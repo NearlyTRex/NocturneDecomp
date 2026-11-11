@@ -13,7 +13,7 @@ CAsciiUnarmor * support_codec_cpp_CAsciiUnarmor_ctor_FUN_00434c70(CAsciiUnarmor 
 {
   CAsciiUnarmor *pCVar1;
   
-  pCVar1 = (CAsciiUnarmor *)support_codec_cpp_CCodec_ctor_FUN_00433e80((CCodec *)this_ptr);
-  *(byte ***)pCVar1 = &g_CAsciiUnarmorVTable;
+  pCVar1 = (CAsciiUnarmor *)support_codec_cpp_CCodec_ctor_FUN_00433e80(&this_ptr->base);
+  (pCVar1->base).vtable = &g_CAsciiUnarmorVTable;
   return pCVar1;
 }

@@ -29,7 +29,7 @@
 ;   unkaddr_0059d350.cpp_FUN_0059dae0
 ;   unkafter_basicene.cpp_FUN_0059f570
 ;   unkafter_basicene.cpp_FUN_005a01a0
-;   unkafter_superopt.cpp_FUN_005a8180
+;   unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     LEA EAX,[EBX + 0x264]               ; 005a433a
     PUSH dword ptr [ESP + 0x4c]         ; 005a4340
     PUSH EAX                            ; 005a4344
-    CALL unkafter_superopt.cpp_FUN_005a8180 ; 005a4345
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; undefined unkafter_superopt.cpp_FUN_005a8180()
+    CALL unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 005a4345
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
     ADD ESP,0x8                         ; 005a434a
     PUSH 0x5f0312                       ; 005a434d | DAT_005f0312
     LEA EAX,[EBX + 0x10af8]             ; 005a4352

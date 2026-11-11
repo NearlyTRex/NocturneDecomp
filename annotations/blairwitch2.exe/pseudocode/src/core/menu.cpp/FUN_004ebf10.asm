@@ -44,8 +44,8 @@
 ;   core_game.cpp_CGame_updateDT_FUN_004b3010
 ;   core_menu.cpp_FUN_004eb0e0
 ;   core_menu.cpp_showCalibrationTest_FUN_004ebe30
-;   core_moon.cpp_FUN_005024a0
-;   core_moon.cpp_FUN_00502510
+;   core_moon.cpp_CMoon_render_FUN_00502510
+;   core_moon.cpp_CMoon_update_FUN_005024a0
 ;   core_set.cpp_CDemonSet_setFlatColor_FUN_005344c0
 ;   crt_string.c__stricmp_FUN_005b8130
 ;   crt_unknown.c_sprintf_FUN_005b7790
@@ -137,13 +137,13 @@ section .text
     MOV EDX,dword ptr [EAX + 0x284]     ; 004ec015 | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP],EDX             ; 004ec01b
     PUSH 0x1d05620                      ; 004ec01e
-    CALL core_moon.cpp_FUN_005024a0     ; 004ec023
-        ;   XREF to: 005024a0 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_005024a0()
+    CALL core_moon.cpp_CMoon_update_FUN_005024a0 ; 004ec023
+        ;   XREF to: 005024a0 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_update_FUN_005024a0(CMoon * this_ptr, float param_2)
     ADD ESP,0x8                         ; 004ec028
     PUSH 0x1d05620                      ; 004ec02b
     MOV ESI,0x5dcc8d                    ; 004ec030 | DAT_005dcc8d
-    CALL core_moon.cpp_FUN_00502510     ; 004ec035
-        ;   XREF to: 00502510 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_00502510()
+    CALL core_moon.cpp_CMoon_render_FUN_00502510 ; 004ec035
+        ;   XREF to: 00502510 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_render_FUN_00502510(CMoon * this_ptr)
     MOV EAX,[0x0061b5a8]                ; 004ec03a | g_CDemonSetPtr
     ADD ESP,0x4                         ; 004ec03f
     MOV EDI,0x61e180                    ; 004ec042 | DAT_0061e180
@@ -249,7 +249,7 @@ section .text
     ADD ESP,0x8                         ; 004ec1b0
     MOV EAX,[0x00616494]                ; 004ec1b3 | g_CGamePtr
     MOV EBX,dword ptr [ESP + 0x23c]     ; 004ec1b8
-    MOV dword ptr [EAX + 0xc],0x0       ; 004ec1bf | g_CGameInstance.field3_0xc
+    MOV dword ptr [EAX + 0xc],0x0       ; 004ec1bf | g_CGameInstance.halo_mode
     TEST EBX,EBX                        ; 004ec1c6
     JZ 0x004ec50c                       ; 004ec1c8
         ;   XREF to: 004ec50c (CONDITIONAL_JUMP)  ; LAB_004ec50c
@@ -357,7 +357,7 @@ section .text
     CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004ec2ce
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,[0x00616494]                ; 004ec2d3 | g_CGamePtr
-    MOV ESI,dword ptr [EAX + 0x10]      ; 004ec2d8 | g_CGameInstance.field7_0x10
+    MOV ESI,dword ptr [EAX + 0x10]      ; 004ec2d8 | g_CGameInstance.subtitle_mode
     ADD ESP,0x8                         ; 004ec2db
     TEST ESI,ESI                        ; 004ec2de
     JZ 0x004ec65a                       ; 004ec2e0
@@ -386,7 +386,7 @@ section .text
     POP EDI                             ; 004ec313
         ;   Label: LAB_004ec313
     MOV EAX,[0x00616494]                ; 004ec314 | g_CGamePtr
-    CMP dword ptr [EAX + 0x20],0x0      ; 004ec319 | g_CGameInstance.field23_0x20
+    CMP dword ptr [EAX + 0x20],0x0      ; 004ec319 | g_CGameInstance.quimby_flag
     JZ 0x004ec664                       ; 004ec31d
         ;   XREF to: 004ec664 (CONDITIONAL_JUMP)  ; LAB_004ec664
     PUSH 0x5dcec8                       ; 004ec323 | = "Particle Density : "
@@ -445,7 +445,7 @@ section .text
     POP EDI                             ; 004ec3a0
         ;   Label: LAB_004ec3a0
     MOV EAX,[0x00616494]                ; 004ec3a1 | g_CGamePtr
-    MOV ECX,dword ptr [EAX + 0x20]      ; 004ec3a6 | g_CGameInstance.field23_0x20
+    MOV ECX,dword ptr [EAX + 0x20]      ; 004ec3a6 | g_CGameInstance.quimby_flag
     MOV EBX,0x9                         ; 004ec3a9
     TEST ECX,ECX                        ; 004ec3ae
     JZ 0x004ec3b7                       ; 004ec3b0
@@ -719,7 +719,7 @@ section .text
         ;   Label: LAB_004ec65a
     JMP 0x004ec2eb                      ; 004ec65f
         ;   XREF to: 004ec2eb (UNCONDITIONAL_JUMP)  ; LAB_004ec2eb
-    CMP dword ptr [EAX + 0x18],0x0      ; 004ec664 | g_CGameInstance.field15_0x18
+    CMP dword ptr [EAX + 0x18],0x0      ; 004ec664 | g_CGameInstance.nudity_flag
         ;   Label: LAB_004ec664
     JZ 0x004ec69d                       ; 004ec668
         ;   XREF to: 004ec69d (CONDITIONAL_JUMP)  ; LAB_004ec69d
@@ -968,20 +968,20 @@ section .text
         ;   XREF to: 004ec46d (UNCONDITIONAL_JUMP)  ; caseD_2
     MOV EAX,[0x00616494]                ; 004ec924 | g_CGamePtr
         ;   Label: caseD_6
-    CMP dword ptr [EAX + 0x10],0x0      ; 004ec929 | g_CGameInstance.field7_0x10
+    CMP dword ptr [EAX + 0x10],0x0      ; 004ec929 | g_CGameInstance.subtitle_mode
     SETZ DL                             ; 004ec92d
     AND EDX,0xff                        ; 004ec930
-    MOV dword ptr [EAX + 0x10],EDX      ; 004ec936 | g_CGameInstance.field7_0x10
+    MOV dword ptr [EAX + 0x10],EDX      ; 004ec936 | g_CGameInstance.subtitle_mode
     JMP 0x004ec46d                      ; 004ec939
         ;   XREF to: 004ec46d (UNCONDITIONAL_JUMP)  ; caseD_2
     MOV EAX,[0x00616494]                ; 004ec93e | g_CGamePtr
         ;   Label: caseD_7
-    CMP dword ptr [EAX + 0x18],0x0      ; 004ec943 | g_CGameInstance.field15_0x18
+    CMP dword ptr [EAX + 0x18],0x0      ; 004ec943 | g_CGameInstance.nudity_flag
     SETZ DL                             ; 004ec947
     AND EDX,0xff                        ; 004ec94a
-    MOV dword ptr [EAX + 0x18],EDX      ; 004ec950 | g_CGameInstance.field15_0x18
-    MOV dword ptr [EAX + 0x14],EDX      ; 004ec953 | g_CGameInstance.field11_0x14
-    MOV dword ptr [EAX + 0x1c],EDX      ; 004ec956 | g_CGameInstance.field19_0x1c
+    MOV dword ptr [EAX + 0x18],EDX      ; 004ec950 | g_CGameInstance.nudity_flag
+    MOV dword ptr [EAX + 0x14],EDX      ; 004ec953 | g_CGameInstance.blood_flag
+    MOV dword ptr [EAX + 0x1c],EDX      ; 004ec956 | g_CGameInstance.foul_language_flag
     JMP 0x004ec46d                      ; 004ec959
         ;   XREF to: 004ec46d (UNCONDITIONAL_JUMP)  ; caseD_2
     PUSH 0x5dcef2                       ; 004ec95e | = "Adjust Particle Density"

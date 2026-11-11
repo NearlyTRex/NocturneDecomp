@@ -11,7 +11,7 @@ void core_marquee_cpp_factoryFuncMarquee_FUN_004e7c50(void)
 {
   CMarquee *this_ptr;
   
-  this_ptr = (CMarquee *)debugAllocTracked1(0x318);
+  this_ptr = (CMarquee *)operator_new(0x318);
   if (this_ptr == (CMarquee *)0x0) {
     return;
   }

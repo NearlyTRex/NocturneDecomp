@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 369,
-    "complexity_score": 357,
+    "complexity_score": 309,
     "cross_reference_count": 4,
     "function_call_count": 14,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 202,
-    "suspect_count": 12,
+    "pseudocode_lines": 199,
+    "suspect_count": 8,
     "suspect_types": [
       "bitcast_double_pair",
       "pointer_cast",
       "stack_alignment_array",
       "stack_param",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 571
+    "total_lines": 568
   },
   "cross_references": [
     {
@@ -340,23 +339,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 130,
       "match": "(float *)((int)this_ptr",
       "severity": "moderate",
       "text": "pfVar12 = (float *)((int)this_ptr + (uint)bVar15 * -8 + 0x24);",
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 134,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "uStack_b4 = *(uint *)&(this_ptr->base).field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 146,
+      "line": 143,
       "match": "in_stack_fffffeb8",
       "severity": "moderate",
       "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_fffffeb8);",
@@ -364,39 +355,15 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 169,
+      "line": 166,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "uStack_2c = __BITCAST_DOUBLE(CONCAT44(-fStack_34,(float)uStack_2c));",
       "type": "bitcast_double_pair"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 188,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "puVar2 = &(this_ptr->base).field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 190,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr->base).field_0x24 = afStack_78[3];",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 191,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).field_0x28 = uStack_68;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 149,
+      "line": 146,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar10 = 6; iVar10 != 0; iVar10 = iVar10 + -1) {",
@@ -404,7 +371,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 141,
+      "line": 138,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pUVar1->vec).x = pCVar3->x;",

@@ -379,11 +379,11 @@ uint __cdecl CDemonActor::handleFootstep(CDemonActor *this_ptr,CVector3f *positi
 
 // Original: core_actor.cpp_FUN_0040ce40
 // Address: 0040ce40
-void FUN_0040ce40(int param_1,int param_2,undefined4 param_3);
+void FUN_0040ce40(int param_1,int param_2,int param_3);
 
 // Original: core_actor.cpp_FUN_0040ce70
 // Address: 0040ce70
-void FUN_0040ce70(int param_1,int param_2,undefined4 param_3);
+void FUN_0040ce70(int param_1,int param_2,int param_3);
 
 // Original: core_actor.cpp_FUN_0040cea0
 // Address: 0040cea0

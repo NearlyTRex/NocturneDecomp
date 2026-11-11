@@ -13,22 +13,22 @@ void FUN_005a7eb0(void);
 // Address: 005a7ed0
 bool FUN_005a7ed0(void);
 
-// Original: unkaddr_005a7eb0.cpp_FUN_005a7f50
+// Original: unkaddr_005a7eb0.cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50
 // Address: 005a7f50
-int FUN_005a7f50(int param_1,undefined4 param_2);
+int __cdecl CSimpleParticleSystem::ctorCapacity(CSimpleParticleSystem *this_ptr,int param_2);
 
-// Original: unkaddr_005a7eb0.cpp_FUN_005a8030
+// Original: unkaddr_005a7eb0.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030
 // Address: 005a8030
-void FUN_005a8030(int param_1,undefined4 param_2);
+void __cdecl CSimpleParticleSystem::setMaxParticles(CSimpleParticleSystem *this_ptr,int param_2);
 
-// Original: unkaddr_005a7eb0.cpp_FUN_005a8050
+// Original: unkaddr_005a7eb0.cpp_CSimpleParticleSystem_attach_FUN_005a8050
 // Address: 005a8050
-void FUN_005a8050(undefined4 *param_1,undefined4 param_2);
+void __cdecl CSimpleParticleSystem::attach(CSimpleParticleSystem *this_ptr,CDemonActor *param_2);
 
-// Original: unkaddr_005a7eb0.cpp_FUN_005a80d0
+// Original: unkaddr_005a7eb0.cpp_CSimpleParticleSystem_start_FUN_005a80d0
 // Address: 005a80d0
-void FUN_005a80d0(int param_1,int param_2);
+void __cdecl CSimpleParticleSystem::start(CSimpleParticleSystem *this_ptr,int param_2);
 
-// Original: unkaddr_005a7eb0.cpp_FUN_005a8100
+// Original: unkaddr_005a7eb0.cpp_CSimpleParticleSystem_stop_FUN_005a8100
 // Address: 005a8100
-void FUN_005a8100(int param_1,int param_2);
+void __cdecl CSimpleParticleSystem::stop(CSimpleParticleSystem *this_ptr,int param_2);

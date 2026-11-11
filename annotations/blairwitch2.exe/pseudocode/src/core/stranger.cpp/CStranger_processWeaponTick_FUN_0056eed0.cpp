@@ -24,16 +24,14 @@ void __cdecl core_stranger_cpp_CStranger_processWeaponTick_FUN_0056eed0(CStrange
     if (this_ptr_01 != (CCharacter *)0x0) {
       iVar2 = core_dynamite_cpp_CDynamite_isFuseBurnedOut_FUN_0047a1c0((CDynamite *)this_ptr_01);
       if (iVar2 != 0) {
-        *(uint *)&(this_ptr_01->model).field_0x42c = 0;
-        *(uint *)&(this_ptr_01->model).field_0x428 =
-             *(uint *)&(this_ptr_01->model).field_0x42c;
-        *(uint *)&(this_ptr_01->model).field_0x424 =
-             *(uint *)&(this_ptr_01->model).field_0x428;
+        (this_ptr_01->model).bone_origins[0x51].z = 0.0;
+        (this_ptr_01->model).bone_origins[0x51].y = (this_ptr_01->model).bone_origins[0x51].z;
+        (this_ptr_01->model).bone_origins[0x51].x = (this_ptr_01->model).bone_origins[0x51].y;
         (*(((this_ptr_01->base).vtable._uc)->_uc).isGrabbable)(this_ptr_01,unaff_EBX);
         this_ptr->weapon = (CWeapon *)0x0;
-        *(uint *)&this_ptr->field_0x2d04 = 0;
+        (this_ptr->base).base.layer_action_index = 0;
         fVar1 = 0x41200000;
-        *(uint *)&this_ptr->field_0x2d08 = 0;
+        (this_ptr->base).base.layer_action_t = 0.0;
         this_ptr->aim_speed_factor = fVar1;
         if (this_ptr->action_pending == 3) {
           this_ptr->action_pending = 0;

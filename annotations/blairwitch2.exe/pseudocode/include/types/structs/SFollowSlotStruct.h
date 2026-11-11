@@ -2,15 +2,27 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CCharacter;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: SFollowSlotStruct
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 60; empty ctor 0059e370; the follow-slot container ctor 0059ded0 (embedded in CCharacter) arrinits 16 at container+4 and zeroes +0,+4,+0x20..+0x38 of each; stride 0xf dwords in the update/compaction code
 // Ghidra size: 0x3c (60 bytes)
 #pragma pack(push, 1)
 typedef struct SFollowSlotStruct {
-    char field_0[60]; // 0x0
+    struct CCharacter* follower; // 0x0, update 0059dd00 reads its position (+0x20) and radius (+0x3434); process 0059e110 drops the slot when follower+0x342c is no longer the leader
+    float follow_distance; // 0x4, update scales the unit leader->follower direction by it
+    CVector3f offset; // 0x8, update stores direction*follow_distance; compaction copies it as 3 dwords
+    CVector3f target_position; // 0x14, update stores leader position + offset; compaction copies it
+    float heading; // 0x20, update stores the yaw of convertDirectionVectorToEulerAngles(direction)
+    float spread_angle; // 0x24, update stores asin(follower_radius/|offset|)*k
+    float follower_radius; // 0x28, update copies follower+0x3434
+    char field_44[12]; // 0x2c
+    struct SFollowSlotStruct* next; // 0x38, process links slot i to slot i+1 (container+0x40+i*0x3c)
 } SFollowSlotStruct;
 #pragma pack(pop)
 

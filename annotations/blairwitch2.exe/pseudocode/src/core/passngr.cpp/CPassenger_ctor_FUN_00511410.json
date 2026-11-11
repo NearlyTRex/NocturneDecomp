@@ -10,10 +10,10 @@
     "pseudocode_lines": 53,
     "suspect_count": 12,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
       "pointer_cast",
       "pointer_truncation",
-      "unnamed_field",
       "unrolled_strcpy"
     ],
     "total_lines": 137
@@ -119,14 +119,6 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x10c",
-      "severity": "mild",
-      "text": "pCVar3 = core_morph_cpp_CMorph_ctor_FUN_005b6e60((CMorph *)&pCVar2[1].base.base.field_0x10c);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 15,
       "match": "pCVar3[-1].",
@@ -213,6 +205,13 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "'(CMorph *)&pCVar2[1].base.base.scale.y' walks 1 x sizeof(CNPC) (0x24348) + offsetof(base.base.scale.y) (0x10c) + 0x0 = 0x24454, which is exactly offsetof(CHostage, hero_left_me_event[32]). Ghidra had no CHostage type here and reached the field by index arithmetic; write it as ((CHostage *)pCVar2)->hero_left_me_event[32] (\u00a7de-pun/\u00a712). Ambiguous: CPassenger::morph also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 14,
+      "severity": "moderate",
+      "text": "pCVar3 = core_morph_cpp_CMorph_ctor_FUN_005b6e60((CMorph *)&pCVar2[1].base.base.scale.y);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

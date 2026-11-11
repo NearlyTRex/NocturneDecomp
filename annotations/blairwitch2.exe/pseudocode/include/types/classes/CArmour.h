@@ -11,7 +11,7 @@
 #pragma pack(push, 1)
 typedef struct CArmour {
     CEnemy base; // 0x0
-    char field_68344[100]; // 0x10af8
+    char fall_apart_event[100]; // 0x10af8
 } CArmour;
 #pragma pack(pop)
 

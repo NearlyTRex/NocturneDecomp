@@ -11,7 +11,7 @@ void core_drip_cpp_factoryFuncDrip_FUN_0046ce40(void)
 {
   CDrip *this_ptr;
   
-  this_ptr = (CDrip *)debugAllocTracked1(0x498);
+  this_ptr = (CDrip *)operator_new(0x498);
   if (this_ptr == (CDrip *)0x0) {
     return;
   }

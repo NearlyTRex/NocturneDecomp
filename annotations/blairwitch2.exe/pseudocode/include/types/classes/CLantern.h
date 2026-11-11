@@ -2,15 +2,29 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonLight;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CWeapon.h"
 
 // Structure: CLantern
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 1800
 // Ghidra size: 0x708 (1800 bytes)
 #pragma pack(push, 1)
 typedef struct CLantern {
-    char field_0[1800]; // 0x0
+    CWeapon base; // 0x0, derived
+    float flicker_timer; // 0x6d4, ctor 0; process counts down, reloads random(0.1,0.2)*flicker
+    CVector3f light_position; // 0x6d8, FUN_0059ced0 stores offset hand position, copies to light +0x4; renderTransparent cone position
+    CVector3f light_rotation; // 0x6e4, FUN_0059ced0 copies orient +0x30 then sets x; buildRotationMatrix into light +0x10; renderTransparent cone rotation
+    float light_max_distance; // 0x6f0, process = (flicker*k+c)*brightness, copied to light +0x140 max_distance; renderTransparent falloff arg
+    float light_focal_length; // 0x6f4, process same formula, copied to light +0x38 focal_length; renderTransparent fov arg
+    float flicker; // 0x6f8, ctor 0; process random(0.7,1.0); volumetric intensity = brightness*flicker
+    int unused_6fc; // 0x6fc, ctor 0059cbd0 stores 0; no reader found
+    float brightness; // 0x700, ctor 0; process/renderOpaque/renderTransparent run the light only while > 0; process clears it when off
+    struct CDemonLight* light; // 0x704, ctor = &g_CDemonLightInstance, CDemonLight_init; process writes its fields and addDynamicLight
 } CLantern;
 #pragma pack(pop)
 

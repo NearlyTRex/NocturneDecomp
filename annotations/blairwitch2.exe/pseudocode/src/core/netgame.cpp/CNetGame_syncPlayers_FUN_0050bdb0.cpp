@@ -17,8 +17,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_0050bdb0(CNetGame *this_pt
   float local_198;
   char local_194 [256];
   char local_94 [100];
-  uint local_30;
-  byte local_2c;
+  SNetPacketHeader local_30;
   int local_2b;
   int local_24;
   int local_20;
@@ -46,7 +45,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_0050bdb0(CNetGame *this_pt
   }
   _DAT_01d34e38 = _DAT_01d34e38 + _DAT_01d34e34;
   _DAT_01d34e34 = iVar1 / 0x12;
-  *(int *)&this_ptr->players[this_ptr->local_player_index].field_0x3c = sync_stage;
+  this_ptr->players[this_ptr->local_player_index].local_sync_stage = sync_stage;
   if (this_ptr->connection_type == CONNECTION_HOST) {
     local_20 = _DAT_01d34e38 + -0x1e0000;
     local_1c = this_ptr->players;
@@ -62,16 +61,16 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_0050bdb0(CNetGame *this_pt
       if (0 < this_ptr->player_count) {
         do {
           iVar2 = iVar1;
-          if (*(int *)&pCVar3->players[0].field_0x3c < sync_stage) {
+          if (pCVar3->players[0].local_sync_stage < sync_stage) {
             local_18 = 0;
-            engine_2d_c_drawText_FUN_00401fe0((char *)(local_1c + local_14),0,iVar1);
+            engine_2d_c_drawText_FUN_00401fe0(local_1c[local_14].name,0,iVar1);
             _sprintf(local_194,&DAT_005e070f);
             iVar2 = iVar1 + 0xb;
             engine_2d_c_drawText_FUN_00401fe0(local_194,200,iVar1);
           }
           local_14 = local_14 + 1;
           iVar1 = iVar2;
-          pCVar3 = (CNetGame *)&pCVar3->players[0].field_0x60;
+          pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.light;
         } while (local_14 < this_ptr->player_count);
       }
       if (local_18 != 0) break;
@@ -87,22 +86,21 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_0050bdb0(CNetGame *this_pt
       }
       if ((float)_DAT_005e07c5 < local_198) {
         local_20 = _DAT_01d34e38;
-        local_2c = 8;
-        local_30 = 9;
+        local_30.type = PACKET_SYNC_STAGE_REQ;
+        local_30.size = 9;
         local_2b = sync_stage;
         iVar1 = 0;
         pCVar3 = this_ptr;
         if (0 < this_ptr->player_count) {
           do {
-            if (*(int *)&pCVar3->players[0].field_0x3c < sync_stage) {
-              core_netgame_cpp_CNetGame_send_FUN_0050cd90
-                        (this_ptr,iVar1,(SNetPacketHeader *)&local_30);
+            if (pCVar3->players[0].local_sync_stage < sync_stage) {
+              core_netgame_cpp_CNetGame_send_FUN_0050cd90(this_ptr,iVar1,&local_30);
             }
             else {
               core_netgame_cpp_CNetGame_updatePing_FUN_0050d840(this_ptr,iVar1,2.0);
             }
             iVar1 = iVar1 + 1;
-            pCVar3 = (CNetGame *)&pCVar3->players[0].field_0x60;
+            pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.light;
           } while (iVar1 < this_ptr->player_count);
         }
       }

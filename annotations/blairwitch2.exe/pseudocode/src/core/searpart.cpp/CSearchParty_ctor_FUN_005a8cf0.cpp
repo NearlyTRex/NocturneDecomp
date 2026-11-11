@@ -13,18 +13,18 @@ CSearchParty * core_searpart_cpp_CSearchParty_ctor_FUN_005a8cf0(CSearchParty *th
 {
   CBasicNPC *this_ptr_00;
   
-  this_ptr_00 = core_basicnpc_cpp_CBasicNPC_ctor_FUN_005a47b0((CBasicNPC *)this_ptr);
-  *(CBasicEnemy_full_vtable **)&this_ptr_00->field_0x2b0 = &g_CSearchPartyVTable;
+  this_ptr_00 = core_basicnpc_cpp_CBasicNPC_ctor_FUN_005a47b0(&this_ptr->base);
+  (this_ptr_00->base).base.base.base.vtable._ub = &g_CSearchPartyVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            ((CDeformableModelInstance *)&this_ptr_00->field_0x2b4,(char *)0x5f0844);
-  *(uint *)&this_ptr_00->field_0x3434 = 0x3f800000;
-  *(uint *)&this_ptr_00->field_0x1134c = 0x3fc00000;
-  *(uint *)&this_ptr_00->field_0x11380 = 0;
-  *(uint *)&this_ptr_00->field_0x11384 = 0;
-  *(uint *)&this_ptr_00->field_0x11388 = 1;
-  *(uint *)&this_ptr_00->field_0x1138c = 1;
-  *(uint *)&this_ptr_00->field_0x11390 = 0;
-  *(uint *)&this_ptr_00->field_0x11394 = 0;
+            (&(this_ptr_00->base).base.base.model,(char *)0x5f0844);
+  (this_ptr_00->base).base.base.collision_cylinder_radius = 1.0;
+  (this_ptr_00->base).anim_speed_scale = 1.5;
+  (this_ptr_00->base).walk_state_3_motion = 0;
+  (this_ptr_00->base).idle_motion = 0;
+  (this_ptr_00->base).walk_motion = 1;
+  (this_ptr_00->base).run_motion = 1;
+  (this_ptr_00->base).animation_state = 0;
+  (this_ptr_00->base).attack_range = 0.0;
   core_searpart_cpp_CSearchParty_processStates_FUN_005a8db0((CSearchParty *)this_ptr_00,0.0,0);
   unkaddr_0059d350_cpp_FUN_0059d990();
   unkaddr_0059d350_cpp_FUN_0059dc80();

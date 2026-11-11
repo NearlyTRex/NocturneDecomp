@@ -14,7 +14,7 @@ void __cdecl core_dfilter_cpp_CDemonFilter_allocMemory_FUN_00447860(CDemonFilter
   uchar *puVar1;
   
   core_dfilter_cpp_CDemonFilter_freeMemory_FUN_004478b0(this_ptr);
-  puVar1 = FUN_005b8580(this_ptr->size * this_ptr->count);
+  puVar1 = (uchar *)malloc(this_ptr->size * this_ptr->count);
   this_ptr->data_buffer = puVar1;
   if (puVar1 != (uchar *)0x0) {
     return;

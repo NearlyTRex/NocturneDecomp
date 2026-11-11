@@ -10,9 +10,9 @@
     "pseudocode_lines": 117,
     "suspect_count": 9,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
       "pointer_cast",
-      "unnamed_field",
       "unrolled_strcpy"
     ],
     "total_lines": 211
@@ -118,14 +118,6 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0xf0",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&pCVar2[1].field_0xf0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 16,
       "match": "this_ptr_00[-1].",
@@ -188,6 +180,13 @@
       "severity": "moderate",
       "text": "*(byte *)(this_ptr_00[1].part_visibility_flags + 0xd) = 0;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "'(CKeyFramedModelInstance *)&pCVar2[1].platform_orientation_delta.y' walks 1 x sizeof(CDemonActor) (0x2b4) + offsetof(platform_orientation_delta.y) (0xf0) + 0x0 = 0x3a4, which is exactly offsetof(CEmitter, model). Ghidra had no CEmitter type here and reached the field by index arithmetic; write it as ((CEmitter *)pCVar2)->model (\u00a7de-pun/\u00a712). Ambiguous: CFlame::off_event[44], CTrigger::on_event[36], CWaterActor::move_down_event[48] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 15,
+      "severity": "moderate",
+      "text": "((CKeyFramedModelInstance *)&pCVar2[1].platform_orientation_delta.y);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

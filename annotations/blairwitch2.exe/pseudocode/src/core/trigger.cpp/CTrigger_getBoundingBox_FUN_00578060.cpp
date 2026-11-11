@@ -22,11 +22,11 @@ CBoundingBox3D * __cdecl core_trigger_cpp_CTrigger_getBoundingBox_FUN_00578060(C
   
   fVar1 = (float)_DAT_005ecd92;
   afStack_1c[1] = -0.1;
-  afStack_1c[3] = *(float *)&this_ptr->field_0x2bc * fVar1;
-  fStack_c = *(float *)&this_ptr->field_0x2c0 + (float)_DAT_005ecd9a;
-  fStack_8 = *(float *)&this_ptr->field_0x2c4 * fVar1;
-  afStack_1c[2] = -*(float *)&this_ptr->field_0x2c4 * fVar1;
-  afStack_1c[0] = -*(float *)&this_ptr->field_0x2bc * fVar1;
+  afStack_1c[3] = (this_ptr->trigger_size).x * fVar1;
+  fStack_c = (this_ptr->trigger_size).y + (float)_DAT_005ecd9a;
+  fStack_8 = (this_ptr->trigger_size).z * fVar1;
+  afStack_1c[2] = -(this_ptr->trigger_size).z * fVar1;
+  afStack_1c[0] = -(this_ptr->trigger_size).x * fVar1;
   pfVar3 = afStack_1c;
   pCVar4 = unaff_ESI;
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {

@@ -22,7 +22,7 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_004154f0(CVector3f *pos
   float10 fVar7;
   float10 fVar8;
   
-  this_ptr = (CBodyPart *)debugAllocTracked1(0x1344);
+  this_ptr = (CBodyPart *)operator_new(0x1344);
   this_ptr_00 = (CBodyPart *)0x0;
   if (this_ptr != (CBodyPart *)0x0) {
     this_ptr_00 = core_bodypart_cpp_CBodyPart_ctor_FUN_004156e0(this_ptr);
@@ -32,9 +32,9 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_004154f0(CVector3f *pos
     _DAT_01d046a4 = 0x32;
     core_main_c_FUN_004e4500("Can't create body part!");
   }
-  *(float *)&(this_ptr_00->base).field_0x20 = position->x;
-  *(float *)&(this_ptr_00->base).field_0x24 = position->y;
-  *(float *)&(this_ptr_00->base).field_0x28 = position->z;
+  (this_ptr_00->base).location.position.x = position->x;
+  (this_ptr_00->base).location.position.y = position->y;
+  (this_ptr_00->base).location.position.z = position->z;
   pUVar1 = &(this_ptr_00->base).orient;
   if (pUVar1 != orientation) {
     (pUVar1->vec).x = (orientation->vec).x;
@@ -62,12 +62,12 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_004154f0(CVector3f *pos
   core_mission_cpp_CDemonMission_generateActorName_FUN_004fcda0(0x01D182F0,&this_ptr_00->base);
   core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200(0x01D182F0,&this_ptr_00->base);
   if (scale_source != (CDemonActor *)0x0) {
-    *(uint *)&(this_ptr_00->base).field_0x108 = *(uint *)&scale_source->field_0x108;
-    *(uint *)&(this_ptr_00->base).field_0x10c = *(uint *)&scale_source->field_0x10c;
-    *(uint *)&(this_ptr_00->base).field_0x110 = *(uint *)&scale_source->field_0x110;
+    (this_ptr_00->base).scale.x = (scale_source->scale).x;
+    (this_ptr_00->base).scale.y = (scale_source->scale).y;
+    (this_ptr_00->base).scale.z = (scale_source->scale).z;
   }
   this_ptr_00->dont_use_normals = dont_use_normals;
-  *(int *)&(this_ptr_00->base).field_0xfc = is_transparent;
+  (this_ptr_00->base).is_transparent = is_transparent;
   this_ptr_00->transparent_geometry_flag = is_transparent;
   this_ptr_00->blood_type = blood_type;
   return this_ptr_00;

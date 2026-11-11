@@ -11,10 +11,10 @@ void __cdecl core_charactr_cpp_CCharacter_detachBodyPart_FUN_00427770(CCharacter
 {
   CBodyPart *body_part;
   
-  if (((this_ptr->model).field_0x2260 != '\0') &&
-     (*(int *)(&(this_ptr->model).field_0x2140 + part_index * 4) != 0)) {
+  if (((this_ptr->model).model_name[0] != '\0') &&
+     ((this_ptr->model).part_data.visibility_flags[part_index] != 0)) {
     body_part = core_bodypart_cpp_createBodyPart_FUN_004154f0
-                          ((CVector3f *)&(this_ptr->base).field_0x20,&(this_ptr->base).orient,
+                          (&(this_ptr->base).location.position,&(this_ptr->base).orient,
                            initial_velocity,&this_ptr->base,0,0,this_ptr->blood_type);
     core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_004277e0
               (this_ptr,body_part,part_index,render_in_background);

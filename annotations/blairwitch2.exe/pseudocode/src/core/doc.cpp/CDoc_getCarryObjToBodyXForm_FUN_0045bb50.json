@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 89,
+    "complexity_score": 74,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 19,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "unnamed_field",
       "unrolled_memcpy"
     ],
     "total_lines": 47
@@ -102,14 +101,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x2620",
-      "severity": "mild",
-      "text": "(this_ptr,*(uint *)(&this_ptr->field_0x2620 + hand_index * 0x78),hand_index);",
-      "type": "unnamed_field"
-    },
     {
       "description": "Complex pointer cast",
       "line": 19,

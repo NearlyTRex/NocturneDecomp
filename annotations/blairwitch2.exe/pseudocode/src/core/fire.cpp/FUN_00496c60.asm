@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_FUN_00496c60(CParticle *param_1,float *param_2,undefined4 *param_3,undefined4 *param_4,undefined4 *param_5,undefined4 param_6)
+; void core_fire_cpp_FUN_00496c60(CParticle *param_1,float *param_2,int *param_3,float *param_4,float *param_5,float param_6)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x100]:4  local_100

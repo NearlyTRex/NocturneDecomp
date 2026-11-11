@@ -11,7 +11,7 @@
 void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00507240(CMP3Decoder *this_ptr,SMpegSubbandQuantizedSamples *quantized_dest,SMpegLayer3SideInfo *side_info,int channel,int granule,int frame_bit_offset,SMpegFrame *frame)
 
 {
-  SMpegLayer3SideInfo *pSVar1;
+  int *piVar1;
   uint uVar2;
   int iVar3;
   byte *puVar4;
@@ -32,16 +32,16 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00507240(C
   int local_38;
   int local_34;
   int local_30;
-  SMpegLayer3SideInfo *local_2c;
+  int *local_2c;
   SHuffmanTable *local_28;
-  SMpegLayer3SideInfo *local_24;
+  int *local_24;
   int local_20;
   char *local_1c;
   int local_18;
   uint local_14;
   
   bVar12 = 0;
-  local_34 = (*(int **)frame)[4] + **(int **)frame * 3;
+  local_34 = frame->header->sampling_rate_index + frame->header->mpeg_version * 3;
   if (_DAT_01d1edd0 == 0) {
     local_18 = _DAT_01d1edd0;
     iVar8 = 0;
@@ -126,12 +126,12 @@ LAB_005075d4:
     }
     _DAT_01d1edd0 = 1;
   }
-  iVar8 = granule * 0x48 + channel * 0xa0;
-  if ((*(int *)(side_info + iVar8 + 0x28) == 0) || (*(int *)(side_info + iVar8 + 0x2c) != 2)) {
-    iVar8 = granule * 0x48 + channel * 0xa0;
-    local_20 = *(int *)(&DAT_0061933c + *(int *)(side_info + iVar8 + 0x4c) * 4 + local_34 * 0x94);
+  if ((side_info->channels[channel].granules[granule].window_switching_flag == 0) ||
+     (side_info->channels[channel].granules[granule].block_type != 2)) {
+    iVar8 = side_info->channels[channel].granules[granule].region0_count;
+    local_20 = *(int *)(&DAT_0061933c + iVar8 * 4 + local_34 * 0x94);
     iVar8 = *(int *)(&DAT_00619340 +
-                    (*(int *)(side_info + iVar8 + 0x50) + *(int *)(side_info + iVar8 + 0x4c)) * 4 +
+                    (side_info->channels[channel].granules[granule].region1_count + iVar8) * 4 +
                     local_34 * 0x94);
   }
   else {
@@ -141,66 +141,69 @@ LAB_005075d4:
   sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_00504d20(this_ptr);
   local_30 = granule * 0x48;
   iVar6 = 1;
-  local_24 = side_info + channel * 0xa0;
-  for (uVar9 = 0; pSVar1 = local_24, iVar7 = local_30,
-      uVar9 < (uint)(*(int *)(local_24 + local_30 + 0x1c) * 2); uVar9 = uVar9 + 2) {
+  local_24 = &side_info->channels[channel + -1].granules[1].scalefac_scale;
+  for (uVar9 = 0; piVar1 = local_24, iVar7 = local_30,
+      uVar9 < (uint)(*(int *)((int)local_24 + local_30 + 0x1c) * 2); uVar9 = uVar9 + 2) {
     if ((int)uVar9 < local_20) {
-      huffman_table = (SHuffmanTable *)(*(int *)(local_24 + local_30 + 0x34) * 0x828 + 0x1d23658);
+      huffman_table =
+           (SHuffmanTable *)(*(int *)((int)local_24 + local_30 + 0x34) * 0x828 + 0x1d23658);
     }
     else if ((int)uVar9 < iVar8) {
-      huffman_table = (SHuffmanTable *)(*(int *)(local_24 + local_30 + 0x38) * 0x828 + 0x1d23658);
+      huffman_table =
+           (SHuffmanTable *)(*(int *)((int)local_24 + local_30 + 0x38) * 0x828 + 0x1d23658);
     }
     else {
-      huffman_table = (SHuffmanTable *)(*(int *)(local_24 + local_30 + 0x3c) * 0x828 + 0x1d23658);
+      huffman_table =
+           (SHuffmanTable *)(*(int *)((int)local_24 + local_30 + 0x3c) * 0x828 + 0x1d23658);
     }
     sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_00504f10
               (this_ptr,huffman_table,&local_48,&local_44,&local_40,&local_3c);
-    *(int *)(quantized_dest + ((int)uVar9 % 0x12) * 4 + ((int)uVar9 / 0x12) * 0x48) = local_48;
+    quantized_dest->samples[(int)uVar9 / 0x12][(int)uVar9 % 0x12] = local_48;
     iVar7 = iVar6 / 0x12;
     iVar3 = iVar6 % 0x12;
     iVar6 = iVar6 + 2;
-    *(int *)(quantized_dest + iVar3 * 4 + iVar7 * 0x48) = local_44;
+    quantized_dest->samples[iVar7][iVar3] = local_44;
   }
   sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_00504d20(this_ptr);
-  local_28 = (SHuffmanTable *)((*(int *)(pSVar1 + iVar7 + 0x5c) + 0x20) * 0x828 + 0x1d23658);
+  local_28 = (SHuffmanTable *)((*(int *)((int)piVar1 + iVar7 + 0x5c) + 0x20) * 0x828 + 0x1d23658);
   iVar8 = uVar9 + 3;
   iVar6 = uVar9 + 2;
-  local_2c = side_info + granule * 0x48 + channel * 0xa0;
+  local_2c = side_info->channels[channel].scfsi + granule * 0x12 + -2;
   iVar7 = uVar9 + 1;
   while( true ) {
-    local_14 = frame_bit_offset + *(int *)(local_2c + 0x18);
+    local_14 = frame_bit_offset + local_2c[6];
     uVar2 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_00504d20(this_ptr);
     if ((local_14 <= uVar2) || (0x23f < (int)uVar9)) break;
     sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_00504f10
               (this_ptr,local_28,&local_48,&local_44,&local_40,&local_3c);
-    *(int *)(quantized_dest + ((int)uVar9 % 0x12) * 4 + ((int)uVar9 / 0x12) * 0x48) = local_40;
-    *(int *)(quantized_dest + (iVar7 % 0x12) * 4 + (iVar7 / 0x12) * 0x48) = local_3c;
-    *(int *)(quantized_dest + (iVar6 % 0x12) * 4 + (iVar6 / 0x12) * 0x48) = local_48;
+    quantized_dest->samples[(int)uVar9 / 0x12][(int)uVar9 % 0x12] = local_40;
+    quantized_dest->samples[iVar7 / 0x12][iVar7 % 0x12] = local_3c;
+    quantized_dest->samples[iVar6 / 0x12][iVar6 % 0x12] = local_48;
     iVar3 = iVar8 / 0x12;
     iVar5 = iVar8 % 0x12;
     uVar9 = uVar9 + 4;
     iVar7 = iVar7 + 4;
     iVar6 = iVar6 + 4;
     iVar8 = iVar8 + 4;
-    *(int *)(quantized_dest + iVar5 * 4 + iVar3 * 0x48) = local_44;
+    quantized_dest->samples[iVar3][iVar5] = local_44;
   }
-  iVar6 = granule * 0x48 + channel * 0xa0;
   sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_00504d20(this_ptr);
-  iVar8 = *(int *)(side_info + iVar6 + 0x18);
+  iVar8 = side_info->channels[channel].granules[granule].part_2_3_length;
   uVar2 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_00504d20(this_ptr);
   if ((uint)(frame_bit_offset + iVar8) < uVar2) {
     uVar2 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_00504d20(this_ptr);
     uVar9 = uVar9 - 4;
     sound_mp3_cpp_CMP3Decoder_unreadBits_FUN_00504e80
-              (this_ptr,(uVar2 - frame_bit_offset) - *(int *)(side_info + iVar6 + 0x18));
+              (this_ptr,(uVar2 - frame_bit_offset) -
+                        side_info->channels[channel].granules[granule].part_2_3_length);
   }
-  iVar8 = *(int *)(side_info + granule * 0x48 + channel * 0xa0 + 0x18);
+  iVar8 = frame_bit_offset + side_info->channels[channel].granules[granule].part_2_3_length;
   uVar2 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_00504d20(this_ptr);
-  if ((int)uVar2 < frame_bit_offset + iVar8) {
-    sound_mp3_cpp_CMP3Decoder_readBits_FUN_00504d30(this_ptr,(frame_bit_offset + iVar8) - uVar2);
+  if ((int)uVar2 < iVar8) {
+    sound_mp3_cpp_CMP3Decoder_readBits_FUN_00504d30(this_ptr,iVar8 - uVar2);
   }
   for (; (int)uVar9 < 0x240; uVar9 = uVar9 + 1) {
-    *(uint *)(quantized_dest + ((int)uVar9 % 0x12) * 4 + ((int)uVar9 / 0x12) * 0x48) = 0;
+    quantized_dest->samples[(int)uVar9 / 0x12][(int)uVar9 % 0x12] = 0;
   }
   return;
 }

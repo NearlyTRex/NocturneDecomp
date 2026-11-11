@@ -10,8 +10,8 @@
     "pseudocode_lines": 72,
     "suspect_count": 11,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
-      "unnamed_field",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
@@ -140,14 +140,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0xc8",
-      "severity": "mild",
-      "text": "iVar6 = core_necklace_cpp_FUN_005adda0(&pCVar5[1].base.base.field_0xc8);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 20,
       "match": "pCVar7[-99].",
@@ -218,6 +210,13 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "'pCVar5[1].base.base.create_event + 0x50' walks 1 x sizeof(CEnemy) (0x10af8) + offsetof(base.base.create_event) (0x78) + 0x50 = 0x10bc0, which is exactly offsetof(CBoneGuy, boxes[1]). Ghidra had no CBoneGuy type here and reached the field by index arithmetic; write it as ((CBoneGuy *)pCVar5)->boxes[1] (\u00a7de-pun/\u00a712). Ambiguous: CBugs::bugs[3], CConstruct::death_event[24], CDraculaBride::part_list[6] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 18,
+      "severity": "moderate",
+      "text": "iVar6 = core_necklace_cpp_FUN_005adda0(pCVar5[1].base.base.create_event + 0x50);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

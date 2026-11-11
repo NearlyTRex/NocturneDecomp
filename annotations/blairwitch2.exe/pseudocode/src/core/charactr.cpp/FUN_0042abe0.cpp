@@ -6,13 +6,15 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 uint core_charactr_cpp_FUN_0042abe0(CCharacter *param_1,float param_2)
 
 {
-  int iVar1;
-  CHero *pCVar2;
+  CLocation *pCVar1;
+  int iVar2;
+  CHero *this_ptr;
   uint uVar3;
   CVector3f *pCVar4;
   byte bVar5;
@@ -62,16 +64,16 @@ uint core_charactr_cpp_FUN_0042abe0(CCharacter *param_1,float param_2)
   float fStack_28;
   uint uStack_24;
   uint uStack_20;
-  CHero *pCStack_1c;
-  CHero *pCStack_18;
-  float *local_14;
+  CLocation *pCStack_1c;
+  CLocation *pCStack_18;
+  CLocation *local_14;
   
   bVar5 = 0;
   if (0.0 <= param_1->hero_proximity_timer) {
-    local_14 = (float *)&(param_1->base).field_0x20;
-    pCVar2 = core_hero_cpp_closestHeroToPoint_FUN_004ce050((CLocation *)local_14);
-    local_34 = pCVar2;
-    core_actor_cpp_FUN_00408de0(pCVar2,local_14);
+    local_14 = &(param_1->base).location;
+    this_ptr = core_hero_cpp_closestHeroToPoint_FUN_004ce050(local_14);
+    local_34 = this_ptr;
+    core_actor_cpp_FUN_00408de0(this_ptr,local_14);
     afStack_94[2] = local_d4;
     afStack_94[(uint)bVar5 * -2 + 3] = afStack_e8[(uint)bVar5 * -2 + 6];
     afStack_94[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
@@ -82,10 +84,10 @@ uint core_charactr_cpp_FUN_0042abe0(CCharacter *param_1,float param_2)
     local_13c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
          afStack_64[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
     local_38 = ABS(local_13c[0]);
-    local_110 = *local_14 - *(float *)(pCVar2 + 0x20);
-    local_10c = local_14[1] - *(float *)(pCVar2 + 0x24);
-    local_108 = local_14[2] - *(float *)(pCVar2 + 0x28);
-    local_ec = *local_14 - *(float *)(pCVar2 + 0x20);
+    local_110 = (local_14->position).x - (this_ptr->base).base.location.position.x;
+    local_10c = (local_14->position).y - (this_ptr->base).base.location.position.y;
+    local_108 = (local_14->position).z - (this_ptr->base).base.location.position.z;
+    local_ec = local_110;
     afStack_e8[(uint)bVar5 * -2] = afStack_124[(uint)bVar5 * -2 + 6];
     afStack_e8[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
          afStack_124[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];
@@ -95,18 +97,18 @@ uint core_charactr_cpp_FUN_0042abe0(CCharacter *param_1,float param_2)
     afStack_e8[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
          afStack_64[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10];
     local_2c = afStack_e8[3];
-    iVar1 = (**(code **)(*(int *)(pCVar2 + 0x2b0) + 0x154))(pCVar2);
-    if ((iVar1 != 0) && (local_38 < _DAT_005cd2e6)) {
+    iVar2 = (*(((this_ptr->base).base.vtable._uh)->_uh).isWeaponDrawn)(this_ptr);
+    if ((iVar2 != 0) && (local_38 < _DAT_005cd2e6)) {
       uStack_30 = (uint)(afStack_94[2] < 0.0);
       uStack_20 = 0;
       pCVar4 = &param_1->move_away_target;
-      pCStack_1c = local_34 + 0x20;
+      pCStack_1c = &(local_34->base).base.location;
       do {
         uVar3 = uStack_20;
         if (uStack_30 != 0) {
           uVar3 = uStack_20 ^ 1;
         }
-        local_14 = (float *)(local_2c + *(float *)(&DAT_00609aa0 + uVar3 * 4));
+        local_14 = (CLocation *)(local_2c + *(float *)(&DAT_00609aa0 + uVar3 * 4));
         uStack_50 = 0;
         uStack_48 = 0;
         fStack_4c = local_2c + *(float *)(&DAT_00609aa0 + uVar3 * 4);
@@ -123,15 +125,15 @@ uint core_charactr_cpp_FUN_0042abe0(CCharacter *param_1,float param_2)
           afStack_f8[1] = 0.0;
           afStack_f8[2] = fStack_194;
           core_dirmat_cpp_FUN_00449530(&CStack_168,afStack_124 + 0xb);
-          pCVar2 = pCStack_1c;
+          pCVar1 = pCStack_1c;
           fStack_98 = fStack_68;
           afStack_94[(uint)bVar5 * -2] = afStack_64[(uint)bVar5 * -2];
           afStack_94[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
                afStack_64[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-          fStack_128 = *(float *)pCVar2 + fStack_98;
-          afStack_124[0] = *(float *)(pCVar2 + 4) + afStack_94[0];
-          afStack_124[1] = *(float *)(pCVar2 + 8) + afStack_94[1];
-          CStack_134.x = *(float *)pCVar2 + fStack_98;
+          fStack_128 = (pCVar1->position).x + fStack_98;
+          afStack_124[0] = (pCVar1->position).y + afStack_94[0];
+          afStack_124[1] = (pCVar1->position).z + afStack_94[1];
+          CStack_134.x = fStack_128;
           *(float *)((int)&CStack_134 + (uint)bVar5 * -8 + 4) = afStack_124[(uint)bVar5 * -2];
           *(float *)((int)&CStack_134 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
                afStack_124[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
@@ -140,9 +142,9 @@ uint core_charactr_cpp_FUN_0042abe0(CCharacter *param_1,float param_2)
             (param_1->move_away_target).y = CStack_134.y;
             (param_1->move_away_target).z = CStack_134.z;
           }
-          iVar1 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
+          iVar2 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
                             (param_1,pCVar4,(CPathMap *)0x0,(CVector3f *)&DAT_0265370c,0.0,0.0);
-          if (-1 < iVar1) {
+          if (-1 < iVar2) {
             param_1->walk_stuck_timer = 0.0;
             param_1->hero_proximity_timer = -4.0;
             return 2;
@@ -160,14 +162,14 @@ uint core_charactr_cpp_FUN_0042abe0(CCharacter *param_1,float param_2)
         return 0;
       }
       uStack_24 = 0;
-      pCStack_18 = local_34 + 0x20;
+      pCStack_18 = &(local_34->base).base.location;
       pCVar4 = &param_1->move_away_target;
       do {
         fStack_28 = (float)((int)uStack_24 / 2) * _DAT_005cd316 * _DAT_005cd31a;
         if ((uStack_24 & 1) != 0) {
           fStack_28 = -fStack_28;
         }
-        local_14 = (float *)(local_2c + fStack_28);
+        local_14 = (CLocation *)(local_2c + fStack_28);
         afStack_124[2] = 0.0;
         afStack_124[3] = local_2c + fStack_28;
         pCVar7 = &CStack_bc;
@@ -184,15 +186,15 @@ uint core_charactr_cpp_FUN_0042abe0(CCharacter *param_1,float param_2)
           afStack_74[0] = 0.0;
           afStack_74[1] = 0.0;
           core_dirmat_cpp_FUN_00449530(&CStack_190,afStack_94 + 8);
-          pCVar2 = pCStack_18;
+          pCVar1 = pCStack_18;
           fStack_80 = fStack_104;
           afStack_94[(uint)bVar5 * -2 + 6] = afStack_124[(uint)bVar5 * -2 + 9];
           afStack_94[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7] =
                afStack_124[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10];
-          fStack_b0 = *(float *)pCVar2 + fStack_80;
-          afStack_ac[0] = *(float *)(pCVar2 + 4) + fStack_7c;
-          afStack_ac[1] = *(float *)(pCVar2 + 8) + fStack_78;
-          CStack_c8.x = *(float *)pCVar2 + fStack_80;
+          fStack_b0 = (pCVar1->position).x + fStack_80;
+          afStack_ac[0] = (pCVar1->position).y + fStack_7c;
+          afStack_ac[1] = (pCVar1->position).z + fStack_78;
+          CStack_c8.x = fStack_b0;
           *(float *)((int)&CStack_c8 + (uint)bVar5 * -8 + 4) = afStack_ac[(uint)bVar5 * -2];
           *(float *)((int)&CStack_c8 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
                afStack_ac[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
@@ -201,9 +203,9 @@ uint core_charactr_cpp_FUN_0042abe0(CCharacter *param_1,float param_2)
             (param_1->move_away_target).y = CStack_c8.y;
             (param_1->move_away_target).z = CStack_c8.z;
           }
-          iVar1 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
+          iVar2 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
                             (param_1,pCVar4,(CPathMap *)0x0,(CVector3f *)&DAT_0265370c,0.0,0.0);
-          if (-1 < iVar1) {
+          if (-1 < iVar2) {
             param_1->walk_stuck_timer = 0.0;
             param_1->hero_proximity_timer = -5.0;
             return 1;
@@ -223,10 +225,10 @@ uint core_charactr_cpp_FUN_0042abe0(CCharacter *param_1,float param_2)
     param_2 = param_1->hero_proximity_timer + param_2;
     param_1->hero_proximity_timer = param_2;
     if ((param_2 < 0.0) && (param_1->walk_stuck_timer <= (float)_DAT_005cd2ee)) {
-      iVar1 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
+      iVar2 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
                         (param_1,&param_1->move_away_target,(CPathMap *)0x0,
                          (CVector3f *)&DAT_0265370c,0.0,0.0);
-      if (iVar1 == 0) {
+      if (iVar2 == 0) {
         return 1;
       }
       param_1->hero_proximity_timer = 0.0;

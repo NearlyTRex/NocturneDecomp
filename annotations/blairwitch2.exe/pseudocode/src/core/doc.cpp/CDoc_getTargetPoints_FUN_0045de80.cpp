@@ -18,7 +18,7 @@ int __cdecl core_doc_cpp_CDoc_getTargetPoints_FUN_0045de80(CDoc *this_ptr,CVecto
   uint auStack_14 [2];
   
   bVar1 = 0;
-  core_skeleton_cpp_FUN_00546a90(&this_ptr->field_0x2b4,_DAT_01b4d298);
+  core_skeleton_cpp_FUN_00546a90(&(this_ptr->base).base.model,_DAT_01b4d298);
   CStack_24.x = fStack_18;
   *(uint *)((int)&CStack_24 + (uint)bVar1 * -8 + 4) = auStack_14[(uint)bVar1 * -2];
   *(uint *)((int)&CStack_24 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =

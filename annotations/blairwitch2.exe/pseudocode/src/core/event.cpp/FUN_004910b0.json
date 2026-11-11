@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 99,
+    "complexity_score": 74,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 14,
-    "suspect_count": 7,
+    "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 49
@@ -82,13 +81,13 @@
     },
     {
       "addr": "01cb69e4",
-      "name": "g_CGameInstance.field180_0xe4",
+      "name": "g_CGameInstance.puzzle_difficulty_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb69e8",
-      "name": "g_CGameInstance.field184_0xe8",
+      "name": "g_CGameInstance.combat_difficulty_mode",
       "type": "undefined4",
       "value": null
     }
@@ -188,16 +187,8 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1908) = 0;",
+      "text": "(param_1->game_flags).count = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0xe4",
-      "severity": "mild",
-      "text": "if (*(int *)&pCVar1->field_0xe4 == 1) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -206,14 +197,6 @@
       "severity": "mild",
       "text": "core_event_cpp_FUN_00491110(param_1,\"puzzleModeHard\",1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0xe8",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0xe8 != 1) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

@@ -13,9 +13,9 @@ void __cdecl core_drip_cpp_CDrip_setup_FUN_0046cf50(CDrip *this_ptr)
   
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&this_ptr->model);
   this_ptr->is_ground_cached = 0;
-  *(float *)&(this_ptr->base).field_0x20 = (this_ptr->home_pos).x;
-  *(float *)&(this_ptr->base).field_0x24 = (this_ptr->home_pos).y;
-  *(float *)&(this_ptr->base).field_0x28 = (this_ptr->home_pos).z;
+  (this_ptr->base).location.position.x = (this_ptr->home_pos).x;
+  (this_ptr->base).location.position.y = (this_ptr->home_pos).y;
+  (this_ptr->base).location.position.z = (this_ptr->home_pos).z;
   fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60
                     (this_ptr->min_auto_drip_time,this_ptr->max_auto_drip_time);
   this_ptr->drip_timer = fVar1;

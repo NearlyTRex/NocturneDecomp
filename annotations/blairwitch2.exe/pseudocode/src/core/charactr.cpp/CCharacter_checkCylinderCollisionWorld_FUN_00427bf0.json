@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 81,
+    "complexity_score": 96,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
-    "suspect_count": 4,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_alignment_array",
-      "stack_ref",
-      "unnamed_field"
+      "stack_ref"
     ],
     "total_lines": 85
   },
@@ -115,25 +114,33 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 7,
-      "match": "auStackY_100c",
+      "match": "afStackY_100c",
       "severity": "moderate",
-      "text": "uint auStackY_100c [1015];",
+      "text": "float afStackY_100c [1015];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x281c",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x281c != 0) {",
-      "type": "unnamed_field"
+      "description": "Direct stack address reference",
+      "line": 17,
+      "match": "&stack0xffffffec",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffec + (uint)bVar2 * -8) =",
+      "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 18,
       "match": "&stack0xffffffe0",
       "severity": "moderate",
-      "text": "auStack_14[(uint)bVar2 * -2] = *(uint *)(&stack0xffffffe0 + (uint)bVar2 * -8);",
+      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 19,
+      "match": "&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xfffffff0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -142,6 +149,14 @@
       "match": "&stack0xffffffe4",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffe4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 22,
+      "match": "&stack0xffffffe8",
+      "severity": "moderate",
+      "text": "(&this_ptr->base,(SCollisionReturnInfo *)&stack0xffffffe8,tolerance);",
       "type": "stack_ref"
     }
   ],

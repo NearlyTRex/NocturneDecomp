@@ -11,7 +11,7 @@ void core_crate_cpp_factoryFuncZombieCow_FUN_004390b0(void)
 {
   CZombieCow *this_ptr;
   
-  this_ptr = (CZombieCow *)debugAllocTracked1(0x10b2c);
+  this_ptr = (CZombieCow *)operator_new(0x10b2c);
   if (this_ptr == (CZombieCow *)0x0) {
     return;
   }

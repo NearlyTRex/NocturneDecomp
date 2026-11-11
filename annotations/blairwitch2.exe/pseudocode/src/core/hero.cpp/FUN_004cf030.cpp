@@ -36,11 +36,11 @@ bool core_hero_cpp_FUN_004cf030(CDemonActor *param_1)
                                   (*(uint *)((int)g_CDemonSetPtr->actors + local_18),
                                    g_CDoorClassInfo.name_hash);
     if ((((this_ptr != (CDoor *)0x0) &&
-         (ABS(*(float *)&(this_ptr->base).field_0x20 - *(float *)&param_1->field_0x20) <=
+         (ABS((this_ptr->base).location.position.x - (param_1->location).position.x) <=
           (float)_DAT_005d9c7c)) &&
-        (ABS(*(float *)&(this_ptr->base).field_0x24 - *(float *)&param_1->field_0x24) <=
+        (ABS((this_ptr->base).location.position.y - (param_1->location).position.y) <=
          (float)_DAT_005d9c7c)) &&
-       ((ABS(*(float *)&(this_ptr->base).field_0x28 - *(float *)&param_1->field_0x28) <=
+       ((ABS((this_ptr->base).location.position.z - (param_1->location).position.z) <=
          (float)_DAT_005d9c7c && (this_ptr->door_state == DOOR_STATE_CLOSED)))) {
       core_actor_cpp_FUN_00408de0(param_1,&this_ptr->open_position);
       local_44 = local_50;
@@ -62,11 +62,17 @@ bool core_hero_cpp_FUN_004cf030(CDemonActor *param_1)
             iVar1 = core_door_cpp_CDoor_getMoveType_FUN_00460630(this_ptr,param_1);
             if (iVar1 != 0) {
               local_20 = local_1c;
-              *(uint *)&param_1[0xdd].field_0x8c = 3;
-              *(uint *)&param_1[0xdd].field_0x9c = 0;
-              *(CDoor **)&param_1[0xdd].field_0x90 = this_ptr;
-              *(CDoor **)&param_1[0xdd].field_0x94 = this_ptr;
-              *(int *)&param_1[0xdd].field_0x98 = iVar1;
+              param_1[0xdd].create_event[0x14] = '\x03';
+              param_1[0xdd].create_event[0x15] = '\0';
+              param_1[0xdd].create_event[0x16] = '\0';
+              param_1[0xdd].create_event[0x17] = '\0';
+              param_1[0xdd].create_event[0x24] = '\0';
+              param_1[0xdd].create_event[0x25] = '\0';
+              param_1[0xdd].create_event[0x26] = '\0';
+              param_1[0xdd].create_event[0x27] = '\0';
+              *(CDoor **)(param_1[0xdd].create_event + 0x18) = this_ptr;
+              *(CDoor **)(param_1[0xdd].create_event + 0x1c) = this_ptr;
+              *(int *)(param_1[0xdd].create_event + 0x20) = iVar1;
             }
           }
         }
@@ -74,5 +80,5 @@ bool core_hero_cpp_FUN_004cf030(CDemonActor *param_1)
     }
     local_18 = local_18 + 4;
   }
-  return *(int *)&param_1[0xdd].field_0x8c == 3;
+  return *(int *)(param_1[0xdd].create_event + 0x14) == 3;
 }

@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 135,
-    "complexity_score": 529,
+    "complexity_score": 381,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 45,
+    "pseudocode_lines": 56,
+    "suspect_count": 31,
     "suspect_types": [
-      "unnamed_field",
       "unnamed_param",
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 194
+    "total_lines": 191
   },
   "cross_references": [
     {
@@ -147,23 +146,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&(param_1->model).field_0x225c = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x225c",
-      "severity": "mild",
-      "text": "*(uint *)&(param_1->model).field_0x225c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&(param_1->model).field_0x2258 = *(uint *)&(param_1->model).field_0x225c;",
+      "text": "(param_1->model).accumulated_root_motion.z = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -171,31 +154,15 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&(param_1->model).field_0x2258 = *(uint *)&(param_1->model).field_0x225c;",
+      "text": "(param_1->model).accumulated_root_motion.y = (param_1->model).accumulated_root_motion.z;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x2258",
-      "severity": "mild",
-      "text": "*(uint *)&(param_1->model).field_0x2258 = *(uint *)&(param_1->model).field_0x225c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x225c",
-      "severity": "mild",
-      "text": "*(uint *)&(param_1->model).field_0x2258 = *(uint *)&(param_1->model).field_0x225c;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&(param_1->model).field_0x2254 = *(uint *)&(param_1->model).field_0x2258;",
+      "text": "(param_1->model).accumulated_root_motion.y = (param_1->model).accumulated_root_motion.z;",
       "type": "unnamed_param"
     },
     {
@@ -203,24 +170,16 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&(param_1->model).field_0x2254 = *(uint *)&(param_1->model).field_0x2258;",
+      "text": "(param_1->model).accumulated_root_motion.x = (param_1->model).accumulated_root_motion.y;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 14,
-      "match": "field_0x2254",
+      "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&(param_1->model).field_0x2254 = *(uint *)&(param_1->model).field_0x2258;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x2258",
-      "severity": "mild",
-      "text": "*(uint *)&(param_1->model).field_0x2254 = *(uint *)&(param_1->model).field_0x2258;",
-      "type": "unnamed_field"
+      "text": "(param_1->model).accumulated_root_motion.x = (param_1->model).accumulated_root_motion.y;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
@@ -251,28 +210,28 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CMotionController *)this_ptr,*(int *)&param_1[1].model.field_0x670,1);",
+      "text": "(&this_ptr->base,(int)param_1[1].model.rest_bone_scales[0x57],1);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x670",
-      "severity": "mild",
-      "text": "((CMotionController *)this_ptr,*(int *)&param_1[1].model.field_0x670,1);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CMotionController *)&param_1->model,0,1);",
+      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&(param_1->model).base,0,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,(CVector3f *)(*(int *)(param_1[1].base.actor_name + 0x18) + 0x20));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,(CVector3f *)(*(int *)(param_1[1].base.actor_name + 0x18) + 0x20));",
@@ -281,9 +240,33 @@
     {
       "description": "Unnamed function parameter",
       "line": 32,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_1[1].model.bone_transform.pose_data.bone_rotations[0x48].z - param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,(CVector3f *)(*(int *)(param_1[1].base.actor_name + 0x18) + 0x20));",
+      "text": "param_2 = param_1[1].model.bone_transform.pose_data.bone_rotations[0x48].z - param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_1[1].model.bone_transform.pose_data.bone_rotations[0x48].z - param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].model.bone_transform.pose_data.bone_rotations[0x48].z = param_2;",
       "type": "unnamed_param"
     },
     {
@@ -291,60 +274,12 @@
       "line": 33,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2 = *(float *)&param_1[1].model.field_0xb3c - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2 = *(float *)&param_1[1].model.field_0xb3c - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = *(float *)&param_1[1].model.field_0xb3c - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0xb3c",
-      "severity": "mild",
-      "text": "param_2 = *(float *)&param_1[1].model.field_0xb3c - param_2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)&param_1[1].model.field_0xb3c = param_2;",
+      "text": "param_1[1].model.bone_transform.pose_data.bone_rotations[0x48].z = param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(float *)&param_1[1].model.field_0xb3c = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0xb3c",
-      "severity": "mild",
-      "text": "*(float *)&param_1[1].model.field_0xb3c = param_2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 <= 0.0) {",
@@ -352,23 +287,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[1].model.field_0xb3c = 0;",
+      "text": "param_1[1].model.bone_transform.pose_data.bone_rotations[0x48].z = 0.0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0xb3c",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[1].model.field_0xb3c = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,(CVector3f *)(*(int *)(param_1[1].base.actor_name + 0x18) + 0x20));",
@@ -376,7 +303,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,(CVector3f *)(*(int *)(param_1[1].base.actor_name + 0x18) + 0x20));",
@@ -384,39 +311,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (_DAT_005f056e < *(float *)&(param_1->model).field_0x8) {",
+      "text": "if (_DAT_005f056e < (param_1->model).base.current_frame_number) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x8",
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
       "severity": "mild",
-      "text": "if (_DAT_005f056e < *(float *)&(param_1->model).field_0x8) {",
-      "type": "unnamed_field"
+      "text": "param_1[1].model.bone_transform.pose_data.bone_rotations[0x48].z = 5.0;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[1].model.field_0xb3c = 0x40a00000;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0xb3c",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[1].model.field_0xb3c = 0x40a00000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "core_union_cpp_FUN_005a5460(param_1);",
@@ -424,58 +335,34 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)&param_1[1].model.field_0xb40 = *(int *)&param_1[1].model.field_0xb40 + -1;",
+      "text": "param_1[1].model.bone_transform.pose_data.bone_rotations[0x49].w =",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)&param_1[1].model.field_0xb40 = *(int *)&param_1[1].model.field_0xb40 + -1;",
+      "text": "(float)((int)param_1[1].model.bone_transform.pose_data.bone_rotations[0x49].w + -1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0xb40",
-      "severity": "mild",
-      "text": "*(int *)&param_1[1].model.field_0xb40 = *(int *)&param_1[1].model.field_0xb40 + -1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0xb40",
-      "severity": "mild",
-      "text": "*(int *)&param_1[1].model.field_0xb40 = *(int *)&param_1[1].model.field_0xb40 + -1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (_DAT_005f056a < *(float *)&(param_1->model).field_0x8) {",
+      "text": "if (_DAT_005f056a < (param_1->model).base.current_frame_number) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "if (_DAT_005f056a < *(float *)&(param_1->model).field_0x8) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
       "line": 11,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "*(uint *)&(param_1->model).field_0x225c = 0;",
+      "text": "(param_1->model).accumulated_root_motion.z = 0.0;",
       "type": "unrolled_memset"
     }
   ]

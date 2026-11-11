@@ -11,7 +11,7 @@ void core_lever_cpp_factoryFuncLever_FUN_004e1bf0(void)
 {
   CLever *this_ptr;
   
-  this_ptr = (CLever *)debugAllocTracked1(0x970);
+  this_ptr = (CLever *)operator_new(0x970);
   if (this_ptr == (CLever *)0x0) {
     return;
   }

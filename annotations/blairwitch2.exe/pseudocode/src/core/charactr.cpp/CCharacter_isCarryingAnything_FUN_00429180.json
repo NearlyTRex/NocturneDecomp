@@ -2,17 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 67,
+    "complexity_score": 17,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 17,
-    "suspect_count": 4,
-    "suspect_types": [
-      "shadow_pointer_walk",
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 43
   },
   "cross_references": [
@@ -126,38 +123,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x2620",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&this_ptr->field_0x2620;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x2698",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&this_ptr->field_0x2698;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "this_ptr = (CCharacter *)&(this_ptr->base).field_0x78;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `this_ptr->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 17,
-      "match": "this_ptr = (T *)&(this_ptr->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "this_ptr = (CCharacter *)&(this_ptr->base).field_0x78;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

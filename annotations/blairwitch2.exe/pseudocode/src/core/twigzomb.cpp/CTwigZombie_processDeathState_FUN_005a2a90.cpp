@@ -9,8 +9,8 @@
 void __cdecl core_twigzomb_cpp_CTwigZombie_processDeathState_FUN_005a2a90(CTwigZombie *this_ptr,float delta_time)
 
 {
-  *(uint *)&this_ptr->field_0x342c = 0;
+  (this_ptr->base).base.base.follow_leader = (CCharacter *)0x0;
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-            ((CMotionController *)&this_ptr->field_0x2b4,3,1);
+            (&(this_ptr->base).base.base.model.base,3,1);
   return;
 }

@@ -30,7 +30,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
 ;   crt_unknown.c_FUN_005b86a0
-;   unkafter_minecar.cpp_FUN_004f2ac0
+;   unkafter_minecar.cpp_setRenderViewport_FUN_004f2ac0
 ;
 ; *****************************************************************************
 
@@ -61,8 +61,8 @@ section .text
     PUSH dword ptr [EBX + 0x28]         ; 0047e7c2
     PUSH dword ptr [EBX + 0x24]         ; 0047e7c5
     PUSH dword ptr [EBX + 0x20]         ; 0047e7c8
-    CALL unkafter_minecar.cpp_FUN_004f2ac0 ; 0047e7cb
-        ;   XREF to: 004f2ac0 (UNCONDITIONAL_CALL)  ; undefined unkafter_minecar.cpp_FUN_004f2ac0()
+    CALL unkafter_minecar.cpp_setRenderViewport_FUN_004f2ac0 ; 0047e7cb
+        ;   XREF to: 004f2ac0 (UNCONDITIONAL_CALL)  ; void unkafter_minecar.cpp_setRenderViewport_FUN_004f2ac0(float left, float top, float right, float bottom)
     MOV EAX,dword ptr [EBX + 0x10]      ; 0047e7d0
     MOV [0x01c35e48],EAX                ; 0047e7d3 | DAT_01c35e48
     MOV EAX,dword ptr [EBX + 0x14]      ; 0047e7d8

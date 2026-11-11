@@ -36,8 +36,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00476
           return -999;
         }
         if ((pCVar3->voxel_buffer1 != (SVoxelGrid *)0x0) &&
-           (((byte)pCVar3->voxel_buffer1[(uVar2 & 7) * 8 + uVar7] & (&DAT_00613888)[uVar1 & 7]) != 0
-           )) {
+           ((pCVar3->voxel_buffer1->voxels[uVar2 & 7][uVar7] & (&DAT_00613888)[uVar1 & 7]) != 0)) {
           return uVar7 + iVar5 * 8;
         }
         uVar7 = uVar7 - 1;

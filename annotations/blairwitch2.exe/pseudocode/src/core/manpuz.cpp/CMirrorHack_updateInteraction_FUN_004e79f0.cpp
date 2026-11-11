@@ -11,11 +11,11 @@ int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_004e79f0(CMirrorHa
 {
   UOrientationVector *pUVar1;
   
-  if (*(int *)(player_control + 0xc) != 0) {
-    *(uint *)(player_control + 0xc) = 0;
+  if ((player_control->action_state).fire != 0) {
+    (player_control->action_state).fire = 0;
     return 0;
   }
-  if (*(int *)(player_control + 0x10) == 0) {
+  if ((player_control->action_state).use_item == 0) {
     pUVar1 = &(this_ptr->base).orient;
     if (pUVar1 != user_orientation) {
       (pUVar1->vec).x = (user_orientation->vec).x;
@@ -25,6 +25,6 @@ int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_004e79f0(CMirrorHa
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0(&this_ptr->base);
     return 1;
   }
-  *(uint *)(player_control + 0x10) = 0;
+  (player_control->action_state).use_item = 0;
   return 0;
 }

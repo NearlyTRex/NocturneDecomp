@@ -11,7 +11,7 @@ void core_bodypart_cpp_factoryFuncBodyPart_FUN_004156b0(void)
 {
   CBodyPart *this_ptr;
   
-  this_ptr = (CBodyPart *)debugAllocTracked1(0x1344);
+  this_ptr = (CBodyPart *)operator_new(0x1344);
   if (this_ptr == (CBodyPart *)0x0) {
     return;
   }

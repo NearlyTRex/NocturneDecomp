@@ -2,25 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 532,
+    "complexity_score": 473,
     "cross_reference_count": 7,
     "function_call_count": 4,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 67,
-    "suspect_count": 42,
+    "pseudocode_lines": 73,
+    "suspect_count": 36,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 227
+    "total_lines": 233
   },
   "cross_references": [
     {
@@ -433,72 +432,24 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "(ABS(*(float *)&(this_ptr->base).field_0x20 - *(float *)&param_1->field_0x20) <=",
+      "text": "(ABS((this_ptr->base).location.position.x - (param_1->location).position.x) <=",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(ABS(*(float *)&(this_ptr->base).field_0x20 - *(float *)&param_1->field_0x20) <=",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(ABS(*(float *)&(this_ptr->base).field_0x20 - *(float *)&param_1->field_0x20) <=",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "(ABS(*(float *)&(this_ptr->base).field_0x24 - *(float *)&param_1->field_0x24) <=",
+      "text": "(ABS((this_ptr->base).location.position.y - (param_1->location).position.y) <=",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "(ABS(*(float *)&(this_ptr->base).field_0x24 - *(float *)&param_1->field_0x24) <=",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "(ABS(*(float *)&(this_ptr->base).field_0x24 - *(float *)&param_1->field_0x24) <=",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "((ABS(*(float *)&(this_ptr->base).field_0x28 - *(float *)&param_1->field_0x28) <=",
+      "text": "((ABS((this_ptr->base).location.position.z - (param_1->location).position.z) <=",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "((ABS(*(float *)&(this_ptr->base).field_0x28 - *(float *)&param_1->field_0x28) <=",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "((ABS(*(float *)&(this_ptr->base).field_0x28 - *(float *)&param_1->field_0x28) <=",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -593,96 +544,96 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[0xdd].field_0x8c = 3;",
+      "text": "param_1[0xdd].create_event[0x14] = '\\x03';",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x8c",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[0xdd].field_0x8c = 3;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[0xdd].field_0x9c = 0;",
+      "text": "param_1[0xdd].create_event[0x15] = '\\0';",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 59,
-      "match": "field_0x9c",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[0xdd].field_0x9c = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(CDoor **)&param_1[0xdd].field_0x90 = this_ptr;",
+      "text": "param_1[0xdd].create_event[0x16] = '\\0';",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 60,
-      "match": "field_0x90",
-      "severity": "mild",
-      "text": "*(CDoor **)&param_1[0xdd].field_0x90 = this_ptr;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 61,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(CDoor **)&param_1[0xdd].field_0x94 = this_ptr;",
+      "text": "param_1[0xdd].create_event[0x17] = '\\0';",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 61,
-      "match": "field_0x94",
-      "severity": "mild",
-      "text": "*(CDoor **)&param_1[0xdd].field_0x94 = this_ptr;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 62,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)&param_1[0xdd].field_0x98 = iVar1;",
+      "text": "param_1[0xdd].create_event[0x24] = '\\0';",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 62,
-      "match": "field_0x98",
-      "severity": "mild",
-      "text": "*(int *)&param_1[0xdd].field_0x98 = iVar1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "return *(int *)&param_1[0xdd].field_0x8c == 3;",
+      "text": "param_1[0xdd].create_event[0x25] = '\\0';",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 70,
-      "match": "field_0x8c",
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_1",
       "severity": "mild",
-      "text": "return *(int *)&param_1[0xdd].field_0x8c == 3;",
-      "type": "unnamed_field"
+      "text": "param_1[0xdd].create_event[0x26] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 65,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0xdd].create_event[0x27] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(CDoor **)(param_1[0xdd].create_event + 0x18) = this_ptr;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 67,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(CDoor **)(param_1[0xdd].create_event + 0x1c) = this_ptr;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1[0xdd].create_event + 0x20) = iVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return *(int *)(param_1[0xdd].create_event + 0x14) == 3;",
+      "type": "unnamed_param"
     },
     {
       "description": "Pointer value `&stack0xffffffc4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

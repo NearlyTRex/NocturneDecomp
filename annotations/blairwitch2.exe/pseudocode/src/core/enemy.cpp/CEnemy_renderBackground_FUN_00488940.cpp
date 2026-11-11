@@ -11,7 +11,7 @@ void __cdecl core_enemy_cpp_CEnemy_renderBackground_FUN_00488940(CEnemy *this_pt
 {
   if (this_ptr->pool_me != 0) {
     if (layer_flag != 0) {
-      *(uint *)&(this_ptr->base).field_0x2568 = 1;
+      (this_ptr->base).render_active = 1;
     }
     core_charactr_cpp_CCharacter_renderBackground_FUN_00425a00(&this_ptr->base,layer_flag);
   }

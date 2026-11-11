@@ -11,12 +11,12 @@
 ;   core_ammobox.cpp_CAmmoBox_archive_FUN_0040e860 at 0040e8c7
 ;   core_anvil.cpp_CAnvil_archive_FUN_0040ecc0 at 0040ed02
 ;   core_armour.cpp_CArmour_archive_FUN_0040f040 at 0040f05b
+;   core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10 at 0059fc3c
 ;   core_bat.cpp_CBat_archive_FUN_00411110 at 0041113e
 ;   core_batcreat.cpp_CBatCreature_archive_FUN_004124a0 at 004124bb
 ;   core_batman.cpp_CBatman_archive_FUN_00413e60 at 00413e7b
 ;   core_battery.cpp_CBattery_archive_FUN_004148b0 at 004148de
 ;   core_beast.cpp_CBeast_archive_FUN_00414b10 at 00414b2b
-;   core_biggs.cpp_CBiggs_archive_FUN_00415250 at 0041526b
 ;   ... and 63 more
 ;
 ; Referenced Globals:

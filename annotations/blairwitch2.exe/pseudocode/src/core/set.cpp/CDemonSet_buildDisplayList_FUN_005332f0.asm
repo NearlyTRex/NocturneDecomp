@@ -40,7 +40,7 @@
 ;   undefined4 DAT_01ba5c50
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.profile_mode
-;   undefined4 g_CGameInstance.field508_0x25c
+;   undefined4 g_CGameInstance.goggles_active
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   undefined4 DAT_01cedef4
 ;   ... and 5 more
@@ -191,14 +191,14 @@ section .text
         ;   XREF to: 0053330c (UNCONDITIONAL_JUMP)  ; LAB_0053330c
     MOV EAX,[0x00616494]                ; 005334a1 | g_CGamePtr
         ;   Label: LAB_005334a1
-    CMP dword ptr [EAX + 0x25c],0x0     ; 005334a6 | g_CGameInstance.field508_0x25c
+    CMP dword ptr [EAX + 0x25c],0x0     ; 005334a6 | g_CGameInstance.goggles_active
     JNZ 0x0053335f                      ; 005334ad
         ;   XREF to: 0053335f (CONDITIONAL_JUMP)  ; LAB_0053335f
     JMP 0x00533367                      ; 005334b3
         ;   XREF to: 00533367 (UNCONDITIONAL_JUMP)  ; LAB_00533367
     MOV EAX,[0x00616494]                ; 005334b8 | g_CGamePtr
         ;   Label: LAB_005334b8
-    CMP dword ptr [EAX + 0x25c],0x0     ; 005334bd | g_CGameInstance.field508_0x25c
+    CMP dword ptr [EAX + 0x25c],0x0     ; 005334bd | g_CGameInstance.goggles_active
     JZ 0x00533607                       ; 005334c4
         ;   XREF to: 00533607 (CONDITIONAL_JUMP)  ; LAB_00533607
     LEA ECX,[EBX + 0x20]                ; 005334ca

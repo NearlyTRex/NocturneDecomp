@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 126,
+    "complexity_score": 153,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 36,
-    "suspect_count": 8,
+    "pseudocode_lines": 38,
+    "suspect_count": 10,
     "suspect_types": [
+      "unaffected_reg",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 130
+    "total_lines": 132
   },
   "cross_references": [
     {
@@ -153,32 +154,48 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 11,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(*((this_ptr->base).vtable)->lockSample)(&this_ptr->base,buffer_id,unaff_EDI,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "(*((this_ptr->base).vtable)->lockSample)(&this_ptr->base,buffer_id,unaff_EDI,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 21,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)this_ptr + 8))(this_ptr);",
+      "text": "(**(code **)(*_DAT_0264a5d0 + 8))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 15,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)this_ptr + 0x34))(this_ptr,iVar2);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 19,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_0264a5d0 + 8))(_DAT_0264a5d0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 23,
+      "line": 25,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_0264a5cc + 8))(_DAT_0264a5cc);",
@@ -186,7 +203,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 27,
+      "line": 29,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_0264a5d4 + 8))(_DAT_0264a5d4);",
@@ -194,7 +211,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 31,
+      "line": 33,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_0264a5c8 + 8))(_DAT_0264a5c8);",
@@ -202,7 +219,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 37,
+      "line": 39,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_0264a5c4 + 8))(_DAT_0264a5c4);",

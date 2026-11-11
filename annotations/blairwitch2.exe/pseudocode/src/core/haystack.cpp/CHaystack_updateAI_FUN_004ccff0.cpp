@@ -6,16 +6,19 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004ccff0(CHaystack *this_ptr,float delta_time)
 
 {
-  float fVar1;
+  CDeformableModelInstance *pCVar1;
   float fVar2;
-  int iVar3;
+  EHeroTask EVar3;
+  float fVar4;
+  int iVar5;
   CPathMap *this_ptr_00;
-  byte bVar4;
+  byte bVar6;
   float afStackY_10b4 [1007];
   float local_dc;
   CVector3f local_d8;
@@ -55,132 +58,134 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004ccff0(CHaystack *this_p
   float local_1c;
   float local_18;
   
-  bVar4 = 0;
+  bVar6 = 0;
   local_2c = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
   local_24 = 0;
   local_20 = 0.25;
   local_30 = 0.7853982;
-  memset(&this_ptr->field_0x10a68,0,0x34);
-  if (*(int *)&this_ptr->field_0x25638 != 0) {
-    iVar3 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
-    local_60 = *(float *)&this_ptr->field_0x20 - *(float *)(iVar3 + 0x20);
-    local_5c = *(float *)&this_ptr->field_0x24 - *(float *)(iVar3 + 0x24);
-    local_58 = *(float *)&this_ptr->field_0x28 - *(float *)(iVar3 + 0x28);
+  memset(&(this_ptr->base).player_input,0,0x34);
+  if ((this_ptr->base).ai_task != HERO_TASK_STAND) {
+    iVar5 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
+    local_60 = (this_ptr->base).base.base.location.position.x - *(float *)(iVar5 + 0x20);
+    local_5c = (this_ptr->base).base.base.location.position.y - *(float *)(iVar5 + 0x24);
+    local_58 = (this_ptr->base).base.base.location.position.z - *(float *)(iVar5 + 0x28);
     local_9c = local_60;
-    afStack_b0[(uint)bVar4 * -2 + 6] = afStack_b0[(uint)bVar4 * -2 + 0x15];
-    afStack_b0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
-         afStack_b0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x16];
+    afStack_b0[(uint)bVar6 * -2 + 6] = afStack_b0[(uint)bVar6 * -2 + 0x15];
+    afStack_b0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7] =
+         afStack_b0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x16];
     local_48 = SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98);
-    if (((*(int *)&this_ptr->field_0x25638 == 3) || (local_48 < _DAT_005d9942)) &&
-       ((*(int *)&this_ptr->field_0x25638 == 2 || (*(int *)&this_ptr->field_0x25638 == 3)))) {
+    if ((((this_ptr->base).ai_task == HERO_TASK_GUARD) || (local_48 < _DAT_005d9942)) &&
+       ((EVar3 = (this_ptr->base).ai_task, EVar3 == HERO_TASK_KILL || (EVar3 == HERO_TASK_GUARD))))
+    {
       local_dc = 9999.9;
-      iVar3 = core_hero_cpp_FUN_004d00c0(this_ptr,&local_dc);
-      if ((iVar3 == 0) || ((float)_DAT_005d9946 <= local_dc)) {
+      iVar5 = core_hero_cpp_FUN_004d00c0(this_ptr,&stack0xffffff24);
+      if ((iVar5 == 0) || ((float)_DAT_005d9946 <= local_dc)) {
         if (this_ptr->guns_drawn != 0) {
-          *(uint *)&this_ptr->field_0x10a80 = 1;
+          (this_ptr->base).player_input.action_state.draw = 1;
         }
       }
       else {
-        local_2c = iVar3;
+        local_2c = iVar5;
         local_24 = 1;
       }
     }
-    local_84 = *(float *)(local_2c + 0x20) - *(float *)&this_ptr->field_0x20;
-    local_80 = *(float *)(local_2c + 0x24) - *(float *)&this_ptr->field_0x24;
-    local_7c = *(float *)(local_2c + 0x28) - *(float *)&this_ptr->field_0x28;
+    local_84 = *(float *)(local_2c + 0x20) - (this_ptr->base).base.base.location.position.x;
+    local_80 = *(float *)(local_2c + 0x24) - (this_ptr->base).base.base.location.position.y;
+    local_7c = *(float *)(local_2c + 0x28) - (this_ptr->base).base.base.location.position.z;
     local_54 = local_84;
-    afStack_b0[(uint)bVar4 * -2 + 0x18] = afStack_b0[(uint)bVar4 * -2 + 0xc];
-    afStack_b0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x19] =
-         afStack_b0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0xd];
+    afStack_b0[(uint)bVar6 * -2 + 0x18] = afStack_b0[(uint)bVar6 * -2 + 0xc];
+    afStack_b0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x19] =
+         afStack_b0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xd];
     if (afStack_b0 + 5 != afStack_b0 + 0x17) {
       local_9c = local_54;
       local_98 = local_50;
       local_94 = local_4c;
     }
-    fVar1 = SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98);
-    local_1c = fVar1;
-    if ((float)_DAT_005d994e <= fVar1) {
+    fVar2 = SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98);
+    local_1c = fVar2;
+    if ((float)_DAT_005d994e <= fVar2) {
       this_ptr_00 = (CPathMap *)0x0;
       if (local_24 == 0) {
-        iVar3 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
-        this_ptr_00 = (CPathMap *)(**(code **)(*(int *)(iVar3 + 0x2b0) + 0xcc))(iVar3);
+        iVar5 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
+        this_ptr_00 = (CPathMap *)(**(code **)(*(int *)(iVar5 + 0x2b0) + 0xcc))(iVar5);
       }
       if (this_ptr_00 == (CPathMap *)0x0) {
         this_ptr_00 = core_path_cpp_getPathMap_FUN_00513ea0((CLocation *)(local_2c + 0x20));
       }
-      iVar3 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00513650
-                        (this_ptr_00,(CVector3f *)&this_ptr->field_0x20,&local_d8,
-                         *(int *)&this_ptr->field_0x6c);
-      if (iVar3 != 0) {
+      iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00513650
+                        (this_ptr_00,&(this_ptr->base).base.base.location.position,&local_d8,
+                         (this_ptr->base).base.base.direction_hint);
+      if (iVar5 != 0) {
         local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                    (local_d8.y - *(float *)&this_ptr->field_0x34);
-        fVar2 = local_18 * _DAT_005d9956 * (float)_DAT_005d995e;
+                                    (local_d8.y - (this_ptr->base).base.base.orient.vec.y);
+        fVar4 = local_18 * _DAT_005d9956 * (float)_DAT_005d995e;
         local_3c = -local_20;
-        *(float *)&this_ptr->field_0x10a90 = fVar2;
-        if (fVar2 < local_3c) {
-          *(float *)&this_ptr->field_0x10a90 = local_3c;
+        (this_ptr->base).player_input.turn_speed = fVar4;
+        if (fVar4 < local_3c) {
+          (this_ptr->base).player_input.turn_speed = local_3c;
         }
-        if (local_20 < *(float *)&this_ptr->field_0x10a90) {
-          *(float *)&this_ptr->field_0x10a90 = local_20;
+        if (local_20 < (this_ptr->base).player_input.turn_speed) {
+          (this_ptr->base).player_input.turn_speed = local_20;
         }
-        if (((float)_DAT_005d9966 <= fVar1) || (local_24 == 1)) {
-          *(uint *)&this_ptr->field_0x10a70 = 1;
-          *(uint *)&this_ptr->field_0x10a68 = 1;
+        if (((float)_DAT_005d9966 <= fVar2) || (local_24 == 1)) {
+          (this_ptr->base).player_input.action_state.run = 1;
+          (this_ptr->base).player_input.action_state.walk = 1;
         }
         else {
-          *(uint *)&this_ptr->field_0x10a68 = 1;
+          (this_ptr->base).player_input.action_state.walk = 1;
         }
       }
     }
     else {
+      pCVar1 = &(this_ptr->base).base.model;
       if (local_24 == 1) {
         if (this_ptr->guns_drawn == 0) {
-          *(uint *)&this_ptr->field_0x10a80 = 1;
+          (this_ptr->base).player_input.action_state.draw = 1;
         }
         else {
-          iVar3 = core_motion_cpp_FUN_005035c0(&this_ptr->field_0x2b4);
-          if ((*(int *)(iVar3 + 0x24) != 2) && (*(int *)(iVar3 + 0x24) != 1)) {
-            *(uint *)&this_ptr->field_0x10a74 = 1;
+          iVar5 = core_motion_cpp_FUN_005035c0(pCVar1);
+          if ((*(int *)(iVar5 + 0x24) != 2) && (*(int *)(iVar5 + 0x24) != 1)) {
+            (this_ptr->base).player_input.action_state.fire = 1;
           }
         }
       }
       else {
-        iVar3 = core_motion_cpp_FUN_005035c0(&this_ptr->field_0x2b4);
-        if ((*(int *)(iVar3 + 0x24) == 10) && (this_ptr->guns_drawn != 0)) {
-          *(uint *)&this_ptr->field_0x10a80 = 1;
+        iVar5 = core_motion_cpp_FUN_005035c0(pCVar1);
+        if ((*(int *)(iVar5 + 0x24) == 10) && (this_ptr->guns_drawn != 0)) {
+          (this_ptr->base).player_input.action_state.draw = 1;
         }
       }
       if (local_24 == 1) {
         core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(afStack_b0 + 5);
         local_78 = local_b4;
-        afStack_b0[(uint)bVar4 * -2 + 0xf] = afStack_b0[(uint)bVar4 * -2];
-        afStack_b0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x10] =
-             afStack_b0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+        afStack_b0[(uint)bVar6 * -2 + 0xf] = afStack_b0[(uint)bVar6 * -2];
+        afStack_b0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x10] =
+             afStack_b0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
         local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                    (local_74 - *(float *)&this_ptr->field_0x34);
-        fVar1 = local_18 * _DAT_005d9956 * (float)_DAT_005d995e;
+                                    (local_74 - (this_ptr->base).base.base.orient.vec.y);
+        fVar2 = local_18 * _DAT_005d9956 * (float)_DAT_005d995e;
         local_40 = -local_20;
-        *(float *)&this_ptr->field_0x10a90 = fVar1;
-        if (fVar1 < local_40) {
-          *(float *)&this_ptr->field_0x10a90 = local_40;
+        (this_ptr->base).player_input.turn_speed = fVar2;
+        if (fVar2 < local_40) {
+          (this_ptr->base).player_input.turn_speed = local_40;
         }
-        if (local_20 < *(float *)&this_ptr->field_0x10a90) {
-          *(float *)&this_ptr->field_0x10a90 = local_20;
+        if (local_20 < (this_ptr->base).player_input.turn_speed) {
+          (this_ptr->base).player_input.turn_speed = local_20;
         }
-        if ((((float)_DAT_005d996e < *(float *)&this_ptr->field_0x10a90) &&
-            ((double)*(float *)&this_ptr->field_0x10a90 < _DAT_005d9976)) &&
-           (*(int *)&this_ptr->field_0x10a74 != 0)) {
-          *(uint *)&this_ptr->field_0x10a90 = 0;
+        fVar2 = (this_ptr->base).player_input.turn_speed;
+        if ((((float)_DAT_005d996e < fVar2) && ((double)fVar2 < _DAT_005d9976)) &&
+           ((this_ptr->base).player_input.action_state.fire != 0)) {
+          (this_ptr->base).player_input.turn_speed = 0.0;
         }
       }
     }
-    local_90 = *(float *)(local_2c + 0x20) - *(float *)&this_ptr->field_0x20;
-    local_8c = *(float *)(local_2c + 0x24) - *(float *)&this_ptr->field_0x24;
-    local_88 = *(float *)(local_2c + 0x28) - *(float *)&this_ptr->field_0x28;
+    local_90 = *(float *)(local_2c + 0x20) - (this_ptr->base).base.base.location.position.x;
+    local_8c = *(float *)(local_2c + 0x24) - (this_ptr->base).base.base.location.position.y;
+    local_88 = *(float *)(local_2c + 0x28) - (this_ptr->base).base.base.location.position.z;
     afStack_b0[2] = local_90;
-    afStack_b0[(uint)bVar4 * -2 + 3] = afStack_b0[(uint)bVar4 * -2 + 9];
-    afStack_b0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
-         afStack_b0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10];
+    afStack_b0[(uint)bVar6 * -2 + 3] = afStack_b0[(uint)bVar6 * -2 + 9];
+    afStack_b0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
+         afStack_b0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 10];
     if (afStack_b0 + 5 != afStack_b0 + 2) {
       local_9c = afStack_b0[2];
       local_98 = afStack_b0[3];
@@ -188,9 +193,9 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004ccff0(CHaystack *this_p
     }
     core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(afStack_b0 + 5);
     local_6c = local_cc;
-    afStack_b0[(uint)bVar4 * -2 + 0x12] = afStack_c8[(uint)bVar4 * -2];
-    afStack_b0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x13] =
-         afStack_c8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+    afStack_b0[(uint)bVar6 * -2 + 0x12] = afStack_c8[(uint)bVar6 * -2];
+    afStack_b0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x13] =
+         afStack_c8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
     if (afStack_b0 + 5 != afStack_b0 + 0x11) {
       local_9c = local_6c;
       local_98 = local_68;
@@ -198,7 +203,7 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004ccff0(CHaystack *this_p
     }
     afStack_c8[3] =
          (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                          (local_98 - *(float *)&this_ptr->field_0x34);
+                          (local_98 - (this_ptr->base).base.base.orient.vec.y);
     if (local_30 < afStack_c8[3]) {
       afStack_c8[3] = local_30;
     }

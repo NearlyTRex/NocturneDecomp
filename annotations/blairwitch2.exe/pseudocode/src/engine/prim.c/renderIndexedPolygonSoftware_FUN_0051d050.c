@@ -175,34 +175,39 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_0051d050(int *vertex
       iVar3 = _DAT_01e61b4c - DAT_0061b424;
       bVar13 = SBORROW4(_DAT_01e61b4c,DAT_0061b424);
       while (bVar13 != iVar3 < 0) {
-        if (*(int *)(edge_ptr + 4) <= local_18) {
-          *(uint *)edge_ptr = 0xffffffff;
+        if ((edge_ptr->base).y_max <= local_18) {
+          (edge_ptr->base).y_min = -1;
           edge_ptr = engine_prim_c_findEdgeInBuffer_FUN_0051c580(local_18,local_14);
           if (edge_ptr == (SSoftwareEdge *)0x0) {
             return;
           }
         }
-        if (*(int *)(local_14 + 4) <= local_18) {
-          *(uint *)local_14 = 0xffffffff;
+        if ((local_14->base).y_max <= local_18) {
+          (local_14->base).y_min = -1;
           local_14 = engine_prim_c_findEdgeInBuffer_FUN_0051c580(local_18,edge_ptr);
           if (local_14 == (SSoftwareEdge *)0x0) {
             return;
           }
         }
         engine_special_cpp_FUN_0055d6d7();
-        *(int *)(edge_ptr + 8) = *(int *)(edge_ptr + 8) + *(int *)(edge_ptr + 0xc);
-        *(int *)(edge_ptr + 0x18) = *(int *)(edge_ptr + 0x18) + *(int *)(edge_ptr + 0x1c);
-        *(int *)(edge_ptr + 0x20) = *(int *)(edge_ptr + 0x20) + *(int *)(edge_ptr + 0x24);
-        *(int *)(edge_ptr + 0x10) = *(int *)(edge_ptr + 0x10) + *(int *)(edge_ptr + 0x14);
-        *(int *)(edge_ptr + 0x28) = *(int *)(edge_ptr + 0x28) + *(int *)(edge_ptr + 0x2c);
-        *(int *)(edge_ptr + 0x30) = *(int *)(edge_ptr + 0x30) + *(int *)(edge_ptr + 0x34);
-        *(int *)(local_14 + 8) = *(int *)(local_14 + 8) + *(int *)(local_14 + 0xc);
-        *(int *)(local_14 + 0x18) = *(int *)(local_14 + 0x18) + *(int *)(local_14 + 0x1c);
-        *(int *)(local_14 + 0x20) = *(int *)(local_14 + 0x20) + *(int *)(local_14 + 0x24);
-        *(int *)(local_14 + 0x10) = *(int *)(local_14 + 0x10) + *(int *)(local_14 + 0x14);
-        *(int *)(local_14 + 0x28) = *(int *)(local_14 + 0x28) + *(int *)(local_14 + 0x2c);
+        piVar6 = &(edge_ptr->base).x_current;
+        *piVar6 = *piVar6 + (edge_ptr->base).x_gradient;
+        (edge_ptr->base).u_current = (edge_ptr->base).u_current + (edge_ptr->base).u_gradient;
+        (edge_ptr->base).v_current = (edge_ptr->base).v_current + (edge_ptr->base).v_gradient;
+        (edge_ptr->base).red_current = (edge_ptr->base).red_current + (edge_ptr->base).red_gradient;
+        (edge_ptr->base).depth_current =
+             (edge_ptr->base).depth_current + (edge_ptr->base).depth_gradient;
+        (edge_ptr->base).alpha_current =
+             (edge_ptr->base).alpha_current + (edge_ptr->base).alpha_gradient;
+        (local_14->base).x_current = (local_14->base).x_current + (local_14->base).x_gradient;
+        (local_14->base).u_current = (local_14->base).u_current + (local_14->base).u_gradient;
+        (local_14->base).v_current = (local_14->base).v_current + (local_14->base).v_gradient;
+        (local_14->base).red_current = (local_14->base).red_current + (local_14->base).red_gradient;
+        (local_14->base).depth_current =
+             (local_14->base).depth_current + (local_14->base).depth_gradient;
         local_18 = local_18 + 1;
-        *(int *)(local_14 + 0x30) = *(int *)(local_14 + 0x30) + *(int *)(local_14 + 0x34);
+        (local_14->base).alpha_current =
+             (local_14->base).alpha_current + (local_14->base).alpha_gradient;
         iVar3 = local_18 - DAT_0061b424;
         bVar13 = SBORROW4(local_18,DAT_0061b424);
       }

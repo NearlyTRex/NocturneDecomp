@@ -13,138 +13,143 @@
 CDog * core_dog1_cpp_CDog_ctor_FUN_005aba40(CDog *this_ptr)
 
 {
-  byte *puVar1;
+  SStateMachine *pSVar1;
   char cVar2;
-  uint uVar3;
+  float fVar3;
   CDog *this_ptr_00;
-  char *pcVar4;
+  CVector3f *pCVar4;
+  float unaff_EBP;
   char *pcVar5;
-  byte bVar6;
-  uint auStackY_1028 [1009];
-  uint uStack_4c;
+  char *pcVar6;
+  byte bVar7;
+  float afStackY_1024 [1009];
   uint uStack_48;
   uint uStack_44;
   uint uStack_40;
-  uint uStack_3c;
-  uint uStack_38;
-  uint uStack_34;
+  float fStack_3c;
+  float fStack_38;
+  float fStack_34;
   uint uStack_30;
   uint uStack_2c;
   uint uStack_28;
   uint uStack_24;
   uint uStack_20;
   uint uStack_1c;
-  uint uStack_18;
-  uint uStack_14;
+  float fStack_18;
+  float fStack_14;
   
-  bVar6 = 0;
-  this_ptr_00 = (CDog *)unkafter_basicene_cpp_FUN_0059e3b0(this_ptr);
-  *(CDog_full_vtable **)&this_ptr_00->field_0x2b0 = &g_CDogVTable;
+  bVar7 = 0;
+  this_ptr_00 = (CDog *)unkafter_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(&this_ptr->base);
+  (this_ptr_00->base).base.base.base.vtable._ub = &g_CDogVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            ((CDeformableModelInstance *)&this_ptr_00->field_0x2b4,"blackDog.dfm");
-  *(uint *)&this_ptr_00->field_0x3434 = 0x3f000000;
-  *(uint *)&this_ptr_00->field_0x1134c = 0x3fe00000;
-  *(uint *)&this_ptr_00->field_0xfc = 0;
-  *(uint *)&this_ptr_00->field_0x113c4 = 0x3f800000;
-  *(uint *)&this_ptr_00->field_0x2a8 = 0x3dcccccd;
-  *(uint *)&this_ptr_00->field_0x11380 = 0;
-  *(uint *)&this_ptr_00->field_0x11384 = 0;
-  *(uint *)&this_ptr_00->field_0x11388 = 1;
-  *(uint *)&this_ptr_00->field_0x1138c = 2;
-  *(uint *)&this_ptr_00->field_0x11390 = 0;
+            (&(this_ptr_00->base).base.base.model,"blackDog.dfm");
+  (this_ptr_00->base).base.base.collision_cylinder_radius = 0.5;
+  (this_ptr_00->base).anim_speed_scale = 1.75;
+  (this_ptr_00->base).base.base.base.is_transparent = 0;
+  (this_ptr_00->base).fade_val = 1.0;
+  *(uint *)&(this_ptr_00->base).base.base.base.field_0x2a8 = 0x3dcccccd;
+  (this_ptr_00->base).walk_state_3_motion = 0;
+  (this_ptr_00->base).idle_motion = 0;
+  (this_ptr_00->base).walk_motion = 1;
+  (this_ptr_00->base).run_motion = 2;
+  (this_ptr_00->base).animation_state = 0;
   core_dog1_cpp_CDog_processStates_FUN_005abe90(this_ptr_00,0.0,0);
-  uVar3 = _DAT_00600c50;
-  puVar1 = &this_ptr_00->field_0x10af8;
-  *(uint *)&this_ptr_00->field_0x11398 = 0x40a00000;
-  *(uint *)&this_ptr_00->field_0x11394 = uVar3;
-  unkaddr_0059d350_cpp_FUN_0059d6f0(puVar1,"ChaseFoodComplete","Alert");
-  unkaddr_0059d350_cpp_FUN_0059d7f0(puVar1,"ChaseComplete","MeleeAttack");
-  unkaddr_0059d350_cpp_FUN_0059d990(puVar1,"Alert");
-  unkaddr_0059d350_cpp_FUN_0059dc80(puVar1);
-  *(uint *)&this_ptr_00->field_0x1137c = 0;
-  *(uint *)&this_ptr_00->field_0x113fc = 0xffffffff;
-  *(uint *)&this_ptr_00->field_0x1185c = 0;
-  *(uint *)&this_ptr_00->field_0x11864 = 0x40a00000;
-  *(uint *)&this_ptr_00->field_0x11860 = 0x3f800000;
-  *(uint *)&this_ptr_00->field_0x3434 = 0x3fc00000;
-  *(uint *)&this_ptr_00->field_0x3440 = 0x3f800000;
-  *(uint *)&this_ptr_00->field_0x3444 = 0x40400000;
-  *(uint *)&this_ptr_00->field_0x11344 = 1;
-  uStack_28 = 0xbe883127;
-  uStack_24 = 0x3e000000;
-  uStack_20 = 0x3f00cb29;
-  if ((uint *)&this_ptr_00->field_0x10a0c != &stack0xffffffd8) {
-    *(uint *)&this_ptr_00->field_0x10a0c = 0xbe883127;
-    *(uint *)&this_ptr_00->field_0x10a10 = 0x3e000000;
-    *(uint *)&this_ptr_00->field_0x10a14 = 0x3f00cb29;
+  fVar3 = _DAT_00600c50;
+  pSVar1 = &(this_ptr_00->base).state_machine;
+  (this_ptr_00->base).run_distance = 5.0;
+  (this_ptr_00->base).attack_range = fVar3;
+  unkaddr_0059d350_cpp_FUN_0059d6f0(pSVar1,"ChaseFoodComplete","Alert");
+  unkaddr_0059d350_cpp_FUN_0059d7f0(pSVar1,"ChaseComplete","MeleeAttack");
+  unkaddr_0059d350_cpp_FUN_0059d990(pSVar1,"Alert");
+  pCVar4 = &(this_ptr_00->base).base.base.eye_glow_left_offset;
+  unkaddr_0059d350_cpp_FUN_0059dc80(pSVar1);
+  (this_ptr_00->base).head_bone = 0;
+  (this_ptr_00->base).flinch_bone = -1;
+  this_ptr_00->food = (CDemonActor *)0x0;
+  this_ptr_00->eat_time = 5.0;
+  this_ptr_00->food_scan_timer = 1.0;
+  (this_ptr_00->base).base.base.collision_cylinder_radius = 1.5;
+  (this_ptr_00->base).base.base.collision_cylinder_bottom = 1.0;
+  (this_ptr_00->base).base.base.collision_cylinder_top = 3.0;
+  (this_ptr_00->base).is_grabbable = 1;
+  uStack_24 = 0xbe883127;
+  uStack_20 = 0x3e000000;
+  uStack_1c = 0x3f00cb29;
+  if (pCVar4 != (CVector3f *)&stack0xffffffdc) {
+    pCVar4->x = -0.266;
+    (this_ptr_00->base).base.base.eye_glow_left_offset.y = 0.125;
+    (this_ptr_00->base).base.base.eye_glow_left_offset.z = 0.5031;
   }
-  uStack_48 = 0x3e000000;
-  uStack_44 = 0x3f00cb29;
-  uStack_4c = 0x3e883127;
-  if ((uint *)&this_ptr_00->field_0x10a18 != &stack0xffffffb4) {
-    *(uint *)&this_ptr_00->field_0x10a18 = 0x3e883127;
-    *(uint *)&this_ptr_00->field_0x10a1c = 0x3e000000;
-    *(uint *)&this_ptr_00->field_0x10a20 = 0x3f00cb29;
+  pCVar4 = &(this_ptr_00->base).base.base.eye_glow_right_offset;
+  uStack_44 = 0x3e000000;
+  uStack_40 = 0x3f00cb29;
+  uStack_48 = 0x3e883127;
+  if (pCVar4 != (CVector3f *)&stack0xffffffb8) {
+    pCVar4->x = 0.266;
+    (this_ptr_00->base).base.base.eye_glow_right_offset.y = 0.125;
+    (this_ptr_00->base).base.base.eye_glow_right_offset.z = 0.5031;
   }
-  uStack_2c = 0;
-  uStack_30 = 0x3fc90fdb;
-  uStack_34 = 0;
-  uStack_1c = 0;
-  (&stack0xffffffe8)[(uint)bVar6 * 0xfffffffe] =
-       *(uint *)((int)&stack0xffffffd0 + (uint)bVar6 * -8);
-  *(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-       *(uint *)((int)&stack0xffffffd4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-  if ((uint *)&this_ptr_00->field_0x10a48 != &stack0xffffffe4) {
-    *(uint *)&this_ptr_00->field_0x10a48 = uStack_1c;
-    *(uint *)&this_ptr_00->field_0x10a4c = uStack_18;
-    *(uint *)&this_ptr_00->field_0x10a50 = uStack_14;
+  uStack_28 = 0;
+  uStack_2c = 0x3fc90fdb;
+  uStack_30 = 0;
+  pCVar4 = &(this_ptr_00->base).base.base.eye_glow_left_angles;
+  fStack_18 = 0.0;
+  (&stack0xffffffec)[(uint)bVar7 * 0xfffffffe] =
+       (float)*(uint *)((int)&stack0xffffffd4 + (uint)bVar7 * -8);
+  *(uint *)(&stack0xfffffff0 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
+       *(uint *)((int)&stack0xffffffd8 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
+  if (pCVar4 != (CVector3f *)&stack0xffffffe8) {
+    pCVar4->x = fStack_18;
+    (this_ptr_00->base).base.base.eye_glow_left_angles.y = fStack_14;
+    (this_ptr_00->base).base.base.eye_glow_left_angles.z = unaff_EBP;
   }
-  uStack_40 = 0;
-  (&stack0xffffffc4)[(uint)bVar6 * 0xfffffffe] =
-       *(uint *)(&stack0xfffffff4 + (uint)bVar6 * -8);
-  *(uint *)((int)&stack0xffffffc8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-       *(uint *)(&stack0xfffffff8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-  if ((uint *)&this_ptr_00->field_0x10a54 != &stack0xffffffc0) {
-    *(uint *)&this_ptr_00->field_0x10a54 = uStack_40;
-    *(uint *)&this_ptr_00->field_0x10a58 = uStack_3c;
-    *(uint *)&this_ptr_00->field_0x10a5c = uStack_38;
+  pCVar4 = &(this_ptr_00->base).base.base.eye_glow_right_angles;
+  fStack_3c = 0.0;
+  (&stack0xffffffc8)[(uint)bVar7 * 0xfffffffe] =
+       (float)*(uint *)(&stack0xfffffff8 + (uint)bVar7 * -8);
+  *(uint *)((int)&stack0xffffffcc + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
+       *(uint *)(&stack0xfffffffc + (uint)bVar7 * -8 + (uint)bVar7 * -8);
+  if (pCVar4 != (CVector3f *)&stack0xffffffc4) {
+    pCVar4->x = fStack_3c;
+    (this_ptr_00->base).base.base.eye_glow_right_angles.y = fStack_38;
+    (this_ptr_00->base).base.base.eye_glow_right_angles.z = fStack_34;
   }
-  pcVar4 = (char *)0x5f0d08;
-  pcVar5 = &this_ptr_00->field_0x11444;
+  pcVar5 = (char *)0x5f0d08;
+  pcVar6 = (this_ptr_00->base).hit_sound;
   do {
-    cVar2 = *pcVar4;
-    *pcVar5 = cVar2;
+    cVar2 = *pcVar5;
+    *pcVar6 = cVar2;
     if (cVar2 == '\0') break;
-    cVar2 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
-    pcVar5[1] = cVar2;
+    cVar2 = pcVar5[1];
     pcVar5 = pcVar5 + 2;
+    pcVar6[1] = cVar2;
+    pcVar6 = pcVar6 + 2;
   } while (cVar2 != '\0');
-  pcVar4 = "dogdeath0?.wav";
-  pcVar5 = &this_ptr_00->field_0x11543;
+  pcVar5 = "dogdeath0?.wav";
+  pcVar6 = (this_ptr_00->base).death_sound;
   do {
-    cVar2 = *pcVar4;
-    *pcVar5 = cVar2;
+    cVar2 = *pcVar5;
+    *pcVar6 = cVar2;
     if (cVar2 == '\0') break;
-    cVar2 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
-    pcVar5[1] = cVar2;
+    cVar2 = pcVar5[1];
     pcVar5 = pcVar5 + 2;
+    pcVar6[1] = cVar2;
+    pcVar6 = pcVar6 + 2;
   } while (cVar2 != '\0');
-  pcVar4 = (char *)0x5f0d24;
-  pcVar5 = &this_ptr_00->field_0x11741;
+  pcVar5 = (char *)0x5f0d24;
+  pcVar6 = (this_ptr_00->base).idle_sound;
   do {
-    cVar2 = *pcVar4;
-    *pcVar5 = cVar2;
+    cVar2 = *pcVar5;
+    *pcVar6 = cVar2;
     if (cVar2 == '\0') break;
-    cVar2 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
-    pcVar5[1] = cVar2;
+    cVar2 = pcVar5[1];
     pcVar5 = pcVar5 + 2;
+    pcVar6[1] = cVar2;
+    pcVar6 = pcVar6 + 2;
   } while (cVar2 != '\0');
-  *(uint *)&this_ptr_00->field_0x11844 = 0x40e00000;
-  *(uint *)&this_ptr_00->field_0xfc = 1;
-  *(uint *)&this_ptr_00->field_0x10a28 = 0;
-  *(uint *)&this_ptr_00->field_0x1186c = 0;
+  (this_ptr_00->base).idle_sound_interval = 7.0;
+  (this_ptr_00->base).base.base.base.is_transparent = 1;
+  (this_ptr_00->base).base.base.eye_glow_enabled = 0;
+  this_ptr_00->death_effect_done = 0;
   return this_ptr_00;
 }

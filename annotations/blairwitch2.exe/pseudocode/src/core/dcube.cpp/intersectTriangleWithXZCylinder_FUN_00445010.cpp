@@ -9,18 +9,22 @@
 uint __cdecl core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_00445010(int *param_1,SIntersectXZCylinder *param_2)
 
 {
-  byte bVar1;
-  byte bVar2;
-  byte bVar3;
+  float fVar1;
+  float fVar2;
+  float fVar3;
   float fVar4;
   float fVar5;
-  uint uVar6;
-  uint uVar7;
-  int iVar8;
-  float *pfVar9;
-  float *pfVar10;
-  float *pfVar11;
-  bool bVar12;
+  float fVar6;
+  byte bVar7;
+  byte bVar8;
+  byte bVar9;
+  uint uVar10;
+  uint uVar11;
+  int iVar12;
+  float *pfVar13;
+  float *pfVar14;
+  float *pfVar15;
+  bool bVar16;
   float local_84 [6];
   float local_6c [3];
   float local_60 [3];
@@ -36,158 +40,160 @@ uint __cdecl core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_00445010(int *pa
   float local_20;
   int local_1c;
   
-  if ((float)param_1[5] * *(float *)(param_2 + 0x1c) +
-      (float)param_1[3] * *(float *)(param_2 + 0x18) <= 0.0) {
+  if ((float)param_1[5] * param_2->dir_z + (float)param_1[3] * param_2->dir_x <= 0.0) {
     return 0;
   }
-  pfVar11 = (float *)*param_1;
-  pfVar10 = (float *)param_1[1];
+  pfVar15 = (float *)*param_1;
+  pfVar14 = (float *)param_1[1];
   local_34 = (float *)param_1[2];
-  fVar4 = *pfVar11 * *(float *)(param_2 + 0x18) + pfVar11[2] * *(float *)(param_2 + 0x1c);
-  local_20 = *pfVar10 * *(float *)(param_2 + 0x18) + pfVar10[2] * *(float *)(param_2 + 0x1c);
-  fVar5 = *local_34 * *(float *)(param_2 + 0x18) + local_34[2] * *(float *)(param_2 + 0x1c);
-  pfVar9 = pfVar11;
-  local_30 = fVar4;
-  if (local_20 < fVar4) {
-    pfVar9 = pfVar10;
-    pfVar10 = pfVar11;
-    local_50 = fVar4;
+  fVar1 = *pfVar15 * param_2->dir_x + pfVar15[2] * param_2->dir_z;
+  local_20 = *pfVar14 * param_2->dir_x + pfVar14[2] * param_2->dir_z;
+  fVar2 = *local_34 * param_2->dir_x + local_34[2] * param_2->dir_z;
+  pfVar13 = pfVar15;
+  local_30 = fVar1;
+  if (local_20 < fVar1) {
+    pfVar13 = pfVar14;
+    pfVar14 = pfVar15;
+    local_50 = fVar1;
     local_30 = local_20;
-    local_20 = fVar4;
+    local_20 = fVar1;
   }
-  pfVar11 = pfVar10;
-  local_38 = fVar5;
-  if (fVar5 < local_20) {
+  pfVar15 = pfVar14;
+  local_38 = fVar2;
+  if (fVar2 < local_20) {
     local_44 = local_20;
     local_38 = local_20;
-    pfVar11 = local_34;
-    local_34 = pfVar10;
-    local_20 = fVar5;
+    pfVar15 = local_34;
+    local_34 = pfVar14;
+    local_20 = fVar2;
   }
-  pfVar10 = pfVar9;
+  pfVar14 = pfVar13;
   if (local_20 < local_30) {
     local_30 = local_20;
-    pfVar10 = pfVar11;
-    pfVar11 = pfVar9;
+    pfVar14 = pfVar15;
+    pfVar15 = pfVar13;
   }
-  if (local_38 < *(float *)(param_2 + 0x2c)) {
+  if (local_38 < param_2->sweep_slab_near) {
     return 0;
   }
-  if (*(float *)(param_2 + 0x30) < local_30) {
+  if (param_2->sweep_slab_far < local_30) {
     return 0;
   }
-  bVar1 = *(float *)(param_2 + 0x24) <= *(float *)(*param_1 + 4);
-  if (*(float *)(*param_1 + 4) <= *(float *)(param_2 + 0x28)) {
-    bVar1 = bVar1 | 2;
+  bVar7 = param_2->top_y <= *(float *)(*param_1 + 4);
+  if (*(float *)(*param_1 + 4) <= param_2->bottom_y) {
+    bVar7 = bVar7 | 2;
   }
-  local_2c = (uint)bVar1;
-  bVar2 = *(float *)(param_2 + 0x24) <= *(float *)(param_1[1] + 4);
-  if (*(float *)(param_1[1] + 4) <= *(float *)(param_2 + 0x28)) {
-    bVar2 = bVar2 | 2;
+  local_2c = (uint)bVar7;
+  bVar8 = param_2->top_y <= *(float *)(param_1[1] + 4);
+  if (*(float *)(param_1[1] + 4) <= param_2->bottom_y) {
+    bVar8 = bVar8 | 2;
   }
-  local_28 = (uint)bVar2;
-  bVar3 = *(float *)(param_2 + 0x24) <= *(float *)(param_1[2] + 4);
-  if (*(float *)(param_1[2] + 4) <= *(float *)(param_2 + 0x28)) {
-    bVar3 = bVar3 | 2;
+  local_28 = (uint)bVar8;
+  bVar9 = param_2->top_y <= *(float *)(param_1[2] + 4);
+  if (*(float *)(param_1[2] + 4) <= param_2->bottom_y) {
+    bVar9 = bVar9 | 2;
   }
-  local_24 = (uint)bVar3;
-  if ((bVar1 & bVar2 & bVar3) != 0) {
+  local_24 = (uint)bVar9;
+  if ((bVar7 & bVar8 & bVar9) != 0) {
     return 0;
   }
   if (0.0 <= (float)param_1[4]) {
-    bVar12 = ((bVar1 ^ bVar2) & 1) != 0;
-    if (bVar12) {
-      pfVar9 = (float *)*param_1;
-      fVar4 = (*(float *)(param_2 + 0x24) - pfVar9[1]) / (((float *)param_1[1])[1] - pfVar9[1]);
-      local_6c[0] = (*(float *)param_1[1] - *pfVar9) * fVar4 + *pfVar9;
-      local_84[3] = (*(float *)(param_1[1] + 8) - *(float *)(*param_1 + 8)) * fVar4 +
+    bVar16 = ((bVar7 ^ bVar8) & 1) != 0;
+    if (bVar16) {
+      pfVar13 = (float *)*param_1;
+      fVar1 = (param_2->top_y - pfVar13[1]) / (((float *)param_1[1])[1] - pfVar13[1]);
+      local_6c[0] = (*(float *)param_1[1] - *pfVar13) * fVar1 + *pfVar13;
+      local_84[3] = (*(float *)(param_1[1] + 8) - *(float *)(*param_1 + 8)) * fVar1 +
                     *(float *)(*param_1 + 8);
     }
-    uVar7 = (uint)bVar12;
-    uVar6 = uVar7;
-    if (((bVar2 ^ bVar3) & 1) != 0) {
-      pfVar9 = (float *)param_1[1];
-      fVar4 = (*(float *)(param_2 + 0x24) - pfVar9[1]) / (((float *)param_1[2])[1] - pfVar9[1]);
-      local_84[uVar7 + 6] = (*(float *)param_1[2] - *pfVar9) * fVar4 + *pfVar9;
+    uVar11 = (uint)bVar16;
+    uVar10 = uVar11;
+    if (((bVar8 ^ bVar9) & 1) != 0) {
+      pfVar13 = (float *)param_1[1];
+      fVar1 = (param_2->top_y - pfVar13[1]) / (((float *)param_1[2])[1] - pfVar13[1]);
+      local_84[uVar11 + 6] = (*(float *)param_1[2] - *pfVar13) * fVar1 + *pfVar13;
       local_1c = param_1[2];
       local_54 = param_1[1];
-      uVar6 = uVar7 + 1;
-      local_84[uVar7 + 3] =
-           (*(float *)(local_1c + 8) - *(float *)(local_54 + 8)) * fVar4 + *(float *)(local_54 + 8);
+      uVar10 = uVar11 + 1;
+      local_84[uVar11 + 3] =
+           (*(float *)(local_1c + 8) - *(float *)(local_54 + 8)) * fVar1 + *(float *)(local_54 + 8);
     }
-    uVar7 = uVar6;
-    if (((bVar3 ^ bVar1) & 1) != 0) {
-      pfVar9 = (float *)param_1[2];
-      fVar4 = (*(float *)(param_2 + 0x24) - pfVar9[1]) / (((float *)*param_1)[1] - pfVar9[1]);
-      local_1c = uVar6 * 4;
-      local_84[uVar6 + 6] = (*(float *)*param_1 - *pfVar9) * fVar4 + *pfVar9;
-      uVar7 = uVar6 + 1;
-      local_84[uVar6 + 3] =
-           (*(float *)(*param_1 + 8) - *(float *)(param_1[2] + 8)) * fVar4 +
+    uVar11 = uVar10;
+    if (((bVar9 ^ bVar7) & 1) != 0) {
+      pfVar13 = (float *)param_1[2];
+      fVar1 = (param_2->top_y - pfVar13[1]) / (((float *)*param_1)[1] - pfVar13[1]);
+      local_1c = uVar10 * 4;
+      local_84[uVar10 + 6] = (*(float *)*param_1 - *pfVar13) * fVar1 + *pfVar13;
+      uVar11 = uVar10 + 1;
+      local_84[uVar10 + 3] =
+           (*(float *)(*param_1 + 8) - *(float *)(param_1[2] + 8)) * fVar1 +
            *(float *)(param_1[2] + 8);
     }
-    if (1 < uVar7) {
-      *(float *)(param_2 + 0x3c) = local_6c[0];
-      *(float *)(param_2 + 0x40) = local_84[3];
-      *(float *)(param_2 + 0x44) = local_6c[1];
-      *(float *)(param_2 + 0x48) = local_84[4];
-      iVar8 = core_dcube_cpp_intersectXZCylinder_FUN_00444c90(param_2);
-      if (iVar8 != 0) goto LAB_004453d4;
+    if (1 < uVar11) {
+      param_2->edge_x1 = local_6c[0];
+      param_2->edge_z1 = local_84[3];
+      param_2->edge_x2 = local_6c[1];
+      param_2->edge_z2 = local_84[4];
+      iVar12 = core_dcube_cpp_intersectXZCylinder_FUN_00444c90(param_2);
+      if (iVar12 != 0) goto LAB_004453d4;
     }
   }
   if ((float)param_1[4] <= 0.0) {
-    bVar12 = ((local_2c ^ local_28) & 2) != 0;
-    if (bVar12) {
-      pfVar9 = (float *)*param_1;
-      fVar4 = (*(float *)(param_2 + 0x28) - pfVar9[1]) / (((float *)param_1[1])[1] - pfVar9[1]);
-      local_60[0] = (*(float *)param_1[1] - *pfVar9) * fVar4 + *pfVar9;
-      local_84[0] = (*(float *)(param_1[1] + 8) - *(float *)(*param_1 + 8)) * fVar4 +
+    bVar16 = ((local_2c ^ local_28) & 2) != 0;
+    if (bVar16) {
+      pfVar13 = (float *)*param_1;
+      fVar1 = (param_2->bottom_y - pfVar13[1]) / (((float *)param_1[1])[1] - pfVar13[1]);
+      local_60[0] = (*(float *)param_1[1] - *pfVar13) * fVar1 + *pfVar13;
+      local_84[0] = (*(float *)(param_1[1] + 8) - *(float *)(*param_1 + 8)) * fVar1 +
                     *(float *)(*param_1 + 8);
     }
-    uVar7 = (uint)bVar12;
-    uVar6 = uVar7;
+    uVar11 = (uint)bVar16;
+    uVar10 = uVar11;
     if (((local_28 ^ local_24) & 2) != 0) {
-      pfVar9 = (float *)param_1[1];
-      fVar4 = (*(float *)(param_2 + 0x28) - pfVar9[1]) / (((float *)param_1[2])[1] - pfVar9[1]);
-      local_1c = uVar7 * 4;
-      local_84[uVar7 + 9] = (*(float *)param_1[2] - *pfVar9) * fVar4 + *pfVar9;
-      uVar6 = uVar7 + 1;
-      local_84[uVar7] =
-           (*(float *)(param_1[2] + 8) - *(float *)(param_1[1] + 8)) * fVar4 +
+      pfVar13 = (float *)param_1[1];
+      fVar1 = (param_2->bottom_y - pfVar13[1]) / (((float *)param_1[2])[1] - pfVar13[1]);
+      local_1c = uVar11 * 4;
+      local_84[uVar11 + 9] = (*(float *)param_1[2] - *pfVar13) * fVar1 + *pfVar13;
+      uVar10 = uVar11 + 1;
+      local_84[uVar11] =
+           (*(float *)(param_1[2] + 8) - *(float *)(param_1[1] + 8)) * fVar1 +
            *(float *)(param_1[1] + 8);
     }
-    uVar7 = uVar6;
+    uVar11 = uVar10;
     if (((local_24 ^ local_2c) & 2) != 0) {
-      pfVar9 = (float *)param_1[2];
-      fVar4 = (*(float *)(param_2 + 0x28) - pfVar9[1]) / (((float *)*param_1)[1] - pfVar9[1]);
-      local_1c = uVar6 * 4;
-      local_84[uVar6 + 9] = (*(float *)*param_1 - *pfVar9) * fVar4 + *pfVar9;
-      uVar7 = uVar6 + 1;
-      local_84[uVar6] =
-           (*(float *)(*param_1 + 8) - *(float *)(param_1[2] + 8)) * fVar4 +
+      pfVar13 = (float *)param_1[2];
+      fVar1 = (param_2->bottom_y - pfVar13[1]) / (((float *)*param_1)[1] - pfVar13[1]);
+      local_1c = uVar10 * 4;
+      local_84[uVar10 + 9] = (*(float *)*param_1 - *pfVar13) * fVar1 + *pfVar13;
+      uVar11 = uVar10 + 1;
+      local_84[uVar10] =
+           (*(float *)(*param_1 + 8) - *(float *)(param_1[2] + 8)) * fVar1 +
            *(float *)(param_1[2] + 8);
     }
-    if (1 < uVar7) {
-      *(float *)(param_2 + 0x3c) = local_60[0];
-      *(float *)(param_2 + 0x40) = local_84[0];
-      *(float *)(param_2 + 0x44) = local_60[1];
-      *(float *)(param_2 + 0x48) = local_84[1];
-      iVar8 = core_dcube_cpp_intersectXZCylinder_FUN_00444c90(param_2);
-      if (iVar8 != 0) {
+    if (1 < uVar11) {
+      param_2->edge_x1 = local_60[0];
+      param_2->edge_z1 = local_84[0];
+      param_2->edge_x2 = local_60[1];
+      param_2->edge_z2 = local_84[1];
+      iVar12 = core_dcube_cpp_intersectXZCylinder_FUN_00444c90(param_2);
+      if (iVar12 != 0) {
 LAB_004453d4:
-        *(uint *)(param_2 + 8) = 0;
-        *(uint *)param_2 = *(uint *)(param_2 + 0x4c);
-        *(float *)(param_2 + 0xc) =
-             (*(float *)(param_2 + 0x1c) * *(float *)(param_2 + 0x4c) + *(float *)(param_2 + 0x14))
-             - *(float *)(param_2 + 0x58);
-        *(float *)(param_2 + 4) =
-             (*(float *)(param_2 + 0x18) * *(float *)(param_2 + 0x4c) + *(float *)(param_2 + 0x10))
-             - *(float *)(param_2 + 0x54);
+        fVar1 = param_2->dir_x;
+        fVar2 = param_2->param_t;
+        fVar3 = param_2->dir_z;
+        fVar4 = param_2->param_t;
+        fVar5 = param_2->param_t;
+        (param_2->push_normal).y = 0.0;
+        param_2->closest_t = fVar5;
+        fVar5 = param_2->center_x;
+        fVar6 = param_2->intersect_x;
+        (param_2->push_normal).z = (fVar3 * fVar4 + param_2->center_z) - param_2->intersect_z;
+        (param_2->push_normal).x = (fVar1 * fVar2 + fVar5) - fVar6;
         return 1;
       }
     }
   }
-  uVar6 = core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00444f70(param_2,pfVar10,pfVar11);
-  uVar7 = core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00444f70(param_2,pfVar10,local_34);
-  return uVar7 | uVar6;
+  uVar10 = core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00444f70(param_2,pfVar14,pfVar15);
+  uVar11 = core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00444f70(param_2,pfVar14,local_34);
+  return uVar11 | uVar10;
 }

@@ -7,6 +7,7 @@ struct CDemonActor;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCloth.h"
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CEnemy.h"
 #include "types/classes/CMorph.h"
@@ -17,7 +18,9 @@ struct CDemonActor;
 typedef struct CVampireBoss {
     CEnemy base; // 0x0
     CDeformableModelInstance model; // 0x10af8
-    char field_77228[721296]; // 0x12dac
+    CCloth wing_cloth; // 0x12dac
+    CCloth cape_cloth; // 0x4d8dc
+    CCloth skirt_cloth; // 0x8840c
     int form; // 0xc2f3c
     CMorph morph; // 0xc2f40
     float morph_t; // 0xc3b6c

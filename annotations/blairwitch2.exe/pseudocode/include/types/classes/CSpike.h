@@ -15,7 +15,6 @@
 #pragma pack(push, 1)
 typedef struct CSpike {
     CDemonActor base; // 0x0
-    char field_344[348]; // 0x158
     CKeyFramedModelInstance model; // 0x2b4
     ESpikeType spike_type; // 0x430
     ESpikeState spike_state; // 0x434

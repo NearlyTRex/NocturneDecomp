@@ -9,8 +9,8 @@
 void __cdecl core_hag_cpp_CHag_processDeathState_FUN_005ab760(CHag *this_ptr,float delta_time)
 
 {
-  *(uint *)&this_ptr->field_0x342c = 0;
+  (this_ptr->base).base.base.follow_leader = (CCharacter *)0x0;
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-            ((CMotionController *)&this_ptr->field_0x2b4,6,1);
+            (&(this_ptr->base).base.base.model.base,6,1);
   return;
 }

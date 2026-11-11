@@ -20,7 +20,7 @@ void __cdecl core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0(CDeforma
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(param_1,local_d0);
     return;
   }
-  pcVar2 = &param_1->field_0x2260;
+  pcVar2 = param_1->model_name;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;

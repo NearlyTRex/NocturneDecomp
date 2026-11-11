@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 150,
+    "complexity_score": 116,
     "cross_reference_count": 2,
     "function_call_count": 19,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 70,
-    "suspect_count": 6,
+    "pseudocode_lines": 71,
+    "suspect_count": 3,
     "suspect_types": [
       "raw_address_constant",
       "raw_address_pointer_store",
-      "unnamed_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 270
+    "total_lines": 271
   },
   "cross_references": [
     {
@@ -90,24 +89,24 @@
       "name": "core_menu.cpp_FUN_004eed60"
     },
     {
-      "addr": "005023e0",
-      "is_variadic": false,
-      "name": "core_moon.cpp_FUN_005023e0"
-    },
-    {
       "addr": "00502450",
       "is_variadic": false,
-      "name": "core_moon.cpp_FUN_00502450"
+      "name": "core_moon.cpp_CMoon_free_FUN_00502450"
     },
     {
-      "addr": "005024a0",
+      "addr": "005023e0",
       "is_variadic": false,
-      "name": "core_moon.cpp_FUN_005024a0"
+      "name": "core_moon.cpp_CMoon_init_FUN_005023e0"
     },
     {
       "addr": "00502510",
       "is_variadic": false,
-      "name": "core_moon.cpp_FUN_00502510"
+      "name": "core_moon.cpp_CMoon_render_FUN_00502510"
+    },
+    {
+      "addr": "005024a0",
+      "is_variadic": false,
+      "name": "core_moon.cpp_CMoon_update_FUN_005024a0"
     },
     {
       "addr": "005344c0",
@@ -209,13 +208,13 @@
     },
     {
       "addr": "01cb69d0",
-      "name": "g_CGameInstance.field160_0xd0",
+      "name": "g_CGameInstance.game_control",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb69d4",
-      "name": "g_CGameInstance.field164_0xd4",
+      "name": "g_CGameInstance.hero_number",
       "type": "undefined4",
       "value": null
     },
@@ -331,51 +330,27 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0xd4",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0xd4 = 9;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0xd0",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&g_CGamePtr->field_0xd0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0xd0",
-      "severity": "mild",
-      "text": "if (iVar1 != *(int *)&g_CGamePtr->field_0xd0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 63,
+      "line": 64,
       "match": "*(code **)(*0x01D02F84",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
+      "text": "iVar2 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 63,
+      "line": 64,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
+      "text": "iVar2 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Raw hex address 0x1d07ed0 assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 16,
+      "description": "Raw hex address 0x1d07ed0 assigned to bare local `iVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 17,
       "match": "0x1d07ed0",
       "severity": "moderate",
-      "text": "iVar3 = 0x1d07ed0;",
+      "text": "iVar4 = 0x1d07ed0;",
       "type": "raw_address_constant"
     }
   ]

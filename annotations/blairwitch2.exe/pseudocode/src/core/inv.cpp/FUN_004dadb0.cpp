@@ -31,14 +31,14 @@ uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int par
   char acStack_12c [256];
   int iStack_2c;
   char *pcStack_28;
-  uint local_24;
+  int local_24;
   char *pcStack_20;
   CAmmo *pCStack_1c;
   int iStack_18;
   int iStack_14;
   
   bVar15 = 0;
-  local_24 = *(uint *)&param_1[1].field_0x1b4;
+  local_24 = param_1[1].particle_systems[1].next_particle;
   if (99 < *(int *)(param_1->actor_name + 0x10)) {
     return 0;
   }
@@ -127,8 +127,7 @@ uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int par
         pcVar13[1] = cVar1;
         pcVar13 = pcVar13 + 2;
       } while (cVar1 != '\0');
-      pcVar11 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004ee960
-                                  (*(uint *)&g_CGamePtr->field_0x98);
+      pcVar11 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004ee960(g_CGamePtr->key_next_item);
       iVar6 = -1;
       pcVar13 = acStack_32c;
       do {
@@ -170,8 +169,7 @@ uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int par
         pcVar7[1] = cVar1;
         pcVar7 = pcVar7 + 2;
       } while (cVar1 != '\0');
-      pcVar11 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004ee960
-                                  (*(uint *)&g_CGamePtr->field_0x9c);
+      pcVar11 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004ee960(g_CGamePtr->key_prev_item);
       iVar6 = -1;
       pcVar13 = acStack_32c;
       do {
@@ -214,8 +212,7 @@ uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int par
         pcVar7[1] = cVar1;
         pcVar7 = pcVar7 + 2;
       } while (cVar1 != '\0');
-      pcVar11 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004ee960
-                                  (*(uint *)&g_CGamePtr->field_0x4c);
+      pcVar11 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004ee960(g_CGamePtr->key_use_item);
       iVar6 = -1;
       pcVar13 = acStack_32c;
       do {
@@ -272,8 +269,7 @@ uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int par
         pcVar14[1] = cVar1;
         pcVar14 = pcVar14 + 2;
       } while (cVar1 != '\0');
-      pcVar13 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004ee960
-                                  (*(uint *)&g_CGamePtr->field_0x48);
+      pcVar13 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004ee960(g_CGamePtr->key_fire);
       iVar6 = -1;
       pcVar14 = acStack_32c;
       do {
@@ -321,7 +317,7 @@ uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int par
     core_actor_cpp_isOfClass_FUN_0040c840(param_2,"CAmmo");
     core_actor_cpp_isOfClass_FUN_0040c840(param_2,"CWeapon");
     core_game_cpp_CGame_displayMessage_FUN_004b31a0(g_CGamePtr,acStack_12c,10.0);
-    pcVar14 = &param_1[1].field_0xa0;
+    pcVar14 = param_1[1].create_event + 0x28;
     do {
       cVar1 = *pcVar10;
       *pcVar14 = cVar1;
@@ -331,8 +327,8 @@ uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int par
       pcVar14[1] = cVar1;
       pcVar14 = pcVar14 + 2;
     } while (cVar1 != '\0');
-    iStack_14 = engine_font_cpp_FUN_004aaf00(_DAT_01511cc4,&param_1[1].field_0xa0);
-    *(float *)&param_1[1].field_0x98 = (float)iStack_14 * (float)_DAT_005db702;
+    iStack_14 = engine_font_cpp_FUN_004aaf00(_DAT_01511cc4,param_1[1].create_event + 0x28);
+    *(float *)(param_1[1].create_event + 0x20) = (float)iStack_14 * (float)_DAT_005db702;
   }
   pCStack_1c = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c8f0
                                   (param_2,g_CAmmoClassInfo.name_hash);
@@ -346,10 +342,11 @@ uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int par
         pcStack_20 = pcVar14;
         iVar8 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                           (*(uint *)(pCVar5->actor_name + 0x14),g_CAmmoClassInfo.name_hash);
-        if (((*(int *)&pCVar5[1].field_0x1b8 == *(int *)&param_1[1].field_0x1b4) && (iVar8 != 0)) &&
+        if (((*(int *)&pCVar5[1].particle_systems[1].field_0x20 ==
+              param_1[1].particle_systems[1].next_particle) && (iVar8 != 0)) &&
            ((iVar9 = _strcmp(pcStack_20,(char *)(iVar8 + 0x430)),
             pCVar2 = g_CConsolePtr, iVar9 == 0 &&
-            (*(int *)(iVar8 + 0x474) == *(int *)&pCStack_1c->field_0x474)))) {
+            (*(EAmmoType *)(iVar8 + 0x474) == pCStack_1c->ammo_type)))) {
           *(int *)(iVar8 + 0x470) = *(int *)(iVar8 + 0x470) + pCStack_1c->ammo_count;
           engine_console_cpp_FUN_00436710(pCVar2,"Found existing ammo... adding count");
           core_mission_cpp_FUN_004fc7b0(0x01D182F0,param_2,1);
@@ -381,7 +378,7 @@ uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int par
       pCVar5 = (CDemonActor *)core_actor_cpp_createActorByName_FUN_0040c5a0("CDynamite");
       core_mission_cpp_CDemonMission_generateActorName_FUN_004fcda0(0x01D182F0,pCVar5);
       (*((pCVar5->vtable)._ub)->setup)(pCVar5);
-      *(int *)&pCVar5[2].field_0x15c = pCStack_1c->ammo_count;
+      pCVar5[2].particle_systems[0].position.z = (float)pCStack_1c->ammo_count;
       (*((pCVar5->vtable)._ub)->pickup)(pCVar5,*(CDemonActor **)(param_1->actor_name + 4));
       core_actor_cpp_FUN_00408730(param_2);
       engine_console_cpp_FUN_00436710(g_CConsolePtr,"Found dynamite.  Creating weapon for it.\n");
@@ -396,7 +393,8 @@ uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int par
                         (*(uint *)(pCVar5->actor_name + 0x14),g_CHealthItemClassInfo.name_hash
                         );
       pCVar3 = 0x01D182F0;
-      if ((*(int *)&pCVar5[1].field_0x1b8 == *(int *)&param_1[1].field_0x1b4) && (iVar8 != 0)) {
+      if ((*(int *)&pCVar5[1].particle_systems[1].field_0x20 ==
+           param_1[1].particle_systems[1].next_particle) && (iVar8 != 0)) {
         *(int *)(iVar8 + 0x430) = *(int *)(iVar8 + 0x430) + *(int *)(iStack_2c + 0x430);
         core_mission_cpp_FUN_004fc7b0(pCVar3,param_2,1);
         return 1;
@@ -411,8 +409,8 @@ uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int par
     if (iVar6 != 0) {
       *(CDemonActor **)(param_1->actor_name + *(int *)(param_1->actor_name + 0x10) * 4 + 0x14) =
            param_2;
-      *(uint *)(&param_1[1].field_0x1b8 + *(int *)(param_1->actor_name + 0x10) * 4) = local_24
-      ;
+      *(int *)(&param_1[1].particle_systems[1].field_0x20 + *(int *)(param_1->actor_name + 0x10) * 4
+              ) = local_24;
       pCVar3 = 0x01D182F0;
       *(int *)(param_1->actor_name + 0x10) = *(int *)(param_1->actor_name + 0x10) + 1;
       core_mission_cpp_FUN_004fc7b0(pCVar3,param_2,0);
@@ -425,7 +423,8 @@ uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int par
       do {
         iVar8 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                           (*(uint *)(pCVar5->actor_name + 0x14),g_CWeaponClassInfo.name_hash);
-        if ((*(int *)&pCVar5[1].field_0x1b8 == *(int *)&param_1[1].field_0x1b4) && (iVar8 != 0)) {
+        if ((*(int *)&pCVar5[1].particle_systems[1].field_0x20 ==
+             param_1[1].particle_systems[1].next_particle) && (iVar8 != 0)) {
           pcVar14 = (char *)core_actor_cpp_FUN_00408a50(iVar8);
           pcVar13 = (char *)core_actor_cpp_FUN_00408a50(iStack_18);
           iVar9 = _strcmp(pcVar13,pcVar14);
@@ -448,14 +447,15 @@ uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int par
   }
   *(CDemonActor **)(param_1->actor_name + *(int *)(param_1->actor_name + 0x10) * 4 + 0x14) = param_2
   ;
-  *(uint *)(&param_1[1].field_0x1b8 + *(int *)(param_1->actor_name + 0x10) * 4) =
-       *(uint *)&param_1[1].field_0x1b4;
+  *(int *)(&param_1[1].particle_systems[1].field_0x20 + *(int *)(param_1->actor_name + 0x10) * 4) =
+       param_1[1].particle_systems[1].next_particle;
   pCVar3 = 0x01D182F0;
   *(int *)(param_1->actor_name + 0x10) = *(int *)(param_1->actor_name + 0x10) + 1;
   core_mission_cpp_FUN_004fc270(pCVar3,param_2);
   (*((param_2->vtable)._ub)->onPickup)(param_2,param_1);
   if ((iStack_18 != 0) &&
-     (*(int *)((int)(&param_1[2].orient_matrix + 3) + *(int *)&param_1[1].field_0x1b4 * 4) == 0)) {
+     (*(int *)(param_1[2].create_event + param_1[1].particle_systems[1].next_particle * 4 + 0x30) ==
+      0)) {
     core_inv_cpp_FUN_004db9d0(param_1,iStack_18,5,1);
   }
   return 1;

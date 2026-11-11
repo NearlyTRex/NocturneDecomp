@@ -11,7 +11,7 @@
 int __cdecl core_doc_cpp_CDoc_canDoHeroAction_FUN_0045d0c0(CDoc *this_ptr,int action_type)
 
 {
-  byte *puVar1;
+  CDeformableModelInstance *pCVar1;
   float fVar2;
   float fVar3;
   float fVar4;
@@ -21,13 +21,13 @@ int __cdecl core_doc_cpp_CDoc_canDoHeroAction_FUN_0045d0c0(CDoc *this_ptr,int ac
   float fVar8;
   float fVar9;
   
-  if ((*(int *)&this_ptr->field_0x256a4 == 0) && (*(int *)&this_ptr->field_0x25640 == 0)) {
-    puVar1 = &this_ptr->field_0x2b4;
-    fVar2 = (float)core_motion_cpp_FUN_005038a0(puVar1,0);
-    fVar3 = (float)core_motion_cpp_FUN_005038a0(puVar1,1);
-    fVar4 = (float)core_motion_cpp_FUN_005038a0(puVar1,3);
-    fVar5 = (float)core_motion_cpp_FUN_005038a0(puVar1,4);
-    fVar6 = (float)core_motion_cpp_FUN_005038a0(puVar1,5);
+  if ((this_ptr->action_pending == 0) && (this_ptr->guns_drawn == 0)) {
+    pCVar1 = &(this_ptr->base).base.model;
+    fVar2 = (float)core_motion_cpp_FUN_005038a0(pCVar1,0);
+    fVar3 = (float)core_motion_cpp_FUN_005038a0(pCVar1,1);
+    fVar4 = (float)core_motion_cpp_FUN_005038a0(pCVar1,3);
+    fVar5 = (float)core_motion_cpp_FUN_005038a0(pCVar1,4);
+    fVar6 = (float)core_motion_cpp_FUN_005038a0(pCVar1,5);
     fVar8 = (float)_DAT_005d07cf;
     switch(action_type) {
     case 4:
@@ -53,7 +53,7 @@ int __cdecl core_doc_cpp_CDoc_canDoHeroAction_FUN_0045d0c0(CDoc *this_ptr,int ac
         return 0;
       }
     }
-    iVar7 = core_hero_cpp_CHero_canDoHeroAction_FUN_004d06c0((CHero *)this_ptr,action_type);
+    iVar7 = core_hero_cpp_CHero_canDoHeroAction_FUN_004d06c0(&this_ptr->base,action_type);
     return iVar7;
   }
   return 0;

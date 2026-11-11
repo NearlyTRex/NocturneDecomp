@@ -2,20 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 141,
+    "complexity_score": 132,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 41,
-    "suspect_count": 8,
+    "pseudocode_lines": 42,
+    "suspect_count": 7,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
-      "unnamed_field",
+      "pointer_truncation",
       "unrolled_strcpy"
     ],
-    "total_lines": 94
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -127,36 +127,20 @@
       "line": 18,
       "match": "pCVar4[-1].",
       "severity": "mild",
-      "text": "*(CDemonActor_vtable **)&pCVar4[-1].base.field_0x214 = &g_CFlameCanVTable;",
+      "text": "pCVar4[-1].base.particle_systems[2].standalone = (int)&g_CFlameCanVTable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x214",
-      "severity": "mild",
-      "text": "*(CDemonActor_vtable **)&pCVar4[-1].base.field_0x214 = &g_CFlameCanVTable;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 20,
       "match": "pCVar4[-1].",
       "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&pCVar4[-1].base.field_0x218,\"question.kfm\");",
+      "text": "((CKeyFramedModelInstance *)&pCVar4[-1].base.particle_systems[2].particles,",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x218",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&pCVar4[-1].base.field_0x218,\"question.kfm\");",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 25,
+      "line": 26,
       "match": "pCVar4[-1].",
       "severity": "mild",
       "text": "pcVar6 = pCVar4[-1].off_event + 0x24;",
@@ -164,15 +148,23 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 43,
+      "line": 44,
       "match": "pCVar4[-2].",
       "severity": "mild",
       "text": "return (CFlameCan *)(pCVar4[-2].on_event + 0x50);",
       "type": "negative_offset"
     },
     {
+      "description": "Pointer value `&g_CFlameCanVTable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)&g_CFlameCanVTable",
+      "severity": "moderate",
+      "text": "pCVar4[-1].base.particle_systems[2].standalone = (int)&g_CFlameCanVTable;",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 30,
+      "line": 31,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

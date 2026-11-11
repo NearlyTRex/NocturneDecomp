@@ -72,10 +72,10 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonA
   bVar5 = 0;
   switch(pickup_type) {
   case 1:
-    if (*(int *)&this_ptr->field_0x2620 != 0) {
+    if ((this_ptr->base).base.carry_hands[0].carry_actor != (CDemonActor *)0x0) {
       return 0;
     }
-    core_actor_cpp_FUN_00408de0(item,&this_ptr->field_0x20);
+    core_actor_cpp_FUN_00408de0(item,&(this_ptr->base).base.base.location);
     fStack_34 = fStack_c4;
     (&stack0xffffffcc)[(uint)bVar5 * -2 + 1] = (&stack0xffffff3c)[(uint)bVar5 * -2 + 1];
     (&stack0xffffffcc)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 2] =
@@ -105,7 +105,7 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonA
     }
     break;
   case 2:
-    if (*(int *)&this_ptr->field_0x2698 != 0) {
+    if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
       return 0;
     }
     fStack_a8 = 3.0;
@@ -119,12 +119,12 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonA
     break;
   case 3:
   case 4:
-    if (*(int *)&this_ptr->field_0x2698 != 0) {
+    if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
       return 0;
     }
     if ((item != (CDemonActor *)0x0) &&
        (iVar2 = (*((item->vtable)._ub)->canPickup)(item,(CDemonActor *)this_ptr), iVar2 == 4)) {
-      core_actor_cpp_FUN_00408de0(item,&this_ptr->field_0x20);
+      core_actor_cpp_FUN_00408de0(item,&(this_ptr->base).base.base.location);
       fStack_38 = fStack_74;
       (&stack0xffffffcc)[(uint)bVar5 * 0xfffffffe] =
            (float)(&stack0xffffff90)[(uint)bVar5 * 0xfffffffe];

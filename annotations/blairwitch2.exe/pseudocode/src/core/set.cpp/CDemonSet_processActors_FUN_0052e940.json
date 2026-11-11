@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 634,
+    "complexity_score": 568,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 249,
-    "suspect_count": 33,
+    "pseudocode_lines": 248,
+    "suspect_count": 27,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -17,12 +17,11 @@
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 804
+    "total_lines": 803
   },
   "cross_references": [
     {
@@ -427,14 +426,6 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 85,
-      "match": "field_0x104",
-      "severity": "mild",
-      "text": "if (*(int *)&pCVar3->field_0x104 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 88,
       "match": "(float *)((int)pCVar3",
@@ -503,16 +494,8 @@
       "line": 111,
       "match": "DAT_007bbff4",
       "severity": "mild",
-      "text": "(this_ptr_00,(CVector3f *)&DAT_007bbff4->field_0x20,0);",
+      "text": "(this_ptr_00,&(DAT_007bbff4->location).position,0);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 111,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(this_ptr_00,(CVector3f *)&DAT_007bbff4->field_0x20,0);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -587,38 +570,6 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 158,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "puStack_40 = &(this_ptr_01->base).field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 171,
-      "match": "field_0x464",
-      "severity": "mild",
-      "text": "(this_ptr_02->field_0x464 == '\\0')) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 174,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(0x01C3DEB4,(CVector3f *)&(this_ptr_02->base).field_0x20,0.0,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 183,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(0x01C3DEB4,(CVector3f *)&(this_ptr_03->base).field_0x20,0.0,",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 88,
       "match": "(int)pCVar3",
@@ -668,7 +619,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 188,
+      "line": 187,
       "match": "pCVar8 = (T *)pCVar8->ARRAY",
       "severity": "moderate",
       "text": "pCVar8 = (CDemonSet *)pCVar8->cameras;",

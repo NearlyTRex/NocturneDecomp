@@ -10,11 +10,11 @@
     "pseudocode_lines": 88,
     "suspect_count": 58,
     "suspect_types": [
+      "derived_field_index_pun",
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "unrolled_strcpy",
       "warning_overlapping_globals",
       "warning_type_propagation"
@@ -211,14 +211,6 @@
       "severity": "moderate",
       "text": "float afStackY_101c [1015];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x80",
-      "severity": "mild",
-      "text": "(&pCVar4[1].base.base.field_0x80,0x14,&g_SBoneGuyBoxTypeInfo);",
-      "type": "unnamed_field"
     },
     {
       "description": "Complex pointer cast",
@@ -651,6 +643,13 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
       "type": "pointer_cast"
+    },
+    {
+      "description": "'pCVar4[1].base.base.create_event + 8' walks 1 x sizeof(CEnemy) (0x10af8) + offsetof(base.base.create_event) (0x78) + 0x8 = 0x10b78, which is exactly offsetof(CBatman, part_indices[7]). Ghidra had no CBatman type here and reached the field by index arithmetic; write it as ((CBatman *)pCVar4)->part_indices[7] (\u00a7de-pun/\u00a712). Ambiguous: CBoneGuy::boxes, CConstruct::part_indices[6], CDraculaBride::rise_event[92] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 35,
+      "severity": "moderate",
+      "text": "(pCVar4[1].base.base.create_event + 8,0x14,&g_SBoneGuyBoxTypeInfo);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

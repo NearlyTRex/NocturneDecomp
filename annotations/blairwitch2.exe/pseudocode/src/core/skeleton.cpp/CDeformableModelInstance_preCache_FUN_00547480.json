@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 22,
+    "complexity_score": 7,
     "cross_reference_count": 36,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 7,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 21
   },
   "cross_references": [
@@ -19,6 +17,12 @@
       "addr": "0040eee0",
       "from_addr": "0040eef7",
       "name": "core_armour.cpp_CArmour_setup_FUN_0040eee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059e6a0",
+      "from_addr": "0059e6ad",
+      "name": "core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -224,12 +228,6 @@
       "from_addr": "00595c13",
       "name": "core_zombie.cpp_CZombie_setup_FUN_00595c00",
       "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059e6a0",
-      "from_addr": "0059e6ad",
-      "name": "unkafter_basicene.cpp_FUN_0059e6a0",
-      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -413,14 +411,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x2260",
-      "severity": "mild",
-      "text": "model_ptr = (CDeformableModel *)core_skeleton_cpp_FUN_00548e80(&this_ptr->field_0x2260);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

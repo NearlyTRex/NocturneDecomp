@@ -2,15 +2,36 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CBodyPart;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CQuaternion4f.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SBoneGuyBox.h"
 
 // Structure: CConstruct
-// Stub: size from Watcom RTTI, fields not yet recovered
+// ctor 00436b00 __arrinit(this+0x10c18, 0x18, SBoneGuyBox); archive 00437b80 keys; setup 00436be0
 // Ghidra size: 0x112e4 (70372 bytes)
 #pragma pack(push, 1)
 typedef struct CConstruct {
-    char field_0[70372]; // 0x0
+    CEnemy base; // 0x0, derived; unchanged
+    char fall_event[100]; // 0x10af8, ctor strcpy; archive "fallEvent"
+    uint sfx_handle; // 0x10b5c, setup 00436be0 zeroes; process 00436e80 / processDamage 00437de0 isSfxPlaying/killSfx
+    int part_indices[12]; // 0x10b60, setup findPartByName into +0x10b60..+0x10b8c (slot 7 unused); [0] read by explode FUN_00438060
+    char field_68496[8]; // 0x10b90
+    uint sfx_handles[3]; // 0x10b98, process / processDamage isSfxPlaying/killSfx on +0x10b98..+0x10ba0
+    char field_68516[4]; // 0x10ba4
+    char death_event[100]; // 0x10ba8, ctor strcpy; archive "deathEvent"
+    float recombine_time; // 0x10c0c, ctor 8.0; archive "recombineTime"
+    int initial_hit_points; // 0x10c10, setup round(hit_points); process restores hit_points from it
+    int box_count; // 0x10c14, archive "boxCount"
+    SBoneGuyBox boxes[24]; // 0x10c18, ctor __arrinit count 0x18 stride 0x48; archive boxList*
+    int blown_up; // 0x112d8, archive "blownUp"; ctor zeroes
+    float recombine_interpolation; // 0x112dc, archive "param"
+    int pickable_box_index; // 0x112e0, explode FUN_00438060 stores it; process indexes boxes[i].body_part
 } CConstruct;
 #pragma pack(pop)
 

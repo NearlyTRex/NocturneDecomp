@@ -23,14 +23,14 @@ void __cdecl core_npc_cpp_CNPC_archive_FUN_005109e0(CNPC *this_ptr)
     core_actor_cpp_archiveMotionState_FUN_0040bb60(pCVar1,"motion state");
   }
   if (3 < g_CNPCClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x2433c,"shootMe");
+    core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->shoot_me,"shootMe");
   }
   if (4 < g_CNPCClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x24340,"poolMe");
+    core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->pool_me,"poolMe");
   }
   if (g_CNPCClassVersion < 6) {
     return;
   }
-  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x24344,"speed");
+  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->speed,"speed");
   return;
 }

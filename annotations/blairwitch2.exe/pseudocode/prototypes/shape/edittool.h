@@ -595,7 +595,7 @@ int calculateButtonHeight(char *param_1);
 
 // Original: shape_edittool.cpp_FUN_0048546e
 // Address: 0048546e
-void FUN_0048546e(CEdCheck *param_1,undefined4 param_2,undefined4 param_3,CEdCheck *param_4);
+void FUN_0048546e(CEdCheck *param_1,int param_2,int param_3,char *param_4);
 
 // Original: shape_edittool.cpp_FUN_004854b3
 // Address: 004854b3

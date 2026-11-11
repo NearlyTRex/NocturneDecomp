@@ -182,7 +182,7 @@ section .text
     TEST EBX,EBX                        ; 005507e7
     JZ 0x00550987                       ; 005507e9
         ;   XREF to: 00550987 (CONDITIONAL_JUMP)  ; LAB_00550987
-    CMP dword ptr [EBX + 0x160],-0x1    ; 005507ef | g_SfxSamples[0].field12_0x160
+    CMP dword ptr [EBX + 0x160],-0x1    ; 005507ef | g_SfxSamples[0].streaming_slot_index
     JZ 0x005509fd                       ; 005507f6
         ;   XREF to: 005509fd (CONDITIONAL_JUMP)  ; LAB_005509fd
     LEA EAX,[ESP + 0x100]               ; 005507fc

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 114,
+    "complexity_score": 69,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 44,
-    "suspect_count": 6,
+    "suspect_count": 2,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "unnamed_field"
+      "shadow_pointer_walk"
     ],
     "total_lines": 177
   },
@@ -189,51 +188,19 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "puVar3 = &this_ptr->tires[0].field_0x10;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "puVar2 = &this_ptr->tires[0].field_0xc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "puVar4 = &this_ptr->tires[0].field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `puVar4` was initialized to the address of an array element's subfield (`puVar4 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*puVar4)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `puVar4->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 24,
-      "match": "puVar4 = puVar4 + N",
-      "severity": "moderate",
-      "text": "puVar4 = puVar4 + 0x1b4;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `puVar2` was initialized to the address of an array element's subfield (`puVar2 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*puVar2)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `puVar2->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `pfVar2` was initialized to the address of an array element's subfield (`pfVar2 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pfVar2)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pfVar2->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 26,
-      "match": "puVar2 = puVar2 + N",
+      "match": "pfVar2 = pfVar2 + N",
       "severity": "moderate",
-      "text": "puVar2 = puVar2 + 0x1b4;",
+      "text": "pfVar2 = pfVar2 + 0x6d;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `puVar3` was initialized to the address of an array element's subfield (`puVar3 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*puVar3)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `puVar3->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `pfVar3` was initialized to the address of an array element's subfield (`pfVar3 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pfVar3)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pfVar3->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 27,
-      "match": "puVar3 = puVar3 + N",
+      "match": "pfVar3 = pfVar3 + N",
       "severity": "moderate",
-      "text": "puVar3 = puVar3 + 0x1b4;",
+      "text": "pfVar3 = pfVar3 + 0x6d;",
       "type": "shadow_pointer_walk"
     }
   ],

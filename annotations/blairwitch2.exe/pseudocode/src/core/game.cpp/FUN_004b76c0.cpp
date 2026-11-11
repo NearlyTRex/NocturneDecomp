@@ -11,238 +11,231 @@
 void __cdecl core_game_cpp_FUN_004b76c0(CGame *this_ptr,SPlayerInput *player_control)
 
 {
-  SPlayerInput *pSVar1;
-  float fVar2;
-  int iVar3;
-  byte bVar4;
+  float *pfVar1;
+  int *piVar2;
+  float fVar3;
+  int iVar4;
+  byte bVar5;
   
   if (this_ptr->screen_clear_condition != 0) {
     (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x200);
     (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x201);
   }
-  *(uint *)(player_control + 0x24) = 0;
-  pSVar1 = player_control + 0x24;
-  if ((&DAT_01c37790)[*(int *)&this_ptr->field_0x38] == '\0') {
-    if ((((&DAT_01c37790)[*(int *)&this_ptr->field_0x3c] != '\0') &&
-        ((int)*(float *)pSVar1 < 0x3f800000)) &&
-       (*(float *)pSVar1 = g_CGamePtr->delta_time_float / _DAT_005d78c3 + *(float *)pSVar1,
-       0x3f800000 < (int)*(float *)pSVar1)) {
-      *(float *)pSVar1 = 1.0;
+  player_control->strafe_speed = 0.0;
+  pfVar1 = &player_control->strafe_speed;
+  if ((&DAT_01c37790)[this_ptr->key_strafe_left] == '\0') {
+    if ((((&DAT_01c37790)[this_ptr->key_strafe_right] != '\0') && ((int)*pfVar1 < 0x3f800000)) &&
+       (*pfVar1 = g_CGamePtr->delta_time_float / _DAT_005d78c3 + *pfVar1, 0x3f800000 < (int)*pfVar1)
+       ) {
+      *pfVar1 = 1.0;
     }
   }
-  else if ((_DAT_005d78c7 < *(float *)pSVar1) &&
-          (fVar2 = *(float *)pSVar1 - g_CGamePtr->delta_time_float / _DAT_005d78c3,
-          *(float *)pSVar1 = fVar2, fVar2 < _DAT_005d78c7)) {
-    *(float *)pSVar1 = -1.0;
+  else if ((_DAT_005d78c7 < *pfVar1) &&
+          (fVar3 = *pfVar1 - g_CGamePtr->delta_time_float / _DAT_005d78c3, *pfVar1 = fVar3,
+          fVar3 < _DAT_005d78c7)) {
+    *pfVar1 = -1.0;
   }
-  if ((&DAT_01c37790)[*(int *)&this_ptr->field_0x34] == '\0') {
-    if (((&DAT_01c37790)[*(int *)&this_ptr->field_0x44] != '\0') ||
-       ((&DAT_01c37790)[*(int *)&this_ptr->field_0x40] != '\0')) {
-      fVar2 = (float)this_ptr->x_mouse_sensitivity * (float)_DAT_005d78d3 * (float)_DAT_005d78db;
-      pSVar1 = player_control + 0x28;
-      if ((&DAT_01c37790)[*(int *)&this_ptr->field_0x44] == '\0') {
-        if ((((&DAT_01c37790)[*(int *)&this_ptr->field_0x40] != '\0') &&
-            ((int)*(float *)pSVar1 < 0x3e800000)) &&
-           (*(float *)pSVar1 =
-                 (g_CGamePtr->delta_time_float * _DAT_005d78cb) / fVar2 + *(float *)pSVar1,
-           0x3e800000 < (int)*(float *)pSVar1)) {
-          *(float *)pSVar1 = 0.25;
+  if ((&DAT_01c37790)[this_ptr->key_strafe] == '\0') {
+    if (((&DAT_01c37790)[this_ptr->key_left] != '\0') ||
+       ((&DAT_01c37790)[this_ptr->key_right] != '\0')) {
+      fVar3 = (float)this_ptr->x_mouse_sensitivity * (float)_DAT_005d78d3 * (float)_DAT_005d78db;
+      pfVar1 = &player_control->turn_speed;
+      if ((&DAT_01c37790)[this_ptr->key_left] == '\0') {
+        if ((((&DAT_01c37790)[this_ptr->key_right] != '\0') && ((int)*pfVar1 < 0x3e800000)) &&
+           (*pfVar1 = (g_CGamePtr->delta_time_float * _DAT_005d78cb) / fVar3 + *pfVar1,
+           0x3e800000 < (int)*pfVar1)) {
+          *pfVar1 = 0.25;
         }
       }
-      else if ((_DAT_005d78e3 < *(float *)pSVar1) &&
-              (fVar2 = *(float *)pSVar1 - (g_CGamePtr->delta_time_float * _DAT_005d78cb) / fVar2,
-              *(float *)pSVar1 = fVar2, fVar2 < _DAT_005d78e3)) {
-        *(float *)pSVar1 = -0.25;
+      else if ((_DAT_005d78e3 < *pfVar1) &&
+              (fVar3 = *pfVar1 - (g_CGamePtr->delta_time_float * _DAT_005d78cb) / fVar3,
+              *pfVar1 = fVar3, fVar3 < _DAT_005d78e3)) {
+        *pfVar1 = -0.25;
       }
       goto LAB_004b77cb;
     }
-    fVar2 = (g_CGamePtr->delta_time_float * _DAT_005d78cb) / _DAT_005d78cf;
-    pSVar1 = player_control + 0x28;
-    if (0.0 <= *(float *)pSVar1) {
-      *(float *)pSVar1 = *(float *)pSVar1 - fVar2;
-      fVar2 = *(float *)pSVar1;
+    fVar3 = (g_CGamePtr->delta_time_float * _DAT_005d78cb) / _DAT_005d78cf;
+    pfVar1 = &player_control->turn_speed;
+    if (0.0 <= *pfVar1) {
+      *pfVar1 = *pfVar1 - fVar3;
+      fVar3 = *pfVar1;
       goto joined_r0x004b7da7;
     }
-    fVar2 = *(float *)pSVar1 + fVar2;
+    fVar3 = *pfVar1 + fVar3;
 LAB_004b77b8:
-    *(float *)(player_control + 0x28) = fVar2;
-    if (*(float *)(player_control + 0x28) <= 0.0) goto LAB_004b77cb;
+    player_control->turn_speed = fVar3;
+    if (player_control->turn_speed <= 0.0) goto LAB_004b77cb;
   }
   else {
-    pSVar1 = player_control + 0x24;
-    if ((&DAT_01c37790)[*(int *)&this_ptr->field_0x44] == '\0') {
-      if ((((&DAT_01c37790)[*(int *)&this_ptr->field_0x40] != '\0') &&
-          ((int)*(float *)pSVar1 < 0x3f800000)) &&
-         (*(float *)pSVar1 = g_CGamePtr->delta_time_float / _DAT_005d78c3 + *(float *)pSVar1,
-         0x3f800000 < (int)*(float *)pSVar1)) {
-        *(float *)pSVar1 = 1.0;
+    pfVar1 = &player_control->strafe_speed;
+    if ((&DAT_01c37790)[this_ptr->key_left] == '\0') {
+      if ((((&DAT_01c37790)[this_ptr->key_right] != '\0') && ((int)*pfVar1 < 0x3f800000)) &&
+         (*pfVar1 = g_CGamePtr->delta_time_float / _DAT_005d78c3 + *pfVar1,
+         0x3f800000 < (int)*pfVar1)) {
+        *pfVar1 = 1.0;
       }
     }
-    else if ((_DAT_005d78c7 < *(float *)pSVar1) &&
-            (fVar2 = *(float *)pSVar1 - g_CGamePtr->delta_time_float / _DAT_005d78c3,
-            *(float *)pSVar1 = fVar2, fVar2 < _DAT_005d78c7)) {
-      *(float *)pSVar1 = -1.0;
+    else if ((_DAT_005d78c7 < *pfVar1) &&
+            (fVar3 = *pfVar1 - g_CGamePtr->delta_time_float / _DAT_005d78c3, *pfVar1 = fVar3,
+            fVar3 < _DAT_005d78c7)) {
+      *pfVar1 = -1.0;
     }
-    fVar2 = (g_CGamePtr->delta_time_float * _DAT_005d78cb) / _DAT_005d78cf;
-    pSVar1 = player_control + 0x28;
-    if (*(float *)pSVar1 < 0.0) {
-      fVar2 = *(float *)pSVar1 + fVar2;
+    fVar3 = (g_CGamePtr->delta_time_float * _DAT_005d78cb) / _DAT_005d78cf;
+    pfVar1 = &player_control->turn_speed;
+    if (*pfVar1 < 0.0) {
+      fVar3 = *pfVar1 + fVar3;
       goto LAB_004b77b8;
     }
-    *(float *)pSVar1 = *(float *)pSVar1 - fVar2;
-    fVar2 = *(float *)pSVar1;
+    *pfVar1 = *pfVar1 - fVar3;
+    fVar3 = *pfVar1;
 joined_r0x004b7da7:
-    if (0.0 <= fVar2) goto LAB_004b77cb;
+    if (0.0 <= fVar3) goto LAB_004b77cb;
   }
-  *(uint *)(player_control + 0x28) = 0;
+  player_control->turn_speed = 0.0;
 LAB_004b77cb:
-  if (((&DAT_01c37790)[*(int *)&this_ptr->field_0x74] == '\0') &&
-     ((&DAT_01c37790)[*(int *)&this_ptr->field_0x78] == '\0')) {
-    fVar2 = (g_CGamePtr->delta_time_float * _DAT_005d78cb) / _DAT_005d78e7;
-    pSVar1 = player_control + 0x2c;
-    if (0.0 <= *(float *)pSVar1) {
-      *(float *)pSVar1 = *(float *)pSVar1 - fVar2;
-      if (*(float *)pSVar1 < 0.0) {
-        *(float *)pSVar1 = 0.0;
+  if (((&DAT_01c37790)[this_ptr->key_point_up] == '\0') &&
+     ((&DAT_01c37790)[this_ptr->key_point_down] == '\0')) {
+    fVar3 = (g_CGamePtr->delta_time_float * _DAT_005d78cb) / _DAT_005d78e7;
+    pfVar1 = &player_control->look_up_down_speed;
+    if (0.0 <= *pfVar1) {
+      *pfVar1 = *pfVar1 - fVar3;
+      if (*pfVar1 < 0.0) {
+        *pfVar1 = 0.0;
       }
     }
     else {
-      *(float *)pSVar1 = *(float *)pSVar1 + fVar2;
-      if (0.0 < *(float *)pSVar1) {
-        *(float *)pSVar1 = 0.0;
+      *pfVar1 = *pfVar1 + fVar3;
+      if (0.0 < *pfVar1) {
+        *pfVar1 = 0.0;
       }
     }
   }
   else {
-    fVar2 = (float)this_ptr->y_mouse_sensitivity * (float)_DAT_005d78eb * (float)_DAT_005d78db;
-    pSVar1 = player_control + 0x2c;
-    if ((&DAT_01c37790)[*(int *)&this_ptr->field_0x74] == '\0') {
-      if ((((&DAT_01c37790)[*(int *)&this_ptr->field_0x78] != '\0') &&
-          ((int)*(float *)pSVar1 < 0x3e800000)) &&
-         (*(float *)pSVar1 =
-               (g_CGamePtr->delta_time_float * _DAT_005d78cb) / fVar2 + *(float *)pSVar1,
-         0x3e800000 < (int)*(float *)pSVar1)) {
-        *(float *)pSVar1 = 0.25;
+    fVar3 = (float)this_ptr->y_mouse_sensitivity * (float)_DAT_005d78eb * (float)_DAT_005d78db;
+    pfVar1 = &player_control->look_up_down_speed;
+    if ((&DAT_01c37790)[this_ptr->key_point_up] == '\0') {
+      if ((((&DAT_01c37790)[this_ptr->key_point_down] != '\0') && ((int)*pfVar1 < 0x3e800000)) &&
+         (*pfVar1 = (g_CGamePtr->delta_time_float * _DAT_005d78cb) / fVar3 + *pfVar1,
+         0x3e800000 < (int)*pfVar1)) {
+        *pfVar1 = 0.25;
       }
     }
-    else if ((_DAT_005d78e3 < *(float *)pSVar1) &&
-            (fVar2 = *(float *)pSVar1 - (g_CGamePtr->delta_time_float * _DAT_005d78cb) / fVar2,
-            *(float *)pSVar1 = fVar2, fVar2 < _DAT_005d78e3)) {
-      *(float *)pSVar1 = -0.25;
+    else if ((_DAT_005d78e3 < *pfVar1) &&
+            (fVar3 = *pfVar1 - (g_CGamePtr->delta_time_float * _DAT_005d78cb) / fVar3,
+            *pfVar1 = fVar3, fVar3 < _DAT_005d78e3)) {
+      *pfVar1 = -0.25;
     }
   }
   if (this_ptr->always_run == 0) {
-    bVar4 = (&DAT_01c37790)[*(int *)&this_ptr->field_0x30];
+    bVar5 = (&DAT_01c37790)[this_ptr->key_run];
   }
   else {
-    bVar4 = (&DAT_01c37790)[*(int *)&this_ptr->field_0x30] == '\0';
+    bVar5 = (&DAT_01c37790)[this_ptr->key_run] == '\0';
   }
-  *(uint *)(player_control + 8) = (uint)bVar4;
-  if ((&DAT_01cb7528)[this_ptr->shadow_flag] != (&DAT_01c37790)[this_ptr->shadow_flag]) {
-    *(uint *)player_control = (uint)(byte)(&DAT_01c37790)[this_ptr->shadow_flag];
-  }
+  (player_control->action_state).run = (uint)bVar5;
   if ((&DAT_01cb7528)[this_ptr->key_walk] != (&DAT_01c37790)[this_ptr->key_walk]) {
-    *(uint *)(player_control + 4) = (uint)(byte)(&DAT_01c37790)[this_ptr->key_walk];
+    (player_control->action_state).walk = (uint)(byte)(&DAT_01c37790)[this_ptr->key_walk];
   }
-  iVar3 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
-  iVar3 = (**(code **)(*(int *)(iVar3 + 0x2b0) + 0x114))(iVar3);
-  if (iVar3 == 0) {
-    if ((&DAT_01cb7528)[*(int *)&this_ptr->field_0x48] !=
-        (&DAT_01c37790)[*(int *)&this_ptr->field_0x48]) {
-      *(uint *)(player_control + 0xc) = (uint)(byte)(&DAT_01c37790)[*(int *)&this_ptr->field_0x48];
+  if ((&DAT_01cb7528)[this_ptr->key_backup] != (&DAT_01c37790)[this_ptr->key_backup]) {
+    (player_control->action_state).backup = (uint)(byte)(&DAT_01c37790)[this_ptr->key_backup];
+  }
+  iVar4 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
+  iVar4 = (**(code **)(*(int *)(iVar4 + 0x2b0) + 0x114))(iVar4);
+  if (iVar4 == 0) {
+    if ((&DAT_01cb7528)[this_ptr->key_fire] != (&DAT_01c37790)[this_ptr->key_fire]) {
+      (player_control->action_state).fire = (uint)(byte)(&DAT_01c37790)[this_ptr->key_fire];
     }
   }
   else {
-    *(uint *)(player_control + 0xc) = 0;
+    (player_control->action_state).fire = 0;
   }
-  if ((&DAT_01cb7528)[*(int *)&this_ptr->field_0x4c] ==
-      (&DAT_01c37790)[*(int *)&this_ptr->field_0x4c]) {
-    *(uint *)(player_control + 0x10) = 0;
-  }
-  else {
-    *(uint *)(player_control + 0x10) = (uint)(byte)(&DAT_01c37790)[*(int *)&this_ptr->field_0x4c];
-  }
-  if ((&DAT_01cb7528)[*(int *)&this_ptr->field_0x50] ==
-      (&DAT_01c37790)[*(int *)&this_ptr->field_0x50]) {
-    *(uint *)(player_control + 0x14) = 0;
+  piVar2 = &(player_control->action_state).use_item;
+  if ((&DAT_01cb7528)[this_ptr->key_use_item] == (&DAT_01c37790)[this_ptr->key_use_item]) {
+    *piVar2 = 0;
   }
   else {
-    *(uint *)(player_control + 0x14) = (uint)(byte)(&DAT_01c37790)[*(int *)&this_ptr->field_0x50];
+    *piVar2 = (uint)(byte)(&DAT_01c37790)[this_ptr->key_use_item];
   }
-  if ((&DAT_01cb7528)[*(int *)&this_ptr->field_0x68] ==
-      (&DAT_01c37790)[*(int *)&this_ptr->field_0x68]) {
-    *(uint *)(player_control + 0x18) = 0;
-  }
-  else {
-    *(uint *)(player_control + 0x18) = (uint)(byte)(&DAT_01c37790)[*(int *)&this_ptr->field_0x68];
-  }
-  if ((&DAT_01cb7528)[*(int *)&this_ptr->field_0x70] ==
-      (&DAT_01c37790)[*(int *)&this_ptr->field_0x70]) {
-    *(uint *)(player_control + 0x20) = 0;
+  piVar2 = &(player_control->action_state).light;
+  if ((&DAT_01cb7528)[this_ptr->key_light] == (&DAT_01c37790)[this_ptr->key_light]) {
+    *piVar2 = 0;
   }
   else {
-    *(uint *)(player_control + 0x20) = (uint)(byte)(&DAT_01c37790)[*(int *)&this_ptr->field_0x70];
+    *piVar2 = (uint)(byte)(&DAT_01c37790)[this_ptr->key_light];
   }
-  if ((&DAT_01cb7528)[*(int *)&this_ptr->field_0xaf0] ==
-      (&DAT_01c37790)[*(int *)&this_ptr->field_0xaf0]) {
-    *(uint *)(player_control + 0x30) = 0;
+  piVar2 = &(player_control->action_state).draw;
+  if ((&DAT_01cb7528)[this_ptr->key_draw] == (&DAT_01c37790)[this_ptr->key_draw]) {
+    *piVar2 = 0;
   }
   else {
-    *(uint *)(player_control + 0x30) = (uint)(byte)(&DAT_01c37790)[*(int *)&this_ptr->field_0xaf0];
+    *piVar2 = (uint)(byte)(&DAT_01c37790)[this_ptr->key_draw];
   }
-  iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,*(uint *)&this_ptr->field_0x90);
-  if ((iVar3 != 0) &&
-     ((iVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+  piVar2 = &(player_control->action_state).quick_turn;
+  if ((&DAT_01cb7528)[this_ptr->key_quick_turn] == (&DAT_01c37790)[this_ptr->key_quick_turn]) {
+    *piVar2 = 0;
+  }
+  else {
+    *piVar2 = (uint)(byte)(&DAT_01c37790)[this_ptr->key_quick_turn];
+  }
+  if ((&DAT_01cb7528)[this_ptr->key_drop] == (&DAT_01c37790)[this_ptr->key_drop]) {
+    player_control->drop_item = 0;
+  }
+  else {
+    player_control->drop_item = (uint)(byte)(&DAT_01c37790)[this_ptr->key_drop];
+  }
+  iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_next_weapon);
+  if ((iVar4 != 0) &&
+     ((iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                          (*(uint *)(_DAT_01cedef4 * 4 + 0x1cedee4),g_CDocClassInfo.name_hash),
-      iVar3 == 0 || (*(float *)(iVar3 + 0x259b0) <= 0.0)))) {
+      iVar4 == 0 || (*(float *)(iVar4 + 0x259b0) <= 0.0)))) {
     core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0,5,1);
   }
-  iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,*(uint *)&this_ptr->field_0x94);
-  if ((iVar3 != 0) &&
-     ((iVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+  iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_prev_weapon);
+  if ((iVar4 != 0) &&
+     ((iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                          (*(uint *)(_DAT_01cedef4 * 4 + 0x1cedee4),g_CDocClassInfo.name_hash),
-      iVar3 == 0 || (*(float *)(iVar3 + 0x259b0) <= 0.0)))) {
+      iVar4 == 0 || (*(float *)(iVar4 + 0x259b0) <= 0.0)))) {
     core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0,5,0xffffffff);
   }
-  iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,*(uint *)&this_ptr->field_0x98);
-  if (iVar3 != 0) {
+  iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_next_item);
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_selectItem_FUN_004dbb50
               ((CInventory *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c),1);
   }
-  iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,*(uint *)&this_ptr->field_0x9c);
-  if (iVar3 != 0) {
+  iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_prev_item);
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_selectItem_FUN_004dbb50
               ((CInventory *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c),-1);
   }
-  iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,*(uint *)&this_ptr->field_0xa4);
-  if (iVar3 != 0) {
+  iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_next_ammo);
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60
               ((CInventory *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c),1);
   }
-  iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,*(uint *)&this_ptr->field_0xa0);
-  if (iVar3 != 0) {
+  iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_item_desc);
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_toggleDetailView_FUN_004defa0
               ((CInventory *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c));
   }
-  iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,*(uint *)&this_ptr->field_0x7c);
-  if ((iVar3 != 0) &&
-     ((iVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+  iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_1);
+  if ((iVar4 != 0) &&
+     ((iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                          (*(uint *)(_DAT_01cedef4 * 4 + 0x1cedee4),g_CDocClassInfo.name_hash),
-      iVar3 == 0 || (*(float *)(iVar3 + 0x259b0) <= 0.0)))) {
+      iVar4 == 0 || (*(float *)(iVar4 + 0x259b0) <= 0.0)))) {
     core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0,0,1);
   }
-  iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,*(uint *)&this_ptr->field_0x80);
-  if ((iVar3 != 0) &&
-     ((iVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+  iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_2);
+  if ((iVar4 != 0) &&
+     ((iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                          (*(uint *)(_DAT_01cedef4 * 4 + 0x1cedee4),g_CDocClassInfo.name_hash),
-      iVar3 == 0 || (*(float *)(iVar3 + 0x259b0) <= 0.0)))) {
+      iVar4 == 0 || (*(float *)(iVar4 + 0x259b0) <= 0.0)))) {
     core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0,3,1);
   }
-  iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,*(uint *)&this_ptr->field_0x84);
-  if ((iVar3 != 0) &&
-     ((iVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+  iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_3);
+  if ((iVar4 != 0) &&
+     ((iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                          (*(uint *)(_DAT_01cedef4 * 4 + 0x1cedee4),g_CDocClassInfo.name_hash),
-      iVar3 == 0 || (*(float *)(iVar3 + 0x259b0) <= 0.0)))) {
+      iVar4 == 0 || (*(float *)(iVar4 + 0x259b0) <= 0.0)))) {
     core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0,6,1);
     return;
   }

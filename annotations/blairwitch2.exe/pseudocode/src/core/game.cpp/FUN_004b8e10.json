@@ -12,8 +12,8 @@
     "suspect_types": [
       "param_count_too_few",
       "raw_address_pointer_store",
+      "suspect_float",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unrolled_strcpy",
       "warning_overlapping_globals"
@@ -354,12 +354,12 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Likely misinterpreted integer as float",
       "line": 45,
-      "match": "field_0x1bc",
+      "match": "2.8026e-45",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr[1].field_0x1bc = 2;",
-      "type": "unnamed_field"
+      "text": "this_ptr[1].particle_systems[1].fade_start = 2.8026e-45;",
+      "type": "suspect_float"
     },
     {
       "description": "Undefined global data reference",

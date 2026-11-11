@@ -9,21 +9,24 @@
 int __cdecl support_trisock_cpp_CSocket_getSocketName_FUN_00579430(CSocket *this_ptr,SNetworkAddr *out_address)
 
 {
-  int iVar1;
-  uint *puVar2;
-  byte bVar3;
+  uint uVar1;
+  int iVar2;
+  uint *puVar3;
+  byte bVar4;
   sockaddr sStack_1c;
   byte auStack_c [8];
   int iStack_4;
   
-  bVar3 = 0;
+  bVar4 = 0;
   iStack_4 = 0x10;
-  iVar1 = getsockname(*(SOCKET *)this_ptr,&sStack_1c,&iStack_4);
-  if (iVar1 != 0) {
+  iVar2 = getsockname(this_ptr->handle,&sStack_1c,&iStack_4);
+  if (iVar2 != 0) {
     return 0;
   }
-  puVar2 = (uint *)support_trisock_cpp_convertSockAddr_FUN_00578e80(auStack_c,&sStack_1c);
-  *(uint *)out_address = *puVar2;
-  *(uint *)(out_address + (uint)bVar3 * -8 + 4) = puVar2[(uint)bVar3 * -2 + 1];
+  puVar3 = (uint *)support_trisock_cpp_convertSockAddr_FUN_00578e80(auStack_c,&sStack_1c);
+  out_address->ip_address = *puVar3;
+  uVar1 = puVar3[(uint)bVar4 * -2 + 1];
+  out_address[-(uint)bVar4].port = (short)uVar1;
+  out_address[-(uint)bVar4].padding = (short)(uVar1 >> 0x10);
   return 1;
 }

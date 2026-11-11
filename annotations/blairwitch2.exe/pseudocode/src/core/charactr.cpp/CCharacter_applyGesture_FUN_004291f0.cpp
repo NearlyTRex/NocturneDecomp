@@ -14,8 +14,8 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_004291f0(CCharacter *
   float fVar1;
   float fVar2;
   CSkeleton *this_ptr_00;
-  CMotionList *pCVar3;
-  int iVar4;
+  int iVar3;
+  CMotionList *pCVar4;
   char *bone_name;
   int iVar5;
   float local_c;
@@ -30,14 +30,13 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_004291f0(CCharacter *
     bone_name = "Bip01 spine1";
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
                             (&this_ptr->model);
-    iVar5 = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,bone_name,iVar5);
-    iVar4 = this_ptr->gesture_motion_index * 0x118;
-    this_ptr->gesture_branch_root = iVar5;
-    pCVar3 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860
-                       ((CMotionController *)&this_ptr->model);
-    fVar1 = 1.0 / (*(float *)(pCVar3 + iVar4 + 0x1c48) * _DAT_005cd06a);
+    iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,bone_name,iVar5);
+    iVar5 = this_ptr->gesture_motion_index;
+    this_ptr->gesture_branch_root = iVar3;
+    pCVar4 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860(&(this_ptr->model).base);
+    fVar1 = 1.0 / (pCVar4->motions[iVar5].fps * _DAT_005cd06a);
     fVar2 = this_ptr->gesture_frame * fVar1;
-    fVar1 = ((float)*(int *)(pCVar3 + iVar4 + 0x1c8c) - this_ptr->gesture_frame) * fVar1;
+    fVar1 = ((float)pCVar4->motions[iVar5].frame_count - this_ptr->gesture_frame) * fVar1;
     local_c = 0.85;
     if (fVar2 < _DAT_005cd06e) {
       local_c = fVar2;

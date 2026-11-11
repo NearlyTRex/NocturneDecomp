@@ -2,14 +2,26 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CParticle_vtable;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CParticle
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// setup 00510e00 and process FUN_00510ef0 identical to bw1's (stores +0x18/+0x1c=-32/+0x20, +0x24=5.0, +0x38; process param_1[6..8], [9], [10], [0xb..0xd], [0xe], vtable [0xf]+0xc).
+// Ghidra size: 0x40 (64 bytes)
 #pragma pack(push, 1)
 typedef struct CParticle {
+    CVector3f position; // 0x0, as bw1
+    CVector3f velocity; // 0xc, as bw1
+    CVector3f acceleration; // 0x18, as bw1
+    float lifetime_remaining; // 0x24, as bw1
+    int is_in_solid; // 0x28, as bw1
+    CVector3f previous_position; // 0x2c, as bw1
+    int was_in_solid; // 0x38, as bw1
+    struct CParticle_vtable* vtable; // 0x3c, as bw1
 } CParticle;
 #pragma pack(pop)
 

@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 155,
+    "complexity_score": 92,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 65,
-    "suspect_count": 7,
+    "pseudocode_lines": 62,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "stack_alignment_array",
-      "unnamed_field",
-      "unresolved_funcptr"
+      "stack_alignment_array"
     ],
-    "total_lines": 174
+    "total_lines": 171
   },
   "cross_references": [
     {
@@ -251,58 +249,18 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 10,
-      "match": "auStackY_1030",
+      "match": "afStackY_1030",
       "severity": "moderate",
-      "text": "uint auStackY_1030 [999];",
+      "text": "float afStackY_1030 [999];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_00546a90(&this_ptr->field_0x2b4,bone_index);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 45,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x34))(this_ptr,\"icepick-punch?.wav\");",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x34))(this_ptr,\"icepick-punch?.wav\");",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 45,
       "match": "(CIcePick **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "pCVar1 = *(CIcePick **)((int)g_CDemonSetPtr->characters + iVar3);",
+      "text": "this_ptr_00 = *(CIcePick **)((int)g_CDemonSetPtr->characters + iVar2);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 61,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)&pCVar1->field_0x2b0 + 0x108))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 61,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "iVar2 = (**(code **)(*(int *)&pCVar1->field_0x2b0 + 0x108))",
-      "type": "unnamed_field"
     }
   ]
 }

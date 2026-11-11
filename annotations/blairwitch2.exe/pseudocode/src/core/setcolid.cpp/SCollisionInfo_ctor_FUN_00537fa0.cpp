@@ -9,8 +9,8 @@
 SCollisionInfo * __cdecl core_setcolid_cpp_SCollisionInfo_ctor_FUN_00537fa0(SCollisionInfo *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x20 = 0;
-  *(uint *)&this_ptr->field_0x24 = 0;
-  *(uint *)this_ptr = 0;
+  this_ptr->deformable_model = (CDeformableModelInstance *)0x0;
+  this_ptr->keyframed_model = (CKeyFramedModelInstance *)0x0;
+  (this_ptr->ray_query).ray_type = 0;
   return this_ptr;
 }

@@ -2,15 +2,44 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CCharacter;
+struct CDemonActor_vtable;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SChainVertex.h"
 
 // Structure: CChain
-// Stub: size from Watcom RTTI, fields not yet recovered
+// Written whole: no base fits. CChain in bw2 was built against nocedit's 344-byte CDemonActor: ctor 005b4720 calls CDemonActor_ctor, then stores g_CChainVTable (0x601284) at +0x154 (bw2 CDemonActor keeps its vtable at +0x2b0) and initialises vertex_count +0x158=10, chain_length +0x15c=5.0, weight +0x55c, friction +0x560, gravity +0x564, dampen +0x568, target +0x164, target_bone +0x168, texture_size +0x16c, texture_handle +0x170, texture_name +0x174, pull_wav_name +0x1b4, move_wav_name +0x21c, is_visible +0x574, ground_collide_flag +0x288, and __arrinit(+0x28c, 20 SChainVertex); it also writes +0xf8/+0xfc at nocedit's offsets. archive 005b5e10: vertexCount +0x158, chainLength +0x15c, target +0x164, targetBone +0x168, weight +0x55c, dampen +0x568, friction +0x560, gravity +0x564, pullWavName +0x1b4, moveWavName +0x21c, textureName +0x174, groundCollideFlag +0x288. RTTI 1400 (CDemonActor 692), so a 692-byte base cannot be embedded; base is left out.
 // Ghidra size: 0x578 (1400 bytes)
 #pragma pack(push, 1)
 typedef struct CChain {
-    char field_0[1400]; // 0x0
+    char field_0[340]; // 0x0
+    struct CDemonActor_vtable* vtable; // 0x154, ctor 005b4720 stores g_CChainVTable here
+    int vertex_count; // 0x158, nocedit offset; ctor 005b4720 / archive 005b5e10
+    float chain_length; // 0x15c, nocedit offset; ctor 005b4720 / archive 005b5e10
+    float segment_length; // 0x160, nocedit offset; ctor 005b4720 / archive 005b5e10
+    struct CCharacter* target; // 0x164, nocedit offset; ctor 005b4720 / archive 005b5e10
+    int target_bone; // 0x168, nocedit offset; ctor 005b4720 / archive 005b5e10
+    int texture_size; // 0x16c, nocedit offset; ctor 005b4720 / archive 005b5e10
+    int texture_handle; // 0x170, nocedit offset; ctor 005b4720 / archive 005b5e10
+    char texture_name[64]; // 0x174, nocedit offset; ctor 005b4720 / archive 005b5e10
+    char pull_wav_name[100]; // 0x1b4, nocedit offset; ctor 005b4720 / archive 005b5e10
+    uint pull_wav_handle; // 0x218, nocedit offset; ctor 005b4720 / archive 005b5e10
+    char move_wav_name[100]; // 0x21c, nocedit offset; ctor 005b4720 / archive 005b5e10
+    uint move_wav_handle; // 0x280, nocedit offset; ctor 005b4720 / archive 005b5e10
+    float sound_cooldown; // 0x284, nocedit offset; ctor 005b4720 / archive 005b5e10
+    int ground_collide_flag; // 0x288, nocedit offset; ctor 005b4720 / archive 005b5e10
+    SChainVertex vertices[20]; // 0x28c, nocedit offset; ctor 005b4720 / archive 005b5e10
+    float weight; // 0x55c, nocedit offset; ctor 005b4720 / archive 005b5e10
+    float friction; // 0x560, nocedit offset; ctor 005b4720 / archive 005b5e10
+    float gravity; // 0x564, nocedit offset; ctor 005b4720 / archive 005b5e10
+    float dampen; // 0x568, nocedit offset; ctor 005b4720 / archive 005b5e10
+    float cached_distance; // 0x56c, nocedit offset; ctor 005b4720 / archive 005b5e10
+    float inv_delta_time; // 0x570, nocedit offset; ctor 005b4720 / archive 005b5e10
+    int is_visible; // 0x574, nocedit offset; ctor 005b4720 / archive 005b5e10
 } CChain;
 #pragma pack(pop)
 

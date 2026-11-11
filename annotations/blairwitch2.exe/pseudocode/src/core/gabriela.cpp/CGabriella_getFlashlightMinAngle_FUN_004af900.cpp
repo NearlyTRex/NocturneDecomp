@@ -12,7 +12,7 @@ float __cdecl core_gabriela_cpp_CGabriella_getFlashlightMinAngle_FUN_004af900(CG
   int iVar1;
   
   iVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                    (*(uint *)&this_ptr->field_0x2620,DAT_007bcc84);
+                    ((this_ptr->base).base.carry_hands[0].carry_actor,DAT_007bcc84);
   if ((iVar1 != 0) && ((*(int *)(iVar1 + 0x7d4) == 2 || (*(int *)(iVar1 + 0x7d4) == 3)))) {
     return -1.0471976;
   }

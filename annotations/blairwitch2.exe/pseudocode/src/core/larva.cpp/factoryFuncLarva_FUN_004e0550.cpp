@@ -11,7 +11,7 @@ void core_larva_cpp_factoryFuncLarva_FUN_004e0550(void)
 {
   CLarva *this_ptr;
   
-  this_ptr = (CLarva *)debugAllocTracked1(0x10b04);
+  this_ptr = (CLarva *)operator_new(0x10b04);
   if (this_ptr == (CLarva *)0x0) {
     return;
   }

@@ -46,7 +46,7 @@ section .text
     PUSH ESI                            ; 00462c99
     MOV EDI,dword ptr [0x00616494]      ; 00462c9a | g_CGamePtr
     LEA EAX,[EBX + 0x2514]              ; 00462ca0
-    MOV EDX,dword ptr [EDI + 0x18]      ; 00462ca6 | g_CGameInstance.field15_0x18
+    MOV EDX,dword ptr [EDI + 0x18]      ; 00462ca6 | g_CGameInstance.nudity_flag
     LEA ESI,[EBX + 0x2b4]               ; 00462ca9
     TEST EDX,EDX                        ; 00462caf
     JZ 0x00462f09                       ; 00462cb1

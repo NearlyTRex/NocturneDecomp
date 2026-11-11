@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 258,
-    "complexity_score": 136,
+    "complexity_score": 111,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 42,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 96,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 354
@@ -375,22 +374,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 88,
-      "match": "field_0x2260",
-      "severity": "mild",
-      "text": "(&(this_ptr->base).base.model.field_0x2260,\"smiley2.dfm\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 93,
-      "match": "field_0x2260",
-      "severity": "mild",
-      "text": "(&(this_ptr->base).base.model.field_0x2260,\"smiley3.dfm\");",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

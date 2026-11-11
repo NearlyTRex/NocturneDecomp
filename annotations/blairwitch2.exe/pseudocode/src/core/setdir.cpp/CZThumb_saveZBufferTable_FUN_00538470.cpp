@@ -31,7 +31,7 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00538470(CZThumb *this
   this_ptr->width = width;
   this_ptr->height = height;
   this_ptr->projection_scale = projection_scale;
-  pvVar2 = FUN_005b8580(this_ptr->width * this_ptr->height * 4);
+  pvVar2 = malloc(this_ptr->width * this_ptr->height * 4);
   this_ptr->zbuffer_data = pvVar2;
   if (pvVar2 == (void *)0x0) {
     _DAT_01d046a0 = "..\\core\\setdir.cpp";

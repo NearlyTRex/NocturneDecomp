@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   support_trstream.cpp_FUN_0057d320 at 0057d36b
-;   support_trstream.cpp_FUN_0057d390 at 0057d41d
-;   support_trstream.cpp_FUN_0057d450 at 0057d4c1
+;   support_trstream.cpp_CInStreamFile_openHandle_FUN_0057d450 at 0057d4c1
+;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390 at 0057d41d
+;   support_trstream.cpp_CInStreamFile_open_FUN_0057d320 at 0057d36b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_support_trstream_cpp_005ed551
@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   crt_unknown.c_FUN_005b8580
+;   crt_memory.c_malloc_FUN_005b8580
 ;   support_trstream.cpp_FUN_0057d240
 ;
 ; *****************************************************************************
@@ -35,8 +35,8 @@ section .text
     ADD ESP,0x4                         ; 0057d1e5
     ADD EAX,0x1f                        ; 0057d1e8
     PUSH EAX                            ; 0057d1eb
-    CALL crt_unknown.c_FUN_005b8580     ; 0057d1ec
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 0057d1ec
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     ADD ESP,0x4                         ; 0057d1f1
     MOV dword ptr [EBX + 0x14],EAX      ; 0057d1f4
     TEST EAX,EAX                        ; 0057d1f7

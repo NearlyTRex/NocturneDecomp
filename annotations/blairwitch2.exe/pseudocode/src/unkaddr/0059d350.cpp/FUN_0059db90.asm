@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[5]:
+;   core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10 at 0059ff1e
 ;   core_basicene.cpp_CBasicEnemy_checkVictim_FUN_0059f6b0 at 0059f729
 ;   core_basicene.cpp_CBasicEnemy_processChasingState_FUN_0059ef90 at 0059f08d
 ;   core_dog1.cpp_CDog_processChaseFoodState_FUN_005ac0c0 at 005ac1e4
-;   core_twigzomb.cpp_CTwigZombie_archive_FUN_0059fc10 at 0059ff1e
-;   unkafter_basicene.cpp_FUN_0059e3b0 at 0059e5a9
+;   unkafter_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0 at 0059e5a9
 ;
 ; *****************************************************************************
 

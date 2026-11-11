@@ -88,8 +88,8 @@ void core_fldnotes_cpp_FUN_004a5700(int param_1)
                   (local_220,(char *)0x0,(char *)0x0,local_120,(char *)0x0);
         _sprintf(local_520,&DAT_005d59e3);
         engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(pCVar6,local_520,0x5a,0x36);
-        *(uint *)(&SNotesSection_ARRAY_01cab9f4[0].field_0x148 + local_20) = 0x215;
-        *(int *)(&SNotesSection_ARRAY_01cab9f4[0].field_0x14c + local_20) = iVar1;
+        *(uint *)((int)SNotesSection_ARRAY_01cab9f4[0].entries + local_20 + -0xc) = 0x215;
+        *(int *)((int)SNotesSection_ARRAY_01cab9f4[0].entries + local_20 + -8) = iVar1;
         iVar5 = iVar5 + 1;
         pCVar6 = pCVar6 + 1;
         iVar1 = iVar1 + *(int *)((int)&CAlphaBitmap_ARRAY_01caf128[0].height + local_1c) + 10;
@@ -115,14 +115,14 @@ void core_fldnotes_cpp_FUN_004a5700(int param_1)
     DAT_00616010 = 0;
   }
   if (DAT_00616014 != 0) {
-    core_fldnotes_cpp_FUN_004a2890(&g_STextViewInstance,0x60,0x40,0x1eb,0x1b8);
+    core_fldnotes_cpp_STextView_setRect_FUN_004a2890(&g_STextViewInstance,0x60,0x40,0x1eb,0x1b8);
     iVar5 = 0;
-    core_fldnotes_cpp_FUN_004a27e0(&g_STextViewInstance);
+    core_fldnotes_cpp_STextView_reset_FUN_004a27e0(&g_STextViewInstance);
     DAT_01cab7f0 = 0;
     if (0 < _DAT_01cab9f0) {
       pSVar4 = SNotesSection_ARRAY_01cab9f4;
       do {
-        iVar1 = core_fldnotes_cpp_FUN_004a3740(pSVar4,&g_STextViewInstance);
+        iVar1 = core_fldnotes_cpp_SNotesSection_layout_FUN_004a3740(pSVar4,0x1caf240);
         if (iVar1 == 0) goto LAB_004a57ae;
         iVar5 = iVar5 + 1;
         pSVar4 = pSVar4 + 1;
@@ -136,9 +136,8 @@ LAB_004a57ae:
   if (0 < _DAT_01cab9f0) {
     pSVar4 = SNotesSection_ARRAY_01cab9f4;
     do {
-      if ((*(int *)&pSVar4->field_0x140 <= _DAT_01caf110) &&
-         (_DAT_01caf110 < *(int *)&pSVar4->field_0x140 + *(int *)&pSVar4->field_0x144))
-      goto LAB_004a5802;
+      if ((pSVar4->first_page <= _DAT_01caf110) &&
+         (_DAT_01caf110 < pSVar4->first_page + pSVar4->page_count)) goto LAB_004a5802;
       iVar5 = iVar5 + 1;
       pSVar4 = pSVar4 + 1;
     } while (iVar5 < _DAT_01cab9f0);
@@ -153,12 +152,11 @@ LAB_004a5802:
     do {
       if (iVar1 == local_14) {
         engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900
-                  (pCVar6,*(int *)&pSVar4->field_0x148 + -2,*(int *)&pSVar4->field_0x14c + -2,0xffff
-                  );
+                  (pCVar6,pSVar4->tab_x + -2,pSVar4->tab_y + -2,0xffff);
       }
       else {
         engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040dab0
-                  (pCVar6,0x246,*(int *)&pSVar4->field_0x14c,0x246 - *(int *)&pSVar4->field_0x148,0,
+                  (pCVar6,0x246,pSVar4->tab_y,0x246 - pSVar4->tab_x,0,
                    CAlphaBitmap_ARRAY_01caf128[iVar1].width + -1,
                    CAlphaBitmap_ARRAY_01caf128[iVar1].height + -1,0xffff);
       }
@@ -168,7 +166,7 @@ LAB_004a5802:
     } while (iVar1 < _DAT_01cab9f0);
   }
   _DAT_01caf568 = 0;
-  core_fldnotes_cpp_FUN_004a3240(&g_STextViewInstance,_DAT_01caf110);
+  core_fldnotes_cpp_STextView_drawPage_FUN_004a3240(&g_STextViewInstance,_DAT_01caf110);
   if (g_CGamePtr->letterbox_mode != 0) {
     DAT_01caf4a0 = 0;
     DAT_00616040 = 0xffffffff;
@@ -185,9 +183,8 @@ LAB_004a5802:
   if (iVar5 != 0) {
     local_18 = 1;
   }
-  piVar2 = (int *)core_fldnotes_cpp_FUN_004a2730
-                            (_DAT_01caf110 * 0x144 + g_STextViewInstance._60_4_,_DAT_01c2a37c,
-                             _DAT_01c2a380);
+  piVar2 = core_fldnotes_cpp_STextPage_findResourceAt_FUN_004a2730
+                     (g_STextViewInstance.pages + _DAT_01caf110,_DAT_01c2a37c,_DAT_01c2a380);
   if ((piVar2 != (int *)0x0) &&
      (iVar5 = (**(code **)(piVar2[5] + 8))
                         (piVar2,0,_DAT_01c2a37c - *piVar2,_DAT_01c2a380 - piVar2[1]), iVar5 != 0)) {
@@ -197,7 +194,7 @@ LAB_004a5802:
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900
               (&CAlphaBitmap_01caf1f0,0x0000004A,0x000001AE,0xffff);
   }
-  if (_DAT_01caf110 < g_STextViewInstance._56_4_ + -2) {
+  if (_DAT_01caf110 < g_STextViewInstance.page_count + -2) {
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900
               (&CAlphaBitmap_01caf204,0x000001F4,0x000001AE,0xffff);
   }

@@ -65,8 +65,8 @@
 ;   core_game.cpp_CGame_updateDT_FUN_004b3010
 ;   core_menu.cpp_FUN_004eaf30
 ;   core_menu.cpp_FUN_004eb0e0
-;   core_moon.cpp_FUN_005024a0
-;   core_moon.cpp_FUN_00502510
+;   core_moon.cpp_CMoon_render_FUN_00502510
+;   core_moon.cpp_CMoon_update_FUN_005024a0
 ;   core_set.cpp_CDemonSet_setFlatColor_FUN_005344c0
 ;   core_sound.cpp_CSound_configure_FUN_0055ac50
 ;   crt_math.c_pow_FUN_005b9484
@@ -128,12 +128,12 @@ section .text
     MOV EDX,dword ptr [EAX + 0x284]     ; 004ed2ef | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP],EDX             ; 004ed2f5
     PUSH 0x1d05620                      ; 004ed2f8
-    CALL core_moon.cpp_FUN_005024a0     ; 004ed2fd
-        ;   XREF to: 005024a0 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_005024a0()
+    CALL core_moon.cpp_CMoon_update_FUN_005024a0 ; 004ed2fd
+        ;   XREF to: 005024a0 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_update_FUN_005024a0(CMoon * this_ptr, float param_2)
     ADD ESP,0x8                         ; 004ed302
     PUSH 0x1d05620                      ; 004ed305
-    CALL core_moon.cpp_FUN_00502510     ; 004ed30a
-        ;   XREF to: 00502510 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_00502510()
+    CALL core_moon.cpp_CMoon_render_FUN_00502510 ; 004ed30a
+        ;   XREF to: 00502510 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_render_FUN_00502510(CMoon * this_ptr)
     ADD ESP,0x4                         ; 004ed30f
     XOR ESI,ESI                         ; 004ed312
     MOV EAX,[0x0061b5a8]                ; 004ed314 | g_CDemonSetPtr

@@ -30,7 +30,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00488450(CEnemy *this_ptr,fl
   float fStack_48;
   CVector3f CStack_44;
   float fStack_38;
-  float *pfStack_34;
+  CLocation *pCStack_34;
   int iStack_30;
   float fStack_2c;
   int iStack_28;
@@ -44,7 +44,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00488450(CEnemy *this_ptr,fl
   fStack_60 = this_ptr->victim_height;
   pCVar1 = this_ptr->script_victim;
   if (pCVar1 == (CCharacter *)0x0) {
-    if (((*(int *)&g_CGamePtr->field_0x1f0 != 0) || (*(int *)&g_CGamePtr->field_0x24c == 0)) ||
+    if (((g_CGamePtr->freeze_enemies_enabled != 0) || (g_CGamePtr->allow_enemy_attack_flag == 0)) ||
        (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
                           (0x01C38BC0,"?Capture" + 1), iVar3 != 0)) {
       this_ptr->is_in_combat = 0;
@@ -60,7 +60,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00488450(CEnemy *this_ptr,fl
       fStack_2c = this_ptr->victim_search_radius * this_ptr->victim_search_radius;
       iStack_20 = 0;
       iStack_24 = 0;
-      pfStack_34 = (float *)&(this_ptr->base).base.field_0x20;
+      pCStack_34 = &(this_ptr->base).base.location;
       iStack_30 = 0;
       iStack_28 = 0;
       this_ptr->victim_search_timer = fStack_14;
@@ -71,16 +71,16 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00488450(CEnemy *this_ptr,fl
             (iVar6 = (**(code **)(*(int *)(iVar3 + 0x2b0) + 0x114))(iVar3), iVar6 == 0)) &&
            ((iVar6 = (**(code **)(*(int *)(iVar3 + 0x2b0) + 0x78))(iVar3), iVar6 == 0 &&
             (*(float *)(iVar3 + 0x2820) <= 0.0)))) {
-          fStack_5c = *(float *)(iVar3 + 0x20) - *pfStack_34;
-          fStack_58 = *(float *)(iVar3 + 0x24) - pfStack_34[1];
-          fStack_54 = *(float *)(iVar3 + 0x28) - pfStack_34[2];
+          fStack_5c = *(float *)(iVar3 + 0x20) - (pCStack_34->position).x;
+          fStack_58 = *(float *)(iVar3 + 0x24) - (pCStack_34->position).y;
+          fStack_54 = *(float *)(iVar3 + 0x28) - (pCStack_34->position).z;
           fStack_50 = fStack_5c;
           *(uint *)((int)&stack0xffffffb4 + (uint)bVar7 * -8) =
                *(uint *)((int)&stack0xffffffa8 + (uint)bVar7 * -8);
           *(uint *)((int)&stack0xffffffb8 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
                *(uint *)((int)&stack0xffffffac + (uint)bVar7 * -8 + (uint)bVar7 * -8);
           if (ABS(fStack_4c) <= fStack_60) {
-            if (*(int *)&(this_ptr->base).field_0x2814 == 0) {
+            if ((this_ptr->base).is_spectral == 0) {
               fStack_4c = fStack_4c * _DAT_005d2df5;
             }
             fStack_38 = fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c;
@@ -94,7 +94,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00488450(CEnemy *this_ptr,fl
         }
         iStack_30 = iStack_30 + 4;
       }
-      pCStack_18 = (CVector3f *)&(this_ptr->base).base.field_0x20;
+      pCStack_18 = &(this_ptr->base).base.location.position;
       pCVar1 = this_ptr->victim;
       this_ptr->victim = (CCharacter *)0x0;
       while( true ) {

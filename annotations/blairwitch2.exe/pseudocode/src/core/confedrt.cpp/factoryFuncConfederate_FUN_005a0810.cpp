@@ -11,7 +11,7 @@ void core_confedrt_cpp_factoryFuncConfederate_FUN_005a0810(void)
 {
   CConfederate *this_ptr;
   
-  this_ptr = (CConfederate *)debugAllocTracked1(0x11868);
+  this_ptr = (CConfederate *)operator_new(0x11868);
   if (this_ptr == (CConfederate *)0x0) {
     return;
   }

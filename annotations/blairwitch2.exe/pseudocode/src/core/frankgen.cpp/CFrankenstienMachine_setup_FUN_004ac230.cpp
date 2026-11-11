@@ -105,8 +105,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_setup_FUN_004ac230(CFrankens
   }
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&this_ptr->bed_model);
   if (this_ptr->course_filename[0] != '\0') {
-    core_course_cpp_CCourse_load_FUN_00438af0
-              ((CCourse *)&this_ptr->field_0x45c,this_ptr->course_filename);
+    core_course_cpp_CCourse_load_FUN_00438af0(&this_ptr->course,this_ptr->course_filename);
     core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004accb0(this_ptr);
     return;
   }

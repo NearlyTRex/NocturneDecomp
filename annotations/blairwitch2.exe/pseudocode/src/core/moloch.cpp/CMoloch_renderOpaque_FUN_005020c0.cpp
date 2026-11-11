@@ -23,11 +23,12 @@ int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_005020c0(CMoloch *this_ptr)
   bVar5 = 0;
   iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0046bc80(DAT_0060b280);
   if (iVar1 == 0) {
-    *(uint *)&this_ptr->field_0x2828 = 0;
+    (this_ptr->base).base.was_rendered_opaque = 0;
   }
-  if (*(int *)&this_ptr->field_0x2568 == 0) {
+  if ((this_ptr->base).base.render_active == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
-    (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x24))(this_ptr,0);
+    (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
+              ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
     puVar3 = auStack_34;
     puVar4 = auStack_1c;
     for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -37,14 +38,15 @@ int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_005020c0(CMoloch *this_ptr)
     }
     iVar1 = core_box_cpp_FUN_0041a840(auStack_1c);
     if (iVar1 != 0) {
-      *(uint *)&this_ptr->field_0x2828 = 1;
-      if (this_ptr->morphing == 0) {
+      iVar2 = this_ptr->morphing;
+      (this_ptr->base).base.was_rendered_opaque = 1;
+      if (iVar2 == 0) {
         core_charactr_cpp_CCharacter_renderCharacter_FUN_00424bd0((CCharacter *)this_ptr);
       }
       else {
         this_ptr_00 = &this_ptr->morph;
         core_morph_cpp_CMorph_updateModelFromDeformable_FUN_005b7150
-                  (this_ptr_00,0,(CDeformableModelInstance *)&this_ptr->field_0x2b4,0);
+                  (this_ptr_00,0,&(this_ptr->base).base.model,0);
         core_morph_cpp_CMorph_updateModelFromDeformable_FUN_005b7150
                   (this_ptr_00,1,&this_ptr->model,0);
         core_morph_cpp_CMorph_render_FUN_005b76a0(this_ptr_00,this_ptr->morph_timer / _DAT_005fa3d8)
@@ -53,9 +55,8 @@ int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_005020c0(CMoloch *this_ptr)
       if (_DAT_01d1cdc8 != 0) {
         iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
         if (iVar2 == 0) {
-          core_motion_cpp_FUN_005042e0
-                    ((CMotionController *)&this_ptr->field_0x2b4,(CDemonActor *)this_ptr);
-          (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x60))(this_ptr);
+          core_motion_cpp_FUN_005042e0(&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);
+          (*((this_ptr->base).base.base.vtable._ub)->renderTargetPoints)((CDemonActor *)this_ptr);
         }
       }
     }

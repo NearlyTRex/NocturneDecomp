@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 162,
+    "complexity_score": 150,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 47,
-    "suspect_count": 10,
+    "pseudocode_lines": 50,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
-      "unnamed_field"
+      "undefined_data"
     ],
-    "total_lines": 184
+    "total_lines": 187
   },
   "cross_references": [
     {
@@ -248,19 +247,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 21,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "(DAT_0060b280,(SMRGLTextureBasic *)&this_ptr->field_0x2ec);",
+      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00(DAT_0060b280,this_ptr->textures)",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x2ec",
-      "severity": "mild",
-      "text": "(DAT_0060b280,(SMRGLTextureBasic *)&this_ptr->field_0x2ec);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -283,32 +274,32 @@
       "line": 37,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "(DAT_0060b280,(SMRGLTextureBasic *)(&this_ptr->field_0x2ec + iVar1 * 0x18));",
+      "text": "(DAT_0060b280,this_ptr->textures + iVar1);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x2ec",
-      "severity": "mild",
-      "text": "(DAT_0060b280,(SMRGLTextureBasic *)(&this_ptr->field_0x2ec + iVar1 * 0x18));",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 43,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "(DAT_0060b280,(SMRGLPrimitivePoly *)(this_ptr->faces + local_14),render_flags);",
+      "text": "(DAT_0060b280,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 51,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(DAT_0060b280,1);",
       "type": "undefined_data"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 45,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.",
+      "type": "pointer_cast"
     }
   ]
 }

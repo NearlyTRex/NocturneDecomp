@@ -8,6 +8,10 @@
 #include "types/classes/CMirror.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SMRGLVertex.h"
 
 // Structure: CGlass
 // Ghidra size: 0xc9c (3228 bytes)
@@ -15,7 +19,7 @@
 typedef struct CGlass {
     CDemonActor base; // 0x0
     CVector3f glass_size; // 0x2b4
-    char field_704[24]; // 0x2c0
+    SMRGLTextureBasic glass_texture; // 0x2c0
     int opacity; // 0x2d8
     int shattered; // 0x2dc
     char break_event[100]; // 0x2e0
@@ -23,12 +27,12 @@ typedef struct CGlass {
     CMirror mirror; // 0x348
     char breakable_condition[100]; // 0x468
     int background_flag; // 0x4cc
-    char field_1232[24]; // 0x4d0
+    SMRGLTextureBasic broken_texture; // 0x4d0
     CVector3f broken_vertices[25]; // 0x4e8
     CVector3i render_vertices[25]; // 0x614
     int texture_u[25]; // 0x740
     int texture_v[25]; // 0x7a4
-    char field_2056[1152]; // 0x808
+    SMRGLPrimitiveQuad broken_quads[16]; // 0x808
     int grid_cols; // 0xc88
     int grid_rows; // 0xc8c
     int broken_vertex_count; // 0xc90

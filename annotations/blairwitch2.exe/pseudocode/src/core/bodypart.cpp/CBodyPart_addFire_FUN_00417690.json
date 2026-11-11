@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 241,
+    "complexity_score": 216,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 66,
-    "suspect_count": 14,
+    "suspect_count": 12,
     "suspect_types": [
+      "derived_field_index_pun",
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
-      "unrolled_memcpy",
       "unrolled_strcpy"
     ],
     "total_lines": 178
@@ -235,22 +234,6 @@
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0xfc",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).field_0xfc = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x2f4",
-      "severity": "mild",
-      "text": "pcVar7 = &this_ptr->field_0x2f4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(uint *)((int)this_ptr",
@@ -283,14 +266,6 @@
       "type": "unrolled_strcpy"
     },
     {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 25,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar5->x = position->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 31,
       "match": "(int)&NAME used in byte-offset arithmetic",
@@ -305,6 +280,13 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
       "type": "pointer_cast"
+    },
+    {
+      "description": "'(CLocation *)&pCVar5[3].z' walks 3 x sizeof(CVector3f) (0xc) + offsetof(z) (0x8) + 0x0 = 0x2c, which is exactly offsetof(CLaserBeam, color). Ghidra had no CLaserBeam type here and reached the field by index arithmetic; write it as ((CLaserBeam *)pCVar5)->color (\u00a7de-pun/\u00a712). Ambiguous: CParticle::previous_position, CSimpleParticleSystem::fade_duration, SPoseData::bone_rotations[2] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 35,
+      "severity": "moderate",
+      "text": "(((CLocation *)&pCVar5[3].z)->position).x = local_24;",
+      "type": "derived_field_index_pun"
     }
   ]
 }

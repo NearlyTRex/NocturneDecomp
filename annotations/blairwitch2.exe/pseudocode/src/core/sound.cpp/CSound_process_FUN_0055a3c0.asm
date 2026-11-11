@@ -284,7 +284,7 @@ section .text
         ;   XREF to: 0055a923 (CONDITIONAL_JUMP)  ; caseD_4
     MOV EDX,dword ptr [0x00616494]      ; 0055a669 | g_CGamePtr
     FLD float ptr [EDX + 0x284]         ; 0055a66f | g_CGameInstance.delta_time_float
-    MOV ECX,dword ptr [EDX + 0x25c]     ; 0055a675 | g_CGameInstance.field508_0x25c
+    MOV ECX,dword ptr [EDX + 0x25c]     ; 0055a675 | g_CGameInstance.goggles_active
     FSTP float ptr [ESP + 0x134]        ; 0055a67b
     TEST ECX,ECX                        ; 0055a682
     JNZ 0x0055a9ca                      ; 0055a684

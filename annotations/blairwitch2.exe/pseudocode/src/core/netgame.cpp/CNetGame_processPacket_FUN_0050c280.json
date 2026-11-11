@@ -2,27 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1075,
-    "complexity_score": 1023,
+    "complexity_score": 697,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 428,
-    "suspect_count": 54,
+    "pseudocode_lines": 417,
+    "suspect_count": 24,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
       "undefined_data",
-      "undefined_ptr_cast",
-      "undefined_type",
-      "unnamed_field",
       "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 1503
+    "total_lines": 1492
   },
   "cross_references": [
     {
@@ -645,344 +642,104 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved type",
-      "line": 9,
-      "match": "undefined3 uVar2",
-      "severity": "moderate",
-      "text": "undefined3 uVar2;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(int *)&local_20->field_0x24 = _DAT_01d34e38;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 78,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "((local_2c->player_announce).hero_number != *(EHeroType *)&local_20->field_0x14)) ||",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 79,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "((local_2c->player_announce).aim_mode != *(int *)&local_20->field_0x18)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 88,
-      "match": "field_0x1",
-      "severity": "mild",
-      "text": "pSVar8->field_0x1 = cVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 89,
-      "match": "field_0x2",
-      "severity": "mild",
-      "text": "pSVar8 = (SNetPlayer *)&pSVar8->field_0x2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 91,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(EHeroType *)&local_20->field_0x14 = (local_2c->player_announce).hero_number;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 92,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(int *)&local_20->field_0x18 = (local_2c->player_announce).aim_mode;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 124,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->players[iVar6].field_0x1c = (local_2c->simple).value;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 117,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
-      "text": "*(uint *)((int)this_ptr + (uint)bVar10 * -8 + iVar6 * 0x80 + 0x40) =",
+      "text": "*(uint *)((int)this_ptr + (uint)bVar10 * -8 + iVar5 * 0x80 + 0x40) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 118,
       "match": "(uint *)((int)local_2c",
       "severity": "moderate",
       "text": "*(uint *)((int)local_2c + (uint)bVar10 * -8 + 9);",
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 144,
-      "match": "field_0x1",
-      "severity": "mild",
-      "text": "local_20->field_0x1 = cVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 145,
-      "match": "field_0x2",
-      "severity": "mild",
-      "text": "local_20 = (SNetPlayer *)&local_20->field_0x2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Cast to undefined pointer type",
-      "line": 148,
-      "match": "(undefined3 *)",
-      "severity": "moderate",
-      "text": "uVar2 = *(undefined3 *)((int)packet + 0x6a);",
-      "type": "undefined_ptr_cast"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 148,
-      "match": "(undefined3 *)((int)packet",
-      "severity": "moderate",
-      "text": "uVar2 = *(undefined3 *)((int)packet + 0x6a);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 149,
-      "match": "(SNetworkAddr *)((int)packet",
-      "severity": "moderate",
-      "text": "this_ptr->players[iVar6].field_0x1c = *(SNetworkAddr *)((int)packet + 0x69);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 149,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "this_ptr->players[iVar6].field_0x1c = *(SNetworkAddr *)((int)packet + 0x69);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Cast to undefined pointer type",
-      "line": 150,
-      "match": "(undefined3 *)",
-      "severity": "moderate",
-      "text": "*(undefined3 *)&this_ptr->players[iVar6].field_0x1d = uVar2;",
-      "type": "undefined_ptr_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 150,
-      "match": "field_0x1d",
-      "severity": "mild",
-      "text": "*(undefined3 *)&this_ptr->players[iVar6].field_0x1d = uVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 151,
+      "line": 141,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
-      "text": "*(uint *)((int)this_ptr + (uint)bVar10 * -8 + iVar6 * 0x80 + 0x40) =",
+      "text": "*(uint *)((int)this_ptr + (uint)bVar10 * -8 + iVar5 * 0x80 + 0x40) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 152,
+      "line": 142,
       "match": "(uint *)((int)packet",
       "severity": "moderate",
       "text": "*(uint *)((int)packet + (uint)bVar10 * -8 + 0x6d);",
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 180,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "if (0.0 <= *(float *)&local_20->field_0x28) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 181,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "local_f8 = (float)((packet->simple).value - *(int *)&local_20->field_0x30) *",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 200,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(float *)&local_20->field_0x28 = local_f4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 201,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "*(int *)&local_20->field_0x30 = _DAT_01d34e38;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 234,
+      "line": 224,
       "match": "DAT_01d51058",
       "severity": "mild",
-      "text": "while (*(int *)(&DAT_01d51058 + iVar6) == (packet->simple).value) {",
+      "text": "while (*(uint *)(&DAT_01d51058 + iVar5) == (packet->player_announce).addr.ip_address) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 235,
+      "line": 225,
       "match": "DAT_01d5105c",
       "severity": "mild",
-      "text": "(&DAT_01d5105c)[iVar6 + uVar3] = 1;",
+      "text": "(&DAT_01d5105c)[iVar5 + uVar2] = 1;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 253,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "local_67 = *(uint *)&this_ptr->players[this_ptr->local_player_index].field_0x3c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 268,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "(*(int *)&local_20->field_0x3c <= (packet->simple).value)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 269,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "*(int *)&local_20->field_0x3c = (packet->simple).value;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 279,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "if (*(int *)&local_20->field_0x40 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 280,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "local_18 = *(int *)&local_20->field_0x40 - (packet->simple).value;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 293,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "*(int *)&local_20->field_0x44 = (packet->player_state).ready_flag;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 301,
-      "match": "field_0x1",
-      "severity": "mild",
-      "text": "pSVar8->field_0x1 = cVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 302,
-      "match": "field_0x2",
-      "severity": "mild",
-      "text": "pSVar8 = (SNetPlayer *)&pSVar8->field_0x2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 330,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "(*(int *)&local_20->field_0x34 <= (packet->simple).value)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 331,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "*(int *)&local_20->field_0x34 = (packet->simple).value;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 349,
+      "line": 338,
       "match": "DAT_005e09d4",
       "severity": "mild",
       "text": "pcVar11 = &DAT_005e09d4;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 419,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "(*(int *)&local_20->field_0x48 < (packet->simple).value)) {",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 395,
+      "match": "(SPlayerInput *)((int)pSVar6",
+      "severity": "moderate",
+      "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 420,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "*(int *)&local_20->field_0x48 = (packet->simple).value;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 422,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "piVar9 = (int *)&local_20->field_0x4c;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 415,
+      "match": "(SPlayerInput *)((int)pSVar6",
+      "severity": "moderate",
+      "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Pointer value `local_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 126,
+      "line": 118,
       "match": "(int)local_2c",
       "severity": "moderate",
       "text": "*(uint *)((int)local_2c + (uint)bVar10 * -8 + 9);",
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `pSVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 395,
+      "match": "(int)pSVar6",
+      "severity": "moderate",
+      "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 415,
+      "match": "(int)pSVar6",
+      "severity": "moderate",
+      "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 100,
+      "line": 74,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -990,7 +747,31 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 111,
+      "line": 92,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 103,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 130,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 285,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -998,47 +779,23 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 404,
+      "line": 393,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 412,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 423,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar8->owner`). Replace `pSVar8->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 89,
-      "match": "pSVar8 = (T *)&pSVar8->FIELD",
-      "severity": "moderate",
-      "text": "pSVar8 = (SNetPlayer *)&pSVar8->field_0x2;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_20` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_20->owner`). Replace `local_20->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 145,
-      "match": "local_20 = (T *)&local_20->FIELD",
-      "severity": "moderate",
-      "text": "local_20 = (SNetPlayer *)&local_20->field_0x2;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar8->owner`). Replace `pSVar8->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 302,
-      "match": "pSVar8 = (T *)&pSVar8->FIELD",
-      "severity": "moderate",
-      "text": "pSVar8 = (SNetPlayer *)&pSVar8->field_0x2;",
-      "type": "shadow_pointer_walk"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `local_1c` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `local_1c->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 409,
+      "line": 398,
       "match": "local_1c = (T *)((local_1c->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "local_1c = (UNetPacket *)((local_1c->server_accept).mission_name + 0x1b);",

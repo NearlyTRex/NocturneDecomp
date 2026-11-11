@@ -14,9 +14,9 @@ void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00420000(CBugs *this_ptr
 {
   CCharacter *pCVar1;
   float fVar2;
+  CLocation *pCVar3;
   CPathMap *this_ptr_00;
-  SBug *pSVar3;
-  float *pfVar4;
+  SBug *pSVar4;
   float *pfVar5;
   int iVar6;
   byte bVar7;
@@ -46,7 +46,7 @@ void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00420000(CBugs *this_ptr
   float fStack_30;
   float afStack_2c [4];
   float fStack_1c;
-  float *pfStack_18;
+  CLocation *pCStack_18;
   float fStack_14;
   
   bVar7 = 0;
@@ -54,11 +54,10 @@ void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00420000(CBugs *this_ptr
   if ((this_ptr->allow_swarm != 0) &&
      (pCVar1 = (this_ptr->base).victim, pCVar1 != (CCharacter *)0x0)) {
     afStack_80[2] =
-         *(float *)&(this_ptr->base).base.base.field_0x20 - *(float *)&(pCVar1->base).field_0x20;
+         (this_ptr->base).base.base.location.position.x - (pCVar1->base).location.position.x;
     afStack_80[3] =
-         *(float *)&(this_ptr->base).base.base.field_0x24 - *(float *)&(pCVar1->base).field_0x24;
-    fStack_70 = *(float *)&(this_ptr->base).base.base.field_0x28 -
-                *(float *)&(pCVar1->base).field_0x28;
+         (this_ptr->base).base.base.location.position.y - (pCVar1->base).location.position.y;
+    fStack_70 = (this_ptr->base).base.base.location.position.z - (pCVar1->base).location.position.z;
     fStack_9c = afStack_80[2];
     afStack_bc[(uint)bVar7 * -2 + 9] = afStack_80[(uint)bVar7 * -2 + 3];
     afStack_bc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10] =
@@ -79,11 +78,11 @@ void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00420000(CBugs *this_ptr
     this_ptr_00 = (*((pCVar1->base).vtable._ub)->getPathMap)(&pCVar1->base);
     if (this_ptr_00 == (CPathMap *)0x0) {
       this_ptr_00 = core_path_cpp_getPathMap_FUN_00513ea0
-                              ((CLocation *)&(((this_ptr->base).victim)->base).field_0x20);
+                              (&(((this_ptr->base).victim)->base).location);
     }
-    pfStack_18 = (float *)&(this_ptr->base).base.base.field_0x20;
+    pCStack_18 = &(this_ptr->base).base.base.location;
     iVar6 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00513650
-                      (this_ptr_00,(CVector3f *)pfStack_18,&CStack_90,
+                      (this_ptr_00,&pCStack_18->position,&CStack_90,
                        (this_ptr->base).base.base.direction_hint);
     if (iVar6 != 0) {
       core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(&CStack_e8,&CStack_90);
@@ -97,25 +96,25 @@ void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00420000(CBugs *this_ptr
       *(float *)((int)&CStack_3c + (uint)bVar7 * -8 + 4) = afStack_bc[(uint)bVar7 * -2 + 3];
       *(float *)((int)&CStack_3c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
            afStack_bc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
-      pfVar4 = (float *)((int)this_ptr + (uint)bVar7 * -8 + 0x24);
-      afStack_5c[2] = *(float *)&(this_ptr->base).base.base.field_0x20;
-      afStack_5c[(uint)bVar7 * -2 + 3] = *pfVar4;
+      pfVar5 = (float *)((int)this_ptr + (uint)bVar7 * -8 + 0x24);
+      afStack_5c[2] = (this_ptr->base).base.base.location.position.x;
+      afStack_5c[(uint)bVar7 * -2 + 3] = *pfVar5;
       this_ptr_01 = this_ptr;
-      afStack_5c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] = pfVar4[(uint)bVar7 * -2 + 1];
+      afStack_5c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] = pfVar5[(uint)bVar7 * -2 + 1];
       core_charactr_cpp_FUN_00423a60((CCharacter *)this_ptr_01,velocity);
-      pfVar4 = pfStack_18;
+      pCVar3 = pCStack_18;
       fVar2 = afStack_5c[2];
       pfVar5 = (float *)((int)this_ptr + (uint)bVar7 * -8 + 0x24);
-      fStack_48 = *(float *)&(this_ptr->base).base.base.field_0x20;
+      fStack_48 = (this_ptr->base).base.base.location.position.x;
       afStack_5c[(uint)bVar7 * -2 + 6] = *pfVar5;
       afStack_5c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] = pfVar5[(uint)bVar7 * -2 + 1];
-      *pfVar4 = fVar2;
-      pfVar4[1] = afStack_5c[3];
-      pfVar4[2] = fStack_4c;
-      fStack_c0 = fStack_48 - *pfVar4;
-      afStack_bc[0] = fStack_44 - pfVar4[1];
-      afStack_bc[1] = fStack_40 - pfVar4[2];
-      fStack_30 = fStack_48 - *pfVar4;
+      (pCVar3->position).x = fVar2;
+      (pCVar3->position).y = afStack_5c[3];
+      (pCVar3->position).z = fStack_4c;
+      fStack_c0 = fStack_48 - (pCVar3->position).x;
+      afStack_bc[0] = fStack_44 - (pCVar3->position).y;
+      afStack_bc[1] = fStack_40 - (pCVar3->position).z;
+      fStack_30 = fStack_c0;
       afStack_2c[(uint)bVar7 * -2] = afStack_bc[(uint)bVar7 * -2];
       afStack_2c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
            afStack_bc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
@@ -146,11 +145,11 @@ void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00420000(CBugs *this_ptr
 LAB_004200df:
   iVar6 = 0;
   if (0 < this_ptr->count) {
-    pSVar3 = this_ptr->bugs;
+    pSVar4 = this_ptr->bugs;
     do {
       iVar6 = iVar6 + 1;
-      core_bugs_cpp_FUN_00420840(this_ptr,pSVar3,delta_time,0);
-      pSVar3 = pSVar3 + 1;
+      core_bugs_cpp_FUN_00420840(this_ptr,pSVar4,delta_time,0);
+      pSVar4 = pSVar4 + 1;
     } while (iVar6 < this_ptr->count);
   }
   core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00421a00(this_ptr);

@@ -17,16 +17,16 @@ float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004dcfb0(C
   fStack_20 = 1.0 / max_charge;
   iVar2 = 0;
   pCVar3 = this_ptr;
-  if (0 < *(int *)(this_ptr + 0x10)) {
+  if (0 < this_ptr->item_count) {
     do {
       iVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                        (*(uint *)(pCVar3 + 0x14),g_CBatteryClassInfo.name_hash);
+                        (pCVar3->items[0],g_CBatteryClassInfo.name_hash);
       if (iVar1 != 0) {
         fStack_20 = 1.0 / *(float *)(iVar1 + 0x434) + fStack_20;
       }
       iVar2 = iVar2 + 1;
-      pCVar3 = pCVar3 + 4;
-    } while (iVar2 < *(int *)(this_ptr + 0x10));
+      pCVar3 = (CInventory *)&pCVar3->owner;
+    } while (iVar2 < this_ptr->item_count);
   }
   return 1.0 / fStack_20;
 }

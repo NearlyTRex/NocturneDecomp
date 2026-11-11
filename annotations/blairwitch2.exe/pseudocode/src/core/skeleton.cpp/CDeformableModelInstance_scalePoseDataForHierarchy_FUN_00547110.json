@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 70,
+    "complexity_score": 36,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 20,
-    "suspect_count": 4,
+    "pseudocode_lines": 21,
+    "suspect_count": 1,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "unnamed_field"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 63
+    "total_lines": 64
   },
   "cross_references": [
     {
@@ -129,35 +128,11 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0xcf0",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0xcf0 = *(float *)&this_ptr->field_0xcf0 * scale_factor;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0xcf0",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0xcf0 = *(float *)&this_ptr->field_0xcf0 * scale_factor;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "this_ptr = (CDeformableModelInstance *)&this_ptr->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&this_ptr->owner`). Replace `this_ptr->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 19,
-      "match": "this_ptr = (T *)&this_ptr->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `this_ptr->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 20,
+      "match": "this_ptr = (T *)&(this_ptr->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "this_ptr = (CDeformableModelInstance *)&this_ptr->field_0x4;",
+      "text": "this_ptr = (CDeformableModelInstance *)&(this_ptr->base).current_motion_index;",
       "type": "shadow_pointer_walk"
     }
   ]

@@ -13,18 +13,18 @@ int __cdecl core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100(CDefo
 {
   int iVar1;
   int iVar2;
-  char *str2;
+  SPart *str2;
   
   iVar2 = 0;
   if (0 < this_ptr->num_parts) {
-    str2 = &this_ptr->field_0xc04;
+    str2 = this_ptr->parts;
     do {
-      iVar1 = _stricmp(part_name,str2);
+      iVar1 = _stricmp(part_name,str2->part_name);
       if (iVar1 == 0) {
         return iVar2;
       }
       iVar2 = iVar2 + 1;
-      str2 = str2 + 0x60;
+      str2 = str2 + 1;
     } while (iVar2 < this_ptr->num_parts);
   }
   if (error_if_not_found == 0) {

@@ -23,15 +23,15 @@ void core_shadow_cpp_FUN_0053ea00(CEnemy *param_1,SDamageInfo *param_2)
   
   bVar3 = 0;
   core_shadow_cpp_FUN_0053e9a0(param_1,param_2);
-  sound_sndmain_cpp_killSfx_FUN_00551050(*(uint *)&param_1[1].base.base.field_0x24);
-  if (*(int *)(param_2 + 0x30) == 0x6c) {
+  sound_sndmain_cpp_killSfx_FUN_00551050((uint)param_1[1].base.base.location.position.y);
+  if (param_2->damage_type == DAMAGE_TYPE_BURN) {
     core_shadow_cpp_FUN_0053df40(param_1);
     fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(15.0,30.0);
-    *(float *)(param_2 + 4) = fStack_14 * (float)_DAT_005e6795 * *(float *)(param_2 + 4);
-    core_actor_cpp_FUN_00408d70(param_1,param_2 + 0x1c);
+    param_2->damage_amount = fStack_14 * (float)_DAT_005e6795 * param_2->damage_amount;
+    core_actor_cpp_FUN_00408d70(param_1,&param_2->impact_direction);
   }
-  pCStack_18 = (CMotionController *)&(param_1->base).model;
-  fVar1 = (param_1->base).hit_points - *(float *)(param_2 + 4);
+  pCStack_18 = &(param_1->base).model.base;
+  fVar1 = (param_1->base).hit_points - param_2->damage_amount;
   (param_1->base).hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (param_1->base).hit_points = 0.0;
@@ -63,15 +63,15 @@ void core_shadow_cpp_FUN_0053ea00(CEnemy *param_1,SDamageInfo *param_2)
         iVar2 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,2);
         if (iVar2 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                    ((CMotionController *)&(param_1->base).model,0x11,1);
+                    (&(param_1->base).model.base,0x11,1);
         }
         if (iVar2 == 1) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                    ((CMotionController *)&(param_1->base).model,0x12,1);
+                    (&(param_1->base).model.base,0x12,1);
         }
         if (iVar2 == 2) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                    ((CMotionController *)&(param_1->base).model,0x13,1);
+                    (&(param_1->base).model.base,0x13,1);
         }
       }
     }

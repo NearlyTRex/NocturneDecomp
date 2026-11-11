@@ -41,9 +41,9 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_0058e110(CWinFo
     pcVar10[1] = cVar1;
     pcVar10 = pcVar10 + 2;
   } while (cVar1 != '\0');
-  iVar3 = (**(code **)(*(int *)&this_ptr->field_0x6a44 + 8))(this_ptr,text_string);
+  iVar3 = (*((this_ptr->base).vtable)->getStringWidth)(this_ptr,text_string);
   this_ptr->cached_string_width = iVar3;
-  iVar3 = (**(code **)(*(int *)&this_ptr->field_0x6a44 + 0xc))(this_ptr,text_string);
+  iVar3 = (*((this_ptr->base).vtable)->getStringHeight)(this_ptr,text_string);
   this_ptr->cached_string_height = iVar3;
   uVar6 = 0xffffffff;
   pcVar9 = this_ptr->text_cache;

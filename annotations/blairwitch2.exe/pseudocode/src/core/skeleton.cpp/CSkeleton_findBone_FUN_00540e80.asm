@@ -10,6 +10,7 @@
 ;
 ; XREF[59]:
 ;   core_baron.cpp_CBaron_setup_FUN_0040f780 at 0040f7a8
+;   core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0 at 0059e710
 ;   core_batcreat.cpp_CBatCreature_setup_FUN_004116f0 at 00411722
 ;   core_batman.cpp_CBatman_setup_FUN_00412be0 at 00412c12
 ;   core_boneguy.cpp_CBoneGuy_setup_FUN_004184c0 at 004184e9
@@ -18,7 +19,6 @@
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429420 at 0042946c
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00 at 0042aa45
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042a7a0 at 0042a899
-;   core_charactr.cpp_CCharacter_setup_FUN_00422930 at 004229da
 ;   ... and 49 more
 ;
 ; Referenced Globals:

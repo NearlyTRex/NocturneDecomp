@@ -199,7 +199,7 @@ void __cdecl CDemonSet::renderEnvMapTriangles(CDemonSet *this_ptr,SInputFace *fa
 
 // Original: core_set.cpp_FUN_00533ece
 // Address: 00533ece
-void FUN_00533ece(CDemonSet *param_1,SMRGLHeaderPrimitive *param_2,int param_3,int param_4);
+void FUN_00533ece(CDemonSet *param_1,SMRGLPrimitiveTriangle *param_2,int param_3,int param_4);
 
 // Original: core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00533f40
 // Address: 00533f40

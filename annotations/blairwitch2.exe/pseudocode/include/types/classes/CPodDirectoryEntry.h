@@ -6,10 +6,15 @@
 #include "system/basetypes.h"
 
 // Structure: CPodDirectoryEntry
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// nocedit's layout. CPodFile_populateFileInfo (bw1 0053bf40) indexes directory_entries with stride 20 (i*5*4) and reads offset +8, size +4, timestamp +0xc; it, CPod_getNextSearchResult and CPodFile_findFileIndex are instruction-identical to nocedit in all three builds. bw1 mountFromFile (FUN_0053b250) stores the checksum at +0x10 (0053b60e, zeroes it 0053bd5a) and verifyChecksum (FUN_0053bfbe) reads it.
+// Ghidra size: 0x14 (20 bytes)
 #pragma pack(push, 1)
 typedef struct CPodDirectoryEntry {
+    char* name; // 0x0
+    uint size; // 0x4
+    uint offset; // 0x8
+    uint timestamp; // 0xc
+    uint checksum; // 0x10
 } CPodDirectoryEntry;
 #pragma pack(pop)
 

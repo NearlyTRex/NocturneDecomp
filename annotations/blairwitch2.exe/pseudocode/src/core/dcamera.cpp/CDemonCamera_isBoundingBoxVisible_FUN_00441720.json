@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 309,
+    "complexity_score": 324,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 16,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 189,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data",
       "warning_overlapping_globals"
     ],
@@ -810,7 +811,7 @@
       "line": 101,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0xea480),&local_e8);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[0x4e18].projected_vertex,&local_e8);",
       "type": "undefined_data"
     },
     {
@@ -818,7 +819,7 @@
       "line": 112,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0xea4b0),&local_d0);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[0x4e19].projected_vertex,&local_d0);",
       "type": "undefined_data"
     },
     {
@@ -826,7 +827,7 @@
       "line": 123,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0xea4e0),&local_f4);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[0x4e1a].projected_vertex,&local_f4);",
       "type": "undefined_data"
     },
     {
@@ -834,7 +835,7 @@
       "line": 134,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0xea510),&local_10c);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[0x4e1b].projected_vertex,&local_10c);",
       "type": "undefined_data"
     },
     {
@@ -842,7 +843,7 @@
       "line": 145,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0xea540),&local_130);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[0x4e1c].projected_vertex,&local_130);",
       "type": "undefined_data"
     },
     {
@@ -850,7 +851,7 @@
       "line": 156,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0xea570),&local_ac);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[0x4e1d].projected_vertex,&local_ac);",
       "type": "undefined_data"
     },
     {
@@ -858,7 +859,7 @@
       "line": 167,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0xea5a0),&local_7c);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[0x4e1e].projected_vertex,&local_7c);",
       "type": "undefined_data"
     },
     {
@@ -866,16 +867,24 @@
       "line": 178,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0xea5d0),&local_b8);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[19999].projected_vertex,&local_b8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 184,
+      "line": 182,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "uVar3 = uVar3 & *(uint *)(DAT_0060b280->vertex_buffer_ptr + iVar1);",
+      "text": "puVar1 = (uint *)((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).screen_x + iVar2);",
       "type": "undefined_data"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 182,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).screen_x + iVar2);",
+      "type": "pointer_cast"
     }
   ]
 }

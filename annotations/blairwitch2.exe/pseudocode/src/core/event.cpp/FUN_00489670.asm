@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_event_cpp_FUN_00489670(CEventList *param_1,CEventList *param_2)
+; int core_event_cpp_FUN_00489670(CEventList *param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x29bc]:8  local_29bc
@@ -1157,8 +1157,8 @@ section .text
     PUSH EAX                            ; 00489e0f
     MOV EBX,dword ptr [0x00616044]      ; 00489e10 | g_CFieldNotesPtr
     PUSH EBX                            ; 00489e16 | g_CFieldNotesInstance
-    CALL core_fldnotes.cpp_FUN_004a5310 ; 00489e17
-        ;   XREF to: 004a5310 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a5310()
+    CALL core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004a5310 ; 00489e17
+        ;   XREF to: 004a5310 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004a5310(CFieldNotes * this_ptr, char * param_2)
     ADD ESP,0x8                         ; 00489e1c
     JMP 0x00489af6                      ; 00489e1f
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -1692,8 +1692,8 @@ section .text
     PUSH EAX                            ; 0048a323
     MOV EBX,dword ptr [0x00616044]      ; 0048a324 | g_CFieldNotesPtr
     PUSH EBX                            ; 0048a32a | g_CFieldNotesInstance
-    CALL core_fldnotes.cpp_FUN_004a55b0 ; 0048a32b
-        ;   XREF to: 004a55b0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a55b0()
+    CALL core_fldnotes.cpp_CFieldNotes_completeTask_FUN_004a55b0 ; 0048a32b
+        ;   XREF to: 004a55b0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_completeTask_FUN_004a55b0(CFieldNotes * this_ptr, char * param_2)
     ADD ESP,0x8                         ; 0048a330
     JMP 0x00489af6                      ; 0048a333
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -2457,7 +2457,7 @@ section .text
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
     MOV ECX,dword ptr [0x00616044]      ; 0048aa6c | g_CFieldNotesPtr
     ADD ESP,0x8                         ; 0048aa72
-    MOV dword ptr [ECX + 0x40],EAX      ; 0048aa75 | g_CFieldNotesInstance.field64_0x40
+    MOV dword ptr [ECX + 0x40],EAX      ; 0048aa75 | g_CFieldNotesInstance.is_displayed
     JMP 0x00489af6                      ; 0048aa78
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6
     LEA EAX,[EBP + 0xffffe59e]          ; 0048aa7d
@@ -2920,8 +2920,8 @@ section .text
     PUSH EAX                            ; 0048aeac
     MOV EDI,dword ptr [0x00616044]      ; 0048aead | g_CFieldNotesPtr
     PUSH EDI                            ; 0048aeb3 | g_CFieldNotesInstance
-    CALL core_fldnotes.cpp_FUN_004a5310 ; 0048aeb4
-        ;   XREF to: 004a5310 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a5310()
+    CALL core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004a5310 ; 0048aeb4
+        ;   XREF to: 004a5310 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004a5310(CFieldNotes * this_ptr, char * param_2)
     ADD ESP,0x8                         ; 0048aeb9
     JMP 0x00489af6                      ; 0048aebc
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -7872,8 +7872,8 @@ section .text
     PUSH EAX                            ; 0048dde5
     MOV EDX,dword ptr [0x00616044]      ; 0048dde6 | g_CFieldNotesPtr
     PUSH EDX                            ; 0048ddec | g_CFieldNotesInstance
-    CALL core_fldnotes.cpp_FUN_004a5490 ; 0048dded
-        ;   XREF to: 004a5490 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a5490()
+    CALL core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004a5490 ; 0048dded
+        ;   XREF to: 004a5490 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004a5490(CFieldNotes * this_ptr, char * param_2)
     ADD ESP,0x8                         ; 0048ddf2
     JMP 0x00489af6                      ; 0048ddf5
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6

@@ -29,11 +29,11 @@ void __cdecl core_script_cpp_CScript_loadState_FUN_0052a0d0(CScript *this_ptr,_F
   _fscanf(file_handle,&DAT_005e508a,&g_CGamePtr->letterbox_mode);
   if (1 < local_18) {
     _fgets(local_118,0xff,file_handle);
-    _fscanf(file_handle,&DAT_005e508e,&g_CGamePtr->field_0x248);
+    _fscanf(file_handle,&DAT_005e508e,&g_CGamePtr->allow_damage_flag);
   }
   if (2 < local_18) {
     _fgets(local_118,0xff,file_handle);
-    _fscanf(file_handle,&DAT_005e5092,&g_CGamePtr->field_0x24c);
+    _fscanf(file_handle,&DAT_005e5092,&g_CGamePtr->allow_enemy_attack_flag);
   }
   _fgets(local_118,0xff,file_handle);
   _fscanf(file_handle,&DAT_005e5096,&DAT_01e65900);

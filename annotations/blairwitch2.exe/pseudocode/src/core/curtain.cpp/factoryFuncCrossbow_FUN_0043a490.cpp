@@ -11,7 +11,7 @@ void core_curtain_cpp_factoryFuncCrossbow_FUN_0043a490(void)
 {
   CCrossbow *this_ptr;
   
-  this_ptr = (CCrossbow *)debugAllocTracked1(0xad8);
+  this_ptr = (CCrossbow *)operator_new(0xad8);
   if (this_ptr == (CCrossbow *)0x0) {
     return;
   }

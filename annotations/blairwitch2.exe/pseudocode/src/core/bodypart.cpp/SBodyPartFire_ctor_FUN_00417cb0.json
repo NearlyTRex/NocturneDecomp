@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 36,
+    "complexity_score": 21,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 6,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
     "total_lines": 15
   },
@@ -84,14 +83,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "pCVar1 = core_flame_cpp_CFlame_ctor_FUN_0049f180((CFlame *)&this_ptr->field_0xc);",
-      "type": "unnamed_field"
-    },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 8,

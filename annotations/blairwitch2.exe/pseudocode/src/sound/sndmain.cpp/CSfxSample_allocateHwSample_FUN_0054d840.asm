@@ -21,7 +21,7 @@
 ;   undefined4 g_SfxSamples[1].taken
 ;   undefined4 g_SfxSamples[1].ref_count
 ;   undefined4 g_SfxSamples[1].buffer_id
-;   undefined4 g_SfxSamples[1].field8_0x15c
+;   undefined4 g_SfxSamples[1].is_user_sample
 ;   undefined4 DAT_02648e80
 ;
 ; Called Functions:
@@ -142,7 +142,7 @@ section .text
     CMP ESI,dword ptr [EDX + 0x2641a74] ; 0054d93c | g_SfxSamples[1].taken
     JNZ 0x0054d8f0                      ; 0054d942
         ;   XREF to: 0054d8f0 (CONDITIONAL_JUMP)  ; LAB_0054d8f0
-    CMP ESI,dword ptr [EDX + 0x2641a80] ; 0054d944 | g_SfxSamples[1].field8_0x15c
+    CMP ESI,dword ptr [EDX + 0x2641a80] ; 0054d944 | g_SfxSamples[1].is_user_sample
     JNZ 0x0054d8f0                      ; 0054d94a
         ;   XREF to: 0054d8f0 (CONDITIONAL_JUMP)  ; LAB_0054d8f0
     CMP ESI,dword ptr [ECX + 0x2641acc] ; 0054d94c

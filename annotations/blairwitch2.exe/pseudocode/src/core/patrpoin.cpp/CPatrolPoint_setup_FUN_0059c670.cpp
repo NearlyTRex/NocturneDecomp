@@ -9,6 +9,6 @@
 void __cdecl core_patrpoin_cpp_CPatrolPoint_setup_FUN_0059c670(CPatrolPoint *this_ptr)
 
 {
-  core_waypoint_cpp_CWayPoint_setup_FUN_00587dc0((CWayPoint *)this_ptr);
+  core_waypoint_cpp_CWayPoint_setup_FUN_00587dc0(&this_ptr->base);
   return;
 }

@@ -11,21 +11,19 @@
 void __cdecl core_conveyor_cpp_CConstruct_setup_FUN_00436be0(CConstruct *this_ptr)
 
 {
-  byte *this_ptr_00;
+  CDeformableModelInstance *this_ptr_00;
   CSkeleton *this_ptr_01;
   CDeformableModel *this_ptr_02;
   int iVar1;
   float10 fVar2;
   
-  core_enemy_cpp_CEnemy_setup_FUN_00487eb0((CEnemy *)this_ptr);
-  this_ptr_00 = &this_ptr->field_0x2b4;
-  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00547480
-            ((CDeformableModelInstance *)this_ptr_00);
-  fVar2 = (float10)*(float *)&this_ptr->field_0x25a8;
+  core_enemy_cpp_CEnemy_setup_FUN_00487eb0(&this_ptr->base);
+  this_ptr_00 = &(this_ptr->base).base.model;
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00547480(this_ptr_00);
+  fVar2 = (float10)(this_ptr->base).base.hit_points;
   round();
-  *(int *)&this_ptr->field_0x10c10 = (int)ROUND(fVar2);
-  this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
-                          ((CDeformableModelInstance *)this_ptr_00);
+  this_ptr->initial_hit_points = (int)ROUND(fVar2);
+  this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr_00);
   DAT_007c254c = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80
                            (this_ptr_01,"Bip01 Head",1);
   DAT_007c2560 = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80
@@ -52,41 +50,40 @@ void __cdecl core_conveyor_cpp_CConstruct_setup_FUN_00436be0(CConstruct *this_pt
                            (this_ptr_01,"Bip01 Spine",1);
   _DAT_007c257c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine1",1);
-  this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
-                          ((CDeformableModelInstance *)this_ptr_00);
+  this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,&DAT_005cdd19,1);
-  *(int *)&this_ptr->field_0x10b60 = iVar1;
+  this_ptr->part_indices[0] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"torso",1);
-  *(int *)&this_ptr->field_0x10b64 = iVar1;
+  this_ptr->part_indices[1] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"lforearm",1);
-  *(int *)&this_ptr->field_0x10b68 = iVar1;
+  this_ptr->part_indices[2] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,&DAT_005cdd2d,1);
-  *(int *)&this_ptr->field_0x10b6c = iVar1;
+  this_ptr->part_indices[3] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"rforearm",1);
-  *(int *)&this_ptr->field_0x10b70 = iVar1;
+  this_ptr->part_indices[4] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,&DAT_005cdd3b,1);
-  *(int *)&this_ptr->field_0x10b74 = iVar1;
+  this_ptr->part_indices[5] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"waist",1);
-  *(int *)&this_ptr->field_0x10b78 = iVar1;
+  this_ptr->part_indices[6] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"lthigh",1);
-  *(int *)&this_ptr->field_0x10b80 = iVar1;
+  this_ptr->part_indices[8] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"lshin",1);
-  *(int *)&this_ptr->field_0x10b84 = iVar1;
+  this_ptr->part_indices[9] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"rthigh",1);
-  *(int *)&this_ptr->field_0x10b88 = iVar1;
+  this_ptr->part_indices[10] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"rshin",1);
-  *(uint *)&this_ptr->field_0x10b5c = 0;
-  *(int *)&this_ptr->field_0x10b8c = iVar1;
+  this_ptr->sfx_handle = 0;
+  this_ptr->part_indices[0xb] = iVar1;
   return;
 }

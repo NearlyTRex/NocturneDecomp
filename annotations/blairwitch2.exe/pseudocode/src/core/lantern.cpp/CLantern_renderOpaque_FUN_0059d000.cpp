@@ -11,11 +11,11 @@ int __cdecl core_lantern_cpp_CLantern_renderOpaque_FUN_0059d000(CLantern *this_p
 {
   int iVar1;
   
-  if (*(float *)&this_ptr->field_0x700 <= 0.0) {
-    iVar1 = core_weapon_cpp_CWeapon_renderOpaque_FUN_00589b90((CWeapon *)this_ptr);
+  if (this_ptr->brightness <= 0.0) {
+    iVar1 = core_weapon_cpp_CWeapon_renderOpaque_FUN_00589b90(&this_ptr->base);
     return iVar1;
   }
   core_lantern_cpp_FUN_0059ced0(this_ptr);
-  iVar1 = core_weapon_cpp_CWeapon_renderOpaque_FUN_00589b90((CWeapon *)this_ptr);
+  iVar1 = core_weapon_cpp_CWeapon_renderOpaque_FUN_00589b90(&this_ptr->base);
   return iVar1;
 }

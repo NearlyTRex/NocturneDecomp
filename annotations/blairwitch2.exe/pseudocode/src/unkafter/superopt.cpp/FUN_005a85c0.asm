@@ -18,7 +18,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
-;   unkafter_superopt.cpp_FUN_005a8180 at 005a81fb
+;   unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180 at 005a81fb
 ;
 ; *****************************************************************************
 

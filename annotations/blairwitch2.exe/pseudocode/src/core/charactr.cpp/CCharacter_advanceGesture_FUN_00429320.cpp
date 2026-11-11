@@ -9,17 +9,14 @@
 void __cdecl core_charactr_cpp_CCharacter_advanceGesture_FUN_00429320(CCharacter *this_ptr,float delta_time)
 
 {
-  CMotionList *pCVar1;
-  int iVar2;
+  int iVar1;
+  CMotionList *pCVar2;
   
-  iVar2 = this_ptr->gesture_motion_index;
-  if (-1 < iVar2) {
-    pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860
-                       ((CMotionController *)&this_ptr->model);
-    iVar2 = iVar2 * 0x118;
-    this_ptr->gesture_frame =
-         delta_time * *(float *)(pCVar1 + iVar2 + 0x1c48) + this_ptr->gesture_frame;
-    if ((float)*(int *)(pCVar1 + iVar2 + 0x1c8c) <= this_ptr->gesture_frame) {
+  iVar1 = this_ptr->gesture_motion_index;
+  if (-1 < iVar1) {
+    pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860(&(this_ptr->model).base);
+    this_ptr->gesture_frame = delta_time * pCVar2->motions[iVar1].fps + this_ptr->gesture_frame;
+    if ((float)pCVar2->motions[iVar1].frame_count <= this_ptr->gesture_frame) {
       this_ptr->gesture_motion_index = -1;
       return;
     }

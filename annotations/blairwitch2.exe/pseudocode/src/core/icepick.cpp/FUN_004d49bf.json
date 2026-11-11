@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 346,
+    "complexity_score": 238,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 21,
-    "suspect_count": 29,
+    "pseudocode_lines": 23,
+    "suspect_count": 19,
     "suspect_types": [
       "concat_reconstruction",
       "nonstandard_int",
       "pointer_truncation",
       "register_param",
-      "unaffected_reg",
-      "unnamed_field",
-      "unrolled_memset"
+      "unaffected_reg"
     ],
-    "total_lines": 42
+    "total_lines": 44
   },
   "cross_references": [],
   "function": {
@@ -140,39 +138,15 @@
       "line": 16,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[0x11].field_0x868 = 0x3f800000;",
+      "text": "unaff_EBX[0x11].bone_transform.pose_data.bone_rotations[0x1b].y = 1.0;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x868",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[0x11].field_0x868 = 0x3f800000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
       "line": 17,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[0x11].field_0x864 = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x864",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[0x11].field_0x864 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[0x11].field_0x860 = *(uint *)&unaff_EBX[0x11].field_0x864;",
+      "text": "unaff_EBX[0x11].bone_transform.pose_data.bone_rotations[0x1b].x = 0.0;",
       "type": "unaffected_reg"
     },
     {
@@ -180,31 +154,7 @@
       "line": 18,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[0x11].field_0x860 = *(uint *)&unaff_EBX[0x11].field_0x864;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x860",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[0x11].field_0x860 = *(uint *)&unaff_EBX[0x11].field_0x864;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x864",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[0x11].field_0x860 = *(uint *)&unaff_EBX[0x11].field_0x864;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[0x11].field_0x85c = *(uint *)&unaff_EBX[0x11].field_0x860;",
+      "text": "unaff_EBX[0x11].bone_transform.pose_data.bone_rotations[0x1b].w =",
       "type": "unaffected_reg"
     },
     {
@@ -212,72 +162,48 @@
       "line": 19,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[0x11].field_0x85c = *(uint *)&unaff_EBX[0x11].field_0x860;",
+      "text": "unaff_EBX[0x11].bone_transform.pose_data.bone_rotations[0x1b].x;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x85c",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[0x11].field_0x85c = *(uint *)&unaff_EBX[0x11].field_0x860;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x860",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[0x11].field_0x85c = *(uint *)&unaff_EBX[0x11].field_0x860;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
       "line": 20,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[0x11].field_0x86c = 0;",
+      "text": "unaff_EBX[0x11].bone_transform.pose_data.bone_rotations[0x1a].z =",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x86c",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[0x11].field_0x86c = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
       "line": 21,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[0x11].field_0x870 = 0;",
+      "text": "unaff_EBX[0x11].bone_transform.pose_data.bone_rotations[0x1b].w;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x870",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[0x11].field_0x870 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
       "line": 22,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[1].field_0x2f4 = 0x43960000;",
+      "text": "unaff_EBX[0x11].bone_transform.pose_data.bone_rotations[0x1b].z = 0.0;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x2f4",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[1].field_0x2f4 = 0x43960000;",
-      "type": "unnamed_field"
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[0x11].bone_transform.pose_data.bone_rotations[0x1c].w = 0.0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[1].bone_origins[0x37].z = 300.0;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Pointer value `in_EAX` truncated by cast to `char` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -294,14 +220,6 @@
       "severity": "moderate",
       "text": "pcVar2 = (char *)CONCAT31((int3)((uint)in_EAX >> 8),cVar1);",
       "type": "pointer_truncation"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 17,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[0x11].field_0x864 = 0;",
-      "type": "unrolled_memset"
     },
     {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",

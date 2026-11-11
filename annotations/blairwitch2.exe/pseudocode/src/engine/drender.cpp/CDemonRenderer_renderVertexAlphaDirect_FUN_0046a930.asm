@@ -14,10 +14,10 @@
 ;   core_dlight.cpp_FUN_0044b020 at 0044b55b
 ;   core_dlight.cpp_FUN_0044c15e at 0044c7a1
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_0044d060 at 0044d520
+;   core_fire.cpp_CFirefly_render_FUN_00495150 at 0049528f
 ;   core_fire.cpp_CGunFlame_render_FUN_0049a500 at 0049aa7b
 ;   core_fire.cpp_CLaserBeam_render_FUN_00497800 at 00498024
 ;   core_fire.cpp_CPopcorn_render_FUN_0049b9d0 at 0049bd04
-;   core_fire.cpp_CRainDrop_render_FUN_0049bd40 at 0049c0ae
 ;   ... and 7 more
 ;
 ; Referenced Globals:

@@ -4,32 +4,28 @@ STRUCT QUALITY REPORT
 
 SUMMARY
 ----------------------------------------------------------------------
-Total structs:              476
-Fully clean structs:        475
-Structs with issues:        1
-Unreferenced structs:       34
+Total structs:              503
+Fully clean structs:        498
+Structs with issues:        5
+Unreferenced structs:       27
 
-Total fields:               2191
-Clean fields:               2190
-Unknown (unk*) fields:      0
-Padding (pad*) fields:      0
-Reserved (reserved*) fields:1
+Total fields:               3969
+Clean fields:               3964
+Unknown (unk*) fields:      1
+Padding (pad*) fields:      2
+Reserved (reserved*) fields:2
 Default (field_*) fields:   0
-Overall field quality:      100.0%
+Overall field quality:      99.9%
 
 ======================================================================
-UNREFERENCED STRUCTS (34)
+UNREFERENCED STRUCTS (27)
 ----------------------------------------------------------------------
 These structs are not referenced in any source or header file.
 
-  CActorProperty                            /Nocturne/Class/Game
-  CDemonActorTransformState                 /Nocturne/Class/Game
-  COrientation                              /Nocturne/Class/Game
   CP2D                                      /Nocturne/Class/Game
   CPickList_full_vtable                     /Nocturne/Class/Game
   SCPUInfo                                  /Nocturne/Struct/Game
   SCoronaLightEntry                         /Nocturne/Struct/Game
-  SDamageDecal                              /Nocturne/Struct/Game
   SDisplayListSortEntry                     /Nocturne/Struct/Game
   SEdge                                     /Nocturne/Struct/Game
   SFogGrid                                  /Nocturne/Struct/Game
@@ -42,7 +38,6 @@ These structs are not referenced in any source or header file.
   SMRGLPrimitiveTriangleIndex               /Nocturne/Struct/Game
   SMpegScalefactorBandData                  /Nocturne/Struct/Game
   SMpegStereoSubbandSamples                 /Nocturne/Struct/Game
-  SMpegSubbandSamples                       /Nocturne/Struct/Game
   SNetPacket_ChatMessage                    /Nocturne/Struct/Game
   SNetPacket_GameSettings                   /Nocturne/Struct/Game
   SNetPacket_PlayerAnnounce                 /Nocturne/Struct/Game
@@ -52,26 +47,39 @@ These structs are not referenced in any source or header file.
   SNetPacket_SimFrame                       /Nocturne/Struct/Game
   SNetPacket_Simple                         /Nocturne/Struct/Game
   SRecordingDeviceInfo                      /Nocturne/Struct/Game
-  SScriptXRef                               /Nocturne/Struct/Game
   SStereoBuffers                            /Nocturne/Struct/Game
   SStereoGains                              /Nocturne/Struct/Game
-  STriangleRef                              /Nocturne/Struct/Game
 
 ======================================================================
-STRUCTS WITH PROBLEMATIC FIELDS (1)
+STRUCTS WITH PROBLEMATIC FIELDS (5)
 ----------------------------------------------------------------------
+
+SMRGLSkyTexture                            66.7% complete  (2/3 fields clean)
+  Issues: 1 reserved
+  Fields: reserved
+
+SNetworkAddr                               66.7% complete  (2/3 fields clean)
+  Issues: 1 padding
+  Fields: padding
 
 CExternalRenderer                          90.0% complete  (9/10 fields clean)
   Issues: 1 reserved
   Fields: reserved
 
+SMpegFrameHeader                           91.7% complete  (11/12 fields clean)
+  Issues: 1 padding
+  Fields: padding
+
+STextView                                  94.7% complete  (18/19 fields clean)
+  Issues: 1 unknown
+  Fields: unknown_0x30
+
 ======================================================================
-FULLY CLEAN STRUCTS (475)
+FULLY CLEAN STRUCTS (498)
 ----------------------------------------------------------------------
   C3DSCamera
   C3DSLight
   CActorDestination
-  CActorProperty
   CAlphaBitmap
   CAmmo
   CAmmoBox
@@ -123,8 +131,8 @@ FULLY CLEAN STRUCTS (475)
   CClothList
   CCodec
   CColonel
+  CColor3f
   CColor3i
-  CComplexPolygon
   CConfederate
   CConfederateZombie
   CConfederateZombie_full_vtable
@@ -133,6 +141,7 @@ FULLY CLEAN STRUCTS (475)
   CConstruct
   CConveyor
   CCourse
+  CCourseFrame
   CCrate
   CCrater
   CCross
@@ -198,6 +207,7 @@ FULLY CLEAN STRUCTS (475)
   CFlashlight
   CFlies
   CFont
+  CFont_vtable
   CFootstep
   CFrankenstienMachine
   CGabriella
@@ -248,6 +258,7 @@ FULLY CLEAN STRUCTS (475)
   CKeyFramedModelInstance
   CKeyFramedModelPart
   CKeys
+  CKeys_vtable
   CLZWCompress
   CLZWDecompress
   CLZWDictionary
@@ -295,7 +306,6 @@ FULLY CLEAN STRUCTS (475)
   CNPC
   CNecklace
   CNetGame
-  COptimize
   COrientation
   COutStreamDebug
   COutStreamFile
@@ -305,6 +315,7 @@ FULLY CLEAN STRUCTS (475)
   CPackedBitmapSet
   CParticle
   CParticleBox
+  CParticle_vtable
   CPassenger
   CPathMap
   CPatrolPoint
@@ -389,6 +400,8 @@ FULLY CLEAN STRUCTS (475)
   CUnionZombie_vtable
   CVampireBoss
   CVector2d
+  CVector2i
+  CVector3d
   CVector3f
   CVector3i
   CVehicle
@@ -407,6 +420,7 @@ FULLY CLEAN STRUCTS (475)
   CZombie
   CZombieCow
   CZombieDog
+  SActorVarBlock
   SArmAimData
   SBitBuffer
   SBodyPartFire
@@ -426,24 +440,28 @@ FULLY CLEAN STRUCTS (475)
   SCollisionInfo
   SCollisionReturnInfo
   SCoronaLightEntry
+  SCounterBlock
   SDamageDecal
   SDamageInfo
   SDialogEntry
   SDisplayListSortEntry
   SDynamicLight
   SEdge
-  SExpandedEdge
+  SEventNameBlock
   SFace
   SFire
   SFly
   SFog
   SFogGrid
+  SFogGridPlane
+  SFollowFormation
   SFollowSlotStruct
   SFoundFileInfo
   SFreaky
   SGameSettingsPlayer
   SGem
   SGroundCell
+  SHardwareEdge
   SHuffmanTable
   SInputFace
   SInteractionInfo
@@ -458,6 +476,7 @@ FULLY CLEAN STRUCTS (475)
   SMRGLHeaderBasic
   SMRGLHeaderExtended
   SMRGLHeaderPrimitive
+  SMRGLKeyframe
   SMRGLKeyframeModel
   SMRGLModelBounds
   SMRGLPoint
@@ -466,17 +485,21 @@ FULLY CLEAN STRUCTS (475)
   SMRGLPrimitiveQuad
   SMRGLPrimitiveTriangle
   SMRGLPrimitiveTriangleIndex
-  SMRGLSkyTexture
   SMRGLTextureBasic
   SMRGLTextureModel
+  SMRGLVertex
   SMorphPart
   SMorphPoint
+  SMotion
+  SMotionSignal
   SMotionTransition
   SMovieFrame
+  SMpegAllocationEntry
   SMpegFrame
-  SMpegFrameHeader
   SMpegLayer3GranuleInfo
+  SMpegLayer3ScalefactorGranule
   SMpegLayer3SideInfo
+  SMpegLayer3SideInfoChannel
   SMpegScalefactorBandData
   SMpegStereoSubbandSamples
   SMpegSubbandAllocation
@@ -494,9 +517,12 @@ FULLY CLEAN STRUCTS (475)
   SNetPacket_SimFrame
   SNetPacket_Simple
   SNetPlayer
-  SNetworkAddr
+  SNotesEntry
   SNotesMap
+  SNotesMapAnnotation
+  SNotesMapSet
   SNotesSection
+  SPageResource
   SPageResourceBitmap
   SPageResourceMap
   SPageResourceText
@@ -513,6 +539,7 @@ FULLY CLEAN STRUCTS (475)
   SPoseData
   SProjectedVertex
   SProjectionParams
+  SRGBColor
   SRGBColorPalette
   SRayQueryState
   SRaytraceState
@@ -522,17 +549,22 @@ FULLY CLEAN STRUCTS (475)
   SRoom
   SScrape
   SScriptLine
-  SScriptXRef
+  SSfxBlock
+  SSfxEntry
   SSimFrame
   SSocket
   SSoftwareEdge
   SSoundDeviceInfo
+  SStateMachine
+  SStateRef
   SStereoBuffers
   SStereoGains
   SSurfacePlane
   SSwarmVertex
-  STextView
+  STextPage
+  STextureCacheEntry
   STextureSet
+  STimerBlock
   STrainNoise
   STrianglePackedIndices
   STriangleRef

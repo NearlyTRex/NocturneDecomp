@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 674,
+    "complexity_score": 639,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 59,
-    "suspect_count": 57,
+    "suspect_count": 54,
     "suspect_types": [
       "bit_int_float_compare",
       "param_count_too_few",
@@ -16,7 +16,6 @@
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -76,19 +75,19 @@
     },
     {
       "addr": "01fc0e28",
-      "name": "g_CDemonSetInstance.field95_0x15ac70",
+      "name": "g_CDemonSetInstance.active_fog.scroll.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fc0e2c",
-      "name": "g_CDemonSetInstance.field99_0x15ac74",
+      "name": "g_CDemonSetInstance.active_fog.scroll.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fc0e30",
-      "name": "g_CDemonSetInstance.field103_0x15ac78",
+      "name": "g_CDemonSetInstance.active_fog.scroll.z",
       "type": "undefined4",
       "value": null
     }
@@ -474,30 +473,6 @@
       "severity": "mild",
       "text": "param_1[3] = (float)param_1[3] + local_1c;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x15ac70",
-      "severity": "mild",
-      "text": "local_18 = *(float *)&pCVar2->field_0x15ac70 * local_c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x15ac74",
-      "severity": "mild",
-      "text": "local_14 = *(float *)&pCVar2->field_0x15ac74 * local_c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x15ac78",
-      "severity": "mild",
-      "text": "local_10 = *(float *)&pCVar2->field_0x15ac78 * local_c;",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",

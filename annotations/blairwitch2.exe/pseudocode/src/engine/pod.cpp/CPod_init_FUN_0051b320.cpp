@@ -22,6 +22,6 @@ void __cdecl engine_pod_cpp_CPod_init_FUN_0051b320(CPod *this_ptr)
   else if (this_ptr->pod_file_count != 0) {
     return;
   }
-  (**(code **)(this_ptr->vtable + 4))(this_ptr);
+  (*this_ptr->vtable->load)(this_ptr);
   return;
 }

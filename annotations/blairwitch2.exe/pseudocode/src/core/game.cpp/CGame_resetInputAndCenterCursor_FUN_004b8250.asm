@@ -21,7 +21,7 @@
 ;   CFieldNotes* g_CFieldNotesPtr = 01caf56c
 ;   CNetGame* g_CNetGamePtr = 01d34cb0
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 g_CFieldNotesInstance.field64_0x40
+;   undefined4 g_CFieldNotesInstance.is_displayed
 ;   undefined4 DAT_01cb7528
 ;   undefined4 DAT_01cb7780
 ;   undefined4 DAT_01cb7784
@@ -59,7 +59,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x15aeb8]  ; 004b8282 | g_CDemonSetInstance.selected_camera_index
     MOV [0x01cb7784],EAX                ; 004b8288 | DAT_01cb7784
     MOV EAX,[0x00616044]                ; 004b828d | g_CFieldNotesPtr
-    MOV ECX,dword ptr [EAX + 0x40]      ; 004b8292 | g_CFieldNotesInstance.field64_0x40
+    MOV ECX,dword ptr [EAX + 0x40]      ; 004b8292 | g_CFieldNotesInstance.is_displayed
     ADD ESP,0xc                         ; 004b8295
     TEST ECX,ECX                        ; 004b8298
     JNZ 0x004b82a5                      ; 004b829a

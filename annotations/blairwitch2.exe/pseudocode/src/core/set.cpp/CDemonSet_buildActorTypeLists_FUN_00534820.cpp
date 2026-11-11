@@ -28,7 +28,7 @@ void __cdecl core_set_cpp_CDemonSet_buildActorTypeLists_FUN_00534820(CDemonSet *
   if (0 < this_ptr->actor_count) {
     do {
       pCVar1 = pCVar8->actors[0];
-      if ((*(int *)&pCVar1->field_0xfc != 0) || (*(int *)&pCVar1->field_0xf8 != 0)) {
+      if ((pCVar1->is_transparent != 0) || (pCVar1->is_renderable != 0)) {
         this_ptr->renderable_actors[this_ptr->renderable_actor_count] = pCVar1;
         this_ptr->renderable_actor_count = this_ptr->renderable_actor_count + 1;
       }

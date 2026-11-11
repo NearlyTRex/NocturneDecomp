@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdarg.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CBitFont.h"
 #include "types/classes/CBoundingBox3D.h"
@@ -22,13 +23,16 @@
 #include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SFly.h"
+#include "types/structs/SNotesEntry.h"
 #include "types/structs/SNotesMap.h"
 #include "types/structs/SNotesSection.h"
+#include "types/structs/SPageResource.h"
 #include "types/structs/SPageResourceBitmap.h"
 #include "types/structs/SPageResourceMap.h"
 #include "types/structs/SPageResourceText.h"
 #include "types/structs/SPageResourceTwanaCharacter.h"
 #include "types/structs/SPageResourceTwanaEntry.h"
+#include "types/structs/STextPage.h"
 #include "types/structs/STextView.h"
 
 // =============================================================================
@@ -77,7 +81,7 @@ void unkaddr_004a1200_cpp_FUN_004a1200(void);
 void unkaddr_004a1200_cpp_FUN_004a1390(char *param_1);
 void unkaddr_004a1200_cpp_FUN_004a1420(char *param_1);
 undefined4 unkaddr_004a1200_cpp_FUN_004a1450(byte *param_1,byte *param_2,byte *param_3);
-int unkaddr_004a1200_cpp_FUN_004a14f0(undefined4 param_1,int *param_2);
+int unkaddr_004a1200_cpp_FUN_004a14f0(char *param_1,int *param_2);
 void unkaddr_004a1200_cpp_FUN_004a1540(void);
 void unkaddr_004a1200_cpp_FUN_004a1570(char *param_1);
 void unkaddr_004a1200_cpp_FUN_004a16b0(void);
@@ -88,83 +92,83 @@ int unkaddr_004a1200_cpp_FUN_004a1bb0(int param_1,int param_2);
 undefined4 unkaddr_004a1200_cpp_FUN_004a1c60(int param_1,int param_2);
 undefined4 unkaddr_004a1200_cpp_FUN_004a1d4e(void);
 void unkaddr_004a1200_cpp_FUN_004a1dcc(void);
-void unkaddr_004a1200_cpp_FUN_004a1e60(undefined4 *param_1);
-int unkaddr_004a1200_cpp_FUN_004a1e90(int param_1);
-void core_fldnotes_cpp_FUN_004a1ebe(int param_1,char *param_2);
-bool core_fldnotes_cpp_FUN_004a1f60(int param_1);
-int core_fldnotes_cpp_FUN_004a1f80(undefined4 param_1,char *param_2,undefined4 param_3);
-SPageResourceText * core_fldnotes_cpp_PageResource_Text_dtor_FUN_004a2000(SPageResourceText *this_ptr,uint flags);
-void core_fldnotes_cpp_FUN_004a2060(int *param_1);
-SPageResourceBitmap * core_fldnotes_cpp_PageResource_Bitmap_ctor_FUN_004a2140(SPageResourceBitmap *this_ptr);
-int * core_fldnotes_cpp_FUN_004a2170(undefined4 param_1,char *param_2,int param_3,int param_4);
-SPageResourceBitmap * core_fldnotes_cpp_PageResource_Bitmap_dtor_FUN_004a2200(SPageResourceBitmap *this_ptr,uint flags);
-void core_fldnotes_cpp_FUN_004a2270(int *param_1);
-SPageResourceBitmap * core_fldnotes_cpp_FUN_004a2290(SPageResourceBitmap *param_1,char *param_2);
-SPageResourceTwanaCharacter * core_fldnotes_cpp_PageResource_TwanaCharacter_dtor_FUN_004a2320(SPageResourceTwanaCharacter *this_ptr,uint flags);
-undefined4 core_fldnotes_cpp_FUN_004a2380(int param_1,int param_2);
-SPageResourceTwanaEntry * core_fldnotes_cpp_PageResource_TwanaEntry_ctor_FUN_004a23c0(SPageResourceTwanaEntry *this_ptr);
-SPageResourceTwanaEntry * core_fldnotes_cpp_PageResource_TwanaEntry_dtor_FUN_004a2470(SPageResourceTwanaEntry *this_ptr,uint flags);
-void core_fldnotes_cpp_FUN_004a24f0(int *param_1);
-void core_fldnotes_cpp_FUN_004a2620(int param_1,char *param_2);
-void core_fldnotes_cpp_FUN_004a2690(undefined4 *param_1);
-void core_fldnotes_cpp_FUN_004a26a0(int *param_1);
-void core_fldnotes_cpp_FUN_004a26e0(int *param_1,int param_2);
-int * core_fldnotes_cpp_FUN_004a2730(int *param_1,int param_2,int param_3);
-void core_fldnotes_cpp_FUN_004a2780(int *param_1);
-STextView * core_fldnotes_cpp_TextView_ctor_FUN_004a27b0(STextView *this_ptr);
-STextView * core_fldnotes_cpp_TextView_dtor_FUN_004a27c0(STextView *this_ptr,uint flags);
-void core_fldnotes_cpp_FUN_004a27e0(undefined4 *param_1);
-void core_fldnotes_cpp_FUN_004a2890(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
-int core_fldnotes_cpp_FUN_004a28b0(int param_1,char *param_2);
-undefined4 core_fldnotes_cpp_FUN_004a2ad0(int param_1,undefined4 *param_2);
-void core_fldnotes_cpp_FUN_004a2b30(int param_1);
-void core_fldnotes_cpp_FUN_004a2bb0(int param_1,undefined4 param_2);
-void core_fldnotes_cpp_FUN_004a2bf0(int param_1);
-void core_fldnotes_cpp_FUN_004a2c90(int param_1);
-undefined4 core_fldnotes_cpp_FUN_004a2cc0(int param_1,char *param_2);
-undefined4 core_fldnotes_cpp_FUN_004a30a0(int param_1,int param_2,int param_3);
-undefined4 core_fldnotes_cpp_FUN_004a3100(int param_1,char *param_2);
-void core_fldnotes_cpp_FUN_004a3160(int param_1,char *param_2);
-void core_fldnotes_cpp_FUN_004a31c0(int param_1);
-void core_fldnotes_cpp_FUN_004a3240(int param_1,int param_2);
-void core_fldnotes_cpp_FUN_004a3280(int param_1);
-char *** core_fldnotes_cpp_FUN_004a32c0(int param_1);
-undefined4 core_fldnotes_cpp_FUN_004a32e0(int param_1,int param_2);
-SNotesSection * core_fldnotes_cpp_NotesSection_ctor_FUN_004a3520(SNotesSection *this_ptr);
-SNotesSection * core_fldnotes_cpp_NotesSection_dtor_FUN_004a3550(SNotesSection *this_ptr,uint flags);
-void core_fldnotes_cpp_FUN_004a3570(int param_1);
-undefined4 core_fldnotes_cpp_FUN_004a35e0(int param_1,char *param_2);
-char * core_fldnotes_cpp_FUN_004a3630(int param_1,char *param_2,undefined4 param_3);
-undefined4 core_fldnotes_cpp_FUN_004a3740(int param_1,int param_2);
-SNotesMap * core_fldnotes_cpp_NotesMap_ctor_FUN_004a37c0(SNotesMap *this_ptr);
-SNotesMap * core_fldnotes_cpp_NotesMap_dtor_FUN_004a3820(SNotesMap *this_ptr,uint flags);
-void core_fldnotes_cpp_FUN_004a3860(undefined4 *param_1);
-int core_fldnotes_cpp_FUN_004a38e0(int param_1);
-void core_fldnotes_cpp_FUN_004a3a60(int *param_1);
-undefined4 core_fldnotes_cpp_FUN_004a3b50(int param_1,char *param_2);
-void core_fldnotes_cpp_FUN_004a3bb0(int param_1,int param_2,int param_3,int param_4);
-void core_fldnotes_cpp_FUN_004a3ca0(int param_1,int param_2,int param_3,int param_4);
-int core_fldnotes_cpp_FUN_004a3d00(int param_1,float *param_2);
-void core_fldnotes_cpp_FUN_004a3e40(int param_1,int param_2,int param_3);
-void core_fldnotes_cpp_FUN_004a3fc0(int param_1);
-undefined4 core_fldnotes_cpp_FUN_004a4070(undefined4 param_1,undefined4 param_2);
-void core_fldnotes_cpp_FUN_004a4120(undefined4 param_1,int param_2);
-void core_fldnotes_cpp_FUN_004a4150(undefined4 *param_1);
+void __cdecl unkaddr_004a1200_cpp_SPageResource_ctor_FUN_004a1e60(SPageResource *this_ptr);
+int __cdecl unkaddr_004a1200_cpp_SPageResource_dtor_FUN_004a1e90(SPageResource *this_ptr);
+void __cdecl core_fldnotes_cpp_SPageResource_setLink_FUN_004a1ebe(SPageResource *this_ptr,char *param_2);
+bool __cdecl core_fldnotes_cpp_SPageResource_onMouse_FUN_004a1f60(SPageResource *this_ptr);
+int __cdecl core_fldnotes_cpp_SPageResourceText_ctor_FUN_004a1f80(SPageResourceText *this_ptr,char *param_2,undefined4 param_3);
+SPageResourceText * core_fldnotes_cpp_SPageResourceText_dtor_FUN_004a2000(SPageResourceText *this_ptr,uint flags);
+void __cdecl core_fldnotes_cpp_SPageResourceText_draw_FUN_004a2060(SPageResourceText *this_ptr);
+SPageResourceBitmap * core_fldnotes_cpp_SPageResourceBitmap_ctor_FUN_004a2140(SPageResourceBitmap *this_ptr);
+int * __cdecl core_fldnotes_cpp_SPageResourceBitmap_ctorFromFile_FUN_004a2170(SPageResourceBitmap *this_ptr,char *param_2,int param_3,int param_4);
+SPageResourceBitmap * core_fldnotes_cpp_SPageResourceBitmap_dtor_FUN_004a2200(SPageResourceBitmap *this_ptr,uint flags);
+void __cdecl core_fldnotes_cpp_SPageResourceBitmap_draw_FUN_004a2270(SPageResourceBitmap *this_ptr);
+SPageResourceBitmap * __cdecl core_fldnotes_cpp_SPageResourceTwanaCharacter_ctor_FUN_004a2290(SPageResourceTwanaCharacter *this_ptr,char *param_2);
+SPageResourceTwanaCharacter * core_fldnotes_cpp_SPageResourceTwanaCharacter_dtor_FUN_004a2320(SPageResourceTwanaCharacter *this_ptr,uint flags);
+undefined4 __cdecl core_fldnotes_cpp_SPageResourceTwanaCharacter_onMouse_FUN_004a2380(SPageResourceTwanaCharacter *this_ptr,int param_2);
+SPageResourceTwanaEntry * core_fldnotes_cpp_SPageResourceTwanaEntry_ctor_FUN_004a23c0(SPageResourceTwanaEntry *this_ptr);
+SPageResourceTwanaEntry * core_fldnotes_cpp_SPageResourceTwanaEntry_dtor_FUN_004a2470(SPageResourceTwanaEntry *this_ptr,uint flags);
+void __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_draw_FUN_004a24f0(SPageResourceTwanaEntry *this_ptr);
+void __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_addCharacter_FUN_004a2620(SPageResourceTwanaEntry *this_ptr,char *param_2);
+void __cdecl core_fldnotes_cpp_STextPage_init_FUN_004a2690(STextPage *this_ptr);
+void __cdecl core_fldnotes_cpp_STextPage_clear_FUN_004a26a0(STextPage *this_ptr);
+void __cdecl core_fldnotes_cpp_STextPage_addResource_FUN_004a26e0(STextPage *this_ptr,int param_2);
+int * __cdecl core_fldnotes_cpp_STextPage_findResourceAt_FUN_004a2730(STextPage *this_ptr,int param_2,int param_3);
+void __cdecl core_fldnotes_cpp_STextPage_draw_FUN_004a2780(STextPage *this_ptr);
+STextView * core_fldnotes_cpp_STextView_ctor_FUN_004a27b0(STextView *this_ptr);
+STextView * core_fldnotes_cpp_STextView_dtor_FUN_004a27c0(STextView *this_ptr,uint flags);
+void __cdecl core_fldnotes_cpp_STextView_reset_FUN_004a27e0(STextView *this_ptr);
+void __cdecl core_fldnotes_cpp_STextView_setRect_FUN_004a2890(STextView *this_ptr,int param_2,int param_3,int param_4,int param_5);
+int __cdecl core_fldnotes_cpp_STextView_layoutChunk_FUN_004a28b0(STextView *this_ptr,char *param_2);
+undefined4 __cdecl core_fldnotes_cpp_STextView_placeResource_FUN_004a2ad0(STextView *this_ptr,undefined4 *param_2);
+void __cdecl core_fldnotes_cpp_STextView_flushWord_FUN_004a2b30(STextView *this_ptr);
+void __cdecl core_fldnotes_cpp_STextView_addResource_FUN_004a2bb0(STextView *this_ptr,int param_2);
+void __cdecl core_fldnotes_cpp_STextView_newLine_FUN_004a2bf0(STextView *this_ptr);
+void __cdecl core_fldnotes_cpp_STextView_newPage_FUN_004a2c90(STextView *this_ptr);
+undefined4 __cdecl core_fldnotes_cpp_STextView_handleTag_FUN_004a2cc0(STextView *this_ptr,char *param_2);
+undefined4 __cdecl core_fldnotes_cpp_STextView_ensureSpace_FUN_004a30a0(STextView *this_ptr,int param_2,int param_3);
+undefined4 __cdecl core_fldnotes_cpp_STextView_wordFits_FUN_004a3100(STextView *this_ptr,char *param_2);
+void __cdecl core_fldnotes_cpp_STextView_appendWord_FUN_004a3160(STextView *this_ptr,char *param_2);
+void __cdecl core_fldnotes_cpp_STextView_ensurePage_FUN_004a31c0(STextView *this_ptr);
+void __cdecl core_fldnotes_cpp_STextView_drawPage_FUN_004a3240(STextView *this_ptr,int param_2);
+void __cdecl core_fldnotes_cpp_SNotesEntry_ctor_FUN_004a3280(SNotesEntry *this_ptr);
+char *** __cdecl core_fldnotes_cpp_SNotesEntry_dtor_FUN_004a32c0(SNotesEntry *this_ptr);
+undefined4 __cdecl core_fldnotes_cpp_SNotesEntry_layout_FUN_004a32e0(SNotesEntry *this_ptr,int param_2);
+SNotesSection * core_fldnotes_cpp_SNotesSection_ctor_FUN_004a3520(SNotesSection *this_ptr);
+SNotesSection * core_fldnotes_cpp_SNotesSection_dtor_FUN_004a3550(SNotesSection *this_ptr,uint flags);
+void __cdecl core_fldnotes_cpp_SNotesSection_clear_FUN_004a3570(SNotesSection *this_ptr);
+undefined4 __cdecl core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a35e0(SNotesSection *this_ptr,char *param_2);
+char * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004a3630(SNotesSection *this_ptr,char *param_2,int param_3);
+undefined4 __cdecl core_fldnotes_cpp_SNotesSection_layout_FUN_004a3740(SNotesSection *this_ptr,int param_2);
+SNotesMap * core_fldnotes_cpp_SNotesMap_ctor_FUN_004a37c0(SNotesMap *this_ptr);
+SNotesMap * core_fldnotes_cpp_SNotesMap_dtor_FUN_004a3820(SNotesMap *this_ptr,uint flags);
+void __cdecl core_fldnotes_cpp_SNotesMap_reset_FUN_004a3860(SNotesMap *this_ptr);
+int __cdecl core_fldnotes_cpp_SNotesMap_load_FUN_004a38e0(SNotesMap *this_ptr);
+void __cdecl core_fldnotes_cpp_SNotesMap_revealAtHero_FUN_004a3a60(SNotesMap *this_ptr);
+undefined4 __cdecl core_fldnotes_cpp_SNotesMap_showAnnotation_FUN_004a3b50(SNotesMap *this_ptr,char *param_2);
+void __cdecl core_fldnotes_cpp_SNotesMap_revealCircle_FUN_004a3bb0(SNotesMap *this_ptr,int param_2,int param_3,int param_4);
+void __cdecl core_fldnotes_cpp_SNotesMap_revealPixel_FUN_004a3ca0(SNotesMap *this_ptr,int param_2,int param_3,int param_4);
+int __cdecl core_fldnotes_cpp_SNotesMap_worldToMap_FUN_004a3d00(SNotesMap *this_ptr,float *param_2);
+void __cdecl core_fldnotes_cpp_SNotesMap_draw_FUN_004a3e40(SNotesMap *this_ptr,int param_2,int param_3);
+void __cdecl core_fldnotes_cpp_SNotesMap_applyReveal_FUN_004a3fc0(SNotesMap *this_ptr);
+undefined4 __cdecl core_fldnotes_cpp_SNotesMap_paginate_FUN_004a4070(SNotesMap *this_ptr,STextView *param_2);
+void __cdecl core_fldnotes_cpp_SPageResourceMap_ctor_FUN_004a4120(SPageResourceMap *this_ptr,int param_2);
+void __cdecl core_fldnotes_cpp_SPageResourceMap_draw_FUN_004a4150(SPageResourceMap *this_ptr);
 CFieldNotes * core_fldnotes_cpp_CFieldNotes_ctor_FUN_004a4170(CFieldNotes *this_ptr);
 CFieldNotes * core_fldnotes_cpp_CFieldNotes_dtor_FUN_004a4180(CFieldNotes *this_ptr,uint flags);
-undefined4 core_fldnotes_cpp_FUN_004a41b0(char *param_1,char *param_2,char *param_3);
-void core_fldnotes_cpp_FUN_004a50b0(undefined1 *param_1);
-undefined4 core_fldnotes_cpp_FUN_004a5200(undefined4 param_1,undefined4 param_2,undefined4 param_3,char *param_4);
-void core_fldnotes_cpp_FUN_004a5310(undefined4 param_1,undefined4 param_2);
-undefined4 core_fldnotes_cpp_FUN_004a5430(undefined4 param_1,undefined4 param_2);
-void core_fldnotes_cpp_FUN_004a5490(undefined4 param_1,undefined4 param_2);
-void core_fldnotes_cpp_FUN_004a55b0(undefined4 param_1,undefined4 param_2);
+undefined4 __cdecl core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004a41b0(CFieldNotes *this_ptr,char *param_2,char *param_3);
+void __cdecl core_fldnotes_cpp_CFieldNotes_clear_FUN_004a50b0(CFieldNotes *this_ptr);
+undefined4 core_fldnotes_cpp_FUN_004a5200(undefined4 param_1,char *param_2,char *param_3,char *param_4);
+void __cdecl core_fldnotes_cpp_CFieldNotes_enableEntry_FUN_004a5310(CFieldNotes *this_ptr,char *param_2);
+undefined4 core_fldnotes_cpp_FUN_004a5430(undefined4 param_1,char *param_2);
+void __cdecl core_fldnotes_cpp_CFieldNotes_turnToEntry_FUN_004a5490(CFieldNotes *this_ptr,char *param_2);
+void __cdecl core_fldnotes_cpp_CFieldNotes_completeTask_FUN_004a55b0(CFieldNotes *this_ptr,char *param_2);
 void core_fldnotes_cpp_FUN_004a56c0(undefined4 param_1,char *param_2);
 void core_fldnotes_cpp_FUN_004a5700(int param_1);
 void core_fldnotes_cpp_FUN_004a5f60(int param_1);
-void core_fldnotes_cpp_FUN_004a61b0(undefined4 param_1,undefined4 param_2);
+void core_fldnotes_cpp_FUN_004a61b0(CFieldNotes *param_1,undefined4 param_2);
 void core_fldnotes_cpp_FUN_004a6470(undefined4 param_1,undefined4 param_2);
-SPageResourceMap * unkafter_fldnotes_cpp_PageResource_Map_dtor_FUN_004a66a0(SPageResourceMap *this_ptr,uint flags);
+SPageResourceMap * unkafter_fldnotes_cpp_SPageResourceMap_dtor_FUN_004a66a0(SPageResourceMap *this_ptr,uint flags);
 void unkafter_fldnotes_cpp_FUN_004a66f0(undefined4 param_1);
 CAlphaBitmap * unkaddr_004a1200_cpp_CAlphaBitmap_arrdtor6_FUN_004a6710(CAlphaBitmap *this_ptr,uint flags);
 SNotesMap * unkaddr_004a1200_cpp_SNotesMap_arrdtor4_FUN_004a6730(SNotesMap *this_ptr,uint flags);
@@ -202,7 +206,7 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004a7d00(CBitFont *this_ptr
 void engine_font_cpp_FUN_004a7fe2(void);
 void engine_font_cpp_FUN_004a8540(int param_1,float param_2);
 void __cdecl engine_font_cpp_CBitFont_loadNewBitmap_FUN_004a8560(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags);
-void engine_font_cpp_FUN_004a859e(CBitFont *param_1,CBitFont *param_2);
+void engine_font_cpp_FUN_004a859e(CBitFont *param_1,char *param_2);
 void engine_font_cpp_FUN_004a8850(CBitFont *param_1);
 void __cdecl engine_font_cpp_CBitFont_setInitializedFlag_FUN_004a88d0(CBitFont *this_ptr);
 void engine_font_cpp_FUN_004a88e0(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5);
@@ -210,16 +214,16 @@ int __cdecl engine_font_cpp_CBitFont_calculateCharacterHeight_FUN_004a8d90(CBitF
 int engine_font_cpp_FUN_004a8df0(CBitFont *param_1,byte *param_2,int param_3,int param_4,int param_5,int param_6);
 int __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_004a90b0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextF_FUN_004a90e0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
-int __cdecl engine_font_cpp_CBitFont_drawTextFV_FUN_004a9130(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_7);
+int __cdecl engine_font_cpp_CBitFont_drawTextFV_FUN_004a9130(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextRight_FUN_004a91a0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenter_FUN_004a92a0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterF_FUN_004a92e0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
-int __cdecl engine_font_cpp_CBitFont_drawTextCenterFV_FUN_004a9330(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_7);
+int __cdecl engine_font_cpp_CBitFont_drawTextCenterFV_FUN_004a9330(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004a93a0(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004a93f0(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *format_string);
-int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004a9440(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_8);
+int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004a9440(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterInClip_FUN_004a94b0(CBitFont *this_ptr,int y,int color_mode,int color_value,char *text);
-int __cdecl engine_font_cpp_CBitFont_printCenterFV_FUN_004a9550(CBitFont *this_ptr,int y,int color_mode,int color_value,undefined4 format_string,undefined4 param_6);
+int __cdecl engine_font_cpp_CBitFont_printCenterFV_FUN_004a9550(CBitFont *this_ptr,int y,int color_mode,int color_value,char *format_string,va_list_t args);
 void __cdecl engine_font_cpp_setShadowColor_FUN_004a95b0(uint red,uint green,uint blue);
 int __cdecl engine_font_cpp_getDefaultTextColor_FUN_004a96e0(void);
 void __cdecl engine_font_cpp_setDefaultTextColor_FUN_004a9700(int text_color);

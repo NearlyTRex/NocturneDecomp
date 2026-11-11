@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 271,
-    "complexity_score": 155,
+    "complexity_score": 168,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 100,
-    "suspect_count": 4,
+    "pseudocode_lines": 103,
+    "suspect_count": 5,
     "suspect_types": [
-      "unnamed_field",
+      "shadow_pointer_walk",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 371
+    "total_lines": 374
   },
   "cross_references": [
     {
@@ -100,13 +100,13 @@
     },
     {
       "addr": "01cb6b5c",
-      "name": "g_CGameInstance.field508_0x25c",
+      "name": "g_CGameInstance.goggles_active",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb6b64",
-      "name": "g_CGameInstance.field516_0x264",
+      "name": "g_CGameInstance.flashlight_active",
       "type": "undefined4",
       "value": null
     },
@@ -283,28 +283,36 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x264",
-      "severity": "mild",
-      "text": "if ((*(int *)&g_CGamePtr->field_0x264 == 0) && (*(int *)&g_CGamePtr->field_0x25c == 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x25c",
-      "severity": "mild",
-      "text": "if ((*(int *)&g_CGamePtr->field_0x264 == 0) && (*(int *)&g_CGamePtr->field_0x25c == 0)) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 75,
+      "line": 76,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar4 + 0x2b0) + 0x14))(iVar4,g_CGamePtr->delta_time_float);",
+      "text": "(**(code **)(*(int *)(iVar5 + 0x2b0) + 0x14))(iVar5,g_CGamePtr->delta_time_float);",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar6->owner`). Replace `pCVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 37,
+      "match": "pCVar6 = (T *)&pCVar6->FIELD",
+      "severity": "moderate",
+      "text": "pCVar6 = (CInventory *)&pCVar6->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar6->owner`). Replace `pCVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 59,
+      "match": "pCVar6 = (T *)&pCVar6->FIELD",
+      "severity": "moderate",
+      "text": "pCVar6 = (CInventory *)&pCVar6->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar6->owner`). Replace `pCVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 79,
+      "match": "pCVar6 = (T *)&pCVar6->FIELD",
+      "severity": "moderate",
+      "text": "pCVar6 = (CInventory *)&pCVar6->owner;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

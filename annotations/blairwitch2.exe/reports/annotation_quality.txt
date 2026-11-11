@@ -12,18 +12,18 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          5,676
-  Unnamed functions (FUN_):          1,445 (25.5%)
-  Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        1,330 (23.4%)
+  Unnamed functions (FUN_):          1,271 (22.4%)
+  Functions with unnamed params:     91 ( 1.6%)
+  Functions with type issues:        1,383 (24.4%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
-    Wrong return type (void):          5
+    Wrong return type (void):          6
     Wrong return type (wide/64-bit):   15
     Missing register params:           25
-    Wrong calling convention:          263
-    Undefined types in variables:      1076
-    Unresolved stack params:           121
+    Wrong calling convention:          275
+    Undefined types in variables:      1112
+    Unresolved stack params:           141
 
   Excluded (.keep / MMX / by-value):   0 functions
     Wrong calling convention:          0
@@ -190,7 +190,7 @@ Sorted by caller count (most-referenced first = highest priority to name).
   core/armour.cpp (1 unnamed)
     0x0040f2b0  unknown       56 callers
 
-  unkaddr/0059d350.cpp (29 unnamed)
+  unkaddr/0059d350.cpp (26 unnamed)
     0x0059df70  unknown       56 callers
     0x0059daa0  unknown       42 callers
     0x0059d8e0  unknown       36 callers
@@ -205,9 +205,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x0059db90  unknown       5 callers
     0x0059da70  unknown       4 callers
     0x0059dae0  unknown       4 callers
-    0x0059d360  unknown       1 callers
-    0x0059d420  unknown       1 callers
-    0x0059d440  unknown       1 callers
     0x0059d5f0  unknown       1 callers
     0x0059d610  unknown       1 callers
     0x0059d940  unknown       1 callers
@@ -342,10 +339,8 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00557500  unknown       0 callers
     0x00557800  unknown       0 callers
 
-  unkafter/basicene.cpp (22 unnamed)
+  unkafter/basicene.cpp (20 unnamed)
     0x0059e8c0  unknown       17 callers
-    0x0059e3b0  unknown       10 callers
-    0x0059e6a0  unknown       10 callers
     0x0059f570  unknown       9 callers
     0x005a01a0  unknown       9 callers
     0x0059f740  unknown       8 callers
@@ -365,75 +360,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x0059f0e0  unknown       0 callers
     0x0059f6a0  unknown       0 callers
     0x005a0780  unknown       0 callers
-
-  unkaddr/0057b9a0.cpp (21 unnamed)
-    0x0057d180  unknown       16 callers
-    0x0057cfe0  unknown       10 callers
-    0x0057b9c0  unknown       8 callers
-    0x0057b9d0  unknown       3 callers
-    0x0057d0c0  unknown       3 callers
-    0x0057d130  unknown       3 callers
-    0x0057cc20  unknown       2 callers
-    0x0057d110  unknown       2 callers
-    0x0057ba20  unknown       1 callers
-    0x0057bb80  unknown       1 callers
-    0x0057ccc0  unknown       1 callers
-    0x0057cdb0  unknown       1 callers
-    0x0057cf20  unknown       1 callers
-    0x0057b9a0  unknown       0 callers
-    0x0057b9de  unknown       0 callers
-    0x0057ba00  unknown       0 callers
-    0x0057ba10  unknown       0 callers
-    0x0057ce20  unknown       0 callers
-    0x0057cf40  unknown       0 callers
-    0x0057cf80  unknown       0 callers
-    0x0057d150  unknown       0 callers
-
-  support/trstream.cpp (44 unnamed)
-    0x0057d390  unknown       15 callers
-    0x0057d860  unknown       10 callers
-    0x0057dd60  unknown       4 callers
-    0x0057d1d0  unknown       3 callers
-    0x0057d320  unknown       3 callers
-    0x0057dca0  unknown       3 callers
-    0x0057dd90  unknown       3 callers
-    0x0057de80  unknown       3 callers
-    0x0057e0c0  unknown       3 callers
-    0x0057d240  unknown       2 callers
-    0x0057d280  unknown       2 callers
-    0x0057d520  unknown       2 callers
-    0x0057d760  unknown       2 callers
-    0x0057dba0  unknown       2 callers
-    0x0057dd40  unknown       2 callers
-    0x0057d7b0  unknown       1 callers
-    0x0057d800  unknown       1 callers
-    0x0057d870  unknown       1 callers
-    0x0057d8a0  unknown       1 callers
-    0x0057ddd0  unknown       1 callers
-    0x0057e0d0  unknown       1 callers
-    0x0057e110  unknown       1 callers
-    0x0057d450  unknown       0 callers
-    0x0057d600  unknown       0 callers
-    0x0057d640  unknown       0 callers
-    0x0057d680  unknown       0 callers
-    0x0057d6b0  unknown       0 callers
-    0x0057d710  unknown       0 callers
-    0x0057d740  unknown       0 callers
-    0x0057d770  unknown       0 callers
-    0x0057d780  unknown       0 callers
-    0x0057d830  unknown       0 callers
-    0x0057dc70  unknown       0 callers
-    0x0057dcf0  unknown       0 callers
-    0x0057dd20  unknown       0 callers
-    0x0057de20  unknown       0 callers
-    0x0057df70  unknown       0 callers
-    0x0057dfe0  unknown       0 callers
-    0x0057e070  unknown       0 callers
-    0x0057e150  unknown       0 callers
-    0x0057e240  unknown       0 callers
-    0x0057e270  unknown       0 callers
-    0x0057e330  unknown       0 callers
-    0x0057e360  unknown       0 callers
 
   engine/alphabit.cpp (4 unnamed)
     0x0040d540  __cdecl       14 callers
@@ -581,21 +507,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x0057513c  unknown       0 callers
     0x0057514e  unknown       0 callers
 
-  unkafter/superopt.cpp (13 unnamed)
-    0x005a8300  unknown       13 callers
-    0x005a8180  unknown       12 callers
-    0x005a8290  unknown       11 callers
-    0x005a8220  unknown       9 callers
-    0x005a8160  unknown       2 callers
-    0x005a84c0  unknown       2 callers
-    0x0059bfc0  unknown       1 callers
-    0x005a8140  unknown       1 callers
-    0x005a8250  unknown       1 callers
-    0x005a85c0  unknown       1 callers
-    0x005a86a0  unknown       1 callers
-    0x0059be40  unknown       0 callers
-    0x0059be50  unknown       0 callers
-
   engine/matrix.c (15 unnamed)
     0x0046b4b0  unknown       11 callers
     0x0046b670  unknown       10 callers
@@ -679,15 +590,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00485662  unknown       0 callers
     0x0048569e  unknown       0 callers
 
-  unkaddr/005a7eb0.cpp (7 unnamed)
-    0x005a8100  unknown       11 callers
-    0x005a7ed0  unknown       9 callers
-    0x005a8030  unknown       9 callers
-    0x005a8050  unknown       9 callers
-    0x005a80d0  unknown       6 callers
-    0x005a7f50  unknown       1 callers
-    0x005a7eb0  unknown       0 callers
-
   core/glass.cpp (2 unnamed)
     0x004c6d40  unknown       10 callers
     0x004c5bb0  unknown       1 callers
@@ -723,6 +625,17 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004fd280  __cdecl       1 callers
     0x004fb530  unknown       0 callers
 
+  support/trstream.cpp (9 unnamed)
+    0x0057d860  unknown       10 callers
+    0x0057d1d0  unknown       3 callers
+    0x0057d240  unknown       2 callers
+    0x0057d280  unknown       2 callers
+    0x0057d870  unknown       1 callers
+    0x0057d8a0  unknown       1 callers
+    0x0057d740  unknown       0 callers
+    0x0057d770  unknown       0 callers
+    0x0057e150  unknown       0 callers
+
   core/inv.cpp (11 unnamed)
     0x004dadb0  unknown       9 callers
     0x004db8e0  unknown       7 callers
@@ -735,6 +648,10 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004dd9b0  unknown       1 callers
     0x004da130  unknown       0 callers
     0x004db760  unknown       0 callers
+
+  unkaddr/005a7eb0.cpp (2 unnamed)
+    0x005a7ed0  unknown       9 callers
+    0x005a7eb0  unknown       0 callers
 
   cockpit/ckptutil.c (18 unnamed)
     0x0042c410  unknown       8 callers
@@ -756,67 +673,17 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x0042f4f0  unknown       0 callers
     0x0042f74e  unknown       0 callers
 
-  core/fldnotes.cpp (60 unnamed)
-    0x004a35e0  unknown       8 callers
-    0x004a27e0  unknown       7 callers
-    0x004a50b0  unknown       6 callers
-    0x004a2890  unknown       5 callers
-    0x004a3740  unknown       5 callers
-    0x004a2b30  unknown       4 callers
-    0x004a2c90  unknown       4 callers
-    0x004a28b0  unknown       3 callers
-    0x004a2bb0  unknown       3 callers
-    0x004a2bf0  unknown       3 callers
-    0x004a3860  unknown       3 callers
-    0x004a2730  unknown       2 callers
-    0x004a30a0  unknown       2 callers
-    0x004a31c0  unknown       2 callers
-    0x004a3570  unknown       2 callers
-    0x004a3d00  unknown       2 callers
-    0x004a41b0  unknown       2 callers
-    0x004a1f80  unknown       1 callers
-    0x004a2170  unknown       1 callers
-    0x004a2290  unknown       1 callers
-    0x004a2620  unknown       1 callers
-    0x004a2690  unknown       1 callers
-    0x004a26a0  unknown       1 callers
-    0x004a26e0  unknown       1 callers
-    0x004a2780  unknown       1 callers
-    0x004a2ad0  unknown       1 callers
-    0x004a2cc0  unknown       1 callers
-    0x004a3100  unknown       1 callers
-    0x004a3160  unknown       1 callers
-    0x004a3240  unknown       1 callers
-    0x004a3280  unknown       1 callers
-    0x004a32c0  unknown       1 callers
-    0x004a32e0  unknown       1 callers
-    0x004a3630  unknown       1 callers
-    0x004a38e0  unknown       1 callers
-    0x004a3a60  unknown       1 callers
-    0x004a3b50  unknown       1 callers
-    0x004a3bb0  unknown       1 callers
-    0x004a3ca0  unknown       1 callers
-    0x004a3e40  unknown       1 callers
-    0x004a3fc0  unknown       1 callers
-    0x004a4070  unknown       1 callers
-    0x004a4120  unknown       1 callers
-    0x004a5200  unknown       1 callers
-    0x004a5310  unknown       1 callers
-    0x004a5430  unknown       1 callers
-    0x004a5490  unknown       1 callers
-    0x004a55b0  unknown       1 callers
-    0x004a56c0  unknown       1 callers
-    0x004a5700  unknown       1 callers
-    0x004a5f60  unknown       1 callers
-    0x004a61b0  unknown       1 callers
-    0x004a6470  unknown       1 callers
-    0x004a1ebe  unknown       0 callers
-    0x004a1f60  unknown       0 callers
-    0x004a2060  unknown       0 callers
-    0x004a2270  unknown       0 callers
-    0x004a2380  unknown       0 callers
-    0x004a24f0  unknown       0 callers
-    0x004a4150  unknown       0 callers
+  unkaddr/0057b9a0.cpp (10 unnamed)
+    0x0057b9c0  unknown       8 callers
+    0x0057b9d0  unknown       3 callers
+    0x0057cc20  unknown       2 callers
+    0x0057ba20  unknown       1 callers
+    0x0057bb80  unknown       1 callers
+    0x0057ccc0  unknown       1 callers
+    0x0057b9a0  unknown       0 callers
+    0x0057b9de  unknown       0 callers
+    0x0057ba00  unknown       0 callers
+    0x0057ba10  unknown       0 callers
 
   core/dtrace.cpp (19 unnamed)
     0x00472c60  unknown       7 callers
@@ -904,15 +771,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x0044ea80  unknown       2 callers
     0x0044f020  unknown       2 callers
 
-  core/moon.cpp (7 unnamed)
-    0x00502510  unknown       6 callers
-    0x005024a0  unknown       5 callers
-    0x00502450  unknown       3 callers
-    0x005027b0  unknown       3 callers
-    0x005023e0  unknown       2 callers
-    0x00502760  unknown       1 callers
-    0x00502790  unknown       1 callers
-
   core/setdir.cpp (4 unnamed)
     0x00538d10  unknown       6 callers
     0x005398d0  unknown       2 callers
@@ -943,17 +801,12 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x0049235e  unknown       0 callers
     0x0049249e  unknown       0 callers
 
-  core/fire.cpp (31 unnamed)
+  core/fire.cpp (21 unnamed)
     0x0049d120  __cdecl       5 callers
     0x0049db20  unknown       3 callers
-    0x0049d170  unknown       2 callers
-    0x0049d600  unknown       2 callers
-    0x0049d6a0  unknown       2 callers
     0x0049eb50  unknown       2 callers
     0x004935b0  unknown       1 callers
     0x00493cf0  unknown       1 callers
-    0x00495020  unknown       1 callers
-    0x00496750  unknown       1 callers
     0x004969a0  __cdecl       1 callers
     0x00496c60  unknown       1 callers
     0x00498d30  unknown       1 callers
@@ -962,38 +815,14 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x0049a1b0  unknown       1 callers
     0x004947a0  unknown       0 callers
     0x00494eb0  unknown       0 callers
-    0x00494ec0  unknown       0 callers
-    0x00495150  unknown       0 callers
     0x00495ca0  unknown       0 callers
     0x00496620  unknown       0 callers
     0x004966a0  unknown       0 callers
     0x0049677e  unknown       0 callers
-    0x004967d0  unknown       0 callers
-    0x004968d0  unknown       0 callers
-    0x00496990  unknown       0 callers
     0x004972c0  unknown       0 callers
     0x0049b7f0  unknown       0 callers
     0x0049b9c0  unknown       0 callers
     0x0049eb8e  unknown       0 callers
-
-  unkaddr/004a1200.cpp (17 unnamed)
-    0x004a1e60  unknown       5 callers
-    0x004a1e90  unknown       4 callers
-    0x004a1390  unknown       3 callers
-    0x004a1bb0  unknown       2 callers
-    0x004a1c60  unknown       2 callers
-    0x004a1570  unknown       1 callers
-    0x004a1200  unknown       0 callers
-    0x004a1420  unknown       0 callers
-    0x004a1450  unknown       0 callers
-    0x004a14f0  unknown       0 callers
-    0x004a1540  unknown       0 callers
-    0x004a16b0  unknown       0 callers
-    0x004a1730  unknown       0 callers
-    0x004a1870  unknown       0 callers
-    0x004a1b5e  unknown       0 callers
-    0x004a1d4e  unknown       0 callers
-    0x004a1dcc  unknown       0 callers
 
   engine/ini.cpp (8 unnamed)
     0x004d8b20  unknown       5 callers
@@ -1025,7 +854,7 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00516c88  unknown       0 callers
     0x00516de0  unknown       0 callers
 
-  unkaddr/0059aa80.cpp (25 unnamed)
+  unkaddr/0059aa80.cpp (11 unnamed)
     0x0059ab70  unknown       5 callers
     0x0059ab30  unknown       3 callers
     0x0059ab50  unknown       2 callers
@@ -1035,22 +864,8 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x0059aa80  unknown       0 callers
     0x0059ab60  unknown       0 callers
     0x0059abe0  unknown       0 callers
-    0x0059ad20  unknown       0 callers
-    0x0059ada0  unknown       0 callers
-    0x0059adf0  unknown       0 callers
-    0x0059ae40  unknown       0 callers
     0x0059af20  unknown       0 callers
-    0x0059af30  unknown       0 callers
-    0x0059b3c0  unknown       0 callers
-    0x0059b430  unknown       0 callers
-    0x0059b5a0  unknown       0 callers
-    0x0059b900  unknown       0 callers
     0x0059b960  unknown       0 callers
-    0x0059b970  unknown       0 callers
-    0x0059ba10  unknown       0 callers
-    0x0059bad0  unknown       0 callers
-    0x0059bb40  unknown       0 callers
-    0x0059bb60  unknown       0 callers
 
   core/boxactor.cpp (2 unnamed)
     0x0041bf10  unknown       4 callers
@@ -1070,26 +885,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00461e62  unknown       0 callers
     0x00461f2e  unknown       0 callers
 
-  unkafter/minecar.cpp (18 unnamed)
-    0x004f2ac0  unknown       4 callers
-    0x004f2ba0  __cdecl       2 callers
-    0x004f23d0  unknown       1 callers
-    0x004f23e0  unknown       1 callers
-    0x004f2950  unknown       1 callers
-    0x004f229e  unknown       0 callers
-    0x004f22be  unknown       0 callers
-    0x004f236e  unknown       0 callers
-    0x004f23ee  unknown       0 callers
-    0x004f240e  unknown       0 callers
-    0x004f242e  unknown       0 callers
-    0x004f2450  unknown       0 callers
-    0x004f2460  unknown       0 callers
-    0x004f24b0  unknown       0 callers
-    0x004f29b0  unknown       0 callers
-    0x004f2a00  unknown       0 callers
-    0x004f2a30  unknown       0 callers
-    0x004f2a50  unknown       0 callers
-
   engine/model.c (4 unnamed)
     0x00500f30  __cdecl       4 callers
     0x005008f0  unknown       1 callers
@@ -1102,14 +897,11 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00521cf0  unknown       1 callers
     0x00521ff0  unknown       0 callers
 
-  support/codec.cpp (41 unnamed)
+  support/codec.cpp (23 unnamed)
     0x00433a90  unknown       3 callers
-    0x00435300  unknown       3 callers
     0x004338f0  unknown       2 callers
     0x00434570  unknown       2 callers
     0x00434910  unknown       2 callers
-    0x00434e50  unknown       2 callers
-    0x004351e0  unknown       2 callers
     0x004338a0  unknown       1 callers
     0x004338d0  unknown       1 callers
     0x00433ad0  unknown       1 callers
@@ -1121,8 +913,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00434a10  unknown       1 callers
     0x00434a70  unknown       1 callers
     0x00434b10  unknown       1 callers
-    0x00434d20  unknown       1 callers
-    0x00434d30  unknown       1 callers
     0x00434d60  unknown       1 callers
     0x00433ee0  unknown       0 callers
     0x00433f50  __cdecl       0 callers
@@ -1130,20 +920,7 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004340f0  unknown       0 callers
     0x004341e0  unknown       0 callers
     0x00434b90  unknown       0 callers
-    0x00434bb0  unknown       0 callers
-    0x00434c00  unknown       0 callers
-    0x00434c90  unknown       0 callers
-    0x00434ce0  unknown       0 callers
     0x00434dd0  unknown       0 callers
-    0x00434fa0  unknown       0 callers
-    0x00434ff0  unknown       0 callers
-    0x00435020  unknown       0 callers
-    0x00435060  unknown       0 callers
-    0x00435120  unknown       0 callers
-    0x00435150  unknown       0 callers
-    0x00435180  unknown       0 callers
-    0x004351b0  unknown       0 callers
-    0x00435270  unknown       0 callers
 
   core/dcube.cpp (5 unnamed)
     0x00446b60  unknown       3 callers
@@ -1167,6 +944,23 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00479df0  unknown       0 callers
     0x00479dfc  unknown       0 callers
     0x00479e0c  unknown       0 callers
+
+  unkaddr/004a1200.cpp (15 unnamed)
+    0x004a1390  unknown       3 callers
+    0x004a1bb0  unknown       2 callers
+    0x004a1c60  unknown       2 callers
+    0x004a1570  unknown       1 callers
+    0x004a1200  unknown       0 callers
+    0x004a1420  unknown       0 callers
+    0x004a1450  unknown       0 callers
+    0x004a14f0  unknown       0 callers
+    0x004a1540  unknown       0 callers
+    0x004a16b0  unknown       0 callers
+    0x004a1730  unknown       0 callers
+    0x004a1870  unknown       0 callers
+    0x004a1b5e  unknown       0 callers
+    0x004a1d4e  unknown       0 callers
+    0x004a1dcc  unknown       0 callers
 
   core/game.cpp (30 unnamed)
     0x004b76c0  __cdecl       3 callers
@@ -1209,6 +1003,11 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004e6340  unknown       1 callers
     0x004e63c0  __cdecl       1 callers
     0x004e6820  __cdecl       1 callers
+
+  core/moon.cpp (3 unnamed)
+    0x005027b0  unknown       3 callers
+    0x00502760  unknown       1 callers
+    0x00502790  unknown       1 callers
 
   core/set.cpp (13 unnamed)
     0x005306e0  unknown       3 callers
@@ -1468,6 +1267,12 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00599e0e  unknown       0 callers
     0x0059a06e  unknown       0 callers
 
+  unkafter/superopt.cpp (4 unnamed)
+    0x005a84c0  unknown       2 callers
+    0x0059bfc0  unknown       1 callers
+    0x005a85c0  unknown       1 callers
+    0x005a86a0  unknown       1 callers
+
   core/lantern.cpp (1 unnamed)
     0x0059ced0  unknown       2 callers
 
@@ -1523,6 +1328,15 @@ Sorted by caller count (most-referenced first = highest priority to name).
   core/flame.cpp (1 unnamed)
     0x004a0590  __cdecl       1 callers
 
+  core/fldnotes.cpp (7 unnamed)
+    0x004a5200  unknown       1 callers
+    0x004a5430  unknown       1 callers
+    0x004a56c0  unknown       1 callers
+    0x004a5700  unknown       1 callers
+    0x004a5f60  unknown       1 callers
+    0x004a61b0  unknown       1 callers
+    0x004a6470  unknown       1 callers
+
   unkafter/fldnotes.cpp (1 unnamed)
     0x004a66f0  unknown       1 callers
 
@@ -1567,6 +1381,24 @@ Sorted by caller count (most-referenced first = highest priority to name).
   unkafter/marquee.cpp (2 unnamed)
     0x004e8620  unknown       1 callers
     0x004e86a0  unknown       1 callers
+
+  unkafter/minecar.cpp (16 unnamed)
+    0x004f23d0  unknown       1 callers
+    0x004f23e0  unknown       1 callers
+    0x004f2950  unknown       1 callers
+    0x004f229e  unknown       0 callers
+    0x004f22be  unknown       0 callers
+    0x004f236e  unknown       0 callers
+    0x004f23ee  unknown       0 callers
+    0x004f240e  unknown       0 callers
+    0x004f242e  unknown       0 callers
+    0x004f2450  unknown       0 callers
+    0x004f2460  unknown       0 callers
+    0x004f24b0  unknown       0 callers
+    0x004f29b0  unknown       0 callers
+    0x004f2a00  unknown       0 callers
+    0x004f2a30  unknown       0 callers
+    0x004f2a50  unknown       0 callers
 
   unkafter/mission.cpp (2 unnamed)
     0x004fd450  unknown       1 callers
@@ -1667,12 +1499,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
 
   core/werewolf.cpp (1 unnamed)
     0x0058dd00  unknown       1 callers
-
-  unkaddr/0059c270.cpp (4 unnamed)
-    0x0059c2c0  unknown       1 callers
-    0x0059c380  unknown       1 callers
-    0x0059c3d0  unknown       1 callers
-    0x0059c270  unknown       0 callers
 
   core/patrpoin.cpp (1 unnamed)
     0x0059c9c0  unknown       1 callers
@@ -1811,10 +1637,8 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x005956b0  unknown       0 callers
     0x00595750  unknown       0 callers
 
-  shape/superopt.cpp (3 unnamed)
-    0x0059be00  unknown       0 callers
-    0x0059be10  unknown       0 callers
-    0x0059be20  unknown       0 callers
+  unkaddr/0059c270.cpp (1 unnamed)
+    0x0059c270  unknown       0 callers
 
   core/confzomb.cpp (1 unnamed)
     0x005a2240  unknown       0 callers
@@ -1861,15 +1685,474 @@ UNNAMED PARAMETERS (still using param_N)
 
 Sorted by number of unnamed parameters (most unnamed first).
 
-  (none)
+  CSimpleParticleSystem_emit
+    Address: 0x005a8300  File: unkafter/superopt.cpp
+    Unnamed: param_2 (undefined4), param_3 (undefined4), param_4 (undefined4), param_5 (undefined4), param_6 (undefined4), param_7 (undefined4), param_8 (undefined4), param_9 (undefined4), param_10 (float *), param_11 (undefined4 *), param_12 (undefined4 *), param_13 (undefined4)
+    Named:   this_ptr (CSimpleParticleSystem *)
+
+  CFireEffect_createFirefly
+    Address: 0x0049d6a0  File: core/fire.cpp
+    Unnamed: param_2 (undefined4), param_3 (undefined4), param_4 (int), param_5 (int), param_6 (int), param_7 (int), param_8 (float), param_9 (float)
+    Named:   this_ptr (CFireEffect *)
+
+  CAudioRecPuzzle_addButton
+    Address: 0x0059b3c0  File: unkaddr/0059aa80.cpp
+    Unnamed: param_2 (int), param_3 (char *), param_4 (int), param_5 (int), param_6 (undefined4), param_7 (undefined4), param_8 (undefined4), param_9 (undefined4)
+    Named:   this_ptr (CAudioRecPuzzle *)
+
+  CFireEffect_createLeaf
+    Address: 0x0049d600  File: core/fire.cpp
+    Unnamed: param_2 (undefined4), param_3 (undefined4), param_4 (CKeyFramedModel *), param_5 (undefined4)
+    Named:   this_ptr (CFireEffect *)
+
+  CLeaf_init
+    Address: 0x00496750  File: core/fire.cpp
+    Unnamed: param_2 (CVector3f *), param_3 (CVector3f *), param_4 (undefined4), param_5 (float)
+    Named:   this_ptr (CLeaf *)
+
+  STextView_setRect
+    Address: 0x004a2890  File: core/fldnotes.cpp
+    Unnamed: param_2 (undefined4), param_3 (undefined4), param_4 (undefined4), param_5 (undefined4)
+    Named:   this_ptr (STextView *)
+
+  CInStreamPipe_open
+    Address: 0x00435270  File: support/codec.cpp
+    Unnamed: param_2 (undefined4), param_3 (undefined4), param_4 (undefined4), param_5 (ulong)
+    Named:   this_ptr (CInStreamPipe *)
+
+  CAudioRecPuzzle_renderReel
+    Address: 0x0059bb60  File: unkaddr/0059aa80.cpp
+    Unnamed: param_2 (int), param_3 (int), param_4 (float), param_5 (int)
+    Named:   this_ptr (CAudioRecPuzzle *)
+
+  SNotesMap_revealCircle
+    Address: 0x004a3bb0  File: core/fldnotes.cpp
+    Unnamed: param_2 (int), param_3 (int), param_4 (int)
+    Named:   this_ptr (SNotesMap *)
+
+  SNotesMap_revealPixel
+    Address: 0x004a3ca0  File: core/fldnotes.cpp
+    Unnamed: param_2 (int), param_3 (int), param_4 (int)
+    Named:   this_ptr (SNotesMap *)
+
+  SPageResourceBitmap_ctorFromFile
+    Address: 0x004a2170  File: core/fldnotes.cpp
+    Unnamed: param_2 (char *), param_3 (int), param_4 (int)
+    Named:   this_ptr (SPageResourceBitmap *)
+
+  CInStreamFile_openHandle
+    Address: 0x0057d450  File: support/trstream.cpp
+    Unnamed: param_2 (int), param_3 (int), param_4 (int)
+    Named:   this_ptr (CInStreamFile *)
+
+  COutStreamFile_openInDirectory
+    Address: 0x0057ddd0  File: support/trstream.cpp
+    Unnamed: param_2 (char *), param_3 (char *), param_4 (char *)
+    Named:   this_ptr (COutStreamFile *)
+
+  CGameHook_formatFlag
+    Address: 0x0059c380  File: unkaddr/0059c270.cpp
+    Unnamed: param_2 (undefined4), param_3 (int), param_4 (char *)
+    Named:   this_ptr (CGameHook *)
+
+  CSimpleParticleSystem_setFade
+    Address: 0x005a8140  File: unkafter/superopt.cpp
+    Unnamed: param_2 (undefined4), param_3 (undefined4), param_4 (undefined4)
+    Named:   this_ptr (CSimpleParticleSystem *)
+
+  CFireEffect_createMuzzleEffect
+    Address: 0x0049d170  File: core/fire.cpp
+    Unnamed: param_2 (undefined4), param_3 (undefined4)
+    Named:   this_ptr (CFireEffect *)
+
+  CFieldNotes_loadFile
+    Address: 0x004a41b0  File: core/fldnotes.cpp
+    Unnamed: param_2 (char *), param_3 (char *)
+    Named:   this_ptr (CFieldNotes *)
+
+  SNotesMap_draw
+    Address: 0x004a3e40  File: core/fldnotes.cpp
+    Unnamed: param_2 (int), param_3 (int)
+    Named:   this_ptr (SNotesMap *)
+
+  SNotesSection_addEntry
+    Address: 0x004a3630  File: core/fldnotes.cpp
+    Unnamed: param_2 (char *), param_3 (undefined4)
+    Named:   this_ptr (SNotesSection *)
+
+  SPageResourceText_ctor
+    Address: 0x004a1f80  File: core/fldnotes.cpp
+    Unnamed: param_2 (char *), param_3 (undefined4)
+    Named:   this_ptr (SPageResourceText *)
+
+  STextPage_findResourceAt
+    Address: 0x004a2730  File: core/fldnotes.cpp
+    Unnamed: param_2 (int), param_3 (int)
+    Named:   this_ptr (STextPage *)
+
+  STextView_ensureSpace
+    Address: 0x004a30a0  File: core/fldnotes.cpp
+    Unnamed: param_2 (int), param_3 (int)
+    Named:   this_ptr (STextView *)
+
+  CAsciiArmor_encode
+    Address: 0x00434bb0  File: support/codec.cpp
+    Unnamed: param_2 (undefined4), param_3 (int *)
+    Named:   this_ptr (CAsciiArmor *)
+
+  CAsciiUnarmor_decode
+    Address: 0x00434c90  File: support/codec.cpp
+    Unnamed: param_2 (int *), param_3 (undefined4)
+    Named:   this_ptr (CAsciiUnarmor *)
+
+  CCheesyCipher_ctor
+    Address: 0x00434ce0  File: support/codec.cpp
+    Unnamed: param_2 (undefined4), param_3 (undefined4)
+    Named:   this_ptr (CCheesyCipher *)
+
+  CInStreamPipe_read
+    Address: 0x00435060  File: support/codec.cpp
+    Unnamed: param_2 (undefined4 *), param_3 (uint)
+    Named:   this_ptr (CInStreamPipe *)
+
+  CInStreamFile_openInDirectory
+    Address: 0x0057d390  File: support/trstream.cpp
+    Unnamed: param_2 (undefined4), param_3 (undefined4)
+    Named:   this_ptr (CInStreamFile *)
+
+  CInStreamMemory_ctorOpen
+    Address: 0x0057d520  File: support/trstream.cpp
+    Unnamed: param_2 (undefined4), param_3 (undefined4)
+    Named:   this_ptr (CInStreamMemory *)
+
+  CInStreamMemory_openOwned
+    Address: 0x0057d830  File: support/trstream.cpp
+    Unnamed: param_2 (int), param_3 (int)
+    Named:   this_ptr (CInStreamMemory *)
+
+  CInStreamMemory_open
+    Address: 0x0057d800  File: support/trstream.cpp
+    Unnamed: param_2 (int), param_3 (int)
+    Named:   this_ptr (CInStreamMemory *)
+
+  CInStreamMemory_read
+    Address: 0x0057d6b0  File: support/trstream.cpp
+    Unnamed: param_2 (undefined4 *), param_3 (uint)
+    Named:   this_ptr (CInStreamMemory *)
+
+  CInStreamMemory_seek
+    Address: 0x0057d710  File: support/trstream.cpp
+    Unnamed: param_2 (int), param_3 (uint)
+    Named:   this_ptr (CInStreamMemory *)
+
+  COutStreamDebug_write
+    Address: 0x0057e270  File: support/trstream.cpp
+    Unnamed: param_2 (undefined4 *), param_3 (uint)
+    Named:   this_ptr (COutStreamDebug *)
+
+  COutStreamFile_ctorOpen
+    Address: 0x0057dba0  File: support/trstream.cpp
+    Unnamed: param_2 (undefined4), param_3 (undefined4)
+    Named:   this_ptr (COutStreamFile *)
+
+  COutStreamFile_open
+    Address: 0x0057dd90  File: support/trstream.cpp
+    Unnamed: param_2 (undefined4), param_3 (undefined4)
+    Named:   this_ptr (COutStreamFile *)
+
+  COutStreamFile_seek
+    Address: 0x0057dcf0  File: support/trstream.cpp
+    Unnamed: param_2 (undefined4), param_3 (undefined4)
+    Named:   this_ptr (COutStreamFile *)
+
+  COutStreamFile_write
+    Address: 0x0057dca0  File: support/trstream.cpp
+    Unnamed: param_2 (undefined4), param_3 (int)
+    Named:   this_ptr (COutStreamFile *)
+
+  COutStreamMemory_ctorOpen
+    Address: 0x0057de80  File: support/trstream.cpp
+    Unnamed: param_2 (undefined4), param_3 (undefined4)
+    Named:   this_ptr (COutStreamMemory *)
+
+  COutStreamMemory_open
+    Address: 0x0057e110  File: support/trstream.cpp
+    Unnamed: param_2 (int), param_3 (int)
+    Named:   this_ptr (COutStreamMemory *)
+
+  COutStreamMemory_seek
+    Address: 0x0057e070  File: support/trstream.cpp
+    Unnamed: param_2 (int), param_3 (uint)
+    Named:   this_ptr (COutStreamMemory *)
+
+  COutStreamMemory_write
+    Address: 0x0057dfe0  File: support/trstream.cpp
+    Unnamed: param_2 (undefined4 *), param_3 (uint)
+    Named:   this_ptr (COutStreamMemory *)
+
+  CInStreamFile_ctorOpenInDirectory
+    Address: 0x0057ce20  File: unkaddr/0057b9a0.cpp
+    Unnamed: param_2 (undefined4), param_3 (undefined4)
+    Named:   this_ptr (CInStreamFile *)
+
+  CInStreamFile_read
+    Address: 0x0057cfe0  File: unkaddr/0057b9a0.cpp
+    Unnamed: param_2 (undefined4 *), param_3 (uint)
+    Named:   this_ptr (CInStreamFile *)
+
+  CInStreamFile_seek
+    Address: 0x0057d0c0  File: unkaddr/0057b9a0.cpp
+    Unnamed: param_2 (int), param_3 (uint)
+    Named:   this_ptr (CInStreamFile *)
+
+  CAudioRecPuzzle_hitTestButtons
+    Address: 0x0059bad0  File: unkaddr/0059aa80.cpp
+    Unnamed: param_2 (int), param_3 (int)
+    Named:   this_ptr (CAudioRecPuzzle *)
+
+  CExamplePuzzle_onMouse
+    Address: 0x0059adf0  File: unkaddr/0059aa80.cpp
+    Unnamed: param_2 (int), param_3 (int)
+    Named:   this_ptr (CExamplePuzzle *)
+
+  CMuzzleEffect_init
+    Address: 0x0059d360  File: unkaddr/0059d350.cpp
+    Unnamed: param_2 (CVector3f *), param_3 (undefined4)
+    Named:   this_ptr (CMuzzleEffect *)
+
+  CFieldNotes_completeTask
+    Address: 0x004a55b0  File: core/fldnotes.cpp
+    Unnamed: param_2 (char *)
+    Named:   this_ptr (CFieldNotes *)
+
+  CFieldNotes_enableEntry
+    Address: 0x004a5310  File: core/fldnotes.cpp
+    Unnamed: param_2 (char *)
+    Named:   this_ptr (CFieldNotes *)
+
+  CFieldNotes_turnToEntry
+    Address: 0x004a5490  File: core/fldnotes.cpp
+    Unnamed: param_2 (char *)
+    Named:   this_ptr (CFieldNotes *)
+
+  SNotesEntry_layout
+    Address: 0x004a32e0  File: core/fldnotes.cpp
+    Unnamed: param_2 (int)
+    Named:   this_ptr (SNotesEntry *)
+
+  SNotesMap_paginate
+    Address: 0x004a4070  File: core/fldnotes.cpp
+    Unnamed: param_2 (undefined4)
+    Named:   this_ptr (SNotesMap *)
+
+  SNotesMap_showAnnotation
+    Address: 0x004a3b50  File: core/fldnotes.cpp
+    Unnamed: param_2 (char *)
+    Named:   this_ptr (SNotesMap *)
+
+  SNotesMap_worldToMap
+    Address: 0x004a3d00  File: core/fldnotes.cpp
+    Unnamed: param_2 (float *)
+    Named:   this_ptr (SNotesMap *)
+
+  SNotesSection_findEntry
+    Address: 0x004a35e0  File: core/fldnotes.cpp
+    Unnamed: param_2 (char *)
+    Named:   this_ptr (SNotesSection *)
+
+  SNotesSection_layout
+    Address: 0x004a3740  File: core/fldnotes.cpp
+    Unnamed: param_2 (int)
+    Named:   this_ptr (SNotesSection *)
+
+  SPageResourceMap_ctor
+    Address: 0x004a4120  File: core/fldnotes.cpp
+    Unnamed: param_2 (int)
+    Named:   this_ptr (SPageResourceMap *)
+
+  SPageResourceTwanaCharacter_ctor
+    Address: 0x004a2290  File: core/fldnotes.cpp
+    Unnamed: param_2 (char *)
+    Named:   this_ptr (SPageResourceTwanaCharacter *)
+
+  SPageResourceTwanaCharacter_onMouse
+    Address: 0x004a2380  File: core/fldnotes.cpp
+    Unnamed: param_2 (int)
+    Named:   this_ptr (SPageResourceTwanaCharacter *)
+
+  SPageResourceTwanaEntry_addCharacter
+    Address: 0x004a2620  File: core/fldnotes.cpp
+    Unnamed: param_2 (char *)
+    Named:   this_ptr (SPageResourceTwanaEntry *)
+
+  SPageResource_setLink
+    Address: 0x004a1ebe  File: core/fldnotes.cpp
+    Unnamed: param_2 (char *)
+    Named:   this_ptr (SPageResource *)
+
+  STextPage_addResource
+    Address: 0x004a26e0  File: core/fldnotes.cpp
+    Unnamed: param_2 (int)
+    Named:   this_ptr (STextPage *)
+
+  STextView_addResource
+    Address: 0x004a2bb0  File: core/fldnotes.cpp
+    Unnamed: param_2 (undefined4)
+    Named:   this_ptr (STextView *)
+
+  STextView_appendWord
+    Address: 0x004a3160  File: core/fldnotes.cpp
+    Unnamed: param_2 (char *)
+    Named:   this_ptr (STextView *)
+
+  STextView_drawPage
+    Address: 0x004a3240  File: core/fldnotes.cpp
+    Unnamed: param_2 (int)
+    Named:   this_ptr (STextView *)
+
+  STextView_handleTag
+    Address: 0x004a2cc0  File: core/fldnotes.cpp
+    Unnamed: param_2 (char *)
+    Named:   this_ptr (STextView *)
+
+  STextView_layoutChunk
+    Address: 0x004a28b0  File: core/fldnotes.cpp
+    Unnamed: param_2 (char *)
+    Named:   this_ptr (STextView *)
+
+  STextView_placeResource
+    Address: 0x004a2ad0  File: core/fldnotes.cpp
+    Unnamed: param_2 (undefined4 *)
+    Named:   this_ptr (STextView *)
+
+  STextView_wordFits
+    Address: 0x004a3100  File: core/fldnotes.cpp
+    Unnamed: param_2 (char *)
+    Named:   this_ptr (STextView *)
+
+  CMoon_update
+    Address: 0x005024a0  File: core/moon.cpp
+    Unnamed: param_2 (float)
+    Named:   this_ptr (CMoon *)
+
+  CAsciiArmor_flush
+    Address: 0x00434c00  File: support/codec.cpp
+    Unnamed: param_2 (int *)
+    Named:   this_ptr (CAsciiArmor *)
+
+  CCheesyCipher_setKey
+    Address: 0x00434d30  File: support/codec.cpp
+    Unnamed: param_2 (uint)
+    Named:   this_ptr (CCheesyCipher *)
+
+  CCheesyCipher_setMode
+    Address: 0x00434d20  File: support/codec.cpp
+    Unnamed: param_2 (undefined4)
+    Named:   this_ptr (CCheesyCipher *)
+
+  CInStreamFile_open
+    Address: 0x0057d320  File: support/trstream.cpp
+    Unnamed: param_2 (LPCSTR)
+    Named:   this_ptr (CInStreamFile *)
+
+  CInStreamMemory_ungetChar
+    Address: 0x0057d640  File: support/trstream.cpp
+    Unnamed: param_2 (int)
+    Named:   this_ptr (CInStreamMemory *)
+
+  COutStreamDebug_putChar
+    Address: 0x0057e240  File: support/trstream.cpp
+    Unnamed: param_2 (undefined1)
+    Named:   this_ptr (COutStreamDebug *)
+
+  COutStreamFile_attach
+    Address: 0x0057de20  File: support/trstream.cpp
+    Unnamed: param_2 (int)
+    Named:   this_ptr (COutStreamFile *)
+
+  COutStreamFile_putChar
+    Address: 0x0057dc70  File: support/trstream.cpp
+    Unnamed: param_2 (byte)
+    Named:   this_ptr (COutStreamFile *)
+
+  COutStreamMemory_putChar
+    Address: 0x0057df70  File: support/trstream.cpp
+    Unnamed: param_2 (undefined1)
+    Named:   this_ptr (COutStreamMemory *)
+
+  CInStreamFile_ctorOpen
+    Address: 0x0057cdb0  File: unkaddr/0057b9a0.cpp
+    Unnamed: param_2 (undefined4)
+    Named:   this_ptr (CInStreamFile *)
+
+  CInStreamFile_ungetChar
+    Address: 0x0057cf40  File: unkaddr/0057b9a0.cpp
+    Unnamed: param_2 (int)
+    Named:   this_ptr (CInStreamFile *)
+
+  CAudioRecPuzzle_isButtonHovered
+    Address: 0x0059b900  File: unkaddr/0059aa80.cpp
+    Unnamed: param_2 (int)
+    Named:   this_ptr (CAudioRecPuzzle *)
+
+  CAudioRecPuzzle_load
+    Address: 0x0059af30  File: unkaddr/0059aa80.cpp
+    Unnamed: param_2 (int)
+    Named:   this_ptr (CAudioRecPuzzle *)
+
+  CAudioRecPuzzle_turnKnob
+    Address: 0x0059ba10  File: unkaddr/0059aa80.cpp
+    Unnamed: param_2 (int)
+    Named:   this_ptr (CAudioRecPuzzle *)
+
+  CExamplePuzzle_load
+    Address: 0x0059ad20  File: unkaddr/0059aa80.cpp
+    Unnamed: param_2 (int)
+    Named:   this_ptr (CExamplePuzzle *)
+
+  CSimpleParticleSystem_attach
+    Address: 0x005a8050  File: unkaddr/005a7eb0.cpp
+    Unnamed: param_2 (undefined4)
+    Named:   this_ptr (CSimpleParticleSystem *)
+
+  CSimpleParticleSystem_ctorCapacity
+    Address: 0x005a7f50  File: unkaddr/005a7eb0.cpp
+    Unnamed: param_2 (undefined4)
+    Named:   this_ptr (CSimpleParticleSystem *)
+
+  CSimpleParticleSystem_setMaxParticles
+    Address: 0x005a8030  File: unkaddr/005a7eb0.cpp
+    Unnamed: param_2 (undefined4)
+    Named:   this_ptr (CSimpleParticleSystem *)
+
+  CSimpleParticleSystem_start
+    Address: 0x005a80d0  File: unkaddr/005a7eb0.cpp
+    Unnamed: param_2 (int)
+    Named:   this_ptr (CSimpleParticleSystem *)
+
+  CSimpleParticleSystem_stop
+    Address: 0x005a8100  File: unkaddr/005a7eb0.cpp
+    Unnamed: param_2 (int)
+    Named:   this_ptr (CSimpleParticleSystem *)
+
+  CSimpleParticleSystem_process
+    Address: 0x005a8180  File: unkafter/superopt.cpp
+    Unnamed: param_2 (float)
+    Named:   this_ptr (CSimpleParticleSystem *)
 
 ====================================================================================================
 TYPE CORRECTNESS ISSUES (heuristic-based)
 ====================================================================================================
 
 --------------------------------------------------------------------------------
-Wrong return type (void function with extra output) (5)
+Wrong return type (void function with extra output) (6)
 --------------------------------------------------------------------------------
+
+  SPageResourceMap_ctor
+    Address: 0x004a4120  File: core/fldnotes.cpp
+    Evidence: extraout_EAX, extraout_EAX, extraout_EAX, extraout_EAX, extraout_EAX, extraout_EAX
+    Signature: void __cdecl core_fldnotes_cpp_SPageResourceMap_ctor_FUN_004a4120(SPageResourceMap *this_ptr,int param_2)
+    Suggested: Likely returns int or void*
 
   FUN_004ed260
     Address: 0x004ed260  File: core/menu.cpp
@@ -1949,7 +2232,7 @@ Wrong return type (64-bit return via EDX:EAX) (15)
 
   CTextureCache_loadTexture
     Address: 0x00573b80  File: engine/texture.cpp
-    Evidence: extraout_EDX, extraout_EDX, extraout_EDX, extraout_EDX
+    Evidence: extraout_EDX, extraout_EDX, extraout_EDX, extraout_EDX, extraout_EDX
     Signature: int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00573b80(CTextureCache *this_ptr,char *texture_name)
     Suggested: Likely returns 64-bit value (longlong) via EDX:EAX
 
@@ -2150,7 +2433,7 @@ Missing register parameters (likely wrong calling convention) (25)
     Suggested: Likely register-based calling convention
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (263)
+Wrong calling convention (unaffected register usage) (275)
 --------------------------------------------------------------------------------
 
   drawLine3D
@@ -2399,6 +2682,12 @@ Wrong calling convention (unaffected register usage) (263)
     Signature: void core_conveyor_cpp_FUN_00438830(int param_1)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
+  FUN_00439f00
+    Address: 0x00439f00  File: core/crate.cpp
+    Evidence: unaff_ESI, unaff_ESI
+    Signature: void core_crate_cpp_FUN_00439f00(CDemonActor *param_1)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
   FUN_0043a240
     Address: 0x0043a240  File: core/crate.cpp
     Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
@@ -2498,7 +2787,7 @@ Wrong calling convention (unaffected register usage) (263)
   FUN_0044902e
     Address: 0x0044902e  File: core/dimage.cpp
     Evidence: unaff_EBX, unaff_ESI, unaff_ESI, unaff_EBX
-    Signature: void core_dimage_cpp_FUN_0044902e(CDemonImage *param_1,CDemonImage *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+    Signature: void core_dimage_cpp_FUN_0044902e(CDemonImage *param_1,CDemonImage *param_2,int param_3,int param_4,undefined4 param_5 )
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   FUN_00449530
@@ -2547,6 +2836,12 @@ Wrong calling convention (unaffected register usage) (263)
     Address: 0x0045bba0  File: unkafter/stranger.cpp
     Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
     Signature: void unkafter_stranger_cpp_FUN_0045bba0(int param_1)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
+  CDoc_doHeroAction
+    Address: 0x0045ca30  File: core/doc.cpp
+    Evidence: unaff_EBX, unaff_EBX
+    Signature: void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CDoor_getBoundingBox
@@ -2843,10 +3138,34 @@ Wrong calling convention (unaffected register usage) (263)
     Signature: void core_gabriela_cpp_FUN_004aeb00(CDemonActor *param_1)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
+  FUN_004af410
+    Address: 0x004af410  File: core/gabriela.cpp
+    Evidence: unaff_EBP, unaff_EBP, unaff_EBP
+    Signature: void core_gabriela_cpp_FUN_004af410(CGabriella *param_1,float param_2)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
   FUN_004af960
     Address: 0x004af960  File: core/gabriela.cpp
     Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
     Signature: void core_gabriela_cpp_FUN_004af960(int param_1)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
+  FUN_004b0ef0
+    Address: 0x004b0ef0  File: core/gabriela.cpp
+    Evidence: unaff_ESI, unaff_ESI
+    Signature: void core_gabriela_cpp_FUN_004b0ef0(CDemonActor *param_1)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
+  CGabriella_scoreTargetVisibility
+    Address: 0x004b11a0  File: core/gabriela.cpp
+    Evidence: unaff_EBP, unaff_EBP
+    Signature: float __cdecl core_gabriela_cpp_CGabriella_scoreTargetVisibility_FUN_004b11a0(CGabriella *this_ptr,CDemonActor *target_actor,int use_wider_fov)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
+  CGabriella_getCarryObjToBodyXForm
+    Address: 0x004b22c0  File: core/gabriela.cpp
+    Evidence: unaff_EBP, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EBP, unaff_EBP
+    Signature: CMatrix3x4f * __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004b22c0(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CGame_beginFadeOut
@@ -2983,7 +3302,7 @@ Wrong calling convention (unaffected register usage) (263)
 
   CMansionPuzzleCircle_updateGem
     Address: 0x004e6c40  File: core/manpuz.cpp
-    Evidence: unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP
+    Evidence: unaff_EBP, unaff_EBP, unaff_EBP
     Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateGem_FUN_004e6c40(CMansionPuzzleCircle *this_ptr,int gem_index,float delta_time)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
@@ -3257,6 +3576,12 @@ Wrong calling convention (unaffected register usage) (263)
     Signature: void sound_sndmain_cpp_FUN_00553380(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
+  CDirectSoundDevice_close
+    Address: 0x00555060  File: sound/snddx.cpp
+    Evidence: unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI
+    Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_close_FUN_00555060(CDirectSoundDevice *this_ptr)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
   FUN_0055b3b1
     Address: 0x0055b3b1  File: engine/special.cpp
     Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EBX, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI
@@ -3339,6 +3664,12 @@ Wrong calling convention (unaffected register usage) (263)
     Address: 0x00569620  File: core/stranger.cpp
     Evidence: unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI
     Signature: int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_00569620(CStranger *this_ptr,char *class_name)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
+  CStranger_tryClimbLadder
+    Address: 0x0056a240  File: core/stranger.cpp
+    Evidence: unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP
+    Signature: int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0056a240(CStranger *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CStranger_tryDescendLadder
@@ -3695,6 +4026,12 @@ Wrong calling convention (unaffected register usage) (263)
     Signature: CVector3f * __cdecl core_lantern_cpp_CLantern_getMuzzlePoint_FUN_0059d0d0(CLantern *this_ptr,CVector3f *out_point)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
+  CBasicEnemy_process
+    Address: 0x0059f420  File: core/basicene.cpp
+    Evidence: unaff_EBP, unaff_EBP
+    Signature: void __cdecl core_basicene_cpp_CBasicEnemy_process_FUN_0059f420(CBasicEnemy *this_ptr,float delta_time)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
   FUN_005a1180
     Address: 0x005a1180  File: core/confedrt.cpp
     Evidence: unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI
@@ -3705,6 +4042,24 @@ Wrong calling convention (unaffected register usage) (263)
     Address: 0x005a4fe0  File: core/union.cpp
     Evidence: unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI
     Signature: void core_union_cpp_FUN_005a4fe0(CCharacter *param_1)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
+  CHag_processStates
+    Address: 0x005aa970  File: core/hag.cpp
+    Evidence: unaff_ESI, unaff_ESI
+    Signature: void __cdecl core_hag_cpp_CHag_processStates_FUN_005aa970(CHag *this_ptr,float delta_time,int mode)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
+  CDog_ctor
+    Address: 0x005aba40  File: core/dog1.cpp
+    Evidence: unaff_EBP, unaff_EBP
+    Signature: CDog * core_dog1_cpp_CDog_ctor_FUN_005aba40(CDog *this_ptr)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
+  CDog_processStates
+    Address: 0x005abe90  File: core/dog1.cpp
+    Evidence: unaff_ESI, unaff_ESI
+    Signature: void __cdecl core_dog1_cpp_CDog_processStates_FUN_005abe90(CDog *this_ptr,float delta_time,int mode)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   FUN_005b0cde
@@ -3732,7 +4087,7 @@ Wrong calling convention (unaffected register usage) (263)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (121)
+Unresolved stack parameters (missing from signature) (141)
 --------------------------------------------------------------------------------
 
   clipAndDrawLine
@@ -3773,13 +4128,19 @@ Unresolved stack parameters (missing from signature) (121)
 
   CBoneGuy_process
     Address: 0x004186c0  File: core/boneguy.cpp
-    Evidence: in_stack_fffffd98, in_stack_fffffd98
+    Evidence: in_stack_fffffd90, in_stack_fffffd98, in_stack_fffffd90, in_stack_fffffd98
     Signature: void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_004186c0(CBoneGuy *this_ptr,float delta_time)
+    Suggested: Signature is missing stack parameters entirely
+
+  CBoneGuy_getCarryObjToBodyXForm
+    Address: 0x004192a0  File: core/boneguy.cpp
+    Evidence: in_stack_fffffe7c, in_stack_fffffe7c
+    Signature: CMatrix3x4f * __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004192a0(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
     Suggested: Signature is missing stack parameters entirely
 
   CBoneGuy_updatePickupBehavior
     Address: 0x00419520  File: core/boneguy.cpp
-    Evidence: in_stack_fffffeac, in_stack_fffffeac, in_stack_fffffeac
+    Evidence: in_stack_fffffeac, in_stack_fffffeac, in_stack_fffffeac, in_stack_fffffeac
     Signature: int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_00419520(CBoneGuy *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
@@ -3825,6 +4186,18 @@ Unresolved stack parameters (missing from signature) (121)
     Signature: void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_0042c6f0(char *filename,uchar *output_palette)
     Suggested: Signature is missing stack parameters entirely
 
+  CCheesyCipher_ctor
+    Address: 0x00434ce0  File: support/codec.cpp
+    Evidence: in_stack_00000014, in_stack_00000014
+    Signature: CCodec * __cdecl support_codec_cpp_CCheesyCipher_ctor_FUN_00434ce0(CCheesyCipher *this_ptr,undefined4 param_2,undefined4 param_3)
+    Suggested: Signature is missing stack parameters entirely
+
+  CConstruct_process
+    Address: 0x00436e80  File: core/conveyor.cpp
+    Evidence: in_stack_fffffdf4, in_stack_fffffdf4
+    Signature: void __cdecl core_conveyor_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_ptr,float delta_time)
+    Suggested: Signature is missing stack parameters entirely
+
   FUN_00439dc0
     Address: 0x00439dc0  File: core/crate.cpp
     Evidence: in_stack_ffffffbc, in_stack_ffffffbc
@@ -3855,16 +4228,28 @@ Unresolved stack parameters (missing from signature) (121)
     Signature: void core_doc_cpp_FUN_004501a2(void)
     Suggested: Signature is missing stack parameters entirely
 
+  FUN_00450c60
+    Address: 0x00450c60  File: core/doc.cpp
+    Evidence: in_stack_fffff9e4, in_stack_fffff9ec, in_stack_fffff9e4, in_stack_fffff9ec
+    Signature: void core_doc_cpp_FUN_00450c60(CHero *param_1,float param_2)
+    Suggested: Signature is missing stack parameters entirely
+
   FUN_00453250
     Address: 0x00453250  File: core/doc.cpp
-    Evidence: in_stack_fffffe74, in_stack_fffffe74, in_stack_fffffe74, in_stack_fffffe74, in_stack_fffffe74, in_stack_fffffe74, in_stack_fffffe74, in_stack_fffffe74, in_stack_fffffe74
-    Signature: void core_doc_cpp_FUN_00453250(CCharacter *param_1,float param_2)
+    Evidence: in_stack_fffffe6c, in_stack_fffffe70, in_stack_fffffe74, in_stack_fffffe70, in_stack_fffffe6c, in_stack_fffffe6c, in_stack_fffffe70, in_stack_fffffe74, in_stack_fffffe74, in_stack_fffffe74, in_stack_fffffe70, in_stack_fffffe6c, in_stack_fffffe70, in_stack_fffffe74, in_stack_fffffe74, in_stack_fffffe74
+    Signature: void core_doc_cpp_FUN_00453250(CHero *param_1,float param_2)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_00459555
     Address: 0x00459555  File: core/doc.cpp
     Evidence: in_stack_0000006c, in_stack_00000070, in_stack_00000074, in_stack_00000088, in_stack_0000008c, in_stack_000000c0, in_stack_000000c4, in_stack_000000c8, in_stack_000000d8, in_stack_000000dc, in_stack_000000e0, in_stack_000000fc, in_stack_00000108, in_stack_0000010c, in_stack_00000110, in_stack_00000160, in_stack_0000017c, in_stack_00000188, in_stack_00000194, in_stack_00000194, in_stack_0000006c, in_stack_00000074, in_stack_00000108, in_stack_00000194, in_stack_000000c0, in_stack_0000006c, in_stack_00000108, in_stack_000000c4, in_stack_00000070, in_stack_0000010c, in_stack_000000c8, in_stack_00000074, in_stack_00000110, in_stack_000000fc, in_stack_000000c0, in_stack_00000160, in_stack_00000194, in_stack_00000160, in_stack_00000160, in_stack_0000017c, in_stack_00000188, in_stack_0000017c, in_stack_0000006c, in_stack_000000d8, in_stack_000000dc, in_stack_00000070, in_stack_000000e0, in_stack_00000074, in_stack_0000008c, in_stack_0000008c, in_stack_00000088, in_stack_00000088, in_stack_0000017c, in_stack_0000017c, in_stack_00000188, in_stack_00000188
     Signature: undefined4 core_doc_cpp_FUN_00459555(void)
+    Suggested: Signature is missing stack parameters entirely
+
+  CDoc_doHeroAction
+    Address: 0x0045ca30  File: core/doc.cpp
+    Evidence: in_stack_ffffff20, in_stack_ffffff20
+    Signature: void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CDoc_canReachPickup
@@ -3945,6 +4330,12 @@ Unresolved stack parameters (missing from signature) (121)
     Signature: void __cdecl core_elephant_cpp_CElephantGun_process_FUN_00485a30(CElephantGun *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
+  CEmitter_process
+    Address: 0x00486cb0  File: core/emitter.cpp
+    Evidence: in_stack_fffffe60, in_stack_fffffe60
+    Signature: void __cdecl core_emitter_cpp_CEmitter_process_FUN_00486cb0(CEmitter *this_ptr,float delta_time)
+    Suggested: Signature is missing stack parameters entirely
+
   CEnemy_getTargetPoints
     Address: 0x00488020  File: core/enemy.cpp
     Evidence: in_stack_ffffff88, in_stack_ffffff88
@@ -3960,7 +4351,7 @@ Unresolved stack parameters (missing from signature) (121)
   FUN_00489670
     Address: 0x00489670  File: core/event.cpp
     Evidence: in_stack_ffffd64c, in_stack_ffffd64c
-    Signature: int core_event_cpp_FUN_00489670(CEventList *param_1,CEventList *param_2)
+    Signature: int core_event_cpp_FUN_00489670(CEventList *param_1,char *param_2)
     Suggested: Signature is missing stack parameters entirely
 
   CFilmReel_setup
@@ -3981,6 +4372,12 @@ Unresolved stack parameters (missing from signature) (121)
     Signature: int __cdecl core_flamecan_cpp_CFlameCan_getTargetPoints_FUN_004a0ac0(CFlameCan *this_ptr,CVector3f *out_points_array)
     Suggested: Signature is missing stack parameters entirely
 
+  SNotesMap_draw
+    Address: 0x004a3e40  File: core/fldnotes.cpp
+    Evidence: in_stack_00000010, in_stack_00000010, in_stack_00000010, in_stack_00000010, in_stack_00000010
+    Signature: void __cdecl core_fldnotes_cpp_SNotesMap_draw_FUN_004a3e40(SNotesMap *this_ptr,int param_2,int param_3)
+    Suggested: Signature is missing stack parameters entirely
+
   FUN_004a7fe2
     Address: 0x004a7fe2  File: engine/font.cpp
     Evidence: in_stack_00000458, in_stack_0000045c, in_stack_00000458, in_stack_00000458, in_stack_00000458, in_stack_00000458, in_stack_0000045c, in_stack_00000458, in_stack_00000458, in_stack_00000458, in_stack_00000458, in_stack_00000458, in_stack_00000458, in_stack_00000458, in_stack_00000458, in_stack_00000458, in_stack_00000458, in_stack_00000458, in_stack_00000458, in_stack_00000458, in_stack_00000458, in_stack_00000458, in_stack_00000458, in_stack_00000458, in_stack_0000045c
@@ -3993,10 +4390,46 @@ Unresolved stack parameters (missing from signature) (121)
     Signature: int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004aca90(CFrankenstienMachine *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
+  CGabriella_process
+    Address: 0x004ad640  File: core/gabriela.cpp
+    Evidence: in_stack_fffffcfc, in_stack_fffffcfc
+    Signature: void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004ad640(CGabriella *this_ptr,float delta_time)
+    Suggested: Signature is missing stack parameters entirely
+
+  FUN_004af410
+    Address: 0x004af410  File: core/gabriela.cpp
+    Evidence: in_stack_ffffff08, in_stack_ffffff08, in_stack_ffffff08, in_stack_ffffff08, in_stack_ffffff08
+    Signature: void core_gabriela_cpp_FUN_004af410(CGabriella *param_1,float param_2)
+    Suggested: Signature is missing stack parameters entirely
+
+  CGabriella_updateWeaponPosition
+    Address: 0x004b0210  File: core/gabriela.cpp
+    Evidence: in_stack_fffffc20, in_stack_fffffc24, in_stack_fffffc20, in_stack_fffffc24, in_stack_fffffc20, in_stack_fffffc24
+    Signature: void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004b0210(CGabriella *this_ptr,float delta_time)
+    Suggested: Signature is missing stack parameters entirely
+
+  CGabriella_scoreTargetVisibility
+    Address: 0x004b11a0  File: core/gabriela.cpp
+    Evidence: in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffea0
+    Signature: float __cdecl core_gabriela_cpp_CGabriella_scoreTargetVisibility_FUN_004b11a0(CGabriella *this_ptr,CDemonActor *target_actor,int use_wider_fov)
+    Suggested: Signature is missing stack parameters entirely
+
   CGabriella_updateAimTracking
     Address: 0x004b1530  File: core/gabriela.cpp
     Evidence: in_stack_fffffe68, in_stack_fffffe68
     Signature: void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004b1530(CGabriella *this_ptr,float delta_time,int is_holstering)
+    Suggested: Signature is missing stack parameters entirely
+
+  CGabriella_updateClavicleCollisionAvoidance
+    Address: 0x004b1e00  File: core/gabriela.cpp
+    Evidence: in_stack_00000010, in_stack_ffffff50, in_stack_ffffff58, in_stack_ffffff50, in_stack_00000010, in_stack_ffffff58, in_stack_00000010
+    Signature: void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004b1e00(CGabriella *this_ptr,float delta_time,int has_carried_objects)
+    Suggested: Signature is missing stack parameters entirely
+
+  CGabriella_getCarryObjToBodyXForm
+    Address: 0x004b22c0  File: core/gabriela.cpp
+    Evidence: in_stack_fffffe18, in_stack_fffffe18
+    Signature: CMatrix3x4f * __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004b22c0(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
     Suggested: Signature is missing stack parameters entirely
 
   CGame_beginFadeOut
@@ -4077,16 +4510,16 @@ Unresolved stack parameters (missing from signature) (121)
     Signature: void __cdecl core_minecar_cpp_CMineCar_setup_FUN_004f2070(CMineCar *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_004f2ba0
-    Address: 0x004f2ba0  File: unkafter/minecar.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000010
-    Signature: CEdCheck * __cdecl unkafter_minecar_cpp_FUN_004f2ba0(CEdCheck *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   FUN_004f3ff0
     Address: 0x004f3ff0  File: engine/mini3d.cpp
     Evidence: in_stack_00000018, in_stack_0000001c, in_stack_00000020, in_stack_00000018, in_stack_0000001c, in_stack_00000020, in_stack_00000018, in_stack_0000001c, in_stack_00000020
     Signature: void engine_mini3d_cpp_FUN_004f3ff0(void)
+    Suggested: Signature is missing stack parameters entirely
+
+  CDemonMission_prepareAllActors
+    Address: 0x004fc350  File: core/mission.cpp
+    Evidence: in_stack_ffffffec, in_stack_ffffffec
+    Signature: void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_004fc350(CDemonMission *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CMobster_processWeaponPickup
@@ -4169,7 +4602,7 @@ Unresolved stack parameters (missing from signature) (121)
 
   CScat_process
     Address: 0x0051ecc0  File: core/scat.cpp
-    Evidence: in_stack_0000001c, in_stack_ffffff44, in_stack_ffffff48, in_stack_ffffff50, in_stack_ffffff44, in_stack_ffffff48, in_stack_ffffff50, in_stack_0000001c, in_stack_0000001c, in_stack_0000001c, in_stack_0000001c, in_stack_0000001c, in_stack_0000001c, in_stack_0000001c, in_stack_0000001c, in_stack_0000001c
+    Evidence: in_stack_0000001c, in_stack_00000020, in_stack_00000024, in_stack_ffffff44, in_stack_ffffff48, in_stack_ffffff50, in_stack_ffffff60, in_stack_ffffff44, in_stack_ffffff48, in_stack_ffffff50, in_stack_0000001c, in_stack_0000001c, in_stack_0000001c, in_stack_0000001c, in_stack_0000001c, in_stack_ffffff60, in_stack_0000001c, in_stack_0000001c, in_stack_00000020, in_stack_ffffff60, in_stack_00000024
     Signature: void __cdecl core_scat_cpp_CScat_process_FUN_0051ecc0(CScat *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
@@ -4281,6 +4714,12 @@ Unresolved stack parameters (missing from signature) (121)
     Signature: void sound_snddx_cpp_FUN_00555c50(void)
     Suggested: Signature is missing stack parameters entirely
 
+  CWavOutDevice_setMode
+    Address: 0x00557f00  File: sound/sndwav.cpp
+    Evidence: in_stack_00000018, in_stack_00000018
+    Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_00557f00(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size)
+    Suggested: Signature is missing stack parameters entirely
+
   CWavInDevice_setMode
     Address: 0x00558440  File: sound/sndwav.cpp
     Evidence: in_stack_00000018, in_stack_00000018
@@ -4293,6 +4732,24 @@ Unresolved stack parameters (missing from signature) (121)
     Signature: void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_00560cb0(CSpike *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
+  CStranger_processFrame
+    Address: 0x00563060  File: core/stranger.cpp
+    Evidence: in_stack_fffffb70, in_stack_fffffb78, in_stack_fffffb88, in_stack_fffffb88, in_stack_fffffb70, in_stack_fffffb78
+    Signature: void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00563060(CStranger *this_ptr,float delta_time)
+    Suggested: Signature is missing stack parameters entirely
+
+  FUN_005656f0
+    Address: 0x005656f0  File: core/stranger.cpp
+    Evidence: in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffee8
+    Signature: void core_stranger_cpp_FUN_005656f0(CStranger *param_1,float param_2)
+    Suggested: Signature is missing stack parameters entirely
+
+  FUN_00565ff0
+    Address: 0x00565ff0  File: core/stranger.cpp
+    Evidence: in_stack_ffffdf70, in_stack_ffffdf70
+    Signature: void __cdecl core_stranger_cpp_FUN_00565ff0(CStranger *this_ptr)
+    Suggested: Signature is missing stack parameters entirely
+
   FUN_00568500
     Address: 0x00568500  File: core/stranger.cpp
     Evidence: in_stack_fffff160, in_stack_fffff160, in_stack_fffff160
@@ -4301,7 +4758,7 @@ Unresolved stack parameters (missing from signature) (121)
 
   CStranger_tryPickupObject
     Address: 0x00569620  File: core/stranger.cpp
-    Evidence: in_stack_fffffd84, in_stack_fffffd84, in_stack_fffffd84, in_stack_fffffd84, in_stack_fffffd84, in_stack_fffffd84
+    Evidence: in_stack_fffffd78, in_stack_fffffd84, in_stack_fffffd78, in_stack_fffffd78, in_stack_fffffd78, in_stack_fffffd84, in_stack_fffffd84, in_stack_fffffd84, in_stack_fffffd78, in_stack_fffffd84, in_stack_fffffd84, in_stack_fffffd78
     Signature: int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_00569620(CStranger *this_ptr,char *class_name)
     Suggested: Signature is missing stack parameters entirely
 
@@ -4313,7 +4770,7 @@ Unresolved stack parameters (missing from signature) (121)
 
   CStranger_updateWeaponLayerActions
     Address: 0x0056db50  File: core/stranger.cpp
-    Evidence: in_stack_ffffff88, in_stack_ffffff8c, in_stack_ffffff88, in_stack_ffffff88, in_stack_ffffff8c, in_stack_ffffff88, in_stack_ffffff8c, in_stack_ffffff88, in_stack_ffffff8c
+    Evidence: in_stack_ffffff8c, in_stack_ffffff90, in_stack_ffffff8c, in_stack_ffffff8c, in_stack_ffffff90, in_stack_ffffff8c, in_stack_ffffff90, in_stack_ffffff8c, in_stack_ffffff90
     Signature: void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_0056db50(CStranger *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
@@ -4421,8 +4878,14 @@ Unresolved stack parameters (missing from signature) (121)
 
   CZombie_process
     Address: 0x00595f30  File: core/zombie.cpp
-    Evidence: in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8
+    Evidence: in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9e0, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8, in_stack_fffff9d8
     Signature: void __cdecl core_zombie_cpp_CZombie_process_FUN_00595f30(CZombie *this_ptr,float delta_time)
+    Suggested: Signature is missing stack parameters entirely
+
+  CZombie_getCarryObjToBodyXForm
+    Address: 0x005980a0  File: core/zombie.cpp
+    Evidence: in_stack_fffffdf8, in_stack_fffffdf8, in_stack_fffffdf8
+    Signature: CMatrix3x4f * __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005980a0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
     Suggested: Signature is missing stack parameters entirely
 
   CZombie_processPickup
@@ -4431,10 +4894,10 @@ Unresolved stack parameters (missing from signature) (121)
     Signature: int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005984e0(CZombie *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_0059bb40
+  CAudioRecPuzzle_onMouse
     Address: 0x0059bb40  File: unkaddr/0059aa80.cpp
     Evidence: in_stack_00000014, in_stack_00000014
-    Signature: void unkaddr_0059aa80_cpp_FUN_0059bb40(int param_1)
+    Signature: void __cdecl unkaddr_0059aa80_cpp_CAudioRecPuzzle_onMouse_FUN_0059bb40(CAudioRecPuzzle *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CLantern_setup
@@ -4449,10 +4912,22 @@ Unresolved stack parameters (missing from signature) (121)
     Signature: void __cdecl core_lantern_cpp_CLantern_process_FUN_0059ccf0(CLantern *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
+  CBasicEnemy_process
+    Address: 0x0059f420  File: core/basicene.cpp
+    Evidence: in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
+    Signature: void __cdecl core_basicene_cpp_CBasicEnemy_process_FUN_0059f420(CBasicEnemy *this_ptr,float delta_time)
+    Suggested: Signature is missing stack parameters entirely
+
   CSpiritMine_renderTransparent
     Address: 0x005ad910  File: core/spirmine.cpp
     Evidence: in_stack_00000008, in_stack_00000008
     Signature: int __cdecl core_spirmine_cpp_CSpiritMine_renderTransparent_FUN_005ad910(CSpiritMine *this_ptr)
+    Suggested: Signature is missing stack parameters entirely
+
+  CNecklace_process
+    Address: 0x005adad0  File: core/necklace.cpp
+    Evidence: in_stack_fffffea4, in_stack_fffffea4
+    Signature: void __cdecl core_necklace_cpp_CNecklace_process_FUN_005adad0(CNecklace *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_005b4d30
@@ -4462,7 +4937,7 @@ Unresolved stack parameters (missing from signature) (121)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (1076)
+Undefined types in variables (1112)
 --------------------------------------------------------------------------------
 
   CBox_processPhysics
@@ -5175,7 +5650,7 @@ Undefined types in variables (1076)
     Locals:  local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004a41b0
+  CFieldNotes_loadFile
     Address: 0x004a41b0  File: core/fldnotes.cpp
     Locals:  local_5b4 (undefined), local_5b3 (undefined), local_5b2 (undefined1), local_5b1 (undefined1), local_5b0 (undefined1), local_5af (undefined1), local_1b4 (undefined), local_1b3 (undefined1), local_b4 (undefined), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5620,6 +6095,12 @@ Undefined types in variables (1076)
     Locals:  local_498 (undefined8), local_488 (undefined4), local_484 (undefined), local_483 (undefined1), local_482 (undefined1), local_481 (undefined1), local_358 (undefined), local_258 (undefined), local_158 (undefined), local_58 (undefined), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CSimpleParticleSystem_emit
+    Address: 0x005a8300  File: unkafter/superopt.cpp
+    Params:  param_2 (undefined4), param_3 (undefined4), param_4 (undefined4), param_5 (undefined4), param_6 (undefined4), param_7 (undefined4), param_8 (undefined4), param_9 (undefined4), param_11 (undefined4 *), param_12 (undefined4 *), param_13 (undefined4)
+    Locals:  local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CBaron_performLightningAttack
     Address: 0x00410170  File: core/baron.cpp
     Locals:  local_1a0 (undefined), local_128 (undefined), local_124 (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_a4 (undefined), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined), local_14 (undefined), local_c (undefined4)
@@ -5640,7 +6121,7 @@ Undefined types in variables (1076)
     Locals:  local_60 (undefined), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00502510
+  CMoon_render
     Address: 0x00502510  File: core/moon.cpp
     Locals:  local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -6140,7 +6621,7 @@ Undefined types in variables (1076)
     Locals:  local_44 (undefined8), local_3c (undefined8), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0059d440
+  CMuzzleEffect_render
     Address: 0x0059d440  File: unkaddr/0059d350.cpp
     Locals:  local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -6600,6 +7081,11 @@ Undefined types in variables (1076)
     Locals:  local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined), local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CBasicEnemy_archive
+    Address: 0x0059fc10  File: core/basicene.cpp
+    Locals:  local_314 (undefined1), local_313 (undefined1), local_214 (undefined), local_213 (undefined1), local_114 (undefined), local_113 (undefined1), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CBoundingBox3D_isVisibleWithShadow
     Address: 0x0041a670  File: core/box.cpp
     Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4), local_8 (undefined4)
@@ -6728,11 +7214,6 @@ Undefined types in variables (1076)
   FUN_00567430
     Address: 0x00567430  File: core/stranger.cpp
     Locals:  local_1aec (undefined4), local_48 (undefined), local_38 (undefined), local_28 (undefined), local_1c (undefined), local_18 (undefined4), local_10 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CTwigZombie_archive
-    Address: 0x0059fc10  File: core/twigzomb.cpp
-    Locals:  local_314 (undefined1), local_313 (undefined1), local_214 (undefined), local_213 (undefined1), local_114 (undefined), local_113 (undefined1), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   FUN_00401450
@@ -6885,13 +7366,13 @@ Undefined types in variables (1076)
     Locals:  local_50 (undefined), local_44 (undefined), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004a2cc0
-    Address: 0x004a2cc0  File: core/fldnotes.cpp
+  FUN_004a61b0
+    Address: 0x004a61b0  File: core/fldnotes.cpp
     Locals:  local_220 (undefined), local_120 (undefined), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004a61b0
-    Address: 0x004a61b0  File: core/fldnotes.cpp
+  STextView_handleTag
+    Address: 0x004a2cc0  File: core/fldnotes.cpp
     Locals:  local_220 (undefined), local_120 (undefined), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
@@ -7050,11 +7531,6 @@ Undefined types in variables (1076)
     Locals:  local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005a8300
-    Address: 0x005a8300  File: unkafter/superopt.cpp
-    Locals:  local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   getJoystickState
     Address: 0x00590060  File: wincore/winrun.cpp
     Locals:  local_50 (undefined4), local_4c (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
@@ -7120,6 +7596,11 @@ Undefined types in variables (1076)
     Locals:  local_60 (undefined4), local_54 (undefined4), local_48 (undefined4), local_40 (undefined), local_18 (undefined)
     Suggested: Resolve undefined types to concrete types
 
+  CFirefly_setupRenderState
+    Address: 0x00495020  File: core/fire.cpp
+    Locals:  local_60 (undefined4), local_54 (undefined4), local_48 (undefined4), local_40 (undefined), local_18 (undefined)
+    Suggested: Resolve undefined types to concrete types
+
   CSmokeParticle_setupRenderState
     Address: 0x00493410  File: core/fire.cpp
     Locals:  local_60 (undefined4), local_54 (undefined4), local_48 (undefined4), local_40 (undefined), local_18 (undefined)
@@ -7135,12 +7616,7 @@ Undefined types in variables (1076)
     Locals:  local_24 (undefined), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00495020
-    Address: 0x00495020  File: core/fire.cpp
-    Locals:  local_60 (undefined4), local_54 (undefined4), local_48 (undefined4), local_40 (undefined), local_18 (undefined)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_004a3a60
+  SNotesMap_revealAtHero
     Address: 0x004a3a60  File: core/fldnotes.cpp
     Locals:  local_24 (undefined8), local_1c (undefined8), local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -7325,6 +7801,12 @@ Undefined types in variables (1076)
     Locals:  local_274 (undefined), local_174 (undefined), local_173 (undefined1), local_74 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CMuzzleEffect_init
+    Address: 0x0059d360  File: unkaddr/0059d350.cpp
+    Params:  param_3 (undefined4)
+    Locals:  local_28 (undefined), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   FUN_00459ff0
     Address: 0x00459ff0  File: unkafter/stranger.cpp
     Locals:  local_5c (undefined4), local_54 (undefined4), local_38 (undefined4), local_34 (undefined4), local_2c (undefined4)
@@ -7405,14 +7887,19 @@ Undefined types in variables (1076)
     Locals:  local_30 (undefined4), local_2c (undefined4), local_24 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004a28b0
+  SNotesMap_revealCircle
+    Address: 0x004a3bb0  File: core/fldnotes.cpp
+    Locals:  local_14 (undefined4), local_10 (undefined4), local_c (undefined4), local_8 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  STextView_layoutChunk
     Address: 0x004a28b0  File: core/fldnotes.cpp
     Locals:  local_314 (undefined1), local_114 (undefined), local_113 (undefined1), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004a3bb0
-    Address: 0x004a3bb0  File: core/fldnotes.cpp
-    Locals:  local_14 (undefined4), local_10 (undefined4), local_c (undefined4), local_8 (undefined4)
+  STextView_setRect
+    Address: 0x004a2890  File: core/fldnotes.cpp
+    Params:  param_2 (undefined4), param_3 (undefined4), param_4 (undefined4), param_5 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CFrankenstienMachine_accumulateParticles
@@ -7670,9 +8157,9 @@ Undefined types in variables (1076)
     Locals:  local_29c (undefined1), local_29b (undefined1), local_184 (undefined), local_183 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0059d360
-    Address: 0x0059d360  File: unkaddr/0059d350.cpp
-    Locals:  local_28 (undefined), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+  CAudioRecPuzzle_addButton
+    Address: 0x0059b3c0  File: unkaddr/0059aa80.cpp
+    Params:  param_6 (undefined4), param_7 (undefined4), param_8 (undefined4), param_9 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   FUN_0059a5d0
@@ -7810,18 +8297,23 @@ Undefined types in variables (1076)
     Locals:  local_28 (undefined8), local_20 (undefined8), local_18 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004a32e0
-    Address: 0x004a32e0  File: core/fldnotes.cpp
-    Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_004a3d00
-    Address: 0x004a3d00  File: core/fldnotes.cpp
-    Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+  CFireEffect_createLeaf
+    Address: 0x0049d600  File: core/fire.cpp
+    Params:  param_2 (undefined4), param_3 (undefined4), param_5 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   FUN_004a6470
     Address: 0x004a6470  File: core/fldnotes.cpp
+    Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  SNotesEntry_layout
+    Address: 0x004a32e0  File: core/fldnotes.cpp
+    Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  SNotesMap_worldToMap
+    Address: 0x004a3d00  File: core/fldnotes.cpp
     Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
@@ -8145,6 +8637,17 @@ Undefined types in variables (1076)
     Locals:  local_3c (undefined), local_34 (undefined), local_33 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
+  CInStreamPipe_open
+    Address: 0x00435270  File: support/codec.cpp
+    Params:  param_2 (undefined4), param_3 (undefined4), param_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CInStreamFile_read
+    Address: 0x0057cfe0  File: unkaddr/0057b9a0.cpp
+    Params:  param_2 (undefined4 *)
+    Locals:  local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   FUN_004613b0
     Address: 0x004613b0  File: unkafter/dosio.cpp
     Locals:  local_114 (undefined1), local_113 (undefined1), local_14 (undefined4)
@@ -8153,6 +8656,11 @@ Undefined types in variables (1076)
   FUN_0045d2c0
     Address: 0x0045d2c0  File: unkafter/stranger.cpp
     Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CSimpleParticleSystem_setFade
+    Address: 0x005a8140  File: unkafter/superopt.cpp
+    Params:  param_2 (undefined4), param_3 (undefined4), param_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   calibrateCPUSpeed
@@ -8348,6 +8856,16 @@ Undefined types in variables (1076)
   parseVectorLocation
     Address: 0x00488e30  File: core/event.cpp
     Locals:  local_78 (undefined), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CFireEffect_createFirefly
+    Address: 0x0049d6a0  File: core/fire.cpp
+    Params:  param_2 (undefined4), param_3 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CFireEffect_createMuzzleEffect
+    Address: 0x0049d170  File: core/fire.cpp
+    Params:  param_2 (undefined4), param_3 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CFireEffect_load
@@ -8705,6 +9223,11 @@ Undefined types in variables (1076)
     Locals:  local_34 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CCheesyCipher_ctor
+    Address: 0x00434ce0  File: support/codec.cpp
+    Params:  param_2 (undefined4), param_3 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   FUN_00434490
     Address: 0x00434490  File: support/codec.cpp
     Locals:  local_18 (undefined4), local_14 (undefined4)
@@ -8725,14 +9248,44 @@ Undefined types in variables (1076)
     Locals:  local_28 (undefined), local_18 (undefined)
     Suggested: Resolve undefined types to concrete types
 
+  CInStreamFile_openInDirectory
+    Address: 0x0057d390  File: support/trstream.cpp
+    Params:  param_2 (undefined4), param_3 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CInStreamMemory_ctorOpen
+    Address: 0x0057d520  File: support/trstream.cpp
+    Params:  param_2 (undefined4), param_3 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  COutStreamFile_ctorOpen
+    Address: 0x0057dba0  File: support/trstream.cpp
+    Params:  param_2 (undefined4), param_3 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  COutStreamFile_open
+    Address: 0x0057dd90  File: support/trstream.cpp
+    Params:  param_2 (undefined4), param_3 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  COutStreamFile_seek
+    Address: 0x0057dcf0  File: support/trstream.cpp
+    Params:  param_2 (undefined4), param_3 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  COutStreamMemory_ctorOpen
+    Address: 0x0057de80  File: support/trstream.cpp
+    Params:  param_2 (undefined4), param_3 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   FUN_004a1bb0
     Address: 0x004a1bb0  File: unkaddr/004a1200.cpp
     Locals:  local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0057cfe0
-    Address: 0x0057cfe0  File: unkaddr/0057b9a0.cpp
-    Locals:  local_18 (undefined4), local_14 (undefined4)
+  CInStreamFile_ctorOpenInDirectory
+    Address: 0x0057ce20  File: unkaddr/0057b9a0.cpp
+    Params:  param_2 (undefined4), param_3 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   FUN_005a6cf0
@@ -9020,6 +9573,11 @@ Undefined types in variables (1076)
     Locals:  local_10 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
+  CLeaf_init
+    Address: 0x00496750  File: core/fire.cpp
+    Params:  param_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CShell_setup
     Address: 0x0049b660  File: core/fire.cpp
     Locals:  local_c (undefined4)
@@ -9035,19 +9593,44 @@ Undefined types in variables (1076)
     Locals:  local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004a2170
+  SNotesMap_load
+    Address: 0x004a38e0  File: core/fldnotes.cpp
+    Locals:  local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  SNotesMap_paginate
+    Address: 0x004a4070  File: core/fldnotes.cpp
+    Params:  param_2 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  SNotesSection_addEntry
+    Address: 0x004a3630  File: core/fldnotes.cpp
+    Params:  param_3 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  SPageResourceBitmap_ctorFromFile
     Address: 0x004a2170  File: core/fldnotes.cpp
     Locals:  local_108 (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004a2290
+  SPageResourceText_ctor
+    Address: 0x004a1f80  File: core/fldnotes.cpp
+    Params:  param_3 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  SPageResourceTwanaCharacter_ctor
     Address: 0x004a2290  File: core/fldnotes.cpp
     Locals:  local_10c (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004a38e0
-    Address: 0x004a38e0  File: core/fldnotes.cpp
-    Locals:  local_14 (undefined4)
+  STextView_addResource
+    Address: 0x004a2bb0  File: core/fldnotes.cpp
+    Params:  param_2 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  STextView_placeResource
+    Address: 0x004a2ad0  File: core/fldnotes.cpp
+    Params:  param_2 (undefined4 *)
     Suggested: Resolve undefined types to concrete types
 
   CGabriella_getFlashlightMinAngle
@@ -9740,9 +10323,34 @@ Undefined types in variables (1076)
     Locals:  local_34 (undefined)
     Suggested: Resolve undefined types to concrete types
 
+  CAsciiArmor_encode
+    Address: 0x00434bb0  File: support/codec.cpp
+    Params:  param_2 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CAsciiUnarmor_decode
+    Address: 0x00434c90  File: support/codec.cpp
+    Params:  param_3 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CCheesyCipher_setMode
+    Address: 0x00434d20  File: support/codec.cpp
+    Params:  param_2 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CCodec_processBuffer
     Address: 0x00434070  File: support/codec.cpp
     Locals:  local_24 (undefined)
+    Suggested: Resolve undefined types to concrete types
+
+  CInStreamPipe_fillBuffer
+    Address: 0x00435300  File: support/codec.cpp
+    Locals:  local_24 (undefined)
+    Suggested: Resolve undefined types to concrete types
+
+  CInStreamPipe_read
+    Address: 0x00435060  File: support/codec.cpp
+    Params:  param_2 (undefined4 *)
     Suggested: Resolve undefined types to concrete types
 
   FUN_004338f0
@@ -9763,11 +10371,6 @@ Undefined types in variables (1076)
   FUN_00434810
     Address: 0x00434810  File: support/codec.cpp
     Locals:  local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00435300
-    Address: 0x00435300  File: support/codec.cpp
-    Locals:  local_24 (undefined)
     Suggested: Resolve undefined types to concrete types
 
   decryptMessage
@@ -9795,6 +10398,36 @@ Undefined types in variables (1076)
     Locals:  local_18 (undefined2)
     Suggested: Resolve undefined types to concrete types
 
+  CInStreamMemory_read
+    Address: 0x0057d6b0  File: support/trstream.cpp
+    Params:  param_2 (undefined4 *)
+    Suggested: Resolve undefined types to concrete types
+
+  COutStreamDebug_putChar
+    Address: 0x0057e240  File: support/trstream.cpp
+    Params:  param_2 (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  COutStreamDebug_write
+    Address: 0x0057e270  File: support/trstream.cpp
+    Params:  param_2 (undefined4 *)
+    Suggested: Resolve undefined types to concrete types
+
+  COutStreamFile_write
+    Address: 0x0057dca0  File: support/trstream.cpp
+    Params:  param_2 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  COutStreamMemory_putChar
+    Address: 0x0057df70  File: support/trstream.cpp
+    Params:  param_2 (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  COutStreamMemory_write
+    Address: 0x0057dfe0  File: support/trstream.cpp
+    Params:  param_2 (undefined4 *)
+    Suggested: Resolve undefined types to concrete types
+
   FUN_0057d280
     Address: 0x0057d280  File: support/trstream.cpp
     Locals:  local_14 (undefined4)
@@ -9810,9 +10443,34 @@ Undefined types in variables (1076)
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CInStreamFile_ctorOpen
+    Address: 0x0057cdb0  File: unkaddr/0057b9a0.cpp
+    Params:  param_2 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   FUN_0059ac60
     Address: 0x0059ac60  File: unkaddr/0059aa80.cpp
     Locals:  local_10 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CGameHook_formatFlag
+    Address: 0x0059c380  File: unkaddr/0059c270.cpp
+    Params:  param_2 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CSimpleParticleSystem_attach
+    Address: 0x005a8050  File: unkaddr/005a7eb0.cpp
+    Params:  param_2 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CSimpleParticleSystem_ctorCapacity
+    Address: 0x005a7f50  File: unkaddr/005a7eb0.cpp
+    Params:  param_2 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CSimpleParticleSystem_setMaxParticles
+    Address: 0x005a8030  File: unkaddr/005a7eb0.cpp
+    Params:  param_2 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   FUN_004e8620
@@ -9852,7 +10510,7 @@ FUNCTION NAME / ADDRESS MISMATCHES (0)
   No mismatches found.
 
 ====================================================================================================
-DUPLICATE FUNCTION NAMES (132 groups)
+DUPLICATE FUNCTION NAMES (130 groups)
 ====================================================================================================
 
 Functions that share the same base name (ignoring FUN_XXXXXXXX suffix).
@@ -9924,8 +10582,8 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00408ef0  (void)
     0x004090f0  (int param_1,int param_2,uint param_3)
     0x004093a0  (int param_1,CBoundingBox3D *param_2,float *param_3,undefi...)
-    0x0040ce40  (int param_1,int param_2,undefined4 param_3)
-    0x0040ce70  (int param_1,int param_2,undefined4 param_3)
+    0x0040ce40  (int param_1,int param_2,int param_3)
+    0x0040ce70  (int param_1,int param_2,int param_3)
     0x0040cea0  (int param_1,int param_2,undefined4 param_3,undefined4 par...)
     0x0040ced0  (void)
     0x0040d320  (float *param_1)
@@ -10085,7 +10743,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00448f40  (CDemonImage *this_ptr)
     0x00448fa0  (CDemonImage *this_ptr)
     0x00448fcc  (undefined4 param_1,uint param_2,uint param_3,uint param_4)
-    0x0044902e  (CDemonImage *param_1,CDemonImage *param_2,undefined4 para...)
+    0x0044902e  (CDemonImage *param_1,CDemonImage *param_2,int param_3,int...)
 
   core_dirmat.cpp  (4 functions)
     0x00449530  (float *param_1,float *param_2)
@@ -10109,8 +10767,8 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0044febe  (int param_1)
     0x0044ffd0  (undefined4 param_1)
     0x004501a2  (void)
-    0x00450c60  (CCharacter *param_1,float param_2)
-    0x00453250  (CCharacter *param_1,float param_2)
+    0x00450c60  (CHero *param_1,float param_2)
+    0x00453250  (CHero *param_1,float param_2)
     0x00453c5e  (int param_1)
     0x00453cc0  (int param_1)
     0x00453d80  (int param_1)
@@ -10184,7 +10842,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00488aae  (undefined4 param_1)
 
   core_event.cpp  (7 functions)
-    0x00489670  (CEventList *param_1,CEventList *param_2)
+    0x00489670  (CEventList *param_1,char *param_2)
     0x00490f80  (CEventList *this_ptr,char *name,int add_flag)
     0x004910b0  (CEventList *param_1)
     0x00491110  (CEventList *this_ptr,char *name,int add_flag)
@@ -10192,24 +10850,17 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0049235e  (int *param_1,int param_2,char *param_3,char *param_4)
     0x0049249e  (int *param_1,int param_2)
 
-  core_fire.cpp  (31 functions)
+  core_fire.cpp  (21 functions)
     0x004935b0  (undefined4 *param_1)
     0x00493cf0  (undefined4 *param_1)
     0x004947a0  (CVector3f *param_1)
     0x00494eb0  (void)
-    0x00494ec0  (int param_1)
-    0x00495020  (void)
-    0x00495150  (CVector3f *param_1)
     0x00495ca0  (CVector3f *param_1)
     0x00496620  (int param_1)
     0x004966a0  (CVector3f *param_1)
-    0x00496750  (CParticle *param_1,CVector3f *param_2,CVector3f *param_3,...)
     0x0049677e  (void)
-    0x004967d0  (int param_1)
-    0x004968d0  (CVector3f *param_1)
-    0x00496990  (void)
     0x004969a0  (CMuzzleFlash *this_ptr,CVector3f *position,CMatrix3x3f *r...)
-    0x00496c60  (CParticle *param_1,float *param_2,undefined4 *param_3,und...)
+    0x00496c60  (CParticle *param_1,float *param_2,int *param_3,float *par...)
     0x004972c0  (void)
     0x00498d30  (float *param_1,float *param_2,float param_3,float param_4)
     0x004992b0  (int *param_1,int param_2,CVector3f *param_3,CVector3f *pa...)
@@ -10218,73 +10869,17 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0049b7f0  (int param_1)
     0x0049b9c0  (void)
     0x0049d120  (CFireEffect *this_ptr,CVector3f *position,CMatrix3x3f *ro...)
-    0x0049d170  (undefined4 param_1,undefined4 param_2,undefined4 param_3)
-    0x0049d600  (undefined4 param_1,undefined4 param_2,undefined4 param_3,...)
-    0x0049d6a0  (undefined4 param_1,undefined4 param_2,undefined4 param_3,...)
     0x0049db20  (CFireEffect *param_1,float *param_2,float *param_3,float ...)
     0x0049eb50  (void)
     0x0049eb8e  (undefined4 param_1,SProjectedVertex *param_2,float *param_3)
 
-  core_fldnotes.cpp  (60 functions)
-    0x004a1ebe  (int param_1,char *param_2)
-    0x004a1f60  (int param_1)
-    0x004a1f80  (undefined4 param_1,char *param_2,undefined4 param_3)
-    0x004a2060  (int *param_1)
-    0x004a2170  (undefined4 param_1,char *param_2,int param_3,int param_4)
-    0x004a2270  (int *param_1)
-    0x004a2290  (SPageResourceBitmap *param_1,char *param_2)
-    0x004a2380  (int param_1,int param_2)
-    0x004a24f0  (int *param_1)
-    0x004a2620  (int param_1,char *param_2)
-    0x004a2690  (undefined4 *param_1)
-    0x004a26a0  (int *param_1)
-    0x004a26e0  (int *param_1,int param_2)
-    0x004a2730  (int *param_1,int param_2,int param_3)
-    0x004a2780  (int *param_1)
-    0x004a27e0  (undefined4 *param_1)
-    0x004a2890  (undefined4 *param_1,undefined4 param_2,undefined4 param_3...)
-    0x004a28b0  (int param_1,char *param_2)
-    0x004a2ad0  (int param_1,undefined4 *param_2)
-    0x004a2b30  (int param_1)
-    0x004a2bb0  (int param_1,undefined4 param_2)
-    0x004a2bf0  (int param_1)
-    0x004a2c90  (int param_1)
-    0x004a2cc0  (int param_1,char *param_2)
-    0x004a30a0  (int param_1,int param_2,int param_3)
-    0x004a3100  (int param_1,char *param_2)
-    0x004a3160  (int param_1,char *param_2)
-    0x004a31c0  (int param_1)
-    0x004a3240  (int param_1,int param_2)
-    0x004a3280  (int param_1)
-    0x004a32c0  (int param_1)
-    0x004a32e0  (int param_1,int param_2)
-    0x004a3570  (int param_1)
-    0x004a35e0  (int param_1,char *param_2)
-    0x004a3630  (int param_1,char *param_2,undefined4 param_3)
-    0x004a3740  (int param_1,int param_2)
-    0x004a3860  (undefined4 *param_1)
-    0x004a38e0  (int param_1)
-    0x004a3a60  (int *param_1)
-    0x004a3b50  (int param_1,char *param_2)
-    0x004a3bb0  (int param_1,int param_2,int param_3,int param_4)
-    0x004a3ca0  (int param_1,int param_2,int param_3,int param_4)
-    0x004a3d00  (int param_1,float *param_2)
-    0x004a3e40  (int param_1,int param_2,int param_3)
-    0x004a3fc0  (int param_1)
-    0x004a4070  (undefined4 param_1,undefined4 param_2)
-    0x004a4120  (undefined4 param_1,int param_2)
-    0x004a4150  (undefined4 *param_1)
-    0x004a41b0  (char *param_1,char *param_2,char *param_3)
-    0x004a50b0  (undefined1 *param_1)
-    0x004a5200  (undefined4 param_1,undefined4 param_2,undefined4 param_3,...)
-    0x004a5310  (undefined4 param_1,undefined4 param_2)
-    0x004a5430  (undefined4 param_1,undefined4 param_2)
-    0x004a5490  (undefined4 param_1,undefined4 param_2)
-    0x004a55b0  (undefined4 param_1,undefined4 param_2)
+  core_fldnotes.cpp  (7 functions)
+    0x004a5200  (undefined4 param_1,char *param_2,char *param_3,char *param_4)
+    0x004a5430  (undefined4 param_1,char *param_2)
     0x004a56c0  (undefined4 param_1,char *param_2)
     0x004a5700  (int param_1)
     0x004a5f60  (int param_1)
-    0x004a61b0  (undefined4 param_1,undefined4 param_2)
+    0x004a61b0  (CFieldNotes *param_1,undefined4 param_2)
     0x004a6470  (undefined4 param_1,undefined4 param_2)
 
   core_gabriela.cpp  (6 functions)
@@ -10336,7 +10931,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004c8010  (undefined4 *param_1,int param_2)
     0x004c88a0  (undefined4 *param_1,int param_2)
     0x004c9000  (undefined4 *param_1,int param_2)
-    0x004c9bd0  (undefined4 param_1,undefined4 *param_2,int param_3,float ...)
+    0x004c9bd0  (undefined4 param_1,float *param_2,int param_3,float param...)
 
   core_ground.cpp  (2 functions)
     0x004ca7c0  (uint param_1)
@@ -10352,7 +10947,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004cf440  (int param_1)
     0x004cf4e0  (CCharacter *param_1)
     0x004cfc80  (CHero *param_1)
-    0x004cfd60  (CDemonActor *param_1,char *param_2)
+    0x004cfd60  (CHero *param_1,char *param_2)
     0x004cff50  (CHero *this_ptr,int hand_index)
     0x004cff90  (int param_1,int param_2)
     0x004d00c0  (int param_1,float *param_2)
@@ -10373,7 +10968,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004dadb0  (CDemonActor *param_1,CDemonActor *param_2,int param_3)
     0x004db760  (undefined4 param_1,int param_2)
     0x004db8e0  (void *param_1,int param_2,int param_3)
-    0x004db9d0  (CInventory *param_1,int param_2,undefined4 param_3,int pa...)
+    0x004db9d0  (CInventory *param_1,CWeapon *param_2,undefined4 param_3,i...)
     0x004dc850  (int param_1)
     0x004dc8c0  (int param_1,CDemonActor *param_2)
     0x004dd0a0  (undefined4 param_1,CDemonActor *param_2,int param_3)
@@ -10432,11 +11027,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004fcf50  (void)
     0x004fd280  (CDemonMission *this_ptr)
 
-  core_moon.cpp  (7 functions)
-    0x005023e0  (int *param_1)
-    0x00502450  (int *param_1)
-    0x005024a0  (undefined4 param_1,float param_2)
-    0x00502510  (void)
+  core_moon.cpp  (3 functions)
     0x00502760  (undefined4 *param_1)
     0x00502790  (undefined4 param_1)
     0x005027b0  (undefined4 *param_1)
@@ -10505,7 +11096,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x005306e0  (undefined4 param_1,int param_2)
     0x00531a90  (CDemonSet *this_ptr,CVector3f *vertex_position,CVector3f ...)
     0x00533190  (int param_1,float *param_2)
-    0x00533ece  (CDemonSet *param_1,SMRGLHeaderPrimitive *param_2,int para...)
+    0x00533ece  (CDemonSet *param_1,SMRGLPrimitiveTriangle *param_2,int pa...)
     0x00534680  (int param_1,undefined4 param_2,undefined4 param_3,undefin...)
 
   core_setcolid.cpp  (8 functions)
@@ -10694,7 +11285,7 @@ Some are legitimate overloads, others may need disambiguating names.
   engine_font.cpp  (12 functions)
     0x004a7fe2  (void)
     0x004a8540  (int param_1,float param_2)
-    0x004a859e  (CBitFont *param_1,CBitFont *param_2)
+    0x004a859e  (CBitFont *param_1,char *param_2)
     0x004a8850  (CBitFont *param_1)
     0x004a88e0  (CBitFont *param_1,int param_2,int param_3,int param_4,int...)
     0x004a8df0  (CBitFont *param_1,byte *param_2,int param_3,int param_4,i...)
@@ -10989,7 +11580,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00484440  (CEdScrollBar *param_1)
     0x00484e70  (CEdButton *this_ptr)
     0x00484f20  (int param_1,int param_2)
-    0x0048546e  (CEdCheck *param_1,undefined4 param_2,undefined4 param_3,C...)
+    0x0048546e  (CEdCheck *param_1,int param_2,int param_3,char *param_4)
     0x004854b3  (void)
     0x004854bb  (void)
     0x004854dc  (void)
@@ -11002,11 +11593,6 @@ Some are legitimate overloads, others may need disambiguating names.
   shape_spotview.cpp  (2 functions)
     0x005619ee  (CSpotView *param_1,uint param_2)
     0x00561d90  (int param_1)
-
-  shape_superopt.cpp  (3 functions)
-    0x0059be00  (int param_1)
-    0x0059be10  (int param_1)
-    0x0059be20  (int param_1)
 
   sound_mp3.cpp  (2 functions)
     0x005048e0  (int *param_1,int param_2,ulong param_3,int param_4)
@@ -11062,9 +11648,9 @@ Some are legitimate overloads, others may need disambiguating names.
     0x005506b0  (char *param_1)
     0x00550b70  (uint sfx_handle)
     0x00550d30  (uint param_1,undefined4 param_2,undefined4 param_3,undefi...)
-    0x00550da0  (uint param_1,undefined4 param_2)
-    0x00550ea0  (uint param_1,undefined4 param_2)
-    0x00550f20  (uint param_1,undefined4 param_2)
+    0x00550da0  (uint param_1,void *param_2)
+    0x00550ea0  (uint param_1,void *param_2)
+    0x00550f20  (uint param_1,float param_2)
     0x00550f50  (uint sfx_handle,float base_frequency)
     0x00551330  (uint param_1)
     0x0055141c  (int param_1)
@@ -11112,7 +11698,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00558c20  (void)
     0x00558c30  (void)
 
-  support_codec.cpp  (41 functions)
+  support_codec.cpp  (23 functions)
     0x004338a0  (int *param_1,int param_2,uint param_3)
     0x004338d0  (undefined4 *param_1,undefined4 *param_2)
     0x004338f0  (byte *param_1,int param_2,uint param_3,int *param_4)
@@ -11134,26 +11720,8 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00434a70  (int param_1,int *param_2)
     0x00434b10  (uint param_1)
     0x00434b90  (int param_1)
-    0x00434bb0  (int param_1,undefined4 param_2,int *param_3)
-    0x00434c00  (int param_1,int *param_2)
-    0x00434c90  (int param_1,int *param_2,undefined4 param_3)
-    0x00434ce0  (CCodec *param_1,undefined4 param_2,undefined4 param_3)
-    0x00434d20  (int param_1,undefined4 param_2)
-    0x00434d30  (int param_1,uint param_2)
-    0x00434d60  (int param_1,byte param_2)
+    0x00434d60  (CCheesyCipher *param_1,byte param_2)
     0x00434dd0  (undefined4 param_1,int *param_2,int *param_3)
-    0x00434e50  (int param_1)
-    0x00434fa0  (int param_1)
-    0x00434ff0  (int param_1)
-    0x00435020  (int param_1)
-    0x00435060  (int param_1,undefined4 *param_2,uint param_3)
-    0x00435120  (void)
-    0x00435150  (void)
-    0x00435180  (int param_1)
-    0x004351b0  (int param_1)
-    0x004351e0  (int param_1)
-    0x00435270  (int param_1,undefined4 param_2,undefined4 param_3,undefin...)
-    0x00435300  (int param_1)
 
   support_trisock.cpp  (24 functions)
     0x005790f0  (SOCKET *param_1,undefined4 param_2)
@@ -11181,58 +11749,23 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0057ad10  (int param_1,char *param_2)
     0x0057b680  (int param_1,int param_2)
 
-  support_trstream.cpp  (44 functions)
+  support_trstream.cpp  (9 functions)
     0x0057d1d0  (int param_1)
     0x0057d240  (int param_1)
     0x0057d280  (int param_1)
-    0x0057d320  (int *param_1,LPCSTR param_2)
-    0x0057d390  (int *param_1,undefined4 param_2,undefined4 param_3)
-    0x0057d450  (int *param_1,int param_2,int param_3,int param_4)
-    0x0057d520  (undefined4 param_1,undefined4 param_2,undefined4 param_3)
-    0x0057d600  (int param_1)
-    0x0057d640  (int param_1,int param_2)
-    0x0057d680  (int param_1)
-    0x0057d6b0  (int param_1,undefined4 *param_2,uint param_3)
-    0x0057d710  (uint param_1,int param_2,uint param_3)
     0x0057d740  (void)
-    0x0057d760  (int param_1)
     0x0057d770  (void)
-    0x0057d780  (int param_1)
-    0x0057d7b0  (int param_1)
-    0x0057d800  (int *param_1,int param_2,int param_3)
-    0x0057d830  (int *param_1,int param_2,int param_3)
     0x0057d860  (undefined4 *param_1)
     0x0057d870  (undefined4 param_1,undefined4 param_2)
     0x0057d8a0  (int *param_1,byte *param_2,int *param_3)
-    0x0057dba0  (undefined4 param_1,undefined4 param_2,undefined4 param_3)
-    0x0057dc70  (int param_1,byte param_2)
-    0x0057dca0  (int param_1,undefined4 param_2,int param_3)
-    0x0057dcf0  (int param_1,undefined4 param_2,undefined4 param_3)
-    0x0057dd20  (int param_1)
-    0x0057dd40  (int param_1)
-    0x0057dd60  (int param_1)
-    0x0057dd90  (int *param_1,undefined4 param_2,undefined4 param_3)
-    0x0057ddd0  (int *param_1,char *param_2,char *param_3,char *param_4)
-    0x0057de20  (int *param_1,int param_2)
-    0x0057de80  (undefined4 param_1,undefined4 param_2,undefined4 param_3)
-    0x0057df70  (int param_1,undefined1 param_2)
-    0x0057dfe0  (int param_1,undefined4 *param_2,uint param_3)
-    0x0057e070  (int param_1,int param_2,uint param_3)
-    0x0057e0c0  (int param_1)
-    0x0057e0d0  (int param_1)
-    0x0057e110  (int *param_1,int param_2,int param_3)
     0x0057e150  (int *param_1,int *param_2)
-    0x0057e240  (undefined4 param_1,undefined1 param_2)
-    0x0057e270  (undefined4 param_1,undefined4 *param_2,uint param_3)
-    0x0057e330  (void)
-    0x0057e360  (void)
 
-  unkaddr_004a1200.cpp  (17 functions)
+  unkaddr_004a1200.cpp  (15 functions)
     0x004a1200  (void)
     0x004a1390  (char *param_1)
     0x004a1420  (char *param_1)
     0x004a1450  (byte *param_1,byte *param_2,byte *param_3)
-    0x004a14f0  (undefined4 param_1,int *param_2)
+    0x004a14f0  (char *param_1,int *param_2)
     0x004a1540  (void)
     0x004a1570  (char *param_1)
     0x004a16b0  (void)
@@ -11243,10 +11776,8 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004a1c60  (int param_1,int param_2)
     0x004a1d4e  (void)
     0x004a1dcc  (void)
-    0x004a1e60  (undefined4 *param_1)
-    0x004a1e90  (int param_1)
 
-  unkaddr_0057b9a0.cpp  (21 functions)
+  unkaddr_0057b9a0.cpp  (10 functions)
     0x0057b9a0  (void)
     0x0057b9c0  (undefined4 *param_1)
     0x0057b9d0  (undefined4 *param_1)
@@ -11257,19 +11788,8 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0057bb80  (int *param_1,byte *param_2,int *param_3)
     0x0057cc20  (int *param_1,undefined1 *param_2,int param_3)
     0x0057ccc0  (int *param_1)
-    0x0057cdb0  (undefined4 param_1,undefined4 param_2)
-    0x0057ce20  (undefined4 param_1,undefined4 param_2,undefined4 param_3)
-    0x0057cf20  (int *param_1)
-    0x0057cf40  (int param_1,int param_2)
-    0x0057cf80  (int param_1)
-    0x0057cfe0  (int param_1,undefined4 *param_2,uint param_3)
-    0x0057d0c0  (int param_1,int param_2,uint param_3)
-    0x0057d110  (int param_1)
-    0x0057d130  (int param_1)
-    0x0057d150  (int param_1)
-    0x0057d180  (int param_1)
 
-  unkaddr_0059aa80.cpp  (25 functions)
+  unkaddr_0059aa80.cpp  (11 functions)
     0x0059aa80  (void)
     0x0059ab30  (undefined4 *param_1)
     0x0059ab50  (undefined4 *param_1)
@@ -11279,34 +11799,11 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0059abe0  (void)
     0x0059ac10  (void)
     0x0059ac60  (void)
-    0x0059ad20  (int param_1,int param_2)
-    0x0059ada0  (int param_1)
-    0x0059adf0  (int param_1,int param_2,int param_3)
-    0x0059ae40  (int param_1)
     0x0059af20  (void)
-    0x0059af30  (int *param_1,int param_2)
-    0x0059b3c0  (int param_1,int param_2,char *param_3,int param_4,int par...)
-    0x0059b430  (int *param_1)
-    0x0059b5a0  (int *param_1)
-    0x0059b900  (int param_1,int param_2)
     0x0059b960  (void)
-    0x0059b970  (int param_1)
-    0x0059ba10  (int param_1,int param_2)
-    0x0059bad0  (int param_1,int param_2,int param_3)
-    0x0059bb40  (int param_1)
-    0x0059bb60  (int param_1,int param_2,int param_3,float param_4,int par...)
 
-  unkaddr_0059c270.cpp  (4 functions)
-    0x0059c270  (void)
-    0x0059c2c0  (void)
-    0x0059c380  (undefined4 param_1,undefined4 param_2,int param_3,char *p...)
-    0x0059c3d0  (uint *param_1)
-
-  unkaddr_0059d350.cpp  (29 functions)
+  unkaddr_0059d350.cpp  (26 functions)
     0x0059d350  (void)
-    0x0059d360  (undefined4 *param_1,CVector3f *param_2,undefined4 param_3)
-    0x0059d420  (int *param_1)
-    0x0059d440  (int *param_1)
     0x0059d5f0  (void)
     0x0059d610  (int param_1)
     0x0059d650  (char *param_1,char *param_2)
@@ -11333,18 +11830,11 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0059ded0  (int param_1)
     0x0059df70  (undefined4 param_1)
 
-  unkaddr_005a7eb0.cpp  (7 functions)
+  unkaddr_005a7eb0.cpp  (2 functions)
     0x005a7eb0  (void)
     0x005a7ed0  (void)
-    0x005a7f50  (int param_1,undefined4 param_2)
-    0x005a8030  (int param_1,undefined4 param_2)
-    0x005a8050  (undefined4 *param_1,undefined4 param_2)
-    0x005a80d0  (int param_1,int param_2)
-    0x005a8100  (int param_1,int param_2)
 
-  unkafter_basicene.cpp  (22 functions)
-    0x0059e3b0  (CEnemy *param_1)
-    0x0059e6a0  (CEnemy *param_1)
+  unkafter_basicene.cpp  (20 functions)
     0x0059e7a0  (int param_1,undefined4 param_2)
     0x0059e7c0  (int param_1,undefined4 param_2)
     0x0059e880  (CDemonActor *param_1,int param_2)
@@ -11359,7 +11849,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0059f5b0  (int param_1,float param_2)
     0x0059f660  (int param_1,float param_2)
     0x0059f6a0  (void)
-    0x0059f740  (CEnemy *param_1,undefined4 param_2,int param_3,float param_4)
+    0x0059f740  (CEnemy *param_1,float param_2,int param_3,float param_4)
     0x0059fae0  (CDemonActor *param_1)
     0x005a01a0  (int param_1,undefined4 param_2,undefined4 param_3,undefin...)
     0x005a01d0  (int param_1,undefined4 *param_2)
@@ -11406,7 +11896,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004927f4  (void)
     0x004927fc  (void)
 
-  unkafter_minecar.cpp  (18 functions)
+  unkafter_minecar.cpp  (16 functions)
     0x004f229e  (void)
     0x004f22be  (void)
     0x004f236e  (void)
@@ -11423,8 +11913,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004f2a00  (void)
     0x004f2a30  (void)
     0x004f2a50  (float *param_1)
-    0x004f2ac0  (float param_1,float param_2,float param_3,float param_4)
-    0x004f2ba0  (CEdCheck *this_ptr)
 
   unkafter_mission.cpp  (2 functions)
     0x004fd450  (void)
@@ -11461,17 +11949,8 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0045df30  (CCharacter *param_1)
     0x0045e040  (float *param_1,float *param_2)
 
-  unkafter_superopt.cpp  (13 functions)
-    0x0059be40  (void)
-    0x0059be50  (void)
+  unkafter_superopt.cpp  (4 functions)
     0x0059bfc0  (undefined4 param_1)
-    0x005a8140  (int param_1,undefined4 param_2,undefined4 param_3,undefin...)
-    0x005a8160  (int param_1)
-    0x005a8180  (int param_1,float param_2)
-    0x005a8220  (int param_1)
-    0x005a8250  (int param_1)
-    0x005a8290  (int param_1)
-    0x005a8300  (float *param_1,undefined4 param_2,undefined4 param_3,unde...)
     0x005a84c0  (undefined4 *param_1)
     0x005a85c0  (int *param_1,float param_2)
     0x005a86a0  (int param_1)

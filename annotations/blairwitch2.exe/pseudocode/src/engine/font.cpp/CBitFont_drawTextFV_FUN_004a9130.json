@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 34,
+    "complexity_score": 9,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 9,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 45
   },
   "cross_references": [
@@ -32,7 +30,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_font.cpp_CBitFont_drawTextFV_FUN_004a9130",
-    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextFV_FUN_004a9130(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_7)"
+    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextFV_FUN_004a9130(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args)"
   },
   "function_calls": [
     {
@@ -91,10 +89,10 @@
     "pcode_op_count": 124
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 32,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 24,
+    "param_size": 28,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -138,25 +136,15 @@
         "offset": 24,
         "size": 4,
         "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "args",
+        "offset": 28,
+        "size": 4,
+        "type": "va_list_t"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "int __cdecl engine_font_cpp_CBitFont_drawTextFV_FUN_004a9130(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,uint format_string,uint param_7)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "_vsprintf(acStack_1010,format_string,param_7);",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

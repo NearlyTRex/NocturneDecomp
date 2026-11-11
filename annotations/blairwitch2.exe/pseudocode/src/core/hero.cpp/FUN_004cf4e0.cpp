@@ -67,7 +67,7 @@ uint core_hero_cpp_FUN_004cf4e0(CCharacter *param_1)
   if (iVar3 != 0) {
     return 0;
   }
-  if (*(int *)&param_1[2].field_0x414c == 0) {
+  if (*(int *)(param_1[2].flames[1].on_event + 0x18) == 0) {
     local_1c = 0;
     for (local_20 = 0; local_20 < g_CDemonSetPtr->actor_count; local_20 = local_20 + 1) {
       iVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
@@ -141,18 +141,18 @@ uint core_hero_cpp_FUN_004cf4e0(CCharacter *param_1)
                *(uint *)(&stack0xffffff7c + (uint)bVar8 * -8 + (uint)bVar8 * -8);
           fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(uStack_7c);
           if (ABS(fStack_18) <= (float)_DAT_005d9d14) {
-            *(int *)&param_1[2].field_0x414c = iVar3;
+            *(int *)(param_1[2].flames[1].on_event + 0x18) = iVar3;
             break;
           }
         }
       }
       local_1c = local_1c + 4;
     }
-    if (*(int *)&param_1[2].field_0x414c == 0) {
+    iVar3 = *(int *)(param_1[2].flames[1].on_event + 0x18);
+    if (iVar3 == 0) {
       return 0;
     }
-    iVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                      (*(int *)&param_1[2].field_0x414c,g_CBoxActorClassInfo.name_hash);
+    iVar3 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c8f0(iVar3,g_CBoxActorClassInfo.name_hash);
     if (iVar3 != 0) {
       *(CCharacter **)(iVar3 + 0x47c) = param_1;
       uVar4 = (**(code **)(*(int *)(iVar3 + 0x2b0) + 0x38))(iVar3,iVar3 + 0x488);

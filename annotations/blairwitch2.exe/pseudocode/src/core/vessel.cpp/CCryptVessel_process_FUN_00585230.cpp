@@ -6,13 +6,14 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_00585230(CCryptVessel *this_ptr,float delta_time)
 
 {
   UOrientationVector *pUVar1;
-  byte *puVar2;
+  CLocation *pCVar2;
   CActorDestination *pCVar3;
   CCryptVessel *pCVar4;
   float fVar5;
@@ -44,14 +45,14 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_00585230(CCryptVessel *thi
   
   bVar8 = 0;
   if (this_ptr->visual_type == CRYPT_VESSEL_FIRE) {
-    *(uint *)&(this_ptr->flame).base.field_0x20 = *(uint *)&(this_ptr->base).field_0x20;
-    *(uint *)&(this_ptr->flame).base.field_0x24 = *(uint *)&(this_ptr->base).field_0x24;
-    *(uint *)&(this_ptr->flame).base.field_0x28 = *(uint *)&(this_ptr->base).field_0x28;
-    *(uint *)&(this_ptr->flame).base.field_0x2c = *(uint *)&(this_ptr->base).field_0x2c;
+    (this_ptr->flame).base.location.position.x = (this_ptr->base).location.position.x;
+    (this_ptr->flame).base.location.position.y = (this_ptr->base).location.position.y;
+    (this_ptr->flame).base.location.position.z = (this_ptr->base).location.position.z;
+    (this_ptr->flame).base.location.area_id = (this_ptr->base).location.area_id;
     pUVar7 = &(this_ptr->flame).base.orient;
     pUVar1 = &(this_ptr->base).orient;
-    *(float *)&(this_ptr->flame).base.field_0x24 =
-         *(float *)&(this_ptr->flame).base.field_0x24 + _DAT_005eddfa;
+    (this_ptr->flame).base.location.position.y =
+         (this_ptr->flame).base.location.position.y + _DAT_005eddfa;
     if (pUVar7 != pUVar1) {
       (pUVar7->vec).x = (pUVar1->vec).x;
       (this_ptr->flame).base.orient.vec.y = (this_ptr->base).orient.vec.y;
@@ -76,7 +77,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_00585230(CCryptVessel *thi
     }
     pUVar1 = &(this_ptr->base).orient;
     iVar6 = this_ptr->state;
-    puVar2 = &(this_ptr->base).field_0x20;
+    pCVar2 = &(this_ptr->base).location;
     if (iVar6 == 1) {
       fVar5 = this_ptr->timer + delta_time;
       this_ptr->timer = fVar5;
@@ -89,10 +90,10 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_00585230(CCryptVessel *thi
         if (iVar6 != 0) {
           pCVar3 = this_ptr->start_loc;
           this_ptr->state = 2;
-          *(uint *)puVar2 = *(uint *)&(pCVar3->base).field_0x20;
-          *(uint *)&(this_ptr->base).field_0x24 = *(uint *)&(pCVar3->base).field_0x24;
-          *(uint *)&(this_ptr->base).field_0x28 = *(uint *)&(pCVar3->base).field_0x28;
-          *(uint *)&(this_ptr->base).field_0x2c = *(uint *)&(pCVar3->base).field_0x2c;
+          (pCVar2->position).x = (pCVar3->base).location.position.x;
+          (this_ptr->base).location.position.y = (pCVar3->base).location.position.y;
+          (this_ptr->base).location.position.z = (pCVar3->base).location.position.z;
+          (this_ptr->base).location.area_id = (pCVar3->base).location.area_id;
           pCVar3 = this_ptr->start_loc;
           pUVar7 = &(pCVar3->base).orient;
           if (pUVar1 != pUVar7) {
@@ -110,17 +111,17 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_00585230(CCryptVessel *thi
                    iVar6 != 0 ||
                    (iVar6 = core_vessel_cpp_isStartLocTriggered_FUN_00585210(this_ptr->neutral),
                    iVar6 != 0)))) {
-          *(uint *)&(this_ptr->base).field_0x24 = 0x461c3f9a;
-          *(uint *)&(this_ptr->base).field_0x28 = 0x461c3f9a;
-          *(uint *)&(this_ptr->base).field_0x20 = 0x461c3f9a;
+          (this_ptr->base).location.position.y = 9999.9;
+          (this_ptr->base).location.position.z = 9999.9;
+          (this_ptr->base).location.position.x = 9999.9;
         }
         else {
           pCVar3 = this_ptr->start_loc;
           this_ptr->state = 2;
-          *(uint *)&(this_ptr->base).field_0x20 = *(uint *)&(pCVar3->base).field_0x20;
-          *(uint *)&(this_ptr->base).field_0x24 = *(uint *)&(pCVar3->base).field_0x24;
-          *(uint *)&(this_ptr->base).field_0x28 = *(uint *)&(pCVar3->base).field_0x28;
-          *(uint *)&(this_ptr->base).field_0x2c = *(uint *)&(pCVar3->base).field_0x2c;
+          (this_ptr->base).location.position.x = (pCVar3->base).location.position.x;
+          (this_ptr->base).location.position.y = (pCVar3->base).location.position.y;
+          (this_ptr->base).location.position.z = (pCVar3->base).location.position.z;
+          (this_ptr->base).location.area_id = (pCVar3->base).location.area_id;
           pCVar3 = this_ptr->start_loc;
           pUVar1 = &(this_ptr->base).orient;
           pUVar7 = &(pCVar3->base).orient;
@@ -149,13 +150,13 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_00585230(CCryptVessel *thi
           return;
         }
         core_fire_cpp_CFireEffect_createExplosion_FUN_0049e360
-                  (0x01C3DEB4,(CVector3f *)puVar2,8.0,1500.0,4.0);
+                  (0x01C3DEB4,&pCVar2->position,8.0,1500.0,4.0);
         pCVar3 = this_ptr->start_loc;
         this_ptr->timer = 1.0;
-        *(uint *)puVar2 = *(uint *)&(pCVar3->base).field_0x20;
-        *(uint *)&(this_ptr->base).field_0x24 = *(uint *)&(pCVar3->base).field_0x24;
-        *(uint *)&(this_ptr->base).field_0x28 = *(uint *)&(pCVar3->base).field_0x28;
-        *(uint *)&(this_ptr->base).field_0x2c = *(uint *)&(pCVar3->base).field_0x2c;
+        (pCVar2->position).x = (pCVar3->base).location.position.x;
+        (this_ptr->base).location.position.y = (pCVar3->base).location.position.y;
+        (this_ptr->base).location.position.z = (pCVar3->base).location.position.z;
+        (this_ptr->base).location.area_id = (pCVar3->base).location.area_id;
         pCVar3 = this_ptr->start_loc;
         pUVar7 = &(pCVar3->base).orient;
         if (pUVar1 == pUVar7) {
@@ -184,10 +185,10 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_00585230(CCryptVessel *thi
       fStack_18 = 999.9;
       iVar6 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
       fStack_20 = 0.0;
-      puVar2 = &(this_ptr->base).field_0x20;
-      fStack_4c = *(float *)(iVar6 + 0x20) - *(float *)puVar2;
-      fStack_48 = *(float *)(iVar6 + 0x24) - *(float *)&(this_ptr->base).field_0x24;
-      fStack_44 = *(float *)(iVar6 + 0x28) - *(float *)&(this_ptr->base).field_0x28;
+      pCVar2 = &(this_ptr->base).location;
+      fStack_4c = *(float *)(iVar6 + 0x20) - (pCVar2->position).x;
+      fStack_48 = *(float *)(iVar6 + 0x24) - (this_ptr->base).location.position.y;
+      fStack_44 = *(float *)(iVar6 + 0x28) - (this_ptr->base).location.position.z;
       fStack_40 = fStack_4c;
       *(uint *)((int)&stack0xffffffc4 + (uint)bVar8 * -8) =
            *(uint *)((int)&stack0xffffffb8 + (uint)bVar8 * -8);
@@ -196,9 +197,9 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_00585230(CCryptVessel *thi
       pCVar4 = this_ptr->prey;
       fStack_1c = SQRT(fStack_38 * fStack_38 + fStack_40 * fStack_40 + fStack_3c * fStack_3c);
       if (pCVar4 != (CCryptVessel *)0x0) {
-        fStack_34 = *(float *)puVar2 - *(float *)&(pCVar4->base).field_0x20;
-        fStack_30 = *(float *)&(this_ptr->base).field_0x24 - *(float *)&(pCVar4->base).field_0x24;
-        fStack_2c = *(float *)&(this_ptr->base).field_0x28 - *(float *)&(pCVar4->base).field_0x28;
+        fStack_34 = (pCVar2->position).x - (pCVar4->base).location.position.x;
+        fStack_30 = (this_ptr->base).location.position.y - (pCVar4->base).location.position.y;
+        fStack_2c = (this_ptr->base).location.position.z - (pCVar4->base).location.position.z;
         fStack_64 = fStack_34;
         *(uint *)((int)&stack0xffffffa0 + (uint)bVar8 * -8) =
              *(uint *)((int)&stack0xffffffd0 + (uint)bVar8 * -8);
@@ -208,9 +209,9 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_00585230(CCryptVessel *thi
       }
       pCVar4 = this_ptr->neutral;
       if (pCVar4 != (CCryptVessel *)0x0) {
-        fStack_58 = *(float *)&(pCVar4->base).field_0x20 - *(float *)&(this_ptr->base).field_0x20;
-        fStack_54 = *(float *)&(pCVar4->base).field_0x24 - *(float *)&(this_ptr->base).field_0x24;
-        fStack_50 = *(float *)&(pCVar4->base).field_0x28 - *(float *)&(this_ptr->base).field_0x28;
+        fStack_58 = (pCVar4->base).location.position.x - (this_ptr->base).location.position.x;
+        fStack_54 = (pCVar4->base).location.position.y - (this_ptr->base).location.position.y;
+        fStack_50 = (pCVar4->base).location.position.z - (this_ptr->base).location.position.z;
         fStack_70 = fStack_58;
         *(uint *)((int)&stack0xffffff94 + (uint)bVar8 * -8) =
              *(uint *)((int)&stack0xffffffac + (uint)bVar8 * -8);

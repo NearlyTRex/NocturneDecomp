@@ -27,9 +27,9 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00415e10(CBodyPart
     if (0 < this_ptr->fire_count) {
       pSVar1 = this_ptr->fires;
       do {
-        core_flame_cpp_CFlame_renderTransparent_FUN_0049f850((CFlame *)&pSVar1->field_0xc);
+        core_flame_cpp_CFlame_renderTransparent_FUN_0049f850(&pSVar1->flame);
         iVar2 = iVar2 + 1;
-        pSVar1 = (SBodyPartFire *)(&pSVar1->field_0xc + 0x400);
+        pSVar1 = (SBodyPartFire *)(&pSVar1->flame + 1);
       } while (iVar2 < this_ptr->fire_count);
     }
     return 1;

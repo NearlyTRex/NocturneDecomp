@@ -21,7 +21,7 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderOpaque_FUN_0041c580(CBoxActor *thi
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20(&this_ptr->model);
   if ((pCVar1->poly_count < 1) ||
      ((iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280), iVar2 == 0
-      && (*(int *)&(this_ptr->base).field_0xfc != 0)))) {
+      && ((this_ptr->base).is_transparent != 0)))) {
     return 0;
   }
   if ((this_ptr->plot_in_shadow_flag == 0) &&
@@ -30,7 +30,7 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderOpaque_FUN_0041c580(CBoxActor *thi
     return 0;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-            (0x01BA5C50,(CVector3f *)&(this_ptr->base).field_0x20);
+            (0x01BA5C50,&(this_ptr->base).location.position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
             (0x01BA5C50,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);

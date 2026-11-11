@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 142,
+    "complexity_score": 117,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 62,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "unrolled_memcpy"
     ],
     "total_lines": 159
@@ -258,22 +257,6 @@
       "severity": "moderate",
       "text": "float afStackY_1024 [967];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "core_xform_cpp_FUN_00591c10(local_cc,&(this_ptr->base).field_0x20,&(this_ptr->base).orient);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(&local_9c,(CVector3f *)&this_ptr->master_actor->field_0x20,",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",

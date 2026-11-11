@@ -53,7 +53,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004be430(CGame *this_ptr)
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(&local_54,"title_bw",0x280,0x1e0);
   local_30 = engine_dosio_cpp_FUN_00460c70(&DAT_005d8a53,"credits.txt",&DAT_005d8a44);
   if (local_30 != (_FILE *)0x0) {
-    for (iVar6 = local_40 << 2; (((byte)local_30[0xc] & 0x10) == 0 && (iVar6 < 0x1000));
+    for (iVar6 = local_40 << 2; ((local_30->_flag & 0x10) == 0 && (iVar6 < 0x1000));
         iVar6 = iVar6 + 4) {
       _fgets(local_154,0xff,local_30);
       iVar3 = _strcmp(local_154,&DAT_005d8a58);
@@ -66,7 +66,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004be430(CGame *this_ptr)
         cVar2 = *pcVar7;
         pcVar7 = pcVar7 + (uint)bVar9 * -2 + 1;
       } while (cVar2 != '\0');
-      pvVar4 = FUN_005b8580(~uVar5 + 9);
+      pvVar4 = malloc(~uVar5 + 9);
       *(void **)((int)auStack_1154 + iVar6) = pvVar4;
       if (pvVar4 == (void *)0x0) {
         _DAT_01d046a0 = "..\\core\\game.cpp";
@@ -101,7 +101,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004be430(CGame *this_ptr)
     engine_2d_c_clearInputAndWait_FUN_004032b0();
     this_ptr_00 = _DAT_01511cc0;
     local_20 = _DAT_01511cc0;
-    *(uint *)(_DAT_01511cc0 + 0x4210) = 0;
+    _DAT_01511cc0->win_font_enabled = 0;
     iVar6 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(this_ptr_00,0x58);
     local_38 = -1;
     local_24 = iVar6;
@@ -165,7 +165,7 @@ LAB_004be772:
   return;
 LAB_004be71e:
   if (_DAT_01d63250 != 0) {
-    *(uint *)(local_20 + 0x4210) = 1;
+    local_20->win_font_enabled = 1;
   }
   sound_sndmain_cpp_resetSoundDevice_FUN_005526b0();
   iVar6 = local_40;

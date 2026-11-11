@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 93,
+    "complexity_score": 17,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
-    "suspect_count": 6,
-    "suspect_types": [
-      "pointer_cast",
-      "unnamed_field"
-    ],
-    "total_lines": 60
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 54
   },
   "cross_references": [],
   "function": {
@@ -104,56 +101,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x261c",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).base.field_0x261c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x2694",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).base.field_0x2694 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 19,
-      "match": "(byte *)((int)(this_ptr->bone_indices + 0) +",
-      "severity": "moderate",
-      "text": "uVar1 = *(byte *)((int)(this_ptr->bone_indices + 0) + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 20,
-      "match": "(ushort *)((int)(this_ptr->bone_indices + 0) +",
-      "severity": "moderate",
-      "text": "uVar2 = *(ushort *)((int)(this_ptr->bone_indices + 0) + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x261a",
-      "severity": "mild",
-      "text": "*(ushort *)&(this_ptr->base).base.field_0x261a = uVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x2690",
-      "severity": "mild",
-      "text": "*(int *)&(this_ptr->base).base.field_0x2690 = this_ptr->bone_indices[1];",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

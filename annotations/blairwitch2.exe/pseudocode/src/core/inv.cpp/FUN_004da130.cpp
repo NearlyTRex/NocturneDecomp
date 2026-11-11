@@ -20,21 +20,7 @@ void core_inv_cpp_FUN_004da130(void)
   float afStackY_10fc [986];
   CMatrix3x3f *this_ptr;
   CVector3f *euler_angles;
-  SMRGLPrimitivePoly aSStack_184 [4];
-  uint uStack_180;
-  uint uStack_16c;
-  uint uStack_168;
-  uint uStack_164;
-  uint uStack_160;
-  uint uStack_15c;
-  uint uStack_158;
-  uint uStack_154;
-  uint uStack_150;
-  uint uStack_14c;
-  uint uStack_148;
-  uint uStack_144;
-  uint uStack_140;
-  CMatrix3x3f CStack_13c;
+  byte auStack_184 [112];
   float fStack_114;
   float afStack_110 [5];
   CVector3f CStack_fc;
@@ -85,11 +71,11 @@ void core_inv_cpp_FUN_004da130(void)
   fStack_24 = (float)iVar3 * fVar1;
   fStack_1c = (float)(iVar3 + 4) * fVar1;
   fStack_14 = *(float *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x34) -
-              *(float *)&g_CDemonSetPtr->field_0x15acbc;
+              g_CDemonSetPtr->altitude_reference_y;
   fStack_20 = (float)(iVar4 - y) * fVar1;
   afStack_38[4] = fStack_14;
   euler_angles = &CStack_fc;
-  this_ptr = &CStack_13c;
+  this_ptr = (CMatrix3x3f *)(auStack_184 + 0x48);
   fStack_18 = (float)(y + iVar4) * fVar1;
   CStack_fc.x = 0.0;
   *(float *)((int)&CStack_fc + (uint)bVar5 * -8 + 4) = afStack_38[(uint)bVar5 * -2 + 3];
@@ -101,7 +87,7 @@ void core_inv_cpp_FUN_004da130(void)
   fStack_b4 = -fStack_24;
   uStack_ac = 0;
   fStack_14 = fStack_b0;
-  core_dirmat_cpp_FUN_00449530(&CStack_13c,&fStack_b4);
+  core_dirmat_cpp_FUN_00449530(auStack_184 + 0x48,&fStack_b4);
   afStack_74[2] = afStack_a4[2];
   afStack_74[(uint)bVar5 * -2 + 3] = afStack_a4[(uint)bVar5 * -2 + 3];
   afStack_74[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
@@ -116,12 +102,12 @@ void core_inv_cpp_FUN_004da130(void)
   *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_8c[(uint)bVar5 * -2];
   *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        afStack_8c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-  engine_special_cpp_FUN_0055d723((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&CStack_c0);
+  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&CStack_c0);
   fStack_44 = -fStack_20;
   fStack_48 = fStack_24;
   uStack_40 = 0;
   fStack_14 = fStack_44;
-  core_dirmat_cpp_FUN_00449530(&CStack_13c,afStack_74 + 0xb);
+  core_dirmat_cpp_FUN_00449530(auStack_184 + 0x48,afStack_74 + 0xb);
   fStack_114 = fStack_78;
   afStack_110[(uint)bVar5 * -2] = afStack_74[(uint)bVar5 * -2];
   afStack_110[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
@@ -136,12 +122,11 @@ void core_inv_cpp_FUN_004da130(void)
   *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_38[(uint)bVar5 * -2];
   *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        afStack_38[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-  engine_special_cpp_FUN_0055d723
-            ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&CStack_c0);
+  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_c0);
   fStack_54 = fStack_24;
   fStack_50 = fStack_20;
   uStack_4c = 0;
-  core_dirmat_cpp_FUN_00449530(&CStack_13c,afStack_74 + 8);
+  core_dirmat_cpp_FUN_00449530(auStack_184 + 0x48,afStack_74 + 8);
   fStack_60 = afStack_110[2];
   afStack_74[(uint)bVar5 * -2 + 6] = afStack_110[(uint)bVar5 * -2 + 3];
   afStack_74[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7] =
@@ -156,12 +141,11 @@ void core_inv_cpp_FUN_004da130(void)
   *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_ec[(uint)bVar5 * -2];
   *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        afStack_ec[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-  engine_special_cpp_FUN_0055d723
-            ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&CStack_c0);
+  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&CStack_c0);
   afStack_8c[3] = fStack_20;
   afStack_8c[2] = -fStack_24;
   uStack_7c = 0;
-  core_dirmat_cpp_FUN_00449530(&CStack_13c,afStack_8c + 2);
+  core_dirmat_cpp_FUN_00449530(auStack_184 + 0x48,afStack_8c + 2);
   fStack_d8 = afStack_d4[2];
   afStack_d4[(uint)bVar5 * -2] = afStack_d4[(uint)bVar5 * -2 + 3];
   afStack_d4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
@@ -176,27 +160,27 @@ void core_inv_cpp_FUN_004da130(void)
   *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_a4[(uint)bVar5 * -2];
   *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        afStack_a4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-  engine_special_cpp_FUN_0055d723
-            ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x90),&CStack_c0);
-  uStack_180 = 4;
-  uStack_16c = 0;
-  uStack_168 = 0;
-  uStack_164 = 0;
-  uStack_160 = 1;
-  uStack_15c = 0x1000000;
-  uStack_158 = 0;
-  uStack_150 = 0x1000000;
-  uStack_14c = 0x1000000;
-  uStack_154 = 2;
-  uStack_140 = 0x1000000;
-  uStack_148 = 3;
-  uStack_144 = 0;
+  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&CStack_c0);
+  auStack_184._4_4_ = 4;
+  auStack_184._24_4_ = 0;
+  auStack_184._28_4_ = 0;
+  auStack_184._32_4_ = 0;
+  auStack_184._36_4_ = 1;
+  auStack_184._40_4_ = 0x1000000;
+  auStack_184._44_4_ = 0;
+  auStack_184._52_4_ = 0x1000000;
+  auStack_184._56_4_ = 0x1000000;
+  auStack_184._48_4_ = 2;
+  auStack_184._68_4_ = 0x1000000;
+  auStack_184._60_4_ = 3;
+  auStack_184._64_4_ = 0;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,0);
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046b870(DAT_0060b280,0);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
             (DAT_0060b280,(SMRGLTextureBasic *)0x1d02ee4);
-  engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00(DAT_0060b280,aSStack_184,0x23);
+  engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00
+            (DAT_0060b280,(SMRGLPrimitivePoly *)auStack_184,0x23);
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046b870(DAT_0060b280,1);
   _DAT_01c37788 = uVar2;
   return;

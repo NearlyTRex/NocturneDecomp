@@ -20,7 +20,8 @@ void __cdecl core_twigzomb_cpp_CTwigZombie_processMotionEvent_FUN_005a2e30(CTwig
       sound_name = "twigswing0?.wav";
     }
     core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-              (0x0264B290,(CDemonActor *)this_ptr,sound_name,(CVector3f *)&this_ptr->field_0x20);
+              (0x0264B290,(CDemonActor *)this_ptr,sound_name,
+               &(this_ptr->base).base.base.base.location.position);
   }
 LAB_005a2e65:
   unkafter_basicene_cpp_FUN_0059e880(this_ptr,event_id);

@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 259,
-    "complexity_score": 1097,
+    "complexity_score": 1042,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 152,
-    "suspect_count": 89,
+    "suspect_count": 84,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "unrolled_memcpy",
@@ -325,16 +324,8 @@
       "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x414c == 0) {",
+      "text": "if (*(int *)(param_1[2].flames[1].on_event + 0x18) == 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0x414c",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x414c == 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Complex pointer cast",
@@ -629,48 +620,16 @@
       "line": 137,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)&param_1[2].field_0x414c = iVar3;",
+      "text": "*(int *)(param_1[2].flames[1].on_event + 0x18) = iVar3;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 137,
-      "match": "field_0x414c",
-      "severity": "mild",
-      "text": "*(int *)&param_1[2].field_0x414c = iVar3;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 144,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x414c == 0) {",
+      "text": "iVar3 = *(int *)(param_1[2].flames[1].on_event + 0x18);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 144,
-      "match": "field_0x414c",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x414c == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 148,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)&param_1[2].field_0x414c,g_CBoxActorClassInfo.name_hash);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 148,
-      "match": "field_0x414c",
-      "severity": "mild",
-      "text": "(*(int *)&param_1[2].field_0x414c,g_CBoxActorClassInfo.name_hash);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

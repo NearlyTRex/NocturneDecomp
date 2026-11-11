@@ -25,14 +25,7 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_00560cb0(CSpi
   float *pfVar9;
   SDamageInfo *this_ptr_00;
   CVector3f aCStack_230 [8];
-  SDamageInfo aSStack_1d0 [4];
-  float fStack_1cc;
-  uint uStack_1b4;
-  float fStack_1b0;
-  uint uStack_1ac;
-  uint uStack_1a0;
-  CSpike *pCStack_19c;
-  CSpike *pCStack_198;
+  SDamageInfo SStack_1d0;
   SCollisionInfo SStack_194;
   byte auStack_16c [20];
   uint auStack_158 [2];
@@ -44,7 +37,7 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_00560cb0(CSpi
   float fStack_13c;
   uint auStack_138 [6];
   CBoundingBox3D CStack_120;
-  uint uStack_108;
+  float fStack_108;
   float afStack_104 [5];
   float fStack_f0;
   float afStack_ec [4];
@@ -56,7 +49,7 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_00560cb0(CSpi
   float fStack_c0;
   float fStack_bc;
   float fStack_b8;
-  uint uStack_b4;
+  float fStack_b4;
   float fStack_a8;
   float fStack_a4;
   float fStack_a0;
@@ -77,7 +70,7 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_00560cb0(CSpi
   float fStack_28;
   float fStack_24;
   int iStack_20;
-  float *pfStack_1c;
+  CLocation *pCStack_1c;
   int iStack_18;
   int iStack_14;
   
@@ -134,19 +127,19 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_00560cb0(CSpi
   afStack_ec[(uint)bVar8 * -2 + 0x12] = afStack_ec[(uint)bVar8 * -2];
   afStack_ec[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x13] =
        afStack_ec[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
-  pfStack_1c = (float *)&(this_ptr->base).field_0x20;
+  pCStack_1c = &(this_ptr->base).location;
   iStack_18 = 0;
   for (iStack_14 = 0; iStack_14 < g_CDemonSetPtr->character_count; iStack_14 = iStack_14 + 1) {
     iVar5 = *(int *)((int)g_CDemonSetPtr->characters + iStack_18);
-    fVar1 = *pfStack_1c - *(float *)(iVar5 + 0x20);
-    fVar3 = pfStack_1c[1] - *(float *)(iVar5 + 0x24);
-    fVar2 = pfStack_1c[2] - *(float *)(iVar5 + 0x28);
+    fVar1 = (pCStack_1c->position).x - *(float *)(iVar5 + 0x20);
+    fVar3 = (pCStack_1c->position).y - *(float *)(iVar5 + 0x24);
+    fVar2 = (pCStack_1c->position).z - *(float *)(iVar5 + 0x28);
     if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= fStack_24) {
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_00537fa0(&SStack_194);
-      SStack_194._0_4_ = 0;
+      SStack_194.ray_query.ray_type = 0;
       iStack_20 = (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x44))(iVar5,&SStack_194);
       if (iStack_20 != 0) {
-        SStack_194._20_4_ = 0;
+        SStack_194.cylinder_bottom_y = 0.0;
         core_actor_cpp_FUN_00408de0(this_ptr,(float *)(iVar5 + 0x20));
         afStack_ec[2] = fStack_60;
         afStack_ec[(uint)bVar8 * -2 + 3] = afStack_5c[(uint)bVar8 * -2];
@@ -193,22 +186,22 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_00560cb0(CSpi
           afStack_ec[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 10] =
                afStack_ec[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x1c];
           core_actor_cpp_FUN_00408de0(iVar5,pfVar9);
-          this_ptr_00 = aSStack_1d0;
-          uStack_108 = uStack_b4;
+          this_ptr_00 = &SStack_1d0;
+          fStack_108 = fStack_b4;
           afStack_104[(uint)bVar8 * -2] = afStack_ec[(uint)bVar8 * -2 + 0xf];
           afStack_104[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
                afStack_ec[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x10];
           core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(this_ptr_00);
-          fStack_1cc = this_ptr->damage_strength;
-          uStack_1a0 = 0x67;
-          if (&uStack_1b4 != &uStack_108) {
-            uStack_1b4 = uStack_108;
-            fStack_1b0 = afStack_104[0];
-            uStack_1ac = afStack_104[1];
+          SStack_1d0.damage_amount = this_ptr->damage_strength;
+          SStack_1d0.damage_type = DAMAGE_TYPE_ATTACK_BLADE;
+          if (&SStack_1d0.impact_direction != (CVector3f *)&fStack_108) {
+            SStack_1d0.impact_direction.x = fStack_108;
+            SStack_1d0.impact_direction.y = afStack_104[0];
+            SStack_1d0.impact_direction.z = afStack_104[1];
           }
-          pCStack_19c = this_ptr;
-          pCStack_198 = this_ptr;
-          (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x110))(iVar5,aSStack_1d0);
+          SStack_1d0.attacker = &this_ptr->base;
+          SStack_1d0.wielder = &this_ptr->base;
+          (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x110))(iVar5,&SStack_1d0);
         }
       }
     }

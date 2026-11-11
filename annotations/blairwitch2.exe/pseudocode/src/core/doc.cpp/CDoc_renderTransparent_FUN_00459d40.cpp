@@ -9,17 +9,17 @@
 int __cdecl core_doc_cpp_CDoc_renderTransparent_FUN_00459d40(CDoc *this_ptr)
 
 {
-  int iVar1;
+  CWeapon *this_ptr_00;
   
-  if (0.0 < *(float *)&this_ptr->field_0x259b0) {
+  if (0.0 < this_ptr->lantern_tween_pct) {
     core_dlight_cpp_renderConeLightGeometry_FUN_0044d060
-              ((CVector3f *)&this_ptr->field_0x25790,(CVector3f *)&this_ptr->field_0x2579c,32.0,5.0)
-    ;
+              (&this_ptr->lantern_light_position,&this_ptr->lantern_light_direction,32.0,5.0);
   }
-  iVar1 = *(int *)&this_ptr->field_0x25698;
-  if (iVar1 != 0) {
-    (**(code **)(*(int *)(iVar1 + 0x2b0) + 0x1c))(iVar1);
+  this_ptr_00 = this_ptr->weapon;
+  if (this_ptr_00 != (CWeapon *)0x0) {
+    (*((this_ptr_00->base).vtable._ub)->renderTransparent)(&this_ptr_00->base);
   }
-  unkafter_superopt_cpp_FUN_005a8290(&this_ptr->field_0x154);
+  unkafter_superopt_cpp_CSimpleParticleSystem_render_FUN_005a8290
+            ((this_ptr->base).base.base.particle_systems);
   return 1;
 }

@@ -9,6 +9,6 @@
 void __cdecl core_union_cpp_CUnion_archive_FUN_005a5450(CUnion *this_ptr)
 
 {
-  core_basicnpc_cpp_CBasicNPC_archive_FUN_005a4930((CBasicNPC *)this_ptr);
+  core_basicnpc_cpp_CBasicNPC_archive_FUN_005a4930(&this_ptr->base);
   return;
 }

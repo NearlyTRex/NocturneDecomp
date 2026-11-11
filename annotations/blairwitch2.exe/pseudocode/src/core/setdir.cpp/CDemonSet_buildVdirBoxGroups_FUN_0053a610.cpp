@@ -23,9 +23,9 @@ int __cdecl core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_0053a610(CDemonSet 
   pCVar4 = this_ptr;
   if (0 < this_ptr->vdir_box_count) {
     do {
-      *(uint *)&pCVar4->vdir_boxes[0].field_0x40 = 0xffffffff;
+      pCVar4->vdir_boxes[0].parent_index = -1;
       iVar1 = iVar1 + 1;
-      pCVar4 = (CDemonSet *)&pCVar4->cameras[0].field_0x40;
+      pCVar4 = (CDemonSet *)(pCVar4->cameras[0].name + 0x40);
     } while (iVar1 < this_ptr->vdir_box_count);
   }
   local_24 = 0;
@@ -39,12 +39,12 @@ int __cdecl core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_0053a610(CDemonSet 
         do {
           iVar2 = core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_0053a720(this_ptr,box_index);
           if (iVar2 != iVar1) {
-            obb_a = (SVDBox *)(&this_ptr->vdir_boxes[0].field_0x0 + local_28);
+            obb_a = (SVDBox *)((int)(this_ptr->vdir_boxes[0].rotation_matrix.m + -2) + local_28);
             iVar3 = core_setdir_cpp_testOBBIntersection_FUN_0053a1b0(obb_a,obb_b);
             if ((iVar3 != 0) ||
                (iVar3 = core_setdir_cpp_testOBBIntersection_FUN_0053a1b0(obb_b,obb_a), iVar3 != 0))
             {
-              *(int *)&this_ptr->vdir_boxes[iVar2].field_0x40 = iVar1;
+              this_ptr->vdir_boxes[iVar2].parent_index = iVar1;
             }
           }
           box_index = box_index + 1;

@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_filmreel.cpp_CFilmProjector_ctor_FUN_00492c10
-;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x540                          ; 00492be0
         ;   Label: core_filmreel.cpp_factoryFuncFilmProjector_FUN_00492be0
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 00492be5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00492be5
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 00492bea
     TEST EAX,EAX                        ; 00492bed
     JNZ 0x00492bf2                      ; 00492bef

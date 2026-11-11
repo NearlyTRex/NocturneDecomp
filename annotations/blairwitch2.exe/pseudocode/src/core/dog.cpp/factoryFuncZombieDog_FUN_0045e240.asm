@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_dog.cpp_CZombieDog_ctor_FUN_0045e270
-;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x10b04                        ; 0045e240
         ;   Label: core_dog.cpp_factoryFuncZombieDog_FUN_0045e240
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 0045e245
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0045e245
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 0045e24a
     TEST EAX,EAX                        ; 0045e24d
     JNZ 0x0045e252                      ; 0045e24f

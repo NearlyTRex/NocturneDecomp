@@ -56,9 +56,9 @@ int __cdecl core_icepick_cpp_FUN_004d55e0(CIcePick *this_ptr)
       iVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                         (this_ptr_00,g_CTommyGunClassInfo.name_hash);
       if (iVar2 != 0) {
-        fStack_60 = *(float *)&this_ptr_00->field_0x20 - local_30;
-        fStack_5c = *(float *)&this_ptr_00->field_0x24 - fStack_2c;
-        fStack_58 = *(float *)&this_ptr_00->field_0x28 - local_28;
+        fStack_60 = (this_ptr_00->location).position.x - local_30;
+        fStack_5c = (this_ptr_00->location).position.y - fStack_2c;
+        fStack_58 = (this_ptr_00->location).position.z - local_28;
         fStack_54 = fStack_60;
         *(uint *)((int)&stack0xffffffb0 + (uint)bVar3 * -8) =
              *(uint *)((int)&stack0xffffffa4 + (uint)bVar3 * -8);
@@ -76,13 +76,13 @@ int __cdecl core_icepick_cpp_FUN_004d55e0(CIcePick *this_ptr)
   if (this_ptr->pending_pickup_target == (CDemonActor *)0x0) {
     return 0;
   }
-  *(float *)&this_ptr->field_0x20 =
-       (*(float *)&this_ptr->pending_pickup_target->field_0x20 - local_30) +
-       *(float *)&this_ptr->field_0x20;
-  *(float *)&this_ptr->field_0x28 =
-       (*(float *)&this_ptr->pending_pickup_target->field_0x28 - local_28) +
-       *(float *)&this_ptr->field_0x28;
+  (this_ptr->base).base.base.location.position.x =
+       ((this_ptr->pending_pickup_target->location).position.x - local_30) +
+       (this_ptr->base).base.base.location.position.x;
+  (this_ptr->base).base.base.location.position.z =
+       ((this_ptr->pending_pickup_target->location).position.z - local_28) +
+       (this_ptr->base).base.base.location.position.z;
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-            ((CMotionController *)&this_ptr->field_0x2b4,0x13,1);
+            (&(this_ptr->base).base.model.base,0x13,1);
   return 1;
 }

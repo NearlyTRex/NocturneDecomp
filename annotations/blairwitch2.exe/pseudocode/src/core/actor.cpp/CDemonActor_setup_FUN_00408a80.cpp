@@ -11,14 +11,13 @@ void __cdecl core_actor_cpp_CDemonActor_setup_FUN_00408a80(CDemonActor *this_ptr
 {
   CPathMap *this_ptr_00;
   
-  *(uint *)&this_ptr->field_0x114 = 0;
-  *(uint *)&this_ptr->field_0x11c = 0;
+  this_ptr->blood_effect_timer = 0;
+  this_ptr->footstep_particle_count = 0;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0(this_ptr);
   this_ptr_00 = (*((this_ptr->vtable)._ub)->getPathMap)(this_ptr);
   if (this_ptr_00 == (CPathMap *)0x0) {
     return;
   }
-  core_path_cpp_CPathMap_updateIfNeeded_FUN_005121a0
-            (this_ptr_00,(CVector3f *)&this_ptr->field_0x20,1);
+  core_path_cpp_CPathMap_updateIfNeeded_FUN_005121a0(this_ptr_00,&(this_ptr->location).position,1);
   return;
 }

@@ -49,7 +49,7 @@ void core_game_cpp_FUN_004b8e10(uint param_1,char *param_2)
         }
         core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
                   ((CKeyFramedModelInstance *)(this_ptr + 1));
-        *(uint *)&this_ptr[1].field_0x1bc = 2;
+        this_ptr[1].particle_systems[1].fade_start = 2.8026e-45;
         iVar2 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
         goto LAB_004b8edb;
       }

@@ -5,13 +5,9 @@
 // Function prototypes for unkafter/basicene.cpp
 // Generated from Ghidra function signatures
 
-// Original: unkafter_basicene.cpp_FUN_0059e3b0
+// Original: unkafter_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0
 // Address: 0059e3b0
-int FUN_0059e3b0(CEnemy *param_1);
-
-// Original: unkafter_basicene.cpp_FUN_0059e6a0
-// Address: 0059e6a0
-void FUN_0059e6a0(CEnemy *param_1);
+int __cdecl CBasicEnemy::ctor(CBasicEnemy *this_ptr);
 
 // Original: unkafter_basicene.cpp_FUN_0059e7a0
 // Address: 0059e7a0
@@ -71,7 +67,7 @@ void FUN_0059f6a0(void);
 
 // Original: unkafter_basicene.cpp_FUN_0059f740
 // Address: 0059f740
-int FUN_0059f740(CEnemy *param_1,undefined4 param_2,int param_3,float param_4);
+int FUN_0059f740(CEnemy *param_1,float param_2,int param_3,float param_4);
 
 // Original: unkafter_basicene.cpp_FUN_0059fae0
 // Address: 0059fae0

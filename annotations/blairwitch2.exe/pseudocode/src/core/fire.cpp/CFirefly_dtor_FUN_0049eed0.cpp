@@ -13,6 +13,6 @@ CFirefly * core_fire_cpp_CFirefly_dtor_FUN_0049eed0(CFirefly *this_ptr,uint flag
 {
   CFirefly *pCVar1;
   
-  pCVar1 = (CFirefly *)core_particle_cpp_CParticle_dtor_FUN_00510df0((CParticle *)this_ptr,1);
+  pCVar1 = (CFirefly *)core_particle_cpp_CParticle_dtor_FUN_00510df0(&this_ptr->base,1);
   return pCVar1;
 }

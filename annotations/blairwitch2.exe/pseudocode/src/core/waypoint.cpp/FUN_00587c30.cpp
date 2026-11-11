@@ -22,9 +22,9 @@ bool core_waypoint_cpp_FUN_00587c30(float *param_1,CLocation *param_2,int param_
   float local_18;
   float local_14;
   
-  local_28 = *param_1 - *(float *)param_2;
-  local_24 = param_1[1] - *(float *)(param_2 + 4);
-  local_20 = param_1[2] - *(float *)(param_2 + 8);
+  local_28 = *param_1 - (param_2->position).x;
+  local_24 = param_1[1] - (param_2->position).y;
+  local_20 = param_1[2] - (param_2->position).z;
   if (param_3 == 0) {
     if ((((float)_DAT_005ee09f < ABS(local_24)) || ((float)_DAT_005ee0a7 < ABS(local_28))) ||
        ((float)_DAT_005ee0a7 < ABS(local_20))) {

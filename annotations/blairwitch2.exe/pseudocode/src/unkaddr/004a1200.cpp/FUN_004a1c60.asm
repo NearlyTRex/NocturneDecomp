@@ -18,7 +18,7 @@
 ;   undefined4 CAlphaBitmap_01caf1f0.height
 ;   undefined4 CAlphaBitmap_01caf204.width
 ;   undefined4 CAlphaBitmap_01caf204.height
-;   undefined4 g_STextViewInstance.field56_0x38
+;   undefined4 g_STextViewInstance.page_count
 ;
 ; *****************************************************************************
 
@@ -52,7 +52,7 @@ section .text
     CMP EDX,EAX                         ; 004a1c9f
     JL 0x004a1ced                       ; 004a1ca1
         ;   XREF to: 004a1ced (CONDITIONAL_JUMP)  ; LAB_004a1ced
-    MOV EAX,[0x01caf278]                ; 004a1ca3 | g_STextViewInstance.field56_0x38
+    MOV EAX,[0x01caf278]                ; 004a1ca3 | g_STextViewInstance.page_count
         ;   Label: LAB_004a1ca3
     MOV ESI,dword ptr [0x01caf110]      ; 004a1ca8 | DAT_01caf110
     SUB EAX,0x2                         ; 004a1cae

@@ -6,10 +6,15 @@
 #include "system/basetypes.h"
 
 // Structure: SPart
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x60 (96 bytes)
 #pragma pack(push, 1)
 typedef struct SPart {
+    char part_name[32]; // 0x0
+    int tri_counts[5]; // 0x20
+    int cap_tri_counts[5]; // 0x34
+    int adj_part_count; // 0x48
+    int adj_part_list[4]; // 0x4c
+    int dominant_bone; // 0x5c
 } SPart;
 #pragma pack(pop)
 

@@ -12,11 +12,9 @@ void __cdecl core_mobster_cpp_CMobster_setup_FUN_004fd950(CMobster *this_ptr)
 
 {
   CDeformableModelInstance *this_ptr_00;
-  byte uVar1;
-  ushort uVar2;
   CSkeleton *this_ptr_01;
   CDeformableModel *this_ptr_02;
-  int iVar3;
+  int iVar1;
   
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00547480(this_ptr_00);
@@ -56,47 +54,43 @@ void __cdecl core_mobster_cpp_CMobster_setup_FUN_004fd950(CMobster *this_ptr)
   _DAT_01d1c73c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine2",1);
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(this_ptr_00);
-  iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"larm01",1);
-  this_ptr->part_indices[0] = iVar3;
-  iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+  this_ptr->part_indices[0] = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"l4arm01",1);
-  this_ptr->part_indices[1] = iVar3;
-  iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+  this_ptr->part_indices[1] = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"rarm01",1);
-  this_ptr->part_indices[2] = iVar3;
-  iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+  this_ptr->part_indices[2] = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"r4arm01",1);
-  this_ptr->part_indices[3] = iVar3;
-  iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+  this_ptr->part_indices[3] = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"rthigh01",1);
-  this_ptr->part_indices[4] = iVar3;
-  iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+  this_ptr->part_indices[4] = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"rshin01",1);
-  this_ptr->part_indices[5] = iVar3;
-  iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+  this_ptr->part_indices[5] = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"lthigh01",1);
-  this_ptr->part_indices[6] = iVar3;
-  iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+  this_ptr->part_indices[6] = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"lshin01",1);
-  this_ptr->part_indices[7] = iVar3;
-  iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+  this_ptr->part_indices[7] = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"waist01",1);
-  this_ptr->part_indices[8] = iVar3;
-  iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+  this_ptr->part_indices[8] = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"torso01",1);
-  this_ptr->part_indices[9] = iVar3;
-  iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+  this_ptr->part_indices[9] = iVar1;
+  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"head01",1);
-  this_ptr->part_indices[10] = iVar3;
-  uVar1 = DAT_01d1c714_1;
-  uVar2 = uRam01d1c716;
-  (this_ptr->base).base.carry_hands[0] = (SCarryHand)DAT_01d1c714;
-  (this_ptr->base).base.carry_hands[1] = (SCarryHand)uVar1;
-  *(ushort *)&(this_ptr->base).base.field_0x261a = uVar2;
-  *(int *)&(this_ptr->base).base.field_0x261c = this_ptr->part_indices[1];
-  *(int *)&(this_ptr->base).base.field_0x2690 = _DAT_01d1c718;
-  *(int *)&(this_ptr->base).base.field_0x2694 = this_ptr->part_indices[3];
+  this_ptr->part_indices[10] = iVar1;
+  (this_ptr->base).base.carry_hands[0].bone_index = _DAT_01d1c714;
+  (this_ptr->base).base.carry_hands[0].secondary_bone_index = this_ptr->part_indices[1];
+  (this_ptr->base).base.carry_hands[1].bone_index = _DAT_01d1c718;
+  (this_ptr->base).base.carry_hands[1].secondary_bone_index = this_ptr->part_indices[3];
   core_enemy_cpp_CEnemy_setup_FUN_00487eb0(&this_ptr->base);
   this_ptr->firing_blend = 0.0;
   this_ptr->firing_cooldown = 0.0;

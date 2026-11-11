@@ -37,8 +37,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
+;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_memory.c_memset_FUN_005b77c0
-;   crt_unknown.c_FUN_005b8580
 ;   crt_unknown.c_FUN_005b86a0
 ;   engine_2d.c_setupViewportAndClipping_FUN_00401810
 ;   engine_special.cpp_clearScreen_FUN_0055b1f0
@@ -131,8 +131,8 @@ section .text
     SAR EAX,0x3                         ; 00588b28
     IMUL EAX,ECX                        ; 00588b2b
     PUSH EAX                            ; 00588b2e
-    CALL crt_unknown.c_FUN_005b8580     ; 00588b2f
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 00588b2f
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     ADD ESP,0x4                         ; 00588b34
     MOV [0x00622010],EAX                ; 00588b37 | DAT_00622010
     TEST EAX,EAX                        ; 00588b3c
@@ -152,8 +152,8 @@ section .text
     SHL EAX,0x2                         ; 00588b6f
     ADD EAX,0x40                        ; 00588b72
     PUSH EAX                            ; 00588b75
-    CALL crt_unknown.c_FUN_005b8580     ; 00588b76
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 00588b76
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     ADD ESP,0x4                         ; 00588b7b
     MOV [0x02661af0],EAX                ; 00588b7e | DAT_02661af0
     TEST EAX,EAX                        ; 00588b83

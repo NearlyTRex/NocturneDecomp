@@ -28,10 +28,10 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_
   }
   pSVar3 = this_ptr->panels;
   do {
-    while (*(int *)pSVar3 != 0) {
+    while (pSVar3->exists != 0) {
       core_setcolid_cpp_FUN_00536cb0
-                (g_CDemonSetPtr,cylinder,&CStack_24,(CVector3f *)&pSVar3->field_0xc,
-                 (CMatrix3x3f *)&pSVar3->field_0x24);
+                (g_CDemonSetPtr,cylinder,&CStack_24,&pSVar3->local_position,&pSVar3->rotation_matrix
+                );
       pSVar3 = pSVar3 + 1;
       if ((SGem *)pSVar3 == this_ptr->gems) {
         return;

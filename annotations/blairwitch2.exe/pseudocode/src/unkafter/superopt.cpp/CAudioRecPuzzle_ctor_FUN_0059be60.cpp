@@ -22,6 +22,6 @@ CAudioRecPuzzle * unkafter_superopt_cpp_CAudioRecPuzzle_ctor_FUN_0059be60(CAudio
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
                      ((CKeyFramedModelInstance *)(iVar1 + 0x528));
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80(pCVar3 + 1);
-  *(byte ***)(pCVar3[-5].model_name + 4) = &g_CAudioRecPuzzleVTable;
+  ((CAudioRecPuzzle *)(pCVar3[-5].model_name + 4))->vtable = &g_CAudioRecPuzzleVTable;
   return (CAudioRecPuzzle *)(pCVar3[-5].model_name + 4);
 }

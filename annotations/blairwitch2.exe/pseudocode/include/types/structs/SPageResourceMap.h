@@ -2,15 +2,20 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct SNotesMap;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SPageResource.h"
 
 // Structure: SPageResourceMap
-// Stub: size from Watcom RTTI, fields not yet recovered
+// new(0x1c) in SNotesMap_paginate
 // Ghidra size: 0x1c (28 bytes)
 #pragma pack(push, 1)
 typedef struct SPageResourceMap {
-    char field_0[28]; // 0x0
+    SPageResource base; // 0x0, derived
+    struct SNotesMap* map; // 0x18, ctor stores arg and copies its width/height (+0x68/+0x6c); draw calls SNotesMap_draw(map, x, y)
 } SPageResourceMap;
 #pragma pack(pop)
 

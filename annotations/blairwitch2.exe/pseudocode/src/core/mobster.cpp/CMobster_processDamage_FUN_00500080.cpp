@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_00500080(CMobster *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -17,19 +19,18 @@ void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_00500080(CMobster *this
   sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handle);
   sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handles[1]);
   core_mobster_cpp_CMobster_processDismemberment_FUN_004ffcc0(this_ptr,damage_info);
-  if ((*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[1] * 4) == 0) &&
-     (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[3] * 4) == 0)) {
-    *(uint *)(damage_info + 4) = 0x461c3f9a;
+  if (((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]] == 0) &&
+     ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[3]] == 0)) {
+    damage_info->damage_amount = 9999.9;
   }
-  fVar1 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
     iVar2 = core_motion_cpp_FUN_005035c0(this_ptr_00);
     if ((*(int *)(iVar2 + 0x24) != 5) && (*(int *)(iVar2 + 0x24) != 4)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                ((CMotionController *)this_ptr_00,4,1);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,4,1);
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
                 ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
       if (this_ptr->death_sound_played == 0) {
@@ -45,11 +46,10 @@ void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_00500080(CMobster *this
     goto LAB_00500145;
   }
   iVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                    (*(uint *)(damage_info + 0x34),g_CTommyGunClassInfo.name_hash);
+                    (damage_info->attacker,g_CTommyGunClassInfo.name_hash);
   if (iVar2 == 0) {
 LAB_00500121:
-    core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-              ((CMotionController *)this_ptr_00,3,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,3,1);
   }
   else {
     iVar2 = core_actor_cpp_randomChance_FUN_0040d060(0.5);

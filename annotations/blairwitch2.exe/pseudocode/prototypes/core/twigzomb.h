@@ -5,10 +5,6 @@
 // Function prototypes for core/twigzomb.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_twigzomb.cpp_CTwigZombie_archive_FUN_0059fc10
-// Address: 0059fc10
-void __cdecl CTwigZombie::archive(CTwigZombie *this_ptr);
-
 // Original: core_twigzomb.cpp_staticInit_FUN_005a2670
 // Address: 005a2670
 void staticInit(void);

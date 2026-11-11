@@ -15,7 +15,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_00408790(CDemonActor *
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = core_actor_cpp_initTransformCache_FUN_00408750(&this_ptr->field_0x12c);
+  iVar2 = core_actor_cpp_initTransformCache_FUN_00408750(&this_ptr->previous_transform_state);
   iVar2 = __arrinit(iVar2 + 0x28,5,&g_CSimpleParticleSystemTypeInfo);
   this_ptr_00 = (CDemonActor *)(iVar2 + -0x154);
   *(CDemonActor_vtable **)(iVar2 + 0x15c) = &g_CDemonActorVTable;

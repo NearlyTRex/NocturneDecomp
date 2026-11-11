@@ -63,25 +63,22 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_0049b380(CTrail *this_ptr)
   local_2c.y = (int)ROUND(local_50 * _DAT_005f64e4);
   local_2c.z = (int)ROUND(_DAT_005f64e4 * 0.0);
   local_4c = local_50;
-  engine_special_cpp_FUN_0055d723((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&local_2c);
+  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_2c);
   local_50 = -local_50;
   local_20.x = (int)ROUND(local_50 * _DAT_005f64e4);
   local_20.y = (int)ROUND(local_4c * _DAT_005f64e4);
   local_20.z = (int)ROUND(local_48 * _DAT_005f64e4);
-  engine_special_cpp_FUN_0055d723
-            ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&local_20);
+  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_20);
   local_4c = -local_4c;
   local_14.x = (int)ROUND(local_50 * _DAT_005f64e4);
   local_14.y = (int)ROUND(local_4c * _DAT_005f64e4);
   local_14.z = (int)ROUND(local_48 * _DAT_005f64e4);
-  engine_special_cpp_FUN_0055d723
-            ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&local_14);
+  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_14);
   local_50 = -local_50;
   local_5c.x = (int)ROUND(local_50 * _DAT_005f64e4);
   local_5c.y = (int)ROUND(local_4c * _DAT_005f64e4);
   local_5c.z = (int)ROUND(local_48 * _DAT_005f64e4);
-  engine_special_cpp_FUN_0055d723
-            ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x90),&local_5c);
+  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_5c);
   DAT_0062202c = 0x80000;
   _DAT_00622030 = 0xf80000;
   _DAT_0062205c = 0xf80000;

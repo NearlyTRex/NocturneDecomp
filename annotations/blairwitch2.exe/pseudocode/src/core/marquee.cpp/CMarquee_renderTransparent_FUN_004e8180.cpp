@@ -75,7 +75,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_004e8180(CMarquee *t
       else if (this_ptr->type == MARQUEE_DISPLAY_RING) {
         fVar4 = (float10)this_ptr->param;
         pCVar1 = (CCourse *)round();
-        iStack_28 = *(int *)pCVar1;
+        iStack_28 = pCVar1->len;
         iVar2 = (int)ROUND(fVar4);
         iStack_10 = 0;
         iStack_2c = iVar2;
@@ -106,9 +106,9 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_004e8180(CMarquee *t
       }
     }
     else {
-      iStack_24 = *(int *)&this_ptr->field_0x300;
+      iStack_24 = (this_ptr->course).len;
       iVar2 = 0;
-      pCVar1 = (CCourse *)&this_ptr->field_0x300;
+      pCVar1 = &this_ptr->course;
       if (0 < iStack_24) {
         do {
           pCStack_1c = pCVar1;

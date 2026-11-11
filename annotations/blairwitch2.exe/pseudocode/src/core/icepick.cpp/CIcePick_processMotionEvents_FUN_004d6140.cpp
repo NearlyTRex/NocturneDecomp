@@ -11,13 +11,14 @@
 void __cdecl core_icepick_cpp_CIcePick_processMotionEvents_FUN_004d6140(CIcePick *this_ptr,float delta_time)
 
 {
+  CDeformableModelInstance *this_ptr_00;
   CDemonActor *pCVar1;
   int iVar2;
   uint uVar3;
   
+  this_ptr_00 = &(this_ptr->base).base.model;
   do {
-    iVar2 = core_motion_cpp_CMotionController_advance_FUN_005030c0
-                      ((CMotionController *)&this_ptr->field_0x2b4,&delta_time);
+    iVar2 = core_motion_cpp_CMotionController_advance_FUN_005030c0(&this_ptr_00->base,&delta_time);
     switch(iVar2) {
     case 100:
       iVar2 = this_ptr->attack_count + 1;
@@ -35,8 +36,7 @@ void __cdecl core_icepick_cpp_CIcePick_processMotionEvents_FUN_004d6140(CIcePick
     case 0x67:
       uVar3 = rand();
       if ((uVar3 & 3) == 0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                  ((CMotionController *)&this_ptr->field_0x2b4,0x15,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,0x15,1);
       }
       break;
     case 0x68:
@@ -47,7 +47,8 @@ void __cdecl core_icepick_cpp_CIcePick_processMotionEvents_FUN_004d6140(CIcePick
       }
       break;
     case 0x69:
-      (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x130))(this_ptr,1,0);
+      (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
+                ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
       break;
     default:
       core_charactr_cpp_CCharacter_processMotion_FUN_0042aa00((CCharacter *)this_ptr,iVar2);

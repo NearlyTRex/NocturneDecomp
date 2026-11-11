@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 254,
+    "complexity_score": 108,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
-    "suspect_count": 18,
+    "pseudocode_lines": 48,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "shadow_pointer_walk",
-      "unnamed_field",
+      "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 129
+    "total_lines": 128
   },
   "cross_references": [
     {
@@ -256,140 +255,28 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x1",
-      "severity": "mild",
-      "text": "pSVar5->field_0x1 = cVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x2",
-      "severity": "mild",
-      "text": "pSVar5 = (SNetPlayer *)&pSVar5->field_0x2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(uint *)&dest->field_0x1c = *(uint *)addr;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
-      "text": "*(uint *)((int)dest + (uint)bVar6 * -8 + 0x20) =",
+      "text": "*(uint *)((int)dest + (uint)bVar6 * -8 + 0x20) = *(uint *)&addr[-(uint)bVar6].port;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(uint *)&dest->field_0x28 = 0xbf800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "*(uint *)&dest->field_0x44 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "*(uint *)&dest->field_0x40 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "*(uint *)&dest->field_0x3c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(int *)&dest->field_0x14 = hero_number;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(int *)&dest->field_0x18 = aim_mode;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(int *)&dest->field_0x24 = _DAT_01d34e38;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "*(int *)&dest->field_0x2c = iVar4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "*(int *)&dest->field_0x30 = iVar4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "*(int *)&dest->field_0x38 = iVar4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "*(int *)&dest->field_0x34 = iVar3 + -1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 36,
       "match": "(int)dest",
       "severity": "moderate",
-      "text": "*(uint *)((int)dest + (uint)bVar6 * -8 + 0x20) =",
+      "text": "*(uint *)((int)dest + (uint)bVar6 * -8 + 0x20) = *(uint *)&addr[-(uint)bVar6].port;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar5->owner`). Replace `pSVar5->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 33,
-      "match": "pSVar5 = (T *)&pSVar5->FIELD",
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 26,
+      "match": "do {",
       "severity": "moderate",
-      "text": "pSVar5 = (SNetPlayer *)&pSVar5->field_0x2;",
-      "type": "shadow_pointer_walk"
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

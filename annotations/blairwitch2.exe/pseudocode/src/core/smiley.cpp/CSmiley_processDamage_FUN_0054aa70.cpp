@@ -10,33 +10,33 @@ void __cdecl core_smiley_cpp_CSmiley_processDamage_FUN_0054aa70(CSmiley *this_pt
 
 {
   CDeformableModelInstance *this_ptr_00;
-  float fVar1;
-  int iVar2;
+  EDamageType EVar1;
+  float fVar2;
+  int iVar3;
   
   if (this_ptr->model_variant != 1) {
-    *(uint *)(damage_info + 0x30) = 100;
-    *(uint *)(damage_info + 4) = 0;
+    damage_info->damage_type = DAMAGE_TYPE_ATTACK_GENERIC;
+    damage_info->damage_amount = 0.0;
     return;
   }
-  iVar2 = *(int *)(damage_info + 0x30);
-  if (iVar2 == 4) {
-    *(uint *)(damage_info + 0x30) = 100;
+  EVar1 = damage_info->damage_type;
+  if (EVar1 == DAMAGE_TYPE_FALL_APART) {
+    damage_info->damage_type = DAMAGE_TYPE_ATTACK_GENERIC;
   }
-  else if ((iVar2 < 0xc) || (iVar2 == 0x6b)) goto LAB_0054aaa4;
-  *(uint *)(damage_info + 4) = 0;
+  else if (((int)EVar1 < 0xc) || (EVar1 == DAMAGE_TYPE_PIERCING)) goto LAB_0054aaa4;
+  damage_info->damage_amount = 0.0;
 LAB_0054aaa4:
-  if (0.0 < *(float *)(damage_info + 4)) {
+  if (0.0 < damage_info->damage_amount) {
     core_smiley_cpp_CSmiley_processDismemberment_FUN_0054a790(this_ptr,damage_info);
   }
-  fVar1 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
+  fVar2 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
-  (this_ptr->base).base.hit_points = fVar1;
-  if (fVar1 <= 0.0) {
+  (this_ptr->base).base.hit_points = fVar2;
+  if (fVar2 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
-    iVar2 = core_motion_cpp_FUN_005035c0(this_ptr_00);
-    if ((*(int *)(iVar2 + 0x24) != 8) && (*(int *)(iVar2 + 0x24) != 7)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                ((CMotionController *)this_ptr_00,7,1);
+    iVar3 = core_motion_cpp_FUN_005035c0(this_ptr_00);
+    if ((*(int *)(iVar3 + 0x24) != 8) && (*(int *)(iVar3 + 0x24) != 7)) {
+      core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,7,1);
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
                 ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
       (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -45,8 +45,7 @@ LAB_0054aaa4:
     core_enemy_cpp_CEnemy_processDamage_FUN_00488890(&this_ptr->base,damage_info);
     return;
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-            ((CMotionController *)this_ptr_00,3,1);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,3,1);
   core_enemy_cpp_CEnemy_processDamage_FUN_00488890(&this_ptr->base,damage_info);
   return;
 }

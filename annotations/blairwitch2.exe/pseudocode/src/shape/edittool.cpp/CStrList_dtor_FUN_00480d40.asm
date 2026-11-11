@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[6]:
-;   core_fldnotes.cpp_FUN_004a32c0 at 004a32cc
+;   core_fldnotes.cpp_SNotesEntry_dtor_FUN_004a32c0 at 004a32cc
 ;   core_script.cpp_CScript_dtor_FUN_00521600 at 00521614
 ;   shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047c760 at 0047c7dc
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004820b0 at 00482104

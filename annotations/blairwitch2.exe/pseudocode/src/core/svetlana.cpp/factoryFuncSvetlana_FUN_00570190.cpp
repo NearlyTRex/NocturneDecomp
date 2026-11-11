@@ -11,7 +11,7 @@ void core_svetlana_cpp_factoryFuncSvetlana_FUN_00570190(void)
 {
   CSvetlana *this_ptr;
   
-  this_ptr = (CSvetlana *)debugAllocTracked1(0x9acc4);
+  this_ptr = (CSvetlana *)operator_new(0x9acc4);
   if (this_ptr == (CSvetlana *)0x0) {
     return;
   }

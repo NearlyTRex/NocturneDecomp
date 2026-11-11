@@ -67,15 +67,17 @@ void core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_0053be4c(int param_1)
       CStack_50.z = (int)ROUND(fStack_3c * _DAT_005fb3c0);
       iStack_8 = iVar5;
       engine_special_cpp_FUN_0055d723
-                ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + iVar3),&CStack_50);
+                ((SProjectedVertex *)
+                 ((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x + iVar3),
+                 &CStack_50);
       pCVar2 = DAT_0060b280;
-      *(uint *)(DAT_0060b280->vertex_buffer_ptr + iVar3 + 0x18) = 0x800000;
-      *(uint *)(pCVar2->vertex_buffer_ptr + iVar3 + 0x1c) = 0x800000;
+      *(uint *)((int)&DAT_0060b280->vertex_buffer_ptr->u + iVar3) = 0x800000;
+      *(uint *)((int)&pCVar2->vertex_buffer_ptr->v + iVar3) = 0x800000;
       fVar6 = (float10)*(float *)(param_1 + 0x11c4) * (float10)_DAT_005e64f9;
       pSVar1 = pCVar2->vertex_buffer_ptr;
       round();
       iStack_8 = (int)ROUND(fVar6);
-      *(int *)(pSVar1 + iVar3 + 0x20) = iStack_8;
+      *(int *)((int)&pSVar1->r + iVar3) = iStack_8;
       iVar4 = *extraout_EDX;
       fVar6 = (float10)*(float *)(param_1 + 0x11c8) * (float10)_DAT_005e64f9;
       round();

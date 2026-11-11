@@ -11,7 +11,7 @@
 int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_004fcf70(CDemonMission *this_ptr,int index,int hero_type,CCharacter *existing_actor)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   int iVar2;
   CCharacter *local_14;
   
@@ -25,10 +25,10 @@ int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_004fcf70(CDemonMiss
     _DAT_01d046a4 = 0x641;
     core_main_c_FUN_004e4500("CDemonMission::createOneHero - hero already created!");
   }
-  iVar1 = *(int *)(this_ptr + 0x1114);
+  pCVar1 = this_ptr->first_actor;
   local_14 = (CCharacter *)0x0;
   do {
-    if (iVar1 == 0) {
+    if (pCVar1 == (CDemonActor *)0x0) {
 LAB_004fcfea:
       if (local_14 == (CCharacter *)0x0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0047be40
@@ -38,7 +38,7 @@ LAB_004fcfea:
       *(CCharacter **)(index * 4 + 0x1cedee4) = local_14;
       return 1;
     }
-    iVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0(iVar1,_DAT_01cedf8c);
+    iVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar1,_DAT_01cedf8c);
     if ((iVar2 != 0) && (index == *(int *)(iVar2 + 0x2b4))) {
       if (existing_actor == (CCharacter *)0x0) {
         local_14 = (CCharacter *)
@@ -48,15 +48,15 @@ LAB_004fcfea:
         local_14 = existing_actor;
         (*((existing_actor->base).vtable._ub)->setPositionAndOrientation)
                   (&existing_actor->base,(CVector3f *)(iVar2 + 0x20),(CVector3f *)(iVar2 + 0x30));
-        *(uint *)&(existing_actor->base).field_0x2c = *(uint *)(iVar2 + 0x2c);
+        (existing_actor->base).location.area_id = *(int *)(iVar2 + 0x2c);
         core_motion_cpp_CMotionController_jumpToMotion_FUN_00503980
-                  ((CMotionController *)&existing_actor->model,0,0.0);
+                  (&(existing_actor->model).base,0,0.0);
         (*(((existing_actor->base).vtable._uc)->_uc).setWalkTarget)
                   (existing_actor,(CDemonActor *)0x0,0.0,0.0);
       }
       core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200(0x01D182F0,&local_14->base);
       goto LAB_004fcfea;
     }
-    iVar1 = *(int *)(iVar1 + 0x14c);
+    pCVar1 = pCVar1->next_actor;
   } while( true );
 }

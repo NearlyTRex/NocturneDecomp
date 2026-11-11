@@ -32,8 +32,8 @@ void __cdecl core_setcolid_cpp_CDemonSet_transferVoxelShadow_FUN_005380c0(CDemon
     fStack_10 = afStack_40[0];
   }
   core_dtrace_cpp_CDemonRaytrace_transferShadowVoxels_FUN_00477160
-            (&g_CDemonRaytraceInstance,(CVector3f *)&actor->field_0x20,&(actor->orient).vec,
-             &CStack_1c,(CVector3f *)&fStack_10);
+            (&g_CDemonRaytraceInstance,&(actor->location).position,&(actor->orient).vec,&CStack_1c,
+             (CVector3f *)&fStack_10);
   core_path_cpp_resetAllPathMaps_FUN_00513f30();
   return;
 }

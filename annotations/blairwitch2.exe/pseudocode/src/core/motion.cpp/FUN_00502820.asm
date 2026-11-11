@@ -38,9 +38,9 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
 ;   core_moon.cpp_FUN_005027b0
+;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_stdio.c_fgetc_FUN_005b8180
 ;   crt_stdio.c_fscanf_FUN_005b8100
-;   crt_unknown.c_FUN_005b8580
 ;
 ; *****************************************************************************
 
@@ -291,8 +291,8 @@ section .text
         ;   XREF to: 00502aaa (CONDITIONAL_JUMP)  ; LAB_00502aaa
     IMUL EAX,ECX,0x18                   ; 00502a22
     PUSH EAX                            ; 00502a25
-    CALL crt_unknown.c_FUN_005b8580     ; 00502a26
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 00502a26
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     ADD ESP,0x4                         ; 00502a2b
     MOV dword ptr [ESI + 0x6c],EAX      ; 00502a2e
     TEST EAX,EAX                        ; 00502a31

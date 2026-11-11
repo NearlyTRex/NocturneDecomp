@@ -12,14 +12,14 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_004fc74
   CDemonActor *str1;
   int iVar1;
   
-  str1 = *(CDemonActor **)(this_ptr + 0x1114);
+  str1 = this_ptr->first_actor;
   while( true ) {
     if (str1 == (CDemonActor *)0x0) {
       return (CDemonActor *)0x0;
     }
     iVar1 = _stricmp(str1->actor_name,name);
     if (iVar1 == 0) break;
-    str1 = *(CDemonActor **)&str1->field_0x14c;
+    str1 = str1->next_actor;
   }
   return str1;
 }

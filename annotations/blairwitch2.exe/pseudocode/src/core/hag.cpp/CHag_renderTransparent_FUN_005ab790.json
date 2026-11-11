@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 33,
+    "complexity_score": 26,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 8,
-    "suspect_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 11,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "warning_type_propagation"
     ],
-    "total_lines": 31
+    "total_lines": 34
   },
   "cross_references": [],
   "function": {
@@ -36,7 +36,7 @@
     {
       "addr": "005a8290",
       "is_variadic": false,
-      "name": "unkafter_superopt.cpp_FUN_005a8290"
+      "name": "unkafter_superopt.cpp_CSimpleParticleSystem_render_FUN_005a8290"
     }
   ],
   "globals": [],
@@ -87,20 +87,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "unkafter_superopt_cpp_FUN_005a8290(&this_ptr->field_0x154);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x264",
-      "severity": "mild",
-      "text": "unkafter_superopt_cpp_FUN_005a8290(&this_ptr->field_0x264);",
-      "type": "unnamed_field"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     }
   ],
   "vtable_info": {

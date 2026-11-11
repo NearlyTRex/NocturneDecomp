@@ -11,7 +11,7 @@ void core_pendulum_cpp_factoryFuncPendulum_FUN_00514ca0(void)
 {
   CPendulum *this_ptr;
   
-  this_ptr = (CPendulum *)debugAllocTracked1(0x5a0);
+  this_ptr = (CPendulum *)operator_new(0x5a0);
   if (this_ptr == (CPendulum *)0x0) {
     return;
   }

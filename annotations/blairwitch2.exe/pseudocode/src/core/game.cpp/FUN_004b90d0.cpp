@@ -35,8 +35,7 @@ void core_game_cpp_FUN_004b90d0(CGame *param_1)
   float fVar20;
   char local_368 [256];
   byte abStack_268 [100];
-  SDamageInfo aSStack_204 [4];
-  uint uStack_200;
+  SDamageInfo SStack_204;
   float fStack_1c8;
   float afStack_1c4 [4];
   float fStack_1b4;
@@ -154,9 +153,9 @@ void core_game_cpp_FUN_004b90d0(CGame *param_1)
                          ("The horror has been unleashed.");
       core_game_cpp_CGame_displayMessage_FUN_004b31a0(param_1,pcVar6,fVar20);
     }
-    iVar5 = *(int *)&param_1->field_0x1f8;
+    iVar5 = param_1->subtitle_system_enabled;
     if ((iVar5 == 0) &&
-       (iVar14 = (**(code **)(*(int *)0x01D02F84 + 4))(0x01D02F84,0x44), iVar14 != 0)) {
+       (iVar14 = (*0x01D02F84->vtable->getAndClearKeyState)(0x01D02F84,DIK_F10), iVar14 != 0)) {
       iVar14 = 100;
       pbVar18 = abStack_268;
       pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Enter cheat code");
@@ -350,8 +349,8 @@ LAB_004b9228:
         }
         if (local_18c == local_190) {
           DAT_01cb80f8 = 0;
-          uVar7 = (uint)(*(int *)&param_1->field_0x1f4 == 0);
-          *(uint *)&param_1->field_0x1f4 = uVar7;
+          uVar7 = (uint)(param_1->event_processing_enabled == 0);
+          param_1->event_processing_enabled = uVar7;
           if (uVar7 == 0) {
             pcVar6 = "Event debug off";
           }
@@ -390,8 +389,8 @@ LAB_004b9228:
         }
         if (local_184 == local_188) {
           DAT_01cb80f8 = (byte)local_184 ^ (byte)local_188;
-          uVar7 = (uint)(*(int *)&param_1->field_0x1f8 == 0);
-          *(uint *)&param_1->field_0x1f8 = uVar7;
+          uVar7 = (uint)(param_1->subtitle_system_enabled == 0);
+          param_1->subtitle_system_enabled = uVar7;
           if (uVar7 == 0) {
             fVar20 = 5.0;
             pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Script debug off")
@@ -479,11 +478,10 @@ LAB_004b9228:
       if (iVar5 == local_178) {
         fVar20 = 5.0;
         DAT_01cb80f8 = 0;
-        *(uint *)&param_1->field_0xd8 = 2;
+        param_1->aim_mode = AIM_MODE_MANUAL;
         pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Manual aim enabled");
         core_game_cpp_CGame_displayMessage_FUN_004b31a0(param_1,pcVar6,fVar20);
-        *(uint *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x24378) =
-             *(uint *)&param_1->field_0xd8;
+        *(EAimMode *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x24378) = param_1->aim_mode;
       }
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_0050ff00(&DAT_005d7cc5);
       iVar5 = 0;
@@ -512,11 +510,10 @@ LAB_004b9228:
       if (iVar5 == local_174) {
         fVar20 = 5.0;
         DAT_01cb80f8 = 0;
-        *(uint *)&param_1->field_0xd8 = 0;
+        param_1->aim_mode = AIM_MODE_AUTO;
         pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Auto aim enabled");
         core_game_cpp_CGame_displayMessage_FUN_004b31a0(param_1,pcVar6,fVar20);
-        *(uint *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x24378) =
-             *(uint *)&param_1->field_0xd8;
+        *(EAimMode *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x24378) = param_1->aim_mode;
       }
       if (param_1->developer_mode_enabled != 0) {
         pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_0050ff00(&DAT_005d7d08);
@@ -676,8 +673,8 @@ LAB_004b9228:
       }
       if (iVar5 == iStack_15c) {
         DAT_01cb80f8 = 0;
-        uVar7 = (uint)(*(int *)&param_1->field_0x1ec == 0);
-        *(uint *)&param_1->field_0x1ec = uVar7;
+        uVar7 = (uint)(param_1->god_mode_enabled == 0);
+        param_1->god_mode_enabled = uVar7;
         if (uVar7 == 0) {
           fVar20 = 5.0;
           pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("God mode disabled");
@@ -716,8 +713,8 @@ LAB_004b9228:
       }
       if (iStack_154 == iStack_158) {
         DAT_01cb80f8 = (byte)iStack_154 ^ (byte)iStack_158;
-        uVar7 = (uint)(*(int *)&param_1->field_0x1f0 == 0);
-        *(uint *)&param_1->field_0x1f0 = uVar7;
+        uVar7 = (uint)(param_1->freeze_enemies_enabled == 0);
+        param_1->freeze_enemies_enabled = uVar7;
         if (uVar7 == 0) {
           pcVar6 = "Enemies thawed";
         }
@@ -759,7 +756,7 @@ LAB_004b9228:
         core_game_cpp_FUN_004b8e10("CMeleeAxe",0);
         core_game_cpp_FUN_004b8e10("CCross",0);
         core_game_cpp_FUN_004b8e10("CBoxActor","Lantern");
-        pCVar12 = (CAmmo *)debugAllocTracked1(0x47c);
+        pCVar12 = (CAmmo *)operator_new(0x47c);
         if (pCVar12 == (CAmmo *)0x0) {
           pCVar12 = (CAmmo *)0x0;
         }
@@ -770,7 +767,7 @@ LAB_004b9228:
           core_mission_cpp_CDemonMission_generateActorName_FUN_004fcda0(0x01D182F0,&pCVar12->base)
           ;
           (*((pCVar12->base).vtable._ub)->setup)(&pCVar12->base);
-          *(uint *)&pCVar12->field_0x474 = 0;
+          pCVar12->ammo_type = AMMO_TYPE_GENERIC;
           core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040e240(pCVar12,&DAT_005d7efa);
           iVar5 = _DAT_01cedef4;
           pCVar12->ammo_count = 500;
@@ -806,9 +803,9 @@ LAB_004b9228:
           DAT_01cb80f8 = 0;
         }
         else {
-          iVar5 = (*(code *)**(uint **)0x01D02F84)(0x01D02F84,0x1d);
+          iVar5 = (*0x01D02F84->vtable->getKeyState)(0x01D02F84,DIK_LCONTROL);
           if ((iVar5 == 0) ||
-             (iVar5 = (**(code **)(*(int *)0x01D02F84 + 4))(0x01D02F84,0x13), iVar5 == 0))
+             (iVar5 = (*0x01D02F84->vtable->getAndClearKeyState)(0x01D02F84,DIK_R), iVar5 == 0))
           goto LAB_004ba142;
         }
         while (iVar5 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_0047dae0
@@ -864,9 +861,9 @@ LAB_004ba142:
           if (SQRT(fStack_1b4 * fStack_1b4 +
                    afStack_1c4[2] * afStack_1c4[2] + afStack_1c4[3] * afStack_1c4[3]) <=
               (float)_DAT_005d83e3) {
-            core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(aSStack_204);
-            uStack_200 = 0x42c80000;
-            (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x110))(iVar5,aSStack_204);
+            core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(&SStack_204);
+            SStack_204.damage_amount = 100.0;
+            (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x110))(iVar5,&SStack_204);
           }
           iStack_64 = iStack_64 + 4;
         }
@@ -897,8 +894,8 @@ LAB_004ba142:
       }
       if (iVar5 == iStack_138) {
         DAT_01cb80f8 = 0;
-        uVar7 = (uint)(*(int *)&param_1->field_0x1fc == 0);
-        *(uint *)&param_1->field_0x1fc = uVar7;
+        uVar7 = (uint)(param_1->gratuitous_dismemberment == 0);
+        param_1->gratuitous_dismemberment = uVar7;
         if (uVar7 == 0) {
           pcVar6 = "Gratuitous dismemberment disabled";
         }
@@ -1025,9 +1022,9 @@ LAB_004ba142:
         iVar5 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
         pCVar10 = *(CDemonActor **)(iVar5 + 0x2498c + *(int *)(iVar5 + 0x247e4) * 4);
         if (pCVar10 != (CDemonActor *)0x0) {
-          if (*(int *)&pCVar10[2].field_0x160 == 5) {
+          if (pCVar10[2].particle_systems[0].fade_current == 7.00649e-45) {
             fVar20 = 5.0;
-            *(uint *)&pCVar10[2].field_0x160 = 0;
+            pCVar10[2].particle_systems[0].fade_current = 0.0;
             pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80
                                ("Flaming ammo disabled");
           }
@@ -1040,7 +1037,7 @@ LAB_004ba142:
             }
             else {
               fVar20 = 5.0;
-              *(uint *)&pCVar10[2].field_0x160 = 5;
+              pCVar10[2].particle_systems[0].fade_current = 7.00649e-45;
               pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80
                                  ("Flaming ammo enabled.");
             }
@@ -1106,7 +1103,7 @@ LAB_004ba142:
         }
         if (iStack_10c == iStack_110) {
           DAT_01cb80f8 = 0;
-          *(uint *)&g_CDemonSetPtr->field_0x14d150 = 0;
+          g_CDemonSetPtr->min_ambient_value = 0.0;
           core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00441e80(&g_CDemonCameraInstance,0.0)
           ;
         }
@@ -1290,19 +1287,18 @@ LAB_004ba142:
             if (iVar5 != -1) {
               pCStack_e0 = pCStack_e8;
               fStack_dc = fStack_ec;
-              *(float *)(&pCStack_e8->field_0x514 + iVar5 * 4) =
-                   *(float *)(&pCStack_e8->field_0x514 + iVar5 * 4) * fStack_ec;
+              pCStack_e8->rest_bone_scales[iVar5] = pCStack_e8->rest_bone_scales[iVar5] * fStack_ec;
               iVar14 = 0;
               pCVar17 = pCVar13;
               iStack_d8 = iVar5;
               if (0 < pCVar13->bone_count) {
                 do {
-                  if (iStack_d8 == *(int *)(pCVar17->bone_list + 0x20)) {
+                  if (iStack_d8 == pCVar17->bone_list[0].parent_index) {
                     core_game_cpp_scaleBoneRecursive_FUN_004b9060
                               (pCStack_e0,pCVar13,fStack_dc,iVar14);
                   }
                   iVar14 = iVar14 + 1;
-                  pCVar17 = (CSkeleton *)&pCVar17->field_0x24;
+                  pCVar17 = (CSkeleton *)((pCVar17->motion_list).state_names[1] + 2);
                 } while (iVar14 < pCVar13->bone_count);
               }
             }
@@ -1312,19 +1308,18 @@ LAB_004ba142:
             if (iVar5 != -1) {
               pCStack_d4 = pCStack_e8;
               fStack_d0 = fStack_ec;
-              *(float *)(&pCStack_e8->field_0x514 + iVar5 * 4) =
-                   *(float *)(&pCStack_e8->field_0x514 + iVar5 * 4) * fStack_ec;
+              pCStack_e8->rest_bone_scales[iVar5] = pCStack_e8->rest_bone_scales[iVar5] * fStack_ec;
               iVar14 = 0;
               pCVar17 = pCStack_e4;
               iStack_cc = iVar5;
               if (0 < pCStack_e4->bone_count) {
                 do {
-                  if (iStack_cc == *(int *)(pCVar17->bone_list + 0x20)) {
+                  if (iStack_cc == pCVar17->bone_list[0].parent_index) {
                     core_game_cpp_scaleBoneRecursive_FUN_004b9060
                               (pCStack_d4,pCVar13,fStack_d0,iVar14);
                   }
                   iVar14 = iVar14 + 1;
-                  pCVar17 = (CSkeleton *)&pCVar17->field_0x24;
+                  pCVar17 = (CSkeleton *)((pCVar17->motion_list).state_names[1] + 2);
                 } while (iVar14 < pCVar13->bone_count);
               }
             }
@@ -1334,19 +1329,18 @@ LAB_004ba142:
             if (iVar5 != -1) {
               pCStack_c8 = pCStack_e8;
               fStack_c4 = fStack_ec;
-              *(float *)(&pCStack_e8->field_0x514 + iVar5 * 4) =
-                   *(float *)(&pCStack_e8->field_0x514 + iVar5 * 4) * fStack_ec;
+              pCStack_e8->rest_bone_scales[iVar5] = pCStack_e8->rest_bone_scales[iVar5] * fStack_ec;
               iVar14 = 0;
               pCVar17 = pCStack_e4;
               iStack_c0 = iVar5;
               if (0 < pCStack_e4->bone_count) {
                 do {
-                  if (iStack_c0 == *(int *)(pCVar17->bone_list + 0x20)) {
+                  if (iStack_c0 == pCVar17->bone_list[0].parent_index) {
                     core_game_cpp_scaleBoneRecursive_FUN_004b9060
                               (pCStack_c8,pCVar13,fStack_c4,iVar14);
                   }
                   iVar14 = iVar14 + 1;
-                  pCVar17 = (CSkeleton *)&pCVar17->field_0x24;
+                  pCVar17 = (CSkeleton *)((pCVar17->motion_list).state_names[1] + 2);
                 } while (iVar14 < pCVar13->bone_count);
               }
             }

@@ -12,7 +12,6 @@
 #include "types/classes/CBasicNPC.h"
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CCharacter.h"
-#include "types/classes/CComplexPolygon.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CEnemy.h"
@@ -22,10 +21,9 @@
 #include "types/classes/CLantern.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CMeleeAxe.h"
-#include "types/classes/COptimize.h"
+#include "types/classes/CMuzzleEffect.h"
 #include "types/classes/CPatrolPoint.h"
 #include "types/classes/CQuaternion4f.h"
-#include "types/classes/CTwigZombie.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CZombie.h"
 #include "types/enums/ECollisionType.h"
@@ -34,7 +32,6 @@
 #include "types/structs/SButtonStruct.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
-#include "types/structs/SExpandedEdge.h"
 #include "types/structs/SFollowSlotStruct.h"
 #include "types/structs/SRenderVertex.h"
 
@@ -153,33 +150,33 @@ void unkaddr_0059aa80_cpp_FUN_0059abb0(void);
 void unkaddr_0059aa80_cpp_FUN_0059abe0(void);
 void unkaddr_0059aa80_cpp_FUN_0059ac10(void);
 void unkaddr_0059aa80_cpp_FUN_0059ac60(void);
-void unkaddr_0059aa80_cpp_FUN_0059ad20(int param_1,int param_2);
-void unkaddr_0059aa80_cpp_FUN_0059ada0(int param_1);
-void unkaddr_0059aa80_cpp_FUN_0059adf0(int param_1,int param_2,int param_3);
-void unkaddr_0059aa80_cpp_FUN_0059ae40(int param_1);
+void __cdecl unkaddr_0059aa80_cpp_CExamplePuzzle_load_FUN_0059ad20(CExamplePuzzle *this_ptr,int param_2);
+void __cdecl unkaddr_0059aa80_cpp_CExamplePuzzle_render_FUN_0059ada0(CExamplePuzzle *this_ptr);
+void __cdecl unkaddr_0059aa80_cpp_CExamplePuzzle_onMouse_FUN_0059adf0(CExamplePuzzle *this_ptr,int param_2,int param_3);
+void __cdecl unkaddr_0059aa80_cpp_CAudioRecPuzzle_reset_FUN_0059ae40(CAudioRecPuzzle *this_ptr);
 void unkaddr_0059aa80_cpp_FUN_0059af20(void);
-void unkaddr_0059aa80_cpp_FUN_0059af30(int *param_1,int param_2);
-void unkaddr_0059aa80_cpp_FUN_0059b3c0(int param_1,int param_2,char *param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9);
-void unkaddr_0059aa80_cpp_FUN_0059b430(int *param_1);
-void unkaddr_0059aa80_cpp_FUN_0059b5a0(int *param_1);
-longlong unkaddr_0059aa80_cpp_FUN_0059b900(int param_1,int param_2);
+void __cdecl unkaddr_0059aa80_cpp_CAudioRecPuzzle_load_FUN_0059af30(CAudioRecPuzzle *this_ptr,int param_2);
+void __cdecl unkaddr_0059aa80_cpp_CAudioRecPuzzle_addButton_FUN_0059b3c0(CAudioRecPuzzle *this_ptr,int param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8,int param_9);
+void __cdecl unkaddr_0059aa80_cpp_CAudioRecPuzzle_render_FUN_0059b430(CAudioRecPuzzle *this_ptr);
+void __cdecl unkaddr_0059aa80_cpp_CAudioRecPuzzle_process_FUN_0059b5a0(CAudioRecPuzzle *this_ptr);
+longlong __cdecl unkaddr_0059aa80_cpp_CAudioRecPuzzle_isButtonHovered_FUN_0059b900(CAudioRecPuzzle *this_ptr,int param_2);
 void unkaddr_0059aa80_cpp_FUN_0059b960(void);
-void unkaddr_0059aa80_cpp_FUN_0059b970(int param_1);
-void unkaddr_0059aa80_cpp_FUN_0059ba10(int param_1,int param_2);
-undefined4 unkaddr_0059aa80_cpp_FUN_0059bad0(int param_1,int param_2,int param_3);
-void unkaddr_0059aa80_cpp_FUN_0059bb40(int param_1);
-void unkaddr_0059aa80_cpp_FUN_0059bb60(int param_1,int param_2,int param_3,float param_4,int param_5);
-int __cdecl shape_superopt_cpp_COptimize_getMaxPolygonSides_FUN_0059bdf0(COptimize *this_ptr);
-undefined4 shape_superopt_cpp_FUN_0059be00(int param_1);
-undefined4 shape_superopt_cpp_FUN_0059be10(int param_1);
-undefined4 shape_superopt_cpp_FUN_0059be20(int param_1);
-SExpandedEdge * __cdecl shape_superopt_cpp_CComplexPolygon_getExpandedEdges_FUN_0059be30(CComplexPolygon *this_ptr);
-char * unkafter_superopt_cpp_FUN_0059be40(void);
-char * unkafter_superopt_cpp_FUN_0059be50(void);
+void __cdecl unkaddr_0059aa80_cpp_CAudioRecPuzzle_moveTransportSwitch_FUN_0059b970(CAudioRecPuzzle *this_ptr);
+void __cdecl unkaddr_0059aa80_cpp_CAudioRecPuzzle_turnKnob_FUN_0059ba10(CAudioRecPuzzle *this_ptr,int param_2);
+undefined4 __cdecl unkaddr_0059aa80_cpp_CAudioRecPuzzle_hitTestButtons_FUN_0059bad0(CAudioRecPuzzle *this_ptr,int param_2,int param_3);
+void __cdecl unkaddr_0059aa80_cpp_CAudioRecPuzzle_onMouse_FUN_0059bb40(CAudioRecPuzzle *this_ptr);
+void __cdecl unkaddr_0059aa80_cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60(CAudioRecPuzzle *this_ptr,int param_2,int param_3,float param_4,int param_5);
+int __cdecl shape_superopt_cpp_CAudioRecPuzzle_getKnob0Position_FUN_0059bdf0(CAudioRecPuzzle *this_ptr);
+int __cdecl shape_superopt_cpp_CAudioRecPuzzle_getKnob1Position_FUN_0059be00(CAudioRecPuzzle *this_ptr);
+int __cdecl shape_superopt_cpp_CAudioRecPuzzle_getKnob2Position_FUN_0059be10(CAudioRecPuzzle *this_ptr);
+int __cdecl shape_superopt_cpp_CAudioRecPuzzle_getSpeedSetting_FUN_0059be20(CAudioRecPuzzle *this_ptr);
+int __cdecl shape_superopt_cpp_CAudioRecPuzzle_getTransportState_FUN_0059be30(CAudioRecPuzzle *this_ptr);
+char * __cdecl unkafter_superopt_cpp_CExamplePuzzle_getName_FUN_0059be40(CExamplePuzzle *this_ptr);
+char * __cdecl unkafter_superopt_cpp_CAudioRecPuzzle_getName_FUN_0059be50(CAudioRecPuzzle *this_ptr);
 CAudioRecPuzzle * unkafter_superopt_cpp_CAudioRecPuzzle_ctor_FUN_0059be60(CAudioRecPuzzle *this_ptr);
 CAudioRecPuzzle * unkafter_superopt_cpp_CAudioRecPuzzle_dtor_FUN_0059bec0(CAudioRecPuzzle *this_ptr,uint flags);
-SButtonStruct * unkafter_superopt_cpp___1hlg6hbuttonStruct_ctor_FUN_0059bf30(SButtonStruct *this_ptr);
-SButtonStruct * unkafter_superopt_cpp___1hlg6hbuttonStruct_dtor_FUN_0059bf40(SButtonStruct *this_ptr,uint flags);
+SButtonStruct * unkafter_superopt_cpp_SButtonStruct_ctor_FUN_0059bf30(SButtonStruct *this_ptr);
+SButtonStruct * unkafter_superopt_cpp_SButtonStruct_dtor_FUN_0059bf40(SButtonStruct *this_ptr,uint flags);
 CExamplePuzzle * unkafter_superopt_cpp_CExamplePuzzle_ctor_FUN_0059bf50(CExamplePuzzle *this_ptr);
 CExamplePuzzle * unkafter_superopt_cpp_CExamplePuzzle_dtor_FUN_0059bf70(CExamplePuzzle *this_ptr,uint flags);
 void unkafter_superopt_cpp_FUN_0059bfc0(undefined4 param_1);
@@ -199,9 +196,9 @@ CGoggles * core_goggles_cpp_CGoggles_dtor_FUN_0059c220(CGoggles *this_ptr,uint f
 void unkaddr_0059c270_cpp_FUN_0059c270(void);
 CGameHook * unkclass_gamehook_cpp_CGameHook_ctor_FUN_0059c290(CGameHook *this_ptr);
 CGameHook * unkclass_gamehook_cpp_CGameHook_dtor_FUN_0059c2b0(CGameHook *this_ptr,uint flags);
-void unkaddr_0059c270_cpp_FUN_0059c2c0(void);
-void unkaddr_0059c270_cpp_FUN_0059c380(undefined4 param_1,undefined4 param_2,int param_3,char *param_4);
-void unkaddr_0059c270_cpp_FUN_0059c3d0(uint *param_1);
+void __cdecl unkaddr_0059c270_cpp_CGameHook_printBanner_FUN_0059c2c0(CGameHook *this_ptr);
+void __cdecl unkaddr_0059c270_cpp_CGameHook_formatFlag_FUN_0059c380(CGameHook *this_ptr,undefined4 param_2,int param_3,char *param_4);
+void __cdecl unkaddr_0059c270_cpp_CGameHook_showDebugMenu_FUN_0059c3d0(CGameHook *this_ptr);
 void core_patrpoin_cpp_staticInit_FUN_0059c580(void);
 void core_patrpoin_cpp_factoryFuncPatrolPoint_FUN_0059c5b0(void);
 CDemonActorType * core_patrpoin_cpp_CPatrolPoint_getActorType_FUN_0059c5d0(CPatrolPoint *this_ptr);
@@ -233,9 +230,9 @@ CDemonActorType * core_meleeaxe_cpp_CMeleeAxe_getActorType_FUN_0059d210(CMeleeAx
 CMeleeAxe * core_meleeaxe_cpp_CMeleeAxe_ctor_FUN_0059d220(CMeleeAxe *this_ptr);
 CMeleeAxe * core_meleeaxe_cpp_CMeleeAxe_dtor_FUN_0059d300(CMeleeAxe *this_ptr,uint flags);
 void unkaddr_0059d350_cpp_FUN_0059d350(void);
-void unkaddr_0059d350_cpp_FUN_0059d360(undefined4 *param_1,CVector3f *param_2,undefined4 param_3);
-void unkaddr_0059d350_cpp_FUN_0059d420(int *param_1);
-void unkaddr_0059d350_cpp_FUN_0059d440(int *param_1);
+void __cdecl unkaddr_0059d350_cpp_CMuzzleEffect_init_FUN_0059d360(CMuzzleEffect *this_ptr,CVector3f *param_2,undefined4 param_3);
+void __cdecl unkaddr_0059d350_cpp_CMuzzleEffect_process_FUN_0059d420(CMuzzleEffect *this_ptr);
+void __cdecl unkaddr_0059d350_cpp_CMuzzleEffect_render_FUN_0059d440(CMuzzleEffect *this_ptr);
 void unkaddr_0059d350_cpp_FUN_0059d5f0(void);
 void unkaddr_0059d350_cpp_FUN_0059d610(int param_1);
 undefined4 unkaddr_0059d350_cpp_FUN_0059d650(char *param_1,char *param_2);
@@ -266,8 +263,8 @@ int unkafter_special_cpp_FUN_0059e0f0(int param_1);
 void unkafter_special_cpp_FUN_0059e110(int *param_1,float param_2);
 SFollowSlotStruct * unkafter_special_cpp_SFollowSlotStruct_ctor_FUN_0059e370(SFollowSlotStruct *this_ptr);
 void core_basicene_cpp_staticInit_FUN_0059e380(void);
-int unkafter_basicene_cpp_FUN_0059e3b0(CEnemy *param_1);
-void unkafter_basicene_cpp_FUN_0059e6a0(CEnemy *param_1);
+int __cdecl unkafter_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(CBasicEnemy *this_ptr);
+void __cdecl core_basicene_cpp_CBasicEnemy_setup_FUN_0059e6a0(CBasicEnemy *this_ptr);
 void unkafter_basicene_cpp_FUN_0059e7a0(int param_1,undefined4 param_2);
 void unkafter_basicene_cpp_FUN_0059e7c0(int param_1,undefined4 param_2);
 void __cdecl core_basicene_cpp_CBasicEnemy_advanceMotion_FUN_0059e7d0(CBasicEnemy *this_ptr,float delta_time);
@@ -287,7 +284,7 @@ void unkafter_basicene_cpp_FUN_0059f5b0(int param_1,float param_2);
 ushort unkafter_basicene_cpp_FUN_0059f660(int param_1,float param_2);
 void unkafter_basicene_cpp_FUN_0059f6a0(void);
 int __cdecl core_basicene_cpp_CBasicEnemy_checkVictim_FUN_0059f6b0(CBasicEnemy *this_ptr);
-int unkafter_basicene_cpp_FUN_0059f740(CEnemy *param_1,undefined4 param_2,int param_3,float param_4);
+int unkafter_basicene_cpp_FUN_0059f740(CEnemy *param_1,float param_2,int param_3,float param_4);
 void __cdecl core_basicene_cpp_CBasicEnemy_processDamage_FUN_0059f800(CBasicEnemy *this_ptr,SDamageInfo *damage_info);
 EDeathState __cdecl core_basicnpc_cpp_CBasicNPC_getDeathState_FUN_0059f930(CBasicNPC *this_ptr);
 ECollisionType __cdecl core_basicene_cpp_CBasicEnemy_getCollisionType_FUN_0059f960(CBasicEnemy *this_ptr,SCollisionInfo *collision_info);
@@ -295,5 +292,5 @@ int __cdecl core_basicene_cpp_CBasicEnemy_renderTransparent_FUN_0059f980(CBasicE
 int __cdecl core_basicene_cpp_CBasicEnemy_renderOpaque_FUN_0059fa20(CBasicEnemy *this_ptr);
 int __cdecl core_basicene_cpp_CBasicEnemy_isGrabbable_FUN_0059fa70(CBasicEnemy *this_ptr,CDemonActor *grabber);
 void unkafter_basicene_cpp_FUN_0059fae0(CDemonActor *param_1);
-void __cdecl core_twigzomb_cpp_CTwigZombie_archive_FUN_0059fc10(CTwigZombie *this_ptr);
+void __cdecl core_basicene_cpp_CBasicEnemy_archive_FUN_0059fc10(CBasicEnemy *this_ptr);
 

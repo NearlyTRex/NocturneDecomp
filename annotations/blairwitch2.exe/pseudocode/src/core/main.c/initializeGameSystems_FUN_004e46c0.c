@@ -47,7 +47,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
   unkafter_flattn_cpp_FUN_004a67a0();
   core_inivar_cpp_readIniData_FUN_004d8d60();
   _DAT_0264bbac = 2;
-  engine_pod_cpp_CPod_init_FUN_0051b320((CPod *)g_CDemonPodPtr);
+  engine_pod_cpp_CPod_init_FUN_0051b320(&g_CDemonPodPtr->base);
   engine_dosio_cpp_addGetFileInfoHook_FUN_00460930();
   engine_dosio_cpp_addGetFileInfoHook_FUN_00460930();
   support_newmsg_cpp_readMessageFile_FUN_0050f9e0("msglist.txt");

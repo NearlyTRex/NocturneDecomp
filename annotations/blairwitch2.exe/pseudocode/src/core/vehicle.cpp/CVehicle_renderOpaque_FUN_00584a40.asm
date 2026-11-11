@@ -10,7 +10,7 @@
 ;   undefined4 DAT_0060b280
 ;   CGame* g_CGamePtr = 01cb6900
 ;   undefined4 DAT_01ba5c50
-;   undefined4 g_CGameInstance.field508_0x25c
+;   undefined4 g_CGameInstance.goggles_active
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
@@ -71,7 +71,7 @@ section .text
     JZ 0x00584b56                       ; 00584ac0
         ;   XREF to: 00584b56 (CONDITIONAL_JUMP)  ; LAB_00584b56
     MOV EAX,[0x00616494]                ; 00584ac6 | g_CGamePtr
-    CMP dword ptr [EAX + 0x25c],0x0     ; 00584acb | g_CGameInstance.field508_0x25c
+    CMP dword ptr [EAX + 0x25c],0x0     ; 00584acb | g_CGameInstance.goggles_active
     JNZ 0x00584b56                      ; 00584ad2
         ;   XREF to: 00584b56 (CONDITIONAL_JUMP)  ; LAB_00584b56
     MOV EBP,dword ptr [ESP + 0xc4]      ; 00584ad8

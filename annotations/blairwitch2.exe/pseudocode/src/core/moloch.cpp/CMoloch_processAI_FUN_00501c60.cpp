@@ -6,17 +6,20 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_00501c60(CMoloch *this_ptr,float delta_time)
 
 {
-  int iVar1;
+  CLocation *pCVar1;
   float fVar2;
-  CPathMap *this_ptr_00;
-  uint uVar3;
+  EHeroTask EVar3;
   int iVar4;
-  byte bVar5;
+  CPathMap *this_ptr_00;
+  uint uVar5;
+  int iVar6;
+  byte bVar7;
   float afStackY_108c [1009];
   CVector3f CStack_b0;
   float fStack_a4;
@@ -46,89 +49,92 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_00501c60(CMoloch *this_ptr,fl
   int local_18;
   float fStack_14;
   
-  bVar5 = 0;
+  bVar7 = 0;
   local_18 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
   local_24 = 0.25;
   local_28 = 0.7853982;
-  memset(&this_ptr->field_0x10a68,0,0x34);
-  iVar4 = local_18;
-  if ((*(int *)&this_ptr->field_0x25638 != 0) && (*(int *)&this_ptr->field_0x25638 == 1)) {
-    iVar1 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
-    local_5c = *(float *)&this_ptr->field_0x20 - *(float *)(iVar1 + 0x20);
-    local_58 = *(float *)&this_ptr->field_0x24 - *(float *)(iVar1 + 0x24);
-    local_54 = *(float *)&this_ptr->field_0x28 - *(float *)(iVar1 + 0x28);
+  memset(&(this_ptr->base).player_input,0,0x34);
+  iVar6 = local_18;
+  EVar3 = (this_ptr->base).ai_task;
+  if ((EVar3 != HERO_TASK_STAND) && (EVar3 == HERO_TASK_FOLLOW)) {
+    iVar4 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
+    pCVar1 = &(this_ptr->base).base.base.location;
+    local_5c = (pCVar1->position).x - *(float *)(iVar4 + 0x20);
+    local_58 = (this_ptr->base).base.base.location.position.y - *(float *)(iVar4 + 0x24);
+    local_54 = (this_ptr->base).base.base.location.position.z - *(float *)(iVar4 + 0x28);
     afStack_a0[2] = local_5c;
-    afStack_a0[(uint)bVar5 * -2 + 3] = afStack_a0[(uint)bVar5 * -2 + 0x12];
-    afStack_a0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
-         afStack_a0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x13];
-    local_50 = *(float *)(iVar4 + 0x20) - *(float *)&this_ptr->field_0x20;
-    local_4c = *(float *)(iVar4 + 0x24) - *(float *)&this_ptr->field_0x24;
-    local_48 = *(float *)(iVar4 + 0x28) - *(float *)&this_ptr->field_0x28;
+    afStack_a0[(uint)bVar7 * -2 + 3] = afStack_a0[(uint)bVar7 * -2 + 0x12];
+    afStack_a0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
+         afStack_a0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x13];
+    local_50 = *(float *)(iVar6 + 0x20) - (pCVar1->position).x;
+    local_4c = *(float *)(iVar6 + 0x24) - (this_ptr->base).base.base.location.position.y;
+    local_48 = *(float *)(iVar6 + 0x28) - (this_ptr->base).base.base.location.position.z;
     local_68 = local_50;
-    afStack_a0[(uint)bVar5 * -2 + 0xf] = afStack_a0[(uint)bVar5 * -2 + 0x15];
-    afStack_a0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x10] =
-         afStack_a0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x16];
+    afStack_a0[(uint)bVar7 * -2 + 0xf] = afStack_a0[(uint)bVar7 * -2 + 0x15];
+    afStack_a0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x10] =
+         afStack_a0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x16];
     if (afStack_a0 + 2 != afStack_a0 + 0xe) {
       afStack_a0[2] = local_68;
       afStack_a0[3] = local_64;
       local_90 = local_60;
     }
-    iVar4 = _DAT_01cedef4 * 4;
-    *(uint *)&this_ptr->field_0x2578 = 0;
+    iVar6 = _DAT_01cedef4 * 4;
+    (this_ptr->base).base.turn_angle_accumulator = 0.0;
     if (SQRT(local_90 * local_90 + afStack_a0[2] * afStack_a0[2] + afStack_a0[3] * afStack_a0[3]) <=
         (float)_DAT_005df249) {
-      iVar4 = *(int *)(iVar4 + 0x1cedee4);
-      iVar4 = (**(code **)(*(int *)(iVar4 + 0x2b0) + 0x154))(iVar4);
-      if ((iVar4 == 0) && (uVar3 = core_charactr_cpp_FUN_0042abe0(this_ptr,delta_time), uVar3 != 0))
+      iVar6 = *(int *)(iVar6 + 0x1cedee4);
+      iVar6 = (**(code **)(*(int *)(iVar6 + 0x2b0) + 0x154))(iVar6);
+      if ((iVar6 == 0) && (uVar5 = core_charactr_cpp_FUN_0042abe0(this_ptr,delta_time), uVar5 != 0))
       {
-        if (uVar3 < 2) {
-          *(uint *)&this_ptr->field_0x10a68 = 1;
+        if (uVar5 < 2) {
+          (this_ptr->base).player_input.action_state.walk = 1;
         }
-        else if (uVar3 == 2) {
-          *(uint *)&this_ptr->field_0x10a70 = 1;
-          *(uint *)&this_ptr->field_0x10a68 = 1;
+        else if (uVar5 == 2) {
+          (this_ptr->base).player_input.action_state.run = 1;
+          (this_ptr->base).player_input.action_state.walk = 1;
         }
       }
     }
     else {
-      iVar4 = *(int *)(iVar4 + 0x1cedee4);
-      this_ptr_00 = (CPathMap *)(**(code **)(*(int *)(iVar4 + 0x2b0) + 0xcc))(iVar4);
-      iVar4 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00513650
-                        (this_ptr_00,(CVector3f *)&this_ptr->field_0x20,&CStack_b0,
-                         *(int *)&this_ptr->field_0x6c);
-      if (iVar4 != 0) {
+      iVar6 = *(int *)(iVar6 + 0x1cedee4);
+      this_ptr_00 = (CPathMap *)(**(code **)(*(int *)(iVar6 + 0x2b0) + 0xcc))(iVar6);
+      iVar6 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00513650
+                        (this_ptr_00,&(this_ptr->base).base.base.location.position,&CStack_b0,
+                         (this_ptr->base).base.base.direction_hint);
+      if (iVar6 != 0) {
         fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                     (CStack_b0.y - *(float *)&this_ptr->field_0x34);
+                                     (CStack_b0.y - (this_ptr->base).base.base.orient.vec.y);
         fVar2 = fStack_14 * _DAT_005df251 * (float)_DAT_005df259;
         fStack_34 = -local_24;
-        *(float *)&this_ptr->field_0x10a90 = fVar2;
+        (this_ptr->base).player_input.turn_speed = fVar2;
         if (fVar2 < fStack_34) {
-          *(float *)&this_ptr->field_0x10a90 = fStack_34;
+          (this_ptr->base).player_input.turn_speed = fStack_34;
         }
-        if (local_24 < *(float *)&this_ptr->field_0x10a90) {
-          *(float *)&this_ptr->field_0x10a90 = local_24;
+        if (local_24 < (this_ptr->base).player_input.turn_speed) {
+          (this_ptr->base).player_input.turn_speed = local_24;
         }
-        *(uint *)&this_ptr->field_0x10a68 = 1;
+        (this_ptr->base).player_input.action_state.walk = 1;
       }
-      *(uint *)&this_ptr->field_0x303c = 0;
+      (this_ptr->base).base.hero_proximity_timer = 0.0;
     }
-    if (*(float *)&this_ptr->field_0x2578 <= 0.0) {
-      if (*(float *)&this_ptr->field_0x2578 < 0.0) {
-        *(uint *)&this_ptr->field_0x2578 = 0;
-        *(float *)&this_ptr->field_0x10a90 = -local_24;
+    fVar2 = (this_ptr->base).base.turn_angle_accumulator;
+    if (fVar2 <= 0.0) {
+      if (fVar2 < 0.0) {
+        (this_ptr->base).base.turn_angle_accumulator = 0.0;
+        (this_ptr->base).player_input.turn_speed = -local_24;
       }
     }
     else {
-      *(uint *)&this_ptr->field_0x2578 = 0;
-      *(float *)&this_ptr->field_0x10a90 = local_24;
+      (this_ptr->base).base.turn_angle_accumulator = 0.0;
+      (this_ptr->base).player_input.turn_speed = local_24;
     }
-    fStack_a4 = *(float *)(local_18 + 0x20) - *(float *)&this_ptr->field_0x20;
-    afStack_a0[0] = *(float *)(local_18 + 0x24) - *(float *)&this_ptr->field_0x24;
-    afStack_a0[1] = *(float *)(local_18 + 0x28) - *(float *)&this_ptr->field_0x28;
+    fStack_a4 = *(float *)(local_18 + 0x20) - (this_ptr->base).base.base.location.position.x;
+    afStack_a0[0] = *(float *)(local_18 + 0x24) - (this_ptr->base).base.base.location.position.y;
+    afStack_a0[1] = *(float *)(local_18 + 0x28) - (this_ptr->base).base.base.location.position.z;
     fStack_8c = fStack_a4;
-    afStack_a0[(uint)bVar5 * -2 + 6] = afStack_a0[(uint)bVar5 * -2];
-    afStack_a0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7] =
-         afStack_a0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+    afStack_a0[(uint)bVar7 * -2 + 6] = afStack_a0[(uint)bVar7 * -2];
+    afStack_a0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
+         afStack_a0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
     if (afStack_a0 + 2 != afStack_a0 + 5) {
       afStack_a0[2] = fStack_8c;
       afStack_a0[3] = fStack_88;
@@ -136,16 +142,16 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_00501c60(CMoloch *this_ptr,fl
     }
     core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(afStack_a0 + 2);
     fStack_80 = fStack_74;
-    afStack_a0[(uint)bVar5 * -2 + 9] = afStack_a0[(uint)bVar5 * -2 + 0xc];
-    afStack_a0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10] =
-         afStack_a0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xd];
+    afStack_a0[(uint)bVar7 * -2 + 9] = afStack_a0[(uint)bVar7 * -2 + 0xc];
+    afStack_a0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10] =
+         afStack_a0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd];
     if (afStack_a0 + 2 != afStack_a0 + 8) {
       afStack_a0[2] = fStack_80;
       afStack_a0[3] = fStack_7c;
       local_90 = fStack_78;
     }
     fStack_40 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                 (afStack_a0[3] - *(float *)&this_ptr->field_0x34);
+                                 (afStack_a0[3] - (this_ptr->base).base.base.orient.vec.y);
     if (local_28 < fStack_40) {
       fStack_40 = local_28;
     }

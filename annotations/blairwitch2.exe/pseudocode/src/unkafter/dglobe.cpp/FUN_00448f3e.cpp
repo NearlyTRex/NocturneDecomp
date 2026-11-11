@@ -14,8 +14,8 @@ void unkafter_dglobe_cpp_FUN_00448f3e(CDemonImage *param_1)
   void *pvVar1;
   
   core_dimage_cpp_FUN_00448fa0(param_1);
-  pvVar1 = FUN_005b8580(*(int *)(param_1 + 0x304) * *(int *)(param_1 + 0x308));
-  *(void **)(param_1 + 0x300) = pvVar1;
+  pvVar1 = malloc(param_1->width * param_1->height);
+  param_1->data = pvVar1;
   if (pvVar1 != (void *)0x0) {
     return;
   }

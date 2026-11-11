@@ -36,7 +36,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270
     _DAT_01d046a4 = 0xa0;
     core_main_c_FUN_004e4500("gEdFont must be set by the application.");
   }
-  _DAT_01c25f78 = *(int *)(_DAT_01c25590 + 0x41e8);
+  _DAT_01c25f78 = _DAT_01c25590->max_char_width;
   _DAT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(_DAT_01c25590,0x6a);
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_0047e1d0
             (this_ptr,_DAT_01c25f78 * 0x1e,_DAT_01c25f7c * 2,dialog_title,0);

@@ -1235,8 +1235,8 @@ section .text
     PUSH 0x47c                          ; 004b9d82
     MOV EDI,0x5d7efa                    ; 004b9d87 | DAT_005d7efa
     XOR ESI,ESI                         ; 004b9d8c
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 004b9d8e
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004b9d8e
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 004b9d93
     TEST EAX,EAX                        ; 004b9d96
     JZ 0x004ba0b5                       ; 004b9d98
@@ -2142,7 +2142,7 @@ section .text
     XOR DL,DL                           ; 004ba798
     PUSH 0x1fc7838                      ; 004ba79a
     MOV byte ptr [0x01cb80f8],DL        ; 004ba79f | DAT_01cb80f8
-    MOV dword ptr [EAX + 0x14d150],0x0  ; 004ba7a5 | g_CDemonSetInstance.field13_0x14d150
+    MOV dword ptr [EAX + 0x14d150],0x0  ; 004ba7a5 | g_CDemonSetInstance.min_ambient_value
     CALL core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00441e80 ; 004ba7af
         ;   XREF to: 00441e80 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00441e80(CDemonCamera * this_ptr, float intensity)
     ADD ESP,0x8                         ; 004ba7b4

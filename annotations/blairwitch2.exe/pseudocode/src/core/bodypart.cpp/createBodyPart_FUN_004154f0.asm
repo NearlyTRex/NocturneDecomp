@@ -43,7 +43,7 @@
 ;   core_main.c_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0
-;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x44]      ; 004154fb
     MOV EDI,dword ptr [ESP + 0x48]      ; 004154ff
     PUSH 0x1344                         ; 00415503
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 00415508
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00415508
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 0041550d
     TEST EAX,EAX                        ; 00415510
     JNZ 0x004155f1                      ; 00415512

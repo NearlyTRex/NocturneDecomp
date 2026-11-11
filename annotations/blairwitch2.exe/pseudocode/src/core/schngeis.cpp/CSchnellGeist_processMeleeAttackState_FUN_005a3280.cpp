@@ -6,51 +6,55 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_schngeis_cpp_CSchnellGeist_processMeleeAttackState_FUN_005a3280(CSchnellGeist *this_ptr,float delta_time)
 
 {
-  byte *this_ptr_00;
-  float fVar1;
+  CDeformableModelInstance *this_ptr_00;
+  CCharacter *pCVar1;
   float fVar2;
-  int iVar3;
+  float fVar3;
+  CDemonActor *pCVar4;
+  int iVar5;
+  SStateMachine *pSVar6;
   
-  iVar3 = (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x17c))(this_ptr);
-  if (iVar3 != 0) {
-    fVar1 = *(float *)&this_ptr->field_0x20 - *(float *)(*(int *)&this_ptr->field_0x10a78 + 0x20);
-    fVar2 = *(float *)&this_ptr->field_0x28 - *(float *)(*(int *)&this_ptr->field_0x10a78 + 0x28);
-    this_ptr_00 = &this_ptr->field_0x2b4;
-    iVar3 = core_motion_cpp_FUN_005035c0(this_ptr_00);
-    iVar3 = *(int *)(iVar3 + 0x24);
-    if (_DAT_005ff350 < SQRT(fVar2 * fVar2 + fVar1 * fVar1)) {
-      *(float *)&this_ptr->field_0x11394 = _DAT_005ff350;
-      unkaddr_0059d350_cpp_FUN_0059dcb0(&this_ptr->field_0x10af8,0x3f000000);
-      unkaddr_0059d350_cpp_FUN_0059d8e0(&this_ptr->field_0x10af8,"Chasing");
-      if (iVar3 == 10) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                  ((CMotionController *)this_ptr_00,0,1);
+  pCVar4 = (*(this_ptr->base).base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
+  if (pCVar4 != (CDemonActor *)0x0) {
+    pCVar1 = (this_ptr->base).base.victim;
+    fVar2 = (this_ptr->base).base.base.base.location.position.x - (pCVar1->base).location.position.x
+    ;
+    fVar3 = (this_ptr->base).base.base.base.location.position.z - (pCVar1->base).location.position.z
+    ;
+    this_ptr_00 = &(this_ptr->base).base.base.model;
+    iVar5 = core_motion_cpp_FUN_005035c0(this_ptr_00);
+    iVar5 = *(int *)(iVar5 + 0x24);
+    if (_DAT_005ff350 < SQRT(fVar3 * fVar3 + fVar2 * fVar2)) {
+      pSVar6 = &(this_ptr->base).state_machine;
+      (this_ptr->base).attack_range = _DAT_005ff350;
+      unkaddr_0059d350_cpp_FUN_0059dcb0(pSVar6,0x3f000000);
+      unkaddr_0059d350_cpp_FUN_0059d8e0(pSVar6,"Chasing");
+      if (iVar5 == 10) {
+        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,0,1);
         return;
       }
     }
     else {
-      if (iVar3 == 10) {
-        iVar3 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,1);
-        *(int *)&this_ptr->field_0x1186c = iVar3;
-        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                  ((CMotionController *)this_ptr_00,0,1);
+      if (iVar5 == 10) {
+        iVar5 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,1);
+        this_ptr->attack_variant = iVar5;
+        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,0,1);
         return;
       }
       core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
-                ((CCharacter *)this_ptr,(CVector3f *)(*(int *)&this_ptr->field_0x10a78 + 0x20));
-      if (*(int *)&this_ptr->field_0x1186c == 0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                  ((CMotionController *)this_ptr_00,3,1);
+                ((CCharacter *)this_ptr,&(((this_ptr->base).base.victim)->base).location.position);
+      if (this_ptr->attack_variant == 0) {
+        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,3,1);
         return;
       }
-      if (*(int *)&this_ptr->field_0x1186c == 1) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                  ((CMotionController *)this_ptr_00,4,1);
+      if (this_ptr->attack_variant == 1) {
+        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,4,1);
         return;
       }
     }

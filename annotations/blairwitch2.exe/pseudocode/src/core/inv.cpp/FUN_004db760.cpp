@@ -19,7 +19,7 @@ void core_inv_cpp_FUN_004db760(uint param_1,int param_2)
   if (*(int *)(param_2 + 0x6c8) == -1) {
     return;
   }
-  pCVar2 = (CAmmo *)debugAllocTracked1(0x47c);
+  pCVar2 = (CAmmo *)operator_new(0x47c);
   this_ptr = (CAmmo *)0x0;
   if (pCVar2 != (CAmmo *)0x0) {
     this_ptr = core_ammo_cpp_CAmmo_ctor_FUN_0040ddb0(pCVar2);
@@ -30,7 +30,7 @@ void core_inv_cpp_FUN_004db760(uint param_1,int param_2)
     core_main_c_FUN_004e4500("Out of memory");
   }
   this_ptr->ammo_count = *(int *)(param_2 + 0x6c4);
-  *(uint *)&this_ptr->field_0x474 = *(uint *)(param_2 + 0x6c8);
+  this_ptr->ammo_type = *(EAmmoType *)(param_2 + 0x6c8);
   pcVar3 = (char *)core_actor_cpp_FUN_00408a50(param_2);
   core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040e240(this_ptr,pcVar3);
   (*((this_ptr->base).vtable._ub)->setup)(&this_ptr->base);

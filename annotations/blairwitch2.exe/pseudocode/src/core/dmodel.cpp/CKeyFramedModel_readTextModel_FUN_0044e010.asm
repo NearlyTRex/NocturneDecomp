@@ -47,9 +47,9 @@
 ;   core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_0044f760
 ;   core_dmodel.cpp_FUN_0044ea80
 ;   core_main.c_FUN_004e4500
+;   crt_memory.c_operator_new_array_FUN_005b8df8
 ;   crt_stdio.c_fgetc_FUN_005b8180
 ;   crt_stdio.c_fscanf_FUN_005b8100
-;   crt_unknown.c_FUN_005b8df8
 ;
 ; *****************************************************************************
 
@@ -561,8 +561,8 @@ section .text
         ;   Label: LAB_0044e4bb
     MOV ESI,dword ptr [EAX + 0x110]     ; 0044e4bf
     PUSH ESI                            ; 0044e4c5
-    CALL crt_unknown.c_FUN_005b8df8     ; 0044e4c6
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8df8()
+    CALL crt_memory.c_operator_new_array_FUN_005b8df8 ; 0044e4c6
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005b8df8()
     ADD ESP,0x4                         ; 0044e4cb
     MOV EBX,dword ptr [ESP + 0x4c]      ; 0044e4ce
     MOV dword ptr [EBX + 0x11c],EAX     ; 0044e4d2

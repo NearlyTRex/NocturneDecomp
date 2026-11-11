@@ -21,8 +21,8 @@
 ;   core_ground.cpp_CGround_free_FUN_004caa60
 ;   core_main.c_FUN_004e4500
 ;   core_texlist.cpp_CTextureList_ctor_FUN_00573490
-;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
-;   crt_unknown.c_FUN_005b8580
+;   crt_memory.c_malloc_FUN_005b8580
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     ADD ESP,0x4                         ; 004ca9d1
     SHL EAX,0x2                         ; 004ca9d4
     PUSH EAX                            ; 004ca9d7
-    CALL crt_unknown.c_FUN_005b8580     ; 004ca9d8
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 004ca9d8
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     ADD ESP,0x4                         ; 004ca9dd
     MOV dword ptr [EBX + 0x24],EAX      ; 004ca9e0
     TEST EAX,EAX                        ; 004ca9e3
@@ -48,8 +48,8 @@ section .text
         ;   XREF to: 004caa0a (CONDITIONAL_JUMP)  ; LAB_004caa0a
     PUSH 0x6d64                         ; 004ca9e7
         ;   Label: LAB_004ca9e7
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 004ca9ec
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004ca9ec
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 004ca9f1
     TEST EAX,EAX                        ; 004ca9f4
     JZ 0x004caa01                       ; 004ca9f6

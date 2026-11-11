@@ -41,69 +41,69 @@ void FUN_0059ac10(void);
 // Address: 0059ac60
 void FUN_0059ac60(void);
 
-// Original: unkaddr_0059aa80.cpp_FUN_0059ad20
+// Original: unkaddr_0059aa80.cpp_CExamplePuzzle_load_FUN_0059ad20
 // Address: 0059ad20
-void FUN_0059ad20(int param_1,int param_2);
+void __cdecl CExamplePuzzle::load(CExamplePuzzle *this_ptr,int param_2);
 
-// Original: unkaddr_0059aa80.cpp_FUN_0059ada0
+// Original: unkaddr_0059aa80.cpp_CExamplePuzzle_render_FUN_0059ada0
 // Address: 0059ada0
-void FUN_0059ada0(int param_1);
+void __cdecl CExamplePuzzle::render(CExamplePuzzle *this_ptr);
 
-// Original: unkaddr_0059aa80.cpp_FUN_0059adf0
+// Original: unkaddr_0059aa80.cpp_CExamplePuzzle_onMouse_FUN_0059adf0
 // Address: 0059adf0
-void FUN_0059adf0(int param_1,int param_2,int param_3);
+void __cdecl CExamplePuzzle::onMouse(CExamplePuzzle *this_ptr,int param_2,int param_3);
 
-// Original: unkaddr_0059aa80.cpp_FUN_0059ae40
+// Original: unkaddr_0059aa80.cpp_CAudioRecPuzzle_reset_FUN_0059ae40
 // Address: 0059ae40
-void FUN_0059ae40(int param_1);
+void __cdecl CAudioRecPuzzle::reset(CAudioRecPuzzle *this_ptr);
 
 // Original: unkaddr_0059aa80.cpp_FUN_0059af20
 // Address: 0059af20
 void FUN_0059af20(void);
 
-// Original: unkaddr_0059aa80.cpp_FUN_0059af30
+// Original: unkaddr_0059aa80.cpp_CAudioRecPuzzle_load_FUN_0059af30
 // Address: 0059af30
-void FUN_0059af30(int *param_1,int param_2);
+void __cdecl CAudioRecPuzzle::load(CAudioRecPuzzle *this_ptr,int param_2);
 
-// Original: unkaddr_0059aa80.cpp_FUN_0059b3c0
+// Original: unkaddr_0059aa80.cpp_CAudioRecPuzzle_addButton_FUN_0059b3c0
 // Address: 0059b3c0
-void FUN_0059b3c0(int param_1,int param_2,char *param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9);
+void __cdecl CAudioRecPuzzle::addButton(CAudioRecPuzzle *this_ptr,int param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8,int param_9);
 
-// Original: unkaddr_0059aa80.cpp_FUN_0059b430
+// Original: unkaddr_0059aa80.cpp_CAudioRecPuzzle_render_FUN_0059b430
 // Address: 0059b430
-void FUN_0059b430(int *param_1);
+void __cdecl CAudioRecPuzzle::render(CAudioRecPuzzle *this_ptr);
 
-// Original: unkaddr_0059aa80.cpp_FUN_0059b5a0
+// Original: unkaddr_0059aa80.cpp_CAudioRecPuzzle_process_FUN_0059b5a0
 // Address: 0059b5a0
-void FUN_0059b5a0(int *param_1);
+void __cdecl CAudioRecPuzzle::process(CAudioRecPuzzle *this_ptr);
 
-// Original: unkaddr_0059aa80.cpp_FUN_0059b900
+// Original: unkaddr_0059aa80.cpp_CAudioRecPuzzle_isButtonHovered_FUN_0059b900
 // Address: 0059b900
-longlong FUN_0059b900(int param_1,int param_2);
+longlong __cdecl CAudioRecPuzzle::isButtonHovered(CAudioRecPuzzle *this_ptr,int param_2);
 
 // Original: unkaddr_0059aa80.cpp_FUN_0059b960
 // Address: 0059b960
 void FUN_0059b960(void);
 
-// Original: unkaddr_0059aa80.cpp_FUN_0059b970
+// Original: unkaddr_0059aa80.cpp_CAudioRecPuzzle_moveTransportSwitch_FUN_0059b970
 // Address: 0059b970
-void FUN_0059b970(int param_1);
+void __cdecl CAudioRecPuzzle::moveTransportSwitch(CAudioRecPuzzle *this_ptr);
 
-// Original: unkaddr_0059aa80.cpp_FUN_0059ba10
+// Original: unkaddr_0059aa80.cpp_CAudioRecPuzzle_turnKnob_FUN_0059ba10
 // Address: 0059ba10
-void FUN_0059ba10(int param_1,int param_2);
+void __cdecl CAudioRecPuzzle::turnKnob(CAudioRecPuzzle *this_ptr,int param_2);
 
-// Original: unkaddr_0059aa80.cpp_FUN_0059bad0
+// Original: unkaddr_0059aa80.cpp_CAudioRecPuzzle_hitTestButtons_FUN_0059bad0
 // Address: 0059bad0
-undefined4 FUN_0059bad0(int param_1,int param_2,int param_3);
+undefined4 __cdecl CAudioRecPuzzle::hitTestButtons(CAudioRecPuzzle *this_ptr,int param_2,int param_3);
 
-// Original: unkaddr_0059aa80.cpp_FUN_0059bb40
+// Original: unkaddr_0059aa80.cpp_CAudioRecPuzzle_onMouse_FUN_0059bb40
 // Address: 0059bb40
-void FUN_0059bb40(int param_1);
+void __cdecl CAudioRecPuzzle::onMouse(CAudioRecPuzzle *this_ptr);
 
-// Original: unkaddr_0059aa80.cpp_FUN_0059bb60
+// Original: unkaddr_0059aa80.cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60
 // Address: 0059bb60
-void FUN_0059bb60(int param_1,int param_2,int param_3,float param_4,int param_5);
+void __cdecl CAudioRecPuzzle::renderReel(CAudioRecPuzzle *this_ptr,int param_2,int param_3,float param_4,int param_5);
 
 // Original: unkaddr_0059aa80.cpp_CAlphaBitmap_arrdtor4_FUN_0059bfe0
 // Address: 0059bfe0

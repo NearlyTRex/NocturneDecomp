@@ -11,10 +11,12 @@ int __cdecl core_hero_cpp_CHero_canDoHeroAction_FUN_004d06c0(CHero *this_ptr,int
 {
   int iVar1;
   
-  if ((((*(int *)(this_ptr + 0x25618) == 0) && (*(int *)(this_ptr + 0x25604) == 0)) &&
-      (*(int *)(this_ptr + 0x25608) == 0)) &&
-     (((*(int *)(this_ptr + 0x2560c) == 0 && (*(int *)(this_ptr + 0x25610) == 0)) &&
-      ((*(int *)(this_ptr + 0x25614) == 0 && (*(int *)(this_ptr + 0x2561c) == 0)))))) {
+  if ((((this_ptr->nearby_interactive_actor == (CDemonActor *)0x0) &&
+       (this_ptr->door_to_open == (CDoor *)0x0)) &&
+      (this_ptr->object_to_pick_up == (CDemonActor *)0x0)) &&
+     (((this_ptr->pushed_object == (CBoxActor *)0x0 && (this_ptr->lever_to_pull == (CLever *)0x0))
+      && ((this_ptr->ladder_to_climb == (CLadder *)0x0 &&
+          (this_ptr->target_actor == (CDemonActor *)0x0)))))) {
     switch(action_type) {
     case 0:
     case 3:
@@ -25,7 +27,7 @@ int __cdecl core_hero_cpp_CHero_canDoHeroAction_FUN_004d06c0(CHero *this_ptr,int
     case 8:
     case 10:
     case 0xb:
-      iVar1 = core_charactr_cpp_CCharacter_isCarryingAnything_FUN_00429180((CCharacter *)this_ptr);
+      iVar1 = core_charactr_cpp_CCharacter_isCarryingAnything_FUN_00429180(&this_ptr->base);
       if (iVar1 == 0) {
         return 1;
       }
@@ -34,7 +36,7 @@ int __cdecl core_hero_cpp_CHero_canDoHeroAction_FUN_004d06c0(CHero *this_ptr,int
     case 2:
       return 1;
     case 9:
-      iVar1 = core_charactr_cpp_CCharacter_isCarryingAnything_FUN_00429180((CCharacter *)this_ptr);
+      iVar1 = core_charactr_cpp_CCharacter_isCarryingAnything_FUN_00429180(&this_ptr->base);
       if (iVar1 == 0) {
         return 1;
       }

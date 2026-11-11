@@ -143,7 +143,7 @@ void __cdecl CGore::loadAssets(CGore *this_ptr);
 
 // Original: core_gore.cpp_FUN_004c9bd0
 // Address: 004c9bd0
-CFlies * FUN_004c9bd0(undefined4 param_1,undefined4 *param_2,int param_3,float param_4,float *param_5);
+CFlies * FUN_004c9bd0(undefined4 param_1,float *param_2,int param_3,float param_4,float *param_5);
 
 // Original: core_gore.cpp_CGore_spawnFliesOnActor_FUN_004c9cc0
 // Address: 004c9cc0

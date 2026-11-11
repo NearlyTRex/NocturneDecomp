@@ -11,7 +11,7 @@ void core_union_cpp_factoryFuncUnion_FUN_005a4a50(void)
 {
   CUnion *this_ptr;
   
-  this_ptr = (CUnion *)debugAllocTracked1(0x11864);
+  this_ptr = (CUnion *)operator_new(0x11864);
   if (this_ptr == (CUnion *)0x0) {
     return;
   }

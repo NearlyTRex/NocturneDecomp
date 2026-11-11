@@ -18,7 +18,7 @@ void shape_edittool_cpp_FUN_0047be90(uint param_1,uint param_2)
     _DAT_01d046a4 = 0xa0;
     core_main_c_FUN_004e4500("gEdFont must be set by the application.");
   }
-  _DAT_01c25f78 = *(uint *)(_DAT_01c25590 + 0x41e8);
+  _DAT_01c25f78 = _DAT_01c25590->max_char_width;
   _DAT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(_DAT_01c25590,0x6a);
   local_14 = &stack0x0000000c;
   _vsprintf(0x1c231f0,param_2,&local_14);

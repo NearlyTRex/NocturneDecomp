@@ -16,32 +16,32 @@ void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_005036e0(CMot
   int iVar3;
   float local_18;
   
-  local_18 = *(float *)(transition + 0xc);
+  local_18 = transition->to_frame_number;
   if (local_18 == _DAT_005dfc94) {
-    iVar3 = (**(code **)(this_ptr->vtable + 4))
+    iVar3 = (*this_ptr->vtable->findPatchToFrame)
                       (this_ptr,this_ptr->current_motion_index,this_ptr->current_frame_number,
-                       *(uint *)(transition + 8));
+                       transition->to_motion_number);
     local_18 = (float)iVar3;
   }
-  if (*(float *)(transition + 0x10) <= 0.0) {
+  if (transition->tween_time <= 0.0) {
     core_motion_cpp_CMotionController_jumpToMotion_FUN_00503980
-              (this_ptr,*(int *)(transition + 8),local_18);
-    if (*(int *)(transition + 0x14) != 0) {
+              (this_ptr,transition->to_motion_number,local_18);
+    if (transition->set_new_state_as_desired != 0) {
       iVar3 = core_motion_cpp_FUN_005035c0(this_ptr);
       this_ptr->state_index = *(int *)(iVar3 + 0x24);
       return;
     }
   }
   else {
-    this_ptr->tween_target_motion = *(int *)(transition + 8);
+    this_ptr->tween_target_motion = transition->to_motion_number;
     this_ptr->tween_target_frame = local_18;
-    EVar2 = *(EMotionTransitionCmd *)(transition + 4);
+    EVar2 = transition->cmd;
     this_ptr->tween_progress = 0.001;
     this_ptr->tween_type = EVar2;
-    fVar1 = *(float *)(transition + 0x10);
+    fVar1 = transition->tween_time;
     this_ptr->tween_direction = 0;
     this_ptr->tween_speed = 1.0 / fVar1;
-    this_ptr->tween_set_new_state = *(int *)(transition + 0x14);
+    this_ptr->tween_set_new_state = transition->set_new_state_as_desired;
   }
   return;
 }

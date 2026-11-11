@@ -19,12 +19,12 @@ float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00538be0(CDemonActor *par
   float fStack_20;
   
   if ((*(int *)(param_5 + 0x1a0) != 0) &&
-     (fVar4 = *(float *)(param_5 + 0x100) - *(float *)&param_1->field_0x20,
-     fVar2 = *(float *)(param_5 + 0x104) - *(float *)&param_1->field_0x24,
-     fVar1 = *(float *)(param_5 + 0x108) - *(float *)&param_1->field_0x28,
+     (fVar4 = *(float *)(param_5 + 0x100) - (param_1->location).position.x,
+     fVar2 = *(float *)(param_5 + 0x104) - (param_1->location).position.y,
+     fVar1 = *(float *)(param_5 + 0x108) - (param_1->location).position.z,
      fVar1 * fVar1 + fVar2 * fVar2 + fVar4 * fVar4 <= _DAT_005fb354 * _DAT_005fb354)) {
     iVar3 = core_setutil_cpp_C3DSCamera_testSphereInFrustum_FUN_0053ae20
-                      (param_5,&param_1->field_0x20,param_6);
+                      (param_5,&param_1->location,param_6);
     fStack_20 = 0.0;
     if (iVar3 != 0) {
       this_ptr = g_CZThumbPool + param_4 * 6;

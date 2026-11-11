@@ -11,11 +11,12 @@
 void __cdecl core_marquee_cpp_CMarquee_renderLightBulb_FUN_004e7ff0(CMarquee *this_ptr,CVector3f *position)
 
 {
+  int *piVar1;
   CDemonRenderer *this_ptr_00;
-  int iVar1;
-  SRenderVertex *pSVar2;
+  int iVar2;
   SRenderVertex *pSVar3;
-  byte bVar4;
+  SRenderVertex *pSVar4;
+  byte bVar5;
   SMRGLHeaderPrimitive SStack_44;
   uint uStack_2c;
   uint uStack_28;
@@ -23,60 +24,61 @@ void __cdecl core_marquee_cpp_CMarquee_renderLightBulb_FUN_004e7ff0(CMarquee *th
   uint uStack_20;
   CVector3i CStack_1c;
   
-  bVar4 = 0;
+  bVar5 = 0;
   CStack_1c.x = (int)ROUND(position->x * _DAT_005f9b50);
   CStack_1c.y = (int)ROUND(position->y * _DAT_005f9b50);
   CStack_1c.z = (int)ROUND(position->z * _DAT_005f9b50);
-  engine_special_cpp_FUN_0055d9ec((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&CStack_1c);
+  engine_special_cpp_FUN_0055d9ec(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&CStack_1c);
   this_ptr_00 = DAT_0060b280;
-  pSVar2 = DAT_0060b280->vertex_buffer_ptr;
-  pSVar3 = DAT_0060b280->vertex_buffer_ptr + 0x30;
-  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(uint *)pSVar3 = *(uint *)pSVar2;
-    pSVar2 = pSVar2 + ((uint)bVar4 * -2 + 1) * 4;
-    pSVar3 = pSVar3 + ((uint)bVar4 * -2 + 1) * 4;
+  pSVar3 = DAT_0060b280->vertex_buffer_ptr;
+  pSVar4 = DAT_0060b280->vertex_buffer_ptr + 1;
+  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+    (pSVar4->projected_vertex).transformed_x = (pSVar3->projected_vertex).transformed_x;
+    pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
+    pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);
   }
-  pSVar2 = this_ptr_00->vertex_buffer_ptr;
-  pSVar3 = this_ptr_00->vertex_buffer_ptr + 0x60;
-  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(uint *)pSVar3 = *(uint *)pSVar2;
-    pSVar2 = pSVar2 + ((uint)bVar4 * -2 + 1) * 4;
-    pSVar3 = pSVar3 + ((uint)bVar4 * -2 + 1) * 4;
+  pSVar3 = this_ptr_00->vertex_buffer_ptr;
+  pSVar4 = this_ptr_00->vertex_buffer_ptr + 2;
+  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+    (pSVar4->projected_vertex).transformed_x = (pSVar3->projected_vertex).transformed_x;
+    pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
+    pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);
   }
-  pSVar2 = this_ptr_00->vertex_buffer_ptr;
-  pSVar3 = this_ptr_00->vertex_buffer_ptr + 0x90;
-  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(uint *)pSVar3 = *(uint *)pSVar2;
-    pSVar2 = pSVar2 + ((uint)bVar4 * -2 + 1) * 4;
-    pSVar3 = pSVar3 + ((uint)bVar4 * -2 + 1) * 4;
+  pSVar3 = this_ptr_00->vertex_buffer_ptr;
+  pSVar4 = this_ptr_00->vertex_buffer_ptr + 3;
+  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+    (pSVar4->projected_vertex).transformed_x = (pSVar3->projected_vertex).transformed_x;
+    pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
+    pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);
   }
-  *(int *)this_ptr_00->vertex_buffer_ptr = *(int *)this_ptr_00->vertex_buffer_ptr + 0x80;
-  *(int *)(this_ptr_00->vertex_buffer_ptr + 4) = *(int *)(this_ptr_00->vertex_buffer_ptr + 4) + 0x80
-  ;
-  *(int *)(this_ptr_00->vertex_buffer_ptr + 0x30) =
-       *(int *)(this_ptr_00->vertex_buffer_ptr + 0x30) + -0x80;
-  *(int *)(this_ptr_00->vertex_buffer_ptr + 0x34) =
-       *(int *)(this_ptr_00->vertex_buffer_ptr + 0x34) + 0x80;
-  *(int *)(this_ptr_00->vertex_buffer_ptr + 0x60) =
-       *(int *)(this_ptr_00->vertex_buffer_ptr + 0x60) + -0x80;
-  *(int *)(this_ptr_00->vertex_buffer_ptr + 100) =
-       *(int *)(this_ptr_00->vertex_buffer_ptr + 100) + -0x80;
-  *(int *)(this_ptr_00->vertex_buffer_ptr + 0x90) =
-       *(int *)(this_ptr_00->vertex_buffer_ptr + 0x90) + 0x80;
-  *(int *)(this_ptr_00->vertex_buffer_ptr + 0x94) =
-       *(int *)(this_ptr_00->vertex_buffer_ptr + 0x94) + -0x80;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x10) = 0x80000000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x40) = 0x80000000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x70) = 0x80000000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xa0) = 0x80000000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x18) = 0x80000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x1c) = 0xf80000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x48) = 0xf80000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x4c) = 0xf80000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x78) = 0xf80000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x7c) = 0x80000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xa8) = 0x80000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xac) = 0x80000;
+  (this_ptr_00->vertex_buffer_ptr->projected_vertex).transformed_x =
+       (this_ptr_00->vertex_buffer_ptr->projected_vertex).transformed_x + 0x80;
+  piVar1 = &(this_ptr_00->vertex_buffer_ptr->projected_vertex).transformed_y;
+  *piVar1 = *piVar1 + 0x80;
+  this_ptr_00->vertex_buffer_ptr[1].projected_vertex.transformed_x =
+       this_ptr_00->vertex_buffer_ptr[1].projected_vertex.transformed_x + -0x80;
+  piVar1 = &this_ptr_00->vertex_buffer_ptr[1].projected_vertex.transformed_y;
+  *piVar1 = *piVar1 + 0x80;
+  this_ptr_00->vertex_buffer_ptr[2].projected_vertex.transformed_x =
+       this_ptr_00->vertex_buffer_ptr[2].projected_vertex.transformed_x + -0x80;
+  piVar1 = &this_ptr_00->vertex_buffer_ptr[2].projected_vertex.transformed_y;
+  *piVar1 = *piVar1 + -0x80;
+  this_ptr_00->vertex_buffer_ptr[3].projected_vertex.transformed_x =
+       this_ptr_00->vertex_buffer_ptr[3].projected_vertex.transformed_x + 0x80;
+  piVar1 = &this_ptr_00->vertex_buffer_ptr[3].projected_vertex.transformed_y;
+  *piVar1 = *piVar1 + -0x80;
+  (this_ptr_00->vertex_buffer_ptr->projected_vertex).screen_x = -0x80000000;
+  this_ptr_00->vertex_buffer_ptr[1].projected_vertex.screen_x = -0x80000000;
+  this_ptr_00->vertex_buffer_ptr[2].projected_vertex.screen_x = -0x80000000;
+  this_ptr_00->vertex_buffer_ptr[3].projected_vertex.screen_x = -0x80000000;
+  this_ptr_00->vertex_buffer_ptr->u = 0x80000;
+  this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
+  this_ptr_00->vertex_buffer_ptr[1].u = 0xf80000;
+  this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;
+  this_ptr_00->vertex_buffer_ptr[2].u = 0xf80000;
+  this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
+  this_ptr_00->vertex_buffer_ptr[3].u = 0x80000;
+  this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
   SStack_44.base.count = 4;
   SStack_44.surface_normal.D.i = 0;
   SStack_44.surface_normal.C.i = 0;

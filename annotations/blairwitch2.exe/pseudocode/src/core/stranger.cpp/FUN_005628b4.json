@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 205,
-    "complexity_score": 1118,
+    "complexity_score": 835,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 83,
-    "suspect_count": 100,
+    "pseudocode_lines": 145,
+    "suspect_count": 66,
     "suspect_types": [
       "concat_reconstruction",
       "nonstandard_int",
       "pointer_truncation",
       "register_param",
       "unaffected_reg",
-      "unnamed_field",
-      "unrolled_memset"
+      "unnamed_field"
     ],
-    "total_lines": 288
+    "total_lines": 350
   },
   "cross_references": [],
   "function": {
@@ -105,7 +104,7 @@
   "suspects": [
     {
       "description": "Inferred register parameter",
-      "line": 7,
+      "line": 10,
       "match": "in_EAX",
       "severity": "mild",
       "text": "char *in_EAX;",
@@ -113,7 +112,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 8,
+      "line": 11,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "CCharacter *unaff_EBX;",
@@ -121,282 +120,50 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 11,
+      "line": 14,
       "match": "in_EAX",
       "severity": "mild",
-      "text": "cVar2 = (char)in_EAX + *in_EAX;",
+      "text": "cVar5 = (char)in_EAX + *in_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 11,
+      "line": 14,
       "match": "in_EAX",
       "severity": "mild",
-      "text": "cVar2 = (char)in_EAX + *in_EAX;",
+      "text": "cVar5 = (char)in_EAX + *in_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 12,
+      "line": 15,
       "match": "in_EAX",
       "severity": "mild",
-      "text": "pcVar3 = (char *)CONCAT31((int3)((uint)in_EAX >> 8),cVar2);",
+      "text": "pcVar6 = (char *)CONCAT31((int3)((uint)in_EAX >> 8),cVar5);",
       "type": "register_param"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 12,
+      "line": 15,
       "match": "int3",
       "severity": "mild",
-      "text": "pcVar3 = (char *)CONCAT31((int3)((uint)in_EAX >> 8),cVar2);",
+      "text": "pcVar6 = (char *)CONCAT31((int3)((uint)in_EAX >> 8),cVar5);",
       "type": "nonstandard_int"
     },
     {
       "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4238 = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x4238",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4238 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41d4 = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x41d4",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41d4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41dc = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x41dc",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41dc = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
       "line": 18,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41e8 = 0;",
+      "text": "pCVar4 = unaff_EBX[2].flames + 2;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x41e8",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41e8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41ec = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x41ec",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41ec = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 21,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41f0 = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x41f0",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41f0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 22,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4190 = uVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x4190",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4190 = uVar1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
       "line": 23,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x425c = 0xf149f2ca;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x425c",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x425c = 0xf149f2ca;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 24,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4244 = 0xf149f2ca;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x4244",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4244 = 0xf149f2ca;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 25,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41a0 = *(uint *)&unaff_EBX[2].field_0x419c;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 25,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41a0 = *(uint *)&unaff_EBX[2].field_0x419c;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x41a0",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41a0 = *(uint *)&unaff_EBX[2].field_0x419c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x419c",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41a0 = *(uint *)&unaff_EBX[2].field_0x419c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 26,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4198 = *(uint *)&unaff_EBX[2].field_0x4194;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 26,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4198 = *(uint *)&unaff_EBX[2].field_0x4194;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x4198",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4198 = *(uint *)&unaff_EBX[2].field_0x4194;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x4194",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4198 = *(uint *)&unaff_EBX[2].field_0x4194;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 27,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41c0 = *(uint *)&unaff_EBX[2].field_0x41bc;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 27,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41c0 = *(uint *)&unaff_EBX[2].field_0x41bc;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x41c0",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41c0 = *(uint *)&unaff_EBX[2].field_0x41bc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x41bc",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41c0 = *(uint *)&unaff_EBX[2].field_0x41bc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 28,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41b8 = *(uint *)&unaff_EBX[2].field_0x41b4;",
+      "text": "pCVar4 = unaff_EBX[2].flames;",
       "type": "unaffected_reg"
     },
     {
@@ -404,319 +171,55 @@
       "line": 28,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41b8 = *(uint *)&unaff_EBX[2].field_0x41b4;",
+      "text": "pCVar4 = unaff_EBX[2].flames;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x41b8",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41b8 = *(uint *)&unaff_EBX[2].field_0x41b4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x41b4",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41b8 = *(uint *)&unaff_EBX[2].field_0x41b4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 30,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "(&unaff_EBX->model,\"p?stranger.dfm\" + 2);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 31,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "unaff_EBX->layer_action_index = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 32,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41d8 = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x41d8",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41d8 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
       "line": 33,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41fc = 0;",
+      "text": "pCVar4 = unaff_EBX[2].flames;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x41fc",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41fc = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 34,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4200 = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x4200",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4200 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x422c = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x422c",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x422c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 36,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4228 = *(uint *)&unaff_EBX[2].field_0x422c;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 36,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4228 = *(uint *)&unaff_EBX[2].field_0x422c;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x4228",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4228 = *(uint *)&unaff_EBX[2].field_0x422c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x422c",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4228 = *(uint *)&unaff_EBX[2].field_0x422c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 37,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4224 = *(uint *)&unaff_EBX[2].field_0x4228;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 37,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4224 = *(uint *)&unaff_EBX[2].field_0x4228;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x4224",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4224 = *(uint *)&unaff_EBX[2].field_0x4228;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x4228",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4224 = *(uint *)&unaff_EBX[2].field_0x4228;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
       "line": 38,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4230 = 0xffffffff;",
+      "text": "pCVar4 = unaff_EBX[2].flames;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x4230",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4230 = 0xffffffff;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 39,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41e0 = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x41e0",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41e0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 40,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4204 = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x4204",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4204 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 41,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4208 = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x4208",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4208 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 42,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41e4 = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x41e4",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x41e4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 43,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4234 = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x4234",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4234 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
       "line": 44,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x423c = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x423c",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x423c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 47,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "(*(int *)(&unaff_EBX[2].field_0x34cc + *(int *)&unaff_EBX[2].field_0x3324 * 4) + 0x2b4)",
+      "text": "pCVar4 = unaff_EBX[2].flames;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 47,
+      "line": 49,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "(*(int *)(&unaff_EBX[2].field_0x34cc + *(int *)&unaff_EBX[2].field_0x3324 * 4) + 0x2b4)",
+      "text": "*(uint *)(unaff_EBX[2].flames[1].on_event + 0x5c) = uVar1;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x34cc",
-      "severity": "mild",
-      "text": "(*(int *)(&unaff_EBX[2].field_0x34cc + *(int *)&unaff_EBX[2].field_0x3324 * 4) + 0x2b4)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x3324",
-      "severity": "mild",
-      "text": "(*(int *)(&unaff_EBX[2].field_0x34cc + *(int *)&unaff_EBX[2].field_0x3324 * 4) + 0x2b4)",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
       "line": 50,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "(unaff_EBX,0,1,\"draw_stand2holsters\",0);",
+      "text": "unaff_EBX[2].flames[2].base.orient_matrix.m[0].x = -1e+30;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 51,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[2].flames[2].base.location.position.y = -1e+30;",
       "type": "unaffected_reg"
     },
     {
@@ -724,7 +227,15 @@
       "line": 52,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "(unaff_EBX,1,2,\"draw_holsters2aimPistols\",0);",
+      "text": "uVar1 = *(uint *)(unaff_EBX[2].flames[1].on_event + 0x60);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 53,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "uVar2 = *(uint *)(unaff_EBX[2].flames[1].off_event + 0x24);",
       "type": "unaffected_reg"
     },
     {
@@ -732,7 +243,15 @@
       "line": 54,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "(unaff_EBX,0,3,\"draw_stand2coatPocket\",0);",
+      "text": "uVar3 = *(uint *)(unaff_EBX[2].flames[1].off_event + 0x1c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 55,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBX[2].flames[1].off_event + 8) =",
       "type": "unaffected_reg"
     },
     {
@@ -740,7 +259,15 @@
       "line": 56,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "(unaff_EBX,3,4,\"draw_coatPocket2aimShotgun\",0);",
+      "text": "*(uint *)(unaff_EBX[2].flames[1].off_event + 4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 57,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(uint *)unaff_EBX[2].flames[1].off_event = uVar1;",
       "type": "unaffected_reg"
     },
     {
@@ -748,15 +275,23 @@
       "line": 58,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "(unaff_EBX,3,5,\"draw_coatPocket2aimFlameThrower\",0);",
+      "text": "*(uint *)(unaff_EBX[2].flames[1].off_event + 0x28) = uVar2;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 60,
+      "line": 59,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "(unaff_EBX,1,3,\"draw_holsters2CoatPocket\",0);",
+      "text": "*(uint *)(unaff_EBX[2].flames[1].off_event + 0x20) = uVar3;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 61,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(&unaff_EBX->model,\"p?stranger.dfm\" + 2);",
       "type": "unaffected_reg"
     },
     {
@@ -764,23 +299,15 @@
       "line": 62,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "(unaff_EBX,0,6,\"draw_stand2TossAim\",1);",
+      "text": "unaff_EBX->layer_action_index = 0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 64,
+      "line": 63,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "(unaff_EBX,6,0,\"draw_tossAim2Stand\",1);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 66,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "(unaff_EBX,0xb,4,\"draw_shotGunRecoil\",1);",
+      "text": "pCVar4 = unaff_EBX[2].flames;",
       "type": "unaffected_reg"
     },
     {
@@ -788,7 +315,15 @@
       "line": 68,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "(unaff_EBX,3,7,\"draw_coatPocket2aimTommy\",0);",
+      "text": "unaff_EBX[2].flames[1].intensity = 0.0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 69,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[2].flames[1].randomness = 0.0;",
       "type": "unaffected_reg"
     },
     {
@@ -796,23 +331,15 @@
       "line": 70,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "(unaff_EBX,7,7,\"draw_tommyRecoil\",0);",
+      "text": "pCVar4 = unaff_EBX[2].flames + 2;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 72,
+      "line": 75,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "(unaff_EBX,0,8,\"draw_stand2spearhold\",0);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 74,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "(unaff_EBX,0xc,8,\"draw_spearStab\",1);",
+      "text": "*(uint *)(unaff_EBX[2].flames[2].base.actor_name + 8) =",
       "type": "unaffected_reg"
     },
     {
@@ -820,7 +347,15 @@
       "line": 76,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "(unaff_EBX,0xc,8,\"draw_spearOverheadswing\",1);",
+      "text": "*(uint *)(unaff_EBX[2].flames[2].base.actor_name + 0xc);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 77,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBX[2].flames[2].base.actor_name + 4) =",
       "type": "unaffected_reg"
     },
     {
@@ -828,12 +363,212 @@
       "line": 78,
       "match": "unaff_EBX",
       "severity": "moderate",
+      "text": "*(uint *)(unaff_EBX[2].flames[2].base.actor_name + 8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 79,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "pCVar4 = unaff_EBX[2].flames + 2;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 84,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "pCVar4 = unaff_EBX[2].flames;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 89,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[2].flames[1].burn_hero = 0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 90,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[2].flames[1].burn_enemy = 0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 91,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "pCVar4 = unaff_EBX[2].flames;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 96,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "pCVar4 = unaff_EBX[2].flames + 2;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 101,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "pCVar4 = unaff_EBX[2].flames + 2;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 108,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "((int)(&unaff_EBX[2].damage_decals[2].transform.m[0].y)",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 109,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "[*(int *)&unaff_EBX[2].follow_formation.slots[0xb].field_0x34] + 0x2b4),",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 109,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "[*(int *)&unaff_EBX[2].follow_formation.slots[0xb].field_0x34] + 0x2b4),",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 112,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,0,1,\"draw_stand2holsters\",0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 114,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,1,2,\"draw_holsters2aimPistols\",0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 116,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,0,3,\"draw_stand2coatPocket\",0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 118,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,3,4,\"draw_coatPocket2aimShotgun\",0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 120,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,3,5,\"draw_coatPocket2aimFlameThrower\",0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 122,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,1,3,\"draw_holsters2CoatPocket\",0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 124,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,0,6,\"draw_stand2TossAim\",1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 126,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,6,0,\"draw_tossAim2Stand\",1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 128,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,0xb,4,\"draw_shotGunRecoil\",1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 130,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,3,7,\"draw_coatPocket2aimTommy\",0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 132,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,7,7,\"draw_tommyRecoil\",0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 134,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,0,8,\"draw_stand2spearhold\",0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 136,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,0xc,8,\"draw_spearStab\",1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 138,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,0xc,8,\"draw_spearOverheadswing\",1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 140,
+      "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "(unaff_EBX,9,9,\"draw_holdCrate\",0);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 80,
+      "line": 142,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "(unaff_EBX,3,10,\"draw_coatPocket2GasMask\",0);",
@@ -841,7 +576,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 82,
+      "line": 144,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "(unaff_EBX,10,0,\"draw_gasMask2Stand\",0);",
@@ -849,7 +584,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 83,
+      "line": 145,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "core_cloth_cpp_CClothList_add_FUN_005b15c0(&unaff_EBX->cloth_list,\"strcoat.cth\");",
@@ -857,50 +592,42 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 84,
+      "line": 146,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4418 = 0;",
+      "text": "unaff_EBX[2].flames[2].base.particle_systems[2].next_particle = 0;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 84,
-      "match": "field_0x4418",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX[2].field_0x4418 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Pointer value `in_EAX` truncated by cast to `char` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 11,
+      "line": 14,
       "match": "(char)in_EAX",
       "severity": "moderate",
-      "text": "cVar2 = (char)in_EAX + *in_EAX;",
+      "text": "cVar5 = (char)in_EAX + *in_EAX;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `in_EAX` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 12,
+      "line": 15,
       "match": "(uint)in_EAX",
       "severity": "moderate",
-      "text": "pcVar3 = (char *)CONCAT31((int3)((uint)in_EAX >> 8),cVar2);",
+      "text": "pcVar6 = (char *)CONCAT31((int3)((uint)in_EAX >> 8),cVar5);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 35,
-      "match": "cascade_constant_fill",
+      "description": "Pointer value `(&unaff_EBX[2].damage_decals[2].transform.m[0].y)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 108,
+      "match": "(int)(&unaff_EBX[2].damage_decals[2].transform.m[0].y)",
       "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX[2].field_0x422c = 0;",
-      "type": "unrolled_memset"
+      "text": "((int)(&unaff_EBX[2].damage_decals[2].transform.m[0].y)",
+      "type": "pointer_truncation"
     },
     {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 12,
+      "line": 15,
       "match": "CONCAT31",
       "severity": "moderate",
-      "text": "pcVar3 = (char *)CONCAT31((int3)((uint)in_EAX >> 8),cVar2);",
+      "text": "pcVar6 = (char *)CONCAT31((int3)((uint)in_EAX >> 8),cVar5);",
       "type": "concat_reconstruction"
     }
   ]

@@ -47,7 +47,7 @@ void __cdecl core_teleport_cpp_CTeleport_process_FUN_00572330(CTeleport *this_pt
     if ((((fStack_4c <= fStack_1c) && (fStack_48 <= fStack_18)) && (fStack_44 <= fStack_14)) &&
        (((fStack_1c <= fStack_40 && (fStack_18 <= fStack_3c)) && (fStack_14 <= fStack_38)))) {
       core_mission_cpp_CDemonMission_setTeleportTarget_FUN_004fc780
-                (0x01D182F0,(CLocation *)&this_ptr->destination->field_0x20);
+                (0x01D182F0,&this_ptr->destination->location);
       return;
     }
   }

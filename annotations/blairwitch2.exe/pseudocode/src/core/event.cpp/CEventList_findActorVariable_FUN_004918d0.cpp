@@ -11,19 +11,19 @@ int __cdecl core_event_cpp_CEventList_findActorVariable_FUN_004918d0(CEventList 
 {
   int iVar1;
   int iVar2;
-  CEventList *str1;
+  char (*str1) [30];
   
   iVar2 = 0;
-  if (0 < *(int *)(this_ptr + 0x34e8)) {
-    str1 = this_ptr + 0x34ec;
+  if (0 < (this_ptr->actor_vars).count) {
+    str1 = (this_ptr->actor_vars).var_names;
     do {
-      iVar1 = _stricmp((char *)str1,name);
+      iVar1 = _stricmp(*str1,name);
       if (iVar1 == 0) {
         return iVar2;
       }
       iVar2 = iVar2 + 1;
-      str1 = str1 + 0x1e;
-    } while (iVar2 < *(int *)(this_ptr + 0x34e8));
+      str1 = str1 + 1;
+    } while (iVar2 < (this_ptr->actor_vars).count);
   }
   return -1;
 }

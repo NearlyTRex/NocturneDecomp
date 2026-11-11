@@ -10,7 +10,6 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonMission.h"
-#include "types/classes/CEdCheck.h"
 #include "types/classes/CLocation.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CMimic.h"
@@ -79,8 +78,8 @@ void unkafter_minecar_cpp_FUN_004f29b0(void);
 void unkafter_minecar_cpp_FUN_004f2a00(void);
 float unkafter_minecar_cpp_FUN_004f2a30(void);
 void unkafter_minecar_cpp_FUN_004f2a50(float *param_1);
-void unkafter_minecar_cpp_FUN_004f2ac0(float param_1,float param_2,float param_3,float param_4);
-CEdCheck * __cdecl unkafter_minecar_cpp_FUN_004f2ba0(CEdCheck *this_ptr);
+void __cdecl unkafter_minecar_cpp_setRenderViewport_FUN_004f2ac0(float left,float top,float right,float bottom);
+void __cdecl unkafter_minecar_cpp_getRenderViewport_FUN_004f2ba0(float *left,float *top,float *right,float *bottom);
 void engine_mini3d_cpp_FUN_004f2be0(int param_1,float *param_2);
 void engine_mini3d_cpp_FUN_004f2f20(float *param_1,float *param_2);
 void engine_mini3d_cpp_FUN_004f311e(undefined4 *param_1);

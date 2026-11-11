@@ -11,18 +11,17 @@
 void __cdecl core_fire_cpp_CShell_render_FUN_0049b6f0(CShell *this_ptr)
 
 {
-  SProjectedVertex *output;
+  SRenderVertex *vertex_ptr;
   int iVar1;
   CVector3i CStack_1c;
   
-  if (0.0 < *(float *)&this_ptr->field_0x24) {
-    output = (SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr;
-    CStack_1c.x = (int)ROUND(*(float *)this_ptr * _DAT_005f64e4);
-    CStack_1c.y = (int)ROUND(*(float *)&this_ptr->field_0x4 * _DAT_005f64e4);
-    CStack_1c.z = (int)ROUND(*(float *)&this_ptr->field_0x8 * _DAT_005f64e4);
-    engine_special_cpp_FUN_0055d9ec(output,&CStack_1c);
-    iVar1 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0046cad0
-                      (DAT_0060b280,(SRenderVertex *)output);
+  if (0.0 < (this_ptr->base).lifetime_remaining) {
+    vertex_ptr = DAT_0060b280->vertex_buffer_ptr;
+    CStack_1c.x = (int)ROUND((this_ptr->base).position.x * _DAT_005f64e4);
+    CStack_1c.y = (int)ROUND((this_ptr->base).position.y * _DAT_005f64e4);
+    CStack_1c.z = (int)ROUND((this_ptr->base).position.z * _DAT_005f64e4);
+    engine_special_cpp_FUN_0055d9ec(&vertex_ptr->projected_vertex,&CStack_1c);
+    iVar1 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0046cad0(DAT_0060b280,vertex_ptr);
     if (iVar1 != 0) {
       iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
       if (iVar1 == 0) {

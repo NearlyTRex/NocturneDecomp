@@ -22,9 +22,12 @@ typedef struct SOCKADDR {
 } SOCKADDR;
 
 // Structure: SOCKADDR_IN
-// Stub: no RTTI in this build, size and fields not yet recovered
 #pragma pack(push, 1)
 typedef struct SOCKADDR_IN {
+    ushort sin_family;
+    ushort sin_port;
+    uint sin_addr;
+    char padding_0x08[8];
 } SOCKADDR_IN;
 #pragma pack(pop)
 

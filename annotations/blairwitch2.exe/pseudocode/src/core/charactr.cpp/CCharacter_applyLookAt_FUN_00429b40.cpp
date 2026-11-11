@@ -61,8 +61,8 @@ void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_00429b40(CCharacter *t
          (afStack_30 + (uint)bVar2 * -2 + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1];
     bone_index = this_ptr->look_at_head_bone;
     core_xform_cpp_slerpQuaternion_FUN_00593df0
-              (&(this_ptr->model).field_0x6b0 + bone_index * 0x10,&stack0xffffff8c,
-               this_ptr->look_at_weight);
+              ((this_ptr->model).bone_transform.pose_data.bone_rotations + bone_index,
+               &stack0xffffff8c,this_ptr->look_at_weight);
     local_44.w = local_14;
     pfVar1 = (float *)((int)&local_44 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
     *(float *)((int)&local_44 + (uint)bVar2 * -8 + 4) = afStack_30[(uint)bVar2 * -2 + 8];

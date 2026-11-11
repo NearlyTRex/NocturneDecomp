@@ -2,26 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1352,
-    "complexity_score": 1423,
+    "complexity_score": 1699,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 613,
-    "suspect_count": 76,
+    "pseudocode_lines": 594,
+    "suspect_count": 106,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "self_copy_guard",
       "stack_alignment_array",
       "suspect_float",
       "undefined_data",
-      "unnamed_field",
+      "unknown_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1965
+    "total_lines": 1946
   },
   "cross_references": [
     {
@@ -264,7 +263,7 @@
     },
     {
       "addr": "01cb690c",
-      "name": "g_CGameInstance.field3_0xc",
+      "name": "g_CGameInstance.halo_mode",
       "type": "undefined4",
       "value": null
     }
@@ -1823,7 +1822,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 169,
+      "line": 151,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_006151e4);",
@@ -1831,7 +1830,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 169,
+      "line": 151,
       "match": "DAT_006151e4",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_006151e4);",
@@ -1839,7 +1838,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 188,
+      "line": 170,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_matrix_c_FUN_0046b5e0(DAT_0060b280);",
@@ -1847,7 +1846,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 220,
+      "line": 202,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_matrix_c_FUN_0046b5e0(DAT_0060b280);",
@@ -1855,23 +1854,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 259,
+      "line": 241,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,0);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 260,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "if ((0.0 < local_390) && (*(int *)&g_CGamePtr->field_0xc != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 265,
+      "line": 247,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,1);",
@@ -1879,7 +1870,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 295,
+      "line": 277,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,&local_178);",
@@ -1887,7 +1878,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 296,
+      "line": 278,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_matrix_c_FUN_0046b670(DAT_0060b280);",
@@ -1895,7 +1886,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 306,
+      "line": 288,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,&local_1f0,pCVar13);",
@@ -1903,39 +1894,39 @@
     },
     {
       "description": "Undefined global data reference",
+      "line": 295,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_13c)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 302,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_d0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 308,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_a0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 314,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&local_13c);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_f4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 320,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&local_d0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 326,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&local_a0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 332,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x90),&local_f4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 334,
+      "line": 316,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_0061522c);",
@@ -1943,7 +1934,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 334,
+      "line": 316,
       "match": "DAT_0061522c",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_0061522c);",
@@ -1951,7 +1942,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 342,
+      "line": 324,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "pSVar8 = DAT_0060b280->vertex_buffer_ptr;",
@@ -1959,7 +1950,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 377,
+      "line": 359,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);",
@@ -1967,7 +1958,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 381,
+      "line": 363,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_006151fc);",
@@ -1975,7 +1966,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 381,
+      "line": 363,
       "match": "DAT_006151fc",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_006151fc);",
@@ -1983,7 +1974,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 383,
+      "line": 365,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,&this_ptr->origin);",
@@ -1991,7 +1982,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 385,
+      "line": 367,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,&local_e8,(CVector3f *)0x0);",
@@ -1999,7 +1990,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 388,
+      "line": 370,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "local_24 = 1.12104e-44;",
@@ -2007,7 +1998,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 391,
+      "line": 373,
       "match": "2.24208e-44",
       "severity": "mild",
       "text": "local_24 = 2.24208e-44;",
@@ -2015,7 +2006,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 404,
+      "line": 386,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "pCVar5 = DAT_0060b280;",
@@ -2023,7 +2014,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 411,
+      "line": 393,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "pSVar8 = DAT_0060b280->vertex_buffer_ptr;",
@@ -2031,23 +2022,55 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 412,
+      "line": 394,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "pSVar9 = DAT_0060b280->vertex_buffer_ptr + 0x90;",
+      "text": "pSVar9 = DAT_0060b280->vertex_buffer_ptr + 3;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 397,
+      "match": "(SRenderVertex *)((int)pSVar8",
+      "severity": "moderate",
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 398,
+      "match": "(SRenderVertex *)((int)pSVar9",
+      "severity": "moderate",
+      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 406,
+      "match": "(SRenderVertex *)((int)pSVar9",
+      "severity": "moderate",
+      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 407,
+      "match": "(SRenderVertex *)((int)pSVar8",
+      "severity": "moderate",
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 424,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_238);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 442,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&local_238);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 447,
+      "line": 429,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "pCVar5 = DAT_0060b280;",
@@ -2055,15 +2078,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 471,
+      "line": 453,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "*(int *)(DAT_0060b280->vertex_buffer_ptr + 0x20) = (this_ptr->color).r;",
+      "text": "DAT_0060b280->vertex_buffer_ptr->r = (this_ptr->color).r;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 490,
+      "line": 472,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "pCVar5 = DAT_0060b280;",
@@ -2071,7 +2094,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 493,
+      "line": 475,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,local_2c);",
@@ -2079,23 +2102,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 494,
+      "line": 477,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_0046ac20(DAT_0060b280,local_330)",
+      "text": "(DAT_0060b280,(SMRGLPrimitivePoly *)(local_378 + 0x48));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 498,
+      "line": 480,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "*(int *)(DAT_0060b280->vertex_buffer_ptr + 0x2c) = local_2c;",
+      "text": "DAT_0060b280->vertex_buffer_ptr->a = local_2c;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 545,
+      "line": 528,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,&local_10c);",
@@ -2103,7 +2126,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 547,
+      "line": 530,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,&local_e8,(CVector3f *)0x0);",
@@ -2111,7 +2134,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 549,
+      "line": 532,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_00615214);",
@@ -2119,7 +2142,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 549,
+      "line": 532,
       "match": "DAT_00615214",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_00615214);",
@@ -2127,55 +2150,191 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 556,
+      "line": 539,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&local_298);",
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_298);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 562,
+      "line": 544,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&local_dc);",
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_dc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 568,
+      "line": 549,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&local_b8);",
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_b8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 574,
+      "line": 554,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x90),local_94);",
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,local_94);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 575,
+      "line": 555,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "pCVar5 = DAT_0060b280;",
       "type": "undefined_data"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 556,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_378._4_4_ = 4;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 557,
+      "match": "._20_4_",
+      "severity": "mild",
+      "text": "local_378._20_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 558,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "local_378._16_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 559,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "local_378._12_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 560,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_378._8_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 561,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "local_378._24_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 562,
+      "match": "._60_4_",
+      "severity": "mild",
+      "text": "local_378._60_4_ = 3;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 563,
+      "match": "._28_4_",
+      "severity": "mild",
+      "text": "local_378._28_4_ = 0x80000;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 564,
+      "match": "._32_4_",
+      "severity": "mild",
+      "text": "local_378._32_4_ = 0x80000;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 565,
+      "match": "._40_4_",
+      "severity": "mild",
+      "text": "local_378._40_4_ = 0xf80000;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 566,
+      "match": "._44_4_",
+      "severity": "mild",
+      "text": "local_378._44_4_ = 0x80000;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 567,
+      "match": "._52_4_",
+      "severity": "mild",
+      "text": "local_378._52_4_ = 0xf80000;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 568,
+      "match": "._56_4_",
+      "severity": "mild",
+      "text": "local_378._56_4_ = 0xf80000;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 569,
+      "match": "._64_4_",
+      "severity": "mild",
+      "text": "local_378._64_4_ = 0x80000;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 570,
+      "match": "._68_4_",
+      "severity": "mild",
+      "text": "local_378._68_4_ = 0xf80000;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 571,
+      "match": "._36_4_",
+      "severity": "mild",
+      "text": "local_378._36_4_ = 1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 572,
+      "match": "._48_4_",
+      "severity": "mild",
+      "text": "local_378._48_4_ = 2;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 593,
+      "line": 573,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "*(int *)(DAT_0060b280->vertex_buffer_ptr + 0x20) = (this_ptr->color).r;",
+      "text": "DAT_0060b280->vertex_buffer_ptr->r = (this_ptr->color).r;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 610,
+      "line": 590,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,local_18);",
@@ -2183,15 +2342,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 611,
+      "line": 592,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_0046ac20(DAT_0060b280,local_378);",
+      "text": "(DAT_0060b280,(SMRGLPrimitivePoly *)local_378);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 614,
+      "line": 595,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);",
@@ -2199,7 +2358,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 615,
+      "line": 596,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);",
@@ -2207,7 +2366,7 @@
     },
     {
       "description": "Pointer value `&local_e8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 181,
+      "line": 163,
       "match": "(int)&local_e8",
       "severity": "moderate",
       "text": "*(float *)((int)&local_e8 + (uint)bVar10 * -8 + 4) = local_168[(uint)bVar10 * -2 + 9];",
@@ -2215,7 +2374,7 @@
     },
     {
       "description": "Pointer value `&local_e8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 182,
+      "line": 164,
       "match": "(int)&local_e8",
       "severity": "moderate",
       "text": "*(float *)((int)&local_e8 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
@@ -2223,7 +2382,7 @@
     },
     {
       "description": "Pointer value `&local_1f0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 300,
+      "line": 282,
       "match": "(int)&local_1f0",
       "severity": "moderate",
       "text": "*(int *)((int)&local_1f0 + (uint)bVar10 * -8 + 4) = aiStack_288[(uint)bVar10 * -2];",
@@ -2231,15 +2390,47 @@
     },
     {
       "description": "Pointer value `&local_1f0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 301,
+      "line": 283,
       "match": "(int)&local_1f0",
       "severity": "moderate",
       "text": "*(int *)((int)&local_1f0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `pSVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 397,
+      "match": "(int)pSVar8",
+      "severity": "moderate",
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 398,
+      "match": "(int)pSVar9",
+      "severity": "moderate",
+      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 406,
+      "match": "(int)pSVar9",
+      "severity": "moderate",
+      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 407,
+      "match": "(int)pSVar8",
+      "severity": "moderate",
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Pointer value `&local_10c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 531,
+      "line": 514,
       "match": "(int)&local_10c",
       "severity": "moderate",
       "text": "*(float *)((int)&local_10c + (uint)bVar10 * -8 + 4) = local_fc[(uint)bVar10 * -2];",
@@ -2247,47 +2438,15 @@
     },
     {
       "description": "Pointer value `&local_10c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 532,
+      "line": 515,
       "match": "(int)&local_10c",
       "severity": "moderate",
       "text": "*(float *)((int)&local_10c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0xf80000 assigned to bare local `local_350`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_350` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 585,
-      "match": "0xf80000",
-      "severity": "moderate",
-      "text": "local_350 = 0xf80000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0xf80000 assigned to bare local `local_344`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_344` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 587,
-      "match": "0xf80000",
-      "severity": "moderate",
-      "text": "local_344 = 0xf80000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0xf80000 assigned to bare local `local_340`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_340` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 588,
-      "match": "0xf80000",
-      "severity": "moderate",
-      "text": "local_340 = 0xf80000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0xf80000 assigned to bare local `local_334`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_334` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 590,
-      "match": "0xf80000",
-      "severity": "moderate",
-      "text": "local_334 = 0xf80000;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 413,
+      "line": 395,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {",
@@ -2295,7 +2454,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 422,
+      "line": 404,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {",
@@ -2303,7 +2462,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 290,
+      "line": 272,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_178.x = local_154.x;",
@@ -2311,15 +2470,95 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 540,
+      "line": 328,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr->r = (this_ptr->color).r;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 333,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[1].r = (this_ptr->color).r;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 338,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[2].r = (this_ptr->color).r;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 343,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[3].r = (this_ptr->color).r;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 456,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar5->vertex_buffer_ptr[1].r = (this_ptr->color).r;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 459,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar5->vertex_buffer_ptr[2].r = (this_ptr->color).r;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 462,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar5->vertex_buffer_ptr[3].r = (this_ptr->color).r;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 523,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_e8.x = local_124.x;",
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 576,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar5->vertex_buffer_ptr[1].r = (this_ptr->color).r;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 579,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar5->vertex_buffer_ptr[2].r = (this_ptr->color).r;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 582,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar5->vertex_buffer_ptr[3].r = (this_ptr->color).r;",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Watcom dead self-copy guard: `if (&local_1cc != &local_16c)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 212,
+      "line": 194,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_1cc != &local_16c) {",
@@ -2327,7 +2566,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 181,
+      "line": 163,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_e8 + (uint)bVar10 * -8 + 4) = local_168[(uint)bVar10 * -2 + 9];",
@@ -2335,7 +2574,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 182,
+      "line": 164,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_e8 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
@@ -2343,7 +2582,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 300,
+      "line": 282,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&local_1f0 + (uint)bVar10 * -8 + 4) = aiStack_288[(uint)bVar10 * -2];",
@@ -2351,7 +2590,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 301,
+      "line": 283,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&local_1f0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
@@ -2359,7 +2598,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 531,
+      "line": 514,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_10c + (uint)bVar10 * -8 + 4) = local_fc[(uint)bVar10 * -2];",
@@ -2367,7 +2606,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 532,
+      "line": 515,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_10c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",

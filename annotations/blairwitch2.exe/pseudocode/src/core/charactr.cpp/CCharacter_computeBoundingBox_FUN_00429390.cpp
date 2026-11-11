@@ -23,7 +23,7 @@ void __cdecl core_charactr_cpp_CCharacter_computeBoundingBox_FUN_00429390(CChara
   float local_10;
   
   bVar5 = 0;
-  if ((this_ptr->model).field_0x2260 != '\0') {
+  if ((this_ptr->model).model_name[0] != '\0') {
     core_skeleton_cpp_FUN_005487d0(&this_ptr->model);
     pfVar3 = local_3c;
     pfVar4 = &local_24;

@@ -11,7 +11,7 @@ void core_cross_cpp_factoryFuncCross_FUN_005a69c0(void)
 {
   CCross *this_ptr;
   
-  this_ptr = (CCross *)debugAllocTracked1(0x848);
+  this_ptr = (CCross *)operator_new(0x848);
   if (this_ptr == (CCross *)0x0) {
     return;
   }

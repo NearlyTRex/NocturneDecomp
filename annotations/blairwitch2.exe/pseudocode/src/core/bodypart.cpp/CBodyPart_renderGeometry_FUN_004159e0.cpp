@@ -25,8 +25,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_004159e0(CBodyPart *
      ) {
     iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
     if (iVar2 == 0) {
-      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-                (DAT_0060b280,(SMRGLTextureBasic *)&this_ptr->field_0x2ec);
+      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00(DAT_0060b280,this_ptr->textures)
+      ;
     }
     engine_drender_cpp_CDemonRenderer_renderTriangleBatch_FUN_0046bca0
               (DAT_0060b280,this_ptr->faces,this_ptr->tri_count,render_flags);
@@ -41,13 +41,16 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_004159e0(CBodyPart *
         iVar1 = *(int *)((int)this_ptr->face_texture_indices + iVar3);
         if (iVar1 != local_18) {
           engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-                    (DAT_0060b280,(SMRGLTextureBasic *)(&this_ptr->field_0x2ec + iVar1 * 0x18));
+                    (DAT_0060b280,this_ptr->textures + iVar1);
           local_18 = iVar1;
         }
         iVar3 = iVar3 + 4;
         iVar2 = iVar2 + 1;
         engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00
-                  (DAT_0060b280,(SMRGLPrimitivePoly *)(this_ptr->faces + local_14),render_flags);
+                  (DAT_0060b280,
+                   (SMRGLPrimitivePoly *)
+                   ((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.
+                          type + local_14),render_flags);
         local_14 = local_14 + 0x3c;
       } while (iVar2 < this_ptr->tri_count);
     }

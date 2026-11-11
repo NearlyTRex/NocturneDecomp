@@ -9,7 +9,8 @@
 void unkaddr_005a7eb0_cpp_FUN_005a7eb0(void)
 
 {
-  unkaddr_005a7eb0_cpp_FUN_005a7f50(&g_CSimpleParticleSystemInstance,0x2000);
-  _atexit(&WatcomStaticDestructorNode_0061ebec);
+  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50
+            (&g_CSimpleParticleSystemInstance,0x2000);
+  _atexit();
   return;
 }

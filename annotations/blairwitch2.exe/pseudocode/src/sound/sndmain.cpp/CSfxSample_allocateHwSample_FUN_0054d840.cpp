@@ -31,9 +31,8 @@ int __cdecl sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_0054d840(CSfxSampl
   else {
     sound_sndmain_cpp_FUN_00552b30(in_stack_fffffd50);
     if (extraout_EAX < 1) {
-      sound_sndmain_cpp_FUN_0054b960(*(int *)&this_ptr->field_0x168);
-      psVar1 = (short *)realloc
-                         (this_ptr->sample_data,*(ulong *)&this_ptr->field_0x168);
+      sound_sndmain_cpp_FUN_0054b960(this_ptr->data_size_bytes);
+      psVar1 = (short *)realloc(this_ptr->sample_data,this_ptr->data_size_bytes);
       if (psVar1 != (short *)0x0) {
         this_ptr->sample_data = psVar1;
         return 1;
@@ -67,7 +66,7 @@ int __cdecl sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_0054d840(CSfxSampl
             }
             if ((((g_SfxSamples[iVar2].ref_count == 0) && (g_SfxSamples[iVar2].buffer_id != 0)) &&
                 (g_SfxSamples[iVar2].taken == 0)) &&
-               ((*(int *)&g_SfxSamples[iVar2].field_0x15c == 0 &&
+               ((g_SfxSamples[iVar2].is_user_sample == 0 &&
                 (g_SfxSamples[_DAT_02641920].locked_length == 0)))) {
               sound_sndmain_cpp_CSfxSample_freeMemory_FUN_0054d9b0(g_SfxSamples + iVar2);
               break;

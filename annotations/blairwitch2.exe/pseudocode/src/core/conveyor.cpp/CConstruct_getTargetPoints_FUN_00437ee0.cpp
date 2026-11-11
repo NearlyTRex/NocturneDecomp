@@ -25,7 +25,7 @@ int __cdecl core_conveyor_cpp_CConstruct_getTargetPoints_FUN_00437ee0(CConstruct
   float afStack_24 [5];
   
   bVar1 = 0;
-  core_skeleton_cpp_FUN_00546a90(&this_ptr->field_0x2b4,DAT_007c254c);
+  core_skeleton_cpp_FUN_00546a90(&(this_ptr->base).base.model,DAT_007c254c);
   CStack_58.x = fStack_70;
   *(float *)((int)&CStack_58 + (uint)bVar1 * -8 + 4) = afStack_6c[(uint)bVar1 * -2];
   *(float *)((int)&CStack_58 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
@@ -35,7 +35,7 @@ int __cdecl core_conveyor_cpp_CConstruct_getTargetPoints_FUN_00437ee0(CConstruct
     out_points_array->y = CStack_58.y;
     out_points_array->z = CStack_58.z;
   }
-  core_skeleton_cpp_FUN_00546a90(&this_ptr->field_0x2b4,DAT_007c2568);
+  core_skeleton_cpp_FUN_00546a90(&(this_ptr->base).base.model,DAT_007c2568);
   CStack_40.x = fStack_28;
   *(float *)((int)&CStack_40 + (uint)bVar1 * -8 + 4) = afStack_24[(uint)bVar1 * -2];
   *(float *)((int)&CStack_40 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
@@ -45,7 +45,7 @@ int __cdecl core_conveyor_cpp_CConstruct_getTargetPoints_FUN_00437ee0(CConstruct
     out_points_array[1].y = CStack_40.y;
     out_points_array[1].z = CStack_40.z;
   }
-  core_skeleton_cpp_FUN_00546a90(&this_ptr->field_0x2b4,DAT_007c256c);
+  core_skeleton_cpp_FUN_00546a90(&(this_ptr->base).base.model,DAT_007c256c);
   CStack_34.x = afStack_24[2];
   *(float *)((int)&CStack_34 + (uint)bVar1 * -8 + 4) = afStack_24[(uint)bVar1 * -2 + 3];
   *(float *)((int)&CStack_34 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
@@ -55,7 +55,7 @@ int __cdecl core_conveyor_cpp_CConstruct_getTargetPoints_FUN_00437ee0(CConstruct
     out_points_array[2].y = CStack_34.y;
     out_points_array[2].z = CStack_34.z;
   }
-  core_skeleton_cpp_FUN_00546a90(&this_ptr->field_0x2b4,DAT_007c2578);
+  core_skeleton_cpp_FUN_00546a90(&(this_ptr->base).base.model,DAT_007c2578);
   CStack_7c.x = fStack_4c;
   *(float *)((int)&CStack_7c + (uint)bVar1 * -8 + 4) = afStack_48[(uint)bVar1 * -2];
   *(float *)((int)&CStack_7c + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
@@ -65,7 +65,7 @@ int __cdecl core_conveyor_cpp_CConstruct_getTargetPoints_FUN_00437ee0(CConstruct
     out_points_array[3].y = CStack_7c.y;
     out_points_array[3].z = CStack_7c.z;
   }
-  core_skeleton_cpp_FUN_00546a90(&this_ptr->field_0x2b4,DAT_007c2580);
+  core_skeleton_cpp_FUN_00546a90(&(this_ptr->base).base.model,DAT_007c2580);
   CStack_64.x = fStack_88;
   *(uint *)((int)&CStack_64 + (uint)bVar1 * -8 + 4) =
        *(uint *)(&stack0xffffff7c + (uint)bVar1 * -8);

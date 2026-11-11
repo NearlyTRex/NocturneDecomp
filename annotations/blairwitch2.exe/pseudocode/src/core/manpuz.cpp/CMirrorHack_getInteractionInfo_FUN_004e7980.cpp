@@ -12,12 +12,12 @@ void __cdecl core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_004e7980(CMirror
   CDemonActor *pCVar1;
   
   core_actor_cpp_CDemonActor_getInteractionInfo_FUN_00409ed0(&this_ptr->base,out_info);
-  *(uint *)out_info = 1;
+  out_info->can_interact = 1;
   pCVar1 = this_ptr->interacting_actor;
-  *(uint *)(out_info + 0x10) = 0x40c90fdb;
-  *(uint *)(out_info + 0x14) = 0xc0c90fdb;
-  *(uint *)(out_info + 8) = 0xbf800000;
-  *(uint *)(out_info + 0xc) = 0;
-  *(CDemonActor **)(out_info + 4) = pCVar1;
+  out_info->yaw_max = 6.2831855;
+  out_info->yaw_min = -6.2831855;
+  out_info->approach_offset = -1.0;
+  out_info->distance_max = 0.0;
+  out_info->interacting_actor = pCVar1;
   return;
 }

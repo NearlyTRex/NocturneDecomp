@@ -19,7 +19,7 @@ CCross * unkafter_cross_cpp_CCross_dtor_FUN_005a6b30(CCross *this_ptr,uint flags
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  *(CWeapon_full_vtable **)&this_ptr->field_0x2b0 = &g_CCrossVTable;
+  (this_ptr->base).base.base.vtable._ub = &g_CCrossVTable._ub;
   pCVar1 = (CCross *)core_weapon_cpp_CWeapon_dtor_FUN_00589ae0((CWeapon *)this_ptr,1);
   if ((flags & 2) == 0) {
     return pCVar1;

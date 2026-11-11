@@ -11,7 +11,7 @@ void core_unionzom_cpp_factoryFuncUnionZombie_FUN_005a3d00(void)
 {
   CUnionZombie *this_ptr;
   
-  this_ptr = (CUnionZombie *)debugAllocTracked1(0x1185c);
+  this_ptr = (CUnionZombie *)operator_new(0x1185c);
   if (this_ptr == (CUnionZombie *)0x0) {
     return;
   }

@@ -32,7 +32,7 @@
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_004fc570
-;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0047bda0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_00481fc0
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482250
@@ -130,8 +130,8 @@ section .text
     ADD ESP,0x4                         ; 004fd34e
     PUSH 0x2d8                          ; 004fd351
         ;   Label: LAB_004fd351
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 004fd356
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004fd356
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 004fd35b
     TEST EAX,EAX                        ; 004fd35e
     JZ 0x004fd36b                       ; 004fd360

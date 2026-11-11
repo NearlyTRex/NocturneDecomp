@@ -14,7 +14,7 @@ int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_0050ce70(CNetGame *this_ptr,
   char cVar1;
   int iVar2;
   int iVar3;
-  int iVar4;
+  uint uVar4;
   SNetPlayer *dest;
   SNetPlayer *pSVar5;
   byte bVar6;
@@ -32,29 +32,28 @@ int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_0050ce70(CNetGame *this_ptr,
   pSVar5 = dest;
   do {
     cVar1 = *name;
-    *(char *)pSVar5 = cVar1;
+    pSVar5->name[0] = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = name[1];
     name = name + 2;
-    pSVar5->field_0x1 = cVar1;
-    pSVar5 = (SNetPlayer *)&pSVar5->field_0x2;
+    pSVar5->name[1] = cVar1;
+    pSVar5 = (SNetPlayer *)(pSVar5->name + 2);
   } while (cVar1 != '\0');
-  *(uint *)&dest->field_0x1c = *(uint *)addr;
-  *(uint *)((int)dest + (uint)bVar6 * -8 + 0x20) =
-       *(uint *)(addr + (uint)bVar6 * -8 + 4);
-  *(uint *)&dest->field_0x28 = 0xbf800000;
-  *(uint *)&dest->field_0x44 = 0;
-  *(uint *)&dest->field_0x40 = 0;
-  *(uint *)&dest->field_0x3c = 0;
-  *(int *)&dest->field_0x14 = hero_number;
-  *(int *)&dest->field_0x18 = aim_mode;
-  iVar4 = _DAT_01d34e38;
-  *(int *)&dest->field_0x24 = _DAT_01d34e38;
-  iVar4 = iVar4 + -0x1e0000;
-  *(int *)&dest->field_0x2c = iVar4;
-  *(int *)&dest->field_0x30 = iVar4;
+  (dest->addr).ip_address = addr->ip_address;
+  *(uint *)((int)dest + (uint)bVar6 * -8 + 0x20) = *(uint *)&addr[-(uint)bVar6].port;
+  dest->ping_quality = -1.0;
+  dest->ready_flag = 0;
+  dest->state_change_time = 0;
+  dest->local_sync_stage = 0;
+  dest->hero_number = hero_number;
+  dest->aim_mode = aim_mode;
+  uVar4 = _DAT_01d34e38;
+  dest->last_arrival_time = _DAT_01d34e38;
+  uVar4 = uVar4 - 0x1e0000;
+  dest->last_ping_sent = uVar4;
+  dest->last_ping_response = uVar4;
   iVar3 = _DAT_01d34e44;
-  *(int *)&dest->field_0x38 = iVar4;
-  *(int *)&dest->field_0x34 = iVar3 + -1;
+  dest->last_update_time = uVar4;
+  dest->player_id = iVar3 + -1;
   return iVar2;
 }

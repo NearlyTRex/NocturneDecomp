@@ -12,29 +12,32 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_005b65a0(CMor
 
 {
   UIntegerFloat *pUVar1;
-  SMRGLHeaderPrimitive *pSVar2;
-  int iVar3;
+  SMRGLPrimitiveTriangle *pSVar2;
+  SMRGLHeaderPrimitive *pSVar3;
   int iVar4;
   int iVar5;
   int iVar6;
-  SMRGLHeaderPrimitive *pSVar7;
-  uint *puVar8;
-  UIntegerFloat *pUVar9;
-  SMRGLPrimitiveTriangle *pSVar10;
-  byte bVar11;
+  int iVar7;
+  SMRGLHeaderPrimitive *pSVar8;
+  int *piVar9;
+  UIntegerFloat *pUVar10;
+  int *piVar11;
+  int *piVar12;
+  UIntegerFloat *pUVar13;
+  byte bVar14;
   int *local_24;
   int local_20;
   int local_18;
   
-  bVar11 = 0;
+  bVar14 = 0;
   if ((part_index < 0) || (this_ptr->part_count <= part_index)) {
     _DAT_01d046a0 = "..\\core\\morph.cpp";
     _DAT_01d046a4 = 0x152;
     core_main_c_FUN_004e4500("CMorphModel::setFaceList - invalid part index");
   }
-  iVar4 = this_ptr->parts[part_index].start_face;
-  local_18 = start_face + iVar4;
-  if (iVar4 + this_ptr->parts[part_index].face_count < poly_count + local_18) {
+  iVar5 = this_ptr->parts[part_index].start_face;
+  local_18 = start_face + iVar5;
+  if (iVar5 + this_ptr->parts[part_index].face_count < poly_count + local_18) {
     _DAT_01d046a0 = "..\\core\\morph.cpp";
     _DAT_01d046a4 = 0x159;
     core_main_c_FUN_004e4500("CMorphModel::setFaceList - invalid vertex range");
@@ -43,63 +46,66 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_005b65a0(CMor
   if (0 < poly_count) {
     local_24 = texture_index_list;
     do {
-      iVar4 = core_morph_cpp_CMorphModel_findOrAddTexture_FUN_005b6940
+      iVar5 = core_morph_cpp_CMorphModel_findOrAddTexture_FUN_005b6940
                         (this_ptr,texture_list[*local_24].texture_name);
-      iVar6 = 2;
+      iVar7 = 2;
       if (2 < (poly_data->base).count) {
-        pSVar7 = poly_data + 1;
-        iVar5 = local_18 * 0x3c;
+        pSVar8 = poly_data + 1;
+        iVar6 = local_18 * 0x3c;
         do {
-          iVar3 = _DAT_0268014c;
-          *(uint *)(this_ptr->faces + iVar5 + 4) = 3;
-          if (iVar3 == 0) {
-            pSVar10 = this_ptr->faces + iVar5 + 0x18;
-            puVar8 = (uint *)((int)poly_data + (uint)bVar11 * -8 + 0x1c);
-            *(int *)pSVar10 = poly_data[1].base.type;
-            *(uint *)(pSVar10 + (uint)bVar11 * -8 + 4) = *puVar8;
-            *(uint *)(pSVar10 + (uint)bVar11 * -8 + 4 + (uint)bVar11 * -8 + 4) =
-                 puVar8[(uint)bVar11 * -2 + 1];
-            pUVar1 = (UIntegerFloat *)(this_ptr->faces + iVar5 + 0x24);
-            pUVar9 = (UIntegerFloat *)((int)pSVar7 + (uint)bVar11 * -8 + 0x10);
-            *pUVar1 = (pSVar7->surface_normal).B;
-            pUVar1[(uint)bVar11 * -2 + 1] = *pUVar9;
-            (pUVar1 + (uint)bVar11 * -2 + 1)[(uint)bVar11 * -2 + 1] = pUVar9[(uint)bVar11 * -2 + 1];
-            pSVar10 = this_ptr->faces;
-            pSVar2 = pSVar7;
+          iVar4 = _DAT_0268014c;
+          *(uint *)((int)this_ptr->faces->vertices + iVar6 + -0x14) = 3;
+          if (iVar4 == 0) {
+            piVar11 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar6);
+            piVar12 = piVar11 + (uint)bVar14 * -2 + 1;
+            piVar9 = (int *)((int)poly_data + (uint)bVar14 * -8 + 0x1c);
+            *piVar11 = poly_data[1].base.type;
+            *piVar12 = *piVar9;
+            piVar12[(uint)bVar14 * -2 + 1] = piVar9[(uint)bVar14 * -2 + 1];
+            pUVar1 = (UIntegerFloat *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar6);
+            pUVar13 = pUVar1 + (uint)bVar14 * -2 + 1;
+            pUVar10 = (UIntegerFloat *)((int)pSVar8 + (uint)bVar14 * -8 + 0x10);
+            *pUVar1 = (pSVar8->surface_normal).B;
+            *pUVar13 = *pUVar10;
+            pUVar13[(uint)bVar14 * -2 + 1] = pUVar10[(uint)bVar14 * -2 + 1];
+            pSVar2 = this_ptr->faces;
+            pSVar3 = pSVar8;
           }
           else {
-            pSVar10 = this_ptr->faces + iVar5 + 0x18;
-            puVar8 = (uint *)((int)pSVar7 + (uint)bVar11 * -8 + 0x1c);
-            *(int *)pSVar10 = pSVar7[1].base.type;
-            *(uint *)(pSVar10 + (uint)bVar11 * -8 + 4) = *puVar8;
-            *(uint *)(pSVar10 + (uint)bVar11 * -8 + 4 + (uint)bVar11 * -8 + 4) =
-                 puVar8[(uint)bVar11 * -2 + 1];
-            pUVar1 = (UIntegerFloat *)(this_ptr->faces + iVar5 + 0x24);
-            pUVar9 = (UIntegerFloat *)((int)pSVar7 + (uint)bVar11 * -8 + 0x10);
-            *pUVar1 = (pSVar7->surface_normal).B;
-            pUVar1[(uint)bVar11 * -2 + 1] = *pUVar9;
-            (pUVar1 + (uint)bVar11 * -2 + 1)[(uint)bVar11 * -2 + 1] = pUVar9[(uint)bVar11 * -2 + 1];
-            pSVar10 = this_ptr->faces;
-            pSVar2 = poly_data;
+            piVar11 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar6);
+            piVar12 = piVar11 + (uint)bVar14 * -2 + 1;
+            piVar9 = (int *)((int)pSVar8 + (uint)bVar14 * -8 + 0x1c);
+            *piVar11 = pSVar8[1].base.type;
+            *piVar12 = *piVar9;
+            piVar12[(uint)bVar14 * -2 + 1] = piVar9[(uint)bVar14 * -2 + 1];
+            pUVar1 = (UIntegerFloat *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar6);
+            pUVar13 = pUVar1 + (uint)bVar14 * -2 + 1;
+            pUVar10 = (UIntegerFloat *)((int)pSVar8 + (uint)bVar14 * -8 + 0x10);
+            *pUVar1 = (pSVar8->surface_normal).B;
+            *pUVar13 = *pUVar10;
+            pUVar13[(uint)bVar14 * -2 + 1] = pUVar10[(uint)bVar14 * -2 + 1];
+            pSVar2 = this_ptr->faces;
+            pSVar3 = poly_data;
           }
-          pSVar10 = pSVar10 + iVar5 + 0x30;
-          puVar8 = (uint *)((int)pSVar2 + (uint)bVar11 * -8 + 0x1c);
-          *(int *)pSVar10 = pSVar2[1].base.type;
-          *(uint *)(pSVar10 + (uint)bVar11 * -8 + 4) = *puVar8;
-          *(uint *)(pSVar10 + (uint)bVar11 * -8 + 4 + (uint)bVar11 * -8 + 4) =
-               puVar8[(uint)bVar11 * -2 + 1];
-          *(int *)(this_ptr->faces + iVar5) = iVar4;
-          *(int *)(this_ptr->faces + iVar5 + 0x18) =
-               *(int *)(this_ptr->faces + iVar5 + 0x18) + this_ptr->parts[part_index].start_vertex;
-          *(int *)(this_ptr->faces + iVar5 + 0x24) =
-               *(int *)(this_ptr->faces + iVar5 + 0x24) + this_ptr->parts[part_index].start_vertex;
-          pSVar7 = (SMRGLHeaderPrimitive *)&(pSVar7->surface_normal).B;
-          iVar6 = iVar6 + 1;
-          *(int *)(this_ptr->faces + iVar5 + 0x30) =
-               *(int *)(this_ptr->faces + iVar5 + 0x30) + this_ptr->parts[part_index].start_vertex;
-          iVar5 = iVar5 + 0x3c;
+          piVar9 = (int *)((int)&pSVar2->vertices[2].vertex_index + iVar6);
+          piVar12 = piVar9 + (uint)bVar14 * -2 + 1;
+          piVar11 = (int *)((int)pSVar3 + (uint)bVar14 * -8 + 0x1c);
+          *piVar9 = pSVar3[1].base.type;
+          *piVar12 = *piVar11;
+          piVar12[(uint)bVar14 * -2 + 1] = piVar11[(uint)bVar14 * -2 + 1];
+          *(int *)((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.
+                         type + iVar6) = iVar5;
+          piVar11 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar6);
+          *piVar11 = *piVar11 + this_ptr->parts[part_index].start_vertex;
+          piVar11 = (int *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar6);
+          *piVar11 = *piVar11 + this_ptr->parts[part_index].start_vertex;
+          pSVar8 = (SMRGLHeaderPrimitive *)&(pSVar8->surface_normal).B;
+          iVar7 = iVar7 + 1;
+          piVar11 = (int *)((int)&this_ptr->faces->vertices[2].vertex_index + iVar6);
+          *piVar11 = *piVar11 + this_ptr->parts[part_index].start_vertex;
+          iVar6 = iVar6 + 0x3c;
           local_18 = local_18 + 1;
-        } while (iVar6 < (poly_data->base).count);
+        } while (iVar7 < (poly_data->base).count);
       }
       local_24 = local_24 + 1;
       local_20 = local_20 + 1;

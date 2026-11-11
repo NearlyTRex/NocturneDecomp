@@ -27,20 +27,10 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_0053f170(CShotgun *this_ptr)
   CShotgun *this_ptr_02;
   CMatrix3x3f *rotation_matrix;
   float fStack_184;
-  int iStack_180;
-  float afStack_17c [3];
-  uint uStack_170;
-  uint uStack_16c;
-  uint uStack_164;
-  float fStack_160;
-  uint uStack_15c;
-  EAmmoType EStack_158;
-  uint uStack_154;
-  uint uStack_150;
-  CShotgun *pCStack_14c;
+  SDamageInfo SStack_180;
   CDemonActor *pCStack_144;
   float afStack_140 [4];
-  uint uStack_130;
+  float fStack_130;
   float fStack_12c;
   float fStack_128;
   float fStack_124;
@@ -54,7 +44,7 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_0053f170(CShotgun *this_ptr)
   float fStack_fc;
   float fStack_f0;
   CVector3f CStack_e4;
-  uint uStack_d8;
+  float fStack_d8;
   float afStack_d4 [5];
   float afStack_c0 [3];
   float fStack_b4;
@@ -226,10 +216,10 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_0053f170(CShotgun *this_ptr)
         else {
           iVar4 = (**(code **)(*(int *)(iStack_14 + 0x2b0) + 0xe8))(iStack_14);
           if (iVar4 != 0) break;
-          core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0((SDamageInfo *)&iStack_180);
-          iStack_180 = g_CDemonSetPtr->collision_part_index;
-          afStack_17c[0] = fStack_24;
-          afStack_17c[1] = 0.4;
+          core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(&SStack_180);
+          SStack_180.hit_part_index = g_CDemonSetPtr->collision_part_index;
+          SStack_180.damage_amount = fStack_24;
+          SStack_180.gore_multiplier = 0.4;
           fStack_108 = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
           fStack_104 = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;
           fStack_100 = (g_CDemonSetPtr->ray_target).z - (g_CDemonSetPtr->ray_origin).z;
@@ -246,27 +236,27 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_0053f170(CShotgun *this_ptr)
           afStack_140[(uint)bVar5 * -2 + 3] = afStack_98[(uint)bVar5 * -2 + 3];
           afStack_140[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
                afStack_98[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-          if (afStack_17c + 2 != afStack_140 + 2) {
-            afStack_17c[2] = afStack_140[2];
-            uStack_170 = afStack_140[3];
-            uStack_16c = uStack_130;
+          if (&SStack_180.impact_point != (CVector3f *)(afStack_140 + 2)) {
+            SStack_180.impact_point.x = afStack_140[2];
+            SStack_180.impact_point.y = afStack_140[3];
+            SStack_180.impact_point.z = fStack_130;
           }
           core_actor_cpp_FUN_00408de0(iStack_14,&g_CDemonSetPtr->collision_impact_position);
-          uStack_d8 = afStack_d4[2];
+          fStack_d8 = afStack_d4[2];
           afStack_d4[(uint)bVar5 * -2] = afStack_d4[(uint)bVar5 * -2 + 3];
           afStack_d4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
                afStack_d4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-          if (&uStack_164 != &uStack_d8) {
-            uStack_164 = uStack_d8;
-            fStack_160 = afStack_d4[0];
-            uStack_15c = afStack_d4[1];
+          if (&SStack_180.impact_direction != (CVector3f *)&fStack_d8) {
+            SStack_180.impact_direction.x = fStack_d8;
+            SStack_180.impact_direction.y = afStack_d4[0];
+            SStack_180.impact_direction.z = afStack_d4[1];
           }
-          EStack_158 = (this_ptr->base).ammo_type;
-          uStack_150 = 0x65;
-          uStack_154 = 0x3e19999a;
-          pCStack_14c = this_ptr;
+          SStack_180.ammo_type = (this_ptr->base).ammo_type;
+          SStack_180.damage_type = DAMAGE_TYPE_ATTACK_BULLET;
+          SStack_180.dismember_prob = 0.15;
+          SStack_180.attacker = (CDemonActor *)this_ptr;
           pCStack_144 = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
-          (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x110))(iVar2,afStack_17c);
+          (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x110))(iVar2,&SStack_180.damage_amount);
           if ((this_ptr->base).can_penetrate == 0) break;
           core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30
                     (g_CDemonSetPtr,g_CDemonSetPtr->collision_actor);

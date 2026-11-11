@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 140,
+    "complexity_score": 54,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
-    "suspect_count": 9,
+    "pseudocode_lines": 39,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_constant",
-      "unnamed_field"
+      "raw_address_constant"
     ],
-    "total_lines": 110
+    "total_lines": 109
   },
   "cross_references": [
     {
@@ -119,75 +118,11 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0xf8",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).field_0xf8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).field_0x100 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0xfc",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).field_0xfc = uVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).field_0x100 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).field_0x100 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).field_0x100 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x104",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).field_0x104 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x104",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).field_0x104 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Raw hex address 0x1d182f0 assigned to bare local `iVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 11,
+      "description": "Raw hex address 0x1d182f0 assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 10,
       "match": "0x1d182f0",
       "severity": "moderate",
-      "text": "iVar4 = 0x01D182F0;",
+      "text": "iVar3 = 0x01D182F0;",
       "type": "raw_address_constant"
     }
   ],

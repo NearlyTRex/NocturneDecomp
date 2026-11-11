@@ -16,9 +16,8 @@ int __cdecl core_dynamite_cpp_CDynamite_fire_FUN_0047a0a0(CDynamite *this_ptr)
     return 0;
   }
   core_fire_cpp_CFireEffect_createToss_FUN_0049e560
-            (0x01C3DEB4,(CVector3f *)&(this_ptr->base).base.field_0x20,
-             &(this_ptr->base).base.orient,&this_ptr->toss_velocity,this_ptr->fuse_timer,
-             this_ptr->sfx_handle);
+            (0x01C3DEB4,&(this_ptr->base).base.location.position,&(this_ptr->base).base.orient,
+             &this_ptr->toss_velocity,this_ptr->fuse_timer,this_ptr->sfx_handle);
   this_ptr->sfx_handle = 0;
   this_ptr->fuse_timer = -1.0;
   (this_ptr->toss_velocity).z = 0.0;

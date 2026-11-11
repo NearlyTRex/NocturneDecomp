@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 257,
-    "complexity_score": 137,
+    "complexity_score": 110,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 39,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 97,
-    "suspect_count": 3,
+    "pseudocode_lines": 95,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 354
+    "total_lines": 352
   },
   "cross_references": [],
   "function": {
@@ -301,7 +300,7 @@
     },
     {
       "addr": "01cb6918",
-      "name": "g_CGameInstance.field15_0x18",
+      "name": "g_CGameInstance.nudity_flag",
       "type": "undefined4",
       "value": null
     }
@@ -365,22 +364,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2260",
-      "severity": "mild",
-      "text": "str1 = &(this_ptr->base).base.model.field_0x2260;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x18 == 0) {",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

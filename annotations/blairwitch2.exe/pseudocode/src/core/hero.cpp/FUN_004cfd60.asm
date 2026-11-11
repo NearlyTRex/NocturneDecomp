@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool core_hero_cpp_FUN_004cfd60(CDemonActor *param_1,char *param_2)
+; bool core_hero_cpp_FUN_004cfd60(CHero *param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20

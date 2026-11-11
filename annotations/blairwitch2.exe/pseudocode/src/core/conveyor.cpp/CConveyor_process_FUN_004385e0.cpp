@@ -23,7 +23,7 @@ void __cdecl core_conveyor_cpp_CConveyor_process_FUN_004385e0(CConveyor *this_pt
   float fStack_3c;
   float fStack_38;
   float fStack_34;
-  uint uStack_30;
+  float fStack_30;
   float fStack_2c;
   char *pcStack_20;
   CVector3f *pCStack_1c;
@@ -45,8 +45,8 @@ void __cdecl core_conveyor_cpp_CConveyor_process_FUN_004385e0(CConveyor *this_pt
       iStack_14 = 0;
       for (iStack_18 = 0; iStack_18 < g_CDemonSetPtr->actor_count; iStack_18 = iStack_18 + 1) {
         actor_ptr = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_14);
-        if ((this_ptr == *(CConveyor **)&actor_ptr->field_0xdc) &&
-           (((*(CConveyor **)&actor_ptr->field_0xdc)->actor_class[0] == '\0' ||
+        if ((this_ptr == (CConveyor *)actor_ptr->standing_platform) &&
+           ((((CConveyor *)actor_ptr->standing_platform)->actor_class[0] == '\0' ||
             (iVar1 = core_actor_cpp_isOfClass_FUN_0040c840(actor_ptr,pcStack_20), iVar1 != 0)))) {
           core_actor_cpp_FUN_00408cf0(this_ptr,pCStack_1c);
           fStack_50 = fStack_2c;
@@ -62,14 +62,14 @@ void __cdecl core_conveyor_cpp_CConveyor_process_FUN_004385e0(CConveyor *this_pt
                (float)*(uint *)((int)&stack0xffffffc0 + (uint)bVar2 * -8);
           *(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
                *(uint *)((int)&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-          if ((float *)&actor_ptr->field_0xe0 != &stack0xffffffc8) {
-            *(float *)&actor_ptr->field_0xe0 = fStack_38;
-            *(float *)&actor_ptr->field_0xe4 = fStack_34;
-            *(uint *)&actor_ptr->field_0xe8 = uStack_30;
+          if (&actor_ptr->platform_position_delta != (CVector3f *)&stack0xffffffc8) {
+            (actor_ptr->platform_position_delta).x = fStack_38;
+            (actor_ptr->platform_position_delta).y = fStack_34;
+            (actor_ptr->platform_position_delta).z = fStack_30;
           }
-          *(uint *)&actor_ptr->field_0xf4 = 0;
-          *(uint *)&actor_ptr->field_0xf0 = 0;
-          *(uint *)&actor_ptr->field_0xec = 0;
+          (actor_ptr->platform_orientation_delta).z = 0.0;
+          (actor_ptr->platform_orientation_delta).y = 0.0;
+          (actor_ptr->platform_orientation_delta).x = 0.0;
         }
         iStack_14 = iStack_14 + 4;
       }

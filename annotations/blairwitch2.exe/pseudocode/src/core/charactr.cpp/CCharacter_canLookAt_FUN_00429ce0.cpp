@@ -19,11 +19,11 @@ int __cdecl core_charactr_cpp_CCharacter_canLookAt_FUN_00429ce0(CCharacter *this
   
   EVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
   if ((int)EVar1 < 2) {
-    if ((this_ptr->model).field_0x2260 != '\0') {
+    if ((this_ptr->model).model_name[0] != '\0') {
       iVar2 = 0;
       state_name = "STAND";
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860
-                              ((CMotionController *)&this_ptr->model);
+                              (&(this_ptr->model).base);
       iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_00502fa0(this_ptr_00,state_name,iVar2);
       if (-1 < iVar2) {
         fVar3 = (float)core_motion_cpp_FUN_005038a0(&this_ptr->model,iVar2);

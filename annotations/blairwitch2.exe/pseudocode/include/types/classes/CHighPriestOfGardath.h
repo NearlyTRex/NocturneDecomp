@@ -11,7 +11,7 @@
 #pragma pack(push, 1)
 typedef struct CHighPriestOfGardath {
     CNPC base; // 0x0
-    char field_148296[100]; // 0x24348
+    char kill_event[100]; // 0x24348
 } CHighPriestOfGardath;
 #pragma pack(pop)
 

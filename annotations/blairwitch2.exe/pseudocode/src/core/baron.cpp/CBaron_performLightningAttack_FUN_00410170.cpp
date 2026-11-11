@@ -16,7 +16,7 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410170(CBaron *t
   int iVar3;
   byte bVar4;
   float afStackY_10d4 [36];
-  byte *apuStackY_1044 [929];
+  CMatrix3x4f *apCStackY_1044 [929];
   CFireEffect *this_ptr_00;
   CVector3f *start_position;
   CVector3f *end_position;
@@ -24,11 +24,7 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410170(CBaron *t
   uint *puVar5;
   float end_spread;
   byte local_1a0 [120];
-  SDamageInfo local_128 [4];
-  uint local_124;
-  uint local_f8;
-  CBaron *local_f4;
-  CBaron *local_f0;
+  SDamageInfo local_128;
   uint uStack_ec;
   float afStack_e8 [5];
   float fStack_d4;
@@ -47,15 +43,15 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410170(CBaron *t
   uint uStack_64;
   uint uStack_60;
   uint local_5c;
-  byte *local_58 [2];
+  CMatrix3x4f *local_58 [2];
   CVector3f CStack_50;
   uint local_44;
-  byte *local_40 [5];
+  CMatrix3x4f *local_40 [5];
   uint uStack_2c;
   uint uStack_20;
   byte local_14 [4];
   int iStack_10;
-  byte *local_c;
+  CMatrix3x4f *local_c;
   
   bVar4 = 0;
   iVar1 = core_hero_cpp_FUN_004d00c0(this_ptr,local_14);
@@ -64,9 +60,9 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410170(CBaron *t
   }
   core_actor_cpp_FUN_00408de0(this_ptr,iVar1 + 0x20);
   local_44 = local_a4;
-  local_40[(uint)bVar4 * -2] = (byte *)afStack_a0[(uint)bVar4 * -2];
+  local_40[(uint)bVar4 * -2] = (CMatrix3x4f *)afStack_a0[(uint)bVar4 * -2];
   local_40[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-       (byte *)afStack_a0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+       (CMatrix3x4f *)afStack_a0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&local_44);
   local_5c = local_40[2];
   local_58[(uint)bVar4 * -2] = local_40[(uint)bVar4 * -2 + 3];
@@ -77,7 +73,7 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410170(CBaron *t
     local_40[0] = local_58[0];
     local_40[1] = local_58[1];
   }
-  local_40[0] = (byte *)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_40[0]);
+  local_40[0] = (CMatrix3x4f *)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_40[0]);
   local_c = local_40[0];
   if (((float)local_40[0] < _DAT_005cb573) || (0x3f490fdb < (int)local_40[0])) {
     core_fire_cpp_CFireEffect_createLightningBolt_FUN_0049e6e0
@@ -111,8 +107,8 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410170(CBaron *t
       uStack_64 = uStack_d0;
       uStack_60 = uStack_cc;
     }
-    local_c = &this_ptr->field_0x1134;
-    core_xform_cpp_FUN_00591530(&DAT_0265370c,local_c + DAT_007bc4cc * 0x30);
+    local_c = (this_ptr->base).base.model.bone_transform.bone_model_matrices;
+    core_xform_cpp_FUN_00591530(&DAT_0265370c,local_c + DAT_007bc4cc);
     puVar5 = &uStack_ec;
     uStack_ec = uStack_2c;
     afStack_e8[(uint)bVar4 * -2] = (float)local_40[(uint)bVar4 * -2 + 6];
@@ -123,7 +119,7 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410170(CBaron *t
     *(float *)((int)&CStack_b0 + (uint)bVar4 * -8 + 4) = afStack_88[(uint)bVar4 * -2 + 6];
     *(float *)((int)&CStack_b0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
          afStack_88[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
-    core_xform_cpp_FUN_00591530(&DAT_0265370c,local_c + DAT_007bc4d0 * 0x30);
+    core_xform_cpp_FUN_00591530(&DAT_0265370c,local_c + DAT_007bc4d0);
     puVar5 = &uStack_8c;
     uStack_8c = uStack_c8;
     afStack_88[(uint)bVar4 * -2] = afStack_e8[(uint)bVar4 * -2 + 9];
@@ -144,17 +140,18 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410170(CBaron *t
               (this_ptr_00,start_position,end_position,iVar2,end_width,end_spread);
     core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_0049e760
               (0x01C3DEB4,&CStack_98,&CStack_50,1,0.5,4.0);
-    (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x34))(this_ptr,"baron-attack.wav");
+    (*((this_ptr->base).base.base.vtable._ub)->playSound)
+              ((CDemonActor *)this_ptr,"baron-attack.wav");
   }
-  core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(local_128);
-  local_f8 = 6;
-  local_124 = 0x42c80000;
-  local_f4 = this_ptr;
-  local_f0 = (CBaron *)this_ptr->target_actor;
-  if (local_f0 == (CBaron *)0x0) {
-    local_f0 = this_ptr;
+  core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(&local_128);
+  local_128.damage_type = DAMAGE_TYPE_ELECTROCUTE;
+  local_128.damage_amount = 100.0;
+  local_128.attacker = (CDemonActor *)this_ptr;
+  local_128.wielder = this_ptr->target_actor;
+  if ((CBaron *)local_128.wielder == (CBaron *)0x0) {
+    local_128.wielder = (CDemonActor *)this_ptr;
   }
-  (**(code **)(*(int *)(iVar1 + 0x2b0) + 0x110))(iVar1,local_128);
+  (**(code **)(*(int *)(iVar1 + 0x2b0) + 0x110))(iVar1,&local_128);
   *(uint *)(iVar1 + 0x1022c) = 0x40400000;
   return;
 }

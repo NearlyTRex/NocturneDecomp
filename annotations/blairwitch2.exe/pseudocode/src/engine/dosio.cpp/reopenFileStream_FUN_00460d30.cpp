@@ -18,7 +18,8 @@ void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00460d30(char *param_1,uint p
   char acStack_114 [264];
   
   _fflush(param_4);
-  ios_clear((ios *)(param_4 + *(int *)(*(int *)param_4 + 4)),0);
+  ios_clear((ios *)((int)&param_4->_ptr + *(int *)(param_4->_ptr + 4)),0)
+  ;
   engine_dosio_cpp_FUN_00460910(acStack_214,param_1,param_5);
   if ((param_6 & 0x52) == 0) {
     iVar1 = engine_dosio_cpp_findFile_FUN_00460980(acStack_214);
@@ -26,7 +27,7 @@ void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00460d30(char *param_1,uint p
       openFile(param_4,acStack_114,param_6,_DAT_006013f0);
       if (unaff_EBX != 0) {
         uStack_210 = 0x460df8;
-        istream_seekg(param_4 + 0x44,unaff_EBX);
+        istream_seekg(&param_4[2]._handle,unaff_EBX);
         return;
       }
     }

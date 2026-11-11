@@ -4,13 +4,22 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CMelee.h"
 
 // Structure: CCross
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 2120
 // Ghidra size: 0x848 (2120 bytes)
 #pragma pack(push, 1)
 typedef struct CCross {
-    char field_0[2120]; // 0x0
+    CMelee base; // 0x0, derived
+    float charge; // 0x828, ctor 0; process = charge_time/max; renderTransparent globe intensity/radius; particle scale
+    float charge_time; // 0x82c, process +dt while held by a living character else -dt, clamped 0..DAT_005ffe6c; FUN_005a6cf0 zeroes on release
+    float glow_intensity; // 0x830, ctor 0.7; process = charge*k*sin(pulse)+c; renderTransparent multiplies intensity by it
+    float pulse_timer; // 0x834, ctor 0; process +dt, wraps at DAT_005ffe70, sin phase
+    float blast_strength; // 0x838, FUN_005a6cf0 stores charge on release, scales burn radius; process scales blast particles by it
+    int unused_83c; // 0x83c, ctor and FUN_005a6cf0 store 0; no reader found
+    float blast_pending; // 0x840, FUN_005a6cf0 sets 1.0 when <= 0; process spawns blast particles while > 0 and clears it
+    int corona_queued; // 0x844, ctor 0; renderTransparent removes the globe when set, sets 1 after addQueuedCoronaGlobe
 } CCross;
 #pragma pack(pop)
 

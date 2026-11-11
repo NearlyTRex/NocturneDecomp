@@ -15,7 +15,7 @@ void core_course_cpp_FUN_00438a90(int *param_1,int param_2)
   
   core_course_cpp_FUN_00438c20(param_1);
   *param_1 = param_2;
-  iVar1 = FUN_005b8df8(param_2 * 0x1c);
+  iVar1 = operator_new_array(param_2 * 0x1c);
   param_1[1] = iVar1;
   if (iVar1 != 0) {
     return;

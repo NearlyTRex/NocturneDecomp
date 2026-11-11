@@ -9,15 +9,17 @@
 void unkafter_stranger_cpp_FUN_0045dd30(CHero *param_1)
 
 {
+  CDeformableModelInstance *this_ptr;
+  
+  this_ptr = &(param_1->base).model;
   core_hero_cpp_CHero_reset_FUN_004d02e0(param_1);
-  *(uint *)(param_1 + 0x25694) = 0;
-  *(uint *)(param_1 + 0x25698) = 0;
-  *(uint *)(param_1 + 0x256a4) = 0;
-  *(uint *)(param_1 + 0x2d04) = 0;
-  *(uint *)(param_1 + 0x2d08) = 0;
+  param_1[1].base.base.orient_matrix.m[2].x = 0.0;
+  param_1[1].base.base.orient_matrix.m[2].y = 0.0;
+  param_1[1].base.base.health = 0;
+  (param_1->base).layer_action_index = 0;
+  (param_1->base).layer_action_t = 0.0;
   core_motion_cpp_CMotionController_jumpToMotionByName_FUN_00503950
-            ((CMotionController *)(param_1 + 0x2b4),"stand",0.0);
-  core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-            ((CMotionController *)(param_1 + 0x2b4),0,1);
+            (&this_ptr->base,"stand",0.0);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr->base,0,1);
   return;
 }

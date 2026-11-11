@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonPod* g_CDemonPodPtr = 01e614b0
-;   undefined4 g_CDemonPodInstance.field404_0x194
+;   undefined4 g_CDemonPodInstance.base.vtable
 ;
 ; *****************************************************************************
 
@@ -28,7 +28,7 @@ section .text
         ;   Label: LAB_0051bfad
     PUSH ECX                            ; 0051bfb1
     MOV EAX,EDX                         ; 0051bfb2
-    MOV EDX,dword ptr [EDX + 0x194]     ; 0051bfb4 | g_CDemonPodInstance.field404_0x194
+    MOV EDX,dword ptr [EDX + 0x194]     ; 0051bfb4 | g_CDemonPodInstance.base.vtable
     PUSH EAX                            ; 0051bfba
     CALL dword ptr [EDX + 0x8]          ; 0051bfbb
     ADD ESP,0x8                         ; 0051bfbe

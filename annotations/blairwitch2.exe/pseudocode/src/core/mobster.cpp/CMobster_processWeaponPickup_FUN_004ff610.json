@@ -2,25 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 396,
-    "complexity_score": 547,
+    "complexity_score": 444,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 182,
-    "suspect_count": 32,
+    "pseudocode_lines": 184,
+    "suspect_count": 21,
     "suspect_types": [
       "bit_int_float_compare",
       "pointer_cast",
+      "pointer_truncation",
       "raw_address_pointer_store",
+      "shadow_pointer_walk",
       "stack_alignment_array",
       "stack_param",
       "stack_ref",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 578
+    "total_lines": 580
   },
   "cross_references": [
     {
@@ -287,17 +288,17 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 16,
-      "match": "afStackY_1084",
+      "match": "aiStackY_1084",
       "severity": "moderate",
-      "text": "float afStackY_1084 [27];",
+      "text": "int aiStackY_1084 [27];",
       "type": "stack_alignment_array"
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 17,
-      "match": "apfStackY_1018",
+      "match": "apCStackY_1018",
       "severity": "moderate",
-      "text": "float *apfStackY_1018 [959];",
+      "text": "CLocation *apCStackY_1018 [959];",
       "type": "stack_alignment_array"
     },
     {
@@ -309,96 +310,32 @@
       "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "if ((*(int *)(&(this_ptr->base).base.model.field_0x2140 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x2694",
-      "severity": "mild",
-      "text": "*(int *)&(this_ptr->base).base.field_0x2694 * 4) != 0) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x2698",
-      "severity": "mild",
-      "text": "(*(int *)&(this_ptr->base).base.field_0x2698 == 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 61,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "puVar5 = &(this_ptr->base).base.base.field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 74,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "pCVar2 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_20);",
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 74,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "CStack_78.z = *(float *)&pCVar2->field_0x20 - *local_28[1];",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 75,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "aCStack_6c[0].x = *(float *)&pCVar2->field_0x24 - local_28[1][1];",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 76,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "aCStack_6c[0].y = *(float *)&pCVar2->field_0x28 - local_28[1][2];",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 78,
-      "match": "(float *)((int)aCStack_6c",
+      "line": 83,
+      "match": "(int *)((int)aCStack_6c",
       "severity": "moderate",
-      "text": "afStack_98[(uint)bVar8 * -2 + 2] = *(float *)((int)aCStack_6c + (uint)bVar8 * -8);",
+      "text": "(&iStack_98)[(uint)bVar8 * -2 + 2] = *(int *)((int)aCStack_6c + (uint)bVar8 * -8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(uint *)((int)aCStack_6c",
+      "line": 85,
+      "match": "(int *)((int)aCStack_6c",
       "severity": "moderate",
-      "text": "*(uint *)((int)aCStack_6c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + -0x20) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 80,
-      "match": "(uint *)((int)aCStack_6c",
-      "severity": "moderate",
-      "text": "*(uint *)((int)aCStack_6c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 4);",
+      "text": "*(int *)((int)aCStack_6c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 85,
+      "line": 89,
       "match": "&stack0xfffffefc",
       "severity": "moderate",
       "text": "*(CDemonActor **)(&stack0xfffffefc + (int)local_18) = pCVar2;",
@@ -406,7 +343,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 89,
       "match": "(CDemonActor **)(&stack0xfffffefc + (int)local_18",
       "severity": "moderate",
       "text": "*(CDemonActor **)(&stack0xfffffefc + (int)local_18) = pCVar2;",
@@ -414,23 +351,15 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 85,
+      "line": 89,
       "match": "*(CDemonActor **)(&stack0xfffffefc",
       "severity": "moderate",
       "text": "*(CDemonActor **)(&stack0xfffffefc + (int)local_18) = pCVar2;",
       "type": "raw_address_pointer_store"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(float *)((int)local_28",
-      "severity": "moderate",
-      "text": "local_28[0] = (float *)((int)local_28[0] + 1);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 96,
+      "line": 100,
       "match": "&stack0xfffffef8",
       "severity": "moderate",
       "text": "pCVar2 = *(CDemonActor **)(&stack0xfffffef8 + iVar4 * 4);",
@@ -438,39 +367,15 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 96,
+      "line": 100,
       "match": "*(CDemonActor **)(&stack0xfffffef8",
       "severity": "moderate",
       "text": "pCVar2 = *(CDemonActor **)(&stack0xfffffef8 + iVar4 * 4);",
       "type": "raw_address_pointer_store"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 114,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "fVar9 = *(float *)puVar5 - *(float *)&this_ptr->target_weapon->field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 115,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "fVar10 = *(float *)&(this_ptr->base).base.base.field_0x28 -",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 116,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->target_weapon->field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 129,
+      "line": 133,
       "match": "in_stack_fffffefc",
       "severity": "moderate",
       "text": "(this_ptr->target_weapon,in_stack_fffffefc);",
@@ -478,7 +383,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 131,
+      "line": 135,
       "match": "&stack0xffffff2c",
       "severity": "moderate",
       "text": "puVar7 = (uint *)&stack0xffffff2c;",
@@ -486,47 +391,55 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 145,
-      "match": "(float *)((int)aCStack_6c",
-      "severity": "moderate",
-      "text": "*(float *)((int)aCStack_6c + (uint)bVar8 * -8 + -0x20) = afStack_50[(uint)bVar8 * -2];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 150,
+      "line": 165,
       "match": "(int *)((int)aCStack_6c",
       "severity": "moderate",
-      "text": "(&local_2c)[(uint)bVar8 * -2] = *(int *)((int)aCStack_6c + (uint)bVar8 * -8 + -0x20);",
+      "text": "*(int *)((int)aCStack_6c + (uint)bVar8 * -8 + 4) = aiStack_50[(uint)bVar8 * -2 + 6];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 161,
-      "match": "(float *)((int)aCStack_6c",
+      "line": 166,
+      "match": "(int *)((int)aCStack_6c",
       "severity": "moderate",
-      "text": "*(float *)((int)aCStack_6c + (uint)bVar8 * -8 + 4) = afStack_50[(uint)bVar8 * -2 + 6];",
+      "text": "*(int *)((int)aCStack_6c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 162,
-      "match": "(float *)((int)aCStack_6c",
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 73,
+      "match": "(int)local_24",
       "severity": "moderate",
-      "text": "*(float *)((int)aCStack_6c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",
-      "type": "pointer_cast"
+      "text": "while ((int)local_24 < g_CDemonSetPtr->actor_count) {",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 132,
+      "line": 136,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 91,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_28 = (CLocation *)((int)&(local_28->position).x + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_28` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `local_28->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 91,
+      "match": "local_28 = (T *)((int)&(local_28->FIELD).SUBFIELD + CONST)",
+      "severity": "moderate",
+      "text": "local_28 = (CLocation *)((int)&(local_28->position).x + 1);",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x41700001 is the IEEE 754 bit pattern of 15f. Rewrite in a .keep as a plain float compare against 15f.",
-      "line": 84,
+      "line": 88,
       "match": "(int)fVar9 < 0x41700001",
       "severity": "moderate",
       "text": "if (((float)_DAT_005dee3d <= fVar9) && ((int)fVar9 < 0x41700001)) {",

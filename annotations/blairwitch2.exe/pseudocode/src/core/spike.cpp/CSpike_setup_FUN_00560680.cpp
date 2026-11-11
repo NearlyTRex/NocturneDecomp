@@ -41,9 +41,9 @@ void __cdecl core_spike_cpp_CSpike_setup_FUN_00560680(CSpike *this_ptr)
        *(uint *)((int)&stack0xffffffdc + (uint)bVar1 * 0xfffffffe * 4);
   *(uint *)((int)&stack0xffffffc8 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
        *(uint *)(&stack0xffffffe0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-  fStack_4c = *(float *)&(this_ptr->base).field_0x20 - fStack_40;
-  fStack_48 = *(float *)&(this_ptr->base).field_0x24 - fStack_3c;
-  fStack_44 = *(float *)&(this_ptr->base).field_0x28 - fStack_38;
+  fStack_4c = (this_ptr->base).location.position.x - fStack_40;
+  fStack_48 = (this_ptr->base).location.position.y - fStack_3c;
+  fStack_44 = (this_ptr->base).location.position.z - fStack_38;
   fStack_1c = fStack_4c;
   (&stack0xffffffe8)[(uint)bVar1 * 0xfffffffe] =
        (float)*(uint *)((int)&stack0xffffffb8 + (uint)bVar1 * -8);

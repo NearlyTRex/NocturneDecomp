@@ -2,15 +2,43 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CShadow
-// Stub: size from Watcom RTTI, fields not yet recovered
+// CWerewolf-style tail; ctor 0053c200, setup FUN_0053c310, process FUN_0053c500, archive FUN_0053e860 (keys pinned below)
 // Ghidra size: 0x10b80 (68480 bytes)
 #pragma pack(push, 1)
 typedef struct CShadow {
-    char field_0[68480]; // 0x0
+    CEnemy base; // 0x0, derived; unchanged
+    int type; // 0x10af8, archive (class version >= 5) integer; ctor zeroes; process compares
+    int bone_indices[7]; // 0x10afc, setup findBone Spine2, L/R Finger1, Head, Pelvis, Spine2, Head
+    int light_up_eyes; // 0x10b18, ctor 1; archive "lightUpEyes"
+    uint sfx_handle; // 0x10b1c, setup zeroes; sound players FUN_0053df40..
+    float howl_cooldown; // 0x10b20, setup getRandomFloatFromRange(10,30); process
+    uint sfx_handles[2]; // 0x10b24, setup zeroes; process
+    struct CDemonActor* chain_anchor; // 0x10b2c, archive "chainAnchor"; ctor zeroes
+    float chain_length; // 0x10b30, archive "chainLength"; ctor 5.0
+    struct CDemonActor* alpha1; // 0x10b34, archive "alpha1"
+    struct CDemonActor* alpha2; // 0x10b38, archive "alpha2"
+    float eye_glow_phase; // 0x10b3c, ctor zeroes; process FADD
+    int phase; // 0x10b40, archive "phase"
+    float phase_timer; // 0x10b44, archive "phaseTimer"; ctor global
+    int is_shadow_beast; // 0x10b48, setup 1 for SHADOWBEAST.DFM / WERE_HEADLESS.DFM
+    char field_68428[16]; // 0x10b4c
+    int walk_target; // 0x10b5c, ctor zeroes; process walk helper target
+    int walk_status; // 0x10b60, process walk helper out-param
+    float walk_timeout; // 0x10b64, ctor zeroes; process counts down
+    float periodic_timer; // 0x10b68, ctor 10.0; process counts down
+    int attack_loop_count; // 0x10b6c, process INC/CMP
+    int is_opaque; // 0x10b70, setup/process; renderOpaque FUN_0053e640 tests
+    float fade_scale; // 0x10b74, ctor 1.0; process
+    int fade_alpha; // 0x10b78, process FISTP; renderTransparent FUN_0053e6c0
+    int corona_added; // 0x10b7c, ctor zeroes; process sets; renderTransparent tests
 } CShadow;
 #pragma pack(pop)
 

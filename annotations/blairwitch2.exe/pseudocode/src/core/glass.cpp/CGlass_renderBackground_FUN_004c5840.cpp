@@ -44,10 +44,10 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004c5840(CGlass *this_pt
     }
     core_box_cpp_FUN_0041a840(auStack_3c);
     if (this_ptr->shattered == 0) {
-      texture = (SMRGLTextureBasic *)&this_ptr->field_0x2c0;
+      texture = &this_ptr->glass_texture;
     }
     else {
-      texture = (SMRGLTextureBasic *)&this_ptr->field_0x4d0;
+      texture = &this_ptr->broken_texture;
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00(DAT_0060b280,texture);
     pCVar2 = this_ptr->broken_vertices;
@@ -67,18 +67,18 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004c5840(CGlass *this_pt
     core_set_cpp_CDemonSet_rotateVerticies_FUN_00531e90
               (g_CDemonSetPtr,this_ptr->broken_vertex_count,this_ptr->render_vertices);
     if (0 < this_ptr->broken_polygon_count) {
-      poly = (SMRGLPrimitivePoly *)&this_ptr->field_0x808;
+      poly = (SMRGLPrimitivePoly *)this_ptr->broken_quads;
       pCVar4 = this_ptr;
       do {
-        *(uint *)&pCVar4->field_0x810 = 0;
+        pCVar4->broken_quads[0].base.surface_normal.A.i = 0;
         this_ptr_00 = DAT_0060b280;
-        *(uint *)&pCVar4->field_0x814 = 0;
+        pCVar4->broken_quads[0].base.surface_normal.B.i = 0;
         iVar1 = iVar1 + 1;
-        *(uint *)&pCVar4->field_0x818 = 0;
-        *(uint *)&pCVar4->field_0x81c = 0;
+        pCVar4->broken_quads[0].base.surface_normal.C.i = 0;
+        pCVar4->broken_quads[0].base.surface_normal.D.i = 0;
         pCVar4 = (CGlass *)((pCVar4->base).orient_matrix.m + 1);
         engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00(this_ptr_00,poly,0xc1);
-        poly = poly + 0x48;
+        poly = (SMRGLPrimitivePoly *)(poly->vertices + 4);
       } while (iVar1 < this_ptr->broken_polygon_count);
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10(&this_ptr->base);

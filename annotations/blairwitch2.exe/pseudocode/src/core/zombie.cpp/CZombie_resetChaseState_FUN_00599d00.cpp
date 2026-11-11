@@ -18,8 +18,7 @@ void __cdecl core_zombie_cpp_CZombie_resetChaseState_FUN_00599d00(CZombie *this_
   iVar1 = 0;
   state_name = "CHASE_2";
   this_ptr_01 = &(this_ptr->base).base.model;
-  this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860
-                          ((CMotionController *)this_ptr_01);
+  this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860(&this_ptr_01->base);
   iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_00502fa0(this_ptr_00,state_name,iVar1);
   if (iVar1 == 0x16) {
     if (this_ptr->always_chase_fast == 0) {
@@ -32,10 +31,9 @@ void __cdecl core_zombie_cpp_CZombie_resetChaseState_FUN_00599d00(CZombie *this_
       iVar1 = 0x16;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-              ((CMotionController *)this_ptr_01,iVar1,force_immediate);
+              (&this_ptr_01->base,iVar1,force_immediate);
     return;
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-            ((CMotionController *)this_ptr_01,1,1);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_01->base,1,1);
   return;
 }

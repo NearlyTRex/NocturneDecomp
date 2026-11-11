@@ -17,16 +17,16 @@ CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_ctor_FUN_0043a4c0(CCrossbow *thi
   *(CWeapon_full_vtable **)(pCVar2[-2].off_event + 0x60) = &g_CCrossbowVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
             ((CKeyFramedModelInstance *)&pCVar2[-2].intensity,(char *)0x5ce210);
-  *(uint *)&pCVar2[-1].base.field_0x184 = 0;
+  pCVar2[-1].base.particle_systems[0].fade_timer = 0.0;
   pCVar2[-1].render_corona = 0;
   (pCVar2->flame_size).x = 0.45;
   (pCVar2->flame_size).y = 0.85;
   (pCVar2->flame_size).z = 0.45;
-  *(uint *)&pCVar2[-1].base.field_0x15c = 0;
-  *(uint *)&pCVar2[-1].base.field_0x160 = 0;
-  *(uint *)&pCVar2[-1].base.field_0x164 = 1;
-  *(uint *)&pCVar2[-1].base.field_0x168 = 0;
-  *(uint *)&pCVar2[-1].base.field_0x16c = 0x42480000;
-  *(uint *)&pCVar2[-1].base.field_0x170 = 0;
-  return (CCrossbow *)&pCVar2[-2].base.field_0x128;
+  pCVar2[-1].base.particle_systems[0].position.z = 0.0;
+  pCVar2[-1].base.particle_systems[0].fade_current = 0.0;
+  pCVar2[-1].base.particle_systems[0].active = 1;
+  pCVar2[-1].base.particle_systems[0].owner = (CDemonActor *)0x0;
+  pCVar2[-1].base.particle_systems[0].max_particles = 0x42480000;
+  pCVar2[-1].base.particle_systems[0].next_particle = 0;
+  return (CCrossbow *)&pCVar2[-2].base.dead2;
 }

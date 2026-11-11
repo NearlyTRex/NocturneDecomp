@@ -24,9 +24,9 @@
 ; Called Functions:
 ;   engine_2d.c_FUN_00401590
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940
-;   support_trstream.cpp_FUN_0057d390
-;   unkaddr_0057b9a0.cpp_FUN_0057cfe0
-;   unkaddr_0057b9a0.cpp_FUN_0057d180
+;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390
+;   unkaddr_0057b9a0.cpp_CInStreamFile_close_FUN_0057d180
+;   unkaddr_0057b9a0.cpp_CInStreamFile_read_FUN_0057cfe0
 ;   unkclass_instream.cpp_CInStreamFile_ctor_FUN_0057cd50
 ;   unkclass_instream.cpp_CInStreamFile_dtor_FUN_0057cec0
 ;   wincore_wddvmem.cpp_FUN_00588790
@@ -90,8 +90,8 @@ section .text
     PUSH 0x5ca030                       ; 004010b4 | DAT_005ca030
     LEA EAX,[ESP + 0x8]                 ; 004010b9
     PUSH EAX                            ; 004010bd
-    CALL support_trstream.cpp_FUN_0057d390 ; 004010be
-        ;   XREF to: 0057d390 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057d390()
+    CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390 ; 004010be
+        ;   XREF to: 0057d390 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390(CInStreamFile * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 004010c3
     TEST EAX,EAX                        ; 004010c6
     JNZ 0x004010de                      ; 004010c8
@@ -110,13 +110,13 @@ section .text
     PUSH 0x1c35b38                      ; 004010e3
     LEA EAX,[ESP + 0x8]                 ; 004010e8
     PUSH EAX                            ; 004010ec
-    CALL unkaddr_0057b9a0.cpp_FUN_0057cfe0 ; 004010ed
-        ;   XREF to: 0057cfe0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057cfe0()
+    CALL unkaddr_0057b9a0.cpp_CInStreamFile_read_FUN_0057cfe0 ; 004010ed
+        ;   XREF to: 0057cfe0 (UNCONDITIONAL_CALL)  ; int unkaddr_0057b9a0.cpp_CInStreamFile_read_FUN_0057cfe0(CInStreamFile * this_ptr, undefined4 * param_2, uint param_3)
     ADD ESP,0xc                         ; 004010f2
     MOV EAX,ESP                         ; 004010f5
     PUSH EAX                            ; 004010f7
-    CALL unkaddr_0057b9a0.cpp_FUN_0057d180 ; 004010f8
-        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057d180()
+    CALL unkaddr_0057b9a0.cpp_CInStreamFile_close_FUN_0057d180 ; 004010f8
+        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; undefined4 unkaddr_0057b9a0.cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 004010fd
     PUSH 0x0                            ; 00401100
     LEA EAX,[ESP + 0x4]                 ; 00401102

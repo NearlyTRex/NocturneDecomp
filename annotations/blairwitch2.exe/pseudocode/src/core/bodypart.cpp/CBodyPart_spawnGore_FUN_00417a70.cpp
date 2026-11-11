@@ -16,7 +16,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_spawnGore_FUN_00417a70(CBodyPart *this_
     return;
   }
   core_gore_cpp_CGore_spawnBloodParticles_FUN_004c9730
-            (g_CGorePtr,(CVector3f *)&(this_ptr->base).field_0x20,(CVector3f *)&DAT_0265370c,
+            (g_CGorePtr,&(this_ptr->base).location.position,(CVector3f *)&DAT_0265370c,
              this_ptr->blood_type);
   return;
 }

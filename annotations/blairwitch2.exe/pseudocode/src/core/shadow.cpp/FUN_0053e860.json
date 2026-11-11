@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 275,
+    "complexity_score": 260,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 21,
+    "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "primitive_walker_cast",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 143
@@ -240,7 +239,7 @@
       "line": 15,
       "match": "(int *)&param_1[",
       "severity": "moderate",
-      "text": "((int *)&param_1[1].base.base.field_0x20,\"lightUpEyes\");",
+      "text": "((int *)&param_1[1].base.base.location,\"lightUpEyes\");",
       "type": "primitive_walker_cast"
     },
     {
@@ -248,16 +247,8 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "((int *)&param_1[1].base.base.field_0x20,\"lightUpEyes\");",
+      "text": "((int *)&param_1[1].base.base.location,\"lightUpEyes\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "((int *)&param_1[1].base.base.field_0x20,\"lightUpEyes\");",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

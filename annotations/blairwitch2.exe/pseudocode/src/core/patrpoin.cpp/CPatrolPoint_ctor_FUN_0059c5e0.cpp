@@ -13,7 +13,7 @@ CPatrolPoint * core_patrpoin_cpp_CPatrolPoint_ctor_FUN_0059c5e0(CPatrolPoint *th
 {
   CWayPoint *pCVar1;
   
-  pCVar1 = core_waypoint_cpp_CWayPoint_ctor_FUN_00587d70((CWayPoint *)this_ptr);
+  pCVar1 = core_waypoint_cpp_CWayPoint_ctor_FUN_00587d70(&this_ptr->base);
   (pCVar1->base).base.vtable._ub = &g_CPatrolPointVTable;
   *(uint *)&pCVar1->field_0x6b8 = 1;
   return (CPatrolPoint *)pCVar1;

@@ -19,7 +19,7 @@
 ;   unkaddr_0059d350.cpp_FUN_0059d7f0
 ;   unkaddr_0059d350.cpp_FUN_0059d990
 ;   unkaddr_0059d350.cpp_FUN_0059dc80
-;   unkafter_basicene.cpp_FUN_0059e3b0
+;   unkafter_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     SUB ESP,0x48                        ; 005aba44
     MOV EBP,dword ptr [ESP + 0x5c]      ; 005aba47
     PUSH EBP                            ; 005aba4b
-    CALL unkafter_basicene.cpp_FUN_0059e3b0 ; 005aba4c
-        ;   XREF to: 0059e3b0 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059e3b0()
+    CALL unkafter_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0 ; 005aba4c
+        ;   XREF to: 0059e3b0 (UNCONDITIONAL_CALL)  ; int unkafter_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0(CBasicEnemy * this_ptr)
     ADD ESP,0x4                         ; 005aba51
     MOV EBX,EAX                         ; 005aba54
     PUSH 0x5f0cc3                       ; 005aba56

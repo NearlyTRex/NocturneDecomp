@@ -38,6 +38,6 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_start_FUN_00557dc0(CWavOutDevice *thi
     return 1;
   }
 LAB_00557e70:
-  (**(code **)(*(int *)this_ptr + 8))(this_ptr);
+  (*((this_ptr->base).vtable)->reset)(&this_ptr->base);
   return 0;
 }

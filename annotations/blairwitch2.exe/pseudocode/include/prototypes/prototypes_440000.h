@@ -76,7 +76,7 @@ void __cdecl core_dcube_cpp_clipPolygonAgainstMaxZ_FUN_00444650(float max_z_plan
 void __cdecl core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_004447b0(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base);
 float core_dcube_cpp_FUN_00444a40(undefined4 *param_1,float *param_2,float *param_3);
 int __cdecl core_dcube_cpp_intersectXZCylinder_FUN_00444c90(SIntersectXZCylinder *cylinder);
-undefined4 __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00444f70(SIntersectXZCylinder *param_1,undefined4 *param_2,undefined4 *param_3);
+undefined4 __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00444f70(SIntersectXZCylinder *param_1,float *param_2,float *param_3);
 uint __cdecl core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_00445010(int *param_1,SIntersectXZCylinder *param_2);
 undefined4 __cdecl core_dcube_cpp_intersectVerticalCylinderSegment_FUN_004454b0(float *param_1,float *param_2,float param_3,float *param_4);
 uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00445620(CDemonCubeTriangle *triangle,CVector3f *cylinder_center,float cylinder_radius,float *out_height);
@@ -137,7 +137,7 @@ void __cdecl core_dimage_cpp_FUN_00448f40(CDemonImage *this_ptr);
 void __cdecl core_dimage_cpp_FUN_00448fa0(CDemonImage *this_ptr);
 uint core_dimage_cpp_FUN_00448fcc(undefined4 param_1,uint param_2,uint param_3,uint param_4);
 ushort __cdecl core_dimage_cpp_CDemonImage_packColor_FUN_00448fd0(CDemonImage *this_ptr,uint red,uint green,uint blue);
-void core_dimage_cpp_FUN_0044902e(CDemonImage *param_1,CDemonImage *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+void core_dimage_cpp_FUN_0044902e(CDemonImage *param_1,CDemonImage *param_2,int param_3,int param_4,undefined4 param_5 );
 void __cdecl core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(CMatrix3x3f *this_ptr,CVector3f *euler_angles);
 void __cdecl core_dirmat_cpp_CMatrix3x3f_invert_FUN_00449370(CMatrix3x3f *this_ptr);
 void core_dirmat_cpp_FUN_00449530(float *param_1,float *param_2);

@@ -9,5 +9,5 @@
 SPart * __cdecl core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_005430e0(CDeformableModel *this_ptr,int part_index)
 
 {
-  return (SPart *)(&this_ptr->field_0xc04 + part_index * 0x60);
+  return this_ptr->parts + part_index;
 }

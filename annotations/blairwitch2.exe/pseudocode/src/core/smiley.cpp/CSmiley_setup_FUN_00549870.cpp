@@ -92,12 +92,12 @@ void __cdecl core_smiley_cpp_CSmiley_setup_FUN_00549870(CSmiley *this_ptr)
   this_ptr->dismember_hit_count = 0;
   this_ptr->model_variant = 1;
   iVar1 = _stricmp
-                    (&(this_ptr->base).base.model.field_0x2260,"smiley2.dfm");
+                    ((this_ptr->base).base.model.model_name,"smiley2.dfm");
   if (iVar1 == 0) {
     this_ptr->model_variant = 2;
   }
   iVar1 = _stricmp
-                    (&(this_ptr->base).base.model.field_0x2260,"smiley3.dfm");
+                    ((this_ptr->base).base.model.model_name,"smiley3.dfm");
   if (iVar1 != 0) {
     return;
   }

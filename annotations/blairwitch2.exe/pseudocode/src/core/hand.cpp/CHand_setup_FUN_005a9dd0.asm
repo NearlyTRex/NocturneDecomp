@@ -10,8 +10,8 @@
 ;   TerminatedCString s_Bip01_R_Hand_005f0a0f
 ;
 ; Called Functions:
+;   core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80
-;   unkafter_basicene.cpp_FUN_0059e6a0
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
         ;   Label: core_hand.cpp_CHand_setup_FUN_005a9dd0
     MOV EBX,dword ptr [ESP + 0x8]       ; 005a9dd1
     PUSH EBX                            ; 005a9dd5
-    CALL unkafter_basicene.cpp_FUN_0059e6a0 ; 005a9dd6
-        ;   XREF to: 0059e6a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059e6a0()
+    CALL core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0 ; 005a9dd6
+        ;   XREF to: 0059e6a0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0(CBasicEnemy * this_ptr)
     ADD ESP,0x4                         ; 005a9ddb
     PUSH 0x1                            ; 005a9dde
     PUSH 0x5f0a0f                       ; 005a9de0 | = "Bip01 R Hand"

@@ -26,14 +26,14 @@ void __cdecl core_bat_cpp_CBat_process_FUN_00411200(CBat *this_ptr,float delta_t
   int iStack_14;
   
   bVar4 = 0;
-  fStack_38 = *(float *)&(this_ptr->base).field_0x20;
-  fStack_34 = *(float *)&(this_ptr->base).field_0x24;
-  fStack_30 = *(float *)&(this_ptr->base).field_0x28;
+  fStack_38 = (this_ptr->base).location.position.x;
+  fStack_34 = (this_ptr->base).location.position.y;
+  fStack_30 = (this_ptr->base).location.position.z;
   this_ptr->param = this_ptr->course_speed * delta_time + this_ptr->param;
   core_bat_cpp_CBat_updateCoursePosition_FUN_004114e0(this_ptr);
-  fStack_3c = *(float *)&(this_ptr->base).field_0x24 - fStack_30;
-  fStack_38 = *(float *)&(this_ptr->base).field_0x28 - fStack_2c;
-  fStack_2c = *(float *)&(this_ptr->base).field_0x20 - fStack_34;
+  fStack_3c = (this_ptr->base).location.position.y - fStack_30;
+  fStack_38 = (this_ptr->base).location.position.z - fStack_2c;
+  fStack_2c = (this_ptr->base).location.position.x - fStack_34;
   *(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8) =
        *(uint *)((int)&stack0xffffffc4 + (uint)bVar4 * -8);
   *(uint *)((int)&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
@@ -64,9 +64,9 @@ void __cdecl core_bat_cpp_CBat_process_FUN_00411200(CBat *this_ptr,float delta_t
     iVar2 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handle);
     if (iVar2 == 0) {
       iVar2 = sound_sndmain_cpp_FUN_005515e0
-                        ((double)*(float *)&(this_ptr->base).field_0x20,
-                         (double)*(float *)&(this_ptr->base).field_0x24,
-                         (double)*(float *)&(this_ptr->base).field_0x28,0x42480000);
+                        ((double)(this_ptr->base).location.position.x,
+                         (double)(this_ptr->base).location.position.y,
+                         (double)(this_ptr->base).location.position.z,0x42480000);
       if (iVar2 != 0) {
         uVar3 = (*((this_ptr->base).vtable._ub)->playAmbientSound)
                           (&this_ptr->base,this_ptr->periodic_sound);

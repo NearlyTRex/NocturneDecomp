@@ -10,7 +10,7 @@ ECollisionType __cdecl core_glass_cpp_CGlass_getCollisionType_FUN_004c5b80(CGlas
 
 {
   if ((this_ptr->shattered != 0) && (this_ptr->mirror_flag == 0)) {
-    *(uint *)&(this_ptr->base).field_0x100 = 1;
+    (this_ptr->base).collision_disabled = 1;
     return COLLISION_TYPE_NONE;
   }
   return COLLISION_TYPE_MESH;

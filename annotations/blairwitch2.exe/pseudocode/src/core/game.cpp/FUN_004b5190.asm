@@ -184,7 +184,7 @@ section .text
         ;   Label: LAB_004b5284
     MOV EAX,[0x00616044]                ; 004b5289 | g_CFieldNotesPtr
         ;   Label: LAB_004b5289
-    CMP dword ptr [EAX + 0x40],0x0      ; 004b528e | g_CFieldNotesInstance.field64_0x40
+    CMP dword ptr [EAX + 0x40],0x0      ; 004b528e | g_CFieldNotesInstance.is_displayed
     JZ 0x004b5c7a                       ; 004b5292
         ;   XREF to: 004b5c7a (CONDITIONAL_JUMP)  ; LAB_004b5c7a
     MOV ECX,dword ptr [0x026677e0]      ; 004b5298 | DAT_026677e0
@@ -320,7 +320,7 @@ section .text
     CALL core_netgame.cpp_CNetGame_processServerFrame_FUN_0050ecb0 ; 004b5417
         ;   XREF to: 0050ecb0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_processServerFrame_FUN_0050ecb0(CNetGame * this_ptr)
     MOV EAX,[0x00616044]                ; 004b541c | g_CFieldNotesPtr
-    MOV EDI,dword ptr [EAX + 0x40]      ; 004b5421 | g_CFieldNotesInstance.field64_0x40
+    MOV EDI,dword ptr [EAX + 0x40]      ; 004b5421 | g_CFieldNotesInstance.is_displayed
     ADD ESP,0x4                         ; 004b5424
     TEST EDI,EDI                        ; 004b5427
     JZ 0x004b5ccc                       ; 004b5429
@@ -366,7 +366,7 @@ section .text
     CALL engine_special.cpp_FUN_0055f500 ; 004b54b1
         ;   XREF to: 0055f500 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_0055f500()
     MOV EAX,[0x00616044]                ; 004b54b6 | g_CFieldNotesPtr
-    CMP dword ptr [EAX + 0x40],0x0      ; 004b54bb | g_CFieldNotesInstance.field64_0x40
+    CMP dword ptr [EAX + 0x40],0x0      ; 004b54bb | g_CFieldNotesInstance.is_displayed
     JZ 0x004b5cfa                       ; 004b54bf
         ;   XREF to: 004b5cfa (CONDITIONAL_JUMP)  ; LAB_004b5cfa
     PUSH EAX                            ; 004b54c5

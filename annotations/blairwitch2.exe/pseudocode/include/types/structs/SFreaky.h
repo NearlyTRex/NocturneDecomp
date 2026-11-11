@@ -2,15 +2,24 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDraculaBride;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: SFreaky
-// Stub: size from Watcom RTTI, fields not yet recovered
+// array DAT_01ba5798 of 6 (staticInit 00462af0, RTTI 84); FUN_004658e0 (update) uses [0x14] owner, [7] t, +8/+0xb/+0xe/+0x11 control points, +1 position, +4 tangent, stride 0x15 dwords; FUN_00465400 (start) stores owner at puVar5[0x14].
 // Ghidra size: 0x54 (84 bytes)
 #pragma pack(push, 1)
 typedef struct SFreaky {
-    char field_0[84]; // 0x0
+    uint sfx_handle; // 0x0, as bw1
+    CVector3f position; // 0x4, as bw1
+    CVector3f tangent; // 0x10, as bw1
+    float t; // 0x1c, as bw1
+    CVector3f control_points[4]; // 0x20, as bw1
+    struct CDraculaBride* owner; // 0x50, as bw1
 } SFreaky;
 #pragma pack(pop)
 

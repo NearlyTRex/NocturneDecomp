@@ -23,13 +23,13 @@ void core_mission_cpp_FUN_004fc820(int *param_1)
       core_set_cpp_CDemonSet_buildActorTypeLists_FUN_00534820(g_CDemonSetPtr);
       return;
     }
-    if (*param_1 == *(int *)&pCVar1->field_0x2c) {
+    if (*param_1 == (pCVar1->location).area_id) {
       if (pCVar1->lifecycle_state == ACTOR_NOT_CREATED) {
-        if (pCVar1->field_0x78 != '\0') {
-          iVar3 = _stricmp(&pCVar1->field_0x78,&DAT_005de812);
+        if (pCVar1->create_event[0] != '\0') {
+          iVar3 = _stricmp(pCVar1->create_event,&DAT_005de812);
           if ((iVar3 != 0) &&
              (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                                (0x01C38BC0,&pCVar1->field_0x78), iVar3 == 0)) goto LAB_004fc91a;
+                                (0x01C38BC0,pCVar1->create_event), iVar3 == 0)) goto LAB_004fc91a;
         }
         iVar3 = core_actor_cpp_randomChance_FUN_0040d060(pCVar1->create_prob);
         if (iVar3 == 0) {
@@ -53,6 +53,6 @@ LAB_004fc91a:
         if (pCVar1->lifecycle_state == ACTOR_CREATED) goto LAB_004fc89c;
       }
     }
-    pCVar1 = *(CDemonActor **)&pCVar1->field_0x14c;
+    pCVar1 = pCVar1->next_actor;
   } while( true );
 }

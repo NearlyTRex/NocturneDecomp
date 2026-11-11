@@ -59,8 +59,8 @@
 ;   core_actor.cpp_FUN_00408d70
 ;   core_actor.cpp_FUN_00408de0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
+;   core_fire.cpp_CFireEffect_createMuzzleEffect_FUN_0049d170
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230
-;   core_fire.cpp_FUN_0049d170
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00537e30
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00537eb0
@@ -217,8 +217,8 @@ section .text
     PUSH EAX                            ; 005a567d
     MOV EDI,dword ptr [0x00614d30]      ; 005a567e | DAT_00614d30
     PUSH EDI                            ; 005a5684
-    CALL core_fire.cpp_FUN_0049d170     ; 005a5685
-        ;   XREF to: 0049d170 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0049d170()
+    CALL core_fire.cpp_CFireEffect_createMuzzleEffect_FUN_0049d170 ; 005a5685
+        ;   XREF to: 0049d170 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffect * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 005a568a
     PUSH 0xffff                         ; 005a568d
     PUSH 0x0                            ; 005a5692

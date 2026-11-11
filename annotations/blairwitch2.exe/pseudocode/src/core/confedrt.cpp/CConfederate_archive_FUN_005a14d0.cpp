@@ -9,6 +9,6 @@
 void __cdecl core_confedrt_cpp_CConfederate_archive_FUN_005a14d0(CConfederate *this_ptr)
 
 {
-  core_twigzomb_cpp_CTwigZombie_archive_FUN_0059fc10((CTwigZombie *)this_ptr);
+  core_basicene_cpp_CBasicEnemy_archive_FUN_0059fc10(&this_ptr->base);
   return;
 }

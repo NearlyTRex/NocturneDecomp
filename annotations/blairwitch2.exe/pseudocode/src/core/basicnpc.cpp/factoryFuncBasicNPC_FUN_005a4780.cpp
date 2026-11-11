@@ -11,7 +11,7 @@ void core_basicnpc_cpp_factoryFuncBasicNPC_FUN_005a4780(void)
 {
   CBasicNPC *this_ptr;
   
-  this_ptr = (CBasicNPC *)debugAllocTracked1(0x11850);
+  this_ptr = (CBasicNPC *)operator_new(0x11850);
   if (this_ptr == (CBasicNPC *)0x0) {
     return;
   }

@@ -10,49 +10,111 @@ void core_stranger_cpp_FUN_005628b4(void)
 
 {
   uint uVar1;
-  char cVar2;
+  uint uVar2;
+  uint uVar3;
+  CFlame *pCVar4;
+  char cVar5;
   char *in_EAX;
   CCharacter *unaff_EBX;
-  char *pcVar3;
+  char *pcVar6;
   
-  cVar2 = (char)in_EAX + *in_EAX;
-  pcVar3 = (char *)CONCAT31((int3)((uint)in_EAX >> 8),cVar2);
-  *pcVar3 = *pcVar3 + cVar2;
-  *pcVar3 = *pcVar3 + cVar2;
-  *(uint *)&unaff_EBX[2].field_0x4238 = 0;
-  *(uint *)&unaff_EBX[2].field_0x41d4 = 0;
-  *(uint *)&unaff_EBX[2].field_0x41dc = 0;
-  *(uint *)&unaff_EBX[2].field_0x41e8 = 0;
-  *(uint *)&unaff_EBX[2].field_0x41ec = 0;
+  cVar5 = (char)in_EAX + *in_EAX;
+  pcVar6 = (char *)CONCAT31((int3)((uint)in_EAX >> 8),cVar5);
+  *pcVar6 = *pcVar6 + cVar5;
+  *pcVar6 = *pcVar6 + cVar5;
+  pCVar4 = unaff_EBX[2].flames + 2;
+  (pCVar4->base).actor_name[0x18] = '\0';
+  (pCVar4->base).actor_name[0x19] = '\0';
+  (pCVar4->base).actor_name[0x1a] = '\0';
+  (pCVar4->base).actor_name[0x1b] = '\0';
+  pCVar4 = unaff_EBX[2].flames;
+  pCVar4[1].off_event[0x3c] = '\0';
+  pCVar4[1].off_event[0x3d] = '\0';
+  pCVar4[1].off_event[0x3e] = '\0';
+  pCVar4[1].off_event[0x3f] = '\0';
+  pCVar4 = unaff_EBX[2].flames;
+  pCVar4[1].off_event[0x44] = '\0';
+  pCVar4[1].off_event[0x45] = '\0';
+  pCVar4[1].off_event[0x46] = '\0';
+  pCVar4[1].off_event[0x47] = '\0';
+  pCVar4 = unaff_EBX[2].flames;
+  pCVar4[1].off_event[0x50] = '\0';
+  pCVar4[1].off_event[0x51] = '\0';
+  pCVar4[1].off_event[0x52] = '\0';
+  pCVar4[1].off_event[0x53] = '\0';
+  pCVar4 = unaff_EBX[2].flames;
+  pCVar4[1].off_event[0x54] = '\0';
   uVar1 = 0x41200000;
-  *(uint *)&unaff_EBX[2].field_0x41f0 = 0;
-  *(uint *)&unaff_EBX[2].field_0x4190 = uVar1;
-  *(uint *)&unaff_EBX[2].field_0x425c = 0xf149f2ca;
-  *(uint *)&unaff_EBX[2].field_0x4244 = 0xf149f2ca;
-  *(uint *)&unaff_EBX[2].field_0x41a0 = *(uint *)&unaff_EBX[2].field_0x419c;
-  *(uint *)&unaff_EBX[2].field_0x4198 = *(uint *)&unaff_EBX[2].field_0x4194;
-  *(uint *)&unaff_EBX[2].field_0x41c0 = *(uint *)&unaff_EBX[2].field_0x41bc;
-  *(uint *)&unaff_EBX[2].field_0x41b8 = *(uint *)&unaff_EBX[2].field_0x41b4;
+  pCVar4[1].off_event[0x55] = '\0';
+  pCVar4[1].off_event[0x56] = '\0';
+  pCVar4[1].off_event[0x57] = '\0';
+  pCVar4 = unaff_EBX[2].flames;
+  pCVar4[1].off_event[0x58] = '\0';
+  pCVar4[1].off_event[0x59] = '\0';
+  pCVar4[1].off_event[0x5a] = '\0';
+  pCVar4[1].off_event[0x5b] = '\0';
+  *(uint *)(unaff_EBX[2].flames[1].on_event + 0x5c) = uVar1;
+  unaff_EBX[2].flames[2].base.orient_matrix.m[0].x = -1e+30;
+  unaff_EBX[2].flames[2].base.location.position.y = -1e+30;
+  uVar1 = *(uint *)(unaff_EBX[2].flames[1].on_event + 0x60);
+  uVar2 = *(uint *)(unaff_EBX[2].flames[1].off_event + 0x24);
+  uVar3 = *(uint *)(unaff_EBX[2].flames[1].off_event + 0x1c);
+  *(uint *)(unaff_EBX[2].flames[1].off_event + 8) =
+       *(uint *)(unaff_EBX[2].flames[1].off_event + 4);
+  *(uint *)unaff_EBX[2].flames[1].off_event = uVar1;
+  *(uint *)(unaff_EBX[2].flames[1].off_event + 0x28) = uVar2;
+  *(uint *)(unaff_EBX[2].flames[1].off_event + 0x20) = uVar3;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             (&unaff_EBX->model,"p?stranger.dfm" + 2);
   unaff_EBX->layer_action_index = 0;
-  *(uint *)&unaff_EBX[2].field_0x41d8 = 0;
-  *(uint *)&unaff_EBX[2].field_0x41fc = 0;
-  *(uint *)&unaff_EBX[2].field_0x4200 = 0;
-  *(uint *)&unaff_EBX[2].field_0x422c = 0;
-  *(uint *)&unaff_EBX[2].field_0x4228 = *(uint *)&unaff_EBX[2].field_0x422c;
-  *(uint *)&unaff_EBX[2].field_0x4224 = *(uint *)&unaff_EBX[2].field_0x4228;
-  *(uint *)&unaff_EBX[2].field_0x4230 = 0xffffffff;
-  *(uint *)&unaff_EBX[2].field_0x41e0 = 0;
-  *(uint *)&unaff_EBX[2].field_0x4204 = 0;
-  *(uint *)&unaff_EBX[2].field_0x4208 = 0;
-  *(uint *)&unaff_EBX[2].field_0x41e4 = 0;
-  *(uint *)&unaff_EBX[2].field_0x4234 = 0;
-  *(uint *)&unaff_EBX[2].field_0x423c = 0;
+  pCVar4 = unaff_EBX[2].flames;
+  pCVar4[1].off_event[0x40] = '\0';
+  pCVar4[1].off_event[0x41] = '\0';
+  pCVar4[1].off_event[0x42] = '\0';
+  pCVar4[1].off_event[0x43] = '\0';
+  unaff_EBX[2].flames[1].intensity = 0.0;
+  unaff_EBX[2].flames[1].randomness = 0.0;
+  pCVar4 = unaff_EBX[2].flames + 2;
+  (pCVar4->base).actor_name[0xc] = '\0';
+  (pCVar4->base).actor_name[0xd] = '\0';
+  (pCVar4->base).actor_name[0xe] = '\0';
+  (pCVar4->base).actor_name[0xf] = '\0';
+  *(uint *)(unaff_EBX[2].flames[2].base.actor_name + 8) =
+       *(uint *)(unaff_EBX[2].flames[2].base.actor_name + 0xc);
+  *(uint *)(unaff_EBX[2].flames[2].base.actor_name + 4) =
+       *(uint *)(unaff_EBX[2].flames[2].base.actor_name + 8);
+  pCVar4 = unaff_EBX[2].flames + 2;
+  (pCVar4->base).actor_name[0x10] = -1;
+  (pCVar4->base).actor_name[0x11] = -1;
+  (pCVar4->base).actor_name[0x12] = -1;
+  (pCVar4->base).actor_name[0x13] = -1;
+  pCVar4 = unaff_EBX[2].flames;
+  pCVar4[1].off_event[0x48] = '\0';
+  pCVar4[1].off_event[0x49] = '\0';
+  pCVar4[1].off_event[0x4a] = '\0';
+  pCVar4[1].off_event[0x4b] = '\0';
+  unaff_EBX[2].flames[1].burn_hero = 0;
+  unaff_EBX[2].flames[1].burn_enemy = 0;
+  pCVar4 = unaff_EBX[2].flames;
+  pCVar4[1].off_event[0x4c] = '\0';
+  pCVar4[1].off_event[0x4d] = '\0';
+  pCVar4[1].off_event[0x4e] = '\0';
+  pCVar4[1].off_event[0x4f] = '\0';
+  pCVar4 = unaff_EBX[2].flames + 2;
+  (pCVar4->base).actor_name[0x14] = '\0';
+  (pCVar4->base).actor_name[0x15] = '\0';
+  (pCVar4->base).actor_name[0x16] = '\0';
+  (pCVar4->base).actor_name[0x17] = '\0';
+  pCVar4 = unaff_EBX[2].flames + 2;
+  (pCVar4->base).actor_name[0x1c] = '\0';
+  (pCVar4->base).actor_name[0x1d] = '\0';
+  (pCVar4->base).actor_name[0x1e] = '\0';
+  (pCVar4->base).actor_name[0x1f] = '\0';
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
             ((CKeyFramedModelInstance *)
-             (*(int *)(&unaff_EBX[2].field_0x34cc + *(int *)&unaff_EBX[2].field_0x3324 * 4) + 0x2b4)
-             ,(char *)0x5eb1ca);
+             ((int)(&unaff_EBX[2].damage_decals[2].transform.m[0].y)
+                   [*(int *)&unaff_EBX[2].follow_formation.slots[0xb].field_0x34] + 0x2b4),
+             (char *)0x5eb1ca);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
             (unaff_EBX,0,1,"draw_stand2holsters",0);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
@@ -88,6 +150,6 @@ void core_stranger_cpp_FUN_005628b4(void)
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
             (unaff_EBX,10,0,"draw_gasMask2Stand",0);
   core_cloth_cpp_CClothList_add_FUN_005b15c0(&unaff_EBX->cloth_list,"strcoat.cth");
-  *(uint *)&unaff_EBX[2].field_0x4418 = 0;
+  unaff_EBX[2].flames[2].base.particle_systems[2].next_particle = 0;
   return;
 }

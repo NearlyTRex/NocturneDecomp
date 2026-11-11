@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 123,
+    "complexity_score": 38,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
-    "suspect_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "warning_type_propagation"
     ],
-    "total_lines": 69
+    "total_lines": 74
   },
   "cross_references": [],
   "function": {
@@ -39,14 +39,14 @@
       "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80"
     },
     {
-      "addr": "005a8030",
-      "is_variadic": false,
-      "name": "unkaddr_005a7eb0.cpp_FUN_005a8030"
-    },
-    {
       "addr": "005a8050",
       "is_variadic": false,
-      "name": "unkaddr_005a7eb0.cpp_FUN_005a8050"
+      "name": "unkaddr_005a7eb0.cpp_CSimpleParticleSystem_attach_FUN_005a8050"
+    },
+    {
+      "addr": "005a8030",
+      "is_variadic": false,
+      "name": "unkaddr_005a7eb0.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030"
     }
   ],
   "globals": [
@@ -110,84 +110,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x113b0",
-      "severity": "mild",
-      "text": "(*(CSkeleton **)&this_ptr->field_0x113b0,\"Bip01 Head\",1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x11850",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x11850 = iVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x10a24",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x10a24 = iVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x113b0",
-      "severity": "mild",
-      "text": "(*(CSkeleton **)&this_ptr->field_0x113b0,\"Bip01 R Hand\",1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x11854",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x11854 = iVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2618",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x2618 = iVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "unkaddr_005a7eb0_cpp_FUN_005a8030(&this_ptr->field_0x154,0x100);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "unkaddr_005a7eb0_cpp_FUN_005a8050(&this_ptr->field_0x154,this_ptr);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x198",
-      "severity": "mild",
-      "text": "unkaddr_005a7eb0_cpp_FUN_005a8030(&this_ptr->field_0x198,0x100);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x198",
-      "severity": "mild",
-      "text": "unkaddr_005a7eb0_cpp_FUN_005a8050(&this_ptr->field_0x198,this_ptr);",
-      "type": "unnamed_field"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     }
   ],
   "vtable_info": {

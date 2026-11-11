@@ -31,9 +31,8 @@ void core_doc_cpp_FUN_00453d80(int param_1)
   float local_201c;
   float fStack_2014;
   float local_2010;
-  uint local_200c [2];
-  uint local_2004;
-  float afStack_1cf4 [1505];
+  SPoseData local_200c;
+  float afStack_1500 [996];
   CMatrix3x3f local_570;
   float fStack_548;
   float fStack_544;
@@ -207,12 +206,12 @@ void core_doc_cpp_FUN_00453d80(int param_1)
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00
             ((CDeformableModelInstance *)(param_1 + 0x2b4));
   if ((0.0 < (float)local_2030) && (-1 < *(int *)(param_1 + 0x256ec))) {
-    core_doc_cpp_FUN_00455170(param_1,local_200c);
-    local_200c[0] = 0;
-    local_2004 = 0;
+    core_doc_cpp_FUN_00455170(param_1,&local_200c);
+    local_200c.root_position.x = 0.0;
+    local_200c.root_position.z = 0.0;
     core_skeleton_cpp_CDeformableModelInstance_blendWithPoseData_FUN_00546190
-              ((CDeformableModelInstance *)(param_1 + 0x2b4),(SPoseData *)local_200c,
-               (float)local_2030,-1,core_skeleton_cpp_FUN_00544cc0);
+              ((CDeformableModelInstance *)(param_1 + 0x2b4),&local_200c,(float)local_2030,-1,
+               core_skeleton_cpp_FUN_00544cc0);
   }
   core_doc_cpp_FUN_004555c0(param_1);
   core_doc_cpp_FUN_00455d10(param_1,g_CGamePtr->delta_time_float);
@@ -454,7 +453,7 @@ LAB_00454025:
           local_2b4[(uint)bVar6 * -2 + 0x33] = local_2b4[(uint)bVar6 * -2 + 0x45];
           local_2b4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x34] =
                local_2b4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x46];
-          local_201c = *(float *)&pCVar8->field_0x8;
+          local_201c = (pCVar8->base).current_frame_number;
           if ((float)_DAT_005d017f <= local_201c) {
             if (_DAT_005d0167 <= (double)local_201c) {
               local_201c = 1.0 - (local_201c + (float)_DAT_005d016f) * (float)_DAT_005d0177;
@@ -760,7 +759,7 @@ LAB_00454032:
   core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40
             (pCVar8,rotation_quat,local_201c,iVar1,core_skeleton_cpp_FUN_00544cc0);
 LAB_0045403a:
-  if (*(int *)&g_CGamePtr->field_0x25c != 0) {
+  if (g_CGamePtr->goggles_active != 0) {
     local_144[1] = 0.0;
     local_144[2] = 0.0;
     local_144[0] = 0.0;
@@ -788,7 +787,7 @@ LAB_0045403a:
   pCVar8 = (CDeformableModelInstance *)(param_1 + 0x2b4);
   this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(pCVar8);
   iVar1 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10
-                    ((CMotionList *)this_ptr,motion_name,iVar1);
+                    (&this_ptr->motion_list,motion_name,iVar1);
   local_34 = core_motion_cpp_FUN_00503f50(pCVar8,iVar1,0x3f800000);
   local_14 = (CDeformableModelInstance *)local_34;
   core_skeleton_cpp_FUN_00545a60

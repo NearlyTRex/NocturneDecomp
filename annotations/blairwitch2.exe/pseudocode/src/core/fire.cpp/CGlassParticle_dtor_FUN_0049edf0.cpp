@@ -13,6 +13,6 @@ CGlassParticle * core_fire_cpp_CGlassParticle_dtor_FUN_0049edf0(CGlassParticle *
 {
   CGlassParticle *pCVar1;
   
-  pCVar1 = (CGlassParticle *)core_particle_cpp_CParticle_dtor_FUN_00510df0((CParticle *)this_ptr,1);
+  pCVar1 = (CGlassParticle *)core_particle_cpp_CParticle_dtor_FUN_00510df0(&this_ptr->base,1);
   return pCVar1;
 }

@@ -9,6 +9,6 @@
 void __cdecl core_belling_cpp_CBelling_setup_FUN_005a9050(CBelling *this_ptr)
 
 {
-  core_basicnpc_cpp_CBasicNPC_setup_FUN_005a4870((CBasicNPC *)this_ptr);
+  core_basicnpc_cpp_CBasicNPC_setup_FUN_005a4870(&this_ptr->base);
   return;
 }

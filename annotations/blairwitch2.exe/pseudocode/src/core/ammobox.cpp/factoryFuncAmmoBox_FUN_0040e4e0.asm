@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_ammobox.cpp_CAmmoBox_ctor_FUN_0040e510
-;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x4a8                          ; 0040e4e0
         ;   Label: core_ammobox.cpp_factoryFuncAmmoBox_FUN_0040e4e0
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 0040e4e5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0040e4e5
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 0040e4ea
     TEST EAX,EAX                        ; 0040e4ed
     JNZ 0x0040e4f2                      ; 0040e4ef

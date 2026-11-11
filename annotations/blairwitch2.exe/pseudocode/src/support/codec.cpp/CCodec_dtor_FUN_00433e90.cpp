@@ -16,7 +16,7 @@ CCodec * __cdecl support_codec_cpp_CCodec_dtor_FUN_00433e90(CCodec *this_ptr,uin
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  *this_ptr = (CCodec)&g_CCodecVTable;
+  this_ptr->vtable = &g_CCodecVTable;
   if ((flags & 2) == 0) {
     return this_ptr;
   }

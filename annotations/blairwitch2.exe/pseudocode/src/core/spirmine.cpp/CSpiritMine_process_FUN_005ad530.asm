@@ -19,8 +19,8 @@
 ;   core_xform.cpp_FUN_00594380
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10
 ;   unkaddr_005a7eb0.cpp_FUN_005a7ed0
-;   unkafter_superopt.cpp_FUN_005a8180
-;   unkafter_superopt.cpp_FUN_005a8300
+;   unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300
+;   unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 005ad54b
     PUSH EAX                            ; 005ad551
     MOV dword ptr [EBP + 0x72],EAX      ; 005ad552
-    CALL unkafter_superopt.cpp_FUN_005a8180 ; 005ad555
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; undefined unkafter_superopt.cpp_FUN_005a8180()
+    CALL unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 005ad555
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
     ADD ESP,0x8                         ; 005ad55a
     PUSH dword ptr [EBP + 0x92]         ; 005ad55d
     PUSH EBX                            ; 005ad563
@@ -198,8 +198,8 @@ section .text
     MOV ESI,dword ptr [EBP + 0x72]      ; 005ad72c
     PUSH 0x40000000                     ; 005ad72f
     PUSH ESI                            ; 005ad734
-    CALL unkafter_superopt.cpp_FUN_005a8300 ; 005ad735
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; undefined unkafter_superopt.cpp_FUN_005a8300()
+    CALL unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 005ad735
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
     ADD ESP,0x34                        ; 005ad73a
     FLD float ptr [EBP + 0x6a]          ; 005ad73d
         ;   Label: LAB_005ad73d
@@ -346,8 +346,8 @@ section .text
     PUSH EDI                            ; 005ad8e1
     MOV dword ptr [EBP + 0xa],EDX       ; 005ad8e2
     MOV dword ptr [EBP + 0x12],EDX      ; 005ad8e5
-    CALL unkafter_superopt.cpp_FUN_005a8300 ; 005ad8e8
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; undefined unkafter_superopt.cpp_FUN_005a8300()
+    CALL unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 005ad8e8
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
     ADD ESP,0x34                        ; 005ad8ed
     JMP 0x005ad7d1                      ; 005ad8f0
         ;   XREF to: 005ad7d1 (UNCONDITIONAL_JUMP)  ; LAB_005ad7d1

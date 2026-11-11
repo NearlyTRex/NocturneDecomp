@@ -561,7 +561,11 @@ extern undefined1* g_CAudioRecPuzzleVTable;
 
 // void*
 extern void* g_CCodecVTable;
-extern void* g_PageResource_BitmapVTable;
-extern void* g_PageResource_TwanaEntryVTable;
+extern void* g_SPageResourceVTable;
+extern void* g_SPageResourceTextVTable;
+extern void* g_SPageResourceBitmapVTable;
+extern void* g_SPageResourceTwanaCharacterVTable;
+extern void* g_SPageResourceTwanaEntryVTable;
+extern void* g_SPageResourceMapVTable;
 extern void* g_CDeformableModelInstanceVTable;
 

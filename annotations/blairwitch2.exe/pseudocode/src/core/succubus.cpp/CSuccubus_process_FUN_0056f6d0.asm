@@ -312,8 +312,8 @@ section .text
     JBE 0x0056fae7                      ; 0056f9b1
         ;   XREF to: 0056fae7 (CONDITIONAL_JUMP)  ; LAB_0056fae7
     PUSH 0x10b2c                        ; 0056f9b7
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 0056f9bc
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0056f9bc
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 0056f9c1
     TEST EAX,EAX                        ; 0056f9c4
     JZ 0x0056f9d1                       ; 0056f9c6

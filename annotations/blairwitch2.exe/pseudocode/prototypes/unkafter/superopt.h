@@ -5,13 +5,13 @@
 // Function prototypes for unkafter/superopt.cpp
 // Generated from Ghidra function signatures
 
-// Original: unkafter_superopt.cpp_FUN_0059be40
+// Original: unkafter_superopt.cpp_CExamplePuzzle_getName_FUN_0059be40
 // Address: 0059be40
-char * FUN_0059be40(void);
+char * __cdecl CExamplePuzzle::getName(CExamplePuzzle *this_ptr);
 
-// Original: unkafter_superopt.cpp_FUN_0059be50
+// Original: unkafter_superopt.cpp_CAudioRecPuzzle_getName_FUN_0059be50
 // Address: 0059be50
-char * FUN_0059be50(void);
+char * __cdecl CAudioRecPuzzle::getName(CAudioRecPuzzle *this_ptr);
 
 // Original: unkafter_superopt.cpp_CAudioRecPuzzle_ctor_FUN_0059be60
 // Address: 0059be60
@@ -21,13 +21,13 @@ CAudioRecPuzzle * CAudioRecPuzzle::ctor(CAudioRecPuzzle *this_ptr);
 // Address: 0059bec0
 CAudioRecPuzzle * CAudioRecPuzzle::dtor(CAudioRecPuzzle *this_ptr,uint flags);
 
-// Original: unkafter_superopt.cpp___1hlg6hbuttonStruct_ctor_FUN_0059bf30
+// Original: unkafter_superopt.cpp_SButtonStruct_ctor_FUN_0059bf30
 // Address: 0059bf30
-SButtonStruct * ::_1hlg6hbuttonStruct_ctor(SButtonStruct *this_ptr);
+SButtonStruct * SButtonStruct::ctor(SButtonStruct *this_ptr);
 
-// Original: unkafter_superopt.cpp___1hlg6hbuttonStruct_dtor_FUN_0059bf40
+// Original: unkafter_superopt.cpp_SButtonStruct_dtor_FUN_0059bf40
 // Address: 0059bf40
-SButtonStruct * ::_1hlg6hbuttonStruct_dtor(SButtonStruct *this_ptr,uint flags);
+SButtonStruct * SButtonStruct::dtor(SButtonStruct *this_ptr,uint flags);
 
 // Original: unkafter_superopt.cpp_CExamplePuzzle_ctor_FUN_0059bf50
 // Address: 0059bf50
@@ -41,33 +41,37 @@ CExamplePuzzle * CExamplePuzzle::dtor(CExamplePuzzle *this_ptr,uint flags);
 // Address: 0059bfc0
 void FUN_0059bfc0(undefined4 param_1);
 
-// Original: unkafter_superopt.cpp_FUN_005a8140
+// Original: unkafter_superopt.cpp_CSimpleParticleSystem_isActive_FUN_005a8130
+// Address: 005a8130
+int __cdecl CSimpleParticleSystem::isActive(CSimpleParticleSystem *this_ptr);
+
+// Original: unkafter_superopt.cpp_CSimpleParticleSystem_setFade_FUN_005a8140
 // Address: 005a8140
-void FUN_005a8140(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl CSimpleParticleSystem::setFade(CSimpleParticleSystem *this_ptr,float param_2,float param_3,float param_4);
 
-// Original: unkafter_superopt.cpp_FUN_005a8160
+// Original: unkafter_superopt.cpp_CSimpleParticleSystem_resetFade_FUN_005a8160
 // Address: 005a8160
-void FUN_005a8160(int param_1);
+void __cdecl CSimpleParticleSystem::resetFade(CSimpleParticleSystem *this_ptr);
 
-// Original: unkafter_superopt.cpp_FUN_005a8180
+// Original: unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180
 // Address: 005a8180
-void FUN_005a8180(int param_1,float param_2);
+void __cdecl CSimpleParticleSystem::process(CSimpleParticleSystem *this_ptr,float param_2);
 
-// Original: unkafter_superopt.cpp_FUN_005a8220
+// Original: unkafter_superopt.cpp_CSimpleParticleSystem_release_FUN_005a8220
 // Address: 005a8220
-void FUN_005a8220(int param_1);
+void __cdecl CSimpleParticleSystem::release(CSimpleParticleSystem *this_ptr);
 
-// Original: unkafter_superopt.cpp_FUN_005a8250
+// Original: unkafter_superopt.cpp_CSimpleParticleSystem_updateFade_FUN_005a8250
 // Address: 005a8250
-undefined4 FUN_005a8250(int param_1);
+float __cdecl CSimpleParticleSystem::updateFade(CSimpleParticleSystem *this_ptr);
 
-// Original: unkafter_superopt.cpp_FUN_005a8290
+// Original: unkafter_superopt.cpp_CSimpleParticleSystem_render_FUN_005a8290
 // Address: 005a8290
-void FUN_005a8290(int param_1);
+void __cdecl CSimpleParticleSystem::render(CSimpleParticleSystem *this_ptr);
 
-// Original: unkafter_superopt.cpp_FUN_005a8300
+// Original: unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300
 // Address: 005a8300
-void FUN_005a8300(float *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,float *param_10,undefined4 *param_11,undefined4 *param_12,undefined4 param_13);
+void __cdecl CSimpleParticleSystem::emit(CSimpleParticleSystem *this_ptr,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,float *param_10,undefined4 *param_11,undefined4 *param_12,undefined4 param_13);
 
 // Original: unkafter_superopt.cpp_FUN_005a84c0
 // Address: 005a84c0

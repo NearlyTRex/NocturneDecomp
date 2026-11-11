@@ -9,6 +9,6 @@
 void FUN_005c45a0(ulong param_1)
 
 {
-  FUN_005b8580(param_1);
+  malloc(param_1);
   return;
 }

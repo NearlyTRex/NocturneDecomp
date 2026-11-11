@@ -24,6 +24,6 @@ void __cdecl core_backgnd_cpp_CBackgroundActor_archive_FUN_0040f4d0(CBackgroundA
     }
   }
   core_actor_cpp_archiveInteger_FUN_0040b960
-            ((int *)&this_ptr->field_0x2b4,"castShadowsFlag");
+            (&this_ptr->cast_shadows_flag,"castShadowsFlag");
   return;
 }

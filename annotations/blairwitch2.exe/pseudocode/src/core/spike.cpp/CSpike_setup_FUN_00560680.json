@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 350,
+    "complexity_score": 315,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 50,
-    "suspect_count": 27,
+    "suspect_count": 24,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "warning_type_propagation"
     ],
     "total_lines": 127
@@ -178,30 +177,6 @@
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "fStack_4c = *(float *)&(this_ptr->base).field_0x20 - fStack_40;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "fStack_48 = *(float *)&(this_ptr->base).field_0x24 - fStack_3c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "fStack_44 = *(float *)&(this_ptr->base).field_0x28 - fStack_38;",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",

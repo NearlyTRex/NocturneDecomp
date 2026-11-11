@@ -36,11 +36,11 @@
 ;   ... and 40 more
 ;
 ; Called Functions:
-;   core_fldnotes.cpp_FUN_004a2730
-;   core_fldnotes.cpp_FUN_004a27e0
-;   core_fldnotes.cpp_FUN_004a2890
-;   core_fldnotes.cpp_FUN_004a3240
-;   core_fldnotes.cpp_FUN_004a3740
+;   core_fldnotes.cpp_SNotesSection_layout_FUN_004a3740
+;   core_fldnotes.cpp_STextPage_findResourceAt_FUN_004a2730
+;   core_fldnotes.cpp_STextView_drawPage_FUN_004a3240
+;   core_fldnotes.cpp_STextView_reset_FUN_004a27e0
+;   core_fldnotes.cpp_STextView_setRect_FUN_004a2890
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d900
@@ -84,13 +84,13 @@ section .text
     PUSH 0x40                           ; 004a574d
     PUSH 0x60                           ; 004a574f
     PUSH 0x1caf240                      ; 004a5751
-    CALL core_fldnotes.cpp_FUN_004a2890 ; 004a5756
-        ;   XREF to: 004a2890 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a2890()
+    CALL core_fldnotes.cpp_STextView_setRect_FUN_004a2890 ; 004a5756
+        ;   XREF to: 004a2890 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_setRect_FUN_004a2890(STextView * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
     ADD ESP,0x14                        ; 004a575b
     PUSH 0x1caf240                      ; 004a575e
     XOR ESI,ESI                         ; 004a5763
-    CALL core_fldnotes.cpp_FUN_004a27e0 ; 004a5765
-        ;   XREF to: 004a27e0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a27e0()
+    CALL core_fldnotes.cpp_STextView_reset_FUN_004a27e0 ; 004a5765
+        ;   XREF to: 004a27e0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_reset_FUN_004a27e0(STextView * this_ptr)
     MOV EDI,dword ptr [0x01cab9f0]      ; 004a576a | DAT_01cab9f0
     XOR DH,DH                           ; 004a5770
     ADD ESP,0x4                         ; 004a5772
@@ -102,8 +102,8 @@ section .text
     PUSH 0x1caf240                      ; 004a5784
         ;   Label: LAB_004a5784
     PUSH EBX                            ; 004a5789
-    CALL core_fldnotes.cpp_FUN_004a3740 ; 004a578a
-        ;   XREF to: 004a3740 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a3740()
+    CALL core_fldnotes.cpp_SNotesSection_layout_FUN_004a3740 ; 004a578a
+        ;   XREF to: 004a3740 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_SNotesSection_layout_FUN_004a3740(SNotesSection * this_ptr, int param_2)
     ADD ESP,0x8                         ; 004a578f
     TEST EAX,EAX                        ; 004a5792
     JZ 0x004a57ae                       ; 004a5794
@@ -133,12 +133,12 @@ section .text
         ;   XREF to: 004a5e51 (CONDITIONAL_JUMP)  ; LAB_004a5e51
     MOV EBX,0x1cab9f4                   ; 004a57d9
     MOV ECX,dword ptr [0x01cab9f0]      ; 004a57de | DAT_01cab9f0
-    MOV ESI,dword ptr [EBX + 0x140]     ; 004a57e4 | SNotesSection_ARRAY_01cab9f4[0].field320_0x140 | SNotesSection_ARRAY_01cab9f4[1].field320_0x140
+    MOV ESI,dword ptr [EBX + 0x140]     ; 004a57e4 | SNotesSection_ARRAY_01cab9f4[0].first_page | SNotesSection_ARRAY_01cab9f4[1].first_page
         ;   Label: LAB_004a57e4
     CMP EAX,ESI                         ; 004a57ea
     JL 0x004a5e42                       ; 004a57ec
         ;   XREF to: 004a5e42 (CONDITIONAL_JUMP)  ; LAB_004a5e42
-    ADD ESI,dword ptr [EBX + 0x144]     ; 004a57f2 | SNotesSection_ARRAY_01cab9f4[0].field324_0x144 | SNotesSection_ARRAY_01cab9f4[1].field324_0x144
+    ADD ESI,dword ptr [EBX + 0x144]     ; 004a57f2 | SNotesSection_ARRAY_01cab9f4[0].page_count | SNotesSection_ARRAY_01cab9f4[1].page_count
     CMP ESI,EAX                         ; 004a57f8
     JLE 0x004a5e42                      ; 004a57fa
         ;   XREF to: 004a5e42 (CONDITIONAL_JUMP)  ; LAB_004a5e42
@@ -157,11 +157,11 @@ section .text
     CMP ESI,dword ptr [ESP + 0x50c]     ; 004a5821
     JNZ 0x004a5e5b                      ; 004a5828
         ;   XREF to: 004a5e5b (CONDITIONAL_JUMP)  ; LAB_004a5e5b
-    MOV EAX,dword ptr [EBX + 0x14c]     ; 004a582e | SNotesSection_ARRAY_01cab9f4[0].field332_0x14c | SNotesSection_ARRAY_01cab9f4[1].field332_0x14c
+    MOV EAX,dword ptr [EBX + 0x14c]     ; 004a582e | SNotesSection_ARRAY_01cab9f4[0].tab_y | SNotesSection_ARRAY_01cab9f4[1].tab_y
     PUSH 0xffff                         ; 004a5834
     SUB EAX,0x2                         ; 004a5839
     PUSH EAX                            ; 004a583c
-    MOV EAX,dword ptr [EBX + 0x148]     ; 004a583d | SNotesSection_ARRAY_01cab9f4[0].field328_0x148 | SNotesSection_ARRAY_01cab9f4[1].field328_0x148
+    MOV EAX,dword ptr [EBX + 0x148]     ; 004a583d | SNotesSection_ARRAY_01cab9f4[0].tab_x | SNotesSection_ARRAY_01cab9f4[1].tab_x
     SUB EAX,0x2                         ; 004a5843
     PUSH EAX                            ; 004a5846
     PUSH EDI                            ; 004a5847
@@ -182,8 +182,8 @@ section .text
     XOR ECX,ECX                         ; 004a586b
     PUSH 0x1caf240                      ; 004a586d
     MOV dword ptr [0x01caf568],ECX      ; 004a5872 | DAT_01caf568
-    CALL core_fldnotes.cpp_FUN_004a3240 ; 004a5878
-        ;   XREF to: 004a3240 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a3240()
+    CALL core_fldnotes.cpp_STextView_drawPage_FUN_004a3240 ; 004a5878
+        ;   XREF to: 004a3240 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_drawPage_FUN_004a3240(STextView * this_ptr, int param_2)
     MOV EAX,[0x00616494]                ; 004a587d | g_CGamePtr | g_CGameInstance
     MOV ESI,dword ptr [EAX + 0x244]     ; 004a5882 | g_CGameInstance.letterbox_mode
     ADD ESP,0x8                         ; 004a5888
@@ -238,13 +238,13 @@ section .text
     SHL EAX,0x4                         ; 004a5920
     PUSH ESI                            ; 004a5923
     ADD EAX,EBX                         ; 004a5924
-    MOV EBX,dword ptr [0x01caf27c]      ; 004a5926 | g_STextViewInstance.field60_0x3c
+    MOV EBX,dword ptr [0x01caf27c]      ; 004a5926 | g_STextViewInstance.pages
     SHL EAX,0x2                         ; 004a592c
     PUSH EDI                            ; 004a592f
     ADD EAX,EBX                         ; 004a5930
     PUSH EAX                            ; 004a5932
-    CALL core_fldnotes.cpp_FUN_004a2730 ; 004a5933
-        ;   XREF to: 004a2730 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a2730()
+    CALL core_fldnotes.cpp_STextPage_findResourceAt_FUN_004a2730 ; 004a5933
+        ;   XREF to: 004a2730 (UNCONDITIONAL_CALL)  ; int * core_fldnotes.cpp_STextPage_findResourceAt_FUN_004a2730(STextPage * this_ptr, int param_2, int param_3)
     ADD ESP,0xc                         ; 004a5938
     TEST EAX,EAX                        ; 004a593b
     JZ 0x004a5971                       ; 004a593d
@@ -279,7 +279,7 @@ section .text
     CALL engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d900 ; 004a5992
         ;   XREF to: 0040d900 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d900(CAlphaBitmap * this_ptr, int x, int y, int alpha)
     ADD ESP,0x10                        ; 004a5997
-    MOV EAX,[0x01caf278]                ; 004a599a | g_STextViewInstance.field56_0x38
+    MOV EAX,[0x01caf278]                ; 004a599a | g_STextViewInstance.page_count
         ;   Label: LAB_004a599a
     MOV EBP,dword ptr [0x01caf110]      ; 004a599f | DAT_01caf110
     SUB EAX,0x2                         ; 004a59a5
@@ -664,12 +664,12 @@ section .text
     MOV EAX,dword ptr [EBP + 0x1caf134] ; 004a5e68 | CAlphaBitmap_ARRAY_01caf128[1].width
     DEC EAX                             ; 004a5e6e
     PUSH EAX                            ; 004a5e6f
-    MOV ECX,dword ptr [EBX + 0x148]     ; 004a5e70 | SNotesSection_ARRAY_01cab9f4[1].field328_0x148
+    MOV ECX,dword ptr [EBX + 0x148]     ; 004a5e70 | SNotesSection_ARRAY_01cab9f4[1].tab_x
     MOV EAX,0x246                       ; 004a5e76
     PUSH 0x0                            ; 004a5e7b
     SUB EAX,ECX                         ; 004a5e7d
     PUSH EAX                            ; 004a5e7f
-    MOV EBP,dword ptr [EBX + 0x14c]     ; 004a5e80 | SNotesSection_ARRAY_01cab9f4[1].field332_0x14c
+    MOV EBP,dword ptr [EBX + 0x14c]     ; 004a5e80 | SNotesSection_ARRAY_01cab9f4[1].tab_y
     PUSH EBP                            ; 004a5e86
     PUSH 0x246                          ; 004a5e87
     PUSH EDI                            ; 004a5e8c

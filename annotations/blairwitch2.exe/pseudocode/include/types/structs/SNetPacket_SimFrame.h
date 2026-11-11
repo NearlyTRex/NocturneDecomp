@@ -8,13 +8,12 @@
 #include "types/structs/SSimFrame.h"
 
 // Structure: SNetPacket_SimFrame
-// Ghidra size: 0x69 (105 bytes)
+// processServerFrame 0050ecb0: header.size = 0x79, type 0xf (nocedit 0x69); the frame follows the 5-byte header
+// Ghidra size: 0x79 (121 bytes)
 #pragma pack(push, 1)
 typedef struct SNetPacket_SimFrame {
     SNetPacketHeader header; // 0x0
-    char field_1[4]; // 0x1
     SSimFrame frame; // 0x5
-    char field_6[99]; // 0x6
 } SNetPacket_SimFrame;
 #pragma pack(pop)
 

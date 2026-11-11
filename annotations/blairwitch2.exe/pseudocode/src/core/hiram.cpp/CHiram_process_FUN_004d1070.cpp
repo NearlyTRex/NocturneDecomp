@@ -24,10 +24,9 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004d1070(CHiram *this_ptr,float d
   iVar2 = core_motion_cpp_FUN_005035c0(pCVar1);
   if (*(int *)(iVar2 + 0x24) != 1) {
     iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                      (0x01C38BC0,&this_ptr->field_0x24348);
+                      (0x01C38BC0,this_ptr->kill_event);
     if (iVar2 != 0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                ((CMotionController *)pCVar1,1,1);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar1->base,1,1);
       uVar4 = g_CGlassClassInfo.name_hash;
       pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_004fc740
                          (0x01D182F0,"GlassHiram");
@@ -38,15 +37,14 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004d1070(CHiram *this_ptr,float d
     }
   }
   afStack_18[0] = delta_time;
-  *(uint *)&(this_ptr->base).base.model.field_0x225c = 0;
+  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   pCVar1 = &(this_ptr->base).base.model;
-  *(uint *)&(this_ptr->base).base.model.field_0x2258 =
-       *(uint *)&(this_ptr->base).base.model.field_0x225c;
-  *(uint *)&(this_ptr->base).base.model.field_0x2254 =
-       *(uint *)&(this_ptr->base).base.model.field_0x2258;
+  (this_ptr->base).base.model.accumulated_root_motion.y =
+       (this_ptr->base).base.model.accumulated_root_motion.z;
+  (this_ptr->base).base.model.accumulated_root_motion.x =
+       (this_ptr->base).base.model.accumulated_root_motion.y;
   while (0.0 < afStack_18[0]) {
-    iVar2 = core_motion_cpp_CMotionController_advance_FUN_005030c0
-                      ((CMotionController *)pCVar1,afStack_18);
+    iVar2 = core_motion_cpp_CMotionController_advance_FUN_005030c0(&pCVar1->base,afStack_18);
     if (iVar2 == 0x29a) {
       core_mission_cpp_FUN_004fc7b0(0x01D182F0,this_ptr,1);
     }

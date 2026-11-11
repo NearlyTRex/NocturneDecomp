@@ -30,7 +30,8 @@ void __cdecl core_dcube_cpp_CDemonCube_load_FUN_004467a0(CDemonCube *this_ptr,_F
     do {
       iVar1 = iVar1 + 1;
       core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_004447b0
-                (this_ptr->triangle_buffer + iVar3,file_handle,this_ptr->vertex_buffer);
+                ((CDemonCubeTriangle *)((int)(this_ptr->triangle_buffer->triangle).vertices + iVar3)
+                 ,file_handle,this_ptr->vertex_buffer);
       iVar3 = iVar3 + 0x20;
     } while (iVar1 < this_ptr->triangle_count);
   }
@@ -42,14 +43,14 @@ void __cdecl core_dcube_cpp_CDemonCube_load_FUN_004467a0(CDemonCube *this_ptr,_F
     pSVar2 = this_ptr->voxel_buffer1;
     pSVar4 = this_ptr->voxel_buffer2;
     for (iVar1 = 0x10; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *(uint *)pSVar4 = *(uint *)pSVar2;
-      pSVar2 = pSVar2 + (uint)bVar5 * -8 + 4;
-      pSVar4 = pSVar4 + (uint)bVar5 * -8 + 4;
+      *(uint *)pSVar4->voxels[0] = *(uint *)pSVar2->voxels[0];
+      pSVar2 = (SVoxelGrid *)((int)pSVar2 + (uint)bVar5 * -8 + 4);
+      pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -8 + 4);
     }
     for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *pSVar4 = *pSVar2;
-      pSVar2 = pSVar2 + (uint)bVar5 * -2 + 1;
-      pSVar4 = pSVar4 + (uint)bVar5 * -2 + 1;
+      pSVar4->voxels[0][0] = pSVar2->voxels[0][0];
+      pSVar2 = (SVoxelGrid *)((int)pSVar2 + (uint)bVar5 * -2 + 1);
+      pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -2 + 1);
     }
     return;
   }

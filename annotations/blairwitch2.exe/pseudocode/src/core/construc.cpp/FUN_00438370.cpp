@@ -11,7 +11,7 @@ ECollisionType core_construc_cpp_FUN_00438370(CCharacter *param_1,SCollisionInfo
 {
   ECollisionType EVar1;
   
-  if (*(int *)&param_1[1].model.field_0x5c4 != 0) {
+  if (param_1[1].model.rest_bone_scales[0x2c] != 0.0) {
     return COLLISION_TYPE_NONE;
   }
   EVar1 = core_charactr_cpp_CCharacter_getCollisionType_FUN_00427680(param_1,param_2);

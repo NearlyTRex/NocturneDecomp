@@ -13,7 +13,7 @@ void * support_trisock_cpp_FUN_0057aa00(int param_1)
   int iVar2;
   
   pCVar1 = support_trisock_cpp_CSocket_ctor_FUN_00579000((CSocket *)(param_1 + 0xd2c));
-  iVar2 = support_trisock_cpp_FUN_0057a6d0(pCVar1 + 4);
+  iVar2 = support_trisock_cpp_FUN_0057a6d0(pCVar1 + 1);
   memset((void *)(iVar2 + -0xd30),0,0x200);
   memset((void *)(iVar2 + -0xb30),0,0x200);
   memset((void *)(iVar2 + -0x930),0,0x100);

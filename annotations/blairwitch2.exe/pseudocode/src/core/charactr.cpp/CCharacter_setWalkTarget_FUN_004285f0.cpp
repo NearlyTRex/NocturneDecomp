@@ -24,16 +24,16 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_004285f0(CCharacter 
   if (target == (CDemonActor *)0x0) {
     if (((this_ptr->walk_state != WALK_STATE_IDLE) &&
         (this_ptr->walk_to_target != (CDemonActor *)0x0)) &&
-       ((this_ptr->model).field_0x2260 != '\0')) {
+       ((this_ptr->model).model_name[0] != '\0')) {
       state_name = "?STAND" + 1;
       error_on_not_found = target;
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860
-                              ((CMotionController *)&this_ptr->model);
+                              (&(this_ptr->model).base);
       iVar4 = core_motion_cpp_CMotionList_findStateIndex_FUN_00502fa0
                         (this_ptr_00,state_name,(int)error_on_not_found);
       if (-1 < iVar4) {
         core_motion_cpp_CMotionController_setDesiredStateByName_FUN_005036b0
-                  ((CMotionController *)&this_ptr->model,"STAND",1);
+                  (&(this_ptr->model).base,"STAND",1);
       }
     }
     local_18 = -1.0;
@@ -44,9 +44,9 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_004285f0(CCharacter 
     this_ptr->walk_state = WALK_STATE_WALKING;
     iVar4 = core_actor_cpp_isOfClass_FUN_0040c840(target,"CCharacter");
     if (iVar4 == 0) {
-      fVar1 = *(float *)&(this_ptr->base).field_0x20 - *(float *)&target->field_0x20;
-      fVar3 = *(float *)&(this_ptr->base).field_0x24 - *(float *)&target->field_0x24;
-      fVar2 = *(float *)&(this_ptr->base).field_0x28 - *(float *)&target->field_0x28;
+      fVar1 = (this_ptr->base).location.position.x - (target->location).position.x;
+      fVar3 = (this_ptr->base).location.position.y - (target->location).position.y;
+      fVar2 = (this_ptr->base).location.position.z - (target->location).position.z;
       local_18 = SQRT(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) * (float)_DAT_005cced6;
       if (_DAT_005ccede <= local_18) {
         if (_DAT_005ccee2 < local_18) {

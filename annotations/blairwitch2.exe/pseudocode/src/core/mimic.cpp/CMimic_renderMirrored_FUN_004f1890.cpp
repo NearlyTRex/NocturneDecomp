@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004f1890(CMimic *this_ptr)
@@ -24,6 +25,8 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004f1890(CMimic *this_ptr)
   int *piVar6;
   CVector3f *euler_angles;
   CVector3f *translation;
+  uint local_130 [12];
+  uint local_100 [12];
   byte local_d0 [48];
   uint local_a0 [6];
   uint local_88 [6];
@@ -38,7 +41,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004f1890(CMimic *this_ptr)
   int local_14;
   
   bVar4 = 0;
-  if (*(int *)&(this_ptr->base).base.field_0x2568 == 0) {
+  if ((this_ptr->base).base.render_active == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
     (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
               ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
@@ -63,8 +66,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004f1890(CMimic *this_ptr)
         _DAT_01c38ba4 = -_DAT_01c38ba4;
         core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_00547170
                   (&(this_ptr->base).base.model,-1,0xffffffff,1,0);
-        core_cloth_cpp_CCloth_render_FUN_005b0fe0
-                  ((CCloth *)&this_ptr->field_0x10bc0,(CDeformableModelInstance *)0x0);
+        core_cloth_cpp_CCloth_render_FUN_005b0fe0(&this_ptr->cloth,(CDeformableModelInstance *)0x0);
         local_14 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                              (*(uint *)(_DAT_01cedef4 * 4 + 0x1cedee4),
                               g_CStrangerClassInfo.name_hash);
@@ -84,20 +86,21 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004f1890(CMimic *this_ptr)
                aiStack_6c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
           core_xform_cpp_FUN_00591c10(puVar5,piVar6,puVar2);
           core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
-                    (local_d0,&(this_ptr->base).base.model.field_0xe80 + _DAT_01d097c4 * 0x30);
-          puVar2 = (uint *)&stack0xffffff00;
-          puVar3 = (uint *)&stack0xfffffed0;
+                    (local_d0,(this_ptr->base).base.model.bone_transform.bone_model_matrices +
+                              _DAT_01d097c4);
+          puVar2 = local_100;
+          puVar3 = local_130;
           for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
             *puVar3 = *puVar2;
             puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
             puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
           }
-          core_xform_cpp_FUN_00592720(&stack0xfffffed0);
+          core_xform_cpp_FUN_00592720(local_130);
           local_34.x = local_40;
           *(float *)((int)&local_34 + (uint)bVar4 * -8 + 4) = afStack_3c[(uint)bVar4 * -2];
           *(float *)((int)&local_34 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
                afStack_3c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-          core_xform_cpp_matrixToEulerAngles_FUN_00591de0(&stack0xfffffed0);
+          core_xform_cpp_matrixToEulerAngles_FUN_00591de0(local_130);
           translation = &local_34;
           euler_angles = &local_4c;
           local_4c.x = local_70;
@@ -116,7 +119,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004f1890(CMimic *this_ptr)
            (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280),
            iVar1 == 0)) {
           this_ptr_00 = &(this_ptr->base).base.model;
-          core_motion_cpp_FUN_005042e0((CMotionController *)this_ptr_00,(CDemonActor *)this_ptr);
+          core_motion_cpp_FUN_005042e0(&this_ptr_00->base,(CDemonActor *)this_ptr);
           core_motion_cpp_FUN_005035c0(this_ptr_00);
         }
         engine_matrix_c_pop_FUN_0046b4a0();

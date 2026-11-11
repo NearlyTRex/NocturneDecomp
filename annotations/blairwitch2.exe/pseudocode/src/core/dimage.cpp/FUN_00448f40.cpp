@@ -14,8 +14,8 @@ void __cdecl core_dimage_cpp_FUN_00448f40(CDemonImage *this_ptr)
   void *pvVar1;
   
   core_dimage_cpp_FUN_00448fa0(this_ptr);
-  pvVar1 = FUN_005b8580(*(int *)(this_ptr + 0x304) * *(int *)(this_ptr + 0x308));
-  *(void **)(this_ptr + 0x300) = pvVar1;
+  pvVar1 = malloc(this_ptr->width * this_ptr->height);
+  this_ptr->data = pvVar1;
   if (pvVar1 != (void *)0x0) {
     return;
   }

@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 86,
+    "complexity_score": 31,
     "cross_reference_count": 50,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 16,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 59
@@ -542,46 +541,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x22b0",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x22b0 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x2260",
-      "severity": "mild",
-      "text": "if (this_ptr->field_0x2260 != '\\0') {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x2260",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004e4500(\"Tried to do something with model %s, but modelPtr not set.  (CDeformableModelInstance::preCache not called.\",&this_ptr->field_0x2260);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x22b0",
-      "severity": "mild",
-      "text": "return *(CDeformableModel **)&this_ptr->field_0x22b0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x22b0",
-      "severity": "mild",
-      "text": "return *(CDeformableModel **)&this_ptr->field_0x22b0;",
-      "type": "unnamed_field"
     }
   ]
 }

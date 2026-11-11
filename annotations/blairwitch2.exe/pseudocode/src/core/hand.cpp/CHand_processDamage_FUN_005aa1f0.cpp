@@ -10,8 +10,8 @@ void __cdecl core_hand_cpp_CHand_processDamage_FUN_005aa1f0(CHand *this_ptr,SDam
 
 {
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-            ((CMotionController *)&this_ptr->field_0x2b4,0,1);
-  *(uint *)&this_ptr->field_0x11864 = *(uint *)&this_ptr->field_0x11860;
-  unkaddr_0059d350_cpp_FUN_0059d8e0(&this_ptr->field_0x10af8,"Sleeping");
+            (&(this_ptr->base).base.base.model.base,0,1);
+  this_ptr->sleep_timer = this_ptr->sleep_time;
+  unkaddr_0059d350_cpp_FUN_0059d8e0(&(this_ptr->base).state_machine,"Sleeping");
   return;
 }

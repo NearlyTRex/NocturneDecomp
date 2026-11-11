@@ -11,6 +11,6 @@ int __cdecl core_confedrt_cpp_CConfederate_renderOpaque_FUN_005a1490(CConfederat
 {
   int iVar1;
   
-  iVar1 = core_basicene_cpp_CBasicEnemy_renderOpaque_FUN_0059fa20((CBasicEnemy *)this_ptr);
+  iVar1 = core_basicene_cpp_CBasicEnemy_renderOpaque_FUN_0059fa20(&this_ptr->base);
   return iVar1;
 }

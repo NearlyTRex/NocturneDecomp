@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int unkafter_basicene_cpp_FUN_0059f740(CEnemy *param_1,undefined4 param_2,int param_3,float param_4)
+; int unkafter_basicene_cpp_FUN_0059f740(CEnemy *param_1,float param_2,int param_3,float param_4)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x70]:1  local_70

@@ -33,8 +33,8 @@ int __cdecl core_litecone_cpp_CLightCone_renderTransparent_FUN_004e42a0(CLightCo
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10(&this_ptr->base);
       if (iVar1 != 0) {
         core_dlight_cpp_renderConeLightGeometry_FUN_0044d060
-                  ((CVector3f *)&(this_ptr->base).field_0x20,&(this_ptr->base).orient.vec,
-                   this_ptr->fov,this_ptr->falloff);
+                  (&(this_ptr->base).location.position,&(this_ptr->base).orient.vec,this_ptr->fov,
+                   this_ptr->falloff);
       }
       return iVar1;
     }

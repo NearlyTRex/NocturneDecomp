@@ -662,7 +662,7 @@
       "line": 99,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&local_78);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_78);",
       "type": "undefined_data"
     },
     {
@@ -670,15 +670,15 @@
       "line": 107,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&local_6c);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_6c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 115,
+      "line": 114,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x90),local_60);",
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,local_60)",
       "type": "undefined_data"
     },
     {
@@ -694,7 +694,7 @@
       "line": 117,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "*(int *)(DAT_0060b280->vertex_buffer_ptr + 0x2c) = local_38;",
+      "text": "DAT_0060b280->vertex_buffer_ptr->a = local_38;",
       "type": "undefined_data"
     },
     {

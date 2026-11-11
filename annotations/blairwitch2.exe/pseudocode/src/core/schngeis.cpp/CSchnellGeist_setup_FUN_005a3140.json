@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 73,
+    "complexity_score": 18,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 18,
-    "suspect_count": 5,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 63
   },
   "cross_references": [],
@@ -29,6 +27,11 @@
   },
   "function_calls": [
     {
+      "addr": "0059e6a0",
+      "is_variadic": false,
+      "name": "core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0"
+    },
+    {
       "addr": "00547890",
       "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890"
@@ -37,11 +40,6 @@
       "addr": "00540e80",
       "is_variadic": false,
       "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80"
-    },
-    {
-      "addr": "0059e6a0",
-      "is_variadic": false,
-      "name": "unkafter_basicene.cpp_FUN_0059e6a0"
     }
   ],
   "globals": [
@@ -115,48 +113,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&this_ptr->field_0x2b4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x11850",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x11850 = iVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x11854",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x11854 = iVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x11858",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x11858 = iVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x1185c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1185c = iVar1;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

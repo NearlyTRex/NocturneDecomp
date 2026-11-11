@@ -24,6 +24,6 @@ CLightActor * __cdecl core_boxactor_cpp_CLightActor_ctor_FUN_0041cf60(CLightActo
   pCVar2[1].base.base.rotation_matrix.m[0].x = pCVar2[1].base.base.rotation_matrix.m[0].y;
   pCVar2[1].base.base.position.f.z = pCVar2[1].base.base.rotation_matrix.m[0].x;
   pCVar2[1].base.base.rotation_matrix.m[0].z = 0.0;
-  *(uint *)&pCVar2[-1].field_0x2fac = 1;
+  pCVar2[-1].bloom_intensity = 1.4013e-45;
   return (CLightActor *)(pCVar2[-1].saved_screen_buffer_rows + 0x2c1);
 }

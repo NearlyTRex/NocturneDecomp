@@ -35,7 +35,7 @@ int __cdecl intersectXZCylinder(SIntersectXZCylinder *cylinder);
 
 // Original: core_dcube.cpp_intersectXZCylinderWithHeight_FUN_00444f70
 // Address: 00444f70
-undefined4 __cdecl intersectXZCylinderWithHeight(SIntersectXZCylinder *param_1,undefined4 *param_2,undefined4 *param_3);
+undefined4 __cdecl intersectXZCylinderWithHeight(SIntersectXZCylinder *param_1,float *param_2,float *param_3);
 
 // Original: core_dcube.cpp_intersectTriangleWithXZCylinder_FUN_00445010
 // Address: 00445010

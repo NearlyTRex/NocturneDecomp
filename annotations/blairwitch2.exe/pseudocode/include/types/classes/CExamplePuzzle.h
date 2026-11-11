@@ -6,11 +6,15 @@
 #include "system/basetypes.h"
 
 // Structure: CExamplePuzzle
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 20; ctor 0059bf50 calls the puzzle base ctor 0059ab30 then stores the CExamplePuzzle vtable at +0
 // Ghidra size: 0x14 (20 bytes)
 #pragma pack(push, 1)
 typedef struct CExamplePuzzle {
-    char field_0[20]; // 0x0
+    void* vtable; // 0x0, puzzle vtable pointer: the shared puzzle base ctor (0059ab30) stores the base vtable at +0 and registers the object in the global puzzle list; the base has no fields, no RTTI and no type in the DB, so it is modelled as this field
+    int rect_left; // 0x4, load 0059ad20 stores random(10, screen_w-20); render 0059ada0 passes it to drawRect; onMouse 0059adf0 tests x >= it
+    int rect_top; // 0x8, load stores random(10, screen_h-20); drawRect arg 2; onMouse tests y >= it
+    int rect_right; // 0xc, load stores random(left+5, screen_w-10); drawRect arg 3; onMouse tests x <= it
+    int rect_bottom; // 0x10, load stores random(top+5, screen_h-10); drawRect arg 4; onMouse tests y <= it and fires 'Hooray'
 } CExamplePuzzle;
 #pragma pack(pop)
 

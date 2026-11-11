@@ -19,7 +19,7 @@ void __cdecl core_mimic_cpp_CMimic_renderBackground_FUN_004f1b80(CMimic *this_pt
   bVar4 = 0;
   if ((this_ptr->base).pool_me != 0) {
     if (layer_flag != 0) {
-      *(uint *)&(this_ptr->base).base.field_0x2568 = 1;
+      (this_ptr->base).base.render_active = 1;
     }
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
     (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
@@ -35,8 +35,7 @@ void __cdecl core_mimic_cpp_CMimic_renderBackground_FUN_004f1b80(CMimic *this_pt
     if (iVar1 != 0) {
       core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_00547170
                 (&(this_ptr->base).base.model,-1,0xffffffff,1,0);
-      core_cloth_cpp_CCloth_render_FUN_005b0fe0
-                ((CCloth *)&this_ptr->field_0x10bc0,(CDeformableModelInstance *)0x0);
+      core_cloth_cpp_CCloth_render_FUN_005b0fe0(&this_ptr->cloth,(CDeformableModelInstance *)0x0);
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10((CDemonActor *)this_ptr);
   }

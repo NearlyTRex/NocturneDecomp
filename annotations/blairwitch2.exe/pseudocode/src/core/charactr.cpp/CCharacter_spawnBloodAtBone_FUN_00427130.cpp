@@ -21,7 +21,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00427130(CCharact
   float afStack_c [2];
   
   bVar2 = 0;
-  if (*(int *)(&(this_ptr->model).field_0x2140 + part_index * 4) == 0) {
+  if ((this_ptr->model).part_data.visibility_flags[part_index] == 0) {
     iVar1 = core_actor_cpp_randomChance_FUN_0040d060(chance);
     if (iVar1 != 0) {
       core_skeleton_cpp_FUN_00546a90(&this_ptr->model,bone_index);

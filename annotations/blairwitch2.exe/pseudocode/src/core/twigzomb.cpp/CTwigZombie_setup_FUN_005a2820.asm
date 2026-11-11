@@ -11,10 +11,10 @@
 ;   TerminatedCString s_SM_TWIG_DFM_005effdc
 ;
 ; Called Functions:
+;   core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80
 ;   crt_string.c__strcmp_FUN_005b8c30
-;   unkafter_basicene.cpp_FUN_0059e6a0
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     MOV EBP,ESP                         ; 005a2823
     MOV EBX,dword ptr [EBP + 0x10]      ; 005a2825
     PUSH EBX                            ; 005a2828
-    CALL unkafter_basicene.cpp_FUN_0059e6a0 ; 005a2829
-        ;   XREF to: 0059e6a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059e6a0()
+    CALL core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0 ; 005a2829
+        ;   XREF to: 0059e6a0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0(CBasicEnemy * this_ptr)
     ADD ESP,0x4                         ; 005a282e
     LEA EAX,[EBX + 0x2b4]               ; 005a2831
     PUSH EAX                            ; 005a2837

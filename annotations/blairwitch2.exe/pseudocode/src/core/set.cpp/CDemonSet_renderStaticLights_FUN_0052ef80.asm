@@ -37,7 +37,7 @@
 ;   undefined4 DAT_01511ce4
 ;   undefined4 DAT_01ba5c50
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.quimby_flag
+;   undefined4 g_CGameInstance.shadow_flag
 ;   undefined4 g_CGameInstance.profile_mode
 ;   ... and 5 more
 ;
@@ -68,7 +68,7 @@ section .text
     SUB ESP,0x30                        ; 0052ef84
     MOV ESI,dword ptr [ESP + 0x44]      ; 0052ef87
     MOV EAX,[0x00616494]                ; 0052ef8b | g_CGamePtr | g_CGameInstance
-    CMP dword ptr [EAX + 0x24],0x0      ; 0052ef90 | g_CGameInstance.quimby_flag
+    CMP dword ptr [EAX + 0x24],0x0      ; 0052ef90 | g_CGameInstance.shadow_flag
     JZ 0x0052f05b                       ; 0052ef94
         ;   XREF to: 0052f05b (CONDITIONAL_JUMP)  ; LAB_0052f05b
     CMP dword ptr [EAX + 0x228],0x0     ; 0052ef9a | g_CGameInstance.profile_mode

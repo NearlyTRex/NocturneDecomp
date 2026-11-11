@@ -11,39 +11,41 @@
 SMRGLHeaderExtended * __cdecl engine_model_c_FUN_005011a0(char *filename,int model_size)
 
 {
-  _FILE *p_Var1;
-  SMRGLHeaderExtended *pSVar2;
-  int iVar3;
+  char cVar1;
+  _FILE *p_Var2;
+  SMRGLHeaderExtended *pSVar3;
+  int iVar4;
   char local_60 [80];
   
-  p_Var1 = engine_dosio_cpp_FUN_00460c70("models",filename,&DAT_005df0cd);
-  if (p_Var1 == (_FILE *)0x0) {
+  p_Var2 = engine_dosio_cpp_FUN_00460c70("models",filename,&DAT_005df0cd);
+  if (p_Var2 == (_FILE *)0x0) {
     _sprintf(local_60,"Unable to open model: %s");
     _DAT_01d046a0 = "..\\engine\\model.c";
     _DAT_01d046a4 = 0x2e4;
     core_main_c_FUN_004e4500(local_60);
   }
-  pSVar2 = FUN_005b8580(model_size + 4);
-  if (pSVar2 == (SMRGLHeaderExtended *)0x0) {
+  pSVar3 = (SMRGLHeaderExtended *)malloc(model_size + 4);
+  if (pSVar3 == (SMRGLHeaderExtended *)0x0) {
     _sprintf(local_60,"Out of partial model mem : %s");
     _DAT_01d046a4 = 0x2ef;
     _DAT_01d046a0 = "..\\engine\\model.c";
     core_main_c_FUN_004e4500(local_60);
   }
-  iVar3 = _fread(pSVar2,1,model_size,p_Var1);
-  if (iVar3 != model_size) {
+  iVar4 = _fread(pSVar3,1,model_size,p_Var2);
+  if (iVar4 != model_size) {
     _DAT_01d046a0 = "..\\engine\\model.c";
     _DAT_01d046a4 = 0x2f4;
     core_main_c_FUN_004e4500("Model read hose");
   }
-  _fclose(p_Var1);
-  if ((*pSVar2 != (SMRGLHeaderExtended)0x14) && (*pSVar2 != (SMRGLHeaderExtended)0x20)) {
+  _fclose(p_Var2);
+  cVar1 = (char)(pSVar3->base).type;
+  if ((cVar1 != '\x14') && (cVar1 != ' ')) {
     _DAT_01d046a0 = "..\\engine\\model.c";
     _DAT_01d046a4 = 0x2f8;
     core_main_c_FUN_004e4500("Bad model!");
-    *(uint *)(pSVar2 + model_size) = 0;
-    return pSVar2;
+    *(uint *)((int)&(pSVar3->base).type + model_size) = 0;
+    return pSVar3;
   }
-  *(uint *)(pSVar2 + model_size) = 0;
-  return pSVar2;
+  *(uint *)((int)&(pSVar3->base).type + model_size) = 0;
+  return pSVar3;
 }

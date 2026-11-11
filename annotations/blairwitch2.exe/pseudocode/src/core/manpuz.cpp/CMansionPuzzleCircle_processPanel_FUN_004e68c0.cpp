@@ -17,65 +17,64 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_004e68c0(CMan
   SPanel *pSVar4;
   
   pSVar3 = this_ptr->panels + panel_index;
-  if (*(int *)pSVar3 != 0) {
-    fVar1 = (*(float *)&pSVar3->field_0x8 * delta_time) / _DAT_005f98c0 +
-            *(float *)&pSVar3->field_0x4;
-    *(float *)&pSVar3->field_0x4 = fVar1;
+  if (pSVar3->exists != 0) {
+    fVar1 = (pSVar3->anim_speed * delta_time) / _DAT_005f98c0 + pSVar3->anim_progress;
+    pSVar3->anim_progress = fVar1;
     if (fVar1 < 0.0) {
-      *(uint *)&pSVar3->field_0x8 = 0;
-      *(uint *)&pSVar3->field_0x4 = 0;
+      pSVar3->anim_speed = 0.0;
+      pSVar3->anim_progress = 0.0;
     }
-    if (1.0 <= *(float *)&pSVar3->field_0x4) {
+    if (1.0 <= pSVar3->anim_progress) {
       iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004e7560
                         (this_ptr,panel_index);
       pSVar4 = this_ptr->panels + iVar2;
-      if (*(int *)pSVar4 != 0) {
+      if (pSVar4->exists != 0) {
         _DAT_01d046a0 = "..\\core\\manpuz.cpp";
         _DAT_01d046a4 = 0x45d;
         core_main_c_FUN_004e4500("CMansionPuzzleCircle::processPanel - Panel collision!");
       }
-      *(int *)pSVar4 = *(int *)pSVar3;
-      *(uint *)&pSVar4->field_0x4 = *(uint *)&pSVar3->field_0x4;
-      *(uint *)&pSVar4->field_0x8 = *(uint *)&pSVar3->field_0x8;
-      if (&pSVar4->field_0xc != &pSVar3->field_0xc) {
-        *(uint *)&pSVar4->field_0xc = *(uint *)&pSVar3->field_0xc;
-        *(uint *)&pSVar4->field_0x10 = *(uint *)&pSVar3->field_0x10;
-        *(uint *)&pSVar4->field_0x14 = *(uint *)&pSVar3->field_0x14;
+      pSVar4->exists = pSVar3->exists;
+      pSVar4->anim_progress = pSVar3->anim_progress;
+      pSVar4->anim_speed = pSVar3->anim_speed;
+      if (&pSVar4->local_position != &pSVar3->local_position) {
+        (pSVar4->local_position).x = (pSVar3->local_position).x;
+        (pSVar4->local_position).y = (pSVar3->local_position).y;
+        (pSVar4->local_position).z = (pSVar3->local_position).z;
       }
-      if (&pSVar4->field_0x18 != &pSVar3->field_0x18) {
-        *(uint *)&pSVar4->field_0x18 = *(uint *)&pSVar3->field_0x18;
-        *(uint *)&pSVar4->field_0x1c = *(uint *)&pSVar3->field_0x1c;
-        *(uint *)&pSVar4->field_0x20 = *(uint *)&pSVar3->field_0x20;
+      if (&pSVar4->rotation != &pSVar3->rotation) {
+        (pSVar4->rotation).x = (pSVar3->rotation).x;
+        (pSVar4->rotation).y = (pSVar3->rotation).y;
+        (pSVar4->rotation).z = (pSVar3->rotation).z;
       }
-      *(uint *)&pSVar4->field_0x24 = *(uint *)&pSVar3->field_0x24;
-      *(uint *)&pSVar4->field_0x28 = *(uint *)&pSVar3->field_0x28;
-      *(uint *)&pSVar4->field_0x2c = *(uint *)&pSVar3->field_0x2c;
-      *(uint *)&pSVar4->field_0x30 = *(uint *)&pSVar3->field_0x30;
-      *(uint *)&pSVar4->field_0x34 = *(uint *)&pSVar3->field_0x34;
-      *(uint *)&pSVar4->field_0x38 = *(uint *)&pSVar3->field_0x38;
-      *(uint *)&pSVar4->field_0x3c = *(uint *)&pSVar3->field_0x3c;
-      *(uint *)&pSVar4->field_0x40 = *(uint *)&pSVar3->field_0x40;
-      *(uint *)&pSVar4->field_0x44 = *(uint *)&pSVar3->field_0x44;
-      *(uint *)&pSVar4->field_0x48 = *(uint *)&pSVar3->field_0x48;
-      *(uint *)&pSVar4->field_0x4c = *(uint *)&pSVar3->field_0x4c;
-      *(uint *)&pSVar4->field_0x50 = *(uint *)&pSVar3->field_0x50;
-      *(uint *)&pSVar4->field_0x54 = *(uint *)&pSVar3->field_0x54;
-      if (&pSVar4->field_0x58 != &pSVar3->field_0x58) {
-        *(uint *)&pSVar4->field_0x58 = *(uint *)&pSVar3->field_0x58;
-        *(uint *)&pSVar4->field_0x5c = *(uint *)&pSVar3->field_0x5c;
-        *(uint *)&pSVar4->field_0x60 = *(uint *)&pSVar3->field_0x60;
+      (pSVar4->rotation_matrix).m[0].x = (pSVar3->rotation_matrix).m[0].x;
+      (pSVar4->rotation_matrix).m[0].y = (pSVar3->rotation_matrix).m[0].y;
+      (pSVar4->rotation_matrix).m[0].z = (pSVar3->rotation_matrix).m[0].z;
+      (pSVar4->rotation_matrix).m[1].x = (pSVar3->rotation_matrix).m[1].x;
+      (pSVar4->rotation_matrix).m[1].y = (pSVar3->rotation_matrix).m[1].y;
+      (pSVar4->rotation_matrix).m[1].z = (pSVar3->rotation_matrix).m[1].z;
+      (pSVar4->rotation_matrix).m[2].x = (pSVar3->rotation_matrix).m[2].x;
+      (pSVar4->rotation_matrix).m[2].y = (pSVar3->rotation_matrix).m[2].y;
+      (pSVar4->rotation_matrix).m[2].z = (pSVar3->rotation_matrix).m[2].z;
+      pSVar4->dead = pSVar3->dead;
+      (pSVar4->color).r = (pSVar3->color).r;
+      (pSVar4->color).g = (pSVar3->color).g;
+      (pSVar4->color).b = (pSVar3->color).b;
+      if (&pSVar4->world_position != &pSVar3->world_position) {
+        (pSVar4->world_position).x = (pSVar3->world_position).x;
+        (pSVar4->world_position).y = (pSVar3->world_position).y;
+        (pSVar4->world_position).z = (pSVar3->world_position).z;
       }
-      *(uint *)&pSVar4->field_0x8 = 0;
-      *(uint *)&pSVar4->field_0x4 = 0;
-      *(int *)pSVar3 = 0;
+      pSVar4->anim_speed = 0.0;
+      pSVar4->anim_progress = 0.0;
+      pSVar3->exists = 0;
       goto LAB_004e6a3b;
     }
   }
-  if (*(int *)pSVar3 != 0) {
+  if (pSVar3->exists != 0) {
     return;
   }
 LAB_004e6a3b:
-  *(uint *)&pSVar3->field_0x8 = 0;
-  *(uint *)&pSVar3->field_0x4 = 0;
+  pSVar3->anim_speed = 0.0;
+  pSVar3->anim_progress = 0.0;
   return;
 }

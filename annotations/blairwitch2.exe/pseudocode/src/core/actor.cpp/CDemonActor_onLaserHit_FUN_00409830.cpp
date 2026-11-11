@@ -9,8 +9,8 @@
 void __cdecl core_actor_cpp_CDemonActor_onLaserHit_FUN_00409830(CDemonActor *this_ptr,SLaserInfo *laser_info)
 
 {
-  *(uint *)(laser_info + 0x48) = 0;
-  *(uint *)(laser_info + 0x50) = 0;
-  *(uint *)(laser_info + 0x4c) = *(uint *)(laser_info + 0x44);
+  laser_info->reflectivity = 0.0;
+  laser_info->transparency = 0.0;
+  laser_info->stored_angle = laser_info->incidence_angle;
   return;
 }

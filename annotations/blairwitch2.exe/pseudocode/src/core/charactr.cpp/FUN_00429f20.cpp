@@ -30,9 +30,9 @@ uint core_charactr_cpp_FUN_00429f20(CCharacter *param_1,float param_2,char *para
   if (0.0 < param_2) goto LAB_00429ff3;
   pCVar2 = param_1->wander_target;
   if ((pCVar2 == (CWayPoint *)0x0) ||
-     (fVar4 = *(float *)&(pCVar2->base).base.field_0x20 - *(float *)&(param_1->base).field_0x20,
-     fVar1 = *(float *)&(pCVar2->base).base.field_0x24 - *(float *)&(param_1->base).field_0x24,
-     fVar5 = *(float *)&(pCVar2->base).base.field_0x28 - *(float *)&(param_1->base).field_0x28,
+     (fVar4 = (pCVar2->base).base.location.position.x - (param_1->base).location.position.x,
+     fVar1 = (pCVar2->base).base.location.position.y - (param_1->base).location.position.y,
+     fVar5 = (pCVar2->base).base.location.position.z - (param_1->base).location.position.z,
      (float)_DAT_005cd146 <= SQRT(fVar5 * fVar5 + fVar1 * fVar1 + fVar4 * fVar4))) {
     if (param_1->wander_nearest_waypoint == (CWayPoint *)0x0) goto LAB_00429fa6;
     if (param_1->wander_target == (CWayPoint *)0x0) goto LAB_00429fb0;
@@ -67,7 +67,7 @@ LAB_00429ff3:
   direction = (CVector3f *)&DAT_0265370c;
   path_map = (*((pCVar2->base).base.vtable._ub)->getPathMap)((CDemonActor *)pCVar2);
   iVar3 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
-                    (param_1,(CVector3f *)&(param_1->wander_nearest_waypoint->base).base.field_0x20,
+                    (param_1,&(param_1->wander_nearest_waypoint->base).base.location.position,
                      path_map,direction,fVar4,fVar5);
   if (iVar3 != 0) {
     if (iVar3 < 0) {

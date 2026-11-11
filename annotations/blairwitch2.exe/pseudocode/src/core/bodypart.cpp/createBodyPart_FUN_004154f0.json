@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 155,
-    "complexity_score": 223,
+    "complexity_score": 123,
     "cross_reference_count": 16,
     "function_call_count": 7,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 63,
-    "suspect_count": 14,
+    "suspect_count": 5,
     "suspect_types": [
-      "alloc_magic_size",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -161,7 +159,7 @@
     {
       "addr": "005b8be2",
       "is_variadic": false,
-      "name": "crt_unknown.c_debugAllocTracked1_FUN_005b8be2"
+      "name": "crt_memory.c_operator_new_FUN_005b8be2"
     }
   ],
   "globals": [
@@ -432,84 +430,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 28,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr_00->base).field_0x20 = position->x;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr_00->base).field_0x24 = position->y;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr_00->base).field_0x28 = position->z;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr_00->base).field_0x108 = *(uint *)&scale_source->field_0x108;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr_00->base).field_0x108 = *(uint *)&scale_source->field_0x108;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 59,
-      "match": "field_0x10c",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr_00->base).field_0x10c = *(uint *)&scale_source->field_0x10c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 59,
-      "match": "field_0x10c",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr_00->base).field_0x10c = *(uint *)&scale_source->field_0x10c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 60,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr_00->base).field_0x110 = *(uint *)&scale_source->field_0x110;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 60,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr_00->base).field_0x110 = *(uint *)&scale_source->field_0x110;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0xfc",
-      "severity": "mild",
-      "text": "*(int *)&(this_ptr_00->base).field_0xfc = is_transparent;",
-      "type": "unnamed_field"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr_00->base).location.position.x = position->x;",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
@@ -528,12 +454,12 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Allocation size hardcodes 0x1344 == sizeof(CBodyPart). Replace the magic with sizeof(CBodyPart) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 18,
-      "match": "(CBodyPart*) alloc stride 0x1344",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 58,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(CBodyPart *)debugAllocTracked1(0x1344)",
-      "type": "alloc_magic_size"
+      "text": "(this_ptr_00->base).scale.x = (scale_source->scale).x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

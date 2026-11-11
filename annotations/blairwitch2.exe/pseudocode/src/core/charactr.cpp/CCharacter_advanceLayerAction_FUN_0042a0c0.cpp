@@ -26,21 +26,19 @@ int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042a0c0(CCharac
     _DAT_01d046a4 = 0x114a;
     core_main_c_FUN_004e4500("CCharacter::advanceLayerAction - invalid layerActionIndex");
   }
-  pSVar6 = this_ptr->layer_actions + this_ptr->layer_action_index * 0x38;
+  pSVar6 = this_ptr->layer_actions + this_ptr->layer_action_index;
   if (this_ptr->layer_action_t < 0.0) {
     this_ptr->layer_action_t = 0.0;
   }
   if (1.0 < this_ptr->layer_action_t) {
     this_ptr->layer_action_t = 1.0;
   }
-  fVar3 = this_ptr->layer_action_t * *(float *)(pSVar6 + 0x34);
-  local_18 = *(float *)(pSVar6 + 0x34) * (1.0 - this_ptr->layer_action_t);
-  iVar7 = *(int *)(pSVar6 + 0x28);
+  fVar3 = this_ptr->layer_action_t * pSVar6->duration;
+  local_18 = pSVar6->duration * (1.0 - this_ptr->layer_action_t);
+  iVar7 = pSVar6->direction;
   if (iVar7 != 0) goto LAB_0042a1e0;
-  fVar1 = *(float *)((int)this_ptr->motion_transition_costs +
-                    target_bone_index * 4 + *(int *)(pSVar6 + 4) * 0x58);
-  fVar2 = *(float *)((int)this_ptr->motion_transition_costs +
-                    target_bone_index * 4 + *(int *)pSVar6 * 0x58);
+  fVar1 = this_ptr->motion_transition_costs[pSVar6->to_bone_index][target_bone_index];
+  fVar2 = this_ptr->motion_transition_costs[pSVar6->from_bone_index][target_bone_index];
   fVar4 = fVar1 + local_18;
   fVar5 = fVar2 + fVar3;
   if (fVar4 <= fVar5) {
@@ -59,7 +57,7 @@ LAB_0042a1e0:
     local_18 = fVar3;
   }
   if (*remaining_time < local_18) {
-    fVar3 = ((float)iVar7 * *remaining_time) / *(float *)(pSVar6 + 0x34) + this_ptr->layer_action_t;
+    fVar3 = ((float)iVar7 * *remaining_time) / pSVar6->duration + this_ptr->layer_action_t;
     this_ptr->layer_action_t = fVar3;
     if (fVar3 < 0.0) {
       this_ptr->layer_action_t = 0.0;
@@ -72,11 +70,11 @@ LAB_0042a1e0:
   }
   *remaining_time = *remaining_time - local_18;
   if (-1 < iVar7) {
-    iVar7 = *(int *)(pSVar6 + 4);
+    iVar7 = pSVar6->to_bone_index;
     this_ptr->layer_action_t = 1.0;
     return iVar7;
   }
-  iVar7 = *(int *)pSVar6;
+  iVar7 = pSVar6->from_bone_index;
   this_ptr->layer_action_t = 0.0;
   return iVar7;
 }

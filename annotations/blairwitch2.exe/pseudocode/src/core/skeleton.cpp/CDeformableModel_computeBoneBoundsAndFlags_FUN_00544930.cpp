@@ -9,14 +9,14 @@
 void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00544930(CDeformableModel *this_ptr)
 
 {
-  byte *pbVar1;
+  uchar *puVar1;
   int iVar2;
   CSkeleton *pCVar3;
   int iVar4;
-  byte *pbVar5;
+  uchar *puVar5;
   CDeformableModel *pCVar6;
   int iVar7;
-  byte *pbVar8;
+  uchar *puVar8;
   CSkeleton *pCVar9;
   int iVar10;
   CDeformableModel *pCVar11;
@@ -44,15 +44,15 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00
   if (0 < this_ptr->vertex_count[0]) {
     local_28 = 0;
     do {
-      pbVar5 = &this_ptr->vertex_data_ptr[0]->field_0x0 + local_28;
-      point = (CVector3f *)(pbVar5 + 0x10);
-      pbVar8 = pbVar5;
-      for (iVar7 = 0; iVar7 < (int)(uint)*pbVar5; iVar7 = iVar7 + 1) {
-        pbVar1 = pbVar8 + 1;
-        pbVar8 = pbVar8 + 1;
-        core_box_cpp_CBoundingBox3D_expand_FUN_0041a590(this_ptr->bone_bounds + *pbVar1,point);
+      puVar5 = this_ptr->vertex_data_ptr[0]->bone_indices + local_28 + -1;
+      point = (CVector3f *)(puVar5 + 0x10);
+      puVar8 = puVar5;
+      for (iVar7 = 0; iVar7 < (int)(uint)*puVar5; iVar7 = iVar7 + 1) {
+        puVar1 = puVar8 + 1;
+        puVar8 = puVar8 + 1;
+        core_box_cpp_CBoundingBox3D_expand_FUN_0041a590(this_ptr->bone_bounds + *puVar1,point);
         point = point + 1;
-        this_ptr->bone_flags[*pbVar8] = 1;
+        this_ptr->bone_flags[*puVar8] = 1;
       }
       local_28 = local_28 + 0x34;
       local_24 = local_24 + 1;
@@ -64,16 +64,16 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00
   if (0 < iVar2) {
     do {
       if (pCVar6->bone_flags[0] == 1) {
-        if (-1 < *(int *)(local_2c->bone_list + 0x20)) {
+        if (-1 < local_2c->bone_list[0].parent_index) {
           iVar4 = 0;
           pCVar9 = pCVar3;
           pCVar11 = this_ptr;
           if (0 < iVar2) {
             do {
-              if ((iVar7 == *(int *)(pCVar9->bone_list + 0x20)) && (pCVar11->bone_flags[0] != 0))
+              if ((iVar7 == pCVar9->bone_list[0].parent_index) && (pCVar11->bone_flags[0] != 0))
               break;
               iVar4 = iVar4 + 1;
-              pCVar9 = (CSkeleton *)&pCVar9->field_0x24;
+              pCVar9 = (CSkeleton *)((pCVar9->motion_list).state_names[1] + 2);
               pCVar11 = (CDeformableModel *)pCVar11->lod_info;
             } while (iVar4 < iVar2);
           }
@@ -81,7 +81,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00
             iVar10 = 0;
             iVar4 = iVar7;
             do {
-              iVar4 = *(int *)(pCVar3->bone_list + iVar4 * 0x24 + 0x20);
+              iVar4 = pCVar3->bone_list[iVar4].parent_index;
               if ((iVar4 < 0) || (this_ptr->bone_flags[iVar4] == 2)) break;
               iVar10 = iVar10 + 1;
             } while (iVar10 < 2);
@@ -93,7 +93,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00
 LAB_00544a02:
       iVar7 = iVar7 + 1;
       pCVar6 = (CDeformableModel *)pCVar6->lod_info;
-      local_2c = (CSkeleton *)&local_2c->field_0x24;
+      local_2c = (CSkeleton *)((local_2c->motion_list).state_names[1] + 2);
     } while (iVar7 < iVar2);
   }
   return;

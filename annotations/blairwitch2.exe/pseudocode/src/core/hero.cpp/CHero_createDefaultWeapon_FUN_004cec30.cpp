@@ -9,6 +9,6 @@
 void __cdecl core_hero_cpp_CHero_createDefaultWeapon_FUN_004cec30(CHero *this_ptr)
 
 {
-  core_inv_cpp_CInventory_initialize_FUN_004da900((CInventory *)(this_ptr + 0x2437c));
+  core_inv_cpp_CInventory_initialize_FUN_004da900(this_ptr->inventories);
   return;
 }

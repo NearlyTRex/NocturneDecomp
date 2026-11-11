@@ -14,7 +14,7 @@
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240
 ;   core_inv.cpp_FUN_004dadb0
 ;   core_main.c_FUN_004e4500
-;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     RET                                 ; 004db771
     PUSH 0x47c                          ; 004db772
         ;   Label: LAB_004db772
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 004db777
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004db777
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 004db77c
     TEST EAX,EAX                        ; 004db77f
     JZ 0x004db78c                       ; 004db781

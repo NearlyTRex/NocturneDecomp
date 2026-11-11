@@ -20,7 +20,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_0047
     _DAT_01d046a4 = 0xa0;
     core_main_c_FUN_004e4500("gEdFont must be set by the application.");
   }
-  _DAT_01c25f78 = *(uint *)(_DAT_01c25590 + 0x41e8);
+  _DAT_01c25f78 = _DAT_01c25590->max_char_width;
   _DAT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(_DAT_01c25590,0x6a);
   iVar1 = DAT_006141b8 / 2;
   if (message_text != (char *)0x0) {

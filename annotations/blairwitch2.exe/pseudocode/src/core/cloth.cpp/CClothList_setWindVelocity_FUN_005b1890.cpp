@@ -19,10 +19,10 @@ void __cdecl core_cloth_cpp_CClothList_setWindVelocity_FUN_005b1890(CClothList *
     do {
       while( true ) {
         pCVar1 = pCVar2->cloths[0];
-        if ((CVector3f *)(pCVar1 + 0x3ab24) == wind_velocity) break;
-        ((CVector3f *)(pCVar1 + 0x3ab24))->x = wind_velocity->x;
-        *(float *)(pCVar1 + 0x3ab28) = wind_velocity->y;
-        *(float *)(pCVar1 + 0x3ab2c) = wind_velocity->z;
+        if (&pCVar1->wind_velocity == wind_velocity) break;
+        (pCVar1->wind_velocity).x = wind_velocity->x;
+        (pCVar1->wind_velocity).y = wind_velocity->y;
+        (pCVar1->wind_velocity).z = wind_velocity->z;
         iVar3 = iVar3 + 1;
         pCVar2 = (CClothList *)pCVar2->filenames;
         if (this_ptr->count <= iVar3) {

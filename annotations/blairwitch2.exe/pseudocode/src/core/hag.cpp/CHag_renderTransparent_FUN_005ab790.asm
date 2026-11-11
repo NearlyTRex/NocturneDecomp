@@ -8,7 +8,7 @@
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_renderTransparent_FUN_0059f980
-;   unkafter_superopt.cpp_FUN_005a8290
+;   unkafter_superopt.cpp_CSimpleParticleSystem_render_FUN_005a8290
 ;
 ; *****************************************************************************
 
@@ -25,13 +25,13 @@ section .text
     MOV EBX,EAX                         ; 005ab79f
     LEA EAX,[ESI + 0x154]               ; 005ab7a1
     PUSH EAX                            ; 005ab7a7
-    CALL unkafter_superopt.cpp_FUN_005a8290 ; 005ab7a8
-        ;   XREF to: 005a8290 (UNCONDITIONAL_CALL)  ; undefined unkafter_superopt.cpp_FUN_005a8290()
+    CALL unkafter_superopt.cpp_CSimpleParticleSystem_render_FUN_005a8290 ; 005ab7a8
+        ;   XREF to: 005a8290 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_render_FUN_005a8290(CSimpleParticleSystem * this_ptr)
     ADD ESP,0x4                         ; 005ab7ad
     LEA EAX,[ESI + 0x264]               ; 005ab7b0
     PUSH EAX                            ; 005ab7b6
-    CALL unkafter_superopt.cpp_FUN_005a8290 ; 005ab7b7
-        ;   XREF to: 005a8290 (UNCONDITIONAL_CALL)  ; undefined unkafter_superopt.cpp_FUN_005a8290()
+    CALL unkafter_superopt.cpp_CSimpleParticleSystem_render_FUN_005a8290 ; 005ab7b7
+        ;   XREF to: 005a8290 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_render_FUN_005a8290(CSimpleParticleSystem * this_ptr)
     ADD ESP,0x4                         ; 005ab7bc
     MOV EAX,EBX                         ; 005ab7bf
     POP ESI                             ; 005ab7c1

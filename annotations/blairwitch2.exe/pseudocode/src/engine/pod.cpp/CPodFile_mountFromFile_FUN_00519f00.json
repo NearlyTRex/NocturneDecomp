@@ -2,22 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 833,
-    "complexity_score": 584,
+    "complexity_score": 901,
     "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 374,
-    "suspect_count": 18,
+    "pseudocode_lines": 376,
+    "suspect_count": 48,
     "suspect_types": [
+      "alloc_magic_size",
+      "pointer_cast",
       "pointer_stride_bytecount",
+      "pointer_truncation",
       "sign_compare_idiom",
       "undefined_data",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1207
+    "total_lines": 1209
   },
   "cross_references": [
     {
@@ -58,6 +61,11 @@
       "name": "core_main.c_FUN_004e4500"
     },
     {
+      "addr": "005b8580",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005b8580"
+    },
+    {
       "addr": "005b8ce0",
       "is_variadic": false,
       "name": "crt_memory.c_realloc_FUN_005b8ce0"
@@ -96,11 +104,6 @@
       "addr": "005b8130",
       "is_variadic": false,
       "name": "crt_string.c__stricmp_FUN_005b8130"
-    },
-    {
-      "addr": "005b8580",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8580"
     },
     {
       "addr": "004609e0",
@@ -685,7 +688,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 81,
       "match": "DAT_005e2407",
       "severity": "mild",
       "text": "iVar2 = _fopen(this_ptr->filename,&DAT_005e2407);",
@@ -693,7 +696,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 86,
       "match": "DAT_005e240a",
       "severity": "mild",
       "text": "iVar3 = _stricmp(local_260,&DAT_005e240a);",
@@ -701,7 +704,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 88,
       "match": "DAT_005e240e",
       "severity": "mild",
       "text": "(iVar3 = _stricmp(local_260,&DAT_005e240e), iVar3 == 0)) {",
@@ -709,23 +712,127 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 150,
+      "line": 152,
       "match": "SBORROW4",
       "severity": "moderate",
-      "text": "bVar9 = SBORROW4(size,local_2c);",
+      "text": "bVar10 = SBORROW4(size,local_2c);",
       "type": "sign_compare_idiom"
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 346,
+      "line": 348,
       "match": "SBORROW4",
       "severity": "moderate",
-      "text": "bVar9 = SBORROW4(size,local_14);",
+      "text": "bVar10 = SBORROW4(size,local_14);",
       "type": "sign_compare_idiom"
     },
     {
+      "description": "Pointer value `&this_ptr->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 112,
+      "match": "(int)&this_ptr->directory_entries->name",
+      "severity": "moderate",
+      "text": "*(ulong *)((int)&this_ptr->directory_entries->name + local_1c) = size;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 134,
+      "match": "(int)&this_ptr->directory_entries->name",
+      "severity": "moderate",
+      "text": "*(int *)((int)&this_ptr->directory_entries->name + local_1c);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 144,
+      "match": "(int)&this_ptr->directory_entries->size",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->size + local_1c) = local_6c;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->offset` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 145,
+      "match": "(int)&this_ptr->directory_entries->offset",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->offset + local_1c) = local_68;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->checksum` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 146,
+      "match": "(int)&this_ptr->directory_entries->checksum",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->checksum + local_1c) = local_60;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->timestamp` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 148,
+      "match": "(int)&this_ptr->directory_entries->timestamp",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_1c) = this_ptr->timestamp;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 308,
+      "match": "(int)&this_ptr->directory_entries->name",
+      "severity": "moderate",
+      "text": "*(ulong *)((int)&this_ptr->directory_entries->name + local_24) = size;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 330,
+      "match": "(int)&this_ptr->directory_entries->name",
+      "severity": "moderate",
+      "text": "*(int *)((int)&this_ptr->directory_entries->name + local_24);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 340,
+      "match": "(int)&this_ptr->directory_entries->size",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->size + local_24) = local_3c;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->offset` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 341,
+      "match": "(int)&this_ptr->directory_entries->offset",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->offset + local_24) = local_38;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->checksum` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 342,
+      "match": "(int)&this_ptr->directory_entries->checksum",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->checksum + local_24) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->timestamp` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 343,
+      "match": "(int)&this_ptr->directory_entries->timestamp",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_24) = this_ptr->timestamp;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 369,
+      "match": "(int)&this_ptr->directory_entries->name",
+      "severity": "moderate",
+      "text": "piVar5 = (int *)((int)&this_ptr->directory_entries->name + iVar3);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 70,
+      "line": 71,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -733,7 +840,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 92,
+      "line": 93,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -741,7 +848,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 133,
+      "line": 135,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -749,7 +856,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 162,
+      "line": 164,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -757,7 +864,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 173,
+      "line": 175,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -765,7 +872,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 184,
+      "line": 186,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -773,7 +880,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 237,
+      "line": 239,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -781,7 +888,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 288,
+      "line": 289,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -789,15 +896,119 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 329,
+      "line": 331,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 112,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(ulong *)((int)&this_ptr->directory_entries->name + local_1c) = size;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 134,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&this_ptr->directory_entries->name + local_1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 144,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->size + local_1c) = local_6c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 145,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->offset + local_1c) = local_68;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 146,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->checksum + local_1c) = local_60;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 148,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_1c) = this_ptr->timestamp;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 308,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(ulong *)((int)&this_ptr->directory_entries->name + local_24) = size;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 330,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&this_ptr->directory_entries->name + local_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 340,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->size + local_24) = local_3c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 341,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->offset + local_24) = local_38;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 342,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->checksum + local_24) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 343,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_24) = this_ptr->timestamp;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 369,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar5 = (int *)((int)&this_ptr->directory_entries->name + iVar3);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 114,
+      "line": 115,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -805,15 +1016,47 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 310,
+      "line": 311,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
+    },
+    {
+      "description": "Allocation size hardcodes 0x14 == sizeof(CPodDirectoryEntry). Replace the magic with sizeof(CPodDirectoryEntry) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 102,
+      "match": "(CPodDirectoryEntry*) alloc stride 0x14",
+      "severity": "moderate",
+      "text": "(CPodDirectoryEntry *)malloc(this_ptr->file_count * 0x14)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x14 == sizeof(CPodDirectoryEntry). Replace the magic with sizeof(CPodDirectoryEntry) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 199,
+      "match": "(CPodDirectoryEntry*) alloc stride 0x14",
+      "severity": "moderate",
+      "text": "(CPodDirectoryEntry *)malloc(this_ptr->file_count * 0x14)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x14 == sizeof(CPodDirectoryEntry). Replace the magic with sizeof(CPodDirectoryEntry) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 250,
+      "match": "(CPodDirectoryEntry*) alloc stride 0x14",
+      "severity": "moderate",
+      "text": "(CPodDirectoryEntry *)malloc(this_ptr->file_count * 0x14)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x14 == sizeof(CPodDirectoryEntry). Replace the magic with sizeof(CPodDirectoryEntry) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 298,
+      "match": "(CPodDirectoryEntry*) alloc stride 0x14",
+      "severity": "moderate",
+      "text": "(CPodDirectoryEntry *)malloc(this_ptr->file_count * 0x14)",
+      "type": "alloc_magic_size"
     },
     {
       "description": "_qsort element width is the literal 0x14 instead of sizeof(*base). If the elements are pointers or hold one, the sort walks misaligned elements on the 64-bit build.",
-      "line": 374,
+      "line": 376,
       "match": "_qsort",
       "severity": "moderate",
       "text": "_qsort",

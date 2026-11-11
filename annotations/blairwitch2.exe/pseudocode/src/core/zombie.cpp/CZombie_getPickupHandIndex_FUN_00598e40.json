@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 76,
+    "complexity_score": 50,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 36,
-    "suspect_count": 3,
+    "pseudocode_lines": 35,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field"
+      "undefined_data"
     ],
-    "total_lines": 125
+    "total_lines": 124
   },
   "cross_references": [
     {
@@ -234,28 +233,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x2260",
-      "severity": "mild",
-      "text": "(&(this_ptr->base).base.model.field_0x2260,\"jeff.dfm\"), iVar1 == 0)",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 13,
       "match": "DAT_005ef2c7",
       "severity": "mild",
-      "text": "(&(this_ptr->base).base.model.field_0x2260,&DAT_005ef2c7,3);",
+      "text": "((this_ptr->base).base.model.model_name,&DAT_005ef2c7,3);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x2260",
-      "severity": "mild",
-      "text": "(&(this_ptr->base).base.model.field_0x2260,&DAT_005ef2c7,3);",
-      "type": "unnamed_field"
     }
   ]
 }

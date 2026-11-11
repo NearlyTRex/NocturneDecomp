@@ -26,12 +26,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_0044f760(
         iVar1 = iVar1 + 1;
         this_ptr->collision_triangle_count =
              this_ptr->collision_triangle_count +
-             *(int *)(this_ptr->poly_vert_list + iVar3 + 4) + -2;
+             *(int *)((int)this_ptr->poly_vert_list->vertices + iVar3 + -0x14) + -2;
         iVar3 = iVar3 + 0x48;
       } while (iVar1 < this_ptr->poly_count);
     }
     pCVar2 = (CDemonTriangle *)
-             FUN_005b8df8
+             operator_new_array
                        (this_ptr->frame_count * this_ptr->collision_triangle_count * 0x38);
     this_ptr->collision_triangle_list = pCVar2;
     if (pCVar2 == (CDemonTriangle *)0x0) {

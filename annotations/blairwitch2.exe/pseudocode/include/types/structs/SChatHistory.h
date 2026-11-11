@@ -4,13 +4,17 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SNetworkAddr.h"
 
 // Structure: SChatHistory
-// Stub: size from Watcom RTTI, fields not yet recovered
+// nocedit's layout. addChatHistory (bw1 0052f100): index*0x120 into the 400-entry array; MOVSD x2 copy the sender addr to +0, message_id to +8, sender_name strcpy to +0xc, message strcpy to +0x20; same code in bw2/bw3. RTTI 288.
 // Ghidra size: 0x120 (288 bytes)
 #pragma pack(push, 1)
 typedef struct SChatHistory {
-    char field_0[288]; // 0x0
+    SNetworkAddr sender_addr; // 0x0
+    int message_id; // 0x8
+    char sender_name[20]; // 0xc
+    char message[256]; // 0x20
 } SChatHistory;
 #pragma pack(pop)
 

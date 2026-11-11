@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_fldnotes_cpp_FUN_004a5200(undefined4 param_1,undefined4 param_2,undefined4 param_3,char *param_4)
+; undefined4 core_fldnotes_cpp_FUN_004a5200(undefined4 param_1,char *param_2,char *param_3,char *param_4)
 ;
 ;
 ; XREF[1]:
@@ -14,8 +14,8 @@
 ;   undefined4 DAT_01cab9f0
 ;
 ; Called Functions:
-;   core_fldnotes.cpp_FUN_004a35e0
-;   core_fldnotes.cpp_FUN_004a3b50
+;   core_fldnotes.cpp_SNotesMap_showAnnotation_FUN_004a3b50
+;   core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a35e0
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;
 ; *****************************************************************************
@@ -38,8 +38,8 @@ section .text
     PUSH EDI                            ; 004a521f
         ;   Label: LAB_004a521f
     PUSH ESI                            ; 004a5220
-    CALL core_fldnotes.cpp_FUN_004a35e0 ; 004a5221
-        ;   XREF to: 004a35e0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a35e0()
+    CALL core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a35e0 ; 004a5221
+        ;   XREF to: 004a35e0 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a35e0(SNotesSection * this_ptr, char * param_2)
     ADD ESP,0x8                         ; 004a5226
     MOV EDX,EAX                         ; 004a5229
     TEST EAX,EAX                        ; 004a522b
@@ -69,8 +69,8 @@ section .text
     PUSH EBP                            ; 004a525c
     ADD EAX,0x1cacb50                   ; 004a525d
     PUSH EAX                            ; 004a5262
-    CALL core_fldnotes.cpp_FUN_004a3b50 ; 004a5263
-        ;   XREF to: 004a3b50 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a3b50()
+    CALL core_fldnotes.cpp_SNotesMap_showAnnotation_FUN_004a3b50 ; 004a5263
+        ;   XREF to: 004a3b50 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_SNotesMap_showAnnotation_FUN_004a3b50(SNotesMap * this_ptr, char * param_2)
     ADD ESP,0x8                         ; 004a5268
     TEST EAX,EAX                        ; 004a526b
     JZ 0x004a52ca                       ; 004a526d

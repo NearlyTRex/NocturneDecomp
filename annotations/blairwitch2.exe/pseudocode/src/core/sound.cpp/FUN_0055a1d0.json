@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 284,
+    "complexity_score": 239,
     "cross_reference_count": 3,
     "function_call_count": 13,
     "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 64,
-    "suspect_count": 19,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 201
@@ -133,19 +132,19 @@
     },
     {
       "addr": "01fc0e28",
-      "name": "g_CDemonSetInstance.field95_0x15ac70",
+      "name": "g_CDemonSetInstance.active_fog.scroll.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fc0e2c",
-      "name": "g_CDemonSetInstance.field99_0x15ac74",
+      "name": "g_CDemonSetInstance.active_fog.scroll.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fc0e30",
-      "name": "g_CDemonSetInstance.field103_0x15ac78",
+      "name": "g_CDemonSetInstance.active_fog.scroll.z",
       "type": "undefined4",
       "value": null
     },
@@ -442,38 +441,6 @@
       "severity": "moderate",
       "text": "float afStackY_100c [1015];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x15ac70",
-      "severity": "mild",
-      "text": "local_18 = -*(float *)&g_CDemonSetPtr->field_0x15ac70;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x15ac74",
-      "severity": "mild",
-      "text": "local_14 = -*(float *)&g_CDemonSetPtr->field_0x15ac74;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x15ac78",
-      "severity": "mild",
-      "text": "local_10 = -*(float *)&g_CDemonSetPtr->field_0x15ac78;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x15ac70",
-      "severity": "mild",
-      "text": "local_24 = -*(float *)&g_CDemonSetPtr->field_0x15ac70;",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",

@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void core_twigzomb_cpp_FUN_005a2ac0(CEnemy *param_1)
@@ -18,10 +19,7 @@ void core_twigzomb_cpp_FUN_005a2ac0(CEnemy *param_1)
   int iVar4;
   byte bVar5;
   float afStackY_106c [999];
-  SDamageInfo aSStack_c0 [4];
-  float fStack_bc;
-  CEnemy *pCStack_8c;
-  CEnemy *pCStack_88;
+  SDamageInfo SStack_c0;
   CVector3f CStack_84;
   float fStack_78;
   float afStack_74 [5];
@@ -36,38 +34,41 @@ void core_twigzomb_cpp_FUN_005a2ac0(CEnemy *param_1)
   float fStack_30;
   float fStack_1c;
   float fStack_18;
-  byte *puStack_14;
+  CMatrix3x4f *pCStack_14;
   
   bVar5 = 0;
   pCVar3 = (*(param_1->base).base.vtable._ub[1].getCarrier)((CDemonActor *)param_1);
   if (pCVar3 != (CDemonActor *)0x0) {
     core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
-              (&param_1->base,(CVector3f *)&(param_1->victim->base).field_0x20);
+              (&param_1->base,&(param_1->victim->base).location.position);
     this_ptr = &(param_1->base).model;
-    fStack_18 = core_motion_cpp_FUN_00503e60((CMotionController *)this_ptr);
-    puStack_14 = (byte *)fStack_18;
+    fStack_18 = core_motion_cpp_FUN_00503e60(&this_ptr->base);
+    pCStack_14 = (CMatrix3x4f *)fStack_18;
     iVar4 = core_motion_cpp_FUN_005035c0(this_ptr);
     if (*(int *)(iVar4 + 0x24) != 2) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                ((CMotionController *)this_ptr,2,1);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr->base,2,1);
       return;
     }
     if ((_DAT_005ff174 <= fStack_18) && (fStack_18 <= _DAT_005ff178)) {
       param_1->speed = 1.0;
-      core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(aSStack_c0);
-      fStack_bc = *(float *)&(param_1->base).field_0x2824 * _DAT_005f001b;
-      pCStack_8c = param_1;
-      pCStack_88 = param_1;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(&SStack_c0);
+      SStack_c0.damage_amount = (param_1->base).size_scale * _DAT_005f001b;
+      SStack_c0.attacker = (CDemonActor *)param_1;
+      SStack_c0.wielder = (CDemonActor *)param_1;
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)param_1);
-      puStack_14 = &(param_1->base).model.field_0xe80;
+      pCStack_14 = (param_1->base).model.bone_transform.bone_model_matrices;
       core_xform_cpp_FUN_00591530
-                (&DAT_0265370c,puStack_14 + *(int *)&param_1[1].base.model.field_0xaa4 * 0x30);
+                (&DAT_0265370c,
+                 pCStack_14 +
+                 (int)param_1[1].base.model.bone_transform.pose_data.bone_rotations[0x3f].x);
       fStack_3c = fStack_30;
       afStack_74[(uint)bVar5 * -2 + 0xf] = afStack_74[(uint)bVar5 * -2 + 0x12];
       afStack_74[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x10] =
            afStack_74[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x13];
       core_xform_cpp_FUN_00591530
-                (&DAT_0265370c,puStack_14 + *(int *)&param_1[1].base.model.field_0xaa8 * 0x30);
+                (&DAT_0265370c,
+                 pCStack_14 +
+                 (int)param_1[1].base.model.bone_transform.pose_data.bone_rotations[0x3f].y);
       fStack_48 = fStack_54;
       afStack_74[(uint)bVar5 * -2 + 0xc] = afStack_74[(uint)bVar5 * -2 + 9];
       afStack_74[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xd] =
@@ -94,15 +95,15 @@ void core_twigzomb_cpp_FUN_005a2ac0(CEnemy *param_1)
         CStack_84.y = CStack_60.y;
         CStack_84.z = CStack_60.z;
       }
-      core_enemy_cpp_CEnemy_testAttackRadius_FUN_00488110(param_1,&CStack_84,fStack_1c,aSStack_c0);
+      core_enemy_cpp_CEnemy_testAttackRadius_FUN_00488110(param_1,&CStack_84,fStack_1c,&SStack_c0);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10((CDemonActor *)param_1);
       return;
     }
     if ((_DAT_005ff178 < fStack_18) &&
-       (fVar1 = *(float *)&(param_1->victim->base).field_0x20 -
-                *(float *)&(param_1->base).base.field_0x20,
-       fVar2 = *(float *)&(param_1->victim->base).field_0x28 -
-               *(float *)&(param_1->base).base.field_0x28,
+       (fVar1 = (param_1->victim->base).location.position.x -
+                (param_1->base).base.location.position.x,
+       fVar2 = (param_1->victim->base).location.position.z -
+               (param_1->base).base.location.position.z,
        _DAT_005ff170 < SQRT(fVar2 * fVar2 + fVar1 * fVar1))) {
       unkaddr_0059d350_cpp_FUN_0059dcb0(param_1 + 1,0x3f800000);
       unkaddr_0059d350_cpp_FUN_0059d8e0(param_1 + 1,"Chasing");

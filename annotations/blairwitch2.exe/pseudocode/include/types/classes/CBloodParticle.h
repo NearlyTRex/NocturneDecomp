@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CParticle.h"
 #include "types/enums/EBloodType.h"
 
 // Structure: CBloodParticle
 // Ghidra size: 0x48 (72 bytes)
 #pragma pack(push, 1)
 typedef struct CBloodParticle {
-    char field_0[64]; // 0x0
+    CParticle base; // 0x0
     EBloodType blood_type; // 0x40
     int texture_index; // 0x44
 } CBloodParticle;

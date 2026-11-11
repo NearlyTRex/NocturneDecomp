@@ -85,8 +85,7 @@ LAB_0050ba41:
             _DAT_01d34e34 = iVar1 / 0x12;
           }
           core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0
-                    (this_ptr,(SNetworkAddr *)
-                              &this_ptr->players[this_ptr->server_player_index].field_0x1c,1);
+                    (this_ptr,&this_ptr->players[this_ptr->server_player_index].addr,1);
           iVar2 = _DAT_01d34e38;
           core_netgame_cpp_CNetGame_receivePackets_FUN_0050c190(this_ptr);
         } while (-1 < this_ptr->server_player_index);
@@ -158,13 +157,13 @@ LAB_0050bc6e:
           }
           iVar1 = 0;
           if (0 < this_ptr->player_count) {
-            dest_addr = (SNetworkAddr *)&this_ptr->players[0].field_0x1c;
+            dest_addr = &this_ptr->players[0].addr;
             do {
               if (iVar1 != this_ptr->local_player_index) {
                 core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0(this_ptr,dest_addr,1);
               }
               iVar1 = iVar1 + 1;
-              dest_addr = dest_addr + 0x80;
+              dest_addr = dest_addr + 0x10;
             } while (iVar1 < this_ptr->player_count);
           }
           iVar2 = _DAT_01d34e38;

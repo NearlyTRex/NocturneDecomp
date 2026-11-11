@@ -4,12 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
 
 // Structure: SMRGLPrimitiveTriangleIndex
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x24 (36 bytes)
 #pragma pack(push, 1)
 typedef struct SMRGLPrimitiveTriangleIndex {
+    SMRGLHeaderPrimitive base; // 0x0
+    int vertices[3]; // 0x18
 } SMRGLPrimitiveTriangleIndex;
 #pragma pack(pop)
 

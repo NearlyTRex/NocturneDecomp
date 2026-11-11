@@ -14,7 +14,8 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_00513d30(CLocation *loca
   int iVar3;
   int iVar4;
   int iVar5;
-  byte bVar6;
+  uint *puVar6;
+  byte bVar7;
   int aiStackY_101c [1015];
   CPathMap *this_ptr;
   CVector3f *source_position;
@@ -23,7 +24,7 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_00513d30(CLocation *loca
   int local_1c;
   int local_18 [2];
   
-  bVar6 = 0;
+  bVar7 = 0;
   if ((DAT_01e4fed0 & 1) == 0) {
     DAT_01e4fed0 = DAT_01e4fed0 | 1;
     __arrinit(g_PathMapCache,0xc,&g_CPathMapTypeInfo);
@@ -43,9 +44,9 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_00513d30(CLocation *loca
   iVar2 = 0;
   iVar3 = 0;
   local_1c = local_34;
-  local_18[(uint)bVar6 * -2] = *(int *)(&stack0xffffffd0 + (uint)bVar6 * -8);
-  local_18[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-       *(int *)(&stack0xffffffd4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+  local_18[(uint)bVar7 * -2] = *(int *)(&stack0xffffffd0 + (uint)bVar7 * -8);
+  local_18[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
+       *(int *)(&stack0xffffffd4 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
   iVar1 = 0;
   do {
     if (((local_1c ==
@@ -75,12 +76,12 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_00513d30(CLocation *loca
   iVar1 = 1;
   source_position = &local_28;
   (&DAT_0061b2f8)[iVar5] = 0;
-  local_28.x = *(float *)location;
-  *(uint *)((int)&local_28 + (uint)bVar6 * -8 + 4) =
-       *(uint *)(location + (uint)bVar6 * -8 + 4);
+  puVar6 = (uint *)((int)location + (uint)bVar7 * -8 + 4);
+  local_28.x = (location->position).x;
+  *(uint *)((int)&local_28 + (uint)bVar7 * -8 + 4) = *puVar6;
   this_ptr = g_PathMapCache + iVar5;
-  *(uint *)((int)&local_28 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-       *(uint *)(location + (uint)bVar6 * -8 + 4 + (uint)bVar6 * -8 + 4);
+  *(uint *)((int)&local_28 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+       puVar6[(uint)bVar7 * -2 + 1];
   core_path_cpp_CPathMap_updateIfNeeded_FUN_005121a0(this_ptr,source_position,iVar1);
   return g_PathMapCache + iVar5;
 }

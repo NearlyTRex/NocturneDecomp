@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 419,
-    "complexity_score": 369,
+    "complexity_score": 233,
     "cross_reference_count": 4,
     "function_call_count": 14,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 159,
-    "suspect_count": 18,
+    "pseudocode_lines": 158,
+    "suspect_count": 5,
     "suspect_types": [
       "bit_int_float_compare",
       "stack_alignment_array",
-      "unknown_field",
-      "unnamed_field",
       "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 578
+    "total_lines": 577
   },
   "cross_references": [
     {
@@ -379,8 +378,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -388,135 +395,23 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 16,
+      "line": 17,
       "match": "afStackY_1044",
       "severity": "moderate",
       "text": "float afStackY_1044 [962];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(0x01C3DEB4,(CVector3f *)&(this_ptr->base).field_0x20,(CVector3f *)0x0,0x4000,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 59,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(0x01C3DEB4,(CVector3f *)&(this_ptr->base).field_0x20,",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 94,
+      "line": 93,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)(iVar1 + 0x2b0) + 0x44))(iVar1,local_ac);",
+      "text": "iVar1 = (**(code **)(*(int *)(iVar1 + 0x2b0) + 0x44))(iVar1,&local_ac);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 97,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "afStack_58[2] = *(float *)(iVar1 + 0x20) - *(float *)&(this_ptr->base).field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 98,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "afStack_58[3] = *(float *)(iVar1 + 0x24) - *(float *)&(this_ptr->base).field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 99,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "fStack_48 = *(float *)(iVar1 + 0x28) - *(float *)&(this_ptr->base).field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 104,
-      "match": "._24_4_",
-      "severity": "mild",
-      "text": "if (((float)_DAT_005d5875 < afStack_58[0]) && (afStack_58[0] < (float)local_ac._24_4_)) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 114,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(this_ptr_01,(CVector3f *)&(this_ptr->base).field_0x20,0,0,2.0,1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 132,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "fStack_44 = *(float *)&(this_ptr_00->base).base.field_0x20 -",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 133,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr->base).field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 134,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "fStack_40 = *(float *)&(this_ptr_00->base).base.field_0x24 -",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 135,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr->base).field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 136,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "fStack_3c = *(float *)&(this_ptr_00->base).base.field_0x28 -",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 137,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr->base).field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 147,
-      "match": "._24_4_",
-      "severity": "mild",
-      "text": "if (((float10)_DAT_005d5875 < fVar5) && (fStack_34 < (float)auStack_84._24_4_)) {",
-      "type": "unknown_field"
-    },
-    {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40ffffff is the IEEE 754 bit pattern of 8f. Rewrite in a .keep as a plain float compare against 8f.",
-      "line": 64,
+      "line": 63,
       "match": "0x40ffffff < (int)this_ptr->animation_time)",
       "severity": "moderate",
       "text": "if (0x40ffffff < (int)this_ptr->animation_time) {",

@@ -11,6 +11,7 @@
 CDoc * core_doc_cpp_CDoc_dtor_FUN_00450580(CDoc *this_ptr,uint flags)
 
 {
+  CSimpleParticleSystem *this_ptr_00;
   CBox *pCVar1;
   CDemonActor *pCVar2;
   CDoc *pCVar3;
@@ -21,13 +22,15 @@ CDoc * core_doc_cpp_CDoc_dtor_FUN_00450580(CDoc *this_ptr,uint flags)
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  *(CHero_full_vtable **)&this_ptr->field_0x2b0 = &g_CDocVTable;
-  unkaddr_005a7eb0_cpp_FUN_005a8100(&this_ptr->field_0x154,0);
-  unkafter_superopt_cpp_FUN_005a8220(&this_ptr->field_0x154);
-  pCVar1 = core_box_cpp_CBox_dtor_FUN_005b1c70((CBox *)&this_ptr->field_0x25ea4,0);
+  this_ptr_00 = (this_ptr->base).base.base.particle_systems;
+  (this_ptr->base).base.base.vtable._ub = &g_CDocVTable._ub;
+  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_stop_FUN_005a8100(this_ptr_00,0);
+  unkafter_superopt_cpp_CSimpleParticleSystem_release_FUN_005a8220(this_ptr_00);
+  pCVar1 = core_box_cpp_CBox_dtor_FUN_005b1c70(&(this_ptr->lantern_box).physics_box,0);
   pCVar2 = core_actor_cpp_CDemonActor_dtor_FUN_00408930
                      ((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal.y,1);
-  pCVar3 = (CDoc *)core_hero_cpp_CHero_dtor_FUN_004ce3d0((CHero *)&pCVar2[-0xdf].field_0x118,1);
+  pCVar3 = (CDoc *)core_hero_cpp_CHero_dtor_FUN_004ce3d0
+                             ((CHero *)&pCVar2[-0xdf].blood_effect_color,1);
   if ((flags & 2) == 0) {
     return pCVar3;
   }

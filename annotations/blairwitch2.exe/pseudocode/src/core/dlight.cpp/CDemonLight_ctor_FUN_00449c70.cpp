@@ -28,7 +28,7 @@ CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_00449c70(CDemonLight 
   pCVar1->volumetric_intensity = 1.0;
   pCVar1->volumetric_enabled = 0;
   pCVar1->antialiasing_enabled = 1;
-  *(uint *)&pCVar1->field_0x2fac = 0x3f800000;
+  pCVar1->bloom_intensity = 1.0;
   pCVar1->shadow_map_width = shadow_map_width;
   pCVar1->shadow_map_height = shadow_map_height;
   return pCVar1;

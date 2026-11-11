@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 50,
-    "complexity_score": 165,
+    "complexity_score": 149,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 105,
-    "suspect_count": 5,
+    "pseudocode_lines": 104,
+    "suspect_count": 4,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy"
     ],
-    "total_lines": 155
+    "total_lines": 154
   },
   "cross_references": [],
   "function": {
@@ -112,14 +111,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 102,
-      "match": "field_0x45c",
-      "severity": "mild",
-      "text": "((CCourse *)&this_ptr->field_0x45c,this_ptr->course_filename);",
-      "type": "unnamed_field"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 18,

@@ -22,7 +22,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004bd570(CGame *this_ptr)
     unaff_ESI = wincore_winrun_cpp_getTime_FUN_0058e9e0();
   }
   pCVar2 = g_CNetGamePtr;
-  *(uint *)&this_ptr->field_0x258 = 1;
+  this_ptr->is_processing = 1;
   if (pCVar2->connection_type == CONNECTION_NONE) {
     seed_value = rand();
   }
@@ -55,9 +55,9 @@ void __cdecl core_game_cpp_CGame_process_FUN_004bd570(CGame *this_ptr)
                (double)g_CGamePtr->delta_time_float);
   }
   this_ptr_00 = 0x0264B290;
-  if (*(int *)&this_ptr->field_0xe0 != 0) {
+  if (this_ptr->cinematic_skip_in_progress != 0) {
     if (this_ptr->letterbox_mode == 0) {
-      *(uint *)&this_ptr->field_0xe0 = 0;
+      this_ptr->cinematic_skip_in_progress = 0;
       core_sound_cpp_FUN_0055a1d0(this_ptr_00);
       core_setdir_cpp_FUN_00538d10(g_CDemonSetPtr,g_CScriptPtr->focus_actor);
       core_game_cpp_CGame_saveClockTime_FUN_004b3000(this_ptr);
@@ -94,7 +94,8 @@ void __cdecl core_game_cpp_CGame_process_FUN_004bd570(CGame *this_ptr)
     _DAT_01cb8118 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
   }
   core_fire_cpp_CFireEffect_process_FUN_0049c430(0x01C3DEB4);
-  unkafter_superopt_cpp_FUN_005a8180(g_CSimpleParticleSystemPtr);
+  unkafter_superopt_cpp_CSimpleParticleSystem_process_FUN_005a8180
+            (g_CSimpleParticleSystemPtr,g_CGamePtr->delta_time_float);
   if (g_CGamePtr->profile_mode == 1) {
     iVar3 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
     engine_console_cpp_FUN_00436710
@@ -131,7 +132,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004bd570(CGame *this_ptr)
                (double)g_CGamePtr->delta_time_float);
   }
   pCVar1 = g_CGamePtr;
-  *(uint *)&this_ptr->field_0x258 = 0;
+  this_ptr->is_processing = 0;
   if (pCVar1->profile_mode != 0) {
     iVar3 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
     engine_console_cpp_FUN_00436710
@@ -139,6 +140,6 @@ void __cdecl core_game_cpp_CGame_process_FUN_004bd570(CGame *this_ptr)
                ((double)(iVar3 - unaff_ESI) * _DAT_005d8913 * _DAT_005d891b * _DAT_005d8923) /
                (double)g_CGamePtr->delta_time_float);
   }
-  *(float *)&this_ptr->field_0x270 = this_ptr->delta_time_float + *(float *)&this_ptr->field_0x270;
+  this_ptr->total_play_time = this_ptr->delta_time_float + this_ptr->total_play_time;
   return;
 }

@@ -13,7 +13,7 @@ void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_00586af0(CWaterActor *this_
 {
   float fVar1;
   float fVar2;
-  uint uVar3;
+  UIntegerFloat UVar3;
   int iVar4;
   int iVar5;
   SWaterVertex *pSVar6;
@@ -21,7 +21,7 @@ void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_00586af0(CWaterActor *this_
   int extraout_ECX;
   int extraout_ECX_00;
   int extraout_ECX_01;
-  byte *puVar8;
+  SMRGLPrimitiveQuad *pSVar8;
   int extraout_EDX;
   int iVar9;
   int iVar10;
@@ -42,8 +42,8 @@ void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_00586af0(CWaterActor *this_
   int iStack_18;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408a80(&this_ptr->base);
-  this_ptr->base_y =
-       *(float *)&(this_ptr->base).field_0x24 - this_ptr->height_delta * this_ptr->param;
+  this_ptr->base_y = (this_ptr->base).location.position.y - this_ptr->height_delta * this_ptr->param
+  ;
   if (this_ptr->round_flag == 0) {
     while( true ) {
       fVar14 = (float10)1 / (float10)this_ptr->patch_size;
@@ -75,11 +75,12 @@ void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_00586af0(CWaterActor *this_
           fVar17 = (float10)(fVar1 / (float)iVar13);
           pSVar6 = this_ptr->vertices + iVar9;
           do {
-            *(uint *)&pSVar6->field_0x4 = 0;
-            *(float *)pSVar6 = fStack_28;
-            *(float *)&pSVar6->field_0x8 = fStack_34;
+            (pSVar6->local_position).y = 0.0;
+            (pSVar6->local_position).x = fStack_28;
+            (pSVar6->local_position).z = fStack_34;
             fVar18 = (float10)(this_ptr->size).x;
-            fVar18 = ((fVar18 * fVar16 + (float10)*(float *)pSVar6) / fVar18) * fVar15 * fVar14;
+            fVar18 = ((fVar18 * fVar16 + (float10)(pSVar6->local_position).x) / fVar18) * fVar15 *
+                     fVar14;
             iVar9 = round();
             *(int *)(iVar9 + 0x18) = (int)ROUND(fVar18) + 0x20000;
             fVar19 = ((float10)1 - (float10)*(float *)(iVar9 + 8) / (float10)(this_ptr->size).z) *
@@ -96,7 +97,7 @@ void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_00586af0(CWaterActor *this_
         iStack_18 = iStack_18 + 1;
       } while (iStack_18 < iVar5);
     }
-    puVar8 = &this_ptr->field_0x8104;
+    pSVar8 = this_ptr->primitives;
     iStack_30 = 0;
     if (0 < this_ptr->grid_rows) {
       do {
@@ -105,46 +106,46 @@ void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_00586af0(CWaterActor *this_
           iVar4 = iStack_30 % 4 << 0x16;
           iVar5 = (iStack_30 % 4 + 1) * 0x400000;
           do {
-            *(uint *)(puVar8 + 4) = 3;
-            *(uint *)(puVar8 + 0x14) = 0;
-            uVar3 = *(uint *)(puVar8 + 0x14);
-            *(uint *)(puVar8 + 0x10) = uVar3;
-            *(uint *)(puVar8 + 0xc) = uVar3;
-            *(uint *)(puVar8 + 8) = uVar3;
+            (pSVar8->base).base.count = 3;
+            (pSVar8->base).surface_normal.D.i = 0;
+            UVar3 = (pSVar8->base).surface_normal.D;
+            (pSVar8->base).surface_normal.C = UVar3;
+            (pSVar8->base).surface_normal.B = UVar3;
+            (pSVar8->base).surface_normal.A = UVar3;
             iVar11 = (this_ptr->grid_cols + 1) * iStack_30 + iVar13;
-            *(int *)(puVar8 + 0x30) = iVar11;
+            pSVar8->vertices[2].vertex_index = iVar11;
             iVar11 = iVar11 + 1;
-            *(int *)(puVar8 + 0x38) = iVar4;
-            *(int *)(puVar8 + 0x24) = iVar11;
+            pSVar8->vertices[2].texture_v = iVar4;
+            pSVar8->vertices[1].vertex_index = iVar11;
             iVar7 = iVar13 % 4 << 0x16;
             iVar10 = (iVar13 % 4 + 1) * 0x400000;
-            *(int *)(puVar8 + 0x34) = iVar7;
-            *(int *)(puVar8 + 0x28) = iVar10;
-            *(int *)(puVar8 + 0x2c) = iVar4;
-            *(int *)(puVar8 + 0x18) = iVar11 + this_ptr->grid_cols + 1;
-            *(int *)(puVar8 + 0x1c) = iVar10;
-            *(int *)(puVar8 + 0x20) = iVar5;
-            *(uint *)(puVar8 + 0x4c) = 3;
-            *(uint *)(puVar8 + 0x5c) = 0;
-            uVar3 = *(uint *)(puVar8 + 0x5c);
-            *(uint *)(puVar8 + 0x58) = uVar3;
-            *(uint *)(puVar8 + 0x54) = uVar3;
-            *(uint *)(puVar8 + 0x50) = uVar3;
+            pSVar8->vertices[2].texture_u = iVar7;
+            pSVar8->vertices[1].texture_u = iVar10;
+            pSVar8->vertices[1].texture_v = iVar4;
+            pSVar8->vertices[0].vertex_index = iVar11 + this_ptr->grid_cols + 1;
+            pSVar8->vertices[0].texture_u = iVar10;
+            pSVar8->vertices[0].texture_v = iVar5;
+            pSVar8[1].base.base.count = 3;
+            pSVar8[1].base.surface_normal.D.i = 0;
+            UVar3 = pSVar8[1].base.surface_normal.D;
+            pSVar8[1].base.surface_normal.C = UVar3;
+            pSVar8[1].base.surface_normal.B = UVar3;
+            pSVar8[1].base.surface_normal.A = UVar3;
             iVar11 = this_ptr->grid_cols;
-            *(int *)(puVar8 + 0x7c) = iVar7;
+            pSVar8[1].vertices[2].texture_u = iVar7;
             iVar11 = iVar13 + (iVar11 + 1) * iStack_30;
-            *(int *)(puVar8 + 0x78) = iVar11;
-            *(int *)(puVar8 + 0x80) = iVar4;
+            pSVar8[1].vertices[2].vertex_index = iVar11;
+            pSVar8[1].vertices[2].texture_v = iVar4;
             iVar9 = this_ptr->grid_cols;
-            *(int *)(puVar8 + 100) = iVar7;
+            pSVar8[1].vertices[0].texture_u = iVar7;
             iVar11 = iVar11 + iVar9 + 2;
-            *(int *)(puVar8 + 0x6c) = iVar11;
-            *(int *)(puVar8 + 0x70) = iVar10;
-            *(int *)(puVar8 + 0x60) = iVar11 + -1;
-            *(int *)(puVar8 + 0x74) = iVar5;
-            *(int *)(puVar8 + 0x68) = iVar5;
+            pSVar8[1].vertices[1].vertex_index = iVar11;
+            pSVar8[1].vertices[1].texture_u = iVar10;
+            pSVar8[1].vertices[0].vertex_index = iVar11 + -1;
+            pSVar8[1].vertices[1].texture_v = iVar5;
+            pSVar8[1].vertices[0].texture_v = iVar5;
             iVar13 = iVar13 + 1;
-            puVar8 = puVar8 + 0x90;
+            pSVar8 = pSVar8 + 2;
           } while (iVar13 < this_ptr->grid_cols);
         }
         iStack_30 = iStack_30 + 1;
@@ -165,58 +166,56 @@ void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_00586af0(CWaterActor *this_
                  (float10)_DAT_005edf36;
         fVar18 = (float10)fcos(fVar17);
         fVar17 = (float10)fsin(fVar17);
-        *(float *)(this_ptr->vertices + this_ptr->vertex_count) =
+        this_ptr->vertices[this_ptr->vertex_count].local_position.x =
              (float)(fVar18 * (float10)(this_ptr->size).x * (float10)_DAT_005edf46);
-        *(uint *)&this_ptr->vertices[this_ptr->vertex_count].field_0x4 = 0;
-        *(float *)&this_ptr->vertices[this_ptr->vertex_count].field_0x8 =
+        this_ptr->vertices[this_ptr->vertex_count].local_position.y = 0.0;
+        this_ptr->vertices[this_ptr->vertex_count].local_position.z =
              (float)(fVar17 * (float10)(this_ptr->size).z * (float10)_DAT_005edf46);
-        fVar17 = ((float10)*(float *)(this_ptr->vertices + this_ptr->vertex_count) /
+        fVar17 = ((float10)this_ptr->vertices[this_ptr->vertex_count].local_position.x /
                  (float10)(this_ptr->size).x) * fVar16 * fVar14 + fVar15;
         round();
-        *(int *)(&this_ptr->vertices[0].field_0x18 + extraout_ECX) = (int)ROUND(fVar17);
-        fVar17 = ((float10)*(float *)&this_ptr->vertices[this_ptr->vertex_count].field_0x8 /
+        *(int *)((int)&this_ptr->vertices[0].u + extraout_ECX) = (int)ROUND(fVar17);
+        fVar17 = ((float10)this_ptr->vertices[this_ptr->vertex_count].local_position.z /
                  (float10)(this_ptr->size).z) * fVar16 * fVar14 + fVar15;
         round();
-        *(int *)(&this_ptr->vertices[0].field_0x1c + extraout_ECX_00) = (int)ROUND(fVar17);
+        *(int *)((int)&this_ptr->vertices[0].v + extraout_ECX_00) = (int)ROUND(fVar17);
         iVar13 = extraout_EDX + 1;
         this_ptr->vertex_count = this_ptr->vertex_count + 1;
       } while (iVar13 < this_ptr->primitive_count);
     }
     iVar13 = this_ptr->vertex_count;
-    *(uint *)&this_ptr->vertices[iVar13].field_0x8 = 0;
-    *(uint *)&this_ptr->vertices[iVar13].field_0x4 =
-         *(uint *)&this_ptr->vertices[iVar13].field_0x8;
-    *(uint *)(this_ptr->vertices + iVar13) =
-         *(uint *)&this_ptr->vertices[iVar13].field_0x4;
+    this_ptr->vertices[iVar13].local_position.z = 0.0;
+    this_ptr->vertices[iVar13].local_position.y = this_ptr->vertices[iVar13].local_position.z;
+    this_ptr->vertices[iVar13].local_position.x = this_ptr->vertices[iVar13].local_position.y;
     iStack_1c = 0;
     this_ptr->vertex_count = this_ptr->vertex_count + 1;
     if (0 < this_ptr->primitive_count) {
-      puVar8 = &this_ptr->field_0x8104;
+      pSVar8 = this_ptr->primitives;
       pCVar12 = this_ptr;
       do {
-        *(uint *)(puVar8 + 4) = 3;
-        *(uint *)(puVar8 + 0x14) = 0;
-        uVar3 = *(uint *)(puVar8 + 0x14);
-        *(uint *)(puVar8 + 0x10) = uVar3;
-        *(uint *)(puVar8 + 0xc) = uVar3;
-        *(uint *)(puVar8 + 8) = uVar3;
-        iVar4 = iStack_1c + 1;
+        (pSVar8->base).base.count = 3;
+        (pSVar8->base).surface_normal.D.i = 0;
+        UVar3 = (pSVar8->base).surface_normal.D;
+        (pSVar8->base).surface_normal.C = UVar3;
+        (pSVar8->base).surface_normal.B = UVar3;
+        (pSVar8->base).surface_normal.A = UVar3;
+        iVar5 = iStack_1c + 1;
         iVar13 = this_ptr->primitive_count;
-        *(uint *)(puVar8 + 0x1c) = 0;
-        *(uint *)(puVar8 + 0x20) = 0;
-        *(int *)(puVar8 + 0x18) = iVar13;
-        iVar13 = iVar4 % this_ptr->primitive_count;
-        *(int *)(puVar8 + 0x24) = iStack_1c;
-        *(uint *)(puVar8 + 0x28) = *(uint *)&pCVar12->vertices[0].field_0x18;
-        uVar3 = *(uint *)&pCVar12->vertices[0].field_0x1c;
-        *(int *)(puVar8 + 0x30) = iVar13;
-        *(uint *)(puVar8 + 0x2c) = uVar3;
-        *(uint *)(puVar8 + 0x34) = *(uint *)&this_ptr->vertices[iVar13].field_0x18;
-        pCVar12 = (CWaterActor *)&(pCVar12->base).field_0x20;
-        *(uint *)(puVar8 + 0x38) = *(uint *)&this_ptr->vertices[iVar13].field_0x1c;
-        puVar8 = puVar8 + 0x48;
-        iStack_1c = iVar4;
-      } while (iVar4 < this_ptr->primitive_count);
+        pSVar8->vertices[0].texture_u = 0;
+        pSVar8->vertices[0].texture_v = 0;
+        pSVar8->vertices[0].vertex_index = iVar13;
+        iVar4 = iVar5 % this_ptr->primitive_count;
+        pSVar8->vertices[1].vertex_index = iStack_1c;
+        pSVar8->vertices[1].texture_u = pCVar12->vertices[0].u;
+        iVar13 = pCVar12->vertices[0].v;
+        pSVar8->vertices[2].vertex_index = iVar4;
+        pSVar8->vertices[1].texture_v = iVar13;
+        pSVar8->vertices[2].texture_u = this_ptr->vertices[iVar4].u;
+        pCVar12 = (CWaterActor *)&(pCVar12->base).location;
+        pSVar8->vertices[2].texture_v = this_ptr->vertices[iVar4].v;
+        pSVar8 = pSVar8 + 1;
+        iStack_1c = iVar5;
+      } while (iVar5 < this_ptr->primitive_count);
     }
   }
   core_wateract_cpp_FUN_005870a0(this_ptr);

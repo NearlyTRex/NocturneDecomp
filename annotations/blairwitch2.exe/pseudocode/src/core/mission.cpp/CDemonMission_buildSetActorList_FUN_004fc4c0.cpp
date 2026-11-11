@@ -15,9 +15,8 @@ void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_004fc4c0(CDemo
   CDemonSet *pCVar2;
   
   g_CDemonSetPtr->actor_count = 0;
-  for (pCVar1 = *(CDemonActor **)(this_ptr + 0x1114); pCVar1 != (CDemonActor *)0x0;
-      pCVar1 = *(CDemonActor **)&pCVar1->field_0x14c) {
-    if (*(int *)this_ptr == *(int *)&pCVar1->field_0x2c) {
+  for (pCVar1 = this_ptr->first_actor; pCVar1 != (CDemonActor *)0x0; pCVar1 = pCVar1->next_actor) {
+    if (this_ptr->current_set_index == (pCVar1->location).area_id) {
       if (1999 < g_CDemonSetPtr->actor_count) {
         _DAT_01d046a0 = "..\\core\\mission.cpp";
         _DAT_01d046a4 = 0x391;

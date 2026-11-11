@@ -20,9 +20,11 @@ void core_colonel_cpp_FUN_0043563f(void)
   *pcVar2 = *pcVar2 + cVar1;
   *pcVar2 = *pcVar2 + cVar1;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(unaff_EBX,unaff_retaddr);
-  *(uint *)&unaff_EBX[0x11].field_0x860 = 0x3f800000;
-  *(uint *)&unaff_EBX[0x11].field_0x85c = 0;
-  *(uint *)&unaff_EBX[0x11].field_0x858 = *(uint *)&unaff_EBX[0x11].field_0x85c;
-  *(uint *)&unaff_EBX[0x11].field_0x854 = *(uint *)&unaff_EBX[0x11].field_0x858;
+  unaff_EBX[0x11].bone_transform.pose_data.bone_rotations[0x1b].w = 1.0;
+  unaff_EBX[0x11].bone_transform.pose_data.bone_rotations[0x1a].z = 0.0;
+  unaff_EBX[0x11].bone_transform.pose_data.bone_rotations[0x1a].y =
+       unaff_EBX[0x11].bone_transform.pose_data.bone_rotations[0x1a].z;
+  unaff_EBX[0x11].bone_transform.pose_data.bone_rotations[0x1a].x =
+       unaff_EBX[0x11].bone_transform.pose_data.bone_rotations[0x1a].y;
   return;
 }

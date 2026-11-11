@@ -20,7 +20,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004c0ea0(CGargoyle *t
   uint auStack_18 [2];
   
   bVar4 = 0;
-  core_actor_cpp_FUN_00408d70(this_ptr,damage_info + 0x1c);
+  core_actor_cpp_FUN_00408d70(this_ptr,&damage_info->impact_direction);
   iVar3 = 0;
   CStack_28.x = fStack_1c;
   *(uint *)((int)&CStack_28 + (uint)bVar4 * -8 + 4) = auStack_18[(uint)bVar4 * -2];
@@ -35,7 +35,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004c0ea0(CGargoyle *t
   iVar3 = core_motion_cpp_FUN_005035c0(this_ptr_00);
   if (*(int *)(iVar3 + 0x24) != 5) {
     core_gargoyle_cpp_CGargoyle_processDismemberment_FUN_004c0c00(this_ptr,damage_info);
-    fVar1 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
+    fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
     (this_ptr->base).base.hit_points = fVar1;
     if (0.0 < fVar1) {
       iVar3 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[0]);
@@ -50,8 +50,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004c0ea0(CGargoyle *t
       (this_ptr->base).base.hit_points = 0.0;
       iVar3 = core_motion_cpp_FUN_005035c0(this_ptr_00);
       if (*(int *)(iVar3 + 0x24) != 8) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                  ((CMotionController *)this_ptr_00,8,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,8,1);
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,"@gargoyle-shatter.wav" + 1);
         core_charactr_cpp_CCharacter_dismember_FUN_00427360
@@ -61,7 +60,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004c0ea0(CGargoyle *t
     core_enemy_cpp_CEnemy_processDamage_FUN_00488890(&this_ptr->base,damage_info);
     return;
   }
-  *(uint *)(damage_info + 4) = 0;
+  damage_info->damage_amount = 0.0;
   core_enemy_cpp_CEnemy_processDamage_FUN_00488890(&this_ptr->base,damage_info);
   return;
 }

@@ -26,10 +26,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_00417690(CBodyPart *this_pt
   bVar8 = 0;
   iVar4 = this_ptr->fire_count;
   if (iVar4 < 2) {
-    pCVar5 = (CVector3f *)(this_ptr->fires + iVar4);
+    pCVar5 = &this_ptr->fires[iVar4].local_position;
     this_ptr->fire_count = iVar4 + 1;
     if (pCVar5 != position) {
-      pCVar5->x = position->x;
+      ((CVector3f *)&pCVar5->x)->x = position->x;
       pCVar5->y = position->y;
       pCVar5->z = position->z;
     }
@@ -39,7 +39,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_00417690(CBodyPart *this_pt
          *(uint *)(&stack0xffffffec + (uint)bVar8 * -8);
     *(uint *)((int)&stack0xffffffe4 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
          *(uint *)(&stack0xfffffff0 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
-    pCVar5[3].z = local_24;
+    (((CLocation *)&pCVar5[3].z)->position).x = local_24;
     pCVar5[4].x = local_20;
     pCVar5[4].y = local_1c;
     core_flame_cpp_CFlame_setup_FUN_0049f270((CFlame *)(pCVar5 + 1));
@@ -48,8 +48,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_00417690(CBodyPart *this_pt
     pCVar5[0x3b].x = 3.0;
     pcVar6 = "GCHAR2.RAW" + 1;
     pCVar5[0x3b].y = 1.5;
-    *(uint *)&(this_ptr->base).field_0xfc = 1;
-    pcVar7 = &this_ptr->field_0x2f4;
+    (this_ptr->base).is_transparent = 1;
+    pcVar7 = this_ptr->textures[0].texture_name;
     this_ptr->texture_count = 1;
     do {
       cVar1 = *pcVar6;

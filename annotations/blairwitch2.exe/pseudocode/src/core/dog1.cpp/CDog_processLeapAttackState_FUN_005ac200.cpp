@@ -11,30 +11,33 @@
 void __cdecl core_dog1_cpp_CDog_processLeapAttackState_FUN_005ac200(CDog *this_ptr,float delta_time)
 
 {
-  int iVar1;
-  float fVar2;
+  CDeformableModelInstance *pCVar1;
+  CDemonActor *pCVar2;
+  int iVar3;
+  float fVar4;
+  SStateMachine *pSVar5;
   
-  iVar1 = (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x17c))(this_ptr);
-  if (iVar1 == 0) {
+  pCVar2 = (*(this_ptr->base).base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
+  if (pCVar2 == (CDemonActor *)0x0) {
     return;
   }
-  iVar1 = core_motion_cpp_FUN_005035c0(&this_ptr->field_0x2b4);
-  iVar1 = *(int *)(iVar1 + 0x24);
-  fVar2 = core_motion_cpp_FUN_00503e60((CMotionController *)&this_ptr->field_0x2b4);
-  if ((iVar1 == 3) && (fVar2 < (float)_DAT_005f0df6)) {
+  pCVar1 = &(this_ptr->base).base.base.model;
+  iVar3 = core_motion_cpp_FUN_005035c0(pCVar1);
+  iVar3 = *(int *)(iVar3 + 0x24);
+  fVar4 = core_motion_cpp_FUN_00503e60(&pCVar1->base);
+  if ((iVar3 == 3) && (fVar4 < (float)_DAT_005f0df6)) {
     core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
-              ((CCharacter *)this_ptr,(CVector3f *)(*(int *)&this_ptr->field_0x10a78 + 0x20));
+              ((CCharacter *)this_ptr,&(((this_ptr->base).base.victim)->base).location.position);
   }
-  if (iVar1 != 7) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-              ((CMotionController *)&this_ptr->field_0x2b4,3,1);
+  pCVar1 = &(this_ptr->base).base.base.model;
+  if (iVar3 != 7) {
+    core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar1->base,3,1);
     return;
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-            ((CMotionController *)&this_ptr->field_0x2b4,0,1);
-  *(uint *)&this_ptr->field_0x11394 = _DAT_00600c50;
-  unkaddr_0059d350_cpp_FUN_0059d7f0
-            (&this_ptr->field_0x10af8,"ChaseComplete","MeleeAttack");
-  unkaddr_0059d350_cpp_FUN_0059d8e0(&this_ptr->field_0x10af8,"Chasing");
+  core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar1->base,0,1);
+  pSVar5 = &(this_ptr->base).state_machine;
+  (this_ptr->base).attack_range = _DAT_00600c50;
+  unkaddr_0059d350_cpp_FUN_0059d7f0(pSVar5,"ChaseComplete","MeleeAttack");
+  unkaddr_0059d350_cpp_FUN_0059d8e0(pSVar5,"Chasing");
   return;
 }

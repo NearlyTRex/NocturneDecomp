@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 261,
+    "complexity_score": 219,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 121,
-    "suspect_count": 11,
+    "pseudocode_lines": 124,
+    "suspect_count": 7,
     "suspect_types": [
       "raw_address_pointer_store",
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 403
+    "total_lines": 406
   },
   "cross_references": [
     {
@@ -259,64 +258,32 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0xd8",
-      "severity": "mild",
-      "text": "iVar3 = *(int *)&pCVar2->field_0xd8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0xd4",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)&pCVar2->field_0xd4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 56,
       "match": "DAT_0061e990",
       "severity": "mild",
-      "text": "auStack_28[3] = DAT_0061e990;",
+      "text": "uStack_1c = DAT_0061e990;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 57,
       "match": "DAT_0061e990",
       "severity": "mild",
       "text": "DAT_0061e990 = 0;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 71,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "uStack_37 = *(uint *)&this_ptr->players[this_ptr->local_player_index].field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 72,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "uStack_33 = *(uint *)&this_ptr->players[this_ptr->local_player_index].field_0x18;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 94,
       "match": "DAT_0061e990",
       "severity": "mild",
-      "text": "DAT_0061e990 = auStack_28[3];",
+      "text": "DAT_0061e990 = uStack_1c;",
       "type": "undefined_data"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 115,
+      "line": 118,
       "match": "*(code **)(*0x01D02F84",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
@@ -324,7 +291,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 115,
+      "line": 118,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
@@ -332,7 +299,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 75,
+      "line": 78,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

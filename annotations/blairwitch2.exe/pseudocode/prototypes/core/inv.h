@@ -83,7 +83,7 @@ void * FUN_004db8e0(void *param_1,int param_2,int param_3);
 
 // Original: core_inv.cpp_FUN_004db9d0
 // Address: 004db9d0
-void FUN_004db9d0(CInventory *param_1,int param_2,undefined4 param_3,int param_4);
+void FUN_004db9d0(CInventory *param_1,CWeapon *param_2,undefined4 param_3,int param_4);
 
 // Original: core_inv.cpp_CInventory_selectItem_FUN_004dbb50
 // Address: 004dbb50

@@ -12,7 +12,8 @@ int __cdecl core_spirmine_cpp_CSpiritMine_renderTransparent_FUN_005ad910(CSpirit
   int iVar1;
   int in_stack_00000008;
   
-  iVar1 = core_boxactor_cpp_CBoxActor_renderTransparent_FUN_0041c690((CBoxActor *)this_ptr);
-  unkafter_superopt_cpp_FUN_005a8290(in_stack_00000008 + 0x154);
+  iVar1 = core_boxactor_cpp_CBoxActor_renderTransparent_FUN_0041c690(&this_ptr->base);
+  unkafter_superopt_cpp_CSimpleParticleSystem_render_FUN_005a8290
+            ((CSimpleParticleSystem *)(in_stack_00000008 + 0x154));
   return iVar1;
 }

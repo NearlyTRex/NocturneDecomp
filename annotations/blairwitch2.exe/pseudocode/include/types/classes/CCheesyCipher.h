@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCodec.h"
 
 // Structure: CCheesyCipher
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 12; ctor 00434ce0(this, mode, key) calls CCodec ctor first, stores the cipher vtable, then setMode/setKey
 // Ghidra size: 0xc (12 bytes)
 #pragma pack(push, 1)
 typedef struct CCheesyCipher {
-    char field_0[12]; // 0x0
+    CCodec base; // 0x0, ctor calls CCodec ctor 00433e80 then stores its own vtable at +0
+    int mode; // 0x4, setMode 00434d20 stores the ctor's mode arg; transformByte branches on 0 (table lookup + key) / 1 (inverse table - key) / else 'Invalid mode.'
+    uint key_state; // 0x8, setKey 00434d30 stores key & 0xffffff then steps it twice; advanceKey 00434e50 does key = key*0x2ff0bd+1 & 0xffffff; transformByte adds/subtracts its low byte
 } CCheesyCipher;
 #pragma pack(pop)
 

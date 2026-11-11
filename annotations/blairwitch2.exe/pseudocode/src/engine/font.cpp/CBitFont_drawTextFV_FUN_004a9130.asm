@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_font_cpp_CBitFont_drawTextFV_FUN_004a9130(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_7)
+; int __cdecl engine_font_cpp_CBitFont_drawTextFV_FUN_004a9130(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
@@ -10,6 +10,7 @@
 ; int              Stack[0x10]:4   color_mode
 ; int              Stack[0x14]:4   color_value
 ; char *           Stack[0x18]:4   format_string
+; va_list_t        Stack[0x1c]:4   args
 ;
 ; XREF[1]:
 ;   engine_font.cpp_CBitFont_drawTextF_FUN_004a90e0 at 004a910f

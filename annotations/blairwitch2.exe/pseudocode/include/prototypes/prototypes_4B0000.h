@@ -13,6 +13,7 @@
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CSkeleton.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/EAmmoType.h"
 #include "types/enums/EInputCodeType.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SPlayerInput.h"
@@ -77,7 +78,7 @@ void __cdecl core_game_cpp_CGame_processMouseControls_FUN_004b80a0(CGame *this_p
 void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004b8250(CGame *this_ptr);
 void __cdecl core_game_cpp_FUN_004b82e0(CGame *this_ptr);
 void core_game_cpp_FUN_004b8e10(undefined4 param_1,char *param_2);
-void core_game_cpp_giveHeroWeaponAmmo_FUN_004b8fce(char *param_1,undefined4 param_2);
+void core_game_cpp_giveHeroWeaponAmmo_FUN_004b8fce(char *param_1,EAmmoType param_2);
 void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004b9060(CDeformableModelInstance *model_instance,CSkeleton *skeleton,float scale_factor,int bone_index);
 void core_game_cpp_FUN_004b90d0(CGame *param_1);
 void __cdecl core_game_cpp_CGame_loadAssets_FUN_004bb050(CGame *this_ptr);

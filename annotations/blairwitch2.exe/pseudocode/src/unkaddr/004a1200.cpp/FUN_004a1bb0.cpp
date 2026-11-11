@@ -22,17 +22,16 @@ int unkaddr_004a1200_cpp_FUN_004a1bb0(int param_1,int param_2)
     pSVar1 = SNotesSection_ARRAY_01cab9f4;
     iVar2 = 0;
     do {
-      iVar4 = *(int *)&SNotesSection_ARRAY_01cab9f4[iVar3].field_0x148;
+      iVar4 = SNotesSection_ARRAY_01cab9f4[iVar3].tab_x;
       iVar5 = *(int *)((int)&CAlphaBitmap_ARRAY_01caf128[0].width + iVar2) + iVar4;
-      if ((_DAT_01caf110 < *(int *)&pSVar1->field_0x140) ||
-         (*(int *)&pSVar1->field_0x140 + *(int *)&pSVar1->field_0x144 <= _DAT_01caf110)) {
+      if ((_DAT_01caf110 < pSVar1->first_page) ||
+         (pSVar1->first_page + pSVar1->page_count <= _DAT_01caf110)) {
         iVar4 = 0x246;
       }
-      if ((((iVar4 <= param_1) &&
-           (*(int *)&SNotesSection_ARRAY_01cab9f4[iVar3].field_0x14c <= param_2)) &&
+      if ((((iVar4 <= param_1) && (SNotesSection_ARRAY_01cab9f4[iVar3].tab_y <= param_2)) &&
           (param_1 < iVar5)) &&
          (param_2 < *(int *)((int)&CAlphaBitmap_ARRAY_01caf128[0].height + iVar2) +
-                    *(int *)&SNotesSection_ARRAY_01cab9f4[iVar3].field_0x14c)) {
+                    SNotesSection_ARRAY_01cab9f4[iVar3].tab_y)) {
         return iVar3;
       }
       pSVar1 = pSVar1 + 1;

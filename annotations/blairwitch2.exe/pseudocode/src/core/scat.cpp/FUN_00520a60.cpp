@@ -62,7 +62,7 @@ uint core_scat_cpp_FUN_00520a60(CDemonActor *param_1,CDemonActor *param_2,int pa
   iVar2 = (*((param_2->vtable)._ub)->getTargetPoints)(param_2,(CVector3f *)&stack0xfffffea4);
   if ((iVar2 != 0) &&
      ((iVar1 == 0 || (iVar1 = (**(code **)(*(int *)(iVar1 + 0x2b0) + 0x114))(iVar1), iVar1 < 1)))) {
-    core_actor_cpp_FUN_00408de0(param_1,&param_2->field_0x20);
+    core_actor_cpp_FUN_00408de0(param_1,&param_2->location);
     fStack_a0 = fStack_28;
     *(uint *)((int)&stack0xffffff64 + (uint)bVar5 * -8) =
          *(uint *)((int)&stack0xffffffdc + (uint)bVar5 * -8);
@@ -124,9 +124,9 @@ uint core_scat_cpp_FUN_00520a60(CDemonActor *param_1,CDemonActor *param_2,int pa
            (float)*(uint *)((int)&stack0xffffffd8 + (uint)bVar5 * -8);
       *(uint *)((int)&stack0xffffffc4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
            *(uint *)((int)&stack0xffffffdc + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-      fStack_8c = *(float *)&param_1->field_0x20 + fStack_44;
-      fStack_88 = *(float *)&param_1->field_0x24 + fStack_40;
-      fStack_84 = *(float *)&param_1->field_0x28 + fStack_3c;
+      fStack_8c = (param_1->location).position.x + fStack_44;
+      fStack_88 = (param_1->location).position.y + fStack_40;
+      fStack_84 = (param_1->location).position.z + fStack_3c;
       fStack_a4 = fStack_8c;
       (&stack0xffffff60)[(uint)bVar5 * 0xfffffffe] = (&stack0xffffff78)[(uint)bVar5 * 0xfffffffe];
       *(uint *)((int)&stack0xffffff64 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =

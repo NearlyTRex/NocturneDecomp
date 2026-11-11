@@ -15,9 +15,9 @@
 ;   core_backgnd.cpp_CBackgroundActor_archive_FUN_0040f4d0 at 0040f4fe
 ;   core_baron.cpp_CBaron_archive_FUN_00410600 at 0041064f
 ;   core_barrier.cpp_CBarrier_archive_FUN_00410dc0 at 00410e0f
+;   core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10 at 0059fd46
 ;   core_batman.cpp_CBatman_archive_FUN_00413e60 at 00413ee8
 ;   core_biggs.cpp_CBiggs_archive_FUN_00415250 at 004152a1
-;   core_bodypart.cpp_CBodyPart_archive_FUN_00415f50 at 00415f70
 ;   ... and 58 more
 ;
 ; Referenced Globals:

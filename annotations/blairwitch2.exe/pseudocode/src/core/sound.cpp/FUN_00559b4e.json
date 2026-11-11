@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 527,
+    "complexity_score": 512,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 17,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 192,
-    "suspect_count": 28,
+    "suspect_count": 27,
     "suspect_types": [
       "extra_output",
       "nan_function_artifact",
@@ -17,7 +17,6 @@
       "shadow_pointer_walk",
       "stack_alignment_array",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_overlapping_globals"
@@ -347,14 +346,6 @@
       "severity": "moderate",
       "text": "float afStackY_1050 [961];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x25c",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x25c == 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

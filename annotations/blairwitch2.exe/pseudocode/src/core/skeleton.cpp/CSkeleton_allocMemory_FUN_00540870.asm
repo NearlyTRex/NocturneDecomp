@@ -22,7 +22,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
 ;   core_skeleton.cpp_FUN_00540980
-;   crt_unknown.c_FUN_005b8df8
+;   crt_memory.c_operator_new_array_FUN_005b8df8
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     IMUL EAX,dword ptr [EBX + 0x1e00c]  ; 005408c6
     SHL EAX,0x4                         ; 005408cd
     PUSH EAX                            ; 005408d0
-    CALL crt_unknown.c_FUN_005b8df8     ; 005408d1
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8df8()
+    CALL crt_memory.c_operator_new_array_FUN_005b8df8 ; 005408d1
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005b8df8()
     MOV EDX,dword ptr [EBX + 0x1e00c]   ; 005408d6
     MOV dword ptr [EBX + 0x1e010],EAX   ; 005408dc
     LEA EAX,[EDX*0x4 + 0x0]             ; 005408e2
@@ -67,8 +67,8 @@ section .text
     ADD ESP,0x4                         ; 005408eb
     SHL EAX,0x2                         ; 005408ee
     PUSH EAX                            ; 005408f1
-    CALL crt_unknown.c_FUN_005b8df8     ; 005408f2
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8df8()
+    CALL crt_memory.c_operator_new_array_FUN_005b8df8 ; 005408f2
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005b8df8()
     MOV EDX,dword ptr [EBX + 0x1e00c]   ; 005408f7
     MOV dword ptr [EBX + 0x1e014],EAX   ; 005408fd
     LEA EAX,[EDX*0x4 + 0x0]             ; 00540903
@@ -76,8 +76,8 @@ section .text
     ADD ESP,0x4                         ; 0054090c
     SHL EAX,0x2                         ; 0054090f
     PUSH EAX                            ; 00540912
-    CALL crt_unknown.c_FUN_005b8df8     ; 00540913
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8df8()
+    CALL crt_memory.c_operator_new_array_FUN_005b8df8 ; 00540913
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005b8df8()
     ADD ESP,0x4                         ; 00540918
     MOV EBP,dword ptr [EBX + 0x1e010]   ; 0054091b
     MOV dword ptr [EBX + 0x1e018],EAX   ; 00540921

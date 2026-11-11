@@ -85,12 +85,12 @@ void core_gabriela_cpp_FUN_004aeb00(CDemonActor *param_1)
   
   bVar8 = 0;
   local_20 = 0.25;
-  memset(&param_1[0x62].field_0x180,0,0x34);
-  if (*(int *)&param_1[0xdd].field_0xd4 != 0) {
+  memset(&param_1[0x62].particle_systems[0].fade_duration,0,0x34);
+  if (*(int *)(param_1[0xdd].create_event + 0x5c) != 0) {
     iVar5 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
-    local_168 = *(float *)&param_1->field_0x20 - *(float *)(iVar5 + 0x20);
-    local_164 = *(float *)&param_1->field_0x24 - *(float *)(iVar5 + 0x24);
-    local_160 = *(float *)&param_1->field_0x28 - *(float *)(iVar5 + 0x28);
+    local_168 = (param_1->location).position.x - *(float *)(iVar5 + 0x20);
+    local_164 = (param_1->location).position.y - *(float *)(iVar5 + 0x24);
+    local_160 = (param_1->location).position.z - *(float *)(iVar5 + 0x28);
     local_cc = local_168;
     afStack_dc[(uint)bVar8 * -2 + 5] =
          *(float *)((int)&stack0xfffffea0 + ((uint)bVar8 * -2 + -1) * 4);
@@ -98,30 +98,30 @@ void core_gabriela_cpp_FUN_004aeb00(CDemonActor *param_1)
          *(float *)((int)&stack0xfffffea0 + ((uint)bVar8 * -2 + (uint)bVar8 * -2) * 4);
     out_box = (CBoundingBox3D *)
               SQRT(local_c4 * local_c4 + local_cc * local_cc + local_c8 * local_c8);
-    if (*(int *)&param_1[0xdd].field_0xd4 == 3) {
+    if (*(int *)(param_1[0xdd].create_event + 0x5c) == 3) {
       out_box = (CBoundingBox3D *)0x0;
     }
     if ((float)_DAT_005d6fc3 <= (float)out_box) {
       iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00513650
                         ((CPathMap *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x10a9c),
-                         (CVector3f *)&param_1->field_0x20,&local_114,param_1->direction_hint);
+                         &(param_1->location).position,&local_114,param_1->direction_hint);
       if (iVar5 != 0) {
         local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                                     (local_114.y - (param_1->orient).vec.y);
         fVar9 = local_18 * _DAT_005d6fcb * (float)_DAT_005d6fc3;
         local_2c = -local_20;
-        *(float *)&param_1[0x62].field_0x1a8 = fVar9;
+        param_1[0x62].particle_systems[1].active = (int)fVar9;
         if (fVar9 < local_2c) {
-          *(float *)&param_1[0x62].field_0x1a8 = local_2c;
+          param_1[0x62].particle_systems[1].active = (int)local_2c;
         }
-        if (local_20 < *(float *)&param_1[0x62].field_0x1a8) {
-          *(float *)&param_1[0x62].field_0x1a8 = local_20;
+        if (local_20 < (float)param_1[0x62].particle_systems[1].active) {
+          param_1[0x62].particle_systems[1].active = (int)local_20;
         }
-        *(uint *)&param_1[0x62].field_0x180 = 1;
+        param_1[0x62].particle_systems[0].fade_duration = 1.4013e-45;
         iVar5 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
-        local_90 = *(float *)&param_1->field_0x20 - *(float *)(iVar5 + 0x20);
-        local_8c = *(float *)&param_1->field_0x24 - *(float *)(iVar5 + 0x24);
-        local_88 = *(float *)&param_1->field_0x28 - *(float *)(iVar5 + 0x28);
+        local_90 = (param_1->location).position.x - *(float *)(iVar5 + 0x20);
+        local_8c = (param_1->location).position.y - *(float *)(iVar5 + 0x24);
+        local_88 = (param_1->location).position.z - *(float *)(iVar5 + 0x28);
         local_78 = local_90;
         local_74[(uint)bVar8 * -2] = afStack_a0[(uint)bVar8 * -2 + 5];
         local_74[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
@@ -133,7 +133,7 @@ void core_gabriela_cpp_FUN_004aeb00(CDemonActor *param_1)
         }
         if ((float)_DAT_005d6fd3 <
             SQRT(local_b8 * local_b8 + local_c0 * local_c0 + local_bc * local_bc)) {
-          *(uint *)&param_1[0x62].field_0x188 = 1;
+          param_1[0x62].particle_systems[0].stop_after_fade = 1;
           return;
         }
       }
@@ -141,28 +141,29 @@ void core_gabriela_cpp_FUN_004aeb00(CDemonActor *param_1)
     else {
       fVar9 = 9999.9;
       local_1c = 0;
-      if ((*(int *)&param_1[0xdd].field_0xd4 == 2) || (*(int *)&param_1[0xdd].field_0xd4 == 3)) {
+      if ((*(int *)(param_1[0xdd].create_event + 0x5c) == 2) ||
+         (*(int *)(param_1[0xdd].create_event + 0x5c) == 3)) {
         local_1c = core_hero_cpp_FUN_004d00c0(param_1,&stack0xfffffe1c);
       }
       if ((local_1c == 0) || ((float)_DAT_005d6fdb <= fVar9)) {
-        if (*(int *)&param_1[0xdd].field_0xdc != 0) {
+        if (param_1[0xdd].standing_platform != (CPlatform *)0x0) {
           iVar5 = core_motion_cpp_FUN_005035c0(param_1 + 1);
           if (*(int *)(iVar5 + 0x24) == 0) {
-            *(uint *)&param_1[0x62].field_0x198 = 1;
+            param_1[0x62].particle_systems[1].position.x = 1.4013e-45;
             return;
           }
         }
       }
       else {
-        if (*(int *)&param_1[0xdd].field_0xdc == 0) {
+        if (param_1[0xdd].standing_platform == (CPlatform *)0x0) {
           iVar5 = core_motion_cpp_FUN_005035c0(param_1 + 1);
           if (*(int *)(iVar5 + 0x24) == 0) {
-            *(uint *)&param_1[0x62].field_0x198 = 1;
+            param_1[0x62].particle_systems[1].position.x = 1.4013e-45;
           }
         }
-        local_138 = *(float *)(local_1c + 0x20) - *(float *)&param_1->field_0x20;
-        local_134 = *(float *)(local_1c + 0x24) - *(float *)&param_1->field_0x24;
-        local_130 = *(float *)(local_1c + 0x28) - *(float *)&param_1->field_0x28;
+        local_138 = *(float *)(local_1c + 0x20) - (param_1->location).position.x;
+        local_134 = *(float *)(local_1c + 0x24) - (param_1->location).position.y;
+        local_130 = *(float *)(local_1c + 0x28) - (param_1->location).position.z;
         local_12c = local_138;
         (&stack0xfffffed4)[(uint)bVar8 * -2 + 1] =
              (float)*(uint *)((int)&stack0xfffffecc + (uint)bVar8 * -8);
@@ -178,16 +179,16 @@ void core_gabriela_cpp_FUN_004aeb00(CDemonActor *param_1)
                                     (local_170 - (param_1->orient).vec.y);
         fVar9 = local_18 * _DAT_005d6fcb * (float)_DAT_005d6fc3;
         local_28 = -local_20;
-        *(float *)&param_1[0x62].field_0x1a8 = fVar9;
+        param_1[0x62].particle_systems[1].active = (int)fVar9;
         if (fVar9 < local_28) {
-          *(float *)&param_1[0x62].field_0x1a8 = local_28;
+          param_1[0x62].particle_systems[1].active = (int)local_28;
         }
-        if (local_20 < *(float *)&param_1[0x62].field_0x1a8) {
-          *(float *)&param_1[0x62].field_0x1a8 = local_20;
+        if (local_20 < (float)param_1[0x62].particle_systems[1].active) {
+          param_1[0x62].particle_systems[1].active = (int)local_20;
         }
-        dVar1 = (double)*(float *)&param_1[0x62].field_0x1a8;
-        if (((float)_DAT_005d6fe3 < *(float *)&param_1[0x62].field_0x1a8) && (dVar1 < _DAT_005d6feb)
-           ) {
+        fVar9 = (float)param_1[0x62].particle_systems[1].active;
+        dVar1 = (double)fVar9;
+        if (((float)_DAT_005d6fe3 < fVar9) && (dVar1 < _DAT_005d6feb)) {
           (*((param_1->vtable)._ub)->getBoundingBox)(param_1,SUB84(__BITCAST_UINT64(dVar1),0));
           puVar6 = (uint *)&stack0xfffffe70;
           puVar7 = &stack0xfffffe50;
@@ -210,9 +211,9 @@ void core_gabriela_cpp_FUN_004aeb00(CDemonActor *param_1)
           afStack_dc[(uint)bVar8 * -2 + 1] = afStack_f4[(uint)bVar8 * -2 + 1];
           afStack_dc[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 2] =
                afStack_f4[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 2];
-          afStack_a0[0] = *(float *)&param_1->field_0x20 + afStack_dc[0];
-          afStack_a0[1] = *(float *)&param_1->field_0x24 + afStack_dc[1];
-          afStack_a0[2] = *(float *)&param_1->field_0x28 + afStack_dc[2];
+          afStack_a0[0] = (param_1->location).position.x + afStack_dc[0];
+          afStack_a0[1] = (param_1->location).position.y + afStack_dc[1];
+          afStack_a0[2] = (param_1->location).position.z + afStack_dc[2];
           fStack_148 = afStack_a0[0];
           *(float *)(&stack0xfffffebc + (uint)bVar8 * -8) = afStack_a0[(uint)bVar8 * -2 + 1];
           *(float *)((int)&stack0xfffffec0 + ((uint)bVar8 * -2 + (uint)bVar8 * -2) * 4) =
@@ -239,9 +240,9 @@ void core_gabriela_cpp_FUN_004aeb00(CDemonActor *param_1)
           afStack_4c[(uint)bVar8 * -2] = *(float *)((int)&stack0xfffffe94 + (uint)bVar8 * -8);
           afStack_4c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
                *(float *)((int)&stack0xfffffe98 + ((uint)bVar8 * -2 + (uint)bVar8 * -2) * 4);
-          local_134 = *(float *)&unaff_EDI->field_0x20 + fStack_50;
-          local_130 = *(float *)&unaff_EDI->field_0x24 + afStack_4c[0];
-          local_12c = *(float *)&unaff_EDI->field_0x28 + afStack_4c[1];
+          local_134 = (unaff_EDI->location).position.x + fStack_50;
+          local_130 = (unaff_EDI->location).position.y + afStack_4c[0];
+          local_12c = (unaff_EDI->location).position.z + afStack_4c[1];
           afStack_4c[2] = local_134;
           afStack_4c[(uint)bVar8 * -2 + 3] = *(float *)((int)&stack0xfffffed0 + (uint)bVar8 * -8);
           afStack_4c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
@@ -294,7 +295,7 @@ void core_gabriela_cpp_FUN_004aeb00(CDemonActor *param_1)
           core_setcolid_cpp_FUN_00535ee0();
           core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
           if (unaff_EDI == g_CDemonSetPtr->collision_actor) {
-            *(uint *)&param_1[0x62].field_0x18c = 1;
+            param_1[0x62].particle_systems[0].standalone = 1;
             return;
           }
         }

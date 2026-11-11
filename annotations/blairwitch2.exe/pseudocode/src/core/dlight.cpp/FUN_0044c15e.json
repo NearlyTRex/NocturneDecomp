@@ -374,7 +374,7 @@
       "line": 134,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&CStack_c0);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&CStack_c0);",
       "type": "undefined_data"
     },
     {
@@ -382,7 +382,7 @@
       "line": 145,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&CStack_90);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_90);",
       "type": "undefined_data"
     },
     {
@@ -390,7 +390,7 @@
       "line": 156,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&CStack_84);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&CStack_84);",
       "type": "undefined_data"
     },
     {
@@ -398,7 +398,7 @@
       "line": 167,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x90),aCStack_78);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,aCStack_78);",
       "type": "undefined_data"
     },
     {
@@ -414,7 +414,7 @@
       "line": 169,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "*(int *)(DAT_0060b280->vertex_buffer_ptr + 0x2c) = iStack_30;",
+      "text": "DAT_0060b280->vertex_buffer_ptr->a = iStack_30;",
       "type": "undefined_data"
     },
     {

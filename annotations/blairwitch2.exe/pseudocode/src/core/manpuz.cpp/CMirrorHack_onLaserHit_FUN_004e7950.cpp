@@ -12,9 +12,9 @@ void __cdecl core_manpuz_cpp_CMirrorHack_onLaserHit_FUN_004e7950(CMirrorHack *th
 
 {
   core_actor_cpp_CDemonActor_onLaserHit_FUN_00409830(&this_ptr->base,laser_info);
-  if (*(float *)(laser_info + 0x34) <= (float)_DAT_005dc73d) {
+  if ((laser_info->local_hit_position).z <= (float)_DAT_005dc73d) {
     return;
   }
-  *(uint *)(laser_info + 0x50) = 0x3f800000;
+  laser_info->transparency = 1.0;
   return;
 }

@@ -12,7 +12,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00540870(CSkeleton *thi
 
 {
   CQuaternion4f *pCVar1;
-  uint uVar2;
+  CVector3f *pCVar2;
   
   core_skeleton_cpp_FUN_00540980(this_ptr,0);
   if (100 < bone_count) {
@@ -23,14 +23,16 @@ void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00540870(CSkeleton *thi
   this_ptr->bone_count = bone_count;
   this_ptr->frame_count = frame_count;
   pCVar1 = (CQuaternion4f *)
-           FUN_005b8df8(this_ptr->bone_count * this_ptr->frame_count * 0x10);
+           operator_new_array
+                     (this_ptr->bone_count * this_ptr->frame_count * 0x10);
   this_ptr->bone_angle_frames = pCVar1;
-  uVar2 = FUN_005b8df8(this_ptr->frame_count * 0xc);
-  *(uint *)&this_ptr->field_0x1e014 = uVar2;
-  uVar2 = FUN_005b8df8(this_ptr->frame_count * 0xc);
-  *(uint *)&this_ptr->field_0x1e018 = uVar2;
+  pCVar2 = (CVector3f *)operator_new_array(this_ptr->frame_count * 0xc);
+  this_ptr->frame_positions_1 = pCVar2;
+  pCVar2 = (CVector3f *)operator_new_array(this_ptr->frame_count * 0xc);
+  this_ptr->frame_positions_2 = pCVar2;
   if (((this_ptr->bone_angle_frames != (CQuaternion4f *)0x0) &&
-      (*(int *)&this_ptr->field_0x1e014 != 0)) && (*(int *)&this_ptr->field_0x1e018 != 0)) {
+      (this_ptr->frame_positions_1 != (CVector3f *)0x0)) &&
+     (this_ptr->frame_positions_2 != (CVector3f *)0x0)) {
     return;
   }
   _DAT_01d046a0 = "..\\core\\skeleton.cpp";

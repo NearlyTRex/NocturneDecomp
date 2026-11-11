@@ -45,16 +45,16 @@ void __cdecl core_game_cpp_CGame_processMouseControls_FUN_004b80a0(CGame *this_p
       if (this_ptr->invert_mouse_y_axis != 0) {
         local_40 = -local_40;
       }
-      if ((&DAT_01c37790)[*(int *)&this_ptr->field_0x34] == '\0') {
-        if (ABS(*(float *)(player_control + 0x28)) < ABS(local_3c)) {
-          *(float *)(player_control + 0x28) = local_3c;
+      if ((&DAT_01c37790)[this_ptr->key_strafe] == '\0') {
+        if (ABS(player_control->turn_speed) < ABS(local_3c)) {
+          player_control->turn_speed = local_3c;
         }
       }
-      else if (ABS(*(float *)(player_control + 0x24)) < ABS(local_3c)) {
-        *(float *)(player_control + 0x24) = local_3c;
+      else if (ABS(player_control->strafe_speed) < ABS(local_3c)) {
+        player_control->strafe_speed = local_3c;
       }
-      if (ABS(*(float *)(player_control + 0x2c)) < ABS(local_40)) {
-        *(float *)(player_control + 0x2c) = local_40;
+      if (ABS(player_control->look_up_down_speed) < ABS(local_40)) {
+        player_control->look_up_down_speed = local_40;
         return;
       }
     }

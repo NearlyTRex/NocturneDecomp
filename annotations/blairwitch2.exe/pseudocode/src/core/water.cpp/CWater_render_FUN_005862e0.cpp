@@ -116,7 +116,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_005862e0(CWater *this_ptr,int rend
         local_64.y = (int)ROUND(local_7c.y * _DAT_005fdc5c);
         local_64.z = (int)ROUND(_DAT_005fdc5c * 0.0);
         engine_special_cpp_FUN_0055d723
-                  ((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&local_64);
+                  (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_64);
         core_set_cpp_FUN_00531a90(g_CDemonSetPtr,&local_7c,local_4c,0);
         local_7c.x = this_ptr->tile_size;
         if (this_ptr->wave_animation_enabled != 0) {
@@ -130,7 +130,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_005862e0(CWater *this_ptr,int rend
         local_70.y = (int)ROUND(local_7c.y * _DAT_005fdc5c);
         local_70.z = (int)ROUND(local_7c.z * _DAT_005fdc5c);
         engine_special_cpp_FUN_0055d723
-                  ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&local_70);
+                  (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_70);
         core_set_cpp_FUN_00531a90(g_CDemonSetPtr,&local_7c,local_4c,1);
         local_7c.z = this_ptr->tile_size;
         if (this_ptr->wave_animation_enabled != 0) {
@@ -144,7 +144,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_005862e0(CWater *this_ptr,int rend
         local_58.y = (int)ROUND(local_7c.y * _DAT_005fdc5c);
         local_58.z = (int)ROUND(local_7c.z * _DAT_005fdc5c);
         engine_special_cpp_FUN_0055d723
-                  ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&local_58);
+                  (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_58);
         core_set_cpp_FUN_00531a90(g_CDemonSetPtr,&local_7c,local_4c,2);
         local_7c.x = 0.0;
         if (this_ptr->wave_animation_enabled != 0) {
@@ -158,7 +158,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_005862e0(CWater *this_ptr,int rend
         local_88.y = (int)ROUND(local_7c.y * _DAT_005fdc5c);
         local_88.z = (int)ROUND(local_7c.z * _DAT_005fdc5c);
         engine_special_cpp_FUN_0055d723
-                  ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x90),&local_88);
+                  (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_88);
         core_set_cpp_FUN_00531a90(g_CDemonSetPtr,&local_7c,local_4c,3);
         if (this_ptr->wave_animation_enabled == 0) {
           if (_DAT_01c37788 == 0) {

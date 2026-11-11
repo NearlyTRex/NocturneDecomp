@@ -11,7 +11,7 @@ void core_npc_cpp_factoryFuncNPC_FUN_00510430(void)
 {
   CNPC *this_ptr;
   
-  this_ptr = (CNPC *)debugAllocTracked1(0x24348);
+  this_ptr = (CNPC *)operator_new(0x24348);
   if (this_ptr == (CNPC *)0x0) {
     return;
   }

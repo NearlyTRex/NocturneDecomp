@@ -2,18 +2,19 @@
 // Address: 005a9890
 // Address Range: [[005a9890, 005a997b]]
 // Convention: unknown
-// Signature: void core_ghostchi_cpp_FUN_005a9890(int param_1,undefined4 param_2)
+// Signature: void core_ghostchi_cpp_FUN_005a9890(int param_1,float param_2)
 
 #include "nocturne.h"
 
-void core_ghostchi_cpp_FUN_005a9890(int param_1,uint param_2)
+void core_ghostchi_cpp_FUN_005a9890(int param_1,float param_2)
 
 {
   CMotionController *this_ptr;
   int iVar1;
   int iVar2;
   
-  unkafter_superopt_cpp_FUN_005a8180(param_1 + 0x264,param_2);
+  unkafter_superopt_cpp_CSimpleParticleSystem_process_FUN_005a8180
+            ((CSimpleParticleSystem *)(param_1 + 0x264),param_2);
   if (0.0 < *(float *)(param_1 + 0x11430)) {
     this_ptr = (CMotionController *)(param_1 + 0x2b4);
     iVar1 = core_motion_cpp_FUN_005035c0(this_ptr);

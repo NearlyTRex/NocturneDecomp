@@ -19,7 +19,7 @@ CLantern * core_lantern_cpp_CLantern_dtor_FUN_0059d170(CLantern *this_ptr,uint f
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = (CLantern *)core_weapon_cpp_CWeapon_dtor_FUN_00589ae0((CWeapon *)this_ptr,1);
+  pCVar1 = (CLantern *)core_weapon_cpp_CWeapon_dtor_FUN_00589ae0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

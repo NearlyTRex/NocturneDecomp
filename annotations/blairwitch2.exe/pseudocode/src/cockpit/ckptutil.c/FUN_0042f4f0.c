@@ -31,7 +31,7 @@ void cockpit_ckptutil_c_FUN_0042f4f0(uint *param_1,int param_2,uint param_3,uint
   
   bVar10 = 0;
   uStack_18 = param_2 * param_4;
-  puStack_24 = FUN_005b8580(param_2 * param_3 * param_4);
+  puStack_24 = (uint *)malloc(param_2 * param_3 * param_4);
   if (puStack_24 == (uint *)0x0) {
     _sprintf(acStack_78,"Unable to allocate %u bytes for temporary rotated bitmap.");
     _DAT_01d046a4 = 0x82f;

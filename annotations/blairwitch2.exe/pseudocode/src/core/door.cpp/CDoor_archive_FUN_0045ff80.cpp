@@ -11,7 +11,7 @@ void __cdecl core_door_cpp_CDoor_archive_FUN_0045ff80(CDoor *this_ptr)
 {
   char cVar1;
   char *pcVar2;
-  char *pcVar3;
+  char (*pacVar3) [100];
   
   core_actor_cpp_CDemonActor_archive_FUN_0040c330(&this_ptr->base);
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ba60
@@ -45,28 +45,29 @@ void __cdecl core_door_cpp_CDoor_archive_FUN_0045ff80(CDoor *this_ptr)
   }
   if (g_CDoorClassVersion < 7) {
     if (4 < g_CDoorClassVersion) {
-      core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x7cc,"scriptOpenEvent");
-      if (this_ptr->field_0x7cc == '\0') {
-        *(uint *)&this_ptr->field_0x5d4 = 0;
+      core_actor_cpp_archiveString_FUN_0040b730
+                ((this_ptr->open_rule).events[0],"scriptOpenEvent");
+      if ((this_ptr->open_rule).events[0][0] == '\0') {
+        (this_ptr->open_rule).list_size = 0;
       }
       else {
         pcVar2 = &DAT_005d0b16;
-        pcVar3 = &this_ptr->field_0x5d8;
+        pacVar3 = (this_ptr->open_rule).conditions;
         do {
           cVar1 = *pcVar2;
-          *pcVar3 = cVar1;
+          (*pacVar3)[0] = cVar1;
           if (cVar1 == '\0') break;
           cVar1 = pcVar2[1];
           pcVar2 = pcVar2 + 2;
-          pcVar3[1] = cVar1;
-          pcVar3 = pcVar3 + 2;
+          (*pacVar3)[1] = cVar1;
+          pacVar3 = (char (*) [100])(*pacVar3 + 2);
         } while (cVar1 != '\0');
-        *(uint *)&this_ptr->field_0x5d4 = 1;
+        (this_ptr->open_rule).list_size = 1;
       }
     }
   }
   else {
-    core_actor_cpp_archiveRules_FUN_0040c170(&this_ptr->field_0x5d4,"openRules");
+    core_actor_cpp_archiveRules_FUN_0040c170(&this_ptr->open_rule,"openRules");
   }
   if (5 < g_CDoorClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b960
@@ -88,13 +89,14 @@ void __cdecl core_door_cpp_CDoor_archive_FUN_0045ff80(CDoor *this_ptr)
     core_actor_cpp_archiveString_FUN_0040b730(this_ptr->locked_sound,"lockedSound");
   }
   if (0xb < g_CDoorClassVersion) {
-    core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0xb40,"shakeMeEvent");
-    core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0xb3c,"shakeMeStrength");
+    core_actor_cpp_archiveString_FUN_0040b730(this_ptr->shake_me_event,"shakeMeEvent");
+    core_actor_cpp_archiveFloat_FUN_0040b8e0
+              (&this_ptr->shake_me_strength,"shakeMeStrength");
   }
   if (g_CDoorClassVersion < 0xd) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040b960
-            ((int *)&this_ptr->field_0xba4,"handleVertexIndex");
+            (&this_ptr->handle_vertex_index,"handleVertexIndex");
   return;
 }

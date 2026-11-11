@@ -7,13 +7,14 @@ struct CDemonActor;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CHero.h"
 #include "types/classes/CVector3f.h"
 
 // Structure: CBaron
 // Ghidra size: 0x25740 (153408 bytes)
 #pragma pack(push, 1)
 typedef struct CBaron {
-    char field_0[153152]; // 0x0
+    CHero base; // 0x0
     char summon_event[100]; // 0x25640
     char go_away_event[100]; // 0x256a4
     CVector3f head_rotation; // 0x25708

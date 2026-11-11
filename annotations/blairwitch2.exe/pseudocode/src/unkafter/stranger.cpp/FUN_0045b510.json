@@ -2,25 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 494,
-    "complexity_score": 595,
+    "complexity_score": 506,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 200,
-    "suspect_count": 35,
+    "pseudocode_lines": 201,
+    "suspect_count": 27,
     "suspect_types": [
       "bit_int_float_compare",
       "param_count_too_few",
       "pointer_cast",
       "self_copy_guard",
       "stack_alignment_array",
-      "unknown_field",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 694
+    "total_lines": 695
   },
   "cross_references": [
     {
@@ -706,20 +704,12 @@
       "line": 62,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x41d8 == 0) {",
+      "text": "iVar1 = *(int *)(param_1[2].flames[1].off_event + 0x40);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 62,
-      "match": "field_0x41d8",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x41d8 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 64,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3 = 0;",
@@ -727,23 +717,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(*(int *)&param_1[2].field_0x41d8 + 0x43c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 66,
-      "match": "field_0x41d8",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(*(int *)&param_1[2].field_0x41d8 + 0x43c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 69,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3 = 1;",
@@ -751,7 +725,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 73,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 != 0) {",
@@ -759,7 +733,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 76,
       "match": "(CCharacter **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "this_ptr = *(CCharacter **)((int)g_CDemonSetPtr->characters + local_1c);",
@@ -767,35 +741,19 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 77,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408de0(param_1,&(this_ptr->base).field_0x20);",
+      "text": "core_actor_cpp_FUN_00408de0(param_1,&(this_ptr->base).location);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 76,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408de0(param_1,&(this_ptr->base).field_0x20);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 83,
+      "line": 84,
       "match": "param_1",
       "severity": "mild",
       "text": "((((int)local_f8 < 0x40c00001 && (this_ptr != param_1)) &&",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 90,
-      "match": "._28_4_",
-      "severity": "mild",
-      "text": "(fStack_150 = 1.0 - ((local_f8 - (float)auStack_14c._28_4_) + (float)_DAT_005d060f) *",
-      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -850,16 +808,8 @@
       "line": 190,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_15c = local_158 - *(float *)&param_1[2].field_0x4234;",
+      "text": "local_15c = local_158 - *(float *)(param_1[2].flames[2].base.actor_name + 0x14);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 190,
-      "match": "field_0x4234",
-      "severity": "mild",
-      "text": "local_15c = local_158 - *(float *)&param_1[2].field_0x4234;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -890,32 +840,16 @@
       "line": 202,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)&param_1[2].field_0x4234 = *(float *)&param_1[2].field_0x4234 + local_15c;",
+      "text": "*(float *)(param_1[2].flames[2].base.actor_name + 0x14) =",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 202,
+      "line": 203,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)&param_1[2].field_0x4234 = *(float *)&param_1[2].field_0x4234 + local_15c;",
+      "text": "*(float *)(param_1[2].flames[2].base.actor_name + 0x14) + local_15c;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 202,
-      "match": "field_0x4234",
-      "severity": "mild",
-      "text": "*(float *)&param_1[2].field_0x4234 = *(float *)&param_1[2].field_0x4234 + local_15c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 202,
-      "match": "field_0x4234",
-      "severity": "mild",
-      "text": "*(float *)&param_1[2].field_0x4234 = *(float *)&param_1[2].field_0x4234 + local_15c;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_124 != &local_118)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
@@ -927,7 +861,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40c00001 is the IEEE 754 bit pattern of 6f. Rewrite in a .keep as a plain float compare against 6f.",
-      "line": 83,
+      "line": 84,
       "match": "(int)local_f8 < 0x40c00001",
       "severity": "moderate",
       "text": "((((int)local_f8 < 0x40c00001 && (this_ptr != param_1)) &&",

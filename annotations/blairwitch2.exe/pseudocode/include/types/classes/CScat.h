@@ -8,13 +8,14 @@ struct CWeapon;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CHero.h"
 #include "types/classes/CVector3f.h"
 
 // Structure: CScat
 // Ghidra size: 0x2566c (153196 bytes)
 #pragma pack(push, 1)
 typedef struct CScat {
-    char field_0[153152]; // 0x0
+    CHero base; // 0x0
     int guns_drawn; // 0x25640
     CVector3f head_euler_angles; // 0x25644
     float head_blend_weight; // 0x25650

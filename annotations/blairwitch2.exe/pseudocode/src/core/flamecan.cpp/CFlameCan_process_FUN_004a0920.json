@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 70,
+    "complexity_score": 55,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 30,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "unaffected_reg",
-      "unnamed_field"
+      "unaffected_reg"
     ],
     "total_lines": 107
   },
@@ -159,14 +158,6 @@
       "severity": "moderate",
       "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,unaff_ESI);",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(0x01C3DEB4,(CVector3f *)&(this_ptr->flame).base.field_0x20,16.0,1500.0,4.0);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

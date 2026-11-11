@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 519,
+    "complexity_score": 444,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 69,
-    "suspect_count": 43,
+    "suspect_count": 36,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -264,72 +263,24 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "(fVar4 = *(float *)&(pCVar2->base).base.field_0x20 - *(float *)&(param_1->base).field_0x20,",
+      "text": "(fVar4 = (pCVar2->base).base.location.position.x - (param_1->base).location.position.x,",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(fVar4 = *(float *)&(pCVar2->base).base.field_0x20 - *(float *)&(param_1->base).field_0x20,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(fVar4 = *(float *)&(pCVar2->base).base.field_0x20 - *(float *)&(param_1->base).field_0x20,",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = *(float *)&(pCVar2->base).base.field_0x24 - *(float *)&(param_1->base).field_0x24,",
+      "text": "fVar1 = (pCVar2->base).base.location.position.y - (param_1->base).location.position.y,",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)&(pCVar2->base).base.field_0x24 - *(float *)&(param_1->base).field_0x24,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)&(pCVar2->base).base.field_0x24 - *(float *)&(param_1->base).field_0x24,",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar5 = *(float *)&(pCVar2->base).base.field_0x28 - *(float *)&(param_1->base).field_0x28,",
+      "text": "fVar5 = (pCVar2->base).base.location.position.z - (param_1->base).location.position.z,",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "fVar5 = *(float *)&(pCVar2->base).base.field_0x28 - *(float *)&(param_1->base).field_0x28,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "fVar5 = *(float *)&(pCVar2->base).base.field_0x28 - *(float *)&(param_1->base).field_0x28,",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -448,7 +399,7 @@
       "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,(CVector3f *)&(param_1->wander_nearest_waypoint->base).base.field_0x20,",
+      "text": "(param_1,&(param_1->wander_nearest_waypoint->base).base.location.position,",
       "type": "unnamed_param"
     },
     {
@@ -456,16 +407,8 @@
       "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,(CVector3f *)&(param_1->wander_nearest_waypoint->base).base.field_0x20,",
+      "text": "(param_1,&(param_1->wander_nearest_waypoint->base).base.location.position,",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(param_1,(CVector3f *)&(param_1->wander_nearest_waypoint->base).base.field_0x20,",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 87,
+    "complexity_score": 72,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy"
     ],
     "total_lines": 99
@@ -124,16 +123,8 @@
       "line": 17,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "(DAT_0060b280,(CVector3f *)&(this_ptr->base).field_0x20);",
+      "text": "(DAT_0060b280,&(this_ptr->base).location.position);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(DAT_0060b280,(CVector3f *)&(this_ptr->base).field_0x20);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

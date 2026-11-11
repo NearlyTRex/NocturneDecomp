@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 85,
+    "complexity_score": 86,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 5,
+    "pseudocode_lines": 6,
     "suspect_count": 7,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param"
     ],
-    "total_lines": 21
+    "total_lines": 22
   },
   "cross_references": [
     {
@@ -33,13 +33,13 @@
     ],
     "convention": "unknown",
     "name": "core_actor.cpp_FUN_0040ce40",
-    "signature": "void core_actor_cpp_FUN_0040ce40(int param_1,int param_2,undefined4 param_3)"
+    "signature": "void core_actor_cpp_FUN_0040ce40(int param_1,int param_2,int param_3)"
   },
   "function_calls": [
     {
       "addr": "005a80d0",
       "is_variadic": false,
-      "name": "unkaddr_005a7eb0.cpp_FUN_005a80d0"
+      "name": "unkaddr_005a7eb0.cpp_CSimpleParticleSystem_start_FUN_005a80d0"
     }
   ],
   "globals": [],
@@ -106,7 +106,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_actor_cpp_FUN_0040ce40(int param_1,int param_2,uint param_3)",
+      "text": "void core_actor_cpp_FUN_0040ce40(int param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -114,7 +114,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_actor_cpp_FUN_0040ce40(int param_1,int param_2,uint param_3)",
+      "text": "void core_actor_cpp_FUN_0040ce40(int param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -122,31 +122,31 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_actor_cpp_FUN_0040ce40(int param_1,int param_2,uint param_3)",
+      "text": "void core_actor_cpp_FUN_0040ce40(int param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 5,
+      "line": 6,
       "match": "param_2",
       "severity": "mild",
-      "text": "unkaddr_005a7eb0_cpp_FUN_005a80d0(param_2 * 0x44 + param_1 + 0x154,param_3);",
+      "text": "((CSimpleParticleSystem *)(param_2 * 0x44 + param_1 + 0x154),param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 5,
+      "line": 6,
       "match": "param_1",
       "severity": "mild",
-      "text": "unkaddr_005a7eb0_cpp_FUN_005a80d0(param_2 * 0x44 + param_1 + 0x154,param_3);",
+      "text": "((CSimpleParticleSystem *)(param_2 * 0x44 + param_1 + 0x154),param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 5,
+      "line": 6,
       "match": "param_3",
       "severity": "mild",
-      "text": "unkaddr_005a7eb0_cpp_FUN_005a80d0(param_2 * 0x44 + param_1 + 0x154,param_3);",
+      "text": "((CSimpleParticleSystem *)(param_2 * 0x44 + param_1 + 0x154),param_3);",
       "type": "unnamed_param"
     },
     {

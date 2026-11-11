@@ -18,7 +18,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_00426730(CCharacter
   int iVar3;
   float10 fVar4;
   CBoundingBox3D *bounding_box;
-  SPose local_1aac [6816];
+  SPose local_1aac;
   
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,1);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xc000);
@@ -32,11 +32,11 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_00426730(CCharacter
   DAT_0060b280->skip_uv_extraction = 1;
   engine_texture_cpp_FUN_00574e00(&DAT_00609a10 + (iVar2 % 6) * 0x18);
   this_ptr_00 = &this_ptr->model;
-  core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_00548620(this_ptr_00,local_1aac);
+  core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_00548620(this_ptr_00,&local_1aac);
   core_skeleton_cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_00547110
             (this_ptr_00,1.1,-1);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00546ae0(this_ptr_00);
-  bounding_box = (CBoundingBox3D *)&(this_ptr->model).field_0x2238;
+  bounding_box = &(this_ptr->model).bounding_box;
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(this_ptr_00);
   iVar2 = core_skeleton_cpp_CDeformableModel_selectLOD_FUN_00543d00(this_ptr_01,bounding_box);
   core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_00547280(this_ptr_00,iVar2);
@@ -45,16 +45,16 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_00426730(CCharacter
   iVar2 = 0;
   do {
     pCVar1 = DAT_0060b280;
-    *(uint *)(DAT_0060b280->vertex_buffer_ptr + iVar2 + 0x20) = 0xb332;
-    *(uint *)(pCVar1->vertex_buffer_ptr + iVar2 + 0x24) = 0xb332;
+    *(uint *)((int)&DAT_0060b280->vertex_buffer_ptr->r + iVar2) = 0xb332;
+    *(uint *)((int)&pCVar1->vertex_buffer_ptr->g + iVar2) = 0xb332;
     iVar3 = iVar2 + 0x30;
-    *(uint *)(pCVar1->vertex_buffer_ptr + iVar2 + 0x28) = 0xffff;
+    *(uint *)((int)&pCVar1->vertex_buffer_ptr->b + iVar2) = 0xffff;
     iVar2 = iVar3;
   } while (iVar3 != 96000);
   core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_00547370(&this_ptr->model,0x267,1);
   DAT_0060b280->skip_uv_extraction = 0;
   core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005486f0
-            (&this_ptr->model,local_1aac);
+            (&this_ptr->model,&local_1aac);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
   return;
 }

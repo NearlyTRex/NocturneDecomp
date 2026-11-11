@@ -17,21 +17,21 @@ CMoon * CMoon::ctor(CMoon *this_ptr);
 // Address: 00502390
 CMoon * CMoon::dtor(CMoon *this_ptr,uint flags);
 
-// Original: core_moon.cpp_FUN_005023e0
+// Original: core_moon.cpp_CMoon_init_FUN_005023e0
 // Address: 005023e0
-void FUN_005023e0(int *param_1);
+void __cdecl CMoon::init(CMoon *this_ptr);
 
-// Original: core_moon.cpp_FUN_00502450
+// Original: core_moon.cpp_CMoon_free_FUN_00502450
 // Address: 00502450
-void FUN_00502450(int *param_1);
+void __cdecl CMoon::free(CMoon *this_ptr);
 
-// Original: core_moon.cpp_FUN_005024a0
+// Original: core_moon.cpp_CMoon_update_FUN_005024a0
 // Address: 005024a0
-void FUN_005024a0(undefined4 param_1,float param_2);
+void __cdecl CMoon::update(CMoon *this_ptr,float param_2);
 
-// Original: core_moon.cpp_FUN_00502510
+// Original: core_moon.cpp_CMoon_render_FUN_00502510
 // Address: 00502510
-void FUN_00502510(void);
+void __cdecl CMoon::render(CMoon *this_ptr);
 
 // Original: core_moon.cpp_CAlphaBitmap_arrdtor75_FUN_00502720
 // Address: 00502720

@@ -19,8 +19,8 @@ void __cdecl core_minecar_cpp_CMineCar_process_FUN_004f2090(CMineCar *this_ptr,f
      (fVar2 = this_ptr->spark_timer - delta_time, this_ptr->spark_timer = fVar2, fVar2 < 0.0)) {
     this_ptr->spark_timer = 0.1;
     core_fire_cpp_CFireEffect_createSpark_FUN_0049d090
-              (0x01C3DEB4,(CVector3f *)&(this_ptr->base).base.field_0x20,(CVector3f *)0x0,0x4000,
-               0x10000,0,0xffff);
+              (0x01C3DEB4,&(this_ptr->base).base.location.position,(CVector3f *)0x0,0x4000,0x10000
+               ,0,0xffff);
     return;
   }
   return;

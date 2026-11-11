@@ -91,14 +91,13 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_005311e0(CDemonS
       iVar5 = iVar5 + iVar4;
     } while (iVar6 < _DAT_0200e3d4);
   }
-  if ((((*(uint *)&this_ptr->field_0x14d160 & 0x7fffffff) != 0) &&
-      (surface_normal != (CVector3i *)0x0)) &&
-     (lVar1 = (longlong)_DAT_0200a398 * (longlong)surface_normal->x,
-     lVar2 = (longlong)_DAT_0200a39c * (longlong)surface_normal->y,
-     lVar3 = (longlong)_DAT_0200a3a0 * (longlong)surface_normal->z,
-     iVar6 = ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
-             ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
-             ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10), iVar6 < 0)) {
+  if (((ABS(this_ptr->directional_light_intensity) != 0.0) && (surface_normal != (CVector3i *)0x0))
+     && (lVar1 = (longlong)_DAT_0200a398 * (longlong)surface_normal->x,
+        lVar2 = (longlong)_DAT_0200a39c * (longlong)surface_normal->y,
+        lVar3 = (longlong)_DAT_0200a3a0 * (longlong)surface_normal->z,
+        iVar6 = ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
+                ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
+                ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10), iVar6 < 0)) {
     iVar5 = iVar5 - iVar6;
   }
   local_18 = 0;

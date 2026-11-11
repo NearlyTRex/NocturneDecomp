@@ -26,10 +26,10 @@ void __cdecl core_weapon_cpp_CWeapon_process_FUN_00589c80(CWeapon *this_ptr,floa
       this_ptr->sim_timer = 0.0;
     }
     core_box_cpp_CBox_process_FUN_005b2290(&this_ptr->physics_box,delta_time);
-    *(float *)&(this_ptr->base).field_0x20 = (this_ptr->physics_box).position.x;
-    *(float *)&(this_ptr->base).field_0x24 = (this_ptr->physics_box).position.y;
+    (this_ptr->base).location.position.x = (this_ptr->physics_box).position.x;
+    (this_ptr->base).location.position.y = (this_ptr->physics_box).position.y;
     pUVar1 = &(this_ptr->base).orient;
-    *(float *)&(this_ptr->base).field_0x28 = (this_ptr->physics_box).position.z;
+    (this_ptr->base).location.position.z = (this_ptr->physics_box).position.z;
     pCVar2 = &(this_ptr->physics_box).orientation;
     if ((CVector3f *)pUVar1 != pCVar2) {
       (pUVar1->vec).x = pCVar2->x;

@@ -12,27 +12,28 @@ int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_004244b0(CCharacte
 
 {
   float fVar1;
+  CPlatform *pCVar2;
   CScript *this_ptr_00;
-  float fVar2;
-  int iVar3;
-  CCharacter *pCVar4;
+  float fVar3;
+  int iVar4;
+  CCharacter *pCVar5;
   
-  fVar2 = this_ptr->sound_cooldown - delta_time;
-  this_ptr->sound_cooldown = fVar2;
-  if (fVar2 < 0.0) {
+  fVar3 = this_ptr->sound_cooldown - delta_time;
+  this_ptr->sound_cooldown = fVar3;
+  if (fVar3 < 0.0) {
     this_ptr->sound_cooldown = 0.0;
   }
   core_charactr_cpp_CCharacter_processFire_FUN_00425fb0(this_ptr,delta_time);
   core_charactr_cpp_CCharacter_advanceGesture_FUN_00429320(this_ptr,delta_time);
-  fVar2 = this_ptr->stagger_amount - delta_time;
-  this_ptr->stagger_amount = fVar2;
-  if (fVar2 < 0.0) {
+  fVar3 = this_ptr->stagger_amount - delta_time;
+  this_ptr->stagger_amount = fVar3;
+  if (fVar3 < 0.0) {
     this_ptr->stagger_amount = 0.0;
   }
-  if ((0.0 < *(float *)&this_ptr->field_0x2820) &&
-     (fVar2 = *(float *)&this_ptr->field_0x2820 - delta_time,
-     *(float *)&this_ptr->field_0x2820 = fVar2, this_ptr_00 = g_CScriptPtr, fVar2 < 0.0)) {
-    *(uint *)&this_ptr->field_0x2820 = 0;
+  if ((0.0 < this_ptr->speech_timer) &&
+     (fVar3 = this_ptr->speech_timer - delta_time, this_ptr->speech_timer = fVar3,
+     this_ptr_00 = g_CScriptPtr, fVar3 < 0.0)) {
+    this_ptr->speech_timer = 0.0;
     core_script_cpp_CScript_setSpeaker_FUN_00529990(this_ptr_00,&this_ptr->base);
   }
   if (this_ptr->health_bar_mode == HEALTH_BAR_ALWAYS) {
@@ -40,46 +41,46 @@ int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_004244b0(CCharacte
               (g_CGamePtr,this_ptr->descriptive_name,this_ptr->hit_points / this_ptr->max_hit_points
                ,2.0);
   }
-  if (*(int *)&this_ptr->field_0x2568 == 0) {
+  if (this_ptr->render_active == 0) {
     if (this_ptr->closest_distance_threshold == _DAT_005f4084) {
-      iVar3 = 0;
-      pCVar4 = this_ptr;
+      iVar4 = 0;
+      pCVar5 = this_ptr;
       do {
-        if (*(int *)&pCVar4->field_0x2620 != 0) {
-          core_charactr_cpp_FUN_00428bd0(this_ptr,iVar3,0,0);
+        if (pCVar5->carry_hands[0].carry_actor != (CDemonActor *)0x0) {
+          core_charactr_cpp_FUN_00428bd0(this_ptr,iVar4,0,0);
         }
-        iVar3 = iVar3 + 1;
-        pCVar4 = (CCharacter *)&(pCVar4->base).field_0x78;
-      } while (iVar3 < 2);
+        iVar4 = iVar4 + 1;
+        pCVar5 = (CCharacter *)(pCVar5->base).create_event;
+      } while (iVar4 < 2);
     }
-    fVar2 = *(float *)&(this_ptr->base).field_0xe4;
-    *(uint *)&(this_ptr->base).field_0xe4 = 0;
+    fVar3 = (this_ptr->base).platform_position_delta.y;
+    (this_ptr->base).platform_position_delta.y = 0.0;
     fVar1 = this_ptr->closest_distance_threshold;
-    *(float *)&(this_ptr->base).field_0x24 = fVar2 + *(float *)&(this_ptr->base).field_0x24;
-    if ((fVar1 == _DAT_005f4084) || (*(int *)&(this_ptr->base).field_0xdc != 0)) {
-      fVar2 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
-                        (&this_ptr->base,*(float *)&this_ptr->field_0x3430,(CVector3f *)0x0);
-      this_ptr->closest_distance_threshold = fVar2;
+    (this_ptr->base).location.position.y = fVar3 + (this_ptr->base).location.position.y;
+    if ((fVar1 == _DAT_005f4084) || ((this_ptr->base).standing_platform != (CPlatform *)0x0)) {
+      fVar3 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
+                        (&this_ptr->base,this_ptr->collision_cylinder_height,(CVector3f *)0x0);
+      this_ptr->closest_distance_threshold = fVar3;
     }
     this_ptr->is_on_ground =
-         (uint)(*(float *)&(this_ptr->base).field_0x24 <
+         (uint)((this_ptr->base).location.position.y <
                this_ptr->closest_distance_threshold + (float)_DAT_005ccc9e);
-    *(uint *)&this_ptr->field_0x2584 = 0;
-    *(uint *)&this_ptr->field_0x2580 = *(uint *)&this_ptr->field_0x2584;
-    *(uint *)&this_ptr->field_0x257c = *(uint *)&this_ptr->field_0x2580;
-    iVar3 = *(int *)&(this_ptr->base).field_0xdc;
-    *(uint *)&this_ptr->field_0x2578 = 0;
-    if (((iVar3 == 0) && (this_ptr->walk_to_target == (CDemonActor *)0x0)) &&
-       (iVar3 = core_hero_cpp_isAnyHeroWithinCylinder_FUN_004ce180
-                          (&(this_ptr->base).field_0x20,*(uint *)&this_ptr->field_0x343c,
-                           *(uint *)&this_ptr->field_0x3438), iVar3 == 0)) {
+    (this_ptr->position_delta).z = 0.0;
+    (this_ptr->position_delta).y = (this_ptr->position_delta).z;
+    (this_ptr->position_delta).x = (this_ptr->position_delta).y;
+    pCVar2 = (this_ptr->base).standing_platform;
+    this_ptr->turn_angle_accumulator = 0.0;
+    if (((pCVar2 == (CPlatform *)0x0) && (this_ptr->walk_to_target == (CDemonActor *)0x0)) &&
+       (iVar4 = core_hero_cpp_isAnyHeroWithinCylinder_FUN_004ce180
+                          (&(this_ptr->base).location,this_ptr->ai_detection_range_max,
+                           this_ptr->ai_detection_range_min), iVar4 == 0)) {
       sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handle);
       return 0;
     }
-    iVar3 = 1;
+    iVar4 = 1;
   }
   else {
-    iVar3 = 0;
+    iVar4 = 0;
   }
-  return iVar3;
+  return iVar4;
 }

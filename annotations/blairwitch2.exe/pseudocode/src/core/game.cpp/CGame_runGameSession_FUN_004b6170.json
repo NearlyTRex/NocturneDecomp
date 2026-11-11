@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1071,
-    "complexity_score": 860,
+    "complexity_score": 542,
     "cross_reference_count": 1,
     "function_call_count": 57,
     "global_count": 74,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 380,
-    "suspect_count": 45,
+    "pseudocode_lines": 377,
+    "suspect_count": 14,
     "suspect_types": [
       "raw_address_constant",
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1451
+    "total_lines": 1448
   },
   "cross_references": [
     {
@@ -304,7 +303,7 @@
     {
       "addr": "0059c2c0",
       "is_variadic": false,
-      "name": "unkaddr_0059c270.cpp_FUN_0059c2c0"
+      "name": "unkaddr_0059c270.cpp_CGameHook_printBanner_FUN_0059c2c0"
     },
     {
       "addr": "004fd450",
@@ -624,7 +623,7 @@
     },
     {
       "addr": "01caf5ac",
-      "name": "g_CFieldNotesInstance.field64_0x40",
+      "name": "g_CFieldNotesInstance.is_displayed",
       "type": "undefined4",
       "value": null
     },
@@ -896,7 +895,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 33,
       "match": "DAT_005d7738",
       "severity": "mild",
       "text": "engine_console_cpp_FUN_00436710(g_CConsolePtr,&DAT_005d7738);",
@@ -904,215 +903,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 36,
       "match": "DAT_005d773a",
       "severity": "mild",
       "text": "engine_console_cpp_FUN_00436710(g_CConsolePtr,&DAT_005d773a,local_11c);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x200",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x200 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x204",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x204 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x1ec",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1ec = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x1fc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1fc = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x1f0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1f0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x1f4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1f4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x1f8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1f8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 61,
-      "match": "field_0x258",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x258 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 62,
-      "match": "field_0xe0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xe0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 64,
-      "match": "field_0x254",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x254 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 66,
-      "match": "field_0xaec",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xaec = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0x25c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x25c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 68,
-      "match": "field_0x260",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x260 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 69,
-      "match": "field_0x264",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x264 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 74,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "*(uint *)&g_CFieldNotesPtr->field_0x40 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 102,
+      "line": 101,
       "match": "DAT_01cb7c54",
       "severity": "mild",
       "text": "core_set_cpp_CDemonSet_loadMasterLightStates_FUN_00534990(g_CDemonSetPtr,(int *)&DAT_01cb7c54);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 130,
-      "match": "field_0xd8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xd8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 131,
-      "match": "field_0x278",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x278 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 145,
+      "line": 143,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x114))(iVar5), pCVar2 = g_CFieldNotesPtr,",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 147,
-      "match": "field_0x25c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x25c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 148,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x40 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 164,
-      "match": "field_0xe0",
-      "severity": "mild",
-      "text": "else if ((((this_ptr->is_game_active != 0) && (*(int *)&this_ptr->field_0xe0 == 0)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 165,
-      "match": "field_0x25c",
-      "severity": "mild",
-      "text": "(g_CNetGamePtr->has_pending_sim_frame == 0)) && (*(int *)&this_ptr->field_0x25c == 0))",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 170,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar6 = (**(code **)(*(int *)0x01D02F84 + 4))(0x01D02F84,1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 174,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CFieldNotesPtr->field_0x40 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 177,
+      "line": 175,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar6 = (**(code **)(*(int *)(iVar6 + 0x2b0) + 0x114))(iVar6);",
@@ -1120,7 +935,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 220,
+      "line": 218,
       "match": "DAT_005d7845",
       "severity": "mild",
       "text": "pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d7845);",
@@ -1128,7 +943,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 245,
+      "line": 243,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "if (0xf0 < DAT_006141bc) {",
@@ -1136,55 +951,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 256,
+      "line": 254,
       "match": "DAT_005d7866",
       "severity": "mild",
       "text": "pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d7866);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 267,
-      "match": "field_0xe0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xe0 = (uint)(iVar5 == 0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 270,
-      "match": "field_0xe0",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0xe0 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 274,
-      "match": "field_0xd8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xd8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 284,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "*(uint *)&g_CFieldNotesPtr->field_0x40 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 307,
-      "match": "field_0xe0",
-      "severity": "mild",
-      "text": "if (((*(int *)&this_ptr->field_0xe0 == 0) && (g_CNetGamePtr->has_pending_sim_frame == 0)) &&",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 328,
+      "line": 325,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x114))(iVar5);",
@@ -1192,15 +967,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 330,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar5 = (**(code **)(*(int *)0x01D02F84 + 4))(0x01D02F84,0x1c), iVar5 != 0))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 351,
+      "line": 348,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x2b0) + 0x114))(iVar4);",
@@ -1208,31 +975,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 356,
+      "line": 353,
       "match": "DAT_005d7875",
       "severity": "mild",
       "text": "pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d7875);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 373,
-      "match": "field_0x26c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x26c = uVar7;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 378,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)0x01D02F84 + 8))(0x01D02F84);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Raw hex address 0x1d02f84 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 372,
+      "line": 369,
       "match": "0x1d02f84",
       "severity": "moderate",
       "text": "this_ptr_00 = 0x01D02F84;",
@@ -1240,7 +991,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 85,
+      "line": 84,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

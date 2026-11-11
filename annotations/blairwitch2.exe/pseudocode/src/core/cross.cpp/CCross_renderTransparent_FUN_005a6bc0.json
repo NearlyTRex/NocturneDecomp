@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 194,
+    "complexity_score": 131,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 39,
-    "suspect_count": 14,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 41,
+    "suspect_count": 7,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
-      "warning_overlapping_globals"
+      "unrolled_memcpy",
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 133
+    "total_lines": 135
   },
   "cross_references": [],
   "function": {
@@ -183,8 +184,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -192,7 +201,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 15,
       "match": "DAT_026686f8",
       "severity": "mild",
       "text": "if ((DAT_026686f8 & 1) == 0) {",
@@ -200,7 +209,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 16,
       "match": "DAT_026686f8",
       "severity": "mild",
       "text": "DAT_026686f8 = DAT_026686f8 | 1;",
@@ -208,91 +217,27 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 16,
       "match": "DAT_026686f8",
       "severity": "mild",
       "text": "DAT_026686f8 = DAT_026686f8 | 1;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "CStack_24.x = *(float *)&this_ptr->field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "CStack_24.y = *(float *)&this_ptr->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "CStack_24.z = *(float *)&this_ptr->field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x844",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x844 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x844",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x844 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x828",
-      "severity": "mild",
-      "text": "fVar3 = (float10)*(float *)&this_ptr->field_0x828;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x830",
-      "severity": "mild",
-      "text": "fVar4 = (float10)iStack_10 * (float10)*(float *)&this_ptr->field_0x830;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 36,
       "match": "DAT_026686d4",
       "severity": "mild",
       "text": "DAT_026686d4 = (byte)((int)(((iVar1 >> 8) + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x844",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x844 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x6d0",
-      "severity": "mild",
-      "text": "return *(int *)&this_ptr->field_0x6d0;",
-      "type": "unnamed_field"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 18,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_24.x = (this_ptr->base).base.base.location.position.x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

@@ -5,6 +5,7 @@
 ;
 ;
 ; XREF[18]:
+;   core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10 at 0059ffa7
 ;   core_basicnpc.cpp_CBasicNPC_ctor_FUN_005a47b0 at 005a4854
 ;   core_belling.cpp_CBelling_ctor_FUN_005a8f80 at 005a902c
 ;   core_confedrt.cpp_CConfederate_ctor_FUN_005a0840 at 005a0949
@@ -14,7 +15,6 @@
 ;   core_grandma.cpp_CGrandma_ctor_FUN_005a7b10 at 005a7bbc
 ;   core_hag.cpp_CHag_ctor_FUN_005aa600 at 005aa735
 ;   core_hand.cpp_CHand_ctor_FUN_005a9c00 at 005a9cf1
-;   core_robin.cpp_CRobin_ctor_FUN_005a5e70 at 005a5f2f
 ;   ... and 8 more
 ;
 ; Called Functions:

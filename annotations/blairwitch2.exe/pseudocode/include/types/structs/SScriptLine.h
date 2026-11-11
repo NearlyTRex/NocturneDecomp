@@ -6,10 +6,12 @@
 #include "system/basetypes.h"
 
 // Structure: SScriptLine
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// CScript_buildParsedLines: realloc((count+1)*8); stores index+1 at +0 and the malloc'd line copy at +4 (all three builds).
+// Ghidra size: 0x8 (8 bytes)
 #pragma pack(push, 1)
 typedef struct SScriptLine {
+    int line_number; // 0x0
+    char* text; // 0x4
 } SScriptLine;
 #pragma pack(pop)
 

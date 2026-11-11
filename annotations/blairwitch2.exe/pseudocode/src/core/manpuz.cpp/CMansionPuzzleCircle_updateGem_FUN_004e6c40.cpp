@@ -15,115 +15,115 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateGem_FUN_004e6c40(CMansio
   byte bVar2;
   byte bVar3;
   float fVar4;
-  uint uVar5;
+  float *pfVar5;
   uint uVar6;
   uint uVar7;
-  int iVar8;
-  SPanel *pSVar9;
-  SGem *pSVar10;
+  uint uVar8;
+  int iVar9;
+  SPanel *pSVar10;
+  SGem *pSVar11;
   float unaff_EBP;
-  byte bVar11;
+  byte bVar12;
   int in_stack_0000001c;
   int in_stack_0000002c;
   int in_stack_0000003c;
   uint auStackY_1030 [1012];
-  byte *puVar12;
-  char *pcVar13;
-  byte *puVar14;
+  uint *puVar13;
+  char *pcVar14;
+  byte *puVar15;
   uint uStack_40;
   float in_stack_ffffffe4;
   float in_stack_ffffffe8;
   
-  bVar11 = 0;
+  bVar12 = 0;
   fVar4 = (delta_time * _DAT_005dc5e9) / _DAT_005f98c4;
-  pSVar10 = this_ptr->gems + gem_index;
-  core_actor_cpp_FUN_00408d70(this_ptr,&pSVar10->field_0x24);
-  puVar14 = &stack0xffffffc4;
-  pcVar13 = "p?manpuz-chargegemloop-red.wav" + 2;
-  puVar12 = &pSVar10->field_0xac;
-  *(uint *)(&stack0xffffffc8 + (uint)bVar11 * -8) =
-       *(uint *)(&stack0xffffffbc + (uint)bVar11 * -8);
-  *(uint *)(&stack0xffffffcc + (uint)bVar11 * -8 + (uint)bVar11 * -8) =
-       *(uint *)((int)&stack0xffffffc0 + (uint)bVar11 * -8 + (uint)bVar11 * -8);
-  uVar5 = core_manpuz_cpp_updateGemHumChannel_FUN_004e6b20
-                    (&pSVar10->field_0xc,*(uint *)&pSVar10->field_0x18,fVar4,puVar12,pcVar13,
-                     puVar14);
+  pSVar11 = this_ptr->gems + gem_index;
+  core_actor_cpp_FUN_00408d70(this_ptr,&pSVar11->position);
+  puVar15 = &stack0xffffffc4;
+  pcVar14 = "p?manpuz-chargegemloop-red.wav" + 2;
+  puVar13 = pSVar11->sfx_handles;
+  *(uint *)(&stack0xffffffc8 + (uint)bVar12 * -8) =
+       *(uint *)(&stack0xffffffbc + (uint)bVar12 * -8);
+  *(uint *)(&stack0xffffffcc + (uint)bVar12 * -8 + (uint)bVar12 * -8) =
+       *(uint *)((int)&stack0xffffffc0 + (uint)bVar12 * -8 + (uint)bVar12 * -8);
   uVar6 = core_manpuz_cpp_updateGemHumChannel_FUN_004e6b20
-                    (&pSVar10->field_0x10,*(uint *)&pSVar10->field_0x1c,fVar4,
-                     &pSVar10->field_0xb0,"manpuz-chargegemloop-green.wav",&stack0xffffffc4);
+                    (&pSVar11->hum_color,(pSVar11->light).r,fVar4,puVar13,pcVar14,puVar15);
   uVar7 = core_manpuz_cpp_updateGemHumChannel_FUN_004e6b20
-                    (&pSVar10->field_0x14,*(uint *)&pSVar10->field_0x20,fVar4,
-                     &pSVar10->field_0xb4,"manpuz-chargegemloop-blue.wav",&stack0xffffffc4);
-  *(uint *)&pSVar10->field_0x20 = 0;
-  *(uint *)&pSVar10->field_0x1c = *(uint *)&pSVar10->field_0x20;
-  *(uint *)&pSVar10->field_0x18 = *(uint *)&pSVar10->field_0x1c;
+                    (&(pSVar11->hum_color).g,(pSVar11->light).g,fVar4,pSVar11->sfx_handles + 1,
+                     "manpuz-chargegemloop-green.wav",&stack0xffffffc4);
+  uVar8 = core_manpuz_cpp_updateGemHumChannel_FUN_004e6b20
+                    (&(pSVar11->hum_color).b,(pSVar11->light).b,fVar4,pSVar11->sfx_handles + 2,
+                     "manpuz-chargegemloop-blue.wav",&stack0xffffffc4);
+  (pSVar11->light).b = 0.0;
+  (pSVar11->light).g = (pSVar11->light).b;
+  (pSVar11->light).r = (pSVar11->light).g;
   core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004e6a50
             (this_ptr,gem_index,(float *)&stack0xffffffdc,(float *)&stack0xffffffd0,
              (float *)&stack0xffffffd8);
   in_stack_ffffffe8 = in_stack_ffffffe8 / _DAT_005f98c8;
-  bVar11 = 1;
-  if (unaff_EBP - *(float *)pSVar10 < -in_stack_ffffffe8) {
-    fVar1 = *(float *)pSVar10 - in_stack_ffffffe8;
+  fVar1 = unaff_EBP - (pSVar11->color).r;
+  bVar12 = 1;
+  if (fVar1 < -in_stack_ffffffe8) {
+    fVar1 = (pSVar11->color).r - in_stack_ffffffe8;
 LAB_004e6d84:
-    *(float *)pSVar10 = fVar1;
-    bVar11 = 0;
+    (pSVar11->color).r = fVar1;
+    bVar12 = 0;
   }
   else {
-    if (in_stack_ffffffe8 < unaff_EBP - *(float *)pSVar10) {
-      fVar1 = *(float *)pSVar10 + in_stack_ffffffe8;
+    if (in_stack_ffffffe8 < fVar1) {
+      fVar1 = (pSVar11->color).r + in_stack_ffffffe8;
       goto LAB_004e6d84;
     }
-    *(float *)pSVar10 = unaff_EBP;
+    (pSVar11->color).r = unaff_EBP;
   }
-  puVar12 = &pSVar10->field_0x4;
-  if (-in_stack_ffffffe8 <= in_stack_ffffffe4 - *(float *)puVar12) {
-    if (in_stack_ffffffe8 < in_stack_ffffffe4 - *(float *)puVar12) {
-      fVar1 = *(float *)puVar12 + in_stack_ffffffe8;
+  pfVar5 = &(pSVar11->color).g;
+  if (-in_stack_ffffffe8 <= in_stack_ffffffe4 - *pfVar5) {
+    if (in_stack_ffffffe8 < in_stack_ffffffe4 - *pfVar5) {
+      fVar1 = *pfVar5 + in_stack_ffffffe8;
       goto LAB_004e6db2;
     }
-    *(float *)puVar12 = in_stack_ffffffe4;
+    *pfVar5 = in_stack_ffffffe4;
     bVar3 = 1;
   }
   else {
-    fVar1 = *(float *)puVar12 - in_stack_ffffffe8;
+    fVar1 = *pfVar5 - in_stack_ffffffe8;
 LAB_004e6db2:
-    *(float *)puVar12 = fVar1;
+    *pfVar5 = fVar1;
     bVar3 = 0;
   }
-  puVar12 = &pSVar10->field_0x8;
-  if (-in_stack_ffffffe8 <= fVar4 - *(float *)puVar12) {
-    if (fVar4 - *(float *)puVar12 <= in_stack_ffffffe8) {
-      *(float *)puVar12 = fVar4;
+  pfVar5 = &(pSVar11->color).b;
+  if (-in_stack_ffffffe8 <= fVar4 - *pfVar5) {
+    if (fVar4 - *pfVar5 <= in_stack_ffffffe8) {
+      *pfVar5 = fVar4;
       bVar2 = 1;
       goto LAB_004e6de4;
     }
-    in_stack_ffffffe8 = *(float *)puVar12 + in_stack_ffffffe8;
+    in_stack_ffffffe8 = *pfVar5 + in_stack_ffffffe8;
   }
   else {
-    in_stack_ffffffe8 = *(float *)puVar12 - in_stack_ffffffe8;
+    in_stack_ffffffe8 = *pfVar5 - in_stack_ffffffe8;
   }
-  *(float *)puVar12 = in_stack_ffffffe8;
+  *pfVar5 = in_stack_ffffffe8;
   bVar2 = 0;
 LAB_004e6de4:
-  if ((((((bool)(bVar11 & bVar3 & bVar2)) && ((uVar5 & 1 & uVar6 & uVar7) != 0)) &&
-       (pSVar9 = this_ptr->panels + in_stack_0000001c, *(int *)pSVar9 != 0)) &&
-      (((*(uint *)&pSVar9->field_0x8 & 0x7fffffff) == 0 &&
-       ((*(uint *)&pSVar9->field_0x4 & 0x7fffffff) == 0)))) &&
-     (((float)*(int *)&pSVar9->field_0x4c == *(float *)&pSVar10->field_0xc &&
-      (((float)*(int *)&pSVar9->field_0x50 == *(float *)&pSVar10->field_0x10 &&
-       ((float)*(int *)&pSVar9->field_0x54 == *(float *)&pSVar10->field_0x14)))))) {
+  if ((((((bool)(bVar12 & bVar3 & bVar2)) && ((uVar6 & 1 & uVar7 & uVar8) != 0)) &&
+       (pSVar10 = this_ptr->panels + in_stack_0000001c, pSVar10->exists != 0)) &&
+      ((ABS(pSVar10->anim_speed) == 0.0 && (ABS(pSVar10->anim_progress) == 0.0)))) &&
+     (((float)(pSVar10->color).r == (pSVar11->hum_color).r &&
+      (((float)(pSVar10->color).g == (pSVar11->hum_color).g &&
+       ((float)(pSVar10->color).b == (pSVar11->hum_color).b)))))) {
     uStack_40 = 0x4e6ec0;
-    iVar8 = core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004e7570
+    iVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004e7570
                       (this_ptr,in_stack_0000001c);
-    iVar8 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004e76f0(this_ptr,iVar8);
-    if (iVar8 == 0) {
+    iVar9 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004e76f0(this_ptr,iVar9);
+    if (iVar9 == 0) {
       core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004e7220(this_ptr,in_stack_0000002c);
       return;
     }
-    iVar8 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004e7560
+    iVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004e7560
                       (this_ptr,in_stack_0000002c);
-    iVar8 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004e76f0(this_ptr,iVar8);
-    if (iVar8 == 0) {
+    iVar9 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004e76f0(this_ptr,iVar9);
+    if (iVar9 == 0) {
       core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004e73c0(this_ptr,in_stack_0000003c);
       return;
     }

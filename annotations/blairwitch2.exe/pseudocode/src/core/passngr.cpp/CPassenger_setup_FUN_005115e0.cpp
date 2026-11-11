@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void __cdecl core_passngr_cpp_CPassenger_setup_FUN_005115e0(CPassenger *this_ptr)
 
 {
@@ -34,14 +36,10 @@ void __cdecl core_passngr_cpp_CPassenger_setup_FUN_005115e0(CPassenger *this_ptr
       pCVar3 = (CWerewolf *)((pCVar3->base).base.base.actor_name + 2);
     } while (cVar2 != '\0');
     pCVar3 = this_ptr->werewolf_actor;
-    *(uint *)&(pCVar3->base).base.base.field_0x20 =
-         *(uint *)&(this_ptr->base).base.base.field_0x20;
-    *(uint *)&(pCVar3->base).base.base.field_0x24 =
-         *(uint *)&(this_ptr->base).base.base.field_0x24;
-    *(uint *)&(pCVar3->base).base.base.field_0x28 =
-         *(uint *)&(this_ptr->base).base.base.field_0x28;
-    *(uint *)&(pCVar3->base).base.base.field_0x2c =
-         *(uint *)&(this_ptr->base).base.base.field_0x2c;
+    (pCVar3->base).base.base.location.position.x = (this_ptr->base).base.base.location.position.x;
+    (pCVar3->base).base.base.location.position.y = (this_ptr->base).base.base.location.position.y;
+    (pCVar3->base).base.base.location.position.z = (this_ptr->base).base.base.location.position.z;
+    (pCVar3->base).base.base.location.area_id = (this_ptr->base).base.base.location.area_id;
     pCVar3 = this_ptr->werewolf_actor;
     pUVar1 = &(this_ptr->base).base.base.orient;
     pUVar4 = &(pCVar3->base).base.base.orient;
@@ -52,16 +50,16 @@ void __cdecl core_passngr_cpp_CPassenger_setup_FUN_005115e0(CPassenger *this_ptr
     }
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
               (&(this_ptr->werewolf_actor->base).base.model,this_ptr->wolf_model_name);
-    *(float *)&(this_ptr->werewolf_actor->base).base.field_0x2824 = this_ptr->wolf_size;
+    (this_ptr->werewolf_actor->base).base.size_scale = this_ptr->wolf_size;
     (*((this_ptr->werewolf_actor->base).base.base.vtable._ub)->setup)
               ((CDemonActor *)this_ptr->werewolf_actor);
     iVar6 = 1;
     pcVar5 = "transform";
     this_ptr_02 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860
-                            ((CMotionController *)&(this_ptr->werewolf_actor->base).base.model);
+                            (&(this_ptr->werewolf_actor->base).base.model.base);
     iVar6 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10(this_ptr_02,pcVar5,iVar6);
     core_motion_cpp_CMotionController_jumpToMotion_FUN_00503980
-              ((CMotionController *)&(this_ptr->werewolf_actor->base).base.model,iVar6,0.0);
+              (&(this_ptr->werewolf_actor->base).base.model.base,iVar6,0.0);
   }
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_00544e60
             (&(this_ptr->werewolf_actor->base).base.model);

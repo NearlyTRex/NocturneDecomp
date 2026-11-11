@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 105,
+    "complexity_score": 65,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 35,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
     "total_lines": 116
@@ -58,19 +56,19 @@
   "globals": [
     {
       "addr": "01cb8318",
-      "name": "g_BloodParticles[0].field36_0x24",
+      "name": "g_BloodParticles[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb8360",
-      "name": "g_BloodParticles[1].field36_0x24",
+      "name": "g_BloodParticles[1].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb8378",
-      "name": "g_BloodParticles[1].field60_0x3c",
+      "name": "g_BloodParticles[1].base.vtable",
       "type": "undefined4",
       "value": null
     },
@@ -188,35 +186,11 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "if (0.0 < *(float *)&pCVar1->field_0x24) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 15,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&pCVar1->field_0x3c + 4))(pCVar1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&pCVar1->field_0x3c + 4))(pCVar1);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 18,
       "match": "DAT_01cbcaf4",
       "severity": "mild",
-      "text": "} while (pCVar1 != (CBloodParticle *)&DAT_01cbcaf4);",
+      "text": "} while (this_ptr_00 != (CBloodParticle *)&DAT_01cbcaf4);",
       "type": "undefined_data"
     }
   ]

@@ -11,7 +11,7 @@ void core_lantern_cpp_factoryFuncLantern_FUN_0059cba0(void)
 {
   CLantern *this_ptr;
   
-  this_ptr = (CLantern *)debugAllocTracked1(0x708);
+  this_ptr = (CLantern *)operator_new(0x708);
   if (this_ptr == (CLantern *)0x0) {
     return;
   }

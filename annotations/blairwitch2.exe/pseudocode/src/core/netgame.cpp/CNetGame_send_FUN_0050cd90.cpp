@@ -17,6 +17,6 @@ void __cdecl core_netgame_cpp_CNetGame_send_FUN_0050cd90(CNetGame *this_ptr,int 
     core_main_c_FUN_004e4500("CNetGame::send - invalid player index");
   }
   core_netgame_cpp_CNetGame_sendPacket_FUN_0050cdf0
-            (this_ptr,(SNetworkAddr *)&this_ptr->players[player_index].field_0x1c,packet);
+            (this_ptr,&this_ptr->players[player_index].addr,packet);
   return;
 }

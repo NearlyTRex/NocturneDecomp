@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_succubus.cpp_CSuccubus_ctor_FUN_0056f2c0
-;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x13ba4                        ; 0056f290
         ;   Label: core_succubus.cpp_factoryFuncSuccubus_FUN_0056f290
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 0056f295
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0056f295
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 0056f29a
     TEST EAX,EAX                        ; 0056f29d
     JNZ 0x0056f2a2                      ; 0056f29f

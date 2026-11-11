@@ -6,11 +6,16 @@
 #include "system/basetypes.h"
 
 // Structure: COutStreamMemory
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 24; ctor 0057de40 calls the out-stream base ctor, zeroes +4..+0x10 and sets +0x14 = 1
 // Ghidra size: 0x18 (24 bytes)
 #pragma pack(push, 1)
 typedef struct COutStreamMemory {
-    char field_0[24]; // 0x0
+    void* vtable; // 0x0, stream vtable pointer; the abstract output-stream base ctor (0057d860) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB
+    char* buffer; // 0x4, open 0057e110 stores the buffer arg; putChar 0057df70 writes buffer[position] and realloc()s it by 0x4000 when growable; close 0057e0d0 frees it when growable
+    int capacity; // 0x8, open stores the size arg; putChar/write grow it with realloc
+    int position; // 0xc, putChar/write advance it; seek sets it; tell returns it (codec callers subtract it from the remaining length)
+    int length; // 0x10, high-water mark: putChar/write raise it to position
+    int growable; // 0x14, ctor sets 1, open (caller buffer) sets 0; write 0057dfe0 grows the buffer only when set; close frees only when set
 } COutStreamMemory;
 #pragma pack(pop)
 

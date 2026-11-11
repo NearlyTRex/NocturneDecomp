@@ -37,6 +37,7 @@
   {
     "kind":"class",
     "name":"CBasicNPC",
+    "parent":"CBasicEnemy",
     "size":71760
   },
   {
@@ -70,11 +71,6 @@
     "kind":"class",
     "name":"CColor3i",
     "size":12
-  },
-  {
-    "kind":"class",
-    "name":"CComplexPolygon",
-    "size":1
   },
   {
     "kind":"funcdef",
@@ -306,7 +302,7 @@
     "kind":"class",
     "name":"CEventList",
     "rtti_file":"core/event.cpp",
-    "size":1
+    "size":20812
   },
   {
     "kind":"class",
@@ -334,20 +330,69 @@
   },
   {
     "kind":"class",
-    "name":"COptimize",
-    "rtti_file":"core/optimize.cpp",
-    "size":1
-  },
-  {
-    "kind":"class",
     "name":"CP2D",
     "rtti_file":"core/p2d.cpp",
     "size":16
   },
   {
+    "kind":"funcdef",
+    "name":"CPod_findFile",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CPod",
+          "ptr":1
+        }
+      },
+      {
+        "name":"found_file_info",
+        "type":{
+          "kind":"struct",
+          "name":"SFoundFileInfo",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CPod_vtable",
-    "size":1
+    "size":24,
+    "vtable_slots":[
+      {
+        "name":"dtor",
+        "offset":0
+      },
+      {
+        "name":"load",
+        "offset":4
+      },
+      {
+        "name":"findFile",
+        "offset":8
+      },
+      {
+        "name":"mount",
+        "offset":12
+      },
+      {
+        "name":"dismount",
+        "offset":16
+      },
+      {
+        "name":"remount",
+        "offset":20
+      }
+    ]
   },
   {
     "kind":"class",
@@ -537,22 +582,28 @@
   {
     "kind":"struct",
     "name":"SMRGLHeaderExtended",
-    "size":1
+    "parent":"SMRGLHeaderBasic",
+    "size":12
+  },
+  {
+    "kind":"struct",
+    "name":"SMpegAllocationEntry",
+    "size":16
   },
   {
     "kind":"struct",
     "name":"SMpegSubbandSCFSI",
-    "size":1
+    "size":128
   },
   {
     "kind":"struct",
     "name":"SMpegSubbandSamples",
-    "size":1
+    "size":2304
   },
   {
     "kind":"struct",
     "name":"SNetPacket_PlayerInput",
-    "size":53
+    "size":61
   },
   {
     "kind":"struct",
@@ -562,6 +613,6 @@
   {
     "kind":"struct",
     "name":"SPlatformAttachment",
-    "size":1
+    "size":52
   }
 ]

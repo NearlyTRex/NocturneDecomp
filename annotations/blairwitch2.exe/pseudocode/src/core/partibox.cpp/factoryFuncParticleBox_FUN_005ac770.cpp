@@ -11,7 +11,7 @@ void core_partibox_cpp_factoryFuncParticleBox_FUN_005ac770(void)
 {
   CParticleBox *this_ptr;
   
-  this_ptr = (CParticleBox *)debugAllocTracked1(0x7d8);
+  this_ptr = (CParticleBox *)operator_new(0x7d8);
   if (this_ptr == (CParticleBox *)0x0) {
     return;
   }

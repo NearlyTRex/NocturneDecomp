@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 1002,
+    "complexity_score": 1008,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 212,
+    "pseudocode_lines": 218,
     "suspect_count": 75,
     "suspect_types": [
       "pointer_cast",
@@ -19,7 +19,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 578
+    "total_lines": 584
   },
   "cross_references": [],
   "function": {
@@ -72,11 +72,6 @@
       "name": "core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10"
     },
     {
-      "addr": "005a8130",
-      "is_variadic": false,
-      "name": "shape_superopt.cpp_CComplexPolygon_getMaterialId_FUN_005a8130"
-    },
-    {
       "addr": "0059daa0",
       "is_variadic": false,
       "name": "unkaddr_0059d350.cpp_FUN_0059daa0"
@@ -92,14 +87,19 @@
       "name": "unkaddr_005a7eb0.cpp_FUN_005a7ed0"
     },
     {
-      "addr": "005a8180",
-      "is_variadic": false,
-      "name": "unkafter_superopt.cpp_FUN_005a8180"
-    },
-    {
       "addr": "005a8300",
       "is_variadic": false,
-      "name": "unkafter_superopt.cpp_FUN_005a8300"
+      "name": "unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300"
+    },
+    {
+      "addr": "005a8130",
+      "is_variadic": false,
+      "name": "unkafter_superopt.cpp_CSimpleParticleSystem_isActive_FUN_005a8130"
+    },
+    {
+      "addr": "005a8180",
+      "is_variadic": false,
+      "name": "unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180"
     }
   ],
   "globals": [
@@ -248,7 +248,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = unkaddr_0059d350_cpp_FUN_0059daa0(param_1 + 0x10af8,\"Death\");",
@@ -256,7 +256,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 65,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = unkaddr_0059d350_cpp_FUN_0059daa0(param_1 + 0x10af8,\"Animation\");",
@@ -264,7 +264,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 63,
+      "line": 67,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",
@@ -272,79 +272,79 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCStack_1c = (CComplexPolygon *)(param_1 + 0x154);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 67,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "unkafter_superopt_cpp_FUN_005a8180(pCStack_1c,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = *(float *)(param_1 + 0x2a8) - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_2 = *(float *)(param_1 + 0x2a8) - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = *(float *)(param_1 + 0x2a8) - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2a8) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2a8) = param_2;",
+      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 70,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCStack_1c = (CSimpleParticleSystem *)(param_1 + 0x154);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "unkafter_superopt_cpp_CSimpleParticleSystem_process_FUN_005a8180(pCStack_1c,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 72,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = *(float *)(param_1 + 0x2a8) - param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 72,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_2 = *(float *)(param_1 + 0x2a8) - param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 72,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = *(float *)(param_1 + 0x2a8) - param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 73,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x2a8) = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 73,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x2a8) = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 74,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 <= 0.0) {",
@@ -352,7 +352,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 78,
       "match": "param_1",
       "severity": "mild",
       "text": "(&DAT_0265370c,param_1 + 0x1134 + *(int *)(param_1 + 0x11860) * 0x30);",
@@ -360,7 +360,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 78,
       "match": "param_1",
       "severity": "mild",
       "text": "(&DAT_0265370c,param_1 + 0x1134 + *(int *)(param_1 + 0x11860) * 0x30);",
@@ -368,7 +368,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 78,
       "match": "DAT_0265370c",
       "severity": "mild",
       "text": "(&DAT_0265370c,param_1 + 0x1134 + *(int *)(param_1 + 0x11860) * 0x30);",
@@ -376,7 +376,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 80,
       "match": "(uint *)((int)afStack_c0",
       "severity": "moderate",
       "text": "*(uint *)((int)afStack_c0 + ((uint)bVar5 * -2 + 7) * 4) =",
@@ -384,7 +384,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 81,
       "match": "(uint *)((int)afStack_80",
       "severity": "moderate",
       "text": "*(uint *)((int)afStack_80 + ((uint)bVar5 * -2 + 6) * 4);",
@@ -392,7 +392,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 82,
       "match": "(uint *)((int)afStack_c0",
       "severity": "moderate",
       "text": "*(uint *)((int)afStack_c0 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 8) * 4) =",
@@ -400,7 +400,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 83,
       "match": "(uint *)((int)afStack_80",
       "severity": "moderate",
       "text": "*(uint *)((int)afStack_80 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 7) * 4);",
@@ -408,7 +408,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 85,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2a8) = 0x3d4ccccd;",
@@ -416,7 +416,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 98,
       "match": "(uint *)((int)afStack_c0",
       "severity": "moderate",
       "text": "*(uint *)((int)afStack_c0 + (uint)bVar5 * 0xfffffff8) =",
@@ -424,7 +424,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 99,
       "match": "(uint *)((int)auStack_100",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_100 + ((uint)bVar5 * -2 + 4) * 4);",
@@ -432,7 +432,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 100,
       "match": "(uint *)((int)afStack_c0",
       "severity": "moderate",
       "text": "*(uint *)((int)afStack_c0 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4) =",
@@ -440,7 +440,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 101,
       "match": "(uint *)((int)auStack_100",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_100 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 5) * 4);",
@@ -448,7 +448,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 102,
       "match": "(uint *)((int)afStack_c0",
       "severity": "moderate",
       "text": "((uint *)((int)afStack_c0 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4))",
@@ -456,7 +456,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 104,
       "match": "(uint *)((int)auStack_100",
       "severity": "moderate",
       "text": "((uint *)((int)auStack_100 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 5) * 4))",
@@ -464,7 +464,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 105,
+      "line": 109,
       "match": "(uint *)((int)auStack_100",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_100 + (uint)bVar5 * 0xfffffff8) =",
@@ -472,7 +472,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 107,
+      "line": 111,
       "match": "(uint *)((int)auStack_100",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_100 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4) =",
@@ -480,7 +480,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 109,
+      "line": 113,
       "match": "(uint *)((int)auStack_100",
       "severity": "moderate",
       "text": "((uint *)((int)auStack_100 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4))",
@@ -488,7 +488,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 115,
+      "line": 119,
       "match": "(uint *)((int)auStack_110",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_110 + (uint)bVar5 * 0xfffffff8) =",
@@ -496,7 +496,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 120,
       "match": "(uint *)((int)auStack_110",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_110 + ((uint)bVar5 * -2 + -8) * 4);",
@@ -504,7 +504,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 121,
       "match": "(uint *)((int)auStack_110",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_110 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4) =",
@@ -512,7 +512,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 118,
+      "line": 122,
       "match": "(uint *)((int)auStack_110",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_110 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + -7) * 4);",
@@ -520,7 +520,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 119,
+      "line": 123,
       "match": "(uint *)((int)auStack_110",
       "severity": "moderate",
       "text": "((uint *)((int)auStack_110 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4))",
@@ -528,7 +528,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 121,
+      "line": 125,
       "match": "(uint *)((int)auStack_110",
       "severity": "moderate",
       "text": "((uint *)((int)auStack_110 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + -7) * 4))",
@@ -536,7 +536,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 129,
       "match": "(uint *)((int)auStack_e0",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_e0 + (uint)bVar5 * 0xfffffff8) =",
@@ -544,7 +544,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 130,
       "match": "(uint *)((int)auStack_150",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_150 + (uint)bVar5 * 0xfffffff8);",
@@ -552,7 +552,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 127,
+      "line": 131,
       "match": "(uint *)((int)auStack_e0",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_e0 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4) =",
@@ -560,7 +560,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 129,
+      "line": 133,
       "match": "(uint *)((int)auStack_e0",
       "severity": "moderate",
       "text": "((uint *)((int)auStack_e0 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4))",
@@ -568,7 +568,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 135,
+      "line": 139,
       "match": "(uint *)((int)auStack_d0",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_d0 + (uint)bVar5 * 0xfffffff8) =",
@@ -576,7 +576,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 140,
       "match": "(uint *)((int)auStack_100",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_100 + ((uint)bVar5 * -2 + -8) * 4);",
@@ -584,7 +584,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 137,
+      "line": 141,
       "match": "(uint *)((int)auStack_d0",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_d0 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4) =",
@@ -592,7 +592,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 138,
+      "line": 142,
       "match": "(uint *)((int)auStack_100",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_100 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + -7) * 4);",
@@ -600,7 +600,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 139,
+      "line": 143,
       "match": "(uint *)((int)auStack_d0",
       "severity": "moderate",
       "text": "((uint *)((int)auStack_d0 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4))",
@@ -608,7 +608,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 141,
+      "line": 145,
       "match": "(uint *)((int)auStack_100",
       "severity": "moderate",
       "text": "((uint *)((int)auStack_100 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + -7) * 4))",
@@ -616,7 +616,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 162,
+      "line": 166,
       "match": "(uint *)((int)afStack_c0",
       "severity": "moderate",
       "text": "*(uint *)((int)afStack_c0 + ((uint)bVar5 * -2 + 4) * 4) =",
@@ -624,7 +624,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 163,
+      "line": 167,
       "match": "(uint *)((int)afStack_80",
       "severity": "moderate",
       "text": "*(uint *)((int)afStack_80 + (uint)bVar5 * 0xfffffff8);",
@@ -632,7 +632,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 164,
+      "line": 168,
       "match": "(uint *)((int)afStack_c0",
       "severity": "moderate",
       "text": "*(uint *)((int)afStack_c0 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 5) * 4) =",
@@ -640,7 +640,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 165,
+      "line": 169,
       "match": "(uint *)((int)afStack_80",
       "severity": "moderate",
       "text": "*(uint *)((int)afStack_80 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4);",
@@ -648,7 +648,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 170,
+      "line": 176,
       "match": "(uint *)((int)afStack_44",
       "severity": "moderate",
       "text": "*(uint *)((int)afStack_44 + (uint)bVar5 * 0xfffffff8) =",
@@ -656,7 +656,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 171,
+      "line": 177,
       "match": "(uint *)((int)afStack_80",
       "severity": "moderate",
       "text": "*(uint *)((int)afStack_80 + ((uint)bVar5 * -2 + 3) * 4);",
@@ -664,7 +664,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 172,
+      "line": 178,
       "match": "(uint *)((int)afStack_44",
       "severity": "moderate",
       "text": "*(uint *)((int)afStack_44 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4) =",
@@ -672,7 +672,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 173,
+      "line": 179,
       "match": "(uint *)((int)afStack_80",
       "severity": "moderate",
       "text": "*(uint *)((int)afStack_80 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 4) * 4);",
@@ -680,15 +680,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 183,
-      "match": "(uint *)((int)afStack_98",
+      "line": 189,
+      "match": "(uint *)((int)afStack_c0",
       "severity": "moderate",
-      "text": "*(uint *)((int)afStack_98 + (uint)bVar5 * 0xfffffff8) =",
+      "text": "*(uint *)((int)afStack_c0 + ((uint)bVar5 * -2 + 10) * 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 184,
+      "line": 190,
       "match": "(uint *)((int)afStack_80",
       "severity": "moderate",
       "text": "*(uint *)((int)afStack_80 + ((uint)bVar5 * -2 + 9) * 4);",
@@ -696,15 +696,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 185,
-      "match": "(uint *)((int)afStack_98",
+      "line": 191,
+      "match": "(uint *)((int)afStack_c0",
       "severity": "moderate",
-      "text": "*(uint *)((int)afStack_98 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4) =",
+      "text": "*(uint *)((int)afStack_c0 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xb) * 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 186,
+      "line": 192,
       "match": "(uint *)((int)afStack_80",
       "severity": "moderate",
       "text": "*(uint *)((int)afStack_80 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 10) * 4);",
@@ -712,7 +712,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 198,
+      "line": 204,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",
@@ -720,7 +720,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 198,
+      "line": 204,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",
@@ -728,7 +728,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 198,
+      "line": 204,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",
@@ -736,7 +736,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 200,
+      "line": 206,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = unkaddr_0059d350_cpp_FUN_0059daa0(param_1 + 0x10af8,\"Chasing\");",
@@ -744,7 +744,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 203,
+      "line": 209,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1 + 0x10af8,\"ChaseComplete\",\"RangeAttack\");",
@@ -752,7 +752,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 205,
+      "line": 211,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar7 = *(float *)(*(int *)(param_1 + 0x10a78) + 0x20) - *(float *)(param_1 + 0x20);",
@@ -760,7 +760,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 205,
+      "line": 211,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar7 = *(float *)(*(int *)(param_1 + 0x10a78) + 0x20) - *(float *)(param_1 + 0x20);",
@@ -768,7 +768,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 206,
+      "line": 212,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar6 = *(float *)(*(int *)(param_1 + 0x10a78) + 0x28) - *(float *)(param_1 + 0x28);",
@@ -776,7 +776,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 206,
+      "line": 212,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar6 = *(float *)(*(int *)(param_1 + 0x10a78) + 0x28) - *(float *)(param_1 + 0x28);",
@@ -784,7 +784,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 209,
+      "line": 215,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x11394) = fVar6;",
@@ -792,7 +792,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 147,
+      "line": 151,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",

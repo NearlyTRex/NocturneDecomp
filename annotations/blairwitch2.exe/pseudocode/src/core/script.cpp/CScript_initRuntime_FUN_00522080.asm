@@ -59,9 +59,9 @@ section .text
     MOV dword ptr [EBX + 0xc],EAX       ; 005220c3
     MOV EAX,[0x00616494]                ; 005220c6 | g_CGamePtr
     MOV dword ptr [EBX + 0x10],0x1      ; 005220cb
-    MOV dword ptr [EAX + 0x248],0x1     ; 005220d2 | g_CGameInstance.field488_0x248
+    MOV dword ptr [EAX + 0x248],0x1     ; 005220d2 | g_CGameInstance.allow_damage_flag
     XOR EDX,EDX                         ; 005220dc
-    MOV dword ptr [EAX + 0x24c],0x1     ; 005220de | g_CGameInstance.field492_0x24c
+    MOV dword ptr [EAX + 0x24c],0x1     ; 005220de | g_CGameInstance.allow_enemy_attack_flag
     PUSH EDX                            ; 005220e8
     MOV dword ptr [EAX + 0x244],EDX     ; 005220e9 | g_CGameInstance.letterbox_mode
     LEA EAX,[ESP + 0x4]                 ; 005220ef

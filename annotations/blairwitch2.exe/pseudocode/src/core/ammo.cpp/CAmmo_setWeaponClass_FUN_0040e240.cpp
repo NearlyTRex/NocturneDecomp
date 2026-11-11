@@ -29,26 +29,26 @@ void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040e240(CAmmo *this_ptr,cha
   }
   iVar2 = _strcmp(weapon_class_name,&DAT_005cb10b);
   if (iVar2 == 0) {
-    switch(*(uint *)&this_ptr->field_0x474) {
-    case 1:
+    switch(this_ptr->ammo_type) {
+    case AMMO_TYPE_HOLY:
       pcVar4 = "holybullet.kfm";
       break;
-    case 2:
+    case AMMO_TYPE_WOOD:
       pcVar4 = "woodbullet.kfm";
       break;
-    case 3:
+    case AMMO_TYPE_SILVER:
       pcVar4 = "silverbullet.kfm";
       break;
-    case 4:
+    case AMMO_TYPE_GOLD:
       pcVar4 = "goldbullet.kfm";
       break;
     default:
       pcVar4 = "bullets6_1.kfm";
       break;
-    case 7:
+    case AMMO_TYPE_LITHIUM:
       pcVar4 = "lithiumbullet.kfm";
       break;
-    case 8:
+    case AMMO_TYPE_MERCURY:
       pcVar4 = "mercurybullet.kfm";
     }
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(&this_ptr->model,pcVar4);
@@ -60,7 +60,7 @@ void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040e240(CAmmo *this_ptr,cha
   }
   iVar2 = _strcmp(weapon_class_name,"CCrossbow");
   if (iVar2 == 0) {
-    if (*(int *)&this_ptr->field_0x474 == 1) {
+    if (this_ptr->ammo_type == AMMO_TYPE_HOLY) {
       pcVar4 = "holystake.kfm";
     }
     else {

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 271,
-    "complexity_score": 1161,
+    "complexity_score": 1116,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 141,
-    "suspect_count": 94,
+    "suspect_count": 90,
     "suspect_types": [
       "bit_int_float_compare",
       "param_count_too_few",
@@ -20,7 +20,6 @@
       "sub84_truncation",
       "suspect_float",
       "unaffected_reg",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "unrolled_memcpy",
@@ -381,7 +380,7 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408de0(param_1,&param_2->field_0x20);",
+      "text": "core_actor_cpp_FUN_00408de0(param_1,&param_2->location);",
       "type": "unnamed_param"
     },
     {
@@ -389,16 +388,8 @@
       "line": 58,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408de0(param_1,&param_2->field_0x20);",
+      "text": "core_actor_cpp_FUN_00408de0(param_1,&param_2->location);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408de0(param_1,&param_2->field_0x20);",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",
@@ -613,48 +604,24 @@
       "line": 120,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_8c = *(float *)&param_1->field_0x20 + fStack_44;",
+      "text": "fStack_8c = (param_1->location).position.x + fStack_44;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 120,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "fStack_8c = *(float *)&param_1->field_0x20 + fStack_44;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 121,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_88 = *(float *)&param_1->field_0x24 + fStack_40;",
+      "text": "fStack_88 = (param_1->location).position.y + fStack_40;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 121,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "fStack_88 = *(float *)&param_1->field_0x24 + fStack_40;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 122,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_84 = *(float *)&param_1->field_0x28 + fStack_3c;",
+      "text": "fStack_84 = (param_1->location).position.z + fStack_3c;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 122,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "fStack_84 = *(float *)&param_1->field_0x28 + fStack_3c;",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",

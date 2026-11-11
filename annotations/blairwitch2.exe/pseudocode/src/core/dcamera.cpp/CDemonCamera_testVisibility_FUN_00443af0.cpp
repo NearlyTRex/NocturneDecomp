@@ -28,7 +28,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_testVisibility_FUN_00443af0(CDemonCame
   do {
     engine_special_cpp_FUN_0055d9ec(output,corners);
     corners = corners + 1;
-    output = output + 0x30;
+    output = output + 2;
   } while (corners != pCVar2);
   SStack_38.surface_normal.D.i = (uint)corners ^ (uint)pCVar2;
   SStack_38.base.count = 4;

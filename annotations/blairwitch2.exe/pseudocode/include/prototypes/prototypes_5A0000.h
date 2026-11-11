@@ -9,7 +9,6 @@
 #include "types/classes/CBelling.h"
 #include "types/classes/CCharacter.h"
 #include "types/classes/CCloth.h"
-#include "types/classes/CComplexPolygon.h"
 #include "types/classes/CConfederate.h"
 #include "types/classes/CConfederateZombie.h"
 #include "types/classes/CCross.h"
@@ -221,20 +220,20 @@ CGrandma * core_grandma_cpp_CGrandma_dtor_FUN_005a7e10(CGrandma *this_ptr,uint f
 void unkaddr_005a7eb0_cpp_FUN_005a7eb0(void);
 bool unkaddr_005a7eb0_cpp_FUN_005a7ed0(void);
 CSimpleParticleSystem * unkclass_simppart_cpp_CSimpleParticleSystem_ctor_FUN_005a7ef0(CSimpleParticleSystem *this_ptr);
-int unkaddr_005a7eb0_cpp_FUN_005a7f50(int param_1,undefined4 param_2);
+int __cdecl unkaddr_005a7eb0_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50(CSimpleParticleSystem *this_ptr,int param_2);
 CSimpleParticleSystem * unkclass_simppart_cpp_CSimpleParticleSystem_dtor_FUN_005a8000(CSimpleParticleSystem *this_ptr,uint flags);
-void unkaddr_005a7eb0_cpp_FUN_005a8030(int param_1,undefined4 param_2);
-void unkaddr_005a7eb0_cpp_FUN_005a8050(undefined4 *param_1,undefined4 param_2);
-void unkaddr_005a7eb0_cpp_FUN_005a80d0(int param_1,int param_2);
-void unkaddr_005a7eb0_cpp_FUN_005a8100(int param_1,int param_2);
-int __cdecl shape_superopt_cpp_CComplexPolygon_getMaterialId_FUN_005a8130(CComplexPolygon *this_ptr);
-void unkafter_superopt_cpp_FUN_005a8140(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-void unkafter_superopt_cpp_FUN_005a8160(int param_1);
-void unkafter_superopt_cpp_FUN_005a8180(int param_1,float param_2);
-void unkafter_superopt_cpp_FUN_005a8220(int param_1);
-undefined4 unkafter_superopt_cpp_FUN_005a8250(int param_1);
-void unkafter_superopt_cpp_FUN_005a8290(int param_1);
-void unkafter_superopt_cpp_FUN_005a8300(float *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,float *param_10,undefined4 *param_11,undefined4 *param_12,undefined4 param_13);
+void __cdecl unkaddr_005a7eb0_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(CSimpleParticleSystem *this_ptr,int param_2);
+void __cdecl unkaddr_005a7eb0_cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem *this_ptr,CDemonActor *param_2);
+void __cdecl unkaddr_005a7eb0_cpp_CSimpleParticleSystem_start_FUN_005a80d0(CSimpleParticleSystem *this_ptr,int param_2);
+void __cdecl unkaddr_005a7eb0_cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem *this_ptr,int param_2);
+int __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_isActive_FUN_005a8130(CSimpleParticleSystem *this_ptr);
+void __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_setFade_FUN_005a8140(CSimpleParticleSystem *this_ptr,float param_2,float param_3,float param_4);
+void __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_resetFade_FUN_005a8160(CSimpleParticleSystem *this_ptr);
+void __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem *this_ptr,float param_2);
+void __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_release_FUN_005a8220(CSimpleParticleSystem *this_ptr);
+float __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_updateFade_FUN_005a8250(CSimpleParticleSystem *this_ptr);
+void __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_render_FUN_005a8290(CSimpleParticleSystem *this_ptr);
+void __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,float *param_10,undefined4 *param_11,undefined4 *param_12,undefined4 param_13);
 void unkafter_superopt_cpp_FUN_005a84c0(undefined4 *param_1);
 void unkafter_superopt_cpp_FUN_005a85c0(int *param_1,float param_2);
 int unkafter_superopt_cpp_FUN_005a86a0(int param_1);
@@ -273,7 +272,7 @@ void __cdecl core_ghostchi_cpp_CGhostChild_setup_FUN_005a9440(CGhostChild *this_
 void __cdecl core_ghostchi_cpp_CGhostChild_processStates_FUN_005a94c0(CGhostChild *this_ptr,float delta_time,int mode);
 void __cdecl core_ghostchi_cpp_CGhostChild_processMeleeAttackState_FUN_005a9580(CGhostChild *this_ptr,float delta_time);
 void __cdecl core_ghostchi_cpp_CGhostChild_processSleepState_FUN_005a9770(CGhostChild *this_ptr,float delta_time);
-void core_ghostchi_cpp_FUN_005a9890(int param_1,undefined4 param_2);
+void core_ghostchi_cpp_FUN_005a9890(int param_1,float param_2);
 void __cdecl core_ghostchi_cpp_CGhostChild_processDeathState_FUN_005a9980(CGhostChild *this_ptr,float delta_time);
 int __cdecl core_ghostchi_cpp_CGhostChild_getTargetPoints_FUN_005a99f0(CGhostChild *this_ptr,CVector3f *out_points_array);
 EDeathState __cdecl core_ghostchi_cpp_CGhostChild_getDeathState_FUN_005a9a80(CGhostChild *this_ptr);

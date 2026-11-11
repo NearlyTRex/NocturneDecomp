@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_tentacle.cpp_CTentacle_ctor_FUN_005725d0
-;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x10b68                        ; 005725a0
         ;   Label: core_tentacle.cpp_factoryFuncTentacle_FUN_005725a0
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 005725a5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005725a5
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 005725aa
     TEST EAX,EAX                        ; 005725ad
     JNZ 0x005725b2                      ; 005725af

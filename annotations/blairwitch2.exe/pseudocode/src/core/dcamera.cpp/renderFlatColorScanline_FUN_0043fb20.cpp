@@ -28,8 +28,8 @@ void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_0043fb20(int scanline_
   uVar7 = scanline_y - _DAT_01c35e4c;
   if (((_DAT_01308800 != 1) || ((uVar7 & 1) == 0)) && ((_DAT_01308800 != 2 || ((uVar7 & 3) == 0))))
   {
-    iVar10 = (*(int *)(right + 8) >> 0x10) - _DAT_01c35e48;
-    iStack_18 = (*(int *)(left + 8) >> 0x10) - _DAT_01c35e48;
+    iVar10 = ((right->base).x_current >> 0x10) - _DAT_01c35e48;
+    iStack_18 = ((left->base).x_current >> 0x10) - _DAT_01c35e48;
     pSVar8 = left;
     iVar11 = iVar10;
     if (iStack_18 < iVar10) {
@@ -38,11 +38,11 @@ void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_0043fb20(int scanline_
       iVar11 = iStack_18;
       iStack_18 = iVar10;
     }
-    iVar10 = *(int *)(right + 0x28);
+    iVar10 = (right->base).depth_current;
     puStack_14 = (uint *)(*(int *)(&DAT_01c2b64c + uVar7 * 4) + iVar11 * 4);
     iStack_18 = iStack_18 >> (DAT_01308800 & 0x1f);
     iVar11 = iVar11 >> (DAT_01308800 & 0x1f);
-    iVar3 = (*(int *)(pSVar8 + 0x28) - iVar10) / ((iStack_18 - iVar11) + 1);
+    iVar3 = ((pSVar8->base).depth_current - iVar10) / ((iStack_18 - iVar11) + 1);
     uVar2 = (byte)
             ((_DAT_0150f450 + (_DAT_0150f450 >> 0x1f) * -0x100) -
              (uint)((_DAT_0150f450 >> 0x1f) << 7 < 0) >> 8);

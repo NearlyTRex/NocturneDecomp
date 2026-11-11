@@ -11,7 +11,7 @@ void core_spirmine_cpp_factoryFuncSpiritMine_FUN_005ad390(void)
 {
   CSpiritMine *this_ptr;
   
-  this_ptr = (CSpiritMine *)debugAllocTracked1(0x838);
+  this_ptr = (CSpiritMine *)operator_new(0x838);
   if (this_ptr == (CSpiritMine *)0x0) {
     return;
   }

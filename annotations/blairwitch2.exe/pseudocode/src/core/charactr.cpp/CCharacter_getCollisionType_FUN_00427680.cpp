@@ -9,32 +9,32 @@
 ECollisionType __cdecl core_charactr_cpp_CCharacter_getCollisionType_FUN_00427680(CCharacter *this_ptr,SCollisionInfo *collision_info)
 
 {
-  EDeathState EVar1;
+  int iVar1;
+  EDeathState EVar2;
   
-  if (*(int *)collision_info == 2) {
+  iVar1 = (collision_info->ray_query).ray_type;
+  if (iVar1 == 2) {
     return COLLISION_TYPE_NONE;
   }
-  if (*(int *)&this_ptr->field_0x2814 == 0) {
-    EVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
-    if (1 < (int)EVar1) {
+  if (this_ptr->is_spectral == 0) {
+    EVar2 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
+    if (1 < (int)EVar2) {
       return COLLISION_TYPE_NONE;
     }
   }
-  else if (*(int *)collision_info != 3) {
+  else if (iVar1 != 3) {
     return COLLISION_TYPE_NONE;
   }
-  if ((*(int *)collision_info != 1) && (*(int *)collision_info != 3)) {
-    *(float *)&collision_info->field_0x18 =
-         *(float *)&this_ptr->field_0x3444 * *(float *)&this_ptr->field_0x2824;
-    *(float *)&collision_info->field_0x14 =
-         *(float *)&this_ptr->field_0x3440 * *(float *)&this_ptr->field_0x2824;
-    if (*(float *)&collision_info->field_0x18 < *(float *)&collision_info->field_0x14) {
-      *(uint *)&collision_info->field_0x18 = *(uint *)&(this_ptr->model).field_0x2248;
+  iVar1 = (collision_info->ray_query).ray_type;
+  if ((iVar1 != 1) && (iVar1 != 3)) {
+    collision_info->cylinder_top_y = this_ptr->collision_cylinder_top * this_ptr->size_scale;
+    collision_info->cylinder_bottom_y = this_ptr->collision_cylinder_bottom * this_ptr->size_scale;
+    if (collision_info->cylinder_top_y < collision_info->cylinder_bottom_y) {
+      collision_info->cylinder_top_y = (this_ptr->model).bounding_box.max.y;
     }
-    *(float *)&collision_info->field_0x1c =
-         *(float *)&this_ptr->field_0x3434 * *(float *)&this_ptr->field_0x2824;
+    collision_info->cylinder_radius = this_ptr->collision_cylinder_radius * this_ptr->size_scale;
     return COLLISION_TYPE_CYLINDER;
   }
-  *(CDeformableModelInstance **)&collision_info->field_0x20 = &this_ptr->model;
+  collision_info->deformable_model = &this_ptr->model;
   return COLLISION_TYPE_MESH;
 }

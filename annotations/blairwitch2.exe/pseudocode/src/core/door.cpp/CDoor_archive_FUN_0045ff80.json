@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 215,
+    "complexity_score": 122,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 35,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 90,
-    "suspect_count": 11,
+    "pseudocode_lines": 92,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unrolled_strcpy"
     ],
-    "total_lines": 368
+    "total_lines": 370
   },
   "cross_references": [],
   "function": {
@@ -331,88 +330,16 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x7cc",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x7cc,\"scriptOpenEvent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x7cc",
-      "severity": "mild",
-      "text": "if (this_ptr->field_0x7cc == '\\0') {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x5d4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x5d4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 47,
       "match": "DAT_005d0b16",
       "severity": "mild",
       "text": "pcVar2 = &DAT_005d0b16;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x5d8",
-      "severity": "mild",
-      "text": "pcVar3 = &this_ptr->field_0x5d8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 57,
-      "match": "field_0x5d4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x5d4 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 62,
-      "match": "field_0x5d4",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveRules_FUN_0040c170(&this_ptr->field_0x5d4,\"openRules\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 84,
-      "match": "field_0xb40",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0xb40,\"shakeMeEvent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 85,
-      "match": "field_0xb3c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0xb3c,\"shakeMeStrength\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 91,
-      "match": "field_0xba4",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0xba4,\"handleVertexIndex\");",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 48,
+      "line": 49,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

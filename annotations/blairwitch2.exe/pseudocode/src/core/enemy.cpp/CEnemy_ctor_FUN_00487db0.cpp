@@ -30,7 +30,7 @@ CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_00487db0(CEnemy *this_ptr)
   pCVar2->guard_distance = 100.0;
   pcVar4 = &DAT_005d2d28;
   pCVar2->attack_cooldown = 0.0;
-  pcVar5 = &(pCVar2->base).base.field_0x120;
+  pcVar5 = (pCVar2->base).base.footstep_sound_code;
   pCVar2->victim_height = 6.0;
   pCVar2->allow_pathfind_to_new_targets = 1;
   pCVar2->speed = fVar3;
@@ -43,6 +43,6 @@ CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_00487db0(CEnemy *this_ptr)
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  *(uint *)&(pCVar2->base).field_0x259c = 0x3fc90fdb;
+  (pCVar2->base).turn_rate = 1.5707964;
   return pCVar2;
 }

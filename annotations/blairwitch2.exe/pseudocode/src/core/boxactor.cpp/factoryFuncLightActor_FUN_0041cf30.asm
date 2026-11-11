@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_boxactor.cpp_CLightActor_ctor_FUN_0041cf60
-;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x37e4                         ; 0041cf30
         ;   Label: core_boxactor.cpp_factoryFuncLightActor_FUN_0041cf30
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 0041cf35
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0041cf35
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 0041cf3a
     TEST EAX,EAX                        ; 0041cf3d
     JNZ 0x0041cf42                      ; 0041cf3f

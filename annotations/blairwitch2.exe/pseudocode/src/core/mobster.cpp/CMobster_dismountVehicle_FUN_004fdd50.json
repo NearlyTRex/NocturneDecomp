@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 283,
+    "complexity_score": 248,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 58,
-    "suspect_count": 19,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
@@ -242,9 +241,9 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 10,
-      "match": "auStackY_1024",
+      "match": "afStackY_1024",
       "severity": "moderate",
-      "text": "uint auStackY_1024 [1012];",
+      "text": "float afStackY_1024 [1012];",
       "type": "stack_alignment_array"
     },
     {
@@ -300,7 +299,7 @@
       "line": 52,
       "match": "&stack0xffffffec",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar2 * 0xfffffffe * 4);",
+      "text": "(float)*(uint *)((int)&stack0xffffffec + (uint)bVar2 * 0xfffffffe * 4);",
       "type": "stack_ref"
     },
     {
@@ -320,35 +319,11 @@
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).base.base.field_0x20 = local_3c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).base.base.field_0x24 = local_38;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 57,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).base.base.field_0x28 = local_34;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Pointer value `&stack0xffffffec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 52,
       "match": "(int)&stack0xffffffec",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar2 * 0xfffffffe * 4);",
+      "text": "(float)*(uint *)((int)&stack0xffffffec + (uint)bVar2 * 0xfffffffe * 4);",
       "type": "pointer_truncation"
     },
     {
@@ -364,7 +339,7 @@
       "line": 52,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar2 * 0xfffffffe * 4);",
+      "text": "(float)*(uint *)((int)&stack0xffffffec + (uint)bVar2 * 0xfffffffe * 4);",
       "type": "pointer_cast"
     },
     {

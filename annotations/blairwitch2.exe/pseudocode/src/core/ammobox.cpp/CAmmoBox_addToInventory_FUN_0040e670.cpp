@@ -25,7 +25,7 @@ void __cdecl core_ammobox_cpp_CAmmoBox_addToInventory_FUN_0040e670(CAmmoBox *thi
   if (this_ptr->ammo_count == 0) {
     return;
   }
-  pCVar2 = (CAmmo *)debugAllocTracked1(0x47c);
+  pCVar2 = (CAmmo *)operator_new(0x47c);
   this_ptr_00 = (CAmmo *)0x0;
   if (pCVar2 != (CAmmo *)0x0) {
     this_ptr_00 = core_ammo_cpp_CAmmo_ctor_FUN_0040ddb0(pCVar2);
@@ -37,7 +37,7 @@ void __cdecl core_ammobox_cpp_CAmmoBox_addToInventory_FUN_0040e670(CAmmoBox *thi
   }
   core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040e240(this_ptr_00,this_ptr->weapon_class_name);
   core_ammo_cpp_FUN_0040e440(this_ptr_00,this_ptr->ammo_count);
-  *(EAmmoBoxType *)&this_ptr_00->field_0x474 = this_ptr->ammo_type;
+  this_ptr_00->ammo_type = this_ptr->ammo_type;
   (*((this_ptr_00->base).vtable._ub)->setup)(&this_ptr_00->base);
   core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040e240(this_ptr_00,this_ptr->weapon_class_name);
   pcVar3 = "Some_ammo";

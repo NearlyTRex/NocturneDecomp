@@ -1,0 +1,20 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl core_fldnotes_cpp_STextPage_init_FUN_004a2690(STextPage *this_ptr)
+;
+; Parameters:
+; STextPage *      Stack[0x4]:4   this_ptr
+;
+; XREF[1]:
+;   core_fldnotes.cpp_STextView_ensurePage_FUN_004a31c0 at 004a321d
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 004a2690
+        ;   Label: core_fldnotes.cpp_STextPage_init_FUN_004a2690
+    MOV dword ptr [EAX],0x0             ; 004a2694
+    RET                                 ; 004a269a
+

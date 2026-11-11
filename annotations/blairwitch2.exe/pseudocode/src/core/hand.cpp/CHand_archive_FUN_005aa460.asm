@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveFloat_FUN_0040b8e0
-;   core_twigzomb.cpp_CTwigZombie_archive_FUN_0059fc10
+;   core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005aa460
         ;   Label: core_hand.cpp_CHand_archive_FUN_005aa460
     PUSH EDX                            ; 005aa464
-    CALL core_twigzomb.cpp_CTwigZombie_archive_FUN_0059fc10 ; 005aa465
-        ;   XREF to: 0059fc10 (UNCONDITIONAL_CALL)  ; void core_twigzomb.cpp_CTwigZombie_archive_FUN_0059fc10(CTwigZombie * this_ptr)
+    CALL core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10 ; 005aa465
+        ;   XREF to: 0059fc10 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10(CBasicEnemy * this_ptr)
     MOV ECX,dword ptr [0x0061eca8]      ; 005aa46a | g_CHandClassVersion
     ADD ESP,0x4                         ; 005aa470
     CMP ECX,0x2                         ; 005aa473

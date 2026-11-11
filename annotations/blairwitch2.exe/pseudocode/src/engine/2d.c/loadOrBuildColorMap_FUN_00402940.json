@@ -2,12 +2,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 170,
+    "complexity_score": 173,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
+    "pseudocode_lines": 63,
     "suspect_count": 9,
     "suspect_types": [
       "undefined_data",
@@ -15,7 +15,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 212
+    "total_lines": 215
   },
   "cross_references": [
     {
@@ -54,6 +54,16 @@
       "name": "engine_2d.c_buildColorLookupTable_FUN_00402880"
     },
     {
+      "addr": "0057d390",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390"
+    },
+    {
+      "addr": "0057dd60",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_COutStreamFile_close_FUN_0057dd60"
+    },
+    {
       "addr": "0057db80",
       "is_variadic": false,
       "name": "support_trstream.cpp_COutStreamFile_ctor_FUN_0057db80"
@@ -64,34 +74,24 @@
       "name": "support_trstream.cpp_COutStreamFile_dtor_FUN_0057dc10"
     },
     {
-      "addr": "0057d390",
+      "addr": "0057ddd0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_0057d390"
+      "name": "support_trstream.cpp_COutStreamFile_openInDirectory_FUN_0057ddd0"
     },
     {
       "addr": "0057dca0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_0057dca0"
-    },
-    {
-      "addr": "0057dd60",
-      "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_0057dd60"
-    },
-    {
-      "addr": "0057ddd0",
-      "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_0057ddd0"
-    },
-    {
-      "addr": "0057cfe0",
-      "is_variadic": false,
-      "name": "unkaddr_0057b9a0.cpp_FUN_0057cfe0"
+      "name": "support_trstream.cpp_COutStreamFile_write_FUN_0057dca0"
     },
     {
       "addr": "0057d180",
       "is_variadic": false,
-      "name": "unkaddr_0057b9a0.cpp_FUN_0057d180"
+      "name": "unkaddr_0057b9a0.cpp_CInStreamFile_close_FUN_0057d180"
+    },
+    {
+      "addr": "0057cfe0",
+      "is_variadic": false,
+      "name": "unkaddr_0057b9a0.cpp_CInStreamFile_read_FUN_0057cfe0"
     },
     {
       "addr": "0057cd50",
@@ -305,42 +305,42 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 45,
       "match": "DAT_005ca0ae",
       "severity": "mild",
-      "text": "iVar2 = support_trstream_cpp_FUN_0057d390(&local_38,&DAT_005ca0ae,local_88);",
+      "text": "(&local_38,&DAT_005ca0ae,local_88);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 50,
       "match": "DAT_005ca0b5",
       "severity": "mild",
-      "text": "iVar2 = support_trstream_cpp_FUN_0057ddd0(&local_10,&DAT_005ca0b5,local_88,&DAT_005ca0b2);",
+      "text": "(&local_10,&DAT_005ca0b5,local_88,&DAT_005ca0b2);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 50,
       "match": "DAT_005ca0b2",
       "severity": "mild",
-      "text": "iVar2 = support_trstream_cpp_FUN_0057ddd0(&local_10,&DAT_005ca0b5,local_88,&DAT_005ca0b2);",
+      "text": "(&local_10,&DAT_005ca0b5,local_88,&DAT_005ca0b2);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 56,
       "match": "DAT_01c2c910",
       "severity": "mild",
-      "text": "support_trstream_cpp_FUN_0057dca0(&local_10,&DAT_01c2c910,0x8000);",
+      "text": "support_trstream_cpp_COutStreamFile_write_FUN_0057dca0(&local_10,&DAT_01c2c910,0x8000);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 62,
       "match": "DAT_01c2c910",
       "severity": "mild",
-      "text": "unkaddr_0057b9a0_cpp_FUN_0057cfe0(&local_38,&DAT_01c2c910,0x8000);",
+      "text": "(&local_38,(uint *)&DAT_01c2c910,0x8000);",
       "type": "undefined_data"
     },
     {

@@ -18,7 +18,7 @@ CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_dtor_FUN_00571a30(CSvetlana *thi
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  iVar1 = core_necklace_cpp_FUN_005ade00(&this_ptr->field_0x60178,0);
+  iVar1 = core_necklace_cpp_FUN_005ade00(&this_ptr->hair_cloth,0);
   iVar1 = core_necklace_cpp_FUN_005ade00(iVar1 + -0x3ab30,0);
   pCVar2 = (CSvetlana *)core_hero_cpp_CHero_dtor_FUN_004ce3d0((CHero *)(iVar1 + -0x25648),1);
   if ((flags & 2) == 0) {

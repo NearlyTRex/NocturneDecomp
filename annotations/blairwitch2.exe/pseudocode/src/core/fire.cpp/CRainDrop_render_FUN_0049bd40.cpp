@@ -11,7 +11,7 @@
 void __cdecl core_fire_cpp_CRainDrop_render_FUN_0049bd40(CRainDrop *this_ptr)
 
 {
-  SProjectedVertex *output;
+  SRenderVertex *vertex_ptr;
   int iVar1;
   uint extraout_EDX;
   byte bVar2;
@@ -37,13 +37,12 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_0049bd40(CRainDrop *this_ptr)
   int aiStack_1c [4];
   
   bVar2 = 0;
-  output = (SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr;
-  CStack_68.x = (int)ROUND(*(float *)this_ptr * _DAT_005f64e4);
-  CStack_68.y = (int)ROUND(*(float *)&this_ptr->field_0x4 * _DAT_005f64e4);
-  CStack_68.z = (int)ROUND(*(float *)&this_ptr->field_0x8 * _DAT_005f64e4);
-  engine_special_cpp_FUN_0055d9ec(output,&CStack_68);
-  iVar1 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0046cad0
-                    (DAT_0060b280,(SRenderVertex *)output);
+  vertex_ptr = DAT_0060b280->vertex_buffer_ptr;
+  CStack_68.x = (int)ROUND((this_ptr->base).position.x * _DAT_005f64e4);
+  CStack_68.y = (int)ROUND((this_ptr->base).position.y * _DAT_005f64e4);
+  CStack_68.z = (int)ROUND((this_ptr->base).position.z * _DAT_005f64e4);
+  engine_special_cpp_FUN_0055d9ec(&vertex_ptr->projected_vertex,&CStack_68);
+  iVar1 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0046cad0(DAT_0060b280,vertex_ptr);
   if (iVar1 == 0) {
     return;
   }
@@ -63,37 +62,34 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_0049bd40(CRainDrop *this_ptr)
   CStack_50.x = (int)ROUND(_DAT_005f64e4 * -0.125);
   CStack_50.y = (int)ROUND(_DAT_005f64e4 * -0.125);
   CStack_50.z = (int)ROUND(_DAT_005f64e4 * 0.0);
-  engine_special_cpp_FUN_0055d723((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&CStack_50);
+  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&CStack_50);
   uStack_5c = 0x3e000000;
   uStack_58 = 0xbe000000;
   uStack_54 = 0;
   CStack_80.x = (int)ROUND(_DAT_005f64e4 * 0.125);
   CStack_80.y = (int)ROUND(_DAT_005f64e4 * -0.125);
   CStack_80.z = (int)ROUND(_DAT_005f64e4 * 0.0);
-  engine_special_cpp_FUN_0055d723
-            ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&CStack_80);
+  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_80);
   uStack_5c = 0x3e000000;
   uStack_58 = 0x3e000000;
   uStack_54 = 0;
   CStack_74.x = (int)ROUND(_DAT_005f64e4 * 0.125);
   CStack_74.y = (int)ROUND(_DAT_005f64e4 * 0.125);
   CStack_74.z = (int)ROUND(_DAT_005f64e4 * 0.0);
-  engine_special_cpp_FUN_0055d723
-            ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&CStack_74);
+  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&CStack_74);
   uStack_5c = 0xbe000000;
   uStack_58 = 0x3e000000;
   uStack_54 = 0;
   CStack_44.x = (int)ROUND(_DAT_005f64e4 * -0.125);
   CStack_44.y = (int)ROUND(_DAT_005f64e4 * 0.125);
   CStack_44.z = (int)ROUND(_DAT_005f64e4 * 0.0);
-  engine_special_cpp_FUN_0055d723
-            ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x90),&CStack_44);
+  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&CStack_44);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
             (DAT_0060b280,(SMRGLTextureBasic *)&DAT_00615874);
   (**(code **)(*(int *)(DAT_007bda74 + 0x3c) + 4))(DAT_007bda74,this_ptr,0);
   aiStack_1c[2] = 0xffff - _DAT_01c38aec;
-  fVar3 = (float10)aiStack_1c[2] * (float10)*(float *)&this_ptr->field_0x24 * (float10)_DAT_005d576a
-  ;
+  fVar3 = (float10)aiStack_1c[2] *
+          (float10)(this_ptr->base).lifetime_remaining * (float10)_DAT_005d576a;
   _DAT_0062205c = 0xd00000;
   DAT_0062202c = 0x800000;
   _DAT_00622030 = 0xdc0000;
@@ -104,9 +100,9 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_0049bd40(CRainDrop *this_ptr)
   aiStack_1c[3] = aiStack_1c[2];
   round();
   DAT_00622040 = (int)ROUND(fVar3);
-  CStack_2c.x = (int)ROUND(*(float *)this_ptr * _DAT_005f64e4);
-  CStack_2c.y = (int)ROUND(*(float *)&this_ptr->field_0x4 * _DAT_005f64e4);
-  CStack_2c.z = (int)ROUND(*(float *)&this_ptr->field_0x8 * _DAT_005f64e4);
+  CStack_2c.x = (int)ROUND((this_ptr->base).position.x * _DAT_005f64e4);
+  CStack_2c.y = (int)ROUND((this_ptr->base).position.y * _DAT_005f64e4);
+  CStack_2c.z = (int)ROUND((this_ptr->base).position.z * _DAT_005f64e4);
   DAT_00622070 = DAT_00622040;
   _DAT_006220a0 = DAT_00622040;
   _DAT_006220c0 = extraout_EDX;

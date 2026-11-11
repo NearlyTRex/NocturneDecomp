@@ -12,11 +12,11 @@ void __cdecl core_moloch_cpp_CMoloch_startMorph_FUN_00502280(CMoloch *this_ptr)
   this_ptr->morph_timer = 0.0;
   this_ptr->morphing = 1;
   if (this_ptr->in_human_form != 0) {
-    (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x34))
-              (this_ptr,"moloch-morph-todemon.wav");
+    (*((this_ptr->base).base.base.vtable._ub)->playSound)
+              ((CDemonActor *)this_ptr,"moloch-morph-todemon.wav");
     return;
   }
-  (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x34))(this_ptr,"moloch-morph-tohuman.wav")
-  ;
+  (*((this_ptr->base).base.base.vtable._ub)->playSound)
+            ((CDemonActor *)this_ptr,"moloch-morph-tohuman.wav");
   return;
 }

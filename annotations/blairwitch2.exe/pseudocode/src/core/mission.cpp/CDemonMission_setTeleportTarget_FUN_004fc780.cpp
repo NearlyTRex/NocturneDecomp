@@ -9,9 +9,9 @@
 void __cdecl core_mission_cpp_CDemonMission_setTeleportTarget_FUN_004fc780(CDemonMission *this_ptr,CLocation *teleport_target)
 
 {
-  *(uint *)(this_ptr + 0x111c) = *(uint *)teleport_target;
-  *(uint *)(this_ptr + 0x1120) = *(uint *)(teleport_target + 4);
-  *(uint *)(this_ptr + 0x1124) = *(uint *)(teleport_target + 8);
-  *(uint *)(this_ptr + 0x1128) = *(uint *)(teleport_target + 0xc);
+  (this_ptr->pending_teleport).position.x = (teleport_target->position).x;
+  (this_ptr->pending_teleport).position.y = (teleport_target->position).y;
+  (this_ptr->pending_teleport).position.z = (teleport_target->position).z;
+  (this_ptr->pending_teleport).area_id = teleport_target->area_id;
   return;
 }

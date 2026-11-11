@@ -20,9 +20,9 @@ CFrankenstienMachine * core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004ad050(
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = core_course_cpp_CCourse_dtor_FUN_00438a70((CCourse *)&this_ptr->field_0x45c,0);
+  pCVar1 = core_course_cpp_CCourse_dtor_FUN_00438a70(&this_ptr->course,0);
   pCVar2 = (CFrankenstienMachine *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)(pCVar1 + -0x45c),1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)(pCVar1 + -0x5d),1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

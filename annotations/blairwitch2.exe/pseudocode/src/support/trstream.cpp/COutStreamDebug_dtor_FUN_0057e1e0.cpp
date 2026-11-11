@@ -19,7 +19,7 @@ COutStreamDebug * support_trstream_cpp_COutStreamDebug_dtor_FUN_0057e1e0(COutStr
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  *this_ptr = (COutStreamDebug)&g_COutStreamDebugVTable;
+  this_ptr->vtable = &g_COutStreamDebugVTable;
   pCVar1 = (COutStreamDebug *)support_trstream_cpp_FUN_0057d860(this_ptr,1);
   if ((flags & 2) == 0) {
     return pCVar1;

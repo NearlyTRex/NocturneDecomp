@@ -13,11 +13,11 @@ int __cdecl core_basicene_cpp_CBasicEnemy_renderOpaque_FUN_0059fa20(CBasicEnemy 
   int iVar2;
   
   iVar2 = 0;
-  if (*(int *)(this_ptr + 0xfc) == 0) {
+  if ((this_ptr->base).base.base.is_transparent == 0) {
     iVar2 = core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0((CCharacter *)this_ptr);
   }
   iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
-  if ((iVar1 == 0) && (*(int *)g_CGameHookPtr != 0)) {
+  if ((iVar1 == 0) && (g_CGameHookPtr->debug_state_display != 0)) {
     unkafter_basicene_cpp_FUN_0059fae0(this_ptr);
     return iVar2;
   }

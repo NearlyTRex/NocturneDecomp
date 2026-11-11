@@ -11,6 +11,6 @@ EDeathState __cdecl core_basicnpc_cpp_CBasicNPC_getDeathState_FUN_0059f930(CBasi
 {
   int iVar1;
   
-  iVar1 = unkaddr_0059d350_cpp_FUN_0059daa0(&this_ptr->field_0x10af8,"Death");
+  iVar1 = unkaddr_0059d350_cpp_FUN_0059daa0(&(this_ptr->base).state_machine,"Death");
   return (uint)(iVar1 != 0);
 }

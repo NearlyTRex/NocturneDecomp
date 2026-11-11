@@ -2,15 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 390,
+    "complexity_score": 405,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 95,
-    "suspect_count": 28,
+    "suspect_count": 29,
     "suspect_types": [
       "extra_output",
+      "raw_address_pointer_store",
       "undefined_data",
       "warning_overlapping_globals"
     ],
@@ -309,6 +310,14 @@
       "type": "extra_output"
     },
     {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 21,
+      "match": "*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4",
+      "severity": "moderate",
+      "text": "(this_ptr->owner == *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4))) {",
+      "type": "raw_address_pointer_store"
+    },
+    {
       "description": "Undefined global data reference",
       "line": 22,
       "match": "DAT_006141bc",
@@ -321,7 +330,7 @@
       "line": 31,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "if ((DAT_006141bc < 0x180) && (*(int *)(this_ptr + 0x454) == 0)) {",
+      "text": "if ((DAT_006141bc < 0x180) && (this_ptr->render_mode_flag == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -417,7 +426,7 @@
       "line": 67,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "if ((DAT_006141bc < 0x180) && (*(int *)(this_ptr + 0x454) == 0)) {",
+      "text": "if ((DAT_006141bc < 0x180) && (this_ptr->render_mode_flag == 0)) {",
       "type": "undefined_data"
     },
     {

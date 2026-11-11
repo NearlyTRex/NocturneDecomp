@@ -41,14 +41,14 @@ void core_crate_cpp_FUN_00439dc0(CDemonActor *param_1)
   if (fVar1 < fVar2) {
     fVar2 = fVar1;
   }
-  *(float *)&param_1[1].field_0x180 = fVar2;
-  *(uint *)&param_1[1].field_0x188 = 0xc61c3f9a;
-  *(uint *)&param_1[1].field_0x18c = 0xc61c3f9a;
-  *(uint *)&param_1[1].field_0x190 = 0xc61c3f9a;
-  *(uint *)&param_1[1].field_0x194 = 0xc61c3f9a;
-  *(uint *)&param_1[1].field_0x19c = 0xc61c3f9a;
-  *(uint *)&param_1[1].field_0x198 = 0xc61c3f9a;
-  *(uint *)&param_1[1].field_0x1a0 = 0x461c3f9a;
-  *(uint *)&param_1[1].field_0x17c = 0;
+  param_1[1].particle_systems[0].fade_duration = fVar2;
+  param_1[1].particle_systems[0].stop_after_fade = -0x39e3c066;
+  param_1[1].particle_systems[0].standalone = -0x39e3c066;
+  param_1[1].particle_systems[0].particles = (void *)0xc61c3f9a;
+  param_1[1].particle_systems[0].vtable = (void *)0xc61c3f9a;
+  param_1[1].particle_systems[1].position.y = -9999.9;
+  param_1[1].particle_systems[1].position.x = -9999.9;
+  param_1[1].particle_systems[1].position.z = 9999.9;
+  param_1[1].particle_systems[0].fade_end = 0.0;
   return;
 }

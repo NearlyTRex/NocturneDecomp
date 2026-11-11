@@ -9,10 +9,10 @@
 void __cdecl core_hand_cpp_CHand_archive_FUN_005aa460(CHand *this_ptr)
 
 {
-  core_twigzomb_cpp_CTwigZombie_archive_FUN_0059fc10((CTwigZombie *)this_ptr);
+  core_basicene_cpp_CBasicEnemy_archive_FUN_0059fc10(&this_ptr->base);
   if (g_CHandClassVersion < 2) {
     return;
   }
-  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x11860,"SleepTime");
+  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->sleep_time,"SleepTime");
   return;
 }

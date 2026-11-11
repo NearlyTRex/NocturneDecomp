@@ -2,20 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 380,
-    "complexity_score": 898,
+    "complexity_score": 636,
     "cross_reference_count": 10,
     "function_call_count": 11,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 128,
-    "suspect_count": 75,
+    "pseudocode_lines": 136,
+    "suspect_count": 48,
     "suspect_types": [
       "primitive_walker_cast",
       "undefined_data",
       "unnamed_field",
       "unnamed_param"
     ],
-    "total_lines": 508
+    "total_lines": 516
   },
   "cross_references": [
     {
@@ -510,7 +510,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar1 = &param_1->model;",
@@ -518,7 +518,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_archive_FUN_0040c330(&param_1->base);",
@@ -526,7 +526,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archivePartStatus_FUN_0040bc50(&param_1->model,\"partStatus\");",
@@ -534,7 +534,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveActor_FUN_0040b9e0(&param_1->grabbed_by,\"grabbedBy\");",
@@ -542,7 +542,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&param_1->hit_points,\"hitPoints\");",
@@ -550,7 +550,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "core_charactr_cpp_CCharacter_archive_FUN_00422c30(param_1);",
@@ -558,7 +558,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveActor_FUN_0040b9e0(&param_1->grabbed_by,\"grabbedBy\");",
@@ -566,7 +566,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->grabbed_type = 0;",
@@ -574,7 +574,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "((int *)(param_1[1].base.actor_name + 4),\"controlType\");",
@@ -582,195 +582,99 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b9e0(&param_1[2].field_0x4148,\"objectToPickUp\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x4148",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b9e0(&param_1[2].field_0x4148,\"objectToPickUp\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b9e0(&param_1[2].field_0x4144,\"doorToOpen\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x4144",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b9e0(&param_1[2].field_0x4144,\"doorToOpen\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b9e0(&param_1[2].field_0x4150,\"leverToPull\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x4150",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b9e0(&param_1[2].field_0x4150,\"leverToPull\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b9e0(&param_1[2].field_0x4154,\"ladderToClimb\");",
+      "text": "(param_1[2].flames[1].on_event + 0x14,\"objectToPickUp\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x4154",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b9e0(&param_1[2].field_0x4154,\"ladderToClimb\");",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b9e0(&param_1[2].field_0x414c,\"pushedObject\");",
+      "text": "(param_1[2].flames[1].on_event + 0x10,\"doorToOpen\");",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x414c",
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b9e0(&param_1[2].field_0x414c,\"pushedObject\");",
-      "type": "unnamed_field"
+      "text": "(param_1[2].flames[1].on_event + 0x1c,\"leverToPull\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1[2].flames[1].on_event + 0x20,\"ladderToClimb\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1[2].flames[1].on_event + 0x18,\"pushedObject\");",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 53,
       "match": "DAT_005d9ade",
       "severity": "mild",
       "text": "core_actor_cpp_archiveInteger_FUN_0040b960(&local_14,&DAT_005d9ade);",
       "type": "undefined_data"
     },
     {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 57,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b960((int *)&param_1[2].field_0x4178,\"AITask\");",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b960((int *)&param_1[2].field_0x4178,\"AITask\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 57,
-      "match": "field_0x4178",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b960((int *)&param_1[2].field_0x4178,\"AITask\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 61,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "((int *)&param_1[2].field_0x4128,\"isWearingGasMask\");",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)&param_1[2].field_0x4128,\"isWearingGasMask\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 61,
-      "match": "field_0x4128",
-      "severity": "mild",
-      "text": "((int *)&param_1[2].field_0x4128,\"isWearingGasMask\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 65,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "((int *)&param_1[2].field_0x412c,\"isWearingGoggles\");",
-      "type": "primitive_walker_cast"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 65,
       "match": "param_1",
       "severity": "mild",
-      "text": "((int *)&param_1[2].field_0x412c,\"isWearingGoggles\");",
+      "text": "((int *)(param_1[2].flames[1].on_event + 0x44),\"AITask\");",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0x412c",
-      "severity": "mild",
-      "text": "((int *)&param_1[2].field_0x412c,\"isWearingGoggles\");",
-      "type": "unnamed_field"
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 69,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "((int *)&param_1[2].flames[1].globe_scalar,\"isWearingGasMask\");",
+      "type": "primitive_walker_cast"
     },
     {
       "description": "Unnamed function parameter",
       "line": 69,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar2 = (CInventory *)(param_1[2].cloth_list.cloths + 7);",
+      "text": "((int *)&param_1[2].flames[1].globe_scalar,\"isWearingGasMask\");",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "if (DAT_007bc038 == 1) {",
-      "type": "undefined_data"
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 73,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "((int *)&param_1[2].flames[1].sfx_handle,\"isWearingGoggles\");",
+      "type": "primitive_walker_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 71,
-      "match": "DAT_007bc034",
+      "description": "Unnamed function parameter",
+      "line": 73,
+      "match": "param_1",
       "severity": "mild",
-      "text": "core_inv_cpp_CInventory_load_FUN_004dc4b0(pCVar2,DAT_007bc034);",
-      "type": "undefined_data"
+      "text": "((int *)&param_1[2].flames[1].sfx_handle,\"isWearingGoggles\");",
+      "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 74,
-      "match": "DAT_007bc034",
+      "description": "Unnamed function parameter",
+      "line": 77,
+      "match": "param_1",
       "severity": "mild",
-      "text": "core_inv_cpp_CInventory_save_FUN_004dc2c0(pCVar2,DAT_007bc034);",
-      "type": "undefined_data"
+      "text": "pCVar2 = (CInventory *)(param_1[2].cloth_list.cloths + 7);",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -781,203 +685,107 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 80,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CInventory *)&param_1[2].field_0x34e0,DAT_007bc034);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 79,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "((CInventory *)&param_1[2].field_0x34e0,DAT_007bc034);",
+      "text": "core_inv_cpp_CInventory_load_FUN_004dc4b0(pCVar2,DAT_007bc034);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 80,
-      "match": "field_0x34e0",
-      "severity": "mild",
-      "text": "((CInventory *)&param_1[2].field_0x34e0,DAT_007bc034);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 82,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CInventory *)&param_1[2].field_0x3b04,DAT_007bc034);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 82,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "((CInventory *)&param_1[2].field_0x3b04,DAT_007bc034);",
+      "text": "core_inv_cpp_CInventory_save_FUN_004dc2c0(pCVar2,DAT_007bc034);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 82,
-      "match": "field_0x3b04",
-      "severity": "mild",
-      "text": "((CInventory *)&param_1[2].field_0x3b04,DAT_007bc034);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 86,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CInventory *)&param_1[2].field_0x34e0,DAT_007bc034);",
+      "text": "this_ptr = &param_1[2].flames[0].base.platform_position_delta.y;",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 86,
-      "match": "DAT_007bc034",
-      "severity": "mild",
-      "text": "((CInventory *)&param_1[2].field_0x34e0,DAT_007bc034);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 86,
-      "match": "field_0x34e0",
-      "severity": "mild",
-      "text": "((CInventory *)&param_1[2].field_0x34e0,DAT_007bc034);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 88,
+      "line": 87,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CInventory *)&param_1[2].field_0x3b04,DAT_007bc034);",
+      "text": "this_ptr_00 = &param_1[2].damage_decals[2].transform.m[1].z;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 88,
-      "match": "DAT_007bc034",
+      "match": "DAT_007bc038",
       "severity": "mild",
-      "text": "((CInventory *)&param_1[2].field_0x3b04,DAT_007bc034);",
+      "text": "if (DAT_007bc038 == 1) {",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 88,
-      "match": "field_0x3b04",
+      "description": "Undefined global data reference",
+      "line": 89,
+      "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "((CInventory *)&param_1[2].field_0x3b04,DAT_007bc034);",
-      "type": "unnamed_field"
+      "text": "core_inv_cpp_CInventory_load_FUN_004dc4b0((CInventory *)this_ptr_00,DAT_007bc034);",
+      "type": "undefined_data"
     },
     {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "description": "Undefined global data reference",
+      "line": 90,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "core_inv_cpp_CInventory_load_FUN_004dc4b0((CInventory *)this_ptr,DAT_007bc034);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 93,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "((int *)&param_1[2].field_0x417c,\"HeroInventoryIndex\");",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 93,
-      "match": "param_1",
+      "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "((int *)&param_1[2].field_0x417c,\"HeroInventoryIndex\");",
-      "type": "unnamed_param"
+      "text": "core_inv_cpp_CInventory_save_FUN_004dc2c0((CInventory *)this_ptr_00,DAT_007bc034);",
+      "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 93,
-      "match": "field_0x417c",
-      "severity": "mild",
-      "text": "((int *)&param_1[2].field_0x417c,\"HeroInventoryIndex\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "description": "Undefined global data reference",
       "line": 94,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "piVar4 = (int *)&param_1[2].field_0x3328;",
-      "type": "primitive_walker_cast"
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "core_inv_cpp_CInventory_save_FUN_004dc2c0((CInventory *)this_ptr,DAT_007bc034);",
+      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 94,
+      "line": 99,
       "match": "param_1",
       "severity": "mild",
-      "text": "piVar4 = (int *)&param_1[2].field_0x3328;",
+      "text": "((int *)(param_1[2].flames[1].on_event + 0x48),\"HeroInventoryIndex\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 94,
-      "match": "field_0x3328",
-      "severity": "mild",
-      "text": "piVar4 = (int *)&param_1[2].field_0x3328;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 98,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "} while (piVar4 != (int *)&param_1[2].field_0x34b8);",
-      "type": "primitive_walker_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 100,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (piVar4 != (int *)&param_1[2].field_0x34b8);",
+      "text": "ppSVar4 = &param_1[2].follow_formation.slots[0xb].next;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 98,
-      "match": "field_0x34b8",
-      "severity": "mild",
-      "text": "} while (piVar4 != (int *)&param_1[2].field_0x34b8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 102,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "((int *)&param_1[2].field_0x3324,\"InventoryIndex\");",
-      "type": "primitive_walker_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 102,
+      "line": 104,
       "match": "param_1",
       "severity": "mild",
-      "text": "((int *)&param_1[2].field_0x3324,\"InventoryIndex\");",
+      "text": "} while (ppSVar4 != (SFollowSlotStruct **)&param_1[2].damage_decals[1].transform.m[2].z);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 102,
-      "match": "field_0x3324",
-      "severity": "mild",
-      "text": "((int *)&param_1[2].field_0x3324,\"InventoryIndex\");",
-      "type": "unnamed_field"
     },
     {
       "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
       "line": 108,
       "match": "(int *)&param_1[",
       "severity": "moderate",
-      "text": "((int *)&param_1[2].field_0x417c,\"HeroInventoryIndex\");",
+      "text": "((int *)&param_1[2].follow_formation.slots[0xb].field_0x34,",
       "type": "primitive_walker_cast"
     },
     {
@@ -985,92 +793,68 @@
       "line": 108,
       "match": "param_1",
       "severity": "mild",
-      "text": "((int *)&param_1[2].field_0x417c,\"HeroInventoryIndex\");",
+      "text": "((int *)&param_1[2].follow_formation.slots[0xb].field_0x34,",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 108,
-      "match": "field_0x417c",
+      "match": "field_0x34",
       "severity": "mild",
-      "text": "((int *)&param_1[2].field_0x417c,\"HeroInventoryIndex\");",
+      "text": "((int *)&param_1[2].follow_formation.slots[0xb].field_0x34,",
       "type": "unnamed_field"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 109,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "piVar4 = (int *)&param_1[2].field_0x3328;",
-      "type": "primitive_walker_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 115,
       "match": "param_1",
       "severity": "mild",
-      "text": "piVar4 = (int *)&param_1[2].field_0x3328;",
+      "text": "((int *)(param_1[2].flames[1].on_event + 0x48),\"HeroInventoryIndex\");",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 109,
-      "match": "field_0x3328",
-      "severity": "mild",
-      "text": "piVar4 = (int *)&param_1[2].field_0x3328;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 113,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "} while (piVar4 != (int *)&param_1[2].field_0x34b8);",
-      "type": "primitive_walker_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 113,
+      "line": 116,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (piVar4 != (int *)&param_1[2].field_0x34b8);",
+      "text": "ppSVar4 = &param_1[2].follow_formation.slots[0xb].next;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 113,
-      "match": "field_0x34b8",
-      "severity": "mild",
-      "text": "} while (piVar4 != (int *)&param_1[2].field_0x34b8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 117,
-      "match": "(int *)&param_1[",
-      "severity": "moderate",
-      "text": "((int *)&param_1[2].field_0x3324,\"InventoryIndex\");",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 117,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)&param_1[2].field_0x3324,\"InventoryIndex\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 117,
-      "match": "field_0x3324",
-      "severity": "mild",
-      "text": "((int *)&param_1[2].field_0x3324,\"InventoryIndex\");",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 120,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (ppSVar4 != (SFollowSlotStruct **)&param_1[2].damage_decals[1].transform.m[2].z);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 124,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "((int *)&param_1[2].follow_formation.slots[0xb].field_0x34,",
+      "type": "primitive_walker_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 124,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((int *)&param_1[2].follow_formation.slots[0xb].field_0x34,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 124,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "((int *)&param_1[2].follow_formation.slots[0xb].field_0x34,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 128,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar2 = (CInventory *)(param_1[2].cloth_list.cloths + 7);",
@@ -1078,7 +862,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 121,
+      "line": 129,
       "match": "DAT_007bc038",
       "severity": "mild",
       "text": "if (DAT_007bc038 != 1) {",
@@ -1086,7 +870,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 122,
+      "line": 130,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "core_inv_cpp_CInventory_save_FUN_004dc2c0(pCVar2,DAT_007bc034);",
@@ -1094,7 +878,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 125,
+      "line": 133,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "core_inv_cpp_CInventory_load_FUN_004dc4b0(pCVar2,DAT_007bc034);",

@@ -11,8 +11,8 @@
 CFieldNotes * core_fldnotes_cpp_CFieldNotes_dtor_FUN_004a4180(CFieldNotes *this_ptr,uint flags)
 
 {
-  core_fldnotes_cpp_FUN_004a50b0(this_ptr);
-  *(uint *)&this_ptr->field_0x40 = 0;
-  core_fldnotes_cpp_FUN_004a27e0(&g_STextViewInstance);
+  core_fldnotes_cpp_CFieldNotes_clear_FUN_004a50b0(this_ptr);
+  this_ptr->is_displayed = 0;
+  core_fldnotes_cpp_STextView_reset_FUN_004a27e0(&g_STextViewInstance);
   return this_ptr;
 }

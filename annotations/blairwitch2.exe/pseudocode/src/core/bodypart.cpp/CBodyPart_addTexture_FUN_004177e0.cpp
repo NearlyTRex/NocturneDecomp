@@ -18,7 +18,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_004177e0(CBodyPart *this_
   
   iVar3 = 0;
   if (0 < this_ptr->texture_count) {
-    pcVar4 = &this_ptr->field_0x2f4;
+    pcVar4 = this_ptr->textures[0].texture_name;
     do {
       iVar2 = _stricmp(pcVar4,texture_name);
       if (iVar2 == 0) {
@@ -33,8 +33,8 @@ int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_004177e0(CBodyPart *this_
     _DAT_01d046a4 = 0x47a;
     core_main_c_FUN_004e4500("Too many body part textures!");
   }
-  memset(&this_ptr->field_0x2ec + this_ptr->texture_count * 0x18,0,0x18);
-  pcVar4 = &this_ptr->field_0x2f4 + this_ptr->texture_count * 0x18;
+  memset(this_ptr->textures + this_ptr->texture_count,0,0x18);
+  pcVar4 = this_ptr->textures[this_ptr->texture_count].texture_name;
   do {
     cVar1 = *texture_name;
     *pcVar4 = cVar1;

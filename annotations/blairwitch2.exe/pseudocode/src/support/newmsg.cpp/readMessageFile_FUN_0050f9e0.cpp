@@ -111,7 +111,7 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_0050f9e0(char *message_file)
       cVar1 = *pcVar11;
       pcVar11 = pcVar11 + (uint)bVar13 * -2 + 1;
     } while (cVar1 != '\0');
-    pvVar8 = FUN_005b8580(~uVar9);
+    pvVar8 = malloc(~uVar9);
     *(void **)(_DAT_01d63258 * 4 + 0x1d641fc) = pvVar8;
     if (pvVar8 == (void *)0x0) {
       _DAT_01d046a0 = "..\\support\\newmsg.cpp";
@@ -126,7 +126,7 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_0050f9e0(char *message_file)
       cVar1 = *pcVar11;
       pcVar11 = pcVar11 + (uint)bVar13 * -2 + 1;
     } while (cVar1 != '\0');
-    pvVar8 = FUN_005b8580(~uVar9);
+    pvVar8 = malloc(~uVar9);
     *(void **)(_DAT_01d63258 * 4 + 0x1d649cc) = pvVar8;
     if (pvVar8 == (void *)0x0) {
       _DAT_01d046a0 = "..\\support\\newmsg.cpp";

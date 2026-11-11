@@ -83,17 +83,16 @@ LAB_004cab2d:
       iVar9 = 0;
       if (0 < this_ptr->width) {
         do {
-          if ((*(int *)(p_Var4 + 4) < 1) || (**(byte **)p_Var4 - 0xd < 0xfe)) {
+          if ((p_Var4->_cnt < 1) || ((byte)*p_Var4->_ptr - 0xd < 0xfe)) {
             uVar3 = _fgetc(p_Var4);
           }
           else {
-            *(int *)(p_Var4 + 4) = *(int *)(p_Var4 + 4) + -1;
-            pbVar2 = *(byte **)p_Var4;
-            *(byte **)p_Var4 = pbVar2 + 1;
+            p_Var4->_cnt = p_Var4->_cnt + -1;
+            pbVar2 = (byte *)p_Var4->_ptr;
+            p_Var4->_ptr = (char *)(pbVar2 + 1);
             uVar3 = (ushort)*pbVar2;
           }
-          *(ushort *)(this_ptr->terrain_data + (local_18 * this_ptr->width + iVar9) * 4) =
-               uVar3 << 7;
+          this_ptr->terrain_data[local_18 * this_ptr->width + iVar9].height = uVar3 << 7;
           iVar9 = iVar9 + 1;
         } while (iVar9 < this_ptr->width);
       }
@@ -155,7 +154,7 @@ LAB_004cac77:
         do {
           iVar5 = local_14 * this_ptr->width + iVar9;
           iVar9 = iVar9 + 1;
-          _fread(this_ptr->terrain_data + iVar5 * 4 + 2,1,2,local_1c);
+          _fread(&this_ptr->terrain_data[iVar5].color,1,2,local_1c);
         } while (iVar9 < this_ptr->width);
       }
       local_14 = local_14 + 1;

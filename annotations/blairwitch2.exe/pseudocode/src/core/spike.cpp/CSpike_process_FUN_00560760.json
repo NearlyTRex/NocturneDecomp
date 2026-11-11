@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 262,
-    "complexity_score": 533,
+    "complexity_score": 468,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 148,
-    "suspect_count": 35,
+    "suspect_count": 29,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
@@ -176,14 +175,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 118,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "fStack_50 = *(float *)&(this_ptr->base).field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 119,
       "match": "&stack0xffffffb4",
@@ -270,46 +261,6 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 140,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "puVar1 = &(this_ptr->base).field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 143,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).field_0x24 = uStack_58;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 144,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "fStack_4c = fStack_4c - *(float *)&(this_ptr->base).field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 145,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).field_0x28 = uStack_54;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 146,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "fStack_48 = fStack_48 - *(float *)&(this_ptr->base).field_0x28;",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer value `&stack0xffffffb4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

@@ -4,8 +4,10 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCourse.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CVector3f.h"
 #include "types/enums/EGroundType.h"
@@ -18,7 +20,6 @@
 #pragma pack(push, 1)
 typedef struct CPlatform {
     CDemonActor base; // 0x0
-    char field_344[348]; // 0x158
     CKeyFramedModelInstance model; // 0x2b4
     EPlatformStateType state; // 0x430
     EGroundType ground_type; // 0x434
@@ -28,7 +29,7 @@ typedef struct CPlatform {
     float travel_time_to_end; // 0x444
     float travel_time_to_start; // 0x448
     char course_filename[32]; // 0x44c
-    char field_1132[12]; // 0x46c
+    CCourse course; // 0x46c
     CVector3f start_pos; // 0x478
     CVector3f end_pos; // 0x484
     CQuaternion4f orig_orient; // 0x490
@@ -49,7 +50,7 @@ typedef struct CPlatform {
     int recompute_fog; // 0x670
     int plot_in_shadow_flag; // 0x674
     SPlatformAttachment attach_actors[10]; // 0x678
-    char field_1666[514]; // 0x682
+    int rendered_in_background; // 0x880
 } CPlatform;
 #pragma pack(pop)
 

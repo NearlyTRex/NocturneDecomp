@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCourse.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 
@@ -13,7 +14,7 @@
 typedef struct CBat {
     CDemonActor base; // 0x0
     char course_filename[32]; // 0x2b4
-    char field_724[12]; // 0x2d4
+    CCourse course; // 0x2d4
     float anim_frame; // 0x2e0
     CKeyFramedModelInstance model; // 0x2e4
     float param; // 0x460

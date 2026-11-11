@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: SWaterVertex
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x20 (32 bytes)
 #pragma pack(push, 1)
 typedef struct SWaterVertex {
-    char field_0[32]; // 0x0
+    CVector3f local_position; // 0x0
+    CVector3f world_position; // 0xc
+    int u; // 0x18
+    int v; // 0x1c
 } SWaterVertex;
 #pragma pack(pop)
 

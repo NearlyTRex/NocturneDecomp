@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 570,
-    "complexity_score": 530,
+    "complexity_score": 603,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 195,
-    "suspect_count": 31,
+    "pseudocode_lines": 198,
+    "suspect_count": 38,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -16,7 +16,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 765
+    "total_lines": 768
   },
   "cross_references": [
     {
@@ -616,7 +616,7 @@
       "line": 125,
       "match": "DAT_0061933c",
       "severity": "mild",
-      "text": "local_20 = *(int *)(&DAT_0061933c + *(int *)(side_info + iVar8 + 0x4c) * 4 + local_34 * 0x94);",
+      "text": "local_20 = *(int *)(&DAT_0061933c + iVar8 * 4 + local_34 * 0x94);",
       "type": "undefined_data"
     },
     {
@@ -629,26 +629,42 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 151,
-      "match": "(int *)(quantized_dest + ((int)uVar9",
+      "line": 139,
+      "match": "(int *)((int)local_24",
       "severity": "moderate",
-      "text": "*(int *)(quantized_dest + ((int)uVar9 % 0x12) * 4 + ((int)uVar9 / 0x12) * 0x48) = local_48;",
+      "text": "uVar9 < (uint)(*(int *)((int)local_24 + local_30 + 0x1c) * 2); uVar9 = uVar9 + 2) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 169,
-      "match": "(int *)(quantized_dest + ((int)uVar9",
+      "line": 142,
+      "match": "(int *)((int)local_24",
       "severity": "moderate",
-      "text": "*(int *)(quantized_dest + ((int)uVar9 % 0x12) * 4 + ((int)uVar9 / 0x12) * 0x48) = local_40;",
+      "text": "(SHuffmanTable *)(*(int *)((int)local_24 + local_30 + 0x34) * 0x828 + 0x1d23658);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 196,
-      "match": "(uint *)(quantized_dest + ((int)uVar9",
+      "line": 146,
+      "match": "(int *)((int)local_24",
       "severity": "moderate",
-      "text": "*(uint *)(quantized_dest + ((int)uVar9 % 0x12) * 4 + ((int)uVar9 / 0x12) * 0x48) = 0;",
+      "text": "(SHuffmanTable *)(*(int *)((int)local_24 + local_30 + 0x38) * 0x828 + 0x1d23658);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 150,
+      "match": "(int *)((int)local_24",
+      "severity": "moderate",
+      "text": "(SHuffmanTable *)(*(int *)((int)local_24 + local_30 + 0x3c) * 0x828 + 0x1d23658);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 161,
+      "match": "(int *)((int)piVar1",
+      "severity": "moderate",
+      "text": "local_28 = (SHuffmanTable *)((*(int *)((int)piVar1 + iVar7 + 0x5c) + 0x20) * 0x828 + 0x1d23658);",
       "type": "pointer_cast"
     },
     {
@@ -665,6 +681,46 @@
       "match": "(int)puVar11",
       "severity": "moderate",
       "text": "puVar11 = (uint *)((int)puVar11 + (uint)bVar12 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 139,
+      "match": "(int)local_24",
+      "severity": "moderate",
+      "text": "uVar9 < (uint)(*(int *)((int)local_24 + local_30 + 0x1c) * 2); uVar9 = uVar9 + 2) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 142,
+      "match": "(int)local_24",
+      "severity": "moderate",
+      "text": "(SHuffmanTable *)(*(int *)((int)local_24 + local_30 + 0x34) * 0x828 + 0x1d23658);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 146,
+      "match": "(int)local_24",
+      "severity": "moderate",
+      "text": "(SHuffmanTable *)(*(int *)((int)local_24 + local_30 + 0x38) * 0x828 + 0x1d23658);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 150,
+      "match": "(int)local_24",
+      "severity": "moderate",
+      "text": "(SHuffmanTable *)(*(int *)((int)local_24 + local_30 + 0x3c) * 0x828 + 0x1d23658);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 161,
+      "match": "(int)piVar1",
+      "severity": "moderate",
+      "text": "local_28 = (SHuffmanTable *)((*(int *)((int)piVar1 + iVar7 + 0x5c) + 0x20) * 0x828 + 0x1d23658);",
       "type": "pointer_truncation"
     },
     {

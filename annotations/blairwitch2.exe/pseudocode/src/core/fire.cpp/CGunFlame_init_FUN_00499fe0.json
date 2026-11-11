@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 290,
+    "complexity_score": 165,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 60,
-    "suspect_count": 20,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 206
@@ -253,14 +252,6 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_18 = (float *)&this_ptr->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 29,
       "match": "DAT_01c3f5ac",
@@ -269,100 +260,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "if (((*(int *)&this_ptr->field_0x20 == 2) || (this_ptr_00->gun_flame_ignitable != 0)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(fVar1 = *(float *)&(this_ptr_00->base).field_0x20 - *local_18,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "fVar3 = *(float *)&(this_ptr_00->base).field_0x24 - local_18[1],",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)&(this_ptr_00->base).field_0x28 - local_18[2],",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(this_ptr_00,&local_50,0,0,1.0,(uint)(*(int *)&this_ptr->field_0x20 == 2));",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 52,
       "match": "DAT_01c3f678",
       "severity": "mild",
       "text": "this_ptr_01 = *(CFlameCan **)(&DAT_01c3f678 + local_24);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)&(this_ptr_01->base).field_0x20 - *(float *)&this_ptr->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)&(this_ptr_01->base).field_0x20 - *(float *)&this_ptr->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "fVar3 = *(float *)&(this_ptr_01->base).field_0x24 - *(float *)&this_ptr->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "fVar3 = *(float *)&(this_ptr_01->base).field_0x24 - *(float *)&this_ptr->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)&(this_ptr_01->base).field_0x28 - *(float *)&this_ptr->field_0xc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)&(this_ptr_01->base).field_0x28 - *(float *)&this_ptr->field_0xc;",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer value `&local_50` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

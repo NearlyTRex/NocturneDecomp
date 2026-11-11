@@ -13,11 +13,11 @@
 ;
 ; XREF[13]:
 ;   core_fire.cpp_CFireEffect_render_FUN_0049c780 at 0049c8a3
+;   core_fire.cpp_CLeaf_render_FUN_004968d0 at 00496956
 ;   core_fire.cpp_CShell_render_FUN_0049b6f0 at 0049b79a
 ;   core_fire.cpp_CStake_render_FUN_004944c0 at 00494558
 ;   core_fire.cpp_FUN_00495ca0 at 00495d65
 ;   core_fire.cpp_FUN_004966a0 at 00496727
-;   core_fire.cpp_FUN_004968d0 at 00496956
 ;   core_gore.cpp_CGore_renderParticles_FUN_004c9440 at 004c9478
 ;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0052dc10 at 0052dcb3
 ;   core_set.cpp_FUN_0052fad0 at 0052fd41

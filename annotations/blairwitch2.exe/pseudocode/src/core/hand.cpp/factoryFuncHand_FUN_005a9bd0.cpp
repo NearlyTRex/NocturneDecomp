@@ -11,7 +11,7 @@ void core_hand_cpp_factoryFuncHand_FUN_005a9bd0(void)
 {
   CHand *this_ptr;
   
-  this_ptr = (CHand *)debugAllocTracked1(0x1186c);
+  this_ptr = (CHand *)operator_new(0x1186c);
   if (this_ptr == (CHand *)0x0) {
     return;
   }

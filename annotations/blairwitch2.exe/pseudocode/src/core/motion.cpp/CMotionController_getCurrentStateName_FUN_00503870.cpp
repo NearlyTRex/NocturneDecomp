@@ -12,5 +12,5 @@ char * __cdecl core_motion_cpp_CMotionController_getCurrentStateName_FUN_0050387
   int iVar1;
   
   iVar1 = core_motion_cpp_FUN_005035c0(this_ptr);
-  return (char *)(this_ptr->motion_list_ptr + *(int *)(iVar1 + 0x24) * 0x1e + 4);
+  return this_ptr->motion_list_ptr->state_names[*(int *)(iVar1 + 0x24)];
 }

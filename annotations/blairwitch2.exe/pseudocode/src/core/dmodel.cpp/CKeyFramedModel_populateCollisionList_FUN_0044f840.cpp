@@ -34,9 +34,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_0044f840(
   int local_28;
   CMatrix3x3f *local_24;
   CVector3i *local_20;
-  SMRGLPrimitiveQuad *local_1c;
+  int local_1c;
   CDemonTriangle *local_18;
-  SMRGLPrimitiveQuad *local_14;
+  int local_14;
   
   bVar3 = 0;
   if (&this_ptr->transform_vector != transform_vector) {
@@ -59,7 +59,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_0044f840(
       if (0 < this_ptr->poly_count) {
         local_2c = 0;
         do {
-          local_1c = this_ptr->poly_vert_list + local_2c;
+          local_1c = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base)
+                           .base.type + local_2c;
           pCVar1 = local_20 + *(int *)(local_1c + 0x18);
           local_80.x = (float)pCVar1->x * _DAT_005f50c4;
           local_80.y = (float)pCVar1->y * _DAT_005f50c4;

@@ -11,6 +11,6 @@ int __cdecl core_steuben_cpp_CSteuben_renderOpaque_FUN_005a5d50(CSteuben *this_p
 {
   int iVar1;
   
-  iVar1 = core_basicnpc_cpp_CBasicNPC_renderOpaque_FUN_005a4920((CBasicNPC *)this_ptr);
+  iVar1 = core_basicnpc_cpp_CBasicNPC_renderOpaque_FUN_005a4920(&this_ptr->base);
   return iVar1;
 }

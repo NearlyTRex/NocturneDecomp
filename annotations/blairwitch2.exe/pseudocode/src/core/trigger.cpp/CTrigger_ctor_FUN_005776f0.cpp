@@ -16,15 +16,15 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005776f0(CTrigger *this_pt
   
   pCVar2 = (CTrigger *)core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
   (pCVar2->base).vtable._ub = &g_CTriggerVTable;
-  *(uint *)&pCVar2->field_0x2bc = 0x40a00000;
-  *(uint *)&pCVar2->field_0x2c0 = 0x41100000;
-  *(uint *)&pCVar2->field_0x2c4 = 0x40a00000;
-  *(uint *)&pCVar2->field_0x2cc = 0;
-  *(uint *)&pCVar2->field_0x2b8 = 0;
+  (pCVar2->trigger_size).x = 5.0;
+  (pCVar2->trigger_size).y = 9.0;
+  (pCVar2->trigger_size).z = 5.0;
+  pCVar2->trigger_shape = TRIGGER_SHAPE_BOX;
+  pCVar2->event_type = TRIGGER_EVENT_MOMENTARY;
   pcVar3 = "nobody";
   pCVar2->on_event[0] = '\0';
   pCVar2->off_event[0] = '\0';
-  *(uint *)&pCVar2->field_0x2c8 = 0;
+  pCVar2->trigger_state = 0;
   pcVar4 = pCVar2->actor_name;
   pCVar2->trigger_cause = TRIGGER_CAUSE_HERO;
   do {
@@ -56,11 +56,11 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005776f0(CTrigger *this_pt
   pCVar2->hit_points = 100.0;
   (pCVar2->base).health = 0x96;
   pCVar2->cached_actor = (CDemonActor *)0x0;
-  *(uint *)&pCVar2->field_0x45c = 0;
-  *(uint *)&pCVar2->field_0x2b4 = 0x47c34ff3;
-  *(uint *)&pCVar2->field_0x460 = 1;
-  pCVar2->field_0x464 = 0;
+  pCVar2->triggering_actor = (CDemonActor *)0x0;
+  pCVar2->test_radius = 99999.9;
+  pCVar2->auto_aim_at_me = 1;
+  pCVar2->damage_actor_wildcard_name[0] = '\0';
   pCVar2->damage_cooldown = 0.0;
-  *(CTrigger **)&pCVar2->field_0x458 = pCVar2;
+  pCVar2->hilite_actor = (CDemonActor *)pCVar2;
   return pCVar2;
 }

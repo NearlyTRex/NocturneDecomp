@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 967,
-    "complexity_score": 2006,
+    "complexity_score": 1931,
     "cross_reference_count": 8,
     "function_call_count": 17,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 441,
-    "suspect_count": 149,
+    "suspect_count": 142,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -20,7 +20,6 @@
       "stack_ref",
       "unaffected_reg",
       "unknown_field",
-      "unnamed_field",
       "unnamed_param",
       "unrolled_memcpy",
       "warning_overlapping_globals",
@@ -951,64 +950,32 @@
       "line": 184,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "fStack_b8 = local_f0.z - *(float *)&unaff_EBP->field_0x20;",
+      "text": "fStack_b8 = local_f0.z - (unaff_EBP->location).position.x;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 184,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "fStack_b8 = local_f0.z - *(float *)&unaff_EBP->field_0x20;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
       "line": 185,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "fStack_b4 = fStack_e4 - *(float *)&unaff_EBP->field_0x24;",
+      "text": "fStack_b4 = fStack_e4 - (unaff_EBP->location).position.y;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 185,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "fStack_b4 = fStack_e4 - *(float *)&unaff_EBP->field_0x24;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
       "line": 186,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "afStack_b0[0] = CStack_e0.x - *(float *)&unaff_EBP->field_0x28;",
+      "text": "afStack_b0[0] = CStack_e0.x - (unaff_EBP->location).position.z;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 186,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "afStack_b0[0] = CStack_e0.x - *(float *)&unaff_EBP->field_0x28;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
       "line": 192,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "local_20 = (CDemonSet *)((float)pfVar15 - *(float *)&unaff_EBP->field_0x24);",
+      "text": "local_20 = (CDemonSet *)((float)pfVar15 - (unaff_EBP->location).position.y);",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 192,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "local_20 = (CDemonSet *)((float)pfVar15 - *(float *)&unaff_EBP->field_0x24);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -1055,16 +1022,8 @@
       "line": 198,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "local_30[2] = (float *)((float)local_20 + *(float *)&unaff_EBP->field_0x24);",
+      "text": "local_30[2] = (float *)((float)local_20 + (unaff_EBP->location).position.y);",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 198,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "local_30[2] = (float *)((float)local_20 + *(float *)&unaff_EBP->field_0x24);",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",
@@ -1367,16 +1326,8 @@
       "line": 413,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "local_30[3] = (float *)((float)local_30[2] - *(float *)&unaff_EBP->field_0x24);",
+      "text": "local_30[3] = (float *)((float)local_30[2] - (unaff_EBP->location).position.y);",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 413,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "local_30[3] = (float *)((float)local_30[2] - *(float *)&unaff_EBP->field_0x24);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
@@ -1423,16 +1374,8 @@
       "line": 418,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "local_18 = (CDemonActor *)((float)local_14 + *(float *)&unaff_EBP->field_0x24);",
+      "text": "local_18 = (CDemonActor *)((float)local_14 + (unaff_EBP->location).position.y);",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 418,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "local_18 = (CDemonActor *)((float)local_14 + *(float *)&unaff_EBP->field_0x24);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",

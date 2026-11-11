@@ -4,13 +4,19 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBasicNPC.h"
 
 // Structure: CUnion
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 71780
 // Ghidra size: 0x11864 (71780 bytes)
 #pragma pack(push, 1)
 typedef struct CUnion {
-    char field_0[71780]; // 0x0
+    CBasicNPC base; // 0x0, derived
+    float fire_timer; // 0x11850, ctor 0; FUN_005a5130 counts down by dt, 5.0 after a shot; FUN_005a4e90 stores 0
+    int ammo_count; // 0x11854, ctor 999; FUN_005a4e90/005a5130 decrement per shot; 0 switches to MeleeAttack
+    int gun_bone; // 0x11858, setup findBone 'Bip01 gun1'; processMotionEvent; FUN_005a5460
+    int gun2_bone; // 0x1185c, setup findBone 'Bip01 gun12'; processMotionEvent; FUN_005a5460
+    int melee_variant; // 0x11860, ctor 0; FUN_005a4fe0 motion 5/9 by it, re-rolls getRandomInt(0,1)
 } CUnion;
 #pragma pack(pop)
 

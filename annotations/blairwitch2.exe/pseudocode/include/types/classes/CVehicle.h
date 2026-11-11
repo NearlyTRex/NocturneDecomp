@@ -7,6 +7,7 @@ struct CKeyFramedModel;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCourse.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CTire.h"
@@ -33,7 +34,7 @@ typedef struct CVehicle {
     CVector3f ground_normal; // 0x1168
     float ground_offset; // 0x1174
     int dead; // 0x1178
-    char field_4476[12]; // 0x117c
+    CCourse course; // 0x117c
     float cur_time; // 0x1188
     float total_time; // 0x118c
     char course_name[32]; // 0x1190

@@ -46,17 +46,16 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_0044e7d0(CKeyF
       local_24 = instance;
       iVar9 = 0;
       do {
-        iVar5 = *(int *)(local_28->part_list + 4) + iVar9;
+        iVar5 = local_28->part_list[0].poly_count + iVar9;
         if ((instance == (CKeyFramedModelInstance *)0x0) ||
            (local_24->part_visibility_flags[0] != 0)) {
           if ((this_ptr->texture_count < 2) || (iVar4 != 0)) {
             if (iVar4 == 0) {
               engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-                        (DAT_0060b280,(SMRGLTextureBasic *)&this_ptr->field_0x124);
+                        (DAT_0060b280,(SMRGLTextureBasic *)this_ptr->texture_list);
             }
             core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00533f40
-                      (g_CDemonSetPtr,this_ptr->poly_vert_list + iVar9 * 0x48,iVar5 - iVar9,
-                       render_flags);
+                      (g_CDemonSetPtr,this_ptr->poly_vert_list + iVar9,iVar5 - iVar9,render_flags);
           }
           else {
             while (iVar9 < iVar5) {
@@ -64,8 +63,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_0044e7d0(CKeyF
                 engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
                           (DAT_0060b280,
                            (SMRGLTextureBasic *)
-                           (&this_ptr->field_0x124 + this_ptr->poly_texture_index_list[iVar9] * 0x48
-                           ));
+                           (this_ptr->texture_list + this_ptr->poly_texture_index_list[iVar9]));
                 iVar8 = this_ptr->poly_texture_index_list[iVar9];
               }
               iVar6 = iVar9 * 4;
@@ -76,8 +74,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_0044e7d0(CKeyF
                 if (iVar5 * 4 <= iVar6) break;
               } while (iVar8 == *(int *)((int)this_ptr->poly_texture_index_list + iVar6));
               core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00533f40
-                        (g_CDemonSetPtr,this_ptr->poly_vert_list + iVar9 * 0x48,iVar7 - iVar9,
-                         render_flags);
+                        (g_CDemonSetPtr,this_ptr->poly_vert_list + iVar9,iVar7 - iVar9,render_flags)
+              ;
               iVar9 = iVar7;
             }
           }

@@ -17,7 +17,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBackground_FUN_00425a00(CCharact
   uint local_1c [6];
   
   bVar4 = 0;
-  if (*(int *)&this_ptr->field_0x2568 == 0) {
+  if (this_ptr->render_active == 0) {
     return;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0(&this_ptr->base);

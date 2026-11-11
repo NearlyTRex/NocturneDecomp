@@ -10,6 +10,6 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processDeathState_FUN_005a3b10(CSch
 
 {
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-            ((CMotionController *)&this_ptr->field_0x2b4,7,1);
+            (&(this_ptr->base).base.base.model.base,7,1);
   return;
 }

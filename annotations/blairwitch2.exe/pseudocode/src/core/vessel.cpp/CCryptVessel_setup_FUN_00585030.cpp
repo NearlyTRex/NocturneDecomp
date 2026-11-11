@@ -11,8 +11,8 @@
 void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_00585030(CCryptVessel *this_ptr)
 
 {
-  byte *puVar1;
-  byte *puVar2;
+  CLocation *pCVar1;
+  CLocation *pCVar2;
   UOrientationVector *pUVar3;
   CActorDestination *pCVar4;
   UOrientationVector *pUVar5;
@@ -32,9 +32,9 @@ void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_00585030(CCryptVessel *this_
   pCVar4 = this_ptr->start_loc;
   this_ptr->carrier = (CDemonActor *)0x0;
   if (pCVar4 != (CActorDestination *)0x0) {
-    puVar1 = &(pCVar4->base).field_0x20;
-    puVar2 = &(this_ptr->base).field_0x20;
-    fStack_14 = *(float *)puVar1 - *(float *)puVar2;
+    pCVar1 = &(pCVar4->base).location;
+    pCVar2 = &(this_ptr->base).location;
+    fStack_14 = (pCVar1->position).x - (pCVar2->position).x;
     fStack_20 = fStack_14;
     *(uint *)((int)&stack0xffffffe4 + (uint)bVar6 * -8) =
          *(uint *)(&stack0xfffffff0 + (uint)bVar6 * -8);
@@ -42,10 +42,10 @@ void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_00585030(CCryptVessel *this_
          *(uint *)(&stack0xfffffff4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
     if (SQRT(fStack_18 * fStack_18 + fStack_20 * fStack_20 + fStack_1c * fStack_1c) <
         (float)_DAT_005eddd2) {
-      *(uint *)puVar2 = *(uint *)puVar1;
-      *(uint *)&(this_ptr->base).field_0x24 = *(uint *)&(pCVar4->base).field_0x24;
-      *(uint *)&(this_ptr->base).field_0x28 = *(uint *)&(pCVar4->base).field_0x28;
-      *(uint *)&(this_ptr->base).field_0x2c = *(uint *)&(pCVar4->base).field_0x2c;
+      (pCVar2->position).x = (pCVar1->position).x;
+      (this_ptr->base).location.position.y = (pCVar4->base).location.position.y;
+      (this_ptr->base).location.position.z = (pCVar4->base).location.position.z;
+      (this_ptr->base).location.area_id = (pCVar4->base).location.area_id;
       pCVar4 = this_ptr->start_loc;
       pUVar3 = &(this_ptr->base).orient;
       pUVar5 = &(pCVar4->base).orient;
@@ -64,6 +64,6 @@ void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_00585030(CCryptVessel *this_
   (this_ptr->flame).flame_size.y = 1.0;
   (this_ptr->flame).flame_size.z = 0.5;
   core_flame_cpp_CFlame_setup_FUN_0049f270(&this_ptr->flame);
-  *(uint *)&(this_ptr->base).field_0xfc = 1;
+  (this_ptr->base).is_transparent = 1;
   return;
 }

@@ -27,10 +27,10 @@ LAB_0052d2c1:
     }
   }
   else {
-    visible_cube_count = *(int *)&this_ptr->cameras[iVar1].field_0x194;
+    visible_cube_count = this_ptr->cameras[iVar1].pvs_count;
     if ((0 < visible_cube_count) &&
-       (visible_cube_indices = *(int **)&this_ptr->cameras[iVar1].field_0x198,
-       visible_cube_indices != (int *)0x0)) {
+       (visible_cube_indices = this_ptr->cameras[iVar1].pvs_list, visible_cube_indices != (int *)0x0
+       )) {
       core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_00475ff0
                 (&g_CDemonRaytraceInstance,visible_cube_count,visible_cube_indices);
       goto LAB_0052d2c1;
@@ -44,8 +44,8 @@ LAB_0052d14b:
   if (render_mode == 2) {
     core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00476150
               (&g_CDemonRaytraceInstance,
-               (int *)&this_ptr->cameras[this_ptr->selected_camera_index].field_0x194,
-               (int **)&this_ptr->cameras[this_ptr->selected_camera_index].field_0x198);
+               &this_ptr->cameras[this_ptr->selected_camera_index].pvs_count,
+               &this_ptr->cameras[this_ptr->selected_camera_index].pvs_list);
   }
   iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
   if (iVar1 == 0) {

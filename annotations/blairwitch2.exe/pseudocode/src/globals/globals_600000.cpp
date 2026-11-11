@@ -944,14 +944,54 @@ WatcomDestructorCall DAT_006002B0 = {
 };
 
 // WatcomStaticDestructorNode
-WatcomStaticDestructorNode DAT_0060994C = {};
-WatcomStaticDestructorNode g_ConsoleDestructorNode = {};
-WatcomStaticDestructorNode g_CLZWDecompressDestructorNode = {};
-WatcomStaticDestructorNode DAT_0060A044 = {};
-WatcomStaticDestructorNode DAT_0060A054 = {};
-WatcomStaticDestructorNode g_CFilterCacheDestructorNode = {};
-WatcomStaticDestructorNode g_CFilterFXDestructorNode = {};
-WatcomStaticDestructorNode g_CKeyFramedModelPoolDestructorNode = {};
+WatcomStaticDestructorNode DAT_0060994C = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005F39F0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CDemonFilter_ARRAY_007bc9ec
+};
+WatcomStaticDestructorNode g_ConsoleDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)&g_CConsoleDestructorCall,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CConsoleInstance
+};
+WatcomStaticDestructorNode g_CLZWDecompressDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005F4DC0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CLZWDecompressInstance
+};
+WatcomStaticDestructorNode DAT_0060A044 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005F4FA0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CDemonFilter_ARRAY_01510e18
+};
+WatcomStaticDestructorNode DAT_0060A054 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005F4FAC,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CDemonFilter_ARRAY_01511078
+};
+WatcomStaticDestructorNode g_CFilterCacheDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005F4FB8,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CFilterCacheInstance
+};
+WatcomStaticDestructorNode g_CFilterFXDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005F4FC4,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CFilterFXInstance
+};
+WatcomStaticDestructorNode g_CKeyFramedModelPoolDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005F50B0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CKeyFramedModelPool
+};
 
 // WatcomTypeInfo
 WatcomTypeInfo g_CCrossTypeInfo = {

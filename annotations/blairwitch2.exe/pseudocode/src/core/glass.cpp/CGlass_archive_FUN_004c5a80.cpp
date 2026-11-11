@@ -11,7 +11,8 @@ void __cdecl core_glass_cpp_CGlass_archive_FUN_004c5a80(CGlass *this_ptr)
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c330(&this_ptr->base);
   core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->glass_size,"?glassSize" + 1);
-  core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x2c8,"glassTexture");
+  core_actor_cpp_archiveString_FUN_0040b730
+            ((this_ptr->glass_texture).texture_name,"glassTexture");
   if (1 < g_CGlassClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->opacity,"opacity");
   }
@@ -30,6 +31,7 @@ void __cdecl core_glass_cpp_CGlass_archive_FUN_004c5a80(CGlass *this_ptr)
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->background_flag,"backgroundFlag");
-  core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x4d8,"brokenTexture");
+  core_actor_cpp_archiveString_FUN_0040b730
+            ((this_ptr->broken_texture).texture_name,"brokenTexture");
   return;
 }

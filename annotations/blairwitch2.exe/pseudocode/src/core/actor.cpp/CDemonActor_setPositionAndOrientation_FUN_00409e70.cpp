@@ -9,9 +9,9 @@
 void __cdecl core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_00409e70(CDemonActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation)
 
 {
-  *(float *)&this_ptr->field_0x20 = new_position->x;
-  *(float *)&this_ptr->field_0x24 = new_position->y;
-  *(float *)&this_ptr->field_0x28 = new_position->z;
+  (this_ptr->location).position.x = new_position->x;
+  (this_ptr->location).position.y = new_position->y;
+  (this_ptr->location).position.z = new_position->z;
   if ((CVector3f *)&this_ptr->orient != new_orientation) {
     (this_ptr->orient).vec.x = new_orientation->x;
     (this_ptr->orient).vec.y = new_orientation->y;

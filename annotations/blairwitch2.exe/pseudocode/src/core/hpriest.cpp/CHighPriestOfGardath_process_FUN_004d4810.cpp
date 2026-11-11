@@ -13,7 +13,7 @@ void __cdecl core_hpriest_cpp_CHighPriestOfGardath_process_FUN_004d4810(CHighPri
   
   core_npc_cpp_CNPC_process_FUN_005105b0(&this_ptr->base,delta_time);
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
-                    (0x01C38BC0,&this_ptr->field_0x24348);
+                    (0x01C38BC0,this_ptr->kill_event);
   if (iVar1 == 0) {
     return;
   }

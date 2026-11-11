@@ -19,7 +19,7 @@ CCheesyCipher * support_codec_cpp_CCheesyCipher_dtor_FUN_00435400(CCheesyCipher 
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = (CCheesyCipher *)support_codec_cpp_CCodec_dtor_FUN_00433e90((CCodec *)this_ptr,1);
+  pCVar1 = (CCheesyCipher *)support_codec_cpp_CCodec_dtor_FUN_00433e90(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

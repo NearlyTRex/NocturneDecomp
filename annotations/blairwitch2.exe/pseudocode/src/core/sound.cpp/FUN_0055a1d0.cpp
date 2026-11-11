@@ -54,10 +54,10 @@ void __cdecl core_sound_cpp_FUN_0055a1d0(CSound *this_ptr)
   sound_sndmain_cpp_setNextSfxChannel_FUN_00550310(3);
   sound_sndmain_cpp_popSfxOptions_FUN_005504d0();
   if (g_CDemonSetPtr->player_on_train != 0) {
-    local_18 = -*(float *)&g_CDemonSetPtr->field_0x15ac70;
-    local_14 = -*(float *)&g_CDemonSetPtr->field_0x15ac74;
-    local_10 = -*(float *)&g_CDemonSetPtr->field_0x15ac78;
-    local_24 = -*(float *)&g_CDemonSetPtr->field_0x15ac70;
+    local_18 = -(g_CDemonSetPtr->active_fog).scroll.x;
+    local_14 = -(g_CDemonSetPtr->active_fog).scroll.y;
+    local_10 = -(g_CDemonSetPtr->active_fog).scroll.z;
+    local_24 = local_18;
     *(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8) =
          *(uint *)((int)&stack0xffffffec + (uint)bVar2 * -8);
     *(uint *)((int)&stack0xffffffe4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =

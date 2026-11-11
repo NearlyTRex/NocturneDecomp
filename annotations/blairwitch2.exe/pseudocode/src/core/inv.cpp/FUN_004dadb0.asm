@@ -255,7 +255,7 @@ section .text
     POP EDI                             ; 004dafc0
         ;   Label: LAB_004dafc0
     MOV EAX,[0x00616494]                ; 004dafc1 | g_CGamePtr
-    MOV ESI,dword ptr [EAX + 0x98]      ; 004dafc6 | g_CGameInstance.field134_0x98
+    MOV ESI,dword ptr [EAX + 0x98]      ; 004dafc6 | g_CGameInstance.key_next_item
     PUSH ESI                            ; 004dafcc
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004dafcd
         ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
@@ -311,7 +311,7 @@ section .text
     POP EDI                             ; 004db02d
         ;   Label: LAB_004db02d
     MOV EAX,[0x00616494]                ; 004db02e | g_CGamePtr
-    MOV EDI,dword ptr [EAX + 0x9c]      ; 004db033 | g_CGameInstance.field138_0x9c
+    MOV EDI,dword ptr [EAX + 0x9c]      ; 004db033 | g_CGameInstance.key_prev_item
     PUSH EDI                            ; 004db039
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004db03a
         ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
@@ -367,7 +367,7 @@ section .text
     POP EDI                             ; 004db09a
         ;   Label: LAB_004db09a
     MOV EAX,[0x00616494]                ; 004db09b | g_CGamePtr
-    MOV EBP,dword ptr [EAX + 0x4c]      ; 004db0a0 | g_CGameInstance.field58_0x4c
+    MOV EBP,dword ptr [EAX + 0x4c]      ; 004db0a0 | g_CGameInstance.key_use_item
     PUSH EBP                            ; 004db0a3
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004db0a4
         ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
@@ -455,7 +455,7 @@ section .text
     POP EDI                             ; 004db14c
         ;   Label: LAB_004db14c
     MOV EAX,[0x00616494]                ; 004db14d | g_CGamePtr
-    MOV EDX,dword ptr [EAX + 0x48]      ; 004db152 | g_CGameInstance.field54_0x48
+    MOV EDX,dword ptr [EAX + 0x48]      ; 004db152 | g_CGameInstance.key_fire
     PUSH EDX                            ; 004db155
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004db156
         ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()

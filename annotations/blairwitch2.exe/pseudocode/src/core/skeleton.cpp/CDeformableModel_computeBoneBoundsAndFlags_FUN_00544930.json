@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 180,
+    "complexity_score": 145,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
-    "suspect_count": 8,
+    "suspect_count": 5,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "unnamed_field"
+      "shadow_pointer_walk"
     ],
     "total_lines": 271
   },
@@ -172,30 +171,6 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x0",
-      "severity": "mild",
-      "text": "pbVar5 = &this_ptr->vertex_data_ptr[0]->field_0x0 + local_28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 69,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "pCVar9 = (CSkeleton *)&pCVar9->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 89,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "local_2c = (CSkeleton *)&local_2c->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 33,
       "match": "pCVar6 = (T *)pCVar6->ARRAY",
@@ -204,11 +179,11 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar9->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 69,
-      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "match": "pCVar9 = (T *)((pCVar9->FIELD).ARRAY[N] + CONST)",
       "severity": "moderate",
-      "text": "pCVar9 = (CSkeleton *)&pCVar9->field_0x24;",
+      "text": "pCVar9 = (CSkeleton *)((pCVar9->motion_list).state_names[1] + 2);",
       "type": "shadow_pointer_walk"
     },
     {
@@ -228,11 +203,11 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `local_2c` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_2c->owner`). Replace `local_2c->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `local_2c` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `local_2c->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 89,
-      "match": "local_2c = (T *)&local_2c->FIELD",
+      "match": "local_2c = (T *)((local_2c->FIELD).ARRAY[N] + CONST)",
       "severity": "moderate",
-      "text": "local_2c = (CSkeleton *)&local_2c->field_0x24;",
+      "text": "local_2c = (CSkeleton *)((local_2c->motion_list).state_names[1] + 2);",
       "type": "shadow_pointer_walk"
     }
   ]

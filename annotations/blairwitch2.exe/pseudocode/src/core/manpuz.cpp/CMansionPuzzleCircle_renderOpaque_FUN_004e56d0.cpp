@@ -36,7 +36,7 @@ int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_004e56d0(CMans
     CStack_18.y = (int)ROUND(_DAT_02653710 * _DAT_005f98a0);
     CStack_18.z = (int)ROUND(_DAT_02653714 * _DAT_005f98a0);
     engine_special_cpp_FUN_0055d723
-              ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 48000),&CStack_18);
+              (&DAT_0060b280->vertex_buffer_ptr[1000].projected_vertex,&CStack_18);
     iVar2 = 0;
     do {
       core_manpuz_cpp_FUN_004e6340(this_ptr,iVar2);

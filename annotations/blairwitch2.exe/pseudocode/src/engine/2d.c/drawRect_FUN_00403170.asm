@@ -11,7 +11,7 @@
 ;
 ; XREF[2]:
 ;   engine_2d.c_fillRectWithBorder_FUN_00403250 at 00403297
-;   unkaddr_0059aa80.cpp_FUN_0059ada0 at 0059adc8
+;   unkaddr_0059aa80.cpp_CExamplePuzzle_render_FUN_0059ada0 at 0059adc8
 ;
 ; Called Functions:
 ;   engine_2d.c_drawHLine_FUN_00402f30

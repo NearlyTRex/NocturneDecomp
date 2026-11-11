@@ -42,7 +42,7 @@ void cockpit_pkbmpset_cpp_FUN_005177de(CPackedBitmapSet *param_1,char *param_2,i
   cockpit_pkbmpset_cpp_FUN_00517670(param_1,iVar2);
   param_1->height = param_4;
   param_1->width = param_3;
-  bitmap_data = FUN_005b8580(uStack_14);
+  bitmap_data = (uchar *)malloc(uStack_14);
   if (bitmap_data == (uchar *)0x0) {
     _sprintf(acStack_e0,"Can't allocate %u bytes for RAW buffer in CPackedBitmapSet::loadJoinedRAW");
     _DAT_01d046a0 = "..\\cockpit\\pkbmpset.cpp";

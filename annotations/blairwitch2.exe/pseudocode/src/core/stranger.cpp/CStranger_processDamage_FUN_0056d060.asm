@@ -20,9 +20,9 @@
 ;   CGore* g_CGorePtr = 01cb8284
 ;   CConsole g_CConsoleInstance
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field172_0xdc
-;   undefined4 g_CGameInstance.field444_0x1ec
-;   undefined4 g_CGameInstance.field488_0x248
+;   undefined4 g_CGameInstance.auto_use_health
+;   undefined4 g_CGameInstance.god_mode_enabled
+;   undefined4 g_CGameInstance.allow_damage_flag
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -59,12 +59,12 @@ section .text
     JNZ 0x0056d2c3                      ; 0056d077
         ;   XREF to: 0056d2c3 (CONDITIONAL_JUMP)  ; LAB_0056d2c3
     MOV EAX,[0x00616494]                ; 0056d07d | g_CGamePtr
-    CMP dword ptr [EAX + 0x1ec],0x0     ; 0056d082 | g_CGameInstance.field444_0x1ec
+    CMP dword ptr [EAX + 0x1ec],0x0     ; 0056d082 | g_CGameInstance.god_mode_enabled
     JNZ 0x0056d2ca                      ; 0056d089
         ;   XREF to: 0056d2ca (CONDITIONAL_JUMP)  ; LAB_0056d2ca
     MOV EAX,[0x00616494]                ; 0056d08f | g_CGamePtr
         ;   Label: LAB_0056d08f
-    MOV EDI,dword ptr [EAX + 0x248]     ; 0056d094 | g_CGameInstance.field488_0x248
+    MOV EDI,dword ptr [EAX + 0x248]     ; 0056d094 | g_CGameInstance.allow_damage_flag
     TEST EDI,EDI                        ; 0056d09a
     JNZ 0x0056d0a1                      ; 0056d09c
         ;   XREF to: 0056d0a1 (CONDITIONAL_JUMP)  ; LAB_0056d0a1
@@ -102,7 +102,7 @@ section .text
     FSUBR float ptr [EBX + 0x25a8]      ; 0056d0f1
     MOV EAX,[0x00616494]                ; 0056d0f7 | g_CGamePtr
     FSTP float ptr [EBX + 0x25a8]       ; 0056d0fc
-    CMP dword ptr [EAX + 0xdc],0x0      ; 0056d102 | g_CGameInstance.field172_0xdc
+    CMP dword ptr [EAX + 0xdc],0x0      ; 0056d102 | g_CGameInstance.auto_use_health
     JZ 0x0056d16c                       ; 0056d109
         ;   XREF to: 0056d16c (CONDITIONAL_JUMP)  ; LAB_0056d16c
     CMP dword ptr [ESI + 0x30],0xb      ; 0056d10b

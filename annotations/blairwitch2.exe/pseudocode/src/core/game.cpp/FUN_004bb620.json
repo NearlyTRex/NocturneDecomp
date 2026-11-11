@@ -2,16 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 474,
+    "complexity_score": 544,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 109,
-    "suspect_count": 34,
+    "suspect_count": 40,
     "suspect_types": [
       "extra_output",
       "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
@@ -346,7 +348,7 @@
       "line": 31,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "*(uint *)(DAT_0060b280->vertex_buffer_ptr + 0x10) = 0;",
+      "text": "(DAT_0060b280->vertex_buffer_ptr->projected_vertex).screen_x = 0;",
       "type": "undefined_data"
     },
     {
@@ -442,7 +444,7 @@
       "line": 71,
       "match": "extraout_EDX_00",
       "severity": "moderate",
-      "text": "*(int *)(pSVar1 + extraout_EDX_00 + 0x24) = local_14;",
+      "text": "*(int *)((int)&pSVar1->g + extraout_EDX_00) = local_14;",
       "type": "extra_output"
     },
     {
@@ -466,7 +468,7 @@
       "line": 77,
       "match": "extraout_EDX_00",
       "severity": "moderate",
-      "text": "*(int *)(pSVar1 + extraout_EDX_00 + 0x28) = local_14;",
+      "text": "*(int *)((int)&pSVar1->b + extraout_EDX_00) = local_14;",
       "type": "extra_output"
     },
     {
@@ -506,8 +508,56 @@
       "line": 83,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "*(uint *)(DAT_0060b280->vertex_buffer_ptr + 0x18) = 0;",
+      "text": "DAT_0060b280->vertex_buffer_ptr->u = 0;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&pSVar1->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 66,
+      "match": "(int)&pSVar1->r",
+      "severity": "moderate",
+      "text": "*(int *)((int)&pSVar1->r + iVar3) = local_14;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pSVar1->g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 71,
+      "match": "(int)&pSVar1->g",
+      "severity": "moderate",
+      "text": "*(int *)((int)&pSVar1->g + extraout_EDX_00) = local_14;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pSVar1->b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 77,
+      "match": "(int)&pSVar1->b",
+      "severity": "moderate",
+      "text": "*(int *)((int)&pSVar1->b + extraout_EDX_00) = local_14;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 66,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&pSVar1->r + iVar3) = local_14;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 71,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&pSVar1->g + extraout_EDX_00) = local_14;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 77,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&pSVar1->b + extraout_EDX_00) = local_14;",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 1,

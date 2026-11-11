@@ -269,6 +269,22 @@ Consider removing the Ghidra label and leaving the raw number.
     CExplosion_render
       ADD EAX,0x615244                    ; 00498f1e | DAT_00615244
 
+  DAT_0061516c  value=0x61516C (6377836)  refs=1
+    CFirefly_render
+      PUSH 0x61516c                       ; 004951d0 | DAT_0061516c
+
+  DAT_00615184  value=0x615184 (6377860)  refs=1
+    CFirefly_render
+      PUSH 0x615184                       ; 004956e0 | DAT_00615184
+
+  DAT_0061519c  value=0x61519C (6377884)  refs=1
+    CFirefly_render
+      PUSH 0x61519c                       ; 004956f1 | DAT_0061519c
+
+  DAT_006151b4  value=0x6151B4 (6377908)  refs=1
+    CFirefly_render
+      PUSH 0x6151b4                       ; 00495702 | DAT_006151b4
+
   DAT_006151e4  value=0x6151E4 (6377956)  refs=1
     CLaserBeam_render
       PUSH 0x6151e4                       ; 0049780f | DAT_006151e4
@@ -296,22 +312,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_00615154  value=0x615154 (6377812)  refs=1
     FUN_004947a0
       PUSH 0x615154                       ; 00494cf3 | DAT_00615154
-
-  DAT_0061516c  value=0x61516C (6377836)  refs=1
-    FUN_00495150
-      PUSH 0x61516c                       ; 004951d0 | DAT_0061516c
-
-  DAT_00615184  value=0x615184 (6377860)  refs=1
-    FUN_00495150
-      PUSH 0x615184                       ; 004956e0 | DAT_00615184
-
-  DAT_0061519c  value=0x61519C (6377884)  refs=1
-    FUN_00495150
-      PUSH 0x61519c                       ; 004956f1 | DAT_0061519c
-
-  DAT_006151b4  value=0x6151B4 (6377908)  refs=1
-    FUN_00495150
-      PUSH 0x6151b4                       ; 00495702 | DAT_006151b4
 
   DAT_006151cc  value=0x6151CC (6377932)  refs=1
     FUN_00495ca0
@@ -4002,7 +4002,7 @@ LOW CONFIDENCE (169 clusters)
     Likely type: unknown grouping
     Reason: 3 items, span=84 bytes
     Referenced by: 4 functions
-     near: g_CDemonPodInstance.field404_0x194 (undefined4) at +4
+     near: g_CDemonPodInstance.base.vtable (undefined4) at +4
       0x01e61648  DAT_01e61648  undefined4
       0x01e6164c  DAT_01e6164c  undefined4
       0x01e6169c  DAT_01e6169c  undefined4
@@ -4303,7 +4303,7 @@ LOW CONFIDENCE (169 clusters)
     Likely type: unknown grouping
     Reason: 2 items, span=36 bytes
     Referenced by: 3 functions
-     near: g_FireballPool[0].field36_0x24 (undefined4) at -368
+     near: g_FireballPool[0].base.lifetime_remaining (undefined4) at -368
       0x01c91288  DAT_01c91288  undefined4
       0x01c912ac  DAT_01c912ac  undefined4
 
@@ -4312,7 +4312,7 @@ LOW CONFIDENCE (169 clusters)
     Likely type: unknown grouping
     Reason: 2 items, span=4 bytes
     Referenced by: 3 functions
-     near: g_CGameInstance.field615_0xb1c (undefined4) at +268
+     near: g_CGameInstance.vtable (undefined4) at +268
       0x01cb7528  DAT_01cb7528  undefined4 [byte]
       0x01cb752c  DAT_01cb752c  undefined4
 
@@ -4452,16 +4452,16 @@ ISOLATED DAT_ GLOBALS (94 - not part of any cluster)
   DAT_005f6068                    addr=005f6068    type=undefined4      refs=2  near: g_CEnemyVTable(-12)
   DAT_00780000                    addr=00780000    type=undefined4      refs=2
   DAT_01c9c4d0                    addr=01c9c4d0    type=undefined4      refs=2
-  DAT_01c913d0                    addr=01c913d0    type=undefined4      refs=2  near: g_FireballPool[0].field36_0x24(-40)
-  DAT_01c86e60                    addr=01c86e60    type=undefined4      refs=2  near: g_GlassParticlePool[0].field36_0x24(-40)
-  DAT_01ca367c                    addr=01ca367c    type=undefined4      refs=2  near: g_PopcornPool[0].field36_0x24(-40)
-  DAT_01ca7680                    addr=01ca7680    type=undefined4      refs=2  near: g_RainDropPool[0].field36_0x24(-40)
-  DAT_01c93cd4                    addr=01c93cd4    type=undefined4      refs=2  near: g_RockPool[0].field36_0x24(-40)
-  DAT_01ca23b8                    addr=01ca23b8    type=undefined4      refs=2  near: g_ShellPool[0].field36_0x24(-40)
-  DAT_01c7f4f0                    addr=01c7f4f0    type=undefined4      refs=2  near: g_SparkPool[0].field36_0x24(-40)
+  DAT_01c913d0                    addr=01c913d0    type=undefined4      refs=2  near: g_FireballPool[0].base.lifetime_remaining(-40)
+  DAT_01c848f4                    addr=01c848f4    type=undefined4      refs=2  near: CFirefly_ARRAY_01c848f8[0].base.lifetime_remaining(-40)
+  DAT_01c86e60                    addr=01c86e60    type=undefined4      refs=2  near: g_GlassParticlePool[0].base.lifetime_remaining(-40)
+  DAT_01c950d8                    addr=01c950d8    type=undefined4      refs=2  near: CLeaf_ARRAY_01c950dc[0].base.lifetime_remaining(-40)
+  DAT_01ca367c                    addr=01ca367c    type=undefined4      refs=2  near: g_PopcornPool[0].base.lifetime_remaining(-40)
+  DAT_01ca7680                    addr=01ca7680    type=undefined4      refs=2  near: g_RainDropPool[0].base.lifetime_remaining(-40)
+  DAT_01c93cd4                    addr=01c93cd4    type=undefined4      refs=2  near: g_RockPool[0].base.lifetime_remaining(-40)
+  DAT_01ca23b8                    addr=01ca23b8    type=undefined4      refs=2  near: g_ShellPool[0].base.lifetime_remaining(-40)
+  DAT_01c7f4f0                    addr=01c7f4f0    type=undefined4      refs=2  near: g_SparkPool[0].base.lifetime_remaining(-40)
   DAT_01ca15a4                    addr=01ca15a4    type=undefined4      refs=2
-  DAT_01c848f4                    addr=01c848f4    type=undefined4      refs=2  near: CFirefly_ARRAY_01c848f8[0].field36_0x24(-40)
-  DAT_01c950d8                    addr=01c950d8    type=undefined4      refs=2  near: CLeaf_ARRAY_01c950dc[0].field36_0x24(-40)
   DAT_005fa3d8                    addr=005fa3d8    type=undefined4      refs=2 [likely float]  near: g_CMolochVTable(-12)
   DAT_02177ff4                    addr=02177ff4    type=undefined4      refs=2
   DAT_0264b460                    addr=0264b460    type=undefined4      refs=2  near: g_CStrListInstance(+16)

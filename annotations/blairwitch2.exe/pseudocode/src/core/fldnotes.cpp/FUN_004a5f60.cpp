@@ -14,15 +14,15 @@ void core_fldnotes_cpp_FUN_004a5f60(int param_1)
   int *piVar1;
   int iVar2;
   CAlphaBitmap *this_ptr;
-  SNotesMap *pSVar3;
+  SNotesMap *this_ptr_00;
   
   iVar2 = 0;
   if (0 < _DAT_01cacb4c) {
-    pSVar3 = SNotesMap_ARRAY_01cacb50;
+    this_ptr_00 = SNotesMap_ARRAY_01cacb50;
     do {
-      core_fldnotes_cpp_FUN_004a3a60(pSVar3);
+      core_fldnotes_cpp_SNotesMap_revealAtHero_FUN_004a3a60(this_ptr_00);
       iVar2 = iVar2 + 1;
-      pSVar3 = pSVar3 + 1;
+      this_ptr_00 = this_ptr_00 + 1;
     } while (iVar2 < _DAT_01cacb4c);
   }
   if (*(int *)(param_1 + 0x40) == 0) {
@@ -51,7 +51,7 @@ void core_fldnotes_cpp_FUN_004a5f60(int param_1)
      ((**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x200), (DAT_01c2a384 & 1) != 0)) {
     iVar2 = unkaddr_004a1200_cpp_FUN_004a1bb0(_DAT_01c2a37c,_DAT_01c2a380);
     if (-1 < iVar2) {
-      _DAT_01caf110 = *(int *)&SNotesSection_ARRAY_01cab9f4[iVar2].field_0x140;
+      _DAT_01caf110 = SNotesSection_ARRAY_01cab9f4[iVar2].first_page;
     }
     iVar2 = unkaddr_004a1200_cpp_FUN_004a1c60(_DAT_01c2a37c,_DAT_01c2a380);
     _DAT_01caf110 = _DAT_01caf110 + iVar2;
@@ -60,9 +60,8 @@ void core_fldnotes_cpp_FUN_004a5f60(int param_1)
        (_DAT_01c2a380 < CAlphaBitmap_01caf218.height + 0x000001C0)) {
       *(uint *)(param_1 + 0x40) = 0;
     }
-    piVar1 = (int *)core_fldnotes_cpp_FUN_004a2730
-                              (g_STextViewInstance._60_4_ + _DAT_01caf110 * 0x144,_DAT_01c2a37c,
-                               _DAT_01c2a380);
+    piVar1 = core_fldnotes_cpp_STextPage_findResourceAt_FUN_004a2730
+                       (g_STextViewInstance.pages + _DAT_01caf110,_DAT_01c2a37c,_DAT_01c2a380);
     if (piVar1 != (int *)0x0) {
       (**(code **)(piVar1[5] + 8))(piVar1,1,_DAT_01c2a37c - *piVar1,_DAT_01c2a380 - piVar1[1]);
     }

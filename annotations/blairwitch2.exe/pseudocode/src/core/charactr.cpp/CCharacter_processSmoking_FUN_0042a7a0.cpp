@@ -42,8 +42,8 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042a7a0(CCharacter
   
   bVar3 = 0;
   if (((this_ptr->was_rendered_opaque != 0) &&
-      ((*(int *)&this_ptr->field_0x2814 != 0 || (this_ptr->was_rendered_opaque != 0)))) &&
-     ((*(float *)&g_CDemonSetPtr->field_0x15ac84 < (float)_DAT_005cd266 ||
+      ((this_ptr->is_spectral != 0 || (this_ptr->was_rendered_opaque != 0)))) &&
+     (((g_CDemonSetPtr->active_fog).temperature < (float)_DAT_005cd266 ||
       (iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(&this_ptr->base,"?CZombieDog" + 1),
       iVar2 != 0)))) {
     if ((this_ptr->smoke_occluded == 0) &&
@@ -65,7 +65,8 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042a7a0(CCharacter
         local_30 = 0x3e4ccccd;
         local_2c = 0x3f000000;
         local_34 = 0;
-        core_xform_cpp_FUN_00591530(&local_34,&(this_ptr->model).field_0xe80 + iVar2 * 0x30);
+        core_xform_cpp_FUN_00591530
+                  (&local_34,(this_ptr->model).bone_transform.bone_model_matrices + iVar2);
         iVar2 = (int)&local_94;
         local_94 = afStack_24[2];
         afStack_90[(uint)bVar3 * -2] = afStack_24[(uint)bVar3 * -2 + 3];
@@ -96,7 +97,8 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042a7a0(CCharacter
         afStack_54[2] = 0.0;
         afStack_54[4] = 0.5;
         afStack_54[3] = 0.2;
-        core_xform_cpp_FUN_00591530(afStack_54 + 2,&(this_ptr->model).field_0xe80 + iVar2 * 0x30);
+        core_xform_cpp_FUN_00591530
+                  (afStack_54 + 2,(this_ptr->model).bone_transform.bone_model_matrices + iVar2);
         puVar6 = &stack0xffffff54;
         local_ac = afStack_90[2];
         *(float *)((int)&stack0xffffff58 + (uint)bVar3 * 0xfffffffe * 4) =

@@ -150,7 +150,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_004764c0(CDemonRay
                               (uint)((local_2c >> 0x1f) << 2 < 0)) >> 3);
     if (pCVar14 != (CDemonCube *)0x0) {
       if ((pCVar14->voxel_buffer1 != (SVoxelGrid *)0x0) &&
-         (((byte)pCVar14->voxel_buffer1[(local_2c % 8) * 8 + local_34 % 8] &
+         ((pCVar14->voxel_buffer1->voxels[local_2c % 8][local_34 % 8] &
           (&DAT_00613888)[local_38 % 8]) != 0)) {
         return 1;
       }

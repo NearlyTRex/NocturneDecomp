@@ -12,26 +12,27 @@ void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_004079f0(SMRGLHeaderExtended
 
 {
   uint *puVar1;
-  SMRGLHeaderExtended SVar2;
-  int iVar3;
+  char cVar2;
+  byte bVar3;
   int iVar4;
+  int iVar5;
   char acStack_110 [256];
   
-  SVar2 = *mrgl;
+  cVar2 = (char)(mrgl->base).type;
   _DAT_007ba070 = 0;
   do {
-    if (SVar2 == (SMRGLHeaderExtended)0x0) {
+    if (cVar2 == '\0') {
       if (_DAT_007ba070 != 0) {
         if (_DAT_01c37788 == 0) {
+          iVar5 = 0;
           iVar4 = 0;
-          iVar3 = 0;
           if (0 < _DAT_007ba070) {
             do {
-              puVar1 = (uint *)(iVar3 + 0x7ba074);
-              iVar3 = iVar3 + 4;
-              iVar4 = iVar4 + 1;
+              puVar1 = (uint *)(iVar4 + 0x7ba074);
+              iVar4 = iVar4 + 4;
+              iVar5 = iVar5 + 1;
               engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b70(*puVar1);
-            } while (iVar4 < _DAT_007ba070);
+            } while (iVar5 < _DAT_007ba070);
           }
         }
         else {
@@ -42,10 +43,10 @@ void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_004079f0(SMRGLHeaderExtended
       DAT_006141e0 = 1;
       return;
     }
-    SVar2 = *mrgl;
-    if ((byte)SVar2 < 0x14) {
-      if ((byte)SVar2 < 3) {
-        if (SVar2 == (SMRGLHeaderExtended)0x2) {
+    bVar3 = (byte)(mrgl->base).type;
+    if (bVar3 < 0x14) {
+      if (bVar3 < 3) {
+        if (bVar3 == 2) {
           engine_3d_c_transformAndBufferVertices_FUN_00403890(mrgl);
           if (DAT_006141e0 != 0) {
             engine_3d_c_FUN_004078b0(mrgl);
@@ -60,22 +61,22 @@ LAB_00407bd2:
           core_main_c_FUN_004e4500(acStack_110);
         }
       }
-      else if ((byte)SVar2 < 4) {
+      else if (bVar3 < 4) {
         engine_3d_c_processVertexLighting_FUN_00403a40(mrgl);
       }
       else {
-        if (SVar2 != (SMRGLHeaderExtended)0xd) goto LAB_00407bd2;
+        if (bVar3 != 0xd) goto LAB_00407bd2;
         if (_DAT_007ba070 != 0) {
           if (_DAT_01c37788 == 0) {
-            iVar3 = 0;
+            iVar4 = 0;
             if (0 < _DAT_007ba070) {
-              iVar4 = 0;
+              iVar5 = 0;
               do {
-                puVar1 = (uint *)(iVar4 + 0x7ba074);
-                iVar4 = iVar4 + 4;
-                iVar3 = iVar3 + 1;
+                puVar1 = (uint *)(iVar5 + 0x7ba074);
+                iVar5 = iVar5 + 4;
+                iVar4 = iVar4 + 1;
                 engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b70(*puVar1);
-              } while (iVar3 < _DAT_007ba070);
+              } while (iVar4 < _DAT_007ba070);
             }
           }
           else {
@@ -86,14 +87,14 @@ LAB_00407bd2:
         engine_texture_cpp_FUN_00574e00(mrgl);
       }
     }
-    else if (0x14 < (byte)SVar2) {
-      if ((byte)SVar2 < 0x29) {
-        if (SVar2 != (SMRGLHeaderExtended)0x18) goto LAB_00407bd2;
+    else if (0x14 < bVar3) {
+      if (bVar3 < 0x29) {
+        if (bVar3 != 0x18) goto LAB_00407bd2;
         engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_004046e0(mrgl);
       }
-      else if ((byte)SVar2 < 0x2a) {
-        iVar3 = engine_3d_c_isVisiblePlane_FUN_00403970(mrgl + 8);
-        if (iVar3 != 0) {
+      else if (bVar3 < 0x2a) {
+        iVar4 = engine_3d_c_isVisiblePlane_FUN_00403970(&mrgl->child_count);
+        if (iVar4 != 0) {
           if (1999 < _DAT_007ba070) {
             _DAT_01d046a0 = "..\\engine\\3d.c";
             _DAT_01d046a4 = 0xcb5;
@@ -104,12 +105,12 @@ LAB_00407bd2:
         }
       }
       else {
-        if (SVar2 != (SMRGLHeaderExtended)0x41) goto LAB_00407bd2;
+        if (bVar3 != 0x41) goto LAB_00407bd2;
         engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_004072b0(mrgl);
       }
     }
-    iVar3 = engine_model_c_FUN_00500f30(mrgl);
-    mrgl = mrgl + iVar3;
-    SVar2 = *mrgl;
+    iVar4 = engine_model_c_FUN_00500f30(mrgl);
+    mrgl = (SMRGLHeaderExtended *)((int)&(mrgl->base).type + iVar4);
+    cVar2 = (char)(mrgl->base).type;
   } while( true );
 }

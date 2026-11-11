@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005726c0(CTentacle *this_ptr,float delta_time)
@@ -77,11 +78,11 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005726c0(CTentacle *this_pt
     pCStack_24 = (CVector3f *)&(this_ptr->base).base.base.orient;
     fStack_2a8 = delta_time * (this_ptr->base).speed;
     pCStack_20 = &this_ptr->prev_target_matrix;
-    pCStack_1c = (CVector3f *)&(this_ptr->base).base.base.field_0x20;
+    pCStack_1c = &(this_ptr->base).base.base.location.position;
     pCStack_18 = &(this_ptr->base).base.model;
     while (0.0 < fStack_2a8) {
       uVar6 = core_motion_cpp_CMotionController_advance_FUN_005030c0
-                        ((CMotionController *)pCStack_18,&stack0xfffffd58);
+                        (&pCStack_18->base,&stack0xfffffd58);
       if (99 < uVar6) {
         if (uVar6 < 0x65) {
           pCVar1 = (this_ptr->base).victim;
@@ -111,9 +112,9 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005726c0(CTentacle *this_pt
             *(float *)((int)&CStack_4c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =
                  afStack_9c[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 0xd];
             pCVar1 = (this_ptr->base).victim;
-            fStack_58 = CStack_4c.x - *(float *)&(pCVar1->base).field_0x20;
-            fStack_54 = CStack_4c.y - *(float *)&(pCVar1->base).field_0x24;
-            fStack_50 = CStack_4c.z - *(float *)&(pCVar1->base).field_0x28;
+            fStack_58 = CStack_4c.x - (pCVar1->base).location.position.x;
+            fStack_54 = CStack_4c.y - (pCVar1->base).location.position.y;
+            fStack_50 = CStack_4c.z - (pCVar1->base).location.position.z;
             fStack_d0 = fStack_58;
             afStack_f0[(uint)bVar14 * -2 + 9] = afStack_9c[(uint)bVar14 * -2 + 0x12];
             afStack_f0[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 10] =
@@ -125,7 +126,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005726c0(CTentacle *this_pt
               pCVar1 = (this_ptr->base).victim;
               this_ptr->target_blend = 0.0;
               core_xform_cpp_FUN_00591c10
-                        (auStack_184,&(pCVar1->base).field_0x20,&(pCVar1->base).orient);
+                        (auStack_184,&(pCVar1->base).location,&(pCVar1->base).orient);
               core_xform_cpp_FUN_00591ad0(&CStack_244,pCStack_1c,pCStack_24);
               core_xform_cpp_inverse_FUN_00592830(auStack_124);
               puVar9 = auStack_1b4;
@@ -196,8 +197,8 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005726c0(CTentacle *this_pt
             iVar4 = core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_00573010
                               (this_ptr,"CEnemy CHero CNPC");
             if (iVar4 != 0) {
-              core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                        ((CMotionController *)this_ptr_00,2,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,2,1)
+              ;
               this_ptr->wait_timer = 0.0;
             }
           }
@@ -205,8 +206,8 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005726c0(CTentacle *this_pt
             iVar4 = core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_00573010
                               (this_ptr,"CHero CNPC");
             if (iVar4 != 0) {
-              core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                        ((CMotionController *)this_ptr_00,2,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,2,1)
+              ;
               this_ptr->wait_timer = 0.0;
               core_grave_cpp_CGrave_startAnimation_FUN_004ca3e0((CGrave *)this_ptr->grave_actor);
               this_ptr->grave_actor = (CDemonActor *)0x0;
@@ -222,9 +223,9 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005726c0(CTentacle *this_pt
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         pCVar1 = (this_ptr->base).victim;
         if (pCVar1 != (CCharacter *)0x0) {
-          fStack_b8 = *(float *)&(pCVar1->base).field_0x20 - pCStack_1c->x;
-          fStack_b4 = *(float *)&(pCVar1->base).field_0x24 - pCStack_1c->y;
-          fStack_b0 = *(float *)&(pCVar1->base).field_0x28 - pCStack_1c->z;
+          fStack_b8 = (pCVar1->base).location.position.x - ((CVector3f *)&pCStack_1c->x)->x;
+          fStack_b4 = (pCVar1->base).location.position.y - pCStack_1c->y;
+          fStack_b0 = (pCVar1->base).location.position.z - pCStack_1c->z;
           afStack_7c[0] = fStack_b8;
           afStack_9c[(uint)bVar14 * -2 + 9] = afStack_f0[(uint)bVar14 * -2 + 0xf];
           afStack_9c[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 10] =
@@ -237,37 +238,36 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005726c0(CTentacle *this_pt
           fStack_3c = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                                        (fStack_60 - (this_ptr->base).base.base.orient.vec.y);
           fStack_2c = delta_time * _DAT_005ec4ba;
-          *(float *)&(this_ptr->base).base.field_0x2578 = fStack_3c;
+          (this_ptr->base).base.turn_angle_accumulator = fStack_3c;
           fStack_34 = -fStack_2c;
-          if (*(float *)&(this_ptr->base).base.field_0x2578 < fStack_34) {
-            *(float *)&(this_ptr->base).base.field_0x2578 = fStack_34;
+          if ((this_ptr->base).base.turn_angle_accumulator < fStack_34) {
+            (this_ptr->base).base.turn_angle_accumulator = fStack_34;
           }
-          if (fStack_2c < *(float *)&(this_ptr->base).base.field_0x2578) {
-            *(float *)&(this_ptr->base).base.field_0x2578 = fStack_2c;
+          if (fStack_2c < (this_ptr->base).base.turn_angle_accumulator) {
+            (this_ptr->base).base.turn_angle_accumulator = fStack_2c;
           }
           fStack_14 = fStack_3c;
           if ((float)_DAT_005ec4c2 < this_ptr->chase_timer) {
             pCVar1 = (this_ptr->base).victim;
-            fVar2 = *(float *)&(this_ptr->base).base.base.field_0x20 -
-                    *(float *)&(pCVar1->base).field_0x20;
-            fVar3 = *(float *)&(this_ptr->base).base.base.field_0x28 -
-                    *(float *)&(pCVar1->base).field_0x28;
+            fVar2 = (this_ptr->base).base.base.location.position.x -
+                    (pCVar1->base).location.position.x;
+            fVar3 = (this_ptr->base).base.base.location.position.z -
+                    (pCVar1->base).location.position.z;
             fStack_2b0 = SQRT(fVar3 * fVar3 + fVar2 * fVar2);
             fStack_2ac = fStack_2b0;
             if (((fStack_3c < _DAT_005ec4ca) &&
-                (ABS(*(float *)&(this_ptr->base).base.base.field_0x24 -
-                     *(float *)&(pCVar1->base).field_0x24) < (float)_DAT_005ec4d2)) &&
+                (ABS((this_ptr->base).base.base.location.position.y -
+                     (pCVar1->base).location.position.y) < (float)_DAT_005ec4d2)) &&
                ((float)_DAT_005ec4da < fStack_2b0 && fStack_2b0 < (float)_DAT_005ec4e2)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                        ((CMotionController *)&(this_ptr->base).base.model,6,1);
+                        (&(this_ptr->base).base.model.base,6,1);
               this_ptr->wait_timer = 25.0;
             }
           }
         }
       }
       else {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                  ((CMotionController *)pCStack_18,0,1);
+        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCStack_18->base,0,1);
         this_ptr->wait_timer = 25.0;
       }
     }
@@ -277,9 +277,9 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005726c0(CTentacle *this_pt
                pCVar8 = (*(((pCVar1->base).vtable._uc)->_uc).getGrabber)(pCVar1),
                pCVar8 == (CDemonActor *)0x0)) {
       pCVar1 = (this_ptr->base).victim;
-      fStack_a0 = *(float *)&(pCVar1->base).field_0x20 - pCStack_1c->x;
-      afStack_9c[0] = *(float *)&(pCVar1->base).field_0x24 - pCStack_1c->y;
-      afStack_9c[1] = *(float *)&(pCVar1->base).field_0x28 - pCStack_1c->z;
+      fStack_a0 = (pCVar1->base).location.position.x - ((CVector3f *)&pCStack_1c->x)->x;
+      afStack_9c[0] = (pCVar1->base).location.position.y - pCStack_1c->y;
+      afStack_9c[1] = (pCVar1->base).location.position.z - pCStack_1c->z;
       afStack_88[0] = fStack_a0;
       afStack_9c[(uint)bVar14 * -2 + 6] = afStack_9c[(uint)bVar14 * -2];
       afStack_9c[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 7] =
@@ -292,13 +292,13 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005726c0(CTentacle *this_pt
       fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                                    (afStack_9c[3] - (this_ptr->base).base.base.orient.vec.y);
       fStack_28 = delta_time * _DAT_005ec4aa;
-      *(float *)&(this_ptr->base).base.field_0x2578 = fStack_14;
+      (this_ptr->base).base.turn_angle_accumulator = fStack_14;
       fStack_30 = -fStack_28;
       if (fStack_14 < fStack_30) {
-        *(float *)&(this_ptr->base).base.field_0x2578 = fStack_30;
+        (this_ptr->base).base.turn_angle_accumulator = fStack_30;
       }
-      if (fStack_28 < *(float *)&(this_ptr->base).base.field_0x2578) {
-        *(float *)&(this_ptr->base).base.field_0x2578 = fStack_28;
+      if (fStack_28 < (this_ptr->base).base.turn_angle_accumulator) {
+        (this_ptr->base).base.turn_angle_accumulator = fStack_28;
       }
     }
     fVar2 = delta_time / _DAT_005fcc78 + this_ptr->target_blend;

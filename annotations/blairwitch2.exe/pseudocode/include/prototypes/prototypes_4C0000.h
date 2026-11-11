@@ -130,7 +130,7 @@ void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004c9850(CGore *this_ptr,CV
 CBloodPool * __cdecl core_gore_cpp_CGore_allocateBloodPool_FUN_004c9a80(CGore *this_ptr);
 void __cdecl core_gore_cpp_CGore_createBloodPool_FUN_004c9ad0(CGore *this_ptr,CVector3f *position,EBloodType blood_type);
 void __cdecl core_gore_cpp_CGore_loadAssets_FUN_004c9b00(CGore *this_ptr);
-CFlies * core_gore_cpp_FUN_004c9bd0(undefined4 param_1,undefined4 *param_2,int param_3,float param_4,float *param_5);
+CFlies * core_gore_cpp_FUN_004c9bd0(undefined4 param_1,float *param_2,int param_3,float param_4,float *param_5);
 void __cdecl core_gore_cpp_CGore_spawnFliesOnActor_FUN_004c9cc0(CGore *this_ptr,CDemonActor *actor,int gather_count,float spawn_rate,CVector3f *box_size);
 void __cdecl core_gore_cpp_CGore_createFootstep_FUN_004c9d00(CGore *this_ptr,CVector3f *position,UOrientationVector *orientation,int surface_type ,int alpha,EBloodType blood_type);
 int __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004c9d80(CGore *this_ptr,CVector3f *position,int *out_blood_type);
@@ -249,7 +249,7 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004cf890(CHero *this_
 void __cdecl core_hero_cpp_CHero_stopNearbyInteraction_FUN_004cfad0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004cfb00(CHero *this_ptr);
 undefined4 core_hero_cpp_FUN_004cfc80(CHero *param_1);
-bool core_hero_cpp_FUN_004cfd60(CDemonActor *param_1,char *param_2);
+bool core_hero_cpp_FUN_004cfd60(CHero *param_1,char *param_2);
 int __cdecl core_hero_cpp_CHero_canLookAt_FUN_004cfe80(CHero *this_ptr);
 void __cdecl core_hero_cpp_FUN_004cff50(CHero *this_ptr,int hand_index);
 void core_hero_cpp_FUN_004cff90(int param_1,int param_2);

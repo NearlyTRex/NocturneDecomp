@@ -18,16 +18,16 @@ void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_0057f8e0(CTurret *th
   if (this_ptr->can_manual_aim == 0) {
     return;
   }
-  *(uint *)interaction_info = 1;
+  interaction_info->can_interact = 1;
   pCVar2 = this_ptr->user;
-  *(uint *)(interaction_info + 0x10) = 0x40c90fdb;
-  *(uint *)(interaction_info + 0x14) = 0xc0c90fdb;
-  *(CDemonActor **)(interaction_info + 4) = pCVar2;
+  interaction_info->yaw_max = 6.2831855;
+  interaction_info->yaw_min = -6.2831855;
+  interaction_info->interacting_actor = pCVar2;
   fVar3 = 0xBF060A92;
-  *(float *)(interaction_info + 0x18) = 0x3F9C61AA - (this_ptr->base).base.orient.vec.x;
+  interaction_info->pitch_max = 0x3F9C61AA - (this_ptr->base).base.orient.vec.x;
   fVar1 = (this_ptr->base).base.orient.vec.x;
-  *(uint *)(interaction_info + 8) = 0xc0800000;
-  *(float *)(interaction_info + 0x1c) = fVar3 - fVar1;
-  *(uint *)(interaction_info + 0xc) = 0;
+  interaction_info->approach_offset = -4.0;
+  interaction_info->pitch_min = fVar3 - fVar1;
+  interaction_info->distance_max = 0.0;
   return;
 }

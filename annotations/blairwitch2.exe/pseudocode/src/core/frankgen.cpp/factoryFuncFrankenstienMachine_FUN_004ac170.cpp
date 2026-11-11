@@ -11,7 +11,7 @@ void core_frankgen_cpp_factoryFuncFrankenstienMachine_FUN_004ac170(void)
 {
   CFrankenstienMachine *this_ptr;
   
-  this_ptr = (CFrankenstienMachine *)debugAllocTracked1(0x5f8);
+  this_ptr = (CFrankenstienMachine *)operator_new(0x5f8);
   if (this_ptr == (CFrankenstienMachine *)0x0) {
     return;
   }

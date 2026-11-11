@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 174,
-    "complexity_score": 137,
+    "complexity_score": 122,
     "cross_reference_count": 4,
     "function_call_count": 16,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 57,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
       "raw_address_pointer_store",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 231
@@ -59,7 +58,7 @@
     {
       "addr": "004a50b0",
       "is_variadic": false,
-      "name": "core_fldnotes.cpp_FUN_004a50b0"
+      "name": "core_fldnotes.cpp_CFieldNotes_clear_FUN_004a50b0"
     },
     {
       "addr": "004bdfb0",
@@ -194,7 +193,7 @@
     },
     {
       "addr": "01cb6b78",
-      "name": "g_CGameInstance.field536_0x278",
+      "name": "g_CGameInstance.act_completion_state",
       "type": "undefined4",
       "value": null
     },
@@ -348,9 +347,9 @@
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
       "line": 28,
-      "match": "*(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4",
+      "match": "*(CHero **)(_DAT_01cedef4 * 4 + 0x1cedee4",
       "severity": "moderate",
-      "text": "existing_hero = *(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4);",
+      "text": "this_ptr_00 = *(CHero **)(_DAT_01cedef4 * 4 + 0x1cedee4);",
       "type": "raw_address_pointer_store"
     },
     {
@@ -368,14 +367,6 @@
       "severity": "mild",
       "text": "core_mission_cpp_CDemonMission_load_FUN_004fb490(this_ptr,&DAT_01d1c630,0);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x278",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x278 == 0) {",
-      "type": "unnamed_field"
     }
   ]
 }

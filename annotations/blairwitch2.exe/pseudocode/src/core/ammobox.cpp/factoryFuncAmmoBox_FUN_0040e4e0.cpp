@@ -11,7 +11,7 @@ void core_ammobox_cpp_factoryFuncAmmoBox_FUN_0040e4e0(void)
 {
   CAmmoBox *this_ptr;
   
-  this_ptr = (CAmmoBox *)debugAllocTracked1(0x4a8);
+  this_ptr = (CAmmoBox *)operator_new(0x4a8);
   if (this_ptr == (CAmmoBox *)0x0) {
     return;
   }

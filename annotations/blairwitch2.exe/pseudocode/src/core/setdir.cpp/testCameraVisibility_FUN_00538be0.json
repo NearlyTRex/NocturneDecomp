@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 351,
+    "complexity_score": 306,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 36,
-    "suspect_count": 30,
+    "suspect_count": 26,
     "suspect_types": [
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -174,7 +173,7 @@
       "line": 15,
       "match": "param_5",
       "severity": "mild",
-      "text": "(fVar4 = *(float *)(param_5 + 0x100) - *(float *)&param_1->field_0x20,",
+      "text": "(fVar4 = *(float *)(param_5 + 0x100) - (param_1->location).position.x,",
       "type": "unnamed_param"
     },
     {
@@ -182,23 +181,15 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "(fVar4 = *(float *)(param_5 + 0x100) - *(float *)&param_1->field_0x20,",
+      "text": "(fVar4 = *(float *)(param_5 + 0x100) - (param_1->location).position.x,",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(fVar4 = *(float *)(param_5 + 0x100) - *(float *)&param_1->field_0x20,",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 16,
       "match": "param_5",
       "severity": "mild",
-      "text": "fVar2 = *(float *)(param_5 + 0x104) - *(float *)&param_1->field_0x24,",
+      "text": "fVar2 = *(float *)(param_5 + 0x104) - (param_1->location).position.y,",
       "type": "unnamed_param"
     },
     {
@@ -206,23 +197,15 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar2 = *(float *)(param_5 + 0x104) - *(float *)&param_1->field_0x24,",
+      "text": "fVar2 = *(float *)(param_5 + 0x104) - (param_1->location).position.y,",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)(param_5 + 0x104) - *(float *)&param_1->field_0x24,",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 17,
       "match": "param_5",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_5 + 0x108) - *(float *)&param_1->field_0x28,",
+      "text": "fVar1 = *(float *)(param_5 + 0x108) - (param_1->location).position.z,",
       "type": "unnamed_param"
     },
     {
@@ -230,23 +213,15 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_5 + 0x108) - *(float *)&param_1->field_0x28,",
+      "text": "fVar1 = *(float *)(param_5 + 0x108) - (param_1->location).position.z,",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)(param_5 + 0x108) - *(float *)&param_1->field_0x28,",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 20,
       "match": "param_5",
       "severity": "mild",
-      "text": "(param_5,&param_1->field_0x20,param_6);",
+      "text": "(param_5,&param_1->location,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -254,7 +229,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_5,&param_1->field_0x20,param_6);",
+      "text": "(param_5,&param_1->location,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -262,16 +237,8 @@
       "line": 20,
       "match": "param_6",
       "severity": "mild",
-      "text": "(param_5,&param_1->field_0x20,param_6);",
+      "text": "(param_5,&param_1->location,param_6);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(param_5,&param_1->field_0x20,param_6);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

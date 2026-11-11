@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 104,
+    "complexity_score": 79,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
       "bitcast_double_pair",
       "sub84_truncation",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 119
@@ -225,22 +224,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "(&this_ptr->sample->sample_info,*(double *)&(this_ptr->options).field_0x50,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->options).field_0x58,output_format);",
-      "type": "unnamed_field"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",

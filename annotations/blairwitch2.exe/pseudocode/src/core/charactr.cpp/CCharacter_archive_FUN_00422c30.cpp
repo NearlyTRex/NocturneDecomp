@@ -25,7 +25,7 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_00422c30(CCharacter *this_
         do {
           core_actor_cpp_archiveInteger_FUN_0040b960(&local_18,"carry hand");
           core_actor_cpp_archiveActor_FUN_0040b9e0
-                    (this_ptr->carry_hands + local_18 * 0x78 + 8,"carry actor");
+                    (&this_ptr->carry_hands[local_18].carry_actor,"carry actor");
           local_20 = local_20 + 1;
         } while (local_20 < local_1c);
       }
@@ -34,26 +34,26 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_00422c30(CCharacter *this_
       local_14 = 0;
       pCVar1 = this_ptr;
       do {
-        if (*(int *)&pCVar1->field_0x2620 != 0) {
+        if (pCVar1->carry_hands[0].carry_actor != (CDemonActor *)0x0) {
           local_14 = local_14 + 1;
         }
-        pCVar1 = (CCharacter *)&(pCVar1->base).field_0x78;
-      } while (pCVar1 != (CCharacter *)&(this_ptr->base).field_0xf0);
+        pCVar1 = (CCharacter *)(pCVar1->base).create_event;
+      } while (pCVar1 != (CCharacter *)&(this_ptr->base).platform_orientation_delta.y);
       local_20 = 2;
       core_actor_cpp_archiveInteger_FUN_0040b960(&local_14,"numCarryHands");
       local_20 = 0;
       do {
-        if (*(int *)(this_ptr->carry_hands + local_20 * 0x78 + 8) != 0) {
+        if (this_ptr->carry_hands[local_20].carry_actor != (CDemonActor *)0x0) {
           core_actor_cpp_archiveInteger_FUN_0040b960(&local_20,"carry hand");
           core_actor_cpp_archiveActor_FUN_0040b9e0
-                    (this_ptr->carry_hands + local_20 * 0x78 + 8,"carry actor");
+                    (&this_ptr->carry_hands[local_20].carry_actor,"carry actor");
         }
         local_20 = local_20 + 1;
       } while (local_20 < 2);
     }
   }
   if (2 < g_CCharacterClassVersion) {
-    core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x2708,"talkToMeEvent");
+    core_actor_cpp_archiveString_FUN_0040b730(this_ptr->talk_to_me_event,"talkToMeEvent");
   }
   if (3 < g_CCharacterClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->grabbed_by,"grabbedBy");
@@ -61,7 +61,7 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_00422c30(CCharacter *this_
     core_actor_cpp_archiveClothList_FUN_0040bfd0(&this_ptr->cloth_list,"clothList");
   }
   if (4 < g_CCharacterClassVersion) {
-    core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x2824,"sizeScale");
+    core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->size_scale,"sizeScale");
   }
   if (g_CCharacterClassVersion < 6) {
     this_ptr->max_hit_points = this_ptr->hit_points;
@@ -74,16 +74,14 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_00422c30(CCharacter *this_
     core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->max_hit_points,"maxHitPoints");
   }
   if (6 < g_CCharacterClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b960
-              ((int *)&this_ptr->field_0x2814,"spectralFlag");
+    core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->is_spectral,"spectralFlag");
   }
   if (7 < g_CCharacterClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b960
-              ((int *)&this_ptr->field_0x281c,"invulnerableFlag");
+              (&this_ptr->is_invulnerable,"invulnerableFlag");
   }
   if (8 < g_CCharacterClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b960
-              ((int *)&this_ptr->field_0x2810,"etheralFlag");
+    core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->is_ethereal,"etheralFlag");
     return;
   }
   return;

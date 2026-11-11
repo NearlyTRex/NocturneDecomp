@@ -397,7 +397,7 @@ section .text
     ADD ESP,0x14                        ; 0056629b
     MOV EAX,[0x00616494]                ; 0056629e | g_CGamePtr
         ;   Label: LAB_0056629e
-    CMP dword ptr [EAX + 0x25c],0x0     ; 005662a3 | g_CGameInstance.field508_0x25c
+    CMP dword ptr [EAX + 0x25c],0x0     ; 005662a3 | g_CGameInstance.goggles_active
     JZ 0x00566337                       ; 005662aa
         ;   XREF to: 00566337 (CONDITIONAL_JUMP)  ; LAB_00566337
     XOR EDI,EDI                         ; 005662b0

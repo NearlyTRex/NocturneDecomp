@@ -30,7 +30,7 @@ void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_00517200(int total_entries,
   }
   aiStack_10[1] = total_entries;
   _fwrite(aiStack_10,8,1,file_header);
-  if (((byte)file_header[0xc] & 0x20) == 0) {
+  if ((file_header->_flag & 0x20) == 0) {
     return;
   }
   _DAT_01d046a0 = "..\\cockpit\\pkbitmap.cpp";

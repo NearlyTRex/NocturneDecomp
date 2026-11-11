@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 46,
+    "complexity_score": 31,
     "cross_reference_count": 154,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 16,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 48
@@ -359,6 +358,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00494ec0",
+      "from_addr": "00494f36",
+      "name": "core_fire.cpp_CFirefly_process_FUN_00494ec0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00497800",
       "from_addr": "00498bca",
       "name": "core_fire.cpp_CLaserBeam_render_FUN_00497800",
@@ -398,12 +403,6 @@
       "addr": "004935b0",
       "from_addr": "00493607",
       "name": "core_fire.cpp_FUN_004935b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00494ec0",
-      "from_addr": "00494f36",
-      "name": "core_fire.cpp_FUN_00494ec0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -937,7 +936,7 @@
     {
       "addr": "0059d440",
       "from_addr": "0059d485",
-      "name": "unkaddr_0059d350.cpp_FUN_0059d440",
+      "name": "unkaddr_0059d350.cpp_CMuzzleEffect_render_FUN_0059d440",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -986,7 +985,7 @@
     },
     {
       "addr": "01cb6b58",
-      "name": "g_CGameInstance.field504_0x258",
+      "name": "g_CGameInstance.is_processing",
       "type": "undefined4",
       "value": null
     }
@@ -1079,14 +1078,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x258",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x258 == 0) {",
-      "type": "unnamed_field"
     }
   ]
 }

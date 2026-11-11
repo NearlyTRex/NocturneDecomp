@@ -6,6 +6,7 @@
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CRuleList.h"
 #include "types/enums/ELeverOpenSides.h"
 #include "types/enums/ELeverType.h"
 
@@ -14,7 +15,6 @@
 #pragma pack(push, 1)
 typedef struct CLever {
     CDemonActor base; // 0x0
-    char field_344[348]; // 0x158
     CKeyFramedModelInstance model; // 0x2b4
     int dead; // 0x430
     ELeverType lever_type; // 0x434
@@ -27,7 +27,7 @@ typedef struct CLever {
     int end_vertex_index; // 0x570
     int moving; // 0x574
     float move_to_pct; // 0x578
-    char field_1404[1004]; // 0x57c
+    CRuleList rule; // 0x57c
     ELeverOpenSides allowed_sides; // 0x968
     int enable_collision; // 0x96c
 } CLever;

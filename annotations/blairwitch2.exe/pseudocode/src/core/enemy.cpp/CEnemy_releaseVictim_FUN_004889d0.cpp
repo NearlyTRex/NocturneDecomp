@@ -19,7 +19,7 @@ void __cdecl core_enemy_cpp_CEnemy_releaseVictim_FUN_004889d0(CEnemy *this_ptr)
     if (pCVar1 == this_ptr) {
       (*(((this_ptr->victim->base).vtable._uc)->_uc).releaseFromGrab)(this_ptr->victim);
       if (((byte *)(this_ptr->base).base.validation_magic == &DAT_0078a123) &&
-         (*(int *)&(this_ptr->base).model.field_0x22b0 != 0)) {
+         ((this_ptr->base).model.model_ptr != (CDeformableModel *)0x0)) {
         CStack_14.x = 0.0;
         CStack_14.y = 0.0;
         CStack_14.z = -0.001;

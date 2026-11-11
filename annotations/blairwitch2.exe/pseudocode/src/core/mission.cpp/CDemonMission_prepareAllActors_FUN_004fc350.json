@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 73,
+    "complexity_score": 74,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 48,
+    "pseudocode_lines": 49,
     "suspect_count": 2,
     "suspect_types": [
-      "unresolved_funcptr"
+      "stack_param"
     ],
-    "total_lines": 193
+    "total_lines": 194
   },
   "cross_references": [
     {
@@ -203,20 +203,20 @@
   },
   "suspects": [
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 19,
-      "match": "code *",
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_ffffffec",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar5 + 0x2b0) + 0xc))(iVar5);",
-      "type": "unresolved_funcptr"
+      "text": "float in_stack_ffffffec;",
+      "type": "stack_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 30,
-      "match": "code *",
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_ffffffec",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar5 + 0x2b0) + 8))(iVar5);",
-      "type": "unresolved_funcptr"
+      "text": "(*((pCVar3->vtable)._ub)->process)(pCVar3,in_stack_ffffffec);",
+      "type": "stack_param"
     }
   ]
 }

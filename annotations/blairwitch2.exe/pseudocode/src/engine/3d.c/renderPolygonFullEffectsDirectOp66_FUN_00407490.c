@@ -18,13 +18,13 @@ int __cdecl engine_3d_c_renderPolygonFullEffectsDirectOp66_FUN_00407490(int para
   int iVar5;
   uint *puVar6;
   int iVar7;
-  int *vertex_indices;
-  uint *puVar8;
+  int *piVar8;
   uint *puVar9;
-  byte bVar10;
+  uint *puVar10;
+  byte bVar11;
   
-  bVar10 = 0;
-  vertex_indices = (int *)(param_1 + 0x18);
+  bVar11 = 0;
+  piVar8 = (int *)(param_1 + 0x18);
   iVar2 = engine_3d_c_isVisiblePlane_FUN_00403970(param_1 + 8);
   if (iVar2 != 0) {
     if (_DAT_01c38b40 == 0) {
@@ -44,7 +44,7 @@ int __cdecl engine_3d_c_renderPolygonFullEffectsDirectOp66_FUN_00407490(int para
     _DAT_01c38b58 = 1;
     _DAT_01c38b54 = 0x1e7;
     if (((DAT_0070caf8 == 0) || (0x9c3 < DAT_0070cafc)) || (4 < *(int *)(param_1 + 4))) {
-      engine_clipper_c_clipAndRasterize_FUN_00431d90(*(int *)(param_1 + 4),vertex_indices);
+      engine_clipper_c_clipAndRasterize_FUN_00431d90(*(int *)(param_1 + 4),piVar8);
     }
     else {
       iVar3 = DAT_0070cafc * 0x118;
@@ -55,28 +55,28 @@ int __cdecl engine_3d_c_renderPolygonFullEffectsDirectOp66_FUN_00407490(int para
       iVar7 = 0;
       if (0 < *(int *)(param_1 + 4)) {
         do {
-          puVar8 = &DAT_00622014 + *vertex_indices * 0xc;
-          puVar9 = puVar6 + 1;
+          puVar9 = &DAT_00622014 + *piVar8 * 0xc;
+          puVar10 = puVar6 + 1;
           for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-            *puVar9 = *puVar8;
-            puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
-            puVar9 = puVar9 + (uint)bVar10 * -2 + 1;
+            *puVar10 = *puVar9;
+            puVar9 = puVar9 + (uint)bVar11 * -2 + 1;
+            puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
           }
           if ((int)puVar6[3] < iVar2) {
             iVar2 = puVar6[3];
           }
           puVar6 = puVar6 + 0xc;
           iVar7 = iVar7 + 1;
-          vertex_indices = vertex_indices + 1;
+          piVar8 = piVar8 + 1;
         } while (iVar7 < *(int *)(param_1 + 4));
       }
       pSVar4 = engine_texture_cpp_getCurrentTexture_FUN_005750e0();
       uVar1 = DAT_006141d8;
-      puVar6 = (uint *)(&DAT_0070cbc4 + iVar3);
+      piVar8 = (int *)(&DAT_0070cbc4 + iVar3);
       for (iVar7 = 0x12; iVar7 != 0; iVar7 = iVar7 + -1) {
-        *puVar6 = *(uint *)pSVar4;
-        pSVar4 = pSVar4 + (uint)bVar10 * -8 + 4;
-        puVar6 = puVar6 + (uint)bVar10 * -2 + 1;
+        *piVar8 = (pSVar4->base).type;
+        pSVar4 = (SMRGLTextureBasic *)((int)pSVar4 + (uint)bVar11 * -8 + 4);
+        piVar8 = piVar8 + (uint)bVar11 * -2 + 1;
       }
       *(uint *)(&DAT_0070cc0c + iVar3) = uVar1;
       *(int *)(&DAT_0070cc14 + iVar3) = iVar2;

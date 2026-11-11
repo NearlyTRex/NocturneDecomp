@@ -31,13 +31,16 @@ void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_005b6c90(CMorphModel *th
   if (0 < this_ptr->num_faces) {
     iVar3 = 0;
     do {
-      iVar1 = *(int *)(this_ptr->faces + iVar3);
+      iVar1 = *(int *)((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).
+                             base.type + iVar3);
       if (iVar1 != local_14) {
         engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
                   (DAT_0060b280,(SMRGLTextureBasic *)(this_ptr->textures + iVar1));
         local_14 = iVar1;
       }
-      poly = (SMRGLPrimitivePoly *)(this_ptr->faces + iVar3);
+      poly = (SMRGLPrimitivePoly *)
+             ((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.type +
+             iVar3);
       iVar2 = iVar2 + 1;
       iVar3 = iVar3 + 0x3c;
       engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00(DAT_0060b280,poly,0x267);

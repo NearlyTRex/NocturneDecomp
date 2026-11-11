@@ -21,7 +21,7 @@
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 DAT_0061c068
-;   undefined4 g_CGameInstance.field19_0x1c
+;   undefined4 g_CGameInstance.foul_language_flag
 ;   undefined4 g_CMobsterClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.enemy_count
 ;
@@ -62,7 +62,7 @@ section .text
     INC EDX                             ; 005003a6
     MOV EAX,[0x00616494]                ; 005003a7 | g_CGamePtr
     MOV dword ptr [EBX + 0x1d1c6fc],EDX ; 005003ac
-    CMP dword ptr [EAX + 0x1c],0x0      ; 005003b2 | g_CGameInstance.field19_0x1c
+    CMP dword ptr [EAX + 0x1c],0x0      ; 005003b2 | g_CGameInstance.foul_language_flag
     JNZ 0x005003df                      ; 005003b6
         ;   XREF to: 005003df (CONDITIONAL_JUMP)  ; LAB_005003df
     CMP dword ptr [EBP + 0x18],0x1      ; 005003b8

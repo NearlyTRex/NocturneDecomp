@@ -125,6 +125,7 @@
   {
     "kind":"class",
     "name":"CConfederate",
+    "parent":"CBasicEnemy",
     "size":71784
   },
   {
@@ -158,6 +159,11 @@
   },
   {
     "kind":"class",
+    "name":"CCourseFrame",
+    "size":28
+  },
+  {
+    "kind":"class",
     "name":"CDemonActorType",
     "size":60
   },
@@ -165,11 +171,12 @@
     "kind":"class",
     "name":"CDemonMission",
     "rtti_file":"core/mission.cpp",
-    "size":1
+    "size":17212
   },
   {
     "kind":"class",
     "name":"CDog",
+    "parent":"CBasicEnemy",
     "size":71792
   },
   {
@@ -240,6 +247,7 @@
   {
     "kind":"class",
     "name":"CFireball",
+    "parent":"CParticle",
     "rtti_file":"core/emitter.cpp",
     "size":164
   },
@@ -248,7 +256,7 @@
     "name":"CHero",
     "parent":"CCharacter",
     "rtti_file":"core/hero.cpp",
-    "size":1
+    "size":153152
   },
   {
     "kind":"class",
@@ -256,6 +264,64 @@
     "parent":"CEnemy",
     "rtti_file":"core/mobster.cpp",
     "size":68560
+  },
+  {
+    "kind":"funcdef",
+    "name":"CMotionController_dtor",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CMotionController",
+          "ptr":1
+        }
+      },
+      {
+        "name":"flags",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"class",
+      "name":"CMotionController",
+      "ptr":1
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CParticle_onCollision",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CParticle",
+          "ptr":1
+        }
+      },
+      {
+        "name":"collision_normal",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"funcdef",
@@ -287,6 +353,7 @@
   {
     "kind":"class",
     "name":"CRobin",
+    "parent":"CBasicNPC",
     "size":71768
   },
   {
@@ -376,6 +443,7 @@
   {
     "kind":"class",
     "name":"CWinFont",
+    "parent":"CFont",
     "rtti_file":"engine/font.cpp",
     "size":27520
   },
@@ -982,7 +1050,7 @@
   {
     "kind":"struct",
     "name":"SCameraViewportState",
-    "size":1
+    "size":144
   },
   {
     "kind":"struct",
@@ -991,28 +1059,38 @@
   },
   {
     "kind":"struct",
+    "name":"SCounterBlock",
+    "size":364
+  },
+  {
+    "kind":"struct",
     "name":"SDamageDecal",
-    "size":1
+    "size":56
   },
   {
     "kind":"struct",
     "name":"SDialogEntry",
-    "size":1
+    "size":550
+  },
+  {
+    "kind":"struct",
+    "name":"SMRGLVertex",
+    "size":12
   },
   {
     "kind":"struct",
     "name":"SMorphPoint",
-    "size":1
+    "size":16
   },
   {
     "kind":"struct",
     "name":"SMovieFrame",
-    "size":1
+    "size":8192
   },
   {
     "kind":"struct",
     "name":"SNetPacketHeader",
-    "size":1
+    "size":5
   },
   {
     "kind":"struct",
@@ -1022,27 +1100,39 @@
   {
     "kind":"struct",
     "name":"SPageResourceBitmap",
+    "parent":"SPageResource",
     "size":44
   },
   {
     "kind":"struct",
     "name":"SPageResourceTwanaEntry",
+    "parent":"SPageResource",
     "size":276
   },
   {
     "kind":"struct",
     "name":"SRayQueryState",
-    "size":1
+    "size":20
+  },
+  {
+    "kind":"struct",
+    "name":"SSfxBlock",
+    "size":5764
   },
   {
     "kind":"struct",
     "name":"SSoundDeviceInfo",
-    "size":1
+    "size":280
+  },
+  {
+    "kind":"struct",
+    "name":"SStateRef",
+    "size":32
   },
   {
     "kind":"struct",
     "name":"SStereoGains",
-    "size":1
+    "size":8
   },
   {
     "kind":"union",

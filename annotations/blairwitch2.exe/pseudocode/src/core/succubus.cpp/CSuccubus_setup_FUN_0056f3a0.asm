@@ -53,7 +53,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0056f3a7
     MOV EDI,dword ptr [0x00616494]      ; 0056f3ab | g_CGamePtr
     LEA ESI,[EBX + 0x10af8]             ; 0056f3b1
-    MOV EDX,dword ptr [EDI + 0x18]      ; 0056f3b7 | g_CGameInstance.field15_0x18
+    MOV EDX,dword ptr [EDI + 0x18]      ; 0056f3b7 | g_CGameInstance.nudity_flag
     LEA EAX,[EBX + 0x2b4]               ; 0056f3ba
     TEST EDX,EDX                        ; 0056f3c0
     JZ 0x0056f6ae                       ; 0056f3c2

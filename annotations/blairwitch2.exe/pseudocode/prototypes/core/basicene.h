@@ -9,6 +9,10 @@
 // Address: 0059e380
 void staticInit(void);
 
+// Original: core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0
+// Address: 0059e6a0
+void __cdecl CBasicEnemy::setup(CBasicEnemy *this_ptr);
+
 // Original: core_basicene.cpp_CBasicEnemy_advanceMotion_FUN_0059e7d0
 // Address: 0059e7d0
 void __cdecl CBasicEnemy::advanceMotion(CBasicEnemy *this_ptr,float delta_time);
@@ -48,6 +52,10 @@ int __cdecl CBasicEnemy::renderOpaque(CBasicEnemy *this_ptr);
 // Original: core_basicene.cpp_CBasicEnemy_isGrabbable_FUN_0059fa70
 // Address: 0059fa70
 int __cdecl CBasicEnemy::isGrabbable(CBasicEnemy *this_ptr,CDemonActor *grabber);
+
+// Original: core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10
+// Address: 0059fc10
+void __cdecl CBasicEnemy::archive(CBasicEnemy *this_ptr);
 
 // Original: core_basicene.cpp_CBasicEnemy_startBurn_FUN_005a0270
 // Address: 005a0270

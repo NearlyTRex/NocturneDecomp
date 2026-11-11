@@ -131,7 +131,7 @@ undefined4 FUN_004cfc80(CHero *param_1);
 
 // Original: core_hero.cpp_FUN_004cfd60
 // Address: 004cfd60
-bool FUN_004cfd60(CDemonActor *param_1,char *param_2);
+bool FUN_004cfd60(CHero *param_1,char *param_2);
 
 // Original: core_hero.cpp_CHero_canLookAt_FUN_004cfe80
 // Address: 004cfe80

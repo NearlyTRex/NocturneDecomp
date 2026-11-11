@@ -13,10 +13,10 @@ int __cdecl support_codec_cpp_CCodec_processBuffer_FUN_00434070(CCodec *this_ptr
   int iVar2;
   CInStreamMemory local_24;
   
-  support_trstream_cpp_FUN_0057d520(&local_24,input,*input_length);
-  iVar1 = (**(code **)((int)*this_ptr + 0x10))
+  support_trstream_cpp_CInStreamMemory_ctorOpen_FUN_0057d520(&local_24,input,*input_length);
+  iVar1 = (**(code **)((int)this_ptr->vtable + 0x10))
                     (this_ptr,&local_24,output,output_length,enable_callback);
-  iVar2 = support_trstream_cpp_FUN_0057d760(&local_24);
+  iVar2 = support_trstream_cpp_CInStreamMemory_tell_FUN_0057d760(&local_24);
   *input_length = *input_length - iVar2;
   support_trstream_cpp_CInStreamMemory_dtor_FUN_0057d5a0(&local_24,0);
   return iVar1;

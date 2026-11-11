@@ -18,7 +18,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field176_0xe0
+;   undefined4 g_CGameInstance.cinematic_skip_in_progress
 ;   undefined4 DAT_01e650f8
 ;   undefined4 DAT_01e65100
 ;   undefined4 DAT_01e65904
@@ -54,7 +54,7 @@ section .text
     JZ 0x0052177e                       ; 00521707
         ;   XREF to: 0052177e (CONDITIONAL_JUMP)  ; LAB_0052177e
     MOV EAX,[0x00616494]                ; 0052170d | g_CGamePtr
-    CMP dword ptr [EAX + 0xe0],0x0      ; 00521712 | g_CGameInstance.field176_0xe0
+    CMP dword ptr [EAX + 0xe0],0x0      ; 00521712 | g_CGameInstance.cinematic_skip_in_progress
     JZ 0x0052171e                       ; 00521719
         ;   XREF to: 0052171e (CONDITIONAL_JUMP)  ; LAB_0052171e
     MOV dword ptr [EBX + 0x1c],EDX      ; 0052171b

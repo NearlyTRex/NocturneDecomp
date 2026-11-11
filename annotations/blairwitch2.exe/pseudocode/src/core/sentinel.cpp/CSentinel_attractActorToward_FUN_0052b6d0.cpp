@@ -41,13 +41,15 @@ int __cdecl core_sentinel_cpp_CSentinel_attractActorToward_FUN_0052b6d0(CSentine
     return 0;
   }
   core_xform_cpp_FUN_00591530
-            (&DAT_0265370c,&(this_ptr->base).base.model.field_0xe80 + _DAT_01e66150 * 0x30);
+            (&DAT_0265370c,
+             (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01e66150);
   fStack_34 = fStack_1c;
   afStack_30[(uint)bVar1 * -2] = afStack_30[(uint)bVar1 * -2 + 6];
   afStack_30[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
        afStack_30[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 7];
   core_xform_cpp_FUN_00591530
-            (&DAT_0265370c,&(this_ptr->base).base.model.field_0xe80 + _DAT_01e66154 * 0x30);
+            (&DAT_0265370c,
+             (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01e66154);
   fStack_10 = afStack_30[2];
   afStack_30[(uint)bVar1 * -2 + 9] = afStack_30[(uint)bVar1 * -2 + 3];
   afStack_30[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 10] =

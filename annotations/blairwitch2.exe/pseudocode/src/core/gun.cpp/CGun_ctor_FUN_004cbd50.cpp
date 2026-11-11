@@ -13,7 +13,7 @@ CGun * core_gun_cpp_CGun_ctor_FUN_004cbd50(CGun *this_ptr)
 {
   CWeapon *pCVar1;
   
-  pCVar1 = core_weapon_cpp_CWeapon_ctor_FUN_005899d0((CWeapon *)this_ptr);
+  pCVar1 = core_weapon_cpp_CWeapon_ctor_FUN_005899d0(&this_ptr->base);
   (pCVar1->base).vtable._ub = &g_CGunVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
             (&pCVar1->model,"revolver.kfm");

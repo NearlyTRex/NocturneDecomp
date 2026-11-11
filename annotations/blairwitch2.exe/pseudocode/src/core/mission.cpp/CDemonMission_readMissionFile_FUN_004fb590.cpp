@@ -16,7 +16,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004fb590(CDemonM
   int iVar2;
   CDemonActor *actor;
   int iVar3;
-  CDemonMission *pCVar4;
+  char (*pacVar4) [256];
   CDemonActor *pCVar5;
   uint *puVar6;
   char *pcVar7;
@@ -42,18 +42,18 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004fb590(CDemonM
     iVar2 = _fgetc(file_handle);
     if (iVar2 < 0) break;
   } while (iVar2 != 10);
-  _fscanf(file_handle,"%d,%d\n",this_ptr + 0x100c,&local_2c);
-  if (7 < *(int *)(this_ptr + 0x100c)) {
+  _fscanf(file_handle,"%d,%d\n",&this_ptr->mission_version_num,&local_2c);
+  if (7 < this_ptr->mission_version_num) {
     _DAT_01d046a0 = "..\\core\\mission.cpp";
     _DAT_01d046a4 = 0xe6;
-    core_main_c_FUN_004e4500("Invalid mission version number: %d, current version is %d.  (You probably have an old .exe)",*(int *)(this_ptr + 0x100c),7);
+    core_main_c_FUN_004e4500("Invalid mission version number: %d, current version is %d.  (You probably have an old .exe)",this_ptr->mission_version_num,7);
   }
   if (local_2c < 4) {
     _DAT_01d046a0 = "..\\core\\mission.cpp";
     _DAT_01d046a4 = 0xe9;
     core_main_c_FUN_004e4500("This mission uses actor format version %d, which we don't support anymore!",local_2c);
   }
-  if (*(int *)(this_ptr + 0x100c) < 2) {
+  if (this_ptr->mission_version_num < 2) {
     _DAT_01d046a0 = "..\\core\\mission.cpp";
     _DAT_01d046a4 = 0xee;
     core_main_c_FUN_004e4500("No name in mission");
@@ -62,23 +62,23 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004fb590(CDemonM
     iVar2 = _fgetc(file_handle);
     if (iVar2 < 0) break;
   } while (iVar2 != 10);
-  _fscanf(file_handle,&DAT_005de1d1,this_ptr + 0x1014);
+  _fscanf(file_handle,&DAT_005de1d1,this_ptr->mission_name);
   do {
     iVar2 = _fgetc(file_handle);
     if (iVar2 < 0) break;
   } while (iVar2 != 10);
   iVar2 = 0;
-  _fscanf(file_handle,&DAT_005de1d5,this_ptr + 4);
-  if (0 < *(int *)(this_ptr + 4)) {
-    pCVar4 = this_ptr + 8;
+  _fscanf(file_handle,&DAT_005de1d5,&this_ptr->num_sets);
+  if (0 < this_ptr->num_sets) {
+    pacVar4 = this_ptr->set_names;
     do {
       iVar2 = iVar2 + 1;
-      _fscanf(file_handle,&DAT_005de1d9,pCVar4);
-      pCVar4 = pCVar4 + 0x100;
-    } while (iVar2 < *(int *)(this_ptr + 4));
+      _fscanf(file_handle,&DAT_005de1d9,pacVar4);
+      pacVar4 = pacVar4 + 1;
+    } while (iVar2 < this_ptr->num_sets);
   }
   core_actor_cpp_resetActorTypeInfo_FUN_0040c950();
-  if (2 < *(int *)(this_ptr + 0x100c)) {
+  if (2 < this_ptr->mission_version_num) {
     do {
       iVar2 = _fgetc(file_handle);
       if (iVar2 < 0) break;
@@ -116,8 +116,8 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004fb590(CDemonM
   } while (iVar2 != 10);
   _fscanf(file_handle,&DAT_005de265,&local_28);
   local_24 = 0;
-  if (*(int *)(this_ptr + 0x100c) < 6) {
-    *(uint *)(this_ptr + 0x1010) = 0;
+  if (this_ptr->mission_version_num < 6) {
+    this_ptr->has_inventory_actors = 0;
   }
   else {
     do {
@@ -125,14 +125,14 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004fb590(CDemonM
       if (iVar2 < 0) break;
     } while (iVar2 != 10);
     _fscanf(file_handle,&DAT_005de269,&local_24);
-    *(uint *)(this_ptr + 0x1010) = 1;
+    this_ptr->has_inventory_actors = 1;
   }
   do {
     iVar2 = _fgetc(file_handle);
     if (iVar2 < 0) break;
   } while (iVar2 != 10);
-  *(uint *)(this_ptr + 0x1458) = 0;
-  *(uint *)(this_ptr + 0x1454) = 0;
+  this_ptr->actor_lookup_count = 0;
+  this_ptr->next_inventory_actor = (CDemonActor *)0x0;
   local_14 = 0;
   while (local_14 < local_28 + local_24) {
     puVar6 = &DAT_006181e0;
@@ -165,22 +165,22 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004fb590(CDemonM
     } while (cVar1 != '\0');
     core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200(this_ptr,actor);
     if (local_14 == local_28) {
-      *(CDemonActor **)(this_ptr + 0x1454) = actor;
+      this_ptr->next_inventory_actor = actor;
     }
-    if (2999 < *(int *)(this_ptr + 0x1458)) {
+    if (2999 < this_ptr->actor_lookup_count) {
       _DAT_01d046a0 = "..\\core\\mission.cpp";
       _DAT_01d046a4 = 0x139;
       core_main_c_FUN_004e4500("Too many actors");
     }
-    *(CDemonActor **)(this_ptr + *(int *)(this_ptr + 0x1458) * 4 + 0x145c) = local_18;
+    this_ptr->actor_lookup_table[this_ptr->actor_lookup_count] = local_18;
     local_14 = local_14 + 1;
-    *(int *)(this_ptr + 0x1458) = *(int *)(this_ptr + 0x1458) + 1;
+    this_ptr->actor_lookup_count = this_ptr->actor_lookup_count + 1;
   }
   do {
     iVar2 = _fgetc(file_handle);
     if (iVar2 < 0) break;
   } while (iVar2 != 10);
-  pCVar5 = *(CDemonActor **)(this_ptr + 0x1114);
+  pCVar5 = this_ptr->first_actor;
   iVar2 = 0;
   if (0 < local_28) {
     do {
@@ -191,11 +191,11 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004fb590(CDemonM
       }
       core_actor_cpp_CDemonActor_load_FUN_0040b1c0(pCVar5,file_handle);
       iVar2 = iVar2 + 1;
-      pCVar5 = *(CDemonActor **)&pCVar5->field_0x14c;
+      pCVar5 = pCVar5->next_actor;
     } while (iVar2 < local_28);
   }
-  if (*(int *)(this_ptr + 0x1010) != 0) {
-    pCVar5 = *(CDemonActor **)(this_ptr + 0x1114);
+  if (this_ptr->has_inventory_actors != 0) {
+    pCVar5 = this_ptr->first_actor;
     iVar2 = 0;
     if (0 < local_28) {
       do {
@@ -209,23 +209,23 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004fb590(CDemonM
           core_inv_cpp_CInventory_loadItems_FUN_004dc810((CInventory *)(iVar3 + 0x2437c));
         }
         iVar2 = iVar2 + 1;
-        pCVar5 = *(CDemonActor **)&pCVar5->field_0x14c;
+        pCVar5 = pCVar5->next_actor;
       } while (iVar2 < local_28);
     }
-    *(uint *)(this_ptr + 0x1010) = 0;
+    this_ptr->has_inventory_actors = 0;
   }
   if (pCVar5 != (CDemonActor *)0x0) {
     _DAT_01d046a0 = "..\\core\\mission.cpp";
     _DAT_01d046a4 = 0x159;
     core_main_c_FUN_004e4500("CDemonMission::load - actor list count mismatch #3!");
   }
-  if (*(int *)(this_ptr + 0x1454) != 0) {
+  if (this_ptr->next_inventory_actor != (CDemonActor *)0x0) {
     _DAT_01d046a0 = "..\\core\\mission.cpp";
     _DAT_01d046a4 = 0x15a;
     core_main_c_FUN_004e4500("CDemonMission::load - actor list count mismatch #4!");
   }
-  *(uint *)(this_ptr + 0x1458) = 0;
-  if (*(int *)(this_ptr + 0x100c) < 4) {
+  this_ptr->actor_lookup_count = 0;
+  if (this_ptr->mission_version_num < 4) {
     do {
       iVar2 = _fgetc(file_handle);
       if (iVar2 < 0) break;
@@ -236,9 +236,9 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004fb590(CDemonM
     } while (iVar2 != 10);
   }
   this_ptr_00 = g_CGorePtr;
-  *(uint *)this_ptr = 0xffffffff;
+  this_ptr->current_set_index = -1;
   core_gore_cpp_CGore_reset_FUN_004c93f0(this_ptr_00);
-  if (6 < *(int *)(this_ptr + 0x100c)) {
+  if (6 < this_ptr->mission_version_num) {
     core_gore_cpp_CGore_load_FUN_004c9e70(g_CGorePtr,file_handle);
     return;
   }

@@ -23,7 +23,7 @@ void __cdecl core_doc_cpp_CDoc_process_FUN_00450b20(CDoc *this_ptr,float delta_t
   }
   core_charactr_cpp_FUN_0042b5e0(this_ptr,delta_time);
   delta_time_00 = g_CGamePtr->delta_time_float;
-  iVar2 = core_motion_cpp_FUN_005035c0(&this_ptr->field_0x2b4);
+  iVar2 = core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.model);
   bVar1 = false;
   switch(*(uint *)(iVar2 + 0x24)) {
   case 7:
@@ -47,7 +47,7 @@ void __cdecl core_doc_cpp_CDoc_process_FUN_00450b20(CDoc *this_ptr,float delta_t
   case 0x1b:
     bVar1 = true;
   }
-  if ((*(int *)&this_ptr->field_0x256a4 == 7) || (fVar3 = delta_time, bVar1)) {
+  if ((this_ptr->action_pending == 7) || (fVar3 = delta_time, bVar1)) {
     fVar3 = delta_time * (float)_DAT_005cfe37;
     core_doc_cpp_FUN_00450c60(this_ptr,fVar3);
     core_doc_cpp_FUN_00450c60(this_ptr,fVar3);
@@ -55,6 +55,7 @@ void __cdecl core_doc_cpp_CDoc_process_FUN_00450b20(CDoc *this_ptr,float delta_t
   }
   core_doc_cpp_FUN_00450c60(this_ptr,fVar3);
   core_game_cpp_CGame_slamDT_FUN_004bd460(g_CGamePtr,delta_time_00);
-  unkafter_superopt_cpp_FUN_005a8180(&this_ptr->field_0x154,delta_time);
+  unkafter_superopt_cpp_CSimpleParticleSystem_process_FUN_005a8180
+            ((this_ptr->base).base.base.particle_systems,delta_time);
   return;
 }

@@ -42,7 +42,7 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004c5470(CGlass *this_pt
     iStack_10 = core_box_cpp_FUN_0041a840(auStack_40);
     iVar2 = 0;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-              (DAT_0060b280,(SMRGLTextureBasic *)&this_ptr->field_0x2c0);
+              (DAT_0060b280,&this_ptr->glass_texture);
     pCVar3 = this_ptr->broken_vertices;
     input_vertices = this_ptr->render_vertices;
     pCVar4 = input_vertices;
@@ -61,7 +61,7 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004c5470(CGlass *this_pt
     lVar1 = (longlong)(0xffff - _DAT_01c38aec) * (longlong)this_ptr->opacity;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
               (DAT_0060b280,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    poly = (SMRGLPrimitivePoly *)&this_ptr->field_0x808;
+    poly = (SMRGLPrimitivePoly *)this_ptr->broken_quads;
     core_set_cpp_CDemonSet_lightVerticies_FUN_00532190
               (g_CDemonSetPtr,this_ptr->broken_vertex_count,this_ptr->broken_polygon_count,poly,
                input_vertices,4,(CVector3i *)0x0);
@@ -70,13 +70,13 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004c5470(CGlass *this_pt
     if (0 < this_ptr->broken_polygon_count) {
       do {
         this_ptr_00 = DAT_0060b280;
-        *(uint *)&pCVar5->field_0x810 = 0;
-        *(uint *)&pCVar5->field_0x814 = 0;
+        pCVar5->broken_quads[0].base.surface_normal.A.i = 0;
+        pCVar5->broken_quads[0].base.surface_normal.B.i = 0;
         iVar2 = iVar2 + 1;
-        *(uint *)&pCVar5->field_0x818 = 0;
-        *(uint *)&pCVar5->field_0x81c = 0;
+        pCVar5->broken_quads[0].base.surface_normal.C.i = 0;
+        pCVar5->broken_quads[0].base.surface_normal.D.i = 0;
         engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_0046ac20(this_ptr_00,poly);
-        poly = poly + 0x48;
+        poly = (SMRGLPrimitivePoly *)(poly->vertices + 4);
         pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);
       } while (iVar2 < this_ptr->broken_polygon_count);
     }

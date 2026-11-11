@@ -11,169 +11,210 @@
 void unkafter_stranger_cpp_FUN_0045d2c0(CCharacter *param_1)
 
 {
+  char *pcVar1;
+  CFlame *pCVar2;
   CSound *this_ptr;
-  byte *puVar1;
-  float fVar2;
-  uint uVar3;
-  int iVar4;
+  char *pcVar3;
+  float fVar4;
   uint uVar5;
-  byte *puVar6;
-  int iVar7;
-  CCloth **ppCVar8;
+  int iVar6;
+  uint uVar7;
+  char *pcVar8;
+  CDemonActor *this_ptr_00;
   int iVar9;
-  int iVar10;
+  CCloth **ppCVar10;
+  int iVar11;
+  int iVar12;
   
-  iVar4 = *(int *)(param_1[1].base.actor_name + 0x14);
-  *(uint *)&param_1[2].field_0x41e0 = 0;
-  if (iVar4 == 0) {
+  iVar6 = *(int *)(param_1[1].base.actor_name + 0x14);
+  pCVar2 = param_1[2].flames;
+  pCVar2[1].off_event[0x48] = '\0';
+  pCVar2[1].off_event[0x49] = '\0';
+  pCVar2[1].off_event[0x4a] = '\0';
+  pCVar2[1].off_event[0x4b] = '\0';
+  if (iVar6 == 0) {
     return;
   }
   if (param_1->grabbed_by != (CDemonActor *)0x0) {
     return;
   }
-  if (*(int *)&param_1[2].field_0x41e4 != 0) {
+  if (*(int *)(param_1[2].flames[1].off_event + 0x4c) != 0) {
     return;
   }
-  if ((iVar4 != 0) && (*(int *)&param_1[2].field_0x4180 == 0)) {
+  if ((iVar6 != 0) && (*(int *)(param_1[2].flames[1].on_event + 0x4c) == 0)) {
     return;
   }
-  iVar4 = *(int *)&param_1[2].field_0x41d8;
-  if (iVar4 == 0) {
-    iVar4 = *(int *)&param_1->field_0x2698;
+  this_ptr_00 = *(CDemonActor **)(param_1[2].flames[1].off_event + 0x40);
+  if (this_ptr_00 == (CDemonActor *)0x0) {
+    this_ptr_00 = param_1->carry_hands[1].carry_actor;
 LAB_0045d323:
-    if ((iVar4 != 0) && (iVar10 = (**(code **)(*(int *)(iVar4 + 0x2b0) + 0x7c))(iVar4), iVar10 != 0)
+    if ((this_ptr_00 != (CDemonActor *)0x0) &&
+       (iVar6 = (*((this_ptr_00->vtable)._ub)->getAllowedMeleeAttackTypes)(this_ptr_00), iVar6 != 0)
        ) {
-      iVar4 = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c8f0(iVar4,g_CWeaponClassInfo.name_hash);
-      if (iVar4 == 0) {
+      iVar12 = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c8f0(this_ptr_00,g_CWeaponClassInfo.name_hash)
+      ;
+      if (iVar12 == 0) {
         return;
       }
-      if (*(int *)(iVar4 + 0x43c) == 6) {
-        iVar9 = 0;
+      if (*(int *)(iVar12 + 0x43c) == 6) {
+        iVar11 = 0;
         do {
-          iVar7 = *(int *)&param_1[2].field_0x41e8 + 1;
-          *(int *)&param_1[2].field_0x41e8 = iVar7;
-          if ((iVar7 < 0) || (1 < iVar7)) {
-            *(uint *)&param_1[2].field_0x41e8 = 0;
+          iVar9 = *(int *)(param_1[2].flames[1].off_event + 0x50) + 1;
+          *(int *)(param_1[2].flames[1].off_event + 0x50) = iVar9;
+          if ((iVar9 < 0) || (1 < iVar9)) {
+            pCVar2 = param_1[2].flames;
+            pCVar2[1].off_event[0x50] = '\0';
+            pCVar2[1].off_event[0x51] = '\0';
+            pCVar2[1].off_event[0x52] = '\0';
+            pCVar2[1].off_event[0x53] = '\0';
           }
-          uVar3 = *(int *)&param_1[2].field_0x41e8 + 4;
-          if (uVar3 < 5) {
-            if (uVar3 == 4) {
+          uVar5 = *(int *)(param_1[2].flames[1].off_event + 0x50) + 4;
+          if (uVar5 < 5) {
+            if (uVar5 == 4) {
 LAB_0045d483:
-              if (iVar10 != 0) {
-                param_1->layer_action_index = *(int *)&param_1[2].field_0x41e8 + 4;
+              if (iVar6 != 0) {
+                param_1->layer_action_index = *(int *)(param_1[2].flames[1].off_event + 0x50) + 4;
                 this_ptr = 0x0264B290;
                 param_1->layer_action_t = 0.0;
-                *(uint *)&param_1[2].field_0x41e4 = 7;
+                pCVar2 = param_1[2].flames;
+                pCVar2[1].off_event[0x4c] = '\a';
+                pCVar2[1].off_event[0x4d] = '\0';
+                pCVar2[1].off_event[0x4e] = '\0';
+                pCVar2[1].off_event[0x4f] = '\0';
                 core_sound_cpp_CSound_playActorSound_FUN_0055ae50
                           (this_ptr,&param_1->base,"?swordswing0?.wav" + 1,
-                           (CVector3f *)&(param_1->base).field_0x20);
+                           &(param_1->base).location.position);
                 return;
               }
             }
           }
-          else if ((uVar3 < 6) || (uVar3 == 6)) goto LAB_0045d483;
-          iVar9 = iVar9 + 1;
-        } while (iVar9 < 0x14);
+          else if ((uVar5 < 6) || (uVar5 == 6)) goto LAB_0045d483;
+          iVar11 = iVar11 + 1;
+        } while (iVar11 < 0x14);
       }
-      if (*(int *)(iVar4 + 0x43c) == 8) {
+      if (*(int *)(iVar12 + 0x43c) == 8) {
         param_1->layer_action_t = 0.0;
-        *(uint *)&param_1[2].field_0x41e4 = 7;
+        pCVar2 = param_1[2].flames;
+        pCVar2[1].off_event[0x4c] = '\a';
+        pCVar2[1].off_event[0x4d] = '\0';
+        pCVar2[1].off_event[0x4e] = '\0';
+        pCVar2[1].off_event[0x4f] = '\0';
         param_1->layer_action_index = 7;
         return;
       }
-      if (*(int *)(iVar4 + 0x43c) != 0xd) {
+      if (*(int *)(iVar12 + 0x43c) != 0xd) {
         return;
       }
       param_1->layer_action_t = 0.0;
-      *(uint *)&param_1[2].field_0x41e4 = 7;
+      pCVar2 = param_1[2].flames;
+      pCVar2[1].off_event[0x4c] = '\a';
+      pCVar2[1].off_event[0x4d] = '\0';
+      pCVar2[1].off_event[0x4e] = '\0';
+      pCVar2[1].off_event[0x4f] = '\0';
       param_1->layer_action_index = 8;
       return;
     }
   }
   else {
-    iVar10 = *(int *)(iVar4 + 0x43c);
-    if ((((iVar10 == 7) || (iVar10 == 6)) || (iVar10 == 8)) || (iVar10 == 0xd)) goto LAB_0045d323;
+    iVar6 = this_ptr_00[1].particle_systems[0].stop_after_fade;
+    if ((((iVar6 == 7) || (iVar6 == 6)) || (iVar6 == 8)) || (iVar6 == 0xd)) goto LAB_0045d323;
   }
-  if (*(int *)&param_1[2].field_0x41d8 == 0) {
+  iVar6 = *(int *)(param_1[2].flames[1].off_event + 0x40);
+  if (iVar6 == 0) {
     return;
   }
-  iVar4 = *(int *)(*(int *)&param_1[2].field_0x41d8 + 0x43c);
-  if (iVar4 == 3) {
+  iVar6 = *(int *)(iVar6 + 0x43c);
+  if (iVar6 == 3) {
     return;
   }
-  if ((param_1[2].cloth_list.cloths[6] == (CCloth *)0x0) && (iVar4 == 0)) {
-    puVar6 = &param_1[2].field_0x4194;
-    puVar1 = &param_1[2].field_0x41b4;
-    if (*(int *)&param_1[2].field_0x41dc != 0) {
-      puVar1 = puVar6;
-      puVar6 = &param_1[2].field_0x41b4;
+  if ((param_1[2].cloth_list.cloths[6] == (CCloth *)0x0) && (iVar6 == 0)) {
+    pcVar8 = param_1[2].flames[1].on_event + 0x60;
+    pcVar1 = param_1[2].flames[1].off_event + 0x1c;
+    pcVar3 = pcVar1;
+    if (*(int *)(param_1[2].flames[1].off_event + 0x44) != 0) {
+      pcVar3 = pcVar8;
+      pcVar8 = pcVar1;
     }
-    if ((*(int *)(puVar1 + 0x1c) == 2) && (*(int *)(puVar6 + 0x1c) != 2)) {
-      *(uint *)&param_1[2].field_0x41dc = (uint)(*(int *)&param_1[2].field_0x41dc == 0);
+    if ((*(int *)(pcVar3 + 0x1c) == 2) && (*(int *)(pcVar8 + 0x1c) != 2)) {
+      *(uint *)(param_1[2].flames[1].off_event + 0x44) =
+           (uint)(*(int *)(param_1[2].flames[1].off_event + 0x44) == 0);
     }
   }
-  *(uint *)&param_1[2].field_0x41dc = 1;
-  if (*(int *)&param_1[2].field_0x41d8 == 0) {
+  iVar6 = *(int *)(param_1[2].flames[1].off_event + 0x40);
+  pCVar2 = param_1[2].flames;
+  pCVar2[1].off_event[0x44] = '\x01';
+  pCVar2[1].off_event[0x45] = '\0';
+  pCVar2[1].off_event[0x46] = '\0';
+  pCVar2[1].off_event[0x47] = '\0';
+  if (iVar6 == 0) {
 switchD_0045d3bc_caseD_3:
-    iVar4 = 0;
+    iVar6 = 0;
   }
   else {
-    switch(*(uint *)(*(int *)&param_1[2].field_0x41d8 + 0x43c)) {
+    switch(*(uint *)(iVar6 + 0x43c)) {
     case 0:
     case 5:
-      iVar4 = 2;
+      iVar6 = 2;
       break;
     case 1:
-      iVar4 = 0xb;
+      iVar6 = 0xb;
       break;
     case 2:
-      iVar4 = 9;
+      iVar6 = 9;
       break;
     default:
       goto switchD_0045d3bc_caseD_3;
     case 4:
-      iVar4 = 10;
+      iVar6 = 10;
       break;
     case 6:
     case 7:
     case 8:
     case 0xd:
-      iVar4 = 6;
+      iVar6 = 6;
       break;
     case 10:
     case 0xb:
-      iVar4 = 0xe;
+      iVar6 = 0xe;
     }
   }
-  fVar2 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(param_1,iVar4);
-  if (((((float)_DAT_005d07f7 <= fVar2) &&
-       (fVar2 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(param_1,0x12),
-       fVar2 <= (float)_DAT_005d07ff)) && (1.0 <= *(float *)&param_1[2].field_0x41c8)) &&
-     ((*(float *)&param_1[2].field_0x41c4 <= 0.0 &&
-      (iVar4 = (**(code **)(*(int *)(*(int *)&param_1[2].field_0x41d8 + 0x2b0) + 0xf0))
-                         (*(int *)&param_1[2].field_0x41d8), iVar4 != 0)))) {
-    *(uint *)&param_1[2].field_0x41e0 = 0;
-    iVar4 = (**(code **)(*(int *)(*(int *)&param_1[2].field_0x41d8 + 0x2b0) + 0xec))
-                      (*(int *)&param_1[2].field_0x41d8);
-    if (iVar4 != 0) {
-      *(uint *)&param_1[2].field_0x41e0 = 1;
+  fVar4 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(param_1,iVar6);
+  if (((((float)_DAT_005d07f7 <= fVar4) &&
+       (fVar4 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(param_1,0x12),
+       fVar4 <= (float)_DAT_005d07ff)) && (1.0 <= *(float *)(param_1[2].flames[1].off_event + 0x30))
+      ) && ((*(float *)(param_1[2].flames[1].off_event + 0x2c) <= 0.0 &&
+            (iVar6 = *(int *)(param_1[2].flames[1].off_event + 0x40),
+            iVar6 = (**(code **)(*(int *)(iVar6 + 0x2b0) + 0xf0))(iVar6), iVar6 != 0)))) {
+    iVar6 = *(int *)(param_1[2].flames[1].off_event + 0x40);
+    pCVar2 = param_1[2].flames;
+    pCVar2[1].off_event[0x48] = '\0';
+    pCVar2[1].off_event[0x49] = '\0';
+    pCVar2[1].off_event[0x4a] = '\0';
+    pCVar2[1].off_event[0x4b] = '\0';
+    iVar6 = (**(code **)(*(int *)(iVar6 + 0x2b0) + 0xec))(iVar6);
+    if (iVar6 != 0) {
+      pCVar2 = param_1[2].flames;
+      pCVar2[1].off_event[0x48] = '\x01';
+      pCVar2[1].off_event[0x49] = '\0';
+      pCVar2[1].off_event[0x4a] = '\0';
+      pCVar2[1].off_event[0x4b] = '\0';
       return;
     }
-    ppCVar8 = param_1[2].cloth_list.cloths + 7;
-    iVar4 = 0;
-    for (iVar10 = 0; iVar10 < (int)param_1[2].smoke_check_timer; iVar10 = iVar10 + 1) {
-      if ((CCloth *)*(int *)&param_1[2].field_0x3324 == ppCVar8[0x11b]) {
-        uVar5 = ppCVar8[5];
+    ppCVar10 = param_1[2].cloth_list.cloths + 7;
+    iVar6 = 0;
+    for (iVar12 = 0; iVar12 < (int)param_1[2].smoke_check_timer; iVar12 = iVar12 + 1) {
+      if ((CCloth *)*(int *)&param_1[2].follow_formation.slots[0xb].field_0x34 == ppCVar10[0x11b]) {
+        uVar7 = ppCVar10[5];
       }
       else {
-        uVar5 = 0;
+        uVar7 = 0;
       }
-      iVar4 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c8f0(uVar5,g_CAmmoClassInfo.name_hash);
-      if (iVar4 != 0) break;
-      ppCVar8 = ppCVar8 + 1;
+      iVar6 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c8f0(uVar7,g_CAmmoClassInfo.name_hash);
+      if (iVar6 != 0) break;
+      ppCVar10 = ppCVar10 + 1;
     }
-    if ((iVar4 != 0) && (iVar4 = core_ammo_cpp_FUN_0040e450(iVar4,param_1), iVar4 != 0)) {
-      *(uint *)(*(int *)&param_1[2].field_0x41d8 + 0x6c4) = 6;
+    if ((iVar6 != 0) && (iVar6 = core_ammo_cpp_FUN_0040e450(iVar6,param_1), iVar6 != 0)) {
+      *(uint *)(*(int *)(param_1[2].flames[1].off_event + 0x40) + 0x6c4) = 6;
       param_1->layer_action_index = 0xf;
       param_1->layer_action_t = 0.0;
       return;

@@ -23,9 +23,9 @@ void __cdecl core_imp_cpp_CImp_processDamage_FUN_004d7d50(CImp *this_ptr,SDamage
   
   bVar4 = 0;
   sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handles[0]);
-  if (*(int *)(damage_info + 0x28) == 8) {
-    *(float *)(damage_info + 4) = *(float *)(damage_info + 4) * (float)_DAT_005dab79;
-    core_actor_cpp_FUN_00408d70(this_ptr,damage_info + 0x1c);
+  if (damage_info->ammo_type == AMMO_TYPE_MERCURY) {
+    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005dab79;
+    core_actor_cpp_FUN_00408d70(this_ptr,&damage_info->impact_direction);
     iVar3 = 0;
     CStack_1c.x = fStack_28;
     *(uint *)((int)&CStack_1c + (uint)bVar4 * -8 + 4) =
@@ -39,12 +39,11 @@ void __cdecl core_imp_cpp_CImp_processDamage_FUN_004d7d50(CImp *this_ptr,SDamage
     } while (iVar3 < 5);
   }
   core_imp_cpp_CImp_processDismemberment_FUN_004d7ab0(this_ptr,damage_info);
-  fVar1 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;
   if (0.0 < fVar1) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-              ((CMotionController *)this_ptr_00,5,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,5,1);
     iVar3 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[1]);
     if (iVar3 != 0) goto LAB_004d7e52;
     sound_name = "imp-hurt?.wav";
@@ -53,8 +52,7 @@ void __cdecl core_imp_cpp_CImp_processDamage_FUN_004d7d50(CImp *this_ptr,SDamage
     (this_ptr->base).base.hit_points = 0.0;
     iVar3 = core_motion_cpp_FUN_005035c0(this_ptr_00);
     if ((*(int *)(iVar3 + 0x24) == 6) || (*(int *)(iVar3 + 0x24) == 7)) goto LAB_004d7e52;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-              ((CMotionController *)this_ptr_00,6,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,6,1);
     sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handles[1]);
     sound_name = "@imp-die?.wav" + 1;
   }

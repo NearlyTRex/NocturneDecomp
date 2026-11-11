@@ -10,6 +10,6 @@ void __cdecl core_steuben_cpp_CSteuben_processDeathState_FUN_005a5d10(CSteuben *
 
 {
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-            ((CMotionController *)&this_ptr->field_0x2b4,0,1);
+            (&(this_ptr->base).base.base.base.model.base,0,1);
   return;
 }

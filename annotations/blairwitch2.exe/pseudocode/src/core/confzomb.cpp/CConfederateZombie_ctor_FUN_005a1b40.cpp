@@ -12,34 +12,35 @@
 CConfederateZombie * core_confzomb_cpp_CConfederateZombie_ctor_FUN_005a1b40(CConfederateZombie *this_ptr)
 
 {
-  byte *puVar1;
+  SStateMachine *pSVar1;
   char cVar2;
-  uint uVar3;
-  uint uVar4;
+  float fVar3;
+  float fVar4;
   CConfederateZombie *this_ptr_00;
   char *pcVar5;
   char *pcVar6;
   
-  this_ptr_00 = (CConfederateZombie *)unkafter_basicene_cpp_FUN_0059e3b0(this_ptr);
-  *(CConfederateZombie_full_vtable **)&this_ptr_00->field_0x2b0 = &g_CConfederateZombieVTable;
+  this_ptr_00 = (CConfederateZombie *)
+                unkafter_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(&this_ptr->base);
+  (this_ptr_00->base).base.base.base.vtable._ub = &g_CConfederateZombieVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            ((CDeformableModelInstance *)&this_ptr_00->field_0x2b4,"conzombie_david.dfm");
-  *(uint *)&this_ptr_00->field_0x3434 = 0x3f333333;
-  *(uint *)&this_ptr_00->field_0xfc = 1;
-  *(uint *)&this_ptr_00->field_0x2814 = 0;
-  *(uint *)&this_ptr_00->field_0x113c4 = 0;
-  *(uint *)&this_ptr_00->field_0x1134c = 0x40200000;
-  *(uint *)&this_ptr_00->field_0x11380 = 0;
-  pcVar6 = &this_ptr_00->field_0x113d4;
-  *(uint *)&this_ptr_00->field_0x11384 = 0;
-  uVar3 = _DAT_005fef8c;
-  *(uint *)&this_ptr_00->field_0x11388 = 1;
-  uVar4 = _DAT_005fef90;
-  *(uint *)&this_ptr_00->field_0x1138c = 1;
+            (&(this_ptr_00->base).base.base.model,"conzombie_david.dfm");
+  (this_ptr_00->base).base.base.collision_cylinder_radius = 0.7;
+  (this_ptr_00->base).base.base.base.is_transparent = 1;
+  (this_ptr_00->base).base.base.is_spectral = 0;
+  (this_ptr_00->base).fade_val = 0.0;
+  (this_ptr_00->base).anim_speed_scale = 2.5;
+  (this_ptr_00->base).walk_state_3_motion = 0;
+  pcVar6 = (this_ptr_00->base).flinch_motion_name;
+  (this_ptr_00->base).idle_motion = 0;
+  fVar3 = _DAT_005fef8c;
+  (this_ptr_00->base).walk_motion = 1;
+  fVar4 = _DAT_005fef90;
+  (this_ptr_00->base).run_motion = 1;
   pcVar5 = "flinch";
-  *(uint *)&this_ptr_00->field_0x11418 = 1;
-  *(uint *)&this_ptr_00->field_0x11370 = uVar3;
-  *(uint *)&this_ptr_00->field_0x11394 = uVar4;
+  (this_ptr_00->base).can_flinch = 1;
+  (this_ptr_00->base).alert_distance = fVar3;
+  (this_ptr_00->base).attack_range = fVar4;
   do {
     cVar2 = *pcVar5;
     *pcVar6 = cVar2;
@@ -50,15 +51,15 @@ CConfederateZombie * core_confzomb_cpp_CConfederateZombie_ctor_FUN_005a1b40(CCon
     pcVar6 = pcVar6 + 2;
   } while (cVar2 != '\0');
   core_confzomb_cpp_CConfederateZombie_processStates_FUN_005a1e10(this_ptr_00,0.0,0);
-  puVar1 = &this_ptr_00->field_0x10af8;
-  unkaddr_0059d350_cpp_FUN_0059d7f0(puVar1,"ChaseComplete","RangeAttack");
-  unkaddr_0059d350_cpp_FUN_0059d990(puVar1,"AlertInvisible");
-  pcVar6 = &this_ptr_00->field_0x11444;
-  unkaddr_0059d350_cpp_FUN_0059dc80(puVar1);
-  *(uint *)&this_ptr_00->field_0x11430 = 0;
-  *(uint *)&this_ptr_00->field_0x280c = 1;
+  pSVar1 = &(this_ptr_00->base).state_machine;
+  unkaddr_0059d350_cpp_FUN_0059d7f0(pSVar1,"ChaseComplete");
+  unkaddr_0059d350_cpp_FUN_0059d990(pSVar1);
+  pcVar6 = (this_ptr_00->base).hit_sound;
+  unkaddr_0059d350_cpp_FUN_0059dc80();
+  (this_ptr_00->base).burn_timer = 0.0;
+  (this_ptr_00->base).base.base.blood_type = BLOOD_TYPE_ICHOR;
   pcVar5 = "confedhit0?.wav";
-  *(uint *)&this_ptr_00->field_0x11348 = 1;
+  (this_ptr_00->base).can_burn = 1;
   do {
     cVar2 = *pcVar5;
     *pcVar6 = cVar2;
@@ -69,7 +70,7 @@ CConfederateZombie * core_confzomb_cpp_CConfederateZombie_ctor_FUN_005a1b40(CCon
     pcVar6 = pcVar6 + 2;
   } while (cVar2 != '\0');
   pcVar5 = "uniondeath0?.wav";
-  pcVar6 = &this_ptr_00->field_0x11543;
+  pcVar6 = (this_ptr_00->base).death_sound;
   do {
     cVar2 = *pcVar5;
     *pcVar6 = cVar2;

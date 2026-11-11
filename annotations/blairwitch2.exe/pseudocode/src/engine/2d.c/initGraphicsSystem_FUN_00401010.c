@@ -32,13 +32,14 @@ void __cdecl engine_2d_c_initGraphicsSystem_FUN_00401010(void)
     iVar2 = iVar2 + 4;
   } while (uVar3 < 0x640);
   unkclass_instream_cpp_CInStreamFile_ctor_FUN_0057cd50(&local_2c);
-  iVar2 = support_trstream_cpp_FUN_0057d390(&local_2c,&DAT_005ca030,"default.act");
+  iVar2 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390
+                    (&local_2c,&DAT_005ca030,"default.act");
   if (iVar2 == 0) {
     unkclass_instream_cpp_CInStreamFile_dtor_FUN_0057cec0(&local_2c,0);
     return;
   }
-  unkaddr_0057b9a0_cpp_FUN_0057cfe0(&local_2c,0x1c35b38,0x300);
-  unkaddr_0057b9a0_cpp_FUN_0057d180(&local_2c);
+  unkaddr_0057b9a0_cpp_CInStreamFile_read_FUN_0057cfe0(&local_2c,(uint *)0x1c35b38,0x300);
+  unkaddr_0057b9a0_cpp_CInStreamFile_close_FUN_0057d180(&local_2c);
   unkclass_instream_cpp_CInStreamFile_dtor_FUN_0057cec0(&local_2c,0);
   return;
 }

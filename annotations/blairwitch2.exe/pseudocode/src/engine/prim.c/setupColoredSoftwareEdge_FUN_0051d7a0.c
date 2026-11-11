@@ -12,111 +12,117 @@ void __cdecl engine_prim_c_setupColoredSoftwareEdge_FUN_0051d7a0(SRenderVertex *
 
 {
   longlong lVar1;
-  uint uVar2;
+  int iVar2;
   int iVar3;
   int iVar4;
-  int iVar5;
+  uint uVar5;
   SRenderVertex *pSVar6;
   int iVar7;
   uint uVar8;
   int iStack_14;
   
-  iVar7 = *(int *)(vertex1 + 0x14) >> 0x10;
-  iVar4 = *(int *)(vertex0 + 0x14) >> 0x10;
-  if (iVar4 != iVar7) {
-    iVar5 = iVar4;
+  iVar7 = (vertex1->projected_vertex).screen_y >> 0x10;
+  iVar3 = (vertex0->projected_vertex).screen_y >> 0x10;
+  if (iVar3 != iVar7) {
+    iVar4 = iVar3;
     pSVar6 = vertex1;
-    if (*(int *)(vertex1 + 0x14) < *(int *)(vertex0 + 0x14)) {
-      iVar5 = iVar7;
+    if ((vertex1->projected_vertex).screen_y < (vertex0->projected_vertex).screen_y) {
+      iVar4 = iVar7;
       pSVar6 = vertex0;
       vertex0 = vertex1;
-      iVar7 = iVar4;
+      iVar7 = iVar3;
     }
-    iVar3 = _DAT_01e61b5c * 0x50;
-    *(int *)(&DAT_01e61b60 + iVar3) = iVar5;
-    iVar4 = _DAT_01e62060;
-    *(int *)(iVar3 + 0x1e61b64) = iVar7;
-    if (iVar5 < iVar4) {
-      _DAT_01e62060 = iVar5;
+    iVar2 = _DAT_01e61b5c * 0x50;
+    *(int *)(&DAT_01e61b60 + iVar2) = iVar4;
+    iVar3 = _DAT_01e62060;
+    *(int *)(iVar2 + 0x1e61b64) = iVar7;
+    if (iVar4 < iVar3) {
+      _DAT_01e62060 = iVar4;
     }
     if (_DAT_01e62064 < iVar7) {
       _DAT_01e62064 = iVar7;
     }
-    if ((uint)(*(int *)(pSVar6 + 0x14) - *(int *)(vertex0 + 0x14)) < 0x10000) {
+    uVar5 = (pSVar6->projected_vertex).screen_y - (vertex0->projected_vertex).screen_y;
+    if (uVar5 < 0x10000) {
       iVar7 = 0;
     }
     else {
-      iVar7 = (int)(0xffffffff /
-                   (ulonglong)(uint)(*(int *)(pSVar6 + 0x14) - *(int *)(vertex0 + 0x14)));
+      iVar7 = (int)(0xffffffff / (ulonglong)uVar5);
     }
-    uVar8 = (uint)(ushort)((ushort)*(uint *)(vertex0 + 0x14) ^ 0xffff);
-    lVar1 = (longlong)iVar7 * (longlong)(*(int *)(pSVar6 + 0x10) - *(int *)(vertex0 + 0x10));
-    uVar2 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    *(uint *)(iVar3 + 0x1e61b6c) = uVar2;
-    lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar2;
-    *(uint *)(iVar3 + 0x1e61b68) =
-         *(int *)(vertex0 + 0x10) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    lVar1 = (longlong)iVar7 * (longlong)(*(int *)(pSVar6 + 0x18) - *(int *)(vertex0 + 0x18));
-    uVar2 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    *(uint *)(iVar3 + 0x1e61b7c) = uVar2;
-    lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar2;
-    *(uint *)(iVar3 + 0x1e61b78) =
-         *(int *)(vertex0 + 0x18) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    lVar1 = (longlong)iVar7 * (longlong)(*(int *)(pSVar6 + 0x1c) - *(int *)(vertex0 + 0x1c));
-    uVar2 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    *(uint *)(iVar3 + 0x1e61b84) = uVar2;
-    lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar2;
-    *(uint *)(iVar3 + 0x1e61b80) =
-         *(int *)(vertex0 + 0x1c) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    lVar1 = (longlong)iVar7 * (longlong)(*(int *)(pSVar6 + 0x20) - *(int *)(vertex0 + 0x20));
-    uVar2 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    *(uint *)(iVar3 + 0x1e61b74) = uVar2;
-    lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar2;
-    *(uint *)(iVar3 + 0x1e61b70) =
-         *(int *)(vertex0 + 0x20) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    lVar1 = (longlong)iVar7 * (longlong)(*(int *)(pSVar6 + 0x2c) - *(int *)(vertex0 + 0x2c));
-    uVar2 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    *(uint *)(iVar3 + 0x1e61b94) = uVar2;
-    lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar2;
-    *(uint *)(iVar3 + 0x1e61b90) =
-         *(int *)(vertex0 + 0x2c) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+    uVar8 = (uint)(ushort)((ushort)(vertex0->projected_vertex).screen_y ^ 0xffff);
+    lVar1 = (longlong)iVar7 *
+            (longlong)((pSVar6->projected_vertex).screen_x - (vertex0->projected_vertex).screen_x);
+    uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+    *(uint *)(iVar2 + 0x1e61b6c) = uVar5;
+    lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
+    *(uint *)(iVar2 + 0x1e61b68) =
+         (vertex0->projected_vertex).screen_x +
+         ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+    lVar1 = (longlong)iVar7 * (longlong)(pSVar6->u - vertex0->u);
+    uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+    *(uint *)(iVar2 + 0x1e61b7c) = uVar5;
+    lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
+    *(uint *)(iVar2 + 0x1e61b78) =
+         vertex0->u + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+    lVar1 = (longlong)iVar7 * (longlong)(pSVar6->v - vertex0->v);
+    uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+    *(uint *)(iVar2 + 0x1e61b84) = uVar5;
+    lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
+    *(uint *)(iVar2 + 0x1e61b80) =
+         vertex0->v + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+    lVar1 = (longlong)iVar7 * (longlong)(pSVar6->r - vertex0->r);
+    uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+    *(uint *)(iVar2 + 0x1e61b74) = uVar5;
+    lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
+    *(uint *)(iVar2 + 0x1e61b70) =
+         vertex0->r + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+    lVar1 = (longlong)iVar7 * (longlong)(pSVar6->a - vertex0->a);
+    uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+    *(uint *)(iVar2 + 0x1e61b94) = uVar5;
+    lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
+    *(uint *)(iVar2 + 0x1e61b90) =
+         vertex0->a + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     if (_DAT_01c38b58 == 1) {
       if (_DAT_01c38b50 == 0) {
-        iStack_14 = *(int *)(vertex0 + 0xc);
-        iVar4 = *(int *)(pSVar6 + 0xc);
+        iStack_14 = (vertex0->projected_vertex).inv_z;
+        iVar3 = (pSVar6->projected_vertex).inv_z;
       }
       else {
-        iStack_14 = 0x7fffffff - *(int *)(vertex0 + 8);
-        iVar4 = 0x7fffffff - *(int *)(pSVar6 + 8);
+        iStack_14 = 0x7fffffff - (vertex0->projected_vertex).transformed_z;
+        iVar3 = 0x7fffffff - (pSVar6->projected_vertex).transformed_z;
       }
-      lVar1 = (longlong)iVar7 * (longlong)(iVar4 - iStack_14);
-      uVar2 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-      *(uint *)(iVar3 + 0x1e61b8c) = uVar2;
-      lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar2;
-      *(uint *)(iVar3 + 0x1e61b88) =
+      lVar1 = (longlong)iVar7 * (longlong)(iVar3 - iStack_14);
+      uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+      *(uint *)(iVar2 + 0x1e61b8c) = uVar5;
+      lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
+      *(uint *)(iVar2 + 0x1e61b88) =
            iStack_14 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     }
     else {
-      lVar1 = (longlong)iVar7 * (longlong)(*(int *)(pSVar6 + 8) - *(int *)(vertex0 + 8));
-      uVar2 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-      *(uint *)(iVar3 + 0x1e61b8c) = uVar2;
-      lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar2;
-      *(uint *)(iVar3 + 0x1e61b88) =
-           *(int *)(vertex0 + 8) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+      lVar1 = (longlong)iVar7 *
+              (longlong)
+              ((pSVar6->projected_vertex).transformed_z - (vertex0->projected_vertex).transformed_z)
+      ;
+      uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+      *(uint *)(iVar2 + 0x1e61b8c) = uVar5;
+      lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
+      *(uint *)(iVar2 + 0x1e61b88) =
+           (vertex0->projected_vertex).transformed_z +
+           ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     }
-    lVar1 = (longlong)iVar7 * (longlong)(*(int *)(pSVar6 + 0x24) - *(int *)(vertex0 + 0x24));
-    uVar2 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    *(uint *)(iVar3 + 0x1e61b9c) = uVar2;
-    lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar2;
-    *(uint *)(iVar3 + 0x1e61b98) =
-         *(int *)(vertex0 + 0x24) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    lVar1 = (longlong)iVar7 * (longlong)(*(int *)(pSVar6 + 0x28) - *(int *)(vertex0 + 0x28));
-    uVar2 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    *(uint *)(iVar3 + 0x1e61ba4) = uVar2;
-    lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar2;
+    lVar1 = (longlong)iVar7 * (longlong)(pSVar6->g - vertex0->g);
+    uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+    *(uint *)(iVar2 + 0x1e61b9c) = uVar5;
+    lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
+    *(uint *)(iVar2 + 0x1e61b98) =
+         vertex0->g + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+    lVar1 = (longlong)iVar7 * (longlong)(pSVar6->b - vertex0->b);
+    uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+    *(uint *)(iVar2 + 0x1e61ba4) = uVar5;
+    lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
     _DAT_01e61b5c = _DAT_01e61b5c + 1;
-    *(uint *)(iVar3 + 0x1e61ba0) =
-         *(int *)(vertex0 + 0x28) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+    *(uint *)(iVar2 + 0x1e61ba0) =
+         vertex0->b + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
   }
   return;
 }

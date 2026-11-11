@@ -188,21 +188,21 @@ float * core_setcolid_cpp_FUN_00534ea0(CDemonSet *param_1,CVector3f *param_2,flo
                     core_main_c_FUN_004e4500();
                   }
                   pfVar15 = local_30[2];
-                  fStack_b8 = local_f0.z - *(float *)&unaff_EBP->field_0x20;
-                  fStack_b4 = fStack_e4 - *(float *)&unaff_EBP->field_0x24;
-                  afStack_b0[0] = CStack_e0.x - *(float *)&unaff_EBP->field_0x28;
+                  fStack_b8 = local_f0.z - (unaff_EBP->location).position.x;
+                  fStack_b4 = fStack_e4 - (unaff_EBP->location).position.y;
+                  afStack_b0[0] = CStack_e0.x - (unaff_EBP->location).position.z;
                   CStack_10c.x = fStack_b8;
                   *(float *)((int)&CStack_10c + (uint)bVar20 * -8 + 4) =
                        afStack_b0[(uint)bVar20 * -2 + -1];
                   *(float *)((int)&CStack_10c + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =
                        afStack_b0[(uint)bVar20 * -2 + (uint)bVar20 * -2];
-                  local_20 = (CDemonSet *)((float)pfVar15 - *(float *)&unaff_EBP->field_0x24);
+                  local_20 = (CDemonSet *)((float)pfVar15 - (unaff_EBP->location).position.y);
                   iVar2 = core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_0044f670
                                     (this_ptr,0,&CStack_10c,param_5,(float *)&local_20,
                                      &(unaff_EBP->orient).vec);
                   if (iVar2 != 0) {
                     *(CDemonActor **)((int)param_3 + 0x14d144) = unaff_EBP;
-                    local_30[2] = (float *)((float)local_20 + *(float *)&unaff_EBP->field_0x24);
+                    local_30[2] = (float *)((float)local_20 + (unaff_EBP->location).position.y);
                     afStack_d0[0] = 0.0;
                     afStack_d0[2] = 0.0;
                     afStack_d0[1] = 1.0;
@@ -417,12 +417,12 @@ LAB_00535c8d:
                        afStack_a0[(uint)bVar20 * -2 + 7];
                   *(float *)((int)&CStack_148 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =
                        afStack_a0[(uint)bVar20 * -2 + (uint)bVar20 * -2 + 8];
-                  local_30[3] = (float *)((float)local_30[2] - *(float *)&unaff_EBP->field_0x24);
+                  local_30[3] = (float *)((float)local_30[2] - (unaff_EBP->location).position.y);
                   iVar2 = (*((unaff_EBP->vtable)._ub)->customGetFloorHeight)
                                     (unaff_EBP,&CStack_148,param_5,(float *)(local_30 + 3));
                   if (iVar2 != 0) {
                     param_7[0xde0d].max.x = (float)unaff_EBP;
-                    local_18 = (CDemonActor *)((float)local_14 + *(float *)&unaff_EBP->field_0x24);
+                    local_18 = (CDemonActor *)((float)local_14 + (unaff_EBP->location).position.y);
                     fStack_60 = 0.0;
                     fStack_58 = 0.0;
                     fStack_5c = 1.0;

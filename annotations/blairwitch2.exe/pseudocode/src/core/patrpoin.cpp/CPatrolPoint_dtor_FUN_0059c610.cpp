@@ -11,7 +11,7 @@
 CPatrolPoint * core_patrpoin_cpp_CPatrolPoint_dtor_FUN_0059c610(CPatrolPoint *this_ptr,uint flags)
 
 {
-  CPatrolPoint *pCVar1;
+  CTrigger *pCVar1;
   void *ptr;
   
   if ((flags & 4) != 0) {
@@ -19,11 +19,11 @@ CPatrolPoint * core_patrpoin_cpp_CPatrolPoint_dtor_FUN_0059c610(CPatrolPoint *th
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  *(CDemonActor_vtable **)&this_ptr->field_0x2b0 = &g_CPatrolPointVTable;
-  pCVar1 = (CPatrolPoint *)core_trigger_cpp_CTrigger_dtor_FUN_00577840((CTrigger *)this_ptr,1);
+  (this_ptr->base).base.base.vtable._ub = &g_CPatrolPointVTable;
+  pCVar1 = core_trigger_cpp_CTrigger_dtor_FUN_00577840((CTrigger *)this_ptr,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return (CPatrolPoint *)pCVar1;
   }
   FUN_005b7fdc(pCVar1);
-  return pCVar1;
+  return (CPatrolPoint *)pCVar1;
 }

@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 150,
+    "complexity_score": 135,
     "cross_reference_count": 30,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 10,
+    "suspect_count": 9,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unrolled_strcpy"
     ],
@@ -23,6 +22,12 @@
       "addr": "0040f040",
       "from_addr": "0040f06f",
       "name": "core_armour.cpp_CArmour_archive_FUN_0040f040",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059fc10",
+      "from_addr": "0059fc57",
+      "name": "core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -179,12 +184,6 @@
       "addr": "00572f90",
       "from_addr": "00572fab",
       "name": "core_tentacle.cpp_CTentacle_archive_FUN_00572f90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059fc10",
-      "from_addr": "0059fc57",
-      "name": "core_twigzomb.cpp_CTwigZombie_archive_FUN_0059fc10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -469,16 +468,8 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar2 = &param_1->field_0x2260;",
+      "text": "pcVar2 = param_1->model_name;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x2260",
-      "severity": "mild",
-      "text": "pcVar2 = &param_1->field_0x2260;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

@@ -12,9 +12,10 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_005b6a50(CMorphModel *t
 
 {
   int iVar1;
-  SMorphPoint *pSVar2;
+  uint uVar2;
+  int *piVar3;
   CVector3i *input;
-  byte bVar3;
+  byte bVar4;
   float afStackY_1058 [1011];
   float local_70;
   float local_6c;
@@ -41,7 +42,7 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_005b6a50(CMorphModel *t
   uint local_18;
   int local_14;
   
-  bVar3 = 0;
+  bVar4 = 0;
   if (2000 < this_ptr->num_points) {
     _DAT_01d046a0 = "..\\core\\morph.cpp";
     _DAT_01d046a4 = 0x1f8;
@@ -56,43 +57,47 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_005b6a50(CMorphModel *t
     local_20 = 0;
     local_14 = 0;
     do {
-      pSVar2 = this_ptr->points + local_20;
-      iVar1 = *(int *)pSVar2;
-      local_34 = *(float *)(ref_points + iVar1 * 0x10 + 4) * local_1c;
-      local_30 = *(float *)(ref_points + iVar1 * 0x10 + 8) * local_1c;
-      local_2c = *(float *)(ref_points + iVar1 * 0x10 + 0xc) * local_1c;
-      local_64 = *(float *)(ref_points + iVar1 * 0x10 + 4) * local_1c;
-      *(uint *)((int)&stack0xffffffa0 + (uint)bVar3 * -8) =
-           *(uint *)((int)&stack0xffffffd0 + (uint)bVar3 * -8);
-      *(uint *)((int)&stack0xffffffa4 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-           *(uint *)((int)&stack0xffffffd4 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-      local_40 = *(float *)(pSVar2 + 4) * blend_factor;
-      local_3c = *(float *)(pSVar2 + 8) * blend_factor;
-      local_38 = *(float *)(pSVar2 + 0xc) * blend_factor;
-      local_70 = *(float *)(pSVar2 + 4) * blend_factor;
-      *(uint *)((int)&stack0xffffff94 + (uint)bVar3 * -8) =
-           *(uint *)((int)&stack0xffffffc4 + (uint)bVar3 * -8);
-      *(uint *)((int)&stack0xffffff98 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-           *(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+      piVar3 = (int *)((int)&this_ptr->points->vertex_index + local_20);
+      iVar1 = *piVar3;
+      local_34 = ref_points[iVar1].position.x * local_1c;
+      local_30 = ref_points[iVar1].position.y * local_1c;
+      local_2c = ref_points[iVar1].position.z * local_1c;
+      local_64 = local_34;
+      *(uint *)((int)&stack0xffffffa0 + (uint)bVar4 * -8) =
+           *(uint *)((int)&stack0xffffffd0 + (uint)bVar4 * -8);
+      *(uint *)((int)&stack0xffffffa4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
+           *(uint *)((int)&stack0xffffffd4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+      local_40 = (float)piVar3[1] * blend_factor;
+      local_3c = (float)piVar3[2] * blend_factor;
+      local_38 = (float)piVar3[3] * blend_factor;
+      local_70 = (float)piVar3[1] * blend_factor;
+      *(uint *)((int)&stack0xffffff94 + (uint)bVar4 * -8) =
+           *(uint *)((int)&stack0xffffffc4 + (uint)bVar4 * -8);
+      *(uint *)((int)&stack0xffffff98 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
+           *(uint *)((int)&stack0xffffffc8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
       local_4c = local_70 + local_64;
       local_48 = local_6c + local_60;
       local_44 = local_68 + local_5c;
       local_58 = local_70 + local_64;
-      *(uint *)((int)&stack0xffffffac + (uint)bVar3 * -8) =
-           *(uint *)((int)&stack0xffffffb8 + (uint)bVar3 * -8);
-      *(uint *)((int)&stack0xffffffb0 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-           *(uint *)((int)&stack0xffffffbc + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+      *(uint *)((int)&stack0xffffffac + (uint)bVar4 * -8) =
+           *(uint *)((int)&stack0xffffffb8 + (uint)bVar4 * -8);
+      *(uint *)((int)&stack0xffffffb0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
+           *(uint *)((int)&stack0xffffffbc + (uint)bVar4 * -8 + (uint)bVar4 * -8);
       input->x = (int)ROUND(local_58 * _DAT_006013a0);
       input->y = (int)ROUND(local_54 * _DAT_006013a0);
       input->z = (int)ROUND(local_50 * _DAT_006013a0);
       engine_special_cpp_FUN_0055d723
-                ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + local_14),input);
-      if ((*(uint *)(DAT_0060b280->vertex_buffer_ptr + local_14 + 0x10) & 0x80000000) == 0) {
+                ((SProjectedVertex *)
+                 ((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x + local_14
+                 ),input);
+      uVar2 = *(uint *)((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).screen_x +
+                       local_14);
+      if ((uVar2 & 0x80000000) == 0) {
         local_18 = 0;
       }
       else {
         local_28 = 1;
-        local_18 = local_18 & *(uint *)(DAT_0060b280->vertex_buffer_ptr + local_14 + 0x10);
+        local_18 = local_18 & uVar2;
       }
       input = input + 1;
       local_24 = local_24 + 1;

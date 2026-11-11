@@ -12,11 +12,9 @@
 #pragma pack(push, 1)
 typedef struct SNetPacket_ServerAccept {
     SNetPacketHeader header; // 0x0
-    char field_1[4]; // 0x1
     char player_name[20]; // 0x5
     char mission_name[80]; // 0x19
     SNetworkAddr client_addr; // 0x69
-    char field_106[7]; // 0x6a
 } SNetPacket_ServerAccept;
 #pragma pack(pop)
 

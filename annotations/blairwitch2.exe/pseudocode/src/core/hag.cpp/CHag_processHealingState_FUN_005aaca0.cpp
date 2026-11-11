@@ -6,32 +6,36 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_hag_cpp_CHag_processHealingState_FUN_005aaca0(CHag *this_ptr,float delta_time)
 
 {
-  float fVar1;
+  CCharacter *pCVar1;
   float fVar2;
-  int iVar3;
+  float fVar3;
+  CDemonActor *pCVar4;
   
-  iVar3 = (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x17c))(this_ptr);
-  if (iVar3 != 0) {
+  pCVar4 = (*(this_ptr->base).base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
+  if (pCVar4 != (CDemonActor *)0x0) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-              ((CMotionController *)&this_ptr->field_0x2b4,0,1);
-    iVar3 = *(int *)&this_ptr->field_0x10a78;
-    *(float *)&this_ptr->field_0x25a8 =
-         delta_time * (float)_DAT_005f0bfe + *(float *)&this_ptr->field_0x25a8;
-    if ((iVar3 != 0) &&
-       (fVar1 = *(float *)&this_ptr->field_0x20 - *(float *)(iVar3 + 0x20),
-       fVar2 = *(float *)&this_ptr->field_0x28 - *(float *)(iVar3 + 0x28),
-       SQRT(fVar2 * fVar2 + fVar1 * fVar1) < _DAT_00600a6c)) {
-      unkaddr_0059d350_cpp_FUN_0059d8e0(&this_ptr->field_0x10af8,"?MeleeAttack" + 1);
+              (&(this_ptr->base).base.base.model.base,0,1);
+    pCVar1 = (this_ptr->base).base.victim;
+    (this_ptr->base).base.base.hit_points =
+         delta_time * (float)_DAT_005f0bfe + (this_ptr->base).base.base.hit_points;
+    if ((pCVar1 != (CCharacter *)0x0) &&
+       (fVar2 = (this_ptr->base).base.base.base.location.position.x -
+                (pCVar1->base).location.position.x,
+       fVar3 = (this_ptr->base).base.base.base.location.position.z -
+               (pCVar1->base).location.position.z,
+       SQRT(fVar3 * fVar3 + fVar2 * fVar2) < _DAT_00600a6c)) {
+      unkaddr_0059d350_cpp_FUN_0059d8e0(&(this_ptr->base).state_machine,"?MeleeAttack" + 1);
       return;
     }
-    if ((float)_DAT_005f0c06 <= *(float *)&this_ptr->field_0x25a8) {
-      *(float *)&this_ptr->field_0x11394 = _DAT_00600a6c;
-      unkaddr_0059d350_cpp_FUN_0059d8e0(&this_ptr->field_0x10af8,"Chasing");
+    if ((float)_DAT_005f0c06 <= (this_ptr->base).base.base.hit_points) {
+      (this_ptr->base).attack_range = _DAT_00600a6c;
+      unkaddr_0059d350_cpp_FUN_0059d8e0(&(this_ptr->base).state_machine,"Chasing");
       return;
     }
   }

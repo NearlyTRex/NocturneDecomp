@@ -2,14 +2,14 @@
 // Address: 0049db20
 // Address Range: [[0049db20, 0049e356]]
 // Convention: unknown
-// Signature: void core_fire_cpp_FUN_0049db20(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,undefined4 param_13,undefined4 param_14,undefined4 param_15,undefined4 param_16,undefined4 param_17,undefined4 param_18,undefined4 param_19,undefined4 param_20,float param_21,float param_22,float param_23,float param_24,int param_25)
+// Signature: void core_fire_cpp_FUN_0049db20(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,float param_13,float param_14,float param_15,float param_16,float param_17,float param_18,float param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_fire_cpp_FUN_0049db20(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)
+void core_fire_cpp_FUN_0049db20(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,float param_13,float param_14,float param_15,float param_16,float param_17,float param_18,float param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)
 
 {
   float fVar1;
@@ -26,27 +26,27 @@ void core_fire_cpp_FUN_0049db20(CFireEffect *param_1,float *param_2,float *param
   float fStack_160;
   float fStack_15c;
   float fStack_158;
-  uint local_154;
-  uint local_150;
-  uint local_14c;
+  float local_154;
+  float local_150;
+  float local_14c;
   float local_148;
   float local_144;
   float local_140;
   float local_13c;
   float local_138;
   float local_134;
-  uint local_130;
-  uint local_124;
+  float local_130;
+  float local_124;
   float local_118;
   float local_114;
   float local_110;
-  uint local_10c;
-  uint local_108;
-  uint local_104;
+  float local_10c;
+  float local_108;
+  float local_104;
   CVector3f local_100;
   float local_f4;
   float local_f0 [4];
-  uint local_e0;
+  float local_e0;
   float fStack_dc;
   float fStack_d8;
   float fStack_d4;

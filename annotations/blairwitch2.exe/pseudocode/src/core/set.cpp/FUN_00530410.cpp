@@ -24,7 +24,7 @@ void core_set_cpp_FUN_00530410(CDemonSet *param_1)
   CVector3f CStack_3c;
   uint local_30 [6];
   int local_18;
-  int local_14;
+  char *local_14;
   
   bVar6 = 0;
   _DAT_0200a3a4 = 0;
@@ -35,7 +35,7 @@ void core_set_cpp_FUN_00530410(CDemonSet *param_1)
   }
   local_18 = param_1->sorted_render_actor_count + -1;
   if (-1 < local_18) {
-    local_14 = (int)param_1->cameras + param_1->sorted_render_actor_count * 4 + -8;
+    local_14 = param_1->cameras[0].name + param_1->sorted_render_actor_count * 4 + -8;
     do {
       iVar1 = *(int *)(local_14 + 0x15f6fc);
       if (*(int *)(iVar1 + 0xfc) == 0) {

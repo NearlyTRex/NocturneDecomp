@@ -562,7 +562,7 @@
     "kind":"class",
     "name":"CInventory",
     "rtti_file":"core/inv.cpp",
-    "size":1
+    "size":1572
   },
   {
     "kind":"class",
@@ -589,6 +589,64 @@
     "parent":"CStrList",
     "rtti_file":"shape/edittool.cpp",
     "size":960
+  },
+  {
+    "kind":"funcdef",
+    "name":"CPod_dismount",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CPod",
+          "ptr":1
+        }
+      },
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CPod_mount",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CPod",
+          "ptr":1
+        }
+      },
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -739,7 +797,13 @@
   {
     "kind":"class",
     "name":"CUnionZombie",
+    "parent":"CBasicEnemy",
     "size":71772
+  },
+  {
+    "kind":"class",
+    "name":"CVector3d",
+    "size":24
   },
   {
     "kind":"funcdef",
@@ -798,6 +862,25 @@
   },
   {
     "kind":"enum",
+    "name":"EGasMaskState",
+    "size":4,
+    "values":[
+      {
+        "name":"GAS_MASK_AWAY",
+        "value":0
+      },
+      {
+        "name":"GAS_MASK_IN_HAND",
+        "value":1
+      },
+      {
+        "name":"GAS_MASK_ON_FACE",
+        "value":2
+      }
+    ]
+  },
+  {
+    "kind":"enum",
     "name":"EWeatherType",
     "size":4,
     "values":[
@@ -823,7 +906,7 @@
   {
     "kind":"struct",
     "name":"SLaserInfo",
-    "size":1
+    "size":84
   },
   {
     "kind":"struct",
@@ -834,7 +917,7 @@
   {
     "kind":"struct",
     "name":"SMotionTransition",
-    "size":1
+    "size":24
   },
   {
     "kind":"struct",
@@ -844,7 +927,12 @@
   {
     "kind":"struct",
     "name":"SSimFrame",
-    "size":1
+    "size":116
+  },
+  {
+    "kind":"struct",
+    "name":"SStateMachine",
+    "size":2124
   },
   {
     "kind":"struct",

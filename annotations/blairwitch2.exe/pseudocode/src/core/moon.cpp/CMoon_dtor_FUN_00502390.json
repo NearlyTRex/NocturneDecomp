@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 41,
+    "complexity_score": 25,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 11,
-    "suspect_count": 2,
+    "pseudocode_lines": 10,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
-    "total_lines": 39
+    "total_lines": 38
   },
   "cross_references": [],
   "function": {
@@ -37,7 +36,7 @@
     {
       "addr": "00502450",
       "is_variadic": false,
-      "name": "core_moon.cpp_FUN_00502450"
+      "name": "core_moon.cpp_CMoon_free_FUN_00502450"
     }
   ],
   "globals": [],
@@ -97,16 +96,8 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x738",
-      "severity": "mild",
-      "text": "((CKeyFramedModel *)&this_ptr->field_0x738,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 14,
+      "line": 13,
       "match": "pCVar1[-1].",
       "severity": "mild",
       "text": "return (CMoon *)&pCVar1[-1].rotation_matrix_workspace.m[2].z;",

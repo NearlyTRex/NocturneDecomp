@@ -19,10 +19,10 @@ void shape_edittool_cpp_FUN_0047e870(void)
   int *piVar5;
   int iVar6;
   uint uVar7;
-  uint local_44;
-  uint local_40;
-  uint local_3c;
-  uint local_38;
+  float local_44;
+  float local_40;
+  float local_3c;
+  float local_38;
   int local_34;
   uint local_30;
   int local_2c;
@@ -38,7 +38,7 @@ void shape_edittool_cpp_FUN_0047e870(void)
     _DAT_01d046a4 = 0xa0;
     core_main_c_FUN_004e4500("gEdFont must be set by the application.");
   }
-  _DAT_01c25f78 = *(uint *)(_DAT_01c25590 + 0x41e8);
+  _DAT_01c25f78 = _DAT_01c25590->max_char_width;
   _DAT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(_DAT_01c25590,0x6a);
   if (_DAT_01c2559c < 1) {
     _DAT_01d046a0 = "..\\shape\\edittool.cpp";
@@ -116,9 +116,9 @@ void shape_edittool_cpp_FUN_0047e870(void)
     }
   }
   else {
-    unkafter_minecar_cpp_FUN_004f2ba0((CEdCheck *)&local_44);
+    unkafter_minecar_cpp_getRenderViewport_FUN_004f2ba0(&local_44,&local_40,&local_3c,&local_38);
     local_14 = *(int *)(iVar4 + 0x1c255a8) + 1;
-    unkafter_minecar_cpp_FUN_004f2ac0
+    unkafter_minecar_cpp_setRenderViewport_FUN_004f2ac0
               ((float)*piVar5,(float)*(int *)(iVar4 + 0x1c255a4),(float)local_14,
                (float)(*(int *)(iVar4 + 0x1c255ac) + 1));
     uVar7 = _DAT_01c2638c;
@@ -162,7 +162,7 @@ void shape_edittool_cpp_FUN_0047e870(void)
     engine_mini3d_cpp_FUN_004f93b0
               (*(int *)(iVar4 + 0x1c255a8) + -1,*(uint *)(iVar4 + 0x1c255a4),
                *(int *)(iVar4 + 0x1c255ac) + -1);
-    unkafter_minecar_cpp_FUN_004f2ac0(local_44,local_40,local_3c,local_38);
+    unkafter_minecar_cpp_setRenderViewport_FUN_004f2ac0(local_44,local_40,local_3c,local_38);
   }
   if (*(char *)(iVar4 + 0x1c255e8) != '\0') {
     local_30 = _DAT_01c35e4c;

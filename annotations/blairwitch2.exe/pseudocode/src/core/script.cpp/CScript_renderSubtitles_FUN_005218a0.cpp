@@ -47,7 +47,7 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_005218a0(CScript *this_
     engine_2d_c_fillRectColor_FUN_004031c0(0,iVar9 - iVar4,iVar1 + -1,iVar9 + -1,0);
   }
   uVar2 = _DAT_01c35e4c;
-  if ((this_ptr->current_message[0] != '\0') && (*(int *)&g_CGamePtr->field_0x10 != 0)) {
+  if ((this_ptr->current_message[0] != '\0') && (g_CGamePtr->subtitle_mode != 0)) {
     this_ptr_00 = _DAT_01511cb8;
     if (DAT_006141bc < 0x1e0) {
       this_ptr_00 = _DAT_01511cbc;

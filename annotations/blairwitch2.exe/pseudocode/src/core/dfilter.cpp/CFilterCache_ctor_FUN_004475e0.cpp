@@ -9,6 +9,6 @@
 CFilterCache * __cdecl core_dfilter_cpp_CFilterCache_ctor_FUN_004475e0(CFilterCache *this_ptr)
 
 {
-  *(uint *)this_ptr = 0;
+  this_ptr->filter_count = 0;
   return this_ptr;
 }

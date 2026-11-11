@@ -9,6 +9,6 @@
 void __cdecl core_charactr_cpp_setActorXPos_FUN_0042bf20(CDemonActor *actor,float x)
 
 {
-  *(float *)&actor->field_0x20 = x;
+  (actor->location).position.x = x;
   return;
 }

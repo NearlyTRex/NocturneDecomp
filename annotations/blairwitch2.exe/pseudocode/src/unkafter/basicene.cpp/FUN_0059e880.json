@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 119,
+    "complexity_score": 136,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 9,
-    "suspect_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 11,
+    "suspect_count": 11,
     "suspect_types": [
-      "unnamed_field",
+      "pointer_cast",
+      "pointer_truncation",
       "unnamed_param"
     ],
-    "total_lines": 31
+    "total_lines": 33
   },
   "cross_references": [
     {
@@ -228,64 +229,72 @@
       "line": 5,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((param_2 == 7000) && (param_1[0x66].field_0x28a != '\\0')) {",
+      "text": "if ((param_2 == 7000) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 5,
+      "line": 6,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((param_2 == 7000) && (param_1[0x66].field_0x28a != '\\0')) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x28a",
-      "severity": "mild",
-      "text": "if ((param_2 == 7000) && (param_1[0x66].field_0x28a != '\\0')) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(0x0264B290,param_1,&param_1[0x66].field_0x28a,(CVector3f *)&param_1->field_0x20);",
+      "text": "(*(char *)((int)&param_1[0x66].particle_systems[4].fade_start + 2) != '\\0')) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 7,
+      "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x0264B290,param_1,&param_1[0x66].field_0x28a,(CVector3f *)&param_1->field_0x20);",
+      "text": "(0x0264B290,param_1,(char *)((int)&param_1[0x66].particle_systems[4].fade_start + 2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 7,
+      "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x0264B290,param_1,&param_1[0x66].field_0x28a,(CVector3f *)&param_1->field_0x20);",
+      "text": "(0x0264B290,param_1,(char *)((int)&param_1[0x66].particle_systems[4].fade_start + 2)",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x28a",
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
       "severity": "mild",
-      "text": "(0x0264B290,param_1,&param_1[0x66].field_0x28a,(CVector3f *)&param_1->field_0x20);",
-      "type": "unnamed_field"
+      "text": ",&(param_1->location).position);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(0x0264B290,param_1,&param_1[0x66].field_0x28a,(CVector3f *)&param_1->field_0x20);",
-      "type": "unnamed_field"
+      "description": "Pointer value `&param_1[0x66].particle_systems[4].fade_start` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 6,
+      "match": "(int)&param_1[0x66].particle_systems[4].fade_start",
+      "severity": "moderate",
+      "text": "(*(char *)((int)&param_1[0x66].particle_systems[4].fade_start + 2) != '\\0')) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&param_1[0x66].particle_systems[4].fade_start` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 8,
+      "match": "(int)&param_1[0x66].particle_systems[4].fade_start",
+      "severity": "moderate",
+      "text": "(0x0264B290,param_1,(char *)((int)&param_1[0x66].particle_systems[4].fade_start + 2)",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 6,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(*(char *)((int)&param_1[0x66].particle_systems[4].fade_start + 2) != '\\0')) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 8,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(0x0264B290,param_1,(char *)((int)&param_1[0x66].particle_systems[4].fade_start + 2)",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

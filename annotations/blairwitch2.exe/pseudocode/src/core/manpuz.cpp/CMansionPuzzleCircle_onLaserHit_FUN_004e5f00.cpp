@@ -12,48 +12,49 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004e5f00(CMansi
 
 {
   float fVar1;
-  float *pfVar2;
-  SGem *pSVar3;
-  int iVar4;
+  float fVar2;
+  float fVar3;
+  CVector3f *pCVar4;
+  SGem *pSVar5;
+  int iVar6;
   
   core_actor_cpp_CDemonActor_onLaserHit_FUN_00409830(&this_ptr->base,laser_info);
-  iVar4 = 0;
-  pfVar2 = (float *)&this_ptr->reflectors[0].field_0x1c;
+  iVar6 = 0;
+  pCVar4 = &this_ptr->reflectors[0].position;
   do {
-    if ((pfVar2[2] - *(float *)(laser_info + 0x34)) * (pfVar2[2] - *(float *)(laser_info + 0x34)) +
-        (pfVar2[1] - *(float *)(laser_info + 0x30)) * (pfVar2[1] - *(float *)(laser_info + 0x30)) +
-        (*pfVar2 - *(float *)(laser_info + 0x2c)) * (*pfVar2 - *(float *)(laser_info + 0x2c)) < 1.0)
-    {
-      *(uint *)(laser_info + 0x50) = 0x3f800000;
+    fVar1 = pCVar4->x - (laser_info->local_hit_position).x;
+    fVar3 = pCVar4->y - (laser_info->local_hit_position).y;
+    fVar2 = pCVar4->z - (laser_info->local_hit_position).z;
+    if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 < 1.0) {
+      laser_info->transparency = 1.0;
       return;
     }
-    iVar4 = iVar4 + 1;
-    pfVar2 = pfVar2 + 0x18;
-  } while (iVar4 < 2);
-  if (*(int *)(laser_info + 8) == 2) {
-    iVar4 = 0;
-    pfVar2 = (float *)&this_ptr->gems[0].field_0x24;
+    iVar6 = iVar6 + 1;
+    pCVar4 = pCVar4 + 8;
+  } while (iVar6 < 2);
+  if (laser_info->laser_type == 2) {
+    iVar6 = 0;
+    pCVar4 = &this_ptr->gems[0].position;
     do {
-      pSVar3 = this_ptr->gems + iVar4;
-      if ((pfVar2[2] - *(float *)(laser_info + 0x34)) * (pfVar2[2] - *(float *)(laser_info + 0x34))
-          + (pfVar2[1] - *(float *)(laser_info + 0x30)) *
-            (pfVar2[1] - *(float *)(laser_info + 0x30)) +
-            (*pfVar2 - *(float *)(laser_info + 0x2c)) * (*pfVar2 - *(float *)(laser_info + 0x2c)) <
-          (float)_DAT_005dc51d) {
+      fVar1 = pCVar4->x - (laser_info->local_hit_position).x;
+      fVar3 = pCVar4->y - (laser_info->local_hit_position).y;
+      fVar2 = pCVar4->z - (laser_info->local_hit_position).z;
+      pSVar5 = this_ptr->gems + iVar6;
+      if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 < (float)_DAT_005dc51d) {
         fVar1 = (float)_DAT_005dc515;
-        *(float *)&pSVar3->field_0x18 =
-             (float)*(int *)(laser_info + 0xc) * *(float *)laser_info * *(float *)pSVar3 * fVar1 +
-             *(float *)&pSVar3->field_0x18;
-        *(float *)&pSVar3->field_0x1c =
-             (float)*(int *)(laser_info + 0x10) * *(float *)laser_info *
-             *(float *)&pSVar3->field_0x4 * fVar1 + *(float *)&pSVar3->field_0x1c;
-        *(float *)&pSVar3->field_0x20 =
-             (float)*(int *)(laser_info + 0x14) * *(float *)laser_info *
-             *(float *)&pSVar3->field_0x8 * fVar1 + *(float *)&pSVar3->field_0x20;
+        (pSVar5->light).r =
+             (float)(laser_info->color).r * laser_info->intensity * (pSVar5->color).r * fVar1 +
+             (pSVar5->light).r;
+        (pSVar5->light).g =
+             (float)(laser_info->color).g * laser_info->intensity * (pSVar5->color).g * fVar1 +
+             (pSVar5->light).g;
+        (pSVar5->light).b =
+             (float)(laser_info->color).b * laser_info->intensity * (pSVar5->color).b * fVar1 +
+             (pSVar5->light).b;
       }
-      iVar4 = iVar4 + 1;
-      pfVar2 = pfVar2 + 0x2e;
-    } while (iVar4 < 0xc);
+      iVar6 = iVar6 + 1;
+      pCVar4 = (CVector3f *)((int)(pCVar4 + 0xf) + 4);
+    } while (iVar6 < 0xc);
   }
   return;
 }

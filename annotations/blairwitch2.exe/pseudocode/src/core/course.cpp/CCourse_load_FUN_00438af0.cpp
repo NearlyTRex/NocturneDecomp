@@ -34,22 +34,22 @@ void __cdecl core_course_cpp_CCourse_load_FUN_00438af0(CCourse *this_ptr,char *f
     iVar2 = _fgetc(p_Var1);
     if (iVar2 < 0) break;
   } while (iVar2 != 10);
-  _fscanf(p_Var1,"%d,%d\n",&local_14,this_ptr + 8);
+  _fscanf(p_Var1,"%d,%d\n",&local_14,&this_ptr->loop);
   core_course_cpp_FUN_00438a90(this_ptr,local_14);
   do {
     iVar2 = _fgetc(p_Var1);
     if (iVar2 < 0) break;
   } while (iVar2 != 10);
   iVar2 = 0;
-  if (0 < *(int *)this_ptr) {
+  if (0 < this_ptr->len) {
     iVar4 = 0;
     do {
-      iVar3 = *(int *)(this_ptr + 4) + iVar4;
+      iVar3 = (int)&(this_ptr->frames->pos).x + iVar4;
       iVar2 = iVar2 + 1;
       iVar4 = iVar4 + 0x1c;
       _fscanf(p_Var1,"%f,%f,%f, %f,%f,%f,%f\n",iVar3,iVar3 + 4,iVar3 + 8,iVar3 + 0xc,iVar3 + 0x10,
                  iVar3 + 0x14,iVar3 + 0x18);
-    } while (iVar2 < *(int *)this_ptr);
+    } while (iVar2 < this_ptr->len);
   }
   _fclose(p_Var1);
   return;

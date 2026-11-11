@@ -18,7 +18,7 @@ void __cdecl core_backgnd_cpp_CBackgroundActor_renderBackground_FUN_0040f3f0(CBa
   
   bVar4 = 0;
   if ((layer_flag != 0) &&
-     ((*(int *)&this_ptr->field_0x2b4 != 0 ||
+     ((this_ptr->cast_shadows_flag != 0 ||
       (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280), iVar1 == 0
       )))) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0(&this_ptr->base);

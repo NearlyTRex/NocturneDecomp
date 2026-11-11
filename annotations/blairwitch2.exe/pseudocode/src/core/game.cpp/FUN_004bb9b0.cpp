@@ -120,9 +120,9 @@ void __cdecl core_game_cpp_FUN_004bb9b0(CGame *this_ptr,char *save_filename)
   }
   FUN_005b8010(file_handle,"Game stats\n");
   FUN_005b8010
-            (file_handle,"%f,%f,%d,%d\n",(double)*(float *)&this_ptr->field_0x270,
-             (double)*(float *)&this_ptr->field_0x268,*(uint *)&this_ptr->field_0x26c,
-             *(uint *)&this_ptr->field_0x274);
+            (file_handle,"%f,%f,%d,%d\n",(double)this_ptr->total_play_time,
+             (double)this_ptr->total_game_time,this_ptr->damageable_enemy_count,
+             this_ptr->total_kill_count);
   core_set_cpp_CDemonSet_saveStateInfo_FUN_00534a10(g_CDemonSetPtr,file_handle);
   core_fldnotes_cpp_FUN_004a6470(g_CFieldNotesPtr,file_handle);
   _fclose(file_handle);
@@ -132,7 +132,8 @@ void __cdecl core_game_cpp_FUN_004bb9b0(CGame *this_ptr,char *save_filename)
     support_trstream_cpp_COutStreamFile_ctor_FUN_0057db80(&local_1c);
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Warning!  Your game didn't save.")
     ;
-    iVar2 = support_trstream_cpp_FUN_0057d320(&local_44,"save\\$$SAVE$$.TMP");
+    iVar2 = support_trstream_cpp_CInStreamFile_open_FUN_0057d320(&local_44,"save\\$$SAVE$$.TMP")
+    ;
     if (iVar2 == 0) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0047be40(g_CEditorToolsPtr,pcVar3);
       support_trstream_cpp_COutStreamFile_dtor_FUN_0057dc10(&local_1c,0);
@@ -140,20 +141,21 @@ void __cdecl core_game_cpp_FUN_004bb9b0(CGame *this_ptr,char *save_filename)
       return;
     }
     _sprintf(local_288,"%s\\%s");
-    iVar2 = support_trstream_cpp_FUN_0057dd90();
+    iVar2 = support_trstream_cpp_COutStreamFile_open_FUN_0057dd90(&local_1c,local_288,&DAT_005d8527)
+    ;
     if (iVar2 == 0) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0047be40(g_CEditorToolsPtr,pcVar3);
       support_trstream_cpp_COutStreamFile_dtor_FUN_0057dc10(&local_1c,0);
       unkclass_instream_cpp_CInStreamFile_dtor_FUN_0057cec0(&local_44,0);
       return;
     }
-    support_trstream_cpp_FUN_0057dca0();
+    support_trstream_cpp_COutStreamFile_write_FUN_0057dca0(&local_1c,&DAT_006164dc,4);
     support_codec_cpp_CLZWCompress_ctor_FUN_00434770(&local_84,0x8000,8);
     support_codec_cpp_CLZWCompress_init_FUN_004347c0(&local_84);
     support_codec_cpp_FUN_00434810();
     support_codec_cpp_FUN_00434910(&local_84,&local_1c);
-    unkaddr_0057b9a0_cpp_FUN_0057d180(&local_44);
-    support_trstream_cpp_FUN_0057dd60(&local_1c);
+    unkaddr_0057b9a0_cpp_CInStreamFile_close_FUN_0057d180(&local_44);
+    support_trstream_cpp_COutStreamFile_close_FUN_0057dd60(&local_1c);
     support_codec_cpp_CLZWDictionary_dtor_FUN_00434270(&local_84.dictionary,0);
     support_codec_cpp_CCodec_dtor_FUN_00433e90(&local_84.base,1);
     support_trstream_cpp_COutStreamFile_dtor_FUN_0057dc10(&local_1c,0);

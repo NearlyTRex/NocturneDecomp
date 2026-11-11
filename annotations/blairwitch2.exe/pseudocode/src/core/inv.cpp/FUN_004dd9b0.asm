@@ -666,7 +666,7 @@ section .text
     NOP                                 ; 004de0bf
     MOV EAX,[0x00616494]                ; 004de0c0 | g_CGamePtr
         ;   Label: LAB_004de0c0
-    CMP dword ptr [EAX + 0x264],0x0     ; 004de0c5 | g_CGameInstance.field516_0x264
+    CMP dword ptr [EAX + 0x264],0x0     ; 004de0c5 | g_CGameInstance.flashlight_active
     JZ 0x004dedd4                       ; 004de0cc
         ;   XREF to: 004dedd4 (CONDITIONAL_JUMP)  ; LAB_004dedd4
     MOV EAX,[0x006141bc]                ; 004de0d2 | DAT_006141bc
@@ -940,7 +940,7 @@ section .text
     FSTP float ptr [ESP + 0x8a4]        ; 004de469
     MOV EAX,[0x0061b5a8]                ; 004de470 | g_CDemonSetPtr
     FLD float ptr [EDX + 0x34]          ; 004de475
-    FSUB float ptr [EAX + 0x15acbc]     ; 004de478 | g_CDemonSetInstance.field129_0x15acbc
+    FSUB float ptr [EAX + 0x15acbc]     ; 004de478 | g_CDemonSetInstance.altitude_reference_y
     LEA ESI,[ESP + 0x78c]               ; 004de47e
     FSTP float ptr [ESP + 0x8f4]        ; 004de485
     MOV EAX,dword ptr [ESP + 0x8f4]     ; 004de48c
@@ -1601,7 +1601,7 @@ section .text
     MOV ESI,EAX                         ; 004dedcd
     JMP 0x004ddd63                      ; 004dedcf
         ;   XREF to: 004ddd63 (UNCONDITIONAL_JUMP)  ; LAB_004ddd63
-    CMP dword ptr [EAX + 0x25c],0x0     ; 004dedd4 | g_CGameInstance.field508_0x25c
+    CMP dword ptr [EAX + 0x25c],0x0     ; 004dedd4 | g_CGameInstance.goggles_active
         ;   Label: LAB_004dedd4
     JNZ 0x004de0d2                      ; 004deddb
         ;   XREF to: 004de0d2 (CONDITIONAL_JUMP)  ; LAB_004de0d2

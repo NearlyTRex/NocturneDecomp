@@ -11,7 +11,7 @@ void core_doc_cpp_factoryFuncDoc_FUN_004500a0(void)
 {
   CDoc *this_ptr;
   
-  this_ptr = (CDoc *)debugAllocTracked1(0x26188);
+  this_ptr = (CDoc *)operator_new(0x26188);
   if (this_ptr == (CDoc *)0x0) {
     return;
   }

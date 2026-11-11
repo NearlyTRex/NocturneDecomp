@@ -18,8 +18,7 @@ int unkaddr_004a1200_cpp_FUN_004a1b5e(int param_1)
   if (0 < _DAT_01cab9f0) {
     pSVar1 = SNotesSection_ARRAY_01cab9f4;
     do {
-      if ((*(int *)&pSVar1->field_0x140 <= param_1) &&
-         (param_1 < *(int *)&pSVar1->field_0x140 + *(int *)&pSVar1->field_0x144)) {
+      if ((pSVar1->first_page <= param_1) && (param_1 < pSVar1->first_page + pSVar1->page_count)) {
         return iVar2;
       }
       iVar2 = iVar2 + 1;

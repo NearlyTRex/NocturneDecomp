@@ -29,7 +29,7 @@ int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0047b1f0(char *dialog_tit
     _DAT_01d046a4 = 0xa0;
     core_main_c_FUN_004e4500("gEdFont must be set by the application.");
   }
-  _DAT_01c25f78 = *(uint *)(_DAT_01c25590 + 0x41e8);
+  _DAT_01c25f78 = _DAT_01c25590->max_char_width;
   _DAT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(_DAT_01c25590,0x6a);
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   source_string = input_buffer;
@@ -67,14 +67,14 @@ LAB_0047b3b6:
   shape_edittool_cpp_FUN_00484f20(&local_1e0,iVar2 == 1);
   shape_edittool_cpp_FUN_0047f210(g_CEditorToolsPtr,0);
   wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
-  iVar3 = (*(code *)**(uint **)0x01D02F84)(0x01D02F84,0x2a);
+  iVar3 = (*0x01D02F84->vtable->getKeyState)(0x01D02F84,DIK_LSHIFT);
   if ((iVar3 == 0) &&
-     (iVar3 = (**(code **)(*(int *)0x01D02F84 + 4))(0x01D02F84,0xf), iVar3 != 0)) {
+     (iVar3 = (*0x01D02F84->vtable->getAndClearKeyState)(0x01D02F84,DIK_TAB), iVar3 != 0)) {
     iVar2 = iVar2 + 1;
   }
-  iVar3 = (*(code *)**(uint **)0x01D02F84)(0x01D02F84,0x2a);
+  iVar3 = (*0x01D02F84->vtable->getKeyState)(0x01D02F84,DIK_LSHIFT);
   if ((iVar3 != 0) &&
-     (iVar3 = (**(code **)(*(int *)0x01D02F84 + 4))(0x01D02F84,0xf), iVar3 != 0)) {
+     (iVar3 = (*0x01D02F84->vtable->getAndClearKeyState)(0x01D02F84,DIK_TAB), iVar3 != 0)) {
     iVar2 = iVar2 + -1;
   }
   pCVar6 = &local_320;

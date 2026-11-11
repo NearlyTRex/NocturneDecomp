@@ -4,9 +4,13 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CSocket.h"
 #include "types/enums/EConnectionType.h"
+#include "types/enums/EHeroType.h"
 #include "types/enums/ENetworkMode.h"
 #include "types/structs/SNetPlayer.h"
+#include "types/structs/SNetworkAddr.h"
+#include "types/structs/SPlayerInput.h"
 
 // Structure: CNetGame
 // Ghidra size: 0x184 (388 bytes)
@@ -17,13 +21,12 @@ typedef struct CNetGame {
     char player_name[20]; // 0x8
     int player_count; // 0x1c
     SNetPlayer players[2]; // 0x20
-    char field_272[16]; // 0x110
     int server_player_index; // 0x120
     int local_player_index; // 0x124
     char mission_name[80]; // 0x128
     int has_pending_sim_frame; // 0x178
     uint random_seed; // 0x17c
-    char field_384[4]; // 0x180
+    CSocket socket; // 0x180
 } CNetGame;
 #pragma pack(pop)
 

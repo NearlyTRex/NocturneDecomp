@@ -42,9 +42,9 @@ float core_dmodel_cpp_FUN_0044f020(CKeyFramedModel *param_1,int param_2,uint par
   int local_30;
   int local_2c;
   CVector3i *local_28;
-  SMRGLPrimitiveQuad *local_24;
+  int local_24;
   int local_20;
-  SMRGLPrimitiveQuad *local_1c;
+  int local_1c;
   float local_18;
   
   bVar4 = 0;
@@ -63,7 +63,8 @@ float core_dmodel_cpp_FUN_0044f020(CKeyFramedModel *param_1,int param_2,uint par
       if (0 < param_1->poly_count) {
         local_30 = 0;
         do {
-          local_24 = param_1->poly_vert_list + local_30;
+          local_24 = (int)&(((SMRGLPrimitiveQuad *)(param_1->poly_vert_list->vertices + -2))->base).
+                           base.type + local_30;
           pCVar2 = local_28 + *(int *)(local_24 + 0x18);
           local_b0.x = (float)pCVar2->x * _DAT_005f50c4;
           local_b0.y = (float)pCVar2->y * _DAT_005f50c4;

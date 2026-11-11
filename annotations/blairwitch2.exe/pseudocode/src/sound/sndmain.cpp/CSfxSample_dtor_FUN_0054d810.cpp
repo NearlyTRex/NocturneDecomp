@@ -14,7 +14,6 @@ CSfxSample * sound_sndmain_cpp_CSfxSample_dtor_FUN_0054d810(CSfxSample *this_ptr
   CInStreamFile *pCVar1;
   
   sound_sndmain_cpp_CSfxSample_freeMemory_FUN_0054d9b0(this_ptr);
-  pCVar1 = unkclass_instream_cpp_CInStreamFile_dtor_FUN_0057cec0
-                     ((CInStreamFile *)&this_ptr->field_0x17c,0);
-  return (CSfxSample *)&pCVar1[-10].field_0x14;
+  pCVar1 = unkclass_instream_cpp_CInStreamFile_dtor_FUN_0057cec0(&this_ptr->file_stream,0);
+  return (CSfxSample *)&pCVar1[-10].buffer_alloc;
 }

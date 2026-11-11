@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 230,
-    "complexity_score": 195,
+    "complexity_score": 93,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 20,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 80,
-    "suspect_count": 10,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 78,
+    "suspect_count": 1,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "undefined_data",
-      "unnamed_field"
+      "undefined_data"
     ],
-    "total_lines": 310
+    "total_lines": 308
   },
   "cross_references": [
     {
@@ -333,78 +331,6 @@
       "severity": "mild",
       "text": "if (DAT_007bc038 == 1) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x2620",
-      "severity": "mild",
-      "text": "if (*(int *)&pCVar1->field_0x2620 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "pCVar1 = (CCharacter *)&(pCVar1->base).field_0x78;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0xf0",
-      "severity": "mild",
-      "text": "} while (pCVar1 != (CCharacter *)&(this_ptr->base).field_0xf0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x2708",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x2708,\"talkToMeEvent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 57,
-      "match": "field_0x2824",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x2824,\"sizeScale\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 71,
-      "match": "field_0x2814",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x2814,\"spectralFlag\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 75,
-      "match": "field_0x281c",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x281c,\"invulnerableFlag\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 79,
-      "match": "field_0x2810",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x2810,\"etheralFlag\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 33,
-      "match": "pCVar1 = (T *)&(pCVar1->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "pCVar1 = (CCharacter *)&(pCVar1->base).field_0x78;",
-      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

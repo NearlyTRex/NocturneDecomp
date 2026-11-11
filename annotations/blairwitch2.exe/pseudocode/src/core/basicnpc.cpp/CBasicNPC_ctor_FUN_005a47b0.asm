@@ -23,7 +23,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;   unkaddr_0059d350.cpp_FUN_0059d990
 ;   unkaddr_0059d350.cpp_FUN_0059dc80
-;   unkafter_basicene.cpp_FUN_0059e3b0
+;   unkafter_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     PUSH ESI                            ; 005a47b1
     MOV EDX,dword ptr [ESP + 0xc]       ; 005a47b2
     PUSH EDX                            ; 005a47b6
-    CALL unkafter_basicene.cpp_FUN_0059e3b0 ; 005a47b7
-        ;   XREF to: 0059e3b0 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059e3b0()
+    CALL unkafter_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0 ; 005a47b7
+        ;   XREF to: 0059e3b0 (UNCONDITIONAL_CALL)  ; int unkafter_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0(CBasicEnemy * this_ptr)
     ADD ESP,0x4                         ; 005a47bc
     PUSH 0x5f03f4                       ; 005a47bf
     MOV EBX,EAX                         ; 005a47c4

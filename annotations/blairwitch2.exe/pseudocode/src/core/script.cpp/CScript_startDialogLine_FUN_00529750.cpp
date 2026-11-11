@@ -73,7 +73,7 @@ float __cdecl core_script_cpp_CScript_startDialogLine_FUN_00529750(CScript *this
       pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
     if (this_ptr->who_is_speaking != (CDemonActor *)0x0) {
-      *(float *)&this_ptr->who_is_speaking[0xe].field_0x248 = local_28;
+      this_ptr->who_is_speaking[0xe].particle_systems[3].fade_end = local_28;
     }
     if (bVar2) {
       sound_sndmain_cpp_pushSfxOptions_FUN_00550450();

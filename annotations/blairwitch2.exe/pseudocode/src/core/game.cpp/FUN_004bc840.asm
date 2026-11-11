@@ -35,7 +35,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_FUN_004910b0
-;   core_fldnotes.cpp_FUN_004a50b0
+;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004a50b0
 ;   core_game.cpp_FUN_004bbf70
 ;   core_level.cpp_FUN_004e1480
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004fd0e0
@@ -152,8 +152,8 @@ section .text
     MOV EAX,[0x00616044]                ; 004bc995 | g_CFieldNotesPtr
         ;   Label: LAB_004bc995
     PUSH EAX                            ; 004bc99a
-    CALL core_fldnotes.cpp_FUN_004a50b0 ; 004bc99b
-        ;   XREF to: 004a50b0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a50b0()
+    CALL core_fldnotes.cpp_CFieldNotes_clear_FUN_004a50b0 ; 004bc99b
+        ;   XREF to: 004a50b0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_clear_FUN_004a50b0(CFieldNotes * this_ptr)
     ADD ESP,0x4                         ; 004bc9a0
     MOV EDX,dword ptr [0x006141f0]      ; 004bc9a3 | DAT_006141f0
     PUSH EDX                            ; 004bc9a9

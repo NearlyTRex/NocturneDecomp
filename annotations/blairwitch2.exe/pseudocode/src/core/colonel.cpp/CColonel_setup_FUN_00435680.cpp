@@ -13,9 +13,9 @@ void __cdecl core_colonel_cpp_CColonel_setup_FUN_00435680(CColonel *this_ptr)
 {
   CSkeleton *this_ptr_00;
   
-  core_hero_cpp_CHero_setup_FUN_004ce4a0((CHero *)this_ptr);
+  core_hero_cpp_CHero_setup_FUN_004ce4a0(&this_ptr->base);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
-                          ((CDeformableModelInstance *)&this_ptr->field_0x2b4);
+                          (&(this_ptr->base).base.model);
   DAT_007c150c = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80
                            (this_ptr_00,"Bip01 head",1);
   _DAT_007c1510 =

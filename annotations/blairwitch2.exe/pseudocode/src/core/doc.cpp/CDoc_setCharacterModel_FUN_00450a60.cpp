@@ -14,7 +14,7 @@ void __cdecl core_doc_cpp_CDoc_setCharacterModel_FUN_00450a60(CDoc *this_ptr,cha
   
   core_charactr_cpp_CCharacter_setCharacterModel_FUN_0042b440
             ((CCharacter *)this_ptr,model_name,cloth_name);
-  pcVar2 = &this_ptr->field_0x257b0;
+  pcVar2 = this_ptr->model_name;
   do {
     cVar1 = *model_name;
     *pcVar2 = cVar1;
@@ -24,7 +24,7 @@ void __cdecl core_doc_cpp_CDoc_setCharacterModel_FUN_00450a60(CDoc *this_ptr,cha
     pcVar2[1] = cVar1;
     pcVar2 = pcVar2 + 2;
   } while (cVar1 != '\0');
-  pcVar2 = &this_ptr->field_0x258b0;
+  pcVar2 = this_ptr->cloth_name;
   do {
     cVar1 = *cloth_name;
     *pcVar2 = cVar1;

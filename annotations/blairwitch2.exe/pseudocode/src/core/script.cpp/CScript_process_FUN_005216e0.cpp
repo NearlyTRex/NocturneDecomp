@@ -20,7 +20,7 @@ void __cdecl core_script_cpp_CScript_process_FUN_005216e0(CScript *this_ptr)
   
   _DAT_01e650f8 = 0;
   if ((0 < this_ptr->parsed_line_count) && (this_ptr->parsed_lines != (SScriptLine *)0x0)) {
-    if (*(int *)&g_CGamePtr->field_0xe0 != 0) {
+    if (g_CGamePtr->cinematic_skip_in_progress != 0) {
       this_ptr->script_state = 0;
     }
     iVar3 = 0;

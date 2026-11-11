@@ -11,7 +11,7 @@ void core_melee_cpp_factoryFuncMelee_FUN_004ea880(void)
 {
   CMelee *this_ptr;
   
-  this_ptr = (CMelee *)debugAllocTracked1(0x828);
+  this_ptr = (CMelee *)operator_new(0x828);
   if (this_ptr == (CMelee *)0x0) {
     return;
   }

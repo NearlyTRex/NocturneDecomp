@@ -11,7 +11,7 @@ void core_haystack_cpp_factoryFuncHaystack_FUN_004cc730(void)
 {
   CHaystack *this_ptr;
   
-  this_ptr = (CHaystack *)debugAllocTracked1(0x25658);
+  this_ptr = (CHaystack *)operator_new(0x25658);
   if (this_ptr == (CHaystack *)0x0) {
     return;
   }

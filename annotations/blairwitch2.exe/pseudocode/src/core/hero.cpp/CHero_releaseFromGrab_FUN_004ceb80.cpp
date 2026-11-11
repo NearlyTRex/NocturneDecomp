@@ -9,31 +9,34 @@
 void __cdecl core_hero_cpp_CHero_releaseFromGrab_FUN_004ceb80(CHero *this_ptr)
 
 {
-  CMotionController *this_ptr_00;
+  CDeformableModelInstance *this_ptr_00;
+  CDemonActor *pCVar1;
   CMotionList *this_ptr_01;
-  float fVar1;
+  float fVar2;
   char *state_name;
-  int iVar2;
+  int iVar3;
   
-  if (*(int *)(this_ptr + 0x276c) != 0) {
+  pCVar1 = (this_ptr->base).grabbed_by;
+  if (pCVar1 != (CDemonActor *)0x0) {
     engine_console_cpp_FUN_00436710
-              (g_CConsolePtr,"CHero::stopGettingGrabbed by %s, type %d\n",*(int *)(this_ptr + 0x276c),
-               *(uint *)(this_ptr + 0x2770));
+              (g_CConsolePtr,"CHero::stopGettingGrabbed by %s, type %d\n",pCVar1,
+               (this_ptr->base).grabbed_type);
   }
-  if ((*(byte **)(this_ptr + 0x68) == &DAT_0078a123) && (*(int *)(this_ptr + 0x2564) != 0)) {
-    iVar2 = 0;
+  if (((byte *)(this_ptr->base).base.validation_magic == &DAT_0078a123) &&
+     ((this_ptr->base).model.model_ptr != (CDeformableModel *)0x0)) {
+    iVar3 = 0;
     state_name = "GETGRABBED";
-    this_ptr_00 = (CMotionController *)(this_ptr + 0x2b4);
-    this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860(this_ptr_00);
-    iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_00502fa0(this_ptr_01,state_name,iVar2);
-    if (-1 < iVar2) {
-      fVar1 = (float)core_motion_cpp_FUN_005038a0(this_ptr_00,iVar2);
-      if (0.0 < fVar1) {
+    this_ptr_00 = &(this_ptr->base).model;
+    this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860(&this_ptr_00->base);
+    iVar3 = core_motion_cpp_CMotionList_findStateIndex_FUN_00502fa0(this_ptr_01,state_name,iVar3);
+    if (-1 < iVar3) {
+      fVar2 = (float)core_motion_cpp_FUN_005038a0(this_ptr_00,iVar3);
+      if (0.0 < fVar2) {
         core_motion_cpp_CMotionController_setDesiredStateByName_FUN_005036b0
-                  (this_ptr_00,"STAND",1);
+                  (&this_ptr_00->base,"STAND",1);
       }
     }
   }
-  core_charactr_cpp_CCharacter_releaseFromGrab_FUN_00427a10((CCharacter *)this_ptr);
+  core_charactr_cpp_CCharacter_releaseFromGrab_FUN_00427a10(&this_ptr->base);
   return;
 }

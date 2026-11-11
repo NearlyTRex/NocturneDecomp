@@ -9,6 +9,7 @@
 int __cdecl core_patrpoin_cpp_CPatrolPoint_renderTransparent_FUN_0059c9a0(CPatrolPoint *this_ptr)
 
 {
-  unkafter_superopt_cpp_FUN_005a8290(&this_ptr->field_0x154);
+  unkafter_superopt_cpp_CSimpleParticleSystem_render_FUN_005a8290
+            ((this_ptr->base).base.base.particle_systems);
   return 0;
 }

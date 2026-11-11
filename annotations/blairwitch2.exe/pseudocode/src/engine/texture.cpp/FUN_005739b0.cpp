@@ -12,29 +12,29 @@ void __cdecl engine_texture_cpp_FUN_005739b0(CTextureCache *this_ptr)
 
 {
   code *pcVar1;
-  CTextureCache *pCVar2;
+  STextureCacheEntry *pSVar2;
   
-  *(uint *)(this_ptr + 0x18008) = 0;
-  pCVar2 = this_ptr + 4;
-  *(uint *)(this_ptr + 0x18004) = 0;
+  this_ptr->use_counter = 0;
+  pSVar2 = this_ptr->entries;
+  this_ptr->current_texture_count = 0;
   do {
-    if (*(int *)(pCVar2 + 0x44) != 0) {
-      FUN_005b86a0(*(int *)(pCVar2 + 0x44));
+    if (pSVar2->texture_data != (uchar *)0x0) {
+      FUN_005b86a0(pSVar2->texture_data);
     }
-    if (*(int *)(pCVar2 + 0x48) != 0) {
-      FUN_005b86a0(*(int *)(pCVar2 + 0x48));
+    if (pSVar2->opacity_data != (uchar *)0x0) {
+      FUN_005b86a0(pSVar2->opacity_data);
     }
-    if (*(int *)(pCVar2 + 0x4c) != 0) {
-      FUN_005b86a0(*(int *)(pCVar2 + 0x4c));
+    if (pSVar2->palette_data != (uchar *)0x0) {
+      FUN_005b86a0(pSVar2->palette_data);
     }
-    if (*(int *)(pCVar2 + 0x50) != 0) {
-      FUN_005b86a0(*(int *)(pCVar2 + 0x50));
+    if (pSVar2->true_color_data != (uchar *)0x0) {
+      FUN_005b86a0(pSVar2->true_color_data);
     }
-    pCVar2 = pCVar2 + 0x60;
-  } while (pCVar2 != this_ptr + 0x18004);
-  memset(this_ptr + 4,0,0x18000);
+    pSVar2 = pSVar2 + 1;
+  } while (pSVar2 != (STextureCacheEntry *)&this_ptr->current_texture_count);
+  memset(this_ptr->entries,0,0x18000);
   pcVar1 = _DAT_0264bcbc;
-  *(uint *)this_ptr = 0;
+  this_ptr->wrap_indicator = 0;
   if (pcVar1 == (code *)0x0) {
     return;
   }

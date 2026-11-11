@@ -13,7 +13,7 @@ int __cdecl core_unionzom_cpp_CUnionZombie_getTargetPoints_FUN_005a46e0(CUnionZo
 {
   int iVar1;
   
-  if (*(float *)&this_ptr->field_0x113c4 < (float)_DAT_005f03e2) {
+  if ((this_ptr->base).fade_val < (float)_DAT_005f03e2) {
     return 0;
   }
   iVar1 = core_enemy_cpp_CEnemy_getTargetPoints_FUN_00488020((CEnemy *)this_ptr,out_points_array);

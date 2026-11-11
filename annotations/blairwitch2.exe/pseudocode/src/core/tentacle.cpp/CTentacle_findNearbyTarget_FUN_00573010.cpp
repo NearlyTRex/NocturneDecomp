@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_00573010(CTentacle *this_ptr,char *class_name)
@@ -21,12 +22,12 @@ int __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_00573010(CTentacle 
   float local_34;
   float local_30;
   float local_2c;
-  float *local_20;
+  CLocation *local_20;
   int local_1c;
   int local_18;
   
   bVar2 = 0;
-  local_20 = (float *)&(this_ptr->base).base.base.field_0x20;
+  local_20 = &(this_ptr->base).base.base.location;
   local_18 = 0;
   local_1c = 0;
   do {
@@ -37,9 +38,9 @@ int __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_00573010(CTentacle 
     if (actor_ptr != this_ptr) {
       iVar1 = core_actor_cpp_isOfClass_FUN_0040c840((CDemonActor *)actor_ptr,class_name);
       if (iVar1 != 0) {
-        local_34 = *(float *)&(actor_ptr->base).base.base.field_0x20 - *local_20;
-        local_30 = *(float *)&(actor_ptr->base).base.base.field_0x24 - local_20[1];
-        local_2c = *(float *)&(actor_ptr->base).base.base.field_0x28 - local_20[2];
+        local_34 = (actor_ptr->base).base.base.location.position.x - (local_20->position).x;
+        local_30 = (actor_ptr->base).base.base.location.position.y - (local_20->position).y;
+        local_2c = (actor_ptr->base).base.base.location.position.z - (local_20->position).z;
         local_40 = local_34;
         *(uint *)((int)&stack0xffffffc4 + (uint)bVar2 * -8) =
              *(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8);

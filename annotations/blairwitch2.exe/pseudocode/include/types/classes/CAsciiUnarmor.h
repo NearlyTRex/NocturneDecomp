@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCodec.h"
+#include "types/structs/SBitBuffer.h"
 
 // Structure: CAsciiUnarmor
-// Stub: size from Watcom RTTI, fields not yet recovered
+// size 12 (given; same as CAsciiArmor); ctor 00434c70 calls CCodec ctor 00433e80 first
 // Ghidra size: 0xc (12 bytes)
 #pragma pack(push, 1)
 typedef struct CAsciiUnarmor {
-    char field_0[12]; // 0x0
+    CCodec base; // 0x0, ctor calls CCodec ctor 00433e80 then stores its own vtable at +0
+    SBitBuffer bit_buffer; // 0x4, shares the reset slot 00434b90 (resetBitBuffer(this+4)) with CAsciiArmor; decode slot 00434c90 pushes each decoded 6-bit value into this+4 (bit-writer call with (this+4, 6, value, out))
 } CAsciiUnarmor;
 #pragma pack(pop)
 

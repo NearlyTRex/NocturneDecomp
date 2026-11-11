@@ -9,7 +9,8 @@
 int __cdecl core_confedrt_cpp_CConfederate_renderTransparent_FUN_005a14a0(CConfederate *this_ptr)
 
 {
-  core_basicene_cpp_CBasicEnemy_renderTransparent_FUN_0059f980((CBasicEnemy *)this_ptr);
-  unkafter_superopt_cpp_FUN_005a8290(&this_ptr->field_0x154);
+  core_basicene_cpp_CBasicEnemy_renderTransparent_FUN_0059f980(&this_ptr->base);
+  unkafter_superopt_cpp_CSimpleParticleSystem_render_FUN_005a8290
+            ((this_ptr->base).base.base.base.particle_systems);
   return 1;
 }

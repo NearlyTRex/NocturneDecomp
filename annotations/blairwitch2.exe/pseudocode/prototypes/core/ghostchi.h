@@ -43,7 +43,7 @@ void __cdecl CGhostChild::processSleepState(CGhostChild *this_ptr,float delta_ti
 
 // Original: core_ghostchi.cpp_FUN_005a9890
 // Address: 005a9890
-void FUN_005a9890(int param_1,undefined4 param_2);
+void FUN_005a9890(int param_1,float param_2);
 
 // Original: core_ghostchi.cpp_CGhostChild_processDeathState_FUN_005a9980
 // Address: 005a9980

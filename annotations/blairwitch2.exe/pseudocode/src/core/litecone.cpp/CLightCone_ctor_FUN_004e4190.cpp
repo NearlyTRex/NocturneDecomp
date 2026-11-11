@@ -19,7 +19,7 @@ CLightCone * __cdecl core_litecone_cpp_CLightCone_ctor_FUN_004e4190(CLightCone *
   pcVar3 = (char *)0x5dc105;
   pCVar2->fov = 56.0;
   pCVar2->falloff = 6.0;
-  *(uint *)&(pCVar2->base).field_0xfc = 1;
+  (pCVar2->base).is_transparent = 1;
   pcVar4 = pCVar2->on_event;
   pCVar2->state = 1;
   do {

@@ -7,10 +7,10 @@
 ; XREF[8]:
 ;   support_codec.cpp_CInStreamPipe_ctor_FUN_00434e70 at 00434e75
 ;   support_trstream.cpp_CInStreamMemory_copy_FUN_0057d570 at 0057d575
+;   support_trstream.cpp_CInStreamMemory_ctorOpen_FUN_0057d520 at 0057d527
 ;   support_trstream.cpp_CInStreamMemory_ctor_FUN_0057d4f0 at 0057d4f5
-;   support_trstream.cpp_FUN_0057d520 at 0057d527
-;   unkaddr_0057b9a0.cpp_FUN_0057cdb0 at 0057cdb6
-;   unkaddr_0057b9a0.cpp_FUN_0057ce20 at 0057ce27
+;   unkaddr_0057b9a0.cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20 at 0057ce27
+;   unkaddr_0057b9a0.cpp_CInStreamFile_ctorOpen_FUN_0057cdb0 at 0057cdb6
 ;   unkclass_instream.cpp_CInStreamFile_copy_FUN_0057ce90 at 0057ce95
 ;   unkclass_instream.cpp_CInStreamFile_ctor_FUN_0057cd50 at 0057cd55
 ;

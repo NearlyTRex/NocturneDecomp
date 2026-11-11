@@ -14,10 +14,12 @@ uint unkafter_stranger_cpp_FUN_0045df30(CCharacter *param_1)
   uint uVar3;
   
   uVar3 = 0;
-  if ((*(int *)&param_1[2].field_0x4298 != 0) && (*(float *)&param_1[2].field_0x44f0 < 1.0)) {
+  if ((*(int *)param_1[2].flames[2].base.create_event != 0) &&
+     ((float)param_1[2].flames[2].globe.linear_radius_scaled < 1.0)) {
     uVar3 = 1;
   }
-  if ((*(int *)&param_1[2].field_0x4298 == 0) && (0.0 < *(float *)&param_1[2].field_0x44f0)) {
+  if ((*(int *)param_1[2].flames[2].base.create_event == 0) &&
+     (0.0 < (float)param_1[2].flames[2].globe.linear_radius_scaled)) {
     uVar3 = 1;
   }
   iVar1 = core_motion_cpp_FUN_005035c0(&param_1->model);
@@ -31,7 +33,7 @@ uint unkafter_stranger_cpp_FUN_0045df30(CCharacter *param_1)
      fVar2 < 1.0)) {
     uVar3 = 1;
   }
-  if (*(int *)&param_1->field_0x2698 != 0) {
+  if (param_1->carry_hands[1].carry_actor != (CDemonActor *)0x0) {
     uVar3 = 1;
   }
   return uVar3;

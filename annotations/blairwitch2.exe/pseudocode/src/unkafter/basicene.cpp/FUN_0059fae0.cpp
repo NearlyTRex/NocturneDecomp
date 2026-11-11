@@ -21,7 +21,7 @@ void unkafter_basicene_cpp_FUN_0059fae0(CDemonActor *param_1)
   float local_14;
   
   bVar3 = 0;
-  if (*(int *)&param_1[0x65].field_0x278 == -1) {
+  if (param_1[0x65].particle_systems[4].owner == (CDemonActor *)0xffffffff) {
     return;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0(param_1);
@@ -39,7 +39,7 @@ void unkafter_basicene_cpp_FUN_0059fae0(CDemonActor *param_1)
   if ((*(byte *)(iVar1 + 0x13) & 0x80) == 0) {
     uVar2 = core_motion_cpp_FUN_005035c0
                       (param_1 + 1,(double)*(float *)(param_1[0x66].actor_name + 0xc));
-    unkaddr_0059d350_cpp_FUN_0059db70(&param_1[0x62].field_0x210,uVar2);
+    unkaddr_0059d350_cpp_FUN_0059db70(&param_1[0x62].particle_systems[2].stop_after_fade,uVar2);
     _sprintf((char *)0x2668360,"@(%s)\n%s:[%s] (%0.2f)" + 1);
     engine_2d_c_drawText_FUN_00401fe0
               ((char *)0x2668360,*(int *)(iVar1 + 0x10) >> 0x10,*(int *)(iVar1 + 0x14) >> 0x10);

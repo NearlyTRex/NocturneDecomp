@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 237,
+    "complexity_score": 152,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
-    "suspect_count": 20,
+    "suspect_count": 12,
     "suspect_types": [
       "derived_field_index_pun",
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
     "total_lines": 56
   },
@@ -133,16 +132,8 @@
       "line": 13,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].base.field_0x184 = 0;",
+      "text": "pCVar2[-1].base.particle_systems[0].fade_timer = 0.0;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x184",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].base.field_0x184 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
@@ -157,115 +148,59 @@
       "line": 18,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].base.field_0x15c = 0;",
+      "text": "pCVar2[-1].base.particle_systems[0].position.z = 0.0;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].base.field_0x15c = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 19,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].base.field_0x160 = 0;",
+      "text": "pCVar2[-1].base.particle_systems[0].fade_current = 0.0;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].base.field_0x160 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 20,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].base.field_0x164 = 1;",
+      "text": "pCVar2[-1].base.particle_systems[0].active = 1;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x164",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].base.field_0x164 = 1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 21,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].base.field_0x168 = 0;",
+      "text": "pCVar2[-1].base.particle_systems[0].owner = (CDemonActor *)0x0;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x168",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].base.field_0x168 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 22,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].base.field_0x16c = 0x42480000;",
+      "text": "pCVar2[-1].base.particle_systems[0].max_particles = 0x42480000;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].base.field_0x16c = 0x42480000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 23,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].base.field_0x170 = 0;",
+      "text": "pCVar2[-1].base.particle_systems[0].next_particle = 0;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x170",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].base.field_0x170 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 24,
       "match": "pCVar2[-2].",
       "severity": "mild",
-      "text": "return (CCrossbow *)&pCVar2[-2].base.field_0x128;",
+      "text": "return (CCrossbow *)&pCVar2[-2].base.dead2;",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x128",
-      "severity": "mild",
-      "text": "return (CCrossbow *)&pCVar2[-2].base.field_0x128;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "'pCVar1[1].base.actor_name + 4' walks 1 x sizeof(CWeapon) (0x6d4) + offsetof(base.actor_name) (0x0) + 0x4 = 0x6d8, which is exactly offsetof(CDynamite, toss_velocity). Ghidra had no CDynamite type here and reached the field by index arithmetic; write it as ((CDynamite *)pCVar1)->toss_velocity (\u00a7de-pun/\u00a712). Ambiguous: CElephantGun::muzzle_flash_active, CFlameThrower::sfx_handle, CMelee::strength_lo also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar1[1].base.actor_name + 4' walks 1 x sizeof(CWeapon) (0x6d4) + offsetof(base.actor_name) (0x0) + 0x4 = 0x6d8, which is exactly offsetof(CCrossbow, bolt_flame). Ghidra had no CCrossbow type here and reached the field by index arithmetic; write it as ((CCrossbow *)pCVar1)->bolt_flame (\u00a7de-pun/\u00a712). Ambiguous: CDynamite::toss_velocity, CElephantGun::muzzle_flash_active, CFlameThrower::sfx_handle also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 9,
       "severity": "moderate",
       "text": "pCVar2 = core_flame_cpp_CFlame_ctor_FUN_0049f180((CFlame *)(pCVar1[1].base.actor_name + 4));",

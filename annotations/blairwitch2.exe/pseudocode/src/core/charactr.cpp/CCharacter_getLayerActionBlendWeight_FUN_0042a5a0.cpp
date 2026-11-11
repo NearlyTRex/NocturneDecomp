@@ -12,10 +12,10 @@ float __cdecl core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a
   float local_18;
   
   local_18 = 0.0;
-  if (state_index == *(int *)(this_ptr->layer_actions + this_ptr->layer_action_index * 0x38 + 4)) {
+  if (state_index == this_ptr->layer_actions[this_ptr->layer_action_index].to_bone_index) {
     local_18 = this_ptr->layer_action_t;
   }
-  if (state_index != *(int *)(this_ptr->layer_actions + this_ptr->layer_action_index * 0x38)) {
+  if (state_index != this_ptr->layer_actions[this_ptr->layer_action_index].from_bone_index) {
     return local_18;
   }
   return (1.0 - this_ptr->layer_action_t) + local_18;

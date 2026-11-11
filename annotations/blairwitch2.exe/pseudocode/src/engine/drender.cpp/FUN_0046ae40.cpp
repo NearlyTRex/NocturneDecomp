@@ -28,7 +28,7 @@ void engine_drender_cpp_FUN_0046ae40(CDemonRenderer *param_1,int param_2)
         iVar1 = *(int *)(iVar4 + 0x18);
         *(int *)(&DAT_01ba5c84 + iVar2) = iVar1;
         iVar2 = iVar2 + 4;
-        uStack_14 = uStack_14 & *(uint *)(param_1->vertex_buffer_ptr + iVar1 * 0x30 + 0x10);
+        uStack_14 = uStack_14 & param_1->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
         iVar4 = iVar4 + 0xc;
         iVar3 = iVar3 + 1;
       } while (iVar3 < *(int *)(param_2 + 4));
@@ -48,10 +48,8 @@ void engine_drender_cpp_FUN_0046ae40(CDemonRenderer *param_1,int param_2)
           iVar4 = param_2;
           do {
             iVar1 = *(int *)(&DAT_01ba5c84 + iVar2);
-            *(uint *)(param_1->vertex_buffer_ptr + iVar1 * 0x30 + 0x18) =
-                 *(uint *)(iVar4 + 0x1c);
-            *(uint *)(param_1->vertex_buffer_ptr + iVar1 * 0x30 + 0x1c) =
-                 *(uint *)(iVar4 + 0x20);
+            param_1->vertex_buffer_ptr[iVar1].u = *(int *)(iVar4 + 0x1c);
+            param_1->vertex_buffer_ptr[iVar1].v = *(int *)(iVar4 + 0x20);
             iVar4 = iVar4 + 0xc;
             iVar3 = iVar3 + 1;
             iVar2 = iVar2 + 4;

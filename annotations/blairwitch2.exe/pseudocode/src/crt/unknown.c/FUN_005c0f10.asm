@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005be180
-;   crt_unknown.c_FUN_005b8580
+;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_unknown.c_FUN_005c036c
 ;   GetCurrentDirectoryA
 ;
@@ -57,8 +57,8 @@ section .text
     MOV EAX,ESI                         ; 005c0f4e
     PUSH EAX                            ; 005c0f50
         ;   Label: LAB_005c0f50
-    CALL crt_unknown.c_FUN_005b8580     ; 005c0f51
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 005c0f51
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     ADD ESP,0x4                         ; 005c0f56
     MOV EBX,EAX                         ; 005c0f59
     TEST EAX,EAX                        ; 005c0f5b

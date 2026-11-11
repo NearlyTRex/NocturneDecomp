@@ -27,6 +27,7 @@
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CNPC.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CWeapon.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EDeathState.h"
 #include "types/enums/EInputCodeType.h"
@@ -179,7 +180,7 @@ void core_inv_cpp_FUN_004db760(undefined4 param_1,int param_2);
 CDemonActor * __cdecl core_inv_cpp_CInventory_findItemByName_FUN_004db830(CInventory *this_ptr,char *item_name);
 int __cdecl core_inv_cpp_CInventory_hasItemOfClass_FUN_004db880(CInventory *this_ptr,char *class_name);
 void * core_inv_cpp_FUN_004db8e0(void *param_1,int param_2,int param_3);
-void core_inv_cpp_FUN_004db9d0(CInventory *param_1,int param_2,undefined4 param_3,int param_4);
+void core_inv_cpp_FUN_004db9d0(CInventory *param_1,CWeapon *param_2,undefined4 param_3,int param_4);
 void __cdecl core_inv_cpp_CInventory_selectItem_FUN_004dbb50(CInventory *this_ptr,int direction);
 void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60(CInventory *this_ptr,int direction);
 void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbd80(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,float rotation_y,int alpha);

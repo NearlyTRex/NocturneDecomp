@@ -9,6 +9,6 @@
 void __cdecl engine_font_cpp_CBitFont_setInitializedFlag_FUN_004a88d0(CBitFont *this_ptr)
 
 {
-  *(uint *)(this_ptr + 0x1de4) = 1;
+  this_ptr->is_initialized = 1;
   return;
 }

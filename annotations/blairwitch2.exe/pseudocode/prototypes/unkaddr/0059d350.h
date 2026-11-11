@@ -9,17 +9,17 @@
 // Address: 0059d350
 void FUN_0059d350(void);
 
-// Original: unkaddr_0059d350.cpp_FUN_0059d360
+// Original: unkaddr_0059d350.cpp_CMuzzleEffect_init_FUN_0059d360
 // Address: 0059d360
-void FUN_0059d360(undefined4 *param_1,CVector3f *param_2,undefined4 param_3);
+void __cdecl CMuzzleEffect::init(CMuzzleEffect *this_ptr,CVector3f *param_2,undefined4 param_3);
 
-// Original: unkaddr_0059d350.cpp_FUN_0059d420
+// Original: unkaddr_0059d350.cpp_CMuzzleEffect_process_FUN_0059d420
 // Address: 0059d420
-void FUN_0059d420(int *param_1);
+void __cdecl CMuzzleEffect::process(CMuzzleEffect *this_ptr);
 
-// Original: unkaddr_0059d350.cpp_FUN_0059d440
+// Original: unkaddr_0059d350.cpp_CMuzzleEffect_render_FUN_0059d440
 // Address: 0059d440
-void FUN_0059d440(int *param_1);
+void __cdecl CMuzzleEffect::render(CMuzzleEffect *this_ptr);
 
 // Original: unkaddr_0059d350.cpp_FUN_0059d5f0
 // Address: 0059d5f0

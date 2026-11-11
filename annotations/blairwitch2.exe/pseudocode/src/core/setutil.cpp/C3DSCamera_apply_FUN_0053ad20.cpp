@@ -53,7 +53,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_0053ad20(char *param_1,CDemon
   } while (cVar2 != '\0');
   core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00441e80(param_2,*(float *)(param_1 + 0x148))
   ;
-  if (*(float *)(param_1 + 0x148) < *(float *)&g_CDemonSetPtr->field_0x14d150) {
+  if (*(float *)(param_1 + 0x148) < g_CDemonSetPtr->min_ambient_value) {
     engine_console_cpp_FUN_00436710(g_CConsolePtr,"Ambient set low by script\n");
   }
   if (*(float *)(param_1 + 0x148) <= (float)_DAT_005e6219) {

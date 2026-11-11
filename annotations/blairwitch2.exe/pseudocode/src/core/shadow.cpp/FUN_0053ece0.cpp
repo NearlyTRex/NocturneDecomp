@@ -42,7 +42,7 @@ void core_shadow_cpp_FUN_0053ece0(CCharacter *param_1)
   float local_14;
   
   bVar2 = 0;
-  if ((*(int *)&param_1[1].base.field_0xcc != 0) &&
+  if ((*(int *)(param_1[1].base.create_event + 0x54) != 0) &&
      (*(int *)(param_1[1].base.actor_name + 0x18) != 0)) {
     local_78 = 0;
     local_74 = 0xbe99999a;
@@ -80,8 +80,8 @@ void core_shadow_cpp_FUN_0053ece0(CCharacter *param_1)
     local_28 = SQRT(local_44[1] * local_44[1] + local_48 * local_48 + local_20);
     engine_console_cpp_FUN_00436710
               (g_CConsolePtr,"$@Chain stretched to %f\n" + 2,(double)local_28);
-    if ((*(float *)&param_1[1].base.field_0xd0 < local_28) &&
-       (fVar1 = *(float *)&param_1[1].base.field_0xd0, fVar1 = fVar1 * fVar1 - local_20,
+    if ((*(float *)(param_1[1].base.create_event + 0x58) < local_28) &&
+       (fVar1 = *(float *)(param_1[1].base.create_event + 0x58), fVar1 = fVar1 * fVar1 - local_20,
        local_30 = (double)fVar1, 0.0 <= local_30)) {
       fVar1 = SQRT(fVar1);
       local_54.x = local_6c;

@@ -18,21 +18,20 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004b7050(CGame *this_ptr)
   byte bVar4;
   
   bVar4 = 0;
-  if (((_DAT_01cb7788 == 0) && (*(int *)&g_CFieldNotesPtr->field_0x40 == 0)) && (_DAT_026677e0 == 0)
-     ) {
-    if ((this_ptr->is_paused == 0) && (*(int *)&this_ptr->field_0x254 == 0)) {
+  if (((_DAT_01cb7788 == 0) && (g_CFieldNotesPtr->is_displayed == 0)) && (_DAT_026677e0 == 0)) {
+    if ((this_ptr->is_paused == 0) && (this_ptr->hero_controls_blocked == 0)) {
       player_control = core_netgame_cpp_CNetGame_getMyControls_FUN_0050f430(g_CNetGamePtr);
-      switch(*(uint *)&this_ptr->field_0xd0) {
-      case 0:
+      switch(this_ptr->game_control) {
+      case CONTROL_MODE_KEYBOARD:
         core_game_cpp_FUN_004b76c0(this_ptr,player_control);
         break;
-      case 1:
+      case CONTROL_MODE_MOUSE:
         core_game_cpp_CGame_processMouseControls_FUN_004b80a0(this_ptr,player_control);
         break;
-      case 2:
+      case CONTROL_MODE_GAMEPAD:
         core_game_cpp_CGame_processJoystickControls_FUN_004b7510(this_ptr,player_control);
         break;
-      case 3:
+      case CONTROL_MODE_POINT_AND_CLICK:
         core_game_cpp_FUN_004be8a0(this_ptr,player_control);
         break;
       default:

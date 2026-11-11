@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 110,
+    "complexity_score": 80,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 20,
-    "suspect_count": 7,
+    "suspect_count": 5,
     "suspect_types": [
-      "alloc_magic_size",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -28,7 +26,7 @@
     ],
     "convention": "unknown",
     "name": "core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fce",
-    "signature": "void core_game_cpp_giveHeroWeaponAmmo_FUN_004b8fce(char *param_1,undefined4 param_2)"
+    "signature": "void core_game_cpp_giveHeroWeaponAmmo_FUN_004b8fce(char *param_1,EAmmoType param_2)"
   },
   "function_calls": [
     {
@@ -54,7 +52,7 @@
     {
       "addr": "005b8be2",
       "is_variadic": false,
-      "name": "crt_unknown.c_debugAllocTracked1_FUN_005b8be2"
+      "name": "crt_memory.c_operator_new_FUN_005b8be2"
     }
   ],
   "globals": [
@@ -126,7 +124,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_game_cpp_giveHeroWeaponAmmo_FUN_004b8fce(char *param_1,uint param_2)",
+      "text": "void core_game_cpp_giveHeroWeaponAmmo_FUN_004b8fce(char *param_1,EAmmoType param_2)",
       "type": "unnamed_param"
     },
     {
@@ -134,7 +132,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_game_cpp_giveHeroWeaponAmmo_FUN_004b8fce(char *param_1,uint param_2)",
+      "text": "void core_game_cpp_giveHeroWeaponAmmo_FUN_004b8fce(char *param_1,EAmmoType param_2)",
       "type": "unnamed_param"
     },
     {
@@ -142,16 +140,8 @@
       "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x474 = param_2;",
+      "text": "pCVar1->ammo_type = param_2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x474",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x474 = param_2;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -160,14 +150,6 @@
       "severity": "mild",
       "text": "core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040e240(pCVar1,param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Allocation size hardcodes 0x47c == sizeof(CAmmo). Replace the magic with sizeof(CAmmo) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 9,
-      "match": "(CAmmo*) alloc stride 0x47c",
-      "severity": "moderate",
-      "text": "(CAmmo *)debugAllocTracked1(0x47c)",
-      "type": "alloc_magic_size"
     }
   ]
 }

@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CMelee.h"
 
 // Structure: CSimpleCross
-// Stub: size from Watcom RTTI, fields not yet recovered
+// registered under CMelee (registerActorClass); size 2088 from RTTI; no fields of its own
 // Ghidra size: 0x828 (2088 bytes)
 #pragma pack(push, 1)
 typedef struct CSimpleCross {
-    char field_0[2088]; // 0x0
+    CMelee base; // 0x0, parent class
 } CSimpleCross;
 #pragma pack(pop)
 

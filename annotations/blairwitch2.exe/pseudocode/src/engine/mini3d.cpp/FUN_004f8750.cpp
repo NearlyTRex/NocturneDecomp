@@ -64,13 +64,13 @@ void engine_mini3d_cpp_FUN_004f8750(float *param_1,int param_2,int param_3,int p
     } while (iVar18 < param_2);
   }
   if (_DAT_01d0d2cc == (void *)0x0) {
-    _DAT_01d0d2cc = FUN_005b8580(360000);
+    _DAT_01d0d2cc = malloc(360000);
     if (_DAT_01d0d2cc == (void *)0x0) {
       _DAT_01d046a0 = "..\\engine\\mini3d.cpp";
       _DAT_01d046a4 = 0x14e7;
       core_main_c_FUN_004e4500("CMini3D::userClipPolyList - Out of memory");
     }
-    _DAT_01d0d2d0 = FUN_005b8580(60000);
+    _DAT_01d0d2d0 = malloc(60000);
     if (_DAT_01d0d2d0 == (void *)0x0) {
       _DAT_01d046a0 = "..\\engine\\mini3d.cpp";
       _DAT_01d046a4 = 0x14eb;

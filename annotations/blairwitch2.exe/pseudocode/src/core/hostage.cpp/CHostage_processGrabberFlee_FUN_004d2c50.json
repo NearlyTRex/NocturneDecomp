@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 365,
+    "complexity_score": 207,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
-    "suspect_count": 27,
+    "pseudocode_lines": 57,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 176
+    "total_lines": 173
   },
   "cross_references": [
     {
@@ -258,54 +257,6 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "local_2c = *(float *)&(this_ptr->base).base.base.field_0x20 - *(float *)&pCVar2->field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "local_2c = *(float *)&(this_ptr->base).base.base.field_0x20 - *(float *)&pCVar2->field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "local_28 = *(float *)&(this_ptr->base).base.base.field_0x24 - *(float *)&pCVar2->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "local_28 = *(float *)&(this_ptr->base).base.base.field_0x24 - *(float *)&pCVar2->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "local_24 = *(float *)&(this_ptr->base).base.base.field_0x28 - *(float *)&pCVar2->field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "local_24 = *(float *)&(this_ptr->base).base.base.field_0x28 - *(float *)&pCVar2->field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 37,
       "match": "&stack0xffffffe0",
@@ -344,78 +295,6 @@
       "severity": "moderate",
       "text": "*(uint *)(&stack0xfffffff4 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x2598",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)&(this_ptr->base).base.field_0x2598;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x2578",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).base.field_0x2578 = local_8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x2578",
-      "severity": "mild",
-      "text": "if (*(float *)&(this_ptr->base).base.field_0x2578 < -fVar1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x2578",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).base.field_0x2578 =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x2598",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).base.field_0x2598;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x2598",
-      "severity": "mild",
-      "text": "if (*(float *)&(this_ptr->base).base.field_0x2598 <",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x2578",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr->base).base.field_0x2578) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x2578",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).base.field_0x2578 =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x2598",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).base.field_0x2598;",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer value `&stack0xffffffcc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

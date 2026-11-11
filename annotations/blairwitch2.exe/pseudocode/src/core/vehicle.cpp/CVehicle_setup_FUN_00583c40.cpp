@@ -21,9 +21,9 @@ void __cdecl core_vehicle_cpp_CVehicle_setup_FUN_00583c40(CVehicle *this_ptr)
   float fVar7;
   float fVar8;
   CKeyFramedModel *pCVar9;
-  uint *puVar10;
+  CVector3f *pCVar10;
   CTire *pCVar11;
-  uint *puVar12;
+  CVector3f *pCVar12;
   CKeyFramedModelInstance *this_ptr_00;
   CBoundingBox3D *pCVar13;
   int iVar14;
@@ -48,7 +48,7 @@ void __cdecl core_vehicle_cpp_CVehicle_setup_FUN_00583c40(CVehicle *this_ptr)
   iVar14 = 0;
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&this_ptr->model);
   if (0 < this_ptr->tire_count) {
-    this_ptr_00 = (CKeyFramedModelInstance *)&this_ptr->tires[0].field_0x14;
+    this_ptr_00 = &this_ptr->tires[0].model;
     do {
       core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(this_ptr_00);
       iVar14 = iVar14 + 1;
@@ -111,32 +111,32 @@ void __cdecl core_vehicle_cpp_CVehicle_setup_FUN_00583c40(CVehicle *this_ptr)
   (this_ptr->world_velocity).x = (this_ptr->world_velocity).y;
   iVar14 = 0;
   if (0 < this_ptr->tire_count) {
-    puVar12 = (uint *)&this_ptr->tires[0].field_0x19c;
-    puVar10 = (uint *)&this_ptr->tires[0].field_0x190;
+    pCVar12 = &this_ptr->tires[0].runtime_position;
+    pCVar10 = &this_ptr->tires[0].spin_angle;
     do {
       pCVar11 = this_ptr->tires + iVar14;
-      if ((CTire *)puVar12 != pCVar11) {
-        *puVar12 = *(uint *)pCVar11;
-        puVar12[1] = *(uint *)&pCVar11->field_0x4;
-        puVar12[2] = *(uint *)&pCVar11->field_0x8;
+      if ((CTire *)pCVar12 != pCVar11) {
+        pCVar12->x = (pCVar11->static_bpos).x;
+        pCVar12->y = (pCVar11->static_bpos).y;
+        pCVar12->z = (pCVar11->static_bpos).z;
       }
-      puVar10[2] = 0;
-      puVar12 = puVar12 + 0x6d;
-      puVar10[8] = 0;
+      pCVar10->z = 0.0;
+      pCVar12 = (CVector3f *)((int)(pCVar12 + 0x24) + 4);
+      pCVar10[2].z = 0.0;
       iVar14 = iVar14 + 1;
-      puVar10[1] = puVar10[2];
-      puVar10[7] = puVar10[8];
-      *puVar10 = puVar10[1];
-      puVar10[6] = puVar10[8];
-      puVar10 = puVar10 + 0x6d;
+      fVar1 = pCVar10[2].z;
+      pCVar10->y = pCVar10->z;
+      pCVar10[2].y = fVar1;
+      pCVar10->x = pCVar10->y;
+      pCVar10[2].x = fVar1;
+      pCVar10 = (CVector3f *)((int)(pCVar10 + 0x24) + 4);
     } while (iVar14 < this_ptr->tire_count);
   }
   (this_ptr->ground_normal).x = 0.0;
   (this_ptr->ground_normal).y = 1.0;
   (this_ptr->ground_normal).z = 0.0;
   this_ptr->ground_offset = 0.0;
-  core_course_cpp_CCourse_load_FUN_00438af0
-            ((CCourse *)&this_ptr->field_0x117c,this_ptr->course_name);
+  core_course_cpp_CCourse_load_FUN_00438af0(&this_ptr->course,this_ptr->course_name);
   this_ptr->is_visible = 1;
   this_ptr->sfx_handles[0] = 0;
   this_ptr->sfx_handles[1] = 0;

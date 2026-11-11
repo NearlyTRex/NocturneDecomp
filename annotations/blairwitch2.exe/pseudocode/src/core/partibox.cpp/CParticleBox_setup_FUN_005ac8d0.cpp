@@ -9,14 +9,20 @@
 void __cdecl core_partibox_cpp_CParticleBox_setup_FUN_005ac8d0(CParticleBox *this_ptr)
 
 {
-  core_boxactor_cpp_CBoxActor_setup_FUN_0041be70((CBoxActor *)this_ptr);
-  unkaddr_005a7eb0_cpp_FUN_005a8030(&this_ptr->field_0x154,0x100);
-  unkaddr_005a7eb0_cpp_FUN_005a8050(&this_ptr->field_0x154,this_ptr);
-  unkaddr_005a7eb0_cpp_FUN_005a8030(&this_ptr->field_0x198,0x100);
-  unkaddr_005a7eb0_cpp_FUN_005a8050(&this_ptr->field_0x198,this_ptr);
-  unkaddr_005a7eb0_cpp_FUN_005a8030(&this_ptr->field_0x1dc,0x200);
-  unkaddr_005a7eb0_cpp_FUN_005a8050(&this_ptr->field_0x1dc,this_ptr);
-  unkaddr_005a7eb0_cpp_FUN_005a8030(&this_ptr->field_0x220,0x100);
-  unkaddr_005a7eb0_cpp_FUN_005a8050(&this_ptr->field_0x220,this_ptr);
+  CSimpleParticleSystem *pCVar1;
+  
+  core_boxactor_cpp_CBoxActor_setup_FUN_0041be70(&this_ptr->base);
+  pCVar1 = (this_ptr->base).base.particle_systems;
+  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(pCVar1,0x100);
+  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_attach_FUN_005a8050(pCVar1,this_ptr);
+  pCVar1 = (this_ptr->base).base.particle_systems + 1;
+  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(pCVar1,0x100);
+  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_attach_FUN_005a8050(pCVar1,this_ptr);
+  pCVar1 = (this_ptr->base).base.particle_systems + 2;
+  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(pCVar1,0x200);
+  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_attach_FUN_005a8050(pCVar1,this_ptr);
+  pCVar1 = (this_ptr->base).base.particle_systems + 3;
+  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(pCVar1,0x100);
+  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_attach_FUN_005a8050(pCVar1,this_ptr);
   return;
 }

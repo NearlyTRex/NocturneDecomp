@@ -25,10 +25,10 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_0041f450(CBugs *this_ptr)
   SBug *pSStack_14;
   SBug *pSStack_10;
   CVector3f *pCStack_c;
-  float *pfStack_8;
+  CLocation *pCStack_8;
   
   bVar4 = 0;
-  if (*(int *)&(this_ptr->base).base.field_0x2568 == 0) {
+  if ((this_ptr->base).base.render_active == 0) {
     iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
     if (iVar1 == 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
@@ -47,16 +47,16 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_0041f450(CBugs *this_ptr)
         if (0 < this_ptr->count) {
           pCStack_18 = this_ptr->models;
           pSStack_14 = this_ptr->bugs;
-          pfStack_8 = (float *)&(this_ptr->base).base.base.field_0x20;
-          pCStack_c = (CVector3f *)&this_ptr->bugs[0].field_0x14;
-          translation = (CVector3f *)&this_ptr->bugs[0].field_0x8;
+          pCStack_8 = &(this_ptr->base).base.base.location;
+          pCStack_c = &this_ptr->bugs[0].orientation;
+          translation = &this_ptr->bugs[0].position;
           do {
             pSStack_10 = pSStack_14 + iVar1;
             engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
                       (DAT_0060b280,pCStack_c,translation);
-            fStack_34 = *pfStack_8 + translation->x;
-            afStack_30[0] = pfStack_8[1] + translation->y;
-            afStack_30[1] = pfStack_8[2] + translation->z;
+            fStack_34 = (pCStack_8->position).x + translation->x;
+            afStack_30[0] = (pCStack_8->position).y + translation->y;
+            afStack_30[1] = (pCStack_8->position).z + translation->z;
             CStack_40.x = fStack_34;
             *(float *)((int)&CStack_40 + (uint)bVar4 * -8 + 4) = afStack_30[(uint)bVar4 * -2];
             *(float *)((int)&CStack_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
@@ -69,7 +69,7 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_0041f450(CBugs *this_ptr)
             core_set_cpp_CDemonSet_cacheMirrorLighting_FUN_005344f0(g_CDemonSetPtr,&CStack_28);
             engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);
             core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
-                      (pCStack_18 + *(int *)&pSStack_10->field_0x4,0.0,0x2e7);
+                      (pCStack_18 + pSStack_10->model_index,0.0,0x2e7);
             engine_matrix_c_pop_FUN_0046b4a0();
             pCStack_c = (CVector3f *)&pCStack_c[5].y;
             iVar1 = iVar1 + 1;

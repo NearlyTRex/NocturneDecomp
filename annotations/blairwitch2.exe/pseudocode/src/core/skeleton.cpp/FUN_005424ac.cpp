@@ -11,13 +11,15 @@
 CSkeleton * core_skeleton_cpp_FUN_005424ac(CDeformableModel *param_1,uint param_2,int param_3,byte param_4)
 
 {
-  int iVar1;
+  SRenderVertex *pSVar1;
   int iVar2;
-  CSkeleton *pCVar3;
-  SRenderVertex *pSVar4;
-  SRenderVertex *pSVar5;
-  float *pfVar6;
-  byte bVar7;
+  int iVar3;
+  int iVar4;
+  CSkeleton *pCVar5;
+  SRenderVertex *pSVar6;
+  uint *puVar7;
+  float *pfVar8;
+  byte bVar9;
   float afStackY_105c [1015];
   CDemonRenderer *this_ptr;
   CVector3f *euler_angles;
@@ -37,81 +39,84 @@ CSkeleton * core_skeleton_cpp_FUN_005424ac(CDeformableModel *param_1,uint param_
   int iStack_18;
   CSkeleton *pCStack_14;
   
-  bVar7 = 0;
+  bVar9 = 0;
   pCStack_14 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_005415d0(param_1);
   if ((param_4 & 1) != 0) {
-    iVar2 = 0;
+    iVar4 = 0;
     if (0 < pCStack_14->bone_count) {
       iStack_18 = param_3;
       do {
-        iStack_20 = iVar2 * 0x30;
+        iStack_20 = iVar4 * 0x30;
         core_xform_cpp_FUN_00592720();
         fStack_50 = fStack_38;
-        afStack_64[(uint)bVar7 * -2 + 6] = afStack_34[(uint)bVar7 * -2];
-        afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
-             afStack_34[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+        afStack_64[(uint)bVar9 * -2 + 6] = afStack_34[(uint)bVar9 * -2];
+        afStack_64[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
+             afStack_34[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
         CStack_44.x = (int)ROUND(fStack_50 * _DAT_005fb998);
         CStack_44.y = (int)ROUND(fStack_4c * _DAT_005fb998);
         CStack_44.z = (int)ROUND(fStack_48 * _DAT_005fb998);
         engine_special_cpp_FUN_0055d723
-                  ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + iStack_20),&CStack_44);
-        iVar2 = iVar2 + 1;
+                  ((SProjectedVertex *)
+                   ((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x +
+                   iStack_20),&CStack_44);
+        iVar4 = iVar4 + 1;
         iStack_18 = iStack_18 + 0x30;
-      } while (iVar2 < pCStack_14->bone_count);
+      } while (iVar4 < pCStack_14->bone_count);
     }
     _DAT_01c35e60 = param_2;
-    iVar2 = 0;
+    iVar4 = 0;
     if (0 < pCStack_14->bone_count) {
       iStack_1c = 0;
-      pCVar3 = pCStack_14;
+      pCVar5 = pCStack_14;
       do {
-        if (-1 < *(int *)(pCVar3->bone_list + 0x20)) {
-          pSVar5 = DAT_0060b280->vertex_buffer_ptr;
-          pSVar4 = pSVar5 + *(int *)(pCVar3->bone_list + 0x20) * 0x30;
-          pfVar6 = afStackY_105c + 0x3ee;
-          for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-            *pfVar6 = (float)*(uint *)pSVar4;
-            pSVar4 = pSVar4 + ((uint)bVar7 * -2 + 1) * 4;
-            pfVar6 = pfVar6 + (uint)bVar7 * -2 + 1;
+        iVar3 = pCVar5->bone_list[0].parent_index;
+        if (-1 < iVar3) {
+          pSVar1 = DAT_0060b280->vertex_buffer_ptr;
+          pSVar6 = pSVar1 + iVar3;
+          pfVar8 = afStackY_105c + 0x3ee;
+          for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+            *pfVar8 = (float)(pSVar6->projected_vertex).transformed_x;
+            pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar9 * -2 + 1) * 4);
+            pfVar8 = pfVar8 + (uint)bVar9 * -2 + 1;
           }
-          pSVar5 = pSVar5 + iStack_1c;
-          pfVar6 = afStackY_105c + 0x3e2;
-          for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-            *pfVar6 = (float)*(uint *)pSVar5;
-            pSVar5 = pSVar5 + ((uint)bVar7 * -2 + 1) * 4;
-            pfVar6 = pfVar6 + (uint)bVar7 * -2 + 1;
+          puVar7 = (uint *)((int)&(pSVar1->projected_vertex).transformed_x + iStack_1c);
+          pfVar8 = afStackY_105c + 0x3e2;
+          for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+            *pfVar8 = (float)*puVar7;
+            puVar7 = puVar7 + (uint)bVar9 * -2 + 1;
+            pfVar8 = pfVar8 + (uint)bVar9 * -2 + 1;
           }
           engine_3d_c_clipAndDrawLine2D_FUN_00407cc0();
         }
-        pCVar3 = (CSkeleton *)&pCVar3->field_0x24;
-        iVar2 = iVar2 + 1;
+        pCVar5 = (CSkeleton *)((pCVar5->motion_list).state_names[1] + 2);
+        iVar4 = iVar4 + 1;
         iStack_1c = iStack_1c + 0x30;
-      } while (iVar2 < pCStack_14->bone_count);
+      } while (iVar4 < pCStack_14->bone_count);
     }
   }
-  if (((param_4 & 2) != 0) && (iVar2 = 0, 0 < pCStack_14->bone_count)) {
+  if (((param_4 & 2) != 0) && (iVar4 = 0, 0 < pCStack_14->bone_count)) {
     do {
       translation = &CStack_74;
       core_xform_cpp_matrixToEulerAngles_FUN_00591de0();
       CStack_2c.x = fStack_68;
-      *(float *)((int)&CStack_2c + (uint)bVar7 * -8 + 4) = afStack_64[(uint)bVar7 * -2];
-      *(float *)((int)&CStack_2c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-           afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+      *(float *)((int)&CStack_2c + (uint)bVar9 * -8 + 4) = afStack_64[(uint)bVar9 * -2];
+      *(float *)((int)&CStack_2c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+           afStack_64[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
       core_xform_cpp_FUN_00592720();
       euler_angles = &CStack_2c;
       CStack_74.x = afStack_64[2];
-      *(float *)((int)&CStack_74 + (uint)bVar7 * -8 + 4) = afStack_64[(uint)bVar7 * -2 + 3];
+      *(float *)((int)&CStack_74 + (uint)bVar9 * -8 + 4) = afStack_64[(uint)bVar9 * -2 + 3];
       this_ptr = DAT_0060b280;
-      *(float *)((int)&CStack_74 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-           afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
+      *(float *)((int)&CStack_74 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+           afStack_64[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
       afStackY_105c[0x3f6] = 7.727959e-39;
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
                 (this_ptr,euler_angles,translation);
       afStackY_105c[0x3f6] = 7.727994e-39;
       shape_edittool_cpp_FUN_0047fd00();
       engine_matrix_c_pop_FUN_0046b4a0();
-      iVar2 = iVar2 + 1;
-    } while (iVar2 < pCStack_14->bone_count);
+      iVar4 = iVar4 + 1;
+    } while (iVar4 < pCStack_14->bone_count);
   }
   return pCStack_14;
 }

@@ -10,10 +10,9 @@ void __cdecl core_trigger_cpp_CTrigger_archive_FUN_005780e0(CTrigger *this_ptr)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c330(&this_ptr->base);
-  core_actor_cpp_archiveInteger_FUN_0040b960
-            ((int *)&this_ptr->field_0x2c8,"?triggerState" + 1);
-  core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->field_0x2bc,"triggerSize");
-  core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x2b8,"triggerType");
+  core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->trigger_state,"?triggerState" + 1);
+  core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->trigger_size,"triggerSize");
+  core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->event_type,"triggerType");
   core_actor_cpp_archiveString_FUN_0040b730(this_ptr->on_event,"onName");
   core_actor_cpp_archiveString_FUN_0040b730(this_ptr->off_event,"offName");
   if (g_CTriggerClassVersion < 7) {
@@ -58,21 +57,20 @@ void __cdecl core_trigger_cpp_CTrigger_archive_FUN_005780e0(CTrigger *this_ptr)
       core_trigger_cpp_FUN_00578650(this_ptr);
     }
     else {
-      core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x2b4,"testRadius");
+      core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->test_radius,"testRadius");
     }
     if (8 < g_CTriggerClassVersion) {
-      core_actor_cpp_archiveInteger_FUN_0040b960
-                ((int *)&this_ptr->field_0x460,"autoAimAtMe");
+      core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->auto_aim_at_me,"autoAimAtMe");
     }
     if (9 < g_CTriggerClassVersion) {
-      core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x2cc,"shape");
+      core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->trigger_shape,"shape");
     }
     if (10 < g_CTriggerClassVersion) {
       core_actor_cpp_archiveString_FUN_0040b730
-                (&this_ptr->field_0x464,"damageActorWildcard");
+                (this_ptr->damage_actor_wildcard_name,"damageActorWildcard");
     }
     if (0xb < g_CTriggerClassVersion) {
-      core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x458,"hiliteActor");
+      core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->hilite_actor,"hiliteActor");
       return;
     }
   }

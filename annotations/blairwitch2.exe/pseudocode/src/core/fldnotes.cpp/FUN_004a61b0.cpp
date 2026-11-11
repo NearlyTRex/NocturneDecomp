@@ -2,13 +2,13 @@
 // Address: 004a61b0
 // Address Range: [[004a61b0, 004a6437]]
 // Convention: unknown
-// Signature: void core_fldnotes_cpp_FUN_004a61b0(undefined4 param_1,undefined4 param_2)
+// Signature: void core_fldnotes_cpp_FUN_004a61b0(CFieldNotes *param_1,undefined4 param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_fldnotes_cpp_FUN_004a61b0(uint param_1,uint param_2)
+void core_fldnotes_cpp_FUN_004a61b0(CFieldNotes *param_1,uint param_2)
 
 {
   int iVar1;
@@ -16,9 +16,10 @@ void core_fldnotes_cpp_FUN_004a61b0(uint param_1,uint param_2)
   int iVar3;
   uint *puVar4;
   char *pcVar5;
-  SNotesSection *pSVar6;
+  SNotesSection *this_ptr;
+  char *pcVar6;
   byte bVar7;
-  uint local_220 [64];
+  char local_220 [256];
   char local_120 [256];
   int local_20;
   int local_1c;
@@ -26,7 +27,7 @@ void core_fldnotes_cpp_FUN_004a61b0(uint param_1,uint param_2)
   int *local_14;
   
   bVar7 = 0;
-  core_fldnotes_cpp_FUN_004a50b0(param_1);
+  core_fldnotes_cpp_CFieldNotes_clear_FUN_004a50b0(param_1);
   local_20 = 0;
   _fscanf(param_2,"%*[^\n]\n");
   _fscanf(param_2,"%*[^\n]\n");
@@ -47,7 +48,7 @@ void core_fldnotes_cpp_FUN_004a61b0(uint param_1,uint param_2)
   _fscanf(param_2," \"%[^\"]",local_120);
   _fscanf(param_2,&DAT_005d64df);
   if (local_120[0] != '\0') {
-    core_fldnotes_cpp_FUN_004a41b0(param_1,local_120,0);
+    core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004a41b0(param_1,local_120,(char *)0x0);
     local_1c = 0;
     _fscanf(param_2,"%*[^\n]\n");
     _fscanf(param_2,&DAT_005d64ea,&local_1c);
@@ -55,19 +56,19 @@ void core_fldnotes_cpp_FUN_004a61b0(uint param_1,uint param_2)
     if (0 < local_1c) {
       do {
         pcVar5 = "(parse error)";
-        puVar4 = local_220;
+        pcVar6 = local_220;
         for (iVar3 = 0x40; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *puVar4 = *(uint *)pcVar5;
+          *(uint *)pcVar6 = *(uint *)pcVar5;
           pcVar5 = pcVar5 + ((uint)bVar7 * -2 + 1) * 4;
-          puVar4 = puVar4 + (uint)bVar7 * -2 + 1;
+          pcVar6 = (char *)((int)pcVar6 + ((uint)bVar7 * -2 + 1) * 4);
         }
         iVar3 = 0;
         _fscanf(param_2,"\"%[^\"]\", %d\n",local_220,&local_18);
         local_14 = (int *)0x0;
         if (0 < _DAT_01cab9f0) {
-          pSVar6 = SNotesSection_ARRAY_01cab9f4;
+          this_ptr = SNotesSection_ARRAY_01cab9f4;
           do {
-            iVar1 = core_fldnotes_cpp_FUN_004a35e0(pSVar6,local_220);
+            iVar1 = core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a35e0(this_ptr,local_220);
             if (iVar1 != 0) {
               if (local_14 != (int *)0x0) {
                 *local_14 = iVar3;
@@ -79,7 +80,7 @@ void core_fldnotes_cpp_FUN_004a61b0(uint param_1,uint param_2)
               break;
             }
             iVar3 = iVar3 + 1;
-            pSVar6 = pSVar6 + 1;
+            this_ptr = this_ptr + 1;
           } while (iVar3 < _DAT_01cab9f0);
         }
         shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0
@@ -92,7 +93,7 @@ LAB_004a63af:
     if (0 < _DAT_01cacb4c) {
       iVar3 = 0;
       do {
-        if (*(int *)(*(int *)(&SNotesMap_ARRAY_01cacb50[0].field_0x0 + iVar3) + 0x140) == 6) {
+        if (*(int *)(*(int *)(SNotesMap_ARRAY_01cacb50[0].image_name + iVar3 + -4) + 0x140) == 6) {
           engine_alphabit_cpp_FUN_0040dd20(iVar3 + 0x1cacbd8,0xff);
         }
         iVar2 = iVar2 + 1;

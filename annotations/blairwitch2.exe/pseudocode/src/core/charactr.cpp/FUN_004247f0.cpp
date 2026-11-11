@@ -11,125 +11,149 @@
 void core_charactr_cpp_FUN_004247f0(CDemonActor *param_1)
 
 {
-  float fVar1;
-  CDemonActor *pCVar2;
-  int iVar3;
+  char *pcVar1;
+  float fVar2;
+  CDemonActor *pCVar3;
+  int iVar4;
   CDeformableModel *this_ptr;
-  CDemonActor *pCVar4;
-  float fVar5;
-  uint uVar6;
+  CDemonActor *pCVar5;
+  float fVar6;
+  uint uVar7;
   
-  iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
-  if ((iVar3 != 0) || (*(int *)&param_1[0x62].field_0xf0 == -1)) {
+  iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
+  if ((iVar4 != 0) || (param_1[0x62].platform_orientation_delta.y == -NAN)) {
     return;
   }
   this_ptr = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
                        ((CDeformableModelInstance *)(param_1 + 1));
-  if (*(int *)&param_1[0x62].field_0xf0 == -2) {
-    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100(this_ptr,&DAT_005ccca6,0)
-    ;
-    *(int *)&param_1[0x62].field_0xf0 = iVar3;
-    if (iVar3 == -1) {
+  if (param_1[0x62].platform_orientation_delta.y == -NAN) {
+    fVar6 = (float)core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+                             (this_ptr,&DAT_005ccca6,0);
+    param_1[0x62].platform_orientation_delta.y = fVar6;
+    if (fVar6 == -NAN) {
       return;
     }
-    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100(this_ptr,&DAT_005cccab,0)
+    iVar4 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100(this_ptr,&DAT_005cccab,0)
     ;
-    *(int *)&param_1[0x62].field_0x114 = iVar3;
-    if (iVar3 == -1) {
-      *(uint *)&param_1[0x62].field_0xf0 = 0xffffffff;
+    param_1[0x62].blood_effect_timer = iVar4;
+    if (iVar4 == -1) {
+      param_1[0x62].platform_orientation_delta.y = -NAN;
       return;
     }
-    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100(this_ptr,&DAT_005cccae,1)
+    uVar7 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100(this_ptr,&DAT_005cccae,1)
     ;
-    *(int *)&param_1[0x62].field_0x118 = iVar3;
-    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100(this_ptr,&DAT_005cccb1,1)
+    param_1[0x62].blood_effect_color = uVar7;
+    iVar4 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100(this_ptr,&DAT_005cccb1,1)
     ;
-    *(int *)&param_1[0x62].field_0x11c = iVar3;
-    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100(this_ptr,&DAT_005cccb4,1)
+    param_1[0x62].footstep_particle_count = iVar4;
+    iVar4 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100(this_ptr,&DAT_005cccb4,1)
     ;
-    *(int *)&param_1[0x62].field_0x120 = iVar3;
-    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
-                      (this_ptr,"e1_left",0);
-    *(int *)&param_1[0x62].field_0xf4 = iVar3;
-    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+    *(int *)param_1[0x62].footstep_sound_code = iVar4;
+    fVar6 = (float)core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+                             (this_ptr,"e1_left",0);
+    param_1[0x62].platform_orientation_delta.z = fVar6;
+    iVar4 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                       (this_ptr,"e2_left",0);
-    *(int *)&param_1[0x62].field_0xf8 = iVar3;
-    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+    param_1[0x62].is_renderable = iVar4;
+    iVar4 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                       (this_ptr,"e3_left",0);
-    *(int *)&param_1[0x62].field_0xfc = iVar3;
-    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+    param_1[0x62].is_transparent = iVar4;
+    iVar4 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                       (this_ptr,"e4_left",0);
-    *(int *)&param_1[0x62].field_0x100 = iVar3;
-    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+    param_1[0x62].collision_disabled = iVar4;
+    iVar4 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                       (this_ptr,"e1_right",0);
-    *(int *)&param_1[0x62].field_0x104 = iVar3;
-    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+    param_1[0x62].process_disabled = iVar4;
+    iVar4 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                       (this_ptr,"e2_right",0);
-    *(int *)&param_1[0x62].field_0x108 = iVar3;
-    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+    param_1[0x62].scale.x = iVar4;
+    iVar4 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                       (this_ptr,"e3_right",0);
-    *(int *)&param_1[0x62].field_0x10c = iVar3;
-    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+    param_1[0x62].scale.y = iVar4;
+    iVar4 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                       (this_ptr,"e4_right",0);
-    *(int *)&param_1[0x62].field_0x110 = iVar3;
+    param_1[0x62].scale.z = iVar4;
   }
-  pCVar4 = param_1;
+  pCVar5 = param_1;
   do {
-    if (*(int *)&pCVar4[0x62].field_0xf4 != -1) {
-      *(uint *)
-       ((int)(&param_1[0xd].orient_matrix + 4) + *(int *)&pCVar4[0x62].field_0xf4 * 4 + 4) = 0;
+    fVar6 = pCVar5[0x62].platform_orientation_delta.z;
+    if (fVar6 != -NAN) {
+      pcVar1 = param_1[0xd].create_event + (int)fVar6 * 4 + 0x58;
+      pcVar1[0] = '\0';
+      pcVar1[1] = '\0';
+      pcVar1[2] = '\0';
+      pcVar1[3] = '\0';
     }
-    if (*(int *)&pCVar4[0x62].field_0x104 != -1) {
-      *(uint *)
-       ((int)(&param_1[0xd].orient_matrix + 4) + *(int *)&pCVar4[0x62].field_0x104 * 4 + 4) = 0;
+    if (pCVar5[0x62].process_disabled != -1) {
+      pcVar1 = param_1[0xd].create_event + pCVar5[0x62].process_disabled * 4 + 0x58;
+      pcVar1[0] = '\0';
+      pcVar1[1] = '\0';
+      pcVar1[2] = '\0';
+      pcVar1[3] = '\0';
     }
-    pCVar2 = pCVar4 + 0x62;
-    pCVar4 = (CDemonActor *)(pCVar4->actor_name + 4);
-    *(uint *)((int)(&param_1[0xd].orient_matrix + 4) + *(int *)&pCVar2->field_0x114 * 4 + 4) =
-         0;
-  } while (pCVar4 != (CDemonActor *)(param_1->actor_name + 0x10));
-  fVar1 = (float)_DAT_01c2a370 * _DAT_005cccfe;
-  *(float *)&param_1[0x62].field_0xe8 = *(float *)&param_1[0x62].field_0xe8 - fVar1;
-  if (*(int *)&param_1[0x62].field_0xe4 == 1) {
-    if (*(float *)&param_1[0x62].field_0xe8 <= 0.0) {
-      fVar5 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(5.0,8.0);
-      *(uint *)&param_1[0x62].field_0xd8 = 0;
-      *(uint *)&param_1[0x62].field_0xdc = 0;
-      *(uint *)&param_1[0x62].field_0xe4 = 0;
-      *(float *)&param_1[0x62].field_0xe8 = fVar5;
+    pCVar3 = pCVar5 + 0x62;
+    pCVar5 = (CDemonActor *)(pCVar5->actor_name + 4);
+    pcVar1 = param_1[0xd].create_event + pCVar3->blood_effect_timer * 4 + 0x58;
+    pcVar1[0] = '\0';
+    pcVar1[1] = '\0';
+    pcVar1[2] = '\0';
+    pcVar1[3] = '\0';
+  } while (pCVar5 != (CDemonActor *)(param_1->actor_name + 0x10));
+  fVar2 = (float)_DAT_01c2a370 * _DAT_005cccfe;
+  fVar6 = param_1[0x62].platform_position_delta.y;
+  param_1[0x62].platform_position_delta.z = param_1[0x62].platform_position_delta.z - fVar2;
+  if (fVar6 == 1.4013e-45) {
+    if (param_1[0x62].platform_position_delta.z <= 0.0) {
+      fVar6 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(5.0,8.0);
+      param_1[0x62].create_event[0x60] = '\0';
+      param_1[0x62].create_event[0x61] = '\0';
+      param_1[0x62].create_event[0x62] = '\0';
+      param_1[0x62].create_event[99] = '\0';
+      param_1[0x62].standing_platform = (CPlatform *)0x0;
+      param_1[0x62].platform_position_delta.y = 0.0;
+      param_1[0x62].platform_position_delta.z = fVar6;
     }
   }
-  else if (*(float *)&param_1[0x62].field_0xe8 <= 0.0) {
-    *(uint *)&param_1[0x62].field_0xdc = 3;
-    *(uint *)&param_1[0x62].field_0xe4 = 1;
-    *(uint *)&param_1[0x62].field_0xe8 = 0x3d4ccccd;
-    *(uint *)&param_1[0x62].field_0xd8 = 3;
+  else if (param_1[0x62].platform_position_delta.z <= 0.0) {
+    param_1[0x62].standing_platform = (CPlatform *)0x3;
+    param_1[0x62].platform_position_delta.y = 1.4013e-45;
+    param_1[0x62].platform_position_delta.z = 0.05;
+    param_1[0x62].create_event[0x60] = '\x03';
+    param_1[0x62].create_event[0x61] = '\0';
+    param_1[0x62].create_event[0x62] = '\0';
+    param_1[0x62].create_event[99] = '\0';
   }
-  *(float *)&param_1[0x62].field_0xec = *(float *)&param_1[0x62].field_0xec - fVar1;
-  if (*(float *)&param_1[0x62].field_0xec <= 0.0) {
-    pCVar4 = g_CScriptPtr->who_is_speaking;
-    if (param_1 == pCVar4) {
-      *(uint *)&pCVar4[0x62].field_0xec = 0x3e19999a;
-      uVar6 = rand();
-      *(uint *)&pCVar4[0x62].field_0xe0 = uVar6 & 3;
+  param_1[0x62].platform_orientation_delta.x = param_1[0x62].platform_orientation_delta.x - fVar2;
+  if (param_1[0x62].platform_orientation_delta.x <= 0.0) {
+    pCVar5 = g_CScriptPtr->who_is_speaking;
+    if (param_1 == pCVar5) {
+      pCVar5[0x62].platform_orientation_delta.x = 0.15;
+      uVar7 = rand();
+      pCVar5[0x62].platform_position_delta.x = (float)(uVar7 & 3);
     }
     else {
-      *(uint *)&param_1[0x62].field_0xe0 = 0;
-      *(uint *)&param_1[0x62].field_0xec = 0;
+      param_1[0x62].platform_position_delta.x = 0.0;
+      param_1[0x62].platform_orientation_delta.x = 0.0;
     }
   }
-  if (*(int *)(&param_1[0x62].field_0xf4 + *(int *)&param_1[0x62].field_0xd8 * 4) != -1) {
+  if (*(int *)(param_1[0x62].footstep_sound_code +
+              *(int *)(param_1[0x62].create_event + 0x60) * 4 + -0x2c) != -1) {
     core_charactr_cpp_FUN_004246e0
-              (this_ptr,*(uint *)&param_1[0x62].field_0xf0,
-               *(int *)(&param_1[0x62].field_0xf4 + *(int *)&param_1[0x62].field_0xd8 * 4));
+              (this_ptr,param_1[0x62].platform_orientation_delta.y,
+               *(int *)(param_1[0x62].footstep_sound_code +
+                       *(int *)(param_1[0x62].create_event + 0x60) * 4 + -0x2c));
   }
-  if (*(int *)(&param_1[0x62].field_0x104 + *(int *)&param_1[0x62].field_0xdc * 4) != -1) {
+  if (*(int *)(param_1[0x62].footstep_sound_code + (int)param_1[0x62].standing_platform * 4 + -0x1c)
+      != -1) {
     core_charactr_cpp_FUN_004246e0
-              (this_ptr,*(uint *)&param_1[0x62].field_0xf0,
-               *(int *)(&param_1[0x62].field_0x104 + *(int *)&param_1[0x62].field_0xdc * 4));
+              (this_ptr,param_1[0x62].platform_orientation_delta.y,
+               *(int *)(param_1[0x62].footstep_sound_code +
+                       (int)param_1[0x62].standing_platform * 4 + -0x1c));
   }
   core_charactr_cpp_FUN_004246e0
-            (this_ptr,*(uint *)&param_1[0x62].field_0xf0,
-             *(uint *)(&param_1[0x62].field_0x114 + *(int *)&param_1[0x62].field_0xe0 * 4));
+            (this_ptr,param_1[0x62].platform_orientation_delta.y,
+             *(uint *)
+              (param_1[0x62].footstep_sound_code +
+              (int)param_1[0x62].platform_position_delta.x * 4 + -0xc));
   return;
 }

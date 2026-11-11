@@ -17,7 +17,7 @@ int __cdecl engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(CBitFont *this_p
   char *pcVar6;
   
   pcVar5 = text_string;
-  if (*(int *)(this_ptr + 0x4210) != 0) {
+  if (this_ptr->win_font_enabled != 0) {
     do {
       pcVar6 = pcVar5;
       if (*pcVar5 == '\n') goto LAB_004ab034;
@@ -29,8 +29,8 @@ int __cdecl engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(CBitFont *this_p
     pcVar6 = (char *)0x0;
 LAB_004ab034:
     if (pcVar6 == (char *)0x0) {
-      iVar3 = (**(code **)(*(int *)(*(int *)(this_ptr + 0x4214) + 0x6a44) + 0xc))
-                        (*(int *)(this_ptr + 0x4214),text_string);
+      iVar3 = (*((this_ptr->win_font_helper->base).vtable)->getStringHeight)
+                        (this_ptr->win_font_helper,text_string);
       return iVar3;
     }
   }
@@ -49,9 +49,9 @@ LAB_004ab034:
     bVar1 = text_string[1];
     text_string = text_string + 1;
   }
-  iVar3 = *(int *)(this_ptr + 0x41f0);
+  iVar3 = this_ptr->current_line_height;
   do {
-    iVar3 = iVar3 + *(int *)(this_ptr + 0x41f8) + *(int *)(this_ptr + 0x41f0);
+    iVar3 = iVar3 + this_ptr->line_spacing + this_ptr->current_line_height;
     pbVar4 = (byte *)(text_string + 1);
     do {
       text_string = (char *)pbVar4;

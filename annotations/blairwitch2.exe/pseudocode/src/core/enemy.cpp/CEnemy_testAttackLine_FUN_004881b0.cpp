@@ -21,9 +21,8 @@ int __cdecl core_enemy_cpp_CEnemy_testAttackLine_FUN_004881b0(CEnemy *this_ptr,C
   if (this_ptr_00 != (CCharacter *)0x0) {
     (*(((this_ptr_00->base).vtable._uc)->_uc).testDamageLine)
               (this_ptr_00,start,end,damage_info,&local_20);
-    if (0.0 < *(float *)(damage_info + 4)) {
-      fVar1 = (float10)*(float *)(damage_info + 4) * (float10)_DAT_005d2db9 * (float10)_DAT_005d2dc1
-      ;
+    if (0.0 < damage_info->damage_amount) {
+      fVar1 = (float10)damage_info->damage_amount * (float10)_DAT_005d2db9 * (float10)_DAT_005d2dc1;
       blood_type = BLOOD_TYPE_RED;
       round();
       iStack_14 = (int)ROUND(fVar1);

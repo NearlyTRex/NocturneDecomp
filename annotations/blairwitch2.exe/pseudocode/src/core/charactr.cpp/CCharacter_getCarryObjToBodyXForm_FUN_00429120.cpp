@@ -17,9 +17,9 @@ CMatrix3x4f * __stack2_esi core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_F
   
   bVar4 = 0;
   core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
-            (this_ptr->carry_hands + hand_index * 0x78 + 0xc,
-             &(this_ptr->model).field_0xe80 +
-             *(int *)(this_ptr->carry_hands + hand_index * 0x78) * 0x30);
+            (&this_ptr->carry_hands[hand_index].initial_carry_transform,
+             (this_ptr->model).bone_transform.bone_model_matrices +
+             this_ptr->carry_hands[hand_index].bone_index);
   pfVar2 = local_38;
   pCVar3 = out_matrix;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

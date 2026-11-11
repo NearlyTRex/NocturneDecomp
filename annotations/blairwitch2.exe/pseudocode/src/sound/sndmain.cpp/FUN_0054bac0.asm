@@ -54,7 +54,7 @@
 ;   engine_dosio.cpp_getFileSize_FUN_00460aa0
 ;   engine_dosio.cpp_makePath_FUN_004610a0
 ;   engine_dosio.cpp_splitPath_FUN_00461070
-;   support_trstream.cpp_FUN_0057d390
+;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390
 ;   unkaddr_0057b9a0.cpp_FUN_0057cc20
 ;   unkclass_instream.cpp_CInStreamFile_ctor_FUN_0057cd50
 ;   unkclass_instream.cpp_CInStreamFile_dtor_FUN_0057cec0
@@ -143,8 +143,8 @@ section .text
     PUSH 0x5e7a69                       ; 0054bbd7 | = "sound"
     LEA EAX,[ESP + 0x438]               ; 0054bbdc
     PUSH EAX                            ; 0054bbe3
-    CALL support_trstream.cpp_FUN_0057d390 ; 0054bbe4
-        ;   XREF to: 0057d390 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057d390()
+    CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390 ; 0054bbe4
+        ;   XREF to: 0057d390 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390(CInStreamFile * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 0054bbe9
     TEST EAX,EAX                        ; 0054bbec
     JZ 0x0054bc9c                       ; 0054bbee

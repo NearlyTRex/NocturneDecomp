@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 339,
+    "complexity_score": 125,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 74,
-    "suspect_count": 25,
+    "pseudocode_lines": 75,
+    "suspect_count": 4,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 190
+    "total_lines": 191
   },
   "cross_references": [
     {
@@ -65,7 +64,7 @@
     {
       "addr": "0059e3b0",
       "is_variadic": false,
-      "name": "unkafter_basicene.cpp_FUN_0059e3b0"
+      "name": "unkafter_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0"
     }
   ],
   "globals": [
@@ -154,176 +153,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "*(CConfederateZombie_full_vtable **)&this_ptr_00->field_0x2b0 = &g_CConfederateZombieVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&this_ptr_00->field_0x2b4,\"conzombie_david.dfm\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x3434",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x3434 = 0x3f333333;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0xfc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0xfc = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x2814",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x2814 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x113c4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x113c4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x1134c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x1134c = 0x40200000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x11380",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x11380 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x113d4",
-      "severity": "mild",
-      "text": "pcVar6 = &this_ptr_00->field_0x113d4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x11384",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x11384 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x11388",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x11388 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x1138c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x1138c = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x11418",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x11418 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x11370",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x11370 = uVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x11394",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x11394 = uVar4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x10af8",
-      "severity": "mild",
-      "text": "puVar1 = &this_ptr_00->field_0x10af8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x11444",
-      "severity": "mild",
-      "text": "pcVar6 = &this_ptr_00->field_0x11444;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x11430",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x11430 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x280c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x280c = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x11348",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x11348 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0x11543",
-      "severity": "mild",
-      "text": "pcVar6 = &this_ptr_00->field_0x11543;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 36,
+      "line": 37,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -331,7 +162,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 55,
+      "line": 56,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -339,7 +170,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 66,
+      "line": 67,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

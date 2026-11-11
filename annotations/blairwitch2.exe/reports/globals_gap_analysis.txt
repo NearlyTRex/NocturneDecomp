@@ -2,24 +2,24 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      13457
-  Named globals:             7080
+Total globals analyzed:      13456
+  Named globals:             7079
   DAT_ globals:              6377
-Gaps found:                  3778
-  With exact size bounds:    3764
+Gaps found:                  3774
+  With exact size bounds:    3760
   With estimated bounds:     14
-Total gap bytes:             38,717,873
-  Exact gap bytes:           38,713,106
-Overlaps (size <= 0):        6266
+Total gap bytes:             38,717,500
+  Exact gap bytes:           38,712,733
+Overlaps (size <= 0):        6265
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
   1-4 bytes (likely padding/alignment)          1884
-  5-16 bytes (small vars)                       361
+  5-16 bytes (small vars)                       358
   17-64 bytes (structs/small arrays)            722
   65-256 bytes (medium data)                    238
-  257-1024 bytes (large structs/arrays)         248
+  257-1024 bytes (large structs/arrays)         247
   1-4 KB                                        128
   4-64 KB                                       156
   64+ KB                                        41
@@ -179,7 +179,7 @@ LARGEST GAPS (top 50)
     before: DAT_020b0258                             undefined4           at 0x020b0258
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (3764) - size bounds are known precisely
+ALL EXACT GAPS (3760) - size bounds are known precisely
 --------------------------------------------------------------------------------
    7,372,800 bytes  at 0x00b667a8  between DAT_00b667a4                   and DAT_0126e7a8
    6,291,656 bytes  at 0x01511ce8  between DAT_01511ce4                   and DAT_01b11db0
@@ -234,7 +234,7 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
       46,356 bytes  at 0x0046d844  between switchdataD_0046d840           and PTR_caseD_1_00478d58
       44,884 bytes  at 0x0053ec1c  between switchdataD_0053ec18           and switchdataD_00549b70
       44,132 bytes  at 0x0051fcdc  between switchdataD_0051fcd8           and switchdataD_0052a940
-      41,792 bytes  at 0x01c86f48  between g_GlassParticlePool[1].field60 and DAT_01c91288
+      41,792 bytes  at 0x01c86f48  between g_GlassParticlePool[1].base.vt and DAT_01c91288
       41,504 bytes  at 0x004468a4  between PTR_LAB_004468a0               and switchdataD_00450ac4
       41,247 bytes  at 0x00780004  between DAT_00780000                   and DAT_0078a123
       36,856 bytes  at 0x004b703c  between switchdataD_004b7038           and switchdataD_004c0034
@@ -265,14 +265,14 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
       23,388 bytes  at 0x0050c238  between switchdataD_0050c234           and switchdataD_00511d94
       23,140 bytes  at 0x00512a48  between switchdataD_00512a44           and switchdataD_005184ac
       22,776 bytes  at 0x00467f48  between switchdataD_00467f44           and switchdataD_0046d840
-      21,356 bytes  at 0x01c7f588  between g_SparkPool[1].field60_0x3c    and DAT_01c848f4
+      21,356 bytes  at 0x01c7f588  between g_SparkPool[1].base.vtable     and DAT_01c848f4
       20,848 bytes  at 0x0048964c  between switchdataD_00489648           and switchdataD_0048e7bc
       20,812 bytes  at 0x01c38bc0  between DAT_01c38bbc                   and DAT_01c3dd0c
       20,608 bytes  at 0x005a52e8  between switchdataD_005a52e4           and switchdataD_005aa368
       20,000 bytes  at 0x01d0d2f4  between DAT_01d0d2f0                   and DAT_01d12114
       19,920 bytes  at 0x01c97700  between DAT_01c976fc                   and DAT_01c9c4d0
       18,304 bytes  at 0x00413f20  between switchdataD_00413f1c           and switchdataD_004186a0
-      18,296 bytes  at 0x01cb837c  between g_BloodParticles[1].field60_0x and DAT_01cbcaf4
+      18,296 bytes  at 0x01cb837c  between g_BloodParticles[1].base.vtabl and DAT_01cbcaf4
       18,148 bytes  at 0x004f976c  between PTR_caseD_3_004f9768           and switchdataD_004fde50
       18,000 bytes  at 0x01d1215c  between DAT_01d12158                   and DAT_01d167ac
       17,992 bytes  at 0x005184b0  between switchdataD_005184ac           and switchdataD_0051caf8
@@ -284,8 +284,8 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
       16,476 bytes  at 0x0060d26c  between DAT_0060d268                   and DAT_006112c8
       16,416 bytes  at 0x026577c4  between DAT_026577c0                   and DAT_0265b7e4
       16,380 bytes  at 0x026537c4  between DAT_026537c0                   and DAT_026577c0
-      16,312 bytes  at 0x01ca7704  between g_RainDropPool[1].field60_0x3c and g_CFlameClassInfo.name_hash
-      16,256 bytes  at 0x01ca3700  between g_PopcornPool[1].field60_0x3c  and DAT_01ca7680
+      16,312 bytes  at 0x01ca7704  between g_RainDropPool[1].base.vtable  and g_CFlameClassInfo.name_hash
+      16,256 bytes  at 0x01ca3700  between g_PopcornPool[1].base.vtable   and DAT_01ca7680
       16,180 bytes  at 0x020b19a0  between g_CShadowClassInfo.name_hash   and DAT_020b58d4
       16,000 bytes  at 0x0200a3bc  between DAT_0200a3b8                   and DAT_0200e23c
       15,992 bytes  at 0x0208f780  between DAT_0208f77c                   and DAT_020935f8
@@ -306,7 +306,7 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
       10,580 bytes  at 0x00460620  between switchdataD_0046061c           and switchdataD_00462f74
       10,576 bytes  at 0x00486c78  between switchdataD_00486c74           and switchdataD_004895c8
       10,268 bytes  at 0x00432ff8  between PTR_caseD_3_00432ff4           and switchdataD_00435814
-      10,268 bytes  at 0x01c914b8  between g_FireballPool[1].field60_0x3c and DAT_01c93cd4
+      10,268 bytes  at 0x01c914b8  between g_FireballPool[1].base.vtable  and DAT_01c93cd4
       10,244 bytes  at 0x01cb111c  between DAT_01cb1118                   and DAT_01cb3920
       10,244 bytes  at 0x01e620f4  between DAT_01e620f0                   and DAT_01e648f8
       10,100 bytes  at 0x0053c4a4  between switchdataD_0053c4a0           and switchdataD_0053ec18
@@ -346,15 +346,15 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
        5,932 bytes  at 0x006196b4  between DAT_006196b0                   and DAT_0061ade0
        5,924 bytes  at 0x01d21e34  between DAT_01d21e30                   and DAT_01d23558
        5,920 bytes  at 0x0040e218  between switchdataD_0040e214           and switchdataD_0040f938
-       5,732 bytes  at 0x01c84994  between CFirefly_ARRAY_01c848f8[1].fie and DAT_01c85ff8
+       5,732 bytes  at 0x01c84994  between CFirefly_ARRAY_01c848f8[1].bas and DAT_01c85ff8
        5,664 bytes  at 0x00435818  between switchdataD_00435814           and switchdataD_00436e38
        5,432 bytes  at 0x00611348  between DAT_00611340                   and DAT_00612880
        5,356 bytes  at 0x004d4c3c  between switchdataD_004d4c38           and switchdataD_004d6128
-       5,228 bytes  at 0x01c95170  between CLeaf_ARRAY_01c950dc[1].field6 and DAT_01c965dc
+       5,228 bytes  at 0x01c95170  between CLeaf_ARRAY_01c950dc[1].base.v and DAT_01c965dc
        5,054 bytes  at 0x01e5ec74  between DAT_01e5ec70                   and DAT_01e60032
        5,046 bytes  at 0x01e60036  between DAT_01e60032                   and DAT_01e613ec
        5,000 bytes  at 0x00444644  between PTR_caseD_3_00444640           and PTR_caseD_1_004459cc
-       4,976 bytes  at 0x01c93d68  between g_RockPool[1].field60_0x3c     and DAT_01c950d8
+       4,976 bytes  at 0x01c93d68  between g_RockPool[1].base.vtable      and DAT_01c950d8
        4,828 bytes  at 0x01cb5624  between g_CDemonLightInstance.antialia and g_CGameInstance
        4,800 bytes  at 0x0150f458  between DAT_0150f454                   and DAT_01510718
        4,800 bytes  at 0x01d167f4  between DAT_01d167f0                   and DAT_01d17ab4
@@ -363,7 +363,7 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
        4,792 bytes  at 0x0146716c  between DAT_01467168                   and DAT_01468424
        4,791 bytes  at 0x01b11dc1  between DAT_01b11dbd                   and DAT_01b13078
        4,791 bytes  at 0x01c2a395  between DAT_01c2a391                   and DAT_01c2b64c
-       4,640 bytes  at 0x01ca245c  between g_ShellPool[1].field60_0x3c    and DAT_01ca367c
+       4,640 bytes  at 0x01ca245c  between g_ShellPool[1].base.vtable     and DAT_01ca367c
        4,622 bytes  at 0x0061fe52  between DAT_0061fe4e                   and DAT_00621060
        4,584 bytes  at 0x005a33f8  between switchdataD_005a33f4           and switchdataD_005a45e0
        4,552 bytes  at 0x005a1338  between switchdataD_005a1334           and switchdataD_005a2500
@@ -579,7 +579,7 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
          540 bytes  at 0x005f68f4  between DAT_005f68f0                   and g_CFlameCanTypeInfo
          522 bytes  at 0x0050c02a  between caseD_0                        and switchdataD_0050c234
          520 bytes  at 0x005fca18  between g_CBassPlayerTypeInfo          and g_CTeleportTypeInfo
-         520 bytes  at 0x01caf280  between g_STextViewInstance.field60_0x and DAT_01caf488
+         520 bytes  at 0x01caf280  between g_STextViewInstance.pages      and DAT_01caf488
          516 bytes  at 0x02652eb8  between DAT_02652eb4                   and DAT_026530bc
          508 bytes  at 0x00619034  between DAT_00619030                   and DAT_00619230
          505 bytes  at 0x01cab7f7  between DAT_01cab7f3                   and DAT_01cab9f0
@@ -604,7 +604,7 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
          412 bytes  at 0x005ff364  between DAT_005ff360                   and g_CSchnellGeistTypeInfo
          405 bytes  at 0x005eb1b9  between DAT_005eb1b5                   and s_Bip01_head_005eb34e
          404 bytes  at 0x005ff17c  between DAT_005ff178                   and g_CTwigZombieTypeInfo
-         404 bytes  at 0x01e614b0  between g_CPlatformClassInfo.name_hash and g_CDemonPodInstance.field404_0
+         404 bytes  at 0x01e614b0  between g_CPlatformClassInfo.name_hash and g_CDemonPodInstance.base.vtabl
          400 bytes  at 0x005ff720  between DAT_005ff71c                   and g_CBasicNPCTypeInfo
          400 bytes  at 0x005ff900  between DAT_005ff8fc                   and g_CUnionTypeInfo
          400 bytes  at 0x0061e6f4  between DAT_0061e6f0                   and g_CWaterActorClassVersion
@@ -676,7 +676,6 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
          329 bytes  at 0x005cf01e  between DAT_005cf01a                   and DAT_005cf167
          328 bytes  at 0x005fbf08  between g_CSpikeTypeInfo               and g_CStairsTypeInfo
          328 bytes  at 0x005fd9b8  between g_CVampireBossTypeInfo         and g_CVehicleTypeInfo
-         328 bytes  at 0x01d34cec  between g_CNetGameInstance.players+0x1 and DAT_01d34e34
          320 bytes  at 0x01cab9f4  between DAT_01cab9f0                   and SNotesSection_ARRAY_01cab9f4[0
          320 bytes  at 0x02628640  between DAT_0262863c                   and g_CMP3DecoderInstance.sample_r
          314 bytes  at 0x01326d26  between DAT_01326d22                   and DAT_01326e60
@@ -785,7 +784,7 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
          216 bytes  at 0x0061b478  between DAT_0061b474                   and g_CSentinelClassVersion
          215 bytes  at 0x005e5631  between DAT_005e5630                   and s_Initializing_scene_005e5708
          212 bytes  at 0x0061eb28  between g_CSchnellGeistClassVersion    and g_CSimpleParticleSystemPtr
-         204 bytes  at 0x005f6df8  between g_CFlashlightTypeInfo          and PTR_unkaddr_004a1200.cpp_FUN_0
+         204 bytes  at 0x005f6df8  between g_CFlashlightTypeInfo          and g_SPageResourceVTable
          200 bytes  at 0x005d51ad  between DAT_005d51a9                   and DAT_005d5275
          196 bytes  at 0x01c3f5b0  between DAT_01c3f5ac                   and DAT_01c3f674
          193 bytes  at 0x01caf4a7  between DAT_01caf4a3                   and DAT_01caf568
@@ -839,8 +838,8 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
          139 bytes  at 0x005ec5cf  between DAT_005ec5cb                   and s_engine_texture_cpp_005ec65a
          136 bytes  at 0x005f4f98  between g_CActorDestinationTypeInfo    and DAT_005f5020
          136 bytes  at 0x0061ecd0  between g_CDogClassVersion             and g_CChainClassVersion
-         136 bytes  at 0x01c86ea4  between g_GlassParticlePool[0].field60 and g_GlassParticlePool[1].field36
-         136 bytes  at 0x01c91414  between g_FireballPool[0].field60_0x3c and g_FireballPool[1].field36_0x24
+         136 bytes  at 0x01c86ea4  between g_GlassParticlePool[0].base.vt and g_GlassParticlePool[1].base.li
+         136 bytes  at 0x01c91414  between g_FireballPool[0].base.vtable  and g_FireballPool[1].base.lifetim
          132 bytes  at 0x00617acc  between g_CHostageClassVersion         and s_system_nocturne_ini_00617b50
          132 bytes  at 0x006184d4  between DAT_006184d0                   and DAT_00618558
          132 bytes  at 0x0061855c  between DAT_00618558                   and DAT_006185e0
@@ -958,7 +957,7 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
           76 bytes  at 0x026672b0  between DAT_026672ac                   and DAT_026672fc
           75 bytes  at 0x0061f489  between DAT_0061f485                   and PTR_DAT_0061f4d4
           74 bytes  at 0x005d6cea  between DAT_005d6ce6                   and s_core_frankgen_cpp_005d6d34
-          72 bytes  at 0x005f6f18  between PTR_unkafter_fldnotes.cpp_Page and g_CAlphaBitmapTypeInfo
+          72 bytes  at 0x005f6f18  between g_SPageResourceMapVTable       and g_CAlphaBitmapTypeInfo
           72 bytes  at 0x005fa168  between DAT_005fa164                   and DAT_005fa1b0
           72 bytes  at 0x005fa578  between g_CMolochTypeInfo              and DAT_005fa5c0
           72 bytes  at 0x005fe2a8  between g_CWinFontTypeInfo             and DAT_005fe2f0
@@ -978,7 +977,7 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
           68 bytes  at 0x0061812c  between DAT_00618128                   and DAT_00618170
           68 bytes  at 0x00618df8  between DAT_00618df4                   and DAT_00618e3c
           68 bytes  at 0x0061ec64  between DAT_0061ec60                   and g_CHandClassVersion
-          68 bytes  at 0x01ca23fc  between g_ShellPool[0].field60_0x3c    and g_ShellPool[1].field36_0x24
+          68 bytes  at 0x01ca23fc  between g_ShellPool[0].base.vtable     and g_ShellPool[1].base.lifetime_r
           68 bytes  at 0x01d21c24  between DAT_01d21c20                   and DAT_01d21c68
           65 bytes  at 0x005d12e4  between DAT_005d12e0                   and s_cockpit_drawsurf_cpp_005d132
           65 bytes  at 0x005d9de8  between s_CHero_doHeroAction_type_005d and s_CHero_doHeroAction_type_005d
@@ -993,7 +992,7 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
           64 bytes  at 0x0070cbcc  between DAT_0070cbc8                   and DAT_0070cc0c
           64 bytes  at 0x01ba56d4  between DAT_01ba56d0                   and DAT_01ba5714
           64 bytes  at 0x01c3de78  between g_CFilmReelClassInfo.name_hash and DAT_01c3deb8
-          64 bytes  at 0x01c84938  between CFirefly_ARRAY_01c848f8[0].fie and CFirefly_ARRAY_01c848f8[1].fie
+          64 bytes  at 0x01c84938  between CFirefly_ARRAY_01c848f8[0].bas and CFirefly_ARRAY_01c848f8[1].bas
           64 bytes  at 0x01d06a7c  between DAT_01d06a78                   and DAT_01d06abc
           64 bytes  at 0x01d09814  between DAT_01d09810                   and DAT_01d09854
           64 bytes  at 0x01e620b0  between DAT_01e620ac                   and DAT_01e620f0
@@ -1051,10 +1050,10 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
           56 bytes  at 0x01c26430  between DAT_01c2642c                   and g_CElephantGunClassInfo.name_h
           56 bytes  at 0x01c2646c  between g_CElephantGunClassInfo.name_h and g_CEmitterClassInfo.name_hash
           56 bytes  at 0x01c264a8  between g_CEmitterClassInfo.name_hash  and g_CEnemyClassInfo.name_hash
-          56 bytes  at 0x01c7f534  between g_SparkPool[0].field60_0x3c    and g_SparkPool[1].field36_0x24
-          56 bytes  at 0x01c9511c  between CLeaf_ARRAY_01c950dc[0].field6 and CLeaf_ARRAY_01c950dc[1].field3
+          56 bytes  at 0x01c7f534  between g_SparkPool[0].base.vtable     and g_SparkPool[1].base.lifetime_r
+          56 bytes  at 0x01c9511c  between CLeaf_ARRAY_01c950dc[0].base.v and CLeaf_ARRAY_01c950dc[1].base.l
           56 bytes  at 0x01cab6c0  between g_CFlameClassInfo.name_hash    and g_CFlameCanClassInfo.name_hash
-          56 bytes  at 0x01caf240  between CAlphaBitmap_01caf22c.height   and g_STextViewInstance.field56_0x
+          56 bytes  at 0x01caf240  between CAlphaBitmap_01caf22c.height   and g_STextViewInstance.page_count
           56 bytes  at 0x01caf5f0  between DAT_01caf5ec                   and g_CFliesClassInfo.name_hash
           56 bytes  at 0x01cb05e4  between DAT_01cb05e0                   and g_CFrankenstienMachineClassInf
           56 bytes  at 0x01cb06c8  between DAT_01cb06c4                   and g_CGabriellaClassInfo.name_has
@@ -1102,7 +1101,7 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
           52 bytes  at 0x0061b998  between DAT_0061b994                   and DAT_0061b9cc
           52 bytes  at 0x007bcc50  between DAT_007bcc4c                   and DAT_007bcc84
           52 bytes  at 0x01ba5c90  between DAT_01ba5c8c                   and DAT_01ba5cc4
-          52 bytes  at 0x01c93d18  between g_RockPool[0].field60_0x3c     and g_RockPool[1].field36_0x24
+          52 bytes  at 0x01c93d18  between g_RockPool[0].base.vtable      and g_RockPool[1].base.lifetime_re
           52 bytes  at 0x01caf114  between DAT_01caf110                   and CAlphaBitmap_ARRAY_01caf128[1]
           52 bytes  at 0x01cb0260  between DAT_01cb025c                   and DAT_01cb0294
           52 bytes  at 0x01cbcb10  between DAT_01cbcb0c                   and DAT_01cbcb44
@@ -1180,7 +1179,7 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
           44 bytes  at 0x006220e8  between DAT_006220e4                   and DAT_00622114
           44 bytes  at 0x00622118  between DAT_00622114                   and DAT_00622144
           44 bytes  at 0x00622148  between DAT_00622144                   and DAT_00622174
-          44 bytes  at 0x01cb8334  between g_BloodParticles[0].field60_0x and g_BloodParticles[1].field36_0x
+          44 bytes  at 0x01cb8334  between g_BloodParticles[0].base.vtabl and g_BloodParticles[1].base.lifet
           42 bytes  at 0x005dc2fb  between s_Nocturne_requires_at_lea_005 and DAT_005dc325
           41 bytes  at 0x005cca8d  between s_s_swarming_on_s_at_LOD_d_005 and s_stake_b_kfm_005ccab6
           40 bytes  at 0x005d45df  between s_Can_t_use_hasKeyMask_con_005 and s_d_n_005d4607
@@ -1264,18 +1263,18 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
           36 bytes  at 0x007c0918  between DAT_007c0914                   and DAT_007c093c
           36 bytes  at 0x007c0f18  between DAT_007c0f14                   and DAT_007c0f3c
           36 bytes  at 0x01c38b1c  between DAT_01c38b18                   and DAT_01c38b40
-          36 bytes  at 0x01c7f4f4  between DAT_01c7f4f0                   and g_SparkPool[0].field36_0x24
-          36 bytes  at 0x01c848f8  between DAT_01c848f4                   and CFirefly_ARRAY_01c848f8[0].fie
-          36 bytes  at 0x01c86e64  between DAT_01c86e60                   and g_GlassParticlePool[0].field36
-          36 bytes  at 0x01c913d4  between DAT_01c913d0                   and g_FireballPool[0].field36_0x24
-          36 bytes  at 0x01c93cd8  between DAT_01c93cd4                   and g_RockPool[0].field36_0x24
-          36 bytes  at 0x01c950dc  between DAT_01c950d8                   and CLeaf_ARRAY_01c950dc[0].field3
-          36 bytes  at 0x01ca23bc  between DAT_01ca23b8                   and g_ShellPool[0].field36_0x24
-          36 bytes  at 0x01ca3680  between DAT_01ca367c                   and g_PopcornPool[0].field36_0x24
-          36 bytes  at 0x01ca36c0  between g_PopcornPool[0].field60_0x3c  and g_PopcornPool[1].field36_0x24
-          36 bytes  at 0x01ca7684  between DAT_01ca7680                   and g_RainDropPool[0].field36_0x24
-          36 bytes  at 0x01ca76c4  between g_RainDropPool[0].field60_0x3c and g_RainDropPool[1].field36_0x24
-          36 bytes  at 0x01cb82f4  between DAT_01cb82f0                   and g_BloodParticles[0].field36_0x
+          36 bytes  at 0x01c7f4f4  between DAT_01c7f4f0                   and g_SparkPool[0].base.lifetime_r
+          36 bytes  at 0x01c848f8  between DAT_01c848f4                   and CFirefly_ARRAY_01c848f8[0].bas
+          36 bytes  at 0x01c86e64  between DAT_01c86e60                   and g_GlassParticlePool[0].base.li
+          36 bytes  at 0x01c913d4  between DAT_01c913d0                   and g_FireballPool[0].base.lifetim
+          36 bytes  at 0x01c93cd8  between DAT_01c93cd4                   and g_RockPool[0].base.lifetime_re
+          36 bytes  at 0x01c950dc  between DAT_01c950d8                   and CLeaf_ARRAY_01c950dc[0].base.l
+          36 bytes  at 0x01ca23bc  between DAT_01ca23b8                   and g_ShellPool[0].base.lifetime_r
+          36 bytes  at 0x01ca3680  between DAT_01ca367c                   and g_PopcornPool[0].base.lifetime
+          36 bytes  at 0x01ca36c0  between g_PopcornPool[0].base.vtable   and g_PopcornPool[1].base.lifetime
+          36 bytes  at 0x01ca7684  between DAT_01ca7680                   and g_RainDropPool[0].base.lifetim
+          36 bytes  at 0x01ca76c4  between g_RainDropPool[0].base.vtable  and g_RainDropPool[1].base.lifetim
+          36 bytes  at 0x01cb82f4  between DAT_01cb82f0                   and g_BloodParticles[0].base.lifet
           36 bytes  at 0x01d0bbb4  between DAT_01d0bbb0                   and DAT_01d0bbd8
           36 bytes  at 0x0264ac10  between DAT_0264ac0c                   and DAT_0264ac34
           36 bytes  at 0x02666678  between DAT_02666674                   and DAT_0266669c
@@ -1663,26 +1662,26 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
           20 bytes  at 0x0061e92c  between DAT_0061e928                   and g_CWerewolfClassVersion
           20 bytes  at 0x0061f164  between DAT_0061f160                   and s_s_0123456789abcdefghijkl_006
           20 bytes  at 0x01ba5c54  between DAT_01ba5c50                   and DAT_01ba5c68
-          20 bytes  at 0x01c7f51c  between g_SparkPool[0].field36_0x24    and g_SparkPool[0].field60_0x3c
-          20 bytes  at 0x01c7f570  between g_SparkPool[1].field36_0x24    and g_SparkPool[1].field60_0x3c
-          20 bytes  at 0x01c84920  between CFirefly_ARRAY_01c848f8[0].fie and CFirefly_ARRAY_01c848f8[0].fie
-          20 bytes  at 0x01c8497c  between CFirefly_ARRAY_01c848f8[1].fie and CFirefly_ARRAY_01c848f8[1].fie
-          20 bytes  at 0x01c86e8c  between g_GlassParticlePool[0].field36 and g_GlassParticlePool[0].field60
-          20 bytes  at 0x01c86f30  between g_GlassParticlePool[1].field36 and g_GlassParticlePool[1].field60
-          20 bytes  at 0x01c913fc  between g_FireballPool[0].field36_0x24 and g_FireballPool[0].field60_0x3c
-          20 bytes  at 0x01c914a0  between g_FireballPool[1].field36_0x24 and g_FireballPool[1].field60_0x3c
-          20 bytes  at 0x01c93d00  between g_RockPool[0].field36_0x24     and g_RockPool[0].field60_0x3c
-          20 bytes  at 0x01c93d50  between g_RockPool[1].field36_0x24     and g_RockPool[1].field60_0x3c
-          20 bytes  at 0x01c95104  between CLeaf_ARRAY_01c950dc[0].field3 and CLeaf_ARRAY_01c950dc[0].field6
-          20 bytes  at 0x01c95158  between CLeaf_ARRAY_01c950dc[1].field3 and CLeaf_ARRAY_01c950dc[1].field6
-          20 bytes  at 0x01ca23e4  between g_ShellPool[0].field36_0x24    and g_ShellPool[0].field60_0x3c
-          20 bytes  at 0x01ca2444  between g_ShellPool[1].field36_0x24    and g_ShellPool[1].field60_0x3c
-          20 bytes  at 0x01ca36a8  between g_PopcornPool[0].field36_0x24  and g_PopcornPool[0].field60_0x3c
-          20 bytes  at 0x01ca36e8  between g_PopcornPool[1].field36_0x24  and g_PopcornPool[1].field60_0x3c
-          20 bytes  at 0x01ca76ac  between g_RainDropPool[0].field36_0x24 and g_RainDropPool[0].field60_0x3c
-          20 bytes  at 0x01ca76ec  between g_RainDropPool[1].field36_0x24 and g_RainDropPool[1].field60_0x3c
-          20 bytes  at 0x01cb831c  between g_BloodParticles[0].field36_0x and g_BloodParticles[0].field60_0x
-          20 bytes  at 0x01cb8364  between g_BloodParticles[1].field36_0x and g_BloodParticles[1].field60_0x
+          20 bytes  at 0x01c7f51c  between g_SparkPool[0].base.lifetime_r and g_SparkPool[0].base.vtable
+          20 bytes  at 0x01c7f570  between g_SparkPool[1].base.lifetime_r and g_SparkPool[1].base.vtable
+          20 bytes  at 0x01c84920  between CFirefly_ARRAY_01c848f8[0].bas and CFirefly_ARRAY_01c848f8[0].bas
+          20 bytes  at 0x01c8497c  between CFirefly_ARRAY_01c848f8[1].bas and CFirefly_ARRAY_01c848f8[1].bas
+          20 bytes  at 0x01c86e8c  between g_GlassParticlePool[0].base.li and g_GlassParticlePool[0].base.vt
+          20 bytes  at 0x01c86f30  between g_GlassParticlePool[1].base.li and g_GlassParticlePool[1].base.vt
+          20 bytes  at 0x01c913fc  between g_FireballPool[0].base.lifetim and g_FireballPool[0].base.vtable
+          20 bytes  at 0x01c914a0  between g_FireballPool[1].base.lifetim and g_FireballPool[1].base.vtable
+          20 bytes  at 0x01c93d00  between g_RockPool[0].base.lifetime_re and g_RockPool[0].base.vtable
+          20 bytes  at 0x01c93d50  between g_RockPool[1].base.lifetime_re and g_RockPool[1].base.vtable
+          20 bytes  at 0x01c95104  between CLeaf_ARRAY_01c950dc[0].base.l and CLeaf_ARRAY_01c950dc[0].base.v
+          20 bytes  at 0x01c95158  between CLeaf_ARRAY_01c950dc[1].base.l and CLeaf_ARRAY_01c950dc[1].base.v
+          20 bytes  at 0x01ca23e4  between g_ShellPool[0].base.lifetime_r and g_ShellPool[0].base.vtable
+          20 bytes  at 0x01ca2444  between g_ShellPool[1].base.lifetime_r and g_ShellPool[1].base.vtable
+          20 bytes  at 0x01ca36a8  between g_PopcornPool[0].base.lifetime and g_PopcornPool[0].base.vtable
+          20 bytes  at 0x01ca36e8  between g_PopcornPool[1].base.lifetime and g_PopcornPool[1].base.vtable
+          20 bytes  at 0x01ca76ac  between g_RainDropPool[0].base.lifetim and g_RainDropPool[0].base.vtable
+          20 bytes  at 0x01ca76ec  between g_RainDropPool[1].base.lifetim and g_RainDropPool[1].base.vtable
+          20 bytes  at 0x01cb831c  between g_BloodParticles[0].base.lifet and g_BloodParticles[0].base.vtabl
+          20 bytes  at 0x01cb8364  between g_BloodParticles[1].base.lifet and g_BloodParticles[1].base.vtabl
           20 bytes  at 0x0264a610  between DAT_0264a60c                   and DAT_0264a624
           19 bytes  at 0x005d4c88  between s_Invalid_meta_function_005d4c and DAT_005d4c9b
           19 bytes  at 0x005d97ad  between DAT_005d97a9                   and s_s_45_dry_wav_005d97c0
@@ -1748,9 +1747,6 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
           15 bytes  at 0x005dcf21  between s_Control_Keyboard_005dcf1c+1  and s_Control_Keyboard_Mouse_005dc
           15 bytes  at 0x005dd97d  between s_s_attacking_hero_005dd977+2  and s_speed_005dd98c
           15 bytes  at 0x005eb4a9  between s_DebugActionPending_005eb4a4+ and s_grabbedBy_s_005eb4b8
-          15 bytes  at 0x0061b2e9  between g_PathMapCacheDestructorNode   and DAT_0061b2f8
-          15 bytes  at 0x0061bc71  between g_CMP3DecoderDestructorNode1   and DAT_0061bc80
-          15 bytes  at 0x0061bc85  between g_CMP3DecoderDestructorNode2   and DAT_0061bc94
           15 bytes  at 0x0061f46d  between DAT_0061f469                   and DAT_0061f47c
           15 bytes  at 0x026807a5  between DAT_026807a1                   and DAT_026807b4
           14 bytes  at 0x005cb5a3  between DAT_005cb59f                   and s_core_baron_cpp_005cb5b1
@@ -1805,11 +1801,11 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
           12 bytes  at 0x005f5168  between DAT_005f5164                   and g_CDocVTable
           12 bytes  at 0x005f52e4  between g_CDocVTable                   and g_CDocTypeInfo
           12 bytes  at 0x005f5cf0  between DAT_005f5cec                   and DAT_005f5cfc
-          12 bytes  at 0x005f6ec8  between PTR_unkaddr_004a1200.cpp_FUN_0 and PTR_core_fldnotes.cpp_PageReso
-          12 bytes  at 0x005f6ed8  between PTR_core_fldnotes.cpp_PageReso and g_PageResource_BitmapVTable
-          12 bytes  at 0x005f6ee8  between g_PageResource_BitmapVTable    and PTR_core_fldnotes.cpp_PageReso
-          12 bytes  at 0x005f6ef8  between PTR_core_fldnotes.cpp_PageReso and g_PageResource_TwanaEntryVTabl
-          12 bytes  at 0x005f6f08  between g_PageResource_TwanaEntryVTabl and PTR_unkafter_fldnotes.cpp_Page
+          12 bytes  at 0x005f6ec8  between g_SPageResourceVTable          and g_SPageResourceTextVTable
+          12 bytes  at 0x005f6ed8  between g_SPageResourceTextVTable      and g_SPageResourceBitmapVTable
+          12 bytes  at 0x005f6ee8  between g_SPageResourceBitmapVTable    and g_SPageResourceTwanaCharacterV
+          12 bytes  at 0x005f6ef8  between g_SPageResourceTwanaCharacterV and g_SPageResourceTwanaEntryVTabl
+          12 bytes  at 0x005f6f08  between g_SPageResourceTwanaEntryVTabl and g_SPageResourceMapVTable
           12 bytes  at 0x005f7164  between g_CFliesVTable                 and g_SFlyTypeInfo
           12 bytes  at 0x005f8224  between g_CHealthItemVTable            and g_CHealthItemTypeInfo
           12 bytes  at 0x005f84d4  between g_CHeroPlaceholderVTable       and g_CHeroPlaceholderTypeInfo
@@ -3947,7 +3943,7 @@ ALL EXACT GAPS (3764) - size bounds are known precisely
            1 bytes  at 0x0061f468  between DAT_0061f464                   and DAT_0061f469
 
 --------------------------------------------------------------------------------
-OVERLAPS (6266) - next global starts inside previous
+OVERLAPS (6265) - next global starts inside previous
 --------------------------------------------------------------------------------
   248 bytes overlap ~
     s_vga_act_005ca004                       TerminatedCString    at 0x005ca004  size=256
@@ -22660,9 +22656,6 @@ OVERLAPS (6266) - next global starts inside previous
   3 bytes overlap
     DAT_01d2355a                             undefined4           at 0x01d2355a  size=4
     DAT_01d2355b                             undefined4           at 0x01d2355b
-  332 bytes overlap
-    g_CNetGameInstance                       CNetGame             at 0x01d34cb0  size=388
-    g_CNetGameInstance.players+0x18          undefined4           at 0x01d34ce8
   3 bytes overlap
     DAT_01d5105c                             undefined4           at 0x01d5105c  size=4
     DAT_01d5105d                             undefined4           at 0x01d5105d

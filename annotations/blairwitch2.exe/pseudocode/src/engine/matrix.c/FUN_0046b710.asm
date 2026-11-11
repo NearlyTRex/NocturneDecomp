@@ -11,7 +11,7 @@
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004dbd80 at 004dbec4
 ;   core_level.cpp_CLevelLoader_update_FUN_004e1600 at 004e16b8
 ;   core_setdir.cpp_CZThumb_pushRenderingContext_FUN_005389b0 at 005389eb
-;   unkaddr_0059aa80.cpp_FUN_0059bb60 at 0059bc62
+;   unkaddr_0059aa80.cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60 at 0059bc62
 ;
 ; Called Functions:
 ;   engine_matrix.c_pushViewport_FUN_004ea410

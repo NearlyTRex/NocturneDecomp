@@ -313,7 +313,7 @@
       "type": "undefined_data"
     },
     {
-      "description": "'(CPathMap *)&pCVar1[1].base.orient_matrix' walks 1 x sizeof(CCharacter) (0x10a60) + offsetof(base.orient_matrix) (0x3c) + 0x0 = 0x10a9c, which is exactly offsetof(CEnemy, patrol_name_pattern[24]). Ghidra had no CEnemy type here and reached the field by index arithmetic; write it as ((CEnemy *)pCVar1)->patrol_name_pattern[24] (\u00a7de-pun/\u00a712).",
+      "description": "'(CPathMap *)&pCVar1[1].base.orient_matrix' walks 1 x sizeof(CCharacter) (0x10a60) + offsetof(base.orient_matrix) (0x3c) + 0x0 = 0x10a9c, which is exactly offsetof(CHero, path_map). Ghidra had no CHero type here and reached the field by index arithmetic; write it as ((CHero *)pCVar1)->path_map (\u00a7de-pun/\u00a712).",
       "line": 11,
       "severity": "moderate",
       "text": "pCVar2 = core_path_cpp_CPathMap_ctor_FUN_00511c90((CPathMap *)&pCVar1[1].base.orient_matrix);",

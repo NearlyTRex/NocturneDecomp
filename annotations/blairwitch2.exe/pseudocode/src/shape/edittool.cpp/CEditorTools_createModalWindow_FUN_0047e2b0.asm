@@ -47,15 +47,15 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   crt_unknown.c_FUN_005b8580
+;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_2d.c_setupViewportAndClipping_FUN_00401810
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0
 ;   engine_font.cpp_FUN_004ab2b0
 ;   shape_edittool.cpp_CEditorTools_backupScreen_FUN_0047baf0
-;   unkafter_minecar.cpp_FUN_004f2ac0
-;   unkafter_minecar.cpp_FUN_004f2ba0
+;   unkafter_minecar.cpp_getRenderViewport_FUN_004f2ba0
+;   unkafter_minecar.cpp_setRenderViewport_FUN_004f2ac0
 ;
 ; *****************************************************************************
 
@@ -283,8 +283,8 @@ section .text
     MOV dword ptr [EBX + 0x1dc],0x0     ; 0047e54c
     PUSH EAX                            ; 0047e556
     MOV dword ptr [EBX + 0x1e0],0x0     ; 0047e557
-    CALL crt_unknown.c_FUN_005b8580     ; 0047e561
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 0047e561
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     ADD ESP,0x4                         ; 0047e566
     MOV dword ptr [EBX + 0x1d8],EAX     ; 0047e569
     TEST EAX,EAX                        ; 0047e56f
@@ -359,8 +359,8 @@ section .text
     PUSH EAX                            ; 0047e64b
     LEA EAX,[EBX + 0x20]                ; 0047e64c
     PUSH EAX                            ; 0047e64f
-    CALL unkafter_minecar.cpp_FUN_004f2ba0 ; 0047e650
-        ;   XREF to: 004f2ba0 (UNCONDITIONAL_CALL)  ; CEdCheck * unkafter_minecar.cpp_FUN_004f2ba0(CEdCheck * this_ptr)
+    CALL unkafter_minecar.cpp_getRenderViewport_FUN_004f2ba0 ; 0047e650
+        ;   XREF to: 004f2ba0 (UNCONDITIONAL_CALL)  ; void unkafter_minecar.cpp_getRenderViewport_FUN_004f2ba0(float * left, float * top, float * right, float * bottom)
     ADD ESP,0x10                        ; 0047e655
     MOV EAX,dword ptr [ESP + 0x40]      ; 0047e658
     MOV dword ptr [ESP + 0x18],EAX      ; 0047e65c
@@ -382,8 +382,8 @@ section .text
     FILD dword ptr [ESP + 0x24]         ; 0047e696
     SUB ESP,0x4                         ; 0047e69a
     FSTP float ptr [ESP]                ; 0047e69d
-    CALL unkafter_minecar.cpp_FUN_004f2ac0 ; 0047e6a0
-        ;   XREF to: 004f2ac0 (UNCONDITIONAL_CALL)  ; undefined unkafter_minecar.cpp_FUN_004f2ac0()
+    CALL unkafter_minecar.cpp_setRenderViewport_FUN_004f2ac0 ; 0047e6a0
+        ;   XREF to: 004f2ac0 (UNCONDITIONAL_CALL)  ; void unkafter_minecar.cpp_setRenderViewport_FUN_004f2ac0(float left, float top, float right, float bottom)
     ADD ESP,0x10                        ; 0047e6a5
     MOV EAX,dword ptr [ESP + 0x34]      ; 0047e6a8
     MOV dword ptr [EBX],EAX             ; 0047e6ac

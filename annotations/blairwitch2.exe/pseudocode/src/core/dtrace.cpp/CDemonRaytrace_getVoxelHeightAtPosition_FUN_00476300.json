@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 192,
+    "complexity_score": 191,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 67,
+    "pseudocode_lines": 66,
     "suspect_count": 11,
     "suspect_types": [
       "extra_output",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 233
+    "total_lines": 232
   },
   "cross_references": [
     {
@@ -221,10 +221,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 56,
       "match": "DAT_00613888",
       "severity": "mild",
-      "text": "(((byte)pCVar2->voxel_buffer1[iStack_18 + iVar1 * 8] & (&DAT_00613888)[(int)ROUND(fVar7)])",
+      "text": "((pCVar2->voxel_buffer1->voxels[iVar1][iStack_18] & (&DAT_00613888)[(int)ROUND(fVar7)]) !=",
       "type": "undefined_data"
     }
   ]

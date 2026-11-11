@@ -33,7 +33,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_0047e2b0(CEdi
     _DAT_01d046a4 = 0xa0;
     core_main_c_FUN_004e4500("gEdFont must be set by the application.");
   }
-  _DAT_01c25f78 = *(uint *)(_DAT_01c25590 + 0x41e8);
+  _DAT_01c25f78 = _DAT_01c25590->max_char_width;
   _DAT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(_DAT_01c25590,0x6a);
   if (4 < _DAT_01c2559c) {
     _DAT_01d046a0 = "..\\shape\\edittool.cpp";
@@ -105,7 +105,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_0047e2b0(CEdi
       uVar6 = (int)((iVar4 + iVar9 * -8) - (uint)(iVar9 << 2 < 0)) >> 3;
       *(uint *)(iVar1 + 0x1c2577c) = 0;
       *(uint *)(iVar1 + 0x1c25780) = 0;
-      local_18 = FUN_005b8580(*(int *)(iVar1 + 0x1c25788) * uVar6);
+      local_18 = (uint *)malloc(*(int *)(iVar1 + 0x1c25788) * uVar6);
       *(uint **)(iVar1 + 0x1c25778) = local_18;
       if ((local_18 != (uint *)0x0) && (iVar4 = 0, 0 < *(int *)(iVar1 + 0x1c25788))) {
         do {
@@ -141,8 +141,11 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_0047e2b0(CEdi
   *(uint *)(iVar1 + 0x1c255dc) = _DAT_01c35e44;
   *(uint *)(iVar1 + 0x1c255e0) = _DAT_01c35e58;
   *(uint *)(iVar1 + 0x1c255e4) = _DAT_01c35e5c;
-  unkafter_minecar_cpp_FUN_004f2ba0((CEdCheck *)(iVar1 + 0x1c255c0));
-  unkafter_minecar_cpp_FUN_004f2ac0((float)left,(float)top,(float)right,(float)bottom);
+  unkafter_minecar_cpp_getRenderViewport_FUN_004f2ba0
+            ((float *)(iVar1 + 0x1c255c0),(float *)(iVar1 + 0x1c255c4),(float *)(iVar1 + 0x1c255c8),
+             (float *)(iVar1 + 0x1c255cc));
+  unkafter_minecar_cpp_setRenderViewport_FUN_004f2ac0
+            ((float)left,(float)top,(float)right,(float)bottom);
   *(int *)(iVar1 + 0x1c255a0) = left;
   *(int *)(iVar1 + 0x1c255a4) = top;
   *(int *)(iVar1 + 0x1c255a8) = right;

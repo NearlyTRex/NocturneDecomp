@@ -40,10 +40,11 @@ void __cdecl core_dest_cpp_CActorDestination_process_FUN_00447140(CActorDestinat
     pCStack_1c = pCVar1;
     for (pCStack_18 = pCVar1; (int)pCStack_18 < g_CDemonSetPtr->actor_count;
         pCStack_18 = (CDemonActor *)(pCStack_18->actor_name + 1)) {
-      pCVar1 = *(CDemonActor **)(&pCStack_1c[0x7b3].field_0x188 + (int)g_CDemonSetPtr->cameras);
-      fStack_34 = *(float *)&(this_ptr->base).field_0x20 - *(float *)&pCVar1->field_0x20;
-      fStack_30 = *(float *)&(this_ptr->base).field_0x24 - *(float *)&pCVar1->field_0x24;
-      fStack_2c = *(float *)&(this_ptr->base).field_0x28 - *(float *)&pCVar1->field_0x28;
+      pCVar1 = *(CDemonActor **)
+                (g_CDemonSetPtr->cameras[0].name + 0x34 + (int)pCStack_1c[0x7b3].particle_systems);
+      fStack_34 = (this_ptr->base).location.position.x - (pCVar1->location).position.x;
+      fStack_30 = (this_ptr->base).location.position.y - (pCVar1->location).position.y;
+      fStack_2c = (this_ptr->base).location.position.z - (pCVar1->location).position.z;
       fStack_4c = fStack_34;
       (&stack0xffffffb8)[(uint)bVar3 * 0xfffffffe] =
            (float)*(uint *)((int)&stack0xffffffd0 + (uint)bVar3 * -8);
@@ -58,9 +59,9 @@ void __cdecl core_dest_cpp_CActorDestination_process_FUN_00447140(CActorDestinat
   }
   pCVar1 = this_ptr->dest_actor;
   if (pCVar1 != (CDemonActor *)0x0) {
-    fStack_28 = *(float *)&pCVar1->field_0x20 - *(float *)&(this_ptr->base).field_0x20;
-    fStack_24 = *(float *)&pCVar1->field_0x24 - *(float *)&(this_ptr->base).field_0x24;
-    fStack_20 = *(float *)&pCVar1->field_0x28 - *(float *)&(this_ptr->base).field_0x28;
+    fStack_28 = (pCVar1->location).position.x - (this_ptr->base).location.position.x;
+    fStack_24 = (pCVar1->location).position.y - (this_ptr->base).location.position.y;
+    fStack_20 = (pCVar1->location).position.z - (this_ptr->base).location.position.z;
     fStack_40 = fStack_28;
     (&stack0xffffffc4)[(uint)bVar3 * 0xfffffffe] =
          (float)*(uint *)((int)&stack0xffffffdc + (uint)bVar3 * -8);

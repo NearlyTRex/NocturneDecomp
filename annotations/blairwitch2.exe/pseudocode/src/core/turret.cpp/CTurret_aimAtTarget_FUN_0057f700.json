@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 198,
-    "complexity_score": 207,
+    "complexity_score": 172,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 72,
-    "suspect_count": 11,
+    "suspect_count": 8,
     "suspect_types": [
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
@@ -331,30 +330,6 @@
       "severity": "moderate",
       "text": "float afStackY_1020 [1009];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "local_50 = target_pos->x - *(float *)&(this_ptr->base).base.field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "fStack_4c = target_pos->y - *(float *)&(this_ptr->base).base.field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "fStack_48 = target_pos->z - *(float *)&(this_ptr->base).base.field_0x28;",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",

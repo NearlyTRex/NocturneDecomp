@@ -30,7 +30,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   unkafter_superopt.cpp_FUN_005a8290 at 005a82e8
+;   unkafter_superopt.cpp_CSimpleParticleSystem_render_FUN_005a8290 at 005a82e8
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f0833
@@ -54,7 +54,7 @@
 ;   engine_matrix.c_pop_FUN_0046b4a0
 ;   engine_special.cpp_FUN_0055d723
 ;   engine_special.cpp_FUN_0055d9ec
-;   unkafter_superopt.cpp_FUN_005a8250
+;   unkafter_superopt.cpp_CSimpleParticleSystem_updateFade_FUN_005a8250
 ;
 ; *****************************************************************************
 
@@ -314,8 +314,8 @@ section .text
     FADD float ptr [EAX + 0xc]          ; 005a89b5
     PUSH EDX                            ; 005a89b8
     FSTP float ptr [ESP + 0x94]         ; 005a89b9
-    CALL unkafter_superopt.cpp_FUN_005a8250 ; 005a89c0
-        ;   XREF to: 005a8250 (UNCONDITIONAL_CALL)  ; undefined unkafter_superopt.cpp_FUN_005a8250()
+    CALL unkafter_superopt.cpp_CSimpleParticleSystem_updateFade_FUN_005a8250 ; 005a89c0
+        ;   XREF to: 005a8250 (UNCONDITIONAL_CALL)  ; undefined4 unkafter_superopt.cpp_CSimpleParticleSystem_updateFade_FUN_005a8250(CSimpleParticleSystem * this_ptr)
     MOV dword ptr [ESP + 0xa0],EAX      ; 005a89c5
     FLD float ptr [ESP + 0xa0]          ; 005a89cc
     ADD ESP,0x4                         ; 005a89d3

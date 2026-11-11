@@ -11,7 +11,7 @@ void core_meleeaxe_cpp_factoryFuncMeleeAxe_FUN_0059d1f0(void)
 {
   CMeleeAxe *this_ptr;
   
-  this_ptr = (CMeleeAxe *)debugAllocTracked1(0x828);
+  this_ptr = (CMeleeAxe *)operator_new(0x828);
   if (this_ptr == (CMeleeAxe *)0x0) {
     return;
   }

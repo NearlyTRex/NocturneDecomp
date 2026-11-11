@@ -5,6 +5,7 @@
 ;
 ;
 ; XREF[36]:
+;   core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10 at 0059ff81
 ;   core_basicene.cpp_CBasicEnemy_checkVictim_FUN_0059f6b0 at 0059f733
 ;   core_basicene.cpp_CBasicEnemy_processChasingState_FUN_0059ef90 at 0059f097
 ;   core_basicene.cpp_CBasicEnemy_processDamage_FUN_0059f800 at 0059f873
@@ -14,7 +15,6 @@
 ;   core_confzomb.cpp_CConfederateZombie_processMeleeAttackState_FUN_005a2130 at 005a2203
 ;   core_confzomb.cpp_CConfederateZombie_processRangeAttackState_FUN_005a1f40 at 005a200c
 ;   core_dog1.cpp_CDog_processChaseFoodState_FUN_005ac0c0 at 005ac1ee
-;   core_dog1.cpp_CDog_processLeapAttackState_FUN_005ac200 at 005ac2d5
 ;   ... and 26 more
 ;
 ; Called Functions:

@@ -6,69 +6,76 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_hand_cpp_CHand_processSleepingState_FUN_005a9ff0(CHand *this_ptr,float delta_time)
 
 {
-  byte *this_ptr_00;
-  float fVar1;
-  float fVar2;
-  int iVar3;
+  CDeformableModelInstance *pCVar1;
+  CCharacter *pCVar2;
+  float fVar3;
+  float fVar4;
+  int iVar5;
+  EDeathState EVar6;
   
-  this_ptr_00 = &this_ptr->field_0x2b4;
-  iVar3 = core_motion_cpp_FUN_005035c0(this_ptr_00);
-  iVar3 = *(int *)(iVar3 + 0x24);
-  if (*(float *)&this_ptr->field_0x11864 <= 0.0) {
-    (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x150))(this_ptr,delta_time);
-    if (*(int *)&this_ptr->field_0x10a78 == 0) {
-      if (iVar3 != 0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                  ((CMotionController *)this_ptr_00,2,1);
-        fVar1 = *(float *)&this_ptr->field_0x11868 - delta_time;
-        *(float *)&this_ptr->field_0x11868 = fVar1;
-        if (fVar1 <= 0.0) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                    ((CMotionController *)this_ptr_00,0,1);
+  pCVar1 = &(this_ptr->base).base.base.model;
+  iVar5 = core_motion_cpp_FUN_005035c0(pCVar1);
+  iVar5 = *(int *)(iVar5 + 0x24);
+  if (this_ptr->sleep_timer <= 0.0) {
+    (*(((this_ptr->base).base.base.base.vtable._ue)->_ue).updateVictim)
+              ((CEnemy *)this_ptr,delta_time);
+    if ((this_ptr->base).base.victim == (CCharacter *)0x0) {
+      if (iVar5 != 0) {
+        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar1->base,2,1);
+        fVar3 = this_ptr->giveup_timer - delta_time;
+        this_ptr->giveup_timer = fVar3;
+        if (fVar3 <= 0.0) {
+          core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar1->base,0,1);
           return;
         }
       }
     }
     else {
-      *(uint *)&this_ptr->field_0x11868 = 0x40a00000;
-      iVar3 = (**(code **)(*(int *)(*(int *)&this_ptr->field_0x10a78 + 0x2b0) + 0x114))
-                        (*(int *)&this_ptr->field_0x10a78);
-      if ((iVar3 != 0) && (*(int *)&this_ptr->field_0x10af0 != 0)) {
-        *(uint *)&this_ptr->field_0x10af0 = 0;
-        *(uint *)&this_ptr->field_0x10a78 = 0;
+      pCVar2 = (this_ptr->base).base.victim;
+      this_ptr->giveup_timer = 5.0;
+      EVar6 = (*(((pCVar2->base).vtable._uc)->_uc).getDeathState)(pCVar2);
+      if ((EVar6 != DEATH_STATE_ALIVE) && ((this_ptr->base).base.script_victim != (CCharacter *)0x0)
+         ) {
+        (this_ptr->base).base.script_victim = (CCharacter *)0x0;
+        (this_ptr->base).base.victim = (CCharacter *)0x0;
         return;
       }
-      iVar3 = core_motion_cpp_FUN_005035c0(&this_ptr->field_0x2b4);
-      if (*(int *)(iVar3 + 0x24) == 0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                  ((CMotionController *)&this_ptr->field_0x2b4,2,1);
+      pCVar1 = &(this_ptr->base).base.base.model;
+      iVar5 = core_motion_cpp_FUN_005035c0(pCVar1);
+      if (*(int *)(iVar5 + 0x24) == 0) {
+        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar1->base,2,1);
         return;
       }
-      if (*(int *)(iVar3 + 0x24) != 2) {
+      if (*(int *)(iVar5 + 0x24) != 2) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                  ((CMotionController *)&this_ptr->field_0x2b4,2,1);
+                  (&(this_ptr->base).base.base.model.base,2,1);
         return;
       }
       core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
-                ((CCharacter *)this_ptr,(CVector3f *)(*(int *)&this_ptr->field_0x10a78 + 0x20));
-      fVar1 = *(float *)&this_ptr->field_0x20 - *(float *)(*(int *)&this_ptr->field_0x10a78 + 0x20);
-      fVar2 = *(float *)&this_ptr->field_0x28 - *(float *)(*(int *)&this_ptr->field_0x10a78 + 0x28);
-      if (SQRT(fVar2 * fVar2 + fVar1 * fVar1) < _DAT_0060088c) {
-        unkaddr_0059d350_cpp_FUN_0059d8e0(&this_ptr->field_0x10af8,"?MeleeAttack" + 1);
+                ((CCharacter *)this_ptr,&(((this_ptr->base).base.victim)->base).location.position);
+      pCVar2 = (this_ptr->base).base.victim;
+      fVar3 = (this_ptr->base).base.base.base.location.position.x -
+              (pCVar2->base).location.position.x;
+      fVar4 = (this_ptr->base).base.base.base.location.position.z -
+              (pCVar2->base).location.position.z;
+      if (SQRT(fVar4 * fVar4 + fVar3 * fVar3) < _DAT_0060088c) {
+        unkaddr_0059d350_cpp_FUN_0059d8e0
+                  (&(this_ptr->base).state_machine,"?MeleeAttack" + 1);
         return;
       }
     }
   }
   else {
-    fVar1 = *(float *)&this_ptr->field_0x11864 - delta_time;
-    *(float *)&this_ptr->field_0x11864 = fVar1;
-    if (fVar1 < 0.0) {
-      *(uint *)&this_ptr->field_0x11864 = 0;
+    fVar3 = this_ptr->sleep_timer - delta_time;
+    this_ptr->sleep_timer = fVar3;
+    if (fVar3 < 0.0) {
+      this_ptr->sleep_timer = 0.0;
     }
   }
   return;

@@ -13,7 +13,7 @@ void __cdecl core_dlight_cpp_CDemonLight_allocateFilter_FUN_0044b5b0(CDemonLight
 {
   uchar *puVar1;
   
-  puVar1 = FUN_005b8580(0x10000);
+  puVar1 = (uchar *)malloc(0x10000);
   this_ptr->filter_buffer = puVar1;
   if (puVar1 != (uchar *)0x0) {
     return;

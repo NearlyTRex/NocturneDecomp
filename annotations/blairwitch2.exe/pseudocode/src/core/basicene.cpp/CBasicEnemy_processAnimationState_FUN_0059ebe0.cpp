@@ -9,10 +9,10 @@
 void __cdecl core_basicene_cpp_CBasicEnemy_processAnimationState_FUN_0059ebe0(CBasicEnemy *this_ptr,float delta_time)
 
 {
-  if (*(int *)(this_ptr + 0x11390) < 0) {
+  if (this_ptr->animation_state < 0) {
     return;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-            ((CMotionController *)(this_ptr + 0x2b4),*(int *)(this_ptr + 0x11390),1);
+            (&(this_ptr->base).base.model.base,this_ptr->animation_state,1);
   return;
 }

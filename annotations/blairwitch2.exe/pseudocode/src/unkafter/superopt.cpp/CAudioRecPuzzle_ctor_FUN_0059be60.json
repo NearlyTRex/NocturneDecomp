@@ -103,7 +103,7 @@
       "line": 18,
       "match": "pCVar3[-5].",
       "severity": "mild",
-      "text": "*(byte ***)(pCVar3[-5].model_name + 4) = &g_CAudioRecPuzzleVTable;",
+      "text": "((CAudioRecPuzzle *)(pCVar3[-5].model_name + 4))->vtable = &g_CAudioRecPuzzleVTable;",
       "type": "negative_offset"
     },
     {

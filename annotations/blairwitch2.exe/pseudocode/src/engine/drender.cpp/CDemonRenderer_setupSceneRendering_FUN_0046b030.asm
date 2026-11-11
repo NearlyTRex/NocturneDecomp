@@ -16,7 +16,7 @@
 ;   core_set.cpp_FUN_0052fad0 at 0052fe2a
 ;   core_setdir.cpp_CZThumb_pushRenderingContext_FUN_005389b0 at 00538a23
 ;   shape_spotview.cpp_FUN_00561d90 at 00561e79
-;   unkaddr_0059aa80.cpp_FUN_0059bb60 at 0059bcb1
+;   unkaddr_0059aa80.cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60 at 0059bcb1
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280

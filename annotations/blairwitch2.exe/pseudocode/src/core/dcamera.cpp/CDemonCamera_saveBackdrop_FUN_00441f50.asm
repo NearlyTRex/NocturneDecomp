@@ -133,13 +133,13 @@ section .text
     PUSH EAX                            ; 0044200c
     LEA EAX,[ESP + 0x1b8]               ; 0044200d
     PUSH EAX                            ; 00442014
-    CALL support_trstream.cpp_FUN_0057dba0 ; 00442015
-        ;   XREF to: 0057dba0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057dba0()
+    CALL support_trstream.cpp_COutStreamFile_ctorOpen_FUN_0057dba0 ; 00442015
+        ;   XREF to: 0057dba0 (UNCONDITIONAL_CALL)  ; undefined4 * support_trstream.cpp_COutStreamFile_ctorOpen_FUN_0057dba0(COutStreamFile * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 0044201a
     LEA EAX,[ESP + 0x1b0]               ; 0044201d
     PUSH EAX                            ; 00442024
-    CALL support_trstream.cpp_FUN_0057dd40 ; 00442025
-        ;   XREF to: 0057dd40 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057dd40()
+    CALL support_trstream.cpp_COutStreamFile_isOpen_FUN_0057dd40 ; 00442025
+        ;   XREF to: 0057dd40 (UNCONDITIONAL_CALL)  ; bool support_trstream.cpp_COutStreamFile_isOpen_FUN_0057dd40(COutStreamFile * this_ptr)
     ADD ESP,0x4                         ; 0044202a
     TEST EAX,EAX                        ; 0044202d
     JNZ 0x0044205c                      ; 0044202f
@@ -159,8 +159,8 @@ section .text
     PUSH 0x146592c                      ; 00442061
     LEA EAX,[ESP + 0x1b8]               ; 00442066
     PUSH EAX                            ; 0044206d
-    CALL support_trstream.cpp_FUN_0057dca0 ; 0044206e
-        ;   XREF to: 0057dca0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057dca0()
+    CALL support_trstream.cpp_COutStreamFile_write_FUN_0057dca0 ; 0044206e
+        ;   XREF to: 0057dca0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_write_FUN_0057dca0(COutStreamFile * this_ptr, undefined4 param_2, int param_3)
     MOV EBX,dword ptr [0x01466948]      ; 00442073 | DAT_01466948
     ADD ESP,0xc                         ; 00442079
     TEST EBX,EBX                        ; 0044207c
@@ -173,8 +173,8 @@ section .text
     PUSH EAX                            ; 00442099
     LEA EAX,[ESP + 0x1b8]               ; 0044209a
     PUSH EAX                            ; 004420a1
-    CALL support_trstream.cpp_FUN_0057dca0 ; 004420a2
-        ;   XREF to: 0057dca0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057dca0()
+    CALL support_trstream.cpp_COutStreamFile_write_FUN_0057dca0 ; 004420a2
+        ;   XREF to: 0057dca0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_write_FUN_0057dca0(COutStreamFile * this_ptr, undefined4 param_2, int param_3)
     ADD ESP,0xc                         ; 004420a7
     MOV EAX,dword ptr [ESP + 0x210]     ; 004420aa
     FLD double ptr [0x005ce726]         ; 004420b1 | DAT_005ce726
@@ -425,8 +425,8 @@ section .text
     LEA EAX,[ESP + 0x1b0]               ; 00442484
         ;   Label: LAB_00442484
     PUSH EAX                            ; 0044248b
-    CALL support_trstream.cpp_FUN_0057dd40 ; 0044248c
-        ;   XREF to: 0057dd40 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057dd40()
+    CALL support_trstream.cpp_COutStreamFile_isOpen_FUN_0057dd40 ; 0044248c
+        ;   XREF to: 0057dd40 (UNCONDITIONAL_CALL)  ; bool support_trstream.cpp_COutStreamFile_isOpen_FUN_0057dd40(COutStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00442491
     TEST EAX,EAX                        ; 00442494
     JZ 0x0044259a                       ; 00442496

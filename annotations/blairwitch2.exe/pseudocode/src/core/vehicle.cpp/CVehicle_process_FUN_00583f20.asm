@@ -540,8 +540,8 @@ section .text
         ;   XREF to: 005847a6 (CONDITIONAL_JUMP)  ; LAB_005847a6
     PUSH 0x10bd0                        ; 005845b0
         ;   Label: LAB_005845b0
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 005845b5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005845b5
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 005845ba
     TEST EAX,EAX                        ; 005845bd
     JZ 0x005845ca                       ; 005845bf
@@ -553,8 +553,8 @@ section .text
     PUSH 0x6e0                          ; 005845ca
         ;   Label: LAB_005845ca
     MOV ESI,EAX                         ; 005845cf
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 005845d1
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005845d1
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 005845d6
     TEST EAX,EAX                        ; 005845d9
     JZ 0x005845e6                       ; 005845db

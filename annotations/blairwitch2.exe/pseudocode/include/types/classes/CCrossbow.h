@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CFlame.h"
 #include "types/classes/CWeapon.h"
 
 // Structure: CCrossbow
@@ -12,7 +13,7 @@
 typedef struct CCrossbow {
     CWeapon base; // 0x0
     int flame_active; // 0x6d4
-    char field_1752[1024]; // 0x6d8
+    CFlame bolt_flame; // 0x6d8
 } CCrossbow;
 #pragma pack(pop)
 

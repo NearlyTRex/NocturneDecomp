@@ -2,22 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 390,
-    "complexity_score": 1190,
+    "complexity_score": 1035,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 185,
-    "suspect_count": 95,
+    "suspect_count": 81,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
       "stack_alignment_array",
-      "undefined_ptr_cast",
-      "unknown_field",
-      "unnamed_field",
       "unnamed_param",
       "unrolled_memcpy",
       "warning_type_propagation"
@@ -723,152 +720,48 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 101,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "local_114._0_1_ = param_1->ray_query;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 101,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_114._0_1_ = param_1->ray_query;",
+      "text": "local_114.ray_query.ray_type = (param_1->ray_query).ray_type;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Cast to undefined pointer type",
-      "line": 102,
-      "match": "(undefined3 *)",
-      "severity": "moderate",
-      "text": "local_114._1_3_ = *(undefined3 *)&param_1->field_0x15f695;",
-      "type": "undefined_ptr_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 102,
-      "match": "._1_3_",
-      "severity": "mild",
-      "text": "local_114._1_3_ = *(undefined3 *)&param_1->field_0x15f695;",
-      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 102,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_114._1_3_ = *(undefined3 *)&param_1->field_0x15f695;",
+      "text": "local_114.ray_query.laser_type = (param_1->ray_query).laser_type;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 102,
-      "match": "field_0x15f695",
-      "severity": "mild",
-      "text": "local_114._1_3_ = *(undefined3 *)&param_1->field_0x15f695;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 103,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_114._4_4_ = *(uint *)&param_1->field_0x15f698;",
-      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 103,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_114._4_4_ = *(uint *)&param_1->field_0x15f698;",
+      "text": "local_114.ray_query.laser_color.r = (param_1->ray_query).laser_color.r;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 103,
-      "match": "field_0x15f698",
-      "severity": "mild",
-      "text": "local_114._4_4_ = *(uint *)&param_1->field_0x15f698;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 104,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_114._8_4_ = *(uint *)&param_1->field_0x15f69c;",
-      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 104,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_114._8_4_ = *(uint *)&param_1->field_0x15f69c;",
+      "text": "local_114.ray_query.laser_color.g = (param_1->ray_query).laser_color.g;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 104,
-      "match": "field_0x15f69c",
-      "severity": "mild",
-      "text": "local_114._8_4_ = *(uint *)&param_1->field_0x15f69c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 105,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "local_114._12_4_ = *(uint *)&param_1->field_0x15f6a0;",
-      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 105,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_114._12_4_ = *(uint *)&param_1->field_0x15f6a0;",
+      "text": "local_114.ray_query.laser_color.b = (param_1->ray_query).laser_color.b;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 105,
-      "match": "field_0x15f6a0",
-      "severity": "mild",
-      "text": "local_114._12_4_ = *(uint *)&param_1->field_0x15f6a0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 106,
-      "match": "._16_4_",
-      "severity": "mild",
-      "text": "local_114._16_4_ = *(uint *)&param_1->field_0x15f6a4;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 106,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_114._16_4_ = *(uint *)&param_1->field_0x15f6a4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 106,
-      "match": "field_0x15f6a4",
-      "severity": "mild",
-      "text": "local_114._16_4_ = *(uint *)&param_1->field_0x15f6a4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 108,
+      "line": 107,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < param_1->collidable_actor_count) {",
@@ -876,7 +769,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 108,
       "match": "param_1",
       "severity": "mild",
       "text": "local_18 = &param_1->collision_normal;",
@@ -884,7 +777,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 110,
+      "line": 109,
       "match": "param_1",
       "severity": "mild",
       "text": "local_1c = param_1;",
@@ -895,24 +788,8 @@
       "line": 113,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00536990(param_1,pCVar1);",
+      "text": "core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00536990(param_1,pCVar1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 115,
-      "match": "._32_4_",
-      "severity": "mild",
-      "text": "local_114._32_4_ = iVar3;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 116,
-      "match": "._36_4_",
-      "severity": "mild",
-      "text": "local_114._36_4_ = iVar3;",
-      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -1168,6 +1045,14 @@
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_d0.max.x = (param_3->min).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (5 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 101,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_114.ray_query.ray_type = (param_1->ray_query).ray_type;",
       "type": "unrolled_memcpy"
     },
     {

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   unkafter_basicene.cpp_FUN_0059e6a0 at 0059e793
+;   core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0 at 0059e793
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_00503860

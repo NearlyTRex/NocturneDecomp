@@ -21,13 +21,10 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_004f08a0(CMimic *this_ptr,float d
     core_main_c_FUN_004e4500("CMimic::setup - can't use mimic in multi-player!");
   }
   iVar3 = _DAT_01cedef4;
-  *(uint *)&(this_ptr->base).base.base.field_0x108 =
-       *(uint *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x108);
-  *(uint *)&(this_ptr->base).base.base.field_0x10c =
-       *(uint *)(*(int *)(iVar3 * 4 + 0x1cedee4) + 0x10c);
+  (this_ptr->base).base.base.scale.x = *(int *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x108);
+  (this_ptr->base).base.base.scale.y = *(int *)(*(int *)(iVar3 * 4 + 0x1cedee4) + 0x10c);
   fVar1 = this_ptr->morph_blend;
-  *(uint *)&(this_ptr->base).base.base.field_0x110 =
-       *(uint *)(*(int *)(iVar3 * 4 + 0x1cedee4) + 0x110);
+  (this_ptr->base).base.base.scale.z = *(int *)(*(int *)(iVar3 * 4 + 0x1cedee4) + 0x110);
   if (0.0 <= fVar1) {
     core_mimic_cpp_CMimic_processMorph_FUN_004f1e90(this_ptr,delta_time);
     return;

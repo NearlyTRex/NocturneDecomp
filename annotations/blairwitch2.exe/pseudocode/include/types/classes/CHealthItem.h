@@ -15,7 +15,7 @@ typedef struct CHealthItem {
     CKeyFramedModelInstance model; // 0x2b4
     int use_count; // 0x430
     float hp_restored; // 0x434
-    char field_1080[4]; // 0x438
+    float check_timer; // 0x438, Added in this build
 } CHealthItem;
 #pragma pack(pop)
 

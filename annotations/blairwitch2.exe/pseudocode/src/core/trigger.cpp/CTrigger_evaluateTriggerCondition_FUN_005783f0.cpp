@@ -46,7 +46,7 @@ float __cdecl core_trigger_cpp_CTrigger_evaluateTriggerCondition_FUN_005783f0(CT
     }
     if ((((fStack_50 <= fStack_14) && (fStack_4c <= fStack_10)) && (fStack_48 <= unaff_EDI)) &&
        (((fStack_14 <= fStack_44 && (fStack_10 <= fStack_40)) && (unaff_EDI <= fStack_3c)))) {
-      *in_stack_00000018 = *(uint *)&this_ptr->field_0x458;
+      *in_stack_00000018 = this_ptr->hilite_actor;
       return 0.0;
     }
   }

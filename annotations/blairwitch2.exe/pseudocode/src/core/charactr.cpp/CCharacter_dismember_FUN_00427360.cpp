@@ -46,7 +46,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_00427360(CCharacter *thi
   
   bVar5 = 0;
   sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handle);
-  if ((this_ptr->model).field_0x2260 != '\0') {
+  if ((this_ptr->model).model_name[0] != '\0') {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(&this_ptr->model);
     local_20 = pCVar1->num_parts;
     if (1 < local_20) {

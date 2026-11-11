@@ -20,8 +20,8 @@
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
 ;   unkaddr_0059d350.cpp_FUN_0059df70
-;   unkaddr_005a7eb0.cpp_FUN_005a8100
-;   unkafter_superopt.cpp_FUN_005a8220
+;   unkaddr_005a7eb0.cpp_CSimpleParticleSystem_stop_FUN_005a8100
+;   unkafter_superopt.cpp_CSimpleParticleSystem_release_FUN_005a8220
 ;
 ; *****************************************************************************
 
@@ -38,12 +38,12 @@ section .text
     LEA ESI,[EBX + 0x264]               ; 005a1cd3
     PUSH ESI                            ; 005a1cd9
     MOV dword ptr [EBX + 0x2b0],0x5fefa4 ; 005a1cda | g_CConfederateZombieVTable
-    CALL unkaddr_005a7eb0.cpp_FUN_005a8100 ; 005a1ce4
-        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; undefined unkaddr_005a7eb0.cpp_FUN_005a8100()
+    CALL unkaddr_005a7eb0.cpp_CSimpleParticleSystem_stop_FUN_005a8100 ; 005a1ce4
+        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void unkaddr_005a7eb0.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int param_2)
     ADD ESP,0x8                         ; 005a1ce9
     PUSH ESI                            ; 005a1cec
-    CALL unkafter_superopt.cpp_FUN_005a8220 ; 005a1ced
-        ;   XREF to: 005a8220 (UNCONDITIONAL_CALL)  ; undefined unkafter_superopt.cpp_FUN_005a8220()
+    CALL unkafter_superopt.cpp_CSimpleParticleSystem_release_FUN_005a8220 ; 005a1ced
+        ;   XREF to: 005a8220 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_release_FUN_005a8220(CSimpleParticleSystem * this_ptr)
     ADD ESP,0x4                         ; 005a1cf2
     PUSH 0x0                            ; 005a1cf5
     ADD EBX,0x3a20                      ; 005a1cf7

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 415,
-    "complexity_score": 683,
+    "complexity_score": 808,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 168,
-    "suspect_count": 47,
+    "pseudocode_lines": 173,
+    "suspect_count": 59,
     "suspect_types": [
       "eflags_input",
       "pointer_cast",
@@ -20,7 +20,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 583
+    "total_lines": 588
   },
   "cross_references": [],
   "function": {
@@ -42,14 +42,14 @@
       "name": "core_main.c_FUN_004e4500"
     },
     {
+      "addr": "005b8580",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005b8580"
+    },
+    {
       "addr": "005b77c0",
       "is_variadic": false,
       "name": "crt_memory.c_memset_FUN_005b77c0"
-    },
-    {
-      "addr": "005b8580",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8580"
     },
     {
       "addr": "005b86a0",
@@ -79,17 +79,17 @@
     {
       "addr": "0057d390",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_0057d390"
-    },
-    {
-      "addr": "0057cfe0",
-      "is_variadic": false,
-      "name": "unkaddr_0057b9a0.cpp_FUN_0057cfe0"
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390"
     },
     {
       "addr": "0057d180",
       "is_variadic": false,
-      "name": "unkaddr_0057b9a0.cpp_FUN_0057d180"
+      "name": "unkaddr_0057b9a0.cpp_CInStreamFile_close_FUN_0057d180"
+    },
+    {
+      "addr": "0057cfe0",
+      "is_variadic": false,
+      "name": "unkaddr_0057b9a0.cpp_CInStreamFile_read_FUN_0057cfe0"
     },
     {
       "addr": "0057cd50",
@@ -207,7 +207,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 24,
+      "line": 25,
       "match": "in_CF",
       "severity": "mild",
       "text": "byte in_CF;",
@@ -215,7 +215,7 @@
     },
     {
       "description": "EFLAGS bit input (CPU detection or flag manipulation)",
-      "line": 24,
+      "line": 25,
       "match": "in_CF",
       "severity": "mild",
       "text": "byte in_CF;",
@@ -223,7 +223,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 27,
       "match": "in_stack_00000458",
       "severity": "moderate",
       "text": "int in_stack_00000458;",
@@ -231,7 +231,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 28,
       "match": "in_stack_0000045c",
       "severity": "moderate",
       "text": "int in_stack_0000045c;",
@@ -239,7 +239,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 30,
+      "line": 31,
       "match": "in_EAX",
       "severity": "mild",
       "text": "if (in_EAX + 0x2d7b0000U != (uint)in_CF) {",
@@ -247,7 +247,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 30,
+      "line": 31,
       "match": "in_CF",
       "severity": "mild",
       "text": "if (in_EAX + 0x2d7b0000U != (uint)in_CF) {",
@@ -255,7 +255,7 @@
     },
     {
       "description": "EFLAGS bit input (CPU detection or flag manipulation)",
-      "line": 30,
+      "line": 31,
       "match": "in_CF",
       "severity": "mild",
       "text": "if (in_EAX + 0x2d7b0000U != (uint)in_CF) {",
@@ -263,7 +263,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 33,
       "match": "in_stack_00000458",
       "severity": "moderate",
       "text": "*(uint *)(in_stack_00000458 + 0x1dcc) = 0;",
@@ -271,7 +271,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 35,
       "match": "in_stack_00000458",
       "severity": "moderate",
       "text": "*(uint *)(in_stack_00000458 + 0x1dd0) = 0;",
@@ -279,7 +279,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 36,
       "match": "in_stack_00000458",
       "severity": "moderate",
       "text": "if (*(int *)(in_stack_00000458 + 0x1dd4) != 0) {",
@@ -287,7 +287,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 38,
       "match": "in_stack_00000458",
       "severity": "moderate",
       "text": "*(uint *)(in_stack_00000458 + 0x1dd4) = 0;",
@@ -295,7 +295,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 41,
       "match": "in_stack_0000045c",
       "severity": "moderate",
       "text": "if (in_stack_0000045c != 0) {",
@@ -303,15 +303,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 42,
       "match": "in_stack_00000458",
       "severity": "moderate",
-      "text": "iVar8 = *(int *)(in_stack_00000458 + 0x1a4);",
+      "text": "iVar9 = *(int *)(in_stack_00000458 + 0x1a4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 57,
       "match": "in_stack_00000458",
       "severity": "moderate",
       "text": "((char *)(in_stack_00000458 + 4),(char *)0x0,(char *)0x0,&stack0x00000300,",
@@ -319,7 +319,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 56,
+      "line": 57,
       "match": "&stack0x00000300",
       "severity": "moderate",
       "text": "((char *)(in_stack_00000458 + 4),(char *)0x0,(char *)0x0,&stack0x00000300,",
@@ -327,7 +327,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 59,
+      "line": 60,
       "match": "&stack0x00000200",
       "severity": "moderate",
       "text": "(&stack0x00000200,(char *)0x0,(char *)0x0,&stack0x00000300,(char *)0x5d684a);",
@@ -335,7 +335,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 59,
+      "line": 60,
       "match": "&stack0x00000300",
       "severity": "moderate",
       "text": "(&stack0x00000200,(char *)0x0,(char *)0x0,&stack0x00000300,(char *)0x5d684a);",
@@ -343,7 +343,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 60,
+      "line": 61,
       "match": "&stack0x00000400",
       "severity": "moderate",
       "text": "unkclass_instream_cpp_CInStreamFile_ctor_FUN_0057cd50((CInStreamFile *)&stack0x00000400);",
@@ -351,63 +351,135 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 79,
-      "match": "&stack0x00000000",
+      "line": 63,
+      "match": "&stack0x00000400",
       "severity": "moderate",
-      "text": "*puVar11 = (&stack0x00000000)[iVar7];",
+      "text": "((CInStreamFile *)&stack0x00000400,0x5d684e,&stack0x00000200);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 89,
+      "line": 63,
+      "match": "&stack0x00000200",
+      "severity": "moderate",
+      "text": "((CInStreamFile *)&stack0x00000400,0x5d684e,&stack0x00000200);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 76,
+      "match": "&stack0x00000400",
+      "severity": "moderate",
+      "text": "((CInStreamFile *)&stack0x00000400,(uint *)&stack0x00000000,uVar7);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 76,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "*puVar11 = (&stack0x00000000)[iVar7];",
+      "text": "((CInStreamFile *)&stack0x00000400,(uint *)&stack0x00000000,uVar7);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 83,
+      "match": "&stack0x00000000",
+      "severity": "moderate",
+      "text": "*(byte *)puVar12 = (&stack0x00000000)[iVar8];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(uint *)((int)puVar12",
+      "severity": "moderate",
+      "text": "puVar12 = (uint *)((int)puVar12 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(byte *)((int)puVar5",
+      "severity": "moderate",
+      "text": "puVar13 = (byte *)((int)puVar5 + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 93,
+      "match": "&stack0x00000000",
+      "severity": "moderate",
+      "text": "*puVar13 = (&stack0x00000000)[iVar8];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 98,
+      "match": "(byte *)((int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((byte *)((int)puVar5 + iVar9) + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 104,
+      "match": "&stack0x00000400",
+      "severity": "moderate",
+      "text": "((CInStreamFile *)&stack0x00000400,puVar5,iVar9 * iVar9);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 106,
+      "match": "&stack0x00000400",
+      "severity": "moderate",
+      "text": "unkaddr_0057b9a0_cpp_CInStreamFile_close_FUN_0057d180((CInStreamFile *)&stack0x00000400);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 104,
+      "line": 109,
       "match": "in_stack_00000458",
       "severity": "moderate",
-      "text": "puVar12 = (uint *)(in_stack_00000458 + 0x1b4);",
+      "text": "puVar5 = (uint *)(in_stack_00000458 + 0x1b4);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 112,
-      "match": "(uint *)((int)puVar12",
+      "line": 117,
+      "match": "(uint *)((int)puVar5",
       "severity": "moderate",
-      "text": "puVar12 = (uint *)((int)puVar12 + (uint)bVar16 * -2 + 1);",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar17 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 113,
+      "line": 118,
       "match": "(uint *)((int)puVar3",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar16 * -2 + 1);",
+      "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar17 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 115,
+      "line": 120,
       "match": "in_stack_00000458",
       "severity": "moderate",
-      "text": "pcVar13 = (char *)(in_stack_00000458 + 4);",
+      "text": "pcVar14 = (char *)(in_stack_00000458 + 4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 116,
+      "line": 121,
       "match": "in_stack_00000458",
       "severity": "moderate",
-      "text": "pcVar15 = (char *)(in_stack_00000458 + 0x1dbc);",
+      "text": "pcVar16 = (char *)(in_stack_00000458 + 0x1dbc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 117,
+      "line": 122,
       "match": "in_stack_00000458",
       "severity": "moderate",
       "text": "*(uint *)(in_stack_00000458 + 0x1db8) = 0;",
@@ -415,7 +487,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 129,
+      "line": 134,
       "match": "in_stack_00000458",
       "severity": "moderate",
       "text": "*(void **)(in_stack_00000458 + 0x1dcc) = pvVar4;",
@@ -423,7 +495,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 135,
+      "line": 140,
       "match": "in_stack_00000458",
       "severity": "moderate",
       "text": "*(uint *)(in_stack_00000458 + 0x1dd0) =",
@@ -431,7 +503,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 136,
+      "line": 141,
       "match": "in_stack_00000458",
       "severity": "moderate",
       "text": "*(int *)(in_stack_00000458 + 0x1dcc) + 0x1fU & 0xffffffe0;",
@@ -439,7 +511,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 138,
+      "line": 143,
       "match": "in_stack_00000458",
       "severity": "moderate",
       "text": "*(void **)(in_stack_00000458 + 0x1dd4) = pvVar4;",
@@ -447,34 +519,10 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 144,
+      "line": 149,
       "match": "in_stack_00000458",
       "severity": "moderate",
-      "text": "iVar8 = in_stack_00000458 + 0x80;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 145,
-      "match": "in_stack_00000458",
-      "severity": "moderate",
-      "text": "iVar6 = in_stack_00000458 + 0x200;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 146,
-      "match": "in_stack_00000458",
-      "severity": "moderate",
-      "text": "*(uint *)(in_stack_00000458 + 0x1dd8) = 0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 147,
-      "match": "in_stack_00000458",
-      "severity": "moderate",
-      "text": "*(uint *)(in_stack_00000458 + 0x1ddc) = 0;",
+      "text": "iVar9 = in_stack_00000458 + 0x80;",
       "type": "stack_param"
     },
     {
@@ -482,20 +530,44 @@
       "line": 150,
       "match": "in_stack_00000458",
       "severity": "moderate",
-      "text": "iVar14 = *(int *)(iVar8 + 0x21e8) * 4 + in_stack_00000458;",
+      "text": "iVar6 = in_stack_00000458 + 0x200;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 165,
+      "line": 151,
       "match": "in_stack_00000458",
       "severity": "moderate",
-      "text": "} while (iVar8 != in_stack_00000458 + 0x400);",
+      "text": "*(uint *)(in_stack_00000458 + 0x1dd8) = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 152,
+      "match": "in_stack_00000458",
+      "severity": "moderate",
+      "text": "*(uint *)(in_stack_00000458 + 0x1ddc) = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 155,
+      "match": "in_stack_00000458",
+      "severity": "moderate",
+      "text": "iVar15 = *(int *)(iVar9 + 0x21e8) * 4 + in_stack_00000458;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 170,
+      "match": "in_stack_00000458",
+      "severity": "moderate",
+      "text": "} while (iVar9 != in_stack_00000458 + 0x400);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 166,
+      "line": 171,
       "match": "&stack0x00000400",
       "severity": "moderate",
       "text": "unkclass_instream_cpp_CInStreamFile_dtor_FUN_0057cec0((CInStreamFile *)&stack0x00000400,0);",
@@ -503,7 +575,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 168,
+      "line": 173,
       "match": "in_stack_00000458",
       "severity": "moderate",
       "text": "*(int *)(in_stack_00000458 + 0x420c) = in_stack_0000045c;",
@@ -511,7 +583,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 168,
+      "line": 173,
       "match": "in_stack_0000045c",
       "severity": "moderate",
       "text": "*(int *)(in_stack_00000458 + 0x420c) = in_stack_0000045c;",
@@ -519,23 +591,47 @@
     },
     {
       "description": "Pointer value `puVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 112,
+      "line": 84,
       "match": "(int)puVar12",
       "severity": "moderate",
-      "text": "puVar12 = (uint *)((int)puVar12 + (uint)bVar16 * -2 + 1);",
+      "text": "puVar12 = (uint *)((int)puVar12 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 88,
+      "match": "(int)puVar5",
+      "severity": "moderate",
+      "text": "puVar13 = (byte *)((int)puVar5 + iVar9);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 98,
+      "match": "(int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((byte *)((int)puVar5 + iVar9) + iVar9);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 117,
+      "match": "(int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar17 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `puVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 113,
+      "line": 118,
       "match": "(int)puVar3",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar16 * -2 + 1);",
+      "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar17 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 118,
+      "line": 123,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -543,18 +639,18 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 105,
+      "line": 110,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar8 = 0xc0; iVar8 != 0; iVar8 = iVar8 + -1) {",
+      "text": "for (iVar9 = 0xc0; iVar9 != 0; iVar9 = iVar9 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 110,
+      "line": 115,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar8 = 0; iVar8 != 0; iVar8 = iVar8 + -1) {",
+      "text": "for (iVar9 = 0; iVar9 != 0; iVar9 = iVar9 + -1) {",
       "type": "unrolled_memcpy"
     },
     {

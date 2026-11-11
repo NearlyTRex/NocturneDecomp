@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_batman_cpp_CBatman_processDismemberment_FUN_00413f40(CBatman *this_ptr,SDamageInfo *damage_info)
@@ -29,7 +30,7 @@ void __cdecl core_batman_cpp_CBatman_processDismemberment_FUN_00413f40(CBatman *
   
   bVar3 = 0;
   impact_point = &local_40;
-  if ((0.0 < *(float *)(damage_info + 0x2c)) && (*(int *)damage_info == -1)) {
+  if ((0.0 < damage_info->dismember_prob) && (damage_info->hit_part_index == -1)) {
     iVar2 = rand();
     switch(iVar2 % 6) {
     case 0:
@@ -53,45 +54,45 @@ void __cdecl core_batman_cpp_CBatman_processDismemberment_FUN_00413f40(CBatman *
     default:
       goto switchD_00413f76_default;
     }
-    *(int *)damage_info = iVar2;
+    damage_info->hit_part_index = iVar2;
   }
 switchD_00413f76_default:
-  iVar2 = *(int *)damage_info;
+  iVar2 = damage_info->hit_part_index;
   if (((((iVar2 == this_ptr->part_indices[2]) || (iVar2 == this_ptr->part_indices[3])) ||
        (iVar2 == this_ptr->part_indices[4])) ||
       ((iVar2 == this_ptr->part_indices[5] || (iVar2 == this_ptr->part_indices[1])))) ||
      (iVar2 == this_ptr->part_indices[0])) {
-    local_14 = *(float *)(damage_info + 0x2c);
-    if (this_ptr->part_indices[0] == *(int *)damage_info) {
+    local_14 = damage_info->dismember_prob;
+    if (this_ptr->part_indices[0] == damage_info->hit_part_index) {
       local_14 = 0.05;
     }
-    if (this_ptr->part_indices[1] == *(int *)damage_info) {
+    if (this_ptr->part_indices[1] == damage_info->hit_part_index) {
       local_14 = 0.02;
     }
-    if (*(int *)&g_CGamePtr->field_0x1fc != 0) {
+    if (g_CGamePtr->gratuitous_dismemberment != 0) {
       local_14 = 1.0;
     }
-    if (*(int *)&g_CGamePtr->field_0x14 == 0) {
+    if (g_CGamePtr->blood_flag == 0) {
       local_14 = 0.0;
     }
     iVar2 = core_actor_cpp_randomChance_FUN_0040d060(local_14);
     if (iVar2 != 0) {
       body_part = core_bodypart_cpp_createBodyPart_FUN_004154f0
-                            ((CVector3f *)&(this_ptr->base).base.base.field_0x20,
-                             &(this_ptr->base).base.base.orient,(CVector3f *)(damage_info + 0xc),
+                            (&(this_ptr->base).base.base.location.position,
+                             &(this_ptr->base).base.base.orient,&damage_info->impact_point,
                              (CDemonActor *)this_ptr,0,0,(this_ptr->base).base.blood_type);
       core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_004277e0
-                ((CCharacter *)this_ptr,body_part,*(int *)damage_info,0);
-      if (*(int *)damage_info == this_ptr->part_indices[2]) {
+                ((CCharacter *)this_ptr,body_part,damage_info->hit_part_index,0);
+      if (damage_info->hit_part_index == this_ptr->part_indices[2]) {
         core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_004277e0
                   ((CCharacter *)this_ptr,body_part,this_ptr->part_indices[3],0);
       }
-      if (this_ptr->part_indices[4] == *(int *)damage_info) {
+      if (this_ptr->part_indices[4] == damage_info->hit_part_index) {
         core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_004277e0
                   ((CCharacter *)this_ptr,body_part,this_ptr->part_indices[5],0);
       }
-      if (this_ptr->part_indices[1] == *(int *)damage_info) {
-        initial_velocity = (CVector3f *)(damage_info + 0xc);
+      if (this_ptr->part_indices[1] == damage_info->hit_part_index) {
+        initial_velocity = &damage_info->impact_point;
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_00427770
                   ((CCharacter *)this_ptr,this_ptr->part_indices[4],initial_velocity,0);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_00427770
@@ -106,30 +107,29 @@ switchD_00413f76_default:
       core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042b260
                 ((CCharacter *)this_ptr,"limb?.wav");
       core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416700(body_part);
-      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[0] * 4) == 0)
-      {
-        *(uint *)(damage_info + 4) = 0x461c3c00;
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] == 0) {
+        damage_info->damage_amount = 9999.0;
       }
-      *(float *)(damage_info + 8) = *(float *)(damage_info + 8) * (float)_DAT_005cbbce;
+      damage_info->gore_multiplier = damage_info->gore_multiplier * (float)_DAT_005cbbce;
     }
   }
-  iVar2 = *(int *)damage_info;
+  iVar2 = damage_info->hit_part_index;
   if (iVar2 == this_ptr->part_indices[0]) {
-    fVar4 = *(float *)(damage_info + 4) * (float)_DAT_005cbbde;
+    fVar4 = damage_info->damage_amount * (float)_DAT_005cbbde;
   }
   else {
     if ((iVar2 == this_ptr->part_indices[6]) || (iVar2 == this_ptr->part_indices[1])) {
-      *(uint *)(damage_info + 4) = *(uint *)(damage_info + 4);
+      damage_info->damage_amount = damage_info->damage_amount;
       goto LAB_00414131;
     }
-    fVar4 = *(float *)(damage_info + 4) * (float)_DAT_005cbbd6;
+    fVar4 = damage_info->damage_amount * (float)_DAT_005cbbd6;
   }
-  *(float *)(damage_info + 4) = fVar4;
+  damage_info->damage_amount = fVar4;
 LAB_00414131:
   pCVar1 = g_CConsolePtr;
-  if ((this_ptr->part_indices[1] == *(int *)damage_info) && (*(int *)(damage_info + 0x30) == 0x68))
-  {
-    *(float *)(damage_info + 4) = *(float *)(damage_info + 4) * (float)_DAT_005cbbe6;
+  if ((this_ptr->part_indices[1] == damage_info->hit_part_index) &&
+     (damage_info->damage_type == DAMAGE_TYPE_ATTACK_STAKE)) {
+    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005cbbe6;
     engine_console_cpp_FUN_00436710(pCVar1,"Shot thru the heart\n");
     iVar2 = core_actor_cpp_randomChance_FUN_0040d060(0.5);
     if (iVar2 != 0) {

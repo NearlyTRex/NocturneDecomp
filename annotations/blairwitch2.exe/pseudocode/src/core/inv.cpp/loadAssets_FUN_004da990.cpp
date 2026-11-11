@@ -82,7 +82,7 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004da990(void)
   _DAT_01cf0200 = 0;
   p_Var2 = engine_dosio_cpp_FUN_00460c70(&DAT_005db526,"itemlist.txt",&DAT_005db516);
   if (p_Var2 != (_FILE *)0x0) {
-    while (((byte)p_Var2[0xc] & 0x10) == 0) {
+    while ((p_Var2->_flag & 0x10) == 0) {
       iVar3 = core_inv_cpp_loadItem_FUN_004da720(_DAT_01cf0200 * 0x300 + 0x1cf0208,p_Var2);
       if (iVar3 == 0) break;
       _DAT_01cf0200 = _DAT_01cf0200 + 1;

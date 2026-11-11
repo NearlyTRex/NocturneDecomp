@@ -12,7 +12,7 @@ int __cdecl core_basicene_cpp_CBasicEnemy_isGrabbable_FUN_0059fa70(CBasicEnemy *
   uint uVar1;
   int iVar2;
   
-  if (grabber == (CDemonActor *)this_ptr) {
+  if ((CBasicEnemy *)grabber == this_ptr) {
     return (uint)grabber ^ (uint)this_ptr;
   }
   iVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0(grabber,g_CBasicEnemyClassInfo.name_hash);

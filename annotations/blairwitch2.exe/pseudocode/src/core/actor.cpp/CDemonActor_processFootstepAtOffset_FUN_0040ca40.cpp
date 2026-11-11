@@ -52,7 +52,7 @@ uint __cdecl core_actor_cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40(CDe
   fStack_24 = (float)core_setcolid_cpp_FUN_00534ea0(g_CDemonSetPtr,&CStack_30,0);
   ground_type = g_CDemonSetPtr->ground_type;
   fStack_10 = fStack_24;
-  fStack_20 = (float)core_setcolid_cpp_FUN_00534ea0(g_CDemonSetPtr,&this_ptr->field_0x20,0);
+  fStack_20 = (float)core_setcolid_cpp_FUN_00534ea0(g_CDemonSetPtr,&this_ptr->location,0);
   fStack_10 = fStack_20;
   core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
   if (fStack_24 < fStack_20 + (float)_DAT_005caede) {

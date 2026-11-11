@@ -4,13 +4,15 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBasicNPC.h"
 
 // Structure: CGrandma
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 71764
 // Ghidra size: 0x11854 (71764 bytes)
 #pragma pack(push, 1)
 typedef struct CGrandma {
-    char field_0[71764]; // 0x0
+    CBasicNPC base; // 0x0, derived
+    int hand_bone; // 0x11850, setup findBone 'Bip01 R Hand', also stored to +0x2618
 } CGrandma;
 #pragma pack(pop)
 

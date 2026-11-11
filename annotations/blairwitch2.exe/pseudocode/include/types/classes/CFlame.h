@@ -14,7 +14,6 @@
 #pragma pack(push, 1)
 typedef struct CFlame {
     CDemonActor base; // 0x0
-    char field_344[348]; // 0x158
     CVector3f flame_size; // 0x2b4
     float animation_time; // 0x2c0
     CDemonGlobe globe; // 0x2c4

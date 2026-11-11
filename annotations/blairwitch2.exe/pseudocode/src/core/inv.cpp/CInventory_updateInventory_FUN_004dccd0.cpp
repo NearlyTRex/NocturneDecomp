@@ -11,100 +11,103 @@
 void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004dccd0(CInventory *this_ptr)
 
 {
-  float fVar1;
+  CWeapon *pCVar1;
   float fVar2;
-  int iVar3;
+  float fVar3;
   int iVar4;
-  CInventory *pCVar5;
+  int iVar5;
+  CInventory *pCVar6;
   float local_20;
   float local_1c;
   
-  iVar3 = *(int *)(this_ptr + *(int *)(this_ptr + 0x468) * 4 + 0x610);
-  if (iVar3 != 0) {
-    if ((*(int *)(this_ptr + 0x45c) != *(int *)(iVar3 + 0x6c4)) &&
-       (iVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0(iVar3,g_CLightGunClassInfo.name_hash),
-       iVar3 == 0)) {
+  pCVar1 = this_ptr->selected_weapons[this_ptr->current_group];
+  if (pCVar1 != (CWeapon *)0x0) {
+    if ((this_ptr->cached_ammo_count != pCVar1->ammo_count) &&
+       (iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar1,g_CLightGunClassInfo.name_hash),
+       iVar4 == 0)) {
       core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd270(this_ptr,0);
     }
-    *(uint *)(this_ptr + 0x45c) =
-         *(uint *)(*(int *)(this_ptr + *(int *)(this_ptr + 0x468) * 4 + 0x610) + 0x6c4);
+    this_ptr->cached_ammo_count = this_ptr->selected_weapons[this_ptr->current_group]->ammo_count;
   }
-  if ((*(int *)&g_CGamePtr->field_0x264 == 0) && (*(int *)&g_CGamePtr->field_0x25c == 0)) {
+  if ((g_CGamePtr->flashlight_active == 0) && (g_CGamePtr->goggles_active == 0)) {
     local_1c = 1.0 / _DAT_005f9020;
-    if (0 < *(int *)(this_ptr + 0x10)) {
-      iVar3 = 0;
-      pCVar5 = this_ptr;
+    if (0 < this_ptr->item_count) {
+      iVar4 = 0;
+      pCVar6 = this_ptr;
       do {
-        iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                          (*(uint *)(pCVar5 + 0x14),g_CBatteryClassInfo.name_hash);
-        if (iVar4 != 0) {
-          local_1c = 1.0 / *(float *)(iVar4 + 0x434) + local_1c;
+        iVar5 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                          (pCVar6->items[0],g_CBatteryClassInfo.name_hash);
+        if (iVar5 != 0) {
+          local_1c = 1.0 / *(float *)(iVar5 + 0x434) + local_1c;
         }
-        iVar3 = iVar3 + 1;
-        pCVar5 = pCVar5 + 4;
-      } while (iVar3 < *(int *)(this_ptr + 0x10));
+        iVar4 = iVar4 + 1;
+        pCVar6 = (CInventory *)&pCVar6->owner;
+      } while (iVar4 < this_ptr->item_count);
     }
-    fVar2 = (float)_DAT_005db9ea;
-    fVar1 = g_CGamePtr->delta_time_float * fVar2 * local_1c + *(float *)this_ptr;
-    *(float *)this_ptr = fVar1;
-    if (fVar2 < fVar1) {
-      *(uint *)this_ptr = 0x42c80000;
+    fVar3 = (float)_DAT_005db9ea;
+    fVar2 = g_CGamePtr->delta_time_float * fVar3 * local_1c + this_ptr->battery_charge;
+    this_ptr->battery_charge = fVar2;
+    if (fVar3 < fVar2) {
+      this_ptr->battery_charge = 100.0;
     }
   }
   else {
-    iVar3 = 0;
+    iVar4 = 0;
     local_20 = 0x43FA0000;
-    pCVar5 = this_ptr;
-    if (0 < *(int *)(this_ptr + 0x10)) {
+    pCVar6 = this_ptr;
+    if (0 < this_ptr->item_count) {
       do {
-        iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                          (*(uint *)(pCVar5 + 0x14),g_CBatteryClassInfo.name_hash);
-        if (iVar4 != 0) {
-          local_20 = local_20 + *(float *)(iVar4 + 0x438);
+        iVar5 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                          (pCVar6->items[0],g_CBatteryClassInfo.name_hash);
+        if (iVar5 != 0) {
+          local_20 = local_20 + *(float *)(iVar5 + 0x438);
         }
-        iVar3 = iVar3 + 1;
-        pCVar5 = pCVar5 + 4;
-      } while (iVar3 < *(int *)(this_ptr + 0x10));
+        iVar4 = iVar4 + 1;
+        pCVar6 = (CInventory *)&pCVar6->owner;
+      } while (iVar4 < this_ptr->item_count);
     }
-    fVar1 = *(float *)this_ptr - (g_CGamePtr->delta_time_float * (float)_DAT_005db9ea) / local_20;
-    *(float *)this_ptr = fVar1;
-    if (fVar1 < 0.0) {
-      *(uint *)this_ptr = 0;
+    fVar2 = this_ptr->battery_charge -
+            (g_CGamePtr->delta_time_float * (float)_DAT_005db9ea) / local_20;
+    this_ptr->battery_charge = fVar2;
+    if (fVar2 < 0.0) {
+      this_ptr->battery_charge = 0.0;
     }
   }
-  iVar3 = 0;
-  pCVar5 = this_ptr;
-  if (0 < *(int *)(this_ptr + 0x10)) {
+  iVar4 = 0;
+  pCVar6 = this_ptr;
+  if (0 < this_ptr->item_count) {
     do {
-      iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                        (*(uint *)(pCVar5 + 0x14),g_CLightGunClassInfo.name_hash);
-      if ((iVar4 != 0) && (*(int *)(iVar4 + 0x430) != 2)) {
-        (**(code **)(*(int *)(iVar4 + 0x2b0) + 0x14))(iVar4,g_CGamePtr->delta_time_float);
+      iVar5 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                        (pCVar6->items[0],g_CLightGunClassInfo.name_hash);
+      if ((iVar5 != 0) && (*(int *)(iVar5 + 0x430) != 2)) {
+        (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x14))(iVar5,g_CGamePtr->delta_time_float);
       }
-      iVar3 = iVar3 + 1;
-      pCVar5 = pCVar5 + 4;
-    } while (iVar3 < *(int *)(this_ptr + 0x10));
+      iVar4 = iVar4 + 1;
+      pCVar6 = (CInventory *)&pCVar6->owner;
+    } while (iVar4 < this_ptr->item_count);
   }
-  *(float *)(this_ptr + 0x340) = *(float *)(this_ptr + 0x340) - g_CGamePtr->delta_time_float;
-  if (*(float *)(this_ptr + 0x340) <= 0.0) {
-    *(uint *)(this_ptr + 0x340) = 0;
+  this_ptr->weapon_highlight_timer = this_ptr->weapon_highlight_timer - g_CGamePtr->delta_time_float
+  ;
+  if (this_ptr->weapon_highlight_timer <= 0.0) {
+    this_ptr->weapon_highlight_timer = 0.0;
   }
-  *(float *)(this_ptr + 0x344) = *(float *)(this_ptr + 0x344) - g_CGamePtr->delta_time_float;
-  if (*(float *)(this_ptr + 0x344) <= 0.0) {
-    *(uint *)(this_ptr + 0x344) = 0;
+  this_ptr->item_highlight_timer = this_ptr->item_highlight_timer - g_CGamePtr->delta_time_float;
+  if (this_ptr->item_highlight_timer <= 0.0) {
+    this_ptr->item_highlight_timer = 0.0;
   }
-  *(float *)(this_ptr + 0x348) = *(float *)(this_ptr + 0x348) - g_CGamePtr->delta_time_float;
-  if (*(float *)(this_ptr + 0x348) <= 0.0) {
-    *(uint *)(this_ptr + 0x348) = 0;
+  this_ptr->inventory_display_timer =
+       this_ptr->inventory_display_timer - g_CGamePtr->delta_time_float;
+  if (this_ptr->inventory_display_timer <= 0.0) {
+    this_ptr->inventory_display_timer = 0.0;
   }
-  *(float *)(this_ptr + 0x34c) = *(float *)(this_ptr + 0x34c) - g_CGamePtr->delta_time_float;
-  if (*(float *)(this_ptr + 0x34c) <= 0.0) {
-    this_ptr[0x354] = (CInventory)0x0;
-    *(uint *)(this_ptr + 0x34c) = 0;
+  this_ptr->message_display_timer = this_ptr->message_display_timer - g_CGamePtr->delta_time_float;
+  if (this_ptr->message_display_timer <= 0.0) {
+    this_ptr->message_text[0] = '\0';
+    this_ptr->message_display_timer = 0.0;
   }
-  *(float *)(this_ptr + 0x350) = *(float *)(this_ptr + 0x350) - g_CGamePtr->delta_time_float;
-  if (*(float *)(this_ptr + 0x350) < 0.0) {
-    *(uint *)(this_ptr + 0x350) = 0;
+  this_ptr->ammo_detail_timer = this_ptr->ammo_detail_timer - g_CGamePtr->delta_time_float;
+  if (this_ptr->ammo_detail_timer < 0.0) {
+    this_ptr->ammo_detail_timer = 0.0;
     return;
   }
   return;

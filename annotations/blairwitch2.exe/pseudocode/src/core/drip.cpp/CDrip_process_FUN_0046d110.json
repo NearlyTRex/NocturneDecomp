@@ -2,24 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 302,
-    "complexity_score": 360,
+    "complexity_score": 242,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 130,
-    "suspect_count": 19,
+    "pseudocode_lines": 127,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
       "stack_param",
-      "unnamed_field",
       "unresolved_funcptr",
       "unrolled_memcpy",
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 432
+    "total_lines": 429
   },
   "cross_references": [],
   "function": {
@@ -194,7 +193,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 21,
+      "line": 22,
       "match": "afStackY_1054",
       "severity": "moderate",
       "text": "float afStackY_1054 [988];",
@@ -202,135 +201,47 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 23,
       "match": "in_stack_ffffff28",
       "severity": "moderate",
       "text": "CBoundingBox3D *in_stack_ffffff28;",
       "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr->base).field_0x24 =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "fVar2 * delta_time + *(float *)&(this_ptr->base).field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 54,
       "match": "in_stack_ffffff28",
       "severity": "moderate",
-      "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff28);",
+      "text": "(*pCVar1->getBoundingBox)(&this_ptr->base,in_stack_ffffff28);",
       "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "if (*(float *)&(this_ptr->base).field_0x24 <",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 70,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr->base).field_0x24 = this_ptr->ground_y;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 72,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "position = &(this_ptr->base).field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 79,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "aCStack_2c[0].y = aCStack_2c[0].y + *(float *)&(this_ptr->base).field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 80,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "aCStack_2c[0].z = aCStack_2c[0].z + *(float *)&(this_ptr->base).field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 99,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr->base).field_0x24 = (this_ptr->home_pos).y;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 101,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr->base).field_0x20 =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 104,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr->base).field_0x28 =",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 114,
       "match": "(int *)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)g_CDemonSetPtr->characters + iVar7);",
+      "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->characters + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 124,
+      "line": 121,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar1 + 0x2b0) + 0x108))",
+      "text": "(**(code **)(*(int *)(iVar2 + 0x2b0) + 0x108))",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 125,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(iVar1,&(this_ptr->base).field_0x20,0x3f800000,aSStack_c8);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 58,
+      "line": 57,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "text": "for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 106,
+      "line": 103,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->vel).z = 0.0;",

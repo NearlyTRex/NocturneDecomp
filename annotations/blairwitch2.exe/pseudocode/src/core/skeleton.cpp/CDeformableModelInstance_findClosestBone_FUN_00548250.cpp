@@ -12,7 +12,7 @@ int __cdecl core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_00548
   int iVar1;
   float fVar2;
   float fVar3;
-  byte *puVar4;
+  CMatrix3x4f *pCVar4;
   byte bVar5;
   float afStackY_10e0 [1013];
   float local_f4;
@@ -30,32 +30,32 @@ int __cdecl core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_00548
   float local_c4;
   float local_c0;
   float local_bc;
-  uint local_b8;
-  uint local_b4;
+  float local_b8;
+  float local_b4;
   float local_b0;
   float local_ac;
   float local_a8;
   float local_a4;
-  uint local_a0;
-  uint local_9c;
+  float local_a0;
+  float local_9c;
   float local_98;
   float local_94;
   float local_90;
   float local_8c;
   float local_88;
   float local_84;
-  uint local_7c;
+  float local_7c;
   float local_78;
   float local_68;
-  uint local_5c;
+  float local_5c;
   CSkeleton *local_44;
   int local_40;
-  byte *local_3c;
+  CMatrix3x4f *local_3c;
   float local_38;
   float local_34;
   int local_30;
   CSkeleton *local_2c;
-  uint local_28;
+  float local_28;
   float local_24;
   float local_1c;
   
@@ -65,28 +65,28 @@ int __cdecl core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_00548
   local_40 = 0;
   local_30 = 0;
   if (0 < local_44->bone_count) {
-    puVar4 = &this_ptr->field_0xe80;
+    pCVar4 = (this_ptr->bone_transform).bone_model_matrices;
     local_2c = local_44;
-    local_3c = puVar4;
+    local_3c = pCVar4;
     do {
-      iVar1 = *(int *)(local_2c->bone_list + 0x20);
+      iVar1 = local_2c->bone_list[0].parent_index;
       if (-1 < iVar1) {
-        local_68 = *(float *)(puVar4 + 0xc);
-        local_5c = *(uint *)(puVar4 + 0x1c);
-        local_7c = *(uint *)(puVar4 + 0x2c);
+        local_68 = pCVar4->m[0].z;
+        local_5c = pCVar4->m[1].z;
+        local_7c = pCVar4->m[2].z;
         local_bc = local_68;
-        local_b8 = *(uint *)(puVar4 + 0x1c);
-        local_b4 = *(uint *)(puVar4 + 0x2c);
+        local_b8 = local_5c;
+        local_b4 = local_7c;
         local_98 = local_68;
         *(uint *)((int)&stack0xffffff6c + (uint)bVar5 * -8) =
              *(uint *)((int)&stack0xffffff48 + (uint)bVar5 * -8);
         *(uint *)((int)&stack0xffffff70 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
              *(uint *)((int)&stack0xffffff4c + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-        local_78 = *(float *)(local_3c + iVar1 * 0x30 + 0xc);
-        local_28 = *(uint *)(local_3c + iVar1 * 0x30 + 0x2c);
-        local_a0 = *(uint *)(local_3c + iVar1 * 0x30 + 0x1c);
+        local_78 = local_3c[iVar1].m[0].z;
+        local_28 = local_3c[iVar1].m[2].z;
+        local_a0 = local_3c[iVar1].m[1].z;
         local_a4 = local_78;
-        local_9c = *(uint *)(local_3c + iVar1 * 0x30 + 0x2c);
+        local_9c = local_28;
         local_d4 = local_78;
         *(uint *)((int)&stack0xffffff30 + (uint)bVar5 * -8) =
              *(uint *)((int)&stack0xffffff60 + (uint)bVar5 * -8);
@@ -151,8 +151,8 @@ LAB_00548449:
           local_34 = local_1c;
         }
       }
-      local_2c = (CSkeleton *)&local_2c->field_0x24;
-      puVar4 = puVar4 + 0x30;
+      local_2c = (CSkeleton *)((local_2c->motion_list).state_names[1] + 2);
+      pCVar4 = pCVar4 + 1;
       local_30 = local_30 + 1;
     } while (local_30 < local_44->bone_count);
   }

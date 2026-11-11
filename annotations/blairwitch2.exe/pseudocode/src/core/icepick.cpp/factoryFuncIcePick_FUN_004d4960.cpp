@@ -11,7 +11,7 @@ void core_icepick_cpp_factoryFuncIcePick_FUN_004d4960(void)
 {
   CIcePick *this_ptr;
   
-  this_ptr = (CIcePick *)debugAllocTracked1(0x25670);
+  this_ptr = (CIcePick *)operator_new(0x25670);
   if (this_ptr == (CIcePick *)0x0) {
     return;
   }

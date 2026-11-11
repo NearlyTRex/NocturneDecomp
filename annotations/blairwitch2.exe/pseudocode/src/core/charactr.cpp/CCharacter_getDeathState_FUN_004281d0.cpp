@@ -20,22 +20,19 @@ EDeathState __cdecl core_charactr_cpp_CCharacter_getDeathState_FUN_004281d0(CCha
   iVar3 = 3;
   pcVar2 = &DAT_005ccdff;
   this_ptr_00 = &this_ptr->model;
-  pcVar1 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_00503870
-                     ((CMotionController *)this_ptr_00);
+  pcVar1 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_00503870(&this_ptr_00->base);
   iVar3 = _strnicmp(pcVar1,pcVar2,iVar3);
   if (iVar3 == 0) {
     return DEATH_STATE_DYING;
   }
   pcVar2 = &DAT_005cce03;
-  pcVar1 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_00503870
-                     ((CMotionController *)this_ptr_00);
+  pcVar1 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_00503870(&this_ptr_00->base);
   iVar3 = _stricmp(pcVar1,pcVar2);
   if (iVar3 == 0) {
     return DEATH_STATE_DEAD;
   }
   pcVar2 = "DEAD_POSSUM";
-  pcVar1 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_00503870
-                     ((CMotionController *)this_ptr_00);
+  pcVar1 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_00503870(&this_ptr_00->base);
   iVar3 = _stricmp(pcVar1,pcVar2);
   if (iVar3 == 0) {
     return ~DEATH_STATE_DYING;

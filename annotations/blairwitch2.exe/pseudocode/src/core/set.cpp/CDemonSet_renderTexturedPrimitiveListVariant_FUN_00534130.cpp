@@ -19,7 +19,7 @@ void __cdecl core_set_cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00534
           iVar1 = iVar1 + 1;
           engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0
                     (DAT_0060b280,(SMRGLPrimitivePoly *)prim);
-          prim = prim + 3;
+          prim = (SMRGLHeaderPrimitive *)(((SMRGLPrimitivePoly *)prim)->vertices + 4);
         } while (iVar1 < count);
         return;
       }

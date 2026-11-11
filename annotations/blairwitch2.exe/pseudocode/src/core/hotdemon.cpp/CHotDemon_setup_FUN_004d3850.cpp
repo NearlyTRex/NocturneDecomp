@@ -15,7 +15,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_setup_FUN_004d3850(CHotDemon *this_ptr)
   CSkeleton *this_ptr_01;
   char *model_name;
   
-  if (*(int *)&g_CGamePtr->field_0x18 == 0) {
+  if (g_CGamePtr->nudity_flag == 0) {
     model_name = "hotdemonx.dfm";
   }
   else {

@@ -16,7 +16,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_advanceMotion_FUN_00571460(CSvetlana *t
   
   do {
     bone_index = core_motion_cpp_CMotionController_advance_FUN_005030c0
-                           ((CMotionController *)&this_ptr->field_0x2b4,&delta_time);
+                           (&(this_ptr->base).base.model.base,&delta_time);
     if (bone_index < 100) {
       core_charactr_cpp_CCharacter_processMotion_FUN_0042aa00((CCharacter *)this_ptr,bone_index);
     }

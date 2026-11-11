@@ -11,24 +11,25 @@
 void __cdecl core_svetlana_cpp_CSvetlana_setup_FUN_00570250(CSvetlana *this_ptr)
 
 {
-  byte *this_ptr_00;
+  UOrientationVector *euler;
+  CLocation *position;
+  CDeformableModelInstance *this_ptr_00;
   CSkeleton *this_ptr_01;
   CDeformableModel *this_ptr_02;
   int iVar1;
   char *model_name;
   
-  if (*(int *)&g_CGamePtr->field_0x18 == 0) {
+  if (g_CGamePtr->nudity_flag == 0) {
     model_name = "svetlanax.dfm";
   }
   else {
     model_name = "svetlana.dfm";
   }
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            ((CDeformableModelInstance *)&this_ptr->field_0x2b4,model_name);
-  core_hero_cpp_CHero_setup_FUN_004ce4a0((CHero *)this_ptr);
-  this_ptr_00 = &this_ptr->field_0x2b4;
-  this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
-                          ((CDeformableModelInstance *)this_ptr_00);
+            (&(this_ptr->base).base.model,model_name);
+  core_hero_cpp_CHero_setup_FUN_004ce4a0(&this_ptr->base);
+  this_ptr_00 = &(this_ptr->base).base.model;
+  this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr_00);
   _DAT_0264bf38 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 head",1);
   _DAT_0264bf3c =
@@ -68,18 +69,13 @@ void __cdecl core_svetlana_cpp_CSvetlana_setup_FUN_00570250(CSvetlana *this_ptr)
   _DAT_0264bf80 = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"BipR14",1)
   ;
   this_ptr->blades_drawn = 0;
-  core_cloth_cpp_CCloth_load_FUN_005adeb0
-            ((CCloth *)&this_ptr->field_0x25648,"svetcape.cth");
-  core_cloth_cpp_FUN_005ae680
-            ((CCloth *)&this_ptr->field_0x25648,(CVector3f *)&this_ptr->field_0x20,
-             (CVector3f *)&this_ptr->field_0x30,(CDeformableModelInstance *)this_ptr_00);
-  core_cloth_cpp_CCloth_load_FUN_005adeb0
-            ((CCloth *)&this_ptr->field_0x60178,"svethair.cth");
-  core_cloth_cpp_FUN_005ae680
-            ((CCloth *)&this_ptr->field_0x60178,(CVector3f *)&this_ptr->field_0x20,
-             (CVector3f *)&this_ptr->field_0x30,(CDeformableModelInstance *)this_ptr_00);
-  this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
-                          ((CDeformableModelInstance *)this_ptr_00);
+  core_cloth_cpp_CCloth_load_FUN_005adeb0(&this_ptr->cape_cloth,"svetcape.cth");
+  euler = &(this_ptr->base).base.base.orient;
+  position = &(this_ptr->base).base.base.location;
+  core_cloth_cpp_FUN_005ae680(&this_ptr->cape_cloth,&position->position,&euler->vec,this_ptr_00);
+  core_cloth_cpp_CCloth_load_FUN_005adeb0(&this_ptr->hair_cloth,"svethair.cth");
+  core_cloth_cpp_FUN_005ae680(&this_ptr->hair_cloth,&position->position,&euler->vec,this_ptr_00);
+  this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
                     (this_ptr_02,"lblade01",1);
   this_ptr->part_indices[0] = iVar1;

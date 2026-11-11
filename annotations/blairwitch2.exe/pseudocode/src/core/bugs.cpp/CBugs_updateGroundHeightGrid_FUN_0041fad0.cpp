@@ -69,9 +69,9 @@ void __cdecl core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_0041fad0(CBugs *this
   local_78 = local_a8 * _DAT_005cca0d;
   local_74 = local_a4 * _DAT_005cca0d;
   local_70 = local_a0 * _DAT_005cca0d;
-  local_9c = *(float *)&(this_ptr->base).base.base.field_0x20 + local_78;
-  fStack_98 = *(float *)&(this_ptr->base).base.base.field_0x24 + local_74;
-  local_94 = *(float *)&(this_ptr->base).base.base.field_0x28 + local_70;
+  local_9c = (this_ptr->base).base.base.location.position.x + local_78;
+  fStack_98 = (this_ptr->base).base.base.location.position.y + local_74;
+  local_94 = (this_ptr->base).base.base.location.position.z + local_70;
   local_90 = local_a8;
   local_8c = local_a4;
   local_88 = local_a0;
@@ -90,7 +90,7 @@ void __cdecl core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_0041fad0(CBugs *this
   fVar12 = (float10)local_48;
   local_14 = (float)local_38;
   fVar11 = (float10)local_38 * (float10)_DAT_005f3e28 -
-           (float10)*(float *)&(this_ptr->base).base.base.field_0x20;
+           (float10)(this_ptr->base).base.base.location.position.x;
   fVar10 = (float10)_DAT_005f3e28 * (float10)_DAT_005cca11 * (float10)_DAT_005cca19;
   iVar1 = round();
   local_3c = (int)ROUND(fVar12);
@@ -98,7 +98,7 @@ void __cdecl core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_0041fad0(CBugs *this
   local_14 = (float)local_3c;
   this_ptr->grid_origin_z =
        (float)(((float10)local_3c * (float10)_DAT_005f3e28 -
-               (float10)*(float *)&(this_ptr->base).base.base.field_0x28) - fVar10);
+               (float10)(this_ptr->base).base.base.location.position.z) - fVar10);
   if ((local_38 != this_ptr->grid_cell_x) || (local_3c != this_ptr->grid_cell_z)) {
     iVar1 = this_ptr->grid_cell_x - local_38;
     local_20 = iVar1;
@@ -118,7 +118,7 @@ void __cdecl core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_0041fad0(CBugs *this
       pfVar7 = (float *)((int)pfVar7 + (uint)bVar9 * -2 + 1);
     }
     puVar6 = (uint *)((int)this_ptr + (uint)bVar9 * -8 + 0x24);
-    local_6c = *(float *)&(this_ptr->base).base.base.field_0x20;
+    local_6c = (this_ptr->base).base.base.location.position.x;
     *(uint *)((int)&stack0xffffff98 + (uint)bVar9 * 0xfffffffe * 4) = *puVar6;
     *(uint *)((int)&stack0xffffff9c + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
          puVar6[(uint)bVar9 * -2 + 1];
@@ -146,7 +146,7 @@ void __cdecl core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_0041fad0(CBugs *this
           local_14 = (float)iVar1;
           fVar2 = (float)core_dtrace_cpp_FUN_004738d0
                                    (&g_CDemonRaytraceInstance,&stack0xffffff7c,local_40,0);
-          pCVar4->ground_heights[0][0] = fVar2 - *(float *)&(this_ptr->base).base.base.field_0x24;
+          pCVar4->ground_heights[0][0] = fVar2 - (this_ptr->base).base.base.location.position.y;
         }
         else {
           pCVar8->ground_heights[0][0] = *(float *)((int)&DAT_007bcd08 + iVar3);

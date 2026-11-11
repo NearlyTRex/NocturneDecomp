@@ -11,7 +11,7 @@ void core_hag_cpp_factoryFuncHag_FUN_005aa5d0(void)
 {
   CHag *this_ptr;
   
-  this_ptr = (CHag *)debugAllocTracked1(0x11860);
+  this_ptr = (CHag *)operator_new(0x11860);
   if (this_ptr == (CHag *)0x0) {
     return;
   }

@@ -11,7 +11,7 @@
 typedef struct CIniFile {
     char filename[256]; // 0x0
     char section[256]; // 0x100
-    char field_512[4]; // 0x200
+    void* vtable; // 0x200, Added in this build
 } CIniFile;
 #pragma pack(pop)
 

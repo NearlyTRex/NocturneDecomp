@@ -38,7 +38,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_00516e60(CPacke
   _fwrite(aiStack_2c,0x1c,1,file_handle);
   _fwrite(this_ptr->row_offsets,4,this_ptr->height + 1,file_handle);
   _fwrite(this_ptr->packed_data,this_ptr->row_offsets[this_ptr->height],1,file_handle);
-  if (((byte)file_handle[0xc] & 0x20) == 0) {
+  if ((file_handle->_flag & 0x20) == 0) {
     return;
   }
   _DAT_01d046a0 = "..\\cockpit\\pkbitmap.cpp";

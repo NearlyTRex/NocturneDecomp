@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 25,
+    "complexity_score": 26,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 11,
     "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "warning_type_propagation"
     ],
-    "total_lines": 37
+    "total_lines": 38
   },
   "cross_references": [
     {
@@ -128,12 +128,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "return *(int *)(&(this_ptr->base).base.model.field_0x2140 + iVar1 * 4);",
-      "type": "unnamed_field"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     }
   ]
 }

@@ -36,24 +36,18 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046bff0(CDemo
         _DAT_01c38b58 = 6;
         if (_DAT_01c37788 == 0) {
           for (; 0 < face_count; face_count = face_count + -1) {
-            local_24.x = (int)*(ushort *)face_array;
-            local_24.y = (int)*(ushort *)(face_array + 2);
-            local_24.z = (int)*(ushort *)(face_array + 4);
+            local_24.x = (int)(face_array->vertex_indices).vertex_index_0;
+            local_24.y = (int)(face_array->vertex_indices).vertex_index_1;
+            local_24.z = (int)(face_array->vertex_indices).vertex_index_2;
             if (this_ptr->skip_uv_extraction == 0) {
-              *(uint *)(this_ptr->vertex_buffer_ptr + local_24.x * 0x30 + 0x18) =
-                   (uint)*(ushort *)(face_array + 6) << 8;
-              *(uint *)(this_ptr->vertex_buffer_ptr + local_24.x * 0x30 + 0x1c) =
-                   (uint)*(ushort *)(face_array + 0xc) << 8;
-              *(uint *)(this_ptr->vertex_buffer_ptr + local_24.y * 0x30 + 0x18) =
-                   (uint)*(ushort *)(face_array + 8) << 8;
-              *(uint *)(this_ptr->vertex_buffer_ptr + local_24.y * 0x30 + 0x1c) =
-                   (uint)*(ushort *)(face_array + 0xe) << 8;
-              *(uint *)(this_ptr->vertex_buffer_ptr + local_24.z * 0x30 + 0x18) =
-                   (uint)*(ushort *)(face_array + 10) << 8;
-              *(uint *)(this_ptr->vertex_buffer_ptr + local_24.z * 0x30 + 0x1c) =
-                   (uint)*(ushort *)(face_array + 0x10) << 8;
+              this_ptr->vertex_buffer_ptr[local_24.x].u = (uint)face_array->u_coord_0 << 8;
+              this_ptr->vertex_buffer_ptr[local_24.x].v = (uint)face_array->v_coord_0 << 8;
+              this_ptr->vertex_buffer_ptr[local_24.y].u = (uint)face_array->u_coord_1 << 8;
+              this_ptr->vertex_buffer_ptr[local_24.y].v = (uint)face_array->v_coord_1 << 8;
+              this_ptr->vertex_buffer_ptr[local_24.z].u = (uint)face_array->u_coord_2 << 8;
+              this_ptr->vertex_buffer_ptr[local_24.z].v = (uint)face_array->v_coord_2 << 8;
             }
-            face_array = face_array + 0x12;
+            face_array = face_array + 1;
             core_dpart_cpp_FUN_00461f70(&local_24.x,3);
           }
         }
@@ -76,7 +70,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046bff0(CDemo
                 }
               }
               local_14 = local_14 + 1;
-              face_array = face_array + 0x12;
+              face_array = face_array + 1;
             } while (local_14 < face_count);
           }
           if (0 < iVar4) {
@@ -96,11 +90,11 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046bff0(CDemo
           do {
             _DAT_01c38b58 = uVar2;
             _DAT_01c38b54 = uVar1;
-            local_24.x = (int)*(ushort *)face_array;
-            local_24.y = (int)*(ushort *)(face_array + 2);
-            local_24.z = (int)*(ushort *)(face_array + 4);
+            local_24.x = (int)(face_array->vertex_indices).vertex_index_0;
+            local_24.y = (int)(face_array->vertex_indices).vertex_index_1;
+            local_24.z = (int)(face_array->vertex_indices).vertex_index_2;
             face_count = face_count + -1;
-            face_array = face_array + 0x12;
+            face_array = face_array + 1;
             core_dpart_cpp_FUN_004625f0(&local_24,3);
             uVar1 = _DAT_01c38b54;
             uVar2 = _DAT_01c38b58;
@@ -116,7 +110,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046bff0(CDemo
           iVar4 = iVar4 + 1;
           engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_00469e80
                     (this_ptr,face_array,render_flags);
-          face_array = face_array + 0x12;
+          face_array = face_array + 1;
         } while (iVar4 < face_count);
         return;
       }
@@ -128,8 +122,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046bff0(CDemo
       do {
         iVar4 = iVar4 + 1;
         engine_drender_cpp_CDemonRenderer_captureFace_FUN_0046c720
-                  (this_ptr,(STrianglePackedIndices *)face_array,render_flags);
-        face_array = face_array + 0x12;
+                  (this_ptr,&face_array->vertex_indices,render_flags);
+        face_array = face_array + 1;
       } while (iVar4 < face_count);
     }
   }

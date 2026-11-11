@@ -14,18 +14,13 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateLaser_FUN_004e6f20(CMans
   float fVar1;
   bool bVar2;
   int iVar3;
-  int *piVar4;
+  SLaserInfo *pSVar4;
   int unaff_EDI;
-  int *piVar5;
+  float *pfVar5;
   byte bVar6;
   float afStackY_107c [970];
-  int aiStack_148 [17];
   uint uStack_104;
-  int aiStack_e8 [4];
-  int iStack_d8;
-  int iStack_d4;
-  uint uStack_d0;
-  uint uStack_cc;
+  SLaserInfo SStack_e8;
   float fStack_94;
   float afStack_90 [4];
   float fStack_80;
@@ -47,13 +42,13 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateLaser_FUN_004e6f20(CMans
   bVar6 = 0;
   pSStack_14 = this_ptr->panels + panel_index;
   bVar2 = false;
-  if (*(int *)pSStack_14 == 0) {
+  if (pSStack_14->exists == 0) {
     uStack_104 = 0x4e71bf;
     iVar3 = core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004e7570
                       (this_ptr,panel_index);
     bVar2 = true;
-    if ((*(int *)(this_ptr->panels + iVar3) == 0) ||
-       (*(float *)&this_ptr->panels[iVar3].field_0x8 <= 0.0)) goto LAB_004e6f62;
+    if ((this_ptr->panels[iVar3].exists == 0) || (this_ptr->panels[iVar3].anim_speed <= 0.0))
+    goto LAB_004e6f62;
   }
   else {
 LAB_004e6f62:
@@ -101,21 +96,21 @@ LAB_004e6f77:
     afStack_48[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7] =
          afStack_48[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xd];
     core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
-    core_fire_cpp_SLaserInfo_ctor_FUN_0049dae0((SLaserInfo *)aiStack_e8);
-    aiStack_e8[2] = 2;
-    aiStack_e8[1] = 0x3da3d70a;
-    aiStack_e8[3] = this_ptr->laser_color_r[panel_index];
-    iStack_d8 = this_ptr->laser_color_g[panel_index];
-    iStack_d4 = this_ptr->laser_color_b[panel_index];
-    aiStack_e8[0] = this_ptr->laser_intensity[panel_index];
-    uStack_d0 = 0;
-    uStack_cc = 0;
-    piVar4 = aiStack_e8;
-    piVar5 = aiStack_148;
+    core_fire_cpp_SLaserInfo_ctor_FUN_0049dae0(&SStack_e8);
+    SStack_e8.laser_type = 2;
+    SStack_e8.beam_width = 0.08;
+    SStack_e8.color.r = this_ptr->laser_color_r[panel_index];
+    SStack_e8.color.g = this_ptr->laser_color_g[panel_index];
+    SStack_e8.color.b = this_ptr->laser_color_b[panel_index];
+    SStack_e8.intensity = (float)this_ptr->laser_intensity[panel_index];
+    SStack_e8.is_hero_weapon = 0;
+    SStack_e8.is_damaging = 0;
+    pSVar4 = &SStack_e8;
+    pfVar5 = (float *)&stack0xfffffeb8;
     for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *piVar5 = *piVar4;
-      piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
-      piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
+      *pfVar5 = pSVar4->intensity;
+      pSVar4 = (SLaserInfo *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
+      pfVar5 = pfVar5 + (uint)bVar6 * -2 + 1;
     }
     core_fire_cpp_FUN_0049db20(0x01C3DEB4,afStack_90 + 5,afStack_48 + 5);
     core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);

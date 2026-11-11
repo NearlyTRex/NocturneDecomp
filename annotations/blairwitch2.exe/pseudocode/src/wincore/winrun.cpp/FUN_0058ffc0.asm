@@ -9,8 +9,8 @@
 ;   sound_sndmain.cpp_FUN_0054c1c0 at 0054c598
 ;   sound_sndmain.cpp_FUN_005549c0 at 005549ff
 ;   support_trisock.cpp_FUN_0057a47c at 0057a610
-;   support_trstream.cpp_FUN_0057e240 at 0057e253
-;   support_trstream.cpp_FUN_0057e270 at 0057e2d0
+;   support_trstream.cpp_COutStreamDebug_putChar_FUN_0057e240 at 0057e253
+;   support_trstream.cpp_COutStreamDebug_write_FUN_0057e270 at 0057e2d0
 ;
 ; Referenced Globals:
 ;   void* PTR_OutputDebugStringA_005c85f4 = 001c905e

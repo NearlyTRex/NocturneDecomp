@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 383,
+    "complexity_score": 368,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 53,
-    "suspect_count": 29,
+    "suspect_count": 28,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
-      "unnamed_field",
       "unnamed_param",
       "unrolled_memcpy",
       "unrolled_strcpy",
@@ -127,7 +126,7 @@
     },
     {
       "addr": "01fb3308",
-      "name": "g_CDemonSetInstance.field13_0x14d150",
+      "name": "g_CDemonSetInstance.min_ambient_value",
       "type": "undefined4",
       "value": null
     }
@@ -381,16 +380,8 @@
       "line": 49,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x148) < *(float *)&g_CDemonSetPtr->field_0x14d150) {",
+      "text": "if (*(float *)(param_1 + 0x148) < g_CDemonSetPtr->min_ambient_value) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x14d150",
-      "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x148) < *(float *)&g_CDemonSetPtr->field_0x14d150) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

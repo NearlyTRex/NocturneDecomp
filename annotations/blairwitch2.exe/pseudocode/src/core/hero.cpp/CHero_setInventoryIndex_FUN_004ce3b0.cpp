@@ -9,7 +9,7 @@
 void __cdecl core_hero_cpp_CHero_setInventoryIndex_FUN_004ce3b0(CHero *this_ptr,int index)
 
 {
-  *(int *)(this_ptr + 0x247e4) = index;
-  *(int *)(this_ptr + 0x2563c) = index;
+  this_ptr->inventories[0].current_group = index;
+  this_ptr->hero_inventory_index = index;
   return;
 }

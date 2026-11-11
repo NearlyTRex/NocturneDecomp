@@ -127,8 +127,8 @@ section .text
     PUSH EAX                            ; 0047e913
     LEA EAX,[ESP + 0xc]                 ; 0047e914
     PUSH EAX                            ; 0047e918
-    CALL unkafter_minecar.cpp_FUN_004f2ba0 ; 0047e919
-        ;   XREF to: 004f2ba0 (UNCONDITIONAL_CALL)  ; CEdCheck * unkafter_minecar.cpp_FUN_004f2ba0(CEdCheck * this_ptr)
+    CALL unkafter_minecar.cpp_getRenderViewport_FUN_004f2ba0 ; 0047e919
+        ;   XREF to: 004f2ba0 (UNCONDITIONAL_CALL)  ; void unkafter_minecar.cpp_getRenderViewport_FUN_004f2ba0(float * left, float * top, float * right, float * bottom)
     MOV EAX,dword ptr [EBX + 0xc]       ; 0047e91e
     ADD ESP,0x10                        ; 0047e921
     INC EAX                             ; 0047e924
@@ -148,8 +148,8 @@ section .text
     SUB ESP,0x4                         ; 0047e94e
     FILD dword ptr [EBX]                ; 0047e951
     FSTP float ptr [ESP]                ; 0047e953
-    CALL unkafter_minecar.cpp_FUN_004f2ac0 ; 0047e956
-        ;   XREF to: 004f2ac0 (UNCONDITIONAL_CALL)  ; undefined unkafter_minecar.cpp_FUN_004f2ac0()
+    CALL unkafter_minecar.cpp_setRenderViewport_FUN_004f2ac0 ; 0047e956
+        ;   XREF to: 004f2ac0 (UNCONDITIONAL_CALL)  ; void unkafter_minecar.cpp_setRenderViewport_FUN_004f2ac0(float left, float top, float right, float bottom)
     MOV EAX,[0x01c2638c]                ; 0047e95b | DAT_01c2638c
     MOV EBP,dword ptr [0x01c25f84]      ; 0047e960 | DAT_01c25f84
     ADD ESP,0x10                        ; 0047e966
@@ -278,8 +278,8 @@ section .text
     PUSH dword ptr [ESP + 0xc]          ; 0047eaae
     PUSH dword ptr [ESP + 0xc]          ; 0047eab2
     PUSH dword ptr [ESP + 0xc]          ; 0047eab6
-    CALL unkafter_minecar.cpp_FUN_004f2ac0 ; 0047eaba
-        ;   XREF to: 004f2ac0 (UNCONDITIONAL_CALL)  ; undefined unkafter_minecar.cpp_FUN_004f2ac0()
+    CALL unkafter_minecar.cpp_setRenderViewport_FUN_004f2ac0 ; 0047eaba
+        ;   XREF to: 004f2ac0 (UNCONDITIONAL_CALL)  ; void unkafter_minecar.cpp_setRenderViewport_FUN_004f2ac0(float left, float top, float right, float bottom)
     ADD ESP,0x10                        ; 0047eabf
     CMP byte ptr [EBX + 0x48],0x0       ; 0047eac2
         ;   Label: LAB_0047eac2

@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 37,
+    "complexity_score": 12,
     "cross_reference_count": 38,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 12,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 36
   },
   "cross_references": [
@@ -457,22 +455,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x2578",
-      "severity": "mild",
-      "text": "local_10 = (this_ptr->base).orient.vec.y + *(float *)&this_ptr->field_0x2578;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x2578",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2578 = 0;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

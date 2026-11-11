@@ -23,7 +23,7 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_00415120(CBiggs *this_ptr)
   uint auStack_20 [6];
   
   bVar4 = 0;
-  if (*(int *)&(this_ptr->base).base.field_0x2568 != 0) {
+  if ((this_ptr->base).base.render_active != 0) {
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
@@ -58,8 +58,7 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_00415120(CBiggs *this_ptr)
     if (_DAT_01d1cdc8 != 0) {
       iVar5 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
       if (iVar5 == 0) {
-        core_motion_cpp_FUN_005042e0
-                  ((CMotionController *)&(this_ptr->base).base.model,(CDemonActor *)this_ptr);
+        core_motion_cpp_FUN_005042e0(&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);
         (*((this_ptr->base).base.base.vtable._ub)->renderTargetPoints)((CDemonActor *)this_ptr);
       }
     }

@@ -347,6 +347,33 @@
     "size":1748
   },
   {
+    "kind":"class",
+    "name":"CFont_vtable",
+    "size":20,
+    "vtable_slots":[
+      {
+        "name":"ctor",
+        "offset":0
+      },
+      {
+        "name":"drawText",
+        "offset":4
+      },
+      {
+        "name":"getStringWidth",
+        "offset":8
+      },
+      {
+        "name":"getStringHeight",
+        "offset":12
+      },
+      {
+        "name":"getLineSpacing",
+        "offset":16
+      }
+    ]
+  },
+  {
     "kind":"funcdef",
     "name":"CGhostChild_vfunc97",
     "params":[
@@ -377,7 +404,7 @@
   {
     "kind":"class",
     "name":"CLZWDictionaryNode",
-    "size":1
+    "size":16
   },
   {
     "kind":"class",
@@ -400,17 +427,20 @@
   {
     "kind":"class",
     "name":"CParticleBox",
+    "parent":"CBoxActor",
     "size":2008
   },
   {
     "kind":"class",
     "name":"CPopcorn",
+    "parent":"CParticle",
     "rtti_file":"core/emitter.cpp",
     "size":64
   },
   {
     "kind":"class",
     "name":"CSimpleCross",
+    "parent":"CMelee",
     "size":2088
   },
   {
@@ -640,28 +670,23 @@
   },
   {
     "kind":"struct",
-    "name":"SExpandedEdge",
-    "size":1
-  },
-  {
-    "kind":"struct",
     "name":"SFire",
     "size":24
   },
   {
     "kind":"struct",
     "name":"SInputFace",
-    "size":1
+    "size":18
   },
   {
     "kind":"struct",
     "name":"SMRGLPoint",
-    "size":1
+    "size":16
   },
   {
     "kind":"struct",
     "name":"SMpegStereoSubbandSamples",
-    "size":1
+    "size":4608
   },
   {
     "kind":"struct",
@@ -670,8 +695,13 @@
   },
   {
     "kind":"struct",
+    "name":"SNotesMapAnnotation",
+    "size":212
+  },
+  {
+    "kind":"struct",
     "name":"SPose",
-    "size":1
+    "size":6812
   },
   {
     "kind":"struct",

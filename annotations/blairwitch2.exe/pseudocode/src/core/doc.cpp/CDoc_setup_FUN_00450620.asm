@@ -357,13 +357,13 @@ section .text
     PUSH 0x100                          ; 004509b1
     LEA ESI,[EBX + 0x154]               ; 004509b6
     PUSH ESI                            ; 004509bc
-    CALL unkaddr_005a7eb0.cpp_FUN_005a8030 ; 004509bd
-        ;   XREF to: 005a8030 (UNCONDITIONAL_CALL)  ; undefined unkaddr_005a7eb0.cpp_FUN_005a8030()
+    CALL unkaddr_005a7eb0.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030 ; 004509bd
+        ;   XREF to: 005a8030 (UNCONDITIONAL_CALL)  ; void unkaddr_005a7eb0.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(CSimpleParticleSystem * this_ptr, undefined4 param_2)
     ADD ESP,0x8                         ; 004509c2
     PUSH EBX                            ; 004509c5
     PUSH ESI                            ; 004509c6
-    CALL unkaddr_005a7eb0.cpp_FUN_005a8050 ; 004509c7
-        ;   XREF to: 005a8050 (UNCONDITIONAL_CALL)  ; undefined unkaddr_005a7eb0.cpp_FUN_005a8050()
+    CALL unkaddr_005a7eb0.cpp_CSimpleParticleSystem_attach_FUN_005a8050 ; 004509c7
+        ;   XREF to: 005a8050 (UNCONDITIONAL_CALL)  ; void unkaddr_005a7eb0.cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem * this_ptr, undefined4 param_2)
     MOV ESI,0x5cfe23                    ; 004509cc | = "LANTERN"
     LEA EAX,[EBX + 0x259b4]             ; 004509d1
     ADD ESP,0x8                         ; 004509d7

@@ -12,8 +12,8 @@
 ;   undefined4 DAT_026807e4
 ;
 ; Called Functions:
+;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_memory.c_realloc_FUN_005b8ce0
-;   crt_unknown.c_FUN_005b8580
 ;   crt_unknown.c_FUN_005b86a0
 ;
 ; *****************************************************************************
@@ -61,8 +61,8 @@ section .text
     JNZ 0x005c5b81                      ; 005c5b73
         ;   XREF to: 005c5b81 (CONDITIONAL_JUMP)  ; LAB_005c5b81
     PUSH 0x5                            ; 005c5b75
-    CALL crt_unknown.c_FUN_005b8580     ; 005c5b77
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 005c5b77
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     ADD ESP,0x4                         ; 005c5b7c
     JMP 0x005c5b92                      ; 005c5b7f
         ;   XREF to: 005c5b92 (UNCONDITIONAL_JUMP)  ; LAB_005c5b92

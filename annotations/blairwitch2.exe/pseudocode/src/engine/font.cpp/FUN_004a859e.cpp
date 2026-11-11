@@ -2,17 +2,17 @@
 // Address: 004a859e
 // Address Range: [[004a859e, 004a884b]]
 // Convention: unknown
-// Signature: void engine_font_cpp_FUN_004a859e(CBitFont *param_1,CBitFont *param_2)
+// Signature: void engine_font_cpp_FUN_004a859e(CBitFont *param_1,char *param_2)
 
 #include "nocturne.h"
 
-void engine_font_cpp_FUN_004a859e(CBitFont *param_1,CBitFont *param_2)
+void engine_font_cpp_FUN_004a859e(CBitFont *param_1,char *param_2)
 
 {
-  CBitFont CVar1;
+  char cVar1;
   int iVar2;
-  CBitFont *pCVar3;
-  CBitFont *pCVar4;
+  char *pcVar3;
+  char *pcVar4;
   char acStack_258 [256];
   byte auStack_158 [256];
   CInStreamFile CStack_58;
@@ -21,24 +21,25 @@ void engine_font_cpp_FUN_004a859e(CBitFont *param_1,CBitFont *param_2)
   int iStack_28;
   int iStack_24;
   int iStack_20;
-  uint uStack_1c;
-  uint uStack_18;
-  uint uStack_14;
+  int iStack_1c;
+  int iStack_18;
+  int iStack_14;
   
   unkclass_instream_cpp_CInStreamFile_ctor_FUN_0057cd50(&CStack_58);
-  pCVar3 = param_2;
-  pCVar4 = param_1 + 0x144;
+  pcVar3 = param_2;
+  pcVar4 = param_1->font_filename;
   do {
-    CVar1 = *pCVar3;
-    *pCVar4 = CVar1;
-    if (CVar1 == (CBitFont)0x0) break;
-    CVar1 = pCVar3[1];
-    pCVar3 = pCVar3 + 2;
-    pCVar4[1] = CVar1;
-    pCVar4 = pCVar4 + 2;
-  } while (CVar1 != (CBitFont)0x0);
-  strupr((char *)(param_1 + 0x144));
-  iVar2 = support_trstream_cpp_FUN_0057d390(&CStack_58,0x5d691b,param_2);
+    cVar1 = *pcVar3;
+    *pcVar4 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = pcVar3[1];
+    pcVar3 = pcVar3 + 2;
+    pcVar4[1] = cVar1;
+    pcVar4 = pcVar4 + 2;
+  } while (cVar1 != '\0');
+  strupr(param_1->font_filename);
+  iVar2 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390
+                    (&CStack_58,0x5d691b,param_2);
   if (iVar2 != 0) {
     unkaddr_0057b9a0_cpp_FUN_0057cc20(&CStack_58,auStack_158,0xff);
     unkaddr_0057b9a0_cpp_FUN_0057ba20(&CStack_58,0x5d691f,acStack_258);
@@ -49,10 +50,10 @@ void engine_font_cpp_FUN_004a859e(CBitFont *param_1,CBitFont *param_2)
     unkaddr_0057b9a0_cpp_FUN_0057cc20(&CStack_58,auStack_158,0xff);
     unkaddr_0057b9a0_cpp_FUN_0057ba20(&CStack_58,0x5d6931,&iStack_20);
     unkaddr_0057b9a0_cpp_FUN_0057cc20(&CStack_58,auStack_158,0xff);
-    unkaddr_0057b9a0_cpp_FUN_0057ba20(&CStack_58,0x5d6935,&uStack_1c);
+    unkaddr_0057b9a0_cpp_FUN_0057ba20(&CStack_58,0x5d6935,&iStack_1c);
     unkaddr_0057b9a0_cpp_FUN_0057cc20(&CStack_58,auStack_158,0xff);
-    unkaddr_0057b9a0_cpp_FUN_0057ba20(&CStack_58,0x5d6939,&uStack_18,&uStack_14);
-    unkaddr_0057b9a0_cpp_FUN_0057d180(&CStack_58);
+    unkaddr_0057b9a0_cpp_FUN_0057ba20(&CStack_58,0x5d6939,&iStack_18,&iStack_14);
+    unkaddr_0057b9a0_cpp_CInStreamFile_close_FUN_0057d180(&CStack_58);
     if ((iStack_28 == 0x20) && (iStack_24 == 0xff)) {
       engine_font_cpp_CBitFont_openFontFile_FUN_004a7cd0
                 (param_1,acStack_258,iStack_30,iStack_2c,iStack_20);
@@ -61,9 +62,9 @@ void engine_font_cpp_FUN_004a859e(CBitFont *param_1,CBitFont *param_2)
       engine_font_cpp_CBitFont_loadNewBitmap_FUN_004a8560
                 (param_1,acStack_258,iStack_30,iStack_2c,iStack_28,iStack_24,iStack_20);
     }
-    *(uint *)(param_1 + 0x3668) = uStack_1c;
-    *(uint *)(param_1 + 0x41fc) = uStack_18;
-    *(uint *)(param_1 + 0x4200) = uStack_14;
+    param_1->char_widths[0x20] = iStack_1c;
+    param_1->shadow_offset_x = iStack_18;
+    param_1->shadow_offset_y = iStack_14;
   }
   unkclass_instream_cpp_CInStreamFile_dtor_FUN_0057cec0(&CStack_58,0);
   return;

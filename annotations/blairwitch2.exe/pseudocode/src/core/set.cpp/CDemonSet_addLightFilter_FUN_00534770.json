@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 70,
+    "complexity_score": 45,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 30,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field"
+      "undefined_data"
     ],
     "total_lines": 96
   },
@@ -189,22 +188,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x0",
-      "severity": "mild",
-      "text": "pCVar1 = (C3DSLight *)(&this_ptr->lights[0].field_0x0 + iVar4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "iVar2 = _stricmp(&pCVar1->field_0x4,light_name);",
-      "type": "unnamed_field"
-    },
     {
       "description": "Undefined global data reference",
       "line": 21,

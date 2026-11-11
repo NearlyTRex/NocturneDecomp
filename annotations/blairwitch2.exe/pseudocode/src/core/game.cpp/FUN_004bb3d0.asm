@@ -19,7 +19,7 @@
 ;   CFieldNotes* g_CFieldNotesPtr = 01caf56c
 ;   undefined4 DAT_01c2a38c
 ;   undefined4 DAT_01c2a390
-;   undefined4 g_CFieldNotesInstance.field64_0x40
+;   undefined4 g_CFieldNotesInstance.is_displayed
 ;   undefined4 DAT_01cb80e0
 ;   undefined4 DAT_01cb810c
 ;   undefined4 DAT_01cb8110
@@ -53,7 +53,7 @@ section .text
     JZ 0x004bb40f                       ; 004bb401
         ;   XREF to: 004bb40f (CONDITIONAL_JUMP)  ; LAB_004bb40f
     MOV EAX,[0x00616044]                ; 004bb403 | g_CFieldNotesPtr
-    MOV EBX,dword ptr [EAX + 0x40]      ; 004bb408 | g_CFieldNotesInstance.field64_0x40
+    MOV EBX,dword ptr [EAX + 0x40]      ; 004bb408 | g_CFieldNotesInstance.is_displayed
     TEST EBX,EBX                        ; 004bb40b
     JZ 0x004bb43e                       ; 004bb40d
         ;   XREF to: 004bb43e (CONDITIONAL_JUMP)  ; LAB_004bb43e

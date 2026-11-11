@@ -2,21 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 582,
-    "complexity_score": 324,
+    "complexity_score": 333,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 189,
-    "suspect_count": 11,
+    "pseudocode_lines": 188,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
+      "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 771
+    "total_lines": 770
   },
   "cross_references": [
     {
@@ -55,6 +55,11 @@
       "name": "core_main.c_FUN_004e4500"
     },
     {
+      "addr": "005b8df8",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_array_FUN_005b8df8"
+    },
+    {
       "addr": "005b8180",
       "is_variadic": false,
       "name": "crt_stdio.c_fgetc_FUN_005b8180"
@@ -63,11 +68,6 @@
       "addr": "005b8100",
       "is_variadic": false,
       "name": "crt_stdio.c_fscanf_FUN_005b8100"
-    },
-    {
-      "addr": "005b8df8",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8df8"
     }
   ],
   "globals": [
@@ -395,7 +395,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 34,
       "match": "DAT_005cf66d",
       "severity": "mild",
       "text": "_fscanf(file,&DAT_005cf66d,&local_44);",
@@ -403,7 +403,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 57,
       "match": "DAT_005cf709",
       "severity": "mild",
       "text": "_fscanf(file,&DAT_005cf709,&local_48);",
@@ -411,7 +411,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 67,
       "match": "DAT_005cf70d",
       "severity": "mild",
       "text": "_fscanf(file,&DAT_005cf70d,&this_ptr->transparent_pixel_flag);",
@@ -419,7 +419,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 78,
       "match": "DAT_005cf711",
       "severity": "mild",
       "text": "_fscanf(file,&DAT_005cf711,&this_ptr->disable_backface_culling);",
@@ -427,7 +427,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 87,
       "match": "DAT_005cf715",
       "severity": "mild",
       "text": "_fscanf(file,&DAT_005cf715,&local_2c);",
@@ -435,7 +435,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 127,
+      "line": 126,
       "match": "DAT_005cf734",
       "severity": "mild",
       "text": "_fscanf(file,&DAT_005cf734);",
@@ -443,35 +443,43 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 149,
+      "line": 148,
       "match": "DAT_005cf76a",
       "severity": "mild",
       "text": "_fscanf(file,&DAT_005cf76a,local_28);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 162,
-      "match": "field_0x12c",
-      "severity": "mild",
-      "text": "puVar5 = &this_ptr->field_0x12c;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Pointer value `&this_ptr->vertex_list->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 98,
+      "line": 96,
       "match": "(int)&this_ptr->vertex_list->x",
       "severity": "moderate",
-      "text": "iVar2 = (int)&this_ptr->vertex_list->x + iVar1;",
+      "text": "iVar6 = (int)&this_ptr->vertex_list->x + iVar1;",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 98,
+      "line": 96,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "iVar2 = (int)&this_ptr->vertex_list->x + iVar1;",
+      "text": "iVar6 = (int)&this_ptr->vertex_list->x + iVar1;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 110,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "local_14 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `piVar5` was initialized to the address of an array element's subfield (`piVar5 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*piVar5)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `piVar5->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 179,
+      "match": "piVar5 = piVar5 + N",
+      "severity": "moderate",
+      "text": "piVar5 = piVar5 + 2;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

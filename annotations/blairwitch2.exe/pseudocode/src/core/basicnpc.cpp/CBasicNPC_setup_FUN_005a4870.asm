@@ -15,7 +15,7 @@
 ;   core_union.cpp_CUnion_setup_FUN_005a4c00 at 005a4c07
 ;
 ; Called Functions:
-;   unkafter_basicene.cpp_FUN_0059e6a0
+;   core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005a4870
         ;   Label: core_basicnpc.cpp_CBasicNPC_setup_FUN_005a4870
     PUSH EDX                            ; 005a4874
-    CALL unkafter_basicene.cpp_FUN_0059e6a0 ; 005a4875
-        ;   XREF to: 0059e6a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059e6a0()
+    CALL core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0 ; 005a4875
+        ;   XREF to: 0059e6a0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0(CBasicEnemy * this_ptr)
     ADD ESP,0x4                         ; 005a487a
     RET                                 ; 005a487d
 

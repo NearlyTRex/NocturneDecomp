@@ -11,7 +11,7 @@ void core_lightgun_cpp_factoryFuncLightGun_FUN_004e29f0(void)
 {
   CLightGun *this_ptr;
   
-  this_ptr = (CLightGun *)debugAllocTracked1(0x6f4);
+  this_ptr = (CLightGun *)operator_new(0x6f4);
   if (this_ptr == (CLightGun *)0x0) {
     return;
   }

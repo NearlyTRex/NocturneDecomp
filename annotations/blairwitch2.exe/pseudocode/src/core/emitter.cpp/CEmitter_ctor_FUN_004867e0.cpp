@@ -17,9 +17,9 @@ CEmitter * core_emitter_cpp_CEmitter_ctor_FUN_004867e0(CEmitter *this_ptr)
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408790((CDemonActor *)this_ptr);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
-                          ((CKeyFramedModelInstance *)&pCVar2[1].field_0xf0);
+                          ((CKeyFramedModelInstance *)&pCVar2[1].platform_orientation_delta.y);
   *(CDemonActor_vtable **)(this_ptr_00[-1].model_name + 0x10) = &g_CEmitterVTable;
   this_ptr_00[-0xffffffff00000001].model_name[0x18] = '\0';
   this_ptr_00[-0xffffffff00000001].model_name[0x19] = '\0';

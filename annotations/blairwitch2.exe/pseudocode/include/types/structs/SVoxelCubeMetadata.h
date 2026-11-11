@@ -2,14 +2,24 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonPart;
+struct CDemonTriangle;
+
 // Dependencies
 #include "system/basetypes.h"
 
 // Structure: SVoxelCubeMetadata
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// CDemonRaytrace cube_list: freeCubeList (bw1 0048a9b0; bw2/bw3 same) walks stride 0x58, zeroes +0, +4, +0x54, deletes CDemonPart at +0xc; bw1 consolidate 0048aaee sums [+0] (tri count), copies count*0x38 bytes from [+4] and count bytes from [+0x54]; alloc 0048a960 uses element size 0x58
+// Ghidra size: 0x58 (88 bytes)
 #pragma pack(push, 1)
 typedef struct SVoxelCubeMetadata {
+    int triangle_count; // 0x0
+    struct CDemonTriangle* triangle_list; // 0x4
+    char field_8[4]; // 0x8
+    struct CDemonPart* part_ptr; // 0xc
+    char field_16[68]; // 0x10
+    uchar* triangle_flags; // 0x54
 } SVoxelCubeMetadata;
 #pragma pack(pop)
 

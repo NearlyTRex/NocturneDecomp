@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 521,
+    "complexity_score": 522,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 56,
+    "pseudocode_lines": 57,
     "suspect_count": 45,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 226
+    "total_lines": 227
   },
   "cross_references": [
     {
@@ -56,7 +56,7 @@
     {
       "addr": "005b8df8",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8df8"
+      "name": "crt_memory.c_operator_new_array_FUN_005b8df8"
     }
   ],
   "globals": [
@@ -368,18 +368,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = FUN_005b8df8(*(int *)(param_1 + 0x100) * *(int *)(param_1 + 0x104) * 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar1 = FUN_005b8df8(*(int *)(param_1 + 0x100) * *(int *)(param_1 + 0x104) * 0xc);",
+      "text": "(*(int *)(param_1 + 0x100) * *(int *)(param_1 + 0x104) * 0xc);",
       "type": "unnamed_param"
     },
     {
@@ -387,7 +379,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x10c) = uVar1;",
+      "text": "(*(int *)(param_1 + 0x100) * *(int *)(param_1 + 0x104) * 0xc);",
       "type": "unnamed_param"
     },
     {
@@ -395,7 +387,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = FUN_005b8df8(*(int *)(param_1 + 0x110) * 0x48);",
+      "text": "*(uint *)(param_1 + 0x10c) = uVar1;",
       "type": "unnamed_param"
     },
     {
@@ -403,7 +395,7 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x114) = uVar1;",
+      "text": "uVar1 = operator_new_array(*(int *)(param_1 + 0x110) * 0x48);",
       "type": "unnamed_param"
     },
     {
@@ -411,7 +403,7 @@
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = FUN_005b8df8(*(int *)(param_1 + 0x110) << 2);",
+      "text": "*(uint *)(param_1 + 0x114) = uVar1;",
       "type": "unnamed_param"
     },
     {
@@ -419,7 +411,7 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x118) = uVar1;",
+      "text": "uVar1 = operator_new_array(*(int *)(param_1 + 0x110) << 2);",
       "type": "unnamed_param"
     },
     {
@@ -427,7 +419,7 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = FUN_005b8df8(*(int *)(param_1 + 0x100) * 0x18);",
+      "text": "*(uint *)(param_1 + 0x118) = uVar1;",
       "type": "unnamed_param"
     },
     {
@@ -435,7 +427,7 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x350) = uVar1;",
+      "text": "uVar1 = operator_new_array(*(int *)(param_1 + 0x100) * 0x18);",
       "type": "unnamed_param"
     },
     {
@@ -443,20 +435,20 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x350) = uVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
       "text": "if ((((*(int *)(param_1 + 0x10c) == 0) ||",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((0 < *(int *)(param_1 + 0x110) && (*(int *)(param_1 + 0x114) == 0)))) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "((0 < *(int *)(param_1 + 0x110) && (*(int *)(param_1 + 0x114) == 0)))) ||",
@@ -467,12 +459,12 @@
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "((0 < *(int *)(param_1 + 0x110) && (*(int *)(param_1 + 0x118) == 0)))) ||",
+      "text": "((0 < *(int *)(param_1 + 0x110) && (*(int *)(param_1 + 0x114) == 0)))) ||",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "((0 < *(int *)(param_1 + 0x110) && (*(int *)(param_1 + 0x118) == 0)))) ||",
@@ -483,7 +475,7 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(int *)(param_1 + 0x350) == 0)) {",
+      "text": "((0 < *(int *)(param_1 + 0x110) && (*(int *)(param_1 + 0x118) == 0)))) ||",
       "type": "unnamed_param"
     },
     {
@@ -491,12 +483,20 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
+      "text": "(*(int *)(param_1 + 0x350) == 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
       "text": "core_dmodel_cpp_FUN_0044e590(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "(\"Out of memory in CKeyFramedModel::allocate.  frameCount=%d, vertexCount=%d, polyCount=%d\",*(uint *)(param_1 + 0x100),",
@@ -504,15 +504,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x104),*(uint *)(param_1 + 0x110));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x104),*(uint *)(param_1 + 0x110));",
@@ -523,12 +515,20 @@
       "line": 44,
       "match": "param_1",
       "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x104),*(uint *)(param_1 + 0x110));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x100) != 1) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "else if (*(int *)(param_1 + 0x100) != 1) {",
@@ -536,15 +536,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = FUN_005b8df8(*(int *)(param_1 + 0x104) * 0xc);",
+      "text": "iVar2 = operator_new_array(*(int *)(param_1 + 0x104) * 0xc);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x108) = iVar2;",
@@ -552,7 +552,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
       "text": "core_main_c_FUN_004e4500(\"Out of memory for vertex normals in CKeyFramedModel::allocate.  vertexCount=%d\",*(uint *)(param_1 + 0x104));",

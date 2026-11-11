@@ -17,8 +17,8 @@
 ;   TerminatedCString s_limb_wav_005cb923
 ;   undefined4 DAT_005cb92e
 ;   CGame* g_CGamePtr = 01cb6900
-;   undefined4 g_CGameInstance.field11_0x14
-;   undefined4 g_CGameInstance.field460_0x1fc
+;   undefined4 g_CGameInstance.blood_flag
+;   undefined4 g_CGameInstance.gratuitous_dismemberment
 ;
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040d060
@@ -88,13 +88,13 @@ section .text
     MOV dword ptr [ESP + 0x8],0x3ca3d70a ; 00412578
     MOV EAX,[0x00616494]                ; 00412580 | g_CGamePtr
         ;   Label: LAB_00412580
-    CMP dword ptr [EAX + 0x1fc],0x0     ; 00412585 | g_CGameInstance.field460_0x1fc
+    CMP dword ptr [EAX + 0x1fc],0x0     ; 00412585 | g_CGameInstance.gratuitous_dismemberment
     JZ 0x00412596                       ; 0041258c
         ;   XREF to: 00412596 (CONDITIONAL_JUMP)  ; LAB_00412596
     MOV dword ptr [ESP + 0x8],0x3f800000 ; 0041258e
     MOV EAX,[0x00616494]                ; 00412596 | g_CGamePtr
         ;   Label: LAB_00412596
-    MOV EDX,dword ptr [EAX + 0x14]      ; 0041259b | g_CGameInstance.field11_0x14
+    MOV EDX,dword ptr [EAX + 0x14]      ; 0041259b | g_CGameInstance.blood_flag
     TEST EDX,EDX                        ; 0041259e
     JNZ 0x004125a6                      ; 004125a0
         ;   XREF to: 004125a6 (CONDITIONAL_JUMP)  ; LAB_004125a6

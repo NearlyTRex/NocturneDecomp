@@ -83,7 +83,7 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_0041d020(CLightActor *thi
   }
   this_ptr_01 = &this_ptr->globe;
   core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00448810
-            (this_ptr_01,(CVector3f *)&(this_ptr->base).base.field_0x20);
+            (this_ptr_01,&(this_ptr->base).base.location.position);
   uVar3 = rand();
   (this_ptr->globe).intensity_multiplier = uVar3 & 0x7fff;
   (this_ptr->globe).intensity.bytes[0] = (uchar)((int)(uVar3 & 0x7fff) >> 10);

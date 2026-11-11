@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 434,
+    "complexity_score": 435,
     "cross_reference_count": 7,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
+    "pseudocode_lines": 60,
     "suspect_count": 36,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_param",
-      "unresolved_funcptr"
+      "shadow_pointer_walk",
+      "unnamed_param"
     ],
-    "total_lines": 222
+    "total_lines": 223
   },
   "cross_references": [
     {
@@ -70,7 +70,7 @@
     ],
     "convention": "unknown",
     "name": "core_inv.cpp_FUN_004db9d0",
-    "signature": "void core_inv_cpp_FUN_004db9d0(CInventory *param_1,int param_2,undefined4 param_3,int param_4)"
+    "signature": "void core_inv_cpp_FUN_004db9d0(CInventory *param_1,CWeapon *param_2,undefined4 param_3,int param_4)"
   },
   "function_calls": [
     {
@@ -302,7 +302,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_inv_cpp_FUN_004db9d0(CInventory *param_1,int param_2,uint param_3,int param_4)",
+      "text": "void core_inv_cpp_FUN_004db9d0(CInventory *param_1,CWeapon *param_2,uint param_3,int param_4)",
       "type": "unnamed_param"
     },
     {
@@ -310,7 +310,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_inv_cpp_FUN_004db9d0(CInventory *param_1,int param_2,uint param_3,int param_4)",
+      "text": "void core_inv_cpp_FUN_004db9d0(CInventory *param_1,CWeapon *param_2,uint param_3,int param_4)",
       "type": "unnamed_param"
     },
     {
@@ -318,7 +318,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_inv_cpp_FUN_004db9d0(CInventory *param_1,int param_2,uint param_3,int param_4)",
+      "text": "void core_inv_cpp_FUN_004db9d0(CInventory *param_1,CWeapon *param_2,uint param_3,int param_4)",
       "type": "unnamed_param"
     },
     {
@@ -326,15 +326,7 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "void core_inv_cpp_FUN_004db9d0(CInventory *param_1,int param_2,uint param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x10) < 1) {",
+      "text": "void core_inv_cpp_FUN_004db9d0(CInventory *param_1,CWeapon *param_2,uint param_3,int param_4)",
       "type": "unnamed_param"
     },
     {
@@ -342,23 +334,23 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + *(int *)(param_1 + 0x468) * 4 + 0x610) = 0;",
+      "text": "if (param_1->item_count < 1) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + *(int *)(param_1 + 0x468) * 4 + 0x610) = 0;",
+      "text": "param_1->selected_weapons[param_1->current_group] = (CWeapon *)0x0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd270(param_1,1);",
+      "text": "param_1->selected_weapons[param_1->current_group] = (CWeapon *)0x0;",
       "type": "unnamed_param"
     },
     {
@@ -366,7 +358,7 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x10)) {",
+      "text": "core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd270(param_1,1);",
       "type": "unnamed_param"
     },
     {
@@ -374,23 +366,31 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
+      "text": "if (0 < param_1->item_count) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
       "text": "pCVar5 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + *(int *)(param_1 + 0x468) * 4 + 0x610) == *(int *)(pCVar5 + 0x14))",
+      "text": "if (param_1->selected_weapons[param_1->current_group] == (CWeapon *)pCVar5->items[0]) break;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + *(int *)(param_1 + 0x468) * 4 + 0x610) == *(int *)(pCVar5 + 0x14))",
+      "text": "if (param_1->selected_weapons[param_1->current_group] == (CWeapon *)pCVar5->items[0]) break;",
       "type": "unnamed_param"
     },
     {
@@ -398,7 +398,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar3 < *(int *)(param_1 + 0x10));",
+      "text": "} while (iVar3 < param_1->item_count);",
       "type": "unnamed_param"
     },
     {
@@ -406,7 +406,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + *(int *)(param_1 + 0x468) * 4 + 0x610) != 0) &&",
+      "text": "if ((param_1->selected_weapons[param_1->current_group] != (CWeapon *)0x0) &&",
       "type": "unnamed_param"
     },
     {
@@ -414,7 +414,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + *(int *)(param_1 + 0x468) * 4 + 0x610) != 0) &&",
+      "text": "if ((param_1->selected_weapons[param_1->current_group] != (CWeapon *)0x0) &&",
       "type": "unnamed_param"
     },
     {
@@ -422,7 +422,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(int *)(param_1 + iVar3 * 4 + 0x46c) != *(int *)(param_1 + 0x468))) {",
+      "text": "(param_1->item_groups[iVar3] != param_1->current_group)) {",
       "type": "unnamed_param"
     },
     {
@@ -430,7 +430,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(int *)(param_1 + iVar3 * 4 + 0x46c) != *(int *)(param_1 + 0x468))) {",
+      "text": "(param_1->item_groups[iVar3] != param_1->current_group)) {",
       "type": "unnamed_param"
     },
     {
@@ -438,7 +438,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + *(int *)(param_1 + 0x468) * 4 + 0x610) = 0;",
+      "text": "param_1->selected_weapons[param_1->current_group] = (CWeapon *)0x0;",
       "type": "unnamed_param"
     },
     {
@@ -446,7 +446,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + *(int *)(param_1 + 0x468) * 4 + 0x610) = 0;",
+      "text": "param_1->selected_weapons[param_1->current_group] = (CWeapon *)0x0;",
       "type": "unnamed_param"
     },
     {
@@ -462,7 +462,7 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (iVar3 < *(int *)(param_1 + 0x10)) {",
+      "text": "if (iVar3 < param_1->item_count) {",
       "type": "unnamed_param"
     },
     {
@@ -470,15 +470,7 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1 + 0x10) + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(uint *)(param_1 + iVar3 * 4 + 0x14),g_CWeaponClassInfo.name_hash);",
+      "text": "iVar3 = param_1->item_count + -1;",
       "type": "unnamed_param"
     },
     {
@@ -486,15 +478,7 @@
       "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((((*(int *)(param_1 + 0x468) == *(int *)(param_1 + iVar3 * 4 + 0x46c)) && (iVar1 != 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((*(int *)(param_1 + 0x468) == *(int *)(param_1 + iVar3 * 4 + 0x46c)) && (iVar1 != 0)) &&",
+      "text": "(param_1->items[iVar3],g_CWeaponClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
@@ -502,71 +486,63 @@
       "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar2 = core_inv_cpp_FUN_004dd0a0(param_1,iVar1,param_3), iVar2 != 0)) &&",
+      "text": "if ((((param_1->current_group == param_1->item_groups[iVar3]) && (pCVar1 != (CWeapon *)0x0))",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((((param_1->current_group == param_1->item_groups[iVar3]) && (pCVar1 != (CWeapon *)0x0))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "&& (iVar2 = core_inv_cpp_FUN_004dd0a0(param_1,pCVar1,param_3), iVar2 != 0)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
       "match": "param_3",
       "severity": "mild",
-      "text": "(iVar2 = core_inv_cpp_FUN_004dd0a0(param_1,iVar1,param_3), iVar2 != 0)) &&",
+      "text": "&& (iVar2 = core_inv_cpp_FUN_004dd0a0(param_1,pCVar1,param_3), iVar2 != 0)) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 46,
       "match": "param_2",
       "severity": "mild",
-      "text": "((param_2 == 0 || (iVar1 == param_2)))) break;",
+      "text": "((param_2 == (CWeapon *)0x0 || (pCVar1 == param_2)))) break;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 46,
       "match": "param_2",
       "severity": "mild",
-      "text": "((param_2 == 0 || (iVar1 == param_2)))) break;",
+      "text": "((param_2 == (CWeapon *)0x0 || (pCVar1 == param_2)))) break;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1 + *(int *)(param_1 + 0x468) * 4 + 0x610);",
+      "text": "this_ptr = param_1->selected_weapons[param_1->current_group];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1 + *(int *)(param_1 + 0x468) * 4 + 0x610);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 54,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar3 + 0x2b0) + 0x14))(iVar3,0x3dcccccd);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + *(int *)(param_1 + 0x468) * 4 + 0x610) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + *(int *)(param_1 + 0x468) * 4 + 0x610) = iVar1;",
+      "text": "this_ptr = param_1->selected_weapons[param_1->current_group];",
       "type": "unnamed_param"
     },
     {
@@ -574,8 +550,32 @@
       "line": 57,
       "match": "param_1",
       "severity": "mild",
+      "text": "param_1->selected_weapons[param_1->current_group] = pCVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->selected_weapons[param_1->current_group] = pCVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 58,
+      "match": "param_1",
+      "severity": "mild",
       "text": "core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd020(param_1,999);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar5->owner`). Replace `pCVar5->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 23,
+      "match": "pCVar5 = (T *)&pCVar5->FIELD",
+      "severity": "moderate",
+      "text": "pCVar5 = (CInventory *)&pCVar5->owner;",
+      "type": "shadow_pointer_walk"
     },
     {
       "call_site_count": 15,

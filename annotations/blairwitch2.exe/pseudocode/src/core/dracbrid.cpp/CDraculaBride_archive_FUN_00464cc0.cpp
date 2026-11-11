@@ -37,7 +37,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_00464cc0(CDraculaBride 
       motion_name = "incoffin";
     }
     core_motion_cpp_CMotionController_jumpToMotionByName_FUN_00503950
-              ((CMotionController *)&(this_ptr->base).base.model,motion_name,0.0);
+              (&(this_ptr->base).base.model.base,motion_name,0.0);
   }
   if (3 < g_CDraculaBrideClassVersion) {
     core_actor_cpp_archiveMotionState_FUN_0040bb60

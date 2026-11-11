@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCourse.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
@@ -18,7 +19,7 @@ typedef struct CFrankenstienMachine {
     char course_filename[32]; // 0x2bc
     float part_frame; // 0x2dc
     CKeyFramedModelInstance bed_model; // 0x2e0
-    char field_1116[12]; // 0x45c
+    CCourse course; // 0x45c
     CKeyFramedModelInstance body_model; // 0x468
     int anchor_vertex_index; // 0x5e4
     float particle_accumulator; // 0x5e8

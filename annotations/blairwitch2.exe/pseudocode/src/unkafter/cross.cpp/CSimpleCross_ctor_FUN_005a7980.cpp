@@ -16,7 +16,7 @@ CSimpleCross * unkafter_cross_cpp_CSimpleCross_ctor_FUN_005a7980(CSimpleCross *t
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = core_melee_cpp_CMelee_ctor_FUN_004ea8b0((CMelee *)this_ptr);
+  pCVar2 = core_melee_cpp_CMelee_ctor_FUN_004ea8b0(&this_ptr->base);
   (pCVar2->base).base.vtable._ub = &g_CSimpleCrossVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
             (&(pCVar2->base).model,(char *)0x5f07ad);

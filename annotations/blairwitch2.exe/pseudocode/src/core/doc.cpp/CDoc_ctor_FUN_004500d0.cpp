@@ -11,9 +11,9 @@
 CDoc * core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr)
 
 {
-  byte *this_ptr_00;
+  int *this_ptr_00;
   CDeformableModelInstance *this_ptr_01;
-  byte *puVar1;
+  int *piVar1;
   uint uVar2;
   uint uVar3;
   char cVar4;
@@ -27,7 +27,7 @@ CDoc * core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr)
   
   iVar6 = core_hero_cpp_FUN_004ce240(this_ptr);
   pCVar7 = core_boxactor_cpp_CBoxActor_ctor_FUN_0041bd30((CBoxActor *)(iVar6 + 0x259b4));
-  this_ptr_00 = &pCVar7[-0x4d].base.field_0x110;
+  this_ptr_00 = &pCVar7[-0x4d].base.scale.z;
   *(CHero_full_vtable **)(pCVar7[-0x4d].model.model_name + 0x94) = &g_CDocVTable;
   pCVar7[-1].physics_box.scrape_points[0].raytrace_normal.x = 0.0;
   pCVar7[-1].rpm.y = 0.0;
@@ -94,7 +94,7 @@ CDoc * core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr)
   pCVar7[-1].physics_box.linear_velocity.z = -1e+30;
   pCVar7[-1].pickup_type = EVar5;
   pCVar7[-1].physics_box.rotation_matrix.m[2].x = -1e+30;
-  *(uint *)&pCVar7[-1].field_0x7d0 = 0;
+  pCVar7[-1].cam_orientation.heading = 0.0;
   this_ptr_01 = (CDeformableModelInstance *)(pCVar7[-0x4d].model.model_name + 0x98);
   uVar2 = *(uint *)(pCVar7[-1].push_sound + 0x14);
   uVar3 = *(uint *)(pCVar7[-1].push_sound + 0xc);
@@ -178,7 +178,7 @@ CDoc * core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr)
   pCVar7[-1].physics_box.scrape_points[0].raytrace_intersection = 0.0;
   pCVar7[-1].physics_box.angular_momentum.x = 0.0;
   pCVar7[-1].physics_box.scrape_points[0].local_position.z = 0.0;
-  *(uint *)&pCVar7[-1].field_0x7d0 = 0;
+  pCVar7[-1].cam_orientation.heading = 0.0;
   pfVar8 = &pCVar7[-0x49].physics_box.scrape_points[5].raytrace_normal.y;
   pfVar9 = &pCVar7[-1].physics_box.scrape_points[0].raytrace_normal.y;
   do {
@@ -201,26 +201,26 @@ CDoc * core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr)
     *(char *)((int)&pCVar10->x + 1) = cVar4;
     pCVar10 = (CVector3f *)((int)&pCVar10->x + 2);
   } while (cVar4 != '\0');
-  *(uint *)&pCVar7[-0x4d].base.field_0x20c = 1;
-  *(uint *)&pCVar7[-0x2b].base.field_0x110 = 0;
-  puVar1 = &pCVar7[-0x2b].base.field_0xf4;
-  if (puVar1 != &stack0x00000110) {
-    *(uint *)puVar1 = 0xbde76c8b;
-    *(uint *)&pCVar7[-0x2b].base.field_0xf8 = 0x3ec3126f;
-    *(uint *)&pCVar7[-0x2b].base.field_0xfc = 0x3e79db23;
+  pCVar7[-0x4d].base.particle_systems[2].fade_timer = 1.4013e-45;
+  pCVar7[-0x2b].base.scale.z = 0;
+  pfVar8 = &pCVar7[-0x2b].base.platform_orientation_delta.z;
+  if (pfVar8 != (float *)&stack0x00000110) {
+    *pfVar8 = -0.113;
+    pCVar7[-0x2b].base.is_renderable = 0x3ec3126f;
+    pCVar7[-0x2b].base.is_transparent = 0x3e79db23;
   }
-  puVar1 = &pCVar7[-0x2b].base.field_0x100;
-  if (puVar1 != &stack0x00000128) {
-    *(uint *)puVar1 = 0x3de76c8b;
-    *(uint *)&pCVar7[-0x2b].base.field_0x104 = 0x3ec3126f;
-    *(uint *)&pCVar7[-0x2b].base.field_0x108 = 0x3e79db23;
+  piVar1 = &pCVar7[-0x2b].base.collision_disabled;
+  if (piVar1 != (int *)&stack0x00000128) {
+    *piVar1 = 0x3de76c8b;
+    pCVar7[-0x2b].base.process_disabled = 0x3ec3126f;
+    pCVar7[-0x2b].base.scale.x = 0x3e79db23;
   }
-  puVar1 = &pCVar7[-0x2b].base.field_0x124;
-  if (puVar1 == &stack0x0000011c) {
+  piVar1 = &pCVar7[-0x2b].base.dead1;
+  if (piVar1 == (int *)&stack0x0000011c) {
     return (CDoc *)this_ptr_00;
   }
-  *(uint *)puVar1 = 0x3f000000;
-  *(uint *)&pCVar7[-0x2b].base.field_0x128 = 0;
-  *(uint *)&pCVar7[-0x2b].base.field_0x12c = 0;
+  *piVar1 = 0x3f000000;
+  pCVar7[-0x2b].base.dead2 = 0;
+  pCVar7[-0x2b].base.previous_transform_state.position.x = 0.0;
   return (CDoc *)this_ptr_00;
 }

@@ -2,12 +2,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 177,
+    "complexity_score": 179,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 87,
+    "pseudocode_lines": 89,
     "suspect_count": 7,
     "suspect_types": [
       "unrolled_memcpy",
@@ -15,7 +15,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 253
+    "total_lines": 255
   },
   "cross_references": [
     {
@@ -51,17 +51,17 @@
     {
       "addr": "0057d390",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_0057d390"
-    },
-    {
-      "addr": "0057cfe0",
-      "is_variadic": false,
-      "name": "unkaddr_0057b9a0.cpp_FUN_0057cfe0"
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390"
     },
     {
       "addr": "0057d180",
       "is_variadic": false,
-      "name": "unkaddr_0057b9a0.cpp_FUN_0057d180"
+      "name": "unkaddr_0057b9a0.cpp_CInStreamFile_close_FUN_0057d180"
+    },
+    {
+      "addr": "0057cfe0",
+      "is_variadic": false,
+      "name": "unkaddr_0057b9a0.cpp_CInStreamFile_read_FUN_0057cfe0"
     },
     {
       "addr": "0057cd50",
@@ -221,7 +221,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 68,
+      "line": 69,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc0; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -229,7 +229,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 73,
+      "line": 74,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {",

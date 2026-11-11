@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 86,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 26,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field"
+      "undefined_data"
     ],
     "total_lines": 99
   },
@@ -90,7 +89,7 @@
     },
     {
       "addr": "01cb6b5c",
-      "name": "g_CGameInstance.field508_0x25c",
+      "name": "g_CGameInstance.goggles_active",
       "type": "undefined4",
       "value": null
     }
@@ -159,44 +158,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x24340",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x24340 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x2814",
-      "severity": "mild",
-      "text": "if (*(int *)&(this_ptr->base).field_0x2814 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 12,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x2814",
-      "severity": "mild",
-      "text": "if ((*(int *)&(this_ptr->base).field_0x2814 != 0) && (*(int *)&g_CGamePtr->field_0x25c != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x25c",
-      "severity": "mild",
-      "text": "if ((*(int *)&(this_ptr->base).field_0x2814 != 0) && (*(int *)&g_CGamePtr->field_0x25c != 0)) {",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

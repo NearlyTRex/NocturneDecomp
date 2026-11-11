@@ -21,6 +21,6 @@ CConsole * __cdecl engine_console_cpp_CConsole_ctor_FUN_00436680(CConsole *this_
   }
   engine_console_cpp_CConsole_reset_FUN_004368b0(this_ptr);
   this_ptr->file_logging_enabled = 0;
-  *(uint *)&this_ptr->field_0x4 = 0;
+  this_ptr->field_0x4 = 0;
   return this_ptr;
 }

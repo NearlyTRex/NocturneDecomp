@@ -32,9 +32,9 @@ int __cdecl core_turret_cpp_CTurret_aimAtTarget_FUN_0057f700(CTurret *this_ptr,C
   float local_14;
   
   bVar2 = 0;
-  local_50 = target_pos->x - *(float *)&(this_ptr->base).base.field_0x20;
-  fStack_4c = target_pos->y - *(float *)&(this_ptr->base).base.field_0x24;
-  fStack_48 = target_pos->z - *(float *)&(this_ptr->base).base.field_0x28;
+  local_50 = target_pos->x - (this_ptr->base).base.location.position.x;
+  fStack_4c = target_pos->y - (this_ptr->base).base.location.position.y;
+  fStack_48 = target_pos->z - (this_ptr->base).base.location.position.z;
   local_44 = local_50;
   local_40 = fStack_4c;
   local_3c = fStack_48;

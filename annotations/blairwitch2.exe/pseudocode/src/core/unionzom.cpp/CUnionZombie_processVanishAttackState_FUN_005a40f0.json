@@ -2,16 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 188,
+    "complexity_score": 78,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 48,
-    "suspect_count": 13,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
     "total_lines": 163
   },
@@ -164,108 +164,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x11858",
-      "severity": "mild",
-      "text": "uVar1 = *(uint *)&this_ptr->field_0x11858;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "this_ptr_00 = &this_ptr->field_0x2b4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x113c4",
-      "severity": "mild",
-      "text": "(this_ptr,*(uint *)&this_ptr->field_0x113c4,0,0x3f99999a);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x11858",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x11858 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x2bc",
-      "severity": "mild",
-      "text": "if (_DAT_005f02de <= *(float *)&this_ptr->field_0x2bc) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x113c4",
-      "severity": "mild",
-      "text": "(this_ptr,*(uint *)&this_ptr->field_0x113c4,0x3f800000,0x3f400000);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x11858",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x11858 = 2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x10a78",
-      "severity": "mild",
-      "text": "((CCharacter *)this_ptr,(CVector3f *)(*(int *)&this_ptr->field_0x10a78 + 0x20));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x11394",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x11394 = _DAT_005ff544;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x10af8",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x10af8,\"ChaseComplete\",\"MeleeAttack\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x10af8",
-      "severity": "mild",
-      "text": "unkaddr_0059d350_cpp_FUN_0059d8e0(&this_ptr->field_0x10af8,\"MeleeAttack\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x11858",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x11858 = 0;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

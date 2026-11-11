@@ -8,9 +8,9 @@
 ;
 ; Called Functions:
 ;   core_boxactor.cpp_CBoxActor_setup_FUN_0041be70
-;   unkaddr_005a7eb0.cpp_FUN_005a8030
-;   unkaddr_005a7eb0.cpp_FUN_005a8050
-;   unkaddr_005a7eb0.cpp_FUN_005a80d0
+;   unkaddr_005a7eb0.cpp_CSimpleParticleSystem_attach_FUN_005a8050
+;   unkaddr_005a7eb0.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030
+;   unkaddr_005a7eb0.cpp_CSimpleParticleSystem_start_FUN_005a80d0
 ;
 ; *****************************************************************************
 
@@ -27,18 +27,18 @@ section .text
     PUSH 0x100                          ; 005ad4ff
     LEA EBX,[ESI + 0x154]               ; 005ad504
     PUSH EBX                            ; 005ad50a
-    CALL unkaddr_005a7eb0.cpp_FUN_005a8030 ; 005ad50b
-        ;   XREF to: 005a8030 (UNCONDITIONAL_CALL)  ; undefined unkaddr_005a7eb0.cpp_FUN_005a8030()
+    CALL unkaddr_005a7eb0.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030 ; 005ad50b
+        ;   XREF to: 005a8030 (UNCONDITIONAL_CALL)  ; void unkaddr_005a7eb0.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(CSimpleParticleSystem * this_ptr, undefined4 param_2)
     ADD ESP,0x8                         ; 005ad510
     PUSH ESI                            ; 005ad513
     PUSH EBX                            ; 005ad514
-    CALL unkaddr_005a7eb0.cpp_FUN_005a8050 ; 005ad515
-        ;   XREF to: 005a8050 (UNCONDITIONAL_CALL)  ; undefined unkaddr_005a7eb0.cpp_FUN_005a8050()
+    CALL unkaddr_005a7eb0.cpp_CSimpleParticleSystem_attach_FUN_005a8050 ; 005ad515
+        ;   XREF to: 005a8050 (UNCONDITIONAL_CALL)  ; void unkaddr_005a7eb0.cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem * this_ptr, undefined4 param_2)
     ADD ESP,0x8                         ; 005ad51a
     PUSH 0x0                            ; 005ad51d
     PUSH EBX                            ; 005ad51f
-    CALL unkaddr_005a7eb0.cpp_FUN_005a80d0 ; 005ad520
-        ;   XREF to: 005a80d0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_005a7eb0.cpp_FUN_005a80d0()
+    CALL unkaddr_005a7eb0.cpp_CSimpleParticleSystem_start_FUN_005a80d0 ; 005ad520
+        ;   XREF to: 005a80d0 (UNCONDITIONAL_CALL)  ; void unkaddr_005a7eb0.cpp_CSimpleParticleSystem_start_FUN_005a80d0(CSimpleParticleSystem * this_ptr, int param_2)
     ADD ESP,0x8                         ; 005ad525
     POP ESI                             ; 005ad528
     POP EBX                             ; 005ad529

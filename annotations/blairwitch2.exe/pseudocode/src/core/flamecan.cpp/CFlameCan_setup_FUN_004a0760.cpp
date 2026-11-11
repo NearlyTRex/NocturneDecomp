@@ -54,15 +54,15 @@ void __cdecl core_flamecan_cpp_CFlameCan_setup_FUN_004a0760(CFlameCan *this_ptr)
     puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
     puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
   }
-  *(uint *)&(this_ptr->flame).base.field_0x20 = *(uint *)&(this_ptr->base).field_0x20;
-  *(uint *)&(this_ptr->flame).base.field_0x24 = *(uint *)&(this_ptr->base).field_0x24;
-  *(uint *)&(this_ptr->flame).base.field_0x28 = *(uint *)&(this_ptr->base).field_0x28;
+  (this_ptr->flame).base.location.position.x = (this_ptr->base).location.position.x;
+  (this_ptr->flame).base.location.position.y = (this_ptr->base).location.position.y;
+  (this_ptr->flame).base.location.position.z = (this_ptr->base).location.position.z;
   fStack_28 = fStack_64 - fStack_70;
-  *(uint *)&(this_ptr->flame).base.field_0x2c = *(uint *)&(this_ptr->base).field_0x2c;
+  (this_ptr->flame).base.location.area_id = (this_ptr->base).location.area_id;
   fStack_20 = fStack_5c - fStack_68;
   fStack_24 = fStack_60 - fStack_6c;
-  *(float *)&(this_ptr->flame).base.field_0x24 =
-       *(float *)&(this_ptr->flame).base.field_0x24 + (fStack_60 - fStack_6c);
+  (this_ptr->flame).base.location.position.y =
+       (this_ptr->flame).base.location.position.y + (fStack_60 - fStack_6c);
   fStack_34 = fStack_64 - fStack_70;
   (&stack0xffffffc4)[(uint)bVar8 * -2 + 3] = (&stack0xffffffc4)[(uint)bVar8 * -2 + 6];
   (&stack0xffffffc4)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
@@ -89,6 +89,6 @@ void __cdecl core_flamecan_cpp_CFlameCan_setup_FUN_004a0760(CFlameCan *this_ptr)
     (this_ptr->flame).flame_size.y = fVar2;
   }
   this_ptr->is_visible = 0;
-  *(uint *)&(this_ptr->base).field_0xfc = 1;
+  (this_ptr->base).is_transparent = 1;
   return;
 }

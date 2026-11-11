@@ -16,7 +16,6 @@ void __cdecl sound_sndmain_cpp_writeIni_FUN_00553980(CIniFile *ini_file)
   SSoundDeviceInfo *pSVar4;
   char *pcVar5;
   SSoundDeviceInfo local_29c;
-  char local_29b [279];
   char local_184 [256];
   char acStack_84 [100];
   int iStack_20;
@@ -37,16 +36,16 @@ void __cdecl sound_sndmain_cpp_writeIni_FUN_00553980(CIniFile *ini_file)
     sound_sndmain_cpp_getSoundDeviceInfo_FUN_00552920(DAT_0061bcac,&local_29c);
     pcVar5 = local_184;
     do {
-      cVar1 = *(char *)pSVar4;
+      cVar1 = pSVar4->device_name[0];
       *pcVar5 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = *(char *)(pSVar4 + 1);
-      pSVar4 = pSVar4 + 2;
+      cVar1 = *(char *)((int)pSVar4 + 1);
+      pSVar4 = (SSoundDeviceInfo *)((int)pSVar4 + 2);
       pcVar5[1] = cVar1;
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
   }
-  (**(code **)(*(int *)&ini_file->field_0x200 + 8))(ini_file,"DeviceName",local_184);
+  (**(code **)((int)ini_file->vtable + 8))(ini_file,"DeviceName",local_184);
   sound_sndmain_cpp_getAudioFormat_FUN_00552790(&iStack_18,&iStack_20,&iStack_1c);
   engine_ini_cpp_FUN_004d8b80(ini_file,&DAT_005e934c,iStack_18);
   engine_ini_cpp_FUN_004d8b80(ini_file,"Channels",iStack_20);

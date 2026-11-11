@@ -19,7 +19,7 @@
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
-;   support_trstream.cpp_FUN_0057d7b0
+;   support_trstream.cpp_CInStreamMemory_close_FUN_0057d7b0
 ;   unkaddr_0057b9a0.cpp_FUN_0057b9d0
 ;
 ; *****************************************************************************
@@ -34,8 +34,8 @@ section .text
         ;   XREF to: 0057d5d5 (CONDITIONAL_JUMP)  ; LAB_0057d5d5
     PUSH EBX                            ; 0057d5ac
     MOV dword ptr [EBX],0x5fd424        ; 0057d5ad | g_CInStreamMemoryVTable
-    CALL support_trstream.cpp_FUN_0057d7b0 ; 0057d5b3
-        ;   XREF to: 0057d7b0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057d7b0()
+    CALL support_trstream.cpp_CInStreamMemory_close_FUN_0057d7b0 ; 0057d5b3
+        ;   XREF to: 0057d7b0 (UNCONDITIONAL_CALL)  ; void support_trstream.cpp_CInStreamMemory_close_FUN_0057d7b0(CInStreamMemory * this_ptr)
     ADD ESP,0x4                         ; 0057d5b8
     PUSH 0x1                            ; 0057d5bb
     PUSH EBX                            ; 0057d5bd

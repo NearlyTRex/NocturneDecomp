@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_doc_cpp_FUN_00450c60(CCharacter *param_1,float param_2)
+; void core_doc_cpp_FUN_00450c60(CHero *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x61c]:1  local_61c
@@ -1141,8 +1141,8 @@ section .text
     LEA EAX,[EBX + 0x154]               ; 00451627
     PUSH EAX                            ; 0045162d
     MOV dword ptr [EBP + -0x2],EAX      ; 0045162e
-    CALL shape_superopt.cpp_CComplexPolygon_getMaterialId_FUN_005a8130 ; 00451631
-        ;   XREF to: 005a8130 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_CComplexPolygon_getMaterialId_FUN_005a8130(CComplexPolygon * this_ptr)
+    CALL unkafter_superopt.cpp_CSimpleParticleSystem_isActive_FUN_005a8130 ; 00451631
+        ;   XREF to: 005a8130 (UNCONDITIONAL_CALL)  ; int unkafter_superopt.cpp_CSimpleParticleSystem_isActive_FUN_005a8130(CSimpleParticleSystem * this_ptr)
     ADD ESP,0x4                         ; 00451636
     TEST EAX,EAX                        ; 00451639
     JZ 0x00451961                       ; 0045163b
@@ -1373,8 +1373,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x5a]      ; 00451940
     PUSH 0x3f19999a                     ; 00451943
     PUSH EDI                            ; 00451948
-    CALL unkafter_superopt.cpp_FUN_005a8300 ; 00451949
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; undefined unkafter_superopt.cpp_FUN_005a8300()
+    CALL unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 00451949
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
     ADD ESP,0x34                        ; 0045194e
     MOV EAX,dword ptr [EBP + 0x5e]      ; 00451951
         ;   Label: LAB_00451951
@@ -1550,7 +1550,7 @@ section .text
     JZ 0x0045318b                       ; 00451b49
         ;   XREF to: 0045318b (CONDITIONAL_JUMP)  ; LAB_0045318b
     MOV EAX,[0x00616494]                ; 00451b4f | g_CGamePtr | g_CGameInstance
-    CMP dword ptr [EAX + 0x25c],0x0     ; 00451b54 | g_CGameInstance.field508_0x25c
+    CMP dword ptr [EAX + 0x25c],0x0     ; 00451b54 | g_CGameInstance.goggles_active
     JZ 0x00453144                       ; 00451b5b
         ;   XREF to: 00453144 (CONDITIONAL_JUMP)  ; LAB_00453144
     LEA ESP,[EBP + 0x7a]                ; 00451b61
@@ -3384,7 +3384,7 @@ section .text
     RET                                 ; 0045318a
     MOV EAX,[0x00616494]                ; 0045318b | g_CGamePtr | g_CGameInstance
         ;   Label: LAB_0045318b
-    CMP dword ptr [EAX + 0x25c],0x0     ; 00453190 | g_CGameInstance.field508_0x25c
+    CMP dword ptr [EAX + 0x25c],0x0     ; 00453190 | g_CGameInstance.goggles_active
     JZ 0x00451b61                       ; 00453197
         ;   XREF to: 00451b61 (CONDITIONAL_JUMP)  ; LAB_00451b61
     MOV ECX,dword ptr [EBX + 0x256b4]   ; 0045319d
@@ -3422,13 +3422,13 @@ section .text
     CALL sound_sndmain.cpp_setSfxFade_FUN_00551080 ; 00453203
         ;   XREF to: 00551080 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxFade_FUN_00551080(uint sfx_handle, float target_volume, float fade_duration, int stop_after_fade)
     MOV EAX,[0x00616494]                ; 00453208 | g_CGamePtr | g_CGameInstance
-    MOV EDI,dword ptr [EAX + 0x264]     ; 0045320d | g_CGameInstance.field516_0x264
+    MOV EDI,dword ptr [EAX + 0x264]     ; 0045320d | g_CGameInstance.flashlight_active
     ADD ESP,0x10                        ; 00453213
     TEST EDI,EDI                        ; 00453216
     JZ 0x00451b61                       ; 00453218
         ;   XREF to: 00451b61 (CONDITIONAL_JUMP)  ; LAB_00451b61
     PUSH 0x5cff5f                       ; 0045321e | = "flashlit.wav"
-    MOV dword ptr [EAX + 0x264],0x0     ; 00453223 | g_CGameInstance.field516_0x264
+    MOV dword ptr [EAX + 0x264],0x0     ; 00453223 | g_CGameInstance.flashlight_active
     PUSH EBX                            ; 0045322d
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 0045322e
     CALL dword ptr [EAX + 0x34]         ; 00453234

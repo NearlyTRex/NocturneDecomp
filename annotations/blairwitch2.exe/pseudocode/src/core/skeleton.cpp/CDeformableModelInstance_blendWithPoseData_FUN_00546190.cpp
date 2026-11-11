@@ -10,7 +10,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithPoseData_FUN_00
 
 {
   core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN_005461c0
-            (this_ptr,(CQuaternion4f *)(pose_data + 0xc),(CVector3f *)pose_data,blend_weight,
-             bone_index,blend_callback);
+            (this_ptr,pose_data->bone_rotations,&pose_data->root_position,blend_weight,bone_index,
+             blend_callback);
   return;
 }

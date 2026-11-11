@@ -9,15 +9,16 @@
 void __cdecl core_dog1_cpp_CDog_processDeathState_FUN_005ac520(CDog *this_ptr,float delta_time)
 
 {
+  CDeformableModelInstance *this_ptr_00;
   int iVar1;
   
-  *(uint *)&this_ptr->field_0x342c = 0;
-  core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-            ((CMotionController *)&this_ptr->field_0x2b4,5,1);
-  if ((*(int *)&this_ptr->field_0x10a28 != 0) && (*(int *)&this_ptr->field_0x1186c == 0)) {
-    iVar1 = core_motion_cpp_FUN_005035c0(&this_ptr->field_0x2b4);
+  this_ptr_00 = &(this_ptr->base).base.base.model;
+  (this_ptr->base).base.base.follow_leader = (CCharacter *)0x0;
+  core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,5,1);
+  if (((this_ptr->base).base.base.eye_glow_enabled != 0) && (this_ptr->death_effect_done == 0)) {
+    iVar1 = core_motion_cpp_FUN_005035c0(this_ptr_00);
     if (*(int *)(iVar1 + 0x24) == 6) {
-      *(uint *)&this_ptr->field_0x1186c = 1;
+      this_ptr->death_effect_done = 1;
       core_charactr_cpp_FUN_0042b550(this_ptr,1,0x3f800000,0,0x40a00000,0x3f800000,0,0);
       return;
     }

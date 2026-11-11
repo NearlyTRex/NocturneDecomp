@@ -10,24 +10,23 @@ void __cdecl core_hero_cpp_CHero_reset_FUN_004d02e0(CHero *this_ptr)
 
 {
   CHero *pCVar1;
-  CHero *pCVar2;
+  char *pcVar2;
   
-  *(uint *)(this_ptr + 0x25604) = 0;
-  *(uint *)(this_ptr + 0x25608) = 0;
-  *(uint *)(this_ptr + 0x2560c) = 0;
-  *(uint *)(this_ptr + 0x25610) = 0;
-  *(uint *)(this_ptr + 0x25614) = 0;
-  *(uint *)(this_ptr + 0x25618) = 0;
-  *(uint *)(this_ptr + 0x2561c) = 0;
-  *(uint *)(this_ptr + 0x276c) = 0;
-  core_inv_cpp_CInventory_removeMatchingKeys_FUN_004def40
-            ((CInventory *)(this_ptr + 0x2437c),0xffffffff);
-  (**(code **)(*(int *)(this_ptr + 0x2b0) + 0x150))(this_ptr,0);
-  pCVar2 = this_ptr;
+  this_ptr->door_to_open = (CDoor *)0x0;
+  this_ptr->object_to_pick_up = (CDemonActor *)0x0;
+  this_ptr->pushed_object = (CBoxActor *)0x0;
+  this_ptr->lever_to_pull = (CLever *)0x0;
+  this_ptr->ladder_to_climb = (CLadder *)0x0;
+  this_ptr->nearby_interactive_actor = (CDemonActor *)0x0;
+  this_ptr->target_actor = (CDemonActor *)0x0;
+  (this_ptr->base).grabbed_by = (CDemonActor *)0x0;
+  core_inv_cpp_CInventory_removeMatchingKeys_FUN_004def40(this_ptr->inventories,0xffffffff);
+  (*(((this_ptr->base).base.vtable._ue)->_ue).updateVictim)((CEnemy *)this_ptr,0.0);
+  pCVar1 = this_ptr;
   do {
-    pCVar1 = pCVar2 + 0x78;
-    *(uint *)(pCVar2 + 0x2620) = 0;
-    pCVar2 = pCVar1;
-  } while (pCVar1 != this_ptr + 0xf0);
+    pcVar2 = (pCVar1->base).base.create_event;
+    (pCVar1->base).carry_hands[0].carry_actor = (CDemonActor *)0x0;
+    pCVar1 = (CHero *)pcVar2;
+  } while ((float *)pcVar2 != &(this_ptr->base).base.platform_orientation_delta.y);
   return;
 }

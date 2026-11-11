@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   string_data
 ;
 ; XREF[19]:
-;   core_fldnotes.cpp_FUN_004a41b0 at 004a4ff0
+;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0 at 004a4ff0
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b673d
 ;   core_menu.cpp_FUN_004ed260 at 004ee0d1
 ;   core_menu.cpp_FUN_004eed60 at 004ef9fa

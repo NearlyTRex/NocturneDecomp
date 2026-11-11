@@ -38,7 +38,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004bdfb0(CGame *this_ptr)
   int local_14;
   
   bVar10 = 0;
-  if (*(int *)&this_ptr->field_0x278 == 2) {
+  if (this_ptr->act_completion_state == 2) {
     pCVar7 = _DAT_01511cc0;
     if (g_CDemonCameraInstance.framebuffer_width < 0x1e0) {
       pCVar7 = _DAT_01511cc4;
@@ -57,30 +57,29 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004bdfb0(CGame *this_ptr)
     core_game_cpp_CGame_rollCredits_FUN_004be430(this_ptr);
     return;
   }
-  *(float *)&this_ptr->field_0x268 =
-       *(float *)&this_ptr->field_0x270 + *(float *)&this_ptr->field_0x268;
-  *(int *)&this_ptr->field_0x274 = *(int *)&this_ptr->field_0x274 + *(int *)&this_ptr->field_0x26c;
+  this_ptr->total_game_time = this_ptr->total_play_time + this_ptr->total_game_time;
+  this_ptr->total_kill_count = this_ptr->total_kill_count + this_ptr->damageable_enemy_count;
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&local_4c);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(&local_4c,"test_logo",0x280,0x1e0);
   engine_special_cpp_clearScreen_FUN_0055b1f0();
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900(&local_4c,0,0,0xffff);
-  fVar11 = (float10)*(float *)&this_ptr->field_0x268;
+  fVar11 = (float10)this_ptr->total_game_time;
   fVar12 = fVar11 * (float10)_DAT_005d8a13;
   round();
   local_28 = (int)ROUND(fVar12);
   fVar11 = fVar11 - (float10)local_28 * (float10)_DAT_005d8a1b;
-  *(float *)&this_ptr->field_0x268 = (float)fVar11;
+  this_ptr->total_game_time = (float)fVar11;
   fVar12 = fVar11 * (float10)_DAT_005d8a23;
   local_14 = local_28;
   round();
   local_30 = (int)ROUND(fVar12);
   fVar11 = fVar11 - (float10)local_30 * (float10)_DAT_005d8a2b;
-  *(float *)&this_ptr->field_0x268 = (float)fVar11;
+  this_ptr->total_game_time = (float)fVar11;
   local_14 = local_30;
   round();
   local_18 = (int)ROUND(fVar11);
-  fVar12 = (float10)*(float *)&this_ptr->field_0x268 - (float10)local_18;
-  *(float *)&this_ptr->field_0x268 = (float)fVar12;
+  fVar12 = (float10)this_ptr->total_game_time - (float10)local_18;
+  this_ptr->total_game_time = (float)fVar12;
   fVar12 = fVar12 * (float10)_DAT_005d8a33;
   pcVar3 = "Mission time";
   local_14 = local_18;

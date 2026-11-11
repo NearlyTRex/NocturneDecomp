@@ -4,13 +4,22 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CAlphaBitmap.h"
+#include "types/structs/SPageResource.h"
 
 // Structure: SPageResourceTwanaEntry
-// Stub: size from Watcom RTTI, fields not yet recovered
+// new(0x114) for <twanaentry>; ctor sets width 0x69, height 0x2f and the singleton global
 // Ghidra size: 0x114 (276 bytes)
 #pragma pack(push, 1)
 typedef struct SPageResourceTwanaEntry {
-    char field_0[276]; // 0x0
+    SPageResource base; // 0x0, derived
+    char selected_character_0[32]; // 0x18, ctor memsets +0x18..+0x78; addCharacter fills the first empty 32-byte slot
+    char selected_character_1[32]; // 0x38, ctor memsets +0x18..+0x78; addCharacter fills the first empty 32-byte slot
+    char selected_character_2[32]; // 0x58, ctor memsets +0x18..+0x78; addCharacter fills the first empty 32-byte slot
+    char shown_character_0[32]; // 0x78, ctor memsets; draw stricmp's selected vs shown, reloads the slot bitmap and copies selected into shown
+    char shown_character_1[32]; // 0x98, ctor memsets; draw stricmp's selected vs shown, reloads the slot bitmap and copies selected into shown
+    char shown_character_2[32]; // 0xb8, ctor memsets; draw stricmp's selected vs shown, reloads the slot bitmap and copies selected into shown
+    CAlphaBitmap slot_bitmaps[3]; // 0xd8, ctor __arrinit(+0xd8, 3, CAlphaBitmap); draw loads sm_%s into and displays each
 } SPageResourceTwanaEntry;
 #pragma pack(pop)
 

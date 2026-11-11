@@ -288,7 +288,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_28 = *param_1 - *(float *)param_2;",
+      "text": "local_28 = *param_1 - (param_2->position).x;",
       "type": "unnamed_param"
     },
     {
@@ -296,7 +296,7 @@
       "line": 18,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_28 = *param_1 - *(float *)param_2;",
+      "text": "local_28 = *param_1 - (param_2->position).x;",
       "type": "unnamed_param"
     },
     {
@@ -304,7 +304,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_24 = param_1[1] - *(float *)(param_2 + 4);",
+      "text": "local_24 = param_1[1] - (param_2->position).y;",
       "type": "unnamed_param"
     },
     {
@@ -312,7 +312,7 @@
       "line": 19,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_24 = param_1[1] - *(float *)(param_2 + 4);",
+      "text": "local_24 = param_1[1] - (param_2->position).y;",
       "type": "unnamed_param"
     },
     {
@@ -320,7 +320,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_20 = param_1[2] - *(float *)(param_2 + 8);",
+      "text": "local_20 = param_1[2] - (param_2->position).z;",
       "type": "unnamed_param"
     },
     {
@@ -328,7 +328,7 @@
       "line": 20,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_20 = param_1[2] - *(float *)(param_2 + 8);",
+      "text": "local_20 = param_1[2] - (param_2->position).z;",
       "type": "unnamed_param"
     },
     {

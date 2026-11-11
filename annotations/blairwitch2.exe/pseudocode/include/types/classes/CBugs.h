@@ -13,6 +13,7 @@ struct CKeyFramedModel;
 #include "types/classes/CEnemy.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CMatrix3x4f.h"
+#include "types/classes/CVector3f.h"
 #include "types/enums/EBugsState.h"
 #include "types/structs/SBug.h"
 #include "types/structs/SSwarmVertex.h"
@@ -34,7 +35,6 @@ typedef struct CBugs {
     int lod_index; // 0x1776c
     int swarm_vertex_count; // 0x17770
     SSwarmVertex swarm_vertices[700]; // 0x17774
-    char field_96816[27300]; // 0x17a30
     int allow_chase; // 0x1e4d4
     int allow_swarm; // 0x1e4d8
     char allow_chase_event[100]; // 0x1e4dc

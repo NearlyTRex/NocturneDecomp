@@ -24,7 +24,7 @@ void __cdecl core_larva_cpp_CLarva_processDamage_FUN_004e1140(CLarva *this_ptr,S
   CVector3f CStack_1c;
   
   bVar4 = 0;
-  fVar1 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   (this_ptr->base).base.hit_points = fVar1;
   if (0.0 < fVar1) {
     sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handles[1]);
@@ -36,15 +36,14 @@ void __cdecl core_larva_cpp_CLarva_processDamage_FUN_004e1140(CLarva *this_ptr,S
       this_ptr->sfx_handles[0] = uVar3;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-              ((CMotionController *)&(this_ptr->base).base.model,3,1);
+              (&(this_ptr->base).base.model.base,3,1);
   }
   else {
     this_ptr_00 = &(this_ptr->base).base.model;
     (this_ptr->base).base.hit_points = 0.0;
     iVar2 = core_motion_cpp_FUN_005035c0(this_ptr_00);
     if ((*(int *)(iVar2 + 0x24) != 5) && (*(int *)(iVar2 + 0x24) != 4)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                ((CMotionController *)this_ptr_00,4,1);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,4,1);
     }
     sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handles[0]);
     sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handles[1]);
@@ -53,7 +52,7 @@ void __cdecl core_larva_cpp_CLarva_processDamage_FUN_004e1140(CLarva *this_ptr,S
                       ((CDemonActor *)this_ptr,acStack_8c);
     this_ptr->sfx_handles[0] = uVar3;
   }
-  core_actor_cpp_FUN_00408d70(this_ptr,damage_info + 0x1c);
+  core_actor_cpp_FUN_00408d70(this_ptr,&damage_info->impact_direction);
   CStack_1c.x = fStack_28;
   *(float *)((int)&CStack_1c + (uint)bVar4 * -8 + 4) = afStack_24[(uint)bVar4 * -2];
   *(float *)((int)&CStack_1c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =

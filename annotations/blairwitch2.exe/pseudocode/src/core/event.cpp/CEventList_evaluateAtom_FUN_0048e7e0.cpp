@@ -17,15 +17,15 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0048e7e0(CEventList *this
   float fVar3;
   float fVar4;
   float fVar5;
-  CCharacter *pCVar6;
+  CHero *pCVar6;
   CGame *pCVar7;
   int iVar8;
   int iVar9;
   int iVar10;
-  CCharacter *pCVar11;
+  CHero *pCVar11;
   CDemonActor *pCVar12;
   EDeathState EVar13;
-  CCharacter *pCVar14;
+  CHero *pCVar14;
   uint uVar15;
   SIZE_T SVar16;
   char *pcVar17;
@@ -112,8 +112,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0048e7e0(CEventList *this
   char *local_60;
   int local_5c;
   int local_58;
-  CCharacter *local_54;
-  float *local_50;
+  CHero *local_54;
+  CLocation *local_50;
   int local_40;
   int local_3c;
   int local_38;
@@ -267,11 +267,10 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0048e7e0(CEventList *this
         memmove(pcVar17,local_e0,SVar16);
         SVar16 = SVar16 - 1;
       }
-      pCVar11 = (CCharacter *)
-                core_event_cpp_resolveActorByName_FUN_00488d00
-                          (acStack_255 + 1,g_CDemonActorClassInfo.name_hash,&g_CDemonActorClassInfo)
-      ;
-      if ((pCVar11 == (CCharacter *)0x0) || (pCVar11 == 0x0FFFFFFF)) {
+      pCVar11 = (CHero *)core_event_cpp_resolveActorByName_FUN_00488d00
+                                   (acStack_255 + 1,g_CDemonActorClassInfo.name_hash,
+                                    &g_CDemonActorClassInfo);
+      if ((pCVar11 == (CHero *)0x0) || (pCVar11 == 0x0FFFFFFF)) {
         local_104 = 0;
       }
       else {
@@ -300,7 +299,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0048e7e0(CEventList *this
           } while (cVar1 != '\0');
           return -1;
         }
-        local_104 = *(uint *)&g_CFieldNotesPtr->field_0x40;
+        local_104 = g_CFieldNotesPtr->is_displayed;
         *parse_position = *parse_position + local_dc;
       }
       else {
@@ -442,18 +441,17 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0048e7e0(CEventList *this
                 memmove(local_a25 + 1,local_d0,SVar16);
                 SVar16 = SVar16 - 1;
               }
-              pCVar11 = (CCharacter *)
-                        core_event_cpp_resolveActorByName_FUN_00488d00
-                                  (acStack_63d + 1,g_CHeroClassInfo.name_hash,&g_CHeroClassInfo);
-              if (pCVar11 != (CCharacter *)0x0) {
+              pCVar11 = (CHero *)core_event_cpp_resolveActorByName_FUN_00488d00
+                                           (acStack_63d + 1,g_CHeroClassInfo.name_hash,
+                                            &g_CHeroClassInfo);
+              if (pCVar11 != (CHero *)0x0) {
                 if (pCVar11 == 0x0FFFFFFF) {
                   local_104 = 0;
                   *parse_position = *parse_position + local_78;
                 }
                 else {
                   local_104 = core_inv_cpp_CInventory_hasItemOfClass_FUN_004db880
-                                        ((CInventory *)(pCVar11[2].cloth_list.cloths + 7),
-                                         local_a25 + 1);
+                                        (pCVar11->inventories,local_a25 + 1);
                   *parse_position = *parse_position + local_78;
                 }
                 goto LAB_0048ec8f;
@@ -583,17 +581,16 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0048e7e0(CEventList *this
                   memmove(pcVar17,local_c0,SVar16);
                   SVar16 = SVar16 - 1;
                 }
-                pCVar11 = (CCharacter *)
-                          core_event_cpp_resolveActorByName_FUN_00488d00
-                                    (acStack_9c1 + 1,g_CGlassClassInfo.name_hash,&g_CGlassClassInfo)
-                ;
-                if (pCVar11 != (CCharacter *)0x0) {
+                pCVar11 = (CHero *)core_event_cpp_resolveActorByName_FUN_00488d00
+                                             (acStack_9c1 + 1,g_CGlassClassInfo.name_hash,
+                                              &g_CGlassClassInfo);
+                if (pCVar11 != (CHero *)0x0) {
                   if (pCVar11 == 0x0FFFFFFF) {
                     local_104 = 0;
                     *parse_position = *parse_position + local_c4;
                   }
                   else {
-                    local_104 = (uint)(*(int *)&(pCVar11->model).field_0x28 != 0);
+                    local_104 = (uint)((pCVar11->base).model.base.state_index != 0);
                     *parse_position = *parse_position + local_c4;
                   }
                   goto LAB_0048ec8f;
@@ -624,9 +621,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0048e7e0(CEventList *this
               local_104 = 0;
               if ((-1 < g_CDemonSetPtr->selected_camera_index) &&
                  (iVar8 = _stricmp
-                                    ((char *)(g_CDemonSetPtr->cameras +
-                                             g_CDemonSetPtr->selected_camera_index),local_510),
-                 iVar8 == 0)) {
+                                    (g_CDemonSetPtr->cameras[g_CDemonSetPtr->selected_camera_index].
+                                     name,local_510), iVar8 == 0)) {
                 local_104 = 1;
               }
               *parse_position = *parse_position + local_bc;
@@ -687,11 +683,10 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0048e7e0(CEventList *this
                     } while (cVar1 != '\0');
                     return -1;
                   }
-                  pCVar11 = (CCharacter *)
-                            core_event_cpp_resolveActorByName_FUN_00488d00
-                                      (local_830,g_CCharacterClassInfo.name_hash,
-                                       &g_CCharacterClassInfo);
-                  if (pCVar11 == (CCharacter *)0x0) {
+                  pCVar11 = (CHero *)core_event_cpp_resolveActorByName_FUN_00488d00
+                                               (local_830,g_CCharacterClassInfo.name_hash,
+                                                &g_CCharacterClassInfo);
+                  if (pCVar11 == (CHero *)0x0) {
                     return -1;
                   }
                   if (pCVar11 == 0x0FFFFFFF) {
@@ -699,7 +694,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0048e7e0(CEventList *this
                     *parse_position = *parse_position + local_b4;
                   }
                   else {
-                    EVar13 = (*(((pCVar11->base).vtable._uc)->_uc).getDeathState)(pCVar11);
+                    EVar13 = (*(((pCVar11->base).base.vtable._uc)->_uc).getDeathState)
+                                       ((CCharacter *)pCVar11);
                     local_104 = (uint)(1 < (int)EVar13);
                     *parse_position = *parse_position + local_b4;
                   }
@@ -881,11 +877,11 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0048e7e0(CEventList *this
                           memmove(local_895 + 1,local_8c,SVar16);
                           SVar16 = SVar16 - 1;
                         }
-                        pCVar11 = (CCharacter *)
-                                  core_event_cpp_resolveActorByName_FUN_00488d00
-                                            (acStack_381 + 1,g_CDemonActorClassInfo.name_hash,
-                                             &g_CDemonActorClassInfo);
-                        if (pCVar11 != (CCharacter *)0x0) {
+                        pCVar11 = (CHero *)core_event_cpp_resolveActorByName_FUN_00488d00
+                                                     (acStack_381 + 1,
+                                                      g_CDemonActorClassInfo.name_hash,
+                                                      &g_CDemonActorClassInfo);
+                        if (pCVar11 != (CHero *)0x0) {
                           if (pCVar11 == 0x0FFFFFFF) {
                             local_104 = 0;
                             *parse_position = *parse_position + local_98;
@@ -967,16 +963,15 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0048e7e0(CEventList *this
                         memmove(local_80,local_31d + 2,SVar16);
                         SVar16 = SVar16 - 1;
                       }
-                      pCVar11 = (CCharacter *)
-                                core_event_cpp_resolveActorByName_FUN_00488d00
-                                          (acStack_2b9 + 1,g_CDemonActorClassInfo.name_hash,
-                                           &g_CDemonActorClassInfo);
-                      if ((pCVar11 == (CCharacter *)0x0) ||
-                         (pCVar14 = (CCharacter *)
-                                    core_event_cpp_resolveActorByName_FUN_00488d00
-                                              (local_31d + 1,g_CDemonActorClassInfo.name_hash,
-                                               &g_CDemonActorClassInfo),
-                         pCVar14 == (CCharacter *)0x0)) {
+                      pCVar11 = (CHero *)core_event_cpp_resolveActorByName_FUN_00488d00
+                                                   (acStack_2b9 + 1,g_CDemonActorClassInfo.name_hash
+                                                    ,&g_CDemonActorClassInfo);
+                      if ((pCVar11 == (CHero *)0x0) ||
+                         (pCVar14 = (CHero *)core_event_cpp_resolveActorByName_FUN_00488d00
+                                                       (local_31d + 1,
+                                                        g_CDemonActorClassInfo.name_hash,
+                                                        &g_CDemonActorClassInfo),
+                         pCVar14 == (CHero *)0x0)) {
                         return -1;
                       }
                       *parse_position = *parse_position + local_88;
@@ -1041,7 +1036,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0048e7e0(CEventList *this
                         local_104 = 0;
                       }
                       else {
-                        core_actor_cpp_FUN_00408de0(pCVar11,&(pCVar14->base).field_0x20);
+                        core_actor_cpp_FUN_00408de0(pCVar11,&(pCVar14->base).base.location);
                         local_134 = local_11c;
                         local_130[(uint)bVar19 * -2] = afStack_118[(uint)bVar19 * -2];
                         local_130[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 1] =
@@ -1127,7 +1122,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0048e7e0(CEventList *this
                             } while (cVar1 != '\0');
                             return -1;
                           }
-                          local_104 = (uint)(*(int *)&g_CGamePtr->field_0x18 != 0);
+                          local_104 = (uint)(g_CGamePtr->nudity_flag != 0);
                           *parse_position = *parse_position + local_68;
                         }
                         else {
@@ -1208,17 +1203,17 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0048e7e0(CEventList *this
                                 } while (cVar1 != '\0');
                                 return -1;
                               }
-                              pCVar11 = (CCharacter *)
-                                        core_event_cpp_resolveActorByName_FUN_00488d00
-                                                  (local_574,g_CCharacterClassInfo.name_hash,
-                                                   &g_CCharacterClassInfo);
-                              if (pCVar11 == (CCharacter *)0x0) {
+                              pCVar11 = (CHero *)core_event_cpp_resolveActorByName_FUN_00488d00
+                                                           (local_574,
+                                                            g_CCharacterClassInfo.name_hash,
+                                                            &g_CCharacterClassInfo);
+                              if (pCVar11 == (CHero *)0x0) {
                                 return -1;
                               }
                               if (pCVar11 == 0x0FFFFFFF) {
                                 local_104 = (uint)pCVar11 ^ (uint)0x0FFFFFFF;
                               }
-                              else if (*(float *)&pCVar11->field_0x2820 <= 0.0) {
+                              else if ((pCVar11->base).speech_timer <= 0.0) {
                                 local_104 = 0;
                               }
                               else {
@@ -1249,26 +1244,28 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0048e7e0(CEventList *this
                                   } while (cVar1 != '\0');
                                 }
                                 else {
-                                  local_54 = (CCharacter *)
-                                             core_event_cpp_resolveActorByName_FUN_00488d00
-                                                       (local_95c,g_CCharacterClassInfo.name_hash,
-                                                        &g_CCharacterClassInfo);
-                                  if (local_54 != (CCharacter *)0x0) {
+                                  local_54 = (CHero *)core_event_cpp_resolveActorByName_FUN_00488d00
+                                                                (local_95c,
+                                                                 g_CCharacterClassInfo.name_hash,
+                                                                 &g_CCharacterClassInfo);
+                                  if (local_54 != (CHero *)0x0) {
                                     local_104 = 0;
                                     if (local_54 != 0x0FFFFFFF) {
-                                      local_50 = (float *)&(local_54->base).field_0x20;
+                                      local_50 = &(local_54->base).base.location;
                                       local_18 = 0;
                                       for (iVar8 = 0; iVar8 < g_CDemonSetPtr->enemy_count;
                                           iVar8 = iVar8 + 1) {
                                         iVar9 = *(int *)((int)g_CDemonSetPtr->enemies + local_18);
-                                        if ((((local_54 == *(CCharacter **)(iVar9 + 0x10a78)) &&
+                                        if ((((local_54 == *(CHero **)(iVar9 + 0x10a78)) &&
                                              (iVar10 = (**(code **)(*(int *)(iVar9 + 0x2b0) + 0x114)
                                                        )(iVar9), iVar10 < 1)) &&
                                             (iVar10 = (**(code **)(*(int *)(iVar9 + 0x2b0) + 0x78))
                                                                 (iVar9), iVar10 == 0)) &&
-                                           (fVar3 = *(float *)(iVar9 + 0x20) - *local_50,
-                                           fVar5 = *(float *)(iVar9 + 0x24) - local_50[1],
-                                           fVar4 = *(float *)(iVar9 + 0x28) - local_50[2],
+                                           (fVar3 = *(float *)(iVar9 + 0x20) -
+                                                    (local_50->position).x,
+                                           fVar5 = *(float *)(iVar9 + 0x24) - (local_50->position).y
+                                           , fVar4 = *(float *)(iVar9 + 0x28) -
+                                                     (local_50->position).z,
                                            SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3) <=
                                            (float)_DAT_005d4cb3)) {
                                           local_104 = 1;
@@ -1305,17 +1302,16 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0048e7e0(CEventList *this
                                   } while (cVar1 != '\0');
                                 }
                                 else {
-                                  pCVar11 = (CCharacter *)
-                                            core_event_cpp_resolveActorByName_FUN_00488d00
-                                                      (local_768,g_CHeroClassInfo.name_hash,
-                                                       &g_CHeroClassInfo);
-                                  if (pCVar11 != (CCharacter *)0x0) {
+                                  pCVar11 = (CHero *)core_event_cpp_resolveActorByName_FUN_00488d00
+                                                               (local_768,g_CHeroClassInfo.name_hash
+                                                                ,&g_CHeroClassInfo);
+                                  if (pCVar11 != (CHero *)0x0) {
                                     if (pCVar11 == 0x0FFFFFFF) {
                                       local_104 = (uint)pCVar11 ^ (uint)0x0FFFFFFF;
                                     }
                                     else {
-                                      local_104 = (*(((pCVar11->base).vtable._uh)->_uh).
-                                                    isWeaponDrawn)((CHero *)pCVar11);
+                                      local_104 = (*(((pCVar11->base).base.vtable._uh)->_uh).
+                                                    isWeaponDrawn)(pCVar11);
                                     }
                                     *parse_position = *parse_position + local_40;
                                     goto LAB_0048ec8f;
@@ -1345,17 +1341,17 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0048e7e0(CEventList *this
                                   } while (cVar1 != '\0');
                                 }
                                 else {
-                                  pCVar11 = (CCharacter *)
-                                            core_event_cpp_resolveActorByName_FUN_00488d00
-                                                      (local_3e4,g_CHeroClassInfo.name_hash,
-                                                       &g_CHeroClassInfo);
-                                  if (pCVar11 != (CCharacter *)0x0) {
+                                  pCVar11 = (CHero *)core_event_cpp_resolveActorByName_FUN_00488d00
+                                                               (local_3e4,g_CHeroClassInfo.name_hash
+                                                                ,&g_CHeroClassInfo);
+                                  if (pCVar11 != (CHero *)0x0) {
                                     if (pCVar11 == 0x0FFFFFFF) {
                                       local_104 = 0;
                                       *parse_position = *parse_position + local_3c;
                                     }
                                     else {
-                                      local_104 = (uint)(*(int *)&pCVar11[2].field_0x4128 == 2);
+                                      local_104 = (uint)(pCVar11->is_wearing_gas_mask ==
+                                                        GAS_MASK_ON_FACE);
                                       *parse_position = *parse_position + local_3c;
                                     }
                                     goto LAB_0048ec8f;
@@ -1424,18 +1420,19 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0048e7e0(CEventList *this
                                       } while (cVar1 != '\0');
                                     }
                                     else {
-                                      pCVar11 = (CCharacter *)
-                                                core_event_cpp_resolveActorByName_FUN_00488d00
-                                                          (local_448,g_CCharacterClassInfo.name_hash
-                                                           ,&g_CCharacterClassInfo);
-                                      if (pCVar11 != (CCharacter *)0x0) {
+                                      pCVar11 = (CHero *)
+                                                  core_event_cpp_resolveActorByName_FUN_00488d00
+                                                            (local_448,
+                                                             g_CCharacterClassInfo.name_hash,
+                                                             &g_CCharacterClassInfo);
+                                      if (pCVar11 != (CHero *)0x0) {
                                         if (pCVar11 == 0x0FFFFFFF) {
                                           local_104 = 0;
                                           *parse_position = *parse_position + local_28;
                                         }
                                         else {
-                                          iVar8 = (*(((pCVar11->base).vtable._uc)->_uc).
-                                                    isWalkComplete)(pCVar11);
+                                          iVar8 = (*(((pCVar11->base).base.vtable._uc)->_uc).
+                                                    isWalkComplete)((CCharacter *)pCVar11);
                                           local_104 = (uint)(iVar8 != 0);
                                           *parse_position = *parse_position + local_28;
                                         }
@@ -1568,17 +1565,17 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0048e7e0(CEventList *this
                                     } while (cVar1 != '\0');
                                   }
                                   else {
-                                    pCVar11 = (CCharacter *)
-                                              core_event_cpp_resolveActorByName_FUN_00488d00
-                                                        (acStack_aed + 1,
-                                                         *(uint *)(local_fc + 0x44),
-                                                         local_fc + 0x22);
-                                    if (pCVar11 != (CCharacter *)0x0) {
+                                    pCVar11 = (CHero *)
+                                                  core_event_cpp_resolveActorByName_FUN_00488d00
+                                                            (acStack_aed + 1,
+                                                             *(uint *)(local_fc + 0x44),
+                                                             local_fc + 0x22);
+                                    if (pCVar11 != (CHero *)0x0) {
                                       if (pCVar11 == 0x0FFFFFFF) {
                                         local_104 = 0;
                                       }
                                       else {
-                                        local_104 = *(uint *)((pCVar11->base).actor_name +
+                                        local_104 = *(uint *)((pCVar11->base).base.actor_name +
                                                              *(int *)(iVar8 + 0x40));
                                       }
                                       goto LAB_0048ec8f;

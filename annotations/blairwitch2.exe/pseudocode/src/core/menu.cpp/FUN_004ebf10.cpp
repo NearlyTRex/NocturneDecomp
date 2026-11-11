@@ -63,9 +63,9 @@ void __cdecl core_menu_cpp_FUN_004ebf10(void)
     g_CDemonSetPtr->rendering_mode = 1;
     core_set_cpp_CDemonSet_setFlatColor_FUN_005344c0(this_ptr,50000,50000,0x10000);
     g_CDemonSetPtr->ambient_base_quick = 0xdac;
-    core_moon_cpp_FUN_005024a0(&g_CMoonInstance);
+    core_moon_cpp_CMoon_update_FUN_005024a0(&g_CMoonInstance,g_CGamePtr->delta_time_float);
     pcVar6 = &DAT_005dcc8d;
-    core_moon_cpp_FUN_00502510();
+    core_moon_cpp_CMoon_render_FUN_00502510(&g_CMoonInstance);
     pcVar8 = &DAT_0061e180;
     g_CDemonSetPtr->rendering_mode = 0;
     do {
@@ -139,7 +139,7 @@ void __cdecl core_menu_cpp_FUN_004ebf10(void)
     }
     pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(pcVar6);
     _sprintf((char *)0x1d06150,pcVar6);
-    *(uint *)&g_CGamePtr->field_0xc = 0;
+    g_CGamePtr->halo_mode = 0;
     if (local_1c == 0) {
       if (_DAT_0264bba0 == 0) {
         pcVar6 = "3D Hardware : Off";
@@ -286,7 +286,7 @@ void __cdecl core_menu_cpp_FUN_004ebf10(void)
     } while (cVar1 != '\0');
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Monitor calibration");
     _sprintf((char *)0x1d06650,pcVar7);
-    if (*(int *)&g_CGamePtr->field_0x10 == 0) {
+    if (g_CGamePtr->subtitle_mode == 0) {
       pcVar7 = "Subtitles : Off";
     }
     else {
@@ -303,8 +303,8 @@ void __cdecl core_menu_cpp_FUN_004ebf10(void)
       pcVar6[1] = cVar1;
       pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
-    if (*(int *)&g_CGamePtr->field_0x20 == 0) {
-      if (*(int *)&g_CGamePtr->field_0x18 == 0) {
+    if (g_CGamePtr->quimby_flag == 0) {
+      if (g_CGamePtr->nudity_flag == 0) {
         pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Rating: Teen");
         pcVar6 = &DAT_01d06850;
         do {
@@ -365,7 +365,7 @@ void __cdecl core_menu_cpp_FUN_004ebf10(void)
       pcVar8 = pcVar8 + 2;
     } while (cVar1 != '\0');
     iVar3 = 9;
-    if (*(int *)&g_CGamePtr->field_0x20 != 0) {
+    if (g_CGamePtr->quimby_flag != 0) {
       iVar3 = 8;
     }
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Graphic Options");
@@ -481,13 +481,13 @@ LAB_004ec75b:
       core_menu_cpp_showCalibrationTest_FUN_004ebe30();
       break;
     case 6:
-      *(uint *)&g_CGamePtr->field_0x10 = (uint)(*(int *)&g_CGamePtr->field_0x10 == 0);
+      g_CGamePtr->subtitle_mode = (uint)(g_CGamePtr->subtitle_mode == 0);
       break;
     case 7:
-      uVar5 = (uint)(*(int *)&g_CGamePtr->field_0x18 == 0);
-      *(uint *)&g_CGamePtr->field_0x18 = uVar5;
-      *(uint *)&pCVar2->field_0x14 = uVar5;
-      *(uint *)&pCVar2->field_0x1c = uVar5;
+      uVar5 = (uint)(g_CGamePtr->nudity_flag == 0);
+      g_CGamePtr->nudity_flag = uVar5;
+      pCVar2->blood_flag = uVar5;
+      pCVar2->foul_language_flag = uVar5;
       break;
     case 8:
       pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80

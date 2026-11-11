@@ -9,7 +9,7 @@
 ;   engine_dosio.cpp_getFileSize_FUN_00460aa0 at 00460ac6
 ;   engine_dosio.cpp_reopenFileStream_FUN_00460d30 at 00460db8
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00573b80 at 00573c16
-;   support_trstream.cpp_FUN_0057d390 at 0057d3ce
+;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390 at 0057d3ce
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01b4d370

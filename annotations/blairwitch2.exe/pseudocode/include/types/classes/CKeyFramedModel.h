@@ -13,6 +13,8 @@ struct SMRGLPrimitiveQuad;
 #include "types/classes/CKeyFramedModelPart.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CVector3f.h"
+#include "types/structs/SMRGLHeaderBasic.h"
+#include "types/structs/SMRGLTextureModel.h"
 
 // Structure: CKeyFramedModel
 // Ghidra size: 0x398 (920 bytes)
@@ -28,10 +30,9 @@ typedef struct CKeyFramedModel {
     int* poly_texture_index_list; // 0x118
     uchar* env_map_opac_list; // 0x11c
     int texture_count; // 0x120, max=300
-    char field_292[288]; // 0x124
+    SMRGLTextureModel texture_list[4]; // 0x124, Added in this build
     int part_count; // 0x244, max=30
     CKeyFramedModelPart part_list[30]; // 0x248
-    char field_614[210]; // 0x266
     CBoundingBox3D bounds; // 0x338
     struct CBoundingBox3D* frame_bounds; // 0x350
     int collision_triangle_count; // 0x354

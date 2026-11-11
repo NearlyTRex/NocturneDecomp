@@ -11,10 +11,14 @@ struct SMRGLPrimitiveTriangle;
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CBox.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CFlame.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
 #include "types/enums/EBloodType.h"
 #include "types/structs/SBodyPartFire.h"
 #include "types/structs/SBodyPartModel.h"
+#include "types/structs/SMRGLHeaderBasic.h"
+#include "types/structs/SMRGLTextureBasic.h"
 
 // Structure: CBodyPart
 // Ghidra size: 0x1344 (4932 bytes)
@@ -30,13 +34,12 @@ typedef struct CBodyPart {
     struct SMRGLPrimitiveTriangle* faces; // 0x2e0
     int* face_texture_indices; // 0x2e4
     int texture_count; // 0x2e8
-    char field_748[240]; // 0x2ec
+    SMRGLTextureBasic textures[10]; // 0x2ec
     CVector3f initial_velocity; // 0x3dc
     int attached_model_count; // 0x3e8
     SBodyPartModel attached_models[3]; // 0x3ec
     int fire_count; // 0x8a8
     SBodyPartFire fires[2]; // 0x8ac
-    char field_3596[696]; // 0xe0c
     int dont_use_normals; // 0x10c4
     int transparent_geometry_flag; // 0x10c8
     EBloodType blood_type; // 0x10cc

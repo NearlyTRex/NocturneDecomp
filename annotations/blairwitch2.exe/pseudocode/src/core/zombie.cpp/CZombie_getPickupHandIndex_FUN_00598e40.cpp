@@ -13,12 +13,11 @@ int __cdecl core_zombie_cpp_CZombie_getPickupHandIndex_FUN_00598e40(CZombie *thi
   
   if ((object_shape_type != 2) &&
      (iVar1 = _stricmp
-                        (&(this_ptr->base).base.model.field_0x2260,"jeff.dfm"), iVar1 == 0)
-     ) {
+                        ((this_ptr->base).base.model.model_name,"jeff.dfm"), iVar1 == 0)) {
     return -1;
   }
   iVar1 = _strnicmp
-                    (&(this_ptr->base).base.model.field_0x2260,&DAT_005ef2c7,3);
+                    ((this_ptr->base).base.model.model_name,&DAT_005ef2c7,3);
   if (iVar1 == 0) {
     if ((uint)object_shape_type < 2) {
       if (object_shape_type != 1) {

@@ -9,10 +9,10 @@
 void __cdecl core_hpriest_cpp_CHighPriestOfGardath_processDamage_FUN_004d4860(CHighPriestOfGardath *this_ptr,SDamageInfo *damage_info)
 
 {
-  if (*(int *)&(this_ptr->base).base.field_0x281c != 0) {
+  if ((this_ptr->base).base.is_invulnerable != 0) {
     return;
   }
-  *(uint *)(damage_info + 0x30) = 100;
-  *(uint *)(damage_info + 4) = 0;
+  damage_info->damage_type = DAMAGE_TYPE_ATTACK_GENERIC;
+  damage_info->damage_amount = 0.0;
   return;
 }

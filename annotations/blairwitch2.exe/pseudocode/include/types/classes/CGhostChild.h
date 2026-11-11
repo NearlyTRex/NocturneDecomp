@@ -4,13 +4,20 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBasicEnemy.h"
 
 // Structure: CGhostChild
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 71784
 // Ghidra size: 0x11868 (71784 bytes)
 #pragma pack(push, 1)
 typedef struct CGhostChild {
-    char field_0[71784]; // 0x0
+    CBasicEnemy base; // 0x0, derived
+    int head_bone; // 0x11850, setup findBone 'Bip01 Head', copied to +0x10a24; getTargetPoints
+    int hand_bone; // 0x11854, setup findBone 'Bip01 R Hand'; processMeleeAttackState bone matrix
+    int sleep_phase; // 0x11858, ctor 0; processSleepState steps 0->1->2->3; processMeleeAttackState resets 0
+    int hit_count; // 0x1185c, ctor 0; processMeleeAttackState increments while < 3, resets 0
+    float sleep_time; // 0x11860, ctor 5.0; processSleepState copies to sleep_timer
+    float sleep_timer; // 0x11864, ctor 0; processSleepState counts down
 } CGhostChild;
 #pragma pack(pop)
 

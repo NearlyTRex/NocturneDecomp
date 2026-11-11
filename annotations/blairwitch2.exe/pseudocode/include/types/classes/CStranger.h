@@ -9,6 +9,7 @@ struct CWeapon;
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CHero.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
 #include "types/structs/SArmAimData.h"
@@ -17,16 +18,14 @@ struct CWeapon;
 // Ghidra size: 0x258dc (153820 bytes)
 #pragma pack(push, 1)
 typedef struct CStranger {
-    char field_0[153152]; // 0x0
+    CHero base; // 0x0
     int guns_drawn; // 0x25640
     float guns_drawn_blend; // 0x25644
     float frame_cleared; // 0x25648
     float aim_pitch; // 0x2564c
     float aim_speed_factor; // 0x25650
     SArmAimData right_arm_aim; // 0x25654
-    char field_153173[31]; // 0x25655
     SArmAimData left_arm_aim; // 0x25674
-    char field_153205[31]; // 0x25675
     struct CLadder* ladder_to_descend; // 0x25694
     struct CWeapon* weapon; // 0x25698
     int dual_wield_side; // 0x2569c

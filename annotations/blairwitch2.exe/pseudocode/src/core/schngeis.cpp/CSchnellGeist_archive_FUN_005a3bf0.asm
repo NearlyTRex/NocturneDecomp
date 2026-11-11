@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveInteger_FUN_0040b960
-;   core_twigzomb.cpp_CTwigZombie_archive_FUN_0059fc10
+;   core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005a3bf0
         ;   Label: core_schngeis.cpp_CSchnellGeist_archive_FUN_005a3bf0
     PUSH EDX                            ; 005a3bf4
-    CALL core_twigzomb.cpp_CTwigZombie_archive_FUN_0059fc10 ; 005a3bf5
-        ;   XREF to: 0059fc10 (UNCONDITIONAL_CALL)  ; void core_twigzomb.cpp_CTwigZombie_archive_FUN_0059fc10(CTwigZombie * this_ptr)
+    CALL core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10 ; 005a3bf5
+        ;   XREF to: 0059fc10 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10(CBasicEnemy * this_ptr)
     MOV ECX,dword ptr [0x0061eb24]      ; 005a3bfa | g_CSchnellGeistClassVersion
     ADD ESP,0x4                         ; 005a3c00
     CMP ECX,0x2                         ; 005a3c03

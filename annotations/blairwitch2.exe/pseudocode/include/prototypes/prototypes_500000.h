@@ -72,10 +72,10 @@ int __cdecl core_moloch_cpp_CMoloch_isWeaponDrawn_FUN_005022e0(CMoloch *this_ptr
 void core_moon_cpp_staticInit_FUN_005022f0(void);
 CMoon * core_moon_cpp_CMoon_ctor_FUN_00502350(CMoon *this_ptr);
 CMoon * core_moon_cpp_CMoon_dtor_FUN_00502390(CMoon *this_ptr,uint flags);
-void core_moon_cpp_FUN_005023e0(int *param_1);
-void core_moon_cpp_FUN_00502450(int *param_1);
-void core_moon_cpp_FUN_005024a0(undefined4 param_1,float param_2);
-void core_moon_cpp_FUN_00502510(void);
+void __cdecl core_moon_cpp_CMoon_init_FUN_005023e0(CMoon *this_ptr);
+void __cdecl core_moon_cpp_CMoon_free_FUN_00502450(CMoon *this_ptr);
+void __cdecl core_moon_cpp_CMoon_update_FUN_005024a0(CMoon *this_ptr,float param_2);
+void __cdecl core_moon_cpp_CMoon_render_FUN_00502510(CMoon *this_ptr);
 CAlphaBitmap * core_moon_cpp_CAlphaBitmap_arrdtor75_FUN_00502720(CAlphaBitmap *this_ptr,uint flags);
 undefined4 * core_moon_cpp_FUN_00502760(undefined4 *param_1);
 undefined4 core_moon_cpp_FUN_00502790(undefined4 param_1);

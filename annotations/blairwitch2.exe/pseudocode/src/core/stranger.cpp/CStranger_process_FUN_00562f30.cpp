@@ -21,7 +21,7 @@ void __cdecl core_stranger_cpp_CStranger_process_FUN_00562f30(CStranger *this_pt
     return;
   }
   delta_time_00 = g_CGamePtr->delta_time_float;
-  iVar2 = core_motion_cpp_FUN_005035c0(&this_ptr->field_0x2b4);
+  iVar2 = core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.model);
   bVar1 = false;
   switch(*(uint *)(iVar2 + 0x24)) {
   case 7:

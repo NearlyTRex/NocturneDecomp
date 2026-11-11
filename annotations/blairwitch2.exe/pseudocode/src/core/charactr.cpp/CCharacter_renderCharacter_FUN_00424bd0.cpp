@@ -19,7 +19,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCharacter_FUN_00424bd0(CCharacte
   }
   iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
   if (iVar1 == 0) {
-    if (*(int *)&this_ptr->field_0x2810 == 0) {
+    if (this_ptr->is_ethereal == 0) {
       core_charactr_cpp_CCharacter_renderBurn_FUN_004264d0(this_ptr);
     }
     if (0.0 < this_ptr->stagger_amount) {

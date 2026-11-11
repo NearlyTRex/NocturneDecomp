@@ -11,60 +11,66 @@
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_005474b0(CDeformableModelInstance *this_ptr,CDeformableModel *model_ptr)
 
 {
-  CSkeleton *pCVar1;
-  CVector3f *pCVar2;
+  CDeformableModel *pCVar1;
+  CSkeleton *pCVar2;
   CVector3f *pCVar3;
-  int iVar4;
-  byte *puVar5;
+  CVector3f *pCVar4;
+  int index;
+  float *pfVar5;
   byte bVar6;
-  int aiStackY_1018 [1016];
-  float local_2c [3];
-  int local_20;
-  uint local_1c;
+  float afStackY_1018 [1016];
+  float local_30;
+  float local_2c;
+  float local_28;
+  float local_24;
+  float local_20;
+  float local_1c;
   int local_18;
   CDeformableModelInstance *local_14;
   
   bVar6 = 0;
-  *(CDeformableModel **)&this_ptr->field_0x22b0 = model_ptr;
-  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr);
-  core_motion_cpp_FUN_005037d0(this_ptr,pCVar1);
-  local_18 = pCVar1->bone_count;
-  iVar4 = *(int *)&this_ptr->field_0x22b0;
-  local_2c[0] = *(float *)(iVar4 + 0x1748) * *(float *)&this_ptr->field_0x54;
-  local_2c[1] = *(float *)(iVar4 + 0x174c) * *(float *)&this_ptr->field_0x54;
-  local_2c[2] = *(float *)(iVar4 + 0x1744) * *(float *)&this_ptr->field_0x54;
-  local_2c[(uint)bVar6 * 0xfffffffe + 3] = local_2c[(uint)bVar6 * -2];
-  local_2c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
-       local_2c[(uint)bVar6 * 0xfffffffe + (uint)bVar6 * 0xfffffffe + 1];
-  if ((float *)&this_ptr->field_0x508 != local_2c + 2) {
-    *(float *)&this_ptr->field_0x508 = local_2c[2];
-    *(int *)&this_ptr->field_0x50c = local_20;
-    *(uint *)&this_ptr->field_0x510 = local_1c;
+  this_ptr->model_ptr = model_ptr;
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr);
+  core_motion_cpp_FUN_005037d0(this_ptr,pCVar2);
+  local_18 = pCVar2->bone_count;
+  pCVar1 = this_ptr->model_ptr;
+  local_30 = (pCVar1->model_scale).x * this_ptr->scale_factor;
+  local_2c = (pCVar1->model_scale).y * this_ptr->scale_factor;
+  local_28 = (pCVar1->model_scale).z * this_ptr->scale_factor;
+  local_24 = local_30;
+  (&stack0xffffffe0)[(uint)bVar6 * 0xfffffffe] =
+       (float)*(uint *)((int)&stack0xffffffd4 + (uint)bVar6 * -8);
+  *(uint *)((int)&stack0xffffffe4 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+       *(uint *)((int)&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+  if (&this_ptr->root_offset_scale != (CVector3f *)&stack0xffffffdc) {
+    (this_ptr->root_offset_scale).x = local_24;
+    (this_ptr->root_offset_scale).y = local_20;
+    (this_ptr->root_offset_scale).z = local_1c;
   }
-  iVar4 = 0;
+  index = 0;
   if (0 < local_18) {
-    puVar5 = &this_ptr->field_0x54;
+    pfVar5 = &this_ptr->scale_factor;
     local_14 = this_ptr;
-    pCVar3 = (CVector3f *)&this_ptr->field_0x58;
+    pCVar4 = this_ptr->bone_origins;
     do {
-      pCVar2 = core_skeleton_cpp_CDeformableModel_getVertexPoolPtr_FUN_00541620
-                         (*(CDeformableModel **)&this_ptr->field_0x22b0,iVar4);
-      if (pCVar3 != pCVar2) {
-        pCVar3->x = pCVar2->x;
-        pCVar3->y = pCVar2->y;
-        pCVar3->z = pCVar2->z;
+      pCVar3 = core_skeleton_cpp_CDeformableModel_getVertexPoolPtr_FUN_00541620
+                         (this_ptr->model_ptr,index);
+      if (pCVar4 != pCVar3) {
+        pCVar4->x = pCVar3->x;
+        pCVar4->y = pCVar3->y;
+        pCVar4->z = pCVar3->z;
       }
-      *(uint *)&local_14->field_0x514 = *(uint *)&this_ptr->field_0x54;
-      if (*(int *)(pCVar1->bone_list + 0x20) < 0) {
-        pCVar3->x = *(float *)puVar5 * pCVar3->x;
-        pCVar3->y = *(float *)puVar5 * pCVar3->y;
-        pCVar3->z = *(float *)puVar5 * pCVar3->z;
+      local_14->rest_bone_scales[0] = this_ptr->scale_factor;
+      if (pCVar2->bone_list[0].parent_index < 0) {
+        pCVar4->x = *pfVar5 * pCVar4->x;
+        pCVar4->y = *pfVar5 * pCVar4->y;
+        pCVar4->z = *pfVar5 * pCVar4->z;
       }
-      pCVar1 = (CSkeleton *)&pCVar1->field_0x24;
-      pCVar3 = pCVar3 + 1;
-      local_14 = (CDeformableModelInstance *)&local_14->field_0x4;
-      iVar4 = iVar4 + 1;
-    } while (iVar4 < local_18);
+      pCVar2 = (CSkeleton *)((pCVar2->motion_list).state_names[1] + 2);
+      pCVar4 = pCVar4 + 1;
+      local_14 = (CDeformableModelInstance *)&(local_14->base).current_motion_index;
+      index = index + 1;
+    } while (index < local_18);
   }
   core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_00544db0(this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_00547620(this_ptr);

@@ -13,9 +13,9 @@
 ;   TerminatedCString s_Bip01_R_Finger0_005f00db
 ;
 ; Called Functions:
+;   core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80
-;   unkafter_basicene.cpp_FUN_0059e6a0
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     PUSH ESI                            ; 005a3141
     MOV ESI,dword ptr [ESP + 0xc]       ; 005a3142
     PUSH ESI                            ; 005a3146
-    CALL unkafter_basicene.cpp_FUN_0059e6a0 ; 005a3147
-        ;   XREF to: 0059e6a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059e6a0()
+    CALL core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0 ; 005a3147
+        ;   XREF to: 0059e6a0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0(CBasicEnemy * this_ptr)
     ADD ESP,0x4                         ; 005a314c
     LEA EAX,[ESI + 0x2b4]               ; 005a314f
     PUSH EAX                            ; 005a3155

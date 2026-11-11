@@ -12,10 +12,10 @@ void __cdecl core_confedrt_cpp_CConfederate_processDamage_FUN_005a1a70(CConfeder
   int iVar1;
   
   iVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                    (*(uint *)(damage_info + 0x38),g_CConfederateClassInfo.name_hash);
+                    (damage_info->wielder,g_CConfederateClassInfo.name_hash);
   if (iVar1 != 0) {
     return;
   }
-  core_basicene_cpp_CBasicEnemy_processDamage_FUN_0059f800((CBasicEnemy *)this_ptr,damage_info);
+  core_basicene_cpp_CBasicEnemy_processDamage_FUN_0059f800(&this_ptr->base,damage_info);
   return;
 }

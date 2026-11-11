@@ -11,7 +11,7 @@
 void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00518310(CPlatform *this_ptr)
 
 {
-  byte *out_pos;
+  CLocation *out_pos;
   UOrientationVector *out_euler;
   float *pfVar1;
   byte bVar2;
@@ -47,7 +47,7 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00518310(CPlatform 
   if (1.0 < this_ptr->param) {
     this_ptr->param = 1.0;
   }
-  out_pos = &(this_ptr->base).field_0x20;
+  out_pos = &(this_ptr->base).location;
   out_euler = &(this_ptr->base).orient;
   if (this_ptr->course_filename[0] == '\0') {
     pfVar1 = &this_ptr->param;
@@ -61,9 +61,9 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00518310(CPlatform 
     local_60 = local_48 + local_6c;
     local_5c = local_44 + local_68;
     local_58 = local_40 + local_64;
-    *(float *)out_pos = local_60;
-    *(float *)&(this_ptr->base).field_0x24 = local_5c;
-    *(float *)&(this_ptr->base).field_0x28 = local_58;
+    (out_pos->position).x = local_60;
+    (this_ptr->base).location.position.y = local_5c;
+    (this_ptr->base).location.position.z = local_58;
     local_54 = local_60;
     local_50 = local_5c;
     local_4c = local_58;
@@ -98,10 +98,10 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00518310(CPlatform 
     }
   }
   else {
-    local_14 = *(int *)&this_ptr->field_0x46c;
+    local_14 = (this_ptr->course).len;
     core_course_cpp_FUN_00438c40
-              ((CCourse *)&this_ptr->field_0x46c,(float)local_14 * this_ptr->param,
-               (CVector3f *)out_pos,&out_euler->vec);
+              (&this_ptr->course,(float)local_14 * this_ptr->param,&out_pos->position,
+               &out_euler->vec);
   }
   return;
 }

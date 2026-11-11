@@ -11,14 +11,15 @@ EDeathState __cdecl core_twigzomb_cpp_CTwigZombie_getDeathState_FUN_005a2dc0(CTw
 {
   uint uVar1;
   int iVar2;
+  SStateMachine *pSVar3;
   
-  iVar2 = unkaddr_0059d350_cpp_FUN_0059daa0(&this_ptr->field_0x10af8,"Death");
+  pSVar3 = &(this_ptr->base).state_machine;
+  iVar2 = unkaddr_0059d350_cpp_FUN_0059daa0(pSVar3,"Death");
   if ((iVar2 == 0) &&
-     (iVar2 = unkaddr_0059d350_cpp_FUN_0059daa0(&this_ptr->field_0x10af8,"Animation"),
-     iVar2 == 0)) {
+     (iVar2 = unkaddr_0059d350_cpp_FUN_0059daa0(pSVar3,"Animation"), iVar2 == 0)) {
     return DEATH_STATE_ALIVE;
   }
-  iVar2 = core_motion_cpp_FUN_005035c0(&this_ptr->field_0x2b4);
+  iVar2 = core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.base.model);
   uVar1 = *(uint *)(iVar2 + 0x24);
   if (2 < uVar1) {
     if (uVar1 < 4) {

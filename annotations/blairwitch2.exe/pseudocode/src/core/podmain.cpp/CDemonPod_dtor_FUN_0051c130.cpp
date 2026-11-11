@@ -17,7 +17,7 @@ CDemonPod * __cdecl core_podmain_cpp_CDemonPod_dtor_FUN_0051c130(CDemonPod *this
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = engine_pod_cpp_CPod_dtor_FUN_0051b0b0((CPod *)this_ptr,1);
+  pCVar1 = engine_pod_cpp_CPod_dtor_FUN_0051b0b0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return (CDemonPod *)pCVar1;
   }

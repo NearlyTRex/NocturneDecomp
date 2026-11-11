@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 216,
-    "complexity_score": 456,
+    "complexity_score": 441,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 71,
-    "suspect_count": 35,
+    "suspect_count": 34,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -218,23 +217,15 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "sound_sndmain_cpp_killSfx_FUN_00551050(*(uint *)&param_1[1].base.base.field_0x24);",
+      "text": "sound_sndmain_cpp_killSfx_FUN_00551050((uint)param_1[1].base.base.location.position.y);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_killSfx_FUN_00551050(*(uint *)&param_1[1].base.base.field_0x24);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 20,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (*(int *)(param_2 + 0x30) == 0x6c) {",
+      "text": "if (param_2->damage_type == DAMAGE_TYPE_BURN) {",
       "type": "unnamed_param"
     },
     {
@@ -250,7 +241,7 @@
       "line": 23,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(float *)(param_2 + 4) = fStack_14 * (float)_DAT_005e6795 * *(float *)(param_2 + 4);",
+      "text": "param_2->damage_amount = fStack_14 * (float)_DAT_005e6795 * param_2->damage_amount;",
       "type": "unnamed_param"
     },
     {
@@ -258,7 +249,7 @@
       "line": 23,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(float *)(param_2 + 4) = fStack_14 * (float)_DAT_005e6795 * *(float *)(param_2 + 4);",
+      "text": "param_2->damage_amount = fStack_14 * (float)_DAT_005e6795 * param_2->damage_amount;",
       "type": "unnamed_param"
     },
     {
@@ -266,7 +257,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408d70(param_1,param_2 + 0x1c);",
+      "text": "core_actor_cpp_FUN_00408d70(param_1,&param_2->impact_direction);",
       "type": "unnamed_param"
     },
     {
@@ -274,7 +265,7 @@
       "line": 24,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408d70(param_1,param_2 + 0x1c);",
+      "text": "core_actor_cpp_FUN_00408d70(param_1,&param_2->impact_direction);",
       "type": "unnamed_param"
     },
     {
@@ -282,7 +273,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCStack_18 = (CMotionController *)&(param_1->base).model;",
+      "text": "pCStack_18 = &(param_1->base).model.base;",
       "type": "unnamed_param"
     },
     {
@@ -290,7 +281,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = (param_1->base).hit_points - *(float *)(param_2 + 4);",
+      "text": "fVar1 = (param_1->base).hit_points - param_2->damage_amount;",
       "type": "unnamed_param"
     },
     {
@@ -298,7 +289,7 @@
       "line": 27,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar1 = (param_1->base).hit_points - *(float *)(param_2 + 4);",
+      "text": "fVar1 = (param_1->base).hit_points - param_2->damage_amount;",
       "type": "unnamed_param"
     },
     {
@@ -386,7 +377,7 @@
       "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CMotionController *)&(param_1->base).model,0x11,1);",
+      "text": "(&(param_1->base).model.base,0x11,1);",
       "type": "unnamed_param"
     },
     {
@@ -394,7 +385,7 @@
       "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CMotionController *)&(param_1->base).model,0x12,1);",
+      "text": "(&(param_1->base).model.base,0x12,1);",
       "type": "unnamed_param"
     },
     {
@@ -402,7 +393,7 @@
       "line": 67,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CMotionController *)&(param_1->base).model,0x13,1);",
+      "text": "(&(param_1->base).model.base,0x13,1);",
       "type": "unnamed_param"
     },
     {

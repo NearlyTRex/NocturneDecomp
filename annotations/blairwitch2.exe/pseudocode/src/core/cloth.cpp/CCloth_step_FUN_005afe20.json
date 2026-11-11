@@ -2,21 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1016,
-    "complexity_score": 1214,
+    "complexity_score": 843,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 559,
-    "suspect_count": 63,
+    "pseudocode_lines": 558,
+    "suspect_count": 25,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
+      "shadow_pointer_walk",
       "stack_alignment_array",
-      "unnamed_field",
+      "unrolled_memcpy",
+      "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1575
+    "total_lines": 1574
   },
   "cross_references": [
     {
@@ -120,19 +122,19 @@
     },
     {
       "addr": "01fc0e28",
-      "name": "g_CDemonSetInstance.field95_0x15ac70",
+      "name": "g_CDemonSetInstance.active_fog.scroll.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fc0e2c",
-      "name": "g_CDemonSetInstance.field99_0x15ac74",
+      "name": "g_CDemonSetInstance.active_fog.scroll.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fc0e30",
-      "name": "g_CDemonSetInstance.field103_0x15ac78",
+      "name": "g_CDemonSetInstance.active_fog.scroll.z",
       "type": "undefined4",
       "value": null
     }
@@ -1362,499 +1364,195 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 23,
+      "line": 22,
       "match": "afStackY_129c",
       "severity": "moderate",
       "text": "float afStackY_129c [1004];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 172,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "local_a0 = &model_ptr->field_0xe80;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 264,
-      "match": "(float *)((int)g_CDemonSetPtr",
+      "line": 252,
+      "match": "(float *)((int)local_90",
       "severity": "moderate",
-      "text": "pfVar14 = (float *)((int)g_CDemonSetPtr + (uint)bVar16 * -8 + 0x15ac74);",
+      "text": "pfVar13 = (float *)((int)local_90->connected_indices + local_9c + -0x34);",
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 265,
-      "match": "field_0x15ac70",
-      "severity": "mild",
-      "text": "local_e0 = *(float *)&g_CDemonSetPtr->field_0x15ac70;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 268,
+      "match": "(float *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "pfVar13 = (float *)((int)g_CDemonSetPtr + (uint)bVar15 * -8 + 0x15ac74);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 290,
-      "match": "field_0x15ac70",
-      "severity": "mild",
-      "text": "local_23c = *(float *)&g_CDemonSetPtr->field_0x15ac70 * local_2e0;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 389,
+      "match": "(CVector3f *)((int)(pCVar11 + 0x17) +",
+      "severity": "moderate",
+      "text": "pCVar11 = (CVector3f *)((int)(pCVar11 + 0x17) + 8);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 291,
-      "match": "field_0x15ac74",
-      "severity": "mild",
-      "text": "local_238 = *(float *)&g_CDemonSetPtr->field_0x15ac74 * local_2e0;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 392,
+      "match": "(CVector3f *)((int)(pCVar14 + 0x17) +",
+      "severity": "moderate",
+      "text": "pCVar14 = (CVector3f *)((int)(pCVar14 + 0x17) + 8);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 293,
-      "match": "field_0x15ac78",
-      "severity": "mild",
-      "text": "local_234 = *(float *)&g_CDemonSetPtr->field_0x15ac78 * local_2e0;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 416,
+      "match": "(int *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "pSVar9 = local_74 + *(int *)((int)this_ptr->vertex_sort_buffer + local_3c);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 414,
-      "match": "field_0x74",
-      "severity": "mild",
-      "text": "if (*(int *)&pSVar12->field_0x74 == 0) {",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 506,
+      "match": "(int *)(iVar7 + (int)this_ptr",
+      "severity": "moderate",
+      "text": "pSVar9 = local_64 + *(int *)(iVar7 + (int)this_ptr->vertex_sort_buffer);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 415,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "puVar1 = &pSVar12->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 417,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x28 = *(float *)local_70 * *(float *)&pSVar12->field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 417,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x28 = *(float *)local_70 * *(float *)&pSVar12->field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 418,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x2c = *(float *)local_70 * *(float *)&pSVar12->field_0x2c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 418,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x2c = *(float *)local_70 * *(float *)&pSVar12->field_0x2c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 429,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "puVar2 = &pSVar12->field_0xc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 435,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x10 = *(float *)&pSVar12->field_0x10 - local_d0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 435,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x10 = *(float *)&pSVar12->field_0x10 - local_d0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 436,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x14 = *(float *)&pSVar12->field_0x14 - local_cc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 436,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x14 = *(float *)&pSVar12->field_0x14 - local_cc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 438,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x10 = *(float *)&pSVar12->field_0x10 + local_250;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 438,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x10 = *(float *)&pSVar12->field_0x10 + local_250;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 439,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x14 = *(float *)&pSVar12->field_0x14 + local_24c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 439,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x14 = *(float *)&pSVar12->field_0x14 + local_24c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 440,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "fVar5 = *(float *)&pSVar12->field_0x4 * 0.0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 441,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_14c = fVar5 - *(float *)&pSVar12->field_0x8 *",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 443,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_148[0] = *(float *)&pSVar12->field_0x8 * 0.0 - *(float *)pSVar12 * 0.0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 450,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x10 = *(float *)&pSVar12->field_0x10 + local_268[3];",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 450,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x10 = *(float *)&pSVar12->field_0x10 + local_268[3];",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 451,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x14 = *(float *)&pSVar12->field_0x14 + local_258;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 451,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x14 = *(float *)&pSVar12->field_0x14 + local_258;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 454,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "SQRT(*(float *)&pSVar12->field_0x2c * *(float *)&pSVar12->field_0x2c +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 454,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "SQRT(*(float *)&pSVar12->field_0x2c * *(float *)&pSVar12->field_0x2c +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 456,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x28 * *(float *)&pSVar12->field_0x28))) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 456,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x28 * *(float *)&pSVar12->field_0x28))) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 458,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "local_224 = *(float *)&pSVar12->field_0xc * fVar5;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 459,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "local_220 = *(float *)&pSVar12->field_0x10 * fVar5;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 460,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "local_21c = fVar5 * *(float *)&pSVar12->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 465,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "if ((float *)&pSVar12->field_0x18 != &local_2b4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 466,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x18 = local_2b4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 467,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x1c = local_2b0[0];",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 468,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x20 = local_2b0[1];",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 470,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "local_1f4 = *(float *)&pSVar12->field_0x18 * delta_time;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 471,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "local_1f0[0] = *(float *)&pSVar12->field_0x1c * delta_time;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 472,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "puVar1 = &pSVar12->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 473,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "local_1f0[1] = *(float *)&pSVar12->field_0x20 * delta_time;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 479,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x28 = *(float *)&pSVar12->field_0x28 + local_1cc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 479,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x28 = *(float *)&pSVar12->field_0x28 + local_1cc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 480,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x2c = *(float *)&pSVar12->field_0x2c + local_1c8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 480,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x2c = *(float *)&pSVar12->field_0x2c + local_1c8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 482,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "local_1b4 = *(float *)&pSVar12->field_0x28 * delta_time;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 483,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "local_1b0 = delta_time * *(float *)&pSVar12->field_0x2c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 489,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x4 = *(float *)&pSVar12->field_0x4 + local_1c0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 489,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x4 = *(float *)&pSVar12->field_0x4 + local_1c0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 490,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x8 = *(float *)&pSVar12->field_0x8 + local_1bc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 490,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x8 = *(float *)&pSVar12->field_0x8 + local_1bc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 507,
-      "match": "field_0x74",
-      "severity": "mild",
-      "text": "if ((*(int *)&pSVar12->field_0x74 == 0) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 510,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "SQRT(*(float *)&pSVar12->field_0x2c * *(float *)&pSVar12->field_0x2c +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 510,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "SQRT(*(float *)&pSVar12->field_0x2c * *(float *)&pSVar12->field_0x2c +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 511,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x24 * *(float *)&pSVar12->field_0x24 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 511,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x24 * *(float *)&pSVar12->field_0x24 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 512,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x28 * *(float *)&pSVar12->field_0x28))))) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 512,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(float *)&pSVar12->field_0x28 * *(float *)&pSVar12->field_0x28))))) {",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 526,
+      "match": "(int *)(iVar7 + (int)this_ptr",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)(iVar7 + (int)this_ptr->vertex_sort_buffer);",
+      "type": "pointer_cast"
     },
     {
       "description": "Pointer value `g_CDemonSetPtr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 264,
+      "line": 268,
       "match": "(int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "pfVar14 = (float *)((int)g_CDemonSetPtr + (uint)bVar16 * -8 + 0x15ac74);",
+      "text": "pfVar13 = (float *)((int)g_CDemonSetPtr + (uint)bVar15 * -8 + 0x15ac74);",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(pCVar11 + 0x17)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 389,
+      "match": "(int)(pCVar11 + 0x17)",
+      "severity": "moderate",
+      "text": "pCVar11 = (CVector3f *)((int)(pCVar11 + 0x17) + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(pCVar14 + 0x17)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 392,
+      "match": "(int)(pCVar14 + 0x17)",
+      "severity": "moderate",
+      "text": "pCVar14 = (CVector3f *)((int)(pCVar14 + 0x17) + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 326,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar14->x = position->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 365,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->last_euler).x = euler->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 385,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar14[0x10].x = (pSVar9->position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 179,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(pSVar9->position).z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 315,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->wind_velocity).z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 378,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "pCVar14->z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 552,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar12 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_4c` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_4c->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 207,
+      "match": "local_4c = (T *)&(local_4c->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "local_4c = (SClothVertex *)&(local_4c->position).y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_44` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `local_44->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 214,
+      "match": "local_44 = (T *)((local_44->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "local_44 = (CCloth *)((local_44->model).model_filename + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_40` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_40->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 264,
+      "match": "local_40 = (T *)&(local_40->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "local_40 = (CCloth *)&(local_40->model).env_map_opac_list;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via element-arithmetic `(int)(pCVar11 + N) + M`, where `N*sizeof(*pCVar11) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar11->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 389,
+      "match": "pCVar11 = (T *)((int)(pCVar11 + N) + M)",
+      "severity": "moderate",
+      "text": "pCVar11 = (CVector3f *)((int)(pCVar11 + 0x17) + 8);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 390,
+      "match": "pCVar8 = (T *)&(pCVar8->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar8 = (CCloth *)&(pCVar8->model).env_map_opac_list;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar14` self-updates via element-arithmetic `(int)(pCVar14 + N) + M`, where `N*sizeof(*pCVar14) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar14->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 392,
+      "match": "pCVar14 = (T *)((int)(pCVar14 + N) + M)",
+      "severity": "moderate",
+      "text": "pCVar14 = (CVector3f *)((int)(pCVar14 + 0x17) + 8);",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

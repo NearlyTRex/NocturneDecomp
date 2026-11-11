@@ -11,9 +11,9 @@
 CGameHook * unkclass_gamehook_cpp_CGameHook_ctor_FUN_0059c290(CGameHook *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x4 = 0;
-  *(uint *)&this_ptr->field_0x8 = 0;
-  *(uint *)&this_ptr->field_0xc = 0;
-  *(uint *)this_ptr = 0;
+  this_ptr->debug_barrier_display = 0;
+  this_ptr->debug_waypoint_display = 0;
+  this_ptr->debug_follow_slot_display = 0;
+  this_ptr->debug_state_display = 0;
   return this_ptr;
 }

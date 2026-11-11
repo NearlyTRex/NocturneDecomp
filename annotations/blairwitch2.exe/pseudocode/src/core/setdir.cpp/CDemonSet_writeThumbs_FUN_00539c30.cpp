@@ -31,7 +31,7 @@ void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00539c30(CDemonSet *this_
     local_1c = g_CZThumbPool;
     do {
       iVar2 = 1;
-      if (*(int *)&local_18->cameras[0].field_0x140 != 0) {
+      if (local_18->cameras[0].is_panning != 0) {
         iVar2 = 6;
       }
       iVar1 = 0;
@@ -44,11 +44,11 @@ void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00539c30(CDemonSet *this_
         } while (iVar1 < iVar2);
       }
       local_1c = local_1c + 6;
-      local_18 = (CDemonSet *)&local_18->cameras[0].field_0x1a0;
+      local_18 = (CDemonSet *)&local_18->cameras[0].enabled;
       local_14 = local_14 + 1;
     } while (local_14 < this_ptr->camera_count);
   }
-  if (((byte)file_handle[0xc] & 0x20) != 0) {
+  if ((file_handle->_flag & 0x20) != 0) {
     _DAT_01d046a0 = "..\\core\\setdir.cpp";
     _DAT_01d046a4 = 0x3d7;
     core_main_c_FUN_004e4500("Error writing %s",filename);

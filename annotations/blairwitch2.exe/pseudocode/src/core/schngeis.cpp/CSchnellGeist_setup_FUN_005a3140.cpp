@@ -12,17 +12,17 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_setup_FUN_005a3140(CSchnellGeist *t
   CSkeleton *this_ptr_00;
   int iVar1;
   
-  unkafter_basicene_cpp_FUN_0059e6a0(this_ptr);
+  core_basicene_cpp_CBasicEnemy_setup_FUN_0059e6a0(&this_ptr->base);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
-                          ((CDeformableModelInstance *)&this_ptr->field_0x2b4);
+                          (&(this_ptr->base).base.base.model);
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 Tongue",1);
-  *(int *)&this_ptr->field_0x11850 = iVar1;
+  this_ptr->tongue_bone = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Dummy07",1);
-  *(int *)&this_ptr->field_0x11854 = iVar1;
+  this_ptr->dummy07_bone = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 Tongue",1);
-  *(int *)&this_ptr->field_0x11858 = iVar1;
+  this_ptr->tongue_attack_bone = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80
                     (this_ptr_00,"Bip01 R Finger0",1);
-  *(int *)&this_ptr->field_0x1185c = iVar1;
+  this_ptr->finger_bone = iVar1;
   return;
 }

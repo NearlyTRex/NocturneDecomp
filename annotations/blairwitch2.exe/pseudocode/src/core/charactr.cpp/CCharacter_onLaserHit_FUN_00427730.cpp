@@ -14,12 +14,12 @@ void __cdecl core_charactr_cpp_CCharacter_onLaserHit_FUN_00427730(CCharacter *th
   float fVar1;
   
   core_actor_cpp_CDemonActor_onLaserHit_FUN_00409830(&this_ptr->base,laser_info);
-  if (*(int *)&this_ptr->field_0x2814 == 0) {
+  if (this_ptr->is_spectral == 0) {
     return;
   }
-  *(uint *)(laser_info + 0x50) = 0;
+  laser_info->transparency = 0.0;
   fVar1 = (float)_DAT_005ccdce;
-  *(uint *)(laser_info + 0x48) = 0x3f666666;
-  *(float *)(laser_info + 0x4c) = *(float *)(laser_info + 0x44) * fVar1;
+  laser_info->reflectivity = 0.9;
+  laser_info->stored_angle = laser_info->incidence_angle * fVar1;
   return;
 }

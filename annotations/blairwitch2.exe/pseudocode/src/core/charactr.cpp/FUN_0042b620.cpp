@@ -12,7 +12,7 @@ void core_charactr_cpp_FUN_0042b620(CDemonActor *param_1)
 
 {
   int iVar1;
-  uint *puVar2;
+  int *piVar2;
   uint *puVar3;
   byte bVar4;
   float afStackY_1020 [1001];
@@ -26,14 +26,16 @@ void core_charactr_cpp_FUN_0042b620(CDemonActor *param_1)
   uint auStack_10 [2];
   
   bVar4 = 0;
-  if (*(int *)&param_1[0x62].field_0x140 == 0) {
+  if (param_1[0x62].previous_transform_state.orientation.vec.z == 0.0) {
     return;
   }
-  puVar2 = (uint *)(&param_1[6].field_0xfc + *(int *)&param_1[0x62].field_0x13c * 0x30);
+  piVar2 = (int *)(param_1[6].footstep_sound_code +
+                  *(int *)((int)&param_1[0x62].previous_transform_state.orientation + 4) * 0x30 +
+                  -0x24);
   puVar3 = (uint *)&stack0xffffff98;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + 1;
+    *puVar3 = *piVar2;
+    piVar2 = piVar2 + 1;
     puVar3 = puVar3 + 1;
   }
   core_xform_cpp_matrixToEulerAngles_FUN_00591de0(&stack0xffffff98);
@@ -55,13 +57,13 @@ void core_charactr_cpp_FUN_0042b620(CDemonActor *param_1)
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
             (DAT_0060b280,&local_2c,(CVector3f *)0x0);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-            (DAT_0060b280,(CVector3f *)&param_1[0x62].field_0x160,
-             (CVector3f *)&param_1[0x62].field_0x124);
+            (DAT_0060b280,(CVector3f *)&param_1[0x62].particle_systems[0].fade_current,
+             (CVector3f *)&param_1[0x62].dead1);
   core_charactr_cpp_FUN_0042b760(param_1,&DAT_0265370c);
   engine_matrix_c_pop_FUN_0046b4a0();
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-            (DAT_0060b280,(CVector3f *)&param_1[0x62].field_0x16c,
-             (CVector3f *)&param_1[0x62].field_0x130);
+            (DAT_0060b280,(CVector3f *)&param_1[0x62].particle_systems[0].max_particles,
+             (CVector3f *)&param_1[0x62].previous_transform_state.position.y);
   core_charactr_cpp_FUN_0042b760(param_1,&DAT_0265370c);
   engine_matrix_c_pop_FUN_0046b4a0();
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10(param_1);

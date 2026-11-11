@@ -2,20 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 206,
+    "complexity_score": 158,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 16,
-    "suspect_count": 17,
+    "pseudocode_lines": 18,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_field",
-      "unnamed_param",
-      "unresolved_funcptr"
+      "suspect_float",
+      "unaffected_reg",
+      "unnamed_param"
     ],
-    "total_lines": 52
+    "total_lines": 54
   },
   "cross_references": [
     {
@@ -128,124 +128,84 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Unaffected register variable",
       "line": 7,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30(g_CDemonSetPtr,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 8,
-      "match": "code *",
+      "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)(*(int *)(&param_1[0xd8].field_0x1ac +",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)(*(int *)(&param_1[0xd8].field_0x1ac +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x1ac",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)(*(int *)(&param_1[0xd8].field_0x1ac +",
-      "type": "unnamed_field"
+      "text": "CDemonActor *unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1[0xd8].actor_name + 4) * 4) + 0x2b0) + 0xec)",
+      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30(g_CDemonSetPtr,param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": ")(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)(param_1[0xd8].actor_name + 4) * 4));",
+      "text": "(&param_1[0xd8].particle_systems[1].owner)[*(int *)(param_1[0xd8].actor_name + 4)];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": ")(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)(param_1[0xd8].actor_name + 4) * 4));",
+      "text": "(&param_1[0xd8].particle_systems[1].owner)[*(int *)(param_1[0xd8].actor_name + 4)];",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x1ac",
-      "severity": "mild",
-      "text": ")(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)(param_1[0xd8].actor_name + 4) * 4));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unaffected register variable",
       "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)(param_1[0xd8].actor_name + 4) * 4) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)(param_1[0xd8].actor_name + 4) * 4) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x1ac",
-      "severity": "mild",
-      "text": "(*(int *)(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)(param_1[0xd8].actor_name + 4) * 4) +",
-      "type": "unnamed_field"
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).isGrabbable)(this_ptr,unaff_ESI);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[0xdd].field_0x114 = 0x3f800000;",
+      "text": "((&param_1[0xd8].particle_systems[1].owner)[*(int *)(param_1[0xd8].actor_name + 4)][1].",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x114",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[0xdd].field_0x114 = 0x3f800000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[0xdd].field_0xf4 = 0;",
+      "text": "((&param_1[0xd8].particle_systems[1].owner)[*(int *)(param_1[0xd8].actor_name + 4)][1].",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0xf4",
+      "description": "Likely misinterpreted integer as float",
+      "line": 15,
+      "match": "1.4013e-45",
       "severity": "mild",
-      "text": "*(uint *)&param_1[0xdd].field_0xf4 = 0;",
-      "type": "unnamed_field"
+      "text": "particle_systems[0].fade_timer == 1.4013e-45)) {",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0xdd].blood_effect_timer = 0x3f800000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0xdd].platform_orientation_delta.z = 0.0;",
+      "type": "unnamed_param"
     },
     {
       "call_site_count": 1,

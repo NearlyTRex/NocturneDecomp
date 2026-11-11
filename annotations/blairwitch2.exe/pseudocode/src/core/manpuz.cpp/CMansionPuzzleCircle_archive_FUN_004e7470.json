@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 136,
+    "complexity_score": 130,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
-    "suspect_count": 9,
+    "pseudocode_lines": 30,
+    "suspect_count": 8,
     "suspect_types": [
-      "primitive_walker_cast",
-      "undefined_data",
-      "unnamed_field"
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
+      "undefined_data"
     ],
-    "total_lines": 115
+    "total_lines": 114
   },
   "cross_references": [],
   "function": {
@@ -157,76 +158,68 @@
   },
   "suspects": [
     {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 17,
-      "match": "(int *)&this_ptr->panels[",
-      "severity": "moderate",
-      "text": "int_ptr = (int *)&this_ptr->panels[0].field_0x54;",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "int_ptr = (int *)&this_ptr->panels[0].field_0x54;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 19,
-      "match": "(int *)&this_ptr->panels[",
-      "severity": "moderate",
-      "text": "int_ptr_01 = (int *)&this_ptr->panels[0].field_0x50;",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "int_ptr_01 = (int *)&this_ptr->panels[0].field_0x50;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 20,
-      "match": "(int *)&this_ptr->panels[",
-      "severity": "moderate",
-      "text": "int_ptr_00 = (int *)&this_ptr->panels[0].field_0x4c;",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "int_ptr_00 = (int *)&this_ptr->panels[0].field_0x4c;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 23,
       "match": "DAT_005dc6cc",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b960(int_ptr_00,&DAT_005dc6cc);",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b960(&int_ptr_00->r,&DAT_005dc6cc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 24,
       "match": "DAT_005dc6ce",
       "severity": "mild",
       "text": "core_actor_cpp_archiveInteger_FUN_0040b960(int_ptr_01,&DAT_005dc6ce);",
       "type": "undefined_data"
     },
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 26,
+      "match": "(CColor3i *)((int)(int_ptr_00 + 8) +",
+      "severity": "moderate",
+      "text": "int_ptr_00 = (CColor3i *)((int)(int_ptr_00 + 8) + 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 28,
       "match": "DAT_005dc6d0",
       "severity": "mild",
       "text": "core_actor_cpp_archiveInteger_FUN_0040b960(int_ptr,&DAT_005dc6d0);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `(int_ptr_00 + 8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 26,
+      "match": "(int)(int_ptr_00 + 8)",
+      "severity": "moderate",
+      "text": "int_ptr_00 = (CColor3i *)((int)(int_ptr_00 + 8) + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `int_ptr_00` self-updates via element-arithmetic `(int)(int_ptr_00 + N) + M`, where `N*sizeof(*int_ptr_00) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `int_ptr_00->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 26,
+      "match": "int_ptr_00 = (T *)((int)(int_ptr_00 + N) + M)",
+      "severity": "moderate",
+      "text": "int_ptr_00 = (CColor3i *)((int)(int_ptr_00 + 8) + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `int_ptr_01` was initialized to the address of an array element's subfield (`int_ptr_01 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*int_ptr_01)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `int_ptr_01->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 27,
+      "match": "int_ptr_01 = int_ptr_01 + N",
+      "severity": "moderate",
+      "text": "int_ptr_01 = int_ptr_01 + 0x19;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `int_ptr` was initialized to the address of an array element's subfield (`int_ptr = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*int_ptr)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `int_ptr->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 29,
+      "match": "int_ptr = int_ptr + N",
+      "severity": "moderate",
+      "text": "int_ptr = int_ptr + 0x19;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

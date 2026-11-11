@@ -11,7 +11,7 @@ void core_backgnd_cpp_factoryFuncBackgroundActor_FUN_0040f300(void)
 {
   CBackgroundActor *this_ptr;
   
-  this_ptr = (CBackgroundActor *)debugAllocTracked1(0x43c);
+  this_ptr = (CBackgroundActor *)operator_new(0x43c);
   if (this_ptr == (CBackgroundActor *)0x0) {
     return;
   }

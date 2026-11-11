@@ -18,7 +18,7 @@ CIniFile * engine_ini_cpp_CIniFile_dtor_FUN_004d8940(CIniFile *this_ptr,uint fla
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  *(byte ***)&this_ptr->field_0x200 = &PTR_engine_ini_cpp_CIniFile_dtor_FUN_004d8940_005f8ef4;
+  this_ptr->vtable = &PTR_engine_ini_cpp_CIniFile_dtor_FUN_004d8940_005f8ef4;
   if ((flags & 2) == 0) {
     return this_ptr;
   }

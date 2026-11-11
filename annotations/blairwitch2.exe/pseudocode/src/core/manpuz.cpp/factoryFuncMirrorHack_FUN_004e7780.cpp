@@ -11,7 +11,7 @@ void core_manpuz_cpp_factoryFuncMirrorHack_FUN_004e7780(void)
 {
   CMirrorHack *this_ptr;
   
-  this_ptr = (CMirrorHack *)debugAllocTracked1(0x434);
+  this_ptr = (CMirrorHack *)operator_new(0x434);
   if (this_ptr == (CMirrorHack *)0x0) {
     return;
   }

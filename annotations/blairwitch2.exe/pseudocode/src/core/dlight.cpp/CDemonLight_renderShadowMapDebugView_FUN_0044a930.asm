@@ -25,7 +25,7 @@
 ;   undefined4 DAT_006141bc
 ;   CGame* g_CGamePtr = 01cb6900
 ;   undefined4 DAT_01c2a38c
-;   undefined4 g_CGameInstance.field464_0x200
+;   undefined4 g_CGameInstance.camera_debug_enabled
 ;
 ; Called Functions:
 ;   engine_2d.c_drawTextCenteredXYColor_FUN_00402710
@@ -222,7 +222,7 @@ section .text
         ;   XREF to: 0044a9e6 (UNCONDITIONAL_JUMP)  ; LAB_0044a9e6
     MOV EAX,[0x00616494]                ; 0044ab15 | g_CGamePtr
         ;   Label: LAB_0044ab15
-    CMP dword ptr [EAX + 0x200],0x0     ; 0044ab1a | g_CGameInstance.field464_0x200
+    CMP dword ptr [EAX + 0x200],0x0     ; 0044ab1a | g_CGameInstance.camera_debug_enabled
     JNZ 0x0044ab2b                      ; 0044ab21
         ;   XREF to: 0044ab2b (CONDITIONAL_JUMP)  ; LAB_0044ab2b
     ADD ESP,0x1c                        ; 0044ab23

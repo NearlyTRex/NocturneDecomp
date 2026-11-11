@@ -11,6 +11,6 @@ int __cdecl core_dog1_cpp_CDog_renderTransparent_FUN_005ac720(CDog *this_ptr)
 {
   int iVar1;
   
-  iVar1 = core_basicene_cpp_CBasicEnemy_renderTransparent_FUN_0059f980((CBasicEnemy *)this_ptr);
+  iVar1 = core_basicene_cpp_CBasicEnemy_renderTransparent_FUN_0059f980(&this_ptr->base);
   return (uint)(iVar1 != 0);
 }

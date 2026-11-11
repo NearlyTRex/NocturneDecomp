@@ -15,11 +15,9 @@ void __cdecl core_batman_cpp_CBatman_pickRandomMovementState_FUN_00412ec0(CBatma
   iVar1 = core_actor_cpp_randomChance_FUN_0040d060(0.5);
   this_ptr_00 = &(this_ptr->base).base.model;
   if (iVar1 != 0) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-              ((CMotionController *)this_ptr_00,1,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,1,1);
     return;
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-            ((CMotionController *)this_ptr_00,2,1);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,2,1);
   return;
 }

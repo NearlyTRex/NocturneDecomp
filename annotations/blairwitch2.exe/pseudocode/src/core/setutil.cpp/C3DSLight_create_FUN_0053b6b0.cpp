@@ -23,7 +23,7 @@ ulonglong __cdecl core_setutil_cpp_C3DSLight_create_FUN_0053b6b0(int param_1)
   int iVar8;
   char *pcVar9;
   
-  this_ptr = (CDemonLight *)debugAllocTracked1(0x2fb0);
+  this_ptr = (CDemonLight *)operator_new(0x2fb0);
   this_ptr_00 = (CDemonLight *)0x0;
   if (this_ptr != (CDemonLight *)0x0) {
     this_ptr_00 = core_dlight_cpp_CDemonLight_ctor_FUN_00449c70

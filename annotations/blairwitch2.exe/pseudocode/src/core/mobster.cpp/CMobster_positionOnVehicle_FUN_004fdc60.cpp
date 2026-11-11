@@ -14,10 +14,10 @@ void __cdecl core_mobster_cpp_CMobster_positionOnVehicle_FUN_004fdc60(CMobster *
 {
   float fVar1;
   byte bVar2;
-  uint auStackY_1030 [1016];
-  uint local_48;
-  uint local_44;
-  uint local_40;
+  float afStackY_1030 [1016];
+  float local_48;
+  float local_44;
+  float local_40;
   uint local_3c;
   uint local_38;
   uint local_34;
@@ -27,7 +27,7 @@ void __cdecl core_mobster_cpp_CMobster_positionOnVehicle_FUN_004fdc60(CMobster *
   uint local_24;
   uint local_20;
   uint local_1c;
-  uint local_18;
+  float local_18;
   
   bVar2 = 0;
   if (this_ptr->side_of_car == 0) {
@@ -59,8 +59,8 @@ void __cdecl core_mobster_cpp_CMobster_positionOnVehicle_FUN_004fdc60(CMobster *
        *(uint *)((int)&stack0xffffffec + (uint)bVar2 * 0xfffffffe * 4);
   *(uint *)((int)&stack0xffffffc0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
        *(uint *)(&stack0xfffffff0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  *(uint *)&(this_ptr->base).base.base.field_0x20 = local_48;
-  *(uint *)&(this_ptr->base).base.base.field_0x24 = local_44;
-  *(uint *)&(this_ptr->base).base.base.field_0x28 = local_40;
+  (this_ptr->base).base.base.location.position.x = local_48;
+  (this_ptr->base).base.base.location.position.y = local_44;
+  (this_ptr->base).base.base.location.position.z = local_40;
   return;
 }

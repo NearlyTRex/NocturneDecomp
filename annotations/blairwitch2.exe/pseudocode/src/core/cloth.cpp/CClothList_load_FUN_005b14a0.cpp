@@ -28,7 +28,7 @@ void __cdecl core_cloth_cpp_CClothList_load_FUN_005b14a0(CClothList *this_ptr)
         uVar4 = core_necklace_cpp_FUN_005ade00(pCVar5->cloths[0],0);
         FUN_005b7fdc(uVar4);
       }
-      iVar2 = debugAllocTracked1(0x3ab30);
+      iVar2 = operator_new(0x3ab30);
       pCVar3 = (CCloth *)0x0;
       if (iVar2 != 0) {
         pCVar3 = (CCloth *)core_necklace_cpp_FUN_005adda0(iVar2);

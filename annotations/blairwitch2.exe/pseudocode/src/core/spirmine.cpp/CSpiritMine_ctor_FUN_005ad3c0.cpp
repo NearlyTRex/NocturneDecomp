@@ -13,19 +13,19 @@ CSpiritMine * core_spirmine_cpp_CSpiritMine_ctor_FUN_005ad3c0(CSpiritMine *this_
 {
   CSpiritMine *pCVar1;
   
-  pCVar1 = (CSpiritMine *)core_boxactor_cpp_CBoxActor_ctor_FUN_0041bd30((CBoxActor *)this_ptr);
-  ((UActorVTable *)&pCVar1->field_0x2b0)->_ub = &g_CSpiritMineVTable;
-  *(uint *)&pCVar1->field_0x7dc = 0x40a00000;
-  *(uint *)&pCVar1->field_0x7e0 = 0x40a00000;
-  *(uint *)&pCVar1->field_0x7e4 = 0x41c80000;
-  *(uint *)&pCVar1->field_0x7e8 = 0;
-  *(uint *)&pCVar1->field_0x7ec = 0;
-  *(uint *)&pCVar1->field_0x7f0 = 0;
-  *(uint *)&pCVar1->field_0xfc = 0;
-  *(uint *)&pCVar1->field_0x7d8 = 0x3f800000;
-  *(uint *)&pCVar1->field_0x7d4 = 0x3f800000;
+  pCVar1 = (CSpiritMine *)core_boxactor_cpp_CBoxActor_ctor_FUN_0041bd30(&this_ptr->base);
+  (pCVar1->base).base.vtable._ub = &g_CSpiritMineVTable;
+  pCVar1->sleep_time = 5.0;
+  pCVar1->effect_time = 5.0;
+  pCVar1->effect_damage = 25.0;
+  pCVar1->sleep_timer = 0.0;
+  pCVar1->emit_timer = 0.0;
+  pCVar1->effect_timer = 0.0;
+  (pCVar1->base).base.is_transparent = 0;
+  pCVar1->unused_7d8 = 1.0;
+  pCVar1->trigger_radius = 1.0;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            ((CKeyFramedModelInstance *)&pCVar1->field_0x2b4,"rock_pile.kfm");
-  *(uint *)&pCVar1->field_0x834 = 0;
+            (&(pCVar1->base).model,"rock_pile.kfm");
+  pCVar1->unused_834 = 0;
   return pCVar1;
 }

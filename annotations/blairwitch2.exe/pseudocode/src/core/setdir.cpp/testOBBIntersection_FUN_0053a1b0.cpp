@@ -61,54 +61,54 @@ int __cdecl core_setdir_cpp_testOBBIntersection_FUN_0053a1b0(SVDBox *obb_a,SVDBo
   double local_48;
   double local_40;
   uint local_38;
-  byte *local_34;
+  CMatrix3x3f *local_34;
   float local_30;
   float local_2c;
   float local_28;
   float *local_24;
   uint local_20;
-  byte *local_1c;
+  CMatrix3x3f *local_1c;
   float local_18;
   float local_14;
   
   bVar3 = 0;
-  local_bc = -*(float *)&obb_b->field_0xc;
-  local_b8 = -*(float *)&obb_b->field_0x10;
-  local_b4 = -*(float *)&obb_b->field_0x14;
+  local_bc = -(obb_b->extents).x;
+  local_b8 = -(obb_b->extents).y;
+  local_b4 = -(obb_b->extents).z;
   if (&local_134 != &local_bc) {
     local_134 = local_bc;
     local_130 = local_b8;
     local_12c = local_b4;
   }
-  if (&local_128 != (float *)&obb_b->field_0xc) {
-    local_128 = *(float *)&obb_b->field_0xc;
-    local_124 = *(float *)&obb_b->field_0x10;
-    local_120 = *(float *)&obb_b->field_0x14;
+  if ((CVector3f *)&local_128 != &obb_b->extents) {
+    local_128 = (obb_b->extents).x;
+    local_124 = (obb_b->extents).y;
+    local_120 = (obb_b->extents).z;
   }
   local_80 = local_bc;
   local_7c = local_b8;
   local_78 = local_b4;
   __arrinit(local_194,8,&g_CVectorTypeInfo);
-  local_1c = &obb_b->field_0x18;
-  local_34 = &obb_a->field_0x18;
+  local_1c = &obb_b->rotation_matrix;
+  local_34 = &obb_a->rotation_matrix;
   local_20 = 0;
   do {
-    local_30 = *(float *)&obb_a->field_0xc;
+    local_30 = (obb_a->extents).x;
     local_24 = (float *)((int)local_194 + local_20 * 0xc);
     while( true ) {
       local_e0 = local_30;
       if ((local_20 & 2) == 0) {
-        local_2c = *(float *)&obb_a->field_0x10;
+        local_2c = (obb_a->extents).y;
       }
       else {
-        local_2c = -*(float *)&obb_a->field_0x10;
+        local_2c = -(obb_a->extents).y;
       }
       local_dc = local_2c;
       if ((local_20 & 4) == 0) {
-        local_28 = *(float *)&obb_a->field_0x14;
+        local_28 = (obb_a->extents).z;
       }
       else {
-        local_28 = -*(float *)&obb_a->field_0x14;
+        local_28 = -(obb_a->extents).z;
       }
       local_d8 = local_28;
       core_dirmat_cpp_FUN_00449530(local_34,&local_e0);
@@ -117,10 +117,10 @@ int __cdecl core_setdir_cpp_testOBBIntersection_FUN_0053a1b0(SVDBox *obb_a,SVDBo
            *(uint *)((int)afStack_70 + ((uint)bVar3 * -2 + 3) * 4);
       *(uint *)((int)local_d0 + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 4) * 4) =
            *(uint *)((int)afStack_70 + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 4) * 4);
-      local_b0 = local_d0[2] + *(float *)obb_a;
-      local_ac[0] = local_d0[3] + *(float *)&obb_a->field_0x4;
-      local_ac[1] = local_c0 + *(float *)&obb_a->field_0x8;
-      local_104 = local_d0[2] + *(float *)obb_a;
+      local_b0 = local_d0[2] + (obb_a->position).x;
+      local_ac[0] = local_d0[3] + (obb_a->position).y;
+      local_ac[1] = local_c0 + (obb_a->position).z;
+      local_104 = local_b0;
       *(uint *)((int)local_100 + (uint)bVar3 * 0xfffffff8) =
            *(uint *)((int)local_ac + (uint)bVar3 * 0xfffffff8);
       *(uint *)((int)local_100 + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 1) * 4) =
@@ -130,10 +130,10 @@ int __cdecl core_setdir_cpp_testOBBIntersection_FUN_0053a1b0(SVDBox *obb_a,SVDBo
         local_dc = local_100[0];
         local_d8 = local_100[1];
       }
-      local_ac[2] = local_e0 - *(float *)obb_b;
-      local_ac[3] = local_dc - *(float *)&obb_b->field_0x4;
-      local_9c = local_d8 - *(float *)&obb_b->field_0x8;
-      local_110 = local_e0 - *(float *)obb_b;
+      local_ac[2] = local_e0 - (obb_b->position).x;
+      local_ac[3] = local_dc - (obb_b->position).y;
+      local_9c = local_d8 - (obb_b->position).z;
+      local_110 = local_ac[2];
       *(uint *)((int)auStack_10c + (uint)bVar3 * 0xfffffff8) =
            *(uint *)((int)local_ac + ((uint)bVar3 * -2 + 3) * 4);
       *(uint *)((int)auStack_10c + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 1) * 4) =
@@ -227,7 +227,7 @@ int __cdecl core_setdir_cpp_testOBBIntersection_FUN_0053a1b0(SVDBox *obb_a,SVDBo
         return 1;
       }
       if ((local_20 & 1) == 0) break;
-      local_30 = -*(float *)&obb_a->field_0xc;
+      local_30 = -(obb_a->extents).x;
     }
   } while( true );
 }

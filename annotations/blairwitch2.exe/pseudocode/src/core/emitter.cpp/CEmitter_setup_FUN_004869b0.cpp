@@ -11,29 +11,25 @@
 void __cdecl core_emitter_cpp_CEmitter_setup_FUN_004869b0(CEmitter *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_setup_FUN_00408a80((CDemonActor *)this_ptr);
-  *(uint *)&this_ptr->field_0x5c8 = *(uint *)&this_ptr->field_0x390;
-  if (*(int *)&this_ptr->field_0x2b4 == 4) {
-    core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
-              ((CKeyFramedModelInstance *)&this_ptr->field_0x3a4);
+  core_actor_cpp_CDemonActor_setup_FUN_00408a80(&this_ptr->base);
+  this_ptr->state_timer = this_ptr->max_emit_time;
+  if (this_ptr->emitter_type == EMITTER_TYPE_ROCK) {
+    core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&this_ptr->model);
   }
-  if (*(int *)&this_ptr->field_0x2b4 == 0xb) {
-    core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
-              ((CKeyFramedModelInstance *)&this_ptr->field_0x3a4);
+  if (this_ptr->emitter_type == EMITTER_TYPE_LEAF) {
+    core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&this_ptr->model);
   }
-  if (*(int *)&this_ptr->field_0x2b4 == 0xc) {
-    core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
-              ((CKeyFramedModelInstance *)&this_ptr->field_0x3a4);
+  if (this_ptr->emitter_type == EMITTER_TYPE_FIREFLY) {
+    core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&this_ptr->model);
   }
-  if (*(int *)&this_ptr->field_0x2b4 == 0xd) {
-    core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
-              ((CKeyFramedModelInstance *)&this_ptr->field_0x3a4);
+  if (this_ptr->emitter_type == EMITTER_TYPE_BLOOD) {
+    core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&this_ptr->model);
   }
-  if (*(int *)&this_ptr->field_0x54c == 0) {
-    *(uint *)&this_ptr->field_0x54c = *(uint *)(_DAT_01cedef4 * 4 + 0x1cedee4);
+  if (this_ptr->dest_actor == (CDemonActor *)0x0) {
+    this_ptr->dest_actor = *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4);
   }
-  *(uint *)&this_ptr->field_0x5b8 = 0;
-  *(uint *)&this_ptr->field_0x60c = 0;
-  *(uint *)&this_ptr->field_0x610 = *(uint *)&this_ptr->field_0x2c4;
+  this_ptr->sfx_handle = 0;
+  this_ptr->was_on_screen = 0;
+  this_ptr->prev_emitter_state = this_ptr->emitter_state;
   return;
 }

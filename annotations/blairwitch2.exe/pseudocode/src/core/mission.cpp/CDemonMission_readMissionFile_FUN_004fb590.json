@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 570,
-    "complexity_score": 410,
+    "complexity_score": 385,
     "cross_reference_count": 2,
     "function_call_count": 14,
     "global_count": 37,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 235,
-    "suspect_count": 15,
+    "suspect_count": 13,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_overlapping_globals"
@@ -524,7 +523,7 @@
       "line": 58,
       "match": "DAT_005de1d1",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005de1d1,this_ptr + 0x1014);",
+      "text": "_fscanf(file_handle,&DAT_005de1d1,this_ptr->mission_name);",
       "type": "undefined_data"
     },
     {
@@ -532,7 +531,7 @@
       "line": 64,
       "match": "DAT_005de1d5",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005de1d5,this_ptr + 4);",
+      "text": "_fscanf(file_handle,&DAT_005de1d5,&this_ptr->num_sets);",
       "type": "undefined_data"
     },
     {
@@ -540,7 +539,7 @@
       "line": 69,
       "match": "DAT_005de1d9",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005de1d9,pCVar4);",
+      "text": "_fscanf(file_handle,&DAT_005de1d9,pacVar4);",
       "type": "undefined_data"
     },
     {
@@ -582,22 +581,6 @@
       "severity": "mild",
       "text": "puVar6 = &DAT_00618248;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 187,
-      "match": "field_0x14c",
-      "severity": "mild",
-      "text": "pCVar5 = *(CDemonActor **)&pCVar5->field_0x14c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 205,
-      "match": "field_0x14c",
-      "severity": "mild",
-      "text": "pCVar5 = *(CDemonActor **)&pCVar5->field_0x14c;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

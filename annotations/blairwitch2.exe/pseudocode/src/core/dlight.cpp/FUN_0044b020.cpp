@@ -108,7 +108,7 @@ void __cdecl core_dlight_cpp_FUN_0044b020(CDemonLight *this_ptr)
   }
   fVar5 = -((float10)local_a8[4] * (float10)local_b0 +
            (float10)local_a8[2] * (float10)local_b8 + (float10)local_a8[3] * (float10)local_b4) *
-          (float10)*(float *)&this_ptr->field_0x2fac;
+          (float10)this_ptr->bloom_intensity;
   local_28 = (float)fVar5;
   fVar5 = fVar5 * (float10)local_28 * (float10)local_28 * (float10)local_28 * (float10)_DAT_005cf46f
   ;
@@ -123,56 +123,53 @@ void __cdecl core_dlight_cpp_FUN_0044b020(CDemonLight *this_ptr)
     local_40.x = (int)ROUND(_DAT_005f5050 * 1.0);
     local_40.y = (int)ROUND(_DAT_005f5050 * 1.0);
     local_40.z = (int)ROUND(_DAT_005f5050 * -0.5);
-    engine_special_cpp_FUN_0055d723((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&local_40);
+    engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_40);
     local_cc = 0x3f800000;
     local_d0 = 0xbf800000;
     local_c8 = 0xbf000000;
     local_c4.x = (int)ROUND(_DAT_005f5050 * -1.0);
     local_c4.y = (int)ROUND(_DAT_005f5050 * 1.0);
     local_c4.z = (int)ROUND(_DAT_005f5050 * -0.5);
-    engine_special_cpp_FUN_0055d723
-              ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&local_c4);
+    engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_c4);
     local_d0 = 0xbf800000;
     local_cc = 0xbf800000;
     local_c8 = 0xbf000000;
     local_88.x = (int)ROUND(_DAT_005f5050 * -1.0);
     local_88.y = (int)ROUND(_DAT_005f5050 * -1.0);
     local_88.z = (int)ROUND(_DAT_005f5050 * -0.5);
-    engine_special_cpp_FUN_0055d723
-              ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&local_88);
+    engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_88);
     local_d0 = 0x3f800000;
     local_c8 = 0xbf000000;
     local_cc = 0xbf800000;
     local_4c.x = (int)ROUND(_DAT_005f5050 * 1.0);
     local_4c.y = (int)ROUND(_DAT_005f5050 * -1.0);
     local_4c.z = (int)ROUND(_DAT_005f5050 * -0.5);
-    engine_special_cpp_FUN_0055d723
-              ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x90),&local_4c);
+    engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_4c);
     this_ptr_00 = DAT_0060b280;
-    *(uint *)(DAT_0060b280->vertex_buffer_ptr + 0x18) = 0xf80000;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x1c) = 0xf80000;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x2c) = uVar3;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x48) = 0x80000;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x4c) = 0xf80000;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x5c) = uVar3;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x78) = 0x80000;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x7c) = 0x80000;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x8c) = uVar3;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xa8) = 0xf80000;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xac) = 0x80000;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xbc) = uVar3;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x20) = 0xffff;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x24) = 0xffff;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x28) = 0xffff;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x50) = 0xffff;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x54) = 0xffff;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x58) = 0xffff;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x80) = 0xffff;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x84) = 0xffff;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x88) = 0xffff;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xb0) = 0xffff;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xb4) = 0xffff;
-    *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xb8) = 0xffff;
+    DAT_0060b280->vertex_buffer_ptr->u = 0xf80000;
+    this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
+    this_ptr_00->vertex_buffer_ptr->a = uVar3;
+    this_ptr_00->vertex_buffer_ptr[1].u = 0x80000;
+    this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;
+    this_ptr_00->vertex_buffer_ptr[1].a = uVar3;
+    this_ptr_00->vertex_buffer_ptr[2].u = 0x80000;
+    this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
+    this_ptr_00->vertex_buffer_ptr[2].a = uVar3;
+    this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;
+    this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
+    this_ptr_00->vertex_buffer_ptr[3].a = uVar3;
+    this_ptr_00->vertex_buffer_ptr->r = 0xffff;
+    this_ptr_00->vertex_buffer_ptr->g = 0xffff;
+    this_ptr_00->vertex_buffer_ptr->b = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[1].r = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[1].g = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[1].b = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[2].r = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[2].g = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[2].b = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[3].r = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[3].g = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[3].b = 0xffff;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
               (this_ptr_00,(SMRGLTextureBasic *)&DAT_0060afe0);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,1);

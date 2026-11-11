@@ -14,7 +14,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004acf60(
   int iVar1;
   float local_20;
   
-  iVar1 = *(int *)&this_ptr->field_0x45c;
+  iVar1 = (this_ptr->course).len;
   if (iVar1 < 1) {
     _DAT_01d046a0 = "..\\core\\frankgen.cpp";
     _DAT_01d046a4 = 0x1dc;
@@ -28,7 +28,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004acf60(
     local_20 = (float)(iVar1 + -1);
   }
   core_course_cpp_FUN_00438c40
-            ((CCourse *)&this_ptr->field_0x45c,local_20,(CVector3f *)&(this_ptr->base).field_0x20,
+            (&this_ptr->course,local_20,&(this_ptr->base).location.position,
              &(this_ptr->base).orient.vec);
   return;
 }

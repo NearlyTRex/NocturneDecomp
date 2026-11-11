@@ -5,6 +5,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CCourse.h"
 #include "types/classes/CDemonActor.h"
 #include "types/enums/EMarqueeDisplayType.h"
 
@@ -13,7 +14,6 @@
 #pragma pack(push, 1)
 typedef struct CMarquee {
     CDemonActor base; // 0x0
-    char field_344[348]; // 0x158
     char course_name[32]; // 0x2b4
     float total_time; // 0x2d4
     float param; // 0x2d8
@@ -21,7 +21,7 @@ typedef struct CMarquee {
     CBoundingBox3D bounding_box; // 0x2e0
     int is_visible; // 0x2f8
     EMarqueeDisplayType type; // 0x2fc
-    char field_768[12]; // 0x300
+    CCourse course; // 0x300
     char dead[12]; // 0x30c
 } CMarquee;
 #pragma pack(pop)

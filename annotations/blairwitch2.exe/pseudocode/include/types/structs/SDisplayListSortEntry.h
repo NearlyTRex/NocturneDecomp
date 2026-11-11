@@ -2,14 +2,18 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
 
 // Structure: SDisplayListSortEntry
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x8 (8 bytes)
 #pragma pack(push, 1)
 typedef struct SDisplayListSortEntry {
+    struct CDemonActor* actor; // 0x0
+    float distance_sq; // 0x4
 } SDisplayListSortEntry;
 #pragma pack(pop)
 

@@ -8,7 +8,7 @@
 ;   core_script.cpp_FUN_00522350 at 00527831
 ;
 ; Called Functions:
-;   unkafter_superopt.cpp_FUN_005a8140
+;   unkafter_superopt.cpp_CSimpleParticleSystem_setFade_FUN_005a8140
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     ADD EAX,EDX                         ; 0040cec0
     PUSH dword ptr [ESP + 0x14]         ; 0040cec2
     PUSH EAX                            ; 0040cec6
-    CALL unkafter_superopt.cpp_FUN_005a8140 ; 0040cec7
-        ;   XREF to: 005a8140 (UNCONDITIONAL_CALL)  ; undefined unkafter_superopt.cpp_FUN_005a8140()
+    CALL unkafter_superopt.cpp_CSimpleParticleSystem_setFade_FUN_005a8140 ; 0040cec7
+        ;   XREF to: 005a8140 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_setFade_FUN_005a8140(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4)
     ADD ESP,0x10                        ; 0040cecc
     NOP                                 ; 0040cecf
 

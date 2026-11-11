@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_elephant.cpp_CElephantGun_ctor_FUN_004859a0
-;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x6e0                          ; 00485970
         ;   Label: core_elephant.cpp_factoryFuncElephantGun_FUN_00485970
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 00485975
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00485975
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 0048597a
     TEST EAX,EAX                        ; 0048597d
     JNZ 0x00485982                      ; 0048597f

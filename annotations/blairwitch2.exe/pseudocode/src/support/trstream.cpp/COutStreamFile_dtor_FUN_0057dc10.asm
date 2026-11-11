@@ -22,8 +22,8 @@
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
+;   support_trstream.cpp_COutStreamFile_close_FUN_0057dd60
 ;   support_trstream.cpp_FUN_0057d860
-;   support_trstream.cpp_FUN_0057dd60
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
         ;   XREF to: 0057dc45 (CONDITIONAL_JUMP)  ; LAB_0057dc45
     PUSH EBX                            ; 0057dc1c
     MOV dword ptr [EBX],0x5fd484        ; 0057dc1d | g_COutStreamFileVTable
-    CALL support_trstream.cpp_FUN_0057dd60 ; 0057dc23
-        ;   XREF to: 0057dd60 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057dd60()
+    CALL support_trstream.cpp_COutStreamFile_close_FUN_0057dd60 ; 0057dc23
+        ;   XREF to: 0057dd60 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_COutStreamFile_close_FUN_0057dd60(COutStreamFile * this_ptr)
     ADD ESP,0x4                         ; 0057dc28
     PUSH 0x1                            ; 0057dc2b
     PUSH EBX                            ; 0057dc2d

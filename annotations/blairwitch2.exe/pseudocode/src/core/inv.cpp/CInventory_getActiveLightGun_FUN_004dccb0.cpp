@@ -11,7 +11,7 @@ CLightGun * __cdecl core_inv_cpp_CInventory_getActiveLightGun_FUN_004dccb0(CInve
 {
   CLightGun *pCVar1;
   
-  pCVar1 = *(CLightGun **)(this_ptr + 0x458);
+  pCVar1 = this_ptr->light_gun_ptr;
   if ((pCVar1 != (CLightGun *)0x0) && ((pCVar1->base).weapon_state != WEAPON_STATE_LYING_AROUND)) {
     return pCVar1;
   }

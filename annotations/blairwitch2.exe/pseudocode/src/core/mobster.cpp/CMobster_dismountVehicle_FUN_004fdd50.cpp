@@ -14,20 +14,20 @@ void __cdecl core_mobster_cpp_CMobster_dismountVehicle_FUN_004fdd50(CMobster *th
 {
   float fVar1;
   byte bVar2;
-  uint auStackY_1024 [1012];
+  float afStackY_1024 [1012];
   uint local_48;
   uint local_44;
   uint local_40;
-  uint local_3c;
-  uint local_38;
-  uint local_34;
+  float local_3c;
+  float local_38;
+  float local_34;
   uint local_30;
   uint local_2c;
   uint local_28;
   uint local_24;
   uint local_20;
   uint local_1c;
-  uint local_18;
+  float local_18;
   
   bVar2 = 0;
   if (this_ptr->side_of_car == 0) {
@@ -56,14 +56,14 @@ void __cdecl core_mobster_cpp_CMobster_dismountVehicle_FUN_004fdd50(CMobster *th
   core_actor_cpp_FUN_00408d70(this_ptr->vehicle,&stack0xffffffd0);
   local_3c = local_18;
   (&stack0xffffffc8)[(uint)bVar2 * 0xfffffffe] =
-       *(uint *)((int)&stack0xffffffec + (uint)bVar2 * 0xfffffffe * 4);
+       (float)*(uint *)((int)&stack0xffffffec + (uint)bVar2 * 0xfffffffe * 4);
   *(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
        *(uint *)(&stack0xfffffff0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  *(uint *)&(this_ptr->base).base.base.field_0x20 = local_3c;
-  *(uint *)&(this_ptr->base).base.base.field_0x24 = local_38;
-  *(uint *)&(this_ptr->base).base.base.field_0x28 = local_34;
+  (this_ptr->base).base.base.location.position.x = local_3c;
+  (this_ptr->base).base.base.location.position.y = local_38;
+  (this_ptr->base).base.base.location.position.z = local_34;
   this_ptr->vehicle = (CDemonActor *)0x0;
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-            ((CMotionController *)&(this_ptr->base).base.model,8,1);
+            (&(this_ptr->base).base.model.base,8,1);
   return;
 }

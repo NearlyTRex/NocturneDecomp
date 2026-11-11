@@ -35,14 +35,14 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_commitShadowBuffer_FUN_004770c0(CDem
                 pSVar3 = pCVar1->voxel_buffer2;
                 pSVar4 = pCVar1->voxel_buffer1;
                 for (iVar2 = 0x10; iVar2 != 0; iVar2 = iVar2 + -1) {
-                  *(uint *)pSVar4 = *(uint *)pSVar3;
-                  pSVar3 = pSVar3 + (uint)bVar5 * -8 + 4;
-                  pSVar4 = pSVar4 + (uint)bVar5 * -8 + 4;
+                  *(uint *)pSVar4->voxels[0] = *(uint *)pSVar3->voxels[0];
+                  pSVar3 = (SVoxelGrid *)((int)pSVar3 + (uint)bVar5 * -8 + 4);
+                  pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -8 + 4);
                 }
                 for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-                  *pSVar4 = *pSVar3;
-                  pSVar3 = pSVar3 + (uint)bVar5 * -2 + 1;
-                  pSVar4 = pSVar4 + (uint)bVar5 * -2 + 1;
+                  pSVar4->voxels[0][0] = pSVar3->voxels[0][0];
+                  pSVar3 = (SVoxelGrid *)((int)pSVar3 + (uint)bVar5 * -2 + 1);
+                  pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -2 + 1);
                 }
               }
               grid_z = grid_z + 1;

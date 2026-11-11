@@ -12,7 +12,7 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_004f04f0(CMimic *this_ptr)
 
 {
   CDeformableModelInstance *pCVar1;
-  SMRGLPrimitiveTriangle *pSVar2;
+  uint *puVar2;
   SMorphPoint *pSVar3;
   SMRGLPrimitiveTriangle *pSVar4;
   CSkeleton *this_ptr_00;
@@ -20,13 +20,14 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_004f04f0(CMimic *this_ptr)
   CDemonActor *pCVar6;
   int iVar7;
   int iVar8;
-  byte bVar9;
+  uint *puVar9;
+  byte bVar10;
   uint auStackY_1010 [1014];
   char *model_name;
   uint uStack_28;
   uint uStack_1c;
   
-  bVar9 = 0;
+  bVar10 = 0;
   if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
     _DAT_01d046a0 = "..\\core\\mimic.cpp";
     _DAT_01d046a4 = 0xb6;
@@ -79,10 +80,9 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_004f04f0(CMimic *this_ptr)
   _DAT_01d09810 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 Spine",1);
   core_enemy_cpp_CEnemy_setup_FUN_00487eb0(&this_ptr->base);
-  core_cloth_cpp_CCloth_load_FUN_005adeb0((CCloth *)&this_ptr->field_0x10bc0,"strcoat.cth")
-  ;
+  core_cloth_cpp_CCloth_load_FUN_005adeb0(&this_ptr->cloth,"strcoat.cth");
   core_cloth_cpp_FUN_005ae680
-            ((CCloth *)&this_ptr->field_0x10bc0,(CVector3f *)&(this_ptr->base).base.base.field_0x20,
+            (&this_ptr->cloth,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec,pCVar1);
   uVar5 = core_actor_cpp_createActorByName_FUN_0040c5a0
                     (this_ptr->morph_actor_type,g_CEnemyClassInfo.name_hash);
@@ -105,7 +105,8 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_004f04f0(CMimic *this_ptr)
     do {
       pSVar3 = (this_ptr->morph).models[0].points;
       iVar8 = iVar8 + 1;
-      *(float *)(pSVar3 + iVar7 + 4) = -*(float *)(pSVar3 + iVar7 + 4);
+      *(float *)((int)&(pSVar3->position).x + iVar7) =
+           -*(float *)((int)&(pSVar3->position).x + iVar7);
       iVar7 = iVar7 + 0x10;
     } while (iVar8 < (this_ptr->morph).models[0].num_points);
   }
@@ -114,30 +115,30 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_004f04f0(CMimic *this_ptr)
     iVar7 = 0;
     do {
       pSVar4 = (this_ptr->morph).models[0].faces;
-      pSVar2 = pSVar4 + iVar7 + 0x30;
-      uStack_1c = *(uint *)pSVar2;
-      *(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8) =
-           *(uint *)(pSVar2 + (uint)bVar9 * -8 + 4);
-      *(uint *)(&stack0xffffffec + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
-           *(uint *)(pSVar2 + (uint)bVar9 * -8 + 4 + (uint)bVar9 * -8 + 4);
-      pSVar2 = pSVar4 + iVar7 + 0x18;
-      uStack_28 = *(uint *)pSVar2;
-      *(uint *)(&stack0xffffffdc + (uint)bVar9 * -8) =
-           *(uint *)(pSVar2 + (uint)bVar9 * -8 + 4);
-      *(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
-           *(uint *)(pSVar2 + (uint)bVar9 * -8 + 4 + (uint)bVar9 * -8 + 4);
-      pSVar2 = pSVar4 + iVar7 + 0x18;
-      *(uint *)pSVar2 = uStack_1c;
-      *(uint *)(pSVar2 + (uint)bVar9 * -8 + 4) =
-           *(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8);
-      *(uint *)(pSVar2 + (uint)bVar9 * -8 + 4 + (uint)bVar9 * -8 + 4) =
-           *(uint *)(&stack0xffffffec + (uint)bVar9 * -8 + (uint)bVar9 * -8);
-      pSVar4 = pSVar4 + iVar7 + 0x30;
-      *(uint *)pSVar4 = uStack_28;
-      *(uint *)(pSVar4 + (uint)bVar9 * -8 + 4) =
-           *(uint *)(&stack0xffffffdc + (uint)bVar9 * -8);
-      *(uint *)(pSVar4 + (uint)bVar9 * -8 + 4 + (uint)bVar9 * -8 + 4) =
-           *(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
+      puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar7);
+      puVar9 = puVar2 + (uint)bVar10 * -2 + 1;
+      uStack_1c = *puVar2;
+      *(uint *)(&stack0xffffffe8 + (uint)bVar10 * -8) = *puVar9;
+      *(uint *)(&stack0xffffffec + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
+           puVar9[(uint)bVar10 * -2 + 1];
+      puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar7);
+      puVar9 = puVar2 + (uint)bVar10 * -2 + 1;
+      uStack_28 = *puVar2;
+      *(uint *)(&stack0xffffffdc + (uint)bVar10 * -8) = *puVar9;
+      *(uint *)(&stack0xffffffe0 + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
+           puVar9[(uint)bVar10 * -2 + 1];
+      puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar7);
+      puVar9 = puVar2 + (uint)bVar10 * -2 + 1;
+      *puVar2 = uStack_1c;
+      *puVar9 = *(uint *)(&stack0xffffffe8 + (uint)bVar10 * -8);
+      puVar9[(uint)bVar10 * -2 + 1] =
+           *(uint *)(&stack0xffffffec + (uint)bVar10 * -8 + (uint)bVar10 * -8);
+      puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar7);
+      puVar9 = puVar2 + (uint)bVar10 * -2 + 1;
+      *puVar2 = uStack_28;
+      *puVar9 = *(uint *)(&stack0xffffffdc + (uint)bVar10 * -8);
+      puVar9[(uint)bVar10 * -2 + 1] =
+           *(uint *)(&stack0xffffffe0 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
       iVar8 = iVar8 + 1;
       iVar7 = iVar7 + 0x3c;
     } while (iVar8 < (this_ptr->morph).models[0].num_faces);

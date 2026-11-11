@@ -291,7 +291,7 @@
       "type": "pointer_cast"
     },
     {
-      "description": "'pCVar2[1].base.actor_name + 0xc' walks 1 x sizeof(CWeapon) (0x6d4) + offsetof(base.actor_name) (0x0) + 0xc = 0x6e0, which is exactly offsetof(CFlameThrower, fire_rate_timer). Ghidra had no CFlameThrower type here and reached the field by index arithmetic; write it as ((CFlameThrower *)pCVar2)->fire_rate_timer (\u00a7de-pun/\u00a712). Ambiguous: CMelee::dismember_prob, CTurret::model also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar2[1].base.actor_name + 0xc' walks 1 x sizeof(CWeapon) (0x6d4) + offsetof(base.actor_name) (0x0) + 0xc = 0x6e0, which is exactly offsetof(CFlameThrower, fire_rate_timer). Ghidra had no CFlameThrower type here and reached the field by index arithmetic; write it as ((CFlameThrower *)pCVar2)->fire_rate_timer (\u00a7de-pun/\u00a712). Ambiguous: CLightGun::charge_ratio, CMelee::dismember_prob, CTurret::model also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 26,
       "severity": "moderate",
       "text": "((CKeyFramedModelInstance *)(pCVar2[1].base.actor_name + 0xc));",

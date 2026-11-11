@@ -15,7 +15,7 @@ void * FUN_005c2d60(uint param_1)
   
   iVar1 = FUN_005c4cc0(param_1);
   size = (iVar1 + 1) * 2;
-  pvVar2 = FUN_005b8580(size);
+  pvVar2 = malloc(size);
   if (pvVar2 != (void *)0x0) {
     FUN_005c4cf0(pvVar2,param_1,size);
   }

@@ -11,25 +11,21 @@
 void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004ad3e0(CGabriella *this_ptr)
 
 {
-  byte *this_ptr_00;
+  CDeformableModelInstance *this_ptr_00;
   CSkeleton *this_ptr_01;
   CMotionList *pCVar1;
   char *pcVar2;
   int iVar3;
   
-  core_hero_cpp_CHero_setup_FUN_004ce4a0((CHero *)this_ptr);
-  this_ptr_00 = &this_ptr->field_0x2b4;
-  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            ((CDeformableModelInstance *)this_ptr_00,"gabriela.dfm");
-  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00547480
-            ((CDeformableModelInstance *)this_ptr_00);
-  core_cloth_cpp_CCloth_load_FUN_005adeb0((CCloth *)&this_ptr->field_0x25680,"gabcoat.cth")
-  ;
+  core_hero_cpp_CHero_setup_FUN_004ce4a0(&this_ptr->base);
+  this_ptr_00 = &(this_ptr->base).base.model;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(this_ptr_00,"gabriela.dfm");
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00547480(this_ptr_00);
+  core_cloth_cpp_CCloth_load_FUN_005adeb0(&this_ptr->coat_cloth,"gabcoat.cth");
   core_cloth_cpp_FUN_005ae680
-            ((CCloth *)&this_ptr->field_0x25680,(CVector3f *)&this_ptr->field_0x20,
-             (CVector3f *)&this_ptr->field_0x30,(CDeformableModelInstance *)this_ptr_00);
-  this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
-                          ((CDeformableModelInstance *)this_ptr_00);
+            (&this_ptr->coat_cloth,&(this_ptr->base).base.base.location.position,
+             &(this_ptr->base).base.base.orient.vec,this_ptr_00);
+  this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr_00);
   _DAT_01cb0678 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 head",1);
   _DAT_01cb067c =
@@ -66,22 +62,19 @@ void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004ad3e0(CGabriella *this_pt
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_01,"Bip01 Spine",1);
   iVar3 = 1;
   pcVar2 = "gab draw";
-  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860
-                     ((CMotionController *)this_ptr_00);
+  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860(&this_ptr_00->base);
   _DAT_01cb06ac = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10(pCVar1,pcVar2,iVar3);
   iVar3 = 1;
   pcVar2 = "gab shoot";
-  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860
-                     ((CMotionController *)this_ptr_00);
+  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860(&this_ptr_00->base);
   _DAT_01cb06b4 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10(pCVar1,pcVar2,iVar3);
   iVar3 = 1;
   pcVar2 = "gab crossbow shoot";
-  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860
-                     ((CMotionController *)this_ptr_00);
+  pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860(&this_ptr_00->base);
   _DAT_01cb06b0 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10(pCVar1,pcVar2,iVar3);
-  *(uint *)&this_ptr->field_0x2560c = 0;
-  *(uint *)&this_ptr->field_0x25610 = 0;
-  *(uint *)&this_ptr->field_0x25614 = 0;
-  *(int *)&this_ptr->field_0x2618 = _DAT_01cb06b8;
+  (this_ptr->base).pushed_object = (CBoxActor *)0x0;
+  (this_ptr->base).lever_to_pull = (CLever *)0x0;
+  (this_ptr->base).ladder_to_climb = (CLadder *)0x0;
+  (this_ptr->base).base.carry_hands[0].bone_index = _DAT_01cb06b8;
   return;
 }

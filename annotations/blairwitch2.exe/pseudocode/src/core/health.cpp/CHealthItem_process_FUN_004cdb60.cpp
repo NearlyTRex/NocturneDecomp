@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_health_cpp_CHealthItem_process_FUN_004cdb60(CHealthItem *this_ptr,float delta_time)
@@ -66,14 +65,15 @@ void __cdecl core_health_cpp_CHealthItem_process_FUN_004cdb60(CHealthItem *this_
   float fStack_14;
   
   bVar6 = 0;
-  unkafter_superopt_cpp_FUN_005a8180(&(this_ptr->base).field_0x154,delta_time);
-  fVar2 = *(float *)&this_ptr->field_0x438 - delta_time;
-  *(float *)&this_ptr->field_0x438 = fVar2;
+  unkafter_superopt_cpp_CSimpleParticleSystem_process_FUN_005a8180
+            ((this_ptr->base).particle_systems,delta_time);
+  fVar2 = this_ptr->check_timer - delta_time;
+  this_ptr->check_timer = fVar2;
   if (0.0 < fVar2) {
     return;
   }
   pCVar1 = (this_ptr->base).vtable._ub;
-  *(uint *)&this_ptr->field_0x438 = 0x3e4ccccd;
+  this_ptr->check_timer = 0.2;
   (*pCVar1->getBoundingBox)(&this_ptr->base,in_stack_fffffea0);
   puVar4 = (uint *)&stack0xffffff00;
   puVar5 = &stack0xffffff18;
@@ -86,10 +86,10 @@ void __cdecl core_health_cpp_CHealthItem_process_FUN_004cdb60(CHealthItem *this_
   fStack_40 = fStack_e4 + fStack_d8;
   fStack_3c = fStack_e0 + fStack_d4;
   fStack_a4 = fStack_e8 + fStack_dc;
-  *(float *)((int)&stack0xffffff60 + (uint)bVar6 * -8) =
-       (&stack0xffffffc0)[(uint)bVar6 * 0xfffffffe];
-  *(float *)((int)&stack0xffffff64 + ((uint)bVar6 * -2 + (uint)bVar6 * -2) * 4) =
-       (&stack0xffffffc0)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+  *(uint *)((int)&stack0xffffff60 + (uint)bVar6 * -8) =
+       *(uint *)((int)&stack0xffffffc0 + (uint)bVar6 * -8);
+  *(uint *)((int)&stack0xffffff64 + ((uint)bVar6 * -2 + (uint)bVar6 * -2) * 4) =
+       *(uint *)((int)&stack0xffffffc4 + ((uint)bVar6 * -2 + (uint)bVar6 * -2) * 4);
   fStack_2c = fStack_a4 * _DAT_005d99bc;
   fStack_28 = fStack_a0 * _DAT_005d99bc;
   fStack_24 = fStack_9c * _DAT_005d99bc;
@@ -103,9 +103,10 @@ void __cdecl core_health_cpp_CHealthItem_process_FUN_004cdb60(CHealthItem *this_
   fStack_4c = fStack_18;
   fStack_48 = fStack_14;
   fStack_80 = fStack_2c;
-  *(float *)((int)&stack0xffffff84 + (uint)bVar6 * -8) = (&stack0xffffffc0)[(uint)bVar6 * -2 + 6];
-  *(float *)((int)&stack0xffffff88 + ((uint)bVar6 * -2 + (uint)bVar6 * -2) * 4) =
-       (&stack0xffffffc0)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
+  *(uint *)((int)&stack0xffffff84 + (uint)bVar6 * -8) =
+       *(uint *)((int)&stack0xffffffd8 + (uint)bVar6 * -8);
+  *(uint *)((int)&stack0xffffff88 + ((uint)bVar6 * -2 + (uint)bVar6 * -2) * 4) =
+       *(uint *)((int)&stack0xffffffdc + ((uint)bVar6 * -2 + (uint)bVar6 * -2) * 4);
   core_xform_cpp_FUN_00594380();
   uStack_d0 = uStack_c0;
   *(uint *)(&stack0xffffff34 + (uint)bVar6 * -8) =
@@ -138,22 +139,23 @@ void __cdecl core_health_cpp_CHealthItem_process_FUN_004cdb60(CHealthItem *this_
   fStack_34 = fStack_88 + fStack_7c;
   fStack_30 = fStack_84 + fStack_78;
   fStack_74 = fStack_8c + fStack_80;
-  (&stack0xffffff90)[(uint)bVar6 * 0xfffffffe] = (&stack0xffffffc0)[(uint)bVar6 * -2 + 3];
-  (&stack0xffffff90)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-       (&stack0xffffffc0)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
+  *(uint *)((int)&stack0xffffff90 + (uint)bVar6 * -8) =
+       *(uint *)((int)&stack0xffffffcc + (uint)bVar6 * -8);
+  *(uint *)((int)&stack0xffffff94 + ((uint)bVar6 * -2 + (uint)bVar6 * -2) * 4) =
+       *(uint *)((int)&stack0xffffffd0 + ((uint)bVar6 * -2 + (uint)bVar6 * -2) * 4);
   uStack_5c = _DAT_0265370c;
-  *(uint *)((int)&stack0xffffffa8 + (uint)bVar6 * 0xfffffffe * 4) =
+  *(uint *)(&stack0xffffffa8 + (uint)bVar6 * -8) =
        *(uint *)(&DAT_02653710 + (uint)bVar6 * -8);
-  *(uint *)((int)&stack0xffffffa8 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4) =
+  *(uint *)(&stack0xffffffac + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
        *(uint *)(&DAT_02653714 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
   uStack_ac = 0x3f800000;
   uStack_b0 = 0;
   uStack_a8 = 0;
-  fStack_74 = fStack_74 + *(float *)&(this_ptr->base).field_0x20;
-  fStack_70 = fStack_70 + *(float *)&(this_ptr->base).field_0x24;
-  fStack_6c = fStack_6c + *(float *)&(this_ptr->base).field_0x28;
-  unkafter_superopt_cpp_FUN_005a8300
+  fStack_74 = fStack_74 + (this_ptr->base).location.position.x;
+  fStack_70 = fStack_70 + (this_ptr->base).location.position.y;
+  fStack_6c = fStack_6c + (this_ptr->base).location.position.z;
+  unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300
             (g_CSimpleParticleSystemPtr,0x3f800000,0x3f800000,0,0x3ecccccd,0,0x3f800000,0,0,
-             &stack0xffffff8c,&stack0xffffffa4);
+             &stack0xffffff8c,&stack0xffffffa4,&stack0xffffff50,0);
   return;
 }

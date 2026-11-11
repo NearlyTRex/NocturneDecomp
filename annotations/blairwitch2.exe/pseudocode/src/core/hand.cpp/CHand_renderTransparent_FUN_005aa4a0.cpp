@@ -9,36 +9,40 @@
 int __cdecl core_hand_cpp_CHand_renderTransparent_FUN_005aa4a0(CHand *this_ptr)
 
 {
-  int iVar1;
-  char *pcVar2;
-  float fVar3;
-  char *pcVar4;
+  CDeformableModelInstance *pCVar1;
+  int iVar2;
+  char *pcVar3;
+  float fVar4;
+  char *pcVar5;
   
-  *(uint *)&this_ptr->field_0x113c4 = 0x3f800000;
-  iVar1 = core_motion_cpp_FUN_005035c0(&this_ptr->field_0x2b4);
-  if ((*(int *)(iVar1 + 0x24) == 0) ||
-     (iVar1 = core_motion_cpp_FUN_005035c0(&this_ptr->field_0x2b4), *(int *)(iVar1 + 0x24) == 6)) {
-    *(uint *)&this_ptr->field_0x113c4 = 0;
+  pCVar1 = &(this_ptr->base).base.base.model;
+  (this_ptr->base).fade_val = 1.0;
+  iVar2 = core_motion_cpp_FUN_005035c0(pCVar1);
+  if ((*(int *)(iVar2 + 0x24) == 0) ||
+     (iVar2 = core_motion_cpp_FUN_005035c0(pCVar1), *(int *)(iVar2 + 0x24) == 6)) {
+    (this_ptr->base).fade_val = 0.0;
   }
-  pcVar4 = &DAT_005f0adf;
-  pcVar2 = (char *)core_motion_cpp_FUN_005035c0(&this_ptr->field_0x2b4);
-  iVar1 = _strcmp(pcVar2,pcVar4);
-  if (iVar1 == 0) {
-    fVar3 = core_motion_cpp_FUN_00503e60((CMotionController *)&this_ptr->field_0x2b4);
-    *(float *)&this_ptr->field_0x113c4 = fVar3;
+  pcVar5 = &DAT_005f0adf;
+  pCVar1 = &(this_ptr->base).base.base.model;
+  pcVar3 = (char *)core_motion_cpp_FUN_005035c0(pCVar1);
+  iVar2 = _strcmp(pcVar3,pcVar5);
+  if (iVar2 == 0) {
+    fVar4 = core_motion_cpp_FUN_00503e60(&pCVar1->base);
+    (this_ptr->base).fade_val = fVar4;
   }
-  pcVar4 = "sleep";
-  pcVar2 = (char *)core_motion_cpp_FUN_005035c0(&this_ptr->field_0x2b4);
-  iVar1 = _strcmp(pcVar2,pcVar4);
-  if (iVar1 != 0) {
-    pcVar4 = &DAT_005f0aea;
-    pcVar2 = (char *)core_motion_cpp_FUN_005035c0(&this_ptr->field_0x2b4);
-    iVar1 = _strcmp(pcVar2,pcVar4);
-    if (iVar1 != 0) goto LAB_005aa54b;
+  pcVar5 = "sleep";
+  pCVar1 = &(this_ptr->base).base.base.model;
+  pcVar3 = (char *)core_motion_cpp_FUN_005035c0(pCVar1);
+  iVar2 = _strcmp(pcVar3,pcVar5);
+  if (iVar2 != 0) {
+    pcVar5 = &DAT_005f0aea;
+    pcVar3 = (char *)core_motion_cpp_FUN_005035c0(pCVar1);
+    iVar2 = _strcmp(pcVar3,pcVar5);
+    if (iVar2 != 0) goto LAB_005aa54b;
   }
-  fVar3 = core_motion_cpp_FUN_00503e60((CMotionController *)&this_ptr->field_0x2b4);
-  *(float *)&this_ptr->field_0x113c4 = 1.0 - fVar3;
+  fVar4 = core_motion_cpp_FUN_00503e60(&(this_ptr->base).base.base.model.base);
+  (this_ptr->base).fade_val = 1.0 - fVar4;
 LAB_005aa54b:
-  iVar1 = core_basicene_cpp_CBasicEnemy_renderTransparent_FUN_0059f980((CBasicEnemy *)this_ptr);
-  return (uint)(iVar1 != 0);
+  iVar2 = core_basicene_cpp_CBasicEnemy_renderTransparent_FUN_0059f980(&this_ptr->base);
+  return (uint)(iVar2 != 0);
 }

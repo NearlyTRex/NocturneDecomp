@@ -11,7 +11,7 @@
 CMeleeAxe * core_meleeaxe_cpp_CMeleeAxe_dtor_FUN_0059d300(CMeleeAxe *this_ptr,uint flags)
 
 {
-  CMeleeAxe *pCVar1;
+  CWeapon *pCVar1;
   void *ptr;
   
   if ((flags & 4) != 0) {
@@ -19,10 +19,10 @@ CMeleeAxe * core_meleeaxe_cpp_CMeleeAxe_dtor_FUN_0059d300(CMeleeAxe *this_ptr,ui
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = (CMeleeAxe *)core_weapon_cpp_CWeapon_dtor_FUN_00589ae0((CWeapon *)this_ptr,1);
+  pCVar1 = core_weapon_cpp_CWeapon_dtor_FUN_00589ae0((CWeapon *)this_ptr,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return (CMeleeAxe *)pCVar1;
   }
   FUN_005b7fdc(pCVar1);
-  return pCVar1;
+  return (CMeleeAxe *)pCVar1;
 }

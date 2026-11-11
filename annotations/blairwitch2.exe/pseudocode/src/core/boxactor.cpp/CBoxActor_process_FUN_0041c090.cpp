@@ -12,7 +12,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041c090(CBoxActor *this_pt
 
 {
   UOrientationVector *pUVar1;
-  byte *puVar2;
+  CLocation *pCVar2;
   CVector3f *pCVar3;
   float fVar4;
   float fVar5;
@@ -24,17 +24,14 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041c090(CBoxActor *this_pt
   uint uVar11;
   float *pfVar12;
   uint *puVar13;
-  CBoxActor **ppCVar14;
+  CDemonActor **ppCVar14;
   byte bVar15;
   float10 fVar16;
   float afStackY_10c8 [987];
   CBox *this_ptr_00;
   CBoundingBox3D *in_stack_fffffeb8;
   float fStack_140;
-  SDamageInfo aSStack_13c [4];
-  float fStack_138;
-  CBoxActor *pCStack_108;
-  CBoxActor *pCStack_104;
+  SDamageInfo SStack_13c;
   float fStack_100;
   float fStack_fc;
   float fStack_f8;
@@ -46,7 +43,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041c090(CBoxActor *this_pt
   float afStack_dc [5];
   float fStack_c8;
   float afStack_c4 [4];
-  uint uStack_b4;
+  float fStack_b4;
   float fStack_b0;
   float fStack_ac;
   float fStack_a8;
@@ -54,7 +51,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041c090(CBoxActor *this_pt
   float afStack_94 [6];
   float fStack_7c;
   float afStack_78 [4];
-  uint uStack_68;
+  float fStack_68;
   float fStack_64;
   float fStack_60;
   float fStack_5c;
@@ -138,7 +135,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041c090(CBoxActor *this_pt
   if ((this_ptr->carrier_actor == (CDemonActor *)0x0) && (0.0 < this_ptr->weight_in_pounds)) {
     this_ptr_00 = &this_ptr->physics_box;
     pfVar12 = (float *)((int)this_ptr + (uint)bVar15 * -8 + 0x24);
-    uStack_b4 = *(uint *)&(this_ptr->base).field_0x20;
+    fStack_b4 = (this_ptr->base).location.position.x;
     afStack_c4[(uint)bVar15 * -2 + 5] = *pfVar12;
     afStack_c4[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 6] = pfVar12[(uint)bVar15 * -2 + 1];
     core_box_cpp_CBox_process_FUN_005b2290(this_ptr_00,delta_time);
@@ -152,9 +149,9 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041c090(CBoxActor *this_pt
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0(&this_ptr->base);
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_fffffeb8);
     puVar13 = auStack_e8;
-    ppCVar14 = &pCStack_108;
+    ppCVar14 = &SStack_13c.attacker;
     for (iVar10 = 6; iVar10 != 0; iVar10 = iVar10 + -1) {
-      *ppCVar14 = (CBoxActor *)*puVar13;
+      *ppCVar14 = (CDemonActor *)*puVar13;
       puVar13 = puVar13 + (uint)bVar15 * -2 + 1;
       ppCVar14 = ppCVar14 + (uint)bVar15 * -2 + 1;
     }
@@ -192,20 +189,20 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041c090(CBoxActor *this_pt
     afStack_78[(uint)bVar15 * -2 + 3] = afStack_78[(uint)bVar15 * -2];
     afStack_78[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 4] =
          afStack_78[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1];
-    puVar2 = &(this_ptr->base).field_0x20;
-    *(float *)puVar2 = afStack_78[2];
-    *(float *)&(this_ptr->base).field_0x24 = afStack_78[3];
-    *(uint *)&(this_ptr->base).field_0x28 = uStack_68;
+    pCVar2 = &(this_ptr->base).location;
+    (pCVar2->position).x = afStack_78[2];
+    (this_ptr->base).location.position.y = afStack_78[3];
+    (this_ptr->base).location.position.z = fStack_68;
     fVar4 = (this_ptr->physics_box).linear_velocity.y;
     fVar5 = (this_ptr->physics_box).linear_velocity.x;
     fVar6 = (this_ptr->physics_box).linear_velocity.z;
     fStack_140 = SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4);
     if ((float)_DAT_005cc521 < fStack_140) {
-      core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(aSStack_13c);
-      fStack_138 = fStack_140 * this_ptr->weight_in_pounds * _DAT_005cc529;
-      pCStack_108 = this_ptr;
-      pCStack_104 = this_ptr;
-      core_setcolid_cpp_FUN_00537f30(g_CDemonSetPtr,afStack_c4 + 6,puVar2,aSStack_13c);
+      core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(&SStack_13c);
+      SStack_13c.damage_amount = fStack_140 * this_ptr->weight_in_pounds * _DAT_005cc529;
+      SStack_13c.attacker = &this_ptr->base;
+      SStack_13c.wielder = &this_ptr->base;
+      core_setcolid_cpp_FUN_00537f30(g_CDemonSetPtr,afStack_c4 + 6,pCVar2,&SStack_13c);
       return;
     }
   }

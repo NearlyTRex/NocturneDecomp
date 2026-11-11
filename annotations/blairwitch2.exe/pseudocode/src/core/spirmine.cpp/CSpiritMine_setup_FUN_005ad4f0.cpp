@@ -9,12 +9,12 @@
 void __cdecl core_spirmine_cpp_CSpiritMine_setup_FUN_005ad4f0(CSpiritMine *this_ptr)
 
 {
-  byte *puVar1;
+  CSimpleParticleSystem *this_ptr_00;
   
-  core_boxactor_cpp_CBoxActor_setup_FUN_0041be70((CBoxActor *)this_ptr);
-  puVar1 = &this_ptr->field_0x154;
-  unkaddr_005a7eb0_cpp_FUN_005a8030(puVar1,0x100);
-  unkaddr_005a7eb0_cpp_FUN_005a8050(puVar1,this_ptr);
-  unkaddr_005a7eb0_cpp_FUN_005a80d0(puVar1,0);
+  core_boxactor_cpp_CBoxActor_setup_FUN_0041be70(&this_ptr->base);
+  this_ptr_00 = (this_ptr->base).base.particle_systems;
+  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(this_ptr_00,0x100);
+  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_attach_FUN_005a8050(this_ptr_00,this_ptr);
+  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_start_FUN_005a80d0(this_ptr_00,0);
   return;
 }

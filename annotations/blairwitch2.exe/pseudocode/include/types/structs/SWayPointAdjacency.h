@@ -2,14 +2,19 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CWayPoint;
+
 // Dependencies
 #include "system/basetypes.h"
 
 // Structure: SWayPointAdjacency
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// CWayPoint setup 00587dc0 walks adjacency with ADD EDX,0x8: waypoint MOV EAX,[EDX+0x4d4] then reads its position, distance FSTP [EDX+0x4d8]; 60 of them span 0x4d4..0x6b4 where pathfind_cost sits.
+// Ghidra size: 0x8 (8 bytes)
 #pragma pack(push, 1)
 typedef struct SWayPointAdjacency {
+    struct CWayPoint* waypoint; // 0x0, [EDX+0x4d4] dereferenced for +0x20..+0x28 (location)
+    float distance; // 0x4, FSTP [EDX+0x4d8] = sqrt of squared distance
 } SWayPointAdjacency;
 #pragma pack(pop)
 

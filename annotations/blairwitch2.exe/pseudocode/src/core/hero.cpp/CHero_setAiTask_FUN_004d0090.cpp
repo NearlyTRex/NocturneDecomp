@@ -9,7 +9,7 @@
 void __cdecl core_hero_cpp_CHero_setAiTask_FUN_004d0090(CHero *this_ptr,int ai_task)
 
 {
-  *(int *)(this_ptr + 0x25638) = ai_task;
-  memset(this_ptr + 0x10a68,0,0x34);
+  this_ptr->ai_task = ai_task;
+  memset(&this_ptr->player_input,0,0x34);
   return;
 }

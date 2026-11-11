@@ -19,7 +19,7 @@ void core_shadow_cpp_FUN_0053e860(CEnemy *param_1)
   core_actor_cpp_archiveMotionState_FUN_0040bb60(&(param_1->base).model,"motion state");
   if (1 < g_CShadowClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b960
-              ((int *)&param_1[1].base.base.field_0x20,"lightUpEyes");
+              ((int *)&param_1[1].base.base.location,"lightUpEyes");
   }
   if (3 < g_CShadowClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040b9e0

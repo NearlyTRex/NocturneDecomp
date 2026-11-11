@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 524,
-    "complexity_score": 591,
+    "complexity_score": 576,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 256,
-    "suspect_count": 30,
+    "suspect_count": 29,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -183,7 +182,7 @@
     },
     {
       "addr": "01cb690c",
-      "name": "g_CGameInstance.field3_0xc",
+      "name": "g_CGameInstance.halo_mode",
       "type": "undefined4",
       "value": null
     }
@@ -930,14 +929,6 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 79,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "if ((this_ptr->volumetric_enabled != 0) && (*(int *)&g_CGamePtr->field_0xc == 2)) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 80,
       "match": "DAT_0060b280",
@@ -990,7 +981,7 @@
       "line": 188,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&local_e0);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_e0);",
       "type": "undefined_data"
     },
     {
@@ -998,7 +989,7 @@
       "line": 194,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&local_d4);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_d4);",
       "type": "undefined_data"
     },
     {
@@ -1006,7 +997,7 @@
       "line": 200,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&local_b0);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_b0);",
       "type": "undefined_data"
     },
     {
@@ -1014,7 +1005,7 @@
       "line": 206,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x90),&local_5c);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_5c);",
       "type": "undefined_data"
     },
     {

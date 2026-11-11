@@ -17,7 +17,7 @@ void __cdecl core_hostage_cpp_CHostage_renderBackground_FUN_004d2da0(CHostage *t
     iVar2 = _stricmp((char *)this_ptr,"?ScatDazzle" + 1);
     if (iVar2 != 0) {
       if (layer_flag != 0) {
-        *(uint *)&(this_ptr->base).base.field_0x2568 = 1;
+        (this_ptr->base).base.render_active = 1;
       }
       core_npc_cpp_CNPC_renderBackground_FUN_005108d0(&this_ptr->base,layer_flag);
       return;

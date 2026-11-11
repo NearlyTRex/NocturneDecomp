@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 474,
-    "complexity_score": 297,
+    "complexity_score": 298,
     "cross_reference_count": 2,
     "function_call_count": 17,
     "global_count": 16,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 162,
+    "pseudocode_lines": 163,
     "suspect_count": 12,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 636
+    "total_lines": 637
   },
   "cross_references": [
     {
@@ -408,7 +408,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 61,
       "match": "DAT_01c3583a",
       "severity": "mild",
       "text": "((uint)(&DAT_01c3583a)[iVar3] |",
@@ -416,7 +416,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 62,
       "match": "DAT_01c35838",
       "severity": "mild",
       "text": "(uint)(&DAT_01c35838)[iVar3] << 0x10 | (uint)(&DAT_01c35839)[iVar3] << 8);",
@@ -424,7 +424,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 62,
       "match": "DAT_01c35839",
       "severity": "mild",
       "text": "(uint)(&DAT_01c35838)[iVar3] << 0x10 | (uint)(&DAT_01c35839)[iVar3] << 8);",
@@ -432,7 +432,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 69,
       "match": "DAT_01c3583a",
       "severity": "mild",
       "text": "((uint)DAT_01c3583a | (uint)DAT_01c35839 << 8 | (uint)DAT_01c35838 << 0x10",
@@ -440,7 +440,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 69,
       "match": "DAT_01c35839",
       "severity": "mild",
       "text": "((uint)DAT_01c3583a | (uint)DAT_01c35839 << 8 | (uint)DAT_01c35838 << 0x10",
@@ -448,7 +448,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 69,
       "match": "DAT_01c35838",
       "severity": "mild",
       "text": "((uint)DAT_01c3583a | (uint)DAT_01c35839 << 8 | (uint)DAT_01c35838 << 0x10",
@@ -456,34 +456,34 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 116,
+      "line": 117,
       "match": "DAT_01c3583a",
       "severity": "mild",
-      "text": "((uint)(&DAT_01c3583a)[iVar6] |",
+      "text": "((uint)(&DAT_01c3583a)[iVar7] |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 117,
+      "line": 118,
       "match": "DAT_01c35839",
       "severity": "mild",
-      "text": "(uint)(&DAT_01c35839)[iVar6] << 8 | (uint)(&DAT_01c35838)[iVar6] << 0x10);",
+      "text": "(uint)(&DAT_01c35839)[iVar7] << 8 | (uint)(&DAT_01c35838)[iVar7] << 0x10);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 117,
+      "line": 118,
       "match": "DAT_01c35838",
       "severity": "mild",
-      "text": "(uint)(&DAT_01c35839)[iVar6] << 8 | (uint)(&DAT_01c35838)[iVar6] << 0x10);",
+      "text": "(uint)(&DAT_01c35839)[iVar7] << 8 | (uint)(&DAT_01c35838)[iVar7] << 0x10);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 122,
+      "line": 123,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "iVar6 = DAT_006141bc / 0x60;",
+      "text": "iVar7 = DAT_006141bc / 0x60;",
       "type": "undefined_data"
     }
   ]

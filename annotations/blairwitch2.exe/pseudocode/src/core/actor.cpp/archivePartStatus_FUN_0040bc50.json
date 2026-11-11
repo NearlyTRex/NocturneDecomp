@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 258,
-    "complexity_score": 686,
+    "complexity_score": 612,
     "cross_reference_count": 7,
     "function_call_count": 7,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 81,
-    "suspect_count": 58,
+    "pseudocode_lines": 82,
+    "suspect_count": 51,
     "suspect_types": [
       "param_count_too_few",
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param"
     ],
-    "total_lines": 339
+    "total_lines": 340
   },
   "cross_references": [
     {
@@ -412,7 +411,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 12,
       "match": "DAT_007bc038",
       "severity": "mild",
       "text": "if (DAT_007bc038 != 1) {",
@@ -420,7 +419,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
@@ -428,7 +427,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 13,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
@@ -436,7 +435,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 13,
       "match": "DAT_00609590",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
@@ -444,16 +443,8 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 15,
       "match": "DAT_007bc034",
-      "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,\"%s%d\\n\",&DAT_00609590,0x1e);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_00609590",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,\"%s%d\\n\",&DAT_00609590,0x1e);",
       "type": "undefined_data"
@@ -461,6 +452,14 @@
     {
       "description": "Undefined global data reference",
       "line": 15,
+      "match": "DAT_00609590",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s%d\\n\",&DAT_00609590,0x1e);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac35,&DAT_00609590);",
@@ -468,7 +467,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 16,
       "match": "DAT_005cac35",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac35,&DAT_00609590);",
@@ -476,7 +475,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 16,
       "match": "DAT_00609590",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac35,&DAT_00609590);",
@@ -484,63 +483,39 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar3 = param_1;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "puVar4 = &pCVar3->field_0x2140;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "pCVar3 = (CDeformableModelInstance *)&pCVar3->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 21,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac38,*(uint *)puVar4);",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac38,pSVar4->visibility_flags[0]);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 21,
       "match": "DAT_005cac38",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac38,*(uint *)puVar4);",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac38,pSVar4->visibility_flags[0]);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (pCVar3 != (CDeformableModelInstance *)&param_1->field_0x78);",
+      "text": "} while (pCVar3 != (CDeformableModelInstance *)&param_1->bone_origins[2].z);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "} while (pCVar3 != (CDeformableModelInstance *)&param_1->field_0x78);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 23,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac3c);",
@@ -548,7 +523,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 23,
       "match": "DAT_005cac3c",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac3c);",
@@ -556,7 +531,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 25,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac3e,&DAT_00609590);",
@@ -564,7 +539,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 25,
       "match": "DAT_005cac3e",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac3e,&DAT_00609590);",
@@ -572,7 +547,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 25,
       "match": "DAT_00609590",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac3e,&DAT_00609590);",
@@ -580,63 +555,47 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar4 = &param_1->field_0x21b8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x21b8",
-      "severity": "mild",
-      "text": "puVar4 = &param_1->field_0x21b8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1 = (CDeformableModelInstance *)&param_1->field_0x4;",
+      "text": "pSVar4 = &param_1->part_data;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1 = (CDeformableModelInstance *)&param_1->field_0x4;",
+      "text": "param_1 = (CDeformableModelInstance *)&(param_1->base).current_motion_index;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x4",
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
       "severity": "mild",
-      "text": "param_1 = (CDeformableModelInstance *)&param_1->field_0x4;",
-      "type": "unnamed_field"
+      "text": "param_1 = (CDeformableModelInstance *)&(param_1->base).current_motion_index;",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 30,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac41,*(uint *)puVar4);",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac41,pSVar4->texture_set_indices[0]);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 30,
       "match": "DAT_005cac41",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac41,*(uint *)puVar4);",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac41,pSVar4->texture_set_indices[0]);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 32,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac45);",
@@ -644,7 +603,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 32,
       "match": "DAT_005cac45",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac45);",
@@ -652,7 +611,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac47,&DAT_00609590);",
@@ -660,7 +619,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_005cac47",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac47,&DAT_00609590);",
@@ -668,7 +627,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_00609590",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac47,&DAT_00609590);",
@@ -676,7 +635,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 38,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "iVar1 = _fgetc(DAT_007bc034);",
@@ -684,7 +643,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 41,
       "match": "param_2",
       "severity": "mild",
       "text": "(\"part status opening brace\",param_2);",
@@ -692,7 +651,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 44,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "_fscanf(DAT_007bc034,&DAT_005cabbb,&local_14);",
@@ -700,7 +659,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 44,
       "match": "DAT_005cabbb",
       "severity": "mild",
       "text": "_fscanf(DAT_007bc034,&DAT_005cabbb,&local_14);",
@@ -708,7 +667,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_00547440(param_1);",
@@ -716,39 +675,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar4 = &param_1->field_0x2140;",
+      "text": "pSVar4 = &param_1->part_data;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "puVar4 = &param_1->field_0x2140;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 50,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "iVar2 = _fscanf(DAT_007bc034,&DAT_005cabbe,puVar4);",
+      "text": "iVar2 = _fscanf(DAT_007bc034,&DAT_005cabbe,pSVar4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 50,
       "match": "DAT_005cabbe",
       "severity": "mild",
-      "text": "iVar2 = _fscanf(DAT_007bc034,&DAT_005cabbe,puVar4);",
+      "text": "iVar2 = _fscanf(DAT_007bc034,&DAT_005cabbe,pSVar4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 59,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "_fscanf(DAT_007bc034,&DAT_005cabdf);",
@@ -756,7 +707,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 59,
       "match": "DAT_005cabdf",
       "severity": "mild",
       "text": "_fscanf(DAT_007bc034,&DAT_005cabdf);",
@@ -764,7 +715,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
       "text": "core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_00547460(param_1);",
@@ -772,39 +723,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar4 = &param_1->field_0x21b8;",
+      "text": "piVar5 = (param_1->part_data).texture_set_indices;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 62,
-      "match": "field_0x21b8",
-      "severity": "mild",
-      "text": "puVar4 = &param_1->field_0x21b8;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 65,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "iVar2 = _fscanf(DAT_007bc034,&DAT_005cabe1,puVar4);",
+      "text": "iVar2 = _fscanf(DAT_007bc034,&DAT_005cabe1,piVar5);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 65,
       "match": "DAT_005cabe1",
       "severity": "mild",
-      "text": "iVar2 = _fscanf(DAT_007bc034,&DAT_005cabe1,puVar4);",
+      "text": "iVar2 = _fscanf(DAT_007bc034,&DAT_005cabe1,piVar5);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 74,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "_fscanf(DAT_007bc034,&DAT_005cac03);",
@@ -812,7 +755,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 74,
       "match": "DAT_005cac03",
       "severity": "mild",
       "text": "_fscanf(DAT_007bc034,&DAT_005cac03);",
@@ -820,7 +763,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 76,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "while (iVar1 = _fgetc(DAT_007bc034), -1 < iVar1) {",
@@ -828,26 +771,26 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 82,
       "match": "param_2",
       "severity": "mild",
       "text": "(\"part status info closing brace\",param_2);",
       "type": "unnamed_param"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 19,
-      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 20,
+      "match": "pCVar3 = (T *)&(pCVar3->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar3 = (CDeformableModelInstance *)&pCVar3->field_0x4;",
+      "text": "pCVar3 = (CDeformableModelInstance *)&(pCVar3->base).current_motion_index;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `param_1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&param_1->owner`). Replace `param_1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 27,
-      "match": "param_1 = (T *)&param_1->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `param_1` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `param_1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 28,
+      "match": "param_1 = (T *)&(param_1->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "param_1 = (CDeformableModelInstance *)&param_1->field_0x4;",
+      "text": "param_1 = (CDeformableModelInstance *)&(param_1->base).current_motion_index;",
       "type": "shadow_pointer_walk"
     },
     {

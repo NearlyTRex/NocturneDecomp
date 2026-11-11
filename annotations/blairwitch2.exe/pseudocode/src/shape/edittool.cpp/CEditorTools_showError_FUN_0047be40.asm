@@ -11,10 +11,10 @@
 ;
 ; XREF[29]:
 ;   core_doc.cpp_CDoc_doHeroAction_FUN_0045ca30 at 0045cb02
-;   core_fldnotes.cpp_FUN_004a41b0 at 004a43f6
-;   core_fldnotes.cpp_FUN_004a5310 at 004a53c1
-;   core_fldnotes.cpp_FUN_004a5490 at 004a5588
-;   core_fldnotes.cpp_FUN_004a55b0 at 004a5661
+;   core_fldnotes.cpp_CFieldNotes_completeTask_FUN_004a55b0 at 004a5661
+;   core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004a5310 at 004a53c1
+;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0 at 004a43f6
+;   core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004a5490 at 004a5588
 ;   core_game.cpp_FUN_004b90d0 at 004b9e8e
 ;   core_game.cpp_FUN_004bb9b0 at 004bbe12
 ;   core_game.cpp_FUN_004bbf70 at 004bc46e

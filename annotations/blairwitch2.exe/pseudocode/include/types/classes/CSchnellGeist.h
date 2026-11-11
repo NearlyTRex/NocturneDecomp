@@ -4,13 +4,22 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBasicEnemy.h"
 
 // Structure: CSchnellGeist
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 71792
 // Ghidra size: 0x11870 (71792 bytes)
 #pragma pack(push, 1)
 typedef struct CSchnellGeist {
-    char field_0[71792]; // 0x0
+    CBasicEnemy base; // 0x0, derived
+    int tongue_bone; // 0x11850, setup findBone 'Bip01 Tongue'; FUN_005a3560
+    int dummy07_bone; // 0x11854, setup findBone 'Dummy07'; FUN_005a3560
+    int tongue_attack_bone; // 0x11858, setup findBone 'Bip01 Tongue' again; processMotionEvent attack bone
+    int finger_bone; // 0x1185c, setup findBone 'Bip01 R Finger0'; processMotionEvent attack bone
+    int unused_11860; // 0x11860, ctor 005a2fb0 stores 0; no reader found
+    int breath_state; // 0x11864, archive BreathState; processMotionEvent sets 1/0; FUN_005a3560 tests
+    int blood_frame_counter; // 0x11868, ctor 2; FUN_005a3560 decrements after spawnBloodParticles, reloads 2 at 0
+    int attack_variant; // 0x1186c, ctor 0; processMeleeAttackState picks by 0/1 and stores a random result
 } CSchnellGeist;
 #pragma pack(pop)
 

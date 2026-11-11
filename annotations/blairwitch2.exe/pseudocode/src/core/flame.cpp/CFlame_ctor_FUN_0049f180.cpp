@@ -25,7 +25,7 @@ CFlame * __cdecl core_flame_cpp_CFlame_ctor_FUN_0049f180(CFlame *this_ptr)
   pCVar1->on_event[0] = '\0';
   pCVar1->off_event[0] = '\0';
   pCVar1->flame_state = 1;
-  *(uint *)&(pCVar1->base).field_0xfc = 1;
+  (pCVar1->base).is_transparent = 1;
   pCVar1->randomness = 0.05;
   pCVar1->intensity = 0.5;
   pCVar1->do_visibility_check = 1;

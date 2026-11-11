@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   support_trstream.cpp_FUN_0057d710 at 0057d72d
+;   support_trstream.cpp_CInStreamMemory_seek_FUN_0057d710 at 0057d72d
 ;
 ; *****************************************************************************
 

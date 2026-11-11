@@ -40,7 +40,7 @@ typedef struct CDemonLight {
     uchar* lightmap_visibility_bits; // 0x2fa0
     int transform_scale_factor; // 0x2fa4, fixed point
     float volumetric_intensity; // 0x2fa8
-    char field_12204[4]; // 0x2fac
+    float bloom_intensity; // 0x2fac, Added in this build
 } CDemonLight;
 #pragma pack(pop)
 

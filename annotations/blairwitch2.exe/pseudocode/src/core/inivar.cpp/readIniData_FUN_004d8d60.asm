@@ -139,7 +139,7 @@ section .text
     POP EBX                             ; 004d8e7d
     MOV EAX,[0x00616494]                ; 004d8e7e | g_CGamePtr
     ADD EAX,0xc                         ; 004d8e83
-    PUSH EAX                            ; 004d8e86 | g_CGameInstance.field3_0xc
+    PUSH EAX                            ; 004d8e86 | g_CGameInstance.halo_mode
     PUSH 0x5dae32                       ; 004d8e87 | = "haloMode"
     LEA EAX,[ESP + 0xc]                 ; 004d8e8c
     PUSH EAX                            ; 004d8e90
@@ -155,7 +155,7 @@ section .text
     MOV EAX,[0x00616494]                ; 004d8ead | g_CGamePtr
     ADD ESP,0xc                         ; 004d8eb2
     ADD EAX,0x10                        ; 004d8eb5
-    PUSH EAX                            ; 004d8eb8 | g_CGameInstance.field7_0x10
+    PUSH EAX                            ; 004d8eb8 | g_CGameInstance.subtitle_mode
     PUSH 0x5dae49                       ; 004d8eb9 | = "subtitleMode"
     LEA EAX,[ESP + 0xc]                 ; 004d8ebe
     PUSH EAX                            ; 004d8ec2
@@ -214,14 +214,14 @@ section .text
     CALL engine_ini.cpp_FUN_004d8b20    ; 004d8f61
         ;   XREF to: 004d8b20 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8b20()
     MOV EAX,[0x00616494]                ; 004d8f66 | g_CGamePtr
-    MOV ESI,dword ptr [EAX + 0x20]      ; 004d8f6b | g_CGameInstance.field23_0x20
+    MOV ESI,dword ptr [EAX + 0x20]      ; 004d8f6b | g_CGameInstance.quimby_flag
     ADD ESP,0xc                         ; 004d8f6e
     TEST ESI,ESI                        ; 004d8f71
     JZ 0x004d8f8a                       ; 004d8f73
         ;   XREF to: 004d8f8a (CONDITIONAL_JUMP)  ; LAB_004d8f8a
-    MOV dword ptr [EAX + 0x18],0x0      ; 004d8f75 | g_CGameInstance.field15_0x18
-    MOV dword ptr [EAX + 0x1c],0x0      ; 004d8f7c | g_CGameInstance.field19_0x1c
-    MOV dword ptr [EAX + 0x14],0x0      ; 004d8f83 | g_CGameInstance.field11_0x14
+    MOV dword ptr [EAX + 0x18],0x0      ; 004d8f75 | g_CGameInstance.nudity_flag
+    MOV dword ptr [EAX + 0x1c],0x0      ; 004d8f7c | g_CGameInstance.foul_language_flag
+    MOV dword ptr [EAX + 0x14],0x0      ; 004d8f83 | g_CGameInstance.blood_flag
     PUSH 0x1d06a74                      ; 004d8f8a | DAT_01d06a74
         ;   Label: LAB_004d8f8a
     PUSH 0x5daea2                       ; 004d8f8f | = "currentBoard"
@@ -269,7 +269,7 @@ section .text
     MOV EAX,[0x00616494]                ; 004d9011 | g_CGamePtr
     ADD ESP,0x8                         ; 004d9016
     ADD EAX,0xd0                        ; 004d9019
-    PUSH EAX                            ; 004d901e | g_CGameInstance.field160_0xd0
+    PUSH EAX                            ; 004d901e | g_CGameInstance.game_control
     PUSH 0x5daed9                       ; 004d901f | = "gameControl"
     LEA EAX,[ESP + 0xc]                 ; 004d9024
     PUSH EAX                            ; 004d9028
@@ -590,7 +590,7 @@ section .text
     MOV EAX,[0x00616494]                ; 004d93fa | g_CGamePtr
     ADD ESP,0xc                         ; 004d93ff
     ADD EAX,0xd8                        ; 004d9402
-    PUSH EAX                            ; 004d9407 | g_CGameInstance.field168_0xd8
+    PUSH EAX                            ; 004d9407 | g_CGameInstance.aim_mode
     PUSH 0x5db05e                       ; 004d9408 | = "aimMode"
     LEA EAX,[ESP + 0x8]                 ; 004d940d
     PUSH EAX                            ; 004d9411
@@ -599,7 +599,7 @@ section .text
     MOV EAX,[0x00616494]                ; 004d9417 | g_CGamePtr
     ADD ESP,0xc                         ; 004d941c
     ADD EAX,0xdc                        ; 004d941f
-    PUSH EAX                            ; 004d9424 | g_CGameInstance.field172_0xdc
+    PUSH EAX                            ; 004d9424 | g_CGameInstance.auto_use_health
     PUSH 0x5db066                       ; 004d9425 | = "autoUseHealth"
     LEA EAX,[ESP + 0x8]                 ; 004d942a
     PUSH EAX                            ; 004d942e

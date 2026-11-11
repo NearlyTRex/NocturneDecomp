@@ -21,16 +21,13 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_0054e560(
     iVar2 = 0;
     pCVar1 = this_ptr;
     do {
-      fVar4 = (float10)*(double *)&(this_ptr->options).field_0x4 -
-              (float10)*(double *)(&DAT_02648f40 + iVar2);
-      fVar5 = (float10)*(double *)&(this_ptr->options).field_0xc -
-              (float10)*(double *)(&DAT_02648f80 + iVar2);
-      fVar6 = (float10)*(double *)&(this_ptr->options).field_0x14 -
-              (float10)*(double *)(&DAT_02648fc0 + iVar2);
+      fVar4 = (float10)(this_ptr->options).position.x - (float10)*(double *)(&DAT_02648f40 + iVar2);
+      fVar5 = (float10)(this_ptr->options).position.y - (float10)*(double *)(&DAT_02648f80 + iVar2);
+      fVar6 = (float10)(this_ptr->options).position.z - (float10)*(double *)(&DAT_02648fc0 + iVar2);
       iVar2 = iVar2 + 8;
       iVar3 = iVar3 + 1;
-      *(float *)&pCVar1->field_0x70 = (float)SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4);
-      pCVar1 = (CSfxSlot *)&(pCVar1->options).field_0x4;
+      pCVar1->distance_to_speakers[0] = (float)SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4);
+      pCVar1 = (CSfxSlot *)&(pCVar1->options).position;
     } while (iVar3 < DAT_0061bc9c);
   }
   return;

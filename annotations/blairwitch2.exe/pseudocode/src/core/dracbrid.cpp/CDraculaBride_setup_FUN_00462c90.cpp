@@ -11,46 +11,44 @@
 void __cdecl core_dracbrid_cpp_CDraculaBride_setup_FUN_00462c90(CDraculaBride *this_ptr)
 
 {
-  byte *str1;
   CDeformableModelInstance *pCVar1;
   int iVar2;
   CSkeleton *this_ptr_00;
   CDeformableModel *this_ptr_01;
   float fVar3;
-  char *model_name;
+  char *pcVar4;
   
-  str1 = &(this_ptr->base).base.model.field_0x2260;
+  pcVar4 = (this_ptr->base).base.model.model_name;
   pCVar1 = &(this_ptr->base).base.model;
-  if (*(int *)&g_CGamePtr->field_0x18 == 0) {
-    iVar2 = _stricmp(str1,"nbride2.dfm");
+  if (g_CGamePtr->nudity_flag == 0) {
+    iVar2 = _stricmp(pcVar4,"nbride2.dfm");
     if (iVar2 == 0) {
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(pCVar1,"nbride2x.dfm");
     }
-    iVar2 = _stricmp(str1,"nbride3.dfm");
+    iVar2 = _stricmp(pcVar4,"nbride3.dfm");
     if (iVar2 == 0) {
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
                 (&(this_ptr->base).base.model,"nbride3x.dfm");
     }
-    iVar2 = _stricmp(str1,"nbride4.dfm");
+    iVar2 = _stricmp(pcVar4,"nbride4.dfm");
     if (iVar2 != 0) goto LAB_00462d25;
-    model_name = "nbride4x.dfm";
+    pcVar4 = "nbride4x.dfm";
   }
   else {
-    iVar2 = _stricmp(str1,"nbride2x.dfm");
+    iVar2 = _stricmp(pcVar4,"nbride2x.dfm");
     if (iVar2 == 0) {
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(pCVar1,"nbride2.dfm");
     }
-    iVar2 = _stricmp(str1,"nbride3x.dfm");
+    iVar2 = _stricmp(pcVar4,"nbride3x.dfm");
     if (iVar2 == 0) {
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
                 (&(this_ptr->base).base.model,"nbride3.dfm");
     }
-    iVar2 = _stricmp(str1,"nbride4x.dfm");
+    iVar2 = _stricmp(pcVar4,"nbride4x.dfm");
     if (iVar2 != 0) goto LAB_00462d25;
-    model_name = "nbride4.dfm";
+    pcVar4 = "nbride4.dfm";
   }
-  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            (&(this_ptr->base).base.model,model_name);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(&(this_ptr->base).base.model,pcVar4);
 LAB_00462d25:
   core_enemy_cpp_CEnemy_setup_FUN_00487eb0(&this_ptr->base);
   pCVar1 = &(this_ptr->base).base.model;

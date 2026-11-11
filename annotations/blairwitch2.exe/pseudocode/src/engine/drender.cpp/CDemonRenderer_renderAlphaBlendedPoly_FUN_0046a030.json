@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 124,
+    "complexity_score": 145,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 64,
-    "suspect_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 60,
+    "suspect_count": 7,
     "suspect_types": [
+      "shadow_pointer_walk",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 191
+    "total_lines": 187
   },
   "cross_references": [
     {
@@ -169,7 +170,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 25,
       "match": "DAT_01ba5c84",
       "severity": "mild",
       "text": "*(int *)(&DAT_01ba5c84 + iVar2) = iVar1;",
@@ -177,15 +178,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 38,
       "match": "DAT_01ba5c84",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_01ba5c84 + iVar2) = *(uint *)(pSVar3 + 0x18);",
+      "text": "*(int *)(&DAT_01ba5c84 + iVar2) = pSVar3->vertices[0].vertex_index;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 46,
       "match": "DAT_006141c0",
       "severity": "mild",
       "text": "if (DAT_006141c0 == 0x20) {",
@@ -193,11 +194,27 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 61,
       "match": "DAT_01ba5c84",
       "severity": "mild",
-      "text": "(this_ptr,*(int *)(poly + 4),(int *)&DAT_01ba5c84);",
+      "text": "(this_ptr,(poly->base).base.count,(int *)&DAT_01ba5c84);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 26,
+      "match": "pSVar3 = (T *)&(pSVar3->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar3 = (SMRGLPrimitivePoly *)&(pSVar3->base).surface_normal.B;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 41,
+      "match": "pSVar3 = (T *)&(pSVar3->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar3 = (SMRGLPrimitivePoly *)&(pSVar3->base).surface_normal.B;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

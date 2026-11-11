@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 CMatrix3x4f * __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004d7850(CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
@@ -41,7 +43,7 @@ CMatrix3x4f * __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004d7850
   uint uStack_10;
   
   bVar4 = 0;
-  iVar1 = *(int *)((this_ptr->base).base.carry_hands + hand_index * 0x78);
+  iVar1 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   if (hand_index == 1) {
     uStack_48 = 0x3e52f1aa;
     uStack_44 = 0xbf0147ae;
@@ -82,7 +84,7 @@ CMatrix3x4f * __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004d7850
 LAB_004d793e:
   core_xform_cpp_FUN_00591c10(auStack_cc,&uStack_18,&uStack_54);
   core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
-            (auStack_cc,&(this_ptr->base).base.model.field_0xe80 + iVar1 * 0x30);
+            (auStack_cc,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1);
   pfVar2 = afStack_9c;
   pCVar3 = out_matrix;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

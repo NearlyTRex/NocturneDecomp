@@ -475,7 +475,7 @@ section .text
     JNC 0x00498063                      ; 00497aff
         ;   XREF to: 00498063 (CONDITIONAL_JUMP)  ; LAB_00498063
     MOV EAX,[0x00616494]                ; 00497b05 | g_CGamePtr
-    CMP dword ptr [EAX + 0xc],0x0       ; 00497b0a | g_CGameInstance.field3_0xc
+    CMP dword ptr [EAX + 0xc],0x0       ; 00497b0a | g_CGameInstance.halo_mode
     JZ 0x00498063                       ; 00497b0e
         ;   XREF to: 00498063 (CONDITIONAL_JUMP)  ; LAB_00498063
     FLD double ptr [ESP]                ; 00497b14

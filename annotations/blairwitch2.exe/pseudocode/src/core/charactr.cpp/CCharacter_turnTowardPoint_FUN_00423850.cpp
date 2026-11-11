@@ -35,12 +35,12 @@ void __cdecl core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850(CCharacte
        *(uint *)(&stack0xffffffb4 + (uint)bVar4 * -8);
   *(uint *)(&stack0xffffffc4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        *(uint *)(&stack0xffffffb8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  fVar1 = *(float *)&this_ptr->field_0x2598;
+  fVar1 = this_ptr->turn_speed;
   fVar2 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_40);
   fVar3 = -fVar1;
   if ((fVar3 <= fVar2) && (fVar3 = fVar1, fVar2 <= fVar1)) {
     fVar3 = fVar2;
   }
-  *(float *)&this_ptr->field_0x2578 = fVar3;
+  this_ptr->turn_angle_accumulator = fVar3;
   return;
 }

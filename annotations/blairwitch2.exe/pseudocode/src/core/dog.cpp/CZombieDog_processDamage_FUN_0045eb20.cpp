@@ -14,7 +14,7 @@ void __cdecl core_dog_cpp_CZombieDog_processDamage_FUN_0045eb20(CZombieDog *this
   uint uVar2;
   int iVar3;
   
-  fVar1 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
@@ -26,8 +26,7 @@ void __cdecl core_dog_cpp_CZombieDog_processDamage_FUN_0045eb20(CZombieDog *this
   else {
     iVar3 = 5;
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-            ((CMotionController *)this_ptr_00,iVar3,1);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,iVar3,1);
 LAB_0045eb55:
   iVar3 = core_sound_cpp_CSound_isSoundPlaying_FUN_0055af70(0x0264B290,this_ptr->sfx_handle);
   if (iVar3 != 0) {

@@ -4,12 +4,18 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CColor3i.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: SFog
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x24 (36 bytes)
 #pragma pack(push, 1)
 typedef struct SFog {
+    CColor3i color_index; // 0x0
+    CVector3f scroll; // 0xc
+    float height_threshold; // 0x18
+    float density_multiplier; // 0x1c
+    float temperature; // 0x20
 } SFog;
 #pragma pack(pop)
 

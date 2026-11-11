@@ -21,7 +21,7 @@ uint sound_sndmain_cpp_FUN_005506b0(char *param_1)
   CSfxSample *pCVar8;
   CSfxSlot *this_ptr;
   char *pcVar9;
-  uint *puVar10;
+  int *piVar10;
   CSfxOptions *pCVar11;
   char *pcVar12;
   byte bVar13;
@@ -29,7 +29,7 @@ uint sound_sndmain_cpp_FUN_005506b0(char *param_1)
   char local_174 [256];
   CSfxOptions local_74;
   uint local_14;
-  byte *puVar5;
+  CVector3d *pCVar5;
   
   bVar13 = 0;
   if (((param_1 == (char *)0x0) || (*param_1 == '\0')) ||
@@ -48,14 +48,14 @@ uint sound_sndmain_cpp_FUN_005506b0(char *param_1)
     pcVar12[1] = cVar1;
     pcVar12 = pcVar12 + 2;
   } while (cVar1 != '\0');
-  puVar10 = (uint *)(_DAT_0264161c * 0x60 + 0x2641620);
+  piVar10 = (int *)(_DAT_0264161c * 0x60 + 0x2641620);
   pCVar11 = &local_74;
   for (iVar2 = 0x18; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(uint *)pCVar11 = *puVar10;
-    puVar10 = puVar10 + (uint)bVar13 * -2 + 1;
+    pCVar11->channel_index = *piVar10;
+    piVar10 = piVar10 + (uint)bVar13 * -2 + 1;
     pCVar11 = (CSfxOptions *)((int)pCVar11 + ((uint)bVar13 * -2 + 1) * 4);
   }
-  iVar2 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005512a0(local_74._0_4_);
+  iVar2 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005512a0(local_74.channel_index);
   if (iVar2 == 0) {
     return 0;
   }
@@ -83,7 +83,7 @@ uint sound_sndmain_cpp_FUN_005506b0(char *param_1)
   pCVar11 = &local_74;
   pCVar4 = this_ptr;
   for (iVar6 = 0x18; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *(uint *)&pCVar4->options = *(uint *)pCVar11;
+    (pCVar4->options).channel_index = pCVar11->channel_index;
     pCVar11 = (CSfxOptions *)((int)pCVar11 + ((uint)bVar13 * -2 + 1) * 4);
     pCVar4 = (CSfxSlot *)((int)pCVar4 + (uint)bVar13 * -8 + 4);
   }
@@ -93,7 +93,7 @@ uint sound_sndmain_cpp_FUN_005506b0(char *param_1)
     iVar3 = _stricmp((char *)pCVar8,param_1);
     if (iVar3 == 0) {
       if (pCVar8 != (CSfxSample *)0x0) {
-        if (*(int *)&pCVar8->field_0x160 != -1) goto LAB_0055080c;
+        if (pCVar8->streaming_slot_index != -1) goto LAB_0055080c;
         *(CSfxSample **)(&DAT_0263cf84 + iVar2) = pCVar8;
         goto LAB_00550817;
       }
@@ -131,10 +131,10 @@ LAB_00550817:
     *(uint *)(iVar2 + 0x263d018) = *(uint *)(iVar2 + 0x263cf54);
     pCVar4 = this_ptr;
     do {
-      puVar5 = &(pCVar4->options).field_0x4;
-      *(uint *)&pCVar4->field_0xd0 = 0xffffffff;
-      pCVar4 = (CSfxSlot *)puVar5;
-    } while (puVar5 != (byte *)(iVar2 + 0x263cf3c));
+      pCVar5 = &(pCVar4->options).position;
+      pCVar4->channel_current_buffer_offsets[0] = -1;
+      pCVar4 = (CSfxSlot *)pCVar5;
+    } while (pCVar5 != (CVector3d *)(iVar2 + 0x263cf3c));
     iVar7 = DAT_0061bc80 + 1;
     iVar6 = *(int *)(&DAT_0263cf84 + iVar2);
     *(uint *)(iVar2 + 0x263d00c) = *(uint *)(*(int *)(&DAT_0263cf84 + iVar2) + 0x114);

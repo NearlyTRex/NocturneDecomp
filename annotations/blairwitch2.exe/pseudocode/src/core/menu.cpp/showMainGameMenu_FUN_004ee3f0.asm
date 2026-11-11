@@ -37,10 +37,10 @@
 ;   core_main.c_FUN_004e45e0
 ;   core_menu.cpp_FUN_004eb0e0
 ;   core_menu.cpp_FUN_004ee1a0
-;   core_moon.cpp_FUN_005023e0
-;   core_moon.cpp_FUN_00502450
-;   core_moon.cpp_FUN_005024a0
-;   core_moon.cpp_FUN_00502510
+;   core_moon.cpp_CMoon_free_FUN_00502450
+;   core_moon.cpp_CMoon_init_FUN_005023e0
+;   core_moon.cpp_CMoon_render_FUN_00502510
+;   core_moon.cpp_CMoon_update_FUN_005024a0
 ;   core_set.cpp_CDemonSet_setFlatColor_FUN_005344c0
 ;   core_sound.cpp_CSound_configure_FUN_0055ac50
 ;   core_sound.cpp_CSound_reset_FUN_0055adb0
@@ -115,8 +115,8 @@ section .text
         ;   XREF to: 00575010 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00575010()
     PUSH 0x1d05620                      ; 004ee497
     MOV dword ptr [ESP + 0x10],EBP      ; 004ee49c
-    CALL core_moon.cpp_FUN_005023e0     ; 004ee4a0
-        ;   XREF to: 005023e0 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_005023e0()
+    CALL core_moon.cpp_CMoon_init_FUN_005023e0 ; 004ee4a0
+        ;   XREF to: 005023e0 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_init_FUN_005023e0(CMoon * this_ptr)
     ADD ESP,0x4                         ; 004ee4a5
     MOV EDX,dword ptr [0x00616494]      ; 004ee4a8 | g_CGamePtr
     MOV EAX,0x1                         ; 004ee4ae
@@ -147,12 +147,12 @@ section .text
     PUSH dword ptr [ESP + 0x10]         ; 004ee50a
     PUSH 0x1d05620                      ; 004ee50e
     MOV dword ptr [EAX + 0x15ae94],0xdac ; 004ee513 | g_CDemonSetInstance.ambient_base_quick
-    CALL core_moon.cpp_FUN_005024a0     ; 004ee51d
-        ;   XREF to: 005024a0 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_005024a0()
+    CALL core_moon.cpp_CMoon_update_FUN_005024a0 ; 004ee51d
+        ;   XREF to: 005024a0 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_update_FUN_005024a0(CMoon * this_ptr, float param_2)
     ADD ESP,0x8                         ; 004ee522
     PUSH 0x1d05620                      ; 004ee525
-    CALL core_moon.cpp_FUN_00502510     ; 004ee52a
-        ;   XREF to: 00502510 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_00502510()
+    CALL core_moon.cpp_CMoon_render_FUN_00502510 ; 004ee52a
+        ;   XREF to: 00502510 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_render_FUN_00502510(CMoon * this_ptr)
     ADD ESP,0x4                         ; 004ee52f
     MOV EAX,[0x0061b5a8]                ; 004ee532 | g_CDemonSetPtr
     PUSH 0x5dd284                       ; 004ee537 | = "S T A R T"
@@ -279,8 +279,8 @@ section .text
         ;   Label: switchD
     PUSH 0x1d05620                      ; 004ee653
         ;   Label: caseD_0
-    CALL core_moon.cpp_FUN_00502450     ; 004ee658
-        ;   XREF to: 00502450 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_00502450()
+    CALL core_moon.cpp_CMoon_free_FUN_00502450 ; 004ee658
+        ;   XREF to: 00502450 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_free_FUN_00502450(CMoon * this_ptr)
     ADD ESP,0x4                         ; 004ee65d
     MOV EDX,dword ptr [0x0061c068]      ; 004ee660 | DAT_0061c068
     PUSH EDX                            ; 004ee666
@@ -317,8 +317,8 @@ section .text
     CALL engine_texture.cpp_FUN_00575010 ; 004ee6b3
         ;   XREF to: 00575010 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00575010()
     PUSH 0x1d05620                      ; 004ee6b8
-    CALL core_moon.cpp_FUN_005023e0     ; 004ee6bd
-        ;   XREF to: 005023e0 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_005023e0()
+    CALL core_moon.cpp_CMoon_init_FUN_005023e0 ; 004ee6bd
+        ;   XREF to: 005023e0 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_init_FUN_005023e0(CMoon * this_ptr)
     ADD ESP,0x4                         ; 004ee6c2
     MOV EDI,dword ptr [0x0061c068]      ; 004ee6c5 | DAT_0061c068
     PUSH EDI                            ; 004ee6cb
@@ -442,8 +442,8 @@ section .text
         ;   XREF to: 0055adb0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_reset_FUN_0055adb0(CSound * this_ptr)
     ADD ESP,0x4                         ; 004ee7df
     PUSH 0x1d05620                      ; 004ee7e2
-    CALL core_moon.cpp_FUN_00502450     ; 004ee7e7
-        ;   XREF to: 00502450 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_00502450()
+    CALL core_moon.cpp_CMoon_free_FUN_00502450 ; 004ee7e7
+        ;   XREF to: 00502450 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_free_FUN_00502450(CMoon * this_ptr)
     ADD ESP,0x4                         ; 004ee7ec
     MOV EAX,EBP                         ; 004ee7ef
     POP EBX                             ; 004ee7f1
@@ -489,8 +489,8 @@ section .text
         ;   XREF to: 004ee6a6 (UNCONDITIONAL_JUMP)  ; LAB_004ee6a6
     PUSH 0x1d05620                      ; 004ee855
         ;   Label: caseD_2
-    CALL core_moon.cpp_FUN_00502450     ; 004ee85a
-        ;   XREF to: 00502450 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_00502450()
+    CALL core_moon.cpp_CMoon_free_FUN_00502450 ; 004ee85a
+        ;   XREF to: 00502450 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_free_FUN_00502450(CMoon * this_ptr)
     ADD ESP,0x4                         ; 004ee85f
     MOV ESI,dword ptr [0x0061c068]      ; 004ee862 | DAT_0061c068
     PUSH ESI                            ; 004ee868
@@ -509,8 +509,8 @@ section .text
     CALL engine_texture.cpp_FUN_00575010 ; 004ee889
         ;   XREF to: 00575010 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00575010()
     PUSH 0x1d05620                      ; 004ee88e
-    CALL core_moon.cpp_FUN_005023e0     ; 004ee893
-        ;   XREF to: 005023e0 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_005023e0()
+    CALL core_moon.cpp_CMoon_init_FUN_005023e0 ; 004ee893
+        ;   XREF to: 005023e0 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_init_FUN_005023e0(CMoon * this_ptr)
     ADD ESP,0x4                         ; 004ee898
     MOV EAX,[0x0061c068]                ; 004ee89b | DAT_0061c068
     PUSH EAX                            ; 004ee8a0

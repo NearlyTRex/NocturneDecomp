@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 83,
+    "complexity_score": 68,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 53,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 198
@@ -96,7 +95,7 @@
     },
     {
       "addr": "01cb69e0",
-      "name": "g_CGameInstance.field176_0xe0",
+      "name": "g_CGameInstance.cinematic_skip_in_progress",
       "type": "undefined4",
       "value": null
     },
@@ -239,14 +238,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0xe0",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0xe0 != 0) {",
-      "type": "unnamed_field"
     }
   ]
 }

@@ -377,10 +377,10 @@ void core_game_cpp_FUN_004be8a0(int param_1,uint *param_2)
     else {
       iVar6 = core_actor_cpp_castToClassHash_FUN_0040c8f0();
       if (iVar6 == 0) {
-        if (&pCStack_34->field_0x20 != &DAT_01cb3924) {
-          _DAT_01cb3924 = *(float *)&pCStack_34->field_0x20;
-          _DAT_01cb392c = *(float *)&pCStack_34->field_0x28;
-          _DAT_01cb3928 = *(float *)&pCStack_34->field_0x24;
+        if (&pCStack_34->location != (CLocation *)&DAT_01cb3924) {
+          _DAT_01cb3924 = (pCStack_34->location).position.x;
+          _DAT_01cb392c = (pCStack_34->location).position.z;
+          _DAT_01cb3928 = (pCStack_34->location).position.y;
         }
       }
       else {

@@ -15,9 +15,9 @@ void __cdecl core_icepick_cpp_CIcePick_setup_FUN_004d4a20(CIcePick *this_ptr)
   int iVar2;
   CSkeleton *this_ptr_00;
   
-  core_hero_cpp_CHero_setup_FUN_004ce4a0((CHero *)this_ptr);
+  core_hero_cpp_CHero_setup_FUN_004ce4a0(&this_ptr->base);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
-                          ((CDeformableModelInstance *)&this_ptr->field_0x2b4);
+                          (&(this_ptr->base).base.model);
   _DAT_01cee0b4 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 head",1);
   _DAT_01cee0b8 =
@@ -54,16 +54,16 @@ void __cdecl core_icepick_cpp_CIcePick_setup_FUN_004d4a20(CIcePick *this_ptr)
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 Spine1",1);
   _DAT_01cee0f8 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,"Bip01 Spine",1);
-  *(uint *)&this_ptr->field_0x261c = 0;
-  *(uint *)&this_ptr->field_0x2694 = 0;
+  (this_ptr->base).base.carry_hands[0].secondary_bone_index = 0;
+  (this_ptr->base).base.carry_hands[1].secondary_bone_index = 0;
   this_ptr->guns_drawn = 0;
-  *(int *)&this_ptr->field_0x2618 = _DAT_01cee0e8;
-  *(int *)&this_ptr->field_0x2690 = _DAT_01cee0ec;
+  (this_ptr->base).base.carry_hands[0].bone_index = _DAT_01cee0e8;
+  (this_ptr->base).base.carry_hands[1].bone_index = _DAT_01cee0ec;
   iVar2 = _DAT_01cedef4;
   this_ptr->pending_pickup_target = (CDemonActor *)0x0;
   pCVar1 = *(CIcePick **)(iVar2 * 4 + 0x1cedee4);
   if (this_ptr == pCVar1) {
-    *(uint *)&pCVar1->field_0x3434 = 0x3fc00000;
+    (pCVar1->base).base.collision_cylinder_radius = 1.5;
   }
   this_ptr->sfx_handles[1] = 0;
   this_ptr->sfx_handles[0] = 0;

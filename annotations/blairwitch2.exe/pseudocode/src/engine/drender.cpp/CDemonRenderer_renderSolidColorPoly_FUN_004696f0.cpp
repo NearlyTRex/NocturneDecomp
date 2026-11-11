@@ -16,17 +16,17 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0
   int iVar3;
   
   if ((this_ptr->plane_culling_enabled == 0) ||
-     (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403970(poly + 8), iVar3 != 0)) {
+     (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403970(&(poly->base).surface_normal), iVar3 != 0)) {
     iVar3 = 0;
-    if (0 < *(int *)(poly + 4)) {
+    if (0 < (poly->base).base.count) {
       pSVar1 = poly;
       iVar2 = 0;
       do {
-        *(uint *)(&DAT_01ba5c84 + iVar2) = *(uint *)(pSVar1 + 0x18);
+        *(int *)(&DAT_01ba5c84 + iVar2) = pSVar1->vertices[0].vertex_index;
         iVar3 = iVar3 + 1;
-        pSVar1 = pSVar1 + 0xc;
+        pSVar1 = (SMRGLPrimitivePoly *)&(pSVar1->base).surface_normal.B;
         iVar2 = iVar2 + 4;
-      } while (iVar3 < *(int *)(poly + 4));
+      } while (iVar3 < (poly->base).base.count);
     }
     if (this_ptr->shadow_pass_active == 0) {
       _DAT_01c38b54 = 0xc0;
@@ -39,7 +39,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0
       _DAT_01c35e6c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046e936;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590
-              (this_ptr,*(int *)(poly + 4),(int *)&DAT_01ba5c84);
+              (this_ptr,(poly->base).base.count,(int *)&DAT_01ba5c84);
   }
   return;
 }

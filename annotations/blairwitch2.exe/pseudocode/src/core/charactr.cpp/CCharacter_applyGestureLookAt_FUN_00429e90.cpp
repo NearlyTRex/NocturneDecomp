@@ -23,8 +23,7 @@ void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00429e90(CChara
     }
   }
   core_cloth_cpp_CClothList_process_FUN_005b1780
-            (&this_ptr->cloth_list,(CVector3f *)&(this_ptr->base).field_0x20,
-             &(this_ptr->base).orient.vec,delta_time,this_ptr->closest_distance_threshold,
-             &this_ptr->model);
+            (&this_ptr->cloth_list,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec,
+             delta_time,this_ptr->closest_distance_threshold,&this_ptr->model);
   return;
 }

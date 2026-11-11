@@ -11,24 +11,23 @@ void __cdecl core_event_cpp_CEventList_restartSfxEntries_FUN_00491be0(CEventList
 {
   uint uVar1;
   int iVar2;
-  int iVar3;
-  CEventList *pCVar4;
+  SSfxEntry *pSVar3;
+  char *pcVar4;
   
   iVar2 = 0;
-  if (0 < *(int *)(this_ptr + 0x3ac8)) {
-    pCVar4 = this_ptr + 0x3ae4;
+  if (0 < (this_ptr->sfx_handles).count) {
+    pcVar4 = (this_ptr->sfx_handles).entries[0].sound_filename;
     do {
-      iVar3 = iVar2 * 0x120;
+      pSVar3 = (this_ptr->sfx_handles).entries + iVar2;
       sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
-      sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005503e0
-                (*(double *)(this_ptr + iVar3 + 0x3acc + 0x118),1);
+      sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005503e0(pSVar3->playback_position,1);
       sound_sndmain_cpp_setNextSfxFlagBits_FUN_005503a0(1);
-      uVar1 = sound_sndmain_cpp_FUN_005506b0(pCVar4);
+      uVar1 = sound_sndmain_cpp_FUN_005506b0(pcVar4);
       iVar2 = iVar2 + 1;
-      *(uint *)(this_ptr + iVar3 + 0x3acc) = uVar1;
+      pSVar3->sfx_handle = uVar1;
       sound_sndmain_cpp_popSfxOptions_FUN_005504d0();
-      pCVar4 = pCVar4 + 0x120;
-    } while (iVar2 < *(int *)(this_ptr + 0x3ac8));
+      pcVar4 = pcVar4 + 0x120;
+    } while (iVar2 < (this_ptr->sfx_handles).count);
   }
   core_event_cpp_CEventList_updateSfxEntries_FUN_00491a90(this_ptr);
   return;

@@ -8,7 +8,7 @@
 ;
 ; Called Functions:
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_0044d060
-;   unkafter_superopt.cpp_FUN_005a8290
+;   unkafter_superopt.cpp_CSimpleParticleSystem_render_FUN_005a8290
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     ADD EBX,0x154                       ; 00459d5e
         ;   Label: LAB_00459d5e
     PUSH EBX                            ; 00459d64
-    CALL unkafter_superopt.cpp_FUN_005a8290 ; 00459d65
-        ;   XREF to: 005a8290 (UNCONDITIONAL_CALL)  ; undefined unkafter_superopt.cpp_FUN_005a8290()
+    CALL unkafter_superopt.cpp_CSimpleParticleSystem_render_FUN_005a8290 ; 00459d65
+        ;   XREF to: 005a8290 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_render_FUN_005a8290(CSimpleParticleSystem * this_ptr)
     MOV EAX,0x1                         ; 00459d6a
     ADD ESP,0x4                         ; 00459d6f
     POP EBX                             ; 00459d72

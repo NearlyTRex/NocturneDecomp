@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040ddb0
-;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -17,8 +17,8 @@ section .text
 
     PUSH 0x47c                          ; 0040dd80
         ;   Label: core_ammo.cpp_factoryFuncAmmo_FUN_0040dd80
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 0040dd85
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0040dd85
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 0040dd8a
     TEST EAX,EAX                        ; 0040dd8d
     JNZ 0x0040dd92                      ; 0040dd8f

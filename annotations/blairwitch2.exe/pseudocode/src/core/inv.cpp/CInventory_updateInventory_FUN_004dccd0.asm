@@ -22,8 +22,8 @@
 ;   undefined4 DAT_005f9020
 ;   CGame* g_CGamePtr = 01cb6900
 ;   undefined4 g_CBatteryClassInfo.name_hash
-;   undefined4 g_CGameInstance.field508_0x25c
-;   undefined4 g_CGameInstance.field516_0x264
+;   undefined4 g_CGameInstance.goggles_active
+;   undefined4 g_CGameInstance.flashlight_active
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   undefined4 g_CLightGunClassInfo.name_hash
 ;
@@ -77,7 +77,7 @@ section .text
     MOV dword ptr [EBX + 0x45c],EAX     ; 004dcd35
     MOV EAX,[0x00616494]                ; 004dcd3b | g_CGamePtr
         ;   Label: LAB_004dcd3b
-    MOV EDI,dword ptr [EAX + 0x264]     ; 004dcd40 | g_CGameInstance.field516_0x264
+    MOV EDI,dword ptr [EAX + 0x264]     ; 004dcd40 | g_CGameInstance.flashlight_active
     TEST EDI,EDI                        ; 004dcd46
     JZ 0x004dced2                       ; 004dcd48
         ;   XREF to: 004dced2 (CONDITIONAL_JUMP)  ; LAB_004dced2
@@ -223,7 +223,7 @@ section .text
     POP ESI                             ; 004dcecf
     POP EBX                             ; 004dced0
     RET                                 ; 004dced1
-    CMP dword ptr [EAX + 0x25c],0x0     ; 004dced2 | g_CGameInstance.field508_0x25c
+    CMP dword ptr [EAX + 0x25c],0x0     ; 004dced2 | g_CGameInstance.goggles_active
         ;   Label: LAB_004dced2
     JNZ 0x004dcd4e                      ; 004dced9
         ;   XREF to: 004dcd4e (CONDITIONAL_JUMP)  ; LAB_004dcd4e

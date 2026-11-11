@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   unkafter_basicene.cpp_FUN_0059e3b0 at 0059e3c9
+;   unkafter_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0 at 0059e3c9
 ;
 ; *****************************************************************************
 

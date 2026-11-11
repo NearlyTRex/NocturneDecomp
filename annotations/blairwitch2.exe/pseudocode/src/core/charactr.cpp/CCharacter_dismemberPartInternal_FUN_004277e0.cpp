@@ -9,7 +9,7 @@
 void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_004277e0(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background)
 
 {
-  int *piVar1;
+  SDamageDecal *pSVar1;
   SFire *pSVar2;
   CCharacter *pCVar3;
   int iVar4;
@@ -17,7 +17,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_004277e0(CCh
   uint *puVar6;
   byte bVar7;
   float afStackY_1050 [15];
-  byte *apuStackY_1014 [975];
+  CMatrix3x4f *apCStackY_1014 [975];
   CBodyPart *this_ptr_00;
   char *model_name;
   CVector3f *position_offset;
@@ -33,23 +33,23 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_004277e0(CCh
   CVector3f local_44;
   CVector3f local_38;
   float local_2c;
-  byte *apuStack_28 [4];
+  CMatrix3x4f *apCStack_28 [4];
   int local_18;
   int local_14;
   
   bVar7 = 0;
-  if (((this_ptr->model).field_0x2260 != '\0') &&
-     (*(int *)(&(this_ptr->model).field_0x2140 + part_index * 4) != 0)) {
+  if (((this_ptr->model).model_name[0] != '\0') &&
+     ((this_ptr->model).part_data.visibility_flags[part_index] != 0)) {
     core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_00548130
               (&this_ptr->model,body_part,part_index);
     local_18 = 0;
-    if (0 < *(int *)&this_ptr->field_0x3448) {
-      apuStack_28[2] = &(this_ptr->model).field_0xe80;
-      piVar1 = (int *)&this_ptr->field_0x344c;
+    if (0 < this_ptr->damage_decal_count) {
+      apCStack_28[2] = (this_ptr->model).bone_transform.bone_model_matrices;
+      pSVar1 = this_ptr->damage_decals;
       do {
-        if (part_index == *piVar1) {
+        if (part_index == pSVar1->part_index) {
           core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
-                    (piVar1 + 2,apuStack_28[2] + piVar1[1] * 0x30);
+                    (&pSVar1->transform,apCStack_28[2] + pSVar1->bone_index);
           puVar5 = (uint *)&stack0xffffff38;
           puVar6 = (uint *)&stack0xffffff68;
           for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -76,22 +76,21 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_004277e0(CCh
           core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_00417610
                     (this_ptr_00,model_name,position_offset,euler_angles);
         }
-        piVar1 = piVar1 + 0xe;
+        pSVar1 = pSVar1 + 1;
         local_18 = local_18 + 1;
-      } while (local_18 < *(int *)&this_ptr->field_0x3448);
+      } while (local_18 < this_ptr->damage_decal_count);
     }
     local_14 = 0;
     if (0 < this_ptr->fire_count) {
-      apuStack_28[3] = &(this_ptr->model).field_0xe80;
+      apCStack_28[3] = (this_ptr->model).bone_transform.bone_model_matrices;
       pSVar2 = this_ptr->fires;
       do {
-        if ((part_index == *(int *)pSVar2) && (-1 < *(int *)&pSVar2->field_0x4)) {
-          core_xform_cpp_FUN_00591530
-                    (&pSVar2->field_0x8,apuStack_28[3] + *(int *)&pSVar2->field_0x4 * 0x30);
+        if ((part_index == pSVar2->bone_part) && (-1 < pSVar2->bone_index)) {
+          core_xform_cpp_FUN_00591530(&pSVar2->offset,apCStack_28[3] + pSVar2->bone_index);
           local_38.x = local_2c;
-          *(byte **)((int)&local_38 + (uint)bVar7 * -8 + 4) = apuStack_28[(uint)bVar7 * -2];
-          *(byte **)((int)&local_38 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-               apuStack_28[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+          *(CMatrix3x4f **)((int)&local_38 + (uint)bVar7 * -8 + 4) = apCStack_28[(uint)bVar7 * -2];
+          *(CMatrix3x4f **)((int)&local_38 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+               apCStack_28[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
           core_bodypart_cpp_CBodyPart_addFire_FUN_00417690(body_part,&local_38);
         }
         pSVar2 = pSVar2 + 1;
@@ -101,11 +100,11 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_004277e0(CCh
     iVar4 = 0;
     pCVar3 = this_ptr;
     do {
-      if (part_index == *(int *)&pCVar3->field_0x261c) {
+      if (part_index == pCVar3->carry_hands[0].secondary_bone_index) {
         (*(((this_ptr->base).vtable._uc)->_uc).dropCarriedObject)(this_ptr,iVar4,(CVector3f *)0x0);
       }
       iVar4 = iVar4 + 1;
-      pCVar3 = (CCharacter *)&(pCVar3->base).field_0x78;
+      pCVar3 = (CCharacter *)(pCVar3->base).create_event;
     } while (iVar4 < 2);
     body_part->render_in_background = render_in_background;
     return;

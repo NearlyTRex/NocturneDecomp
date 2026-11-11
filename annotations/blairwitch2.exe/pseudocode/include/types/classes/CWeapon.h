@@ -18,7 +18,6 @@
 #pragma pack(push, 1)
 typedef struct CWeapon {
     CDemonActor base; // 0x0
-    char field_344[348]; // 0x158
     CKeyFramedModelInstance model; // 0x2b4
     EWeaponState weapon_state; // 0x430
     int is_spread_weapon; // 0x434

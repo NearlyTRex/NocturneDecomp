@@ -22,7 +22,7 @@
 ;   core_main.c_FUN_004e4500
 ;   core_necklace.cpp_FUN_005adda0
 ;   core_necklace.cpp_FUN_005ade00
-;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;   crt_unknown.c_FUN_005b7fdc
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
         ;   XREF to: 005b152d (CONDITIONAL_JUMP)  ; LAB_005b152d
     PUSH 0x3ab30                        ; 005b14c4
         ;   Label: LAB_005b14c4
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 005b14c9
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005b14c9
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 005b14ce
     TEST EAX,EAX                        ; 005b14d1
     JZ 0x005b14de                       ; 005b14d3

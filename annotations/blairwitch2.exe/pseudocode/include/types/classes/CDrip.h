@@ -14,7 +14,6 @@
 #pragma pack(push, 1)
 typedef struct CDrip {
     CDemonActor base; // 0x0
-    char field_344[348]; // 0x158
     CKeyFramedModelInstance model; // 0x2b4
     EDripType type; // 0x430
     int auto_drop; // 0x434

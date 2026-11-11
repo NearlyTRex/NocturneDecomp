@@ -9,41 +9,43 @@
 void __cdecl core_basicene_cpp_CBasicEnemy_startBurn_FUN_005a0270(CBasicEnemy *this_ptr,CVector3f *direction,float strength)
 
 {
-  CBasicEnemy *pCVar1;
-  float fVar2;
-  int iVar3;
-  uint uVar4;
+  SStateMachine *pSVar1;
+  CVector3f *pCVar2;
+  float fVar3;
+  float fVar4;
+  int iVar5;
+  uint uVar6;
   
-  if (*(int *)(this_ptr + 0x11348) == 0) {
+  if (this_ptr->can_burn == 0) {
     return;
   }
-  pCVar1 = this_ptr + 0x10af8;
-  iVar3 = unkaddr_0059d350_cpp_FUN_0059daa0(pCVar1,&DAT_005efb55);
-  if (iVar3 == 0) {
-    uVar4 = unkaddr_0059d350_cpp_FUN_0059db70(pCVar1);
-    unkaddr_0059d350_cpp_FUN_0059d7f0(pCVar1,"BurnComplete",uVar4);
+  pSVar1 = &this_ptr->state_machine;
+  iVar5 = unkaddr_0059d350_cpp_FUN_0059daa0(pSVar1,&DAT_005efb55);
+  if (iVar5 == 0) {
+    uVar6 = unkaddr_0059d350_cpp_FUN_0059db70(pSVar1);
+    unkaddr_0059d350_cpp_FUN_0059d7f0(pSVar1,"BurnComplete",uVar6);
   }
-  unkaddr_0059d350_cpp_FUN_0059d8e0(this_ptr + 0x10af8,&DAT_005efb67);
-  *(float *)(this_ptr + 0x11430) = strength;
-  if ((CVector3f *)(this_ptr + 0x11434) != direction) {
-    ((CVector3f *)(this_ptr + 0x11434))->x = direction->x;
-    *(float *)(this_ptr + 0x11438) = direction->y;
-    *(float *)(this_ptr + 0x1143c) = direction->z;
+  unkaddr_0059d350_cpp_FUN_0059d8e0(&this_ptr->state_machine,&DAT_005efb67);
+  this_ptr->burn_timer = strength;
+  if (&this_ptr->burn_direction != direction) {
+    (this_ptr->burn_direction).x = direction->x;
+    (this_ptr->burn_direction).y = direction->y;
+    (this_ptr->burn_direction).z = direction->z;
   }
-  pCVar1 = this_ptr + 0x11434;
-  *(uint *)(this_ptr + 0x11438) = 0;
-  fVar2 = SQRT(*(float *)(this_ptr + 0x1143c) * *(float *)(this_ptr + 0x1143c) +
-               *(float *)pCVar1 * *(float *)pCVar1 +
-               *(float *)(this_ptr + 0x11438) * *(float *)(this_ptr + 0x11438));
-  if (0.0 < fVar2) {
-    fVar2 = 1.0 / fVar2;
-    *(float *)pCVar1 = *(float *)pCVar1 * fVar2;
-    *(float *)(this_ptr + 0x11438) = *(float *)(this_ptr + 0x11438) * fVar2;
-    *(float *)(this_ptr + 0x1143c) = *(float *)(this_ptr + 0x1143c) * fVar2;
+  pCVar2 = &this_ptr->burn_direction;
+  (this_ptr->burn_direction).y = 0.0;
+  fVar3 = (this_ptr->burn_direction).y;
+  fVar4 = (this_ptr->burn_direction).z;
+  fVar3 = SQRT(fVar4 * fVar4 + pCVar2->x * pCVar2->x + fVar3 * fVar3);
+  if (0.0 < fVar3) {
+    fVar3 = 1.0 / fVar3;
+    pCVar2->x = pCVar2->x * fVar3;
+    (this_ptr->burn_direction).y = (this_ptr->burn_direction).y * fVar3;
+    (this_ptr->burn_direction).z = (this_ptr->burn_direction).z * fVar3;
     return;
   }
-  *(uint *)(this_ptr + 0x1143c) = 0;
-  *(uint *)(this_ptr + 0x11438) = *(uint *)(this_ptr + 0x1143c);
-  *(float *)pCVar1 = *(float *)(this_ptr + 0x11438);
+  (this_ptr->burn_direction).z = 0.0;
+  (this_ptr->burn_direction).y = (this_ptr->burn_direction).z;
+  pCVar2->x = (this_ptr->burn_direction).y;
   return;
 }

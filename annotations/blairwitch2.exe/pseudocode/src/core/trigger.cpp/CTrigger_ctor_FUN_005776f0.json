@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 196,
+    "complexity_score": 81,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 56,
-    "suspect_count": 13,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy"
     ],
     "total_lines": 130
@@ -122,94 +121,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x2bc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2bc = 0x40a00000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x2c0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2c0 = 0x41100000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x2c4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2c4 = 0x40a00000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2cc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2cc = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x2b8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2b8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x2c8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2c8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x45c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x45c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2b4 = 0x47c34ff3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x460",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x460 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x464",
-      "severity": "mild",
-      "text": "pCVar2->field_0x464 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 57,
-      "match": "field_0x458",
-      "severity": "mild",
-      "text": "*(CTrigger **)&pCVar2->field_0x458 = pCVar2;",
-      "type": "unnamed_field"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 23,

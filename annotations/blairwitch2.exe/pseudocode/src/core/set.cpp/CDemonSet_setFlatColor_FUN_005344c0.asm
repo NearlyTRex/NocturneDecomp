@@ -18,7 +18,7 @@
 ;   core_menu.cpp_FUN_004ed260 at 004ed2d0
 ;   core_menu.cpp_FUN_004ee1a0 at 004ee211
 ;   core_menu.cpp_showMainGameMenu_FUN_004ee3f0 at 004ee4fd
-;   core_moon.cpp_FUN_00502510 at 00502626
+;   core_moon.cpp_CMoon_render_FUN_00502510 at 00502626
 ;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0052dc10 at 0052dcd1
 ;   ... and 3 more
 ;

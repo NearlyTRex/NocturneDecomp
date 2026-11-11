@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 436,
-    "complexity_score": 837,
+    "complexity_score": 642,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 222,
-    "suspect_count": 59,
+    "suspect_count": 40,
     "suspect_types": [
       "pointer_cast",
       "self_copy_guard",
       "stack_alignment_array",
-      "unnamed_field",
       "warning_type_propagation"
     ],
     "total_lines": 658
@@ -618,124 +617,12 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 68,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "local_bc = -*(float *)&obb_b->field_0xc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 69,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "local_b8 = -*(float *)&obb_b->field_0x10;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 70,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "local_b4 = -*(float *)&obb_b->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 76,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "if (&local_128 != (float *)&obb_b->field_0xc) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 77,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "local_128 = *(float *)&obb_b->field_0xc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 78,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "local_124 = *(float *)&obb_b->field_0x10;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 79,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "local_120 = *(float *)&obb_b->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 85,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "local_1c = &obb_b->field_0x18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 86,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "local_34 = &obb_a->field_0x18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 89,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "local_30 = *(float *)&obb_a->field_0xc;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 90,
       "match": "(float *)((int)local_194",
       "severity": "moderate",
       "text": "local_24 = (float *)((int)local_194 + local_20 * 0xc);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 94,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "local_2c = *(float *)&obb_a->field_0x10;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 97,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "local_2c = -*(float *)&obb_a->field_0x10;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 101,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "local_28 = *(float *)&obb_a->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 104,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "local_28 = -*(float *)&obb_a->field_0x14;",
-      "type": "unnamed_field"
     },
     {
       "description": "Complex pointer cast",
@@ -770,22 +657,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 114,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_ac[0] = local_d0[3] + *(float *)&obb_a->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 115,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_ac[1] = local_c0 + *(float *)&obb_a->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 117,
       "match": "(uint *)((int)local_100",
@@ -816,22 +687,6 @@
       "severity": "moderate",
       "text": "*(uint *)((int)local_ac + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 127,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_ac[3] = local_dc - *(float *)&obb_b->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 128,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_9c = local_d8 - *(float *)&obb_b->field_0x8;",
-      "type": "unnamed_field"
     },
     {
       "description": "Complex pointer cast",
@@ -1040,14 +895,6 @@
       "severity": "moderate",
       "text": "*(uint *)((int)local_100 + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + -5) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 223,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "local_30 = -*(float *)&obb_a->field_0xc;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_134 != &local_bc)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",

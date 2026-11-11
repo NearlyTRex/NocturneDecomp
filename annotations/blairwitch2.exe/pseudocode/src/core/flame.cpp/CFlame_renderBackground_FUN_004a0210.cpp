@@ -28,7 +28,7 @@ void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_004a0210(CFlame *this_pt
   float afStack_34 [4];
   float fStack_24;
   int iStack_20;
-  float *pfStack_1c;
+  CLocation *pCStack_1c;
   int iStack_18;
   
   this_ptr_00 = DAT_0060b280;
@@ -53,7 +53,7 @@ void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_004a0210(CFlame *this_pt
          (fVar1 = (this_ptr->flame_size).y, fVar2 = (this_ptr->flame_size).x,
          fVar3 = (this_ptr->flame_size).z, 1.0 < SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1)
          )) && (0.0 < this_ptr->globe_scalar)) && (this_ptr->which_flame == FLAME_TYPE_TORCH)) {
-      pfStack_1c = (float *)&(this_ptr->base).field_0x20;
+      pCStack_1c = &(this_ptr->base).location;
       iVar4 = 0;
       iStack_20 = 0;
       for (iStack_18 = 0; iStack_18 < g_CDemonSetPtr->actor_count; iStack_18 = iStack_18 + 1) {
@@ -61,9 +61,9 @@ void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_004a0210(CFlame *this_pt
                           (*(uint *)((int)g_CDemonSetPtr->actors + iVar4),
                            g_CFlameClassInfo.name_hash);
         if (iVar5 != 0) {
-          afStack_34[2] = *pfStack_1c - *(float *)(iVar5 + 0x20);
-          afStack_34[3] = pfStack_1c[1] - *(float *)(iVar5 + 0x24);
-          fStack_24 = pfStack_1c[2] - *(float *)(iVar5 + 0x28);
+          afStack_34[2] = (pCStack_1c->position).x - *(float *)(iVar5 + 0x20);
+          afStack_34[3] = (pCStack_1c->position).y - *(float *)(iVar5 + 0x24);
+          fStack_24 = (pCStack_1c->position).z - *(float *)(iVar5 + 0x28);
           fStack_38 = afStack_34[2];
           *(float *)((int)afStack_34 + (uint)bVar8 * 0xfffffff8) =
                afStack_34[(uint)bVar8 * 0xfffffffe + 3];

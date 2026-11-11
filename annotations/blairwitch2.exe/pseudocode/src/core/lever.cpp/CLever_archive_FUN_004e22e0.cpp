@@ -53,7 +53,7 @@ void __cdecl core_lever_cpp_CLever_archive_FUN_004e22e0(CLever *this_ptr)
     core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->move_to_pct,"moveToPct");
   }
   if (5 < g_CLeverClassVersion) {
-    core_actor_cpp_archiveRules_FUN_0040c170(&this_ptr->field_0x57c,"rules");
+    core_actor_cpp_archiveRules_FUN_0040c170(&this_ptr->rule,"rules");
   }
   if (6 < g_CLeverClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b960

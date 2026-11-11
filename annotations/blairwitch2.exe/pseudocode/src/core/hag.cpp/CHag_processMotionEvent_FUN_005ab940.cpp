@@ -13,15 +13,13 @@ void __cdecl core_hag_cpp_CHag_processMotionEvent_FUN_005ab940(CHag *this_ptr,in
   
   if ((uint)event_id < 0x20d1) {
     if (event_id == 0x20d0) {
-      unkafter_basicene_cpp_FUN_0059f740
-                (this_ptr,0x41C80000,*(uint *)&this_ptr->field_0x11854,0x40000000);
+      unkafter_basicene_cpp_FUN_0059f740(this_ptr,0x41C80000,this_ptr->hand_bone,0x40000000);
       return;
     }
   }
   else {
     if ((uint)event_id < 0x20d2) {
-      unkafter_basicene_cpp_FUN_0059f740
-                (this_ptr,0x41700000,*(uint *)&this_ptr->field_0x11854,0x40000000);
+      unkafter_basicene_cpp_FUN_0059f740(this_ptr,0x41700000,this_ptr->hand_bone,0x40000000);
       return;
     }
     if (event_id != 0x20d2) {
@@ -31,7 +29,7 @@ void __cdecl core_hag_cpp_CHag_processMotionEvent_FUN_005ab940(CHag *this_ptr,in
     if (iVar1 != 0) {
       core_sound_cpp_CSound_playActorSound_FUN_0055ae50
                 (0x0264B290,(CDemonActor *)this_ptr,"hagattack0?.wav",
-                 (CVector3f *)&this_ptr->field_0x20);
+                 &(this_ptr->base).base.base.base.location.position);
       return;
     }
   }

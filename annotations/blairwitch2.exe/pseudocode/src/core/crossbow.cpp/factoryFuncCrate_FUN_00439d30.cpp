@@ -11,7 +11,7 @@ void core_crossbow_cpp_factoryFuncCrate_FUN_00439d30(void)
 {
   CCrate *this_ptr;
   
-  this_ptr = (CCrate *)debugAllocTracked1(0x458);
+  this_ptr = (CCrate *)operator_new(0x458);
   if (this_ptr == (CCrate *)0x0) {
     return;
   }

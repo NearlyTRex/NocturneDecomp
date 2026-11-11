@@ -24,6 +24,6 @@ void __cdecl core_fire_cpp_CGlassParticle_process_FUN_00497250(CGlassParticle *t
     return;
   }
   this_ptr->lifetime = 0;
-  *(uint *)&this_ptr->field_0x24 = 0;
+  (this_ptr->base).lifetime_remaining = 0.0;
   return;
 }

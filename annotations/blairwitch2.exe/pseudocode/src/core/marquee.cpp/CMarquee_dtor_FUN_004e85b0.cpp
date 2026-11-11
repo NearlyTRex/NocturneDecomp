@@ -20,9 +20,9 @@ CMarquee * core_marquee_cpp_CMarquee_dtor_FUN_004e85b0(CMarquee *this_ptr,uint f
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = core_course_cpp_CCourse_dtor_FUN_00438a70((CCourse *)&this_ptr->field_0x300,0);
+  pCVar1 = core_course_cpp_CCourse_dtor_FUN_00438a70(&this_ptr->course,0);
   pCVar2 = (CMarquee *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)(pCVar1 + -0x300),1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)(pCVar1 + -0x40),1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

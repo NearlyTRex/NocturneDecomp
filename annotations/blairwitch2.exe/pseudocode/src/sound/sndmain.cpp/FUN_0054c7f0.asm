@@ -27,14 +27,14 @@
 ;   undefined4 DAT_02641920
 ;   undefined4 g_SfxSamples[1].taken
 ;   undefined4 g_SfxSamples[1].ref_count
-;   undefined4 g_SfxSamples[1].field8_0x15c
+;   undefined4 g_SfxSamples[1].is_user_sample
 ;   undefined4 g_SfxSamples[1].locked_length
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
 ;   crt_math.c_round_FUN_005b7ff0
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;   crt_string.c__stricmp_FUN_005b8130
-;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;   engine_dosio.cpp_getFileSize_FUN_00460aa0
 ;   engine_dosio.cpp_splitPath_FUN_00461070
 ;   sound_mp3.cpp_CMP3Decoder_ctor_FUN_00509c70
@@ -45,7 +45,7 @@
 ;   sound_sndmain.cpp_FUN_0054b4a0
 ;   sound_sndmain.cpp_FUN_0054bac0
 ;   sound_sndmain.cpp_FUN_0054fd90
-;   support_trstream.cpp_FUN_0057d390
+;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -100,7 +100,7 @@ section .text
     CMP ECX,EDI                         ; 0054c85c
     JNZ 0x0054c823                      ; 0054c85e
         ;   XREF to: 0054c823 (CONDITIONAL_JUMP)  ; LAB_0054c823
-    MOV ECX,dword ptr [EAX + 0x2641a80] ; 0054c860 | g_SfxSamples[1].field8_0x15c
+    MOV ECX,dword ptr [EAX + 0x2641a80] ; 0054c860 | g_SfxSamples[1].is_user_sample
     CMP EDI,ECX                         ; 0054c866
     JNZ 0x0054c823                      ; 0054c868
         ;   XREF to: 0054c823 (CONDITIONAL_JUMP)  ; LAB_0054c823
@@ -141,8 +141,8 @@ section .text
     JLE 0x0054cb48                      ; 0054c8be
         ;   XREF to: 0054cb48 (CONDITIONAL_JUMP)  ; LAB_0054cb48
     PUSH 0x8630                         ; 0054c8c4
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 0054c8c9
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0054c8c9
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 0054c8ce
     TEST EAX,EAX                        ; 0054c8d1
     JZ 0x0054c8de                       ; 0054c8d3
@@ -258,8 +258,8 @@ section .text
     LEA EAX,[EBP + 0x17c]               ; 0054ca48
     PUSH EAX                            ; 0054ca4e
     MOV dword ptr [ESP + 0x10c],EAX     ; 0054ca4f
-    CALL support_trstream.cpp_FUN_0057d390 ; 0054ca56
-        ;   XREF to: 0057d390 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057d390()
+    CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390 ; 0054ca56
+        ;   XREF to: 0057d390 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390(CInStreamFile * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 0054ca5b
     TEST EAX,EAX                        ; 0054ca5e
     JZ 0x0054cb48                       ; 0054ca60
@@ -283,8 +283,8 @@ section .text
     POP EDI                             ; 0054ca88
         ;   Label: LAB_0054ca88
     PUSH ECX                            ; 0054ca89
-    CALL unkaddr_0057b9a0.cpp_FUN_0057d110 ; 0054ca8a
-        ;   XREF to: 0057d110 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057d110()
+    CALL unkaddr_0057b9a0.cpp_CInStreamFile_tell_FUN_0057d110 ; 0054ca8a
+        ;   XREF to: 0057d110 (UNCONDITIONAL_CALL)  ; undefined4 unkaddr_0057b9a0.cpp_CInStreamFile_tell_FUN_0057d110(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 0054ca8f
     PUSH EBP                            ; 0054ca92
     MOV dword ptr [EBP + 0x178],EAX     ; 0054ca93

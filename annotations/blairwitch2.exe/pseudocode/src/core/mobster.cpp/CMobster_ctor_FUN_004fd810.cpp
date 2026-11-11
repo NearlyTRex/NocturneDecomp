@@ -12,8 +12,8 @@ CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_004fd810(CMobster *this_pt
 
 {
   char cVar1;
-  uint uVar2;
-  uint uVar3;
+  float fVar2;
+  float fVar3;
   CMobster *pCVar4;
   int iVar5;
   char *pcVar6;
@@ -23,12 +23,12 @@ CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_004fd810(CMobster *this_pt
   (pCVar4->base).base.base.vtable._ub = &g_CMobsterVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             (&(pCVar4->base).base.model,"?mobster1.dfm" + 1);
-  uVar2 = _DAT_005fa230;
-  *(uint *)&(pCVar4->base).base.field_0x3430 = 0x3f19999a;
-  uVar3 = _DAT_005fa234;
-  *(uint *)&(pCVar4->base).base.field_0x3434 = 0x3f666666;
-  *(uint *)&(pCVar4->base).base.field_0x3438 = uVar2;
-  *(uint *)&(pCVar4->base).base.field_0x343c = uVar3;
+  fVar2 = _DAT_005fa230;
+  (pCVar4->base).base.collision_cylinder_height = 0.6;
+  fVar3 = _DAT_005fa234;
+  (pCVar4->base).base.collision_cylinder_radius = 0.9;
+  (pCVar4->base).base.ai_detection_range_min = fVar2;
+  (pCVar4->base).base.ai_detection_range_max = fVar3;
   iVar5 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,0xff);
   pCVar4->idle_timer = 0.0;
   pCVar4->weapon_approach_timer = 0.0;

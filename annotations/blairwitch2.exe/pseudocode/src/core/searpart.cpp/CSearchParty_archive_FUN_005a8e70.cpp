@@ -9,6 +9,6 @@
 void __cdecl core_searpart_cpp_CSearchParty_archive_FUN_005a8e70(CSearchParty *this_ptr)
 
 {
-  core_basicnpc_cpp_CBasicNPC_archive_FUN_005a4930((CBasicNPC *)this_ptr);
+  core_basicnpc_cpp_CBasicNPC_archive_FUN_005a4930(&this_ptr->base);
   return;
 }

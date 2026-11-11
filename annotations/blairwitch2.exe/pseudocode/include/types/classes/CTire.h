@@ -4,13 +4,21 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CTire
-// Stub: size from Watcom RTTI, fields not yet recovered
+// CVehicle.tires CTire[4] at +0xa98, stride 0x1b4 (archive 005848a0 IMUL 0x1b4; setup 00583c40 ADD ESI,0x1b4); setup/process/renderOpaque address the tire fields at nocedit's offsets + 0x15c (+0xa98 static_bpos, +0xaa4 radius, +0xaa8 width, +0xaac model, +0xc28 spin_angle, +0xc34 runtime_position); RTTI 436 = nocedit's.
 // Ghidra size: 0x1b4 (436 bytes)
 #pragma pack(push, 1)
 typedef struct CTire {
-    char field_0[436]; // 0x0
+    CVector3f static_bpos; // 0x0, [EBX+0xa98]/[0xa9c]/[0xaa0]
+    float radius; // 0xc, [EBX+0xaa4], [ESI+0xaa4]
+    float width; // 0x10, [EBX+0xaa8]
+    CKeyFramedModelInstance model; // 0x14, [EAX+0xaac]/[EBX+0xaac] (nocedit tires[0].model +0x950)
+    CVector3f spin_angle; // 0x190, [ESI+0xc28] (nocedit +0xacc)
+    CVector3f runtime_position; // 0x19c, nocedit layout; between spin_angle and the 436 end
+    CVector3f runtime_rotation; // 0x1a8, nocedit layout; ends at RTTI 436
 } CTire;
 #pragma pack(pop)
 

@@ -339,7 +339,7 @@ void __cdecl CDeformableModelInstance::init(CDeformableModelInstance *this_ptr,c
 
 // Original: core_skeleton.cpp_FUN_00547910
 // Address: 00547910
-int FUN_00547910(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,undefined4 param_6,undefined4 param_7,int param_8,undefined4 param_9);
+int FUN_00547910(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,undefined4 param_6,undefined4 param_7,int param_8,float param_9);
 
 // Original: core_skeleton.cpp_FUN_00547b80
 // Address: 00547b80

@@ -8,6 +8,9 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CVector3f.h"
 #include "types/enums/EWaterActorState.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLVertex.h"
 #include "types/structs/SWaterVertex.h"
 
 // Structure: CWaterActor
@@ -15,7 +18,6 @@
 #pragma pack(push, 1)
 typedef struct CWaterActor {
     CDemonActor base; // 0x0
-    char field_344[348]; // 0x158
     CVector3f size; // 0x2b4
     int opacity; // 0x2c0
     float height_delta; // 0x2c4
@@ -35,7 +37,7 @@ typedef struct CWaterActor {
     float inv_delta_time; // 0x80f8
     int grid_cols; // 0x80fc
     int grid_rows; // 0x8100
-    char field_33028[144000]; // 0x8104
+    SMRGLPrimitiveQuad primitives[2000]; // 0x8104
     int texture_frame; // 0x2b384
     int texture_anim_accum; // 0x2b388
     float base_y; // 0x2b38c

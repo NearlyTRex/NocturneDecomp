@@ -11,7 +11,7 @@ void core_tbplayer_cpp_factoryFuncDrummer_FUN_00571d80(void)
 {
   CDrummer *this_ptr;
   
-  this_ptr = (CDrummer *)debugAllocTracked1(0x24350);
+  this_ptr = (CDrummer *)operator_new(0x24350);
   if (this_ptr == (CDrummer *)0x0) {
     return;
   }

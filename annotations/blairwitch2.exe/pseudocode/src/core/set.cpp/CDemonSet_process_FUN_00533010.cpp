@@ -24,7 +24,7 @@ void __cdecl core_set_cpp_CDemonSet_process_FUN_00533010(CDemonSet *this_ptr)
     local_14 = 0;
     pCVar4 = this_ptr->lights;
     do {
-      if (*(int *)pCVar4 == 0) {
+      if (pCVar4->light_type == 0) {
         iVar1 = *(int *)(&DAT_01fc8d04 + local_14);
         if (iVar1 == 0) {
           return;
@@ -51,7 +51,7 @@ void __cdecl core_set_cpp_CDemonSet_process_FUN_00533010(CDemonSet *this_ptr)
         if (iVar2 != 0) {
           *(uint *)(iVar1 + 0x1cb4) = 0;
         }
-        iVar2 = _strnicmp(&pCVar4->field_0x4,&DAT_005e5b41,4);
+        iVar2 = _strnicmp(pCVar4->name,&DAT_005e5b41,4);
         if (iVar2 == 0) {
           if (this_ptr->last_switch_area_invalid == 0) {
             *(uint *)(iVar1 + 0x1cb4) = 0;

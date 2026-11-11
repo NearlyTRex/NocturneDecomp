@@ -43,7 +43,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_00464700(CDraculaBride 
   float local_18;
   
   bVar5 = 0;
-  if ((this_ptr->base).base.model.field_0x2260 != '\0') {
+  if ((this_ptr->base).base.model.model_name[0] != '\0') {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
                        (&(this_ptr->base).base.model);
     local_20 = pCVar1->num_parts;

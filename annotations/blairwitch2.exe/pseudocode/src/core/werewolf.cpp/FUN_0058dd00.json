@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 578,
+    "complexity_score": 543,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 93,
-    "suspect_count": 44,
+    "suspect_count": 41,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals",
       "warning_type_propagation"
@@ -417,16 +416,8 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)&param_1[1].base.field_0xc4 != 0) &&",
+      "text": "if ((*(int *)(param_1[1].base.create_event + 0x4c) != 0) &&",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0xc4",
-      "severity": "mild",
-      "text": "if ((*(int *)&param_1[1].base.field_0xc4 != 0) &&",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -553,32 +544,16 @@
       "line": 75,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(float *)&param_1[1].base.field_0xc8 < local_28) &&",
+      "text": "if ((*(float *)(param_1[1].base.create_event + 0x50) < local_28) &&",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 75,
-      "match": "field_0xc8",
-      "severity": "mild",
-      "text": "if ((*(float *)&param_1[1].base.field_0xc8 < local_28) &&",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 76,
       "match": "param_1",
       "severity": "mild",
-      "text": "(fVar1 = *(float *)&param_1[1].base.field_0xc8, fVar1 = fVar1 * fVar1 - local_20,",
+      "text": "(fVar1 = *(float *)(param_1[1].base.create_event + 0x50), fVar1 = fVar1 * fVar1 - local_20,",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 76,
-      "match": "field_0xc8",
-      "severity": "mild",
-      "text": "(fVar1 = *(float *)&param_1[1].base.field_0xc8, fVar1 = fVar1 * fVar1 - local_20,",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",

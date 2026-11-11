@@ -7,6 +7,7 @@
 #include "types/classes/CBox.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/COrientation.h"
 #include "types/classes/CVector3f.h"
 #include "types/enums/EBoxActorPickupType.h"
 #include "types/enums/EGroundType.h"
@@ -40,7 +41,7 @@ typedef struct CBoxActor {
     char use_event[100]; // 0x75c
     int allowed_melee_attack_types; // 0x7c0
     int block_virtual_director_flag; // 0x7c4
-    char field_1992[12]; // 0x7c8
+    COrientation cam_orientation; // 0x7c8, Added in this build
 } CBoxActor;
 #pragma pack(pop)
 

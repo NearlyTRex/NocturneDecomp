@@ -30,7 +30,8 @@ void core_unionzom_cpp_FUN_005a4330(int param_1,float param_2)
   float afStack_1c [4];
   
   bVar5 = 0;
-  unkafter_superopt_cpp_FUN_005a8180(param_1 + 0x264,param_2);
+  unkafter_superopt_cpp_CSimpleParticleSystem_process_FUN_005a8180
+            ((CSimpleParticleSystem *)(param_1 + 0x264),param_2);
   iVar3 = unkaddr_0059d350_cpp_FUN_0059daa0(param_1 + 0x10af8,&DAT_005f0312);
   if (iVar3 != 0) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620

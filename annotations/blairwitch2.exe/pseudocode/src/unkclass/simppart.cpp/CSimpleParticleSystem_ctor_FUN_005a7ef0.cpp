@@ -11,18 +11,18 @@
 CSimpleParticleSystem * unkclass_simppart_cpp_CSimpleParticleSystem_ctor_FUN_005a7ef0(CSimpleParticleSystem *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x18 = 0x40;
-  *(uint *)&this_ptr->field_0x1c = 0;
-  *(uint *)&this_ptr->field_0x14 = 0;
-  *(uint *)&this_ptr->field_0x3c = 0;
-  *(uint *)&this_ptr->field_0xc = 0x3f800000;
-  *(uint *)&this_ptr->field_0x24 = 0x3f800000;
-  *(uint *)&this_ptr->field_0x28 = 0x3f800000;
-  *(uint *)&this_ptr->field_0x2c = 0x3f800000;
-  *(uint *)&this_ptr->field_0x30 = 0;
-  *(uint *)&this_ptr->field_0x34 = 0;
-  *(uint *)&this_ptr->field_0x10 = 0;
-  *(uint *)&this_ptr->field_0x38 = 0;
-  *(uint *)&this_ptr->field_0x40 = 0x6002e4;
+  this_ptr->max_particles = 0x40;
+  this_ptr->next_particle = 0;
+  this_ptr->owner = (CDemonActor *)0x0;
+  this_ptr->particles = (void *)0x0;
+  this_ptr->fade_current = 1.0;
+  this_ptr->fade_start = 1.0;
+  this_ptr->fade_end = 1.0;
+  this_ptr->fade_duration = 1.0;
+  this_ptr->fade_timer = 0.0;
+  this_ptr->stop_after_fade = 0;
+  this_ptr->active = 0;
+  this_ptr->standalone = 0;
+  this_ptr->vtable = (void *)0x6002e4;
   return this_ptr;
 }

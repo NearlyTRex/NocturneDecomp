@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 121,
+    "complexity_score": 66,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 31,
-    "suspect_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 36,
+    "suspect_count": 2,
     "suspect_types": [
       "negative_offset",
-      "unnamed_field"
+      "warning_type_propagation"
     ],
-    "total_lines": 121
+    "total_lines": 126
   },
   "cross_references": [],
   "function": {
@@ -72,12 +72,12 @@
     {
       "addr": "005a8100",
       "is_variadic": false,
-      "name": "unkaddr_005a7eb0.cpp_FUN_005a8100"
+      "name": "unkaddr_005a7eb0.cpp_CSimpleParticleSystem_stop_FUN_005a8100"
     },
     {
       "addr": "005a8220",
       "is_variadic": false,
-      "name": "unkafter_superopt.cpp_FUN_005a8220"
+      "name": "unkafter_superopt.cpp_CSimpleParticleSystem_release_FUN_005a8220"
     }
   ],
   "globals": [
@@ -152,68 +152,20 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "*(CRobin_full_vtable **)&this_ptr->field_0x2b0 = &g_CRobinVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x198",
-      "severity": "mild",
-      "text": "unkaddr_005a7eb0_cpp_FUN_005a8100(&this_ptr->field_0x198,0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x198",
-      "severity": "mild",
-      "text": "unkafter_superopt_cpp_FUN_005a8220(&this_ptr->field_0x198);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "unkaddr_005a7eb0_cpp_FUN_005a8100(&this_ptr->field_0x154,0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "unkafter_superopt_cpp_FUN_005a8220(&this_ptr->field_0x154);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x3a20",
-      "severity": "mild",
-      "text": "iVar1 = core_armour_cpp_FUN_0040f2b0(&this_ptr->field_0x3a20,0);",
-      "type": "unnamed_field"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 29,
-      "match": "pCVar3[-1].",
+      "line": 34,
+      "match": "pCVar4[-1].",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)&pCVar3[-1].field_0x2000,1);",
+      "text": "((CDemonActor *)(pCVar4[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x2000",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)&pCVar3[-1].field_0x2000,1);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

@@ -54,9 +54,9 @@ uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040cb60(CDemonActor 
     }
   }
   iVar4 = core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004c9d80
-                    (g_CGorePtr,position,(int *)&this_ptr->field_0x118);
-  if ((iVar4 == 0) || (*(int *)&this_ptr->field_0x2ac == 0)) {
-    if (*(int *)&this_ptr->field_0x114 < 1) {
+                    (g_CGorePtr,position,(int *)&this_ptr->blood_effect_color);
+  if ((iVar4 == 0) || (this_ptr->footstep_effects_enabled == 0)) {
+    if (this_ptr->blood_effect_timer < 1) {
       if (ground_type == GROUND_TYPE_DIRT) {
         core_gore_cpp_CGore_createFootstep_FUN_004c9d00
                   (g_CGorePtr,position,&this_ptr->orient,3,0x4000,BLOOD_TYPE_RED);
@@ -65,15 +65,15 @@ uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040cb60(CDemonActor 
     }
   }
   else {
-    *(uint *)&this_ptr->field_0x114 = 0xffff;
+    this_ptr->blood_effect_timer = 0xffff;
   }
   core_gore_cpp_CGore_createFootstep_FUN_004c9d00
-            (g_CGorePtr,position,&this_ptr->orient,0xb,*(int *)&this_ptr->field_0x114,
-             *(EBloodType *)&this_ptr->field_0x118);
-  iVar4 = *(int *)&this_ptr->field_0x114 + -0x2000;
-  *(int *)&this_ptr->field_0x114 = iVar4;
+            (g_CGorePtr,position,&this_ptr->orient,0xb,this_ptr->blood_effect_timer,
+             this_ptr->blood_effect_color);
+  iVar4 = this_ptr->blood_effect_timer + -0x2000;
+  this_ptr->blood_effect_timer = iVar4;
   if (iVar4 < 0) {
-    *(uint *)&this_ptr->field_0x114 = 0;
+    this_ptr->blood_effect_timer = 0;
   }
 LAB_0040cc81:
   if (ground_type == (GROUND_TYPE_GLASS|GROUND_TYPE_CONCRETE)) {
@@ -87,9 +87,9 @@ LAB_0040cc81:
       iVar4 = 3;
     }
     iVar4 = core_actor_cpp_getRandomInt_FUN_0040cfc0(iVar4,max_value);
-    *(int *)&this_ptr->field_0x11c = iVar4;
+    this_ptr->footstep_particle_count = iVar4;
     iVar4 = 0;
-    if (0 < *(int *)&this_ptr->field_0x11c) {
+    if (0 < this_ptr->footstep_particle_count) {
       do {
         fStack_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.7853982,1.5707964);
         fStack_14 = fStack_18;
@@ -107,8 +107,9 @@ LAB_0040cc81:
           CStack_6c.z = position->z;
         }
         iVar4 = iVar4 + 1;
-        core_fire_cpp_FUN_0049d600(0x01C3DEB4,position,afStack_48,0);
-      } while (iVar4 < *(int *)&this_ptr->field_0x11c);
+        core_fire_cpp_CFireEffect_createLeaf_FUN_0049d600
+                  (0x01C3DEB4,position,afStack_48,(CKeyFramedModel *)0x0,0x41700000);
+      } while (iVar4 < this_ptr->footstep_particle_count);
     }
   }
   core_ground_cpp_FUN_004ca7c0(ground_type,(double)volume);

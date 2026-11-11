@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 151,
+    "complexity_score": 136,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 76,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
@@ -330,14 +329,6 @@
       "severity": "mild",
       "text": "iVar4 = sscanf(sound_name,&DAT_005e4d9b);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 69,
-      "match": "field_0x248",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->who_is_speaking[0xe].field_0x248 = local_28;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

@@ -13,12 +13,12 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cab9f0
-;   undefined4 SNotesSection_ARRAY_01cab9f4[0].field320_0x140
-;   undefined4 SNotesSection_ARRAY_01cab9f4[0].field324_0x144
-;   undefined4 SNotesSection_ARRAY_01cab9f4[1].field320_0x140
-;   undefined4 SNotesSection_ARRAY_01cab9f4[1].field324_0x144
-;   undefined4 SNotesSection_ARRAY_01cab9f4[1].field328_0x148
-;   undefined4 SNotesSection_ARRAY_01cab9f4[1].field332_0x14c
+;   undefined4 SNotesSection_ARRAY_01cab9f4[0].first_page
+;   undefined4 SNotesSection_ARRAY_01cab9f4[0].page_count
+;   undefined4 SNotesSection_ARRAY_01cab9f4[1].first_page
+;   undefined4 SNotesSection_ARRAY_01cab9f4[1].page_count
+;   undefined4 SNotesSection_ARRAY_01cab9f4[1].tab_x
+;   undefined4 SNotesSection_ARRAY_01cab9f4[1].tab_y
 ;   undefined4 DAT_01caf110
 ;
 ; *****************************************************************************
@@ -40,8 +40,8 @@ section .text
     XOR ECX,ECX                         ; 004a1bcc
     IMUL ESI,EDX,0x2e4                  ; 004a1bce
         ;   Label: LAB_004a1bce
-    MOV EBX,dword ptr [ESI + 0x1cabb3c] ; 004a1bd4 | SNotesSection_ARRAY_01cab9f4[1].field328_0x148
-    MOV EBP,dword ptr [ESI + 0x1cabb40] ; 004a1bda | SNotesSection_ARRAY_01cab9f4[1].field332_0x14c
+    MOV EBX,dword ptr [ESI + 0x1cabb3c] ; 004a1bd4 | SNotesSection_ARRAY_01cab9f4[1].tab_x
+    MOV EBP,dword ptr [ESI + 0x1cabb40] ; 004a1bda | SNotesSection_ARRAY_01cab9f4[1].tab_y
     MOV ESI,dword ptr [ECX + 0x1caf134] ; 004a1be0
     ADD ESI,EBX                         ; 004a1be6
     MOV dword ptr [ESP + 0x4],ESI       ; 004a1be8
@@ -49,11 +49,11 @@ section .text
     ADD ESI,EBP                         ; 004a1bf2
     MOV EDI,dword ptr [0x01caf110]      ; 004a1bf4 | DAT_01caf110
     MOV dword ptr [ESP],ESI             ; 004a1bfa
-    MOV ESI,dword ptr [EAX + 0x140]     ; 004a1bfd | SNotesSection_ARRAY_01cab9f4[0].field320_0x140 | SNotesSection_ARRAY_01cab9f4[1].field320_0x140
+    MOV ESI,dword ptr [EAX + 0x140]     ; 004a1bfd | SNotesSection_ARRAY_01cab9f4[0].first_page | SNotesSection_ARRAY_01cab9f4[1].first_page
     CMP EDI,ESI                         ; 004a1c03
     JL 0x004a1c4c                       ; 004a1c05
         ;   XREF to: 004a1c4c (CONDITIONAL_JUMP)  ; LAB_004a1c4c
-    ADD ESI,dword ptr [EAX + 0x144]     ; 004a1c07 | SNotesSection_ARRAY_01cab9f4[0].field324_0x144 | SNotesSection_ARRAY_01cab9f4[1].field324_0x144
+    ADD ESI,dword ptr [EAX + 0x144]     ; 004a1c07 | SNotesSection_ARRAY_01cab9f4[0].page_count | SNotesSection_ARRAY_01cab9f4[1].page_count
     CMP ESI,EDI                         ; 004a1c0d
     JLE 0x004a1c4c                      ; 004a1c0f
         ;   XREF to: 004a1c4c (CONDITIONAL_JUMP)  ; LAB_004a1c4c

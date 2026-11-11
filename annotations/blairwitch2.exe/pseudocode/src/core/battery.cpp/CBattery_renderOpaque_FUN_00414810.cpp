@@ -18,7 +18,7 @@ int __cdecl core_battery_cpp_CBattery_renderOpaque_FUN_00414810(CBattery *this_p
   
   bVar4 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-            (DAT_0060b280,(CVector3f *)&(this_ptr->base).field_0x20);
+            (DAT_0060b280,&(this_ptr->base).location.position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
             (DAT_0060b280,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);

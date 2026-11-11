@@ -6,12 +6,13 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004c40f0(CGhoul *this_ptr,SDamageInfo *damage_info)
 
 {
-  byte *puVar1;
+  CLocation *pCVar1;
   CDeformableModelInstance *pCVar2;
   CCharacter *pCVar3;
   CGhoul *pCVar4;
@@ -31,16 +32,16 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004c40f0(CGhoul *this_ptr,S
     this_ptr->heal_timer = 30.0;
     this_ptr->dark_waypoint = (CDemonActor *)0x0;
     this_ptr->is_berserk = 1;
-    puVar1 = &(this_ptr->base).base.base.field_0x20;
+    pCVar1 = &(this_ptr->base).base.base.location;
     this_ptr->stuck_timer = 1.0;
-    if (&this_ptr->prev_position != (CVector3f *)puVar1) {
-      (this_ptr->prev_position).x = *(float *)puVar1;
-      (this_ptr->prev_position).y = *(float *)&(this_ptr->base).base.base.field_0x24;
-      (this_ptr->prev_position).z = *(float *)&(this_ptr->base).base.base.field_0x28;
+    if ((CLocation *)&this_ptr->prev_position != pCVar1) {
+      (this_ptr->prev_position).x = (pCVar1->position).x;
+      (this_ptr->prev_position).y = (this_ptr->base).base.base.location.position.y;
+      (this_ptr->prev_position).z = (this_ptr->base).base.base.location.position.z;
     }
     engine_console_cpp_FUN_00436710(g_CConsolePtr,"@go berzerk\n" + 1);
   }
-  if (*(int *)(damage_info + 0x30) == 0x6c) {
+  if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
     this_ptr->stun_timer = 4.0;
   }
   core_ghoul_cpp_CGhoul_processDismemberment_FUN_004c3e30(this_ptr,damage_info);
@@ -52,8 +53,8 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004c40f0(CGhoul *this_ptr,S
     (*(((pCVar3->base).vtable._uc)->_uc).releaseFromGrab)(pCVar3);
   }
   iVar5 = this_ptr->part_indices[10];
-  (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
-  if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + iVar5 * 4) == 0) {
+  (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
+  if ((this_ptr->base).base.model.part_data.visibility_flags[iVar5] == 0) {
     (this_ptr->base).base.hit_points = 0.0;
   }
   pCVar2 = &(this_ptr->base).base.model;
@@ -67,15 +68,14 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004c40f0(CGhoul *this_ptr,S
     }
     iVar5 = core_motion_cpp_FUN_005035c0(pCVar2);
     if ((*(int *)(iVar5 + 0x24) != 10) && (*(int *)(iVar5 + 0x24) != 9)) {
-      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[10] * 4) == 0)
-      {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] == 0) {
         this_ptr->lives_left = 0;
       }
       else {
         this_ptr->lives_left = this_ptr->lives_left + -1;
       }
       iVar5 = 6;
-      if (*(int *)&(this_ptr->base).base.field_0x3448 < 1) {
+      if ((this_ptr->base).base.damage_decal_count < 1) {
         iVar6 = core_actor_cpp_randomChance_FUN_0040d060(0.5);
         if (iVar6 != 0) {
           iVar5 = 7;
@@ -84,19 +84,19 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004c40f0(CGhoul *this_ptr,S
       else {
         iVar6 = 0;
         pCVar4 = this_ptr;
-        if (0 < *(int *)&(this_ptr->base).base.field_0x3448) {
+        if (0 < (this_ptr->base).base.damage_decal_count) {
           do {
-            if (*(int *)&(pCVar4->base).base.field_0x344c == this_ptr->part_indices[9]) {
+            if ((pCVar4->base).base.damage_decals[0].part_index == this_ptr->part_indices[9]) {
               iVar5 = 8;
               break;
             }
             iVar6 = iVar6 + 1;
             pCVar4 = (CGhoul *)((int)&(pCVar4->base).base.base.orient + 8);
-          } while (iVar6 < *(int *)&(this_ptr->base).base.field_0x3448);
+          } while (iVar6 < (this_ptr->base).base.damage_decal_count);
         }
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                ((CMotionController *)&(this_ptr->base).base.model,iVar5,1);
+                (&(this_ptr->base).base.model.base,iVar5,1);
       iVar5 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[2]);
       if (iVar5 == 0) {
         uVar7 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -119,7 +119,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004c40f0(CGhoul *this_ptr,S
       iVar6 = 1;
       iVar5 = core_actor_cpp_randomChance_FUN_0040d060(0.5);
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                ((CMotionController *)&(this_ptr->base).base.model,(iVar5 == 0) + 3,iVar6);
+                (&(this_ptr->base).base.model.base,(iVar5 == 0) + 3,iVar6);
     }
     else {
       core_actor_cpp_getRandomInt_FUN_0040cfc0(1,2);
@@ -127,7 +127,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004c40f0(CGhoul *this_ptr,S
       iVar5 = 1;
       motion_name = acStack_78;
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860
-                              ((CMotionController *)&(this_ptr->base).base.model);
+                              (&(this_ptr->base).base.model.base);
       iVar5 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10
                         (this_ptr_00,motion_name,iVar5);
       this_ptr->flinch_blend_weight = 1.0;

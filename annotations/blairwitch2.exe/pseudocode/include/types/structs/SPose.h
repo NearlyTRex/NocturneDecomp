@@ -4,12 +4,17 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CMatrix3x4f.h"
+#include "types/classes/CQuaternion4f.h"
+#include "types/structs/SPoseData.h"
 
 // Structure: SPose
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x1a9c (6812 bytes)
 #pragma pack(push, 1)
 typedef struct SPose {
+    SPoseData pose_data; // 0x0
+    float bone_scales[100]; // 0x64c
+    CMatrix3x4f bone_model_matrices[100]; // 0x7dc
 } SPose;
 #pragma pack(pop)
 

@@ -11,7 +11,7 @@ float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_00587900(CWat
 {
   float fVar1;
   int iVar2;
-  byte *puVar3;
+  SMRGLPrimitiveQuad *pSVar3;
   uint *puVar4;
   uint *puVar5;
   byte bVar6;
@@ -41,16 +41,16 @@ float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_00587900(CWat
   fStack_14 = (float)core_box_cpp_FUN_0041af70(auStack_78);
   if ((0.0 <= fStack_14) && (fStack_14 <= 1.0)) {
     iStack_20 = this_ptr->primitive_count;
-    puVar3 = &this_ptr->field_0x8104;
+    pSVar3 = this_ptr->primitives;
     iStack_1c = 0;
     fStack_b4 = 2.0;
     if (0 < iStack_20) {
       pSStack_18 = this_ptr->vertices;
       do {
         core_dtri_cpp_CDemonTriangle_buildCollision_FUN_004779e0
-                  (&CStack_b0,(CVector3f *)(pSStack_18 + *(int *)(puVar3 + 0x18)),
-                   (CVector3f *)(pSStack_18 + *(int *)(puVar3 + 0x24)),
-                   (CVector3f *)(pSStack_18 + *(int *)(puVar3 + 0x30)));
+                  (&CStack_b0,&pSStack_18[pSVar3->vertices[0].vertex_index].local_position,
+                   &pSStack_18[pSVar3->vertices[1].vertex_index].local_position,
+                   &pSStack_18[pSVar3->vertices[2].vertex_index].local_position);
         fVar1 = (float)core_dtri_cpp_rayTriangleIntersection_FUN_00477a50
                                  (&CStack_b0,ray_origin,ray_direction);
         fStack_14 = fVar1;
@@ -70,7 +70,7 @@ float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_00587900(CWat
           }
         }
         iStack_1c = iStack_1c + 1;
-        puVar3 = puVar3 + 0x48;
+        pSVar3 = pSVar3 + 1;
       } while (iStack_1c < iStack_20);
     }
     if ((fStack_b4 < 1.0) && (&CStack_48 != out_normal)) {

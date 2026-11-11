@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 95,
+    "complexity_score": 110,
     "cross_reference_count": 5,
     "function_call_count": 7,
     "global_count": 9,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 45,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data",
       "warning_overlapping_globals"
     ],
@@ -307,6 +308,14 @@
       "severity": "mild",
       "text": "_fscanf(p_Var1,&DAT_005ce057,auStack_18);",
       "type": "undefined_data"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 40,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar3 = (int)&(this_ptr->frames->pos).x + iVar4;",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -18,8 +18,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
-;   unkaddr_005a7eb0.cpp_FUN_005a7f50 at 005a7fdf
-;   unkaddr_005a7eb0.cpp_FUN_005a8050 at 005a8095
+;   unkaddr_005a7eb0.cpp_CSimpleParticleSystem_attach_FUN_005a8050 at 005a8095
+;   unkaddr_005a7eb0.cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50 at 005a7fdf
 ;
 ; *****************************************************************************
 

@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 56,
+    "complexity_score": 41,
     "cross_reference_count": 59,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 26,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 89
@@ -20,6 +19,12 @@
       "addr": "0040f780",
       "from_addr": "0040f7a8",
       "name": "core_baron.cpp_CBaron_setup_FUN_0040f780",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059e6a0",
+      "from_addr": "0059e710",
+      "name": "core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -363,12 +368,6 @@
       "from_addr": "00595c2e",
       "name": "core_zombie.cpp_CZombie_setup_FUN_00595c00",
       "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059e6a0",
-      "from_addr": "0059e710",
-      "name": "unkafter_basicene.cpp_FUN_0059e6a0",
-      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -606,14 +605,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x1d1a8",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004e4500(\"Can't find bone %s in skeleton %s!\",bone_name,&this_ptr->field_0x1d1a8);",
-      "type": "unnamed_field"
     }
   ]
 }

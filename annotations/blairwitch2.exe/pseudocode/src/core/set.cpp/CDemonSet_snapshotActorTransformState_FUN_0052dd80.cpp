@@ -9,19 +9,22 @@
 void __cdecl core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_0052dd80(CDemonSet *this_ptr,CDemonActor *actor)
 
 {
-  *(uint *)&actor->field_0x144 = 0x1f;
-  if (&actor->field_0x12c != &actor->field_0x20) {
-    *(uint *)&actor->field_0x12c = *(uint *)&actor->field_0x20;
-    *(uint *)&actor->field_0x130 = *(uint *)&actor->field_0x24;
-    *(uint *)&actor->field_0x134 = *(uint *)&actor->field_0x28;
+  UOrientationVector *pUVar1;
+  
+  (actor->previous_transform_state).dirty_flags = 0x1f;
+  if (&actor->previous_transform_state != (CDemonActorTransformState *)&actor->location) {
+    (actor->previous_transform_state).position.x = (actor->location).position.x;
+    (actor->previous_transform_state).position.y = (actor->location).position.y;
+    (actor->previous_transform_state).position.z = (actor->location).position.z;
   }
-  if ((UOrientationVector *)&actor->field_0x138 == &actor->orient) {
-    *(uint *)&actor->field_0x148 = 0;
+  pUVar1 = &(actor->previous_transform_state).orientation;
+  if (pUVar1 == &actor->orient) {
+    actor->render_needs_update = 0;
     return;
   }
-  *(float *)&actor->field_0x138 = (actor->orient).vec.x;
-  *(float *)&actor->field_0x13c = (actor->orient).vec.y;
-  *(float *)&actor->field_0x140 = (actor->orient).vec.z;
-  *(uint *)&actor->field_0x148 = 0;
+  (pUVar1->vec).x = (actor->orient).vec.x;
+  (actor->previous_transform_state).orientation.vec.y = (actor->orient).vec.y;
+  (actor->previous_transform_state).orientation.vec.z = (actor->orient).vec.z;
+  actor->render_needs_update = 0;
   return;
 }

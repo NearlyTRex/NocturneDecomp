@@ -12,11 +12,11 @@
 ;   TerminatedCString s_Bip01_Spine_005efc09
 ;
 ; Called Functions:
+;   core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80
-;   unkaddr_005a7eb0.cpp_FUN_005a8030
-;   unkaddr_005a7eb0.cpp_FUN_005a8050
-;   unkafter_basicene.cpp_FUN_0059e6a0
+;   unkaddr_005a7eb0.cpp_CSimpleParticleSystem_attach_FUN_005a8050
+;   unkaddr_005a7eb0.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     PUSH ESI                            ; 005a0a91
     MOV EBX,dword ptr [ESP + 0xc]       ; 005a0a92
     PUSH EBX                            ; 005a0a96
-    CALL unkafter_basicene.cpp_FUN_0059e6a0 ; 005a0a97
-        ;   XREF to: 0059e6a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059e6a0()
+    CALL core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0 ; 005a0a97
+        ;   XREF to: 0059e6a0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0(CBasicEnemy * this_ptr)
     ADD ESP,0x4                         ; 005a0a9c
     LEA EAX,[EBX + 0x2b4]               ; 005a0a9f
     PUSH EAX                            ; 005a0aa5
@@ -61,13 +61,13 @@ section .text
     LEA ESI,[EBX + 0x154]               ; 005a0af7
     PUSH ESI                            ; 005a0afd
     MOV dword ptr [EBX + 0x11860],EAX   ; 005a0afe
-    CALL unkaddr_005a7eb0.cpp_FUN_005a8030 ; 005a0b04
-        ;   XREF to: 005a8030 (UNCONDITIONAL_CALL)  ; undefined unkaddr_005a7eb0.cpp_FUN_005a8030()
+    CALL unkaddr_005a7eb0.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030 ; 005a0b04
+        ;   XREF to: 005a8030 (UNCONDITIONAL_CALL)  ; void unkaddr_005a7eb0.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(CSimpleParticleSystem * this_ptr, undefined4 param_2)
     ADD ESP,0x8                         ; 005a0b09
     PUSH EBX                            ; 005a0b0c
     PUSH ESI                            ; 005a0b0d
-    CALL unkaddr_005a7eb0.cpp_FUN_005a8050 ; 005a0b0e
-        ;   XREF to: 005a8050 (UNCONDITIONAL_CALL)  ; undefined unkaddr_005a7eb0.cpp_FUN_005a8050()
+    CALL unkaddr_005a7eb0.cpp_CSimpleParticleSystem_attach_FUN_005a8050 ; 005a0b0e
+        ;   XREF to: 005a8050 (UNCONDITIONAL_CALL)  ; void unkaddr_005a7eb0.cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem * this_ptr, undefined4 param_2)
     ADD ESP,0x8                         ; 005a0b13
     POP ESI                             ; 005a0b16
     POP EBX                             ; 005a0b17

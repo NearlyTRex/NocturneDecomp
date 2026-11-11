@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 311,
+    "complexity_score": 183,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 56,
-    "suspect_count": 24,
+    "pseudocode_lines": 53,
+    "suspect_count": 12,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 219
+    "total_lines": 216
   },
   "cross_references": [],
   "function": {
@@ -222,144 +221,48 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x80",
-      "severity": "mild",
-      "text": "CStack_28.x = (int)ROUND(*(float *)&this_ptr->field_0x80 * _DAT_005f64e4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x84",
-      "severity": "mild",
-      "text": "CStack_28.y = (int)ROUND(*(float *)&this_ptr->field_0x84 * _DAT_005f64e4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x88",
-      "severity": "mild",
-      "text": "CStack_28.z = (int)ROUND(*(float *)&this_ptr->field_0x88 * _DAT_005f64e4);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 23,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&CStack_28);",
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&CStack_28);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x8c",
-      "severity": "mild",
-      "text": "CStack_1c.x = (int)ROUND(*(float *)&this_ptr->field_0x8c * _DAT_005f64e4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x90",
-      "severity": "mild",
-      "text": "CStack_1c.y = (int)ROUND(*(float *)&this_ptr->field_0x90 * _DAT_005f64e4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x94",
-      "severity": "mild",
-      "text": "CStack_1c.z = (int)ROUND(*(float *)&this_ptr->field_0x94 * _DAT_005f64e4);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 27,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&CStack_1c);",
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_1c);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x98",
-      "severity": "mild",
-      "text": "CStack_34.x = (int)ROUND(*(float *)&this_ptr->field_0x98 * _DAT_005f64e4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x9c",
-      "severity": "mild",
-      "text": "CStack_34.y = (int)ROUND(*(float *)&this_ptr->field_0x9c * _DAT_005f64e4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Undefined global data reference",
       "line": 31,
-      "match": "field_0xa0",
-      "severity": "mild",
-      "text": "CStack_34.z = (int)ROUND(*(float *)&this_ptr->field_0xa0 * _DAT_005f64e4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&CStack_34);",
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&CStack_34);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 32,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "(DAT_0060b280,(SMRGLTextureBasic *)&this_ptr->field_0x44);",
+      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00(DAT_0060b280,&this_ptr->texture);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "(DAT_0060b280,(SMRGLTextureBasic *)&this_ptr->field_0x44);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 41,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,this_ptr->lifetime);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "CStack_40.y = (int)ROUND(*(float *)&this_ptr->field_0x4 * _DAT_005f64e4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "CStack_40.z = (int)ROUND(*(float *)&this_ptr->field_0x8 * _DAT_005f64e4);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 47,
       "match": "DAT_0062202c",
       "severity": "mild",
       "text": "DAT_0062202c = (this_ptr->uv_u_per_vertex).x;",
@@ -367,7 +270,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 52,
       "match": "DAT_00622090",
       "severity": "mild",
       "text": "DAT_00622090 = (this_ptr->uv_v_per_vertex).z;",
@@ -375,7 +278,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 53,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);",
@@ -383,7 +286,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 54,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50(DAT_0060b280,&SStack_68);",

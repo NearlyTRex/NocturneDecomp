@@ -17,10 +17,10 @@ void __cdecl core_game_cpp_FUN_004bb3d0(CGame *this_ptr)
   float10 fVar4;
   int local_18;
   
-  if (*(int *)&this_ptr->field_0xaf4 == 0x3f800000) {
+  if (this_ptr->alpha_fade_alpha == 1.0) {
     engine_2d_c_fillRectColor_FUN_004031c0(0,0,DAT_006141b8 + -1,DAT_006141bc + -1,0);
   }
-  if (((_DAT_01cb80e0 != 0) && (*(int *)&g_CFieldNotesPtr->field_0x40 == 0)) &&
+  if (((_DAT_01cb80e0 != 0) && (g_CFieldNotesPtr->is_displayed == 0)) &&
      (core_game_cpp_FUN_004bb2c0(), DAT_006141c0 == 0x20)) {
     fVar4 = (float10)_DAT_01cb810c * (float10)_DAT_01cb810c;
     iVar3 = 0;

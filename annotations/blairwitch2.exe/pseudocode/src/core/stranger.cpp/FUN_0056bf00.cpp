@@ -83,11 +83,12 @@ void core_stranger_cpp_FUN_0056bf00(CDemonActor *param_1,int param_2,float param
   float fStack_18;
   
   bVar10 = 0;
-  local_28 = (float *)&param_1[0xdd].field_0x110;
+  local_28 = (float *)&param_1[0xdd].scale.z;
   if (param_2 == 1) {
-    local_28 = (float *)&param_1[0xdd].field_0xf0;
+    local_28 = &param_1[0xdd].platform_orientation_delta.y;
   }
-  if (*(int *)&param_1[0xdd].field_0x134 == 0) {
+  fVar7 = param_1[0xdd].previous_transform_state.position.z;
+  if (fVar7 == 0.0) {
     local_28[3] = 0.0;
     local_28[1] = 0.0;
     iVar5 = *(int *)((int)&param_1[0xe].orient_matrix + param_2 * 0x78 + 0xc);
@@ -103,10 +104,10 @@ void core_stranger_cpp_FUN_0056bf00(CDemonActor *param_1,int param_2,float param
     local_4c = 3;
   }
   else {
-    local_4c = *(int *)(*(int *)&param_1[0xdd].field_0x134 + 0x43c);
+    local_4c = *(int *)((int)fVar7 + 0x43c);
   }
   if (param_2 == 0) {
-    if ((*(int *)&param_1[0xd6].field_0x100 == 2) && (local_4c == 0)) {
+    if ((param_1[0xd6].collision_disabled == 2) && (local_4c == 0)) {
       return;
     }
     local_5c = _DAT_0264be64;
@@ -126,8 +127,8 @@ void core_stranger_cpp_FUN_0056bf00(CDemonActor *param_1,int param_2,float param
       local_30 = -0.5235988;
     }
   }
-  fVar7 = *(float *)&param_1[0x62].field_0x1ac * _DAT_005ebc65 * (float)_DAT_005ebc6d * param_3 +
-          *local_28;
+  fVar7 = (float)param_1[0x62].particle_systems[1].owner * _DAT_005ebc65 * (float)_DAT_005ebc6d *
+          param_3 + *local_28;
   local_28[1] = 0.0;
   *local_28 = fVar7;
   if (fVar7 < 0xBF860A92) {
@@ -151,16 +152,16 @@ void core_stranger_cpp_FUN_0056bf00(CDemonActor *param_1,int param_2,float param
   local_28[7] = 0.0;
   fStack_38 = local_28[1];
   fStack_3c = *local_28;
-  if ((local_4c == 3) || (fVar7 = *(float *)&param_1[0xd6].field_0x100, fVar7 != 0.0)) {
+  if ((local_4c == 3) || (fVar7 = (float)param_1[0xd6].collision_disabled, fVar7 != 0.0)) {
     local_28[3] = 0.0;
   }
   else {
-    iVar5 = *(int *)&param_1[0xdd].field_0x134;
+    fVar1 = param_1[0xdd].previous_transform_state.position.z;
     afStack_120[2] = fVar7;
     afStack_120[3] = fVar7;
     fStack_110 = fVar7;
-    if (iVar5 != 0) {
-      (**(code **)(*(int *)(iVar5 + 0x2b0) + 0xe8))(iVar5);
+    if (fVar1 != 0.0) {
+      (**(code **)(*(int *)((int)fVar1 + 0x2b0) + 0xe8))(fVar1);
       fStack_dc = afStack_9c[2];
       afStack_d8[(uint)bVar10 * -2] = afStack_9c[(uint)bVar10 * -2 + 3];
       afStack_d8[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =

@@ -9,29 +9,28 @@
 void __cdecl core_ghostchi_cpp_CGhostChild_processMotionEvent_FUN_005a9af0(CGhostChild *this_ptr,int event_id)
 
 {
-  byte *position;
+  CLocation *position;
   
-  position = &this_ptr->field_0x20;
+  position = &(this_ptr->base).base.base.base.location;
   if ((uint)event_id < 0x2261) {
     if (event_id != 0x2260) {
       return;
     }
     core_sound_cpp_CSound_playActorSound_FUN_0055ae50
               (0x0264B290,(CDemonActor *)this_ptr,"ghostchilslap0?.wav",
-               (CVector3f *)position);
+               &position->position);
     return;
   }
   if ((uint)event_id < 0x2262) {
     core_sound_cpp_CSound_playActorSound_FUN_0055ae50
               (0x0264B290,(CDemonActor *)this_ptr,"ghostchilddeath0?.wav",
-               (CVector3f *)position);
+               &position->position);
     return;
   }
   if (event_id != 0x2262) {
     return;
   }
   core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-            (0x0264B290,(CDemonActor *)this_ptr,"robinscream0?.wav",(CVector3f *)position)
-  ;
+            (0x0264B290,(CDemonActor *)this_ptr,"robinscream0?.wav",&position->position);
   return;
 }

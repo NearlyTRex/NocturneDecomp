@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBasicEnemy.h"
 
 // Structure: CBasicNPC
-// Stub: size from Watcom RTTI, fields not yet recovered
+// registered under CBasicEnemy (registerActorClass); size 71760 from RTTI; no fields of its own
 // Ghidra size: 0x11850 (71760 bytes)
 #pragma pack(push, 1)
 typedef struct CBasicNPC {
-    char field_0[71760]; // 0x0
+    CBasicEnemy base; // 0x0, parent class
 } CBasicNPC;
 #pragma pack(pop)
 

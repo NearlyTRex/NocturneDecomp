@@ -20,7 +20,7 @@ int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00460630(CDoor *this_ptr,CDemonA
   float local_14;
   
   bVar1 = 0;
-  core_actor_cpp_FUN_00408de0(this_ptr,&opener->field_0x20);
+  core_actor_cpp_FUN_00408de0(this_ptr,&opener->location);
   local_1c = local_28;
   *(uint *)(&stack0xffffffe8 + (uint)bVar1 * -8) =
        *(uint *)(&stack0xffffffdc + (uint)bVar1 * -8);

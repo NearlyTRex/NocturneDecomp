@@ -8,7 +8,7 @@
 ;
 ; XREF[15]:
 ;   core_event.cpp_FUN_00489670 at 00489824
-;   core_fldnotes.cpp_FUN_004a41b0 at 004a4503
+;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0 at 004a4503
 ;   core_game.cpp_FUN_004b90d0 at 004b91f4
 ;   core_main.c_FUN_004e45e0 at 004e463c
 ;   core_texlist.cpp_CTextureList_load_FUN_005734b0 at 00573678

@@ -11,12 +11,12 @@ void __cdecl core_tbplayer_cpp_CDrummer_processDamage_FUN_00572030(CDrummer *thi
 {
   float fVar1;
   
-  if ((*(int *)&(this_ptr->base).base.field_0x281c == 0) &&
-     (fVar1 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4),
+  if (((this_ptr->base).base.is_invulnerable == 0) &&
+     (fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount,
      (this_ptr->base).base.hit_points = fVar1, fVar1 <= 0.0)) {
     (this_ptr->base).base.hit_points = 0.0;
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-              ((CMotionController *)&(this_ptr->base).base.model,3,1);
+              (&(this_ptr->base).base.model.base,3,1);
     return;
   }
   return;

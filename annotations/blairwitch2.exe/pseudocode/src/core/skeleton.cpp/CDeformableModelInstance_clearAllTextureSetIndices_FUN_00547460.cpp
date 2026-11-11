@@ -10,13 +10,13 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndice
 
 {
   CDeformableModelInstance *pCVar1;
-  byte *puVar2;
+  int *piVar2;
   
   pCVar1 = this_ptr;
   do {
-    puVar2 = &pCVar1->field_0x4;
-    *(uint *)&pCVar1->field_0x21b8 = 0;
-    pCVar1 = (CDeformableModelInstance *)puVar2;
-  } while (puVar2 != &this_ptr->field_0x78);
+    piVar2 = &(pCVar1->base).current_motion_index;
+    (pCVar1->part_data).texture_set_indices[0] = 0;
+    pCVar1 = (CDeformableModelInstance *)piVar2;
+  } while ((float *)piVar2 != &this_ptr->bone_origins[2].z);
   return;
 }

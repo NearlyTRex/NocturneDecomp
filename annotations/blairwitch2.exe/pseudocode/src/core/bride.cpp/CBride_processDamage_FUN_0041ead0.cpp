@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_bride_cpp_CBride_processDamage_FUN_0041ead0(CBride *this_ptr,SDamageInfo *damage_info)
@@ -31,9 +32,9 @@ void __cdecl core_bride_cpp_CBride_processDamage_FUN_0041ead0(CBride *this_ptr,S
   
   bVar2 = 0;
   sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handles[1]);
-  if (*(int *)(damage_info + 0x28) == 7) {
-    *(float *)(damage_info + 4) = *(float *)(damage_info + 4) * (float)_DAT_005cc8f9;
-    core_actor_cpp_FUN_00408d70(this_ptr,damage_info + 0x1c);
+  if (damage_info->ammo_type == AMMO_TYPE_LITHIUM) {
+    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005cc8f9;
+    core_actor_cpp_FUN_00408d70(this_ptr,&damage_info->impact_direction);
     iVar3 = 0;
     CStack_24.x = fStack_60;
     *(uint *)((int)&CStack_24 + (uint)bVar2 * -8 + 4) =
@@ -46,7 +47,7 @@ void __cdecl core_bride_cpp_CBride_processDamage_FUN_0041ead0(CBride *this_ptr,S
                 (0x01C3DEB4,&CStack_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar3 < 5);
   }
-  if (*(int *)(damage_info + 0x30) == 0x6c) {
+  if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
     core_skeleton_cpp_FUN_00546a90(&(this_ptr->base).base.model,0);
     puVar5 = &uStack_48;
     uStack_48 = uStack_30;
@@ -69,8 +70,8 @@ void __cdecl core_bride_cpp_CBride_processDamage_FUN_0041ead0(CBride *this_ptr,S
   }
   core_bride_cpp_CBride_processDismemberment_FUN_0041e8a0(this_ptr,damage_info);
   iVar3 = this_ptr->part_indices[8];
-  (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
-  if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + iVar3 * 4) == 0) {
+  (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
+  if ((this_ptr->base).base.model.part_data.visibility_flags[iVar3] == 0) {
     (this_ptr->base).base.hit_points = 0.0;
   }
   this_ptr_00 = &(this_ptr->base).base.model;
@@ -78,7 +79,7 @@ void __cdecl core_bride_cpp_CBride_processDamage_FUN_0041ead0(CBride *this_ptr,S
     iVar4 = 1;
     iVar3 = core_actor_cpp_randomChance_FUN_0040d060(0.5);
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-              ((CMotionController *)this_ptr_00,(iVar3 == 0) + 7,iVar4);
+              (&this_ptr_00->base,(iVar3 == 0) + 7,iVar4);
     iVar3 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[0]);
     if (iVar3 == 0) {
       uVar1 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -93,7 +94,7 @@ void __cdecl core_bride_cpp_CBride_processDamage_FUN_0041ead0(CBride *this_ptr,S
       iVar4 = 1;
       iVar3 = core_actor_cpp_randomChance_FUN_0040d060(0.5);
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                ((CMotionController *)this_ptr_00,(iVar3 == 0) + 0xb,iVar4);
+                (&this_ptr_00->base,(iVar3 == 0) + 0xb,iVar4);
       sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handles[0]);
       uVar1 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"ub-die?.wav");

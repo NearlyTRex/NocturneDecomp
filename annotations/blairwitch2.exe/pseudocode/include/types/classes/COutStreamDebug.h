@@ -6,11 +6,11 @@
 #include "system/basetypes.h"
 
 // Structure: COutStreamDebug
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 4; ctor 0057e1c0 calls the out-stream base ctor and stores its vtable; seek/tell (0057e330) only report 'invalid operation'
 // Ghidra size: 0x4 (4 bytes)
 #pragma pack(push, 1)
 typedef struct COutStreamDebug {
-    char field_0[4]; // 0x0
+    void* vtable; // 0x0, stream vtable pointer; the abstract output-stream base ctor (0057d860) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB
 } COutStreamDebug;
 #pragma pack(pop)
 

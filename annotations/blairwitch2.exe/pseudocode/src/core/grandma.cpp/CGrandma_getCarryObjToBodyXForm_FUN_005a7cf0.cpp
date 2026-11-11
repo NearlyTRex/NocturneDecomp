@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 CMatrix3x4f * __stack2_esi core_grandma_cpp_CGrandma_getCarryObjToBodyXForm_FUN_005a7cf0(CGrandma *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
@@ -24,12 +26,12 @@ CMatrix3x4f * __stack2_esi core_grandma_cpp_CGrandma_getCarryObjToBodyXForm_FUN_
   uint uStack_2c;
   int iStack_28;
   int aiStack_24 [5];
-  byte *puStack_10;
+  char *pcStack_10;
   
   bVar4 = 0;
-  puStack_10 = &this_ptr->field_0x0 + hand_index * 0x78;
+  pcStack_10 = (this_ptr->base).base.base.base.base.actor_name + hand_index * 0x78;
   iVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                    (*(uint *)(puStack_10 + 0x2620),g_CBoxActorClassInfo.name_hash);
+                    (*(uint *)(pcStack_10 + 0x2620),g_CBoxActorClassInfo.name_hash);
   if (iVar1 != 0) {
     iStack_28 = _strcmp((char *)(iVar1 + 0x32c),"BROOM.KFM");
     if (iStack_28 == 0) {
@@ -45,7 +47,9 @@ CMatrix3x4f * __stack2_esi core_grandma_cpp_CGrandma_getCarryObjToBodyXForm_FUN_
       uStack_2c = 0;
       core_xform_cpp_FUN_00591c10(auStack_64,&uStack_34,piVar5);
       core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
-                (auStack_64,&this_ptr->field_0x1134 + *(int *)(puStack_10 + 0x2618) * 0x30);
+                (auStack_64,
+                 (int)(this_ptr->base).base.base.base.model.bone_transform.bone_model_matrices +
+                 *(int *)(pcStack_10 + 0x2618) * 0x30);
       pCVar2 = &CStack_c4;
       goto LAB_005a7d6b;
     }

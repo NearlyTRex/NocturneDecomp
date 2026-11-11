@@ -9,7 +9,7 @@
 void __cdecl core_conveyor_cpp_CConveyor_setup_FUN_00438550(CConveyor *this_ptr)
 
 {
-  byte *puVar1;
+  CLocation *pCVar1;
   CVector3f *pCVar2;
   CVector3f *pCVar3;
   uint *puVar4;
@@ -22,11 +22,11 @@ void __cdecl core_conveyor_cpp_CConveyor_setup_FUN_00438550(CConveyor *this_ptr)
   
   bVar8 = 0;
   pCVar2 = &(this_ptr->base).end_pos;
-  puVar1 = &(this_ptr->base).base.field_0x20;
-  if (pCVar2 != (CVector3f *)puVar1) {
-    pCVar2->x = *(float *)puVar1;
-    (this_ptr->base).end_pos.y = *(float *)&(this_ptr->base).base.field_0x24;
-    (this_ptr->base).end_pos.z = *(float *)&(this_ptr->base).base.field_0x28;
+  pCVar1 = &(this_ptr->base).base.location;
+  if ((CLocation *)pCVar2 != pCVar1) {
+    pCVar2->x = (pCVar1->position).x;
+    (this_ptr->base).end_pos.y = (this_ptr->base).base.location.position.y;
+    (this_ptr->base).end_pos.z = (this_ptr->base).base.location.position.z;
   }
   pCVar3 = &(this_ptr->base).start_pos;
   if (pCVar3 != pCVar2) {
@@ -53,6 +53,6 @@ void __cdecl core_conveyor_cpp_CConveyor_setup_FUN_00438550(CConveyor *this_ptr)
   *puVar7 = *puVar5;
   puVar7[(uint)bVar8 * -2 + 1] = puVar5[(uint)bVar8 * -2 + 1];
   core_platfrm_cpp_CPlatform_setup_FUN_00518280(&this_ptr->base);
-  *(uint *)&(this_ptr->base).base.field_0xfc = 1;
+  (this_ptr->base).base.is_transparent = 1;
   return;
 }

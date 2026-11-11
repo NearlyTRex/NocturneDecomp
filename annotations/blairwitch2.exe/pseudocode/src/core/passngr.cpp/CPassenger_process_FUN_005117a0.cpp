@@ -6,12 +6,13 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_passngr_cpp_CPassenger_process_FUN_005117a0(CPassenger *this_ptr,float delta_time)
 
 {
-  byte *puVar1;
+  CLocation *pCVar1;
   CDeformableModelInstance *this_ptr_00;
   float fVar2;
   float fVar3;
@@ -49,8 +50,7 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_005117a0(CPassenger *this_p
     iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
                       (0x01C38BC0,this_ptr->transform_event);
     if (iVar7 != 0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                ((CMotionController *)this_ptr_00,1,1);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,1,1);
       if (this_ptr->transform_wav[0] != '\0') {
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,this_ptr->transform_wav);
@@ -59,38 +59,35 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_005117a0(CPassenger *this_p
     }
   }
   fStack_30 = delta_time;
-  *(uint *)&(this_ptr->base).base.model.field_0x225c = 0;
-  *(uint *)&(this_ptr->base).base.model.field_0x2258 =
-       *(uint *)&(this_ptr->base).base.model.field_0x225c;
-  *(uint *)&(this_ptr->base).base.model.field_0x2254 =
-       *(uint *)&(this_ptr->base).base.model.field_0x2258;
+  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  (this_ptr->base).base.model.accumulated_root_motion.y =
+       (this_ptr->base).base.model.accumulated_root_motion.z;
+  (this_ptr->base).base.model.accumulated_root_motion.x =
+       (this_ptr->base).base.model.accumulated_root_motion.y;
   while (0.0 < fStack_30) {
     iVar7 = core_motion_cpp_CMotionController_advance_FUN_005030c0
-                      ((CMotionController *)&(this_ptr->base).base.model,&stack0xffffffd0);
+                      (&(this_ptr->base).base.model.base,&stack0xffffffd0);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042aa00((CCharacter *)this_ptr,iVar7);
   }
   if (iVar6 != 0) {
-    core_actor_cpp_FUN_00408cf0(this_ptr,&(this_ptr->base).base.model.field_0x2254);
-    puVar1 = &(this_ptr->base).base.base.field_0x20;
+    core_actor_cpp_FUN_00408cf0(this_ptr,&(this_ptr->base).base.model.accumulated_root_motion);
+    pCVar1 = &(this_ptr->base).base.base.location;
     fStack_2c = fStack_20;
     *(uint *)((int)&stack0xffffffd8 + (uint)bVar8 * -8) =
          *(uint *)(&stack0xffffffe4 + (uint)bVar8 * -8);
     *(uint *)((int)&stack0xffffffdc + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
          *(uint *)(&stack0xffffffe8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
-    fVar2 = *(float *)&(this_ptr->base).base.base.field_0x24;
-    fVar3 = *(float *)&(this_ptr->base).base.base.field_0x28;
-    *(float *)puVar1 = *(float *)puVar1 + fStack_2c;
-    *(float *)&(this_ptr->base).base.base.field_0x24 = fVar2 + fStack_28;
-    *(float *)&(this_ptr->base).base.base.field_0x28 = fVar3 + fStack_24;
+    fVar2 = (this_ptr->base).base.base.location.position.y;
+    fVar3 = (this_ptr->base).base.base.location.position.z;
+    (pCVar1->position).x = (pCVar1->position).x + fStack_2c;
+    (this_ptr->base).base.base.location.position.y = fVar2 + fStack_28;
+    (this_ptr->base).base.base.location.position.z = fVar3 + fStack_24;
     pCVar4 = this_ptr->werewolf_actor;
     if (pCVar4 != (CWerewolf *)0x0) {
-      *(uint *)&(pCVar4->base).base.base.field_0x20 = *(uint *)puVar1;
-      *(uint *)&(pCVar4->base).base.base.field_0x24 =
-           *(uint *)&(this_ptr->base).base.base.field_0x24;
-      *(uint *)&(pCVar4->base).base.base.field_0x28 =
-           *(uint *)&(this_ptr->base).base.base.field_0x28;
-      *(uint *)&(pCVar4->base).base.base.field_0x2c =
-           *(uint *)&(this_ptr->base).base.base.field_0x2c;
+      (pCVar4->base).base.base.location.position.x = (pCVar1->position).x;
+      (pCVar4->base).base.base.location.position.y = (this_ptr->base).base.base.location.position.y;
+      (pCVar4->base).base.base.location.position.z = (this_ptr->base).base.base.location.position.z;
+      (pCVar4->base).base.base.location.area_id = (this_ptr->base).base.base.location.area_id;
     }
   }
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_00544f00

@@ -13,12 +13,14 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_00491ca0(CEventList *this_pt
 {
   int iVar1;
   int iVar2;
-  CEventList *pCVar3;
-  CEventList *pCVar4;
+  float *pfVar3;
+  char (*pacVar4) [32];
+  int *piVar5;
+  char (*pacVar6) [30];
   byte local_120 [256];
   int local_20;
-  CEventList *local_1c;
-  CEventList *local_18;
+  char (*local_1c) [30];
+  char (*local_18) [32];
   int local_14;
   
   core_event_cpp_CEventList_reset_FUN_00489380(this_ptr);
@@ -32,96 +34,97 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_00491ca0(CEventList *this_pt
   _fgets(local_120,0xff,file_handle);
   iVar1 = 0;
   _fscanf(file_handle,&DAT_005d500c,this_ptr);
-  if (0 < *(int *)this_ptr) {
-    pCVar4 = this_ptr + 4;
+  if (0 < (this_ptr->events).count) {
+    pacVar4 = (this_ptr->events).names;
     do {
       iVar1 = iVar1 + 1;
-      _fscanf(file_handle,"%[^\n]\n",pCVar4);
-      pCVar4 = pCVar4 + 0x20;
-    } while (iVar1 < *(int *)this_ptr);
+      _fscanf(file_handle,"%[^\n]\n",pacVar4);
+      pacVar4 = pacVar4 + 1;
+    } while (iVar1 < (this_ptr->events).count);
   }
   _fgets(local_120,0xff,file_handle);
   iVar1 = 0;
-  _fscanf(file_handle,&DAT_005d5017,this_ptr + 0xc84);
-  if (0 < *(int *)(this_ptr + 0xc84)) {
-    pCVar4 = this_ptr + 0xc88;
+  _fscanf(file_handle,&DAT_005d5017,&this_ptr->current_events);
+  if (0 < (this_ptr->current_events).count) {
+    pacVar4 = (this_ptr->current_events).names;
     do {
       iVar1 = iVar1 + 1;
-      _fscanf(file_handle,"%[^\n]\n",pCVar4);
-      pCVar4 = pCVar4 + 0x20;
-    } while (iVar1 < *(int *)(this_ptr + 0xc84));
+      _fscanf(file_handle,"%[^\n]\n",pacVar4);
+      pacVar4 = pacVar4 + 1;
+    } while (iVar1 < (this_ptr->current_events).count);
   }
   _fgets(local_120,0xff,file_handle);
   iVar2 = 0;
-  iVar1 = _fscanf(file_handle,&DAT_005d5022,this_ptr + 0x258c);
-  if (0 < *(int *)(this_ptr + 0x258c)) {
-    pCVar4 = this_ptr + 0x2590;
+  iVar1 = _fscanf(file_handle,&DAT_005d5022,&this_ptr->persistent_events);
+  if (0 < (this_ptr->persistent_events).count) {
+    pacVar4 = (this_ptr->persistent_events).names;
     do {
       iVar2 = iVar2 + 1;
-      iVar1 = _fscanf(file_handle,"%[^\n]\n",pCVar4);
-      pCVar4 = pCVar4 + 0x20;
-    } while (iVar2 < *(int *)(this_ptr + 0x258c));
+      iVar1 = _fscanf(file_handle,"%[^\n]\n",pacVar4);
+      pacVar4 = pacVar4 + 1;
+    } while (iVar2 < (this_ptr->persistent_events).count);
   }
   if (1 < local_20) {
     _fgets(local_120,0xff,file_handle);
-    _fscanf(file_handle,&DAT_005d502d,this_ptr + 0x3210);
-    iVar1 = *(int *)(this_ptr + 0x3210);
+    _fscanf(file_handle,&DAT_005d502d,&this_ptr->timers);
+    iVar1 = (this_ptr->timers).count;
     local_14 = 0;
     if (0 < iVar1) {
-      pCVar4 = this_ptr + 0x3214;
-      pCVar3 = this_ptr + 0x3354;
+      pacVar4 = (this_ptr->timers).names;
+      pfVar3 = (this_ptr->timers).durations;
       do {
-        iVar1 = _fscanf(file_handle,"%f, %[^\n]\n",pCVar3,pCVar4);
-        pCVar4 = pCVar4 + 0x20;
-        pCVar3 = pCVar3 + 4;
+        iVar1 = _fscanf(file_handle,"%f, %[^\n]\n",pfVar3,pacVar4);
+        pacVar4 = pacVar4 + 1;
+        pfVar3 = pfVar3 + 1;
         local_14 = local_14 + 1;
-      } while (local_14 < *(int *)(this_ptr + 0x3210));
+      } while (local_14 < (this_ptr->timers).count);
     }
   }
   if (2 < local_20) {
     _fgets(local_120,0xff,file_handle);
     iVar2 = 0;
-    _fscanf(file_handle,&DAT_005d503c,this_ptr + 0x337c);
-    iVar1 = *(int *)(this_ptr + 0x337c);
+    _fscanf(file_handle,&DAT_005d503c,&this_ptr->counters);
+    iVar1 = (this_ptr->counters).count;
     if (0 < iVar1) {
-      local_18 = this_ptr + 0x3380;
-      pCVar4 = this_ptr + 0x34c0;
+      local_18 = (this_ptr->counters).names;
+      piVar5 = (this_ptr->counters).values;
       do {
-        _fscanf(file_handle,"%d, %[^\n]\n",pCVar4,local_18);
+        _fscanf(file_handle,"%d, %[^\n]\n",piVar5,local_18);
         iVar2 = iVar2 + 1;
-        pCVar4 = pCVar4 + 4;
-        local_18 = local_18 + 0x20;
-        iVar1 = *(int *)(this_ptr + 0x337c);
+        piVar5 = piVar5 + 1;
+        local_18 = local_18 + 1;
+        iVar1 = (this_ptr->counters).count;
       } while (iVar2 < iVar1);
     }
   }
   if (3 < local_20) {
     _fgets(local_120,0xff,file_handle);
     iVar2 = 0;
-    iVar1 = _fscanf(file_handle,&DAT_005d504b,this_ptr + 0x34e8);
-    if (0 < *(int *)(this_ptr + 0x34e8)) {
-      local_1c = this_ptr + 0x37da;
-      pCVar4 = this_ptr + 0x34ec;
+    iVar1 = _fscanf(file_handle,&DAT_005d504b,&this_ptr->actor_vars);
+    if (0 < (this_ptr->actor_vars).count) {
+      local_1c = (this_ptr->actor_vars).actor_names;
+      pacVar6 = (this_ptr->actor_vars).var_names;
       do {
-        iVar1 = _fscanf(file_handle,"\"%[^\"]\" , \"%[^\"]\"\n",pCVar4,local_1c);
+        iVar1 = _fscanf(file_handle,"\"%[^\"]\" , \"%[^\"]\"\n",pacVar6,local_1c);
         iVar2 = iVar2 + 1;
-        pCVar4 = pCVar4 + 0x1e;
-        local_1c = local_1c + 0x1e;
-      } while (iVar2 < *(int *)(this_ptr + 0x34e8));
+        pacVar6 = pacVar6 + 1;
+        local_1c = local_1c + 1;
+      } while (iVar2 < (this_ptr->actor_vars).count);
     }
   }
   if (4 < local_20) {
     _fgets(local_120,0xff,file_handle);
     iVar2 = 0;
-    iVar1 = _fscanf(file_handle,&DAT_005d5062,this_ptr + 0x1908);
-    if (0 < *(int *)(this_ptr + 0x1908)) {
-      pCVar4 = this_ptr + 0x190c;
+    iVar1 = _fscanf(file_handle,&DAT_005d5062,&this_ptr->game_flags);
+    if (0 < (this_ptr->game_flags).count) {
+      pacVar4 = (this_ptr->game_flags).names;
       do {
         iVar2 = iVar2 + 1;
-        _fscanf(file_handle,"%[^\n]\n",pCVar4);
-        pCVar4 = pCVar4 + 0x20;
-      } while (iVar2 < *(int *)(this_ptr + 0x1908));
-      return *(int *)(this_ptr + 0x1908);
+        _fscanf(file_handle,"%[^\n]\n",pacVar4);
+        iVar1 = (this_ptr->game_flags).count;
+        pacVar4 = pacVar4 + 1;
+      } while (iVar2 < iVar1);
+      return iVar1;
     }
   }
   return iVar1;

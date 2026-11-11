@@ -28,7 +28,7 @@
 ;   core_ammo.cpp_FUN_0040e440
 ;   core_inv.cpp_FUN_004dadb0
 ;   core_main.c_FUN_004e4500
-;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -64,8 +64,8 @@ section .text
     RET                                 ; 0040e6b4
     PUSH 0x47c                          ; 0040e6b5
         ;   Label: LAB_0040e6b5
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 0040e6ba
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 0040e6ba
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 0040e6bf
     TEST EAX,EAX                        ; 0040e6c2
     JZ 0x0040e6cf                       ; 0040e6c4

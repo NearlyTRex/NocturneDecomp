@@ -112,7 +112,7 @@
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CGore* g_CGorePtr = 01cb8284
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 g_CGameInstance.field448_0x1f0
+;   undefined4 g_CGameInstance.freeze_enemies_enabled
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -349,7 +349,7 @@ section .text
     JNZ 0x004f0f3f                      ; 004f1079
         ;   XREF to: 004f0f3f (CONDITIONAL_JUMP)  ; LAB_004f0f3f
     MOV EAX,[0x00616494]                ; 004f107f | g_CGamePtr
-    CMP dword ptr [EAX + 0x1f0],0x0     ; 004f1084 | g_CGameInstance.field448_0x1f0
+    CMP dword ptr [EAX + 0x1f0],0x0     ; 004f1084 | g_CGameInstance.freeze_enemies_enabled
     JNZ 0x004f0f3f                      ; 004f108b
         ;   XREF to: 004f0f3f (CONDITIONAL_JUMP)  ; LAB_004f0f3f
     MOV EAX,[0x01cedef4]                ; 004f1091 | DAT_01cedef4
@@ -472,7 +472,7 @@ section .text
         ;   XREF to: 004f0f3f (UNCONDITIONAL_JUMP)  ; LAB_004f0f3f
     MOV EAX,[0x00616494]                ; 004f11f3 | g_CGamePtr
         ;   Label: LAB_004f11f3
-    CMP dword ptr [EAX + 0x1f0],0x0     ; 004f11f8 | g_CGameInstance.field448_0x1f0
+    CMP dword ptr [EAX + 0x1f0],0x0     ; 004f11f8 | g_CGameInstance.freeze_enemies_enabled
     JNZ 0x004f0f2c                      ; 004f11ff
         ;   XREF to: 004f0f2c (CONDITIONAL_JUMP)  ; LAB_004f0f2c
     LEA EAX,[EBX + 0x20]                ; 004f1205

@@ -13,11 +13,11 @@ void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00542850(CDeforma
 {
   int iVar1;
   int iVar2;
-  byte *puVar3;
+  SPart *pSVar3;
   int iVar4;
   CVector3f *pCVar5;
   SVert *pSVar6;
-  SInputFace *pSVar7;
+  ushort *puVar7;
   uint local_8c;
   byte local_88 [4];
   byte local_84 [4];
@@ -105,7 +105,7 @@ LAB_005428b4:
       } while (iVar1 != 10);
       for (iVar1 = 0; iVar1 < this_ptr->num_lods; iVar1 = iVar1 + 1) {
         iVar2 = _fscanf(file_handle,"%d,%d,%d,%d,%d\n",&local_3c,&local_38,&local_34,
-                           this_ptr->lod_info + iVar1 * 8,this_ptr->lod_info + iVar1 * 8 + 4);
+                           this_ptr->lod_info + iVar1,&this_ptr->lod_info[iVar1].shadow_only_flag);
         if (iVar2 != 5) goto LAB_00542891;
         core_skeleton_cpp_FUN_00541370(this_ptr,iVar1,local_3c,local_38,local_34);
       }
@@ -122,34 +122,33 @@ LAB_005428b4:
     } while (iVar1 != 10);
     if (local_64 < 3) {
       for (iVar1 = 0; iVar1 < this_ptr->num_parts; iVar1 = iVar1 + 1) {
-        puVar3 = &this_ptr->field_0xc04 + iVar1 * 0x60;
-        iVar2 = _fscanf(file_handle,"\"%[^\"]\",%d,%d,%d\n",puVar3,puVar3 + 0x20,puVar3 + 0x34,
-                           puVar3 + 0x48);
+        pSVar3 = this_ptr->parts + iVar1;
+        iVar2 = _fscanf(file_handle,"\"%[^\"]\",%d,%d,%d\n",pSVar3,pSVar3->tri_counts,
+                           pSVar3->cap_tri_counts,&pSVar3->adj_part_count);
         if (iVar2 != 4) goto LAB_00542891;
-        for (iVar2 = 0; iVar2 < *(int *)(&this_ptr->field_0xc4c + iVar1 * 0x60); iVar2 = iVar2 + 1)
-        {
-          iVar4 = _fscanf(file_handle,&DAT_005e6f79,
-                             &this_ptr->field_0xc50 + iVar2 * 4 + iVar1 * 0x60);
+        for (iVar2 = 0; iVar2 < this_ptr->parts[iVar1].adj_part_count; iVar2 = iVar2 + 1) {
+          iVar4 = _fscanf(file_handle,&DAT_005e6f79,this_ptr->parts[iVar1].adj_part_list + iVar2)
+          ;
           if (iVar4 != 1) goto LAB_00542891;
         }
       }
     }
     else {
       for (iVar1 = 0; iVar1 < this_ptr->num_parts; iVar1 = iVar1 + 1) {
-        puVar3 = &this_ptr->field_0xc04 + iVar1 * 0x60;
+        pSVar3 = this_ptr->parts + iVar1;
         if (local_64 < 6) {
-          _fscanf(file_handle,"\"%[^\"]\", %d\n",puVar3,puVar3 + 0x48);
+          _fscanf(file_handle,"\"%[^\"]\", %d\n",pSVar3,&pSVar3->adj_part_count);
         }
         else {
-          _fscanf(file_handle,"\"%[^\"]\", %d, %d\n",puVar3,puVar3 + 0x5c,puVar3 + 0x48);
+          _fscanf(file_handle,"\"%[^\"]\", %d, %d\n",pSVar3,&pSVar3->dominant_bone,
+                     &pSVar3->adj_part_count);
         }
-        for (iVar2 = 0; iVar2 < *(int *)(&this_ptr->field_0xc4c + iVar1 * 0x60); iVar2 = iVar2 + 1)
-        {
-          _fscanf(file_handle,&DAT_005e6f5c,&this_ptr->field_0xc50 + iVar2 * 4 + iVar1 * 0x60);
+        for (iVar2 = 0; iVar2 < this_ptr->parts[iVar1].adj_part_count; iVar2 = iVar2 + 1) {
+          _fscanf(file_handle,&DAT_005e6f5c,this_ptr->parts[iVar1].adj_part_list + iVar2);
         }
         for (iVar2 = 0; iVar2 < this_ptr->num_lods; iVar2 = iVar2 + 1) {
-          _fscanf(file_handle,"%d,%d\n",&this_ptr->field_0xc24 + iVar2 * 4 + iVar1 * 0x60,
-                     &this_ptr->field_0xc38 + iVar2 * 4 + iVar1 * 0x60);
+          _fscanf(file_handle,"%d,%d\n",this_ptr->parts[iVar1].tri_counts + iVar2,
+                     this_ptr->parts[iVar1].cap_tri_counts + iVar2);
         }
       }
     }
@@ -162,13 +161,13 @@ LAB_005428b4:
         pSVar6 = this_ptr->vertex_data_ptr[local_20] + local_18;
         iVar1 = _fscanf(file_handle,&DAT_005e6f7d,local_30);
         if (iVar1 != 1) goto LAB_00542891;
-        *(byte *)pSVar6 = local_30[0];
-        for (iVar1 = 0; iVar1 < (int)(uint)*(byte *)pSVar6; iVar1 = iVar1 + 1) {
-          puVar3 = &pSVar6->field_0x10 + iVar1 * 0xc;
-          iVar2 = _fscanf(file_handle,"%d,%f,%f,%f,%f\n",local_2c,
-                             &pSVar6->field_0x4 + iVar1 * 4,puVar3,puVar3 + 4,puVar3 + 8);
+        pSVar6->num_bone_influences = local_30[0];
+        for (iVar1 = 0; iVar1 < (int)(uint)pSVar6->num_bone_influences; iVar1 = iVar1 + 1) {
+          pCVar5 = pSVar6->bone_offsets + iVar1;
+          iVar2 = _fscanf(file_handle,"%d,%f,%f,%f,%f\n",local_2c,pSVar6->bone_weights + iVar1,
+                             pCVar5,&pCVar5->y,&pCVar5->z);
           if (iVar2 != 5) goto LAB_00542891;
-          (&pSVar6->field_0x1)[iVar1] = local_2c[0];
+          pSVar6->bone_indices[iVar1] = local_2c[0];
         }
       }
     }
@@ -180,20 +179,20 @@ LAB_005428b4:
       for (iVar1 = 0; iVar2 = local_14,
           iVar1 < this_ptr->tri_count[local_14] + this_ptr->cap_tri_count[local_14];
           iVar1 = iVar1 + 1) {
-        local_1c = this_ptr->tri_data_ptr[local_14] + iVar1 * 0x12;
+        local_1c = this_ptr->tri_data_ptr[local_14] + iVar1;
         iVar4 = _fscanf(file_handle,"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\n",&local_28,local_74,&local_80,
                            &local_8c,local_70,local_7c,local_88,local_6c,local_78,local_84);
         if (iVar4 != 10) goto LAB_00542891;
         this_ptr->index_data_ptr[iVar2][iVar1] = local_28;
         iVar2 = 0;
         do {
-          pSVar7 = local_1c + iVar2 * 2;
-          *(ushort *)pSVar7 = local_74[iVar2 * 2];
+          puVar7 = &(local_1c->vertex_indices).vertex_index_0 + iVar2;
+          *puVar7 = local_74[iVar2 * 2];
           local_24 = *(int *)(local_7c + iVar2 * 4 + -4) >> 8;
-          *(short *)(pSVar7 + 6) = (short)((uint)*(int *)(local_7c + iVar2 * 4 + -4) >> 8);
+          puVar7[3] = (ushort)((uint)*(int *)(local_7c + iVar2 * 4 + -4) >> 8);
           iVar4 = iVar2 * 4;
           iVar2 = iVar2 + 1;
-          *(short *)(pSVar7 + 0xc) = (short)((uint)*(uint *)(local_88 + iVar4 + -4) >> 8);
+          puVar7[6] = (ushort)((uint)*(uint *)(local_88 + iVar4 + -4) >> 8);
         } while (iVar2 < 3);
       }
     }
@@ -214,7 +213,7 @@ LAB_005428b4:
     for (iVar1 = 0; iVar1 < this_ptr->num_texture_sets; iVar1 = iVar1 + 1) {
       for (iVar2 = 0; iVar2 < this_ptr->num_textures; iVar2 = iVar2 + 1) {
         iVar4 = _fscanf(file_handle,"%[^\n]\n",
-                           this_ptr->cap_index_ptr + iVar1 * 0x90 + iVar2 * 0x12 + 9);
+                           this_ptr->texture_sets[iVar1].textures[iVar2].texture_name);
         if (iVar4 != 1) goto LAB_00542891;
       }
     }
@@ -265,7 +264,7 @@ LAB_005428b4:
   if (local_64 < 7) {
     core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_00544380(this_ptr);
   }
-  if (((byte)file_handle[0xc] & 0x20) != 0) {
+  if ((file_handle->_flag & 0x20) != 0) {
     _DAT_01d046a0 = "..\\core\\skeleton.cpp";
     _DAT_01d046a4 = 0x5a5;
     core_main_c_FUN_004e4500("CDeformableModel::loadStream - error reading file!");

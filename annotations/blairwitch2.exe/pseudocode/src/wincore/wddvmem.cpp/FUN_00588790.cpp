@@ -13,7 +13,7 @@ int __cdecl wincore_wddvmem_cpp_FUN_00588790(int width,int height)
 {
   HRESULT HVar1;
   
-  DAT_00622010 = FUN_005b8580
+  DAT_00622010 = malloc
                            (((int)((DAT_006141c0 + (DAT_006141c0 >> 0x1f) * -8) -
                                   (uint)((DAT_006141c0 >> 0x1f) << 2 < 0)) >> 3) *
                             DAT_006141b8 * DAT_006141bc);
@@ -22,7 +22,7 @@ int __cdecl wincore_wddvmem_cpp_FUN_00588790(int width,int height)
     _DAT_01d046a4 = 0xea;
     core_main_c_FUN_004e4500("WDDVMEM: Fatal - out of frame buffer memory");
   }
-  _DAT_02661af0 = FUN_005b8580(DAT_006141b8 * DAT_006141bc * 4 + 0x40);
+  _DAT_02661af0 = malloc(DAT_006141b8 * DAT_006141bc * 4 + 0x40);
   if (_DAT_02661af0 == (void *)0x0) {
     _DAT_01d046a0 = "..\\wincore\\wddvmem.cpp";
     _DAT_01d046a4 = 0xef;

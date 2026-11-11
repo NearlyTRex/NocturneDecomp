@@ -27,10 +27,10 @@ void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042a620(CCh
     if (this_ptr->layer_action_t <= (float)_DAT_005cd236) {
       return;
     }
-    iVar2 = *(int *)(this_ptr->layer_actions + this_ptr->layer_action_index * 0x38 + 4);
+    iVar2 = this_ptr->layer_actions[this_ptr->layer_action_index].to_bone_index;
   }
   else {
-    iVar2 = *(int *)(this_ptr->layer_actions + this_ptr->layer_action_index * 0x38);
+    iVar2 = this_ptr->layer_actions[this_ptr->layer_action_index].from_bone_index;
   }
   if (layer_action_index != iVar2) {
     local_14 = 999.0;
@@ -38,22 +38,20 @@ void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042a620(CCh
     if (0 < this_ptr->layer_action_count) {
       pSVar4 = this_ptr->layer_actions;
       do {
-        if ((*(int *)(pSVar4 + 0x28) < 0) || (*(int *)pSVar4 != iVar2)) {
-          if ((*(int *)(pSVar4 + 0x28) < 1) &&
-             ((*(int *)(pSVar4 + 4) == iVar2 &&
-              (fVar1 = *(float *)(pSVar4 + 0x34) +
-                       *(float *)((int)this_ptr->motion_transition_costs +
-                                 layer_action_index * 4 + *(int *)pSVar4 * 0x58), fVar1 < local_14))
-             )) {
+        if ((pSVar4->direction < 0) || (pSVar4->from_bone_index != iVar2)) {
+          if ((pSVar4->direction < 1) &&
+             ((pSVar4->to_bone_index == iVar2 &&
+              (fVar1 = pSVar4->duration +
+                       this_ptr->motion_transition_costs[pSVar4->from_bone_index]
+                       [layer_action_index], fVar1 < local_14)))) {
             this_ptr->layer_action_t = 1.0;
             this_ptr->layer_action_index = iVar3;
             local_14 = fVar1;
           }
         }
         else {
-          fVar1 = *(float *)(pSVar4 + 0x34) +
-                  *(float *)((int)this_ptr->motion_transition_costs +
-                            layer_action_index * 4 + *(int *)(pSVar4 + 4) * 0x58);
+          fVar1 = pSVar4->duration +
+                  this_ptr->motion_transition_costs[pSVar4->to_bone_index][layer_action_index];
           if (fVar1 < local_14) {
             this_ptr->layer_action_t = 0.0;
             this_ptr->layer_action_index = iVar3;
@@ -61,7 +59,7 @@ void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042a620(CCh
           }
         }
         iVar3 = iVar3 + 1;
-        pSVar4 = pSVar4 + 0x38;
+        pSVar4 = pSVar4 + 1;
       } while (iVar3 < this_ptr->layer_action_count);
     }
   }

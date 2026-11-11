@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 295,
+    "complexity_score": 268,
     "cross_reference_count": 8,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
-    "suspect_count": 22,
+    "pseudocode_lines": 38,
+    "suspect_count": 20,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param"
     ],
-    "total_lines": 107
+    "total_lines": 105
   },
   "cross_references": [
     {
@@ -80,7 +79,7 @@
     ],
     "convention": "unknown",
     "name": "unkafter_basicene.cpp_FUN_0059f740",
-    "signature": "int unkafter_basicene_cpp_FUN_0059f740(CEnemy *param_1,undefined4 param_2,int param_3,float param_4)"
+    "signature": "int unkafter_basicene_cpp_FUN_0059f740(CEnemy *param_1,float param_2,int param_3,float param_4)"
   },
   "function_calls": [
     {
@@ -347,7 +346,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "int unkafter_basicene_cpp_FUN_0059f740(CEnemy *param_1,uint param_2,int param_3,float param_4)",
+      "text": "int unkafter_basicene_cpp_FUN_0059f740(CEnemy *param_1,float param_2,int param_3,float param_4)",
       "type": "unnamed_param"
     },
     {
@@ -355,7 +354,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "int unkafter_basicene_cpp_FUN_0059f740(CEnemy *param_1,uint param_2,int param_3,float param_4)",
+      "text": "int unkafter_basicene_cpp_FUN_0059f740(CEnemy *param_1,float param_2,int param_3,float param_4)",
       "type": "unnamed_param"
     },
     {
@@ -363,7 +362,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "int unkafter_basicene_cpp_FUN_0059f740(CEnemy *param_1,uint param_2,int param_3,float param_4)",
+      "text": "int unkafter_basicene_cpp_FUN_0059f740(CEnemy *param_1,float param_2,int param_3,float param_4)",
       "type": "unnamed_param"
     },
     {
@@ -371,7 +370,7 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "int unkafter_basicene_cpp_FUN_0059f740(CEnemy *param_1,uint param_2,int param_3,float param_4)",
+      "text": "int unkafter_basicene_cpp_FUN_0059f740(CEnemy *param_1,float param_2,int param_3,float param_4)",
       "type": "unnamed_param"
     },
     {
@@ -384,26 +383,34 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1[1].base.model.field_0x624 != 0) {",
+      "text": "if (param_1[1].base.model.rest_bone_scales[0x44] != 0.0) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x624",
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
       "severity": "mild",
-      "text": "if (*(int *)&param_1[1].base.model.field_0x624 != 0) {",
-      "type": "unnamed_field"
+      "text": "local_70.damage_amount = param_2;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
+      "line": 23,
+      "match": "param_1",
       "severity": "mild",
-      "text": "local_6c = param_2;",
+      "text": "local_70.attacker = (CDemonActor *)param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_70.wielder = (CDemonActor *)param_1;",
       "type": "unnamed_param"
     },
     {
@@ -411,52 +418,28 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_3c = param_1;",
+      "text": "(&DAT_0265370c,(param_1->base).model.bone_transform.bone_model_matrices + param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_38 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_xform_cpp_FUN_00591530(&DAT_0265370c,&(param_1->base).model.field_0xe80 + param_3 * 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_3",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_00591530(&DAT_0265370c,&(param_1->base).model.field_0xe80 + param_3 * 0x30);",
+      "text": "(&DAT_0265370c,(param_1->base).model.bone_transform.bone_model_matrices + param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 26,
       "match": "DAT_0265370c",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_00591530(&DAT_0265370c,&(param_1->base).model.field_0xe80 + param_3 * 0x30);",
+      "text": "(&DAT_0265370c,(param_1->base).model.bone_transform.bone_model_matrices + param_3);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "core_xform_cpp_FUN_00591530(&DAT_0265370c,&(param_1->base).model.field_0xe80 + param_3 * 0x30);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_FUN_00408d70(param_1,puVar3);",
@@ -464,7 +447,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = core_enemy_cpp_CEnemy_testAttackRadius_FUN_00488110(param_1,point,param_4,damage_info);",
@@ -472,7 +455,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 39,
       "match": "param_4",
       "severity": "mild",
       "text": "iVar1 = core_enemy_cpp_CEnemy_testAttackRadius_FUN_00488110(param_1,point,param_4,damage_info);",
@@ -480,7 +463,7 @@
     },
     {
       "description": "Pointer value `&local_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 38,
+      "line": 36,
       "match": "(int)&local_34",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_34 + (uint)bVar2 * -8 + 4) = auStack_24[(uint)bVar2 * -2];",
@@ -488,7 +471,7 @@
     },
     {
       "description": "Pointer value `&local_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 39,
+      "line": 37,
       "match": "(int)&local_34",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
@@ -496,7 +479,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 38,
+      "line": 36,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_34 + (uint)bVar2 * -8 + 4) = auStack_24[(uint)bVar2 * -2];",
@@ -504,7 +487,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 39,
+      "line": 37,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",

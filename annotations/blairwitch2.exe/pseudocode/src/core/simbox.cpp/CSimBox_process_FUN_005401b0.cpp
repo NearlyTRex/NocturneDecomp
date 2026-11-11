@@ -61,9 +61,9 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_005401b0(CSimBox *this_ptr,floa
   if (this_ptr->type == 0) {
     iVar3 = (**(code **)*0x01D02F84)(0x01D02F84,0x13);
     if (iVar3 != 0) {
-      *(float *)&(this_ptr->base).field_0x20 = (this_ptr->spawn_position).x;
-      *(float *)&(this_ptr->base).field_0x24 = (this_ptr->spawn_position).y;
-      *(float *)&(this_ptr->base).field_0x28 = (this_ptr->spawn_position).z;
+      (this_ptr->base).location.position.x = (this_ptr->spawn_position).x;
+      (this_ptr->base).location.position.y = (this_ptr->spawn_position).y;
+      (this_ptr->base).location.position.z = (this_ptr->spawn_position).z;
       iStack_10 = rand();
       (this_ptr->base).orient.vec.x =
            ((float)iStack_10 * _DAT_005e6895 + (float)_DAT_005e6899) * (float)_DAT_005e68a1;
@@ -79,9 +79,9 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_005401b0(CSimBox *this_ptr,floa
   }
   if ((this_ptr->physics_box).is_valid != 0) {
     core_box_cpp_CBox_process_FUN_005b2290(&this_ptr->physics_box,delta_time);
-    *(float *)&(this_ptr->base).field_0x20 = (this_ptr->physics_box).position.x;
-    *(float *)&(this_ptr->base).field_0x24 = (this_ptr->physics_box).position.y;
-    *(float *)&(this_ptr->base).field_0x28 = (this_ptr->physics_box).position.z;
+    (this_ptr->base).location.position.x = (this_ptr->physics_box).position.x;
+    (this_ptr->base).location.position.y = (this_ptr->physics_box).position.y;
+    (this_ptr->base).location.position.z = (this_ptr->physics_box).position.z;
     pUVar1 = &(this_ptr->base).orient;
     pCVar4 = &(this_ptr->physics_box).orientation;
     if ((CVector3f *)pUVar1 != pCVar4) {

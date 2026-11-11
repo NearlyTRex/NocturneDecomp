@@ -30,6 +30,7 @@
   {
     "kind":"class",
     "name":"CBloodParticle",
+    "parent":"CParticle",
     "rtti_file":"core/gore.cpp",
     "size":72
   },
@@ -121,6 +122,7 @@
   {
     "kind":"class",
     "name":"CCross",
+    "parent":"CMelee",
     "size":2120
   },
   {
@@ -179,7 +181,7 @@
   {
     "kind":"class",
     "name":"CDemonActorTransformState",
-    "size":1
+    "size":28
   },
   {
     "kind":"funcdef",
@@ -296,6 +298,7 @@
   {
     "kind":"class",
     "name":"CGhostChild",
+    "parent":"CBasicEnemy",
     "size":71784
   },
   {
@@ -330,16 +333,18 @@
   {
     "kind":"class",
     "name":"CLeaf",
+    "parent":"CParticle",
     "size":84
   },
   {
     "kind":"class",
     "name":"CLevelLoader",
-    "size":1
+    "size":304
   },
   {
     "kind":"class",
     "name":"CMeleeAxe",
+    "parent":"CMelee",
     "size":2088
   },
   {
@@ -350,6 +355,7 @@
   {
     "kind":"class",
     "name":"CPatrolPoint",
+    "parent":"CWayPoint",
     "size":1724
   },
   {
@@ -362,6 +368,48 @@
         "offset":0
       }
     ]
+  },
+  {
+    "kind":"funcdef",
+    "name":"CPod_load",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CPod",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CPod_remount",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CPod",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -576,12 +624,12 @@
   {
     "kind":"struct",
     "name":"SCPUInfo",
-    "size":1
+    "size":20
   },
   {
     "kind":"struct",
     "name":"SCarryHand",
-    "size":1
+    "size":120
   },
   {
     "kind":"struct",
@@ -591,17 +639,17 @@
   {
     "kind":"struct",
     "name":"SFog",
-    "size":1
+    "size":36
   },
   {
     "kind":"struct",
     "name":"SFoundFileInfo",
-    "size":1
+    "size":532
   },
   {
     "kind":"struct",
     "name":"SLayerAction",
-    "size":1
+    "size":56
   },
   {
     "kind":"struct",
@@ -611,17 +659,22 @@
   {
     "kind":"struct",
     "name":"SMpegScalefactorBandData",
-    "size":1
+    "size":496
   },
   {
     "kind":"struct",
     "name":"SMpegSubbandAllocation",
-    "size":1
+    "size":128
   },
   {
     "kind":"struct",
     "name":"SMpegSubbandQuantizedSamples",
-    "size":1
+    "size":2304
+  },
+  {
+    "kind":"struct",
+    "name":"SNotesEntry",
+    "size":348
   },
   {
     "kind":"struct",

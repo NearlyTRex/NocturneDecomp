@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 162,
-    "complexity_score": 231,
+    "complexity_score": 166,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 76,
-    "suspect_count": 13,
+    "suspect_count": 7,
     "suspect_types": [
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -203,16 +202,8 @@
       "line": 38,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "(DAT_0060b280,(SMRGLTextureBasic *)&this_ptr->field_0x2c0);",
+      "text": "(DAT_0060b280,&this_ptr->glass_texture);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x2c0",
-      "severity": "mild",
-      "text": "(DAT_0060b280,(SMRGLTextureBasic *)&this_ptr->field_0x2c0);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -223,52 +214,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 57,
-      "match": "field_0x808",
-      "severity": "mild",
-      "text": "poly = (SMRGLPrimitivePoly *)&this_ptr->field_0x808;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 65,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "this_ptr_00 = DAT_0060b280;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 66,
-      "match": "field_0x810",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x810 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0x814",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x814 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 69,
-      "match": "field_0x818",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x818 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 70,
-      "match": "field_0x81c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x81c = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

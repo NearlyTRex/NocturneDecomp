@@ -27,7 +27,7 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_0056fe50(CSuccubus *thi
   if (iStack_c == 0) {
     (this_ptr->base).base.was_rendered_opaque = 0;
   }
-  if (*(int *)&(this_ptr->base).base.field_0x2568 == 0) {
+  if ((this_ptr->base).base.render_active == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
     (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
               ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
@@ -52,11 +52,9 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_0056fe50(CSuccubus *thi
                     (this_ptr_00,0,&(this_ptr->base).base.model,0);
           core_morph_cpp_CMorph_updateModelFromDeformable_FUN_005b7150(this_ptr_00,1,model_ptr,0);
           core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_005b7190
-                    (this_ptr_00,1,(CKeyFramedModel *)(this_ptr->hotdemon_cloth_list).cloths[0],0,1)
-          ;
+                    (this_ptr_00,1,&(this_ptr->hotdemon_cloth_list).cloths[0]->model,0,1);
           core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_005b7190
-                    (this_ptr_00,1,(CKeyFramedModel *)(this_ptr->hotdemon_cloth_list).cloths[0],0,2)
-          ;
+                    (this_ptr_00,1,&(this_ptr->hotdemon_cloth_list).cloths[0]->model,0,2);
           core_morph_cpp_CMorph_render_FUN_005b76a0
                     (this_ptr_00,this_ptr->morph_timer / _DAT_005fc3d8);
         }
@@ -69,8 +67,7 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_0056fe50(CSuccubus *thi
       if ((_DAT_01d1cdc8 != 0) &&
          (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280),
          iVar1 == 0)) {
-        core_motion_cpp_FUN_005042e0
-                  ((CMotionController *)&(this_ptr->base).base.model,(CDemonActor *)this_ptr);
+        core_motion_cpp_FUN_005042e0(&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);
         (*((this_ptr->base).base.base.vtable._ub)->renderTargetPoints)((CDemonActor *)this_ptr);
       }
     }

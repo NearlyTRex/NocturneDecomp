@@ -4,13 +4,25 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoxActor.h"
+#include "types/classes/CDemonGlobe.h"
 
 // Structure: CSpiritMine
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 2104; factory alloc 0x838
 // Ghidra size: 0x838 (2104 bytes)
 #pragma pack(push, 1)
 typedef struct CSpiritMine {
-    char field_0[2104]; // 0x0
+    CBoxActor base; // 0x0, derived
+    float trigger_radius; // 0x7d4, ctor 1.0; archive triggerRadius; process compares hero distance
+    float unused_7d8; // 0x7d8, ctor 005ad3c0 stores 1.0; no reader found
+    float sleep_time; // 0x7dc, ctor 5.0; archive sleepTime; FUN_005ad940 divisor
+    float effect_time; // 0x7e0, ctor 5.0; archive effectTime; process reloads effect_timer from it
+    float effect_damage; // 0x7e4, ctor 25.0; archive effectDamage; process damage amount
+    float sleep_timer; // 0x7e8, ctor 0; FUN_005ad940 glow = (1 - it/sleep_time)*k
+    float emit_timer; // 0x7ec, ctor 0; process counts down, reloads 0.5, emits particles
+    float effect_timer; // 0x7f0, ctor 0; process counts down; trigger sets it to effect_time
+    CDemonGlobe globe; // 0x7f4, FUN_005ad940 setPosition(this+0x7f4), writes +0x810 intensity byte, +0x814 corona_mode, +0x830 intensity_multiplier, precomputeAttenuation
+    int unused_834; // 0x834, ctor 005ad3c0 stores 0; no reader found
 } CSpiritMine;
 #pragma pack(pop)
 

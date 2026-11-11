@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_twigzomb.cpp_CTwigZombie_archive_FUN_0059fc10 at 005a00cf
+;   core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10 at 005a00cf
 ;
 ; *****************************************************************************
 

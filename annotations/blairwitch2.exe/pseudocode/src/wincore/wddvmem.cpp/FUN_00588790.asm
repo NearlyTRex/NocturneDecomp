@@ -31,7 +31,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
 ;   crt_ddraw.c_DirectDrawCreate
-;   crt_unknown.c_FUN_005b8580
+;   crt_memory.c_malloc_FUN_005b8580
 ;   engine_special.cpp_FUN_0055e8c0
 ;
 ; *****************************************************************************
@@ -53,8 +53,8 @@ section .text
     SAR EAX,0x3                         ; 005887b0
     IMUL EAX,ECX                        ; 005887b3
     PUSH EAX                            ; 005887b6
-    CALL crt_unknown.c_FUN_005b8580     ; 005887b7
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 005887b7
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     ADD ESP,0x4                         ; 005887bc
     MOV [0x00622010],EAX                ; 005887bf | DAT_00622010
     TEST EAX,EAX                        ; 005887c4
@@ -66,8 +66,8 @@ section .text
     SHL EAX,0x2                         ; 005887d8
     ADD EAX,0x40                        ; 005887db
     PUSH EAX                            ; 005887de
-    CALL crt_unknown.c_FUN_005b8580     ; 005887df
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 005887df
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     ADD ESP,0x4                         ; 005887e4
     MOV [0x02661af0],EAX                ; 005887e7 | DAT_02661af0
     TEST EAX,EAX                        ; 005887ec

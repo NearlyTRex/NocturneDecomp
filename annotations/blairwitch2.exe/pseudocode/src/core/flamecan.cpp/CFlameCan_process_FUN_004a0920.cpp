@@ -35,6 +35,6 @@ void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_004a0920(CFlameCan *this_pt
   core_mission_cpp_FUN_004fc7b0(0x01D182F0,this_ptr,1);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,unaff_ESI);
   core_fire_cpp_CFireEffect_createExplosion_FUN_0049e360
-            (0x01C3DEB4,(CVector3f *)&(this_ptr->flame).base.field_0x20,16.0,1500.0,4.0);
+            (0x01C3DEB4,&(this_ptr->flame).base.location.position,16.0,1500.0,4.0);
   return;
 }

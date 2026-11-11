@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 116,
+    "complexity_score": 73,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 46,
-    "suspect_count": 5,
+    "pseudocode_lines": 43,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "stack_alignment_array",
-      "unnamed_field",
-      "unresolved_funcptr"
+      "stack_alignment_array"
     ],
-    "total_lines": 122
+    "total_lines": 119
   },
   "cross_references": [
     {
@@ -211,36 +209,12 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_00546a90(&this_ptr->field_0x2b4,bone_index);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 33,
       "match": "(CHaystack **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "pCVar1 = *(CHaystack **)((int)g_CDemonSetPtr->characters + iVar2);",
+      "text": "this_ptr_00 = *(CHaystack **)((int)g_CDemonSetPtr->characters + iVar1);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 42,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&pCVar1->field_0x2b0 + 0x108))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&pCVar1->field_0x2b0 + 0x108))",
-      "type": "unnamed_field"
     }
   ]
 }

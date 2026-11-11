@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 193,
+    "complexity_score": 140,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
-    "suspect_count": 15,
+    "pseudocode_lines": 30,
+    "suspect_count": 10,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_field",
       "unnamed_param"
     ],
-    "total_lines": 124
+    "total_lines": 126
   },
   "cross_references": [
     {
@@ -140,68 +139,36 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)&param_1[2].field_0x4298 != 0) && (*(float *)&param_1[2].field_0x44f0 < 1.0)) {",
+      "text": "if ((*(int *)param_1[2].flames[2].base.create_event != 0) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)&param_1[2].field_0x4298 != 0) && (*(float *)&param_1[2].field_0x44f0 < 1.0)) {",
+      "text": "((float)param_1[2].flames[2].globe.linear_radius_scaled < 1.0)) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x4298",
-      "severity": "mild",
-      "text": "if ((*(int *)&param_1[2].field_0x4298 != 0) && (*(float *)&param_1[2].field_0x44f0 < 1.0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x44f0",
-      "severity": "mild",
-      "text": "if ((*(int *)&param_1[2].field_0x4298 != 0) && (*(float *)&param_1[2].field_0x44f0 < 1.0)) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)&param_1[2].field_0x4298 == 0) && (0.0 < *(float *)&param_1[2].field_0x44f0)) {",
+      "text": "if ((*(int *)param_1[2].flames[2].base.create_event == 0) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)&param_1[2].field_0x4298 == 0) && (0.0 < *(float *)&param_1[2].field_0x44f0)) {",
+      "text": "(0.0 < (float)param_1[2].flames[2].globe.linear_radius_scaled)) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x4298",
-      "severity": "mild",
-      "text": "if ((*(int *)&param_1[2].field_0x4298 == 0) && (0.0 < *(float *)&param_1[2].field_0x44f0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x44f0",
-      "severity": "mild",
-      "text": "if ((*(int *)&param_1[2].field_0x4298 == 0) && (0.0 < *(float *)&param_1[2].field_0x44f0)) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = core_motion_cpp_FUN_005035c0(&param_1->model);",
@@ -209,7 +176,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar2 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(param_1,0);",
@@ -217,7 +184,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "(fVar2 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(param_1,2),",
@@ -225,19 +192,11 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x2698 != 0) {",
+      "text": "if (param_1->carry_hands[1].carry_actor != (CDemonActor *)0x0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x2698",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x2698 != 0) {",
-      "type": "unnamed_field"
     },
     {
       "call_site_count": 1,

@@ -9,7 +9,7 @@
 void __cdecl core_armour_cpp_CArmour_processDamage_FUN_0040f0a0(CArmour *this_ptr,SDamageInfo *damage_info)
 
 {
-  if (*(int *)&(this_ptr->base).base.field_0x281c != 0) {
+  if ((this_ptr->base).base.is_invulnerable != 0) {
     return;
   }
   core_charactr_cpp_CCharacter_dismember_FUN_00427360

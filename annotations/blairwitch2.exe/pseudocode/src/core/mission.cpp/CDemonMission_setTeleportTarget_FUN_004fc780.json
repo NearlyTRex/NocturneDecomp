@@ -111,11 +111,11 @@
   },
   "suspects": [
     {
-      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 6,
-      "match": "raw-offset struct copy",
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 5,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "*(uint *)(this_ptr + 0x1120) = *(uint *)(teleport_target + 4);",
+      "text": "(this_ptr->pending_teleport).position.x = (teleport_target->position).x;",
       "type": "unrolled_memcpy"
     }
   ]

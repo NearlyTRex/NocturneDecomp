@@ -9,6 +9,6 @@
 void __cdecl core_fire_cpp_CGunFlame_reset_FUN_0049a1a0(CGunFlame *this_ptr)
 
 {
-  *(uint *)this_ptr = 0;
+  this_ptr->lifetime = 0.0;
   return;
 }

@@ -18,7 +18,7 @@ int __cdecl engine_pod_cpp_CPod_findFile_FUN_0051b9d0(CPod *this_ptr,SFoundFileI
   if (0 < this_ptr->pod_file_count) {
     do {
       file_index = engine_pod_cpp_CPodFile_findFileIndex_FUN_0051a990
-                             (pCVar1->pod_files[0],(char *)found_file_info);
+                             (pCVar1->pod_files[0],found_file_info->found_path);
       if (-1 < file_index) {
         engine_pod_cpp_CPodFile_populateFileInfo_FUN_0051aa00
                   (pCVar1->pod_files[0],file_index,found_file_info);

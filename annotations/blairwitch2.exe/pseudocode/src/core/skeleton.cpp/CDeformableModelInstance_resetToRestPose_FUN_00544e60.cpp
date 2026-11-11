@@ -12,23 +12,25 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0054
   CSkeleton *pCVar1;
   CDeformableModelInstance *pCVar2;
   int iVar3;
-  byte *puVar4;
+  CQuaternion4f *pCVar4;
   
   iVar3 = 0;
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr);
   if (0 < pCVar1->bone_count) {
-    puVar4 = &this_ptr->field_0x6b0;
+    pCVar4 = (this_ptr->bone_transform).pose_data.bone_rotations;
     pCVar2 = this_ptr;
     do {
-      core_xform_cpp_setIdentityQuaternion_FUN_00593c40(puVar4);
+      core_xform_cpp_setIdentityQuaternion_FUN_00593c40(pCVar4);
       iVar3 = iVar3 + 1;
-      *(uint *)&pCVar2->field_0xcf0 = *(uint *)&pCVar2->field_0x514;
-      puVar4 = puVar4 + 0x10;
-      pCVar2 = (CDeformableModelInstance *)&pCVar2->field_0x4;
+      (pCVar2->bone_transform).bone_scales[0] = pCVar2->rest_bone_scales[0];
+      pCVar4 = pCVar4 + 1;
+      pCVar2 = (CDeformableModelInstance *)&(pCVar2->base).current_motion_index;
     } while (iVar3 < pCVar1->bone_count);
   }
-  *(uint *)&this_ptr->field_0x6ac = 0;
-  *(uint *)&this_ptr->field_0x6a8 = *(uint *)&this_ptr->field_0x6ac;
-  *(uint *)&this_ptr->field_0x6a4 = *(uint *)&this_ptr->field_0x6a8;
+  (this_ptr->bone_transform).pose_data.root_position.z = 0.0;
+  (this_ptr->bone_transform).pose_data.root_position.y =
+       (this_ptr->bone_transform).pose_data.root_position.z;
+  (this_ptr->bone_transform).pose_data.root_position.x =
+       (this_ptr->bone_transform).pose_data.root_position.y;
   return;
 }

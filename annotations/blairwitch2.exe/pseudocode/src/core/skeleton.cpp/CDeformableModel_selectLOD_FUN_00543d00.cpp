@@ -12,7 +12,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_selectLOD_FUN_00543d00(CDeformabl
   int iVar1;
   float fVar2;
   int extraout_ECX;
-  SLod *pSVar3;
+  int *piVar3;
   float10 fVar4;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
@@ -24,13 +24,13 @@ int __cdecl core_skeleton_cpp_CDeformableModel_selectLOD_FUN_00543d00(CDeformabl
       round();
       iVar1 = extraout_ECX + -1;
       if (0 < iVar1) {
-        pSVar3 = this_ptr->lod_info + extraout_ECX * 8 + -0xc;
+        piVar3 = &this_ptr->lod_info[extraout_ECX + -2].shadow_only_flag;
         do {
-          if ((*(int *)(pSVar3 + 8) == 0) && ((int)ROUND(fVar4) < *(int *)(pSVar3 + 4))) {
+          if ((piVar3[2] == 0) && ((int)ROUND(fVar4) < piVar3[1])) {
             return iVar1;
           }
           iVar1 = iVar1 + -1;
-          pSVar3 = pSVar3 + -8;
+          piVar3 = piVar3 + -2;
         } while (0 < iVar1);
       }
       return iVar1;

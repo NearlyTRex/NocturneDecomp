@@ -7,6 +7,7 @@ struct CDemonActor;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCloth.h"
 #include "types/classes/CEnemy.h"
 #include "types/classes/CMorph.h"
 
@@ -17,7 +18,7 @@ typedef struct CMimic {
     CEnemy base; // 0x0
     char mirror_condition[100]; // 0x10af8
     char attack_condition[100]; // 0x10b5c
-    char field_68544[240432]; // 0x10bc0
+    CCloth cloth; // 0x10bc0
     int attack_mode; // 0x4b6f0
     struct CDemonActor* mirror_plane_actor; // 0x4b6f4
     char morph_actor_type[40]; // 0x4b6f8

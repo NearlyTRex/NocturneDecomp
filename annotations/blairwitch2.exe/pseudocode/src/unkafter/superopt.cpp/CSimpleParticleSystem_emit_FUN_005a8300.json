@@ -1,0 +1,767 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 167,
+    "complexity_score": 498,
+    "cross_reference_count": 13,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 73,
+    "suspect_count": 40,
+    "suspect_types": [
+      "pointer_cast",
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 240
+  },
+  "cross_references": [
+    {
+      "addr": "0040ded0",
+      "from_addr": "0040e0db",
+      "name": "core_ammo.cpp_CAmmo_process_FUN_0040ded0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a0380",
+      "from_addr": "005a066c",
+      "name": "core_basicene.cpp_CBasicEnemy_processBurnState_FUN_005a0380",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a0bd0",
+      "from_addr": "005a0eef",
+      "name": "core_confedrt.cpp_FUN_005a0bd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a6ed0",
+      "from_addr": "005a7343",
+      "name": "core_cross.cpp_CCross_process_FUN_005a6ed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00450c60",
+      "from_addr": "00451949",
+      "name": "core_doc.cpp_FUN_00450c60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aae80",
+      "from_addr": "005ab14c",
+      "name": "core_hag.cpp_CHag_processBurnState_FUN_005aae80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ab260",
+      "from_addr": "005ab59c",
+      "name": "core_hag.cpp_FUN_005ab260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cdb60",
+      "from_addr": "004cdd8d",
+      "name": "core_health.cpp_CHealthItem_process_FUN_004cdb60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005adad0",
+      "from_addr": "005add16",
+      "name": "core_necklace.cpp_CNecklace_process_FUN_005adad0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ac960",
+      "from_addr": "005acb38",
+      "name": "core_partibox.cpp_CParticleBox_process_FUN_005ac960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059c680",
+      "from_addr": "0059c960",
+      "name": "core_patrpoin.cpp_CPatrolPoint_process_FUN_0059c680",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a61f0",
+      "from_addr": "005a6598",
+      "name": "core_robin.cpp_FUN_005a61f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ad530",
+      "from_addr": "005ad735",
+      "name": "core_spirmine.cpp_CSpiritMine_process_FUN_005ad530",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a8300",
+    "address_range": [
+      [
+        "005a8300",
+        "005a849a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300",
+    "signature": "void __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,float *param_10,undefined4 *param_11,undefined4 *param_12,undefined4 param_13)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0265370c",
+      "name": "DAT_0265370c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02653710",
+      "name": "DAT_02653710",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02653714",
+      "name": "DAT_02653714",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 26,
+    "call_sites": [
+      {
+        "call_addr": "00451949",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_00450c60",
+        "estimated_params": 13,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 52,
+        "stack_params": 13
+      },
+      {
+        "call_addr": "005a066c",
+        "call_type": "direct",
+        "caller": "core_basicene.cpp_CBasicEnemy_processBurnState_FUN_005a0380",
+        "estimated_params": 13,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 52,
+        "stack_params": 13
+      },
+      {
+        "call_addr": "005a0eef",
+        "call_type": "direct",
+        "caller": "core_confedrt.cpp_FUN_005a0bd0",
+        "estimated_params": 13,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 52,
+        "stack_params": 13
+      },
+      {
+        "call_addr": "005a6598",
+        "call_type": "direct",
+        "caller": "core_robin.cpp_FUN_005a61f0",
+        "estimated_params": 13,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 52,
+        "stack_params": 13
+      },
+      {
+        "call_addr": "005a66db",
+        "call_type": "direct",
+        "caller": "core_robin.cpp_FUN_005a61f0",
+        "estimated_params": 13,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 52,
+        "stack_params": 13
+      },
+      {
+        "call_addr": "005ab14c",
+        "call_type": "direct",
+        "caller": "core_hag.cpp_CHag_processBurnState_FUN_005aae80",
+        "estimated_params": 13,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 52,
+        "stack_params": 13
+      },
+      {
+        "call_addr": "005ab59c",
+        "call_type": "direct",
+        "caller": "core_hag.cpp_FUN_005ab260",
+        "estimated_params": 13,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 52,
+        "stack_params": 13
+      },
+      {
+        "call_addr": "005ab746",
+        "call_type": "direct",
+        "caller": "core_hag.cpp_FUN_005ab260",
+        "estimated_params": 13,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 52,
+        "stack_params": 13
+      },
+      {
+        "call_addr": "0040e0db",
+        "call_type": "direct",
+        "caller": "core_ammo.cpp_CAmmo_process_FUN_0040ded0",
+        "estimated_params": 13,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 52,
+        "stack_params": 13
+      },
+      {
+        "call_addr": "004cdd8d",
+        "call_type": "direct",
+        "caller": "core_health.cpp_CHealthItem_process_FUN_004cdb60",
+        "estimated_params": 13,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 52,
+        "stack_params": 13
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 13,
+    "declared_stack_bytes": 52,
+    "estimated_params": 13,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.457746478873239,
+    "instruction_count": 142,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BRANCH": 2,
+      "CBRANCH": 12,
+      "COPY": 199,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_ADD": 3,
+      "INT_ADD": 90,
+      "INT_AND": 54,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 42,
+      "INT_LEFT": 2,
+      "INT_LESS": 11,
+      "INT_MULT": 7,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 22,
+      "INT_SUB": 22,
+      "INT_XOR": 1,
+      "INT_ZEXT": 6,
+      "LOAD": 54,
+      "POPCOUNT": 20,
+      "RETURN": 2,
+      "STORE": 42
+    },
+    "pcode_op_count": 633
+  },
+  "stack_frame": {
+    "frame_size": 96,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 52,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSimpleParticleSystem *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_4",
+        "offset": 16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_5",
+        "offset": 20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_6",
+        "offset": 24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_7",
+        "offset": 28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_8",
+        "offset": 32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_9",
+        "offset": 36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_10",
+        "offset": 40,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "param_11",
+        "offset": 44,
+        "size": 4,
+        "type": "undefined4 *"
+      },
+      {
+        "is_param": true,
+        "name": "param_12",
+        "offset": 48,
+        "size": 4,
+        "type": "undefined4 *"
+      },
+      {
+        "is_param": true,
+        "name": "param_13",
+        "offset": 52,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "005a839e",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6,uint param_7,uint param_8,uint param_9,float *param_10,uint *param_11,uint *param_12,uint param_13)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6,uint param_7,uint param_8,uint param_9,float *param_10,uint *param_11,uint *param_12,uint param_13)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6,uint param_7,uint param_8,uint param_9,float *param_10,uint *param_11,uint *param_12,uint param_13)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "void __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6,uint param_7,uint param_8,uint param_9,float *param_10,uint *param_11,uint *param_12,uint param_13)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "void __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6,uint param_7,uint param_8,uint param_9,float *param_10,uint *param_11,uint *param_12,uint param_13)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "void __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6,uint param_7,uint param_8,uint param_9,float *param_10,uint *param_11,uint *param_12,uint param_13)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_8",
+      "severity": "mild",
+      "text": "void __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6,uint param_7,uint param_8,uint param_9,float *param_10,uint *param_11,uint *param_12,uint param_13)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_9",
+      "severity": "mild",
+      "text": "void __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6,uint param_7,uint param_8,uint param_9,float *param_10,uint *param_11,uint *param_12,uint param_13)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_10",
+      "severity": "mild",
+      "text": "void __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6,uint param_7,uint param_8,uint param_9,float *param_10,uint *param_11,uint *param_12,uint param_13)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_11",
+      "severity": "mild",
+      "text": "void __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6,uint param_7,uint param_8,uint param_9,float *param_10,uint *param_11,uint *param_12,uint param_13)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_12",
+      "severity": "mild",
+      "text": "void __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6,uint param_7,uint param_8,uint param_9,float *param_10,uint *param_11,uint *param_12,uint param_13)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_13",
+      "severity": "mild",
+      "text": "void __cdecl unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem *this_ptr,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6,uint param_7,uint param_8,uint param_9,float *param_10,uint *param_11,uint *param_12,uint param_13)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_0265370c",
+      "severity": "mild",
+      "text": "if (this_ptr != (CSimpleParticleSystem *)&DAT_0265370c) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(uint *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)((int)this_ptr->particles + this_ptr->next_particle * 0x60);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "puVar7[1] = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "puVar7[2] = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "puVar7[3] = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "puVar7[4] = param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "puVar7[6] = param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "puVar7[7] = param_6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_13",
+      "severity": "mild",
+      "text": "puVar7[8] = param_13;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_10",
+      "severity": "mild",
+      "text": "if (param_10 != (float *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_10",
+      "severity": "mild",
+      "text": "fVar3 = param_10[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_10",
+      "severity": "mild",
+      "text": "fVar4 = param_10[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_10",
+      "severity": "mild",
+      "text": "puVar7[9] = (this_ptr->position).x + *param_10;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_12",
+      "severity": "mild",
+      "text": "if ((param_12 != (uint *)0x0) && (puVar7 + 0xf != param_12)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_12",
+      "severity": "mild",
+      "text": "if ((param_12 != (uint *)0x0) && (puVar7 + 0xf != param_12)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_12",
+      "severity": "mild",
+      "text": "puVar7[0xf] = *param_12;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_12",
+      "severity": "mild",
+      "text": "puVar7[0x10] = param_12[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 58,
+      "match": "param_12",
+      "severity": "mild",
+      "text": "puVar7[0x11] = param_12[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_11",
+      "severity": "mild",
+      "text": "if ((param_11 != (uint *)0x0) && (puVar7 + 0xc != param_11)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_11",
+      "severity": "mild",
+      "text": "if ((param_11 != (uint *)0x0) && (puVar7 + 0xc != param_11)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_11",
+      "severity": "mild",
+      "text": "puVar7[0xc] = *param_11;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_11",
+      "severity": "mild",
+      "text": "puVar7[0xd] = param_11[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
+      "match": "param_11",
+      "severity": "mild",
+      "text": "puVar7[0xe] = param_11[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "puVar7[0x12] = param_7;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 67,
+      "match": "param_8",
+      "severity": "mild",
+      "text": "puVar7[0x13] = param_8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_9",
+      "severity": "mild",
+      "text": "puVar7[0x14] = param_9;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 25,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->position).x = (pCVar5->location).position.x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

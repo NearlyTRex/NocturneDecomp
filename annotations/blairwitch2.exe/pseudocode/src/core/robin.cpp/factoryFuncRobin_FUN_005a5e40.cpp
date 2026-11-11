@@ -11,7 +11,7 @@ void core_robin_cpp_factoryFuncRobin_FUN_005a5e40(void)
 {
   CRobin *this_ptr;
   
-  this_ptr = (CRobin *)debugAllocTracked1(0x11858);
+  this_ptr = (CRobin *)operator_new(0x11858);
   if (this_ptr == (CRobin *)0x0) {
     return;
   }

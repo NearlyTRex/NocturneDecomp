@@ -12,9 +12,9 @@ void __cdecl core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_0041ce90(
   UOrientationVector *pUVar1;
   CVector3f *pCVar2;
   
-  *(float *)&(this_ptr->base).field_0x20 = new_position->x;
-  *(float *)&(this_ptr->base).field_0x24 = new_position->y;
-  *(float *)&(this_ptr->base).field_0x28 = new_position->z;
+  (this_ptr->base).location.position.x = new_position->x;
+  (this_ptr->base).location.position.y = new_position->y;
+  (this_ptr->base).location.position.z = new_position->z;
   pUVar1 = &(this_ptr->base).orient;
   if ((CVector3f *)pUVar1 != new_orientation) {
     (pUVar1->vec).x = new_orientation->x;

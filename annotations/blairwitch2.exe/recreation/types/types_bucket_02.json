@@ -343,7 +343,7 @@
   {
     "kind":"class",
     "name":"CFireEffect",
-    "size":1
+    "size":4
   },
   {
     "kind":"class",
@@ -410,8 +410,38 @@
     "size":149296
   },
   {
+    "kind":"funcdef",
+    "name":"CKeys_getAndClearKeyState",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CKeys",
+          "ptr":1
+        }
+      },
+      {
+        "name":"key_code",
+        "type":{
+          "kind":"enum",
+          "name":"EInputCodeType",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CLantern",
+    "parent":"CWeapon",
     "size":1800
   },
   {
@@ -420,19 +450,85 @@
     "size":1
   },
   {
+    "kind":"funcdef",
+    "name":"CMotionController_accumulateScaledRootMotion",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CMotionController",
+          "ptr":1
+        }
+      },
+      {
+        "name":"start_frame",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"end_frame",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"scale_factor",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CMotionList",
-    "size":1
+    "size":119208
   },
   {
     "kind":"class",
     "name":"COrientation",
-    "size":1
+    "size":12
   },
   {
     "kind":"class",
     "name":"CParticle",
-    "size":1
+    "size":64
+  },
+  {
+    "kind":"funcdef",
+    "name":"CParticle_render",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CParticle",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"funcdef",
@@ -465,11 +561,13 @@
   {
     "kind":"class",
     "name":"CSearchParty",
+    "parent":"CBasicNPC",
     "size":71760
   },
   {
     "kind":"class",
     "name":"CShadow",
+    "parent":"CEnemy",
     "size":68480
   },
   {
@@ -482,11 +580,13 @@
   {
     "kind":"class",
     "name":"CSpiritMine",
+    "parent":"CBoxActor",
     "size":2104
   },
   {
     "kind":"class",
     "name":"CUnion",
+    "parent":"CBasicNPC",
     "size":71780
   },
   {
@@ -527,6 +627,11 @@
   },
   {
     "kind":"class",
+    "name":"CVector2i",
+    "size":8
+  },
+  {
+    "kind":"class",
     "name":"CVector3f",
     "size":12
   },
@@ -539,8 +644,9 @@
   {
     "kind":"class",
     "name":"CWavOutDevice",
+    "parent":"CSoundDevice",
     "rtti_file":"sound/snddx.cpp",
-    "size":1
+    "size":4
   },
   {
     "kind":"funcdef",
@@ -621,6 +727,69 @@
   },
   {
     "kind":"enum",
+    "name":"EEmitterType",
+    "size":4,
+    "values":[
+      {
+        "name":"EMITTER_TYPE_SPARK",
+        "value":0
+      },
+      {
+        "name":"EMITTER_TYPE_SMOKE",
+        "value":1
+      },
+      {
+        "name":"EMITTER_TYPE_FIREBALL",
+        "value":2
+      },
+      {
+        "name":"EMITTER_TYPE_LASER",
+        "value":3
+      },
+      {
+        "name":"EMITTER_TYPE_ROCK",
+        "value":4
+      },
+      {
+        "name":"EMITTER_TYPE_FLAME",
+        "value":5
+      },
+      {
+        "name":"EMITTER_TYPE_POPCORN",
+        "value":6
+      },
+      {
+        "name":"EMITTER_TYPE_LIGHTNING",
+        "value":7
+      },
+      {
+        "name":"EMITTER_TYPE_BLUE_SPARK",
+        "value":8
+      },
+      {
+        "name":"EMITTER_TYPE_POINT_TO_POINT_LIGHTNING",
+        "value":9
+      },
+      {
+        "name":"EMITTER_TYPE_SOUND",
+        "value":10
+      },
+      {
+        "name":"EMITTER_TYPE_LEAF",
+        "value":11
+      },
+      {
+        "name":"EMITTER_TYPE_FIREFLY",
+        "value":12
+      },
+      {
+        "name":"EMITTER_TYPE_BLOOD",
+        "value":13
+      }
+    ]
+  },
+  {
+    "kind":"enum",
     "name":"ELeverType",
     "size":4,
     "values":[
@@ -660,12 +829,17 @@
   {
     "kind":"struct",
     "name":"SDisplayListSortEntry",
-    "size":1
+    "size":8
   },
   {
     "kind":"struct",
     "name":"SEdge",
-    "size":1
+    "size":8
+  },
+  {
+    "kind":"struct",
+    "name":"SFollowFormation",
+    "size":980
   },
   {
     "kind":"struct",
@@ -680,7 +854,8 @@
   {
     "kind":"struct",
     "name":"SMRGLSkyTexture",
-    "size":1
+    "parent":"SMRGLHeaderBasic",
+    "size":24
   },
   {
     "kind":"struct",
@@ -690,23 +865,43 @@
   },
   {
     "kind":"struct",
+    "name":"SMpegLayer3ScalefactorGranule",
+    "size":248
+  },
+  {
+    "kind":"struct",
+    "name":"SPageResource",
+    "size":24
+  },
+  {
+    "kind":"struct",
     "name":"SPart",
-    "size":1
+    "size":96
   },
   {
     "kind":"struct",
     "name":"SProjectedVertex",
-    "size":1
+    "size":24
   },
   {
     "kind":"struct",
     "name":"SRenderVertex",
-    "size":1
+    "size":48
   },
   {
     "kind":"struct",
     "name":"SScriptLine",
-    "size":1
+    "size":8
+  },
+  {
+    "kind":"struct",
+    "name":"SSfxEntry",
+    "size":288
+  },
+  {
+    "kind":"struct",
+    "name":"STextPage",
+    "size":324
   },
   {
     "kind":"struct",

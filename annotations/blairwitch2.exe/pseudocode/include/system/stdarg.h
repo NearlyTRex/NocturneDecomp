@@ -10,7 +10,6 @@
 // =============================================================================
 
 // Structure: va_list_t
-// Stub: no RTTI in this build, size and fields not yet recovered
 #pragma pack(push, 1)
 typedef struct va_list_t {
     char* value[(sizeof(__builtin_va_list) + sizeof(char*) - 1) / sizeof(char*)];

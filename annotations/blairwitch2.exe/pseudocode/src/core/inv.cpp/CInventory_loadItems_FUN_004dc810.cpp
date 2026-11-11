@@ -14,13 +14,13 @@ void __cdecl core_inv_cpp_CInventory_loadItems_FUN_004dc810(CInventory *this_ptr
   
   iVar1 = 0;
   pCVar2 = this_ptr;
-  if (0 < *(int *)(this_ptr + 0x10)) {
+  if (0 < this_ptr->item_count) {
     do {
       iVar1 = iVar1 + 1;
-      core_mission_cpp_FUN_004fc270(0x01D182F0,*(uint *)(pCVar2 + 0x14));
-      pCVar2 = pCVar2 + 4;
-    } while (iVar1 < *(int *)(this_ptr + 0x10));
+      core_mission_cpp_FUN_004fc270(0x01D182F0,pCVar2->items[0]);
+      pCVar2 = (CInventory *)&pCVar2->owner;
+    } while (iVar1 < this_ptr->item_count);
   }
-  *(uint *)(this_ptr + 0x460) = 0;
+  this_ptr->preserve_items = 0;
   return;
 }

@@ -23,7 +23,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_00585810(CCryptVessel 
   
   bVar4 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-            (DAT_0060b280,(CVector3f *)&(this_ptr->base).field_0x20);
+            (DAT_0060b280,&(this_ptr->base).location.position);
   pCStack_14 = (CVector3f *)&(this_ptr->base).orient;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
             (DAT_0060b280,pCStack_14,(CVector3f *)0x0);

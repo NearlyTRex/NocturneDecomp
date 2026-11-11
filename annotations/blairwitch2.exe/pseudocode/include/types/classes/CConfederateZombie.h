@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBasicEnemy.h"
 
 // Structure: CConfederateZombie
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 71768
 // Ghidra size: 0x11858 (71768 bytes)
 #pragma pack(push, 1)
 typedef struct CConfederateZombie {
-    char field_0[71768]; // 0x0
+    CBasicEnemy base; // 0x0, derived
+    int left_finger_bone; // 0x11850, setup findBone 'Bip01 L Finger1'; processMotionEvent attack bone
+    int right_finger_bone; // 0x11854, setup findBone 'Bip01 R Finger1'; processMotionEvent attack bone
 } CConfederateZombie;
 #pragma pack(pop)
 

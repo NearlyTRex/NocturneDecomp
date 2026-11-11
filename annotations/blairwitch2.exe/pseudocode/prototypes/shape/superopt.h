@@ -5,26 +5,22 @@
 // Function prototypes for shape/superopt.cpp
 // Generated from Ghidra function signatures
 
-// Original: shape_superopt.cpp_COptimize_getMaxPolygonSides_FUN_0059bdf0
+// Original: shape_superopt.cpp_CAudioRecPuzzle_getKnob0Position_FUN_0059bdf0
 // Address: 0059bdf0
-int __cdecl COptimize::getMaxPolygonSides(COptimize *this_ptr);
+int __cdecl CAudioRecPuzzle::getKnob0Position(CAudioRecPuzzle *this_ptr);
 
-// Original: shape_superopt.cpp_FUN_0059be00
+// Original: shape_superopt.cpp_CAudioRecPuzzle_getKnob1Position_FUN_0059be00
 // Address: 0059be00
-undefined4 FUN_0059be00(int param_1);
+int __cdecl CAudioRecPuzzle::getKnob1Position(CAudioRecPuzzle *this_ptr);
 
-// Original: shape_superopt.cpp_FUN_0059be10
+// Original: shape_superopt.cpp_CAudioRecPuzzle_getKnob2Position_FUN_0059be10
 // Address: 0059be10
-undefined4 FUN_0059be10(int param_1);
+int __cdecl CAudioRecPuzzle::getKnob2Position(CAudioRecPuzzle *this_ptr);
 
-// Original: shape_superopt.cpp_FUN_0059be20
+// Original: shape_superopt.cpp_CAudioRecPuzzle_getSpeedSetting_FUN_0059be20
 // Address: 0059be20
-undefined4 FUN_0059be20(int param_1);
+int __cdecl CAudioRecPuzzle::getSpeedSetting(CAudioRecPuzzle *this_ptr);
 
-// Original: shape_superopt.cpp_CComplexPolygon_getExpandedEdges_FUN_0059be30
+// Original: shape_superopt.cpp_CAudioRecPuzzle_getTransportState_FUN_0059be30
 // Address: 0059be30
-SExpandedEdge * __cdecl CComplexPolygon::getExpandedEdges(CComplexPolygon *this_ptr);
-
-// Original: shape_superopt.cpp_CComplexPolygon_getMaterialId_FUN_005a8130
-// Address: 005a8130
-int __cdecl CComplexPolygon::getMaterialId(CComplexPolygon *this_ptr);
+int __cdecl CAudioRecPuzzle::getTransportState(CAudioRecPuzzle *this_ptr);

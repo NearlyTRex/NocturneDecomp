@@ -2,20 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 945,
+    "complexity_score": 815,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 215,
-    "suspect_count": 70,
+    "suspect_count": 57,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
       "pointer_truncation",
       "raw_address_constant",
       "stack_ref",
-      "unnamed_field"
+      "suspect_float"
     ],
     "total_lines": 248
   },
@@ -111,14 +111,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "this_ptr_00 = &pCVar7[-0x4d].base.field_0x110;",
-      "type": "unnamed_field"
-    },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 25,
@@ -220,16 +212,8 @@
       "line": 90,
       "match": "pCVar7[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar7[-1].field_0x7d0 = 0;",
+      "text": "pCVar7[-1].cam_orientation.heading = 0.0;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 90,
-      "match": "field_0x7d0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar7[-1].field_0x7d0 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
@@ -388,16 +372,8 @@
       "line": 174,
       "match": "pCVar7[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar7[-1].field_0x7d0 = 0;",
+      "text": "pCVar7[-1].cam_orientation.heading = 0.0;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 174,
-      "match": "field_0x7d0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar7[-1].field_0x7d0 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
@@ -464,116 +440,36 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Likely misinterpreted integer as float",
       "line": 197,
-      "match": "field_0x20c",
+      "match": "1.4013e-45",
       "severity": "mild",
-      "text": "*(uint *)&pCVar7[-0x4d].base.field_0x20c = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 198,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar7[-0x2b].base.field_0x110 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 199,
-      "match": "field_0xf4",
-      "severity": "mild",
-      "text": "puVar1 = &pCVar7[-0x2b].base.field_0xf4;",
-      "type": "unnamed_field"
+      "text": "pCVar7[-0x4d].base.particle_systems[2].fade_timer = 1.4013e-45;",
+      "type": "suspect_float"
     },
     {
       "description": "Direct stack address reference",
       "line": 200,
       "match": "&stack0x00000110",
       "severity": "moderate",
-      "text": "if (puVar1 != &stack0x00000110) {",
+      "text": "if (pfVar8 != (float *)&stack0x00000110) {",
       "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 202,
-      "match": "field_0xf8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar7[-0x2b].base.field_0xf8 = 0x3ec3126f;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 203,
-      "match": "field_0xfc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar7[-0x2b].base.field_0xfc = 0x3e79db23;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 205,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "puVar1 = &pCVar7[-0x2b].base.field_0x100;",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",
       "line": 206,
       "match": "&stack0x00000128",
       "severity": "moderate",
-      "text": "if (puVar1 != &stack0x00000128) {",
+      "text": "if (piVar1 != (int *)&stack0x00000128) {",
       "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 208,
-      "match": "field_0x104",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar7[-0x2b].base.field_0x104 = 0x3ec3126f;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 209,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar7[-0x2b].base.field_0x108 = 0x3e79db23;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 211,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "puVar1 = &pCVar7[-0x2b].base.field_0x124;",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",
       "line": 212,
       "match": "&stack0x0000011c",
       "severity": "moderate",
-      "text": "if (puVar1 == &stack0x0000011c) {",
+      "text": "if (piVar1 == (int *)&stack0x0000011c) {",
       "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 216,
-      "match": "field_0x128",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar7[-0x2b].base.field_0x128 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 217,
-      "match": "field_0x12c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar7[-0x2b].base.field_0x12c = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer value `pCVar7[-1].carrier_actor` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

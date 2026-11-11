@@ -27,7 +27,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004c1980(CGhoul *this_pt
   if ((this_ptr->is_berserk == 0) &&
      (fVar1 = this_ptr->heal_timer - delta_time, this_ptr->heal_timer = fVar1, fVar1 <= 0.0)) {
     local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(1.0,2.0);
-    local_24 = (CVector3f *)&(this_ptr->base).base.base.field_0x20;
+    local_24 = &(this_ptr->base).base.base.location.position;
     local_18 = 0;
     local_1c = 0;
     this_ptr->heal_timer = local_14 + this_ptr->heal_timer;
@@ -54,8 +54,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004c1980(CGhoul *this_pt
         if (local_20 != 0) {
           this_ptr_01 = (*((this_ptr_00->vtable)._ub)->getPathMap)(this_ptr_00);
           if (this_ptr_01 == (CPathMap *)0x0) {
-            this_ptr_01 = core_path_cpp_getPathMap_FUN_00513ea0
-                                    ((CLocation *)&this_ptr_00->field_0x20);
+            this_ptr_01 = core_path_cpp_getPathMap_FUN_00513ea0(&this_ptr_00->location);
           }
           if (this_ptr_01 == (CPathMap *)0x0) {
             _DAT_01d046a0 = "..\\core\\ghoul.cpp";

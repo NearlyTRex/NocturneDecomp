@@ -43,11 +43,10 @@ void __cdecl core_set_cpp_CDemonSet_renderBackgroundActors_FUN_0052dc10(CDemonSe
         CStack_4c.z = CStack_1c.z;
       }
       core_set_cpp_CDemonSet_setLightingParameters_FUN_00530980
-                (this_ptr,(CVector3f *)&this_ptr_00->field_0x20,&this_ptr_00->orient,
+                (this_ptr,&(this_ptr_00->location).position,&this_ptr_00->orient,
                  (CVector3f *)&stack0xffffffa8,&CStack_4c,&this_ptr_00->orient_matrix);
       core_set_cpp_CDemonSet_setFlatColor_FUN_005344c0
-                (this_ptr,*(int *)&this_ptr_00->field_0x108,*(int *)&this_ptr_00->field_0x10c,
-                 *(int *)&this_ptr_00->field_0x110);
+                (this_ptr,(this_ptr_00->scale).x,(this_ptr_00->scale).y,(this_ptr_00->scale).z);
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);
       (*((this_ptr_00->vtable)._ub)->renderBackground)(this_ptr_00,in_stack_00000010);
       in_stack_ffffffa0 = this_ptr;

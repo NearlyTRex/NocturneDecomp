@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 CMatrix3x4f * __stack2_esi core_robin_cpp_CRobin_getCarryObjToBodyXForm_FUN_005a67a0(CRobin *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
@@ -24,16 +26,16 @@ CMatrix3x4f * __stack2_esi core_robin_cpp_CRobin_getCarryObjToBodyXForm_FUN_005a
   int iStack_5c;
   int aiStack_58 [14];
   int aiStack_20 [3];
-  byte *puStack_14;
-  byte *puStack_10;
+  CMatrix3x4f *pCStack_14;
+  char *pcStack_10;
   
   bVar4 = 0;
-  puStack_10 = &this_ptr->field_0x0 + hand_index * 0x78;
+  pcStack_10 = (this_ptr->base).base.base.base.base.actor_name + hand_index * 0x78;
   iVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                    (*(uint *)(puStack_10 + 0x2620),g_CBoxActorClassInfo.name_hash);
+                    (*(uint *)(pcStack_10 + 0x2620),g_CBoxActorClassInfo.name_hash);
   if (iVar1 != 0) {
     iStack_5c = _strcmp((char *)(iVar1 + 0x32c),"WOOD_BOWL.KFM");
-    puStack_14 = &this_ptr->field_0x1134;
+    pCStack_14 = (this_ptr->base).base.base.base.model.bone_transform.bone_model_matrices;
     if (iStack_5c == 0) {
       aiStack_58[1] = 0xbfe00000;
       aiStack_58[2] = 0x3e4ccccd;
@@ -47,7 +49,7 @@ CMatrix3x4f * __stack2_esi core_robin_cpp_CRobin_getCarryObjToBodyXForm_FUN_005a
       aiStack_58[4] = 0;
       core_xform_cpp_FUN_00591c10(auStack_ec,aiStack_58 + 2,piVar5);
       core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
-                (auStack_ec,puStack_14 + *(int *)(puStack_10 + 0x2618) * 0x30);
+                (auStack_ec,pCStack_14 + *(int *)(pcStack_10 + 0x2618));
       pCVar2 = &CStack_11c;
       goto LAB_005a6841;
     }
@@ -66,7 +68,7 @@ CMatrix3x4f * __stack2_esi core_robin_cpp_CRobin_getCarryObjToBodyXForm_FUN_005a
       aiStack_58[5] = 0x3e4ccccd;
       core_xform_cpp_FUN_00591c10(auStack_8c,aiStack_58 + 5,piVar5);
       core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
-                (auStack_8c,puStack_14 + *(int *)(puStack_10 + 0x2618) * 0x30);
+                (auStack_8c,pCStack_14 + *(int *)(pcStack_10 + 0x2618));
       pCVar2 = &CStack_bc;
       goto LAB_005a6841;
     }

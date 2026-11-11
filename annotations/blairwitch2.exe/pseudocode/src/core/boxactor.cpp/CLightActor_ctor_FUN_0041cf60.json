@@ -12,7 +12,7 @@
     "suspect_types": [
       "derived_field_index_pun",
       "negative_offset",
-      "unnamed_field"
+      "suspect_float"
     ],
     "total_lines": 50
   },
@@ -122,16 +122,16 @@
       "line": 20,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x2fac = 1;",
+      "text": "pCVar2[-1].bloom_intensity = 1.4013e-45;",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Likely misinterpreted integer as float",
       "line": 20,
-      "match": "field_0x2fac",
+      "match": "1.4013e-45",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x2fac = 1;",
-      "type": "unnamed_field"
+      "text": "pCVar2[-1].bloom_intensity = 1.4013e-45;",
+      "type": "suspect_float"
     },
     {
       "description": "Negative struct offset (wrong base type)",
@@ -142,7 +142,7 @@
       "type": "negative_offset"
     },
     {
-      "description": "'pCVar1[1].base.actor_name + 4' walks 1 x sizeof(CBoxActor) (0x7d4) + offsetof(base.actor_name) (0x0) + 0x4 = 0x7d8, which is exactly offsetof(CLightActor, light). Ghidra had no CLightActor type here and reached the field by index arithmetic; write it as ((CLightActor *)pCVar1)->light (\u00a7de-pun/\u00a712).",
+      "description": "'pCVar1[1].base.actor_name + 4' walks 1 x sizeof(CBoxActor) (0x7d4) + offsetof(base.actor_name) (0x0) + 0x4 = 0x7d8, which is exactly offsetof(CLightActor, light). Ghidra had no CLightActor type here and reached the field by index arithmetic; write it as ((CLightActor *)pCVar1)->light (\u00a7de-pun/\u00a712). Ambiguous: CSpiritMine::unused_7d8 also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 10,
       "severity": "moderate",
       "text": "((CDemonLight *)(pCVar1[1].base.actor_name + 4),0x100,0x100);",

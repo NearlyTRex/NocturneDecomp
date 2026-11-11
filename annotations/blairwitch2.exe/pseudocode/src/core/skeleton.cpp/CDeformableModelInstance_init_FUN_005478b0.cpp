@@ -12,7 +12,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(CDefor
   char cVar1;
   char *pcVar2;
   
-  pcVar2 = &this_ptr->field_0x2260;
+  pcVar2 = this_ptr->model_name;
   do {
     cVar1 = *model_name;
     *pcVar2 = cVar1;
@@ -22,9 +22,9 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(CDefor
     pcVar2[1] = cVar1;
     pcVar2 = pcVar2 + 2;
   } while (cVar1 != '\0');
-  *(uint *)&this_ptr->field_0x22b0 = 0;
+  this_ptr->model_ptr = (CDeformableModel *)0x0;
   core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_00547440(this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_00547460(this_ptr);
-  *(uint *)&this_ptr->field_0x2230 = 0xffffffff;
+  this_ptr->cached_skinned_lod_index = -1;
   return;
 }

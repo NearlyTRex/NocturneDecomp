@@ -2,18 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 201,
-    "complexity_score": 268,
+    "complexity_score": 189,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
-    "suspect_count": 19,
+    "pseudocode_lines": 69,
+    "suspect_count": 10,
     "suspect_types": [
-      "unnamed_field",
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
       "warning_type_propagation"
     ],
-    "total_lines": 269
+    "total_lines": 270
   },
   "cross_references": [],
   "function": {
@@ -268,148 +270,76 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x10a60",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x10a60,\"@speed\" + 1);",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 65,
+      "match": "(CQuaternion4f *)((int)(pCVar5 + 4) +",
+      "severity": "moderate",
+      "text": "pCVar5 = (CQuaternion4f *)((int)(pCVar5 + 4) + 8);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x2b4,\"modelName\");",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 66,
+      "match": "(CQuaternion4f *)((int)(pCVar3 + 4) +",
+      "severity": "moderate",
+      "text": "pCVar3 = (CQuaternion4f *)((int)(pCVar3 + 4) + 8);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveMotionState_FUN_0040bb60(&this_ptr->field_0x2b4,\"motion state\");",
-      "type": "unnamed_field"
+      "description": "Pointer value `(pCVar5 + 4)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 65,
+      "match": "(int)(pCVar5 + 4)",
+      "severity": "moderate",
+      "text": "pCVar5 = (CQuaternion4f *)((int)(pCVar5 + 4) + 8);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x10af8",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x10af8,\"fallEvent\");",
-      "type": "unnamed_field"
+      "description": "Pointer value `(pCVar3 + 4)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 66,
+      "match": "(int)(pCVar3 + 4)",
+      "severity": "moderate",
+      "text": "pCVar3 = (CQuaternion4f *)((int)(pCVar3 + 4) + 8);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x10ba8",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x10ba8,\"deathEvent\");",
-      "type": "unnamed_field"
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via element-arithmetic `(int)(pCVar5 + N) + M`, where `N*sizeof(*pCVar5) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar5->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 65,
+      "match": "pCVar5 = (T *)((int)(pCVar5 + N) + M)",
+      "severity": "moderate",
+      "text": "pCVar5 = (CQuaternion4f *)((int)(pCVar5 + 4) + 8);",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x10c0c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x10c0c,\"recombineTime\");",
-      "type": "unnamed_field"
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via element-arithmetic `(int)(pCVar3 + N) + M`, where `N*sizeof(*pCVar3) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar3->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 66,
+      "match": "pCVar3 = (T *)((int)(pCVar3 + N) + M)",
+      "severity": "moderate",
+      "text": "pCVar3 = (CQuaternion4f *)((int)(pCVar3 + 4) + 8);",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x112d8",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x112d8,\"blownUp\");",
-      "type": "unnamed_field"
+      "description": "Watcom shadow-pointer walk \u2014 `ppCVar4` was initialized to the address of an array element's subfield (`ppCVar4 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*ppCVar4)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `ppCVar4->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 68,
+      "match": "ppCVar4 = ppCVar4 + N",
+      "severity": "moderate",
+      "text": "ppCVar4 = ppCVar4 + 0x12;",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x112dc",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x112dc,\"param\");",
-      "type": "unnamed_field"
+      "description": "Watcom shadow-pointer walk \u2014 `pCStack_10` was initialized to the address of an array element's subfield (`pCStack_10 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pCStack_10)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pCStack_10->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 69,
+      "match": "pCStack_10 = pCStack_10 + N",
+      "severity": "moderate",
+      "text": "pCStack_10 = pCStack_10 + 6;",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x10c14",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x10c14,\"boxCount\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "core_actor_cpp_archivePartStatus_FUN_0040bc50(&this_ptr->field_0x2b4,\"partStatus\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x10c14",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x10c14 < 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x10c18",
-      "severity": "mild",
-      "text": "puStack_14 = &this_ptr->field_0x10c18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x10c50",
-      "severity": "mild",
-      "text": "puStack_10 = &this_ptr->field_0x10c50;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x10c5c",
-      "severity": "mild",
-      "text": "puVar3 = &this_ptr->field_0x10c5c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x10c40",
-      "severity": "mild",
-      "text": "puVar2 = &this_ptr->field_0x10c40;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x10c24",
-      "severity": "mild",
-      "text": "puStack_c = &this_ptr->field_0x10c24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x10c30",
-      "severity": "mild",
-      "text": "puVar4 = &this_ptr->field_0x10c30;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom shadow-pointer walk \u2014 `pCStack_c` was initialized to the address of an array element's subfield (`pCStack_c = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pCStack_c)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pCStack_c->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 70,
-      "match": "field_0x10c14",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x10c14);",
-      "type": "unnamed_field"
+      "match": "pCStack_c = pCStack_c + N",
+      "severity": "moderate",
+      "text": "pCStack_c = pCStack_c + 6;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

@@ -103,7 +103,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
   }
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Forward");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->shadow_flag,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_walk,pcVar1);
   _sprintf(local_1210,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_1210,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -112,7 +112,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d73c2);
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_walk,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_backup,pcVar1);
   _sprintf(local_b10,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_b10,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -122,7 +122,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
   }
   if (g_CGamePtr->always_run == 0) {
     pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d73cc);
-    core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x30,pcVar1);
+    core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_run,pcVar1);
     _sprintf(local_1810,"?%s = %s" + 1);
     engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_1810,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
     _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -130,7 +130,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
   }
   else {
     pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d73c7);
-    core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x30,pcVar1);
+    core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_run,pcVar1);
     _sprintf(local_210,"?%s = %s" + 1);
     engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_210,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
     _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -141,7 +141,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Strafe on");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x34,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_strafe,pcVar1);
   _sprintf(local_1110,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_1110,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -150,7 +150,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Strafe left");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x38,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_strafe_left,pcVar1);
   _sprintf(local_1910,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_1910,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -159,7 +159,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Strafe right");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x3c,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_strafe_right,pcVar1);
   _sprintf(local_610,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_610,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -168,7 +168,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Turn left");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x44,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_left,pcVar1);
   _sprintf(local_410,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_410,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -177,7 +177,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Turn right");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x40,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_right,pcVar1);
   _sprintf(local_1310,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_1310,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -186,7 +186,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Fire / Action");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x48,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_fire,pcVar1);
   _sprintf(local_c10,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_c10,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -195,7 +195,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Use item");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x4c,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_use_item,pcVar1);
   _sprintf(local_510,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_510,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -204,7 +204,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Lantern");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x50,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_light,pcVar1);
   _sprintf(local_a10,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_a10,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -213,7 +213,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d7427);
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x68,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_draw,pcVar1);
   _sprintf(local_1410,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_1410,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -222,7 +222,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Point up");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x74,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_point_up,pcVar1);
   _sprintf(local_d10,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_d10,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -231,7 +231,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Point down");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x78,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_point_down,pcVar1);
   _sprintf(local_1510,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_1510,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -240,7 +240,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Select Revolver");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x7c,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_weapon_1,pcVar1);
   _sprintf(local_e10,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_e10,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -249,7 +249,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Select Sword / Axe");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x80,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_weapon_2,pcVar1);
   _sprintf(local_710,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_710,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -258,7 +258,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Select Cross");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x84,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_weapon_3,pcVar1);
   _sprintf(local_310,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_310,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -267,7 +267,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Next weapon");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x90,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_next_weapon,pcVar1);
   _sprintf(local_810,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_810,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -276,7 +276,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Previous weapon");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x94,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_prev_weapon,pcVar1);
   _sprintf(local_110,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_110,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -285,7 +285,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Next item");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x98,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_next_item,pcVar1);
   _sprintf(local_1610,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_1610,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -294,7 +294,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Previous item");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0x9c,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_prev_item,pcVar1);
   _sprintf(local_f10,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_f10,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -303,7 +303,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Item description");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0xa0,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_item_desc,pcVar1);
   _sprintf(local_1710,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_1710,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -312,7 +312,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Next ammo");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0xa4,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_next_ammo,pcVar1);
   _sprintf(local_1010,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_1010,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;
@@ -321,7 +321,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004b3c50(CGame *this_p
     _DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;
   }
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Drop Item or Weapon");
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(*(uint *)&this_ptr->field_0xaf0,pcVar1);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(this_ptr->key_drop,pcVar1);
   _sprintf(local_910,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,local_910,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;

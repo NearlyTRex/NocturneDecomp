@@ -21,13 +21,13 @@
 ;   undefined4 DAT_01caf110
 ;   undefined4 CAlphaBitmap_01caf218.width
 ;   undefined4 CAlphaBitmap_01caf218.height
-;   undefined4 g_STextViewInstance.field60_0x3c
+;   undefined4 g_STextViewInstance.pages
 ;   undefined4 DAT_01caf488
 ;   ... and 4 more
 ;
 ; Called Functions:
-;   core_fldnotes.cpp_FUN_004a2730
-;   core_fldnotes.cpp_FUN_004a3a60
+;   core_fldnotes.cpp_SNotesMap_revealAtHero_FUN_004a3a60
+;   core_fldnotes.cpp_STextPage_findResourceAt_FUN_004a2730
 ;   engine_alphabit.cpp_FUN_0040d540
 ;   unkaddr_004a1200.cpp_FUN_004a1bb0
 ;   unkaddr_004a1200.cpp_FUN_004a1c60
@@ -48,8 +48,8 @@ section .text
     MOV ESI,0x1cacb50                   ; 004a5f6f
     PUSH ESI                            ; 004a5f74
         ;   Label: LAB_004a5f74
-    CALL core_fldnotes.cpp_FUN_004a3a60 ; 004a5f75
-        ;   XREF to: 004a3a60 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a3a60()
+    CALL core_fldnotes.cpp_SNotesMap_revealAtHero_FUN_004a3a60 ; 004a5f75
+        ;   XREF to: 004a3a60 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_SNotesMap_revealAtHero_FUN_004a3a60(SNotesMap * this_ptr)
     INC EBX                             ; 004a5f7a
     MOV ECX,dword ptr [0x01cacb4c]      ; 004a5f7b | DAT_01cacb4c
     ADD ESP,0x4                         ; 004a5f81
@@ -190,13 +190,13 @@ section .text
     SHL EBX,0x4                         ; 004a6118
     MOV ESI,dword ptr [0x01c2a37c]      ; 004a611b | DAT_01c2a37c
     ADD EBX,EAX                         ; 004a6121
-    MOV EAX,[0x01caf27c]                ; 004a6123 | g_STextViewInstance.field60_0x3c
+    MOV EAX,[0x01caf27c]                ; 004a6123 | g_STextViewInstance.pages
     SHL EBX,0x2                         ; 004a6128
     PUSH ESI                            ; 004a612b
     ADD EAX,EBX                         ; 004a612c
     PUSH EAX                            ; 004a612e
-    CALL core_fldnotes.cpp_FUN_004a2730 ; 004a612f
-        ;   XREF to: 004a2730 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a2730()
+    CALL core_fldnotes.cpp_STextPage_findResourceAt_FUN_004a2730 ; 004a612f
+        ;   XREF to: 004a2730 (UNCONDITIONAL_CALL)  ; int * core_fldnotes.cpp_STextPage_findResourceAt_FUN_004a2730(STextPage * this_ptr, int param_2, int param_3)
     ADD ESP,0xc                         ; 004a6134
     TEST EAX,EAX                        ; 004a6137
     JZ 0x004a615e                       ; 004a6139

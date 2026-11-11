@@ -6,6 +6,7 @@
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CRuleList.h"
 #include "types/classes/CVector3f.h"
 #include "types/enums/EDoorOpenSides.h"
 #include "types/enums/EDoorSide.h"
@@ -20,7 +21,6 @@
 #pragma pack(push, 1)
 typedef struct CDoor {
     CDemonActor base; // 0x0
-    char field_344[348]; // 0x158
     CKeyFramedModelInstance model; // 0x2b4
     EGroundType ground_type; // 0x430
     EDoorType door_type; // 0x434
@@ -31,7 +31,7 @@ typedef struct CDoor {
     char close_condition[100]; // 0x4a8
     char on_open_trigger_event[100]; // 0x50c
     char on_close_trigger_event[100]; // 0x570
-    char field_1492[1004]; // 0x5d4
+    CRuleList open_rule; // 0x5d4
     char open_sound[100]; // 0x9c0
     char close_sound[100]; // 0xa24
     char locked_sound[100]; // 0xa88
@@ -49,7 +49,9 @@ typedef struct CDoor {
     int plot_as_box_in_shadow; // 0xb30
     EDoorOpenSides allowed_sides; // 0xb34
     int allow_bullet_holes; // 0xb38
-    char field_2876[108]; // 0xb3c
+    float shake_me_strength; // 0xb3c, Added in this build
+    char shake_me_event[100]; // 0xb40, Added in this build
+    int handle_vertex_index; // 0xba4, Added in this build
 } CDoor;
 #pragma pack(pop)
 

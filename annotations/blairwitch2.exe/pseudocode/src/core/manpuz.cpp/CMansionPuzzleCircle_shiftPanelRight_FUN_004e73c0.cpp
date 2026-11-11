@@ -16,16 +16,15 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004e73c0(C
   
   pSVar1 = this_ptr->panels + panel_index;
   iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004e7560(this_ptr,panel_index);
-  if ((((*(int *)pSVar1 == 0) || (*(int *)(this_ptr->panels + iVar2) != 0)) ||
-      ((*(uint *)&pSVar1->field_0x4 & 0x7fffffff) != 0)) ||
-     ((*(uint *)&pSVar1->field_0x8 & 0x7fffffff) != 0)) {
+  if ((((pSVar1->exists == 0) || (this_ptr->panels[iVar2].exists != 0)) ||
+      (ABS(pSVar1->anim_progress) != 0.0)) || (ABS(pSVar1->anim_speed) != 0.0)) {
     _DAT_01d046a0 = "..\\core\\manpuz.cpp";
     _DAT_01d046a4 = 0x57d;
     core_main_c_FUN_004e4500("CMansionPuzzleCircle::shiftPanelRight - fubared.");
   }
-  *(uint *)&pSVar1->field_0x8 = 0x3f800000;
+  pSVar1->anim_speed = 1.0;
   sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
-  sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00550170((CVector3f *)&pSVar1->field_0x58);
+  sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00550170(&pSVar1->world_position);
   sound_sndmain_cpp_FUN_005506b0("manpuz-doorslide.wav");
   sound_sndmain_cpp_popSfxOptions_FUN_005504d0();
   return;

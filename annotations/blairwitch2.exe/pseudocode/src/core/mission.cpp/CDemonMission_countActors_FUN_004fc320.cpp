@@ -9,11 +9,11 @@
 int __cdecl core_mission_cpp_CDemonMission_countActors_FUN_004fc320(CDemonMission *this_ptr)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   int iVar2;
   
   iVar2 = 0;
-  for (iVar1 = *(int *)(this_ptr + 0x1114); iVar1 != 0; iVar1 = *(int *)(iVar1 + 0x14c)) {
+  for (pCVar1 = this_ptr->first_actor; pCVar1 != (CDemonActor *)0x0; pCVar1 = pCVar1->next_actor) {
     iVar2 = iVar2 + 1;
   }
   return iVar2;

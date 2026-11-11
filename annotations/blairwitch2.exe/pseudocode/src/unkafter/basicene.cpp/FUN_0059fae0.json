@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 208,
+    "complexity_score": 183,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 38,
-    "suspect_count": 14,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
       "stack_alignment_array",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -261,16 +260,8 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1[0x65].field_0x278 == -1) {",
+      "text": "if (param_1[0x65].particle_systems[4].owner == (CDemonActor *)0xffffffff) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x278",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[0x65].field_0x278 == -1) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -317,16 +308,8 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "unkaddr_0059d350_cpp_FUN_0059db70(&param_1[0x62].field_0x210,uVar2);",
+      "text": "unkaddr_0059d350_cpp_FUN_0059db70(&param_1[0x62].particle_systems[2].stop_after_fade,uVar2);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x210",
-      "severity": "mild",
-      "text": "unkaddr_0059d350_cpp_FUN_0059db70(&param_1[0x62].field_0x210,uVar2);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

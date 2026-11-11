@@ -31,7 +31,7 @@ void __cdecl core_game_cpp_FUN_004b82e0(CGame *this_ptr)
   int iStack_14;
   
   if (_DAT_01cb7788 == 0) {
-    if (*(int *)&this_ptr->field_0xe0 == 0) {
+    if (this_ptr->cinematic_skip_in_progress == 0) {
       iVar7 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84);
       if (iVar7 != 0) {
         core_event_cpp_CEventList_executeCommands_FUN_004894f0(0x01C38BC0,"GoToMap");
@@ -44,7 +44,7 @@ void __cdecl core_game_cpp_FUN_004b82e0(CGame *this_ptr)
       if (iVar7 != 0) {
         core_event_cpp_CEventList_executeCommands_FUN_004894f0(0x01C38BC0,"UseSPS");
       }
-      if (*(int *)&g_CFieldNotesPtr->field_0x40 != 0) {
+      if (g_CFieldNotesPtr->is_displayed != 0) {
         iVar7 = 0;
         for (iVar8 = 0; iVar8 < g_CDemonSetPtr->enemy_count; iVar8 = iVar8 + 1) {
           iVar2 = *(int *)((int)g_CDemonSetPtr->enemies + iVar7);
@@ -54,7 +54,7 @@ void __cdecl core_game_cpp_FUN_004b82e0(CGame *this_ptr)
              fVar5 = *(float *)(iVar2 + 0x24) - *(float *)(iVar3 + 0x24),
              fVar4 = *(float *)(iVar2 + 0x28) - *(float *)(iVar3 + 0x28),
              SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar12 * fVar12) < (float)_DAT_005d79eb)) {
-            *(uint *)&g_CFieldNotesPtr->field_0x40 = 0;
+            g_CFieldNotesPtr->is_displayed = 0;
           }
           iVar7 = iVar7 + 4;
         }
@@ -105,13 +105,13 @@ void __cdecl core_game_cpp_FUN_004b82e0(CGame *this_ptr)
          (pcVar10 = getenv("SPOOKHOUSE"), pcVar10 != (char *)0x0))
         && (iVar7 = (**(code **)*0x01D02F84)(0x01D02F84), iVar7 != 0)) &&
        (iVar7 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84), iVar7 != 0)) {
-      *(int *)&this_ptr->field_0x200 = 1 - *(int *)&this_ptr->field_0x200;
+      this_ptr->camera_debug_enabled = 1 - this_ptr->camera_debug_enabled;
     }
     iVar7 = (**(code **)*0x01D02F84)(0x01D02F84);
     if ((iVar7 != 0) && (iVar7 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84), iVar7 != 0)) {
       _DAT_01d1cdc8 = (uint)(_DAT_01d1cdc8 == 0);
     }
-    if (((*(int *)&this_ptr->field_0x1f8 == 0) &&
+    if (((this_ptr->subtitle_system_enabled == 0) &&
         (iVar7 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84), iVar7 != 0)) ||
        ((iVar7 = (**(code **)*0x01D02F84)(0x01D02F84), iVar7 != 0 &&
         (iVar7 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84), iVar7 != 0)))) {
@@ -142,7 +142,7 @@ void __cdecl core_game_cpp_FUN_004b82e0(CGame *this_ptr)
        ((iVar7 = (**(code **)*0x01D02F84)(0x01D02F84), iVar7 != 0 &&
         ((iVar7 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84), iVar7 != 0 &&
          (0x1df < DAT_006141bc)))))) {
-      *(uint *)&this_ptr->field_0x204 = (uint)(*(int *)&this_ptr->field_0x204 == 0);
+      this_ptr->debug_toggle_flag = (uint)(this_ptr->debug_toggle_flag == 0);
     }
     iVar7 = (**(code **)*0x01D02F84)(0x01D02F84);
     if (((iVar7 != 0) && (iVar7 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84), iVar7 != 0)) &&
@@ -164,7 +164,7 @@ void __cdecl core_game_cpp_FUN_004b82e0(CGame *this_ptr)
       pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Quick Save");
       core_game_cpp_CGame_displayMessage_FUN_004b31a0(this_ptr,pcVar10,fVar12);
     }
-    if ((*(int *)&this_ptr->field_0x1f8 == 0) &&
+    if ((this_ptr->subtitle_system_enabled == 0) &&
        (iVar7 = (**(code **)*0x01D02F84)(0x01D02F84), iVar7 != 0)) {
       p_Var9 = engine_dosio_cpp_FUN_00460c70
                          (&DAT_005d7965,"quicksavedgame.noc",&DAT_005d794f);
@@ -198,7 +198,7 @@ void __cdecl core_game_cpp_FUN_004b82e0(CGame *this_ptr)
     }
     iVar7 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84);
     if (iVar7 != 0) {
-      *(uint *)&this_ptr->field_0xaec = (uint)(*(int *)&this_ptr->field_0xaec == 0);
+      this_ptr->show_customizable_keys = (uint)(this_ptr->show_customizable_keys == 0);
     }
     if (((this_ptr->developer_mode_enabled != 0) ||
         (pcVar10 = getenv("SPOOKHOUSE"), pcVar10 != (char *)0x0)) &&
@@ -211,7 +211,7 @@ void __cdecl core_game_cpp_FUN_004b82e0(CGame *this_ptr)
          iVar7 != 0)) {
         this_ptr->screen_clear_enabled = 1;
         core_set_cpp_CDemonSet_reinitCamera_FUN_0052e910(pCVar6,0,0,0xf0);
-        *(uint *)&this_ptr->field_0x1f8 = 1;
+        this_ptr->subtitle_system_enabled = 1;
         if (g_CScriptPtr->script_state == 1) {
           g_CScriptPtr->script_state = 0;
         }
@@ -219,7 +219,7 @@ void __cdecl core_game_cpp_FUN_004b82e0(CGame *this_ptr)
           g_CScriptPtr->script_state = 1;
         }
       }
-      if (*(int *)&this_ptr->field_0x1f8 != 0) {
+      if (this_ptr->subtitle_system_enabled != 0) {
         if ((g_CScriptPtr->script_state == 2) &&
            (iVar7 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84), iVar7 != 0)) {
           g_CScriptPtr->script_state = 1;
@@ -282,7 +282,7 @@ void __cdecl core_game_cpp_FUN_004b82e0(CGame *this_ptr)
         core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_00534640(g_CDemonSetPtr,iVar7,fStack_228);
       }
     }
-    unkaddr_0059c270_cpp_FUN_0059c3d0(g_CGameHookPtr,this_ptr->developer_mode_enabled);
+    unkaddr_0059c270_cpp_CGameHook_showDebugMenu_FUN_0059c3d0(g_CGameHookPtr);
   }
   return;
 }

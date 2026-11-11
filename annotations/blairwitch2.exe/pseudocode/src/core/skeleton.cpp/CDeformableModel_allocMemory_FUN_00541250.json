@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 60,
+    "complexity_score": 72,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 10,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 45,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 42,
+    "suspect_count": 2,
     "suspect_types": [
+      "shadow_pointer_walk",
       "warning_overlapping_globals"
     ],
-    "total_lines": 146
+    "total_lines": 143
   },
   "cross_references": [
     {
@@ -221,6 +222,14 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar1->vertices[0].a`). Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 42,
+      "match": "pCVar1 = (T *)&pCVar1->FIELD[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar1 = (CDeformableModel *)&pCVar1->lod_info[0].shadow_only_flag;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

@@ -93,10 +93,6 @@ int FUN_005b8490(void);
 // Address: 005b8515
 int FUN_005b8515(int *param_1);
 
-// Original: crt_unknown.c_FUN_005b8580
-// Address: 005b8580
-void * __cdecl FUN_005b8580(ulong size);
-
 // Original: crt_unknown.c_InternalHeapAlloc_FUN_005b8590
 // Address: 005b8590
 void * __cdecl InternalHeapAlloc(ulong size);
@@ -121,17 +117,9 @@ int FUN_005b8a2c(int param_1);
 // Address: 005b8a3c
 void FUN_005b8a3c(char *param_1,uint param_2);
 
-// Original: crt_unknown.c_debugAllocTracked1_FUN_005b8be2
-// Address: 005b8be2
-void * debugAllocTracked1(ulong param_1);
-
 // Original: crt_unknown.c_FUN_005b8cf8
 // Address: 005b8cf8
 undefined4 * FUN_005b8cf8(undefined4 *param_1,ulong param_2);
-
-// Original: crt_unknown.c_FUN_005b8df8
-// Address: 005b8df8
-void FUN_005b8df8(undefined4 param_1);
 
 // Original: crt_unknown.c_printf_FUN_005b8e10
 // Address: 005b8e10
@@ -164,10 +152,6 @@ void FUN_005b9284(undefined4 *param_1);
 // Original: crt_unknown.c_FUN_005b95c0
 // Address: 005b95c0
 void FUN_005b95c0(void);
-
-// Original: crt_unknown.c_FUN_005b98d0
-// Address: 005b98d0
-void FUN_005b98d0(int param_1,int param_2);
 
 // Original: crt_unknown.c_fflush_FUN_005b9bbc
 // Address: 005b9bbc

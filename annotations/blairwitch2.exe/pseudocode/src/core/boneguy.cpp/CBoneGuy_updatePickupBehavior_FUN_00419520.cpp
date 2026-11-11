@@ -6,199 +6,194 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_00419520(CBoneGuy *this_ptr,float delta_time)
 
 {
-  CDemonActor *this_ptr_00;
   CConsole *pCVar1;
-  CDemonActor *pCVar2;
-  int iVar3;
-  int iVar4;
-  CDeformableModelInstance *this_ptr_01;
+  float *pfVar2;
+  CDemonActor *pCVar3;
+  CDemonActor *pCVar4;
+  int iVar5;
+  int iVar6;
+  CDeformableModelInstance *this_ptr_00;
   int unaff_ESI;
-  uint *puVar5;
-  uint *puVar6;
-  byte bVar7;
-  float afStackY_10a0 [970];
+  uint *puVar7;
+  uint *puVar8;
+  byte bVar9;
+  float afStackY_10a0 [972];
   CPathMap *path_map;
   CVector3f *direction;
-  float fVar8;
-  float *pfVar9;
-  float max_distance;
-  uint uStack_15c;
   CDemonActor *in_stack_fffffeac;
+  float fVar10;
+  float max_distance;
   uint auStack_120 [2];
   float fStack_118;
   float fStack_114;
   float fStack_110;
-  uint uStack_100;
-  uint auStack_fc [2];
-  float fStack_f4;
-  byte auStack_f0 [12];
-  uint auStack_e4 [11];
+  uint auStack_100 [6];
+  uint auStack_e8 [2];
+  float fStack_e0;
+  uint auStack_d0 [6];
   float fStack_b8;
   float afStack_b4 [4];
   float fStack_a4;
   float fStack_a0;
-  CVector3f CStack_9c;
-  uint uStack_90;
-  float afStack_8c [5];
-  CVector3f aCStack_78 [2];
-  uint uStack_60;
-  float afStack_5c [5];
-  float afStack_48 [5];
-  float fStack_34;
-  byte *local_30;
-  int local_2c;
+  float fStack_9c;
+  float fStack_98;
+  uint uStack_94;
+  CVector3f CStack_88;
+  uint uStack_7c;
+  float afStack_78 [5];
+  CVector3f CStack_64;
+  float fStack_58;
+  float afStack_54 [5];
+  float fStack_40;
+  uint uStack_34;
+  CLocation *local_30;
+  float local_2c;
   byte *local_28;
   int local_24;
+  uint uStack_20;
   float *local_1c;
   int local_18;
   float *local_14;
   
-  bVar7 = 0;
-  fVar8 = *(float *)&this_ptr->field_0x10afc - delta_time;
-  *(float *)&this_ptr->field_0x10afc = fVar8;
-  if (0.0 < fVar8) {
-    *(int *)&this_ptr->field_0x10af8 = *(int *)&this_ptr->field_0x10af8 + 1;
+  bVar9 = 0;
+  fVar10 = this_ptr->search_timer - delta_time;
+  this_ptr->search_timer = fVar10;
+  if (0.0 < fVar10) {
+    this_ptr->pickup_attempt_count = this_ptr->pickup_attempt_count + 1;
     local_14 = (float *)core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(5.0,10.0);
-    *(float **)&this_ptr->field_0x10afc = local_14;
+    this_ptr->search_timer = (float)local_14;
   }
-  if (*(int *)&(this_ptr->base).base.field_0x2698 == 0) {
-    if (*(float *)&this_ptr->field_0x10b00 <= 0.0) {
-      iVar4 = *(int *)&this_ptr->field_0x10b04;
-      local_30 = &(this_ptr->base).base.base.field_0x20;
-      if (iVar4 != 0) {
-        iVar4 = (**(code **)(*(int *)(iVar4 + 0x2b0) + 0x9c))(iVar4);
-        if (iVar4 != 0) {
+  if ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) {
+    if (this_ptr->pickup_cooldown <= 0.0) {
+      pCVar4 = this_ptr->pickup_target;
+      local_30 = &(this_ptr->base).base.base.location;
+      if (pCVar4 != (CDemonActor *)0x0) {
+        pCVar4 = (*((pCVar4->vtable)._ub)->getCarrier)(pCVar4);
+        if (pCVar4 != (CDemonActor *)0x0) {
           engine_console_cpp_FUN_00436710
                     (g_CConsolePtr,"?%s can't pick up %s, sombody else beat me to it!\n" + 1,this_ptr,
-                     *(uint *)&this_ptr->field_0x10b04);
-          *(uint *)&this_ptr->field_0x10b04 = 0;
-          *(uint *)&this_ptr->field_0x10b00 = 0;
+                     this_ptr->pickup_target);
+          this_ptr->pickup_target = (CDemonActor *)0x0;
+          this_ptr->pickup_cooldown = 0.0;
           core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                    ((CMotionController *)&(this_ptr->base).base.model,1,1);
+                    (&(this_ptr->base).base.model.base,1,1);
           return 0;
         }
-        iVar4 = -1;
-        if (*(float *)&this_ptr->field_0x10b00 < 0.0) {
-          iVar3 = (**(code **)(*(int *)(*(int *)&this_ptr->field_0x10b04 + 0x2b0) + 0x8c))
-                            (*(int *)&this_ptr->field_0x10b04,this_ptr);
-          if (iVar3 == 3) {
-            iVar4 = *(int *)&this_ptr->field_0x10b04;
-            (**(code **)(*(int *)(iVar4 + 0x2b0) + 0x24))(iVar4);
-            fStack_34 = 0.5;
-            puVar5 = auStack_e4;
-            puVar6 = auStack_fc;
-            for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-              *puVar6 = *puVar5;
-              puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-              puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+        iVar6 = -1;
+        if (this_ptr->pickup_cooldown < 0.0) {
+          iVar5 = (*((this_ptr->pickup_target->vtable)._ub)->canPickup)
+                            (this_ptr->pickup_target,(CDemonActor *)this_ptr);
+          if (iVar5 == 3) {
+            (*((this_ptr->pickup_target->vtable)._ub)->getBoundingBox)
+                      (this_ptr->pickup_target,(CBoundingBox3D *)in_stack_fffffeac);
+            uStack_20 = 0x3f000000;
+            puVar7 = auStack_d0;
+            puVar8 = auStack_e8;
+            for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
+              *puVar8 = *puVar7;
+              puVar7 = puVar7 + (uint)bVar9 * -2 + 1;
+              puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
             }
-            core_bodypart_cpp_FUN_00417ba0(auStack_fc,auStack_f0,afStack_5c + 10);
-            afStack_48[0] = afStack_b4[3];
-            afStack_5c[(uint)bVar7 * -2 + 6] = afStack_b4[(uint)bVar7 * -2 + 4];
-            afStack_5c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
-                 afStack_b4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 5];
-            core_bodypart_cpp_FUN_00417b20(afStack_5c + 5);
-            pfVar9 = afStack_8c + 2;
-            uStack_90 = uStack_60;
-            afStack_8c[(uint)bVar7 * -2] = afStack_5c[(uint)bVar7 * -2];
-            afStack_8c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-                 afStack_5c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-            afStack_8c[1] = fStack_f4 + (float)_DAT_005cc2b2;
-            afStack_8c[2] = (float)uStack_90;
-            afStack_8c[(uint)bVar7 * -2 + 3] = afStack_8c[(uint)bVar7 * -2];
-            afStack_8c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-                 afStack_8c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-            core_actor_cpp_FUN_00408d70(iVar4,pfVar9);
+            core_bodypart_cpp_FUN_00417ba0(auStack_e8);
+            uStack_34 = uStack_94;
+            (&local_30)[(uint)bVar9 * -2] = (CLocation *)afStack_78[(uint)bVar9 * -2 + -6];
+            (&local_2c)[(uint)bVar9 * -2 + (uint)bVar9 * -2] =
+                 afStack_78[(uint)bVar9 * -2 + (uint)bVar9 * -2 + -5];
+            core_bodypart_cpp_FUN_00417b20();
+            uStack_7c = afStack_54[2];
+            afStack_78[(uint)bVar9 * -2] = afStack_54[(uint)bVar9 * -2 + 3];
+            afStack_78[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
+                 afStack_54[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
+            afStack_78[1] = fStack_e0 + (float)_DAT_005cc2b2;
+            afStack_78[2] = (float)uStack_7c;
+            afStack_78[(uint)bVar9 * -2 + 3] = afStack_78[(uint)bVar9 * -2];
+            afStack_78[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
+                 afStack_78[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
+            core_actor_cpp_FUN_00408d70();
             max_distance = 0.0;
-            direction = aCStack_78;
-            fVar8 = 0.0;
+            direction = &CStack_64;
+            fVar10 = 0.0;
             path_map = (CPathMap *)0x0;
-            CStack_9c.x = afStack_5c[2];
-            *(float *)((int)&CStack_9c + (uint)bVar7 * -8 + 4) = afStack_5c[(uint)bVar7 * -2 + 3];
-            *(float *)((int)&CStack_9c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-                 afStack_5c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
-            aCStack_78[0].x = 1.5;
-            aCStack_78[0].y = 0.0;
-            aCStack_78[0].z = 0.0;
-            iVar4 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
-                              ((CCharacter *)this_ptr,&CStack_9c,path_map,direction,fVar8,
+            CStack_88.x = fStack_40;
+            *(float *)((int)&CStack_88 + (uint)bVar9 * -8 + 4) = afStack_54[(uint)bVar9 * -2 + 6];
+            *(float *)((int)&CStack_88 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+                 afStack_54[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7];
+            CStack_64.x = 1.5;
+            CStack_64.y = 0.0;
+            CStack_64.z = 0.0;
+            iVar6 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
+                              ((CCharacter *)this_ptr,&CStack_88,path_map,direction,fVar10,
                                max_distance);
           }
         }
-        this_ptr_01 = &(this_ptr->base).base.model;
-        if (-1 < iVar4) {
-          if (iVar4 < 1) {
+        this_ptr_00 = &(this_ptr->base).base.model;
+        if (-1 < iVar6) {
+          if (iVar6 < 1) {
             return 1;
           }
-          engine_console_cpp_FUN_00436710
-                    (g_CConsolePtr,"%s beginning to pickup %s\n",this_ptr,
-                     *(uint *)&this_ptr->field_0x10b04);
-          core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                    ((CMotionController *)this_ptr_01,7,1);
+          engine_console_cpp_FUN_00436710(g_CConsolePtr,"%s beginning to pickup %s\n");
+          core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,7,1);
           return 1;
         }
-        engine_console_cpp_FUN_00436710
-                  (g_CConsolePtr,"%s can't pick up %s, giving up!!!!\n",this_ptr,
-                   *(uint *)&this_ptr->field_0x10b04);
-        *(uint *)&this_ptr->field_0x10b04 = 0;
-        *(uint *)&this_ptr->field_0x10b00 = 0x41a00000;
-        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                  ((CMotionController *)this_ptr_01,1,1);
+        engine_console_cpp_FUN_00436710(g_CConsolePtr,"%s can't pick up %s, giving up!!!!\n");
+        this_ptr->pickup_target = (CDemonActor *)0x0;
+        this_ptr->pickup_cooldown = 20.0;
+        core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,1,1);
         return 0;
       }
       local_28 = (byte *)auStack_120;
-      local_2c = 0;
+      local_2c = 0.0;
       local_24 = 0;
       local_1c = (float *)0x0;
       local_18 = 0;
       while( true ) {
         if (g_CDemonSetPtr->actor_count <= local_24) break;
-        this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_2c);
-        pCVar2 = (*((this_ptr_00->vtable)._ub)->getCarrier)(this_ptr_00);
-        if (pCVar2 == (CDemonActor *)0x0) {
-          iVar4 = (*((this_ptr_00->vtable)._ub)->canPickup)(this_ptr_00,(CDemonActor *)this_ptr);
-          if (iVar4 == 3) {
-            uStack_15c = 0x419942;
-            (*((this_ptr_00->vtable)._ub)->getBoundingBox)
-                      (this_ptr_00,(CBoundingBox3D *)in_stack_fffffeac);
-            pfVar9 = local_14;
-            puVar5 = &uStack_100;
-            puVar6 = auStack_120;
-            for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-              *puVar6 = *puVar5;
-              puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-              puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+        pCVar4 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + (int)local_2c);
+        pCVar3 = (*((pCVar4->vtable)._ub)->getCarrier)(pCVar4);
+        if (pCVar3 == (CDemonActor *)0x0) {
+          iVar6 = (*((pCVar4->vtable)._ub)->canPickup)(pCVar4,(CDemonActor *)this_ptr);
+          if (iVar6 == 3) {
+            (*((pCVar4->vtable)._ub)->getBoundingBox)(pCVar4,(CBoundingBox3D *)in_stack_fffffeac);
+            pfVar2 = local_14;
+            puVar7 = auStack_100;
+            puVar8 = auStack_120;
+            for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
+              *puVar8 = *puVar7;
+              puVar7 = puVar7 + (uint)bVar9 * -2 + 1;
+              puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
             }
-            afStack_5c[1] = *pfVar9 - fStack_118;
-            afStack_5c[2] = pfVar9[1] - fStack_114;
-            afStack_5c[3] = pfVar9[2] - fStack_110;
-            fStack_b8 = *pfVar9 - fStack_118;
-            afStack_b4[(uint)bVar7 * -2] = afStack_5c[(uint)bVar7 * -2 + 2];
-            afStack_b4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-                 afStack_5c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 3];
+            fStack_58 = *pfVar2 - fStack_118;
+            afStack_54[0] = pfVar2[1] - fStack_114;
+            afStack_54[1] = pfVar2[2] - fStack_110;
+            fStack_b8 = *pfVar2 - fStack_118;
+            *(float *)((int)afStack_b4 + (uint)bVar9 * 0xfffffff8) = afStack_54[(uint)bVar9 * -2];
+            *(float *)((int)afStack_b4 + ((uint)bVar9 * -2 + (uint)bVar9 * -2 + 1) * 4) =
+                 afStack_54[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
             if ((((fStack_b8 < 1.0) && (afStack_b4[0] < 1.0)) &&
                 ((float)_DAT_005cc2ba < afStack_b4[1])) && ((double)afStack_b4[1] < _DAT_005cc2c2))
             {
-              in_stack_fffffeac = this_ptr_00;
-              iVar4 = core_actor_cpp_isOfClass_FUN_0040c840(this_ptr_00,"CBodyPart");
-              if (iVar4 == 0) {
-                fStack_a0 = *(float *)&this_ptr_00->field_0x20 - *local_1c;
-                CStack_9c.x = *(float *)&this_ptr_00->field_0x24 - local_1c[1];
-                CStack_9c.y = *(float *)&this_ptr_00->field_0x28 - local_1c[2];
+              in_stack_fffffeac = pCVar4;
+              iVar6 = core_actor_cpp_isOfClass_FUN_0040c840(pCVar4,"CBodyPart");
+              if (iVar6 == 0) {
+                fStack_a0 = (pCVar4->location).position.x - *local_1c;
+                fStack_9c = (pCVar4->location).position.y - local_1c[1];
+                fStack_98 = (pCVar4->location).position.z - local_1c[2];
                 afStack_b4[2] = fStack_a0;
-                afStack_b4[(uint)bVar7 * -2 + 3] = *(float *)((int)&CStack_9c + (uint)bVar7 * -8);
-                afStack_b4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-                     *(float *)((int)&CStack_9c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 4);
+                *(uint *)((int)afStack_b4 + ((uint)bVar9 * -2 + 3) * 4) =
+                     *(uint *)((int)afStack_b4 + ((uint)bVar9 * -2 + 6) * 4);
+                *(float *)((int)afStack_b4 + ((uint)bVar9 * -2 + (uint)bVar9 * -2 + 4) * 4) =
+                     afStack_78[(uint)bVar9 * -2 + (uint)bVar9 * -2 + -8];
                 afStack_b4[3] = afStack_b4[3] * afStack_b4[3] * afStack_b4[3] * afStack_b4[3];
-                fVar8 = SQRT(fStack_a4 * fStack_a4 +
-                             afStack_b4[2] * afStack_b4[2] + afStack_b4[3] * afStack_b4[3]);
-                if (((float)_DAT_005cc2aa <= fVar8) && ((int)fVar8 < 0x41700001)) {
-                  *(CDemonActor **)(&stack0xfffffec0 + unaff_ESI) = this_ptr_00;
+                fVar10 = SQRT(fStack_a4 * fStack_a4 +
+                              afStack_b4[2] * afStack_b4[2] + afStack_b4[3] * afStack_b4[3]);
+                if (((float)_DAT_005cc2aa <= fVar10) && ((int)fVar10 < 0x41700001)) {
+                  *(CDemonActor **)(&stack0xfffffec0 + unaff_ESI) = pCVar4;
                   unaff_ESI = unaff_ESI + 4;
                   if (0x27 < unaff_ESI) break;
                 }
@@ -207,25 +202,24 @@ int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_00419520(CBoneGuy
           }
         }
         local_24 = local_24 + 1;
-        local_2c = local_2c + 4;
+        local_2c = (float)((int)local_2c + 4);
       }
       if (0 < local_18) {
-        iVar4 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,local_18 + -1);
-        *(uint *)&this_ptr->field_0x10b04 = *(uint *)(&stack0xfffffeac + iVar4 * 4);
+        iVar6 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,local_18 + -1);
+        this_ptr->pickup_target = *(CDemonActor **)(&stack0xfffffeac + iVar6 * 4);
         pCVar1 = g_CConsolePtr;
-        *(uint *)&this_ptr->field_0x10b00 = 0xc2200000;
-        *(int *)&this_ptr->field_0x10af8 = *(int *)&this_ptr->field_0x10af8 + 1;
+        this_ptr->pickup_cooldown = -40.0;
+        this_ptr->pickup_attempt_count = this_ptr->pickup_attempt_count + 1;
         engine_console_cpp_FUN_00436710
-                  (pCVar1,"%s is going to try to pick up %s\n",this_ptr,
-                   *(uint *)&this_ptr->field_0x10b04);
+                  (pCVar1,"%s is going to try to pick up %s\n",this_ptr,this_ptr->pickup_target);
         return 1;
       }
     }
     else {
-      fVar8 = *(float *)&this_ptr->field_0x10b00 - delta_time;
-      *(float *)&this_ptr->field_0x10b00 = fVar8;
-      if (fVar8 < 0.0) {
-        *(uint *)&this_ptr->field_0x10b00 = 0;
+      fVar10 = this_ptr->pickup_cooldown - delta_time;
+      this_ptr->pickup_cooldown = fVar10;
+      if (fVar10 < 0.0) {
+        this_ptr->pickup_cooldown = 0.0;
       }
     }
   }

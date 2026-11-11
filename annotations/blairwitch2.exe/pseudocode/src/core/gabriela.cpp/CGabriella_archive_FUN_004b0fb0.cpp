@@ -11,16 +11,20 @@ void __cdecl core_gabriela_cpp_CGabriella_archive_FUN_004b0fb0(CGabriella *this_
 {
   core_hero_cpp_FUN_004ce590(this_ptr);
   if ((1 < g_CGabriellaClassVersion) && (g_CGabriellaClassVersion < 4)) {
-    core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x25608,"?objectToPickUp" + 1)
+    core_actor_cpp_archiveActor_FUN_0040b9e0
+              (&(this_ptr->base).object_to_pick_up,"?objectToPickUp" + 1);
+    core_actor_cpp_archiveActor_FUN_0040b9e0(&(this_ptr->base).door_to_open,"doorToOpen");
+    core_actor_cpp_archiveActor_FUN_0040b9e0(&(this_ptr->base).lever_to_pull,"leverToPull")
     ;
-    core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x25604,"doorToOpen");
-    core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x25610,"leverToPull");
-    core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x25614,"ladderToClimb");
+    core_actor_cpp_archiveActor_FUN_0040b9e0
+              (&(this_ptr->base).ladder_to_climb,"ladderToClimb");
   }
   if (g_CGabriellaClassVersion != 2) {
     return;
   }
-  core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x2620,"lhCarryObject");
-  core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x2698,"rhCarryObject");
+  core_actor_cpp_archiveActor_FUN_0040b9e0
+            (&(this_ptr->base).base.carry_hands[0].carry_actor,"lhCarryObject");
+  core_actor_cpp_archiveActor_FUN_0040b9e0
+            (&(this_ptr->base).base.carry_hands[1].carry_actor,"rhCarryObject");
   return;
 }

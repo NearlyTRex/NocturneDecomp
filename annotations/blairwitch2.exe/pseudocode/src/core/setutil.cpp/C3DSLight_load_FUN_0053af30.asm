@@ -63,7 +63,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14c]     ; 0053af3a
     MOV ESI,dword ptr [ESP + 0x150]     ; 0053af41
     MOV EAX,[0x0061b5a8]                ; 0053af48 | g_CDemonSetPtr
-    CMP dword ptr [EAX + 0x15acc0],0xb  ; 0053af4d | g_CDemonSetInstance.field133_0x15acc0
+    CMP dword ptr [EAX + 0x15acc0],0xb  ; 0053af4d | g_CDemonSetInstance.set_file_version
     JGE 0x0053b45c                      ; 0053af54
         ;   XREF to: 0053b45c (CONDITIONAL_JUMP)  ; LAB_0053b45c
     LEA EAX,[EBX + 0x4]                 ; 0053af5a
@@ -74,7 +74,7 @@ section .text
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0053af64
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
     MOV EAX,[0x0061b5a8]                ; 0053af69 | g_CDemonSetPtr
-    MOV ECX,dword ptr [EAX + 0x15acc0]  ; 0053af6e | g_CDemonSetInstance.field133_0x15acc0
+    MOV ECX,dword ptr [EAX + 0x15acc0]  ; 0053af6e | g_CDemonSetInstance.set_file_version
     ADD ESP,0xc                         ; 0053af74
     CMP ECX,0xb                         ; 0053af77
     JL 0x0053af8f                       ; 0053af7a
@@ -98,7 +98,7 @@ section .text
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0053afaa
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
     MOV EAX,[0x0061b5a8]                ; 0053afaf | g_CDemonSetPtr
-    MOV EDI,dword ptr [EAX + 0x15acc0]  ; 0053afb4 | g_CDemonSetInstance.field133_0x15acc0
+    MOV EDI,dword ptr [EAX + 0x15acc0]  ; 0053afb4 | g_CDemonSetInstance.set_file_version
     ADD ESP,0x14                        ; 0053afba
     CMP EDI,0xb                         ; 0053afbd
     JL 0x0053afd5                       ; 0053afc0
@@ -122,7 +122,7 @@ section .text
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0053aff0
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
     MOV EAX,[0x0061b5a8]                ; 0053aff5 | g_CDemonSetPtr
-    MOV EBP,dword ptr [EAX + 0x15acc0]  ; 0053affa | g_CDemonSetInstance.field133_0x15acc0
+    MOV EBP,dword ptr [EAX + 0x15acc0]  ; 0053affa | g_CDemonSetInstance.set_file_version
     ADD ESP,0x14                        ; 0053b000
     CMP EBP,0xb                         ; 0053b003
     JL 0x0053b01b                       ; 0053b006
@@ -142,7 +142,7 @@ section .text
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0053b028
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
     MOV EAX,[0x0061b5a8]                ; 0053b02d | g_CDemonSetPtr
-    MOV EDX,dword ptr [EAX + 0x15acc0]  ; 0053b032 | g_CDemonSetInstance.field133_0x15acc0
+    MOV EDX,dword ptr [EAX + 0x15acc0]  ; 0053b032 | g_CDemonSetInstance.set_file_version
     ADD ESP,0xc                         ; 0053b038
     CMP EDX,0x15                        ; 0053b03b
     JL 0x0053b474                       ; 0053b03e
@@ -163,7 +163,7 @@ section .text
     ADD ESP,0xc                         ; 0053b069
     MOV EAX,[0x0061b5a8]                ; 0053b06c | g_CDemonSetPtr
         ;   Label: LAB_0053b06c
-    CMP dword ptr [EAX + 0x15acc0],0x16 ; 0053b071 | g_CDemonSetInstance.field133_0x15acc0
+    CMP dword ptr [EAX + 0x15acc0],0x16 ; 0053b071 | g_CDemonSetInstance.set_file_version
     JL 0x0053b483                       ; 0053b078
         ;   XREF to: 0053b483 (CONDITIONAL_JUMP)  ; LAB_0053b483
     PUSH ESI                            ; 0053b07e
@@ -182,7 +182,7 @@ section .text
     ADD ESP,0xc                         ; 0053b0a3
     MOV EAX,[0x0061b5a8]                ; 0053b0a6 | g_CDemonSetPtr
         ;   Label: LAB_0053b0a6
-    CMP dword ptr [EAX + 0x15acc0],0xb  ; 0053b0ab | g_CDemonSetInstance.field133_0x15acc0
+    CMP dword ptr [EAX + 0x15acc0],0xb  ; 0053b0ab | g_CDemonSetInstance.set_file_version
     JL 0x0053b0c7                       ; 0053b0b2
         ;   XREF to: 0053b0c7 (CONDITIONAL_JUMP)  ; LAB_0053b0c7
     PUSH ESI                            ; 0053b0b4
@@ -199,7 +199,7 @@ section .text
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0053b0ce
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
     MOV EAX,[0x0061b5a8]                ; 0053b0d3 | g_CDemonSetPtr
-    MOV EBP,dword ptr [EAX + 0x15acc0]  ; 0053b0d8 | g_CDemonSetInstance.field133_0x15acc0
+    MOV EBP,dword ptr [EAX + 0x15acc0]  ; 0053b0d8 | g_CDemonSetInstance.set_file_version
     ADD ESP,0xc                         ; 0053b0de
     CMP EBP,0xb                         ; 0053b0e1
     JL 0x0053b0f9                       ; 0053b0e4
@@ -227,7 +227,7 @@ section .text
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0053b122
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
     MOV EAX,[0x0061b5a8]                ; 0053b127 | g_CDemonSetPtr
-    MOV EDX,dword ptr [EAX + 0x15acc0]  ; 0053b12c | g_CDemonSetInstance.field133_0x15acc0
+    MOV EDX,dword ptr [EAX + 0x15acc0]  ; 0053b12c | g_CDemonSetInstance.set_file_version
     ADD ESP,0x1c                        ; 0053b132
     CMP EDX,0xb                         ; 0053b135
     JL 0x0053b14d                       ; 0053b138
@@ -249,7 +249,7 @@ section .text
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0053b161
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
     MOV EAX,[0x0061b5a8]                ; 0053b166 | g_CDemonSetPtr
-    MOV ECX,dword ptr [EAX + 0x15acc0]  ; 0053b16b | g_CDemonSetInstance.field133_0x15acc0
+    MOV ECX,dword ptr [EAX + 0x15acc0]  ; 0053b16b | g_CDemonSetInstance.set_file_version
     ADD ESP,0x10                        ; 0053b171
     CMP ECX,0xb                         ; 0053b174
     JL 0x0053b18c                       ; 0053b177
@@ -269,7 +269,7 @@ section .text
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0053b199
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
     MOV EAX,[0x0061b5a8]                ; 0053b19e | g_CDemonSetPtr
-    MOV EDI,dword ptr [EAX + 0x15acc0]  ; 0053b1a3 | g_CDemonSetInstance.field133_0x15acc0
+    MOV EDI,dword ptr [EAX + 0x15acc0]  ; 0053b1a3 | g_CDemonSetInstance.set_file_version
     ADD ESP,0xc                         ; 0053b1a9
     CMP EDI,0xb                         ; 0053b1ac
     JL 0x0053b1c4                       ; 0053b1af
@@ -283,7 +283,7 @@ section .text
     ADD ESP,0xc                         ; 0053b1c1
     MOV EAX,[0x0061b5a8]                ; 0053b1c4 | g_CDemonSetPtr
         ;   Label: LAB_0053b1c4
-    CMP dword ptr [EAX + 0x15acc0],0x9  ; 0053b1c9 | g_CDemonSetInstance.field133_0x15acc0
+    CMP dword ptr [EAX + 0x15acc0],0x9  ; 0053b1c9 | g_CDemonSetInstance.set_file_version
     JL 0x0053b492                       ; 0053b1d0
         ;   XREF to: 0053b492 (CONDITIONAL_JUMP)  ; LAB_0053b492
     LEA EAX,[EBX + 0x11f0]              ; 0053b1d6
@@ -309,7 +309,7 @@ section .text
         ;   Label: LAB_0053b222
     MOV EAX,[0x0061b5a8]                ; 0053b229 | g_CDemonSetPtr
     MOV dword ptr [ESP + 0x12c],EDX     ; 0053b22e
-    CMP dword ptr [EAX + 0x15acc0],0x10 ; 0053b235 | g_CDemonSetInstance.field133_0x15acc0
+    CMP dword ptr [EAX + 0x15acc0],0x10 ; 0053b235 | g_CDemonSetInstance.set_file_version
     JGE 0x0053b4a1                      ; 0053b23c
         ;   XREF to: 0053b4a1 (CONDITIONAL_JUMP)  ; LAB_0053b4a1
     MOV ECX,dword ptr [ESP + 0x134]     ; 0053b242
@@ -338,7 +338,7 @@ section .text
         ;   XREF to: 0053b222 (CONDITIONAL_JUMP)  ; LAB_0053b222
     MOV EAX,[0x0061b5a8]                ; 0053b2a9 | g_CDemonSetPtr
         ;   Label: LAB_0053b2a9
-    CMP dword ptr [EAX + 0x15acc0],0xb  ; 0053b2ae | g_CDemonSetInstance.field133_0x15acc0
+    CMP dword ptr [EAX + 0x15acc0],0xb  ; 0053b2ae | g_CDemonSetInstance.set_file_version
     JL 0x0053b2ca                       ; 0053b2b5
         ;   XREF to: 0053b2ca (CONDITIONAL_JUMP)  ; LAB_0053b2ca
     PUSH ESI                            ; 0053b2b7
@@ -356,7 +356,7 @@ section .text
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0053b2d7
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
     MOV EAX,[0x0061b5a8]                ; 0053b2dc | g_CDemonSetPtr
-    MOV ECX,dword ptr [EAX + 0x15acc0]  ; 0053b2e1 | g_CDemonSetInstance.field133_0x15acc0
+    MOV ECX,dword ptr [EAX + 0x15acc0]  ; 0053b2e1 | g_CDemonSetInstance.set_file_version
     ADD ESP,0xc                         ; 0053b2e7
     CMP ECX,0x13                        ; 0053b2ea
     JL 0x0053b4ce                       ; 0053b2ed
@@ -385,7 +385,7 @@ section .text
     ADD ESP,0x1c                        ; 0053b334
     MOV EAX,[0x0061b5a8]                ; 0053b337 | g_CDemonSetPtr
         ;   Label: LAB_0053b337
-    CMP dword ptr [EAX + 0x15acc0],0xb  ; 0053b33c | g_CDemonSetInstance.field133_0x15acc0
+    CMP dword ptr [EAX + 0x15acc0],0xb  ; 0053b33c | g_CDemonSetInstance.set_file_version
     JL 0x0053b358                       ; 0053b343
         ;   XREF to: 0053b358 (CONDITIONAL_JUMP)  ; LAB_0053b358
     PUSH ESI                            ; 0053b345
@@ -412,12 +412,12 @@ section .text
     CALL crt_stdio.c_fgets_FUN_005b9600 ; 0053b37f
         ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_005b9600()
     MOV EBP,dword ptr [0x0061b5a8]      ; 0053b384 | g_CDemonSetPtr
-    MOV EAX,dword ptr [EBP + 0x15acc0]  ; 0053b38a | g_CDemonSetInstance.field133_0x15acc0
+    MOV EAX,dword ptr [EBP + 0x15acc0]  ; 0053b38a | g_CDemonSetInstance.set_file_version
     ADD ESP,0xc                         ; 0053b390
     CMP EAX,0xb                         ; 0053b393
     JGE 0x0053b562                      ; 0053b396
         ;   XREF to: 0053b562 (CONDITIONAL_JUMP)  ; LAB_0053b562
-    MOV ECX,dword ptr [EBP + 0x15acc0]  ; 0053b39c | g_CDemonSetInstance.field133_0x15acc0
+    MOV ECX,dword ptr [EBP + 0x15acc0]  ; 0053b39c | g_CDemonSetInstance.set_file_version
     MOV EAX,0x64                        ; 0053b3a2
     CMP ECX,0x7                         ; 0053b3a7
     JL 0x0053b3ba                       ; 0053b3aa
@@ -438,7 +438,7 @@ section .text
     MOV dword ptr [ESP + 0x124],EDX     ; 0053b3d2
     MOV EAX,[0x0061b5a8]                ; 0053b3d9 | g_CDemonSetPtr
         ;   Label: LAB_0053b3d9
-    CMP dword ptr [EAX + 0x15acc0],0x2  ; 0053b3de | g_CDemonSetInstance.field133_0x15acc0
+    CMP dword ptr [EAX + 0x15acc0],0x2  ; 0053b3de | g_CDemonSetInstance.set_file_version
     JL 0x0053b50f                       ; 0053b3e5
         ;   XREF to: 0053b50f (CONDITIONAL_JUMP)  ; LAB_0053b50f
     MOV EAX,dword ptr [ESP + 0x124]     ; 0053b3eb

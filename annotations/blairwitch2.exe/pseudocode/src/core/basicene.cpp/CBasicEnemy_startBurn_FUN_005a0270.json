@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 64,
+    "complexity_score": 81,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 39,
-    "suspect_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 41,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data"
+      "undefined_data",
+      "unrolled_memcpy"
     ],
-    "total_lines": 152
+    "total_lines": 154
   },
   "cross_references": [],
   "function": {
@@ -168,19 +169,27 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 16,
       "match": "DAT_005efb55",
       "severity": "mild",
-      "text": "iVar3 = unkaddr_0059d350_cpp_FUN_0059daa0(pCVar1,&DAT_005efb55);",
+      "text": "iVar5 = unkaddr_0059d350_cpp_FUN_0059daa0(pSVar1,&DAT_005efb55);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 21,
       "match": "DAT_005efb67",
       "severity": "mild",
-      "text": "unkaddr_0059d350_cpp_FUN_0059d8e0(this_ptr + 0x10af8,&DAT_005efb67);",
+      "text": "unkaddr_0059d350_cpp_FUN_0059d8e0(&this_ptr->state_machine,&DAT_005efb67);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 24,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->burn_direction).x = direction->x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

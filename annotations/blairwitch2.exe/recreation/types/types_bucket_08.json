@@ -7,6 +7,64 @@
   },
   {
     "kind":"funcdef",
+    "name":"CCameraView_saveAlphaTransform",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonCamera",
+          "ptr":1
+        }
+      },
+      {
+        "name":"alpha_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCameraView_testVisibility",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonCamera",
+          "ptr":1
+        }
+      },
+      {
+        "name":"corners",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
     "name":"CCharacter_isGrabbable",
     "params":[
       {
@@ -195,6 +253,7 @@
   {
     "kind":"class",
     "name":"CDemonPod",
+    "parent":"CPod",
     "rtti_file":"engine/pod.cpp",
     "size":408
   },
@@ -244,6 +303,7 @@
   {
     "kind":"class",
     "name":"CGoggles",
+    "parent":"CDemonActor",
     "size":1076
   },
   {
@@ -298,7 +358,7 @@
   {
     "kind":"class",
     "name":"CLocation",
-    "size":1
+    "size":16
   },
   {
     "kind":"class",
@@ -330,6 +390,7 @@
   {
     "kind":"class",
     "name":"CRainDrop",
+    "parent":"CParticle",
     "rtti_file":"core/emitter.cpp",
     "size":64
   },
@@ -347,6 +408,7 @@
   {
     "kind":"class",
     "name":"CSchnellGeist",
+    "parent":"CBasicEnemy",
     "size":71792
   },
   {
@@ -515,6 +577,29 @@
   },
   {
     "kind":"enum",
+    "name":"EControlMode",
+    "size":4,
+    "values":[
+      {
+        "name":"CONTROL_MODE_KEYBOARD",
+        "value":0
+      },
+      {
+        "name":"CONTROL_MODE_MOUSE",
+        "value":1
+      },
+      {
+        "name":"CONTROL_MODE_GAMEPAD",
+        "value":2
+      },
+      {
+        "name":"CONTROL_MODE_POINT_AND_CLICK",
+        "value":3
+      }
+    ]
+  },
+  {
+    "kind":"enum",
     "name":"EDeathState",
     "size":4,
     "values":[
@@ -608,7 +693,7 @@
   {
     "kind":"struct",
     "name":"SFogGrid",
-    "size":1
+    "size":4128
   },
   {
     "kind":"struct",
@@ -623,12 +708,13 @@
   {
     "kind":"struct",
     "name":"SMRGLTextureBasic",
-    "size":1
+    "parent":"SMRGLHeaderBasic",
+    "size":24
   },
   {
     "kind":"struct",
     "name":"SMpegSubbandScalefactors",
-    "size":1
+    "size":384
   },
   {
     "kind":"struct",
@@ -638,7 +724,7 @@
   {
     "kind":"struct",
     "name":"SPlayerActionState",
-    "size":1
+    "size":36
   },
   {
     "kind":"struct",
@@ -648,11 +734,11 @@
   {
     "kind":"struct",
     "name":"SSwarmVertex",
-    "size":1
+    "size":40
   },
   {
     "kind":"struct",
     "name":"SWayPointAdjacency",
-    "size":1
+    "size":8
   }
 ]

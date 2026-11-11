@@ -28,9 +28,9 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
+;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fread_FUN_005b87c0
-;   crt_unknown.c_FUN_005b8580
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_dosio.cpp_FUN_00460c70
 ;
@@ -59,8 +59,8 @@ section .text
     LEA EAX,[EDI + 0x4]                 ; 005011cc
         ;   Label: LAB_005011cc
     PUSH EAX                            ; 005011cf
-    CALL crt_unknown.c_FUN_005b8580     ; 005011d0
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 005011d0
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     ADD ESP,0x4                         ; 005011d5
     MOV EBX,EAX                         ; 005011d8
     TEST EAX,EAX                        ; 005011da

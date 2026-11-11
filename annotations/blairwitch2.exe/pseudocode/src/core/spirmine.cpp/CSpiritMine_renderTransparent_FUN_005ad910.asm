@@ -8,7 +8,7 @@
 ;
 ; Called Functions:
 ;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041c690
-;   unkafter_superopt.cpp_FUN_005a8290
+;   unkafter_superopt.cpp_CSimpleParticleSystem_render_FUN_005a8290
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 005ad920
     ADD EAX,0x154                       ; 005ad924
     PUSH EAX                            ; 005ad929
-    CALL unkafter_superopt.cpp_FUN_005a8290 ; 005ad92a
-        ;   XREF to: 005a8290 (UNCONDITIONAL_CALL)  ; undefined unkafter_superopt.cpp_FUN_005a8290()
+    CALL unkafter_superopt.cpp_CSimpleParticleSystem_render_FUN_005a8290 ; 005ad92a
+        ;   XREF to: 005a8290 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_render_FUN_005a8290(CSimpleParticleSystem * this_ptr)
     ADD ESP,0x4                         ; 005ad92f
     MOV EAX,EBX                         ; 005ad932
     POP EBX                             ; 005ad934

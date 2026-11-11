@@ -31,7 +31,7 @@
 ;   undefined4 DAT_01ba5c50
 ;   undefined4 DAT_01c35e60
 ;   undefined4 DAT_01d1cdc8
-;   undefined4 g_CGameHookInstance.field12_0xc
+;   undefined4 g_CGameHookInstance.debug_follow_slot_display
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
@@ -171,7 +171,7 @@ section .text
     RET                                 ; 004255e1
     MOV EAX,[0x0061ea5c]                ; 004255e2 | g_CGameHookPtr
         ;   Label: LAB_004255e2
-    CMP dword ptr [EAX + 0xc],0x0       ; 004255e7 | g_CGameHookInstance.field12_0xc
+    CMP dword ptr [EAX + 0xc],0x0       ; 004255e7 | g_CGameHookInstance.debug_follow_slot_display
     JZ 0x00425568                       ; 004255eb
         ;   XREF to: 00425568 (CONDITIONAL_JUMP)  ; LAB_00425568
     MOV EAX,dword ptr [EBP + 0x14]      ; 004255f1

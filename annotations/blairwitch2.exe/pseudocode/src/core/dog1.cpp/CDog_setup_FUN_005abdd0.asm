@@ -12,9 +12,9 @@
 ;   TerminatedCString s_Bip01_Head_005f0d42
 ;
 ; Called Functions:
+;   core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80
 ;   crt_string.c__strcmp_FUN_005b8c30
-;   unkafter_basicene.cpp_FUN_0059e6a0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     SUB ESP,0xc                         ; 005abdd6
     MOV EBX,dword ptr [EBP + 0x14]      ; 005abdd9
     PUSH EBX                            ; 005abddc
-    CALL unkafter_basicene.cpp_FUN_0059e6a0 ; 005abddd
-        ;   XREF to: 0059e6a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059e6a0()
+    CALL core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0 ; 005abddd
+        ;   XREF to: 0059e6a0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0(CBasicEnemy * this_ptr)
     ADD ESP,0x4                         ; 005abde2
     PUSH 0x1                            ; 005abde5
     PUSH 0x5f0d31                       ; 005abde7 | = "Dummy01"

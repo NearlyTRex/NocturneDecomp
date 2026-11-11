@@ -11,7 +11,7 @@ void core_gargoyle_cpp_factoryFuncGargoyle_FUN_004bfab0(void)
 {
   CGargoyle *this_ptr;
   
-  this_ptr = (CGargoyle *)debugAllocTracked1(0x10b54);
+  this_ptr = (CGargoyle *)operator_new(0x10b54);
   if (this_ptr == (CGargoyle *)0x0) {
     return;
   }

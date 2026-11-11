@@ -6,52 +6,52 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_unionzom_cpp_CUnionZombie_processVanishAttackState_FUN_005a40f0(CUnionZombie *this_ptr,float delta_time)
 
 {
-  byte *this_ptr_00;
-  uint uVar1;
-  int iVar2;
+  CDeformableModelInstance *this_ptr_00;
+  SStateMachine *pSVar1;
+  uint uVar2;
+  int iVar3;
   
-  uVar1 = *(uint *)&this_ptr->field_0x11858;
-  this_ptr_00 = &this_ptr->field_0x2b4;
-  if (uVar1 == 0) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-              ((CMotionController *)this_ptr_00,4,1);
-    unkafter_basicene_cpp_FUN_005a01a0
-              (this_ptr,*(uint *)&this_ptr->field_0x113c4,0,0x3f99999a);
+  uVar2 = this_ptr->vanish_phase;
+  this_ptr_00 = &(this_ptr->base).base.base.model;
+  if (uVar2 == 0) {
+    core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,4,1);
+    unkafter_basicene_cpp_FUN_005a01a0(this_ptr,(this_ptr->base).fade_val,0,0x3f99999a);
     unkafter_basicene_cpp_FUN_0059f570(this_ptr);
-    *(uint *)&this_ptr->field_0x11858 = 1;
+    this_ptr->vanish_phase = 1;
     return;
   }
-  if (uVar1 < 2) {
-    iVar2 = core_motion_cpp_FUN_005035c0(this_ptr_00);
-    if (*(int *)(iVar2 + 0x24) == 4) {
-      if (_DAT_005f02de <= *(float *)&this_ptr->field_0x2bc) {
-        unkafter_basicene_cpp_FUN_005a01a0
-                  (this_ptr,*(uint *)&this_ptr->field_0x113c4,0x3f800000,0x3f400000);
+  if (uVar2 < 2) {
+    iVar3 = core_motion_cpp_FUN_005035c0(this_ptr_00);
+    if (*(int *)(iVar3 + 0x24) == 4) {
+      if (_DAT_005f02de <= (this_ptr->base).base.base.model.base.current_frame_number) {
+        unkafter_basicene_cpp_FUN_005a01a0(this_ptr,(this_ptr->base).fade_val,0x3f800000,0x3f400000)
+        ;
         unkafter_basicene_cpp_FUN_0059f570(this_ptr);
-        *(uint *)&this_ptr->field_0x11858 = 2;
+        this_ptr->vanish_phase = 2;
         return;
       }
       core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
-                ((CCharacter *)this_ptr,(CVector3f *)(*(int *)&this_ptr->field_0x10a78 + 0x20));
+                ((CCharacter *)this_ptr,&(((this_ptr->base).base.victim)->base).location.position);
       return;
     }
   }
   else {
-    if (uVar1 != 2) {
+    if (uVar2 != 2) {
       return;
     }
-    iVar2 = core_motion_cpp_FUN_005035c0(this_ptr_00);
-    if (*(int *)(iVar2 + 0x24) == 3) {
-      *(uint *)&this_ptr->field_0x11394 = _DAT_005ff544;
-      unkaddr_0059d350_cpp_FUN_0059d7f0
-                (&this_ptr->field_0x10af8,"ChaseComplete","MeleeAttack");
-      unkaddr_0059d350_cpp_FUN_0059d8e0(&this_ptr->field_0x10af8,"MeleeAttack");
-      *(uint *)&this_ptr->field_0x11858 = 0;
+    iVar3 = core_motion_cpp_FUN_005035c0(this_ptr_00);
+    if (*(int *)(iVar3 + 0x24) == 3) {
+      pSVar1 = &(this_ptr->base).state_machine;
+      (this_ptr->base).attack_range = _DAT_005ff544;
+      unkaddr_0059d350_cpp_FUN_0059d7f0(pSVar1,"ChaseComplete","MeleeAttack");
+      unkaddr_0059d350_cpp_FUN_0059d8e0(pSVar1,"MeleeAttack");
+      this_ptr->vanish_phase = 0;
       return;
     }
   }

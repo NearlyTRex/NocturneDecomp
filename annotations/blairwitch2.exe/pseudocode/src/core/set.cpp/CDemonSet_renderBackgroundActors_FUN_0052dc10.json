@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 290,
+    "complexity_score": 244,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 50,
-    "suspect_count": 20,
+    "pseudocode_lines": 49,
+    "suspect_count": 16,
     "suspect_types": [
       "phantom_float_to_int",
       "pointer_cast",
@@ -16,10 +16,9 @@
       "stack_ref",
       "unaffected_reg",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 179
+    "total_lines": 178
   },
   "cross_references": [
     {
@@ -346,14 +345,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(this_ptr,(CVector3f *)&this_ptr_00->field_0x20,&this_ptr_00->orient,",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 40,
       "match": "&stack0xffffffa8",
@@ -362,32 +353,8 @@
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "(this_ptr,*(int *)&this_ptr_00->field_0x108,*(int *)&this_ptr_00->field_0x10c,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x10c",
-      "severity": "mild",
-      "text": "(this_ptr,*(int *)&this_ptr_00->field_0x108,*(int *)&this_ptr_00->field_0x10c,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr_00->field_0x110);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 43,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);",
@@ -395,7 +362,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 44,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "(*((this_ptr_00->vtable)._ub)->renderBackground)(this_ptr_00,in_stack_00000010);",
@@ -403,7 +370,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 46,
+      "line": 45,
       "match": "in_stack_ffffffa0",
       "severity": "moderate",
       "text": "in_stack_ffffffa0 = this_ptr;",
@@ -411,7 +378,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 47,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(DAT_0060b280,1);",
@@ -419,7 +386,15 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 49,
+      "line": 48,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = unaff_EBX + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 48,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = unaff_EBX + 1;",
@@ -428,14 +403,6 @@
     {
       "description": "Unaffected register variable",
       "line": 49,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "unaff_EBX = unaff_EBX + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 50,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "} while (unaff_EBX < this_ptr->sorted_render_actor_count);",

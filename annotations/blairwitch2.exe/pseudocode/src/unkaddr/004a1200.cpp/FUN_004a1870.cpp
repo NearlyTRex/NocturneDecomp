@@ -59,8 +59,8 @@ void unkaddr_004a1200_cpp_FUN_004a1870(void)
                 (acStack_318,(char *)0x0,(char *)0x0,acStack_118,(char *)0x0);
       _sprintf(acStack_218,&DAT_005d59e3);
       engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(pCVar1,acStack_218,0x5a,0x36);
-      *(uint *)(&SNotesSection_ARRAY_01cab9f4[0].field_0x148 + iStack_18) = 0x215;
-      *(int *)(&SNotesSection_ARRAY_01cab9f4[0].field_0x14c + iStack_18) = iVar3;
+      *(uint *)((int)SNotesSection_ARRAY_01cab9f4[0].entries + iStack_18 + -0xc) = 0x215;
+      *(int *)((int)SNotesSection_ARRAY_01cab9f4[0].entries + iStack_18 + -8) = iVar3;
       iVar2 = iVar2 + 1;
       pCVar1 = pCVar1 + 1;
       iVar3 = iVar3 + *(int *)((int)&CAlphaBitmap_ARRAY_01caf128[0].height + iStack_14) + 10;

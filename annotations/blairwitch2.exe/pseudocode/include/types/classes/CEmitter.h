@@ -4,13 +4,52 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CColor3i.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EEmitterSoundType.h"
+#include "types/enums/EEmitterType.h"
 
 // Structure: CEmitter
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x61c (1564 bytes)
 #pragma pack(push, 1)
 typedef struct CEmitter {
-    char field_0[1564]; // 0x0
+    CDemonActor base; // 0x0
+    EEmitterType emitter_type; // 0x2b4
+    CVector3f emitter_size; // 0x2b8
+    int emitter_state; // 0x2c4
+    char event_on[100]; // 0x2c8
+    char event_off[100]; // 0x32c
+    float max_emit_time; // 0x390
+    int laser_type; // 0x394
+    CColor3i laser_color; // 0x398
+    CKeyFramedModelInstance model; // 0x3a4
+    float rock_speed; // 0x520
+    float wind_resist; // 0x524, Added in this build
+    float max_speed; // 0x528, Added in this build
+    int firefly_type; // 0x52c, Added in this build
+    int fizzle; // 0x530, Added in this build
+    int bright; // 0x534, Added in this build
+    int delta_mult; // 0x538, Added in this build
+    float ff_size; // 0x53c, Added in this build
+    int periodic_flag; // 0x540
+    float max_wait_time; // 0x544
+    int is_active; // 0x548, Added in this build
+    struct CDemonActor* dest_actor; // 0x54c
+    float sound_radius; // 0x550, Added in this build
+    char wav_name[100]; // 0x554
+    uint sfx_handle; // 0x5b8
+    EEmitterSoundType sfx_type; // 0x5bc
+    float emit_timer; // 0x5c0
+    float emit_period; // 0x5c4
+    float state_timer; // 0x5c8
+    CDemonGlobe globe; // 0x5cc
+    int was_on_screen; // 0x60c
+    int prev_emitter_state; // 0x610
+    float emit_radius; // 0x614, Added in this build
+    float blood_velocity; // 0x618, Added in this build
 } CEmitter;
 #pragma pack(pop)
 

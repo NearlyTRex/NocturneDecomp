@@ -10,6 +10,6 @@ void __cdecl core_hpriest_cpp_CHighPriestOfGardath_archive_FUN_004d47e0(CHighPri
 
 {
   core_npc_cpp_CNPC_archive_FUN_005109e0(&this_ptr->base);
-  core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x24348,"killEvent");
+  core_actor_cpp_archiveString_FUN_0040b730(this_ptr->kill_event,"killEvent");
   return;
 }

@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[4]:
+;   core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0 at 0059e73c
 ;   unkaddr_0059d350.cpp_FUN_0059da20 at 0059da64
 ;   unkaddr_0059d350.cpp_FUN_0059dc80 at 0059dc90
-;   unkafter_basicene.cpp_FUN_0059e3b0 at 0059e589
-;   unkafter_basicene.cpp_FUN_0059e6a0 at 0059e73c
+;   unkafter_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0 at 0059e589
 ;
 ; *****************************************************************************
 

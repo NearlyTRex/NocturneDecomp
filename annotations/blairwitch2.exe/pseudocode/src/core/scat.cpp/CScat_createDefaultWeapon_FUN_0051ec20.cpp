@@ -11,12 +11,12 @@ void __cdecl core_scat_cpp_CScat_createDefaultWeapon_FUN_0051ec20(CScat *this_pt
 {
   char cVar1;
   char *pcVar2;
-  byte *this_ptr_00;
+  CInventory *this_ptr_00;
   char *pcVar3;
   char *pcVar4;
   
-  this_ptr_00 = &this_ptr->field_0x2437c;
-  core_inv_cpp_CInventory_initialize_FUN_004da900((CInventory *)this_ptr_00);
+  this_ptr_00 = (this_ptr->base).inventories;
+  core_inv_cpp_CInventory_initialize_FUN_004da900(this_ptr_00);
   pcVar3 = "BaronProxy";
   pcVar2 = (char *)core_actor_cpp_createActorByName_FUN_0040c5a0("CBaronWeapon");
   pcVar4 = pcVar2;

@@ -63,9 +63,9 @@ int __cdecl core_charactr_cpp_CCharacter_attractActorToward_FUN_00427ac0(CCharac
       new_orientation = (CVector3f *)&actor->orient;
       pCVar1 = (actor->vtable)._ub;
       new_position = &CStack_64;
-      fStack_58 = *(float *)&actor->field_0x20 + fStack_28;
-      afStack_54[0] = *(float *)&actor->field_0x24 + fStack_24;
-      afStack_54[1] = *(float *)&actor->field_0x28 + fStack_20;
+      fStack_58 = (actor->location).position.x + fStack_28;
+      afStack_54[0] = (actor->location).position.y + fStack_24;
+      afStack_54[1] = (actor->location).position.z + fStack_20;
       CStack_64.x = fStack_58;
       *(float *)((int)&CStack_64 + (uint)bVar3 * -8 + 4) = afStack_54[(uint)bVar3 * -2];
       *(float *)((int)&CStack_64 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =

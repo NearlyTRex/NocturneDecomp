@@ -3005,7 +3005,7 @@ section .text
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
     MOV EDX,dword ptr [0x00616494]      ; 00523feb | g_CGamePtr
     ADD ESP,0x8                         ; 00523ff1
-    MOV dword ptr [EDX + 0x24c],EAX     ; 00523ff4 | g_CGameInstance.field492_0x24c
+    MOV dword ptr [EDX + 0x24c],EAX     ; 00523ff4 | g_CGameInstance.allow_enemy_attack_flag
     JMP 0x005223fb                      ; 00523ffa
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
     ADD ESI,0x11                        ; 00523fff
@@ -3041,7 +3041,7 @@ section .text
     MOV DL,AL                           ; 0052405d
     MOV EAX,[0x00616494]                ; 0052405f | g_CGamePtr
     MOV dword ptr [0x01e65904],EDX      ; 00524064 | DAT_01e65904
-    MOV dword ptr [EAX + 0x254],EDX     ; 0052406a | g_CGameInstance.field500_0x254
+    MOV dword ptr [EAX + 0x254],EDX     ; 0052406a | g_CGameInstance.hero_controls_blocked
     JMP 0x005223fb                      ; 00524070
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
     ADD ESI,0xf                         ; 00524075
@@ -3072,7 +3072,7 @@ section .text
         ;   XREF to: 0048e340 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0048e340(CEventList * this_ptr, char * condition_expression)
     MOV EDX,dword ptr [0x00616494]      ; 005240c9 | g_CGamePtr
     ADD ESP,0x8                         ; 005240cf
-    MOV dword ptr [EDX + 0x248],EAX     ; 005240d2 | g_CGameInstance.field488_0x248
+    MOV dword ptr [EDX + 0x248],EAX     ; 005240d2 | g_CGameInstance.allow_damage_flag
     JMP 0x005223fb                      ; 005240d8
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
     ADD ESI,0x15                        ; 005240dd
@@ -4652,7 +4652,7 @@ section .text
     MOV ESI,0x1                         ; 00525393
     MOV EAX,[0x00616494]                ; 00525398 | g_CGamePtr
     MOV dword ptr [ESP + 0x4bd0],ESI    ; 0052539d
-    MOV dword ptr [EAX + 0x248],0x1     ; 005253a4 | g_CGameInstance.field488_0x248
+    MOV dword ptr [EAX + 0x248],0x1     ; 005253a4 | g_CGameInstance.allow_damage_flag
     JMP 0x005223fb                      ; 005253ae
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
     ADD ESI,0x7                         ; 005253b3
@@ -4667,7 +4667,7 @@ section .text
     JNZ 0x005223fb                      ; 005253cd
         ;   XREF to: 005223fb (CONDITIONAL_JUMP)  ; LAB_005223fb
     MOV EDX,dword ptr [0x00616494]      ; 005253d3 | g_CGamePtr
-    MOV dword ptr [EDX + 0x248],EAX     ; 005253d9 | g_CGameInstance.field488_0x248
+    MOV dword ptr [EDX + 0x248],EAX     ; 005253d9 | g_CGameInstance.allow_damage_flag
     MOV dword ptr [ESP + 0x4bd0],EAX    ; 005253df
     FLD float ptr [EBX + 0x48]          ; 005253e6
     FLDZ                                ; 005253e9
@@ -5392,7 +5392,7 @@ section .text
     MOV EAX,[0x00616494]                ; 00525cb7 | g_CGamePtr
     MOV dword ptr [EBX],0x1             ; 00525cbc
     MOV dword ptr [ESP + 0x4bd0],ECX    ; 00525cc2
-    MOV dword ptr [EAX + 0x278],0x1     ; 00525cc9 | g_CGameInstance.field536_0x278
+    MOV dword ptr [EAX + 0x278],0x1     ; 00525cc9 | g_CGameInstance.act_completion_state
     JMP 0x005223fb                      ; 00525cd3
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
     PUSH 0x5e3d33                       ; 00525cd8 | = "Error parsing finishedAct command"
@@ -5465,23 +5465,23 @@ section .text
     SETZ DL                             ; 00525d9f
     AND EDX,0xff                        ; 00525da2
     MOV ESI,dword ptr [EAX + 0x244]     ; 00525da8 | g_CGameInstance.letterbox_mode
-    MOV dword ptr [EAX + 0x248],EDX     ; 00525dae | g_CGameInstance.field488_0x248
+    MOV dword ptr [EAX + 0x248],EDX     ; 00525dae | g_CGameInstance.allow_damage_flag
     TEST ESI,ESI                        ; 00525db4
     SETZ DL                             ; 00525db6
     AND EDX,0xff                        ; 00525db9
-    MOV dword ptr [EAX + 0x24c],EDX     ; 00525dbf | g_CGameInstance.field492_0x24c
+    MOV dword ptr [EAX + 0x24c],EDX     ; 00525dbf | g_CGameInstance.allow_enemy_attack_flag
     MOV EDX,dword ptr [EAX + 0x244]     ; 00525dc5 | g_CGameInstance.letterbox_mode
-    MOV dword ptr [EAX + 0x254],EDX     ; 00525dcb | g_CGameInstance.field500_0x254
+    MOV dword ptr [EAX + 0x254],EDX     ; 00525dcb | g_CGameInstance.hero_controls_blocked
     TEST EDX,EDX                        ; 00525dd1
     JZ 0x00525ddd                       ; 00525dd3
         ;   XREF to: 00525ddd (CONDITIONAL_JUMP)  ; LAB_00525ddd
     MOV EAX,[0x00616044]                ; 00525dd5 | g_CFieldNotesPtr
-    MOV dword ptr [EAX + 0x40],EDI      ; 00525dda | g_CFieldNotesInstance.field64_0x40
+    MOV dword ptr [EAX + 0x40],EDI      ; 00525dda | g_CFieldNotesInstance.is_displayed
     MOV dword ptr [0x01e65904],0x1      ; 00525ddd | DAT_01e65904
         ;   Label: LAB_00525ddd
     MOV EAX,[0x00616494]                ; 00525de7 | g_CGamePtr
     MOV dword ptr [EBX + 0x454],0xffffffff ; 00525dec
-    CMP dword ptr [EAX + 0x25c],0x0     ; 00525df6 | g_CGameInstance.field508_0x25c
+    CMP dword ptr [EAX + 0x25c],0x0     ; 00525df6 | g_CGameInstance.goggles_active
     JZ 0x005223fb                       ; 00525dfd
         ;   XREF to: 005223fb (CONDITIONAL_JUMP)  ; LAB_005223fb
     CMP dword ptr [EAX + 0x244],0x0     ; 00525e03 | g_CGameInstance.letterbox_mode
@@ -5489,7 +5489,7 @@ section .text
         ;   XREF to: 005223fb (CONDITIONAL_JUMP)  ; LAB_005223fb
     MOV ESI,dword ptr [0x0061b5a8]      ; 00525e10 | g_CDemonSetPtr
     PUSH ESI                            ; 00525e16 | g_CDemonSetInstance
-    MOV dword ptr [EAX + 0x25c],0x0     ; 00525e17 | g_CGameInstance.field508_0x25c
+    MOV dword ptr [EAX + 0x25c],0x0     ; 00525e17 | g_CGameInstance.goggles_active
     CALL unkafter_mimic.cpp_FUN_00492630 ; 00525e21
         ;   XREF to: 00492630 (UNCONDITIONAL_CALL)  ; undefined unkafter_mimic.cpp_FUN_00492630()
     ADD ESP,0x4                         ; 00525e26
@@ -5569,8 +5569,8 @@ section .text
     PUSH EAX                            ; 00525f0c
     MOV ECX,dword ptr [0x00616044]      ; 00525f0d | g_CFieldNotesPtr
     PUSH ECX                            ; 00525f13 | g_CFieldNotesInstance
-    CALL core_fldnotes.cpp_FUN_004a41b0 ; 00525f14
-        ;   XREF to: 004a41b0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a41b0()
+    CALL core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0 ; 00525f14
+        ;   XREF to: 004a41b0 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0(CFieldNotes * this_ptr, char * param_2, char * param_3)
     ADD ESP,0xc                         ; 00525f19
     TEST EAX,EAX                        ; 00525f1c
     JNZ 0x005223fb                      ; 00525f1e
@@ -5583,8 +5583,8 @@ section .text
     PUSH EAX                            ; 00525f31
     MOV EDI,dword ptr [0x00616044]      ; 00525f32 | g_CFieldNotesPtr
     PUSH EDI                            ; 00525f38 | g_CFieldNotesInstance
-    CALL core_fldnotes.cpp_FUN_004a41b0 ; 00525f39
-        ;   XREF to: 004a41b0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a41b0()
+    CALL core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0 ; 00525f39
+        ;   XREF to: 004a41b0 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0(CFieldNotes * this_ptr, char * param_2, char * param_3)
     ADD ESP,0xc                         ; 00525f3e
     JMP 0x005223fb                      ; 00525f41
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
@@ -5816,13 +5816,13 @@ section .text
         ;   XREF to: 005223fb (CONDITIONAL_JUMP)  ; LAB_005223fb
     MOV dword ptr [EBX + 0x18],EAX      ; 00526223
     MOV EAX,[0x00616494]                ; 00526226 | g_CGamePtr
-    CMP dword ptr [EAX + 0x260],0x0     ; 0052622b | g_CGameInstance.field512_0x260
+    CMP dword ptr [EAX + 0x260],0x0     ; 0052622b | g_CGameInstance.special_view_active
     SETZ DL                             ; 00526232
     AND EDX,0xff                        ; 00526235
     PUSH EDX                            ; 0052623b
     MOV dword ptr [ESP + 0x4c48],EDX    ; 0052623c
     PUSH EAX                            ; 00526243 | g_CGameInstance
-    MOV ECX,dword ptr [EAX + 0xb1c]     ; 00526244 | g_CGameInstance.field615_0xb1c
+    MOV ECX,dword ptr [EAX + 0xb1c]     ; 00526244 | g_CGameInstance.vtable
     CALL dword ptr [ECX + 0x4]          ; 0052624a
     ADD ESP,0x8                         ; 0052624d
     JMP 0x005223fb                      ; 00526250
@@ -6704,7 +6704,7 @@ section .text
     MOV dword ptr [ESP + 0x4bd0],EAX    ; 00526cde
     MOV EAX,[0x00616494]                ; 00526ce5 | g_CGamePtr
     MOV dword ptr [EBX],0x1             ; 00526cea
-    MOV dword ptr [EAX + 0x278],0x2     ; 00526cf0 | g_CGameInstance.field536_0x278
+    MOV dword ptr [EAX + 0x278],0x2     ; 00526cf0 | g_CGameInstance.act_completion_state
     JMP 0x005223fb                      ; 00526cfa
         ;   XREF to: 005223fb (UNCONDITIONAL_JUMP)  ; LAB_005223fb
     PUSH 0x5e4226                       ; 00526cff | = "Error parsing rollCredits command"
@@ -7167,7 +7167,7 @@ section .text
     MOV EAX,[0x0061b5a8]                ; 00527264 | g_CDemonSetPtr
     LEA EDX,[EAX + ESI*0x1]             ; 00527269
     MOV EAX,dword ptr [ESP + 0x4c90]    ; 0052726c
-    MOV dword ptr [EDX + 0x150],EAX     ; 00527273 | g_CDemonSetInstance.cameras[0].field332_0x14c
+    MOV dword ptr [EDX + 0x150],EAX     ; 00527273 | g_CDemonSetInstance.cameras[0].camera_group
     JMP 0x0052722e                      ; 00527279
         ;   XREF to: 0052722e (UNCONDITIONAL_JUMP)  ; LAB_0052722e
     CMP dword ptr [ESP + 0x4c98],0x0    ; 0052727b

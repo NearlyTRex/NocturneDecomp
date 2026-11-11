@@ -11,15 +11,16 @@ float __cdecl core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408c30(CDemon
 {
   CDemonSet *pCVar1;
   float fVar2;
-  uint uVar3;
+  CPlatform *pCVar3;
   
   core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00537a90(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30(g_CDemonSetPtr,this_ptr);
   core_setcolid_cpp_CDemonSet_enableCollision_FUN_00537ea0(g_CDemonSetPtr);
-  fVar2 = (float)core_setcolid_cpp_FUN_00534ea0(g_CDemonSetPtr,&this_ptr->field_0x20,radius);
-  uVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                    (g_CDemonSetPtr->collision_actor,g_CPlatformClassInfo.name_hash);
-  *(uint *)&this_ptr->field_0xdc = uVar3;
+  fVar2 = (float)core_setcolid_cpp_FUN_00534ea0(g_CDemonSetPtr,&this_ptr->location,radius);
+  pCVar3 = (CPlatform *)
+           core_actor_cpp_castToClassHash_FUN_0040c8f0
+                     (g_CDemonSetPtr->collision_actor,g_CPlatformClassInfo.name_hash);
+  this_ptr->standing_platform = pCVar3;
   pCVar1 = g_CDemonSetPtr;
   if (out_normal != (CVector3f *)0x0) {
     if (out_normal != &g_CDemonSetPtr->collision_normal) {

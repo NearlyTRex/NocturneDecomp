@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1852,
-    "complexity_score": 2483,
+    "complexity_score": 2312,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 993,
-    "suspect_count": 143,
+    "pseudocode_lines": 997,
+    "suspect_count": 126,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -17,13 +17,12 @@
       "suspect_float",
       "unaffected_reg",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 2845
+    "total_lines": 2849
   },
   "cross_references": [
     {
@@ -2797,19 +2796,11 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 206,
-      "match": "(int *)(param_1->carry_hands + (int)param_3",
-      "severity": "moderate",
-      "text": "iVar3 = *(int *)(param_1->carry_hands + (int)param_3 * 0x78);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 206,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1->carry_hands + (int)param_3 * 0x78);",
+      "text": "iVar3 = param_1->carry_hands[(int)param_3].bone_index;",
       "type": "unnamed_param"
     },
     {
@@ -2817,7 +2808,7 @@
       "line": 206,
       "match": "param_3",
       "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1->carry_hands + (int)param_3 * 0x78);",
+      "text": "iVar3 = param_1->carry_hands[(int)param_3].bone_index;",
       "type": "unnamed_param"
     },
     {
@@ -2841,16 +2832,8 @@
       "line": 242,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar10 = &(param_1->model).field_0xe80 + iVar3 * 0x30;",
+      "text": "pCVar10 = (param_1->model).bone_transform.bone_model_matrices + iVar3;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 242,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "puVar10 = &(param_1->model).field_0xe80 + iVar3 * 0x30;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -2865,16 +2848,8 @@
       "line": 293,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar10 = &(param_1->model).field_0xe80 + iVar3 * 0x30;",
+      "text": "pCVar10 = (param_1->model).bone_transform.bone_model_matrices + iVar3;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 293,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "puVar10 = &(param_1->model).field_0xe80 + iVar3 * 0x30;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -2889,16 +2864,8 @@
       "line": 344,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar10 = &(param_1->model).field_0xe80 + iVar3 * 0x30;",
+      "text": "pCVar10 = (param_1->model).bone_transform.bone_model_matrices + iVar3;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 344,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "puVar10 = &(param_1->model).field_0xe80 + iVar3 * 0x30;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -2913,16 +2880,8 @@
       "line": 365,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar10 = &(param_1->model).field_0xe80 + iVar3 * 0x30;",
+      "text": "pCVar10 = (param_1->model).bone_transform.bone_model_matrices + iVar3;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 365,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "puVar10 = &(param_1->model).field_0xe80 + iVar3 * 0x30;",
-      "type": "unnamed_field"
     },
     {
       "description": "Complex pointer cast",
@@ -2961,52 +2920,28 @@
       "line": 498,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_c0 = -*(float *)&param_1[2].field_0x41bc * (float)_DAT_005d0307;",
+      "text": "local_c0 = -*(float *)(param_1[2].flames[1].off_event + 0x24) * (float)_DAT_005d0307;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 498,
-      "match": "field_0x41bc",
-      "severity": "mild",
-      "text": "local_c0 = -*(float *)&param_1[2].field_0x41bc * (float)_DAT_005d0307;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 511,
+      "line": 512,
       "match": "param_1",
       "severity": "mild",
-      "text": "(afStack_13d8 + 0x3a,&(param_1->model).field_0xe80 + _DAT_01b4d290 * 0x30);",
+      "text": "(param_1->model).bone_transform.bone_model_matrices + _DAT_01b4d290);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 511,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "(afStack_13d8 + 0x3a,&(param_1->model).field_0xe80 + _DAT_01b4d290 * 0x30);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 528,
+      "line": 530,
       "match": "param_1",
       "severity": "mild",
-      "text": "(afStack_11e0 + 0x4c,&(param_1->model).field_0xe80 + _DAT_01b4d290 * 0x30);",
+      "text": "(param_1->model).bone_transform.bone_model_matrices + _DAT_01b4d290);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 528,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "(afStack_11e0 + 0x4c,&(param_1->model).field_0xe80 + _DAT_01b4d290 * 0x30);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 553,
+      "line": 555,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(param_1,0);",
@@ -3014,7 +2949,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 565,
+      "line": 567,
       "match": "param_3",
       "severity": "mild",
       "text": "else if (param_3 == 0.0) {",
@@ -3022,7 +2957,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 566,
+      "line": 568,
       "match": "DAT_01b4d248",
       "severity": "mild",
       "text": "core_xform_cpp_FUN_00591c10(local_ba0,&DAT_01b4d248,&DAT_0265370c);",
@@ -3030,7 +2965,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 566,
+      "line": 568,
       "match": "DAT_0265370c",
       "severity": "mild",
       "text": "core_xform_cpp_FUN_00591c10(local_ba0,&DAT_01b4d248,&DAT_0265370c);",
@@ -3038,7 +2973,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 592,
+      "line": 594,
       "match": "&stack0xffffeb60",
       "severity": "moderate",
       "text": "puVar5 = (uint *)&stack0xffffeb60;",
@@ -3046,7 +2981,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 603,
+      "line": 605,
       "match": "DAT_01b4d23c",
       "severity": "mild",
       "text": "core_xform_cpp_FUN_00591c10(local_9c0,&DAT_01b4d23c,&DAT_0265370c);",
@@ -3054,7 +2989,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 603,
+      "line": 605,
       "match": "DAT_0265370c",
       "severity": "mild",
       "text": "core_xform_cpp_FUN_00591c10(local_9c0,&DAT_01b4d23c,&DAT_0265370c);",
@@ -3062,7 +2997,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 649,
+      "line": 651,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->layer_action_index == 9) {",
@@ -3070,55 +3005,39 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 650,
+      "line": 653,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_00591530(&DAT_0265370c,&(param_1->model).field_0xe80 + _DAT_01b4d290 * 0x30);",
+      "text": "(&DAT_0265370c,(param_1->model).bone_transform.bone_model_matrices + _DAT_01b4d290);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 650,
+      "line": 653,
       "match": "DAT_0265370c",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_00591530(&DAT_0265370c,&(param_1->model).field_0xe80 + _DAT_01b4d290 * 0x30);",
+      "text": "(&DAT_0265370c,(param_1->model).bone_transform.bone_model_matrices + _DAT_01b4d290);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 650,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "core_xform_cpp_FUN_00591530(&DAT_0265370c,&(param_1->model).field_0xe80 + _DAT_01b4d290 * 0x30);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 655,
+      "line": 659,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_00591530(&DAT_0265370c,&(param_1->model).field_0xe80 + _DAT_01b4d28c * 0x30);",
+      "text": "(&DAT_0265370c,(param_1->model).bone_transform.bone_model_matrices + _DAT_01b4d28c);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 655,
+      "line": 659,
       "match": "DAT_0265370c",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_00591530(&DAT_0265370c,&(param_1->model).field_0xe80 + _DAT_01b4d28c * 0x30);",
+      "text": "(&DAT_0265370c,(param_1->model).bone_transform.bone_model_matrices + _DAT_01b4d28c);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 655,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "core_xform_cpp_FUN_00591530(&DAT_0265370c,&(param_1->model).field_0xe80 + _DAT_01b4d28c * 0x30);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 674,
+      "line": 678,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(param_2 + 0x2b0) + 0x24))(param_2);",
@@ -3126,7 +3045,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 674,
+      "line": 678,
       "match": "param_2",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_2 + 0x2b0) + 0x24))(param_2);",
@@ -3134,7 +3053,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 674,
+      "line": 678,
       "match": "param_2",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_2 + 0x2b0) + 0x24))(param_2);",
@@ -3142,7 +3061,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 684,
+      "line": 688,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar1 = (float)core_doc_cpp_FUN_0044ffd0(param_2);",
@@ -3150,23 +3069,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 690,
+      "line": 694,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x4230 != 0) {",
+      "text": "if (*(int *)(param_1[2].flames[2].base.actor_name + 0x10) != 0) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 690,
-      "match": "field_0x4230",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x4230 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 713,
+      "line": 717,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,DAT_007bcc84);",
@@ -3174,7 +3085,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 713,
+      "line": 717,
       "match": "DAT_007bcc84",
       "severity": "mild",
       "text": "iVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,DAT_007bcc84);",
@@ -3182,7 +3093,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 715,
+      "line": 719,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(param_2 + 0x2b0) + 0x24))(param_2);",
@@ -3190,7 +3101,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 715,
+      "line": 719,
       "match": "param_2",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_2 + 0x2b0) + 0x24))(param_2);",
@@ -3198,7 +3109,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 715,
+      "line": 719,
       "match": "param_2",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_2 + 0x2b0) + 0x24))(param_2);",
@@ -3206,7 +3117,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 745,
+      "line": 749,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == 0.0) {",
@@ -3214,7 +3125,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 757,
+      "line": 761,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "if (param_3 == 1.4013e-45) {",
@@ -3222,7 +3133,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 757,
+      "line": 761,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == 1.4013e-45) {",
@@ -3230,23 +3141,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 765,
+      "line": 769,
       "match": "param_1",
       "severity": "mild",
-      "text": "(local_d50,&(param_1->model).field_0xe80 + iVar3 * 0x30);",
+      "text": "(local_d50,(param_1->model).bone_transform.bone_model_matrices + iVar3);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 765,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "(local_d50,&(param_1->model).field_0xe80 + iVar3 * 0x30);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 796,
+      "line": 800,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*(int *)(param_2 + 0x2b0) + 0x7c))(param_2);",
@@ -3254,7 +3157,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 796,
+      "line": 800,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = (**(code **)(*(int *)(param_2 + 0x2b0) + 0x7c))(param_2);",
@@ -3262,7 +3165,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 796,
+      "line": 800,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = (**(code **)(*(int *)(param_2 + 0x2b0) + 0x7c))(param_2);",
@@ -3270,23 +3173,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 820,
+      "line": 824,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar10 = &(param_1->model).field_0xe80 + iVar3 * 0x30;",
+      "text": "pCVar10 = (param_1->model).bone_transform.bone_model_matrices + iVar3;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 820,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "puVar10 = &(param_1->model).field_0xe80 + iVar3 * 0x30;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 821,
+      "line": 825,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(param_1,0);",
@@ -3294,7 +3189,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 849,
+      "line": 853,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CBoxActorClassInfo.name_hash);",
@@ -3302,23 +3197,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 865,
+      "line": 869,
       "match": "param_1",
       "severity": "mild",
-      "text": "(local_e70,&(param_1->model).field_0xe80 + _DAT_01b4d290 * 0x30);",
+      "text": "(local_e70,(param_1->model).bone_transform.bone_model_matrices + _DAT_01b4d290);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 865,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "(local_e70,&(param_1->model).field_0xe80 + _DAT_01b4d290 * 0x30);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 878,
+      "line": 882,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CBoxActorClassInfo.name_hash);",
@@ -3326,23 +3213,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 894,
+      "line": 898,
       "match": "param_1",
       "severity": "mild",
-      "text": "(local_5a0,&(param_1->model).field_0xe80 + _DAT_01b4d290 * 0x30);",
+      "text": "(local_5a0,(param_1->model).bone_transform.bone_model_matrices + _DAT_01b4d290);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 894,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "(local_5a0,&(param_1->model).field_0xe80 + _DAT_01b4d290 * 0x30);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 907,
+      "line": 911,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CBoxActorClassInfo.name_hash);",
@@ -3350,23 +3229,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 924,
+      "line": 928,
       "match": "param_1",
       "severity": "mild",
-      "text": "(local_780,&(param_1->model).field_0xe80 + _DAT_01b4d290 * 0x30);",
+      "text": "(local_780,(param_1->model).bone_transform.bone_model_matrices + _DAT_01b4d290);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 924,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "(local_780,&(param_1->model).field_0xe80 + _DAT_01b4d290 * 0x30);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 937,
+      "line": 941,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == 0.0) {",
@@ -3374,7 +3245,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 938,
+      "line": 942,
       "match": "param_3",
       "severity": "mild",
       "text": "local_470 = param_3;",
@@ -3382,7 +3253,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 940,
+      "line": 944,
       "match": "param_3",
       "severity": "mild",
       "text": "local_46c = param_3;",
@@ -3390,7 +3261,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 942,
+      "line": 946,
       "match": "param_3",
       "severity": "mild",
       "text": "local_47c = param_3;",
@@ -3398,7 +3269,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 943,
+      "line": 947,
       "match": "param_3",
       "severity": "mild",
       "text": "local_478 = param_3;",
@@ -3406,7 +3277,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 947,
+      "line": 951,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "else if (param_3 == 1.4013e-45) {",
@@ -3414,7 +3285,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 947,
+      "line": 951,
       "match": "param_3",
       "severity": "mild",
       "text": "else if (param_3 == 1.4013e-45) {",
@@ -3422,23 +3293,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 963,
+      "line": 967,
       "match": "param_1",
       "severity": "mild",
-      "text": "(local_494 + 5,&(param_1->model).field_0xe80 + iVar3 * 0x30);",
+      "text": "(local_494 + 5,(param_1->model).bone_transform.bone_model_matrices + iVar3);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 963,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "(local_494 + 5,&(param_1->model).field_0xe80 + iVar3 * 0x30);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 990,
+      "line": 994,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "pfVar8 = unaff_ESI;",
@@ -3446,7 +3309,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 996,
+      "line": 1000,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",
@@ -3518,7 +3381,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 557,
+      "line": 559,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -3526,7 +3389,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 570,
+      "line": 572,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -3534,7 +3397,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 578,
+      "line": 580,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -3542,7 +3405,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 586,
+      "line": 588,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -3550,7 +3413,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 594,
+      "line": 596,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -3558,7 +3421,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 607,
+      "line": 609,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -3566,7 +3429,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 615,
+      "line": 617,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -3574,7 +3437,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 623,
+      "line": 625,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -3582,7 +3445,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 631,
+      "line": 633,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -3590,7 +3453,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 677,
+      "line": 681,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -3598,7 +3461,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 694,
+      "line": 698,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -3606,7 +3469,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 702,
+      "line": 706,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -3614,7 +3477,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 718,
+      "line": 722,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -3622,7 +3485,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 750,
+      "line": 754,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -3630,7 +3493,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 768,
+      "line": 772,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -3638,7 +3501,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 825,
+      "line": 829,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -3646,7 +3509,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 833,
+      "line": 837,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -3654,7 +3517,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 984,
+      "line": 988,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -3662,7 +3525,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 991,
+      "line": 995,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",

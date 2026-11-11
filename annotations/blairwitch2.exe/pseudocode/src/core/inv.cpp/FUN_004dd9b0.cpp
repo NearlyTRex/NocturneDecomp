@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void core_inv_cpp_FUN_004dd9b0(float *param_1)
@@ -39,29 +40,12 @@ void core_inv_cpp_FUN_004dd9b0(float *param_1)
   char local_500 [256];
   char local_400 [256];
   char local_300 [256];
-  SMRGLPrimitivePoly local_200 [4];
-  uint local_1fc;
-  uint local_1e8;
-  uint local_1e4;
-  uint local_1e0;
-  uint local_1dc;
-  uint local_1d8;
-  uint local_1d4;
-  uint local_1d0;
-  uint local_1cc;
-  uint local_1c8;
-  uint local_1c4;
-  uint local_1c0;
-  uint local_1bc;
-  CMatrix3x3f local_1b8;
+  byte local_200 [112];
   float local_190;
   float local_18c [5];
   float local_178;
   float local_16c;
-  float local_168;
-  uint local_164;
-  float local_160;
-  float local_15c;
+  float local_168 [4];
   uint local_158;
   float local_154;
   float local_148;
@@ -355,7 +339,7 @@ LAB_004ddd00:
       }
     }
   }
-  if ((*(int *)&g_CGamePtr->field_0x264 != 0) || (*(int *)&g_CGamePtr->field_0x25c != 0)) {
+  if ((g_CGamePtr->flashlight_active != 0) || (g_CGamePtr->goggles_active != 0)) {
     local_a0 = DAT_006141bc + -0x21;
     local_1c = (float)(DAT_006141bc + -6);
     color = 2;
@@ -442,12 +426,12 @@ LAB_004ddd00:
     local_18c[3] = 0.0;
     local_6c = (float)iVar7 * fVar1;
     local_1c = *(float *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x34) -
-               *(float *)&g_CDemonSetPtr->field_0x15acbc;
+               g_CDemonSetPtr->altitude_reference_y;
     local_70 = (float)(iVar7 + 4) * fVar1;
     local_18c[4] = local_1c;
     euler_angles = &local_ac;
     local_60 = (float)(iVar3 - iVar4) * fVar1;
-    this_ptr_00 = &local_1b8;
+    this_ptr_00 = (CMatrix3x3f *)(local_200 + 0x48);
     local_74 = (float)(iVar3 + iVar4) * fVar1;
     local_ac.x = 0.0;
     *(float *)((int)&local_ac + (uint)bVar9 * -8 + 4) = local_18c[(uint)bVar9 * -2 + 3];
@@ -459,14 +443,14 @@ LAB_004ddd00:
     local_128 = 0;
     afStack_138[2] = -local_6c;
     local_1c = afStack_138[3];
-    core_dirmat_cpp_FUN_00449530(&local_1b8);
-    local_160 = local_d0;
-    local_18c[(uint)bVar9 * -2 + 0xc] = afStack_cc[(uint)bVar9 * -2];
-    local_18c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0xd] =
+    core_dirmat_cpp_FUN_00449530(local_200 + 0x48);
+    local_168[2] = local_d0;
+    local_168[(uint)bVar9 * -2 + 3] = afStack_cc[(uint)bVar9 * -2];
+    local_168[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
          afStack_cc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-    if (afStack_114 + 2 != local_18c + 0xb) {
-      afStack_114[2] = local_160;
-      afStack_114[3] = local_15c;
+    if (afStack_114 + 2 != local_168 + 2) {
+      afStack_114[2] = local_168[2];
+      afStack_114[3] = local_168[3];
       local_104 = local_158;
     }
     core_inv_cpp_FUN_004d9ff0(local_70 + afStack_114[2]);
@@ -474,16 +458,16 @@ LAB_004ddd00:
     *(int *)((int)&local_124 + (uint)bVar9 * -8 + 4) = aiStack_fc[(uint)bVar9 * -2 + 6];
     *(int *)((int)&local_124 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
          aiStack_fc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7];
-    engine_special_cpp_FUN_0055d723((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&local_124);
+    engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_124);
     local_d8 = -local_60;
     local_dc = local_6c;
     local_d4 = 0;
     local_1c = local_d8;
-    core_dirmat_cpp_FUN_00449530(&local_1b8);
+    core_dirmat_cpp_FUN_00449530(local_200 + 0x48);
     local_b8 = local_154;
-    local_b4[(uint)bVar9 * -2] = local_18c[(uint)bVar9 * -2 + 0xf];
+    local_b4[(uint)bVar9 * -2] = local_168[(uint)bVar9 * -2 + 6];
     local_b4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-         local_18c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0x10];
+         local_168[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7];
     if (afStack_114 + 2 != afStack_cc + 5) {
       afStack_114[2] = local_b8;
       afStack_114[3] = local_b4[0];
@@ -494,12 +478,12 @@ LAB_004ddd00:
     *(int *)((int)&local_124 + (uint)bVar9 * -8 + 4) = aiStack_fc[(uint)bVar9 * -2 + 3];
     *(int *)((int)&local_124 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
          aiStack_fc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
-    engine_special_cpp_FUN_0055d723
-              ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&local_124);
+    engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_124)
+    ;
     local_148 = local_6c;
     local_144 = local_60;
     local_140 = 0;
-    core_dirmat_cpp_FUN_00449530(&local_1b8);
+    core_dirmat_cpp_FUN_00449530(local_200 + 0x48);
     local_190 = local_118;
     local_18c[(uint)bVar9 * -2] = afStack_114[(uint)bVar9 * -2];
     local_18c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
@@ -514,47 +498,48 @@ LAB_004ddd00:
     *(int *)((int)&local_124 + (uint)bVar9 * -8 + 4) = aiStack_fc[(uint)bVar9 * -2];
     *(int *)((int)&local_124 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
          aiStack_fc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-    engine_special_cpp_FUN_0055d723
-              ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&local_124);
+    engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_124)
+    ;
     afStack_cc[3] = local_60;
     afStack_cc[2] = -local_6c;
     local_bc = 0;
-    core_dirmat_cpp_FUN_00449530(&local_1b8);
+    core_dirmat_cpp_FUN_00449530(local_200 + 0x48);
     local_16c = local_178;
-    local_18c[(uint)bVar9 * -2 + 9] = local_18c[(uint)bVar9 * -2 + 6];
-    local_18c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10] =
+    local_168[(uint)bVar9 * -2] = local_18c[(uint)bVar9 * -2 + 6];
+    local_168[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
          local_18c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7];
-    if (afStack_114 + 2 != local_18c + 8) {
+    if (afStack_114 + 2 != &local_16c) {
       afStack_114[2] = local_16c;
-      afStack_114[3] = local_168;
-      local_104 = local_164;
+      afStack_114[3] = local_168[0];
+      local_104 = local_168[1];
     }
     core_inv_cpp_FUN_004d9ff0(local_70 + afStack_114[2]);
     local_124.x = local_13c;
     *(float *)((int)&local_124 + (uint)bVar9 * -8 + 4) = afStack_138[(uint)bVar9 * -2];
     *(float *)((int)&local_124 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
          afStack_138[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-    engine_special_cpp_FUN_0055d723
-              ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x90),&local_124);
-    local_1fc = 4;
-    local_1e8 = 0;
-    local_1e4 = 0;
-    local_1e0 = 0;
-    local_1dc = 1;
-    local_1d8 = 0x1000000;
-    local_1d4 = 0;
-    local_1cc = 0x1000000;
-    local_1c8 = 0x1000000;
-    local_1d0 = 2;
-    local_1bc = 0x1000000;
-    local_1c4 = 3;
-    local_1c0 = 0;
+    engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_124)
+    ;
+    local_200._4_4_ = 4;
+    local_200._24_4_ = 0;
+    local_200._28_4_ = 0;
+    local_200._32_4_ = 0;
+    local_200._36_4_ = 1;
+    local_200._40_4_ = 0x1000000;
+    local_200._44_4_ = 0;
+    local_200._52_4_ = 0x1000000;
+    local_200._56_4_ = 0x1000000;
+    local_200._48_4_ = 2;
+    local_200._68_4_ = 0x1000000;
+    local_200._60_4_ = 3;
+    local_200._64_4_ = 0;
     engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,0);
     engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046b870(DAT_0060b280,0);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
               (DAT_0060b280,(SMRGLTextureBasic *)0x1d02ee4);
-    engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00(DAT_0060b280,local_200,0x23);
+    engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00
+              (DAT_0060b280,(SMRGLPrimitivePoly *)local_200,0x23);
     engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046b870(DAT_0060b280,1);
   }
   _DAT_01c37788 = local_94;

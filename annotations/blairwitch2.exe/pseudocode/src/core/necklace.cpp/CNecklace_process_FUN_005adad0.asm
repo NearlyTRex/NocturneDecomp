@@ -17,7 +17,7 @@
 ;   core_xform.cpp_FUN_00591530
 ;   core_xform.cpp_FUN_00594380
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10
-;   unkafter_superopt.cpp_FUN_005a8300
+;   unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300
 ;
 ; *****************************************************************************
 
@@ -234,8 +234,8 @@ section .text
     MOV EDX,dword ptr [0x0061ebfc]      ; 005add0a | g_CSimpleParticleSystemPtr
     PUSH 0x3f800000                     ; 005add10
     PUSH EDX                            ; 005add15
-    CALL unkafter_superopt.cpp_FUN_005a8300 ; 005add16
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; undefined unkafter_superopt.cpp_FUN_005a8300()
+    CALL unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 005add16
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
     ADD ESP,0x34                        ; 005add1b
     LEA ESP,[EBP + 0x7a]                ; 005add1e
     POP EBP                             ; 005add21

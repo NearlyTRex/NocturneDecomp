@@ -11,7 +11,7 @@ void core_keyactor_cpp_factoryFuncKeyActor_FUN_004df110(void)
 {
   CKeyActor *this_ptr;
   
-  this_ptr = (CKeyActor *)debugAllocTracked1(0x478);
+  this_ptr = (CKeyActor *)operator_new(0x478);
   if (this_ptr == (CKeyActor *)0x0) {
     return;
   }

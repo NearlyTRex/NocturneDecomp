@@ -11,7 +11,6 @@
 int unkafter_superopt_cpp_FUN_005a86a0(int param_1)
 
 {
-  SProjectedVertex *output;
   SRenderVertex *pSVar1;
   int iVar2;
   int iVar3;
@@ -60,13 +59,12 @@ int unkafter_superopt_cpp_FUN_005a86a0(int param_1)
   bVar5 = 0;
   iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
   if (iVar2 == 0) {
-    output = (SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr;
+    pSVar1 = DAT_0060b280->vertex_buffer_ptr;
     local_48.x = (int)ROUND(((CVector3f *)(param_1 + 0x24))->x * _DAT_006002bc);
     local_48.y = (int)ROUND(*(float *)(param_1 + 0x28) * _DAT_006002bc);
     local_48.z = (int)ROUND(*(float *)(param_1 + 0x2c) * _DAT_006002bc);
-    engine_special_cpp_FUN_0055d9ec(output,&local_48);
-    iVar3 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0046cad0
-                      (DAT_0060b280,(SRenderVertex *)output);
+    engine_special_cpp_FUN_0055d9ec(&pSVar1->projected_vertex,&local_48);
+    iVar3 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0046cad0(DAT_0060b280,pSVar1);
     iVar2 = 0;
     if (iVar3 != 0) {
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
@@ -93,8 +91,7 @@ int unkafter_superopt_cpp_FUN_005a86a0(int param_1)
       local_54.z = (int)ROUND(_DAT_006002bc * 0.0);
       local_1c = local_6c;
       local_14 = local_68;
-      engine_special_cpp_FUN_0055d723((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&local_54)
-      ;
+      engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_54);
       local_6c = fVar4;
       local_64 = 0;
       local_68 = local_14;
@@ -102,7 +99,7 @@ int unkafter_superopt_cpp_FUN_005a86a0(int param_1)
       local_30.y = (int)ROUND(local_14 * _DAT_006002bc);
       local_30.z = (int)ROUND(_DAT_006002bc * 0.0);
       engine_special_cpp_FUN_0055d723
-                ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&local_30);
+                (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_30);
       local_6c = fVar4;
       local_68 = local_18;
       local_64 = 0;
@@ -110,7 +107,7 @@ int unkafter_superopt_cpp_FUN_005a86a0(int param_1)
       local_78.y = (int)ROUND(local_18 * _DAT_006002bc);
       local_78.z = (int)ROUND(_DAT_006002bc * 0.0);
       engine_special_cpp_FUN_0055d723
-                ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&local_78);
+                (&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_78);
       local_64 = 0;
       local_6c = local_1c;
       local_68 = local_18;
@@ -118,7 +115,7 @@ int unkafter_superopt_cpp_FUN_005a86a0(int param_1)
       local_60.y = (int)ROUND(local_18 * _DAT_006002bc);
       local_60.z = (int)ROUND(_DAT_006002bc * 0.0);
       engine_special_cpp_FUN_0055d723
-                ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x90),&local_60);
+                (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_60);
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
                 (DAT_0060b280,(SMRGLTextureBasic *)(&DAT_0061ec00 + *(int *)(param_1 + 0x20) * 0x18)
                 );
@@ -127,13 +124,14 @@ int unkafter_superopt_cpp_FUN_005a86a0(int param_1)
       fStack_20 = (*(float *)(param_1 + 0x10) - *(float *)(param_1 + 0xc)) *
                   (1.0 - *(float *)(param_1 + 8) / *(float *)(param_1 + 4)) +
                   *(float *)(param_1 + 0xc);
-      fVar4 = (float)unkafter_superopt_cpp_FUN_005a8250(*(uint *)(param_1 + 0x54));
+      fVar4 = (float)unkafter_superopt_cpp_CSimpleParticleSystem_updateFade_FUN_005a8250
+                               (*(CSimpleParticleSystem **)(param_1 + 0x54));
       local_14 = (float)iStack_24;
       fVar7 = (float10)iStack_24 * (float10)fVar4 * (float10)fStack_20;
       pSVar1 = DAT_0060b280->vertex_buffer_ptr;
       round();
       iStack_24 = (int)ROUND(fVar7);
-      *(int *)(pSVar1 + 0x2c) = iStack_24;
+      pSVar1->a = iStack_24;
       *(int *)(*extraout_EDX + 0x5c) = iStack_24;
       *(int *)(*extraout_EDX + 0x8c) = iStack_24;
       *(int *)(*extraout_EDX + 0xbc) = iStack_24;
@@ -199,14 +197,14 @@ int unkafter_superopt_cpp_FUN_005a86a0(int param_1)
       round();
       local_1c = (float)(int)ROUND(fVar6);
       *(float *)(iVar2 + 0xb8) = local_1c;
-      *(uint *)(this_ptr->vertex_buffer_ptr + 0x18) = 0;
-      *(uint *)(this_ptr->vertex_buffer_ptr + 0x1c) = 0xff0000;
-      *(uint *)(this_ptr->vertex_buffer_ptr + 0x48) = 0xff0000;
-      *(uint *)(this_ptr->vertex_buffer_ptr + 0x4c) = 0xff0000;
-      *(uint *)(this_ptr->vertex_buffer_ptr + 0x78) = 0xff0000;
-      *(uint *)(this_ptr->vertex_buffer_ptr + 0x7c) = 0;
-      *(uint *)(this_ptr->vertex_buffer_ptr + 0xa8) = 0;
-      *(uint *)(this_ptr->vertex_buffer_ptr + 0xac) = 0;
+      this_ptr->vertex_buffer_ptr->u = 0;
+      this_ptr->vertex_buffer_ptr->v = 0xff0000;
+      this_ptr->vertex_buffer_ptr[1].u = 0xff0000;
+      this_ptr->vertex_buffer_ptr[1].v = 0xff0000;
+      this_ptr->vertex_buffer_ptr[2].u = 0xff0000;
+      this_ptr->vertex_buffer_ptr[2].v = 0;
+      this_ptr->vertex_buffer_ptr[3].u = 0;
+      this_ptr->vertex_buffer_ptr[3].v = 0;
       engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(this_ptr,1);
       SStack_ac.base.count = 4;
       SStack_ac.surface_normal.D.i = 0;

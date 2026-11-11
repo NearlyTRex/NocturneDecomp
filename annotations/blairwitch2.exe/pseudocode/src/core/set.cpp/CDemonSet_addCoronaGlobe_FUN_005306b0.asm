@@ -15,7 +15,7 @@
 ;   core_keyactor.cpp_CKeyActor_process_FUN_004df1c0 at 004df24e
 ;   core_shadow.cpp_FUN_0053c500 at 0053d023
 ;   core_weapon.cpp_CWeapon_updateLighting_FUN_00589fd0 at 0058a1ed
-;   unkaddr_0059d350.cpp_FUN_0059d360 at 0059d3a4
+;   unkaddr_0059d350.cpp_CMuzzleEffect_init_FUN_0059d360 at 0059d3a4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01fc961c

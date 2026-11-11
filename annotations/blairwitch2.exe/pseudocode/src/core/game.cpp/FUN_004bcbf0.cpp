@@ -11,7 +11,7 @@
 void __cdecl core_game_cpp_FUN_004bcbf0(CGame *this_ptr)
 
 {
-  byte *puVar1;
+  float *pfVar1;
   char cVar2;
   int iVar3;
   _FILE *p_Var4;
@@ -42,7 +42,7 @@ void __cdecl core_game_cpp_FUN_004bcbf0(CGame *this_ptr)
   if (this_ptr->bitmap_filename[0] == '\0') {
     return;
   }
-  *(uint *)&this_ptr->field_0xe0 = 0;
+  this_ptr->cinematic_skip_in_progress = 0;
   iVar3 = engine_dosio_cpp_getFileSize_FUN_00460aa0(&DAT_005d8748,this_ptr->bitmap_filename);
   if (iVar3 < 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0047be40
@@ -124,7 +124,7 @@ void __cdecl core_game_cpp_FUN_004bcbf0(CGame *this_ptr)
     engine_special_cpp_FUN_0055f550(0);
     wincore_wddvmem_cpp_closeScreenDevice_FUN_00589170();
     wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
-    local_18 = FUN_005b8580(this_ptr->bitmap_width * this_ptr->bitmap_height);
+    local_18 = malloc(this_ptr->bitmap_width * this_ptr->bitmap_height);
     if (local_18 != (void *)0x0) {
       p_Var4 = engine_dosio_cpp_FUN_00460c70(&DAT_005d87a7,this_ptr->bitmap_filename,&DAT_005d87a4);
       if (p_Var4 == (_FILE *)0x0) {
@@ -164,27 +164,27 @@ void __cdecl core_game_cpp_FUN_004bcbf0(CGame *this_ptr)
       }
       engine_2d_c_clearInputAndWait_FUN_004032b0();
       core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004b8250(this_ptr);
-      puVar1 = &this_ptr->field_0x3a8;
+      pfVar1 = &this_ptr->bitmap_display_time;
       while( true ) {
         wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
-        if (*(int *)&this_ptr->field_0xd0 == 2) {
+        if (this_ptr->game_control == CONTROL_MODE_GAMEPAD) {
           core_game_cpp_CGame_resetKeyState_FUN_004b7140(this_ptr);
         }
         iVar3 = wincore_winrun_cpp_wasKeyPressed_FUN_0058eb40();
         if (((iVar3 != 0) ||
-            (iVar3 = (**(code **)*0x01D02F84)(0x01D02F84,*(uint *)&this_ptr->field_0x48),
-            iVar3 != 0)) || (_DAT_01c2a384 != 0)) break;
+            (iVar3 = (**(code **)*0x01D02F84)(0x01D02F84,this_ptr->key_fire), iVar3 != 0)) ||
+           (_DAT_01c2a384 != 0)) break;
         if (_DAT_01cb80cc == 1) {
-          *(float *)puVar1 = *(float *)puVar1 - g_CGamePtr->delta_time_float;
+          *pfVar1 = *pfVar1 - g_CGamePtr->delta_time_float;
         }
         else {
-          if (*(float *)&this_ptr->field_0x3a8 < 0.0) break;
-          *(float *)puVar1 = *(float *)puVar1 - g_CGamePtr->delta_time_float;
+          if (this_ptr->bitmap_display_time < 0.0) break;
+          *pfVar1 = *pfVar1 - g_CGamePtr->delta_time_float;
         }
       }
       do {
         if (_DAT_01c2a384 == 0) {
-          iVar3 = (**(code **)*0x01D02F84)(0x01D02F84,*(uint *)&this_ptr->field_0x48);
+          iVar3 = (**(code **)*0x01D02F84)(0x01D02F84,this_ptr->key_fire);
           if (iVar3 == 0) {
             engine_2d_c_clearInputAndWait_FUN_004032b0();
             core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004b8250(this_ptr);
@@ -219,7 +219,7 @@ void __cdecl core_game_cpp_FUN_004bcbf0(CGame *this_ptr)
             return;
           }
         }
-        if (*(int *)&this_ptr->field_0xd0 == 2) {
+        if (this_ptr->game_control == CONTROL_MODE_GAMEPAD) {
           core_game_cpp_CGame_resetKeyState_FUN_004b7140(this_ptr);
           wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
         }

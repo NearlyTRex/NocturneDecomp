@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ghostchi_cpp_FUN_005a9890(int param_1,undefined4 param_2)
+; void core_ghostchi_cpp_FUN_005a9890(int param_1,float param_2)
 ;
 ;
 ; Referenced Globals:
@@ -16,7 +16,7 @@
 ;   core_motion.cpp_FUN_005035c0
 ;   unkaddr_0059d350.cpp_FUN_0059d7f0
 ;   unkaddr_0059d350.cpp_FUN_0059daa0
-;   unkafter_superopt.cpp_FUN_005a8180
+;   unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     LEA EAX,[EBX + 0x264]               ; 005a9896
     PUSH dword ptr [ESP + 0x10]         ; 005a989c
     PUSH EAX                            ; 005a98a0
-    CALL unkafter_superopt.cpp_FUN_005a8180 ; 005a98a1
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; undefined unkafter_superopt.cpp_FUN_005a8180()
+    CALL unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 005a98a1
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
     FLD float ptr [EBX + 0x11430]       ; 005a98a6
     FLDZ                                ; 005a98ac
     ADD ESP,0x8                         ; 005a98ae

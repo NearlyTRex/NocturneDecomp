@@ -11,8 +11,9 @@
 CParticleBox * core_partibox_cpp_CParticleBox_dtor_FUN_005ac7f0(CParticleBox *this_ptr,uint flags)
 
 {
-  CBox *pCVar1;
-  CParticleBox *pCVar2;
+  CSimpleParticleSystem *pCVar1;
+  CBox *pCVar2;
+  CParticleBox *pCVar3;
   void *ptr;
   
   if ((flags & 4) != 0) {
@@ -20,22 +21,26 @@ CParticleBox * core_partibox_cpp_CParticleBox_dtor_FUN_005ac7f0(CParticleBox *th
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  *(CDemonActor_vtable **)&this_ptr->field_0x2b0 = &g_CParticleBoxVTable;
-  unkaddr_005a7eb0_cpp_FUN_005a8100(&this_ptr->field_0x220,0);
-  unkafter_superopt_cpp_FUN_005a8220(&this_ptr->field_0x220);
-  unkaddr_005a7eb0_cpp_FUN_005a8100(&this_ptr->field_0x1dc,0);
-  unkafter_superopt_cpp_FUN_005a8220(&this_ptr->field_0x1dc);
-  unkaddr_005a7eb0_cpp_FUN_005a8100(&this_ptr->field_0x198,0);
-  unkafter_superopt_cpp_FUN_005a8220(&this_ptr->field_0x198);
-  unkaddr_005a7eb0_cpp_FUN_005a8100(&this_ptr->field_0x154,0);
-  unkafter_superopt_cpp_FUN_005a8220(&this_ptr->field_0x154);
-  pCVar1 = core_box_cpp_CBox_dtor_FUN_005b1c70((CBox *)&this_ptr->field_0x4f0,0);
-  pCVar2 = (CParticleBox *)
+  pCVar1 = (this_ptr->base).base.particle_systems + 3;
+  (this_ptr->base).base.vtable._ub = &g_CParticleBoxVTable;
+  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_stop_FUN_005a8100(pCVar1,0);
+  unkafter_superopt_cpp_CSimpleParticleSystem_release_FUN_005a8220(pCVar1);
+  pCVar1 = (this_ptr->base).base.particle_systems + 2;
+  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_stop_FUN_005a8100(pCVar1,0);
+  unkafter_superopt_cpp_CSimpleParticleSystem_release_FUN_005a8220(pCVar1);
+  pCVar1 = (this_ptr->base).base.particle_systems + 1;
+  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_stop_FUN_005a8100(pCVar1,0);
+  unkafter_superopt_cpp_CSimpleParticleSystem_release_FUN_005a8220(pCVar1);
+  pCVar1 = (this_ptr->base).base.particle_systems;
+  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_stop_FUN_005a8100(pCVar1,0);
+  unkafter_superopt_cpp_CSimpleParticleSystem_release_FUN_005a8220(pCVar1);
+  pCVar2 = core_box_cpp_CBox_dtor_FUN_005b1c70(&(this_ptr->base).physics_box,0);
+  pCVar3 = (CParticleBox *)
            core_actor_cpp_CDemonActor_dtor_FUN_00408930
-                     ((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal.y,1);
+                     ((CDemonActor *)&pCVar2[-3].scrape_points[6].raytrace_normal.y,1);
   if ((flags & 2) == 0) {
-    return pCVar2;
+    return pCVar3;
   }
-  FUN_005b7fdc(pCVar2);
-  return pCVar2;
+  FUN_005b7fdc(pCVar3);
+  return pCVar3;
 }

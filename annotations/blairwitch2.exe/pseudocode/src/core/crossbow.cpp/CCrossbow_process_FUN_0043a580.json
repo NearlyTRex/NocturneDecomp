@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 327,
+    "complexity_score": 262,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 42,
-    "suspect_count": 25,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_param",
       "stack_ref",
-      "unnamed_field",
       "warning_type_propagation"
     ],
     "total_lines": 122
@@ -145,9 +144,9 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 9,
-      "match": "auStackY_101c",
+      "match": "afStackY_101c",
       "severity": "moderate",
-      "text": "uint auStackY_101c [1014];",
+      "text": "float afStackY_101c [1014];",
       "type": "stack_alignment_array"
     },
     {
@@ -223,60 +222,12 @@
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x6f8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x6f8 = uStack_10;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x6fc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x6fc = uStack_30;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x700",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x700 = uStack_2c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x6d8",
-      "severity": "mild",
-      "text": "core_flame_cpp_CFlame_hide_FUN_004a0200((CFlame *)&this_ptr->field_0x6d8);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 43,
       "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "core_flame_cpp_CFlame_process_FUN_0049f2e0((CFlame *)&this_ptr->field_0x6d8,in_stack_00000014);",
+      "text": "core_flame_cpp_CFlame_process_FUN_0049f2e0(&this_ptr->bolt_flame,in_stack_00000014);",
       "type": "stack_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x6d8",
-      "severity": "mild",
-      "text": "core_flame_cpp_CFlame_process_FUN_0049f2e0((CFlame *)&this_ptr->field_0x6d8,in_stack_00000014);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0xfc",
-      "severity": "mild",
-      "text": "*(int *)&(this_ptr->base).base.field_0xfc = this_ptr->flame_active;",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer value `&stack0xffffffe8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

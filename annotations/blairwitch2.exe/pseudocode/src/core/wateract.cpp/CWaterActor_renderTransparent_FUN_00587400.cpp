@@ -49,9 +49,9 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00587400(CWaterA
         piVar4 = (int *)0x265cc48;
         pSVar5 = this_ptr->vertices;
         do {
-          *piVar4 = (int)ROUND(*(float *)pSVar5 * _DAT_005fdca0);
-          piVar4[1] = (int)ROUND(*(float *)&pSVar5->field_0x4 * _DAT_005fdca0);
-          piVar4[2] = (int)ROUND(*(float *)&pSVar5->field_0x8 * _DAT_005fdca0);
+          *piVar4 = (int)ROUND((pSVar5->local_position).x * _DAT_005fdca0);
+          piVar4[1] = (int)ROUND((pSVar5->local_position).y * _DAT_005fdca0);
+          piVar4[2] = (int)ROUND((pSVar5->local_position).z * _DAT_005fdca0);
           iVar3 = iVar3 + 1;
           pSVar5 = pSVar5 + 1;
           piVar4 = piVar4 + 3;
@@ -61,27 +61,30 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00587400(CWaterA
       core_set_cpp_CDemonSet_rotateVerticies_FUN_00531e90
                 (g_CDemonSetPtr,this_ptr->vertex_count,(CVector3i *)0x265cc48);
       if (0 < this_ptr->vertex_count) {
-        vertex_position = (CVector3f *)&this_ptr->vertices[0].field_0xc;
+        vertex_position = &this_ptr->vertices[0].world_position;
         iVar8 = 0;
         do {
           core_set_cpp_FUN_00531a90(g_CDemonSetPtr,vertex_position,(CVector3f *)&DAT_0265370c,iVar3)
           ;
           pSVar1 = DAT_0060b280->vertex_buffer_ptr;
-          lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)(pSVar1 + iVar8 + 0x20);
-          *(uint *)(pSVar1 + iVar8 + 0x20) =
+          lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)((int)&pSVar1->r + iVar8)
+          ;
+          *(uint *)((int)&pSVar1->r + iVar8) =
                (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-          lVar2 = (longlong)((this_ptr->color).g << 8) * (longlong)*(int *)(pSVar1 + iVar8 + 0x24);
-          *(uint *)(pSVar1 + iVar8 + 0x24) =
+          lVar2 = (longlong)((this_ptr->color).g << 8) * (longlong)*(int *)((int)&pSVar1->g + iVar8)
+          ;
+          *(uint *)((int)&pSVar1->g + iVar8) =
                (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-          lVar2 = (longlong)((this_ptr->color).b << 8) * (longlong)*(int *)(pSVar1 + iVar8 + 0x28);
-          *(uint *)(pSVar1 + iVar8 + 0x28) =
+          lVar2 = (longlong)((this_ptr->color).b << 8) * (longlong)*(int *)((int)&pSVar1->b + iVar8)
+          ;
+          *(uint *)((int)&pSVar1->b + iVar8) =
                (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
           iVar3 = iVar3 + 1;
           vertex_position = (CVector3f *)&vertex_position[2].z;
           iVar8 = iVar8 + 0x30;
         } while (iVar3 < this_ptr->vertex_count);
       }
-      poly = (SMRGLPrimitivePoly *)&this_ptr->field_0x8104;
+      poly = (SMRGLPrimitivePoly *)this_ptr->primitives;
       if (this_ptr->opacity < 0xfde9) {
         iVar3 = 0;
         if (0 < this_ptr->primitive_count) {
@@ -89,7 +92,7 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00587400(CWaterA
             iVar3 = iVar3 + 1;
             engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00
                       (DAT_0060b280,poly,0x267);
-            poly = poly + 0x48;
+            poly = (SMRGLPrimitivePoly *)(poly->vertices + 4);
           } while (iVar3 < this_ptr->primitive_count);
         }
       }

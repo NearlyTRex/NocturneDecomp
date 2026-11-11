@@ -27,7 +27,7 @@
 ;   crt_string.c_strstr_FUN_005ba9e0
 ;   unkaddr_0059d350.cpp_FUN_0059d880
 ;   unkaddr_005a7eb0.cpp_FUN_005a7ed0
-;   unkafter_superopt.cpp_FUN_005a8300
+;   unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300
 ;
 ; *****************************************************************************
 
@@ -240,8 +240,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x118]     ; 005a0661
     FSTP float ptr [ESP]                ; 005a0668
     PUSH EDI                            ; 005a066b
-    CALL unkafter_superopt.cpp_FUN_005a8300 ; 005a066c
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; undefined unkafter_superopt.cpp_FUN_005a8300()
+    CALL unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 005a066c
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
     ADD ESP,0x34                        ; 005a0671
     PUSH 0x32                           ; 005a0674
     PUSH 0x0                            ; 005a0676

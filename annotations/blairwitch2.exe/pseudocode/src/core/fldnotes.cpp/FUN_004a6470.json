@@ -2,21 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 198,
-    "complexity_score": 359,
+    "complexity_score": 327,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 20,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 94,
-    "suspect_count": 24,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 92,
+    "suspect_count": 21,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 292
+    "total_lines": 290
   },
   "cross_references": [
     {
@@ -284,7 +284,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "FUN_005b8010(param_2,\"//-- BEGIN FIELD NOTES ------------------------------\\n\");",
@@ -292,7 +292,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 16,
       "match": "param_2",
       "severity": "mild",
       "text": "FUN_005b8010(param_2,\"// field notes file version\\n\");",
@@ -300,7 +300,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
       "text": "FUN_005b8010(param_2,&DAT_005d65a7,1);",
@@ -308,7 +308,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 17,
       "match": "DAT_005d65a7",
       "severity": "mild",
       "text": "FUN_005b8010(param_2,&DAT_005d65a7,1);",
@@ -316,7 +316,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 18,
       "match": "param_2",
       "severity": "mild",
       "text": "FUN_005b8010(param_2,\"// filename\\n\");",
@@ -324,7 +324,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
       "text": "FUN_005b8010(param_2,\"\\\"%s\\\"\\n\",param_1);",
@@ -332,39 +332,39 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_005b8010(param_2,\"\\\"%s\\\"\\n\",param_1);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x150",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(&SNotesSection_ARRAY_01cab9f4[0].field_0x150 + local_14)) {",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(int *)((int)SNotesSection_ARRAY_01cab9f4",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)((int)SNotesSection_ARRAY_01cab9f4[0].entries + local_14 + -4)) {",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(*(int *)(&SNotesSection_ARRAY_01cab9f4[0].field_0x154 + iVar3) + 0x140)) {",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(int *)((int)SNotesSection_ARRAY_01cab9f4",
+      "severity": "moderate",
+      "text": "(*(int *)((int)SNotesSection_ARRAY_01cab9f4[0].entries + iVar4) + 0x140)) {",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x150",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)(&SNotesSection_ARRAY_01cab9f4[0].field_0x150 + local_14));",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(int *)((int)SNotesSection_ARRAY_01cab9f4",
+      "severity": "moderate",
+      "text": "} while (iVar2 < *(int *)((int)SNotesSection_ARRAY_01cab9f4[0].entries + local_14 + -4));",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 54,
       "match": "param_2",
       "severity": "mild",
       "text": "FUN_005b8010(param_2,\"// entry count, list(\\\"name\\\", type)\\n\");",
@@ -372,71 +372,47 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 55,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005b8010(param_2,&DAT_005d660f,iVar2);",
+      "text": "FUN_005b8010(param_2,&DAT_005d660f,iVar3);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 55,
       "match": "DAT_005d660f",
       "severity": "mild",
-      "text": "FUN_005b8010(param_2,&DAT_005d660f,iVar2);",
+      "text": "FUN_005b8010(param_2,&DAT_005d660f,iVar3);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 60,
-      "match": "field_0x150",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&SNotesSection_ARRAY_01cab9f4[local_18].field_0x150) {",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(int *)((int)SNotesSection_ARRAY_01cab9f4",
+      "severity": "moderate",
+      "text": "(*(int *)((int)SNotesSection_ARRAY_01cab9f4[0].entries + iVar4) + 0x140)) {",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(*(int *)(&SNotesSection_ARRAY_01cab9f4[0].field_0x154 + iVar3) + 0x140)) {",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(int *)((int)SNotesSection_ARRAY_01cab9f4",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)SNotesSection_ARRAY_01cab9f4[0].entries + iVar4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 75,
       "match": "param_2",
       "severity": "mild",
-      "text": "(param_2,\"\\\"%s\\\", %d\\n\",",
+      "text": "FUN_005b8010(param_2,\"\\\"%s\\\", %d\\n\",iVar1,*(uint *)(iVar1 + 0x140));",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 75,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(int *)(&SNotesSection_ARRAY_01cab9f4[0].field_0x154 + iVar3),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 77,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(*(int *)(&SNotesSection_ARRAY_01cab9f4[0].field_0x154 + iVar3) + 0x140));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 86,
-      "match": "field_0x150",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)&SNotesSection_ARRAY_01cab9f4[local_18].field_0x150);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 94,
       "match": "param_2",
       "severity": "mild",
       "text": "FUN_005b8010(param_2,\"//-- END FIELD NOTES --------------------------------\\n\");",

@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_steuben.cpp_CSteuben_ctor_FUN_005a5b40
-;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x11850                        ; 005a5b10
         ;   Label: core_steuben.cpp_factoryFuncSteuben_FUN_005a5b10
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 005a5b15
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005a5b15
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 005a5b1a
     TEST EAX,EAX                        ; 005a5b1d
     JNZ 0x005a5b22                      ; 005a5b1f

@@ -17,9 +17,9 @@ CBat * __cdecl core_bat_cpp_CBat_ctor_FUN_00410fd0(CBat *this_ptr)
   char *pcVar5;
   
   pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
-  pCVar3 = core_course_cpp_CCourse_ctor_FUN_00438a50((CCourse *)&pCVar2[1].field_0x20);
+  pCVar3 = core_course_cpp_CCourse_ctor_FUN_00438a50((CCourse *)&pCVar2[1].location);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
-                          ((CKeyFramedModelInstance *)(pCVar3 + 0x10));
+                          ((CKeyFramedModelInstance *)&pCVar3[1].frames);
   *(CDemonActor_vtable **)(this_ptr_00[-1].model_name + 0xd0) = &g_CBatVTable;
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x0;
   this_ptr_00[1].part_visibility_flags[0] = 0;

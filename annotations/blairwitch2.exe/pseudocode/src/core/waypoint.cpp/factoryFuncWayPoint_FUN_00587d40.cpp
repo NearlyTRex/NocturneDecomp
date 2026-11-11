@@ -11,7 +11,7 @@ void core_waypoint_cpp_factoryFuncWayPoint_FUN_00587d40(void)
 {
   CWayPoint *this_ptr;
   
-  this_ptr = (CWayPoint *)debugAllocTracked1(0x6bc);
+  this_ptr = (CWayPoint *)operator_new(0x6bc);
   if (this_ptr == (CWayPoint *)0x0) {
     return;
   }

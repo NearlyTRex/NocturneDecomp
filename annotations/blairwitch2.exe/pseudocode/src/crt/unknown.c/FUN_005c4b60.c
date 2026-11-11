@@ -17,7 +17,7 @@ uint FUN_005c4b60(uint param_1,int param_2)
   
   (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2d0)();
   uVar3 = 1;
-  puVar1 = (uint *)FUN_005b98d0(1,0x10);
+  puVar1 = (uint *)calloc(1,0x10);
   if (puVar1 == (uint *)0x0) {
     uVar3 = 0;
   }

@@ -9,10 +9,6 @@
       "type":"typedef"
     },
     {
-      "name":"CActorProperty",
-      "type":"struct"
-    },
-    {
       "name":"CAlphaBitmap",
       "type":"struct"
     },
@@ -258,10 +254,6 @@
     },
     {
       "name":"CColor3i",
-      "type":"struct"
-    },
-    {
-      "name":"CComplexPolygon",
       "type":"struct"
     },
     {
@@ -882,10 +874,6 @@
     },
     {
       "name":"CMouse",
-      "type":"struct"
-    },
-    {
-      "name":"COptimize",
       "type":"struct"
     },
     {
@@ -2581,10 +2569,6 @@
       "type":"struct"
     },
     {
-      "name":"SExpandedEdge",
-      "type":"struct"
-    },
-    {
       "name":"SFire",
       "type":"struct"
     },
@@ -3038,10 +3022,6 @@
     },
     {
       "name":"SScriptLine",
-      "type":"struct"
-    },
-    {
-      "name":"SScriptXRef",
       "type":"struct"
     },
     {
@@ -4949,6 +4929,10 @@
         {
           "name":"CONTROL_MODE_GAMEPAD",
           "val":2
+        },
+        {
+          "name":"CONTROL_MODE_POINT_AND_CLICK",
+          "val":3
         }
       ]
     },
@@ -5029,23 +5013,31 @@
           "val":11
         },
         {
-          "name":"DAMAGE_TYPE_IMMUNE",
+          "name":"DAMAGE_TYPE_ATTACK_GENERIC",
           "val":100
         },
         {
-          "name":"DAMAGE_TYPE_MELEE",
+          "name":"DAMAGE_TYPE_ATTACK_BULLET",
+          "val":101
+        },
+        {
+          "name":"DAMAGE_TYPE_ATTACK_FIRE",
+          "val":102
+        },
+        {
+          "name":"DAMAGE_TYPE_ATTACK_BLADE",
           "val":103
         },
         {
-          "name":"DAMAGE_TYPE_LAUNCH",
+          "name":"DAMAGE_TYPE_ATTACK_STAKE",
           "val":104
         },
         {
-          "name":"DAMAGE_TYPE_NO_FLINCH",
+          "name":"DAMAGE_TYPE_ATTACK_GAS",
           "val":105
         },
         {
-          "name":"DAMAGE_TYPE_DECAL",
+          "name":"DAMAGE_TYPE_ATTACK_ELECTROCUTE",
           "val":106
         },
         {
@@ -5276,6 +5268,18 @@
         {
           "name":"EMITTER_TYPE_SOUND",
           "val":10
+        },
+        {
+          "name":"EMITTER_TYPE_LEAF",
+          "val":11
+        },
+        {
+          "name":"EMITTER_TYPE_FIREFLY",
+          "val":12
+        },
+        {
+          "name":"EMITTER_TYPE_BLOOD",
+          "val":13
         }
       ]
     },
@@ -5446,6 +5450,10 @@
         {
           "name":"HERO_CONTROL_PLAYER",
           "val":0
+        },
+        {
+          "name":"HERO_CONTROL_NETWORK",
+          "val":1
         },
         {
           "name":"HERO_CONTROL_AI",
@@ -14427,17 +14435,6 @@
     {
       "alig":1,
       "cat":"/Nocturne/Class/Game",
-      "desc":"Stub: no RTTI in this build, size and fields not yet recovered",
-      "fields":[],
-      "importable":true,
-      "len":1,
-      "name":"CActorProperty",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Class/Game",
       "desc":"",
       "fields":[
         {
@@ -18687,17 +18684,6 @@
       "len":12,
       "min_alig":1,
       "name":"CColor3i",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Class/Game",
-      "desc":"Stub: no RTTI in this build, size and fields not yet recovered",
-      "fields":[],
-      "importable":true,
-      "len":1,
-      "name":"CComplexPolygon",
       "pack":false,
       "type":"struct"
     },
@@ -31013,17 +30999,6 @@
     {
       "alig":1,
       "cat":"/Nocturne/Class/Game",
-      "desc":"Stub: no RTTI in this build, size and fields not yet recovered",
-      "fields":[],
-      "importable":true,
-      "len":1,
-      "name":"COptimize",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Class/Game",
       "desc":"",
       "fields":[
         {
@@ -42197,17 +42172,6 @@
     {
       "alig":1,
       "cat":"/Nocturne/Struct/Game",
-      "desc":"Stub: no RTTI in this build, size and fields not yet recovered",
-      "fields":[],
-      "importable":true,
-      "len":1,
-      "name":"SExpandedEdge",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
       "desc":"",
       "fields":[
         {
@@ -46040,8 +46004,16 @@
     {
       "alig":1,
       "cat":"/Nocturne/Struct/Game",
-      "desc":"Stub: size from Watcom RTTI, fields not yet recovered",
-      "fields":[],
+      "desc":"PGameSettingsChanged's nested player record ($GSPlayer$:PGameSettingsChanged$$): RTTI 40, as in nocedit, whose layout is one 40-character name. Its ctor returns this; the netgame code around it is nocedit's.",
+      "fields":[
+        {
+          "comment":"nocedit's layout; RTTI 40 leaves room for nothing else",
+          "len":40,
+          "name":"name",
+          "offset":0,
+          "type":"char[40]"
+        }
+      ],
       "importable":true,
       "len":40,
       "name":"SPlayer",
@@ -46751,17 +46723,6 @@
       "importable":true,
       "len":8,
       "name":"SScriptLine",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"Stub: no RTTI in this build, size and fields not yet recovered",
-      "fields":[],
-      "importable":true,
-      "len":1,
-      "name":"SScriptXRef",
       "pack":false,
       "type":"struct"
     },

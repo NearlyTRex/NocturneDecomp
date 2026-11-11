@@ -10,7 +10,7 @@
 ;   core_setdir.cpp_CZThumb_write_FUN_00538670 at 00538687
 ;   engine_pcx.c_saveScreenshotGeneral_FUN_00514a30 at 00514b44
 ;   engine_pod.cpp_FUN_0051b6dc at 0051b851
-;   support_trstream.cpp_FUN_0057dca0 at 0057dcc4
+;   support_trstream.cpp_COutStreamFile_write_FUN_0057dca0 at 0057dcc4
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005bcdfc_0061f2a4 = 005bcdfc

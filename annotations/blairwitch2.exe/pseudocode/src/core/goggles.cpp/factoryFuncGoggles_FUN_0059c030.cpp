@@ -11,7 +11,7 @@ void core_goggles_cpp_factoryFuncGoggles_FUN_0059c030(void)
 {
   CGoggles *this_ptr;
   
-  this_ptr = (CGoggles *)debugAllocTracked1(0x434);
+  this_ptr = (CGoggles *)operator_new(0x434);
   if (this_ptr == (CGoggles *)0x0) {
     return;
   }

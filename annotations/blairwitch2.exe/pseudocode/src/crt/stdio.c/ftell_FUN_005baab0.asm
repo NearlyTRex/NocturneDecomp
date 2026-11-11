@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[10]:
-;   core_fldnotes.cpp_FUN_004a41b0 at 004a4266
+;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0 at 004a4266
 ;   core_game.cpp_FUN_004bbf70 at 004bc103
 ;   core_script.cpp_CScript_dbLoad_FUN_00529c10 at 00529c76
 ;   core_script.cpp_FUN_00521cf0 at 00521dbe
@@ -14,7 +14,7 @@
 ;   sound_mp3.cpp_FUN_005048e0 at 00504912
 ;   sound_mp3.cpp_FUN_00509db0 at 00509e0f
 ;   support_newmsg.cpp_readMessageFile_FUN_0050f9e0 at 0050fa35
-;   support_trstream.cpp_FUN_0057dd20 at 0057dd32
+;   support_trstream.cpp_COutStreamFile_tell_FUN_0057dd20 at 0057dd32
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2a8 = 005bce04

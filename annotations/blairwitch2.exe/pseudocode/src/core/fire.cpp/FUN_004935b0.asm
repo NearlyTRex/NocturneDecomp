@@ -27,9 +27,9 @@
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CGameInstance.delta_time_float
-;   undefined4 g_CDemonSetInstance.field95_0x15ac70
-;   undefined4 g_CDemonSetInstance.field99_0x15ac74
-;   undefined4 g_CDemonSetInstance.field103_0x15ac78
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.x
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.y
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
@@ -116,11 +116,11 @@ section .text
     FXCH                                ; 0049369c
     FSTP float ptr [EAX + 0x4]          ; 0049369e
     FSTP float ptr [EAX + 0x8]          ; 004936a1
-    FLD float ptr [EBX + 0x15ac70]      ; 004936a4 | g_CDemonSetInstance.field95_0x15ac70
+    FLD float ptr [EBX + 0x15ac70]      ; 004936a4 | g_CDemonSetInstance.active_fog.scroll.x
     FMUL float ptr [ESP + 0x38]         ; 004936aa
-    FLD float ptr [EBX + 0x15ac74]      ; 004936ae | g_CDemonSetInstance.field99_0x15ac74
+    FLD float ptr [EBX + 0x15ac74]      ; 004936ae | g_CDemonSetInstance.active_fog.scroll.y
     FMUL float ptr [ESP + 0x38]         ; 004936b4
-    FLD float ptr [EBX + 0x15ac78]      ; 004936b8 | g_CDemonSetInstance.field103_0x15ac78
+    FLD float ptr [EBX + 0x15ac78]      ; 004936b8 | g_CDemonSetInstance.active_fog.scroll.z
     FMUL float ptr [ESP + 0x38]         ; 004936be
     LEA EDI,[ESP + 0x8]                 ; 004936c2
     LEA ESI,[ESP + 0x2c]                ; 004936c6

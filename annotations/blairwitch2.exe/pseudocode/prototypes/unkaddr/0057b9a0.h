@@ -45,46 +45,46 @@ int FUN_0057cc20(int *param_1,undefined1 *param_2,int param_3);
 // Address: 0057ccc0
 int FUN_0057ccc0(int *param_1);
 
-// Original: unkaddr_0057b9a0.cpp_FUN_0057cdb0
+// Original: unkaddr_0057b9a0.cpp_CInStreamFile_ctorOpen_FUN_0057cdb0
 // Address: 0057cdb0
-undefined4 * FUN_0057cdb0(undefined4 param_1,undefined4 param_2);
+undefined4 * __cdecl CInStreamFile::ctorOpen(CInStreamFile *this_ptr,LPCSTR param_2);
 
-// Original: unkaddr_0057b9a0.cpp_FUN_0057ce20
+// Original: unkaddr_0057b9a0.cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20
 // Address: 0057ce20
-undefined4 * FUN_0057ce20(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+undefined4 * __cdecl CInStreamFile::ctorOpenInDirectory(CInStreamFile *this_ptr,undefined4 param_2,undefined4 param_3);
 
-// Original: unkaddr_0057b9a0.cpp_FUN_0057cf20
+// Original: unkaddr_0057b9a0.cpp_CInStreamFile_getChar_FUN_0057cf20
 // Address: 0057cf20
-int FUN_0057cf20(int *param_1);
+int __cdecl CInStreamFile::getChar(CInStreamFile *this_ptr);
 
-// Original: unkaddr_0057b9a0.cpp_FUN_0057cf40
+// Original: unkaddr_0057b9a0.cpp_CInStreamFile_ungetChar_FUN_0057cf40
 // Address: 0057cf40
-undefined4 FUN_0057cf40(int param_1,int param_2);
+undefined4 __cdecl CInStreamFile::ungetChar(CInStreamFile *this_ptr,int param_2);
 
-// Original: unkaddr_0057b9a0.cpp_FUN_0057cf80
+// Original: unkaddr_0057b9a0.cpp_CInStreamFile_peekChar_FUN_0057cf80
 // Address: 0057cf80
-uint FUN_0057cf80(int param_1);
+uint __cdecl CInStreamFile::peekChar(CInStreamFile *this_ptr);
 
-// Original: unkaddr_0057b9a0.cpp_FUN_0057cfe0
+// Original: unkaddr_0057b9a0.cpp_CInStreamFile_read_FUN_0057cfe0
 // Address: 0057cfe0
-int FUN_0057cfe0(int param_1,undefined4 *param_2,uint param_3);
+int __cdecl CInStreamFile::read(CInStreamFile *this_ptr,undefined4 *param_2,uint param_3);
 
-// Original: unkaddr_0057b9a0.cpp_FUN_0057d0c0
+// Original: unkaddr_0057b9a0.cpp_CInStreamFile_seek_FUN_0057d0c0
 // Address: 0057d0c0
-undefined4 FUN_0057d0c0(int param_1,int param_2,uint param_3);
+undefined4 __cdecl CInStreamFile::seek(CInStreamFile *this_ptr,int param_2,uint param_3);
 
-// Original: unkaddr_0057b9a0.cpp_FUN_0057d110
+// Original: unkaddr_0057b9a0.cpp_CInStreamFile_tell_FUN_0057d110
 // Address: 0057d110
-undefined4 FUN_0057d110(int param_1);
+undefined4 __cdecl CInStreamFile::tell(CInStreamFile *this_ptr);
 
-// Original: unkaddr_0057b9a0.cpp_FUN_0057d130
+// Original: unkaddr_0057b9a0.cpp_CInStreamFile_isOpen_FUN_0057d130
 // Address: 0057d130
-bool FUN_0057d130(int param_1);
+bool __cdecl CInStreamFile::isOpen(CInStreamFile *this_ptr);
 
-// Original: unkaddr_0057b9a0.cpp_FUN_0057d150
+// Original: unkaddr_0057b9a0.cpp_CInStreamFile_isEof_FUN_0057d150
 // Address: 0057d150
-undefined4 FUN_0057d150(int param_1);
+undefined4 __cdecl CInStreamFile::isEof(CInStreamFile *this_ptr);
 
-// Original: unkaddr_0057b9a0.cpp_FUN_0057d180
+// Original: unkaddr_0057b9a0.cpp_CInStreamFile_close_FUN_0057d180
 // Address: 0057d180
-undefined4 FUN_0057d180(int param_1);
+undefined4 __cdecl CInStreamFile::close(CInStreamFile *this_ptr);

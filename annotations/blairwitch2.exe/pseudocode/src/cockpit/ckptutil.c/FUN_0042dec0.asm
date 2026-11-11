@@ -10,9 +10,9 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
+;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fread_FUN_005b87c0
-;   crt_unknown.c_FUN_005b8580
 ;   crt_unknown.c_FUN_005b86a0
 ;   crt_unknown.c_printf_FUN_005b8e10
 ;   crt_unknown.c_sprintf_FUN_005b7790
@@ -161,8 +161,8 @@ section .text
         ;   XREF to: 0042e092 (CONDITIONAL_JUMP)  ; LAB_0042e092
     LEA EBP,[EDX*0x8 + 0x0]             ; 0042e02c
     PUSH EBP                            ; 0042e033
-    CALL crt_unknown.c_FUN_005b8580     ; 0042e034
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 0042e034
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     ADD ESP,0x4                         ; 0042e039
     MOV dword ptr [EBX],EAX             ; 0042e03c
     TEST EAX,EAX                        ; 0042e03e

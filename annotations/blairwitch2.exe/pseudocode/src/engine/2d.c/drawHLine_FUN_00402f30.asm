@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   x2
 ;
 ; XREF[11]:
-;   core_fldnotes.cpp_FUN_004a2060 at 004a212b
+;   core_fldnotes.cpp_SPageResourceText_draw_FUN_004a2060 at 004a212b
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50 at 0050d0c0
 ;   engine_2d.c_drawRect_FUN_00403170 at 00403187
 ;   engine_2d.c_fillRectColor_FUN_004031c0 at 00403224

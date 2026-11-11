@@ -108,7 +108,7 @@
   },
   "suspects": [
     {
-      "description": "'pCVar1[1].actor_name + 0x18' walks 1 x sizeof(CDemonActor) (0x2b4) + offsetof(actor_name) (0x0) + 0x18 = 0x2cc, which is exactly offsetof(CActorDestination, dest_class[20]). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar1)->dest_class[20] (\u00a7de-pun/\u00a712). Ambiguous: CBarrier::effect_class_name_list[8], CBat::course_filename[24], CFrankenstienMachine::course_filename[16] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar1[1].actor_name + 0x18' walks 1 x sizeof(CDemonActor) (0x2b4) + offsetof(actor_name) (0x0) + 0x18 = 0x2cc, which is exactly offsetof(CActorDestination, dest_class[20]). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar1)->dest_class[20] (\u00a7de-pun/\u00a712). Ambiguous: CBarrier::effect_class_name_list[8], CBat::course_filename[24], CEmitter::event_on[4] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 10,
       "severity": "moderate",
       "text": "(pCVar1[1].actor_name + 0x18,0x28,&g_CDemonTriangleTypeInfo);",

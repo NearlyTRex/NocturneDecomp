@@ -6,11 +6,11 @@
 #include "system/basetypes.h"
 
 // Structure: CCodec
-// Stub: size from Watcom RTTI, fields not yet recovered
+// CCodec_ctor (bw1 00442ba0, bw2 00433e80, bw3 00440800) stores the vtable at +0; derived ctors overwrite it. RTTI 4. Typed void * because BW's vtable slots are not checked against nocedit's CCodec_vtable.
 // Ghidra size: 0x4 (4 bytes)
 #pragma pack(push, 1)
 typedef struct CCodec {
-    char field_0[4]; // 0x0
+    void* vtable; // 0x0
 } CCodec;
 #pragma pack(pop)
 

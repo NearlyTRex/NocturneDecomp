@@ -2,21 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 414,
-    "complexity_score": 629,
+    "complexity_score": 645,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 154,
-    "suspect_count": 45,
+    "pseudocode_lines": 155,
+    "suspect_count": 46,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
       "stack_alignment_array",
       "unnamed_param",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 568
+    "total_lines": 569
   },
   "cross_references": [
     {
@@ -694,12 +695,12 @@
       "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_24 = param_1->poly_vert_list + local_30;",
+      "text": "local_24 = (int)&(((SMRGLPrimitiveQuad *)(param_1->poly_vert_list->vertices + -2))->base).",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 85,
       "match": "param_3",
       "severity": "mild",
       "text": "(&local_118,param_3,param_4);",
@@ -707,7 +708,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 85,
       "match": "param_4",
       "severity": "mild",
       "text": "(&local_118,param_3,param_4);",
@@ -715,7 +716,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 87,
       "match": "param_5",
       "severity": "mild",
       "text": "((local_18 <= 1.0 && (local_44 = local_18, param_5 != (float *)0x0)))) {",
@@ -723,7 +724,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 94,
+      "line": 95,
       "match": "param_5",
       "severity": "mild",
       "text": "if (&local_e0 != param_5) {",
@@ -731,7 +732,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 95,
+      "line": 96,
       "match": "param_5",
       "severity": "mild",
       "text": "*param_5 = local_e0;",
@@ -739,7 +740,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 97,
       "match": "param_5",
       "severity": "mild",
       "text": "param_5[1] = local_dc[0];",
@@ -747,7 +748,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 98,
       "match": "param_5",
       "severity": "mild",
       "text": "param_5[2] = local_dc[1];",
@@ -755,7 +756,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 107,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (local_34 < param_1->poly_count);",
@@ -763,7 +764,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 110,
+      "line": 111,
       "match": "param_1",
       "severity": "mild",
       "text": "local_3c = &param_1->rotation_matrix_workspace;",
@@ -771,7 +772,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 111,
+      "line": 112,
       "match": "param_3",
       "severity": "mild",
       "text": "core_dirmat_cpp_FUN_004495a0(local_3c,param_3);",
@@ -779,7 +780,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 116,
+      "line": 117,
       "match": "param_4",
       "severity": "mild",
       "text": "core_dirmat_cpp_FUN_004495a0(local_3c,param_4);",
@@ -787,7 +788,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 121,
+      "line": 122,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar3 = param_1->collision_triangle_list + param_2 * param_1->collision_triangle_count;",
@@ -795,7 +796,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 121,
+      "line": 122,
       "match": "param_2",
       "severity": "mild",
       "text": "pCVar3 = param_1->collision_triangle_list + param_2 * param_1->collision_triangle_count;",
@@ -803,7 +804,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 121,
+      "line": 122,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar3 = param_1->collision_triangle_list + param_2 * param_1->collision_triangle_count;",
@@ -811,7 +812,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 123,
+      "line": 124,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < param_1->collision_triangle_count) {",
@@ -819,7 +820,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 130,
+      "line": 131,
       "match": "param_5",
       "severity": "mild",
       "text": "(local_44 = local_18, param_5 != (float *)0x0)) {",
@@ -827,7 +828,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 144,
+      "line": 145,
       "match": "param_5",
       "severity": "mild",
       "text": "if (local_dc + 8 != param_5) {",
@@ -835,7 +836,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 145,
+      "line": 146,
       "match": "param_5",
       "severity": "mild",
       "text": "*param_5 = local_bc;",
@@ -843,7 +844,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 146,
+      "line": 147,
       "match": "param_5",
       "severity": "mild",
       "text": "param_5[1] = local_b8;",
@@ -851,7 +852,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 147,
+      "line": 148,
       "match": "param_5",
       "severity": "mild",
       "text": "param_5[2] = local_b4;",
@@ -859,7 +860,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 152,
+      "line": 153,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (local_2c < param_1->collision_triangle_count);",
@@ -867,11 +868,19 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 79,
+      "line": 80,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_80.x = local_68.x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 59,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "local_24 = (int)&(((SMRGLPrimitiveQuad *)(param_1->poly_vert_list->vertices + -2))->base).",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 2,

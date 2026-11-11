@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_dtor_FUN_0044dcb0
-;   core_moon.cpp_FUN_00502450
+;   core_moon.cpp_CMoon_free_FUN_00502450
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
         ;   Label: core_moon.cpp_CMoon_dtor_FUN_00502390
     MOV EBX,dword ptr [ESP + 0x8]       ; 00502391
     PUSH EBX                            ; 00502395
-    CALL core_moon.cpp_FUN_00502450     ; 00502396
-        ;   XREF to: 00502450 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_00502450()
+    CALL core_moon.cpp_CMoon_free_FUN_00502450 ; 00502396
+        ;   XREF to: 00502450 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_free_FUN_00502450(CMoon * this_ptr)
     ADD ESP,0x4                         ; 0050239b
     PUSH 0x0                            ; 0050239e
     ADD EBX,0x738                       ; 005023a0

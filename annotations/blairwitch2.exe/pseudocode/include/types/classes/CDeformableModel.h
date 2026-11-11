@@ -11,6 +11,10 @@ struct CSkeleton;
 #include "types/classes/CVector3f.h"
 #include "types/structs/SInputFace.h"
 #include "types/structs/SLod.h"
+#include "types/structs/SMRGLHeaderBasic.h"
+#include "types/structs/SMRGLTextureModel.h"
+#include "types/structs/SPart.h"
+#include "types/structs/STextureSet.h"
 #include "types/structs/SVert.h"
 
 // Structure: CDeformableModel
@@ -19,7 +23,6 @@ struct CSkeleton;
 typedef struct CDeformableModel {
     int num_lods; // 0x0
     SLod lod_info[5]; // 0x4
-    char field_9[35]; // 0x9
     int vertex_count[5]; // 0x2c
     struct SVert* vertex_data_ptr[5]; // 0x40
     int tri_count[5]; // 0x54
@@ -29,9 +32,9 @@ typedef struct CDeformableModel {
     int* cap_index_ptr[5]; // 0xa4
     int num_texture_sets; // 0xb8
     int num_textures; // 0xbc
-    char field_192[2880]; // 0xc0
+    STextureSet texture_sets[5]; // 0xc0
     int num_parts; // 0xc00
-    char field_3076[2880]; // 0xc04
+    SPart parts[30]; // 0xc04
     CVector3f model_scale; // 0x1744
     CVector3f bone_origins[100]; // 0x1750
     CVector3f bias_used; // 0x1c00

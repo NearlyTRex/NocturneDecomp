@@ -40,7 +40,7 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0056a780(CStranger 
   float fStack_e4;
   float fStack_e0;
   uint uStack_dc;
-  uint uStack_d8;
+  float fStack_d8;
   uint uStack_d4;
   uint uStack_d0;
   float fStack_c8;
@@ -74,7 +74,7 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0056a780(CStranger 
   float fStack_34;
   float fStack_30;
   float fStack_2c;
-  byte *local_28;
+  CLocation *local_28;
   float fStack_24;
   int local_20;
   float local_1c;
@@ -86,8 +86,9 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0056a780(CStranger 
   local_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
                        ((CCharacter *)this_ptr,0);
   if ((float)_DAT_005ebb05 <= local_14) {
-    if ((*(int *)&this_ptr->field_0x2620 == 0) && (*(int *)&this_ptr->field_0x2698 == 0)) {
-      local_28 = &this_ptr->field_0x20;
+    if (((this_ptr->base).base.carry_hands[0].carry_actor == (CDemonActor *)0x0) &&
+       ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
+      local_28 = &(this_ptr->base).base.base.location;
       local_20 = 0;
       local_1c = 0.0;
       while( true ) {
@@ -98,9 +99,9 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0056a780(CStranger 
                                  g_CLadderClassInfo.name_hash);
         local_18 = this_ptr_00;
         if ((this_ptr_00 != (CDemonActor *)0x0) &&
-           (ABS(*(float *)&this_ptr->field_0x24 -
-                (*(float *)&this_ptr_00->field_0x24 + *(float *)&this_ptr_00[1].field_0x180)) <=
-            (float)_DAT_005ebb15)) {
+           (ABS((this_ptr->base).base.base.location.position.y -
+                ((this_ptr_00->location).position.y +
+                this_ptr_00[1].particle_systems[0].fade_duration)) <= (float)_DAT_005ebb15)) {
           core_actor_cpp_FUN_00408de0(this_ptr_00,local_28);
           local_f0 = local_114;
           (&stack0xffffff10)[(uint)bVar5 * -2 + 1] =
@@ -156,18 +157,18 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0056a780(CStranger 
               fStack_e4 = fStack_78;
               fStack_e0 = fStack_74;
             }
-            fStack_e4 = fStack_e4 + *(float *)&unaff_EBP->field_0x434;
-            fStack_30 = *(float *)&this_ptr->field_0x44;
-            fStack_2c = *(float *)&this_ptr->field_0x50;
-            fStack_34 = *(float *)&this_ptr->field_0x5c;
-            local_28 = *(byte **)&unaff_EBP->field_0x44;
-            fStack_24 = *(float *)&unaff_EBP->field_0x50;
-            local_1c = *(float *)&unaff_EBP->field_0x5c;
+            fStack_e4 = fStack_e4 + (unaff_EBP->base).base.model.bone_origins[0x18].z;
+            fStack_30 = (this_ptr->base).base.base.orient_matrix.m[0].z;
+            fStack_2c = (this_ptr->base).base.base.orient_matrix.m[1].z;
+            fStack_34 = (this_ptr->base).base.base.orient_matrix.m[2].z;
+            local_28 = (CLocation *)(unaff_EBP->base).base.base.orient_matrix.m[0].z;
+            fStack_24 = (unaff_EBP->base).base.base.orient_matrix.m[1].z;
+            local_1c = (unaff_EBP->base).base.base.orient_matrix.m[2].z;
             fVar6 = (float10)fcos((float10)_DAT_005ebb2d);
             fVar1 = ABS(fStack_34 * local_1c + fStack_30 * (float)local_28 + fStack_2c * fStack_24);
             if (fVar6 <= (float10)fVar1) {
               in_stack_fffffea0 = this_ptr;
-              core_actor_cpp_FUN_00408de0(this_ptr,&unaff_EBP->field_0x20);
+              core_actor_cpp_FUN_00408de0(this_ptr,&(unaff_EBP->base).base.base.location);
               uStack_d0 = uStack_70;
               *(float *)((int)&stack0xffffff34 + (uint)bVar5 * 0xfffffffe * 4) =
                    (&stack0xffffff88)[(uint)bVar5 * -2 + 3];
@@ -178,9 +179,9 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0056a780(CStranger 
                           (g_CConsolePtr,"?Ladder dot : %f\n" + 1,(double)fVar1);
                 this_ptr->ladder_to_descend = (CLadder *)unaff_EBP;
                 core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                          ((CMotionController *)&this_ptr->field_0x2b4,0x2b,1);
-                *(uint *)&this_ptr->field_0x10a74 = 0;
-                uStack_d8 = *(uint *)&unaff_EBP->field_0x434;
+                          (&(this_ptr->base).base.model.base,0x2b,1);
+                (this_ptr->base).player_input.action_state.fire = 0;
+                fStack_d8 = (unaff_EBP->base).base.model.bone_origins[0x18].z;
                 uStack_dc = 0;
                 uStack_d4 = 0xbfc00000;
                 core_actor_cpp_FUN_00408d70(unaff_EBP,&stack0xffffff24);
@@ -191,9 +192,9 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0056a780(CStranger 
                  ((int)&stack0xffffff34 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 7) * 4) =
                      *(uint *)
                       ((int)&stack0xffffff34 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 10) * 4);
-                fStack_4c = fStack_b8 - *(float *)&this_ptr->field_0x20;
-                fStack_48 = fStack_b4 - *(float *)&this_ptr->field_0x24;
-                fStack_44 = fStack_b0 - *(float *)&this_ptr->field_0x28;
+                fStack_4c = fStack_b8 - (this_ptr->base).base.base.location.position.x;
+                fStack_48 = fStack_b4 - (this_ptr->base).base.base.location.position.y;
+                fStack_44 = fStack_b0 - (this_ptr->base).base.base.location.position.z;
                 fStack_88 = fStack_4c;
                 (&stack0xffffff7c)[(uint)bVar5 * 0xfffffffe] =
                      (&stack0xffffff88)[(uint)bVar5 * -2 + 0xc];
@@ -204,9 +205,9 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0056a780(CStranger 
                   (this_ptr->ladder_offset).y = fStack_84;
                   (this_ptr->ladder_offset).z = fStack_80;
                 }
-                fStack_40 = local_e8 - *(float *)&this_ptr->field_0x20;
-                fStack_3c = fStack_e4 - *(float *)&this_ptr->field_0x24;
-                fStack_38 = fStack_e0 - *(float *)&this_ptr->field_0x28;
+                fStack_40 = local_e8 - (this_ptr->base).base.base.location.position.x;
+                fStack_3c = fStack_e4 - (this_ptr->base).base.base.location.position.y;
+                fStack_38 = fStack_e0 - (this_ptr->base).base.base.location.position.z;
                 fStack_f4 = fStack_40;
                 (&stack0xffffff10)[(uint)bVar5 * 0xfffffffe] =
                      (&stack0xffffff88)[(uint)bVar5 * -2 + 0xf];

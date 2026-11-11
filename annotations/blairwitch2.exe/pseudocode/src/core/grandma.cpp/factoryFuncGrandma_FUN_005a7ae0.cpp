@@ -11,7 +11,7 @@ void core_grandma_cpp_factoryFuncGrandma_FUN_005a7ae0(void)
 {
   CGrandma *this_ptr;
   
-  this_ptr = (CGrandma *)debugAllocTracked1(0x11854);
+  this_ptr = (CGrandma *)operator_new(0x11854);
   if (this_ptr == (CGrandma *)0x0) {
     return;
   }

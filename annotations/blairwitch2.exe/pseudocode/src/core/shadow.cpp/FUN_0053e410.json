@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 559,
+    "complexity_score": 558,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 79,
+    "pseudocode_lines": 78,
     "suspect_count": 43,
     "suspect_types": [
       "concat_reconstruction",
@@ -21,7 +21,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 219
+    "total_lines": 218
   },
   "cross_references": [],
   "function": {
@@ -361,24 +361,24 @@
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x90),",
-      "type": "undefined_data"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 50,
+      "line": 49,
       "match": "&stack0x000000ac",
       "severity": "moderate",
-      "text": "(CVector3i *)&stack0x000000ac);",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)&stack0x000000ac);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 49,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)&stack0x000000ac);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "this_ptr = DAT_0060b280;",
@@ -386,15 +386,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 51,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "*(uint *)(DAT_0060b280->vertex_buffer_ptr + 0x20) = 0xffff;",
+      "text": "DAT_0060b280->vertex_buffer_ptr->r = 0xffff;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 77,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,1);",
@@ -402,7 +402,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 80,
+      "line": 79,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "(DAT_0060b280,(SMRGLHeaderPrimitive *)&stack0x00000000);",
@@ -410,7 +410,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 79,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLHeaderPrimitive *)&stack0x00000000);",
@@ -418,7 +418,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 80,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);",

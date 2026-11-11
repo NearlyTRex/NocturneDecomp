@@ -16,17 +16,17 @@ CCross * unkafter_cross_cpp_CCross_ctor_FUN_005a69f0(CCross *this_ptr)
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = (CCross *)core_melee_cpp_CMelee_ctor_FUN_004ea8b0((CMelee *)this_ptr);
-  ((UActorVTable *)&pCVar2->field_0x2b0)->_ub = &g_CCrossVTable._ub;
+  pCVar2 = (CCross *)core_melee_cpp_CMelee_ctor_FUN_004ea8b0(&this_ptr->base);
+  (pCVar2->base).base.base.vtable._ub = &g_CCrossVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            ((CKeyFramedModelInstance *)&pCVar2->field_0x2b4,(char *)0x5f06e9);
-  *(EWeaponType *)&pCVar2->field_0x43c = WEAPON_TYPE_BARON|WEAPON_TYPE_FLASHLIGHT;
-  *(float *)&pCVar2->field_0x6d8 = 25.0;
+            (&(pCVar2->base).base.model,(char *)0x5f06e9);
+  (pCVar2->base).base.weapon_type = WEAPON_TYPE_BARON|WEAPON_TYPE_FLASHLIGHT;
+  (pCVar2->base).strength_lo = 25.0;
   pcVar3 = "shovel?.wav";
-  *(float *)&pCVar2->field_0x6dc = 50.0;
-  *(float *)&pCVar2->field_0x6e0 = 0.9;
-  pcVar4 = &pCVar2->field_0x6fc;
-  *(int *)&pCVar2->field_0x6e4 = 1;
+  (pCVar2->base).strength_hi = 50.0;
+  (pCVar2->base).dismember_prob = 0.9;
+  pcVar4 = (pCVar2->base).thrust_hit_character_sound;
+  (pCVar2->base).can_go_in_inventory = 1;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -37,7 +37,7 @@ CCross * unkafter_cross_cpp_CCross_ctor_FUN_005a69f0(CCross *this_ptr)
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   pcVar3 = (char *)0x5f0700;
-  pcVar4 = &pCVar2->field_0x760;
+  pcVar4 = (pCVar2->base).swing_hit_character_sound;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -48,7 +48,7 @@ CCross * unkafter_cross_cpp_CCross_ctor_FUN_005a69f0(CCross *this_ptr)
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   pcVar3 = (char *)0x5f070c;
-  pcVar4 = &pCVar2->field_0x7c4;
+  pcVar4 = (pCVar2->base).hit_other_sound;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -58,15 +58,15 @@ CCross * unkafter_cross_cpp_CCross_ctor_FUN_005a69f0(CCross *this_ptr)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  *(uint *)&pCVar2->field_0x2a8 = 0x3dcccccd;
-  *(uint *)&pCVar2->field_0xfc = 0;
-  *(uint *)&pCVar2->field_0x828 = 0;
-  *(uint *)&pCVar2->field_0x82c = 0;
-  *(uint *)&pCVar2->field_0x834 = 0;
-  *(uint *)&pCVar2->field_0x830 = 0x3f333333;
-  *(uint *)&pCVar2->field_0x844 = 0;
-  *(uint *)&pCVar2->field_0x840 = 0;
-  *(uint *)&pCVar2->field_0x83c = 0;
-  *(uint *)&pCVar2->field_0x838 = 0;
+  *(uint *)&(pCVar2->base).base.base.field_0x2a8 = 0x3dcccccd;
+  (pCVar2->base).base.base.is_transparent = 0;
+  pCVar2->charge = 0.0;
+  pCVar2->charge_time = 0.0;
+  pCVar2->pulse_timer = 0.0;
+  pCVar2->glow_intensity = 0.7;
+  pCVar2->corona_queued = 0;
+  pCVar2->blast_pending = 0.0;
+  pCVar2->unused_83c = 0;
+  pCVar2->blast_strength = 0.0;
   return pCVar2;
 }

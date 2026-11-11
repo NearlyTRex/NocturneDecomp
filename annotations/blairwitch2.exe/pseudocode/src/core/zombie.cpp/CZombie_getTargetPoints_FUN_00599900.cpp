@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_zombie_cpp_CZombie_getTargetPoints_FUN_00599900(CZombie *this_ptr,CVector3f *out_points_array)
@@ -49,8 +50,7 @@ int __cdecl core_zombie_cpp_CZombie_getTargetPoints_FUN_00599900(CZombie *this_p
   do {
     switch((iStack_1c + (this_ptr->base).base.base.direction_hint) % 4) {
     case 0:
-      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[0] * 4) != 0)
-      {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
         core_skeleton_cpp_FUN_00546a90(pCStack_18,this_ptr->bone_indices[5]);
         CStack_40.x = fStack_34;
         *(float *)((int)&CStack_40 + (uint)bVar3 * -8 + 4) = afStack_30[(uint)bVar3 * -2];
@@ -76,8 +76,7 @@ LAB_00599a4b:
       }
       break;
     case 1:
-      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[2] * 4) != 0)
-      {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
         core_skeleton_cpp_FUN_00546a90(pCStack_18,this_ptr->bone_indices[6]);
         CStack_94.x = afStack_60[2];
         *(float *)((int)&CStack_94 + (uint)bVar3 * -8 + 4) = afStack_60[(uint)bVar3 * -2 + 3];
@@ -94,8 +93,7 @@ LAB_00599a4b:
       }
       break;
     case 2:
-      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[6] * 4) != 0)
-      {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[6]] != 0) {
         core_skeleton_cpp_FUN_00546a90(pCStack_18,this_ptr->bone_indices[0]);
         pCVar2 = out_points_array + iStack_14;
         CStack_28.x = fStack_a0;
@@ -113,8 +111,7 @@ LAB_00599a48:
       }
       break;
     case 3:
-      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[5] * 4) != 0)
-      {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[5]] != 0) {
         core_skeleton_cpp_FUN_00546a90(pCStack_18,this_ptr->bone_indices[10]);
         CStack_4c.x = fStack_64;
         *(float *)((int)&CStack_4c + (uint)bVar3 * -8 + 4) = afStack_60[(uint)bVar3 * -2];

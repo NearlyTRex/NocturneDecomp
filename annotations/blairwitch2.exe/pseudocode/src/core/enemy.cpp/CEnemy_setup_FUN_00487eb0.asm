@@ -8,6 +8,7 @@
 ;
 ; XREF[30]:
 ;   core_armour.cpp_CArmour_setup_FUN_0040eee0 at 0040eee5
+;   core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0 at 0059e6b6
 ;   core_batcreat.cpp_CBatCreature_setup_FUN_004116f0 at 004116f8
 ;   core_batman.cpp_CBatman_setup_FUN_00412be0 at 00412be8
 ;   core_beast.cpp_CBeast_setup_FUN_00414a60 at 00414a77
@@ -16,7 +17,6 @@
 ;   core_bride.cpp_CBride_setup_FUN_0041d9c0 at 0041db9e
 ;   core_bugs.cpp_CBugs_setup_FUN_0041f0f0 at 0041f113
 ;   core_conveyor.cpp_CConstruct_setup_FUN_00436be0 at 00436be8
-;   core_cow.cpp_CZombieCow_setup_FUN_00439150 at 0043919e
 ;   ... and 20 more
 ;
 ; Called Functions:

@@ -9,6 +9,6 @@
 void __cdecl core_steuben_cpp_CSteuben_archive_FUN_005a5d60(CSteuben *this_ptr)
 
 {
-  core_basicnpc_cpp_CBasicNPC_archive_FUN_005a4930((CBasicNPC *)this_ptr);
+  core_basicnpc_cpp_CBasicNPC_archive_FUN_005a4930(&this_ptr->base);
   return;
 }

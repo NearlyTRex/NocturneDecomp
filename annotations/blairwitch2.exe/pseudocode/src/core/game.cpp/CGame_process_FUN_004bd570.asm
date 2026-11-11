@@ -283,8 +283,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x284]     ; 004bd850 | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP],EDX             ; 004bd856
     PUSH EDI                            ; 004bd859
-    CALL unkafter_superopt.cpp_FUN_005a8180 ; 004bd85a
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; undefined unkafter_superopt.cpp_FUN_005a8180()
+    CALL unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 004bd85a
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
     MOV EAX,[0x00616494]                ; 004bd85f | g_CGamePtr
     MOV EBP,dword ptr [EAX + 0x228]     ; 004bd864 | g_CGameInstance.profile_mode
     ADD ESP,0x8                         ; 004bd86a

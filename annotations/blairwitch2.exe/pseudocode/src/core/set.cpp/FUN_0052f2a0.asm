@@ -45,7 +45,7 @@
 ;   undefined4 DAT_0061e8f4
 ;   CConsole g_CConsoleInstance
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.quimby_flag
+;   undefined4 g_CGameInstance.shadow_flag
 ;   ... and 16 more
 ;
 ; Called Functions:
@@ -680,7 +680,7 @@ section .text
     ADD ESP,0x20                        ; 0052f8c5
     MOV EAX,[0x00616494]                ; 0052f8c8 | g_CGamePtr
         ;   Label: LAB_0052f8c8
-    CMP dword ptr [EAX + 0x204],0x0     ; 0052f8cd | g_CGameInstance.field468_0x204
+    CMP dword ptr [EAX + 0x204],0x0     ; 0052f8cd | g_CGameInstance.debug_toggle_flag
     JZ 0x0052f8df                       ; 0052f8d4
         ;   XREF to: 0052f8df (CONDITIONAL_JUMP)  ; LAB_0052f8df
     PUSH EBX                            ; 0052f8d6
@@ -760,7 +760,7 @@ section .text
     RET                                 ; 0052f977
     MOV EAX,[0x00616494]                ; 0052f978 | g_CGamePtr
         ;   Label: LAB_0052f978
-    CMP dword ptr [EAX + 0x24],0x0      ; 0052f97d | g_CGameInstance.quimby_flag
+    CMP dword ptr [EAX + 0x24],0x0      ; 0052f97d | g_CGameInstance.shadow_flag
     JNZ 0x0052f336                      ; 0052f981
         ;   XREF to: 0052f336 (CONDITIONAL_JUMP)  ; LAB_0052f336
     JMP 0x0052f538                      ; 0052f987

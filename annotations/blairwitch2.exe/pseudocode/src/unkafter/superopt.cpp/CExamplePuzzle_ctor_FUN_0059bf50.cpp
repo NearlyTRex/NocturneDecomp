@@ -14,6 +14,6 @@ CExamplePuzzle * unkafter_superopt_cpp_CExamplePuzzle_ctor_FUN_0059bf50(CExample
   CExamplePuzzle *pCVar1;
   
   pCVar1 = (CExamplePuzzle *)unkaddr_0059aa80_cpp_FUN_0059ab30(this_ptr);
-  *(byte **)pCVar1 = &g_CExamplePuzzleVTable;
+  pCVar1->vtable = &g_CExamplePuzzleVTable;
   return pCVar1;
 }

@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 142,
+    "complexity_score": 127,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 17,
-    "suspect_count": 11,
+    "suspect_count": 10,
     "suspect_types": [
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -27,7 +26,7 @@
     ],
     "convention": "unknown",
     "name": "sound_sndmain.cpp_setSfxUserData_FUN_00550fb0",
-    "signature": "undefined4 sound_sndmain_cpp_setSfxUserData_FUN_00550fb0(uint param_1,int param_2,undefined4 param_3)"
+    "signature": "undefined4 sound_sndmain_cpp_setSfxUserData_FUN_00550fb0(uint param_1,int param_2,void *param_3)"
   },
   "function_calls": [
     {
@@ -119,7 +118,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint sound_sndmain_cpp_setSfxUserData_FUN_00550fb0(uint param_1,int param_2,uint param_3)",
+      "text": "uint sound_sndmain_cpp_setSfxUserData_FUN_00550fb0(uint param_1,int param_2,void *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -127,7 +126,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint sound_sndmain_cpp_setSfxUserData_FUN_00550fb0(uint param_1,int param_2,uint param_3)",
+      "text": "uint sound_sndmain_cpp_setSfxUserData_FUN_00550fb0(uint param_1,int param_2,void *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -135,7 +134,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "uint sound_sndmain_cpp_setSfxUserData_FUN_00550fb0(uint param_1,int param_2,uint param_3)",
+      "text": "uint sound_sndmain_cpp_setSfxUserData_FUN_00550fb0(uint param_1,int param_2,void *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -175,7 +174,7 @@
       "line": 18,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)(&(pCVar1->options).field_0x44 + param_2 * 4) = param_3;",
+      "text": "(pCVar1->options).userdata[param_2] = param_3;",
       "type": "unnamed_param"
     },
     {
@@ -183,16 +182,8 @@
       "line": 18,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(uint *)(&(pCVar1->options).field_0x44 + param_2 * 4) = param_3;",
+      "text": "(pCVar1->options).userdata[param_2] = param_3;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "*(uint *)(&(pCVar1->options).field_0x44 + param_2 * 4) = param_3;",
-      "type": "unnamed_field"
     }
   ]
 }

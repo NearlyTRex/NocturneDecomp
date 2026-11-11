@@ -6,57 +6,64 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_hag_cpp_CHag_processMeleeAttackState_FUN_005aab50(CHag *this_ptr,float delta_time)
 
 {
-  float fVar1;
-  int iVar2;
-  int iVar3;
-  float fVar4;
+  CDeformableModelInstance *this_ptr_00;
+  CCharacter *pCVar1;
+  float fVar2;
+  CDemonActor *pCVar3;
+  int iVar4;
+  float fVar5;
+  SStateMachine *pSVar6;
+  int desired_state_index;
   
-  iVar2 = (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x17c))(this_ptr);
-  if (iVar2 == 0) {
+  pCVar3 = (*(this_ptr->base).base.base.base.vtable._ub[1].getCarrier)((CDemonActor *)this_ptr);
+  if (pCVar3 == (CDemonActor *)0x0) {
     return;
   }
-  iVar2 = *(int *)&this_ptr->field_0x10a78;
-  fVar4 = *(float *)&this_ptr->field_0x20 - *(float *)(iVar2 + 0x20);
-  fVar1 = *(float *)&this_ptr->field_0x28 - *(float *)(iVar2 + 0x28);
-  fVar4 = SQRT(fVar1 * fVar1 + fVar4 * fVar4);
-  if (_DAT_00600a6c < fVar4) {
-    *(float *)&this_ptr->field_0x11394 = _DAT_00600a6c;
-    unkaddr_0059d350_cpp_FUN_0059dcb0(&this_ptr->field_0x10af8,0x3f000000);
-    unkaddr_0059d350_cpp_FUN_0059d8e0(&this_ptr->field_0x10af8,"Chasing");
+  pCVar1 = (this_ptr->base).base.victim;
+  fVar5 = (this_ptr->base).base.base.base.location.position.x - (pCVar1->base).location.position.x;
+  fVar2 = (this_ptr->base).base.base.base.location.position.z - (pCVar1->base).location.position.z;
+  fVar5 = SQRT(fVar2 * fVar2 + fVar5 * fVar5);
+  if (_DAT_00600a6c < fVar5) {
+    pSVar6 = &(this_ptr->base).state_machine;
+    (this_ptr->base).attack_range = _DAT_00600a6c;
+    unkaddr_0059d350_cpp_FUN_0059dcb0(pSVar6,0x3f000000);
+    unkaddr_0059d350_cpp_FUN_0059d8e0(pSVar6,"Chasing");
     return;
   }
   core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
-            ((CCharacter *)this_ptr,(CVector3f *)(iVar2 + 0x20));
-  if (_DAT_00600a70 < fVar4) {
-    if (_DAT_00600a6c < fVar4) {
-      iVar2 = 0;
+            ((CCharacter *)this_ptr,&(pCVar1->base).location.position);
+  if (_DAT_00600a70 < fVar5) {
+    if (_DAT_00600a6c < fVar5) {
+      desired_state_index = 0;
     }
     else {
-      iVar2 = 4;
+      desired_state_index = 4;
     }
   }
   else {
-    iVar2 = 5;
+    desired_state_index = 5;
   }
-  iVar3 = core_motion_cpp_FUN_005035c0(&this_ptr->field_0x2b4);
-  iVar3 = *(int *)(iVar3 + 0x24);
-  if (iVar3 != 0) {
-    if ((iVar3 == 5) || (iVar3 == 4)) goto LAB_005aabe3;
-    iVar2 = 0;
+  this_ptr_00 = &(this_ptr->base).base.base.model;
+  iVar4 = core_motion_cpp_FUN_005035c0(this_ptr_00);
+  iVar4 = *(int *)(iVar4 + 0x24);
+  if (iVar4 != 0) {
+    if ((iVar4 == 5) || (iVar4 == 4)) goto LAB_005aabe3;
+    desired_state_index = 0;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-            ((CMotionController *)&this_ptr->field_0x2b4,iVar2,1);
+            (&this_ptr_00->base,desired_state_index,1);
 LAB_005aabe3:
-  if ((iVar3 == 4) &&
-     (fVar4 = core_motion_cpp_FUN_00503e60((CMotionController *)&this_ptr->field_0x2b4),
-     (float)_DAT_005f0bde < fVar4)) {
-    *(float *)&this_ptr->field_0x11394 = _DAT_00600a70;
-    unkaddr_0059d350_cpp_FUN_0059d8e0(&this_ptr->field_0x10af8,"Chasing");
+  if ((iVar4 == 4) &&
+     (fVar5 = core_motion_cpp_FUN_00503e60(&(this_ptr->base).base.base.model.base),
+     (float)_DAT_005f0bde < fVar5)) {
+    (this_ptr->base).attack_range = _DAT_00600a70;
+    unkaddr_0059d350_cpp_FUN_0059d8e0(&(this_ptr->base).state_machine,"Chasing");
     return;
   }
   return;

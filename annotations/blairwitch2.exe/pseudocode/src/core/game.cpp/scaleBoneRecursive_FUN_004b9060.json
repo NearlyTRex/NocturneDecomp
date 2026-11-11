@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 70,
+    "complexity_score": 35,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 20,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "unnamed_field"
+      "shadow_pointer_walk"
     ],
     "total_lines": 67
   },
@@ -149,35 +148,11 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x514",
-      "severity": "mild",
-      "text": "*(float *)(&model_instance->field_0x514 + bone_index * 4) =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x514",
-      "severity": "mild",
-      "text": "*(float *)(&model_instance->field_0x514 + bone_index * 4) * scale_factor;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar1->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 19,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "pCVar1 = (CSkeleton *)&pCVar1->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 19,
-      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "match": "pCVar1 = (T *)((pCVar1->FIELD).ARRAY[N] + CONST)",
       "severity": "moderate",
-      "text": "pCVar1 = (CSkeleton *)&pCVar1->field_0x24;",
+      "text": "pCVar1 = (CSkeleton *)((pCVar1->motion_list).state_names[1] + 2);",
       "type": "shadow_pointer_walk"
     }
   ]

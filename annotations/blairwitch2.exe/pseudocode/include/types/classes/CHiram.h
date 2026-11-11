@@ -11,7 +11,7 @@
 #pragma pack(push, 1)
 typedef struct CHiram {
     CNPC base; // 0x0
-    char field_148296[100]; // 0x24348
+    char kill_event[100]; // 0x24348
 } CHiram;
 #pragma pack(pop)
 

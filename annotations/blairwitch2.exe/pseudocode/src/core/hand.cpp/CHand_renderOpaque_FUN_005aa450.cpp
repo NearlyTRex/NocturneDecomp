@@ -11,6 +11,6 @@ int __cdecl core_hand_cpp_CHand_renderOpaque_FUN_005aa450(CHand *this_ptr)
 {
   int iVar1;
   
-  iVar1 = core_basicene_cpp_CBasicEnemy_renderOpaque_FUN_0059fa20((CBasicEnemy *)this_ptr);
+  iVar1 = core_basicene_cpp_CBasicEnemy_renderOpaque_FUN_0059fa20(&this_ptr->base);
   return iVar1;
 }

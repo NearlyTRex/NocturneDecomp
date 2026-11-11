@@ -14,7 +14,6 @@
 #pragma pack(push, 1)
 typedef struct SNetPacket_GameSettings {
     SNetPacketHeader header; // 0x0
-    char field_1[4]; // 0x1
     int settings_version; // 0x5
     int random_seed; // 0x9
     char mission_name[80]; // 0xd

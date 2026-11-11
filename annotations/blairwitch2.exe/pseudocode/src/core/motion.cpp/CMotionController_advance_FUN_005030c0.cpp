@@ -17,11 +17,7 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_005030c0(CMotionContro
   float local_b0;
   float local_ac;
   char local_a8 [100];
-  SMotionTransition local_44 [4];
-  uint local_40;
-  int local_3c;
-  float local_38;
-  int local_30;
+  SMotionTransition local_44;
   float *local_2c;
   int *local_28;
   int *local_24;
@@ -44,27 +40,27 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_005030c0(CMotionContro
     if (this_ptr->tween_progress < 0.0) {
       iVar2 = core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00503bd0
                         (this_ptr,(int *)this_ptr->current_motion_index,
-                         (float *)this_ptr->current_frame_number,(float)&local_b0,(float)local_44);
-      switch(local_40) {
-      case 1:
-      case 2:
-        this_ptr->current_motion_index = local_3c;
-        this_ptr->current_frame_number = local_38;
-        if (local_30 != 0) {
+                         (float *)this_ptr->current_frame_number,(float)&local_b0,(float)&local_44);
+      switch(local_44.cmd) {
+      case MOTION_CMD_JUMP:
+      case MOTION_CMD_WAIT_EXIT:
+        this_ptr->current_motion_index = local_44.to_motion_number;
+        this_ptr->current_frame_number = local_44.to_frame_number;
+        if (local_44.set_new_state_as_desired != 0) {
           iVar3 = core_motion_cpp_FUN_005035c0(this_ptr);
           this_ptr->state_index = *(int *)(iVar3 + 0x24);
         }
         break;
-      case 3:
-      case 4:
-      case 5:
-      case 6:
-        core_motion_cpp_CMotionController_startTransition_FUN_005036e0(this_ptr,local_44);
+      case MOTION_CMD_TWEEN:
+      case MOTION_CMD_TWEEN_ADVANCE:
+      case MOTION_CMD_TWEEN_ADVANCE_BOTH:
+      case MOTION_CMD_TWEEN_BIDIR:
+        core_motion_cpp_CMotionController_startTransition_FUN_005036e0(this_ptr,&local_44);
         break;
       default:
         _DAT_01d046a0 = "..\\core\\motion.cpp";
         _DAT_01d046a4 = 0x1e2;
-        core_main_c_FUN_004e4500("Invalid transition command returned by CMotionControler::advanceComplex: %d",local_40);
+        core_main_c_FUN_004e4500("Invalid transition command returned by CMotionControler::advanceComplex: %d",local_44.cmd);
       }
       goto LAB_00503261;
     }
@@ -140,7 +136,7 @@ LAB_005031da:
 LAB_00503261:
     *delta_time = *delta_time - local_b0;
     if ((this_ptr->in_transition != (SMotionTransition *)0x0) &&
-       (*(int *)(this_ptr->in_transition + 8) == this_ptr->current_motion_index)) {
+       (this_ptr->in_transition->to_motion_number == this_ptr->current_motion_index)) {
       this_ptr->in_transition = (SMotionTransition *)0x0;
     }
     if (iVar2 != 0) {

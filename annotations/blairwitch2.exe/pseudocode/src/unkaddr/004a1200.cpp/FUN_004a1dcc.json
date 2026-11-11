@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 77,
+    "complexity_score": 92,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "raw_address_constant",
       "undefined_data",
       "warning_overlapping_globals"
     ],
@@ -30,19 +31,19 @@
   },
   "function_calls": [
     {
+      "addr": "004a3740",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_SNotesSection_layout_FUN_004a3740"
+    },
+    {
       "addr": "004a27e0",
       "is_variadic": false,
-      "name": "core_fldnotes.cpp_FUN_004a27e0"
+      "name": "core_fldnotes.cpp_STextView_reset_FUN_004a27e0"
     },
     {
       "addr": "004a2890",
       "is_variadic": false,
-      "name": "core_fldnotes.cpp_FUN_004a2890"
-    },
-    {
-      "addr": "004a3740",
-      "is_variadic": false,
-      "name": "core_fldnotes.cpp_FUN_004a3740"
+      "name": "core_fldnotes.cpp_STextView_setRect_FUN_004a2890"
     }
   ],
   "globals": [
@@ -141,6 +142,14 @@
       "severity": "mild",
       "text": "DAT_00616014 = 0;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Raw hex literal 0x1caf240 matches address of g_STextViewInstance (type STextView). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 21,
+      "match": "0x1caf240",
+      "severity": "moderate",
+      "text": "iVar1 = core_fldnotes_cpp_SNotesSection_layout_FUN_004a3740(this_ptr,0x1caf240);",
+      "type": "raw_address_constant"
     }
   ]
 }

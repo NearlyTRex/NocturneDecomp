@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_batman.cpp_CBatman_ctor_FUN_00412b20
-;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x10bb4                        ; 00412af0
         ;   Label: core_batman.cpp_factoryFuncBatman_FUN_00412af0
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 00412af5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00412af5
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 00412afa
     TEST EAX,EAX                        ; 00412afd
     JNZ 0x00412b02                      ; 00412aff

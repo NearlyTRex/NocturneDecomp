@@ -11,7 +11,7 @@ void core_cow_cpp_factoryFuncConveyor_FUN_00438460(void)
 {
   CConveyor *this_ptr;
   
-  this_ptr = (CConveyor *)debugAllocTracked1(0x9b8);
+  this_ptr = (CConveyor *)operator_new(0x9b8);
   if (this_ptr == (CConveyor *)0x0) {
     return;
   }

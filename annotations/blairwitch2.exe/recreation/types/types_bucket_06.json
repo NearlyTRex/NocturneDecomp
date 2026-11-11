@@ -157,19 +157,25 @@
   {
     "kind":"class",
     "name":"CCheesyCipher",
+    "parent":"CCodec",
     "size":12
   },
   {
     "kind":"class",
     "name":"CCloth",
     "rtti_file":"core/cloth.cpp",
-    "size":1
+    "size":240432
+  },
+  {
+    "kind":"class",
+    "name":"CColor3f",
+    "size":12
   },
   {
     "kind":"class",
     "name":"CCourse",
     "rtti_file":"core/course.cpp",
-    "size":1
+    "size":12
   },
   {
     "kind":"class",
@@ -459,6 +465,7 @@
   {
     "kind":"class",
     "name":"CNecklace",
+    "parent":"CBoxActor",
     "size":2004
   },
   {
@@ -610,47 +617,59 @@
   {
     "kind":"struct",
     "name":"SInventoryItemInfo",
-    "size":1
+    "size":768
   },
   {
     "kind":"struct",
     "name":"SMRGLKeyframeModel",
-    "size":1
+    "size":344
   },
   {
     "kind":"struct",
     "name":"SMRGLPrimitiveTriangleIndex",
-    "size":1
+    "parent":"SMRGLHeaderPrimitive",
+    "size":36
   },
   {
     "kind":"struct",
     "name":"SNetPacket_SimFrame",
-    "size":105
+    "size":121
   },
   {
     "kind":"struct",
     "name":"SPageResourceText",
+    "parent":"SPageResource",
     "size":288
   },
   {
     "kind":"struct",
+    "name":"SRGBColor",
+    "size":3
+  },
+  {
+    "kind":"struct",
     "name":"SSurfacePlane",
-    "size":1
+    "size":32
   },
   {
     "kind":"struct",
     "name":"STrianglePackedIndices",
-    "size":1
+    "size":6
   },
   {
     "kind":"struct",
     "name":"STriangleVertices",
-    "size":1
+    "size":36
   },
   {
     "kind":"union",
     "name":"UActorVTable",
     "size":4
+  },
+  {
+    "kind":"union",
+    "name":"UMpegSubbandScalefactorCodes",
+    "size":384
   },
   {
     "kind":"union",

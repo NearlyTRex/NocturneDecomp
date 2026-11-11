@@ -22,7 +22,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_00416d70(CBodyPart *t
   UOrientationVector *euler_angles_00;
   SBodyPartFire *pSVar8;
   SBodyPartModel *pSVar9;
-  byte *puVar10;
+  CVector3f *pCVar10;
   int iVar11;
   uint *puVar12;
   int iVar13;
@@ -41,23 +41,26 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_00416d70(CBodyPart *t
   CMatrix3x4f local_140;
   uint local_110 [12];
   CMatrix3x3f local_e0;
-  uint local_b8;
-  int aiStack_b4 [4];
-  uint local_a4;
-  int local_a0;
-  uint local_9c;
-  uint local_98;
+  float local_b8;
+  int aiStack_b4 [2];
+  float local_ac;
+  float local_a8;
+  float local_a4;
+  float local_a0;
+  float local_9c;
+  float local_98;
   float local_94;
-  int local_88;
-  uint local_84;
-  uint local_80;
-  uint local_7c;
-  uint local_78;
-  uint local_74;
+  float local_88;
+  float local_84;
+  float local_80;
+  float local_7c;
+  float local_78;
+  float local_74;
   CVector3f local_70;
-  uint local_64;
-  int aiStack_60 [5];
-  int local_4c;
+  float local_64;
+  int aiStack_60 [2];
+  float local_58;
+  float local_4c;
   int local_40;
   int local_3c;
   int local_38;
@@ -158,23 +161,23 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_00416d70(CBodyPart *t
     do {
       local_18 = pSVar8;
       core_dirmat_cpp_FUN_004495a0(&local_e0,pSVar8);
-      local_a0 = aiStack_60[2];
+      local_a0 = local_58;
       aiStack_b4[(uint)bVar15 * -2 + 6] = aiStack_60[(uint)bVar15 * -2 + 3];
       aiStack_b4[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 7] =
            aiStack_60[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 4];
       if (pSVar8 != (SBodyPartFire *)(aiStack_b4 + 5)) {
-        *(int *)pSVar8 = local_a0;
-        *(uint *)&pSVar8->field_0x4 = local_9c;
-        *(uint *)&pSVar8->field_0x8 = local_98;
+        (pSVar8->local_position).x = local_a0;
+        (pSVar8->local_position).y = local_9c;
+        (pSVar8->local_position).z = local_98;
       }
       core_actor_cpp_FUN_00408d70(this_ptr,local_18);
       local_7c = local_64;
       aiStack_b4[(uint)bVar15 * -2 + 0xf] = aiStack_60[(uint)bVar15 * -2];
       aiStack_b4[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 0x10] =
            aiStack_60[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1];
-      *(uint *)&local_18->field_0x2c = local_7c;
-      *(uint *)&local_18->field_0x30 = local_78;
-      *(uint *)&local_18->field_0x34 = local_74;
+      (local_18->flame).base.location.position.x = local_7c;
+      (local_18->flame).base.location.position.y = local_78;
+      (local_18->flame).base.location.position.z = local_74;
       iVar13 = iVar13 + 1;
       pSVar8 = pSVar8 + 1;
     } while (iVar13 < this_ptr->fire_count);
@@ -189,22 +192,22 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_00416d70(CBodyPart *t
       aiStack_b4[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 0xd] =
            aiStack_60[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 7];
       if (pSVar9 != (SBodyPartModel *)(aiStack_b4 + 0xb)) {
-        *(int *)pSVar9 = local_88;
-        *(uint *)&pSVar9->field_0x4 = local_84;
-        *(uint *)&pSVar9->field_0x8 = local_80;
+        (pSVar9->position_offset).x = local_88;
+        (pSVar9->position_offset).y = local_84;
+        (pSVar9->position_offset).z = local_80;
       }
-      puVar10 = &pSVar9->field_0xc;
-      core_xform_cpp_FUN_00591c10(local_1a0,&DAT_0265370c,puVar10);
+      pCVar10 = &pSVar9->euler_angles;
+      core_xform_cpp_FUN_00591c10(local_1a0,&DAT_0265370c,pCVar10);
       core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(local_1a0,&local_170);
       core_xform_cpp_matrixToEulerAngles_FUN_00591de0(&local_170);
-      aiStack_b4[2] = local_b8;
+      local_ac = local_b8;
       aiStack_b4[(uint)bVar15 * -2 + 3] = aiStack_b4[(uint)bVar15 * -2];
       aiStack_b4[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 4] =
            aiStack_b4[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1];
-      if ((int *)puVar10 != aiStack_b4 + 2) {
-        *(int *)puVar10 = aiStack_b4[2];
-        *(int *)&pSVar9->field_0x10 = aiStack_b4[3];
-        *(uint *)&pSVar9->field_0x14 = local_a4;
+      if (pCVar10 != (CVector3f *)(aiStack_b4 + 2)) {
+        pCVar10->x = local_ac;
+        (pSVar9->euler_angles).y = local_a8;
+        (pSVar9->euler_angles).z = local_a4;
       }
       pSVar9 = pSVar9 + 1;
       local_14 = local_14 + 1;

@@ -11,7 +11,7 @@ void core_anvil_cpp_factoryFuncAnvil_FUN_0040ea00(void)
 {
   CAnvil *this_ptr;
   
-  this_ptr = (CAnvil *)debugAllocTracked1(0x4a0);
+  this_ptr = (CAnvil *)operator_new(0x4a0);
   if (this_ptr == (CAnvil *)0x0) {
     return;
   }

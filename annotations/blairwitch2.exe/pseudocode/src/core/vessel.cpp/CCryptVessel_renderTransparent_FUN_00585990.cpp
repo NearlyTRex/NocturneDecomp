@@ -26,7 +26,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_00585990(CCryptVe
     core_flame_cpp_CFlame_renderTransparent_FUN_0049f850(&this_ptr->flame);
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-            (DAT_0060b280,(CVector3f *)&(this_ptr->base).field_0x20);
+            (DAT_0060b280,&(this_ptr->base).location.position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
             (DAT_0060b280,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
   CStack_20.x = 0.0;
@@ -43,13 +43,14 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_00585990(CCryptVe
     this_ptr_00 = (CKeyFramedModelInstance *)round();
     iStack_14 = (int)ROUND(fVar5);
     pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20(this_ptr_00);
-    _sprintf(&pCVar2->field_0x12c,"BWATER%d.RAW");
+    _sprintf(pCVar2->texture_list[0].texture_name,"BWATER%d.RAW")
+    ;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,48000);
   }
   else {
     pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20(&this_ptr->orb_model);
     pcVar3 = "@MENUCLD2.RAW" + 1;
-    pcVar4 = &pCVar2->field_0x12c;
+    pcVar4 = pCVar2->texture_list[0].texture_name;
     do {
       cVar1 = *pcVar3;
       *pcVar4 = cVar1;

@@ -15,8 +15,8 @@ void __cdecl core_charactr_cpp_CCharacter_preProcess_FUN_00424470(CCharacter *th
   
   fStack_14 = (this_ptr->base).orient.vec.x;
   fStack_c = (this_ptr->base).orient.vec.z;
-  local_10 = (this_ptr->base).orient.vec.y + *(float *)&this_ptr->field_0x2578;
-  *(uint *)&this_ptr->field_0x2578 = 0;
+  local_10 = (this_ptr->base).orient.vec.y + this_ptr->turn_angle_accumulator;
+  this_ptr->turn_angle_accumulator = 0.0;
   core_charactr_cpp_FUN_00429d60(this_ptr,&fStack_14);
   return;
 }

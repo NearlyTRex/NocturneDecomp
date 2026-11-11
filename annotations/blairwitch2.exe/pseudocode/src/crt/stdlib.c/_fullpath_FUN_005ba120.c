@@ -17,7 +17,7 @@ char * __cdecl _fullpath(char *buffer,char *path,SIZE_T buffer_size)
   
   if (buffer == (char *)0x0) {
     buffer_size = 0x104;
-    buffer = FUN_005b8580(0x104);
+    buffer = malloc(0x104);
     unaff_EBP = buffer;
     if (buffer == (char *)0x0) {
       setErrno(5);

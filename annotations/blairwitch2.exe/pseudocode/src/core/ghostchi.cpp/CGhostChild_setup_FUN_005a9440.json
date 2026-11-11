@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 93,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
-    "suspect_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 20,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "warning_type_propagation"
     ],
-    "total_lines": 63
+    "total_lines": 65
   },
   "cross_references": [],
   "function": {
@@ -29,29 +29,29 @@
   },
   "function_calls": [
     {
+      "addr": "0059e6a0",
+      "is_variadic": false,
+      "name": "core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0"
+    },
+    {
       "addr": "00540e80",
       "is_variadic": false,
       "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80"
     },
     {
-      "addr": "005a8030",
-      "is_variadic": false,
-      "name": "unkaddr_005a7eb0.cpp_FUN_005a8030"
-    },
-    {
       "addr": "005a8050",
       "is_variadic": false,
-      "name": "unkaddr_005a7eb0.cpp_FUN_005a8050"
+      "name": "unkaddr_005a7eb0.cpp_CSimpleParticleSystem_attach_FUN_005a8050"
+    },
+    {
+      "addr": "005a8030",
+      "is_variadic": false,
+      "name": "unkaddr_005a7eb0.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030"
     },
     {
       "addr": "005a80d0",
       "is_variadic": false,
-      "name": "unkaddr_005a7eb0.cpp_FUN_005a80d0"
-    },
-    {
-      "addr": "0059e6a0",
-      "is_variadic": false,
-      "name": "unkafter_basicene.cpp_FUN_0059e6a0"
+      "name": "unkaddr_005a7eb0.cpp_CSimpleParticleSystem_start_FUN_005a80d0"
     }
   ],
   "globals": [
@@ -115,60 +115,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x113b0",
-      "severity": "mild",
-      "text": "(*(CSkeleton **)&this_ptr->field_0x113b0,\"Bip01 Head\",1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x11850",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x11850 = iVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x113b0",
-      "severity": "mild",
-      "text": "(*(CSkeleton **)&this_ptr->field_0x113b0,\"Bip01 R Hand\",1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x11854",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x11854 = iVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x264",
-      "severity": "mild",
-      "text": "puVar1 = &this_ptr->field_0x264;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x10a24",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10a24 = *(uint *)&this_ptr->field_0x11850;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x11850",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10a24 = *(uint *)&this_ptr->field_0x11850;",
-      "type": "unnamed_field"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     }
   ],
   "vtable_info": {

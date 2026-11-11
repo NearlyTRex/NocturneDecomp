@@ -54,11 +54,10 @@ LAB_005398e9:
     uStack_ac = unaff_ESI;
     uStack_b0 = unaff_EBX;
     local_8 = param_1->cameras + iVar3;
-    if (*(int *)&local_8->field_0x140 != 0) break;
+    if (local_8->is_panning != 0) break;
     core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00538470
-              (g_CZThumbPool + iVar3 * 6,(CVector3f *)&local_8->field_0x100,
-               (CVector3f *)&local_8->field_0x10c,0x40,0x30,
-               *(float *)&local_8->field_0x144 * (float)_DAT_005e6045,param_2);
+              (g_CZThumbPool + iVar3 * 6,&local_8->position,&local_8->orientation,0x40,0x30,
+               local_8->projection_scale * (float)_DAT_005e6045,param_2);
     iVar3 = iVar3 + 1;
     unaff_EBX = uStack_b0;
     unaff_ESI = uStack_ac;
@@ -148,8 +147,7 @@ LAB_005398e9:
       iVar1 = iVar3 * 6 + uVar2;
       uVar2 = uVar2 + 1;
       core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00538470
-                (g_CZThumbPool + iVar1,(CVector3f *)&local_8->field_0x100,&CStack_74,0x40,0x40,1.0,
-                 param_2);
+                (g_CZThumbPool + iVar1,&local_8->position,&CStack_74,0x40,0x40,1.0,param_2);
       if (5 < (int)uVar2) {
         iVar3 = iVar3 + 1;
         unaff_EBX = uStack_b0;

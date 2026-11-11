@@ -27,7 +27,7 @@
 ;   undefined4 DAT_01511cc4
 ;   undefined4 DAT_01511ccc
 ;   undefined4 DAT_01c35e4c
-;   undefined4 g_CGameInstance.field7_0x10
+;   undefined4 g_CGameInstance.subtitle_mode
 ;   undefined4 g_CGameInstance.letterbox_mode
 ;   undefined4 DAT_01d63250
 ;   undefined4 DAT_01e620f0
@@ -140,7 +140,7 @@ section .text
     JZ 0x00521ab0                       ; 00521984
         ;   XREF to: 00521ab0 (CONDITIONAL_JUMP)  ; LAB_00521ab0
     MOV EAX,[0x00616494]                ; 0052198a | g_CGamePtr
-    CMP dword ptr [EAX + 0x10],0x0      ; 0052198f | g_CGameInstance.field7_0x10
+    CMP dword ptr [EAX + 0x10],0x0      ; 0052198f | g_CGameInstance.subtitle_mode
     JZ 0x00521ab0                       ; 00521993
         ;   XREF to: 00521ab0 (CONDITIONAL_JUMP)  ; LAB_00521ab0
     MOV ECX,dword ptr [0x006141bc]      ; 00521999 | DAT_006141bc

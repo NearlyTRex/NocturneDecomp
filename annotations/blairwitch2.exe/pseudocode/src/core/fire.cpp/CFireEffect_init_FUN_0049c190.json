@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 225,
-    "complexity_score": 498,
+    "complexity_score": 396,
     "cross_reference_count": 5,
     "function_call_count": 7,
     "global_count": 44,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 163,
-    "suspect_count": 32,
+    "pseudocode_lines": 166,
+    "suspect_count": 22,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 388
+    "total_lines": 391
   },
   "cross_references": [
     {
@@ -136,13 +135,13 @@
     },
     {
       "addr": "01c7f518",
-      "name": "g_SparkPool[0].field36_0x24",
+      "name": "g_SparkPool[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7f56c",
-      "name": "g_SparkPool[1].field36_0x24",
+      "name": "g_SparkPool[1].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
@@ -154,13 +153,13 @@
     },
     {
       "addr": "01c8491c",
-      "name": "CFirefly_ARRAY_01c848f8[0].field36_0x24",
+      "name": "CFirefly_ARRAY_01c848f8[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c84978",
-      "name": "CFirefly_ARRAY_01c848f8[1].field36_0x24",
+      "name": "CFirefly_ARRAY_01c848f8[1].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
@@ -196,13 +195,13 @@
     },
     {
       "addr": "01c86e88",
-      "name": "g_GlassParticlePool[0].field36_0x24",
+      "name": "g_GlassParticlePool[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c86f2c",
-      "name": "g_GlassParticlePool[1].field36_0x24",
+      "name": "g_GlassParticlePool[1].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
@@ -226,13 +225,13 @@
     },
     {
       "addr": "01c913f8",
-      "name": "g_FireballPool[0].field36_0x24",
+      "name": "g_FireballPool[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c9149c",
-      "name": "g_FireballPool[1].field36_0x24",
+      "name": "g_FireballPool[1].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
@@ -244,13 +243,13 @@
     },
     {
       "addr": "01c93cfc",
-      "name": "g_RockPool[0].field36_0x24",
+      "name": "g_RockPool[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c93d4c",
-      "name": "g_RockPool[1].field36_0x24",
+      "name": "g_RockPool[1].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
@@ -262,13 +261,13 @@
     },
     {
       "addr": "01c95100",
-      "name": "CLeaf_ARRAY_01c950dc[0].field36_0x24",
+      "name": "CLeaf_ARRAY_01c950dc[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c95154",
-      "name": "CLeaf_ARRAY_01c950dc[1].field36_0x24",
+      "name": "CLeaf_ARRAY_01c950dc[1].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
@@ -316,13 +315,13 @@
     },
     {
       "addr": "01ca23e0",
-      "name": "g_ShellPool[0].field36_0x24",
+      "name": "g_ShellPool[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ca2440",
-      "name": "g_ShellPool[1].field36_0x24",
+      "name": "g_ShellPool[1].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
@@ -334,13 +333,13 @@
     },
     {
       "addr": "01ca36a4",
-      "name": "g_PopcornPool[0].field36_0x24",
+      "name": "g_PopcornPool[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ca36e4",
-      "name": "g_PopcornPool[1].field36_0x24",
+      "name": "g_PopcornPool[1].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
@@ -352,13 +351,13 @@
     },
     {
       "addr": "01ca76a8",
-      "name": "g_RainDropPool[0].field36_0x24",
+      "name": "g_RainDropPool[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ca76e8",
-      "name": "g_RainDropPool[1].field36_0x24",
+      "name": "g_RainDropPool[1].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     }
@@ -495,35 +494,19 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x24 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 51,
       "match": "DAT_01c848f4",
       "severity": "mild",
-      "text": "} while (pCVar2 != (CSpark *)&DAT_01c848f4);",
+      "text": "} while (pCVar3 != (CSpark *)&DAT_01c848f4);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar15->field_0x24 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 57,
       "match": "DAT_01c85ff8",
       "severity": "mild",
-      "text": "} while (pCVar3 != (CFirefly *)&DAT_01c85ff8);",
+      "text": "} while (pCVar4 != (CFirefly *)&DAT_01c85ff8);",
       "type": "undefined_data"
     },
     {
@@ -531,7 +514,7 @@
       "line": 58,
       "match": "DAT_01c85ffc",
       "severity": "mild",
-      "text": "puVar4 = (uint *)&DAT_01c85ffc;",
+      "text": "puVar5 = (uint *)&DAT_01c85ffc;",
       "type": "undefined_data"
     },
     {
@@ -547,87 +530,47 @@
       "line": 65,
       "match": "DAT_01c8672c",
       "severity": "mild",
-      "text": "} while (puVar4 != (uint *)&DAT_01c8672c);",
+      "text": "} while (puVar5 != (uint *)&DAT_01c8672c);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 72,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x24 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 80,
       "match": "DAT_01c913d0",
       "severity": "mild",
-      "text": "} while (puVar7 != &DAT_01c913d0);",
+      "text": "} while (puVar8 != &DAT_01c913d0);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 85,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar9->field_0x24 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 87,
       "match": "DAT_01c93cd4",
       "severity": "mild",
-      "text": "} while (pCVar10 != (CFireball *)&DAT_01c93cd4);",
+      "text": "} while (pCVar11 != (CFireball *)&DAT_01c93cd4);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 92,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar11->field_0x24 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 94,
       "match": "DAT_01c950d8",
       "severity": "mild",
-      "text": "} while (pCVar12 != (CRock *)&DAT_01c950d8);",
+      "text": "} while (pCVar13 != (CRock *)&DAT_01c950d8);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 99,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar13->field_0x24 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 101,
       "match": "DAT_01c965dc",
       "severity": "mild",
-      "text": "} while (pCVar14 != (CLeaf *)&DAT_01c965dc);",
+      "text": "} while (pCVar15 != (CLeaf *)&DAT_01c965dc);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 106,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar15->field_0x24 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 108,
       "match": "DAT_01c85ff8",
       "severity": "mild",
-      "text": "} while (pCVar3 != (CFirefly *)&DAT_01c85ff8);",
+      "text": "} while (pCVar4 != (CFirefly *)&DAT_01c85ff8);",
       "type": "undefined_data"
     },
     {
@@ -687,44 +630,20 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 149,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar16->field_0x24 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 151,
       "match": "DAT_01ca367c",
       "severity": "mild",
-      "text": "} while (pCVar17 != (CShell *)&DAT_01ca367c);",
+      "text": "} while (pCVar18 != (CShell *)&DAT_01ca367c);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 156,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar18->field_0x24 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 158,
       "match": "DAT_01ca7680",
       "severity": "mild",
-      "text": "} while (pCVar19 != (CPopcorn *)&DAT_01ca7680);",
+      "text": "} while (pCVar20 != (CPopcorn *)&DAT_01ca7680);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 163,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar20->field_0x24 = 0;",
-      "type": "unnamed_field"
     }
   ]
 }

@@ -23,20 +23,20 @@ void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004c7180(CGlass *this_ptr,SLas
   
   core_actor_cpp_CDemonActor_onLaserHit_FUN_00409830(&this_ptr->base,laser_info);
   if (this_ptr->mirror_flag == 0) {
-    *(float *)(laser_info + 0x48) = 1.0 - (float)this_ptr->opacity * (float)_DAT_005d9422;
+    laser_info->reflectivity = 1.0 - (float)this_ptr->opacity * (float)_DAT_005d9422;
     return;
   }
   if (this_ptr->shattered == 0) {
-    *(uint *)(laser_info + 0x50) = 0x3f800000;
+    laser_info->transparency = 1.0;
   }
   else {
-    fVar1 = *(float *)(laser_info + 0x30);
+    fVar1 = (laser_info->local_hit_position).y;
     fVar2 = (this_ptr->glass_size).y;
-    fVar3 = *(float *)(laser_info + 0x2c);
+    fVar3 = (laser_info->local_hit_position).x;
     fVar4 = (this_ptr->glass_size).x;
     fVar5 = (float)_DAT_005d942a;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-              (DAT_0060b280,(SMRGLTextureBasic *)&this_ptr->field_0x4d0);
+              (DAT_0060b280,&this_ptr->broken_texture);
     fVar6 = (float10)(fVar3 / fVar4 + fVar5) * (float10)DAT_006141c8;
     fVar7 = (float10)(1.0 - fVar1 / fVar2) * (float10)DAT_006141c8;
     round();
@@ -56,7 +56,7 @@ void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004c7180(CGlass *this_ptr,SLas
       iStack_14 = DAT_006141c8 + -1;
     }
     if (*(char *)(iStack_18 + iStack_14 * DAT_006141c8 + _DAT_01c37770) == '\0') {
-      *(uint *)(laser_info + 0x50) = 0x3f800000;
+      laser_info->transparency = 1.0;
       return;
     }
   }

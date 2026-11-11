@@ -19,13 +19,13 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_004264d0(CCharacter *th
   int iVar6;
   int *piVar7;
   int extraout_ECX;
-  byte *pbVar8;
+  uchar *puVar8;
   int extraout_ECX_00;
   int iVar9;
   CCharacter *pCVar10;
   int extraout_EDX;
-  byte *pbVar11;
-  byte *pbVar12;
+  uchar *puVar11;
+  uchar *puVar12;
   CDeformableModelInstance *this_ptr_00;
   CDeformableModel *pCVar13;
   float10 fVar14;
@@ -45,7 +45,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_004264d0(CCharacter *th
   }
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr_00);
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(this_ptr_00);
-  iVar1 = *(int *)&(this_ptr->model).field_0x2230;
+  iVar1 = (this_ptr->model).cached_skinned_lod_index;
   iVar6 = 0;
   if (0 < pCVar4->bone_count) {
     iVar9 = 0;
@@ -61,10 +61,9 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_004264d0(CCharacter *th
     fVar2 = (float)_DAT_005ccd9e;
     pCVar10 = this_ptr;
     do {
-      iVar9 = *(int *)&pCVar10->fires[0].field_0x4;
+      iVar9 = pCVar10->fires[0].bone_index;
       (&DAT_007bdc9c)[iVar9] =
-           (float)(&DAT_007bdc9c)[iVar9] + (*(float *)&pCVar10->fires[0].field_0x14 * fVar2) / fVar3
-      ;
+           (float)(&DAT_007bdc9c)[iVar9] + (pCVar10->fires[0].size * fVar2) / fVar3;
       iVar6 = iVar6 + 1;
       pCVar10 = (CCharacter *)((pCVar10->base).actor_name + 0x18);
     } while (iVar6 < this_ptr->fire_count);
@@ -90,16 +89,16 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_004264d0(CCharacter *th
   }
   local_1c = 0;
   for (iVar6 = 0; iVar6 < pCVar5->vertex_count[iVar1]; iVar6 = iVar6 + 1) {
-    pbVar12 = &pCVar5->vertex_data_ptr[iVar1]->field_0x0 + local_1c;
+    puVar12 = pCVar5->vertex_data_ptr[iVar1]->bone_indices + local_1c + -1;
     local_30 = 0.0;
     iVar9 = 0;
-    pbVar8 = pbVar12;
-    pbVar11 = pbVar12;
-    while (iVar9 < (int)(uint)*pbVar12) {
-      fVar14 = (float10)*(float *)(pbVar8 + 4) * (float10)(float)(&DAT_007bdc9c)[pbVar11[1]];
+    puVar8 = puVar12;
+    puVar11 = puVar12;
+    while (iVar9 < (int)(uint)*puVar12) {
+      fVar14 = (float10)*(float *)(puVar8 + 4) * (float10)(float)(&DAT_007bdc9c)[puVar11[1]];
       round();
-      pbVar8 = (byte *)(extraout_ECX + 4);
-      pbVar11 = pbVar11 + 1;
+      puVar8 = (uchar *)(extraout_ECX + 4);
+      puVar11 = puVar11 + 1;
       local_30 = (float)(int)ROUND(fVar14) + local_30;
       iVar9 = extraout_EDX + 1;
     }

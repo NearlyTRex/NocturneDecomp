@@ -373,8 +373,8 @@ section .text
     MOV EDX,dword ptr [0x00614d30]      ; 00437232 | DAT_00614d30
     PUSH EDX                            ; 00437238
     INC EBX                             ; 00437239
-    CALL core_fire.cpp_FUN_0049d6a0     ; 0043723a
-        ;   XREF to: 0049d6a0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0049d6a0()
+    CALL core_fire.cpp_CFireEffect_createFirefly_FUN_0049d6a0 ; 0043723a
+        ;   XREF to: 0049d6a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createFirefly_FUN_0049d6a0(CFireEffect * this_ptr, undefined4 param_2, undefined4 param_3, int param_4, ...)
     ADD ESP,0x24                        ; 0043723f
     CMP EBX,0xa                         ; 00437242
     JL 0x00437216                       ; 00437245

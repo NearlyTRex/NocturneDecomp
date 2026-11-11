@@ -11,8 +11,9 @@
 void sound_sndmain_cpp_FUN_00553380(void)
 
 {
+  byte *pbVar1;
   int extraout_EAX;
-  int iVar1;
+  int iVar2;
   int unaff_EBP;
   CSfxSlot *this_ptr;
   
@@ -23,23 +24,24 @@ void sound_sndmain_cpp_FUN_00553380(void)
       do {
         if (this_ptr->hardware_buffer_handle != 0) {
           if (_DAT_02648e88 == 1) {
-            *(uint *)&this_ptr->field_0x118 = *(uint *)&this_ptr->field_0x118 | _DAT_02649024;
+            this_ptr->changed_flags = this_ptr->changed_flags | _DAT_02649024;
           }
-          if (((this_ptr->options).field_0x4c & 1) != 0) {
-            *(uint *)&this_ptr->field_0x118 = *(uint *)&this_ptr->field_0x118 & 0xdffffff9;
+          if (((this_ptr->options).flags & 1) != 0) {
+            this_ptr->changed_flags = this_ptr->changed_flags & 0xdffffff9;
           }
-          if (*(int *)&this_ptr->field_0x118 != 0) {
+          if (this_ptr->changed_flags != 0) {
             sound_sndmain_cpp_CSfxSlot_compute_FUN_0054e8c0(this_ptr,0.0);
-            iVar1 = (**(code **)(*_DAT_02648e80 + 0x44))
-                              (_DAT_02648e80,this_ptr,*(uint *)&this_ptr->field_0x118);
-            if (iVar1 == 0) {
+            iVar2 = (**(code **)(*_DAT_02648e80 + 0x44))
+                              (_DAT_02648e80,this_ptr,this_ptr->changed_flags);
+            if (iVar2 == 0) {
 LAB_00553533:
               sound_sndmain_cpp_CSfxSlot_kill_FUN_0054f700(this_ptr);
             }
-            else if ((this_ptr->field_0x11b & 0x40) != 0) {
-              iVar1 = (**(code **)(*_DAT_02648e80 + 0x4c))(_DAT_02648e80,this_ptr);
-              if (iVar1 == 0) goto LAB_00553533;
-              this_ptr->field_0x11b = this_ptr->field_0x11b & 0xbf;
+            else if ((this_ptr->changed_flags & 0x40000000) != 0) {
+              iVar2 = (**(code **)(*_DAT_02648e80 + 0x4c))(_DAT_02648e80,this_ptr);
+              if (iVar2 == 0) goto LAB_00553533;
+              pbVar1 = (byte *)((int)&this_ptr->changed_flags + 3);
+              *pbVar1 = *pbVar1 & 0xbf;
             }
           }
         }

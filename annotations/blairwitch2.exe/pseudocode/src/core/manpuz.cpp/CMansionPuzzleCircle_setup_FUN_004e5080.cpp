@@ -14,28 +14,25 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004e5080(CMansionPuz
   float fVar1;
   float fVar2;
   float fVar3;
-  uint uVar4;
-  uint uVar5;
-  uint uVar6;
-  uint uVar7;
-  uint uVar8;
-  float fVar9;
-  float fVar10;
-  CKeyFramedModel *pCVar11;
-  int iVar12;
-  SGem *pSVar13;
-  CVector3f *pCVar14;
-  CBoundingBox3D *pCVar15;
-  uint *puVar16;
-  float *pfVar17;
-  uint *puVar18;
-  byte bVar19;
-  float10 fVar20;
-  float10 fVar21;
-  float10 fVar22;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  float fVar7;
+  CKeyFramedModel *pCVar8;
+  int iVar9;
+  SGem *pSVar10;
+  CVector3f *pCVar11;
+  CBoundingBox3D *pCVar12;
+  uint *puVar13;
+  float *pfVar14;
+  uint *puVar15;
+  byte bVar16;
+  float10 fVar17;
+  float10 fVar18;
+  float10 fVar19;
   float afStackY_10a0 [923];
   uint uStack_220;
-  byte *puVar23;
+  byte *puVar20;
   byte auStack_20c [48];
   uint auStack_1dc [12];
   byte auStack_1ac [48];
@@ -56,46 +53,45 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004e5080(CMansionPuz
   float afStack_b4 [5];
   CVector3f CStack_a0;
   CVector3f CStack_94;
-  uint uStack_88;
+  float fStack_88;
   float afStack_84 [5];
-  uint uStack_70;
+  float fStack_70;
   float afStack_64 [3];
   uint uStack_58;
   float fStack_4c;
-  uint uStack_48;
-  uint uStack_44;
+  float fStack_48;
+  float fStack_44;
   SGem *pSStack_38;
   float *pfStack_34;
   float *pfStack_30;
-  uint *puStack_2c;
+  CVector3f *pCStack_2c;
   int iStack_28;
   SGem *pSStack_24;
   int iStack_18;
   int iStack_14;
   
-  bVar19 = 0;
+  bVar16 = 0;
   core_actor_cpp_CDemonActor_setup_FUN_00408a80(&this_ptr->base);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&this_ptr->panel_model);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&this_ptr->gem_model);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(&this_ptr->reflector_model);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
             (DAT_0060b280,(SMRGLTextureBasic *)&this_ptr->light_texture);
-  pCVar11 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20(&this_ptr->panel_model)
-  ;
-  pCVar15 = &pCVar11->bounds;
-  pfVar17 = &fStack_f4;
-  for (iVar12 = 6; iVar12 != 0; iVar12 = iVar12 + -1) {
-    *pfVar17 = (pCVar15->min).x;
-    pCVar15 = (CBoundingBox3D *)((int)pCVar15 + (uint)bVar19 * -8 + 4);
-    pfVar17 = pfVar17 + (uint)bVar19 * -2 + 1;
+  pCVar8 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20(&this_ptr->panel_model);
+  pCVar12 = &pCVar8->bounds;
+  pfVar14 = &fStack_f4;
+  for (iVar9 = 6; iVar9 != 0; iVar9 = iVar9 + -1) {
+    *pfVar14 = (pCVar12->min).x;
+    pCVar12 = (CBoundingBox3D *)((int)pCVar12 + (uint)bVar16 * -8 + 4);
+    pfVar14 = pfVar14 + (uint)bVar16 * -2 + 1;
   }
   this_ptr->panel_radius = 12.1391;
-  fVar20 = (float10)fcos((float10)_DAT_005f98bc * (float10)_DAT_005dc4ed);
+  fVar17 = (float10)fcos((float10)_DAT_005f98bc * (float10)_DAT_005dc4ed);
   fVar1 = (this_ptr->emitter_pos).f.y;
   fVar2 = (this_ptr->emitter_pos).f.x;
   fVar3 = (this_ptr->emitter_pos).f.z;
   this_ptr->bbox_height = fStack_e4 - fStack_f0;
-  this_ptr->bbox_extent = (float)(((float10)this_ptr->panel_radius + (float10)fStack_e0) / fVar20);
+  this_ptr->bbox_extent = (float)(((float10)this_ptr->panel_radius + (float10)fStack_e0) / fVar17);
   if (SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) == 0.0) {
     fVar1 = this_ptr->bbox_height;
     (this_ptr->emitter_pos).f.x = 0.0;
@@ -112,37 +108,39 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004e5080(CMansionPuz
     (this_ptr->gem_pos).x = 0.0;
   }
   core_xform_cpp_FUN_00591c10(auStack_1ac,&this_ptr->gem_pos,&this_ptr->gem_orient);
-  pCVar11 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20(&this_ptr->gem_model);
+  pCVar8 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20(&this_ptr->gem_model);
   pSStack_38 = this_ptr->gems;
-  puStack_2c = (uint *)&this_ptr->gems[0].field_0x24;
+  pCStack_2c = &this_ptr->gems[0].position;
   iStack_28 = 0;
-  pfStack_30 = (float *)&this_ptr->gems[0].field_0x4;
-  pfStack_34 = (float *)&this_ptr->gems[0].field_0x8;
-  pCVar15 = &pCVar11->bounds;
-  pfVar17 = afStack_dc;
-  for (iVar12 = 6; iVar12 != 0; iVar12 = iVar12 + -1) {
-    *pfVar17 = (pCVar15->min).x;
-    pCVar15 = (CBoundingBox3D *)((int)pCVar15 + (uint)bVar19 * -8 + 4);
-    pfVar17 = pfVar17 + (uint)bVar19 * -2 + 1;
+  pfStack_30 = &this_ptr->gems[0].color.g;
+  pfStack_34 = &this_ptr->gems[0].color.b;
+  pCVar12 = &pCVar8->bounds;
+  pfVar14 = afStack_dc;
+  for (iVar9 = 6; iVar9 != 0; iVar9 = iVar9 + -1) {
+    *pfVar14 = (pCVar12->min).x;
+    pCVar12 = (CBoundingBox3D *)((int)pCVar12 + (uint)bVar16 * -8 + 4);
+    pfVar14 = pfVar14 + (uint)bVar16 * -2 + 1;
   }
   do {
-    iVar12 = iStack_28;
+    iVar9 = iStack_28;
     core_manpuz_cpp_FUN_004e6240(this_ptr,iStack_28);
-    pSVar13 = pSStack_38 + iVar12;
-    pSStack_24 = pSVar13;
+    pSVar10 = pSStack_38 + iVar9;
+    pSStack_24 = pSVar10;
     core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004e6a50
-              (this_ptr,iVar12,(float *)pSVar13,pfStack_30,pfStack_34);
-    *(uint *)&pSVar13->field_0x14 = 0;
-    *(uint *)&pSVar13->field_0x10 = *(uint *)&pSVar13->field_0x14;
-    *(uint *)&pSVar13->field_0x20 = 0;
-    *(uint *)&pSVar13->field_0xc = *(uint *)&pSVar13->field_0x10;
-    *(uint *)&pSVar13->field_0x1c = *(uint *)&pSVar13->field_0x20;
-    iStack_14 = iVar12;
-    CStack_94.y = (float)iVar12 * _DAT_005f98bc;
-    *(uint *)&pSVar13->field_0xac = 0;
-    *(uint *)&pSVar13->field_0xb0 = 0;
-    *(uint *)&pSVar13->field_0x18 = *(uint *)&pSVar13->field_0x1c;
-    *(uint *)&pSVar13->field_0xb4 = 0;
+              (this_ptr,iVar9,(float *)pSVar10,pfStack_30,pfStack_34);
+    (pSVar10->hum_color).b = 0.0;
+    (pSVar10->hum_color).g = (pSVar10->hum_color).b;
+    fVar1 = (pSVar10->hum_color).g;
+    (pSVar10->light).b = 0.0;
+    (pSVar10->hum_color).r = fVar1;
+    (pSVar10->light).g = (pSVar10->light).b;
+    fVar1 = (pSVar10->light).g;
+    iStack_14 = iVar9;
+    CStack_94.y = (float)iVar9 * _DAT_005f98bc;
+    pSVar10->sfx_handles[0] = 0;
+    pSVar10->sfx_handles[1] = 0;
+    (pSVar10->light).r = fVar1;
+    pSVar10->sfx_handles[2] = 0;
     CStack_94.x = 0.0;
     CStack_94.z = 0.0;
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(&CStack_11c,&CStack_94);
@@ -150,124 +148,121 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004e5080(CMansionPuz
     afStack_b4[2] = 0.0;
     afStack_b4[3] = 0.0;
     core_dirmat_cpp_FUN_00449530(&CStack_11c,afStack_b4 + 2,&CStack_94);
-    pfVar17 = afStack_84 + 8;
-    puVar23 = auStack_20c;
+    pfVar14 = afStack_84 + 8;
+    puVar20 = auStack_20c;
     afStack_64[0] = (float)uStack_58;
-    afStack_84[(uint)bVar19 * -2 + 9] = afStack_84[(uint)bVar19 * -2 + 0xc];
-    afStack_84[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 10] =
-         afStack_84[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 0xd];
-    core_xform_cpp_FUN_00591c10(puVar23,pfVar17);
+    afStack_84[(uint)bVar16 * -2 + 9] = afStack_84[(uint)bVar16 * -2 + 0xc];
+    afStack_84[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 10] =
+         afStack_84[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0xd];
+    core_xform_cpp_FUN_00591c10(puVar20,pfVar14);
     core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(auStack_1ac,auStack_20c);
-    puVar16 = auStack_17c;
-    puVar18 = auStack_1dc;
-    for (iVar12 = 0xc; iVar12 != 0; iVar12 = iVar12 + -1) {
-      *puVar18 = *puVar16;
-      puVar16 = puVar16 + (uint)bVar19 * -2 + 1;
-      puVar18 = puVar18 + (uint)bVar19 * -2 + 1;
+    puVar13 = auStack_17c;
+    puVar15 = auStack_1dc;
+    for (iVar9 = 0xc; iVar9 != 0; iVar9 = iVar9 + -1) {
+      *puVar15 = *puVar13;
+      puVar13 = puVar13 + (uint)bVar16 * -2 + 1;
+      puVar15 = puVar15 + (uint)bVar16 * -2 + 1;
     }
     core_xform_cpp_FUN_00592720(auStack_1dc);
-    uStack_88 = uStack_70;
-    afStack_84[(uint)bVar19 * -2] = afStack_84[(uint)bVar19 * -2 + 6];
-    pSVar13 = pSStack_24;
-    afStack_84[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 1] =
-         afStack_84[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 7];
-    if (&uStack_88 != puStack_2c) {
-      *puStack_2c = uStack_88;
-      puStack_2c[1] = afStack_84[0];
-      puStack_2c[2] = afStack_84[1];
+    fStack_88 = fStack_70;
+    afStack_84[(uint)bVar16 * -2] = afStack_84[(uint)bVar16 * -2 + 6];
+    pSVar10 = pSStack_24;
+    afStack_84[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1] =
+         afStack_84[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 7];
+    if ((CVector3f *)&fStack_88 != pCStack_2c) {
+      pCStack_2c->x = fStack_88;
+      pCStack_2c->y = afStack_84[0];
+      pCStack_2c->z = afStack_84[1];
     }
     core_xform_cpp_matrixToEulerAngles_FUN_00591de0(auStack_1dc);
     fStack_4c = afStack_84[2];
-    afStack_84[(uint)bVar19 * -2 + 0xf] = afStack_84[(uint)bVar19 * -2 + 3];
-    afStack_84[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 0x10] =
-         afStack_84[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 4];
-    if ((float *)&pSVar13->field_0x30 != afStack_84 + 0xe) {
-      *(float *)&pSVar13->field_0x30 = fStack_4c;
-      *(uint *)&pSVar13->field_0x34 = uStack_48;
-      *(uint *)&pSVar13->field_0x38 = uStack_44;
+    afStack_84[(uint)bVar16 * -2 + 0xf] = afStack_84[(uint)bVar16 * -2 + 3];
+    afStack_84[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 0x10] =
+         afStack_84[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 4];
+    if (&pSVar10->rotation != (CVector3f *)(afStack_84 + 0xe)) {
+      (pSVar10->rotation).x = fStack_4c;
+      (pSVar10->rotation).y = fStack_48;
+      (pSVar10->rotation).z = fStack_44;
     }
-    pCVar14 = &CStack_14c;
+    pCVar11 = &CStack_14c;
     __arrinit(&CStack_14c,4,&g_CVectorTypeInfo);
     iStack_18 = 0;
     do {
       uStack_c0 = 0;
       core_xform_cpp_FUN_00591530(auStack_c4,auStack_1dc);
       CStack_a0.x = fStack_b8;
-      *(float *)((int)&CStack_a0 + (uint)bVar19 * -8 + 4) = afStack_b4[(uint)bVar19 * -2];
-      *(float *)((int)&CStack_a0 + (uint)bVar19 * -8 + (uint)bVar19 * -8 + 8) =
-           afStack_b4[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 1];
-      if (pCVar14 != &CStack_a0) {
-        pCVar14->x = CStack_a0.x;
-        pCVar14->y = CStack_a0.y;
-        pCVar14->z = CStack_a0.z;
+      *(float *)((int)&CStack_a0 + (uint)bVar16 * -8 + 4) = afStack_b4[(uint)bVar16 * -2];
+      *(float *)((int)&CStack_a0 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8) =
+           afStack_b4[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1];
+      if (pCVar11 != &CStack_a0) {
+        pCVar11->x = CStack_a0.x;
+        pCVar11->y = CStack_a0.y;
+        pCVar11->z = CStack_a0.z;
       }
       iStack_18 = iStack_18 + 1;
-      pCVar14 = pCVar14 + 1;
+      pCVar11 = pCVar11 + 1;
     } while (iStack_18 < 4);
     uStack_220 = 0x4e54a6;
     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_004779e0
-              ((CDemonTriangle *)&pSStack_24->field_0x3c,&CStack_134,&CStack_140,&CStack_14c);
-    puStack_2c = puStack_2c + 0x2e;
+              (&pSStack_24->collision_tri_a,&CStack_134,&CStack_140,&CStack_14c);
+    pCStack_2c = (CVector3f *)((int)(pCStack_2c + 0xf) + 4);
     uStack_220 = 0x4e54d6;
     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_004779e0
-              ((CDemonTriangle *)&pSStack_24->field_0x74,&CStack_134,&CStack_128,&CStack_140);
+              (&pSStack_24->collision_tri_b,&CStack_134,&CStack_128,&CStack_140);
     pfStack_30 = pfStack_30 + 0x2e;
     pfStack_34 = pfStack_34 + 0x2e;
     iStack_28 = iStack_28 + 1;
   } while (iStack_28 < 0xc);
-  fVar20 = (float10)fcos((float10)_DAT_005f98bc);
-  fVar21 = (float10)fsin((float10)_DAT_005f98bc);
+  fVar17 = (float10)fcos((float10)_DAT_005f98bc);
+  fVar18 = (float10)fsin((float10)_DAT_005f98bc);
   fVar1 = (this_ptr->gem_pos).y;
-  fVar10 = (float)_DAT_005dc4fd;
-  fVar22 = (float10)_DAT_005dc4ed;
+  fVar5 = (float)_DAT_005dc4fd;
+  fVar19 = (float10)_DAT_005dc4ed;
   fVar2 = this_ptr->panel_radius;
-  puVar23 = &this_ptr->reflectors[0].field_0xc;
+  pCVar11 = &this_ptr->reflectors[0].target_position;
   fVar3 = (this_ptr->emitter_pos).f.y;
-  fVar9 = (float)_DAT_005dc505;
-  *(float *)&this_ptr->reflectors[0].field_0x14 =
-       (float)(fVar20 * (float10)this_ptr->panel_radius * fVar22);
-  *(float *)puVar23 = (float)((float10)fVar2 * fVar21 * fVar22);
-  *(float *)&this_ptr->reflectors[0].field_0x10 = fVar3 * fVar9 + fVar1 * fVar10;
-  if (this_ptr->reflectors != (SReflector *)puVar23) {
-    *(uint *)this_ptr->reflectors = *(uint *)puVar23;
-    *(uint *)&this_ptr->reflectors[0].field_0x4 =
-         *(uint *)&this_ptr->reflectors[0].field_0x10;
-    *(uint *)&this_ptr->reflectors[0].field_0x8 =
-         *(uint *)&this_ptr->reflectors[0].field_0x14;
+  fVar4 = (float)_DAT_005dc505;
+  this_ptr->reflectors[0].target_position.z =
+       (float)(fVar17 * (float10)this_ptr->panel_radius * fVar19);
+  pCVar11->x = (float)((float10)fVar2 * fVar18 * fVar19);
+  this_ptr->reflectors[0].target_position.y = fVar3 * fVar4 + fVar1 * fVar5;
+  if (this_ptr->reflectors != (SReflector *)pCVar11) {
+    this_ptr->reflectors[0].start_position.x = pCVar11->x;
+    this_ptr->reflectors[0].start_position.y = this_ptr->reflectors[0].target_position.y;
+    this_ptr->reflectors[0].start_position.z = this_ptr->reflectors[0].target_position.z;
   }
-  puVar23 = &this_ptr->reflectors[0].field_0x28;
-  *(uint *)puVar23 = 0xbda4de71;
-  *(uint *)&this_ptr->reflectors[0].field_0x30 = 0;
-  *(uint *)&this_ptr->reflectors[0].field_0x2c = 0xbfc529dc;
-  *(float *)&this_ptr->reflectors[0].field_0x4 =
-       *(float *)&this_ptr->reflectors[0].field_0x4 + _DAT_005dc50d;
+  pCVar11 = &this_ptr->reflectors[0].rotation;
+  pCVar11->x = -0.0805024;
+  this_ptr->reflectors[0].rotation.z = 0.0;
+  this_ptr->reflectors[0].rotation.y = -1.54034;
+  this_ptr->reflectors[0].start_position.y =
+       this_ptr->reflectors[0].start_position.y + _DAT_005dc50d;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
-            ((CMatrix3x3f *)&this_ptr->reflectors[0].field_0x34,(CVector3f *)puVar23);
-  fVar1 = *(float *)this_ptr->reflectors;
-  uVar4 = *(uint *)&this_ptr->reflectors[0].field_0x8;
-  uVar5 = *(uint *)&this_ptr->reflectors[0].field_0x10;
-  fVar2 = *(float *)&this_ptr->reflectors[0].field_0xc;
-  uVar6 = *(uint *)&this_ptr->reflectors[0].field_0x14;
-  uVar7 = *(uint *)&this_ptr->reflectors[0].field_0x28;
-  *(uint *)&this_ptr->reflectors[1].field_0x4 =
-       *(uint *)&this_ptr->reflectors[0].field_0x4;
-  uVar8 = *(uint *)&this_ptr->reflectors[0].field_0x30;
-  *(uint *)&this_ptr->reflectors[1].field_0x8 = uVar4;
-  fVar3 = *(float *)&this_ptr->reflectors[0].field_0x2c;
-  puVar23 = &this_ptr->reflectors[1].field_0x28;
-  *(uint *)&this_ptr->reflectors[1].field_0x10 = uVar5;
-  *(uint *)&this_ptr->reflectors[1].field_0x14 = uVar6;
-  *(uint *)puVar23 = uVar7;
-  *(uint *)&this_ptr->reflectors[1].field_0x30 = uVar8;
-  *(float *)(this_ptr->reflectors + 1) = -fVar1;
-  *(float *)&this_ptr->reflectors[1].field_0xc = -fVar2;
-  *(float *)&this_ptr->reflectors[1].field_0x2c = -fVar3;
-  iVar12 = 0;
+            (&this_ptr->reflectors[0].rotation_matrix,pCVar11);
+  fVar1 = this_ptr->reflectors[0].start_position.x;
+  fVar2 = this_ptr->reflectors[0].start_position.z;
+  fVar3 = this_ptr->reflectors[0].target_position.y;
+  fVar4 = this_ptr->reflectors[0].target_position.x;
+  fVar5 = this_ptr->reflectors[0].target_position.z;
+  fVar6 = this_ptr->reflectors[0].rotation.x;
+  this_ptr->reflectors[1].start_position.y = this_ptr->reflectors[0].start_position.y;
+  fVar7 = this_ptr->reflectors[0].rotation.z;
+  this_ptr->reflectors[1].start_position.z = fVar2;
+  fVar2 = this_ptr->reflectors[0].rotation.y;
+  pCVar11 = &this_ptr->reflectors[1].rotation;
+  this_ptr->reflectors[1].target_position.y = fVar3;
+  this_ptr->reflectors[1].target_position.z = fVar5;
+  pCVar11->x = fVar6;
+  this_ptr->reflectors[1].rotation.z = fVar7;
+  this_ptr->reflectors[1].start_position.x = -fVar1;
+  this_ptr->reflectors[1].target_position.x = -fVar4;
+  this_ptr->reflectors[1].rotation.y = -fVar2;
+  iVar9 = 0;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
-            ((CMatrix3x3f *)&this_ptr->reflectors[1].field_0x34,(CVector3f *)puVar23);
+            (&this_ptr->reflectors[1].rotation_matrix,pCVar11);
   do {
-    core_manpuz_cpp_FUN_004e7600(this_ptr,iVar12);
-    iVar12 = iVar12 + 1;
-  } while (iVar12 < 2);
+    core_manpuz_cpp_FUN_004e7600(this_ptr,iVar9);
+    iVar9 = iVar9 + 1;
+  } while (iVar9 < 2);
   return;
 }

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 100,
+    "complexity_score": 92,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 50,
-    "suspect_count": 4,
+    "pseudocode_lines": 52,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_stride_bytecount",
       "unrolled_memcpy"
     ],
-    "total_lines": 154
+    "total_lines": 156
   },
   "cross_references": [
     {
@@ -180,24 +180,16 @@
   },
   "suspects": [
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 21,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar6 = 0; pCVar4 = g_CGamePtr, iVar6 != 0; iVar6 = iVar6 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "mem* byte count hardcodes an element stride (((iVar2 + -1) - iVar6) * 0x20) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 39,
+      "description": "mem* byte count hardcodes an element stride ((iVar6 - iVar5) * 0x20) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 41,
       "match": "memmove",
       "severity": "moderate",
-      "text": "memmove(pCVar5,local_14,((iVar2 + -1) - iVar6) * 0x20);",
+      "text": "memmove(pacVar8,local_14,(iVar6 - iVar5) * 0x20);",
       "type": "pointer_stride_bytecount"
     },
     {
-      "description": "mem* byte count hardcodes an element stride ((*(int *)(this_ptr + 0x3210) - iVar6) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 40,
+      "description": "mem* byte count hardcodes an element stride (((this_ptr->timers).count - iVar5) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 42,
       "match": "memmove",
       "severity": "moderate",
       "text": "memmove",

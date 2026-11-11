@@ -14,6 +14,6 @@ COutStreamMemory * support_trstream_cpp_COutStreamMemory_copy_FUN_0057dee0(COutS
   COutStreamMemory *pCVar1;
   
   pCVar1 = (COutStreamMemory *)support_trstream_cpp_FUN_0057d860(this_ptr);
-  *(byte ***)pCVar1 = &g_COutStreamMemoryVTable;
+  pCVar1->vtable = &g_COutStreamMemoryVTable;
   return pCVar1;
 }

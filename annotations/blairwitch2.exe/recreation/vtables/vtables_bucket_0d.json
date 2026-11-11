@@ -5,7 +5,6 @@
     "slots":[
       {
         "addr":"00510e00",
-        "foreign":"CParticle",
         "name":"core_particle.cpp_CParticle_setup_FUN_00510e00",
         "offset":0
       },
@@ -27,12 +26,32 @@
     ]
   },
   {
+    "addr":"005f6ed4",
+    "owner":"SPageResourceText",
+    "slots":[
+      {
+        "addr":"004a2000",
+        "name":"core_fldnotes.cpp_SPageResourceText_dtor_FUN_004a2000",
+        "offset":0
+      },
+      {
+        "addr":"004a2060",
+        "name":"core_fldnotes.cpp_SPageResourceText_draw_FUN_004a2060",
+        "offset":4
+      },
+      {
+        "addr":"004a1f60",
+        "name":"core_fldnotes.cpp_SPageResource_onMouse_FUN_004a1f60",
+        "offset":8
+      }
+    ]
+  },
+  {
     "addr":"005f7bd4",
     "owner":"CBloodParticle",
     "slots":[
       {
         "addr":"00510e00",
-        "foreign":"CParticle",
         "name":"core_particle.cpp_CParticle_setup_FUN_00510e00",
         "offset":0
       },
@@ -1193,11 +1212,10 @@
   },
   {
     "addr":"005fadd4",
-    "owner":"CPod",
+    "owner":"CDemonPod",
     "slots":[
       {
         "addr":"0051c130",
-        "foreign":"CDemonPod",
         "name":"core_podmain.cpp_CDemonPod_dtor_FUN_0051c130",
         "offset":0
       },
@@ -1239,29 +1257,29 @@
       },
       {
         "addr":"0057e240",
-        "name":"support_trstream.cpp_FUN_0057e240",
+        "name":"support_trstream.cpp_COutStreamDebug_putChar_FUN_0057e240",
         "offset":4
       },
       {
         "addr":"0057e270",
-        "name":"support_trstream.cpp_FUN_0057e270",
+        "name":"support_trstream.cpp_COutStreamDebug_write_FUN_0057e270",
         "offset":8
       },
       {
         "addr":"0057e330",
-        "name":"support_trstream.cpp_FUN_0057e330",
+        "name":"support_trstream.cpp_COutStreamDebug_seek_FUN_0057e330",
         "offset":12
       },
       {
         "addr":"0057e360",
-        "name":"support_trstream.cpp_FUN_0057e360",
+        "name":"support_trstream.cpp_COutStreamDebug_tell_FUN_0057e360",
         "offset":16
       }
     ]
   },
   {
     "addr":"005ffad4",
-    "owner":"CEnemy",
+    "owner":"CSteuben",
     "slots":[
       {
         "addr":"0040ced0",
@@ -1275,7 +1293,6 @@
       },
       {
         "addr":"005a5c10",
-        "foreign":"CSteuben",
         "name":"core_steuben.cpp_CSteuben_setup_FUN_005a5c10",
         "offset":8
       },
@@ -1291,19 +1308,16 @@
       },
       {
         "addr":"0059f420",
-        "foreign":"CBasicEnemy",
         "name":"core_basicene.cpp_CBasicEnemy_process_FUN_0059f420",
         "offset":20
       },
       {
         "addr":"005a5d50",
-        "foreign":"CSteuben",
         "name":"core_steuben.cpp_CSteuben_renderOpaque_FUN_005a5d50",
         "offset":24
       },
       {
         "addr":"0059f980",
-        "foreign":"CBasicEnemy",
         "name":"core_basicene.cpp_CBasicEnemy_renderTransparent_FUN_0059f980",
         "offset":28
       },
@@ -1354,7 +1368,6 @@
       },
       {
         "addr":"0059f960",
-        "foreign":"CBasicEnemy",
         "name":"core_basicene.cpp_CBasicEnemy_getCollisionType_FUN_0059f960",
         "offset":68
       },
@@ -1385,7 +1398,6 @@
       },
       {
         "addr":"005a4940",
-        "foreign":"CBasicNPC",
         "name":"core_basicnpc.cpp_CBasicNPC_getTargetPoints_FUN_005a4940",
         "offset":92
       },
@@ -1536,19 +1548,16 @@
       },
       {
         "addr":"005a5b30",
-        "foreign":"CSteuben",
         "name":"core_steuben.cpp_CSteuben_getActorType_FUN_005a5b30",
         "offset":212
       },
       {
         "addr":"005a5d70",
-        "foreign":"CSteuben",
         "name":"core_steuben.cpp_CSteuben_dtor_FUN_005a5d70",
         "offset":216
       },
       {
         "addr":"005a5d60",
-        "foreign":"CSteuben",
         "name":"core_steuben.cpp_CSteuben_archive_FUN_005a5d60",
         "offset":220
       },
@@ -1569,7 +1578,6 @@
       },
       {
         "addr":"005a4950",
-        "foreign":"CBasicNPC",
         "name":"core_basicnpc.cpp_CBasicNPC_isGrabbable_FUN_005a4950",
         "offset":236
       },
@@ -1615,13 +1623,11 @@
       },
       {
         "addr":"0059f800",
-        "foreign":"CBasicEnemy",
         "name":"core_basicene.cpp_CBasicEnemy_processDamage_FUN_0059f800",
         "offset":272
       },
       {
         "addr":"005a5d30",
-        "foreign":"CSteuben",
         "name":"core_steuben.cpp_CSteuben_getDeathState_FUN_005a5d30",
         "offset":276
       },
@@ -1707,19 +1713,16 @@
       },
       {
         "addr":"005a0380",
-        "foreign":"CBasicEnemy",
         "name":"core_basicene.cpp_CBasicEnemy_processBurnState_FUN_005a0380",
         "offset":344
       },
       {
         "addr":"0059e7d0",
-        "foreign":"CBasicEnemy",
         "name":"core_basicene.cpp_CBasicEnemy_advanceMotion_FUN_0059e7d0",
         "offset":348
       },
       {
         "addr":"005a5c20",
-        "foreign":"CSteuben",
         "name":"core_steuben.cpp_CSteuben_processStates_FUN_005a5c20",
         "offset":352
       },
@@ -1730,37 +1733,31 @@
       },
       {
         "addr":"005a5d40",
-        "foreign":"CSteuben",
         "name":"core_steuben.cpp_CSteuben_processMotionEvent_FUN_005a5d40",
         "offset":360
       },
       {
         "addr":"005a0270",
-        "foreign":"CBasicEnemy",
         "name":"core_basicene.cpp_CBasicEnemy_startBurn_FUN_005a0270",
         "offset":364
       },
       {
         "addr":"0059ebe0",
-        "foreign":"CBasicEnemy",
         "name":"core_basicene.cpp_CBasicEnemy_processAnimationState_FUN_0059ebe0",
         "offset":368
       },
       {
         "addr":"005a5d10",
-        "foreign":"CSteuben",
         "name":"core_steuben.cpp_CSteuben_processDeathState_FUN_005a5d10",
         "offset":372
       },
       {
         "addr":"0059ef90",
-        "foreign":"CBasicEnemy",
         "name":"core_basicene.cpp_CBasicEnemy_processChasingState_FUN_0059ef90",
         "offset":376
       },
       {
         "addr":"0059f6b0",
-        "foreign":"CBasicEnemy",
         "name":"core_basicene.cpp_CBasicEnemy_checkVictim_FUN_0059f6b0",
         "offset":380
       }

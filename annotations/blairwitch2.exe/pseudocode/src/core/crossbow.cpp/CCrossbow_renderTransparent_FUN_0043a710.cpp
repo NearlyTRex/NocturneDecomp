@@ -12,6 +12,6 @@ int __cdecl core_crossbow_cpp_CCrossbow_renderTransparent_FUN_0043a710(CCrossbow
   if (this_ptr->flame_active == 0) {
     return 0;
   }
-  core_flame_cpp_CFlame_renderTransparent_FUN_0049f850((CFlame *)&this_ptr->field_0x6d8);
+  core_flame_cpp_CFlame_renderTransparent_FUN_0049f850(&this_ptr->bolt_flame);
   return 1;
 }

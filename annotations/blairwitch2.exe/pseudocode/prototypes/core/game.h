@@ -155,7 +155,7 @@ void FUN_004b8e10(undefined4 param_1,char *param_2);
 
 // Original: core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fce
 // Address: 004b8fce
-void giveHeroWeaponAmmo(char *param_1,undefined4 param_2);
+void giveHeroWeaponAmmo(char *param_1,EAmmoType param_2);
 
 // Original: core_game.cpp_scaleBoneRecursive_FUN_004b9060
 // Address: 004b9060

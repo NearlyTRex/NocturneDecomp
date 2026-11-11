@@ -23,7 +23,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFullEffectsDirect_FUN_0046a
       pSVar1 = prim;
       do {
         iVar3 = iVar3 + 1;
-        uVar2 = uVar2 & *(uint *)(this_ptr->vertex_buffer_ptr + pSVar1[1].base.type * 0x30 + 0x10);
+        uVar2 = uVar2 & this_ptr->vertex_buffer_ptr[pSVar1[1].base.type].projected_vertex.screen_x;
         pSVar1 = (SMRGLHeaderPrimitive *)&(pSVar1->base).count;
       } while (iVar3 < (prim->base).count);
     }

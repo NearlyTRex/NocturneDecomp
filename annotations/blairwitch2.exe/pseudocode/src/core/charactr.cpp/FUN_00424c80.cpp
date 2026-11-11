@@ -87,9 +87,9 @@ void __cdecl core_charactr_cpp_FUN_00424c80(CCharacter *this_ptr)
   iVar5 = 0;
   do {
     pCVar2 = DAT_0060b280;
-    *(uint *)(DAT_0060b280->vertex_buffer_ptr + iVar5 + 0x18) = 0x800000;
+    *(uint *)((int)&DAT_0060b280->vertex_buffer_ptr->u + iVar5) = 0x800000;
     iVar3 = iVar5 + 0x30;
-    *(uint *)(pCVar2->vertex_buffer_ptr + iVar5 + 0x1c) = 0x800000;
+    *(uint *)((int)&pCVar2->vertex_buffer_ptr->v + iVar5) = 0x800000;
     iVar5 = iVar3;
   } while (iVar3 != 0x12c0);
   local_40 = 0x267;
@@ -107,9 +107,9 @@ void __cdecl core_charactr_cpp_FUN_00424c80(CCharacter *this_ptr)
     local_28 = local_38;
     do {
       pCVar2 = DAT_0060b280;
-      *(uint *)(DAT_0060b280->vertex_buffer_ptr + local_1c + 0x20) = 0;
-      *(uint *)(pCVar2->vertex_buffer_ptr + local_1c + 0x24) = 0xffff;
-      *(uint *)(pCVar2->vertex_buffer_ptr + local_1c + 0x28) = 0;
+      *(uint *)((int)&DAT_0060b280->vertex_buffer_ptr->r + local_1c) = 0;
+      *(uint *)((int)&pCVar2->vertex_buffer_ptr->g + local_1c) = 0xffff;
+      *(uint *)((int)&pCVar2->vertex_buffer_ptr->b + local_1c) = 0;
       core_actor_cpp_FUN_00408de0(this_ptr,local_28);
       afStack_80[2] = local_f0;
       afStack_80[(uint)bVar7 * -2 + 3] = afStack_ec[(uint)bVar7 * -2];
@@ -125,7 +125,9 @@ void __cdecl core_charactr_cpp_FUN_00424c80(CCharacter *this_ptr)
       local_a8.y = (int)ROUND(local_bc * _DAT_005f4060);
       local_a8.z = (int)ROUND(local_b8 * _DAT_005f4060);
       engine_special_cpp_FUN_0055d723
-                ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + local_1c),&local_a8);
+                ((SProjectedVertex *)
+                 ((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x + local_1c
+                 ),&local_a8);
       local_1c = iVar5 + 0x30;
       local_28 = local_28 + 1;
     } while (local_1c != 0x90);
@@ -143,9 +145,9 @@ void __cdecl core_charactr_cpp_FUN_00424c80(CCharacter *this_ptr)
     local_24 = local_34;
     do {
       pCVar2 = DAT_0060b280;
-      *(uint *)(DAT_0060b280->vertex_buffer_ptr + local_20 + 0x20) = 0;
-      *(uint *)(pCVar2->vertex_buffer_ptr + local_20 + 0x24) = 0;
-      *(uint *)(pCVar2->vertex_buffer_ptr + local_20 + 0x28) = 0xffff;
+      *(uint *)((int)&DAT_0060b280->vertex_buffer_ptr->r + local_20) = 0;
+      *(uint *)((int)&pCVar2->vertex_buffer_ptr->g + local_20) = 0;
+      *(uint *)((int)&pCVar2->vertex_buffer_ptr->b + local_20) = 0xffff;
       core_actor_cpp_FUN_00408de0(this_ptr,local_24);
       afStack_ec[2] = local_84;
       afStack_ec[(uint)bVar7 * -2 + 3] = afStack_80[(uint)bVar7 * -2];
@@ -161,7 +163,9 @@ void __cdecl core_charactr_cpp_FUN_00424c80(CCharacter *this_ptr)
       local_cc.y = (int)ROUND(local_bc * _DAT_005f4060);
       local_cc.z = (int)ROUND(local_b8 * _DAT_005f4060);
       engine_special_cpp_FUN_0055d723
-                ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + local_20),&local_cc);
+                ((SProjectedVertex *)
+                 ((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x + local_20
+                 ),&local_cc);
       local_20 = iVar5 + 0x30;
       local_24 = local_24 + 1;
     } while (local_20 != 0x90);
@@ -170,16 +174,16 @@ void __cdecl core_charactr_cpp_FUN_00424c80(CCharacter *this_ptr)
     local_34 = local_34 + 3;
     local_44 = local_44 + -0x8000;
   } while (local_34 != (CVector3f *)local_54);
-  local_50 = *(float *)&this_ptr->field_0x3444 * *(float *)&this_ptr->field_0x2824;
-  if (local_50 < *(float *)&this_ptr->field_0x3440 * *(float *)&this_ptr->field_0x2824) {
-    local_50 = *(float *)&(this_ptr->model).field_0x2248;
+  local_50 = this_ptr->collision_cylinder_top * this_ptr->size_scale;
+  if (local_50 < this_ptr->collision_cylinder_bottom * this_ptr->size_scale) {
+    local_50 = (this_ptr->model).bounding_box.max.y;
   }
-  local_11c = *(float *)&this_ptr->field_0x3440 * *(float *)&this_ptr->field_0x2824;
+  local_11c = this_ptr->collision_cylinder_bottom * this_ptr->size_scale;
   if (local_50 < local_11c) {
-    local_50 = *(float *)&this_ptr->field_0x2824 * (float)_DAT_005ccd16 + local_11c;
+    local_50 = this_ptr->size_scale * (float)_DAT_005ccd16 + local_11c;
   }
-  local_5c = *(float *)&this_ptr->field_0x3440 * *(float *)&this_ptr->field_0x2824;
-  local_120 = *(float *)&this_ptr->field_0x3434 * *(float *)&this_ptr->field_0x2824;
+  local_5c = this_ptr->collision_cylinder_bottom * this_ptr->size_scale;
+  local_120 = this_ptr->collision_cylinder_radius * this_ptr->size_scale;
   iVar3 = 0x30;
   iVar5 = 0;
   local_30 = 0;
@@ -196,22 +200,26 @@ void __cdecl core_charactr_cpp_FUN_00424c80(CCharacter *this_ptr)
     local_b4.z = (int)ROUND(local_b8 * _DAT_005f4060);
     local_18 = local_2c;
     engine_special_cpp_FUN_0055d723
-              ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + iVar5),&local_b4);
+              ((SProjectedVertex *)
+               ((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x + iVar5),
+               &local_b4);
     pCVar2 = DAT_0060b280;
-    *(uint *)(DAT_0060b280->vertex_buffer_ptr + iVar5 + 0x20) = 0xffff;
-    *(uint *)(pCVar2->vertex_buffer_ptr + iVar5 + 0x24) = 0;
-    *(uint *)(pCVar2->vertex_buffer_ptr + iVar5 + 0x28) = 0;
+    *(uint *)((int)&DAT_0060b280->vertex_buffer_ptr->r + iVar5) = 0xffff;
+    *(uint *)((int)&pCVar2->vertex_buffer_ptr->g + iVar5) = 0;
+    *(uint *)((int)&pCVar2->vertex_buffer_ptr->b + iVar5) = 0;
     local_bc = local_50;
     local_4c = local_2c + 1;
     local_9c.x = (int)ROUND(local_c0 * _DAT_005f4060);
     local_9c.y = (int)ROUND(local_50 * _DAT_005f4060);
     local_9c.z = (int)ROUND(local_b8 * _DAT_005f4060);
     engine_special_cpp_FUN_0055d723
-              ((SProjectedVertex *)(pCVar2->vertex_buffer_ptr + iVar3),&local_9c);
+              ((SProjectedVertex *)
+               ((int)&(pCVar2->vertex_buffer_ptr->projected_vertex).transformed_x + iVar3),&local_9c
+              );
     pCVar2 = DAT_0060b280;
-    *(uint *)(DAT_0060b280->vertex_buffer_ptr + iVar3 + 0x20) = 0xffff;
-    *(uint *)(pCVar2->vertex_buffer_ptr + iVar3 + 0x24) = 0;
-    *(uint *)(pCVar2->vertex_buffer_ptr + iVar3 + 0x28) = 0;
+    *(uint *)((int)&DAT_0060b280->vertex_buffer_ptr->r + iVar3) = 0xffff;
+    *(uint *)((int)&pCVar2->vertex_buffer_ptr->g + iVar3) = 0;
+    *(uint *)((int)&pCVar2->vertex_buffer_ptr->b + iVar3) = 0;
     if (0 < local_30) {
       local_118.base.count = 4;
       local_100 = local_2c + -2;
@@ -229,33 +237,35 @@ void __cdecl core_charactr_cpp_FUN_00424c80(CCharacter *this_ptr)
   local_90.x = (int)ROUND(_DAT_0265370c * _DAT_005f4060);
   local_90.y = (int)ROUND(_DAT_02653710 * _DAT_005f4060);
   local_90.z = (int)ROUND(_DAT_02653714 * _DAT_005f4060);
-  engine_special_cpp_FUN_0055d723((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&local_90);
+  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_90);
   pCVar2 = DAT_0060b280;
-  *(uint *)(DAT_0060b280->vertex_buffer_ptr + 0x20) = 0xffff;
+  DAT_0060b280->vertex_buffer_ptr->r = 0xffff;
   iVar5 = 0;
-  *(uint *)(pCVar2->vertex_buffer_ptr + 0x24) = 0;
+  pCVar2->vertex_buffer_ptr->g = 0;
   iVar3 = 0x30;
   local_48 = 0;
-  *(uint *)(pCVar2->vertex_buffer_ptr + 0x28) = 0;
+  pCVar2->vertex_buffer_ptr->b = 0;
   do {
     local_18 = local_48;
     fVar8 = (float10)local_48 * (float10)_DAT_005ccd1e * (float10)_DAT_005ccd22;
     fVar9 = (float10)fsin(fVar8);
     fVar8 = (float10)fcos(fVar8);
-    local_c0 = (float)((float10)*(float *)&this_ptr->field_0x2824 *
-                      (float10)*(float *)&this_ptr->field_0x3430 * fVar9);
+    local_c0 = (float)((float10)this_ptr->size_scale *
+                      (float10)this_ptr->collision_cylinder_height * fVar9);
     local_bc = 0.0;
-    local_b8 = (float)(fVar8 * (float10)*(float *)&this_ptr->field_0x3430 *
-                      (float10)*(float *)&this_ptr->field_0x2824);
+    local_b8 = (float)(fVar8 * (float10)this_ptr->collision_cylinder_height *
+                      (float10)this_ptr->size_scale);
     local_d8.x = (int)ROUND(local_c0 * _DAT_005f4060);
     local_d8.y = (int)ROUND(_DAT_005f4060 * 0.0);
     local_d8.z = (int)ROUND(local_b8 * _DAT_005f4060);
     engine_special_cpp_FUN_0055d723
-              ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + iVar3),&local_d8);
+              ((SProjectedVertex *)
+               ((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x + iVar3),
+               &local_d8);
     pCVar2 = DAT_0060b280;
-    *(uint *)(DAT_0060b280->vertex_buffer_ptr + iVar3 + 0x20) = 0xffff;
-    *(uint *)(pCVar2->vertex_buffer_ptr + iVar3 + 0x24) = 0;
-    *(uint *)(pCVar2->vertex_buffer_ptr + iVar3 + 0x28) = 0;
+    *(uint *)((int)&DAT_0060b280->vertex_buffer_ptr->r + iVar3) = 0xffff;
+    *(uint *)((int)&pCVar2->vertex_buffer_ptr->g + iVar3) = 0;
+    *(uint *)((int)&pCVar2->vertex_buffer_ptr->b + iVar3) = 0;
     if (0 < iVar5) {
       local_118.base.count = 3;
       local_100 = 0;

@@ -55,11 +55,11 @@ void __cdecl CDoc::process(CDoc *this_ptr,float delta_time);
 
 // Original: core_doc.cpp_FUN_00450c60
 // Address: 00450c60
-void FUN_00450c60(CCharacter *param_1,float param_2);
+void FUN_00450c60(CHero *param_1,float param_2);
 
 // Original: core_doc.cpp_FUN_00453250
 // Address: 00453250
-void FUN_00453250(CCharacter *param_1,float param_2);
+void FUN_00453250(CHero *param_1,float param_2);
 
 // Original: core_doc.cpp_FUN_00453c5e
 // Address: 00453c5e

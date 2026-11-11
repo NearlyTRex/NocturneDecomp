@@ -18,8 +18,8 @@ void unkafter_basicene_cpp_FUN_005a01d0(int param_1,uint *param_2)
   iVar2 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10(this_ptr,(char *)(param_2 + 1),1)
   ;
   param_2[9] = iVar2;
-  param_2[10] = *(uint *)(this_ptr + iVar2 * 0x118 + 0x1c8c);
-  fVar1 = *(float *)(this_ptr + param_2[9] * 0x118 + 0x1c48);
+  param_2[10] = this_ptr->motions[iVar2].frame_count;
+  fVar1 = this_ptr->motions[param_2[9]].fps;
   *param_2 = 0;
   param_2[0xd] = 0;
   param_2[0xc] = (float)(int)param_2[10] / fVar1;

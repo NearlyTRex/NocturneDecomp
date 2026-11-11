@@ -11,10 +11,10 @@
 void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicEnemy *this_ptr,float delta_time)
 
 {
-  CBasicEnemy *pCVar1;
+  CVector3f *pCVar1;
   int iVar2;
   char *pcVar3;
-  CBasicEnemy *pCVar4;
+  float *pfVar4;
   byte bVar5;
   float afStackY_10bc [990];
   uint uVar6;
@@ -27,12 +27,9 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
   uint uVar12;
   float *pfVar13;
   float *pfVar14;
-  byte *puVar15;
+  uint *puVar15;
   uint uVar16;
-  SDamageInfo aSStack_110 [4];
-  float fStack_10c;
-  uint uStack_dc;
-  uint uStack_d8;
+  SDamageInfo SStack_110;
   CVector3f CStack_d4;
   float fStack_c8;
   float afStack_c4 [4];
@@ -54,35 +51,35 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
   float fStack_48;
   uint uStack_44;
   float fStack_38;
-  CBasicEnemy *pCStack_28;
+  CSimpleParticleSystem *pCStack_28;
   int iStack_24;
   int iStack_20;
-  CBasicEnemy *pCStack_1c;
-  CBasicEnemy *pCStack_18;
+  CMatrix3x4f *pCStack_1c;
+  CVector3f *pCStack_18;
   float fStack_14;
   
   bVar5 = 0;
-  if (0.0 < *(float *)(this_ptr + 0x11430)) {
-    *(float *)(this_ptr + 0x11430) = *(float *)(this_ptr + 0x11430) - delta_time;
-    core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(aSStack_110);
-    fStack_10c = *(float *)(this_ptr + 0x11440) * delta_time;
-    uStack_dc = *(uint *)(_DAT_01cedef4 * 4 + 0x1cedee4);
-    uStack_d8 = uStack_dc;
-    (**(code **)(*(int *)(this_ptr + 0x2b0) + 0x110))(this_ptr,aSStack_110);
+  if (0.0 < this_ptr->burn_timer) {
+    this_ptr->burn_timer = this_ptr->burn_timer - delta_time;
+    core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(&SStack_110);
+    SStack_110.damage_amount = this_ptr->burn_damage_rate * delta_time;
+    SStack_110.attacker = *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4);
+    SStack_110.wielder = SStack_110.attacker;
+    (*(((this_ptr->base).base.base.vtable._uc)->_uc).processDamage)
+              ((CCharacter *)this_ptr,&SStack_110);
     iStack_20 = 0;
     iStack_24 = 0;
-    pCStack_1c = this_ptr + 0x1134;
-    pCStack_18 = this_ptr + 0x11434;
-    pCStack_28 = this_ptr + 0x264;
-    *(uint *)(this_ptr + 0x113d0) = 0;
-    pCVar4 = this_ptr + 0x11430;
-    for (; iStack_20 < *(int *)(*(int *)(this_ptr + 0x113b0) + 0x1d1f8); iStack_20 = iStack_20 + 1)
-    {
+    pCStack_1c = (this_ptr->base).base.model.bone_transform.bone_model_matrices;
+    pCStack_18 = &this_ptr->burn_direction;
+    pCStack_28 = (this_ptr->base).base.base.particle_systems + 4;
+    this_ptr->flinch_active = 0;
+    pfVar4 = &this_ptr->burn_timer;
+    for (; iStack_20 < this_ptr->skeleton->bone_count; iStack_20 = iStack_20 + 1) {
       iVar2 = unkaddr_005a7eb0_cpp_FUN_005a7ed0();
       if (iVar2 != 0) {
         pcVar3 = strstr
-                           ((char *)(*(int *)(this_ptr + 0x113b0) + 0x1d1fc + iStack_24),
-                            "Bip01");
+                           (this_ptr->skeleton->bone_list[0].bone_name + iStack_24,"Bip01")
+        ;
         if (pcVar3 != (char *)0x0) {
           fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,1.0);
           if ((float)_DAT_005efb87 < fStack_14) {
@@ -97,10 +94,10 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
             afStack_88[(uint)bVar5 * -2 + 3] = afStack_88[(uint)bVar5 * -2 + 0x12];
             afStack_88[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
                  afStack_88[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x13];
-            fStack_50 = *(float *)pCVar1 * *(float *)pCVar4;
-            fStack_4c = *(float *)(pCVar1 + 4) * *(float *)pCVar4;
-            fStack_48 = *(float *)(pCVar1 + 8) * *(float *)pCVar4;
-            fStack_c8 = *(float *)pCVar1 * *(float *)pCVar4;
+            fStack_50 = pCVar1->x * *pfVar4;
+            fStack_4c = pCVar1->y * *pfVar4;
+            fStack_48 = pCVar1->z * *pfVar4;
+            fStack_c8 = fStack_50;
             afStack_c4[(uint)bVar5 * -2] = afStack_88[(uint)bVar5 * -2 + 0xf];
             afStack_c4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
                  afStack_88[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x10];
@@ -114,7 +111,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
                  afStack_c4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];
             uVar16 = 2;
             fStack_68 = afStack_c4[2];
-            puVar15 = &DAT_0265370c;
+            puVar15 = (uint *)&DAT_0265370c;
             uStack_60 = uStack_b4;
             pfVar14 = afStack_c4 + 8;
             pfVar13 = afStack_88 + 2;
@@ -134,16 +131,16 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
             uVar6 = 0x3f000000;
             fStack_14 = fVar7;
             fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.8,1.0);
-            unkafter_superopt_cpp_FUN_005a8300
+            unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300
                       (pCStack_28,fStack_14,uVar6,uVar8,fVar7,uVar9,uVar10,uVar11,uVar12,pfVar13,
                        pfVar14,puVar15,uVar16);
             iVar2 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,0x32);
             if (iVar2 == 0) {
+              fStack_8c = pCStack_18->x * *pfVar4;
               pfVar14 = afStack_88 + 2;
-              fStack_8c = *(float *)pCStack_18 * *(float *)pCVar4;
-              afStack_88[0] = *(float *)(pCStack_18 + 4) * *(float *)pCVar4;
-              afStack_88[1] = *(float *)(pCStack_18 + 8) * *(float *)pCVar4;
-              CStack_d4.x = *(float *)pCStack_18 * *(float *)pCVar4;
+              afStack_88[0] = pCStack_18->y * *pfVar4;
+              afStack_88[1] = pCStack_18->z * *pfVar4;
+              CStack_d4.x = fStack_8c;
               *(float *)((int)&CStack_d4 + (uint)bVar5 * -8 + 4) = afStack_88[(uint)bVar5 * -2];
               *(float *)((int)&CStack_d4 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
                    afStack_88[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
@@ -154,17 +151,17 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
               *(float *)((int)&CStack_98 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
                    afStack_88[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x16];
               core_gore_cpp_CGore_spawnBloodBurst_FUN_004c9850
-                        (g_CGorePtr,&CStack_98,&CStack_d4,1,*(EBloodType *)(this_ptr + 0x280c));
+                        (g_CGorePtr,&CStack_98,&CStack_d4,1,(this_ptr->base).base.blood_type);
             }
           }
         }
       }
-      pCStack_1c = pCStack_1c + 0x30;
+      pCStack_1c = pCStack_1c + 1;
       iStack_24 = iStack_24 + 0x24;
     }
     return;
   }
-  *(uint *)(this_ptr + 0x11430) = 0;
-  unkaddr_0059d350_cpp_FUN_0059d880(this_ptr + 0x10af8,"BurnComplete");
+  this_ptr->burn_timer = 0.0;
+  unkaddr_0059d350_cpp_FUN_0059d880(&this_ptr->state_machine,"BurnComplete");
   return;
 }

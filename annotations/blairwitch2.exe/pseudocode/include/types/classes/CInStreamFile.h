@@ -4,13 +4,23 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
 
 // Structure: CInStreamFile
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 40; ctor 0057cd50 calls the in-stream base ctor then zeroes +4..+0x24; bla's open takes no text/binary flag and nothing touches +0x28, hence 40 bytes
 // Ghidra size: 0x28 (40 bytes)
 #pragma pack(push, 1)
 typedef struct CInStreamFile {
-    char field_0[40]; // 0x0
+    void* vtable; // 0x0, stream vtable pointer; the abstract base ctor (0057b9c0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB
+    HANDLE file_handle; // 0x4, open 0057d320 stores CreateFileA(path, GENERIC_READ); close 0057d180 CloseHandle()s and zeroes it; every read slot returns -2 when it is 0
+    int file_size; // 0x8, open stores GetFileSize(); openInDirectory 0057d390 stores the found entry's size; read/seek/isEof bound position against it
+    int file_offset; // 0xc, openInDirectory 0057d390 stores the entry's start offset; fillBuffer adds it to the page position before SetFilePointer
+    int position; // 0x10, getChar 0057cf20 reads the byte at it and increments; seek 0057d0c0 sets it (SEEK_SET/CUR/END against file_size); tell returns it
+    void* buffer_alloc; // 0x14, allocBuffer mallocs buffer_capacity+0x1f bytes into it; freeBuffer frees it
+    char* buffer; // 0x18, allocBuffer stores buffer_alloc rounded up to 32 bytes; byte reads index it with position - buffer_start; ReadFile target
+    int buffer_start; // 0x1c, fillBuffer stores the 4 KiB page start; a read refills when position is outside [buffer_start, buffer_start+buffer_length)
+    int buffer_capacity; // 0x20, allocBuffer sets 0x1000; fillBuffer clamps the read length to it
+    int buffer_length; // 0x24, fillBuffer stores the ReadFile byte count (0 on failure)
 } CInStreamFile;
 #pragma pack(pop)
 

@@ -38,12 +38,12 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
+;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fgets_FUN_005b9600
 ;   crt_stdio.c_fscanf_FUN_005b8100
 ;   crt_stdio.c_ftell_FUN_005baab0
 ;   crt_string.c__strcmp_FUN_005b8c30
-;   crt_unknown.c_FUN_005b8580
 ;   engine_dosio.cpp_FUN_00460c70
 ;   engine_dosio.cpp_getFileSize_FUN_00460aa0
 ;
@@ -278,8 +278,8 @@ section .text
     DEC ECX                             ; 0050fc89
     INC ECX                             ; 0050fc8a
     PUSH ECX                            ; 0050fc8b
-    CALL crt_unknown.c_FUN_005b8580     ; 0050fc8c
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 0050fc8c
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     MOV EDX,EAX                         ; 0050fc91
     MOV EAX,[0x01d63258]                ; 0050fc93 | DAT_01d63258
     ADD ESP,0x4                         ; 0050fc98
@@ -308,8 +308,8 @@ section .text
     DEC ECX                             ; 0050fcde
     INC ECX                             ; 0050fcdf
     PUSH ECX                            ; 0050fce0
-    CALL crt_unknown.c_FUN_005b8580     ; 0050fce1
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 0050fce1
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     MOV EDX,dword ptr [0x01d63258]      ; 0050fce6 | DAT_01d63258
     ADD ESP,0x4                         ; 0050fcec
     MOV dword ptr [EDX*0x4 + 0x1d649cc],EAX ; 0050fcef

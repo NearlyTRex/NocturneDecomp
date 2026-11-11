@@ -2,19 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 230,
+    "complexity_score": 277,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 16,
+    "pseudocode_lines": 52,
+    "suspect_count": 20,
     "suspect_types": [
       "raw_address_constant",
+      "stack_ref",
+      "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 162
+    "total_lines": 159
   },
   "cross_references": [],
   "function": {
@@ -141,7 +143,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "CStack_30.x = (int)ROUND(*param_1 * _DAT_005f5b50);",
@@ -149,7 +151,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "CStack_30.y = (int)ROUND(param_1[1] * _DAT_005f5b50);",
@@ -157,15 +159,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "CStack_30.z = (int)ROUND(param_1[2] * _DAT_005f5b50);",
       "type": "unnamed_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_0060b27c",
+      "severity": "mild",
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b27c->vertex_buffer_ptr->projected_vertex,&CStack_30);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "CStack_18.x = (int)ROUND(param_1[3] * _DAT_005f5b50);",
@@ -173,7 +183,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "CStack_18.y = (int)ROUND(param_1[4] * _DAT_005f5b50);",
@@ -181,15 +191,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "CStack_18.z = (int)ROUND(param_1[5] * _DAT_005f5b50);",
       "type": "unnamed_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_0060b27c",
+      "severity": "mild",
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b27c->vertex_buffer_ptr[1].projected_vertex,&CStack_18);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "CStack_24.x = (int)ROUND(param_1[6] * _DAT_005f5b50);",
@@ -197,7 +215,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "CStack_24.y = (int)ROUND(param_1[7] * _DAT_005f5b50);",
@@ -205,15 +223,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "CStack_24.z = (int)ROUND(param_1[8] * _DAT_005f5b50);",
       "type": "unnamed_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_0060b27c",
+      "severity": "mild",
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b27c->vertex_buffer_ptr[2].projected_vertex,&CStack_24);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 35,
+      "match": "&stack0xffffff88",
+      "severity": "moderate",
+      "text": "poly = (SMRGLPrimitivePoly *)&stack0xffffff88;",
+      "type": "stack_ref"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar2 = (float10)param_1[9] * fVar1;",
@@ -221,7 +255,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar2 = (float10)param_1[10] * fVar1;",
@@ -229,7 +263,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = fVar1 * (float10)param_1[0xb];",
@@ -237,7 +271,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar2 = (float10)param_1[0xc] * (float10)_DAT_005d1e2b * (float10)_DAT_005d1e33;",
@@ -245,7 +279,7 @@
     },
     {
       "description": "Raw hex address 0x1ba5c50 assigned to bare local `this_ptr`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 54,
+      "line": 51,
       "match": "0x1ba5c50",
       "severity": "moderate",
       "text": "this_ptr = 0x01BA5C50;",

@@ -65,7 +65,7 @@ int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_00587e90(CWayPoint *thi
   bVar4 = 0;
   iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
   if (((iVar1 == 0) && (*(int *)(0x01D182F0 + 0x1008) == 0)) &&
-     (*(int *)&g_CGameHookPtr->field_0x8 != 0)) {
+     (g_CGameHookPtr->debug_waypoint_display != 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
     (*((this_ptr->base).base.vtable._ub)->getBoundingBox)((CDemonActor *)this_ptr,unaff_EBX);
     puVar2 = (uint *)&stack0xfffffef0;
@@ -97,13 +97,13 @@ int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_00587e90(CWayPoint *thi
     CStack_c8.x = (int)ROUND(fStack_8c * _DAT_005fde10);
     CStack_c8.y = (int)ROUND(fStack_88 * _DAT_005fde10);
     CStack_c8.z = (int)ROUND(fStack_84 * _DAT_005fde10);
-    engine_special_cpp_FUN_0055d723((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&CStack_c8);
+    engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&CStack_c8);
     pfVar5 = (float *)0x0;
     if (0 < this_ptr->num_adjacent_waypoints) {
       pfStack_8 = &stack0xffffff2c;
       pCVar7 = this_ptr;
       do {
-        this_ptr_00 = *(CWayPoint **)pCVar7->adjacency;
+        this_ptr_00 = pCVar7->adjacency[0].waypoint;
         if (this_ptr <= this_ptr_00) {
           _DAT_01c35e60 = 2;
           (*((this_ptr_00->base).base.vtable._ub)->getBoundingBox)
@@ -150,7 +150,7 @@ int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_00587e90(CWayPoint *thi
           CStack_78.y = (int)ROUND(fStack_b0 * _DAT_005fde10);
           CStack_78.z = (int)ROUND(fStack_ac * _DAT_005fde10);
           engine_special_cpp_FUN_0055d723
-                    ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&CStack_78);
+                    (&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_78);
           unaff_EDI = (CBoundingBox3D *)0x0;
           engine_3d_c_drawLine2DFromIndices_FUN_00407c40(0,1);
         }

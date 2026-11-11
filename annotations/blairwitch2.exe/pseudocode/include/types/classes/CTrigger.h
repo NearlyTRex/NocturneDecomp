@@ -5,14 +5,21 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CVector3f.h"
 #include "types/enums/ETriggerCause.h"
+#include "types/enums/ETriggerEventType.h"
+#include "types/enums/ETriggerShape.h"
 
 // Structure: CTrigger
 // Ghidra size: 0x4d0 (1232 bytes)
 #pragma pack(push, 1)
 typedef struct CTrigger {
     CDemonActor base; // 0x0
-    char field_344[376]; // 0x158
+    float test_radius; // 0x2b4
+    ETriggerEventType event_type; // 0x2b8
+    CVector3f trigger_size; // 0x2bc
+    int trigger_state; // 0x2c8
+    ETriggerShape trigger_shape; // 0x2cc
     ETriggerCause trigger_cause; // 0x2d0
     char actor_name[80]; // 0x2d4
     char actor_type[80]; // 0x324
@@ -25,7 +32,10 @@ typedef struct CTrigger {
     int event_flag; // 0x44c
     int laser_type; // 0x450
     float hit_points; // 0x454
-    char field_1112[112]; // 0x458
+    struct CDemonActor* hilite_actor; // 0x458, Added in this build
+    struct CDemonActor* triggering_actor; // 0x45c
+    int auto_aim_at_me; // 0x460
+    char damage_actor_wildcard_name[100]; // 0x464
     struct CDemonActor* cached_actor; // 0x4c8
     float damage_cooldown; // 0x4cc
 } CTrigger;

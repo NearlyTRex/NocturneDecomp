@@ -11,15 +11,19 @@ void __cdecl core_stranger_cpp_CStranger_archive_FUN_0056b600(CStranger *this_pt
 {
   core_hero_cpp_FUN_004ce590(this_ptr);
   if ((1 < g_CStrangerClassVersion) && (g_CStrangerClassVersion < 5)) {
-    core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x25608,"@objectToPickUp" + 1)
+    core_actor_cpp_archiveActor_FUN_0040b9e0
+              (&(this_ptr->base).object_to_pick_up,"@objectToPickUp" + 1);
+    core_actor_cpp_archiveActor_FUN_0040b9e0(&(this_ptr->base).door_to_open,"doorToOpen");
+    core_actor_cpp_archiveActor_FUN_0040b9e0(&(this_ptr->base).lever_to_pull,"leverToPull")
     ;
-    core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x25604,"doorToOpen");
-    core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x25610,"leverToPull");
-    core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x25614,"ladderToClimb");
+    core_actor_cpp_archiveActor_FUN_0040b9e0
+              (&(this_ptr->base).ladder_to_climb,"ladderToClimb");
   }
   if (g_CStrangerClassVersion == 2) {
-    core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x2620,"lhCarryObject");
-    core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x2698,"rhCarryObject");
+    core_actor_cpp_archiveActor_FUN_0040b9e0
+              (&(this_ptr->base).base.carry_hands[0].carry_actor,"lhCarryObject");
+    core_actor_cpp_archiveActor_FUN_0040b9e0
+              (&(this_ptr->base).base.carry_hands[1].carry_actor,"rhCarryObject");
   }
   if (3 < g_CStrangerClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040b9e0
@@ -38,7 +42,8 @@ void __cdecl core_stranger_cpp_CStranger_archive_FUN_0056b600(CStranger *this_pt
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040b960
-            ((int *)&this_ptr->field_0x2d04,"layerActionIndex");
-  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x2d08,"layerActionT");
+            (&(this_ptr->base).base.layer_action_index,"layerActionIndex");
+  core_actor_cpp_archiveFloat_FUN_0040b8e0
+            (&(this_ptr->base).base.layer_action_t,"layerActionT");
   return;
 }

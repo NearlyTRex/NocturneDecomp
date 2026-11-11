@@ -43,15 +43,15 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_00415b60(CBodyPart *thi
       if (0 < this_ptr->attached_model_count) {
         pSStack_8 = this_ptr->attached_models;
         pSVar1 = this_ptr->attached_models;
-        euler_angles = (CVector3f *)&this_ptr->attached_models[0].field_0xc;
+        euler_angles = &this_ptr->attached_models[0].euler_angles;
         do {
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-                    (DAT_0060b280,euler_angles,(CVector3f *)(pSStack_8 + iVar2));
+                    (DAT_0060b280,euler_angles,&pSStack_8[iVar2].position_offset);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
-                    ((CKeyFramedModelInstance *)&pSVar1->field_0x18,0.0,-1);
+                    (&pSVar1->model,0.0,-1);
           iVar2 = iVar2 + 1;
           euler_angles = (CVector3f *)&euler_angles[0x21].z;
-          pSVar1 = (SBodyPartModel *)(&pSVar1->field_0x18 + 0x17c);
+          pSVar1 = (SBodyPartModel *)(&pSVar1->model + 1);
           engine_matrix_c_pop_FUN_0046b4a0();
         } while (iVar2 < this_ptr->attached_model_count);
       }

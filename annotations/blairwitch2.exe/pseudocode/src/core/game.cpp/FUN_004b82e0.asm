@@ -610,7 +610,7 @@ section .text
     ADD ESP,0x8                         ; 004b88d2
     MOV EAX,[0x00616044]                ; 004b88d5 | g_CFieldNotesPtr
         ;   Label: LAB_004b88d5
-    CMP dword ptr [EAX + 0x40],0x0      ; 004b88da | g_CFieldNotesInstance.field64_0x40
+    CMP dword ptr [EAX + 0x40],0x0      ; 004b88da | g_CFieldNotesInstance.is_displayed
     JZ 0x004b8957                       ; 004b88de
         ;   XREF to: 004b8957 (CONDITIONAL_JUMP)  ; LAB_004b8957
     XOR EDX,EDX                         ; 004b88e4
@@ -655,7 +655,7 @@ section .text
     JNC 0x004b8914                      ; 004b8947
         ;   XREF to: 004b8914 (CONDITIONAL_JUMP)  ; LAB_004b8914
     MOV EAX,[0x00616044]                ; 004b8949 | g_CFieldNotesPtr
-    MOV dword ptr [EAX + 0x40],0x0      ; 004b894e | g_CFieldNotesInstance.field64_0x40
+    MOV dword ptr [EAX + 0x40],0x0      ; 004b894e | g_CFieldNotesInstance.is_displayed
     JMP 0x004b8914                      ; 004b8955
         ;   XREF to: 004b8914 (UNCONDITIONAL_JUMP)  ; LAB_004b8914
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b8957
@@ -1050,8 +1050,8 @@ section .text
     PUSH EDI                            ; 004b8d78
     MOV EAX,[0x0061ea5c]                ; 004b8d79 | g_CGameHookPtr
     PUSH EAX                            ; 004b8d7e
-    CALL unkaddr_0059c270.cpp_FUN_0059c3d0 ; 004b8d7f
-        ;   XREF to: 0059c3d0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059c270.cpp_FUN_0059c3d0()
+    CALL unkaddr_0059c270.cpp_CGameHook_showDebugMenu_FUN_0059c3d0 ; 004b8d7f
+        ;   XREF to: 0059c3d0 (UNCONDITIONAL_CALL)  ; void unkaddr_0059c270.cpp_CGameHook_showDebugMenu_FUN_0059c3d0(CGameHook * this_ptr)
     ADD ESP,0x8                         ; 004b8d84
     MOV ESP,EBP                         ; 004b8d87
         ;   Label: LAB_004b8d87

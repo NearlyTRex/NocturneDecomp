@@ -6,6 +6,7 @@
 ;
 ; XREF[41]:
 ;   core_ammobox.cpp_CAmmoBox_archive_FUN_0040e860 at 0040e90e
+;   core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10 at 0059fd12
 ;   core_bodypart.cpp_CBodyPart_archive_FUN_00415f50 at 004160e9
 ;   core_boneguy.cpp_CBoneGuy_archive_FUN_00419c50 at 00419e00
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_0041c7f0 at 0041c8af
@@ -14,7 +15,6 @@
 ;   core_conveyor.cpp_CConstruct_archive_FUN_00437b80 at 00437da0
 ;   core_crate.cpp_CCrate_archive_FUN_0043a1d0 at 0043a20b
 ;   core_dest.cpp_CActorDestination_archive_FUN_00447450 at 0044749d
-;   core_doc.cpp_CDoc_archive_FUN_004597a0 at 004597cd
 ;   ... and 31 more
 ;
 ; Referenced Globals:

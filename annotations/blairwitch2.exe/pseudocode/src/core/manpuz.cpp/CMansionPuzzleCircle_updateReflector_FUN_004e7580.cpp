@@ -13,21 +13,19 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateReflector_FUN_004e7580(C
 {
   float fVar1;
   
-  if (*(int *)(this_ptr->panels + *(int *)&this_ptr->reflectors[reflector_index].field_0x5c) == 0) {
-    fVar1 = delta_time / _DAT_005f98cc + *(float *)&this_ptr->reflectors[reflector_index].field_0x18
-    ;
-    *(float *)&this_ptr->reflectors[reflector_index].field_0x18 = fVar1;
+  if (this_ptr->panels[this_ptr->reflectors[reflector_index].panel_index].exists == 0) {
+    fVar1 = delta_time / _DAT_005f98cc + this_ptr->reflectors[reflector_index].interp_factor;
+    this_ptr->reflectors[reflector_index].interp_factor = fVar1;
     if (1.0 < fVar1) {
-      *(uint *)&this_ptr->reflectors[reflector_index].field_0x18 = 0x3f800000;
+      this_ptr->reflectors[reflector_index].interp_factor = 1.0;
       return;
     }
   }
   else {
-    fVar1 = *(float *)&this_ptr->reflectors[reflector_index].field_0x18 - delta_time / _DAT_005f98cc
-    ;
-    *(float *)&this_ptr->reflectors[reflector_index].field_0x18 = fVar1;
+    fVar1 = this_ptr->reflectors[reflector_index].interp_factor - delta_time / _DAT_005f98cc;
+    this_ptr->reflectors[reflector_index].interp_factor = fVar1;
     if (fVar1 < 0.0) {
-      *(uint *)&this_ptr->reflectors[reflector_index].field_0x18 = 0;
+      this_ptr->reflectors[reflector_index].interp_factor = 0.0;
       return;
     }
   }

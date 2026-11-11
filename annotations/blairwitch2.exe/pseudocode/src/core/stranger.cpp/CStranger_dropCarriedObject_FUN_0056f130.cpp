@@ -9,9 +9,12 @@
 void __cdecl core_stranger_cpp_CStranger_dropCarriedObject_FUN_0056f130(CStranger *this_ptr,int hand_index,CVector3f *drop_direction)
 
 {
-  if (*(CWeapon **)(&this_ptr->field_0x2620 + hand_index * 0x78) == this_ptr->weapon) {
+  CEnemy_full_vtable *pCVar1;
+  
+  if ((CWeapon *)(this_ptr->base).base.carry_hands[hand_index].carry_actor == this_ptr->weapon) {
+    pCVar1 = (this_ptr->base).base.base.vtable._ue;
     this_ptr->weapon = (CWeapon *)0x0;
-    (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x150))(this_ptr,0);
+    (*(pCVar1->_ue).updateVictim)((CEnemy *)this_ptr,0.0);
   }
   core_charactr_cpp_CCharacter_dropCarriedObject_FUN_00428d60
             ((CCharacter *)this_ptr,hand_index,drop_direction);

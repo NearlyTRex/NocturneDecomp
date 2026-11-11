@@ -12,10 +12,10 @@ int __cdecl core_set_cpp_CDemonSet_isCameraPanning_FUN_00534b80(CDemonSet *this_
 
 {
   if (-1 < this_ptr->selected_camera_index) {
-    return *(int *)&this_ptr->cameras[this_ptr->selected_camera_index].field_0x140;
+    return this_ptr->cameras[this_ptr->selected_camera_index].is_panning;
   }
   _DAT_01d046a0 = "..\\core\\set.cpp";
   _DAT_01d046a4 = 0x149c;
   core_main_c_FUN_004e4500("CDemonSet::isCameraPanning - no camera selected");
-  return *(int *)&this_ptr->cameras[this_ptr->selected_camera_index].field_0x140;
+  return this_ptr->cameras[this_ptr->selected_camera_index].is_panning;
 }

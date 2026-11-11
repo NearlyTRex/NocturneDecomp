@@ -64,7 +64,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_00587280(CWaterActor *thi
     _DAT_01d046a4 = 0x1a5;
     core_main_c_FUN_004e4500("CWaterActor::process - Bad state");
   }
-  *(float *)&(this_ptr->base).field_0x24 =
-       this_ptr->height_delta * this_ptr->param + this_ptr->base_y;
+  (this_ptr->base).location.position.y = this_ptr->height_delta * this_ptr->param + this_ptr->base_y
+  ;
   return;
 }

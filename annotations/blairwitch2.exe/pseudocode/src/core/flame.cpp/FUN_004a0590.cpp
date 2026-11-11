@@ -17,10 +17,10 @@ void __cdecl core_flame_cpp_FUN_004a0590(CFlame *this_ptr)
   CVector3f CStack_28;
   float local_14;
   
-  CStack_28.x = *(float *)&(this_ptr->base).field_0x20;
-  CStack_28.z = *(float *)&(this_ptr->base).field_0x28;
+  CStack_28.x = (this_ptr->base).location.position.x;
+  CStack_28.z = (this_ptr->base).location.position.z;
   CStack_28.y = (this_ptr->flame_size).y * (float)_DAT_005d591d +
-                *(float *)&(this_ptr->base).field_0x24;
+                (this_ptr->base).location.position.y;
   core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00448810(&this_ptr->globe,&CStack_28);
   local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60
                        (-this_ptr->randomness,this_ptr->randomness);

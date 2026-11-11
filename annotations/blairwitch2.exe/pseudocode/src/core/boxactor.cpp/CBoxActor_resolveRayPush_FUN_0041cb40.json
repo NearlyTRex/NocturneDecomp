@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 235,
+    "complexity_score": 182,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 70,
-    "suspect_count": 13,
+    "pseudocode_lines": 72,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
       "stack_param",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 210
+    "total_lines": 212
   },
   "cross_references": [
     {
@@ -300,7 +299,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 13,
+      "line": 15,
       "match": "afStackY_1058",
       "severity": "moderate",
       "text": "float afStackY_1058 [1002];",
@@ -308,7 +307,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 17,
       "match": "in_stack_ffffff58",
       "severity": "moderate",
       "text": "CBoundingBox3D *in_stack_ffffff58;",
@@ -316,74 +315,34 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 42,
       "match": "(float *)((int)local_68",
       "severity": "moderate",
-      "text": "*(float *)((int)local_68 + ((uint)bVar5 * -2 + -1) * 4) = afStack_54[(uint)bVar5 * -2 + 6];",
+      "text": "*(float *)((int)local_68 + ((uint)bVar7 * -2 + -1) * 4) = afStack_54[(uint)bVar7 * -2 + 6];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 43,
       "match": "(float *)((int)local_68",
       "severity": "moderate",
-      "text": "*(float *)((int)local_68 + ((uint)bVar5 * -2 + (uint)bVar5 * -2) * 4) =",
+      "text": "*(float *)((int)local_68 + ((uint)bVar7 * -2 + (uint)bVar7 * -2) * 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 46,
       "match": "in_stack_ffffff58",
       "severity": "moderate",
       "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff58);",
       "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "puVar1 = &(this_ptr->base).field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 64,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr->base).field_0x24 =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr->base).field_0x24 + afStack_28[0];",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 66,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr->base).field_0x28 =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr->base).field_0x28 + afStack_28[1];",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 47,
+      "line": 49,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     }
   ]

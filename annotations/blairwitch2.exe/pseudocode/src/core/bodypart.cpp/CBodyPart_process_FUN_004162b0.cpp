@@ -20,11 +20,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_004162b0(CBodyPart *this_pt
   float *pfVar7;
   byte bVar8;
   float afStackY_100c [999];
-  SDamageInfo aSStack_60 [4];
-  float fStack_5c;
-  CBodyPart *pCStack_2c;
-  CBodyPart *pCStack_28;
-  uint uStack_24;
+  SDamageInfo SStack_60;
+  float fStack_24;
   float afStack_20 [4];
   
   bVar8 = 0;
@@ -55,14 +52,14 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_004162b0(CBodyPart *this_pt
         this_ptr->physics_timer = fVar3;
         if (0.0 <= fVar3) {
           pfVar7 = (float *)((int)this_ptr + (uint)bVar8 * -8 + 0x24);
-          uStack_24 = *(uint *)&(this_ptr->base).field_0x20;
+          fStack_24 = (this_ptr->base).location.position.x;
           afStack_20[(uint)bVar8 * -2] = *pfVar7;
           afStack_20[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] = pfVar7[(uint)bVar8 * -2 + 1];
           core_box_cpp_CBox_process_FUN_005b2290(&this_ptr->physics_box,delta_time);
-          *(float *)&(this_ptr->base).field_0x20 = (this_ptr->physics_box).position.x;
-          *(float *)&(this_ptr->base).field_0x24 = (this_ptr->physics_box).position.y;
+          (this_ptr->base).location.position.x = (this_ptr->physics_box).position.x;
+          (this_ptr->base).location.position.y = (this_ptr->physics_box).position.y;
           pUVar1 = &(this_ptr->base).orient;
-          *(float *)&(this_ptr->base).field_0x28 = (this_ptr->physics_box).position.z;
+          (this_ptr->base).location.position.z = (this_ptr->physics_box).position.z;
           pCVar2 = &(this_ptr->physics_box).orientation;
           if ((CVector3f *)pUVar1 != pCVar2) {
             (pUVar1->vec).x = pCVar2->x;
@@ -77,13 +74,14 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_004162b0(CBodyPart *this_pt
             iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
                               (0x01C38BC0,"disableBodyPartDamage");
             if (iVar6 == 0) {
-              core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(aSStack_60);
-              fStack_5c = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(10.0,15.0);
-              pCStack_2c = this_ptr;
-              pCStack_28 = this_ptr;
-              afStack_20[2] = fStack_5c;
+              core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(&SStack_60);
+              SStack_60.damage_amount =
+                   core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(10.0,15.0);
+              SStack_60.attacker = &this_ptr->base;
+              SStack_60.wielder = &this_ptr->base;
+              afStack_20[2] = SStack_60.damage_amount;
               core_setcolid_cpp_FUN_00537f30
-                        (g_CDemonSetPtr,&uStack_24,&(this_ptr->base).field_0x20,aSStack_60);
+                        (g_CDemonSetPtr,&fStack_24,&(this_ptr->base).location,&SStack_60);
               core_bodypart_cpp_CBodyPart_processFires_FUN_004164b0(this_ptr,delta_time);
               return;
             }

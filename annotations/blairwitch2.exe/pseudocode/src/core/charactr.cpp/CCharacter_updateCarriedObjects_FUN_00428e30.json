@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 216,
-    "complexity_score": 454,
+    "complexity_score": 281,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 129,
-    "suspect_count": 30,
+    "pseudocode_lines": 141,
+    "suspect_count": 12,
     "suspect_types": [
       "stack_alignment_array",
       "stack_param",
       "stack_ref",
-      "unnamed_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 345
+    "total_lines": 357
   },
   "cross_references": [
     {
@@ -399,39 +398,31 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 11,
-      "match": "apUStackY_1034",
+      "line": 12,
+      "match": "afStackY_1034",
       "severity": "moderate",
-      "text": "UOrientationVector *apUStackY_1034 [857];",
+      "text": "float afStackY_1034 [9];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 13,
+      "match": "apCStackY_1010",
+      "severity": "moderate",
+      "text": "CMatrix3x4f *apCStackY_1010 [848];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 14,
       "match": "in_stack_fffffd38",
       "severity": "moderate",
       "text": "CMatrix3x4f *in_stack_fffffd38;",
       "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "local_28 = (UOrientationVector *)&(this_ptr->base).field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "local_20 = &(this_ptr->model).field_0xe80;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 51,
       "match": "in_stack_fffffd38",
       "severity": "moderate",
       "text": "(this_ptr,local_1c,in_stack_fffffd38);",
@@ -439,202 +430,66 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 39,
-      "match": "&stack0xfffffe94",
-      "severity": "moderate",
-      "text": "puVar4 = (uint *)&stack0xfffffe94;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 44,
-      "match": "&stack0xfffffeb8",
-      "severity": "moderate",
-      "text": "puVar4 = (uint *)&stack0xfffffeb8;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 46,
-      "match": "&stack0xfffffee8",
-      "severity": "moderate",
-      "text": "puVar5 = (uint *)&stack0xfffffee8;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 57,
-      "match": "&stack0xfffffe34",
-      "severity": "moderate",
-      "text": "puVar4 = (uint *)&stack0xfffffe34;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 58,
-      "match": "&stack0xfffffda4",
-      "severity": "moderate",
-      "text": "puVar5 = (uint *)&stack0xfffffda4;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 64,
-      "match": "&stack0xfffffef4",
-      "severity": "moderate",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(&stack0xfffffef4,&stack0xfffffda4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 64,
-      "match": "&stack0xfffffda4",
-      "severity": "moderate",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(&stack0xfffffef4,&stack0xfffffda4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 65,
+      "line": 78,
       "match": "&stack0xfffffd44",
       "severity": "moderate",
-      "text": "puVar4 = (uint *)&stack0xfffffd44;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 66,
-      "match": "&stack0xfffffd74",
-      "severity": "moderate",
-      "text": "puVar5 = (uint *)&stack0xfffffd74;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 73,
-      "match": "&stack0xfffffd74",
-      "severity": "moderate",
-      "text": "(pSVar2 + 0xc,&stack0xfffffd74,*(int *)(pSVar2 + 0x40));",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 75,
-      "match": "&stack0xfffffdd4",
-      "severity": "moderate",
-      "text": "puVar5 = (uint *)&stack0xfffffdd4;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 82,
-      "match": "&stack0xfffffdd4",
-      "severity": "moderate",
-      "text": "(&stack0xfffffdd4,*(int *)pSVar2 * 0x30 + iStack_14);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 83,
-      "match": "&stack0xfffffe04",
-      "severity": "moderate",
-      "text": "puVar4 = (uint *)&stack0xfffffe04;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 84,
-      "match": "&stack0xfffffef4",
-      "severity": "moderate",
-      "text": "puVar5 = (uint *)&stack0xfffffef4;",
+      "text": "puVar5 = (uint *)&stack0xfffffd44;",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 96,
+      "line": 109,
       "match": "in_stack_fffffd38",
       "severity": "moderate",
       "text": "in_stack_fffffd38 = (CMatrix3x4f *)0x428f65;",
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 97,
-      "match": "&stack0xfffffef4",
-      "severity": "moderate",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(&stack0xfffffef4,auStack_dc);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 99,
-      "match": "&stack0xfffffe64",
-      "severity": "moderate",
-      "text": "puVar5 = (uint *)&stack0xfffffe64;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 105,
-      "match": "&stack0xfffffe64",
-      "severity": "moderate",
-      "text": "core_xform_cpp_FUN_00592720(&stack0xfffffe64);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 114,
-      "match": "&stack0xfffffe64",
-      "severity": "moderate",
-      "text": "core_xform_cpp_matrixToEulerAngles_FUN_00591de0(&stack0xfffffe64);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 47,
+      "line": 60,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 59,
+      "line": 72,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 67,
+      "line": 80,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 76,
+      "line": 89,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 85,
+      "line": 98,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 100,
+      "line": 113,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     }
   ]

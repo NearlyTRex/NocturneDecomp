@@ -12,7 +12,7 @@ CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_ct
   CMotionController *pCVar1;
   int iVar2;
   
-  pCVar1 = core_motion_cpp_CMotionController_ctor_FUN_00503020((CMotionController *)this_ptr);
+  pCVar1 = core_motion_cpp_CMotionController_ctor_FUN_00503020(&this_ptr->base);
   iVar2 = __arrinit
                     (&pCVar1[1].current_motion_index,100,&g_CVectorTypeInfo);
   *(byte ***)(iVar2 + -8) = &g_CDeformableModelInstanceVTable;

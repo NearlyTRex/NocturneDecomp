@@ -26,7 +26,7 @@ void __cdecl core_fire_cpp_CSpark_process_FUN_004945b0(CSpark *this_ptr)
             ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     this_ptr->intensity_current = iVar2;
     if (iVar2 < 0) {
-      *(uint *)&this_ptr->field_0x24 = 0;
+      (this_ptr->base).lifetime_remaining = 0.0;
       this_ptr->intensity_current = 0;
     }
   }

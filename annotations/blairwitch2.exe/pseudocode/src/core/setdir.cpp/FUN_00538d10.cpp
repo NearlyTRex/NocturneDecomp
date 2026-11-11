@@ -85,10 +85,10 @@ uint core_setdir_cpp_FUN_00538d10(CDemonSet *param_1,CDemonActor *param_2,int pa
   C3DSCamera *pCStack_34;
   int *piStack_30;
   int iStack_2c;
-  byte *puStack_24;
+  CLocation *pCStack_24;
   float *pfStack_20;
   int iStack_1c;
-  float *pfStack_18;
+  CLocation *pCStack_18;
   
   bVar12 = 0;
   local_54 = 0;
@@ -205,7 +205,7 @@ LAB_00538d7f:
   fVar4 = core_box_cpp_CBoundingBox3D_getMaximumBound_FUN_0041b6b0(&CStack_124);
   position = &CStack_d0;
   puVar9 = (uint *)((int)param_2 + (uint)bVar12 * -8 + 0x24);
-  CStack_d0.x = *(float *)&param_2->field_0x20;
+  CStack_d0.x = (param_2->location).position.x;
   *(uint *)((int)&CStack_d0 + (uint)bVar12 * -8 + 4) = *puVar9;
   *(uint *)((int)&CStack_d0 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =
        puVar9[(uint)bVar12 * -2 + 1];
@@ -263,15 +263,15 @@ LAB_00538d7f:
   }
   fStack_3c = _DAT_005fb358 * _DAT_005fb358;
   _DAT_020a2794 = 0;
-  puStack_24 = &param_2->field_0x20;
+  pCStack_24 = &param_2->location;
   pfStack_20 = (float *)0x0;
   for (iStack_1c = 0; iStack_1c < g_CDemonSetPtr->actor_count; iStack_1c = iStack_1c + 1) {
     this_ptr = *(CDemonActor **)((int)pfStack_20 + (int)(g_CDemonSetPtr->cameras + 0xcb0) + 0xa4);
     iVar7 = (*((this_ptr->vtable)._ub)->getBlockVirtualDirectorFlag)(this_ptr);
     if (((iVar7 != 0) && (this_ptr != param_2)) &&
-       (fVar4 = *(float *)&this_ptr->field_0x20 - *pfStack_20,
-       fVar1 = *(float *)&this_ptr->field_0x24 - pfStack_20[1],
-       fVar6 = *(float *)&this_ptr->field_0x28 - pfStack_20[2],
+       (fVar4 = (this_ptr->location).position.x - *pfStack_20,
+       fVar1 = (this_ptr->location).position.y - pfStack_20[1],
+       fVar6 = (this_ptr->location).position.z - pfStack_20[2],
        fVar6 * fVar6 + fVar1 * fVar1 + fVar4 * fVar4 <= fStack_38)) {
       *(CDemonActor **)(&DAT_020a2798 + _DAT_020a2794 * 4) = this_ptr;
       (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,in_stack_fffffdf4);
@@ -297,29 +297,29 @@ LAB_00538d7f:
     }
     pfStack_20 = pfStack_20 + 1;
   }
-  pfStack_18 = (float *)&param_2->field_0x20;
+  pCStack_18 = &param_2->location;
   piStack_30 = (int *)(_DAT_005fb354 * _DAT_005fb354);
   pCStack_34 = param_1->cameras;
   while ((iVar10 = _DAT_02093938, iVar7 = DAT_006141bc, 0 < local_5c &&
          (_DAT_02093938 < param_1->camera_count))) {
-    if (iStack_2c == *(int *)&param_1->cameras[_DAT_02093938].field_0x19c) {
+    if (iStack_2c == param_1->cameras[_DAT_02093938].vdir_zone) {
       pCVar8 = pCStack_34 + _DAT_02093938;
-      if (*(int *)&pCVar8->field_0x1a0 == 0) {
+      if (pCVar8->enabled == 0) {
         fVar4 = 0.0;
         fVar6 = fVar4;
       }
       else {
-        fVar4 = *(float *)&pCVar8->field_0x100 - *pfStack_18;
-        fVar1 = *(float *)&pCVar8->field_0x104 - pfStack_18[1];
-        fVar6 = *(float *)&pCVar8->field_0x108 - pfStack_18[2];
+        fVar4 = (pCVar8->position).x - (pCStack_18->position).x;
+        fVar1 = (pCVar8->position).y - (pCStack_18->position).y;
+        fVar6 = (pCVar8->position).z - (pCStack_18->position).z;
         if (fVar6 * fVar6 + fVar1 * fVar1 + fVar4 * fVar4 <= (float)piStack_30) {
           iVar7 = core_setutil_cpp_C3DSCamera_testSphereInFrustum_FUN_0053ae20
-                            (pCVar8,pfStack_18,fStack_38);
+                            (pCVar8,pCStack_18,fStack_38);
           fVar4 = 0.0;
           fVar6 = fVar4;
           if (iVar7 != 0) {
             this_ptr_01 = g_CZThumbPool + iVar10 * 6;
-            if (*(int *)&pCVar8->field_0x140 == 0) {
+            if (pCVar8->is_panning == 0) {
               fVar4 = core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_005386e0
                                 (this_ptr_01,param_2,aCStack_208,
                                  (SMRGLHeaderPrimitive *)&DAT_0061b97c,1);

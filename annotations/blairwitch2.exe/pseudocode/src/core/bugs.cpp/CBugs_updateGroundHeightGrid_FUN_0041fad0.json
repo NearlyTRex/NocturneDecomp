@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 270,
-    "complexity_score": 626,
+    "complexity_score": 551,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 156,
-    "suspect_count": 42,
+    "suspect_count": 35,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -16,7 +16,6 @@
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals",
       "warning_type_propagation"
@@ -510,46 +509,6 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "local_9c = *(float *)&(this_ptr->base).base.base.field_0x20 + local_78;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 66,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "fStack_98 = *(float *)&(this_ptr->base).base.base.field_0x24 + local_74;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "local_94 = *(float *)&(this_ptr->base).base.base.field_0x28 + local_70;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 86,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(float10)*(float *)&(this_ptr->base).base.base.field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 94,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "(float10)*(float *)&(this_ptr->base).base.base.field_0x28) - fVar10);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 102,
       "match": "DAT_007bcd08",
@@ -572,14 +531,6 @@
       "severity": "moderate",
       "text": "puVar6 = (uint *)((int)this_ptr + (uint)bVar9 * -8 + 0x24);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 114,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "local_6c = *(float *)&(this_ptr->base).base.base.field_0x20;",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",
@@ -636,14 +587,6 @@
       "severity": "moderate",
       "text": "(&g_CDemonRaytraceInstance,&stack0xffffff7c,local_40,0);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 142,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "pCVar4->ground_heights[0][0] = fVar2 - *(float *)&(this_ptr->base).base.base.field_0x24;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

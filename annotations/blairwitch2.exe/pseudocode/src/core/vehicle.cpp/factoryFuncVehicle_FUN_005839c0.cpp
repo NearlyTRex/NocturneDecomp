@@ -11,7 +11,7 @@ void core_vehicle_cpp_factoryFuncVehicle_FUN_005839c0(void)
 {
   CVehicle *this_ptr;
   
-  this_ptr = (CVehicle *)debugAllocTracked1(0x11d4);
+  this_ptr = (CVehicle *)operator_new(0x11d4);
   if (this_ptr == (CVehicle *)0x0) {
     return;
   }

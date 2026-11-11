@@ -77,10 +77,10 @@ float FUN_004f2a30(void);
 // Address: 004f2a50
 void FUN_004f2a50(float *param_1);
 
-// Original: unkafter_minecar.cpp_FUN_004f2ac0
+// Original: unkafter_minecar.cpp_setRenderViewport_FUN_004f2ac0
 // Address: 004f2ac0
-void FUN_004f2ac0(float param_1,float param_2,float param_3,float param_4);
+void __cdecl setRenderViewport(float left,float top,float right,float bottom);
 
-// Original: unkafter_minecar.cpp_FUN_004f2ba0
+// Original: unkafter_minecar.cpp_getRenderViewport_FUN_004f2ba0
 // Address: 004f2ba0
-CEdCheck * __cdecl FUN_004f2ba0(CEdCheck *this_ptr);
+void __cdecl getRenderViewport(float *left,float *top,float *right,float *bottom);

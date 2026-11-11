@@ -26,7 +26,7 @@ void __cdecl core_waypoint_cpp_CWayPoint_archive_FUN_00588230(CWayPoint *this_pt
       do {
         iVar2 = iVar2 + 1;
         core_actor_cpp_archiveActor_FUN_0040b9e0(pSVar1,0);
-        pSVar1 = pSVar1 + 8;
+        pSVar1 = pSVar1 + 1;
       } while (iVar2 < this_ptr->num_adjacent_waypoints);
       return;
     }

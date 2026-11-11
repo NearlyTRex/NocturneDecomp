@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01cb6900
-;   undefined4 g_CGameInstance.field160_0xd0
+;   undefined4 g_CGameInstance.game_control
 ;
 ; *****************************************************************************
 
@@ -21,7 +21,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 004eeba0
         ;   Label: core_menu.cpp_isKeyCodeValidForMode_FUN_004eeba0
     MOV EAX,[0x00616494]                ; 004eeba4 | g_CGamePtr
-    MOV ECX,dword ptr [EAX + 0xd0]      ; 004eeba9 | g_CGameInstance.field160_0xd0
+    MOV ECX,dword ptr [EAX + 0xd0]      ; 004eeba9 | g_CGameInstance.game_control
     TEST ECX,ECX                        ; 004eebaf
     JNZ 0x004eec1a                      ; 004eebb1
         ;   XREF to: 004eec1a (CONDITIONAL_JUMP)  ; LAB_004eec1a

@@ -17,7 +17,7 @@ void __cdecl core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_00537fc0(C
   pCVar1 = this_ptr;
   if (0 < this_ptr->actor_count) {
     do {
-      if (*(int *)&pCVar1->actors[0]->field_0x100 == 0) {
+      if (pCVar1->actors[0]->collision_disabled == 0) {
         this_ptr->collidable_actors[this_ptr->collidable_actor_count] = pCVar1->actors[0];
         this_ptr->collidable_actor_count = this_ptr->collidable_actor_count + 1;
       }

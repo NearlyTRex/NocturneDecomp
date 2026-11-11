@@ -25,11 +25,11 @@ int engine_3d_c_transformAndBufferVertices_FUN_00403890(int param_1)
   if (0 < *(int *)(param_1 + 8)) {
     do {
       engine_special_cpp_FUN_0055d723(output,input);
-      *(uint *)(output + 0x2c) = _DAT_01c38aec;
-      if (((byte)output[0x13] & 0x80) == 0) {
+      output[1].screen_y = _DAT_01c38aec;
+      if ((int)(output->screen_x & -0x80000000) == 0) {
         iStack_14 = iStack_14 + 1;
       }
-      output = output + 0x30;
+      output = output + 2;
       iVar1 = iVar1 + 1;
       input = input + 1;
     } while (iVar1 < *(int *)(param_1 + 8));

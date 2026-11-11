@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 55,
+    "complexity_score": 40,
     "cross_reference_count": 59,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 25,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 93
@@ -155,15 +154,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0049d090",
-      "from_addr": "0049d0e7",
-      "name": "core_fire.cpp_CFireEffect_createSpark_FUN_0049d090",
+      "addr": "0049d6a0",
+      "from_addr": "0049d6fa",
+      "name": "core_fire.cpp_CFireEffect_createFirefly_FUN_0049d6a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0049d6a0",
-      "from_addr": "0049d6fa",
-      "name": "core_fire.cpp_FUN_0049d6a0",
+      "addr": "0049d090",
+      "from_addr": "0049d0e7",
+      "name": "core_fire.cpp_CFireEffect_createSpark_FUN_0049d090",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -361,7 +360,7 @@
     {
       "addr": "0059ad20",
       "from_addr": "0059ad39",
-      "name": "unkaddr_0059aa80.cpp_FUN_0059ad20",
+      "name": "unkaddr_0059aa80.cpp_CExamplePuzzle_load_FUN_0059ad20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -428,7 +427,7 @@
     },
     {
       "addr": "01cb6b58",
-      "name": "g_CGameInstance.field504_0x258",
+      "name": "g_CGameInstance.is_processing",
       "type": "undefined4",
       "value": null
     }
@@ -659,14 +658,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x258",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x258 == 0) {",
-      "type": "unnamed_field"
     }
   ]
 }

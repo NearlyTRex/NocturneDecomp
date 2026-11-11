@@ -2,20 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 271,
-    "complexity_score": 278,
+    "complexity_score": 633,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 138,
-    "suspect_count": 11,
+    "suspect_count": 44,
     "suspect_types": [
       "bit_int_float_compare",
       "stack_alignment_array",
-      "unnamed_field",
+      "stack_param",
+      "stack_ref",
+      "sub84_truncation",
+      "suspect_float",
+      "unaffected_reg",
       "unresolved_funcptr",
       "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
     "total_lines": 409
   },
@@ -272,91 +277,355 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 13,
-      "match": "afStackY_109c",
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "float afStackY_109c [970];",
+      "text": "float unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 14,
+      "match": "afStackY_108c",
+      "severity": "moderate",
+      "text": "float afStackY_108c [966];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 57,
-      "match": "code *",
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_fffffea0",
       "severity": "moderate",
-      "text": "((iVar2 == 0 || (iVar2 = (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x114))(iVar2), iVar2 < 1)))) {",
-      "type": "unresolved_funcptr"
+      "text": "double in_stack_fffffea0;",
+      "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Direct stack address reference",
+      "line": 54,
+      "match": "&stack0xfffffea4",
+      "severity": "moderate",
+      "text": "__arrinit(&stack0xfffffea4,10,&g_CVectorTypeInfo);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 56,
+      "match": "&stack0xfffffea4",
+      "severity": "moderate",
+      "text": "(target_actor,(CVector3f *)&stack0xfffffea4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 58,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408de0(this_ptr,&target_actor->field_0x20);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 94,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x24))(this_ptr);",
+      "text": "((iVar1 == 0 || (iVar1 = (**(code **)(*(int *)(iVar1 + 0x2b0) + 0x114))(iVar1), iVar1 < 1)))) {",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 94,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x24))(this_ptr);",
-      "type": "unnamed_field"
+      "description": "Direct stack address reference",
+      "line": 61,
+      "match": "&stack0xffffff60",
+      "severity": "moderate",
+      "text": "(&stack0xffffff60)[(uint)bVar5 * -2 + 1] = (&stack0xffffffc0)[(uint)bVar5 * -2 + 7];",
+      "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Direct stack address reference",
+      "line": 61,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "(&stack0xffffff60)[(uint)bVar5 * -2 + 1] = (&stack0xffffffc0)[(uint)bVar5 * -2 + 7];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 62,
+      "match": "&stack0xffffff60",
+      "severity": "moderate",
+      "text": "(&stack0xffffff60)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 2] =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 63,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc0)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 8];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 67,
+      "match": "&stack0xffffff60",
+      "severity": "moderate",
+      "text": "core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&stack0xffffff60);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 69,
+      "match": "&stack0xffffff78",
+      "severity": "moderate",
+      "text": "(&stack0xffffff78)[(uint)bVar5 * -2 + 0xd] = (&stack0xffffff78)[(uint)bVar5 * -2 + 10];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 69,
+      "match": "&stack0xffffff78",
+      "severity": "moderate",
+      "text": "(&stack0xffffff78)[(uint)bVar5 * -2 + 0xd] = (&stack0xffffff78)[(uint)bVar5 * -2 + 10];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 70,
+      "match": "&stack0xffffff78",
+      "severity": "moderate",
+      "text": "(&stack0xffffff78)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xe] =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 71,
+      "match": "&stack0xffffff78",
+      "severity": "moderate",
+      "text": "(&stack0xffffff78)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xb];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 76,
+      "match": "in_stack_fffffea0",
+      "severity": "moderate",
+      "text": "in_stack_fffffea0 = (double)fStack_54;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 80,
+      "match": "in_stack_fffffea0",
+      "severity": "moderate",
+      "text": "if (_DAT_005d7153 < in_stack_fffffea0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 96,
+      "match": "in_stack_fffffea0",
+      "severity": "moderate",
+      "text": "((CDemonActor *)this_ptr,SUB84(in_stack_fffffea0,0));",
+      "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 96,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "((CDemonActor *)this_ptr,SUB84(in_stack_fffffea0,0));",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 97,
+      "match": "&stack0xffffff44",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)&stack0xffffff44;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 98,
+      "match": "&stack0xffffff24",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)&stack0xffffff24;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 108,
+      "match": "&stack0xffffff78",
+      "severity": "moderate",
+      "text": "(&stack0xffffff78)[(uint)bVar5 * -2 + 3] = (&stack0xffffff78)[(uint)bVar5 * -2 + 6];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 108,
+      "match": "&stack0xffffff78",
+      "severity": "moderate",
+      "text": "(&stack0xffffff78)[(uint)bVar5 * -2 + 3] = (&stack0xffffff78)[(uint)bVar5 * -2 + 6];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 109,
+      "match": "&stack0xffffff78",
+      "severity": "moderate",
+      "text": "(&stack0xffffff78)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 110,
+      "match": "&stack0xffffff78",
+      "severity": "moderate",
+      "text": "(&stack0xffffff78)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 115,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc0)[(uint)bVar5 * 0xfffffffe] = (&stack0xffffffc0)[(uint)bVar5 * -2 + 6];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 115,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc0)[(uint)bVar5 * 0xfffffffe] = (&stack0xffffffc0)[(uint)bVar5 * -2 + 6];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 116,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc0)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
       "line": 117,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "fStack_9c = *(float *)&this_ptr->field_0x20 + fStack_54;",
-      "type": "unnamed_field"
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc0)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];",
+      "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 118,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "fStack_98 = *(float *)&this_ptr->field_0x24 + fStack_50;",
-      "type": "unnamed_field"
+      "description": "Direct stack address reference",
+      "line": 122,
+      "match": "&stack0xffffff60",
+      "severity": "moderate",
+      "text": "(&stack0xffffff60)[(uint)bVar5 * 0xfffffffe] = (&stack0xffffff78)[(uint)bVar5 * 0xfffffffe];",
+      "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 119,
-      "match": "field_0x28",
+      "description": "Direct stack address reference",
+      "line": 122,
+      "match": "&stack0xffffff78",
+      "severity": "moderate",
+      "text": "(&stack0xffffff60)[(uint)bVar5 * 0xfffffffe] = (&stack0xffffff78)[(uint)bVar5 * 0xfffffffe];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 123,
+      "match": "&stack0xffffff60",
+      "severity": "moderate",
+      "text": "(&stack0xffffff60)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 124,
+      "match": "&stack0xffffff78",
+      "severity": "moderate",
+      "text": "(&stack0xffffff78)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 126,
+      "match": "1.4013e-45",
       "severity": "mild",
-      "text": "fStack_94 = *(float *)&this_ptr->field_0x28 + fStack_4c;",
-      "type": "unnamed_field"
+      "text": "ray_type = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 128,
+      "match": "&stack0xffffff78",
+      "severity": "moderate",
+      "text": "(&stack0xffffff78)[(uint)bVar5 * -2 + 9] = (&stack0xffffffc0)[(uint)bVar5 * -2 + 3];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 128,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "(&stack0xffffff78)[(uint)bVar5 * -2 + 9] = (&stack0xffffffc0)[(uint)bVar5 * -2 + 3];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 130,
+      "match": "&stack0xffffff78",
+      "severity": "moderate",
+      "text": "(&stack0xffffff78)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10] =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 131,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc0)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 134,
+      "match": "&stack0xffffff5c",
+      "severity": "moderate",
+      "text": "fStack_14 = (float)core_setcolid_cpp_FUN_00535ee0(g_CDemonSetPtr,&stack0xffffff5c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 137,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "return unaff_EBP;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 97,
+      "line": 99,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3fc90fdb is the IEEE 754 bit pattern of 1.5708f. Rewrite in a .keep as a plain float compare against 1.5708f.",
-      "line": 90,
-      "match": "0x3fc90fdb < (int)fStack_5c)",
+      "line": 91,
+      "match": "0x3fc90fdb < (int)fStack_54)",
       "severity": "moderate",
-      "text": "if (0x3fc90fdb < (int)fStack_5c) {",
+      "text": "if (0x3fc90fdb < (int)fStack_54) {",
       "type": "bit_int_float_compare"
     }
   ]

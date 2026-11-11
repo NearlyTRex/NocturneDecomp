@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 CMatrix3x4f * __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004d57e0(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
@@ -34,7 +35,7 @@ CMatrix3x4f * __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_
   uint uStack_10;
   
   bVar4 = 0;
-  iVar1 = *(int *)(&this_ptr->field_0x2618 + hand_index * 0x78);
+  iVar1 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   if (hand_index == 1) {
     uStack_2c = 0xbe6a7efa;
     uStack_28 = 0xbca3d70a;
@@ -62,7 +63,8 @@ CMatrix3x4f * __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_
     core_main_c_FUN_004e4500("CIcePick::getCarryObjToBodyXForm - wrong hand");
   }
   core_xform_cpp_FUN_00591c10(auStack_78,&uStack_3c,&uStack_24);
-  core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(auStack_78,&this_ptr->field_0x1134 + iVar1 * 0x30);
+  core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
+            (auStack_78,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1);
   pfVar2 = afStack_a8;
   pCVar3 = out_matrix;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

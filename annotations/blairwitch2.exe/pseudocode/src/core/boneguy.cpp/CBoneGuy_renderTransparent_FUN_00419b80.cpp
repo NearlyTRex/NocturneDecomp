@@ -18,7 +18,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_00419b80(CBoneGuy *t
   uint auStack_20 [6];
   
   bVar5 = 0;
-  if (*(int *)&(this_ptr->base).base.field_0x2568 != 0) {
+  if ((this_ptr->base).base.render_active != 0) {
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);

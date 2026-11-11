@@ -9,6 +9,6 @@
 void __cdecl core_grandma_cpp_CGrandma_archive_FUN_005a7ce0(CGrandma *this_ptr)
 
 {
-  core_basicnpc_cpp_CBasicNPC_archive_FUN_005a4930((CBasicNPC *)this_ptr);
+  core_basicnpc_cpp_CBasicNPC_archive_FUN_005a4930(&this_ptr->base);
   return;
 }

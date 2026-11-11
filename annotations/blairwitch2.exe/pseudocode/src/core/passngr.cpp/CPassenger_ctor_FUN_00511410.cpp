@@ -18,7 +18,7 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_00511410(CPassenger *t
   
   pCVar2 = core_npc_cpp_CNPC_ctor_FUN_00510460(&this_ptr->base);
   pcVar4 = (char *)0x5e15e2;
-  pCVar3 = core_morph_cpp_CMorph_ctor_FUN_005b6e60((CMorph *)&pCVar2[1].base.base.field_0x10c);
+  pCVar3 = core_morph_cpp_CMorph_ctor_FUN_005b6e60((CMorph *)&pCVar2[1].base.base.scale.y);
   piVar6 = &pCVar3[-1].models[1].textures[0x12].base.count;
   *(CCharacter_full_vtable **)(pCVar3[-0x30].models[1].textures[0].texture_name + 0x24) =
        &g_CPassengerVTable;

@@ -11,7 +11,6 @@
 #pragma pack(push, 1)
 typedef struct SNetPacket_ChatMessage {
     SNetPacketHeader header; // 0x0
-    char field_1[4]; // 0x1
     int message_id; // 0x5
     char message[256]; // 0x9
 } SNetPacket_ChatMessage;

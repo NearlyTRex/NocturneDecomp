@@ -36,7 +36,7 @@ void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_004f1e90(CMimic *this_ptr,fl
     local_18[0] = delta_time;
     while (0.0 < local_18[0]) {
       core_motion_cpp_CMotionController_advance_FUN_005030c0
-                ((CMotionController *)&(this_ptr->base).base.model,local_18);
+                (&(this_ptr->base).base.model.base,local_18);
     }
     local_18[0] = delta_time;
     while (0.0 < local_18[0]) {
@@ -53,7 +53,8 @@ void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_004f1e90(CMimic *this_ptr,fl
       do {
         pSVar1 = (this_ptr->morph).models[0].points;
         iVar3 = iVar3 + 1;
-        *(float *)(pSVar1 + iVar4 + 4) = -*(float *)(pSVar1 + iVar4 + 4);
+        *(float *)((int)&(pSVar1->position).x + iVar4) =
+             -*(float *)((int)&(pSVar1->position).x + iVar4);
         iVar4 = iVar4 + 0x10;
       } while (iVar3 < (this_ptr->morph).models[0].num_points);
       return;

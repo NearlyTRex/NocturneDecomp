@@ -12,7 +12,7 @@
 void __cdecl core_spike_cpp_CSpike_process_FUN_00560760(CSpike *this_ptr,float delta_time)
 
 {
-  byte *puVar1;
+  CLocation *pCVar1;
   ESpikeState EVar2;
   int iVar3;
   float fVar4;
@@ -23,8 +23,8 @@ void __cdecl core_spike_cpp_CSpike_process_FUN_00560760(CSpike *this_ptr,float d
   float fStack_64;
   float fStack_60;
   float fStack_5c;
-  uint uStack_58;
-  uint uStack_54;
+  float fStack_58;
+  float fStack_54;
   float fStack_50;
   float fStack_4c;
   float fStack_48;
@@ -122,7 +122,7 @@ LAB_005609bc:
   this_ptr->wait_timer = fVar4 * this_ptr->period;
 LAB_0056082b:
   puVar5 = (uint *)((int)this_ptr + (uint)bVar6 * -8 + 0x24);
-  fStack_50 = *(float *)&(this_ptr->base).field_0x20;
+  fStack_50 = (this_ptr->base).location.position.x;
   *(uint *)((int)&stack0xffffffb4 + (uint)bVar6 * -8) = *puVar5;
   *(uint *)((int)&stack0xffffffb8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
        puVar5[(uint)bVar6 * -2 + 1];
@@ -144,13 +144,13 @@ LAB_0056082b:
        (&stack0xffffffd8)[(uint)bVar6 * 0xfffffffe];
   *(uint *)((int)&stack0xffffffac + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
        *(uint *)((int)&stack0xffffffdc + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-  puVar1 = &(this_ptr->base).field_0x20;
-  *(float *)puVar1 = fStack_5c;
-  fVar4 = fStack_50 - *(float *)puVar1;
-  *(uint *)&(this_ptr->base).field_0x24 = uStack_58;
-  fStack_4c = fStack_4c - *(float *)&(this_ptr->base).field_0x24;
-  *(uint *)&(this_ptr->base).field_0x28 = uStack_54;
-  fStack_48 = fStack_48 - *(float *)&(this_ptr->base).field_0x28;
+  pCVar1 = &(this_ptr->base).location;
+  (pCVar1->position).x = fStack_5c;
+  fVar4 = fStack_50 - (pCVar1->position).x;
+  (this_ptr->base).location.position.y = fStack_58;
+  fStack_4c = fStack_4c - (this_ptr->base).location.position.y;
+  (this_ptr->base).location.position.z = fStack_54;
+  fStack_48 = fStack_48 - (this_ptr->base).location.position.z;
   if (fStack_48 * fStack_48 + fStack_4c * fStack_4c + fVar4 * fVar4 <= (float)_DAT_005eb00c) {
     return;
   }

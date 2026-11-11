@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CHero.h"
 #include "types/classes/CVector3f.h"
 
 // Structure: CColonel
 // Ghidra size: 0x25658 (153176 bytes)
 #pragma pack(push, 1)
 typedef struct CColonel {
-    char field_0[153152]; // 0x0
+    CHero base; // 0x0
     int guns_drawn; // 0x25640
     int dead; // 0x25644
     CVector3f head_look_euler; // 0x25648

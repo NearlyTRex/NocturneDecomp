@@ -17,7 +17,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429420(CCh
   int iVar3;
   CSkeleton *this_ptr_00;
   float fVar4;
-  byte *puVar5;
+  CLocation *pCVar5;
   CDeformableModelInstance *this_ptr_01;
   byte bVar6;
   float afStackY_118c [1012];
@@ -202,11 +202,11 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429420(CCh
     iStack_20 = iStack_1c;
     if (iStack_1c == 0) {
       pCVar1 = this_ptr->look_at_candidate;
-      puVar5 = &(pCVar1->base).field_0x20;
-      if (&stack0xfffffe50 != (float *)puVar5) {
-        fStack_1b0 = *(float *)puVar5;
-        fStack_1ac = *(float *)&(pCVar1->base).field_0x24;
-        fStack_e8 = *(float *)&(pCVar1->base).field_0x28;
+      pCVar5 = &(pCVar1->base).location;
+      if ((CLocation *)&stack0xfffffe50 != pCVar5) {
+        fStack_1b0 = (pCVar5->position).x;
+        fStack_1ac = (pCVar1->base).location.position.y;
+        fStack_e8 = (pCVar1->base).location.position.z;
 LAB_00429762:
         fStack_1a8 = fStack_e8;
       }

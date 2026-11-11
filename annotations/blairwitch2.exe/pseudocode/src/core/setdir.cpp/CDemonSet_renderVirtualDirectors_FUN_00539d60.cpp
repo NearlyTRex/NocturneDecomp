@@ -69,7 +69,7 @@ void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_00539d60(CDemo
       local_18 = g_CZThumbPool + iVar4 * 6;
       local_2c = iVar3;
       local_14 = iVar4;
-      if (*(int *)&this_ptr->cameras[iVar4].field_0x140 == 0) {
+      if (this_ptr->cameras[iVar4].is_panning == 0) {
         core_setdir_cpp_CZThumb_render_FUN_00538a60(local_18,iVar3,iVar5);
         iVar4 = g_CZThumbPool[iVar4 * 6].width;
       }
@@ -87,7 +87,7 @@ void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_00539d60(CDemo
       _sprintf(local_98,&DAT_005e609c);
       engine_2d_c_drawText_FUN_00401fe0
                 (local_98,local_2c,g_CZThumbPool[local_14 * 6].height + iVar5);
-      engine_2d_c_drawText_FUN_00401fe0((char *)(local_34 + local_14),local_2c,local_20);
+      engine_2d_c_drawText_FUN_00401fe0(local_34[local_14].name,local_2c,local_20);
       iVar3 = iVar4 + 2;
       if (DAT_006141b8 < iVar4 + 0x42) {
         iVar3 = 2;

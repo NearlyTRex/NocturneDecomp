@@ -13,7 +13,7 @@ uint FUN_005c40e0(char *param_1,uint *param_2,uint param_3)
   uint uVar2;
   uint uVar3;
   uint uVar4;
-  WatcomStat aWStack_50 [72];
+  WatcomStat WStack_50;
   
   uVar2 = *param_2;
   if ((uVar2 & 3) == 3) {
@@ -45,7 +45,7 @@ uint FUN_005c40e0(char *param_1,uint *param_2,uint param_3)
     uVar4 = uVar4 | 0x200;
   }
   if ((((uVar2 & 0x40) != 0) && ((uVar4 | 0x20) != 0)) &&
-     (iVar1 = FUN_005bfdd4(param_1,aWStack_50), iVar1 != -1)) {
+     (iVar1 = FUN_005bfdd4(param_1,&WStack_50), iVar1 != -1)) {
     return 0xffffffff;
   }
   uVar2 = param_3 & 0x7000;

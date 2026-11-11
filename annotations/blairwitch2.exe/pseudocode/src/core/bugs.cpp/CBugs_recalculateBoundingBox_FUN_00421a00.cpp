@@ -11,7 +11,7 @@
 void __cdecl core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00421a00(CBugs *this_ptr)
 
 {
-  byte *puVar1;
+  CVector3f *pCVar1;
   float fVar2;
   float fVar3;
   float fVar4;
@@ -20,21 +20,21 @@ void __cdecl core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00421a00(CBugs *this
   CVector3f *pCVar7;
   int iVar8;
   
-  puVar1 = &this_ptr->bugs[0].field_0x8;
-  if (&this_ptr->bounds != (CBoundingBox3D *)puVar1) {
-    (this_ptr->bounds).min.x = *(float *)puVar1;
-    (this_ptr->bounds).min.y = *(float *)&this_ptr->bugs[0].field_0xc;
-    (this_ptr->bounds).min.z = *(float *)&this_ptr->bugs[0].field_0x10;
+  pCVar7 = &this_ptr->bugs[0].position;
+  if (&this_ptr->bounds != (CBoundingBox3D *)pCVar7) {
+    (this_ptr->bounds).min.x = pCVar7->x;
+    (this_ptr->bounds).min.y = this_ptr->bugs[0].position.y;
+    (this_ptr->bounds).min.z = this_ptr->bugs[0].position.z;
   }
-  pCVar7 = &(this_ptr->bounds).max;
-  if (pCVar7 != (CVector3f *)puVar1) {
-    pCVar7->x = *(float *)puVar1;
-    (this_ptr->bounds).max.y = *(float *)&this_ptr->bugs[0].field_0xc;
-    (this_ptr->bounds).max.z = *(float *)&this_ptr->bugs[0].field_0x10;
+  pCVar1 = &(this_ptr->bounds).max;
+  if (pCVar1 != pCVar7) {
+    pCVar1->x = pCVar7->x;
+    (this_ptr->bounds).max.y = this_ptr->bugs[0].position.y;
+    (this_ptr->bounds).max.z = this_ptr->bugs[0].position.z;
   }
   iVar8 = 1;
   if (1 < this_ptr->count) {
-    pCVar7 = (CVector3f *)&this_ptr->bugs[1].field_0x8;
+    pCVar7 = &this_ptr->bugs[1].position;
     do {
       iVar8 = iVar8 + 1;
       core_box_cpp_CBoundingBox3D_expand_FUN_0041a590(&this_ptr->bounds,pCVar7);

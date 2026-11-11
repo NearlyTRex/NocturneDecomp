@@ -33,7 +33,7 @@ void unkaddr_004a1200_cpp_FUN_004a1200(void)
   _atexit(&WatcomStaticDestructorNode_00615fd0);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&CAlphaBitmap_01caf22c);
   _atexit(&WatcomStaticDestructorNode_00615fe0);
-  core_fldnotes_cpp_TextView_ctor_FUN_004a27b0(&g_STextViewInstance);
+  core_fldnotes_cpp_STextView_ctor_FUN_004a27b0(&g_STextViewInstance);
   _atexit();
   core_fldnotes_cpp_CFieldNotes_ctor_FUN_004a4170(&g_CFieldNotesInstance);
   _atexit();

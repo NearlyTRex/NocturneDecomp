@@ -54,7 +54,7 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_005191d0(CPlatform 
       this_ptr->one_shot = ONE_SHOT_DONE_IN_BACKGROUND;
     }
     else {
-      *(uint *)&this_ptr->field_0x880 = 1;
+      this_ptr->rendered_in_background = 1;
     }
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0(&this_ptr->base);
@@ -77,9 +77,9 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_005191d0(CPlatform 
       return;
     }
     g_CDemonSetPtr->per_pixel_lighting_enabled = 1;
-    iStack_14 = (int)ROUND(*(float *)&(this_ptr->base).field_0x20 * _DAT_005fac30);
-    iStack_10 = (int)ROUND(*(float *)&(this_ptr->base).field_0x24 * _DAT_005fac30);
-    iStack_c = (int)ROUND(*(float *)&(this_ptr->base).field_0x28 * _DAT_005fac30);
+    iStack_14 = (int)ROUND((this_ptr->base).location.position.x * _DAT_005fac30);
+    iStack_10 = (int)ROUND((this_ptr->base).location.position.y * _DAT_005fac30);
+    iStack_c = (int)ROUND((this_ptr->base).location.position.z * _DAT_005fac30);
     _DAT_0150f450 = (**(code **)(*(int *)(DAT_007bda74 + 0x3c) + 8))(DAT_007bda74,&iStack_14,0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
               (&this_ptr->model,0.0,-1);

@@ -16,7 +16,8 @@ CWaterActor * __cdecl core_wateract_cpp_CWaterActor_ctor_FUN_005869a0(CWaterActo
   char *pcVar5;
   
   pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
-  iVar3 = __arrinit(&pCVar2[1].field_0x144,1000,&g_SWaterVertexTypeInfo);
+  iVar3 = __arrinit
+                    (&pCVar2[1].previous_transform_state.dirty_flags,1000,&g_SWaterVertexTypeInfo);
   *(CDemonActor_vtable **)(iVar3 + -0x148) = &g_CWaterActorVTable;
   *(uint *)(iVar3 + -0x144) = 0x40800000;
   *(uint *)(iVar3 + -0x140) = 0x3dcccccd;
