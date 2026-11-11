@@ -48,15 +48,15 @@ LAB_0042865c:
   }
   else {
     if (DAMAGE_TYPE_ELECTROCUTE < EVar4) {
-      if (EVar4 < DAMAGE_TYPE_LAUNCH) {
+      if (EVar4 < DAMAGE_TYPE_ATTACK_STAKE) {
         if (EVar4 != DAMAGE_TYPE_CHOPPED) goto LAB_00428579;
         goto LAB_0042865c;
       }
-      if (EVar4 < DAMAGE_TYPE_NO_FLINCH) {
+      if (EVar4 < DAMAGE_TYPE_ATTACK_GAS) {
         core_charactr_cpp_CCharacter_addDamageDecal_FUN_00427310(this_ptr);
         goto LAB_00428579;
       }
-      if (EVar4 != DAMAGE_TYPE_DECAL) goto LAB_00428579;
+      if (EVar4 != DAMAGE_TYPE_ATTACK_ELECTROCUTE) goto LAB_00428579;
     }
     core_charactr_cpp_CCharacter_setStaggerAmount_FUN_004286d0(this_ptr,2.0);
   }

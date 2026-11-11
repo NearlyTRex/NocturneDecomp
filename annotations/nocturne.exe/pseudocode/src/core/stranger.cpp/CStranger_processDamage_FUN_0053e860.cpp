@@ -139,7 +139,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CStranger *t
     goto LAB_0053eb7b;
   }
   if (damage_info->damage_amount <= 0.0) goto LAB_0053eb7b;
-  if (((damage_info->damage_type != DAMAGE_TYPE_NO_FLINCH) &&
+  if (((damage_info->damage_type != DAMAGE_TYPE_ATTACK_GAS) &&
       ((this_ptr->base).ladder_to_climb == (CLadder *)0x0)) &&
      ((this_ptr->ladder_to_descend == (CLadder *)0x0 && (this_ptr->action_pending == 0)))) {
     pCVar7 = core_actor_cpp_castToClassHash_FUN_0040d890

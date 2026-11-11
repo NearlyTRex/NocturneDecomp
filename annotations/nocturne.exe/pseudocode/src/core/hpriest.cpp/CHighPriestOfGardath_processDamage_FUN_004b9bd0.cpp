@@ -9,7 +9,7 @@
 void __cdecl core_hpriest_cpp_CHighPriestOfGardath_processDamage_FUN_004b9bd0(CHighPriestOfGardath *this_ptr,SDamageInfo *damage_info)
 
 {
-  damage_info->damage_type = DAMAGE_TYPE_IMMUNE;
+  damage_info->damage_type = DAMAGE_TYPE_ATTACK_GENERIC;
   damage_info->damage_amount = 0.0;
   return;
 }
