@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 46,
+    "complexity_score": 31,
     "cross_reference_count": 154,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 16,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 48
@@ -365,6 +364,30 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004988b0",
+      "from_addr": "00498926",
+      "name": "core_fire.cpp_CFirefly_process_FUN_004988b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049e1a0",
+      "from_addr": "0049e1f0",
+      "name": "core_fire.cpp_CGunFlame_activate_FUN_0049e1a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049df60",
+      "from_addr": "0049e09a",
+      "name": "core_fire.cpp_CGunFlame_burnNearby_FUN_0049df60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049e500",
+      "from_addr": "0049e900",
+      "name": "core_fire.cpp_CGunFlame_render_FUN_0049e500",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0049b1d0",
       "from_addr": "0049c5af",
       "name": "core_fire.cpp_CLaserBeam_render_FUN_0049b1d0",
@@ -374,6 +397,12 @@
       "addr": "0049a480",
       "from_addr": "0049a4c5",
       "name": "core_fire.cpp_CMuzzleFlash_render_FUN_0049a480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049fdf0",
+      "from_addr": "004a02ce",
+      "name": "core_fire.cpp_CRing_process_FUN_0049fdf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -407,12 +436,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004988b0",
-      "from_addr": "00498926",
-      "name": "core_fire.cpp_FUN_004988b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0049a650",
       "from_addr": "0049a76a",
       "name": "core_fire.cpp_FUN_0049a650",
@@ -428,30 +451,6 @@
       "addr": "0049d590",
       "from_addr": "0049d614",
       "name": "core_fire.cpp_FUN_0049d590",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049df60",
-      "from_addr": "0049e09a",
-      "name": "core_fire.cpp_FUN_0049df60",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049e1a0",
-      "from_addr": "0049e1f0",
-      "name": "core_fire.cpp_FUN_0049e1a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049e500",
-      "from_addr": "0049e900",
-      "name": "core_fire.cpp_FUN_0049e500",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049fdf0",
-      "from_addr": "004a02ce",
-      "name": "core_fire.cpp_FUN_0049fdf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -644,12 +643,6 @@
       "addr": "004e7230",
       "from_addr": "004e7243",
       "name": "core_melee.cpp_CMelee_getDamage_FUN_004e7230",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0058f4a0",
-      "from_addr": "0058f4c6",
-      "name": "core_mobster.cpp_CMobster_startFiringAttack_FUN_0058f4a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -917,6 +910,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0058f4a0",
+      "from_addr": "0058f4c6",
+      "name": "core_zombprie.cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00563970",
       "from_addr": "00563cec",
       "name": "engine_special.cpp_FUN_00563970",
@@ -986,7 +985,7 @@
     },
     {
       "addr": "01d2156c",
-      "name": "g_CGameInstance.field560_0x260",
+      "name": "g_CGameInstance.is_processing",
       "type": "undefined4",
       "value": null
     }
@@ -1079,14 +1078,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x260",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x260 == 0) {",
-      "type": "unnamed_field"
     }
   ]
 }

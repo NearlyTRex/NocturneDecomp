@@ -11,7 +11,7 @@ void core_shadow_cpp_FUN_00545f00(void)
 {
   CSpiritShadow *this_ptr;
   
-  this_ptr = (CSpiritShadow *)debugAllocTracked1(0xd0e8);
+  this_ptr = (CSpiritShadow *)operator_new(0xd0e8);
   if (this_ptr == (CSpiritShadow *)0x0) {
     return;
   }

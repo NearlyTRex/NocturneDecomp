@@ -9,8 +9,8 @@
 void __cdecl core_bugs_cpp_CBugs_initializeSwarmGraph_FUN_00421b00(CBugs *this_ptr,int tri_count,SInputFace *triangles)
 
 {
-  SInputFace *pSVar1;
-  ushort uVar2;
+  STrianglePackedIndices *pSVar1;
+  STrianglePackedIndices *pSVar2;
   int first_edge_data;
   int iVar3;
   
@@ -20,26 +20,27 @@ void __cdecl core_bugs_cpp_CBugs_initializeSwarmGraph_FUN_00421b00(CBugs *this_p
   if (0 < tri_count) {
     do {
       core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00421be0
-                (this_ptr,(uint)*(ushort *)triangles,(uint)*(ushort *)(triangles + 2),
-                 first_edge_data);
+                (this_ptr,(uint)(triangles->vertex_indices).vertex_index_0,
+                 (uint)(triangles->vertex_indices).vertex_index_1,first_edge_data);
       core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00421be0
-                (this_ptr,(uint)*(ushort *)(triangles + 2),(uint)*(ushort *)(triangles + 4),
-                 first_edge_data);
+                (this_ptr,(uint)(triangles->vertex_indices).vertex_index_1,
+                 (uint)(triangles->vertex_indices).vertex_index_2,first_edge_data);
       core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00421be0
-                (this_ptr,(uint)*(ushort *)(triangles + 4),(uint)*(ushort *)triangles,
-                 first_edge_data);
+                (this_ptr,(uint)(triangles->vertex_indices).vertex_index_2,
+                 (uint)(triangles->vertex_indices).vertex_index_0,first_edge_data);
       core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00421be0
-                (this_ptr,(uint)*(ushort *)(triangles + 2),(uint)*(ushort *)triangles,
-                 first_edge_data);
+                (this_ptr,(uint)(triangles->vertex_indices).vertex_index_1,
+                 (uint)(triangles->vertex_indices).vertex_index_0,first_edge_data);
       core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00421be0
-                (this_ptr,(uint)*(ushort *)(triangles + 4),(uint)*(ushort *)(triangles + 2),
-                 first_edge_data);
-      pSVar1 = triangles + 4;
-      uVar2 = *(ushort *)triangles;
-      triangles = triangles + 0x12;
+                (this_ptr,(uint)(triangles->vertex_indices).vertex_index_2,
+                 (uint)(triangles->vertex_indices).vertex_index_1,first_edge_data);
+      pSVar1 = &triangles->vertex_indices;
+      pSVar2 = &triangles->vertex_indices;
+      triangles = triangles + 1;
       iVar3 = first_edge_data + 1;
       core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00421be0
-                (this_ptr,(uint)uVar2,(uint)*(ushort *)pSVar1,first_edge_data);
+                (this_ptr,(uint)pSVar2->vertex_index_0,(uint)pSVar1->vertex_index_2,first_edge_data)
+      ;
       first_edge_data = iVar3;
     } while (iVar3 < tri_count);
   }

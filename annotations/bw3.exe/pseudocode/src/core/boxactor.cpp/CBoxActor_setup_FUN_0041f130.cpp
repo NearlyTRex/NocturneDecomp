@@ -25,8 +25,8 @@ void __cdecl core_boxactor_cpp_CBoxActor_setup_FUN_0041f130(CBoxActor *this_ptr)
   if ((this_ptr->physics_box).is_valid < 0) {
     core_boxactor_cpp_FUN_0041f1e0(this_ptr);
   }
-  *(uint *)&this_ptr->field_0x6dc = 0;
-  *(uint *)&this_ptr->field_0x6e4 = 0x10000;
+  this_ptr->fade_timer = 0.0;
+  this_ptr->fade_alpha = 0x10000;
   this_ptr->push_sfx_handle = 0;
   return;
 }

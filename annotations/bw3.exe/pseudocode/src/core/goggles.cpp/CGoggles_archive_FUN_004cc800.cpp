@@ -9,8 +9,7 @@
 void __cdecl core_goggles_cpp_CGoggles_archive_FUN_004cc800(CGoggles *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_archive_FUN_0040c280((CDemonActor *)this_ptr);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0
-            (&this_ptr->field_0x158,"modelName");
+  core_actor_cpp_CDemonActor_archive_FUN_0040c280(&this_ptr->base);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0(&this_ptr->model,"modelName");
   return;
 }

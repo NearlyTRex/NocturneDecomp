@@ -1,0 +1,220 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 57,
+    "complexity_score": 135,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 9,
+    "suspect_types": [
+      "pointer_cast",
+      "shadow_pointer_walk",
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 82
+  },
+  "cross_references": [
+    {
+      "addr": "004a9330",
+      "from_addr": "004a958d",
+      "name": "core_fldnotes.cpp_STextView_handleTag_FUN_004a9330",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a87a0",
+    "address_range": [
+      [
+        "004a87a0",
+        "004a882d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_SPageResourceTwanaCharacter_ctor_FUN_004a87a0",
+    "signature": "SPageResourceBitmap * __cdecl core_fldnotes_cpp_SPageResourceTwanaCharacter_ctor_FUN_004a87a0(SPageResourceTwanaCharacter *this_ptr,char *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a8650",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_SPageResourceBitmap_ctor_FUN_004a8650"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
+    },
+    {
+      "addr": "0040d460",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c0d9a",
+      "name": "DAT_005c0d9a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e02b4",
+      "name": "g_SPageResourceTwanaCharacterVTable",
+      "type": "void*",
+      "value": "004a8830"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004a958d",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_STextView_handleTag_FUN_004a9330",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.877551020408163,
+    "instruction_count": 49,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 38,
+      "INT_ADD": 24,
+      "INT_AND": 18,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 18,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 9,
+      "INT_SUB": 18,
+      "LOAD": 11,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 190
+  },
+  "stack_frame": {
+    "frame_size": 280,
+    "local_size": 272,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10c",
+        "offset": -268,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SPageResourceTwanaCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "SPageResourceBitmap * __cdecl core_fldnotes_cpp_SPageResourceTwanaCharacter_ctor_FUN_004a87a0(SPageResourceTwanaCharacter *this_ptr,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "cVar1 = *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "cVar1 = param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 + 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 + 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_005c0d9a",
+      "severity": "mild",
+      "text": "_sprintf(local_10c,&DAT_005c0d9a);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 19,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(char *)((int)&(pSVar3->base).x + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 20,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pSVar3 = (SPageResourceBitmap *)((int)&(pSVar3->base).x + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pSVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 20,
+      "match": "pSVar3 = (T *)((int)&(pSVar3->FIELD).SUBFIELD + CONST)",
+      "severity": "moderate",
+      "text": "pSVar3 = (SPageResourceBitmap *)((int)&(pSVar3->base).x + 2);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

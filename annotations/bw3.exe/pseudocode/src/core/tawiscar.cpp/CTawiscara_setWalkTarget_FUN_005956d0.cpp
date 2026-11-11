@@ -12,8 +12,8 @@ void __cdecl core_tawiscar_cpp_CTawiscara_setWalkTarget_FUN_005956d0(CTawiscara 
   SMotion *pSVar1;
   
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
-                     ((CMotionController *)&this_ptr->field_0x158);
-  if (*(int *)(pSVar1 + 0x24) == 0x13) {
+                     (&(this_ptr->base).base.model.base);
+  if (pSVar1->state_index == 0x13) {
     return;
   }
   core_charactr_cpp_CCharacter_setWalkTarget_FUN_00431470

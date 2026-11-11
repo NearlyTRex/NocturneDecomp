@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
 ;   crt_memory.c___vec_new_FUN_005a5584
-;   crt_unknown.c_FUN_005a40df
+;   crt_memory.c_operator_new_array_FUN_005a40df
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     SHL EAX,0x2                         ; 004735e6
     ADD EAX,0x4                         ; 004735e9
     PUSH EAX                            ; 004735ec
-    CALL crt_unknown.c_FUN_005a40df     ; 004735ed
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a40df()
+    CALL crt_memory.c_operator_new_array_FUN_005a40df ; 004735ed
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
     ADD ESP,0x4                         ; 004735f2
     PUSH EAX                            ; 004735f5
     CALL crt_memory.c___vec_new_FUN_005a5584 ; 004735f6

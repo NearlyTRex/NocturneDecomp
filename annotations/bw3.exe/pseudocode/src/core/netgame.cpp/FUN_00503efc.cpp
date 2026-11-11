@@ -15,7 +15,8 @@ uint core_netgame_cpp_FUN_00503efc(CNetGame *param_1)
   SNetworkAddr *addr;
   int iVar2;
   char *name;
-  int hero_number;
+  EHeroType hero_number;
+  EAimMode aim_mode;
   byte auStack_14 [8];
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0
@@ -23,12 +24,12 @@ uint core_netgame_cpp_FUN_00503efc(CNetGame *param_1)
   core_netgame_cpp_CNetGame_disconnect_FUN_005043b0(param_1,0);
   pCVar1 = g_CGamePtr;
   param_1->player_count = 0;
-  iVar2 = *(int *)&pCVar1->field_0xdc;
-  hero_number = *(int *)&pCVar1->field_0xd8;
+  aim_mode = pCVar1->aim_mode;
+  hero_number = pCVar1->hero_number;
   name = param_1->player_name;
   addr = (SNetworkAddr *)
          support_trisock_cpp_createNetworkAddr_FUN_0056f730(auStack_14,_DAT_02cfd89c,0x1ddf);
-  iVar2 = core_netgame_cpp_CNetGame_addPlayer_FUN_00505950(param_1,addr,name,hero_number,iVar2);
+  iVar2 = core_netgame_cpp_CNetGame_addPlayer_FUN_00505950(param_1,addr,name,hero_number,aim_mode);
   param_1->local_player_index = iVar2;
   param_1->server_player_index = iVar2;
   iVar2 = core_netgame_cpp_CNetGame_initializeNetwork_FUN_00504270(param_1);

@@ -13,12 +13,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[23]:
-;   core_bmppuzzl.cpp_FUN_00412320 at 00412351
-;   core_fldnotes.cpp_FUN_004a8680 at 004a86e2
-;   core_fldnotes.cpp_FUN_004a87a0 at 004a881a
-;   core_fldnotes.cpp_FUN_004a8a00 at 004a8b02
-;   core_fldnotes.cpp_FUN_004a9f30 at 004a9f4b
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_addButton_FUN_00412320 at 00412351
 ;   core_fldnotes.cpp_FUN_004abe00 at 004ac3b3
+;   core_fldnotes.cpp_SNotesMap_load_FUN_004a9f30 at 004a9f4b
+;   core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004a8680 at 004a86e2
+;   core_fldnotes.cpp_SPageResourceTwanaCharacter_ctor_FUN_004a87a0 at 004a881a
+;   core_fldnotes.cpp_SPageResourceTwanaEntry_draw_FUN_004a8a00 at 004a8b02
 ;   core_game.cpp_CGame_displayActStats_FUN_004bfb50 at 004bfb81
 ;   core_game.cpp_CGame_finishAct_FUN_004bfee0 at 004bff4b
 ;   core_game.cpp_CGame_rollCredits_FUN_004c02a0 at 004c02fb

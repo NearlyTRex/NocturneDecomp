@@ -19,12 +19,12 @@ void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00466bf0(SSoftwa
   int iVar6;
   SSoftwareEdge *pSVar7;
   
-  iVar6 = *(int *)(vertex_b + 0x14) >> 0x10;
-  iVar2 = *(int *)(vertex_a + 0x14) >> 0x10;
+  iVar6 = (vertex_b->base).red_gradient >> 0x10;
+  iVar2 = (vertex_a->base).red_gradient >> 0x10;
   if (iVar2 != iVar6) {
     iVar3 = iVar2;
     pSVar7 = vertex_a;
-    if (*(int *)(vertex_b + 0x14) < *(int *)(vertex_a + 0x14)) {
+    if ((vertex_b->base).red_gradient < (vertex_a->base).red_gradient) {
       iVar3 = iVar6;
       iVar6 = iVar2;
       pSVar7 = vertex_b;
@@ -40,26 +40,28 @@ void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00466bf0(SSoftwa
     if (_DAT_01bdd4dc < iVar6) {
       _DAT_01bdd4dc = iVar6;
     }
-    if ((uint)(*(int *)(vertex_b + 0x14) - *(int *)(pSVar7 + 0x14)) < 0x10000) {
+    uVar5 = (vertex_b->base).red_gradient - (pSVar7->base).red_gradient;
+    if (uVar5 < 0x10000) {
       iVar6 = 0;
     }
     else {
-      iVar6 = (int)(0xffffffff /
-                   (ulonglong)(uint)(*(int *)(vertex_b + 0x14) - *(int *)(pSVar7 + 0x14)));
+      iVar6 = (int)(0xffffffff / (ulonglong)uVar5);
     }
-    lVar1 = (longlong)iVar6 * (longlong)(*(int *)(vertex_b + 0x10) - *(int *)(pSVar7 + 0x10));
+    lVar1 = (longlong)iVar6 * (longlong)((vertex_b->base).red_current - (pSVar7->base).red_current);
     *(uint *)(iVar4 + 0x1bdcfe4) = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)iVar6 * (longlong)((*(int *)(vertex_b + 8) - *(int *)(pSVar7 + 8)) * 0x100);
+    lVar1 = (longlong)iVar6 *
+            (longlong)(((vertex_b->base).x_current - (pSVar7->base).x_current) * 0x100);
     *(uint *)(iVar4 + 0x1bdd004) = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     iVar6 = _DAT_01bdd520;
-    uVar5 = (uint)(ushort)((ushort)*(uint *)(pSVar7 + 0x14) ^ 0xffff);
+    uVar5 = (uint)(ushort)((ushort)(pSVar7->base).red_gradient ^ 0xffff);
     lVar1 = (longlong)(int)uVar5 * (longlong)*(int *)(iVar4 + 0x1bdcfe4);
     *(uint *)(iVar4 + 0x1bdcfe0) =
-         *(int *)(pSVar7 + 0x10) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+         (pSVar7->base).red_current +
+         ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)(int)uVar5 * (longlong)*(int *)(iVar4 + 0x1bdd004);
     _DAT_01bdcfd4 = _DAT_01bdcfd4 + 1;
     *(uint *)(iVar4 + 0x1bdd000) =
-         (*(int *)(pSVar7 + 8) * 0x100 - iVar6) +
+         ((pSVar7->base).x_current * 0x100 - iVar6) +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
   }
   return;

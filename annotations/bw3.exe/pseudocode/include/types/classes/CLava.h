@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CWaterActor.h"
 
 // Structure: CLava
-// Stub: size from Watcom RTTI, fields not yet recovered
+// registered under CWaterActor (registerActorClass); size 176700 from RTTI; no fields of its own
 // Ghidra size: 0x2b23c (176700 bytes)
 #pragma pack(push, 1)
 typedef struct CLava {
-    char field_0[176700]; // 0x0
+    CWaterActor base; // 0x0, parent class
 } CLava;
 #pragma pack(pop)
 

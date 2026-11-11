@@ -145,7 +145,7 @@ int __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_004df050(int param_1
   header = (SMRGLHeaderExtended *)(piVar10 + 3);
   iVar14 = *(int *)(param_1 + 0x14) + 0x14;
   do {
-    uVar8 = *(uint *)header;
+    uVar8 = (header->base).type;
     if (0x17 < uVar8) {
       if (uVar8 < 0x19) {
         engine_keyframe_c_calculateSurfaceNormal_FUN_004dece0(iVar14,header);
@@ -155,8 +155,8 @@ int __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_004df050(int param_1
       }
     }
     uVar8 = engine_model_c_FUN_004f8730(header);
-    header = header + (uVar8 & 0xfffffffc);
-  } while (*(int *)header != 0);
+    header = (SMRGLHeaderExtended *)((int)&(header->base).type + (uVar8 & 0xfffffffc));
+  } while ((header->base).type != 0);
   engine_3d_c_FUN_00407720(*(uint *)(param_1 + 0x14));
   return param_1 + 0x158;
 }

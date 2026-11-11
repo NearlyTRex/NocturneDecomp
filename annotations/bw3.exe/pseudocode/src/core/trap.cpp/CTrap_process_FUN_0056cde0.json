@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 168,
-    "complexity_score": 194,
+    "complexity_score": 193,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 84,
+    "pseudocode_lines": 83,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
@@ -17,7 +17,7 @@
       "unknown_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 252
+    "total_lines": 251
   },
   "cross_references": [],
   "function": {
@@ -158,7 +158,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 41,
       "match": "in_stack_ffffff40",
       "severity": "moderate",
       "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff40);",
@@ -166,23 +166,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 54,
       "match": "(uint *)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "(*(uint *)((int)g_CDemonSetPtr->enemies + iVar8),",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 64,
-      "match": "._32_4_",
-      "severity": "mild",
-      "text": "(pCVar3->base).base.base.location.position.y + (float)auStack_7c._32_4_)) {",
-      "type": "unknown_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 67,
+      "line": 66,
       "match": "&stack0xfffffff4",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xfffffff4 + (uint)bVar7 * -8) = auStack_18[(uint)bVar7 * -2];",
@@ -190,15 +182,23 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 68,
+      "line": 67,
       "match": "&stack0xfffffff8",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xfffffff8 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
       "type": "stack_ref"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 75,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_b0._4_4_ = 10.0;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 47,
+      "line": 46,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",

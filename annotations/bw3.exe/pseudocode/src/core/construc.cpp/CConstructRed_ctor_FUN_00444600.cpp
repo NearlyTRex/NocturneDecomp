@@ -15,15 +15,15 @@ CConstructRed * core_construc_cpp_CConstructRed_ctor_FUN_00444600(CConstructRed 
   CConstructRed *pCVar2;
   float10 fVar3;
   
-  pCVar1 = core_constrct_cpp_CConstruct_ctor_FUN_00442420((CConstruct *)this_ptr);
-  *(CConstruct_full_vtable **)&pCVar1->field_0x154 = &g_CConstructRedVTable;
-  *(uint *)&pCVar1->field_0x2538 = 0x42820000;
-  *(uint *)&pCVar1->field_0xce5c = 0x41a00000;
-  *(uint *)&pCVar1->field_0xce60 = 0x41200000;
-  *(uint *)&pCVar1->field_0xd84c = 2;
-  *(uint *)&pCVar1->field_0xd85c = 2;
-  fVar3 = (float10)*(float *)&pCVar1->field_0x2538;
+  pCVar1 = core_constrct_cpp_CConstruct_ctor_FUN_00442420(&this_ptr->base);
+  (pCVar1->base).base.base.vtable._ub = &g_CConstructRedVTable._ub;
+  (pCVar1->base).base.hit_points = 65.0;
+  (pCVar1->base).attack_damage = 20.0;
+  (pCVar1->base).pain_threshold = 10.0;
+  pCVar1->construct_variant = 2;
+  pCVar1->trail_texture_type = 2;
+  fVar3 = (float10)(pCVar1->base).base.hit_points;
   pCVar2 = (CConstructRed *)round();
-  *(int *)&pCVar2->field_0xd17c = (int)ROUND(fVar3);
+  (pCVar2->base).initial_hit_points = (int)ROUND(fVar3);
   return pCVar2;
 }

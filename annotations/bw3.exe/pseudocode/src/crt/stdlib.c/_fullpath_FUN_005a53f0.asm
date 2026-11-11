@@ -20,8 +20,8 @@
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005a92c0
+;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_string.c__stricmp_FUN_005a3260
-;   crt_unknown.c_FUN_005a3650
 ;   crt_unknown.c_FUN_005a3770
 ;   crt_unknown.c_FUN_005ab46c
 ;   crt_unknown.c_FUN_005acb10
@@ -45,8 +45,8 @@ section .text
         ;   XREF to: 005a542e (CONDITIONAL_JUMP)  ; LAB_005a542e
     MOV EDI,0x104                       ; 005a5407
     PUSH EDI                            ; 005a540c
-    CALL crt_unknown.c_FUN_005a3650     ; 005a540d
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 005a540d
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 005a5412
     MOV EBP,EAX                         ; 005a5415
     TEST EAX,EAX                        ; 005a5417

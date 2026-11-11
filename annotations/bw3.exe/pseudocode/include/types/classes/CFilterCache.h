@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonFilter.h"
 
 // Structure: CFilterCache
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 2820 = nocedit. bw1 findFilter 0045d900: count +0, names strcmp at +4 stepping 0x28, returns [+0xa04 + i*4]; free 0045d770 walks [+0xa04]; getFilter 0045d7c0 CMP [this],0x40 and stores [+0xa04 + i*4]. bw2/bw3 same +0xa04 stores.
 // Ghidra size: 0xb04 (2820 bytes)
 #pragma pack(push, 1)
 typedef struct CFilterCache {
-    char field_0[2820]; // 0x0
+    int filter_count; // 0x0
+    char filter_names[64][40]; // 0x4
+    struct CDemonFilter* filters[64]; // 0xa04
 } CFilterCache;
 #pragma pack(pop)
 

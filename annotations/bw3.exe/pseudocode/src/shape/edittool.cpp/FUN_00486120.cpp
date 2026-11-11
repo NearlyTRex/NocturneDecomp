@@ -112,7 +112,7 @@ LAB_004862e7:
   } while (cVar1 != '\0');
   *pcVar8 = '\0';
   iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(_DAT_01c5b0e0,(char *)local_dc);
-  uVar6 = iVar4 + *(int *)(_DAT_01c5b0e0 + 0x41f4);
+  uVar6 = iVar4 + _DAT_01c5b0e0->char_spacing;
   bVar13 = *(byte *)(param_1 + 0x1c);
   uVar7 = toupper((uint)*(byte *)(param_1 + 4));
   if (uVar7 == bVar13) {

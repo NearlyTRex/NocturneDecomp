@@ -11,7 +11,7 @@ void core_boxactor_cpp_factoryFuncLightActor_FUN_00420330(void)
 {
   CLightActor *this_ptr;
   
-  this_ptr = (CLightActor *)debugAllocTracked1(0x36f4);
+  this_ptr = (CLightActor *)operator_new(0x36f4);
   if (this_ptr == (CLightActor *)0x0) {
     return;
   }

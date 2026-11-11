@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 679,
-    "complexity_score": 1052,
+    "complexity_score": 1062,
     "cross_reference_count": 3,
     "function_call_count": 18,
     "global_count": 38,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 292,
-    "suspect_count": 72,
+    "suspect_count": 73,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -576,7 +576,7 @@
       "line": 119,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr,&CStack_e4);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_e4);",
       "type": "undefined_data"
     },
     {
@@ -584,7 +584,7 @@
       "line": 125,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x30),&CStack_c0);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&CStack_c0);",
       "type": "undefined_data"
     },
     {
@@ -592,7 +592,7 @@
       "line": 131,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x60),&CStack_a8);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_a8);",
       "type": "undefined_data"
     },
     {
@@ -600,7 +600,7 @@
       "line": 137,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x90),&CStack_78);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&CStack_78);",
       "type": "undefined_data"
     },
     {
@@ -845,10 +845,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 230,
+      "line": 229,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr,&CStack_54);",
+      "text": "engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_54)",
       "type": "undefined_data"
     },
     {
@@ -856,7 +856,7 @@
       "line": 236,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x30),&CStack_3c);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&CStack_3c);",
       "type": "undefined_data"
     },
     {
@@ -864,7 +864,7 @@
       "line": 242,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x60),&CStack_b4);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_b4);",
       "type": "undefined_data"
     },
     {
@@ -872,7 +872,7 @@
       "line": 248,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x90),&CStack_84);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&CStack_84);",
       "type": "undefined_data"
     },
     {
@@ -880,7 +880,7 @@
       "line": 251,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "pSVar5 = DAT_005f2afc->vertex_buffer_ptr + iStack_1c;",
+      "text": "piVar5 = (int *)((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_x +",
       "type": "undefined_data"
     },
     {
@@ -896,7 +896,7 @@
       "line": 264,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "*(uint *)(DAT_005f2afc->vertex_buffer_ptr + 0x2c) = 0x4000;",
+      "text": "DAT_005f2afc->vertex_buffer_ptr->a = 0x4000;",
       "type": "undefined_data"
     },
     {
@@ -1089,6 +1089,14 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&CStack_30 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 251,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar5 = (int *)((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_x +",
       "type": "pointer_cast"
     }
   ],

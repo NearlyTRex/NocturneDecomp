@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1732,
-    "complexity_score": 2238,
+    "complexity_score": 2113,
     "cross_reference_count": 2,
     "function_call_count": 12,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 988,
-    "suspect_count": 119,
+    "suspect_count": 107,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -17,7 +17,6 @@
       "suspect_float",
       "unaffected_reg",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "unrolled_memcpy",
@@ -2593,19 +2592,11 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 203,
-      "match": "(int *)(param_1->carry_hands + (int)param_3",
-      "severity": "moderate",
-      "text": "iVar2 = *(int *)(param_1->carry_hands + (int)param_3 * 0x78);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 203,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = *(int *)(param_1->carry_hands + (int)param_3 * 0x78);",
+      "text": "iVar2 = param_1->carry_hands[(int)param_3].bone_index;",
       "type": "unnamed_param"
     },
     {
@@ -2613,7 +2604,7 @@
       "line": 203,
       "match": "param_3",
       "severity": "mild",
-      "text": "iVar2 = *(int *)(param_1->carry_hands + (int)param_3 * 0x78);",
+      "text": "iVar2 = param_1->carry_hands[(int)param_3].bone_index;",
       "type": "unnamed_param"
     },
     {
@@ -2637,16 +2628,8 @@
       "line": 242,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar11 = &(param_1->model).field_0xe80 + iVar2 * 0x30;",
+      "text": "pCVar11 = (param_1->model).bone_transform.bone_model_matrices + iVar2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 242,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "puVar11 = &(param_1->model).field_0xe80 + iVar2 * 0x30;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -2661,16 +2644,8 @@
       "line": 293,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar11 = &(param_1->model).field_0xe80 + iVar2 * 0x30;",
+      "text": "pCVar11 = (param_1->model).bone_transform.bone_model_matrices + iVar2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 293,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "puVar11 = &(param_1->model).field_0xe80 + iVar2 * 0x30;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -2693,16 +2668,8 @@
       "line": 345,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar11 = &(param_1->model).field_0xe80 + iVar2 * 0x30;",
+      "text": "pCVar11 = (param_1->model).bone_transform.bone_model_matrices + iVar2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 345,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "puVar11 = &(param_1->model).field_0xe80 + iVar2 * 0x30;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -2717,16 +2684,8 @@
       "line": 396,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar11 = &(param_1->model).field_0xe80 + iVar2 * 0x30;",
+      "text": "pCVar11 = (param_1->model).bone_transform.bone_model_matrices + iVar2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 396,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "puVar11 = &(param_1->model).field_0xe80 + iVar2 * 0x30;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -2741,32 +2700,16 @@
       "line": 477,
       "match": "param_1",
       "severity": "mild",
-      "text": "(local_a70,&(param_1->model).field_0xe80 + iVar2 * 0x30);",
+      "text": "(local_a70,(param_1->model).bone_transform.bone_model_matrices + iVar2);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 477,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "(local_a70,&(param_1->model).field_0xe80 + iVar2 * 0x30);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 481,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar11 = &(param_1->model).field_0xe80 + iVar2 * 0x30;",
+      "text": "pCVar11 = (param_1->model).bone_transform.bone_model_matrices + iVar2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 481,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "puVar11 = &(param_1->model).field_0xe80 + iVar2 * 0x30;",
-      "type": "unnamed_field"
     },
     {
       "description": "Complex pointer cast",
@@ -2781,16 +2724,8 @@
       "line": 551,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar11 = &(param_1->model).field_0xe80 + iVar2 * 0x30;",
+      "text": "pCVar11 = (param_1->model).bone_transform.bone_model_matrices + iVar2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 551,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "puVar11 = &(param_1->model).field_0xe80 + iVar2 * 0x30;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -2805,16 +2740,8 @@
       "line": 617,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar11 = &(param_1->model).field_0xe80 + iVar2 * 0x30;",
+      "text": "pCVar11 = (param_1->model).bone_transform.bone_model_matrices + iVar2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 617,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "puVar11 = &(param_1->model).field_0xe80 + iVar2 * 0x30;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -2941,16 +2868,8 @@
       "line": 847,
       "match": "param_1",
       "severity": "mild",
-      "text": "(local_d40,&(param_1->model).field_0xe80 + iVar2 * 0x30);",
+      "text": "(local_d40,(param_1->model).bone_transform.bone_model_matrices + iVar2);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 847,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "(local_d40,&(param_1->model).field_0xe80 + iVar2 * 0x30);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
@@ -2981,16 +2900,8 @@
       "line": 903,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar11 = &(param_1->model).field_0xe80 + iVar2 * 0x30;",
+      "text": "pCVar11 = (param_1->model).bone_transform.bone_model_matrices + iVar2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 903,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "puVar11 = &(param_1->model).field_0xe80 + iVar2 * 0x30;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -3061,16 +2972,8 @@
       "line": 958,
       "match": "param_1",
       "severity": "mild",
-      "text": "(afStack_2a4 + 2,&(param_1->model).field_0xe80 + iVar2 * 0x30);",
+      "text": "(afStack_2a4 + 2,(param_1->model).bone_transform.bone_model_matrices + iVar2);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 958,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "(afStack_2a4 + 2,&(param_1->model).field_0xe80 + iVar2 * 0x30);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",

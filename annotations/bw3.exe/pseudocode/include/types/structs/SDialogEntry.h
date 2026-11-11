@@ -6,10 +6,14 @@
 #include "system/basetypes.h"
 
 // Structure: SDialogEntry
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// CScript_dbLoad: realloc(count*0x226), copies the 550-byte stack record with MOVSD.REP 0x89 + MOVSW; CScript_findDialogEntry strides 0x226. The record (at ESP+8 in dbLoad): fscanf "%[^,], " into +0, "%[^,]," into +0x78, " %[^\n]\n" into +0x96; "%s.wav"/"%s.mp3" built from +0 and probed in "sound" through +0x3c (ESP+0x44). nocedit types it as an opaque char[550].
+// Ghidra size: 0x226 (550 bytes)
 #pragma pack(push, 1)
 typedef struct SDialogEntry {
+    char wav_name[60]; // 0x0, dbLoad fscanf into record+0; findDialogEntry stricmp against it
+    char sound_filename[60]; // 0x3c, dbLoad: "%s.wav" / "%s.mp3" of wav_name, passed to getFileSize("sound", ...)
+    char speaker[30]; // 0x78, dbLoad fscanf "%[^,]," into record+0x78 (nocedit replaces "stranger" with "$")
+    char text[400]; // 0x96, dbLoad fscanf " %[^\n]\n" into record+0x96; runs to the 550-byte end
 } SDialogEntry;
 #pragma pack(pop)
 

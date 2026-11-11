@@ -60,8 +60,8 @@
 ;   core_event.cpp_FUN_00494880
 ;   core_fire.cpp_CFireEffect_load_FUN_004a4030
 ;   core_fire.cpp_FUN_004a1480
-;   core_fldnotes.cpp_FUN_004ab7a0
-;   core_fldnotes.cpp_FUN_004ac900
+;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0
+;   core_fldnotes.cpp_CFieldNotes_loadState_FUN_004ac900
 ;   core_gore.cpp_CGore_load_FUN_004cf010
 ;   core_gore.cpp_CGore_reset_FUN_004ce560
 ;   core_level.cpp_FUN_004dfc50
@@ -136,8 +136,8 @@ section .text
     MOV EDX,dword ptr [0x005fe4b0]      ; 004be04a | g_CFieldNotesPtr
         ;   Label: LAB_004be04a
     PUSH EDX                            ; 004be050 | g_CFieldNotesInstance
-    CALL core_fldnotes.cpp_FUN_004ab7a0 ; 004be051
-        ;   XREF to: 004ab7a0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004ab7a0()
+    CALL core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0 ; 004be051
+        ;   XREF to: 004ab7a0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0(CFieldNotes * this_ptr)
     ADD ESP,0x4                         ; 004be056
     MOV EAX,[0x01c5b0e0]                ; 004be059 | DAT_01c5b0e0
     MOV ECX,dword ptr [ESP + 0x584]     ; 004be05e
@@ -322,8 +322,8 @@ section .text
     PUSH EAX                            ; 004be279
     LEA EAX,[ESP + 0x50c]               ; 004be27a
     PUSH EAX                            ; 004be281
-    CALL support_trstream.cpp_FUN_00573f50 ; 004be282
-        ;   XREF to: 00573f50 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00573f50()
+    CALL support_trstream.cpp_CInStreamFile_open_FUN_00573f50 ; 004be282
+        ;   XREF to: 00573f50 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_open_FUN_00573f50(CInStreamFile * this_ptr, LPCSTR param_2, int param_3)
     ADD ESP,0xc                         ; 004be287
     TEST EAX,EAX                        ; 004be28a
     JZ 0x004be4bc                       ; 004be28c
@@ -332,15 +332,15 @@ section .text
     PUSH 0x4                            ; 004be294
     LEA EAX,[ESP + 0x50c]               ; 004be296
     PUSH EAX                            ; 004be29d
-    CALL unkafter_turret.cpp_FUN_00573cf0 ; 004be29e
-        ;   XREF to: 00573cf0 (UNCONDITIONAL_CALL)  ; undefined unkafter_turret.cpp_FUN_00573cf0()
+    CALL unkafter_turret.cpp_CInStreamFile_seek_FUN_00573cf0 ; 004be29e
+        ;   XREF to: 00573cf0 (UNCONDITIONAL_CALL)  ; undefined4 unkafter_turret.cpp_CInStreamFile_seek_FUN_00573cf0(CInStreamFile * this_ptr, int param_2, uint param_3)
     ADD ESP,0xc                         ; 004be2a3
     PUSH 0x5c36bd                       ; 004be2a6 | DAT_005c36bd
     PUSH 0x5fe9f8                       ; 004be2ab | = "save\\$$SAVE$$.TMP"
     LEA EAX,[ESP + 0x538]               ; 004be2b0
     PUSH EAX                            ; 004be2b7
-    CALL support_trstream.cpp_FUN_005749d0 ; 004be2b8
-        ;   XREF to: 005749d0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005749d0()
+    CALL support_trstream.cpp_COutStreamFile_open_FUN_005749d0 ; 004be2b8
+        ;   XREF to: 005749d0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_COutStreamFile_open_FUN_005749d0(COutStreamFile * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 004be2bd
     TEST EAX,EAX                        ; 004be2c0
     JZ 0x004be508                       ; 004be2c2
@@ -375,13 +375,13 @@ section .text
     ADD ESP,0x8                         ; 004be324
     LEA EAX,[ESP + 0x504]               ; 004be327
     PUSH EAX                            ; 004be32e
-    CALL unkafter_turret.cpp_FUN_00573db0 ; 004be32f
-        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; undefined unkafter_turret.cpp_FUN_00573db0()
+    CALL unkafter_turret.cpp_CInStreamFile_close_FUN_00573db0 ; 004be32f
+        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; undefined4 unkafter_turret.cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 004be334
     LEA EAX,[ESP + 0x530]               ; 004be337
     PUSH EAX                            ; 004be33e
-    CALL support_trstream.cpp_FUN_005749a0 ; 004be33f
-        ;   XREF to: 005749a0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005749a0()
+    CALL support_trstream.cpp_COutStreamFile_close_FUN_005749a0 ; 004be33f
+        ;   XREF to: 005749a0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_COutStreamFile_close_FUN_005749a0(COutStreamFile * this_ptr)
     ADD ESP,0x4                         ; 004be344
     PUSH 0x5c36f0                       ; 004be347 | DAT_005c36f0
     PUSH 0x5fe9f8                       ; 004be34c | = "save\\$$SAVE$$.TMP"
@@ -492,8 +492,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x544]     ; 004be47e
     PUSH ECX                            ; 004be485 | g_CFieldNotesInstance
     MOV [0x01c5b0e0],EAX                ; 004be486 | DAT_01c5b0e0
-    CALL core_fldnotes.cpp_FUN_004ab7a0 ; 004be48b
-        ;   XREF to: 004ab7a0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004ab7a0()
+    CALL core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0 ; 004be48b
+        ;   XREF to: 004ab7a0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0(CFieldNotes * this_ptr)
     ADD ESP,0x4                         ; 004be490
     MOV EAX,dword ptr [ESP + 0x57c]     ; 004be493
     PUSH 0x5fe9f8                       ; 004be49a | = "save\\$$SAVE$$.TMP"
@@ -786,8 +786,8 @@ section .text
     PUSH EBX                            ; 004be7e9
     MOV ECX,dword ptr [0x005fe4b0]      ; 004be7ea | g_CFieldNotesPtr
     PUSH ECX                            ; 004be7f0 | g_CFieldNotesInstance
-    CALL core_fldnotes.cpp_FUN_004ac900 ; 004be7f1
-        ;   XREF to: 004ac900 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004ac900()
+    CALL core_fldnotes.cpp_CFieldNotes_loadState_FUN_004ac900 ; 004be7f1
+        ;   XREF to: 004ac900 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_loadState_FUN_004ac900(CFieldNotes * this_ptr, undefined4 param_2)
     ADD ESP,0x8                         ; 004be7f6
     PUSH 0x5c37be                       ; 004be7f9 | = "JustLoadedGame"
         ;   Label: LAB_004be7f9

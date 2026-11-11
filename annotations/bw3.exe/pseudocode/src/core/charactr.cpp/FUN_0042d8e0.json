@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 296,
+    "complexity_score": 251,
     "cross_reference_count": 13,
     "function_call_count": 9,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 36,
-    "suspect_count": 24,
+    "suspect_count": 20,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 154
@@ -183,7 +182,7 @@
     },
     {
       "addr": "01d2154c",
-      "name": "g_CGameInstance.field528_0x240",
+      "name": "g_CGameInstance.collision_render_enabled",
       "type": "undefined4",
       "value": null
     }
@@ -393,16 +392,8 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0xcdc4 == 0) {",
+      "text": "if (param_1->additive == 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0xcdc4",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0xcdc4 == 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -465,16 +456,8 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x27a4 == 0) {",
+      "text": "if (param_1->is_ethereal == 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x27a4",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x27a4 == 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -505,16 +488,8 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0.0 < *(float *)&param_1->field_0x3254) {",
+      "text": "if (0.0 < param_1->bind_time) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x3254",
-      "severity": "mild",
-      "text": "if (0.0 < *(float *)&param_1->field_0x3254) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -531,14 +506,6 @@
       "severity": "mild",
       "text": "core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042e3a0(param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x240",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x240 == 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

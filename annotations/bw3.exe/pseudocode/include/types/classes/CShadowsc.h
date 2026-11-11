@@ -4,13 +4,17 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CShadowsc
-// Stub: size from Watcom RTTI, fields not yet recovered
+// ctor 005462c0, setup 00546360, process 00546400
 // Ghidra size: 0xd06c (53356 bytes)
 #pragma pack(push, 1)
 typedef struct CShadowsc {
-    char field_0[53356]; // 0x0
+    CEnemy base; // 0x0, derived; unchanged
+    int bone_indices[4]; // 0xd054, setup findBone; getTargetPoints; process bone matrix
+    uint sfx_handle; // 0xd064, ctor zeroes; process CSound handle store/kill
+    float difficulty_speed_scale; // 0xd068, ctor 0.75 / 1.0; process FMUL
 } CShadowsc;
 #pragma pack(pop)
 

@@ -50,7 +50,7 @@ void core_shadow_cpp_FUN_00543680(CEnemy *param_1)
   iVar3 = *(int *)param_1[1].base.base.actor_name;
   (param_1->base).base.is_renderable = 0;
   if (iVar3 == 0) {
-    *(uint *)&(param_1->base).field_0x3270 = 0x3fc00000;
+    (param_1->base).collision_cylinder_radius = 1.5;
   }
   param_1[1].base.base.location.position.y = 0.0;
   fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(10.0,30.0);
@@ -61,20 +61,20 @@ void core_shadow_cpp_FUN_00543680(CEnemy *param_1)
   switch(fVar1) {
   case 0.0:
   case 1.4013e-45:
-    *(uint *)&param_1->field_0xce5c = 0x41700000;
+    param_1->attack_damage = 15.0;
     break;
   case 2.8026e-45:
-    *(uint *)&param_1->field_0xce5c = 0x41c80000;
+    param_1->attack_damage = 25.0;
     break;
   case 4.2039e-45:
-    *(uint *)&param_1->field_0xce5c = 0x41f00000;
-    *(uint *)&param_1->field_0xce60 = 0x41a00000;
+    param_1->attack_damage = 30.0;
+    param_1->pain_threshold = 20.0;
     (param_1->base).hit_points = 60.0;
     return;
   default:
     goto switchD_005437f7_default;
   }
-  *(uint *)&param_1->field_0xce60 = 0x41a00000;
+  param_1->pain_threshold = 20.0;
   (param_1->base).hit_points = 40.0;
 switchD_005437f7_default:
   return;

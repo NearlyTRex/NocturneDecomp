@@ -9,5 +9,5 @@
 int __cdecl core_spireagl_cpp_CSpiritEagle_isInvulnerable_FUN_00599e10(CSpiritEagle *this_ptr)
 
 {
-  return (uint)(*(int *)&this_ptr->field_0x20864 == 0);
+  return (uint)(this_ptr->shoot_me == 0);
 }

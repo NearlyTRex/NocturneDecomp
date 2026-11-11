@@ -17,7 +17,7 @@ void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_00
   CCharacter *pCVar5;
   int iVar6;
   SLayerAction *pSVar7;
-  SLayerAction *motion_name;
+  char *motion_name;
   CCharacter *local_20;
   CCharacter *local_18;
   
@@ -38,23 +38,21 @@ void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_00
                             (&(this_ptr->model).base);
     iVar6 = 0;
     if (0 < this_ptr->layer_action_count) {
-      motion_name = this_ptr->layer_actions + 8;
+      motion_name = this_ptr->layer_actions[0].motion_name;
       do {
-        pSVar7 = this_ptr->layer_actions + iVar6 * 0x38;
-        iVar2 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004fb9c0
-                          (this_ptr_00,(char *)motion_name,1);
-        *(int *)(pSVar7 + 0x2c) = iVar2;
-        *(int *)(pSVar7 + 0x30) = *(int *)(this_ptr_00 + iVar2 * 0x120 + 0x1c8c);
-        *(float *)(pSVar7 + 0x34) =
-             (float)*(int *)(pSVar7 + 0x30) /
-             *(float *)(this_ptr_00 + *(int *)(pSVar7 + 0x2c) * 0x120 + 0x1c48);
-        if (-1 < *(int *)(pSVar7 + 0x28)) {
-          *(int *)((int)this_ptr->motion_transition_costs +
-                  *(int *)(pSVar7 + 4) * 4 + *(int *)pSVar7 * 0x84) = *(int *)(pSVar7 + 0x34);
+        pSVar7 = this_ptr->layer_actions + iVar6;
+        iVar2 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004fb9c0(this_ptr_00,motion_name,1);
+        pSVar7->motion_index = iVar2;
+        pSVar7->frame_count = this_ptr_00->motions[iVar2].frame_count;
+        pSVar7->duration =
+             (float)pSVar7->frame_count / this_ptr_00->motions[pSVar7->motion_index].fps;
+        if (-1 < pSVar7->direction) {
+          this_ptr->motion_transition_costs[pSVar7->from_bone_index][pSVar7->to_bone_index] =
+               pSVar7->duration;
         }
-        if (*(int *)(pSVar7 + 0x28) < 1) {
-          *(int *)((int)this_ptr->motion_transition_costs +
-                  *(int *)pSVar7 * 4 + *(int *)(pSVar7 + 4) * 0x84) = *(int *)(pSVar7 + 0x34);
+        if (pSVar7->direction < 1) {
+          this_ptr->motion_transition_costs[pSVar7->to_bone_index][pSVar7->from_bone_index] =
+               pSVar7->duration;
         }
         iVar6 = iVar6 + 1;
         motion_name = motion_name + 0x38;
@@ -89,7 +87,8 @@ void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_00
         local_18 = (CCharacter *)((local_18->base).actor_name + 4);
       } while (iVar6 < 0x21);
       local_20 = (CCharacter *)((local_20->base).create_event + 0xc);
-    } while (local_20 != (CCharacter *)&(this_ptr->model).field_0xfac);
+    } while (local_20 !=
+             (CCharacter *)&(this_ptr->model).bone_transform.bone_model_matrices[6].m[0].z);
   }
   return;
 }

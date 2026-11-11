@@ -2,24 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 684,
-    "complexity_score": 615,
+    "complexity_score": 502,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 355,
-    "suspect_count": 22,
+    "pseudocode_lines": 357,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
       "undefined_data",
       "unknown_field",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 1039
+    "total_lines": 1041
   },
   "cross_references": [],
   "function": {
@@ -256,96 +255,8 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 132,
-      "match": "field_0x15ac70",
-      "severity": "mild",
-      "text": "if ((float *)&g_CDemonSetPtr->field_0x15ac70 != afStack_19c + 0xb) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 133,
-      "match": "field_0x15ac70",
-      "severity": "mild",
-      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ac70 = 0x40800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 134,
-      "match": "field_0x15ac74",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar6->field_0x15ac74 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 135,
-      "match": "field_0x15ac78",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar6->field_0x15ac78 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 141,
-      "match": "field_0x15ac70",
-      "severity": "mild",
-      "text": "if (&this_ptr->drift_target != (CVector3f *)&g_CDemonSetPtr->field_0x15ac70) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 142,
-      "match": "field_0x15ac70",
-      "severity": "mild",
-      "text": "(this_ptr->drift_target).x = *(float *)&g_CDemonSetPtr->field_0x15ac70;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 143,
-      "match": "field_0x15ac74",
-      "severity": "mild",
-      "text": "(this_ptr->drift_target).y = *(float *)&pCVar6->field_0x15ac74;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 144,
-      "match": "field_0x15ac78",
-      "severity": "mild",
-      "text": "(this_ptr->drift_target).z = *(float *)&pCVar6->field_0x15ac78;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 156,
-      "match": "field_0x15ac70",
-      "severity": "mild",
-      "text": "fStack_d4 = *(float *)&g_CDemonSetPtr->field_0x15ac70 - pCVar2->x;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 157,
-      "match": "field_0x15ac74",
-      "severity": "mild",
-      "text": "afStack_d0[0] = *(float *)&g_CDemonSetPtr->field_0x15ac74 - (this_ptr->drift_target).y;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 158,
-      "match": "field_0x15ac78",
-      "severity": "mild",
-      "text": "afStack_d0[1] = *(float *)&g_CDemonSetPtr->field_0x15ac78 - (this_ptr->drift_target).z;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 191,
+      "line": 193,
       "match": "(float *)((int)this_ptr",
       "severity": "moderate",
       "text": "pfVar9 = (float *)((int)this_ptr + (uint)bVar12 * -8 + 0x24);",
@@ -353,23 +264,23 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 309,
-      "match": "._1_4_",
-      "severity": "mild",
-      "text": "fVar3 = (this_ptr->acceleration).y * (float)\"?333?CTrigger\"._1_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 310,
-      "match": "._1_4_",
-      "severity": "mild",
-      "text": "fVar4 = (this_ptr->acceleration).z * (float)\"?333?CTrigger\"._1_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
       "line": 311,
+      "match": "._1_4_",
+      "severity": "mild",
+      "text": "fVar2 = (this_ptr->acceleration).y * (float)\"?333?CTrigger\"._1_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 312,
+      "match": "._1_4_",
+      "severity": "mild",
+      "text": "fVar3 = (this_ptr->acceleration).z * (float)\"?333?CTrigger\"._1_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 313,
       "match": "._1_4_",
       "severity": "mild",
       "text": "(this_ptr->acceleration).x = (this_ptr->acceleration).x * (float)\"?333?CTrigger\"._1_4_;",
@@ -377,7 +288,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 336,
+      "line": 338,
       "match": "DAT_02cfd900",
       "severity": "mild",
       "text": "core_xform_cpp_FUN_00583940(auStack_260,&DAT_02cfd900,pUStack_28);",
@@ -385,7 +296,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 337,
+      "line": 339,
       "match": "DAT_02cfd900",
       "severity": "mild",
       "text": "core_xform_cpp_FUN_00583940(auStack_200,&DAT_02cfd900,afStack_19c + 5);",
@@ -393,10 +304,10 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 341,
+      "line": 343,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar8 = 0xc; iVar8 != 0; iVar8 = iVar8 + -1) {",
+      "text": "for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {",
       "type": "unrolled_memcpy"
     },
     {

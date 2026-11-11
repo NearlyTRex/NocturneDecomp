@@ -198,7 +198,7 @@
       "type": "unrolled_strcpy"
     },
     {
-      "description": "'pCVar2[1].base.base.actor_name + 8' walks 1 x sizeof(CEnemy) (0xd054) + offsetof(base.base.actor_name) (0x0) + 0x8 = 0xd05c, which is exactly offsetof(CBugs, bugs). Ghidra had no CBugs type here and reached the field by index arithmetic; write it as ((CBugs *)pCVar2)->bugs (\u00a7de-pun/\u00a712). Ambiguous: CGargoyle::part_indices[2], CGhoul::spasm_timer, CImp::laugh_timer also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar2[1].base.base.actor_name + 8' walks 1 x sizeof(CEnemy) (0xd054) + offsetof(base.base.actor_name) (0x0) + 0x8 = 0xd05c, which is exactly offsetof(CBoneGuy, search_timer). Ghidra had no CBoneGuy type here and reached the field by index arithmetic; write it as ((CBoneGuy *)pCVar2)->search_timer (\u00a7de-pun/\u00a712). Ambiguous: CBugs::bugs, CCarved::pickup_scan_timer, CConstruct::fall_event[8] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 17,
       "severity": "moderate",
       "text": "(pCVar2[1].base.base.actor_name + 8,400,&g_SBugTypeInfo);",

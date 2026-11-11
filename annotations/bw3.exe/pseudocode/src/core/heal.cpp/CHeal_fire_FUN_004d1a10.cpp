@@ -38,14 +38,14 @@ int __cdecl core_heal_cpp_CHeal_fire_FUN_004d1a10(CHeal *this_ptr)
   CStack_40.x = _DAT_02cfd900;
   CStack_40.y = _DAT_02cfd904;
   CStack_40.z = _DAT_02cfd908;
-  *(uint *)&this_ptr->field_0x594 = 1;
-  if (*(int *)&this_ptr->field_0x598 != 0) {
+  this_ptr->is_firing = 1;
+  if (this_ptr->was_firing_prev_frame != 0) {
     return 0;
   }
-  iVar1 = core_weapon_cpp_CWeapon_fire_FUN_0057b880((CWeapon *)this_ptr);
+  iVar1 = core_weapon_cpp_CWeapon_fire_FUN_0057b880(&this_ptr->base);
   if (iVar1 != 0) {
     iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
-                      (*(uint *)&this_ptr->field_0x304,g_CHeroClassInfo.name_hash);
+                      ((this_ptr->base).carried_by_actor,g_CHeroClassInfo.name_hash);
     if (iVar1 != 0) {
       *(float *)(iVar1 + 0x2538) = *(float *)(iVar1 + 0x2538) + _DAT_005c4a3f;
       if (0x42c80000 < *(int *)(iVar1 + 0x2538)) {
@@ -93,13 +93,13 @@ int __cdecl core_heal_cpp_CHeal_fire_FUN_004d1a10(CHeal *this_ptr)
     }
     core_sound_cpp_CSound_playActorSound_FUN_005609d0
               (0x02CF5680,(CDemonActor *)this_ptr,"wp_heal.wav",
-               (CVector3f *)&this_ptr->field_0x20);
-    *(uint *)&this_ptr->field_0x300 = 0x40400000;
+               &(this_ptr->base).base.location.position);
+    (this_ptr->base).fire_cooldown_timer = 3.0;
     return 1;
   }
   core_sound_cpp_CSound_playActorSound_FUN_005609d0
             (0x02CF5680,(CDemonActor *)this_ptr,"wp_nomana.wav",
-             (CVector3f *)&this_ptr->field_0x20);
-  *(uint *)&this_ptr->field_0x300 = 0x3f800000;
+             &(this_ptr->base).base.location.position);
+  (this_ptr->base).fire_cooldown_timer = 1.0;
   return 0;
 }

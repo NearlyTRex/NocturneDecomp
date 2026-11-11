@@ -13,15 +13,15 @@ void __cdecl core_charactr_cpp_CCharacter_drop_FUN_00430810(CCharacter *this_ptr
   
   pSVar1 = this_ptr->carry_hands;
   do {
-    while (carrier == *(CDemonActor **)(pSVar1 + 8)) {
-      (*(((*(CDemonActor **)(pSVar1 + 8))->vtable)._ub)->onDropped)(carrier,drop_position);
-      *(uint *)(pSVar1 + 8) = 0;
-      pSVar1 = pSVar1 + 0x78;
-      if (pSVar1 == (SCarryHand *)&this_ptr->field_0x2698) {
+    while (carrier == pSVar1->carry_actor) {
+      (*((pSVar1->carry_actor->vtable)._ub)->onDropped)(carrier,drop_position);
+      pSVar1->carry_actor = (CDemonActor *)0x0;
+      pSVar1 = pSVar1 + 1;
+      if (pSVar1 == (SCarryHand *)this_ptr->talk_to_me_event) {
         return;
       }
     }
-    pSVar1 = pSVar1 + 0x78;
-  } while (pSVar1 != (SCarryHand *)&this_ptr->field_0x2698);
+    pSVar1 = pSVar1 + 1;
+  } while (pSVar1 != (SCarryHand *)this_ptr->talk_to_me_event);
   return;
 }

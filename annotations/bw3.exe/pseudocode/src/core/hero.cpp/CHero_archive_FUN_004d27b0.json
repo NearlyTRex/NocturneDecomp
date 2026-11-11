@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 249,
-    "complexity_score": 136,
+    "complexity_score": 135,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 24,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 81,
+    "pseudocode_lines": 80,
     "suspect_count": 5,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 330
+    "total_lines": 329
   },
   "cross_references": [
     {
@@ -325,7 +325,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 44,
       "match": "DAT_005c4bbf",
       "severity": "mild",
       "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0(&local_c,&DAT_005c4bbf);",
@@ -333,7 +333,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 66,
       "match": "DAT_007df9b8",
       "severity": "mild",
       "text": "if (DAT_007df9b8 == 1) {",
@@ -341,26 +341,26 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 67,
       "match": "DAT_007df9b4",
       "severity": "mild",
-      "text": "core_inv_cpp_CInventory_load_FUN_004dc750((CInventory *)(this_ptr + 0x206e8),DAT_007df9b4);",
+      "text": "core_inv_cpp_CInventory_load_FUN_004dc750(&this_ptr->inventory,DAT_007df9b4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 71,
+      "line": 70,
       "match": "DAT_007df9b4",
       "severity": "mild",
-      "text": "core_inv_cpp_CInventory_save_FUN_004dc560((CInventory *)(this_ptr + 0x206e8),DAT_007df9b4);",
+      "text": "core_inv_cpp_CInventory_save_FUN_004dc560(&this_ptr->inventory,DAT_007df9b4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 74,
       "match": "DAT_005c4bfd",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)(this_ptr + 0x20b80),&DAT_005c4bfd);",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->mana,&DAT_005c4bfd);",
       "type": "undefined_data"
     }
   ],

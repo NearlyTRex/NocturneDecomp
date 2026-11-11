@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_FUN_004c07b0(int param_1,undefined4 *param_2)
+; void core_game_cpp_FUN_004c07b0(float param_1,undefined4 *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x860]:4  local_860

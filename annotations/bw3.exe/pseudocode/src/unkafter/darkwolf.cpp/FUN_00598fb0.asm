@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;   unkafter_darkwolf.cpp_CWhitewolf_ctor_FUN_00598fe0
 ;
 ; *****************************************************************************
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xdc98                         ; 00598fb0
         ;   Label: unkafter_darkwolf.cpp_FUN_00598fb0
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 00598fb5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00598fb5
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 00598fba
     TEST EAX,EAX                        ; 00598fbd
     JNZ 0x00598fc2                      ; 00598fbf

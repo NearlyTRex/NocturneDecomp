@@ -129,7 +129,7 @@ section .text
     MOV EAX,[0x005fe9dc]                ; 004d8f6d | g_CGamePtr
     ADD ESP,0xc                         ; 004d8f72
     ADD EAX,0xd8                        ; 004d8f75
-    PUSH EAX                            ; 004d8f7a | g_CGameInstance.field168_0xd8
+    PUSH EAX                            ; 004d8f7a | g_CGameInstance.hero_number
     PUSH 0x5c5953                       ; 004d8f7b | = "heroNumber"
     LEA EAX,[ESP + 0xc]                 ; 004d8f80
     PUSH EAX                            ; 004d8f84
@@ -139,7 +139,7 @@ section .text
     POP EBX                             ; 004d8f8d
     MOV EAX,[0x005fe9dc]                ; 004d8f8e | g_CGamePtr
     ADD EAX,0xc                         ; 004d8f93
-    PUSH EAX                            ; 004d8f96 | g_CGameInstance.field3_0xc
+    PUSH EAX                            ; 004d8f96 | g_CGameInstance.halo_mode
     PUSH 0x5c595e                       ; 004d8f97 | = "haloMode"
     LEA EAX,[ESP + 0x8]                 ; 004d8f9c
     PUSH EAX                            ; 004d8fa0
@@ -191,7 +191,7 @@ section .text
     MOV EAX,[0x005fe9dc]                ; 004d9029 | g_CGamePtr
     ADD ESP,0xc                         ; 004d902e
     ADD EAX,0x24                        ; 004d9031
-    PUSH EAX                            ; 004d9034 | g_CGameInstance.field27_0x24
+    PUSH EAX                            ; 004d9034 | g_CGameInstance.shadow_flag
     PUSH 0x5c59a8                       ; 004d9035 | = "shadowFlag"
     LEA EAX,[ESP + 0x8]                 ; 004d903a
     PUSH EAX                            ; 004d903e
@@ -226,7 +226,7 @@ section .text
     MOV EAX,[0x005fe9dc]                ; 004d9092 | g_CGamePtr
     ADD ESP,0x8                         ; 004d9097
     ADD EAX,0xd4                        ; 004d909a
-    PUSH EAX                            ; 004d909f | g_CGameInstance.field164_0xd4
+    PUSH EAX                            ; 004d909f | g_CGameInstance.game_control
     PUSH 0x5c59c0                       ; 004d90a0 | = "gameControl"
     LEA EAX,[ESP + 0x8]                 ; 004d90a5
     PUSH EAX                            ; 004d90a9
@@ -312,7 +312,7 @@ section .text
     MOV EAX,[0x005fe9dc]                ; 004d9196 | g_CGamePtr
     ADD ESP,0xc                         ; 004d919b
     ADD EAX,0x48                        ; 004d919e
-    PUSH EAX                            ; 004d91a1 | g_CGameInstance.field54_0x48
+    PUSH EAX                            ; 004d91a1 | g_CGameInstance.key_fire
     PUSH 0x5c5a1d                       ; 004d91a2 | = "keyFire"
     LEA EAX,[ESP + 0x8]                 ; 004d91a7
     PUSH EAX                            ; 004d91ab
@@ -330,7 +330,7 @@ section .text
     MOV EAX,[0x005fe9dc]                ; 004d91cc | g_CGamePtr
     ADD ESP,0xc                         ; 004d91d1
     ADD EAX,0x50                        ; 004d91d4
-    PUSH EAX                            ; 004d91d7 | g_CGameInstance.field62_0x50
+    PUSH EAX                            ; 004d91d7 | g_CGameInstance.key_use_item
     PUSH 0x5c5a2f                       ; 004d91d8 | = "keyUseItem"
     LEA EAX,[ESP + 0x8]                 ; 004d91dd
     PUSH EAX                            ; 004d91e1
@@ -339,7 +339,7 @@ section .text
     MOV EAX,[0x005fe9dc]                ; 004d91e7 | g_CGamePtr
     ADD ESP,0xc                         ; 004d91ec
     ADD EAX,0x54                        ; 004d91ef
-    PUSH EAX                            ; 004d91f2 | g_CGameInstance.field66_0x54
+    PUSH EAX                            ; 004d91f2 | g_CGameInstance.key_light
     PUSH 0x5c5a3a                       ; 004d91f3 | = "keyLight"
     LEA EAX,[ESP + 0x8]                 ; 004d91f8
     PUSH EAX                            ; 004d91fc
@@ -456,7 +456,7 @@ section .text
     ADD ESP,0xc                         ; 004d9350
     MOV EAX,[0x005fe9dc]                ; 004d9353 | g_CGamePtr
     ADD EAX,0x94                        ; 004d9358
-    PUSH EAX                            ; 004d935d | g_CGameInstance.field130_0x94
+    PUSH EAX                            ; 004d935d | g_CGameInstance.key_next_weapon
     PUSH 0x5c5aca                       ; 004d935e | = "keyNextWeapon"
     LEA EAX,[ESP + 0x8]                 ; 004d9363
     PUSH EAX                            ; 004d9367
@@ -465,7 +465,7 @@ section .text
     MOV EAX,[0x005fe9dc]                ; 004d936d | g_CGamePtr
     ADD ESP,0xc                         ; 004d9372
     ADD EAX,0x98                        ; 004d9375
-    PUSH EAX                            ; 004d937a | g_CGameInstance.field134_0x98
+    PUSH EAX                            ; 004d937a | g_CGameInstance.key_prev_weapon
     PUSH 0x5c5ad8                       ; 004d937b | = "keyPrevWeapon"
     LEA EAX,[ESP + 0x8]                 ; 004d9380
     PUSH EAX                            ; 004d9384
@@ -474,7 +474,7 @@ section .text
     MOV EAX,[0x005fe9dc]                ; 004d938a | g_CGamePtr
     ADD ESP,0xc                         ; 004d938f
     ADD EAX,0x9c                        ; 004d9392
-    PUSH EAX                            ; 004d9397 | g_CGameInstance.field138_0x9c
+    PUSH EAX                            ; 004d9397 | g_CGameInstance.key_next_item
     PUSH 0x5c5ae6                       ; 004d9398 | = "keyNextItem"
     LEA EAX,[ESP + 0x8]                 ; 004d939d
     PUSH EAX                            ; 004d93a1
@@ -483,7 +483,7 @@ section .text
     MOV EAX,[0x005fe9dc]                ; 004d93a7 | g_CGamePtr
     ADD ESP,0xc                         ; 004d93ac
     ADD EAX,0xa0                        ; 004d93af
-    PUSH EAX                            ; 004d93b4 | g_CGameInstance.field142_0xa0
+    PUSH EAX                            ; 004d93b4 | g_CGameInstance.key_prev_item
     PUSH 0x5c5af2                       ; 004d93b5 | = "keyPrevItem"
     LEA EAX,[ESP + 0x8]                 ; 004d93ba
     PUSH EAX                            ; 004d93be
@@ -582,7 +582,7 @@ section .text
     MOV EAX,[0x005fe9dc]                ; 004d94e6 | g_CGamePtr
     ADD ESP,0xc                         ; 004d94eb
     ADD EAX,0xdc                        ; 004d94ee
-    PUSH EAX                            ; 004d94f3 | g_CGameInstance.field172_0xdc
+    PUSH EAX                            ; 004d94f3 | g_CGameInstance.aim_mode
     PUSH 0x5c5b75                       ; 004d94f4 | = "aimMode"
     LEA EAX,[ESP + 0x8]                 ; 004d94f9
     PUSH EAX                            ; 004d94fd
@@ -591,7 +591,7 @@ section .text
     MOV EAX,[0x005fe9dc]                ; 004d9503 | g_CGamePtr
     ADD ESP,0xc                         ; 004d9508
     ADD EAX,0xe0                        ; 004d950b
-    PUSH EAX                            ; 004d9510 | g_CGameInstance.field176_0xe0
+    PUSH EAX                            ; 004d9510 | g_CGameInstance.show_hero_numbers
     PUSH 0x5c5b7d                       ; 004d9511 | = "show_hero_numbers"
     LEA EAX,[ESP + 0x8]                 ; 004d9516
     PUSH EAX                            ; 004d951a

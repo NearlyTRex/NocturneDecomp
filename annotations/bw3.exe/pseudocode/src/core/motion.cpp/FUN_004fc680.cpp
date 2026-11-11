@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_motion_cpp_FUN_004fc680(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition)
@@ -13,67 +14,67 @@ int __cdecl core_motion_cpp_FUN_004fc680(CMotionController *this_ptr,int motion_
 {
   int iVar1;
   float fVar2;
-  CMotionList *pCVar3;
-  CMotionList *pCVar4;
-  int iVar5;
-  SMotionTransition *pSVar6;
-  byte bVar7;
+  float fVar3;
+  SMotion *pSVar4;
+  SMotion *pSVar5;
+  int iVar6;
+  int *piVar7;
+  SMotionTransition *pSVar8;
+  byte bVar9;
   float local_24;
   int local_1c;
   
-  bVar7 = 0;
-  pCVar4 = this_ptr->motion_list_ptr + motion_index * 0x120 + 0x1c28;
+  bVar9 = 0;
+  pSVar5 = this_ptr->motion_list_ptr->motions + motion_index;
   local_1c = 0;
-  fVar2 = *inout_delta_time * *(float *)(pCVar4 + 0x20) + current_frame;
-  iVar5 = 0;
-  pCVar3 = pCVar4;
+  fVar2 = *inout_delta_time * pSVar5->fps + current_frame;
+  iVar6 = 0;
+  pSVar4 = pSVar5;
   local_24 = fVar2;
-  if (0 < *(int *)(pCVar4 + 0x78)) {
+  if (0 < pSVar5->signal_count) {
     do {
-      iVar1 = *(int *)(pCVar3 + 0x7c);
+      iVar1 = pSVar4->signals[0].frame_number;
       if ((current_frame <= (float)iVar1) && ((float)iVar1 <= local_24 + (float)_DAT_005c9d8c)) {
-        local_1c = *(int *)(pCVar3 + 0x80);
+        local_1c = pSVar4->signals[0].value;
         local_24 = (float)iVar1 + (float)_DAT_005c9d8c;
       }
-      iVar5 = iVar5 + 1;
-      pCVar3 = pCVar3 + 8;
-    } while (iVar5 < *(int *)(pCVar4 + 0x78));
+      iVar6 = iVar6 + 1;
+      pSVar4 = (SMotion *)(pSVar4->motion_name + 8);
+    } while (iVar6 < pSVar5->signal_count);
   }
-  if ((double)local_24 < (double)*(int *)(pCVar4 + 0x28) + _DAT_005c9d84) {
-    (**(code **)(this_ptr->vtable + 8))
-              (this_ptr,(float)*(int *)(pCVar4 + 0x60) +
-                        current_frame * (1.0 / (float)*(int *)(pCVar4 + 0x68)),
-               local_24 * (1.0 / (float)*(int *)(pCVar4 + 0x68)) + (float)*(int *)(pCVar4 + 0x60),
-               0x3f800000);
-    *(uint *)(out_transition + 4) = 1;
-    *(uint *)(out_transition + 0x14) = 0;
-    *(int *)(out_transition + 8) = motion_index;
-    *(float *)(out_transition + 0xc) = local_24;
-    if (fVar2 <= *(float *)(out_transition + 0xc)) {
+  if ((double)local_24 < (double)pSVar5->exit_forward_from_frame + _DAT_005c9d84) {
+    fVar3 = 1.0 / (float)pSVar5->frame_step;
+    (*this_ptr->vtable->accumulateScaledRootMotion)
+              (this_ptr,(float)pSVar5->frame_start + current_frame * fVar3,
+               local_24 * fVar3 + (float)pSVar5->frame_start,1.0);
+    out_transition->cmd = MOTION_CMD_JUMP;
+    out_transition->set_new_state_as_desired = 0;
+    out_transition->to_motion_number = motion_index;
+    out_transition->to_frame_number = local_24;
+    if (fVar2 <= out_transition->to_frame_number) {
       return local_1c;
     }
-    fVar2 = *(float *)(out_transition + 0xc);
+    fVar2 = out_transition->to_frame_number;
   }
   else {
-    (**(code **)(this_ptr->vtable + 8))
-              (this_ptr,(float)*(int *)(pCVar4 + 0x60) +
-                        current_frame * (1.0 / (float)*(int *)(pCVar4 + 0x68)),
-               (float)*(int *)(pCVar4 + 0x28) * (1.0 / (float)*(int *)(pCVar4 + 0x68)) +
-               (float)*(int *)(pCVar4 + 0x60),0x3f800000);
-    pCVar3 = pCVar4 + 0x2c;
-    pSVar6 = out_transition;
-    for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *(uint *)pSVar6 = *(uint *)pCVar3;
-      pCVar3 = pCVar3 + ((uint)bVar7 * -2 + 1) * 4;
-      pSVar6 = pSVar6 + (uint)bVar7 * -8 + 4;
+    fVar2 = 1.0 / (float)pSVar5->frame_step;
+    (*this_ptr->vtable->accumulateScaledRootMotion)
+              (this_ptr,(float)pSVar5->frame_start + current_frame * fVar2,
+               (float)pSVar5->exit_forward_from_frame * fVar2 + (float)pSVar5->frame_start,1.0);
+    piVar7 = &pSVar5->unused1;
+    pSVar8 = out_transition;
+    for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
+      pSVar8->desired_state = *piVar7;
+      piVar7 = piVar7 + (uint)bVar9 * -2 + 1;
+      pSVar8 = (SMotionTransition *)((int)pSVar8 + (uint)bVar9 * -8 + 4);
     }
-    pSVar6 = this_ptr->in_transition;
-    if ((pSVar6 != (SMotionTransition *)0x0) && (*(int *)(pSVar6 + 4) == 2)) {
-      *(uint *)(out_transition + 8) = *(uint *)(pSVar6 + 8);
-      *(uint *)(out_transition + 0xc) = *(uint *)(this_ptr->in_transition + 0xc);
+    pSVar8 = this_ptr->in_transition;
+    if ((pSVar8 != (SMotionTransition *)0x0) && (pSVar8->cmd == MOTION_CMD_WAIT_EXIT)) {
+      out_transition->to_motion_number = pSVar8->to_motion_number;
+      out_transition->to_frame_number = this_ptr->in_transition->to_frame_number;
     }
-    fVar2 = (float)*(int *)(pCVar4 + 0x28);
+    fVar2 = (float)pSVar5->exit_forward_from_frame;
   }
-  *inout_delta_time = (fVar2 - current_frame) / *(float *)(pCVar4 + 0x20);
+  *inout_delta_time = (fVar2 - current_frame) / pSVar5->fps;
   return local_1c;
 }

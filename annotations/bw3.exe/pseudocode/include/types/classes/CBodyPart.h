@@ -11,6 +11,8 @@ struct SMRGLPrimitiveTriangle;
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CBox.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CFlame.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
 #include "types/enums/EBloodType.h"
 #include "types/structs/SBodyPartFire.h"
@@ -44,7 +46,8 @@ typedef struct CBodyPart {
     float physics_timer; // 0xcbc
     int render_alpha; // 0xcc0
     int dont_pick_me_up; // 0xcc4
-    char field_3272[8]; // 0xcc8
+    int render_disabled; // 0xcc8, Added in this build
+    int fire_time_remaining; // 0xccc
     CBox physics_box; // 0xcd0
     float ground_height; // 0xf28
     struct CDemonActor* carried_by_actor; // 0xf2c

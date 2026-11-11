@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 47,
+    "complexity_score": 32,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 17,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "primitive_walker_cast",
-      "unnamed_field"
+      "shadow_pointer_walk"
     ],
     "total_lines": 60
   },
@@ -109,20 +108,12 @@
   },
   "suspects": [
     {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 10,
-      "match": "(int *)&this_ptr->players[",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar1` was initialized to the address of an array element's subfield (`pSVar1 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pSVar1)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pSVar1->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 16,
+      "match": "pSVar1 = pSVar1 + N",
       "severity": "moderate",
-      "text": "piVar1 = (int *)&this_ptr->players[0].field_0x1c;",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "piVar1 = (int *)&this_ptr->players[0].field_0x1c;",
-      "type": "unnamed_field"
+      "text": "pSVar1 = pSVar1 + 0x10;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

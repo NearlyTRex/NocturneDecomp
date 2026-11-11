@@ -21,10 +21,7 @@ void core_weather_cpp_FUN_0057c2e0(CDemonActor *param_1,float param_2,int param_
   float afStackY_10a8 [975];
   float min_value;
   float local_158;
-  SDamageInfo aSStack_154 [4];
-  uint uStack_150;
-  uint uStack_12c;
-  uint uStack_124;
+  SDamageInfo SStack_154;
   CMatrix3x3f local_118;
   uint auStack_f0 [6];
   uint auStack_d8 [6];
@@ -114,12 +111,12 @@ void core_weather_cpp_FUN_0057c2e0(CDemonActor *param_1,float param_2,int param_
           pCVar3 = param_1;
           if (param_1->health < 1) {
 code_r0x0057c51b:
-            core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(aSStack_154);
+            core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(&SStack_154);
             fVar1 = local_20;
-            uStack_150 = 0x41c80000;
-            uStack_12c = 10;
-            uStack_124 = 0x6a;
-            (**(code **)(*(int *)((int)local_20 + 0x154) + 0x108))(local_20,aSStack_154);
+            SStack_154.damage_amount = 25.0;
+            SStack_154.ammo_type = AMMO_TYPE_MANA;
+            SStack_154.damage_type = DAMAGE_TYPE_ATTACK_ELECTROCUTE;
+            (**(code **)(*(int *)((int)local_20 + 0x154) + 0x108))(local_20,&SStack_154);
             core_fire_cpp_FUN_004a3bd0(0x01C73654,(CVector3f *)((int)fVar1 + 0x20),0x41f00000,1,0)
             ;
             core_sound_cpp_CSound_playActorSound_FUN_005609d0

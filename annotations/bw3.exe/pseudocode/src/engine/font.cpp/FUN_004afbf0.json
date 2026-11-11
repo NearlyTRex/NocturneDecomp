@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 423,
-    "complexity_score": 633,
+    "complexity_score": 713,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 183,
-    "suspect_count": 42,
+    "suspect_count": 50,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -46,14 +46,14 @@
       "name": "core_main.c_FUN_004e4330"
     },
     {
+      "addr": "005a3650",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005a3650"
+    },
+    {
       "addr": "005a28f0",
       "is_variadic": false,
       "name": "crt_memory.c_memset_FUN_005a28f0"
-    },
-    {
-      "addr": "005a3650",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3650"
     },
     {
       "addr": "005a3770",
@@ -83,7 +83,12 @@
     {
       "addr": "00573fc0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_00573fc0"
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0"
+    },
+    {
+      "addr": "00573db0",
+      "is_variadic": false,
+      "name": "unkafter_turret.cpp_CInStreamFile_close_FUN_00573db0"
     },
     {
       "addr": "005738c0",
@@ -98,12 +103,7 @@
     {
       "addr": "00573c00",
       "is_variadic": false,
-      "name": "unkafter_turret.cpp_FUN_00573c00"
-    },
-    {
-      "addr": "00573db0",
-      "is_variadic": false,
-      "name": "unkafter_turret.cpp_FUN_00573db0"
+      "name": "unkafter_turret.cpp_CInStreamFile_read_FUN_00573c00"
     }
   ],
   "globals": [
@@ -230,7 +230,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1ddc) = 0;",
@@ -238,7 +238,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1dd8) = 0;",
@@ -246,7 +246,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x1dcc) != 0) {",
@@ -254,7 +254,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_005a3770(*(int *)(param_1 + 0x1dcc));",
@@ -262,7 +262,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1dcc) = 0;",
@@ -270,7 +270,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1dd0) = 0;",
@@ -278,7 +278,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x1dd4) != 0) {",
@@ -286,7 +286,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_005a3770(*(int *)(param_1 + 0x1dd4));",
@@ -294,7 +294,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1dd4) = 0;",
@@ -302,7 +302,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 48,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 != 0) {",
@@ -310,7 +310,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar8 = *(int *)(param_1 + 0x1a4);",
@@ -318,11 +318,51 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
       "text": "((char *)(param_1 + 4),(char *)0x0,(char *)0x0,acStack_158,(char *)0x0);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 91,
+      "match": "(byte *)((int)auStack_458",
+      "severity": "moderate",
+      "text": "*(byte *)puVar9 = *(byte *)((int)auStack_458 + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(uint *)((int)puVar9",
+      "severity": "moderate",
+      "text": "puVar9 = (uint *)((int)puVar9 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 96,
+      "match": "(byte *)((int)puVar3",
+      "severity": "moderate",
+      "text": "puVar10 = (byte *)((int)puVar3 + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 101,
+      "match": "(byte *)((int)auStack_458",
+      "severity": "moderate",
+      "text": "*puVar10 = *(byte *)((int)auStack_458 + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 106,
+      "match": "(byte *)((int)puVar3",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)((byte *)((int)puVar3 + iVar8) + iVar8);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
@@ -337,15 +377,15 @@
       "line": 126,
       "match": "(uint *)((int)puVar3",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar15 * -2 + 1);",
+      "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar14 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 127,
-      "match": "(uint *)((int)puVar13",
+      "match": "(uint *)((int)puVar9",
       "severity": "moderate",
-      "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar15 * -2 + 1);",
+      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar14 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
@@ -353,7 +393,7 @@
       "line": 129,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar10 = (char *)(param_1 + 4);",
+      "text": "pcVar11 = (char *)(param_1 + 4);",
       "type": "unnamed_param"
     },
     {
@@ -361,7 +401,7 @@
       "line": 130,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar14 = (char *)(param_1 + 0x1dbc);",
+      "text": "pcVar13 = (char *)(param_1 + 0x1dbc);",
       "type": "unnamed_param"
     },
     {
@@ -493,19 +533,43 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Pointer value `puVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 92,
+      "match": "(int)puVar9",
+      "severity": "moderate",
+      "text": "puVar9 = (uint *)((int)puVar9 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 96,
+      "match": "(int)puVar3",
+      "severity": "moderate",
+      "text": "puVar10 = (byte *)((int)puVar3 + iVar8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 106,
+      "match": "(int)puVar3",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)((byte *)((int)puVar3 + iVar8) + iVar8);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Pointer value `puVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 126,
       "match": "(int)puVar3",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar15 * -2 + 1);",
+      "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar14 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `puVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 127,
-      "match": "(int)puVar13",
+      "match": "(int)puVar9",
       "severity": "moderate",
-      "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar15 * -2 + 1);",
+      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar14 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {

@@ -33,7 +33,7 @@ int __cdecl core_ammo_cpp_CAmmo_renderOpaque_FUN_0040df20(CAmmo *this_ptr)
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830(&this_ptr->base);
     return 0;
   }
-  fVar5 = (float10)*(float *)&this_ptr->field_0x31c;
+  fVar5 = (float10)this_ptr->anim_frame;
   round();
   iStack_10 = (int)ROUND(fVar5);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540

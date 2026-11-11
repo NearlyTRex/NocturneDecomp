@@ -43,7 +43,7 @@ uint core_sound_cpp_FUN_0055f6ae(void)
   
   bVar10 = 0;
   fStack_24 = g_CGamePtr->delta_time_float;
-  if (*(int *)&g_CGamePtr->field_0x264 == 0) {
+  if (g_CGamePtr->goggles_active == 0) {
     if (_DAT_02cf5f84 != g_CDemonSetPtr->selected_camera_index) {
       core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
       core_setcolid_cpp_CDemonSet_disableIgnore_FUN_0053ec70(g_CDemonSetPtr);

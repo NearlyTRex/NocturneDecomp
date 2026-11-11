@@ -15,15 +15,15 @@ CDemonActor * __cdecl core_inv_cpp_FUN_004db990(CInventory *this_ptr,char *item_
   
   iVar3 = 0;
   pCVar2 = this_ptr;
-  if (0 < *(int *)(this_ptr + 0x10)) {
+  if (0 < this_ptr->item_count) {
     do {
-      iVar1 = _stricmp(*(char **)(pCVar2 + 0x14),item_name);
+      iVar1 = _stricmp(pCVar2->items[0]->actor_name,item_name);
       if (iVar1 == 0) {
-        return *(CDemonActor **)(pCVar2 + 0x14);
+        return pCVar2->items[0];
       }
       iVar3 = iVar3 + 1;
-      pCVar2 = pCVar2 + 4;
-    } while (iVar3 < *(int *)(this_ptr + 0x10));
+      pCVar2 = (CInventory *)&pCVar2->owner;
+    } while (iVar3 < this_ptr->item_count);
   }
   return (CDemonActor *)0x0;
 }

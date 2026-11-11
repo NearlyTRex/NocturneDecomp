@@ -11,7 +11,7 @@
 int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_004f7710(CDemonMission *this_ptr,int index,int hero_type,CCharacter *existing_actor)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   int iVar2;
   CCharacter *local_14;
   
@@ -25,10 +25,10 @@ int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_004f7710(CDemonMiss
     _DAT_01d71de4 = 0x652;
     core_main_c_FUN_004e4330("CDemonMission::createOneHero - hero already created!");
   }
-  iVar1 = *(int *)(this_ptr + 0x143c);
+  pCVar1 = this_ptr->first_actor;
   local_14 = (CCharacter *)0x0;
   do {
-    if (iVar1 == 0) {
+    if (pCVar1 == (CDemonActor *)0x0) {
 LAB_004f778a:
       if (local_14 == (CCharacter *)0x0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40
@@ -38,7 +38,7 @@ LAB_004f778a:
       *(CCharacter **)(index * 4 + 0x1d5ba04) = local_14;
       return 1;
     }
-    iVar2 = core_actor_cpp_castToClassHash_FUN_0040c840(iVar1,_DAT_01d5baac);
+    iVar2 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar1,_DAT_01d5baac);
     if ((iVar2 != 0) && (index == *(int *)(iVar2 + 0x158))) {
       if (existing_actor == (CCharacter *)0x0) {
         local_14 = (CCharacter *)
@@ -58,6 +58,6 @@ LAB_004f778a:
       core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930(0x01D81080,&local_14->base);
       goto LAB_004f778a;
     }
-    iVar1 = *(int *)(iVar1 + 0x14c);
+    pCVar1 = pCVar1->next_actor;
   } while( true );
 }

@@ -6,10 +6,11 @@
 #include "system/basetypes.h"
 
 // Structure: SMovieFrame
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// CFilterFX_openMovie (bw1 0045ddb0, bw2/bw3 same): malloc(frame_count << 0xd), fread(movie_data, 0x2000, frame_count)
+// Ghidra size: 0x2000 (8192 bytes)
 #pragma pack(push, 1)
 typedef struct SMovieFrame {
+    uchar pixels[8192]; // 0x0
 } SMovieFrame;
 #pragma pack(pop)
 

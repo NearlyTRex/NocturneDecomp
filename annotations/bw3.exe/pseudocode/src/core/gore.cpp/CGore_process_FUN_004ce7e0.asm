@@ -10,9 +10,9 @@
 ;   core_game.cpp_CGame_process_FUN_004bf4b0 at 004bf6d4
 ;
 ; Referenced Globals:
-;   undefined4 g_BloodParticles[0].field36_0x24
-;   undefined4 g_BloodParticles[1].field36_0x24
-;   undefined4 g_BloodParticles[1].field60_0x3c
+;   undefined4 g_BloodParticles[0].base.lifetime_remaining
+;   undefined4 g_BloodParticles[1].base.lifetime_remaining
+;   undefined4 g_BloodParticles[1].base.vtable
 ;   undefined4 DAT_01d276b8
 ;   undefined4 DAT_01d4a940
 ;
@@ -34,7 +34,7 @@ section .text
     AND ESP,0xfffffff8                  ; 004ce7e6
     MOV EBX,0x1d22eb4                   ; 004ce7e9
     LEA ESI,[EBX + 0x4800]              ; 004ce7ee
-    FLD float ptr [EBX + 0x24]          ; 004ce7f4 | g_BloodParticles[0].field36_0x24 | g_BloodParticles[1].field36_0x24
+    FLD float ptr [EBX + 0x24]          ; 004ce7f4 | g_BloodParticles[0].base.lifetime_remaining | g_BloodParticles[1].base.lifetime_remaining
         ;   Label: LAB_004ce7f4
     FLDZ                                ; 004ce7f7
     FCOMPP                              ; 004ce7f9
@@ -101,7 +101,7 @@ section .text
     RET                                 ; 004ce886
     PUSH EBX                            ; 004ce887
         ;   Label: LAB_004ce887
-    MOV EAX,dword ptr [EBX + 0x3c]      ; 004ce888 | g_BloodParticles[1].field60_0x3c
+    MOV EAX,dword ptr [EBX + 0x3c]      ; 004ce888 | g_BloodParticles[1].base.vtable
     CALL dword ptr [EAX + 0x4]          ; 004ce88b
     ADD ESP,0x4                         ; 004ce88e
     JMP 0x004ce804                      ; 004ce891

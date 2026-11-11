@@ -4,12 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: STriangleVertices
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// CGlassParticle init 0049a650 (called from CFireEffect_createGlassParticle): reads param floats [0..8] as three vertices (sums [0]+[3]+[6] etc. for the centroid)
+// Ghidra size: 0x24 (36 bytes)
 #pragma pack(push, 1)
 typedef struct STriangleVertices {
+    CVector3f vertices[3]; // 0x0
 } STriangleVertices;
 #pragma pack(pop)
 

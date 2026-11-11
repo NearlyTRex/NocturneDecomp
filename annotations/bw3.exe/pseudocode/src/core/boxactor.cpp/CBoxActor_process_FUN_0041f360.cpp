@@ -31,10 +31,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041f360(CBoxActor *this_pt
   float fVar16;
   CBoundingBox3D *in_stack_fffffeb8;
   float fStack_140;
-  SDamageInfo aSStack_13c [4];
-  float fStack_138;
-  CBoxActor *pCStack_108;
-  CBoxActor *pCStack_104;
+  SDamageInfo SStack_13c;
   uint auStack_100 [4];
   uint auStack_f0 [2];
   float fStack_e8;
@@ -69,13 +66,13 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041f360(CBoxActor *this_pt
   float fStack_18;
   
   bVar14 = 0;
-  if (this_ptr->field_0x664 != '\0') {
+  if (this_ptr->fade_event[0] != '\0') {
     iVar9 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                      (0x01C6E360,&this_ptr->field_0x664);
+                      (0x01C6E360,this_ptr->fade_event);
     if (iVar9 != 0) {
       (this_ptr->base).is_transparent = 1;
       (this_ptr->base).is_renderable = 0;
-      *(uint *)&this_ptr->field_0x6dc = *(uint *)&this_ptr->field_0x6e0;
+      this_ptr->fade_timer = this_ptr->fade_time;
     }
   }
   pCVar8 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(&this_ptr->model);
@@ -208,19 +205,19 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041f360(CBoxActor *this_pt
     fVar5 = (this_ptr->physics_box).linear_velocity.z;
     fStack_140 = SQRT(fVar5 * fVar5 + fVar4 * fVar4 + fVar16 * fVar16);
     if ((float)_DAT_005b74f9 < fStack_140) {
-      core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(aSStack_13c);
-      fStack_138 = fStack_140 * this_ptr->weight_in_pounds * _DAT_005b7501;
-      pCStack_108 = this_ptr;
-      pCStack_104 = this_ptr;
-      core_setcolid_cpp_FUN_0053ed10(g_CDemonSetPtr,afStack_a8 + 2,pCVar2,aSStack_13c);
+      core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(&SStack_13c);
+      SStack_13c.damage_amount = fStack_140 * this_ptr->weight_in_pounds * _DAT_005b7501;
+      SStack_13c.attacker = &this_ptr->base;
+      SStack_13c.wielder = &this_ptr->base;
+      core_setcolid_cpp_FUN_0053ed10(g_CDemonSetPtr,afStack_a8 + 2,pCVar2,&SStack_13c);
     }
   }
-  if (0.0 < *(float *)&this_ptr->field_0x6dc) {
-    *(float *)&this_ptr->field_0x6dc = *(float *)&this_ptr->field_0x6dc - delta_time;
+  if (0.0 < this_ptr->fade_timer) {
+    this_ptr->fade_timer = this_ptr->fade_timer - delta_time;
   }
-  if (0.0 <= *(float *)&this_ptr->field_0x6dc) {
+  if (0.0 <= this_ptr->fade_timer) {
     return;
   }
-  *(uint *)&this_ptr->field_0x6dc = 0;
+  this_ptr->fade_timer = 0.0;
   return;
 }

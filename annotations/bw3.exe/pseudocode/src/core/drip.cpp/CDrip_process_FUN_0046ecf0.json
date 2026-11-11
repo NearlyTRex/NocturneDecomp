@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 302,
-    "complexity_score": 245,
+    "complexity_score": 242,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 130,
+    "pseudocode_lines": 127,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
@@ -18,7 +18,7 @@
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 432
+    "total_lines": 429
   },
   "cross_references": [],
   "function": {
@@ -209,7 +209,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 57,
+      "line": 54,
       "match": "in_stack_ffffff28",
       "severity": "moderate",
       "text": "(*pCVar1->getBoundingBox)(&this_ptr->base,in_stack_ffffff28);",
@@ -217,7 +217,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 114,
       "match": "(int *)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->characters + iVar8);",
@@ -225,7 +225,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 124,
+      "line": 121,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar2 + 0x154) + 0x100))",
@@ -233,7 +233,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 60,
+      "line": 57,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -241,7 +241,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 106,
+      "line": 103,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->vel).z = 0.0;",

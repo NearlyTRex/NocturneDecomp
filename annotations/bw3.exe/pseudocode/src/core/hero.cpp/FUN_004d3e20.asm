@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool core_hero_cpp_FUN_004d3e20(CEnemy *param_1,char *param_2)
+; bool core_hero_cpp_FUN_004d3e20(CHero *param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28

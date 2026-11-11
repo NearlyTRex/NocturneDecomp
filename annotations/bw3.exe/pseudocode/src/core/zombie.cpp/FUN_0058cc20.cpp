@@ -21,7 +21,7 @@ void __cdecl core_zombie_cpp_FUN_0058cc20(CZombie *this_ptr)
   this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310(&this_ptr_01->base);
   iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_004fba50(this_ptr_00,state_name,iVar1);
   if (iVar1 == 2) {
-    if (*(int *)&this_ptr->field_0xd0dc == 0) {
+    if (this_ptr->always_chase_fast == 0) {
       force_immediate = 1;
       iVar1 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,2);
       iVar1 = iVar1 + 1;

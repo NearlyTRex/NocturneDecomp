@@ -34,7 +34,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_FUN_00494880
-;   core_fldnotes.cpp_FUN_004ab7a0
+;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0
 ;   core_game.cpp_FUN_004bdfb0
 ;   core_game.cpp_FUN_004c4d10
 ;   core_level.cpp_FUN_004dfc50
@@ -155,8 +155,8 @@ section .text
     MOV ESI,dword ptr [0x005fe4b0]      ; 004bea30 | g_CFieldNotesPtr
         ;   Label: LAB_004bea30
     PUSH ESI                            ; 004bea36
-    CALL core_fldnotes.cpp_FUN_004ab7a0 ; 004bea37
-        ;   XREF to: 004ab7a0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004ab7a0()
+    CALL core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0 ; 004bea37
+        ;   XREF to: 004ab7a0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0(CFieldNotes * this_ptr)
     ADD ESP,0x4                         ; 004bea3c
     MOV EDI,dword ptr [0x005fba60]      ; 004bea3f | DAT_005fba60
     PUSH EDI                            ; 004bea45

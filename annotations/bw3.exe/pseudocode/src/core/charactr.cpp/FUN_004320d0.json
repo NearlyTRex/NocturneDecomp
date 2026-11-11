@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 234,
+    "complexity_score": 233,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 49,
+    "pseudocode_lines": 48,
     "suspect_count": 17,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 157
+    "total_lines": 156
   },
   "cross_references": [
     {
@@ -275,7 +275,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x275c) == 1) {",
@@ -283,7 +283,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar2 = *(float *)(param_1 + 0x2758) * fVar1;",
@@ -291,15 +291,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = ((float)*(int *)(pCVar4 + iVar5 + 0x1c8c) - *(float *)(param_1 + 0x2758)) * fVar1;",
+      "text": "fVar1 = ((float)pCVar4->motions[iVar5].frame_count - *(float *)(param_1 + 0x2758)) * fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)(param_1 + 0x158),*(int *)(param_1 + 0x2754),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "((CDeformableModelInstance *)(param_1 + 0x158),*(int *)(param_1 + 0x2754),",
@@ -308,14 +316,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x158),*(int *)(param_1 + 0x2754),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x2758),local_c,*(int *)(param_1 + 0x2750),",
@@ -323,7 +323,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x2758),local_c,*(int *)(param_1 + 0x2750),",

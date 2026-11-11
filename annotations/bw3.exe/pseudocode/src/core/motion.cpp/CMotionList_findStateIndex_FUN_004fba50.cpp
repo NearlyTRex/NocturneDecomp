@@ -13,19 +13,19 @@ int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_004fba50(CMotionList 
 {
   int iVar1;
   int iVar2;
-  CMotionList *str1;
+  char (*str1) [30];
   
   iVar2 = 0;
-  if (0 < *(int *)this_ptr) {
-    str1 = this_ptr + 4;
+  if (0 < this_ptr->state_count) {
+    str1 = this_ptr->state_names;
     do {
-      iVar1 = _stricmp((char *)str1,state_name);
+      iVar1 = _stricmp(*str1,state_name);
       if (iVar1 == 0) {
         return iVar2;
       }
       iVar2 = iVar2 + 1;
-      str1 = str1 + 0x1e;
-    } while (iVar2 < *(int *)this_ptr);
+      str1 = str1 + 1;
+    } while (iVar2 < this_ptr->state_count);
   }
   if (error_on_not_found == 0) {
     return -1;

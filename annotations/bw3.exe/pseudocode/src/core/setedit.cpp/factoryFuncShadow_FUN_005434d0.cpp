@@ -11,7 +11,7 @@ void core_setedit_cpp_factoryFuncShadow_FUN_005434d0(void)
 {
   CShadow *this_ptr;
   
-  this_ptr = (CShadow *)debugAllocTracked1(0xd0e8);
+  this_ptr = (CShadow *)operator_new(0xd0e8);
   if (this_ptr == (CShadow *)0x0) {
     return;
   }

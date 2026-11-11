@@ -60,18 +60,17 @@ void __cdecl core_trigger_cpp_CTrigger_archive_FUN_0056e940(CTrigger *this_ptr)
       core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->test_radius,"testRadius");
     }
     if (8 < g_CTriggerClassVersion) {
-      core_actor_cpp_archiveInteger_FUN_0040b8b0
-                ((int *)&this_ptr->field_0x304,"autoAimAtMe");
+      core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->auto_aim_at_me,"autoAimAtMe");
     }
     if (9 < g_CTriggerClassVersion) {
       core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->trigger_shape,"shape");
     }
     if (10 < g_CTriggerClassVersion) {
       core_actor_cpp_archiveString_FUN_0040b680
-                (&this_ptr->field_0x308,"damageActorWildcard");
+                (this_ptr->damage_actor_wildcard_name,"damageActorWildcard");
     }
     if (0xb < g_CTriggerClassVersion) {
-      core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x2fc,"hiliteActor");
+      core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->hilite_actor,"hiliteActor");
       return;
     }
   }

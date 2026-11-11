@@ -11,7 +11,7 @@ void core_hotdemon_cpp_FUN_004d62e0(void)
 {
   CAngelForest *this_ptr;
   
-  this_ptr = (CAngelForest *)debugAllocTracked1(0xd088);
+  this_ptr = (CAngelForest *)operator_new(0xd088);
   if (this_ptr == (CAngelForest *)0x0) {
     return;
   }

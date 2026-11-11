@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 473,
-    "complexity_score": 351,
+    "complexity_score": 442,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 196,
-    "suspect_count": 13,
+    "pseudocode_lines": 202,
+    "suspect_count": 22,
     "suspect_types": [
       "pointer_cast",
       "pointer_stride_bytecount",
       "pointer_truncation",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 669
+    "total_lines": 675
   },
   "cross_references": [
     {
@@ -357,56 +356,24 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0xc24",
-      "severity": "mild",
-      "text": "iVar7 = local_2c + *(int *)(&this_ptr->field_0xc24 + iVar5 + part_index * 0x60);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0xc38",
-      "severity": "mild",
-      "text": "iVar5 = local_30 + *(int *)(&this_ptr->field_0xc38 + iVar5 + part_index * 0x60);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 94,
-      "match": "field_0xc24",
-      "severity": "mild",
-      "text": "body_part_ptr->tri_count + *(int *)(&this_ptr->field_0xc24 + iVar4) +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 95,
-      "match": "field_0xc38",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0xc38 + iVar4));",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 110,
+      "line": 115,
       "match": "(int *)((int)skinned_vertices",
       "severity": "moderate",
-      "text": "piVar12 = (int *)((int)skinned_vertices + (uint)bVar15 * -8 + 4);",
+      "text": "piVar11 = (int *)((int)skinned_vertices + (uint)bVar14 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 155,
       "match": "(int *)(local_2c + (int)this_ptr",
       "severity": "moderate",
-      "text": "*(int *)(local_2c + (int)this_ptr->index_data_ptr[lod_index]) *",
+      "text": "[*(int *)(local_2c + (int)this_ptr->index_data_ptr[lod_index])].",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 154,
+      "line": 159,
       "match": "(int *)((int)body_part_ptr",
       "severity": "moderate",
       "text": "*(int *)((int)body_part_ptr->face_texture_indices + local_28) = iVar6;",
@@ -414,39 +381,143 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 179,
+      "line": 185,
       "match": "(int *)(local_30 + (int)this_ptr",
       "severity": "moderate",
-      "text": "piVar12 = (int *)(local_30 + (int)this_ptr->index_data_ptr[lod_index]);",
+      "text": "piVar11 = (int *)(local_30 + (int)this_ptr->index_data_ptr[lod_index]);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 185,
+      "line": 191,
       "match": "(int *)((int)body_part_ptr",
       "severity": "moderate",
-      "text": "*(int *)((int)body_part_ptr->face_texture_indices + iVar7) = iVar3;",
+      "text": "*(int *)((int)body_part_ptr->face_texture_indices + iVar8) = iVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Pointer value `&body_part_ptr->vertices->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 106,
+      "line": 111,
       "match": "(int)&body_part_ptr->vertices->x",
       "severity": "moderate",
-      "text": "piVar13 = (int *)((int)&body_part_ptr->vertices->x + iVar6);",
+      "text": "piVar12 = (int *)((int)&body_part_ptr->vertices->x + iVar6);",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 106,
+      "line": 62,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "piVar13 = (int *)((int)&body_part_ptr->vertices->x + iVar6);",
+      "text": "((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3) * 4 + 0x270f9bc)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 65,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3) * 4 + 0x270f9bc)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 67,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "puVar5 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 77,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3) * 4 + 0x270f9bc)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 80,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3) * 4 + 0x270f9bc)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 82,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "puVar5 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 111,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar12 = (int *)((int)&body_part_ptr->vertices->x + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 139,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 173,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 136,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "iVar6 = (int)&(((SMRGLPrimitiveTriangle *)(body_part_ptr->faces->vertices + -2))->base).base",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 170,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "iVar3 = (int)&(((SMRGLPrimitiveTriangle *)(body_part_ptr->faces->vertices + -2))->base).base",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 38,
+      "match": "(int *)(iVar8 + 0x54)",
+      "severity": "moderate",
+      "text": "local_30 = *(int *)(iVar8 + 0x54);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 44,
+      "match": "(int *)(iVar8 + 0xc24)",
+      "severity": "moderate",
+      "text": "local_2c = local_2c + *(int *)(iVar8 + 0xc24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 45,
+      "match": "(int *)(iVar8 + 0xc38)",
+      "severity": "moderate",
+      "text": "local_30 = local_30 + *(int *)(iVar8 + 0xc38);",
       "type": "pointer_cast"
     },
     {
       "description": "mem* byte count hardcodes an element stride (this_ptr->vertex_count[lod_index] << 2) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 58,
+      "line": 56,
       "match": "memset",
       "severity": "moderate",
       "text": "memset((void *)0x270f9bc,0,this_ptr->vertex_count[lod_index] << 2);",

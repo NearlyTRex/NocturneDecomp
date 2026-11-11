@@ -10,7 +10,7 @@ void __cdecl core_wateract_cpp_CWaterActor_onLaserHit_FUN_00578fc0(CWaterActor *
 
 {
   core_actor_cpp_CDemonActor_onLaserHit_FUN_004096c0(&this_ptr->base,laser_info);
-  *(uint *)(laser_info + 0x50) = 0x3e99999a;
-  *(uint *)(laser_info + 0x48) = 0x3f4ccccd;
+  laser_info->transparency = 0.3;
+  laser_info->reflectivity = 0.8;
   return;
 }

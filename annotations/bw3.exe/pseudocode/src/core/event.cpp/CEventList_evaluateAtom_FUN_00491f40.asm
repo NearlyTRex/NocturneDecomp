@@ -1023,7 +1023,7 @@ section .text
         ;   XREF to: 00492741 (CONDITIONAL_JUMP)  ; LAB_00492741
     MOV EAX,[0x005fe4b0]                ; 00492727 | g_CFieldNotesPtr
     MOV ESI,dword ptr [EBX]             ; 0049272c
-    MOV EAX,dword ptr [EAX + 0x40]      ; 0049272e | g_CFieldNotesInstance.field64_0x40
+    MOV EAX,dword ptr [EAX + 0x40]      ; 0049272e | g_CFieldNotesInstance.is_displayed
     ADD ESI,ECX                         ; 00492731
     MOV dword ptr [ESP + 0xfbc],EAX     ; 00492733
     MOV dword ptr [EBX],ESI             ; 0049273a
@@ -2974,7 +2974,7 @@ section .text
     JL 0x00493ad4                       ; 00493aaf
         ;   XREF to: 00493ad4 (CONDITIONAL_JUMP)  ; LAB_00493ad4
     MOV EAX,[0x005fe9dc]                ; 00493ab1 | g_CGamePtr
-    CMP dword ptr [EAX + 0x18],0x0      ; 00493ab6 | g_CGameInstance.field15_0x18
+    CMP dword ptr [EAX + 0x18],0x0      ; 00493ab6 | g_CGameInstance.nudity_flag
     SETNZ AL                            ; 00493aba
     MOV EDI,dword ptr [EBX]             ; 00493abd
     AND EAX,0xff                        ; 00493abf

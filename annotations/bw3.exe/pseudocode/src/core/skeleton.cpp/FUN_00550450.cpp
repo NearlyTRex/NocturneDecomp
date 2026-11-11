@@ -19,7 +19,7 @@ void core_skeleton_cpp_FUN_00550450(char *param_1)
   do {
     iVar1 = _stricmp(pcVar4,param_1);
     if (iVar1 == 0) {
-      pcVar4 = &g_SkeletonPool[0].field_0x1de28;
+      pcVar4 = g_SkeletonPool[0].loaded_filename;
       *(uint *)(&DAT_02802f5c + iVar3 * 4) = 1;
       iVar1 = 0;
       do {

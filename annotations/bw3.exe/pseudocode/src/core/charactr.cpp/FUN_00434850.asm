@@ -20,7 +20,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_ghost_005b8922
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 g_CGameInstance.field540_0x24c
+;   undefined4 g_CGameInstance.letterbox_mode
 ;
 ; Called Functions:
 ;   crt_string.c__strnicmp_FUN_005a3f90
@@ -35,7 +35,7 @@ section .text
     MOV EBP,ESP                         ; 00434852
     MOV EBX,dword ptr [EBP + 0xc]       ; 00434854
     MOV EAX,[0x005fe9dc]                ; 00434857 | g_CGamePtr
-    CMP dword ptr [EAX + 0x24c],0x0     ; 0043485c | g_CGameInstance.field540_0x24c
+    CMP dword ptr [EAX + 0x24c],0x0     ; 0043485c | g_CGameInstance.letterbox_mode
     JNZ 0x00434891                      ; 00434863
         ;   XREF to: 00434891 (CONDITIONAL_JUMP)  ; LAB_00434891
     FLD float ptr [EBX + 0x252c]        ; 00434865

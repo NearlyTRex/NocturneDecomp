@@ -31,7 +31,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00461fe0(
       } while (iVar1 < this_ptr->poly_count);
     }
     pCVar2 = (CDemonTriangle *)
-             FUN_005a40df
+             operator_new_array
                        (this_ptr->frame_count * this_ptr->collision_triangle_count * 0x38);
     this_ptr->collision_triangle_list = pCVar2;
     if (pCVar2 == (CDemonTriangle *)0x0) {

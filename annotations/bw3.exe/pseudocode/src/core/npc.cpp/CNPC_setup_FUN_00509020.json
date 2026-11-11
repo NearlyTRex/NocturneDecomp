@@ -2,20 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 201,
+    "complexity_score": 53,
     "cross_reference_count": 5,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 51,
-    "suspect_count": 13,
+    "pseudocode_lines": 38,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "undefined_ram",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 128
+    "total_lines": 115
   },
   "cross_references": [
     {
@@ -258,102 +255,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x27a0",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).field_0x27a0 = 2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x2620",
-      "severity": "mild",
-      "text": "*(int *)&(this_ptr->base).field_0x2620 = _DAT_01dd6a40;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x27a8",
-      "severity": "mild",
-      "text": "iVar5 = *(int *)&(this_ptr->base).field_0x27a8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_01dd6a3c",
-      "severity": "mild",
-      "text": "DAT_01dd6a3c = (byte)iVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 34,
-      "match": "uRam01dd6a3e",
-      "severity": "mild",
-      "text": "uRam01dd6a3e = SUB42(iVar1,2);",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 35,
-      "match": "uRam01dd6a3e",
-      "severity": "mild",
-      "text": "uVar3 = uRam01dd6a3e;",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_01dd6a3c",
-      "severity": "mild",
-      "text": "(this_ptr->base).carry_hands[0] = (SCarryHand)DAT_01dd6a3c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x25aa",
-      "severity": "mild",
-      "text": "*(ushort *)&(this_ptr->base).field_0x25aa = uVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x206bc",
-      "severity": "mild",
-      "text": "fVar6 = (float10)*(int *)&this_ptr->field_0x206bc * (float10)_DAT_005cb558 *",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x206b8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x206b8 = 0xfffffffe;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x206c0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x206c0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x206b4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x206b4 = (int)ROUND(fVar6);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

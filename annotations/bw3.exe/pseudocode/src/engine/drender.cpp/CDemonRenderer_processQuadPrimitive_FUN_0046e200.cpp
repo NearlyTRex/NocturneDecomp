@@ -10,9 +10,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processQuadPrimitive_FUN_0046e200
 
 {
   int iVar1;
-  ushort local_24;
-  ushort local_22;
-  ushort local_20;
+  STrianglePackedIndices local_24;
   ushort local_1e;
   ushort local_1c;
   ushort local_1a;
@@ -25,27 +23,25 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processQuadPrimitive_FUN_0046e200
   {
     return;
   }
-  local_24 = (ushort)quad_primitive[1].base.type;
-  local_22 = *(ushort *)&quad_primitive[1].surface_normal.B;
-  local_20 = (ushort)quad_primitive[2].base.type;
+  local_24.vertex_index_0 = (ushort)quad_primitive[1].base.type;
+  local_24.vertex_index_1 = *(ushort *)&quad_primitive[1].surface_normal.B;
+  local_24.vertex_index_2 = (ushort)quad_primitive[2].base.type;
   local_1e = (ushort)((uint)quad_primitive[1].base.count >> 8);
   local_1c = (ushort)((uint)quad_primitive[1].surface_normal.C.i >> 8);
   local_1a = (ushort)((uint)quad_primitive[2].base.count >> 8);
   local_18 = (ushort)((uint)quad_primitive[1].surface_normal.A.i >> 8);
   local_16 = (ushort)((uint)quad_primitive[1].surface_normal.D.i >> 8);
   local_14 = (ushort)((uint)quad_primitive[2].surface_normal.A.i >> 8);
-  engine_drender_cpp_CDemonRenderer_captureFace_FUN_0046e300
-            (this_ptr,(STrianglePackedIndices *)&local_24,render_flags);
+  engine_drender_cpp_CDemonRenderer_captureFace_FUN_0046e300(this_ptr,&local_24,render_flags);
   if ((quad_primitive->base).count < 4) {
     return;
   }
-  local_22 = (ushort)quad_primitive[2].base.type;
-  local_20 = *(ushort *)&quad_primitive[2].surface_normal.B;
+  local_24.vertex_index_1 = (ushort)quad_primitive[2].base.type;
+  local_24.vertex_index_2 = *(ushort *)&quad_primitive[2].surface_normal.B;
   local_1c = (ushort)((uint)quad_primitive[2].base.count >> 8);
   local_1a = (ushort)((uint)quad_primitive[2].surface_normal.C.i >> 8);
   local_16 = (ushort)((uint)quad_primitive[2].surface_normal.A.i >> 8);
   local_14 = (ushort)((uint)quad_primitive[2].surface_normal.D.i >> 8);
-  engine_drender_cpp_CDemonRenderer_captureFace_FUN_0046e300
-            (this_ptr,(STrianglePackedIndices *)&local_24,render_flags);
+  engine_drender_cpp_CDemonRenderer_captureFace_FUN_0046e300(this_ptr,&local_24,render_flags);
   return;
 }

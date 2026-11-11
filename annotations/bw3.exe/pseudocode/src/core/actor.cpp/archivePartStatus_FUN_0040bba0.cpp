@@ -12,7 +12,8 @@ void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bba0(CDeformableModelInsta
   int iVar1;
   int iVar2;
   CDeformableModelInstance *pCVar3;
-  byte *puVar4;
+  SPartInstanceData *pSVar4;
+  int *piVar5;
   int local_14;
   
   if (DAT_007df9b8 != 1) {
@@ -22,18 +23,18 @@ void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bba0(CDeformableModelInsta
     FUN_005a3140(DAT_007df9b4,&DAT_005b5be4,&DAT_005f0990);
     pCVar3 = model_ptr;
     do {
-      puVar4 = &pCVar3->field_0x2140;
+      pSVar4 = &pCVar3->part_data;
       pCVar3 = (CDeformableModelInstance *)&(pCVar3->base).current_motion_index;
-      FUN_005a3140(DAT_007df9b4,&DAT_005b5be7,*(uint *)puVar4);
+      FUN_005a3140(DAT_007df9b4,&DAT_005b5be7,pSVar4->visibility_flags[0]);
     } while (pCVar3 != (CDeformableModelInstance *)&model_ptr->bone_origins[0xc].z);
     FUN_005a3140(DAT_007df9b4,&DAT_005b5beb);
     iVar1 = 0;
     FUN_005a3140(DAT_007df9b4,&DAT_005b5bed,&DAT_005f0990);
     do {
-      puVar4 = &model_ptr->field_0x2230;
+      pSVar4 = &model_ptr->part_data;
       model_ptr = (CDeformableModelInstance *)&(model_ptr->base).current_motion_index;
       iVar1 = iVar1 + 1;
-      FUN_005a3140(DAT_007df9b4,&DAT_005b5bf0,*(uint *)puVar4);
+      FUN_005a3140(DAT_007df9b4,&DAT_005b5bf0,pSVar4->texture_set_indices[0]);
     } while (iVar1 < 0x3c);
     FUN_005a3140(DAT_007df9b4,&DAT_005b5bf4);
     core_actor_cpp_adjustIndentationLevel_FUN_0040afa0(-1);
@@ -51,30 +52,30 @@ void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bba0(CDeformableModelInsta
   core_skeleton_cpp_FUN_0054e670(model_ptr);
   iVar1 = 0;
   if (0 < local_14) {
-    puVar4 = &model_ptr->field_0x2140;
+    pSVar4 = &model_ptr->part_data;
     do {
-      iVar2 = _fscanf(DAT_007df9b4,&DAT_005b5b6d,puVar4);
+      iVar2 = _fscanf(DAT_007df9b4,&DAT_005b5b6d,pSVar4);
       if (iVar2 != 1) {
         core_actor_cpp_handleActorPropertyParseError_FUN_0040b2d0
                   ("part status entry","description");
       }
       iVar1 = iVar1 + 1;
-      puVar4 = puVar4 + 4;
+      pSVar4 = (SPartInstanceData *)(pSVar4->visibility_flags + 1);
     } while (iVar1 < local_14);
   }
   _fscanf(DAT_007df9b4,&DAT_005b5b8e);
   core_skeleton_cpp_FUN_0054e690(model_ptr);
   iVar1 = 0;
   if (0 < local_14) {
-    puVar4 = &model_ptr->field_0x2230;
+    piVar5 = (model_ptr->part_data).texture_set_indices;
     do {
-      iVar2 = _fscanf(DAT_007df9b4,&DAT_005b5b90,puVar4);
+      iVar2 = _fscanf(DAT_007df9b4,&DAT_005b5b90,piVar5);
       if (iVar2 != 1) {
         core_actor_cpp_handleActorPropertyParseError_FUN_0040b2d0
                   ("part texture entry","description");
       }
       iVar1 = iVar1 + 1;
-      puVar4 = puVar4 + 4;
+      piVar5 = piVar5 + 1;
     } while (iVar1 < local_14);
   }
   _fscanf(DAT_007df9b4,&DAT_005b5bb2);

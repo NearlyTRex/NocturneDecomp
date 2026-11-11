@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 g_CGameInstance.field596_0x290
+;   undefined4 g_CGameInstance.new_set_event_pending
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -105,7 +105,7 @@ section .text
         ;   XREF to: 004c4870 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004c4870()
     MOV EAX,[0x005fe9dc]                ; 004f6e77 | g_CGamePtr
     ADD ESP,0x4                         ; 004f6e7c
-    MOV dword ptr [EAX + 0x290],0x1     ; 004f6e7f | g_CGameInstance.field596_0x290
+    MOV dword ptr [EAX + 0x290],0x1     ; 004f6e7f | g_CGameInstance.new_set_event_pending
     POP ESI                             ; 004f6e89
     POP EBX                             ; 004f6e8a
     RET                                 ; 004f6e8b

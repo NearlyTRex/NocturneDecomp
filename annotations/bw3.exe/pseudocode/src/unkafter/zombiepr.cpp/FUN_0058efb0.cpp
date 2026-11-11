@@ -62,8 +62,8 @@ uint unkafter_zombiepr_cpp_FUN_0058efb0(CCharacter *param_1,float param_2)
       local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(5.0,10.0);
       param_1[1].model.bone_origins[0x12].y = local_18;
     }
-    if ((*(int *)(&(param_1->model).field_0x2140 + *(int *)&param_1->field_0x2624 * 4) != 0) &&
-       (*(int *)&param_1->field_0x2628 == 0)) {
+    if (((param_1->model).part_data.visibility_flags[param_1->carry_hands[1].secondary_bone_index]
+         != 0) && (param_1->carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
       if (0.0 < param_1[1].model.bone_origins[0x12].z) {
         param_2 = param_1[1].model.bone_origins[0x12].z - param_2;
         param_1[1].model.bone_origins[0x12].z = param_2;

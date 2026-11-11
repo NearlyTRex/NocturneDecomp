@@ -6,10 +6,20 @@
 #include "system/basetypes.h"
 
 // Structure: SPlayerActionState
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// 10 dwords: FUN_004b9960 writes +0x0..+0x24 and zeroes strafe_speed at +0x28. bw3 adds keyAction at +0x10 and quick_turn at the end.
+// Ghidra size: 0x28 (40 bytes)
 #pragma pack(push, 1)
 typedef struct SPlayerActionState {
+    int walk; // 0x0, FUN_004b9960 stores the edge of CGame+0x28 (keyWalk, readIniData 004d8e70)
+    int backup; // 0x4, FUN_004b9960 stores the edge of CGame+0x2c (keyBackup, readIniData 004d8e70)
+    int run; // 0x8, FUN_004b9960 stores the edge of CGame+0x30 (keyRun, readIniData 004d8e70)
+    int fire; // 0xc, FUN_004b9960 stores the edge of CGame+0x48 (keyFire, zeroed when the hero is dead, readIniData 004d8e70)
+    int action; // 0x10, FUN_004b9960 stores the edge of CGame+0x4c (keyAction, zeroed with fire when the hero is dead, readIniData 004d8e70)
+    int use_item; // 0x14, FUN_004b9960 stores the edge of CGame+0x50 (keyUseItem, readIniData 004d8e70)
+    int light; // 0x18, FUN_004b9960 stores the edge of CGame+0x54 (keyLight, readIniData 004d8e70)
+    int draw; // 0x1c, FUN_004b9960 stores the edge of CGame+0x6c (keyDraw; also set to 1 when keyWeapon1..5 select a weapon, readIniData 004d8e70)
+    int jump; // 0x20, FUN_004b9960 stores CGame+0x70; no ini key, but it sits between keyDraw (0x6c) and keyQuickTurn (0x74) as bw1's keyJump does (0x6c between 0x68 and 0x70)
+    int quick_turn; // 0x24, FUN_004b9960 stores CGame+0x74 (keyQuickTurn, readIniData 004d8e70)
 } SPlayerActionState;
 #pragma pack(pop)
 

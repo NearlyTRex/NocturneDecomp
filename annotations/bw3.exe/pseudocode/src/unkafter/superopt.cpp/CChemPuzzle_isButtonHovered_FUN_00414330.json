@@ -1,0 +1,168 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 43,
+    "complexity_score": 83,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 6,
+    "suspect_types": [
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 56
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00414330",
+    "address_range": [
+      [
+        "00414330",
+        "00414394"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "unkafter_superopt.cpp_CChemPuzzle_isButtonHovered_FUN_00414330",
+    "signature": "undefined4 __cdecl unkafter_superopt_cpp_CChemPuzzle_isButtonHovered_FUN_00414330(CChemPuzzle *this_ptr,int param_2)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01c5fadc",
+      "name": "DAT_01c5fadc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5fae0",
+      "name": "DAT_01c5fae0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.5675675675675675,
+    "instruction_count": 37,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 12,
+      "CBRANCH": 4,
+      "COPY": 33,
+      "INT_ADD": 18,
+      "INT_AND": 46,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 28,
+      "INT_LEFT": 4,
+      "INT_LESS": 6,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 10,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 16,
+      "INT_SUB": 11,
+      "INT_XOR": 3,
+      "LOAD": 14,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 3
+    },
+    "pcode_op_count": 243
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CChemPuzzle *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint __cdecl unkafter_superopt_cpp_CChemPuzzle_isButtonHovered_FUN_00414330(CChemPuzzle *this_ptr,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = this_ptr->buttons[param_2].x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = this_ptr->buttons[param_2].y;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((((iVar1 <= _DAT_01c5fadc) && (_DAT_01c5fadc <= this_ptr->buttons[param_2].width + iVar1)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(iVar2 <= _DAT_01c5fae0)) && (_DAT_01c5fae0 <= this_ptr->buttons[param_2].height + iVar2)) {",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CChemPuzzle",
+        "offset": 48,
+        "vtable_addr": "005dbee4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

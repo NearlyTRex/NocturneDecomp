@@ -10,7 +10,7 @@
 ;   engine_dosio.cpp_reopenFileStream_FUN_00465a80 at 00465ac0
 ;   engine_pod.cpp_FUN_00512fb0 at 00513005
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00569790 at 00569819
-;   support_trstream.cpp_FUN_00573fc0 at 00573ff3
+;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0 at 00573ff3
 ;
 ; Referenced Globals:
 ;   void* PTR_engine_dosio.cpp_getRelativeFilePath_FUN_00465600_005f2ad0 = 00465600

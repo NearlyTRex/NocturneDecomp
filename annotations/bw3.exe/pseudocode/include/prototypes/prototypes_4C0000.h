@@ -37,7 +37,7 @@
 // =============================================================================
 
 void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr);
-void core_game_cpp_FUN_004c07b0(int param_1,undefined4 *param_2);
+void core_game_cpp_FUN_004c07b0(float param_1,undefined4 *param_2);
 void core_game_cpp_FUN_004c4870(int param_1);
 void core_game_cpp_FUN_004c48b0(void);
 void core_game_cpp_FUN_004c49f0(void);

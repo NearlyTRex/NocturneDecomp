@@ -11,7 +11,7 @@
 CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_ctor_FUN_004a7550(CFlashlight *this_ptr)
 
 {
-  uint uVar1;
+  float fVar1;
   CWeapon *pCVar2;
   
   pCVar2 = core_weapon_cpp_CWeapon_ctor_FUN_0057ad70(&this_ptr->base);
@@ -23,9 +23,9 @@ CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_ctor_FUN_004a7550(CFlashligh
   pCVar2->weapon_type = WEAPON_TYPE_FLASHLIGHT;
   pCVar2->can_penetrate = 0;
   pCVar2->bolt_velocity = 0.0;
-  uVar1 = _DAT_005e008c;
+  fVar1 = _DAT_005e008c;
   pCVar2->fire_cooldown = 0;
-  *(uint *)&pCVar2->field_0x568 = 0;
-  *(uint *)&pCVar2->field_0x564 = uVar1;
+  pCVar2->ammo_count = 0;
+  pCVar2->weight = fVar1;
   return (CFlashlight *)pCVar2;
 }

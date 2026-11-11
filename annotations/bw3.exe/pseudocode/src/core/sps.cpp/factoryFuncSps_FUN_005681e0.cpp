@@ -11,7 +11,7 @@ void core_sps_cpp_factoryFuncSps_FUN_005681e0(void)
 {
   CSps *this_ptr;
   
-  this_ptr = (CSps *)debugAllocTracked1(0x594);
+  this_ptr = (CSps *)operator_new(0x594);
   if (this_ptr == (CSps *)0x0) {
     return;
   }

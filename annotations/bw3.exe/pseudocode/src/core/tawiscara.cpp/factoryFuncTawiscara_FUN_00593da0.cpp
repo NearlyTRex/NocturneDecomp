@@ -11,7 +11,7 @@ void core_tawiscara_cpp_factoryFuncTawiscara_FUN_00593da0(void)
 {
   CTawiscara *this_ptr;
   
-  this_ptr = (CTawiscara *)debugAllocTracked1(0xd09c);
+  this_ptr = (CTawiscara *)operator_new(0xd09c);
   if (this_ptr == (CTawiscara *)0x0) {
     return;
   }

@@ -60,11 +60,14 @@ void core_cloth_cpp_FUN_0043f160(int param_1,int param_2,int param_3)
     CStack_58.y = (int)ROUND((float)(fVar4 * (float10)*(float *)(iVar1 + 0x18)) * _DAT_005dd3b0);
     CStack_58.z = (int)ROUND(_DAT_005dd3b0 * 0.0);
     engine_special_cpp_FUN_005632a3
-              ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + iVar2),&CStack_58);
+              ((SProjectedVertex *)
+               ((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_x + iVar2),
+               &CStack_58);
     iStack_28 = vertex_index1 + 0xd;
     engine_special_cpp_FUN_005632a3
-              ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + iStack_1c),
-               (CVector3i *)&stack0xffffff90);
+              ((SProjectedVertex *)
+               ((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_x + iStack_1c)
+               ,(CVector3i *)&stack0xffffff90);
     if (0 < vertex_index1) {
       engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046d550
                 (DAT_005f2afc,vertex_index1,iStack_28);

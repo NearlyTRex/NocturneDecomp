@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 159,
+    "complexity_score": 134,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 39,
-    "suspect_count": 10,
+    "suspect_count": 8,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
-      "pointer_truncation",
-      "unnamed_field"
+      "pointer_truncation"
     ],
     "total_lines": 63
   },
@@ -139,16 +138,8 @@
       "line": 20,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x22d4 = 1;",
+      "text": "pCVar2[-1].part_data.texture_set_indices[0x29] = 1;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x22d4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x22d4 = 1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
@@ -163,16 +154,8 @@
       "line": 42,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "return (CSpawner *)&pCVar2[-1].field_0x21d4;",
+      "text": "return (CSpawner *)(pCVar2[-1].part_data.visibility_flags + 0x25);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x21d4",
-      "severity": "mild",
-      "text": "return (CSpawner *)&pCVar2[-1].field_0x21d4;",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer value `&pCVar2[-1].accumulated_root_motion.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

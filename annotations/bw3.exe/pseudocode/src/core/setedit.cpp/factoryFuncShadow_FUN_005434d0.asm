@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_shadow.cpp_CShadow_ctor_FUN_00543500
-;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xd0e8                         ; 005434d0
         ;   Label: core_setedit.cpp_factoryFuncShadow_FUN_005434d0
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 005434d5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 005434d5
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 005434da
     TEST EAX,EAX                        ; 005434dd
     JNZ 0x005434e2                      ; 005434df

@@ -11,9 +11,9 @@ int __cdecl core_storm_cpp_CStorm_renderOpaque_FUN_00568c60(CStorm *this_ptr)
 {
   int iVar1;
   
-  if ((*(uint *)&this_ptr->field_0x300 & 0x7fffffff) != 0) {
+  if (ABS((this_ptr->base).fire_cooldown_timer) != 0.0) {
     return 0;
   }
-  iVar1 = core_weapon_cpp_CWeapon_renderOpaque_FUN_0057af80((CWeapon *)this_ptr);
+  iVar1 = core_weapon_cpp_CWeapon_renderOpaque_FUN_0057af80(&this_ptr->base);
   return iVar1;
 }

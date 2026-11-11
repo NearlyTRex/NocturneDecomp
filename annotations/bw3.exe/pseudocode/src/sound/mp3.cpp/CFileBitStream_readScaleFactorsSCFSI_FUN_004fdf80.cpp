@@ -14,28 +14,28 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_004fdf80(CFi
   int iVar3;
   int iVar4;
   int iVar5;
-  SMpegSubbandScalefactors *pSVar6;
-  SMpegSubbandAllocation *pSVar7;
-  SMpegSubbandSCFSI *pSVar8;
+  uint *puVar6;
+  uint *puVar7;
+  int *piVar8;
   int local_28;
   int local_24;
-  SMpegSubbandAllocation *local_14;
+  int *local_14;
   
-  iVar1 = *(int *)(frame + 0x10);
-  iVar3 = *(int *)(frame + 0x18);
+  iVar1 = frame->channel_count;
+  iVar3 = frame->sblimit;
   if (0 < iVar3) {
     local_28 = 0;
     do {
       iVar4 = 0;
       if (0 < iVar1) {
-        pSVar7 = allocation_array + local_28;
+        piVar8 = (int *)((int)allocation_array->bit_allocations + local_28);
         do {
-          if (*(int *)pSVar7 != 0) {
+          if (*piVar8 != 0) {
             uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0(this_ptr,2);
-            *(uint *)(scfsi_array + local_28 + iVar4 * 0x80) = uVar2 & 0xff;
+            *(uint *)((int)scfsi_array[iVar4].scfsi + local_28) = uVar2 & 0xff;
           }
           iVar4 = iVar4 + 1;
-          pSVar7 = pSVar7 + 0x80;
+          piVar8 = piVar8 + 0x20;
         } while (iVar4 < iVar1);
       }
       local_28 = local_28 + 4;
@@ -46,11 +46,11 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_004fdf80(CFi
     do {
       iVar5 = 0;
       if (0 < iVar1) {
-        pSVar8 = scfsi_array + iVar4;
+        puVar7 = (uint *)((int)scfsi_array->scfsi + iVar4);
         do {
           iVar5 = iVar5 + 1;
-          *(uint *)pSVar8 = 0;
-          pSVar8 = pSVar8 + 0x80;
+          *puVar7 = 0;
+          puVar7 = puVar7 + 0x20;
         } while (iVar5 < iVar1);
       }
       iVar4 = iVar4 + 4;
@@ -61,46 +61,46 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_004fdf80(CFi
     do {
       iVar4 = 0;
       if (0 < iVar1) {
-        local_14 = allocation_array + local_24;
-        pSVar6 = scalefactor_array + local_24;
+        local_14 = (int *)((int)allocation_array->bit_allocations + local_24);
+        puVar6 = (uint *)((int)&scalefactor_array->codes + local_24);
         do {
-          if (*(int *)local_14 == 0) {
-            *(uint *)(pSVar6 + 0x100) = 0x3f;
-            *(uint *)(pSVar6 + 0x80) = *(uint *)(pSVar6 + 0x100);
-            *(uint *)pSVar6 = *(uint *)(pSVar6 + 0x100);
+          if (*local_14 == 0) {
+            puVar6[0x40] = 0x3f;
+            puVar6[0x20] = puVar6[0x40];
+            *puVar6 = puVar6[0x40];
             goto switchD_004fe090_default;
           }
-          switch(*(uint *)(scfsi_array + local_24 + iVar4 * 0x80)) {
+          switch(*(uint *)((int)scfsi_array[iVar4].scfsi + local_24)) {
           case 0:
             uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0(this_ptr,6);
-            *(uint *)pSVar6 = uVar2;
+            *puVar6 = uVar2;
             uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0(this_ptr,6);
-            *(uint *)(pSVar6 + 0x80) = uVar2;
+            puVar6[0x20] = uVar2;
             goto LAB_004fe0b8;
           case 1:
             uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0(this_ptr,6);
-            *(uint *)(pSVar6 + 0x80) = uVar2;
-            *(uint *)pSVar6 = uVar2;
+            puVar6[0x20] = uVar2;
+            *puVar6 = uVar2;
 LAB_004fe0b8:
             uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0(this_ptr,6);
-            *(uint *)(pSVar6 + 0x100) = uVar2;
+            puVar6[0x40] = uVar2;
             break;
           case 2:
             uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0(this_ptr,6);
-            *(uint *)(pSVar6 + 0x100) = uVar2;
-            *(uint *)(pSVar6 + 0x80) = uVar2;
-            *(uint *)pSVar6 = uVar2;
+            puVar6[0x40] = uVar2;
+            puVar6[0x20] = uVar2;
+            *puVar6 = uVar2;
             break;
           case 3:
             uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0(this_ptr,6);
-            *(uint *)pSVar6 = uVar2;
+            *puVar6 = uVar2;
             uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0(this_ptr,6);
-            *(uint *)(pSVar6 + 0x100) = uVar2;
-            *(uint *)(pSVar6 + 0x80) = uVar2;
+            puVar6[0x40] = uVar2;
+            puVar6[0x20] = uVar2;
           }
 switchD_004fe090_default:
-          pSVar6 = pSVar6 + 0x180;
-          local_14 = local_14 + 0x80;
+          puVar6 = puVar6 + 0x60;
+          local_14 = local_14 + 0x20;
           iVar4 = iVar4 + 1;
         } while (iVar4 < iVar1);
       }
@@ -112,13 +112,13 @@ switchD_004fe090_default:
     do {
       iVar4 = 0;
       if (0 < iVar1) {
-        pSVar6 = scalefactor_array + iVar3;
+        puVar7 = (uint *)((int)&scalefactor_array->codes + iVar3);
         do {
-          *(uint *)(pSVar6 + 0x100) = 0x3f;
-          *(uint *)(pSVar6 + 0x80) = *(uint *)(pSVar6 + 0x100);
+          puVar7[0x40] = 0x3f;
+          puVar7[0x20] = puVar7[0x40];
           iVar4 = iVar4 + 1;
-          *(uint *)pSVar6 = *(uint *)(pSVar6 + 0x100);
-          pSVar6 = pSVar6 + 0x180;
+          *puVar7 = puVar7[0x40];
+          puVar7 = puVar7 + 0x60;
         } while (iVar4 < iVar1);
       }
       iVar3 = iVar3 + 4;

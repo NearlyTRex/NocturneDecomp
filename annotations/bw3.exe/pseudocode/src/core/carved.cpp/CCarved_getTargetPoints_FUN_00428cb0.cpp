@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_carved_cpp_CCarved_getTargetPoints_FUN_00428cb0(CCarved *this_ptr,CVector3f *out_points_array)
@@ -29,11 +30,11 @@ int __cdecl core_carved_cpp_CCarved_getTargetPoints_FUN_00428cb0(CCarved *this_p
   float afStack_30 [2];
   CVector3f CStack_28;
   int iStack_1c;
-  byte *puStack_18;
+  CDeformableModelInstance *pCStack_18;
   int iStack_14;
   
   bVar3 = 0;
-  core_skeleton_cpp_FUN_0054dcc0(&this_ptr->field_0x158,*(uint *)&this_ptr->field_0xd09c);
+  core_skeleton_cpp_FUN_0054dcc0(&(this_ptr->base).base.model,this_ptr->bone_indices[9]);
   CStack_7c.x = fStack_88;
   *(float *)((int)&CStack_7c + (uint)bVar3 * -8 + 4) = afStack_84[(uint)bVar3 * -2];
   *(float *)((int)&CStack_7c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
@@ -43,14 +44,14 @@ int __cdecl core_carved_cpp_CCarved_getTargetPoints_FUN_00428cb0(CCarved *this_p
     out_points_array->y = CStack_7c.y;
     out_points_array->z = CStack_7c.z;
   }
-  puStack_18 = &this_ptr->field_0x158;
+  pCStack_18 = &(this_ptr->base).base.model;
   iStack_1c = 0;
   iStack_14 = 1;
   do {
-    switch((iStack_1c + *(int *)&this_ptr->field_0x6c) % 4) {
+    switch((iStack_1c + (this_ptr->base).base.base.direction_hint) % 4) {
     case 0:
-      if (*(int *)(&this_ptr->field_0x2298 + *(int *)&this_ptr->field_0xd0a4 * 4) != 0) {
-        core_skeleton_cpp_FUN_0054dcc0(puStack_18,*(uint *)&this_ptr->field_0xd08c);
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
+        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,this_ptr->bone_indices[5]);
         CStack_40.x = fStack_34;
         *(float *)((int)&CStack_40 + (uint)bVar3 * -8 + 4) = afStack_30[(uint)bVar3 * -2];
         *(float *)((int)&CStack_40 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
@@ -75,8 +76,8 @@ LAB_00428dfb:
       }
       break;
     case 1:
-      if (*(int *)(&this_ptr->field_0x2298 + *(int *)&this_ptr->field_0xd0ac * 4) != 0) {
-        core_skeleton_cpp_FUN_0054dcc0(puStack_18,*(uint *)&this_ptr->field_0xd090);
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
+        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,this_ptr->bone_indices[6]);
         CStack_94.x = afStack_60[2];
         *(float *)((int)&CStack_94 + (uint)bVar3 * -8 + 4) = afStack_60[(uint)bVar3 * -2 + 3];
         *(float *)((int)&CStack_94 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
@@ -92,8 +93,8 @@ LAB_00428dfb:
       }
       break;
     case 2:
-      if (*(int *)(&this_ptr->field_0x2298 + *(int *)&this_ptr->field_0xd0bc * 4) != 0) {
-        core_skeleton_cpp_FUN_0054dcc0(puStack_18,*(uint *)&this_ptr->field_0xd078);
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[6]] != 0) {
+        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,this_ptr->bone_indices[0]);
         pCVar2 = out_points_array + iStack_14;
         CStack_28.x = fStack_a0;
         *(uint *)((int)&CStack_28 + (uint)bVar3 * -8 + 4) =
@@ -110,8 +111,8 @@ LAB_00428df8:
       }
       break;
     case 3:
-      if (*(int *)(&this_ptr->field_0x2298 + *(int *)&this_ptr->field_0xd0b8 * 4) != 0) {
-        core_skeleton_cpp_FUN_0054dcc0(puStack_18,*(uint *)&this_ptr->field_0xd0a0);
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[5]] != 0) {
+        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,this_ptr->bone_indices[10]);
         CStack_4c.x = fStack_64;
         *(float *)((int)&CStack_4c + (uint)bVar3 * -8 + 4) = afStack_60[(uint)bVar3 * -2];
         *(float *)((int)&CStack_4c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =

@@ -14,7 +14,7 @@ uint core_shadow_cpp_FUN_00545bd0(int param_1)
   if (*(int *)(param_1 + 0x70) != 2) {
     pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
                        ((CMotionController *)(param_1 + 0x158));
-    switch(*(uint *)(pSVar1 + 0x24)) {
+    switch(pSVar1->state_index) {
     case 0xd:
     case 0xe:
       return 1;

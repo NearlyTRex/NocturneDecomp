@@ -48,11 +48,11 @@ void core_charactr_cpp_FUN_00433c60(CCharacter *param_1,float param_2)
   
   bVar6 = 0;
   if ((param_1->was_rendered_opaque != 0) &&
-     ((*(int *)&param_1->field_0x27a8 != 0 ||
+     ((param_1->is_spectral != 0 ||
       (EVar1 = (*(((param_1->base).vtable._uc)->_uc).getDeathState)(param_1),
       EVar1 == DEATH_STATE_ALIVE)))) {
-    if (*(int *)&param_1->field_0x27a8 == 0) {
-      if (((float)_DAT_005b8866 <= *(float *)&g_CDemonSetPtr->field_0x15ac84) &&
+    if (param_1->is_spectral == 0) {
+      if (((float)_DAT_005b8866 <= (g_CDemonSetPtr->active_fog).temperature) &&
          (iVar4 = core_actor_cpp_isOfClass_FUN_0040c790(&param_1->base,"?CZombieDog" + 1),
          iVar4 == 0)) {
         return;
@@ -77,8 +77,8 @@ void core_charactr_cpp_FUN_00433c60(CCharacter *param_1,float param_2)
           local_ac = 0x3e4ccccd;
           local_a8 = 0x3f000000;
           local_b0 = 0;
-          core_xform_cpp_FUN_00583260(&stack0xffffff50,&(param_1->model).field_0xe80 + iVar4 * 0x30)
-          ;
+          core_xform_cpp_FUN_00583260
+                    (&stack0xffffff50,(param_1->model).bone_transform.bone_model_matrices + iVar4);
           piVar9 = aiStack_a0 + 2;
           aiStack_a0[2] = local_74;
           afStack_94[(uint)bVar6 * -2] = afStack_70[(uint)bVar6 * -2];
@@ -109,7 +109,8 @@ void core_charactr_cpp_FUN_00433c60(CCharacter *param_1,float param_2)
           afStack_94[2] = 0.0;
           afStack_94[4] = 0.5;
           afStack_94[3] = 0.2;
-          core_xform_cpp_FUN_00583260(afStack_94 + 2,&(param_1->model).field_0xe80 + iVar4 * 0x30);
+          core_xform_cpp_FUN_00583260
+                    (afStack_94 + 2,(param_1->model).bone_transform.bone_model_matrices + iVar4);
           pfVar8 = afStack_70 + 2;
           afStack_70[2] = (float)local_44;
           afStack_70[(uint)bVar6 * -2 + 3] = afStack_40[(uint)bVar6 * -2];

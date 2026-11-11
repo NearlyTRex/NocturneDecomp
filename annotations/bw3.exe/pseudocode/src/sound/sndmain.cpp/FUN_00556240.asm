@@ -18,7 +18,7 @@
 ;   core_sound.cpp_CSound_process_FUN_0055ff40 at 0056056a
 ;   core_sound.cpp_FUN_0055f6ae at 0055f9e4
 ;   core_sound.cpp_playSfxInternal_FUN_0055f020 at 0055f257
-;   unkafter_bmppuzzl.cpp_FUN_00412ee0 at 00413198
+;   unkafter_bmppuzzl.cpp_CAudioRecPuzzle_playClip_FUN_00412ee0 at 00413198
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d2507
@@ -179,7 +179,7 @@ section .text
     TEST EBX,EBX                        ; 00556377
     JZ 0x00556517                       ; 00556379
         ;   XREF to: 00556517 (CONDITIONAL_JUMP)  ; LAB_00556517
-    CMP dword ptr [EBX + 0x160],-0x1    ; 0055637f | g_SfxSamples[0].field12_0x160
+    CMP dword ptr [EBX + 0x160],-0x1    ; 0055637f | g_SfxSamples[0].streaming_slot_index
     JZ 0x0055658d                       ; 00556386
         ;   XREF to: 0055658d (CONDITIONAL_JUMP)  ; LAB_0055658d
     LEA EAX,[ESP + 0x100]               ; 0055638c

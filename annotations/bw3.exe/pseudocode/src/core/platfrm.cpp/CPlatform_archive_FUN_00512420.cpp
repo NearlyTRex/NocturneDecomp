@@ -14,7 +14,7 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_00512420(CPlatform *this_ptr
   CPlatform *pCVar1;
   int iVar2;
   int iStack_1c;
-  uint uStack_18;
+  CDemonActor *pCStack_18;
   int iStack_14;
   
   core_actor_cpp_CDemonActor_archive_FUN_0040c280(&this_ptr->base);
@@ -80,8 +80,8 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_00512420(CPlatform *this_ptr
       pCVar1 = this_ptr;
       if (0 < iStack_1c) {
         do {
-          core_actor_cpp_archiveActor_FUN_0040b930(&uStack_18,"attach actor");
-          *(uint *)pCVar1->attach_actors = uStack_18;
+          core_actor_cpp_archiveActor_FUN_0040b930(&pCStack_18,"attach actor");
+          pCVar1->attach_actors[0].actor = pCStack_18;
           iVar2 = iVar2 + 1;
           pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);
         } while (iVar2 < iStack_1c);
@@ -91,7 +91,7 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_00512420(CPlatform *this_ptr
       iStack_14 = 0;
       pCVar1 = this_ptr;
       do {
-        if (*(int *)pCVar1->attach_actors != 0) {
+        if (pCVar1->attach_actors[0].actor != (CDemonActor *)0x0) {
           iStack_14 = iStack_14 + 1;
         }
         pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);
@@ -100,9 +100,9 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_00512420(CPlatform *this_ptr
       core_actor_cpp_archiveInteger_FUN_0040b8b0(&iStack_14,"attachCount");
       pCVar1 = this_ptr;
       do {
-        if (*(int *)pCVar1->attach_actors != 0) {
+        if (pCVar1->attach_actors[0].actor != (CDemonActor *)0x0) {
           core_actor_cpp_archiveActor_FUN_0040b930
-                    (this_ptr->attach_actors + iVar2 * 0x34,"attach actor");
+                    (this_ptr->attach_actors + iVar2,"attach actor");
         }
         iVar2 = iVar2 + 1;
         pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);

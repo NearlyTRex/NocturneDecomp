@@ -8,6 +8,7 @@
 #include "types/classes/CColor3i.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
+#include "types/enums/EAmmoType.h"
 #include "types/enums/EFireMode.h"
 #include "types/enums/EWeaponState.h"
 #include "types/enums/EWeaponType.h"
@@ -30,10 +31,19 @@ typedef struct CWeapon {
     float fire_cooldown_timer; // 0x300
     struct CDemonActor* carried_by_actor; // 0x304
     CBox physics_box; // 0x308
-    char field_1376[32]; // 0x560
+    float ground_height; // 0x560
+    float weight; // 0x564
+    int ammo_count; // 0x568
+    EAmmoType ammo_type; // 0x56c
+    int infinite_ammo; // 0x570, Added in this build
+    int weapon_class; // 0x574, Added in this build
+    int number_of_hands_needed; // 0x578, Added in this build
+    int draw_crosshair; // 0x57c, Added in this build
     float sim_timer; // 0x580
     int is_rendered; // 0x584
-    char field_1416[12]; // 0x588
+    int render_alpha; // 0x588, Added in this build
+    int ammo_per_shot; // 0x58c, Added in this build
+    int uses_hero_ammo; // 0x590, Added in this build
 } CWeapon;
 #pragma pack(pop)
 

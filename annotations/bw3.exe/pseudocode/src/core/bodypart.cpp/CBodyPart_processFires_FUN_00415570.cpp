@@ -12,54 +12,53 @@ void __cdecl core_bodypart_cpp_CBodyPart_processFires_FUN_00415570(CBodyPart *th
 
 {
   float fVar1;
-  uint uVar2;
-  SBodyPartFire *pSVar3;
-  byte bVar4;
+  SBodyPartFire *pSVar2;
+  byte bVar3;
   float afStackY_102c [1013];
   float local_48;
-  uint local_40;
-  uint local_3c;
-  uint local_38;
+  float local_40;
+  float local_3c;
+  float local_38;
   float local_24;
   SBodyPartFire *local_20;
   int local_1c;
-  uint *local_18;
+  CLocation *local_18;
   
-  bVar4 = 0;
+  bVar3 = 0;
   if (this_ptr->fire_count != 0) {
-    fVar1 = *(float *)&this_ptr->field_0xccc - delta_time;
-    *(float *)&this_ptr->field_0xccc = fVar1;
+    fVar1 = (float)this_ptr->fire_time_remaining - delta_time;
+    this_ptr->fire_time_remaining = (int)fVar1;
     if (fVar1 < 0.0) {
       this_ptr->fire_count = 0;
-      *(uint *)&this_ptr->field_0xccc = 0;
+      this_ptr->fire_time_remaining = 0;
       return;
     }
     local_1c = 0;
     if (0 < this_ptr->fire_count) {
       local_20 = this_ptr->fires;
-      local_18 = (uint *)&this_ptr->fires[0].field_0x2c;
+      local_18 = &this_ptr->fires[0].flame.base.location;
       do {
-        pSVar3 = local_20 + local_1c;
-        core_actor_cpp_FUN_00408b80(this_ptr,pSVar3);
-        uVar2 = local_38;
-        *(uint *)((int)&stack0xffffffc0 + (uint)bVar4 * -8) =
-             *(uint *)(&stack0xffffffcc + (uint)bVar4 * -8);
-        *(uint *)((int)&stack0xffffffc4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-             *(uint *)(&stack0xffffffd0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-        *local_18 = uVar2;
-        local_18[1] = local_40;
-        local_18[2] = local_3c;
+        pSVar2 = local_20 + local_1c;
+        core_actor_cpp_FUN_00408b80(this_ptr,pSVar2);
+        fVar1 = local_38;
+        *(uint *)((int)&stack0xffffffc0 + (uint)bVar3 * -8) =
+             *(uint *)(&stack0xffffffcc + (uint)bVar3 * -8);
+        *(uint *)((int)&stack0xffffffc4 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
+             *(uint *)(&stack0xffffffd0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+        (local_18->position).x = fVar1;
+        (local_18->position).y = local_40;
+        (local_18->position).z = local_3c;
         local_48 = 1.0;
-        if (*(float *)&this_ptr->field_0xccc < (float)_DAT_005b6c72) {
-          local_48 = *(float *)&this_ptr->field_0xccc * (float)_DAT_005b6c6a;
+        if ((float)this_ptr->fire_time_remaining < (float)_DAT_005b6c72) {
+          local_48 = (float)this_ptr->fire_time_remaining * (float)_DAT_005b6c6a;
         }
         local_24 = local_48 * (float)_DAT_005b6c5a;
         fVar1 = (float)_DAT_005b6c62;
-        *(float *)&pSVar3->field_0x164 = local_24;
-        *(float *)&pSVar3->field_0x168 = local_48 * fVar1;
-        *(float *)&pSVar3->field_0x16c = local_24;
-        core_flame_cpp_CFlame_process_FUN_004a5b10((CFlame *)&pSVar3->field_0xc,delta_time);
-        local_18 = local_18 + 0xac;
+        (pSVar2->flame).flame_size.x = local_24;
+        (pSVar2->flame).flame_size.y = local_48 * fVar1;
+        (pSVar2->flame).flame_size.z = local_24;
+        core_flame_cpp_CFlame_process_FUN_004a5b10(&pSVar2->flame,delta_time);
+        local_18 = local_18 + 0x2b;
         local_1c = local_1c + 1;
       } while (local_1c < this_ptr->fire_count);
     }

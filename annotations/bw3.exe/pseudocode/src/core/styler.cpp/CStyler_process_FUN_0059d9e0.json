@@ -2,25 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 1012,
+    "complexity_score": 415,
     "cross_reference_count": 0,
     "function_call_count": 16,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 157,
-    "suspect_count": 81,
+    "pseudocode_lines": 170,
+    "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "raw_address_constant",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
-      "unresolved_funcptr",
+      "unrolled_memcpy",
       "unrolled_memset",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 519
+    "total_lines": 532
   },
   "cross_references": [],
   "function": {
@@ -252,8 +252,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -261,642 +269,146 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 14,
+      "line": 20,
       "match": "afStackY_1064",
       "severity": "moderate",
       "text": "float afStackY_1064 [1014];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x487c4",
-      "severity": "mild",
-      "text": "if (1.0 <= *(float *)&this_ptr->field_0x487c4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 38,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x148))(this_ptr,delta_time);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "iVar5 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x148))(this_ptr,delta_time);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x24a4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x24a4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x24a0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x24a0 = *(uint *)&this_ptr->field_0x24a4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x24a4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x24a0 = *(uint *)&this_ptr->field_0x24a4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x249c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x249c = *(uint *)&this_ptr->field_0x24a0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x24a0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x249c = *(uint *)&this_ptr->field_0x24a0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0xcdcc",
-      "severity": "mild",
-      "text": "fStack_80 = delta_time * *(float *)&this_ptr->field_0xcdcc;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 49,
+      "line": 57,
       "match": "&stack0xffffff80",
       "severity": "moderate",
-      "text": "((CMotionController *)&this_ptr->field_0x158,&stack0xffffff80);",
+      "text": "iVar10 = core_motion_cpp_CMotionController_advance_FUN_004fbb70(&pCVar2->base,&stack0xffffff80);",
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CMotionController *)&this_ptr->field_0x158,&stack0xffffff80);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CMotionController *)&this_ptr->field_0x158);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x2524",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2524 = *(uint *)&this_ptr->field_0x24a4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x24a4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2524 = *(uint *)&this_ptr->field_0x24a4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0xcdcc",
-      "severity": "mild",
-      "text": "core_charactr_cpp_FUN_00434850(this_ptr,delta_time * *(float *)&this_ptr->field_0xcdcc);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x2528",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x2528 = *(float *)&this_ptr->field_0x2528 * (float)_DAT_005d9f19;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x2528",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x2528 = *(float *)&this_ptr->field_0x2528 * (float)_DAT_005d9f19;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0x487c4",
-      "severity": "mild",
-      "text": "if (1.0 <= *(float *)&this_ptr->field_0x487c4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CMotionController *)&this_ptr->field_0x158);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 70,
-      "match": "field_0x47b90",
-      "severity": "mild",
-      "text": "(((*(int *)&this_ptr->field_0x47b90 == 0 &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 71,
-      "match": "field_0x487c4",
-      "severity": "mild",
-      "text": "(fVar3 = delta_time * (float)_DAT_005d9f21 + *(float *)&this_ptr->field_0x487c4,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 72,
-      "match": "field_0x487c4",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x487c4 = fVar3, 1.0 <= fVar3)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 73,
-      "match": "field_0x47b94",
-      "severity": "mild",
-      "text": "(*(CDemonActor **)&this_ptr->field_0x47b94 != (CDemonActor *)0x0)))) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 75,
-      "match": "field_0x47b94",
-      "severity": "mild",
-      "text": "(0x01D81080,*(CDemonActor **)&this_ptr->field_0x47b94);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 77,
-      "match": "field_0x47b94",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x47b94 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 81,
-      "match": "field_0x249c",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408b00(this_ptr,&this_ptr->field_0x249c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 82,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "puVar1 = &this_ptr->field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 88,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x24 = *(float *)&this_ptr->field_0x24 + fStack_3c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 88,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x24 = *(float *)&this_ptr->field_0x24 + fStack_3c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 89,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x28 = *(float *)&this_ptr->field_0x28 + fStack_38;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 89,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x28 = *(float *)&this_ptr->field_0x28 + fStack_38;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 90,
-      "match": "field_0x47b94",
-      "severity": "mild",
-      "text": "iVar5 = *(int *)&this_ptr->field_0x47b94;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 93,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)(iVar5 + 0x24) = *(uint *)&this_ptr->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 94,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(uint *)(iVar5 + 0x28) = *(uint *)&this_ptr->field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 95,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "*(uint *)(iVar5 + 0x2c) = *(uint *)&this_ptr->field_0x2c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 99,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&this_ptr->field_0x158);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 103,
-      "match": "field_0x273c",
-      "severity": "mild",
-      "text": "uVar2 = *(uint *)&this_ptr->field_0x273c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 114,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CMotionController *)&this_ptr->field_0x158,iVar5,1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 120,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CMotionController *)&this_ptr->field_0x158,0,1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 123,
-      "match": "field_0x24a4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x24a4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 124,
-      "match": "field_0x24a0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x24a0 = *(uint *)&this_ptr->field_0x24a4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 124,
-      "match": "field_0x24a4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x24a0 = *(uint *)&this_ptr->field_0x24a4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 125,
-      "match": "field_0x249c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x249c = *(uint *)&this_ptr->field_0x24a0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 125,
-      "match": "field_0x24a0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x249c = *(uint *)&this_ptr->field_0x24a0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 128,
-      "match": "field_0x2518",
-      "severity": "mild",
-      "text": "afStack_60[2] = *(float *)&this_ptr->field_0x2518 * delta_time;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 129,
-      "match": "field_0x251c",
-      "severity": "mild",
-      "text": "afStack_60[3] = *(float *)&this_ptr->field_0x251c * delta_time;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 130,
-      "match": "field_0x2520",
-      "severity": "mild",
-      "text": "fStack_50 = *(float *)&this_ptr->field_0x2520 * delta_time;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 135,
-      "match": "field_0x250c",
-      "severity": "mild",
-      "text": "fStack_28 = fStack_64 + *(float *)&this_ptr->field_0x250c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 136,
-      "match": "field_0x2510",
-      "severity": "mild",
-      "text": "fStack_24 = afStack_60[0] + *(float *)&this_ptr->field_0x2510;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 137,
-      "match": "field_0x2514",
-      "severity": "mild",
-      "text": "fStack_20 = afStack_60[1] + *(float *)&this_ptr->field_0x2514;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 139,
+      "line": 150,
       "match": "&stack0xffffff88",
       "severity": "moderate",
-      "text": "*(float *)((int)&stack0xffffff88 + (uint)bVar7 * -8) = afStack_60[(uint)bVar7 * -2 + 0xf];",
+      "text": "*(float *)((int)&stack0xffffff88 + (uint)bVar12 * -8) = afStack_60[(uint)bVar12 * -2 + 0xf];",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 140,
+      "line": 151,
       "match": "&stack0xffffff8c",
       "severity": "moderate",
-      "text": "*(float *)((int)&stack0xffffff8c + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
+      "text": "*(float *)((int)&stack0xffffff8c + (uint)bVar12 * -8 + (uint)bVar12 * -8) =",
       "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 142,
-      "match": "field_0x249c",
-      "severity": "mild",
-      "text": "fStack_4c = fStack_7c + *(float *)&this_ptr->field_0x249c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 143,
-      "match": "field_0x24a0",
-      "severity": "mild",
-      "text": "fStack_48 = fStack_78 + *(float *)&this_ptr->field_0x24a0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 144,
-      "match": "field_0x24a4",
-      "severity": "mild",
-      "text": "fStack_44 = fStack_74 + *(float *)&this_ptr->field_0x24a4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 149,
-      "match": "field_0x2514",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2514 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 150,
-      "match": "field_0x2510",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2510 = *(uint *)&this_ptr->field_0x2514;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 150,
-      "match": "field_0x2514",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2510 = *(uint *)&this_ptr->field_0x2514;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 151,
-      "match": "field_0x250c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x250c = *(uint *)&this_ptr->field_0x2510;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 151,
-      "match": "field_0x2510",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x250c = *(uint *)&this_ptr->field_0x2510;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 152,
-      "match": "field_0x24a4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x24a4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 153,
-      "match": "field_0x24a0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x24a0 = *(uint *)&this_ptr->field_0x24a4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 153,
-      "match": "field_0x24a4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x24a0 = *(uint *)&this_ptr->field_0x24a4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 154,
-      "match": "field_0x249c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x249c = *(uint *)&this_ptr->field_0x24a0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 154,
-      "match": "field_0x24a0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x249c = *(uint *)&this_ptr->field_0x24a0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 158,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&this_ptr->field_0x158);",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer value `&stack0xffffff88` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 139,
+      "line": 150,
       "match": "(int)&stack0xffffff88",
       "severity": "moderate",
-      "text": "*(float *)((int)&stack0xffffff88 + (uint)bVar7 * -8) = afStack_60[(uint)bVar7 * -2 + 0xf];",
+      "text": "*(float *)((int)&stack0xffffff88 + (uint)bVar12 * -8) = afStack_60[(uint)bVar12 * -2 + 0xf];",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&stack0xffffff8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 140,
+      "line": 151,
       "match": "(int)&stack0xffffff8c",
       "severity": "moderate",
-      "text": "*(float *)((int)&stack0xffffff8c + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
+      "text": "*(float *)((int)&stack0xffffff8c + (uint)bVar12 * -8 + (uint)bVar12 * -8) =",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&CStack_70` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 146,
+      "line": 158,
       "match": "(int)&CStack_70",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_70 + (uint)bVar7 * -8 + 4) = afStack_60[(uint)bVar7 * -2 + 6];",
+      "text": "*(float *)((int)&CStack_70 + (uint)bVar12 * -8 + 4) = afStack_60[(uint)bVar12 * -2 + 6];",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&CStack_70` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 147,
+      "line": 159,
       "match": "(int)&CStack_70",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_70 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =",
+      "text": "*(float *)((int)&CStack_70 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1d81080 assigned to bare local `pCVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 76,
+      "description": "Raw hex address 0x1d81080 assigned to bare local `pCVar9`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar9` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 83,
       "match": "0x1d81080",
       "severity": "moderate",
-      "text": "pCVar4 = 0x01D81080;",
+      "text": "pCVar9 = 0x01D81080;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 43,
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 101,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar8->location).position.x = (pCVar1->position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 49,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "*(uint *)&this_ptr->field_0x24a4 = 0;",
+      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
       "type": "unrolled_memset"
     },
     {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 123,
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 131,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "*(uint *)&this_ptr->field_0x24a4 = 0;",
+      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
       "type": "unrolled_memset"
     },
     {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 149,
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 161,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "*(uint *)&this_ptr->field_0x2514 = 0;",
+      "text": "(this_ptr->base).base.position_delta.z = 0.0;",
       "type": "unrolled_memset"
     },
     {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 152,
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 164,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "*(uint *)&this_ptr->field_0x24a4 = 0;",
+      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
       "type": "unrolled_memset"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 139,
+      "line": 150,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&stack0xffffff88 + (uint)bVar7 * -8) = afStack_60[(uint)bVar7 * -2 + 0xf];",
+      "text": "*(float *)((int)&stack0xffffff88 + (uint)bVar12 * -8) = afStack_60[(uint)bVar12 * -2 + 0xf];",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 140,
+      "line": 151,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&stack0xffffff8c + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
+      "text": "*(float *)((int)&stack0xffffff8c + (uint)bVar12 * -8 + (uint)bVar12 * -8) =",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 146,
+      "line": 158,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_70 + (uint)bVar7 * -8 + 4) = afStack_60[(uint)bVar7 * -2 + 6];",
+      "text": "*(float *)((int)&CStack_70 + (uint)bVar12 * -8 + 4) = afStack_60[(uint)bVar12 * -2 + 6];",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 147,
+      "line": 159,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_70 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =",
+      "text": "*(float *)((int)&CStack_70 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =",
       "type": "pointer_cast"
     }
   ],

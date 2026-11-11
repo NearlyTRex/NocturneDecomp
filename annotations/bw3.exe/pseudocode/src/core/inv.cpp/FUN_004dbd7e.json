@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 224,
+    "complexity_score": 239,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 59,
-    "suspect_count": 16,
+    "suspect_count": 17,
     "suspect_types": [
+      "shadow_pointer_walk",
       "unnamed_param"
     ],
     "total_lines": 183
@@ -139,7 +140,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x338) != 0) {",
+      "text": "if (param_1->selected_weapon != (CWeapon *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -155,7 +156,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x10)) {",
+      "text": "if (0 < param_1->item_count) {",
       "type": "unnamed_param"
     },
     {
@@ -163,7 +164,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x338) == *(int *)(pCVar4 + 0x14)) break;",
+      "text": "if (param_1->selected_weapon == (CWeapon *)pCVar4->items[0]) break;",
       "type": "unnamed_param"
     },
     {
@@ -171,7 +172,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar2 < *(int *)(param_1 + 0x10));",
+      "text": "} while (iVar2 < param_1->item_count);",
       "type": "unnamed_param"
     },
     {
@@ -187,7 +188,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (iVar2 < *(int *)(param_1 + 0x10)) {",
+      "text": "if (iVar2 < param_1->item_count) {",
       "type": "unnamed_param"
     },
     {
@@ -195,7 +196,7 @@
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = *(int *)(param_1 + 0x10) + -1;",
+      "text": "iVar2 = param_1->item_count + -1;",
       "type": "unnamed_param"
     },
     {
@@ -203,15 +204,15 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + iVar2 * 4 + 0x14),",
+      "text": "(param_1->items[iVar2],g_CWeaponClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(CDemonActor **)(param_1 + 0x338));",
+      "text": "(&param_1->selected_weapon->base);",
       "type": "unnamed_param"
     },
     {
@@ -219,7 +220,7 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "this_ptr = *(CDemonActor **)(param_1 + 0x338);",
+      "text": "this_ptr = param_1->selected_weapon;",
       "type": "unnamed_param"
     },
     {
@@ -227,7 +228,7 @@
       "line": 53,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(CDemonActor **)(param_1 + 0x338) = this_ptr_00;",
+      "text": "param_1->selected_weapon = this_ptr_00;",
       "type": "unnamed_param"
     },
     {
@@ -237,6 +238,14 @@
       "severity": "mild",
       "text": "core_inv_cpp_FUN_004dd2d0(param_1,999);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar4->owner`). Replace `pCVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 22,
+      "match": "pCVar4 = (T *)&pCVar4->FIELD",
+      "severity": "moderate",
+      "text": "pCVar4 = (CInventory *)&pCVar4->owner;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

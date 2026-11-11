@@ -93,12 +93,13 @@ LAB_005576c8:
     return 1;
   }
   unkafter_turret_cpp_CInStreamFile_ctor_FUN_005738c0(&local_40);
-  iVar4 = support_trstream_cpp_FUN_00573fc0(&local_40,"sound",out_sample,1);
+  iVar4 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0
+                    (&local_40,"sound",out_sample,1);
   if (iVar4 != 0) {
-    local_14 = unkafter_turret_cpp_FUN_00573d40(&local_40);
+    local_14 = unkafter_turret_cpp_CInStreamFile_tell_FUN_00573d40(&local_40);
     iVar4 = sound_sndmain_cpp_FUN_00551000(&local_40,&local_14,out_sample);
     if (iVar4 != 0) {
-      unkafter_turret_cpp_FUN_00573db0(&local_40);
+      unkafter_turret_cpp_CInStreamFile_close_FUN_00573db0(&local_40);
       unkafter_turret_cpp_CInStreamFile_dtor_FUN_00573a40(&local_40,0);
       goto LAB_005576c8;
     }

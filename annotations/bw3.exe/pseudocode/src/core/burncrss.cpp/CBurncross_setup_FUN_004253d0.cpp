@@ -9,7 +9,7 @@
 void __cdecl core_burncrss_cpp_CBurncross_setup_FUN_004253d0(CBurncross *this_ptr)
 
 {
-  core_weapon_cpp_CWeapon_setup_FUN_0057af40((CWeapon *)this_ptr);
+  core_weapon_cpp_CWeapon_setup_FUN_0057af40(&this_ptr->base);
   sound_sndmain_cpp_FUN_00556230();
   sound_sndmain_cpp_FUN_00556230();
   sound_sndmain_cpp_FUN_00556230();

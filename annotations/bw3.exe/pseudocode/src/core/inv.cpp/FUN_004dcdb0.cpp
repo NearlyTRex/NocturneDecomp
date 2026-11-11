@@ -23,51 +23,52 @@ void core_inv_cpp_FUN_004dcdb0(CInventory *param_1)
   int iVar9;
   int iVar10;
   
-  if (((*(int *)(param_1 + 0x338) != 0) &&
+  if (((param_1->selected_weapon != (CWeapon *)0x0) &&
       (iVar9 = core_actor_cpp_castToClassHash_FUN_0040c840
-                         (*(uint *)(*(int *)(param_1 + 0x338) + 0x304),
-                          g_CHeroClassInfo.name_hash), iVar9 != 0)) &&
-     (((*(int *)(*(int *)(param_1 + 0x338) + 0x56c) == 10 &&
-       (*(int *)(param_1 + 0x46c) != *(int *)(iVar9 + 0x20b80))) ||
-      ((*(int *)(*(int *)(param_1 + 0x338) + 0x56c) == 0xb &&
-       (*(int *)(param_1 + 0x468) != *(int *)(iVar9 + 0x20b84))))))) {
+                         (param_1->selected_weapon->carried_by_actor,g_CHeroClassInfo.name_hash),
+      iVar9 != 0)) &&
+     (((param_1->selected_weapon->ammo_type == AMMO_TYPE_MANA &&
+       (param_1->cached_mana_count != *(int *)(iVar9 + 0x20b80))) ||
+      ((param_1->selected_weapon->ammo_type == AMMO_TYPE_BULLET &&
+       (param_1->cached_ammo_count != *(int *)(iVar9 + 0x20b84))))))) {
     core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd340(param_1,0);
-    if (*(int *)(*(int *)(param_1 + 0x338) + 0x56c) == 10) {
-      *(uint *)(param_1 + 0x46c) = *(uint *)(iVar9 + 0x20b80);
+    if (param_1->selected_weapon->ammo_type == AMMO_TYPE_MANA) {
+      param_1->cached_mana_count = *(int *)(iVar9 + 0x20b80);
     }
     else {
-      *(uint *)(param_1 + 0x468) = *(uint *)(iVar9 + 0x20b84);
+      param_1->cached_ammo_count = *(int *)(iVar9 + 0x20b84);
     }
   }
-  if ((((*(int *)&g_CGamePtr->field_0x264 != 0) || (*(int *)&g_CFieldNotesPtr->field_0x40 != 0)) ||
-      (DAT_007dffb4 != 0)) || (*(int *)&g_CGamePtr->field_0x24c != 0)) {
-    *(uint *)(param_1 + 0x344) = 0;
-    *(uint *)(param_1 + 0x34c) = 0;
-    *(uint *)(param_1 + 0x350) = 0;
-    *(uint *)(param_1 + 0x340) = 0;
+  if ((((g_CGamePtr->goggles_active != 0) || (g_CFieldNotesPtr->is_displayed != 0)) ||
+      (DAT_007dffb4 != 0)) || (g_CGamePtr->letterbox_mode != 0)) {
+    param_1->item_highlight_timer = 0.0;
+    param_1->message_display_timer = 0.0;
+    param_1->ammo_detail_timer = 0.0;
+    param_1->weapon_highlight_timer = 0.0;
   }
-  *(float *)(param_1 + 0x340) = *(float *)(param_1 + 0x340) - g_CGamePtr->delta_time_float;
-  if (*(float *)(param_1 + 0x340) <= 0.0) {
-    *(uint *)(param_1 + 0x340) = 0;
+  param_1->weapon_highlight_timer = param_1->weapon_highlight_timer - g_CGamePtr->delta_time_float;
+  if (param_1->weapon_highlight_timer <= 0.0) {
+    param_1->weapon_highlight_timer = 0.0;
   }
-  *(float *)(param_1 + 0x344) = *(float *)(param_1 + 0x344) - g_CGamePtr->delta_time_float;
-  if (*(float *)(param_1 + 0x344) <= 0.0) {
-    *(uint *)(param_1 + 0x344) = 0;
+  param_1->item_highlight_timer = param_1->item_highlight_timer - g_CGamePtr->delta_time_float;
+  if (param_1->item_highlight_timer <= 0.0) {
+    param_1->item_highlight_timer = 0.0;
   }
-  *(float *)(param_1 + 0x348) = *(float *)(param_1 + 0x348) - g_CGamePtr->delta_time_float;
-  if (*(float *)(param_1 + 0x348) <= 0.0) {
-    *(uint *)(param_1 + 0x348) = 0;
+  param_1->inventory_display_timer = param_1->inventory_display_timer - g_CGamePtr->delta_time_float
+  ;
+  if (param_1->inventory_display_timer <= 0.0) {
+    param_1->inventory_display_timer = 0.0;
   }
-  *(float *)(param_1 + 0x34c) = *(float *)(param_1 + 0x34c) - g_CGamePtr->delta_time_float;
-  if (*(float *)(param_1 + 0x34c) <= 0.0) {
-    param_1[0x354] = (CInventory)0x0;
-    *(uint *)(param_1 + 0x34c) = 0;
+  param_1->message_display_timer = param_1->message_display_timer - g_CGamePtr->delta_time_float;
+  if (param_1->message_display_timer <= 0.0) {
+    param_1->message_text[0] = '\0';
+    param_1->message_display_timer = 0.0;
   }
-  *(float *)(param_1 + 0x350) = *(float *)(param_1 + 0x350) - g_CGamePtr->delta_time_float;
-  if (*(float *)(param_1 + 0x350) < 0.0) {
-    *(uint *)(param_1 + 0x350) = 0;
+  param_1->ammo_detail_timer = param_1->ammo_detail_timer - g_CGamePtr->delta_time_float;
+  if (param_1->ammo_detail_timer < 0.0) {
+    param_1->ammo_detail_timer = 0.0;
   }
-  if ((*(int *)(param_1 + 0xc) != 0) &&
+  if ((param_1->show_sps != 0) &&
      (_DAT_01d5be80 = _DAT_01d5be80 - g_CGamePtr->delta_time_float, _DAT_01d5be80 <= 0.0)) {
     _DAT_01d5be80 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.1,0.4);
     iVar10 = 0;
@@ -111,7 +112,7 @@ LAB_004dd05b:
               }
               uVar8 = core_sound_cpp_CSound_playSound_FUN_005609b0
                                 (0x02CF5680,(void *)0x0,"voodoo1.wav");
-              *(uint *)&this_ptr->field_0x27ac = uVar8;
+              this_ptr->spectral_sound_handle = uVar8;
               *(uint *)(iVar6 + 0x1d70a24) = uVar8;
               iVar10 = iVar10 + 1;
               iVar9 = iVar9 + 4;
@@ -128,7 +129,7 @@ LAB_004dd05b:
               }
               uVar8 = core_sound_cpp_CSound_playSound_FUN_005609b0
                                 (0x02CF5680,(void *)0x0,"voodoo2.wav");
-              *(uint *)&this_ptr->field_0x27ac = uVar8;
+              this_ptr->spectral_sound_handle = uVar8;
               *(uint *)(iVar6 + 0x1d70a24) = uVar8;
               iVar10 = iVar10 + 1;
               iVar9 = iVar9 + 4;
@@ -146,7 +147,7 @@ LAB_004dd05b:
             }
             uVar8 = core_sound_cpp_CSound_playSound_FUN_005609b0
                               (0x02CF5680,(void *)0x0,"voodoo3.wav");
-            *(uint *)&this_ptr->field_0x27ac = uVar8;
+            this_ptr->spectral_sound_handle = uVar8;
             *(uint *)(iVar6 + 0x1d70a24) = uVar8;
             iVar10 = iVar10 + 1;
             iVar9 = iVar9 + 4;
@@ -164,7 +165,7 @@ LAB_004dd05b:
           }
           uVar8 = core_sound_cpp_CSound_playSound_FUN_005609b0
                             (0x02CF5680,(void *)0x0,"voodoo4.wav");
-          *(uint *)&this_ptr->field_0x27ac = uVar8;
+          this_ptr->spectral_sound_handle = uVar8;
           *(uint *)(iVar6 + 0x1d70a24) = uVar8;
           iVar10 = iVar10 + 1;
           iVar9 = iVar9 + 4;

@@ -44,8 +44,8 @@
 ;   CWater* g_CWaterPtr = 02cfd950
 ;   undefined4 DAT_006071f0
 ;   CConsole g_CConsoleInstance
-;   undefined4 g_CGameInstance.field27_0x24
-;   undefined4 g_CGameInstance.field476_0x20c
+;   undefined4 g_CGameInstance.shadow_flag
+;   undefined4 g_CGameInstance.debug_toggle_flag
 ;   ... and 15 more
 ;
 ; Called Functions:
@@ -80,7 +80,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 00535da9
     MOV ESI,dword ptr [EBP + 0x18]      ; 00535dac
     MOV EAX,[0x005fe9dc]                ; 00535daf | g_CGamePtr
-    CMP dword ptr [EAX + 0x230],0x0     ; 00535db4 | g_CGameInstance.field512_0x230
+    CMP dword ptr [EAX + 0x230],0x0     ; 00535db4 | g_CGameInstance.profile_mode
     JNZ 0x0053643f                      ; 00535dbb
         ;   XREF to: 0053643f (CONDITIONAL_JUMP)  ; LAB_0053643f
     TEST ESI,ESI                        ; 00535dc1
@@ -324,7 +324,7 @@ section .text
     ADD ESP,0x4                         ; 00536035
     MOV EAX,[0x005fe9dc]                ; 00536038 | g_CGamePtr
         ;   Label: LAB_00536038
-    CMP dword ptr [EAX + 0x230],0x0     ; 0053603d | g_CGameInstance.field512_0x230
+    CMP dword ptr [EAX + 0x230],0x0     ; 0053603d | g_CGameInstance.profile_mode
     JZ 0x0053604e                       ; 00536044
         ;   XREF to: 0053604e (CONDITIONAL_JUMP)  ; LAB_0053604e
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 00536046
@@ -335,7 +335,7 @@ section .text
     CALL core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_0044df60 ; 00536053
         ;   XREF to: 0044df60 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_0044df60(CDemonCamera * this_ptr)
     MOV EAX,[0x005fe9dc]                ; 00536058 | g_CGamePtr
-    MOV ESI,dword ptr [EAX + 0x230]     ; 0053605d | g_CGameInstance.field512_0x230
+    MOV ESI,dword ptr [EAX + 0x230]     ; 0053605d | g_CGameInstance.profile_mode
     ADD ESP,0x4                         ; 00536063
     TEST ESI,ESI                        ; 00536066
     JZ 0x00536072                       ; 00536068
@@ -611,7 +611,7 @@ section .text
     CALL core_dcamera.cpp_CDemonCamera_endScene_FUN_00449750 ; 00536301
         ;   XREF to: 00449750 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_endScene_FUN_00449750(CDemonCamera * this_ptr, int skip_zbuffer_copy)
     MOV EAX,[0x005fe9dc]                ; 00536306 | g_CGamePtr
-    MOV EDX,dword ptr [EAX + 0x230]     ; 0053630b | g_CGameInstance.field512_0x230
+    MOV EDX,dword ptr [EAX + 0x230]     ; 0053630b | g_CGameInstance.profile_mode
     ADD ESP,0x8                         ; 00536311
     TEST EDX,EDX                        ; 00536314
     JZ 0x005363b8                       ; 00536316
@@ -675,7 +675,7 @@ section .text
     ADD ESP,0x20                        ; 005363b5
     MOV EAX,[0x005fe9dc]                ; 005363b8 | g_CGamePtr
         ;   Label: LAB_005363b8
-    CMP dword ptr [EAX + 0x20c],0x0     ; 005363bd | g_CGameInstance.field476_0x20c
+    CMP dword ptr [EAX + 0x20c],0x0     ; 005363bd | g_CGameInstance.debug_toggle_flag
     JZ 0x005363cf                       ; 005363c4
         ;   XREF to: 005363cf (CONDITIONAL_JUMP)  ; LAB_005363cf
     PUSH EBX                            ; 005363c6
@@ -755,7 +755,7 @@ section .text
     RET                                 ; 00536467
     MOV EAX,[0x005fe9dc]                ; 00536468 | g_CGamePtr
         ;   Label: LAB_00536468
-    CMP dword ptr [EAX + 0x24],0x0      ; 0053646d | g_CGameInstance.field27_0x24
+    CMP dword ptr [EAX + 0x24],0x0      ; 0053646d | g_CGameInstance.shadow_flag
     JNZ 0x00535e36                      ; 00536471
         ;   XREF to: 00535e36 (CONDITIONAL_JUMP)  ; LAB_00535e36
     JMP 0x00536038                      ; 00536477

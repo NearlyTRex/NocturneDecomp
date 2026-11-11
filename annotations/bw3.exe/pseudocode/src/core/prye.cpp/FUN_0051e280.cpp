@@ -17,8 +17,7 @@ void core_prye_cpp_FUN_0051e280(int param_1,SPose *param_2)
   float blend_weight;
   int bone_index;
   code *blend_callback;
-  SPose aSStack_1ae4 [704];
-  float afStack_1824 [1527];
+  SPose SStack_1ae4;
   CQuaternion4f local_48;
   float local_38;
   float afStack_34 [6];
@@ -28,7 +27,7 @@ void core_prye_cpp_FUN_0051e280(int param_1,SPose *param_2)
   
   bVar2 = 0;
   this_ptr = (CDeformableModelInstance *)(param_1 + 0x158);
-  core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_0054f850(this_ptr,aSStack_1ae4);
+  core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_0054f850(this_ptr,&SStack_1ae4);
   core_skeleton_cpp_FUN_0054c1b0
             (this_ptr,*(uint *)(param_1 + 0x20c78),
              *(float *)(param_1 + 0x20c48) * (float)_DAT_005cd3c7,0xffffffff);
@@ -51,6 +50,6 @@ void core_prye_cpp_FUN_0051e280(int param_1,SPose *param_2)
   core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170
             (this_ptr,&local_48,blend_weight,bone_index,blend_callback);
   core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_0054f850(this_ptr,param_2);
-  core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_0054f920(this_ptr,aSStack_1ae4);
+  core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_0054f920(this_ptr,&SStack_1ae4);
   return;
 }

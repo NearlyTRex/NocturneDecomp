@@ -2,15 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 56,
+    "complexity_score": 96,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 41,
-    "suspect_count": 1,
+    "suspect_count": 4,
     "suspect_types": [
-      "derived_field_index_pun"
+      "derived_field_index_pun",
+      "negative_offset",
+      "suspect_float"
     ],
     "total_lines": 102
   },
@@ -121,7 +123,31 @@
   },
   "suspects": [
     {
-      "description": "'(CPathMap *)&pCVar1[1].base.orient_matrix' walks 1 x sizeof(CCharacter) (0xcdcc) + offsetof(base.orient_matrix) (0x3c) + 0x0 = 0xce08, which is exactly offsetof(CEnemy, patrol_name_pattern[24]). Ghidra had no CEnemy type here and reached the field by index arithmetic; write it as ((CEnemy *)pCVar1)->patrol_name_pattern[24] (\u00a7de-pun/\u00a712).",
+      "description": "Likely misinterpreted integer as float",
+      "line": 22,
+      "match": "2.8026e-45",
+      "severity": "mild",
+      "text": "pCVar3[-0x47].item_angles[0x15] = 2.8026e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 23,
+      "match": "pCVar3[-1].",
+      "severity": "mild",
+      "text": "pCVar3[-1].cached_mana_count = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 37,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "pCVar3[-0x6d].item_angles[0x19] = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "'(CPathMap *)&pCVar1[1].base.orient_matrix' walks 1 x sizeof(CCharacter) (0xcdcc) + offsetof(base.orient_matrix) (0x3c) + 0x0 = 0xce08, which is exactly offsetof(CEnemy, patrol_name_pattern[24]). Ghidra had no CEnemy type here and reached the field by index arithmetic; write it as ((CEnemy *)pCVar1)->patrol_name_pattern[24] (\u00a7de-pun/\u00a712). Ambiguous: CHero::path_map also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 10,
       "severity": "moderate",
       "text": "pCVar2 = core_path_cpp_CPathMap_ctor_FUN_0050acc0((CPathMap *)&pCVar1[1].base.orient_matrix);",

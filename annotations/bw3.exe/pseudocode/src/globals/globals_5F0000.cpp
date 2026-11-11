@@ -33,53 +33,288 @@ CGore* g_CGorePtr = (CGore*)&g_CGoreInstance;
 CGround* g_CGroundPtr = (CGround*)&g_CGroundInstance;
 
 // WatcomStaticDestructorNode
-WatcomStaticDestructorNode DAT_005F0C67 = {};
-WatcomStaticDestructorNode DAT_005F0C77 = {};
-WatcomStaticDestructorNode DAT_005F0C87 = {};
-WatcomStaticDestructorNode DAT_005F0C97 = {};
-WatcomStaticDestructorNode DAT_005F0E28 = {};
-WatcomStaticDestructorNode g_ConsoleDestructorNode = {};
-WatcomStaticDestructorNode g_CLZWDecompressDestructorNode = {};
-WatcomStaticDestructorNode DAT_005F189C = {};
-WatcomStaticDestructorNode DAT_005F18AC = {};
-WatcomStaticDestructorNode g_CFilterCacheDestructorNode = {};
-WatcomStaticDestructorNode g_CFilterFXDestructorNode = {};
-WatcomStaticDestructorNode g_CKeyFramedModelPoolDestructorNode = {};
-WatcomStaticDestructorNode g_CEditorToolsDestructorNode = {};
-WatcomStaticDestructorNode g_CFireEffectStakesDestructorNode = {};
-WatcomStaticDestructorNode g_CFireEffectSparksDestructorNode = {};
-WatcomStaticDestructorNode DAT_005FC510 = {};
-WatcomStaticDestructorNode DAT_005FC520 = {};
-WatcomStaticDestructorNode g_CFireEffectFireballsDestructorNode = {};
-WatcomStaticDestructorNode g_CFireEffectRocksDestructorNode = {};
-WatcomStaticDestructorNode DAT_005FC550 = {};
-WatcomStaticDestructorNode g_CFireEffectTossesDestructorNodes = {};
-WatcomStaticDestructorNode g_CFireEffectShellsDestructorNode = {};
-WatcomStaticDestructorNode g_CFireEffectPopcornsDestructorNode = {};
-WatcomStaticDestructorNode g_CFireEffectRainDropsDestructorNode = {};
-WatcomStaticDestructorNode DAT_005FE280 = {};
-WatcomStaticDestructorNode DAT_005FE290 = {};
-WatcomStaticDestructorNode DAT_005FE2A0 = {};
-WatcomStaticDestructorNode DAT_005FE2B0 = {};
-WatcomStaticDestructorNode DAT_005FE2C0 = {};
-WatcomStaticDestructorNode DAT_005FE2D0 = {};
-WatcomStaticDestructorNode DAT_005FE2E0 = {};
-WatcomStaticDestructorNode DAT_005FE2F0 = {};
-WatcomStaticDestructorNode DAT_005FE300 = {};
-WatcomStaticDestructorNode DAT_005FE310 = {};
-WatcomStaticDestructorNode DAT_005FE320 = {};
-WatcomStaticDestructorNode DAT_005FE330 = {};
-WatcomStaticDestructorNode DAT_005FE340 = {};
-WatcomStaticDestructorNode DAT_005FE350 = {};
-WatcomStaticDestructorNode DAT_005FE360 = {};
-WatcomStaticDestructorNode g_CDemonLightDestructorNode = {};
-WatcomStaticDestructorNode g_CGameDestructorNode = {};
-WatcomStaticDestructorNode g_CPickListDestructorNode = {};
-WatcomStaticDestructorNode DAT_005FE950 = {};
-WatcomStaticDestructorNode DAT_005FE960 = {};
-WatcomStaticDestructorNode g_CGoreDestructorNode = {};
-WatcomStaticDestructorNode DAT_005FED14 = {};
-WatcomStaticDestructorNode g_CGroundDestructorNode = {};
+WatcomStaticDestructorNode DAT_005F0C67 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DBE00,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_ARRAY_007dffc0
+};
+WatcomStaticDestructorNode DAT_005F0C77 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DBE0C,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_ARRAY_007e0010
+};
+WatcomStaticDestructorNode DAT_005F0C87 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DBE18,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CAudioRecPuzzleInstance
+};
+WatcomStaticDestructorNode DAT_005F0C97 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DBE24,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CChemPuzzleInstance
+};
+WatcomStaticDestructorNode DAT_005F0E28 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DC960,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CDemonFilter_ARRAY_007e17b8
+};
+WatcomStaticDestructorNode g_ConsoleDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)&g_CConsoleDestructorCall,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CConsoleInstance
+};
+WatcomStaticDestructorNode g_CLZWDecompressDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DDFB0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CLZWDecompressInstance
+};
+WatcomStaticDestructorNode DAT_005F189C = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DE300,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CDemonFilter_ARRAY_01548c00
+};
+WatcomStaticDestructorNode DAT_005F18AC = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DE30C,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CDemonFilter_ARRAY_01548e60
+};
+WatcomStaticDestructorNode g_CFilterCacheDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DE318,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CFilterCacheInstance
+};
+WatcomStaticDestructorNode g_CFilterFXDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DE324,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CFilterFXInstance
+};
+WatcomStaticDestructorNode g_CKeyFramedModelPoolDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DE550,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CKeyFramedModelPool
+};
+WatcomStaticDestructorNode g_CEditorToolsDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DEFF0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CEditorToolsInstance
+};
+WatcomStaticDestructorNode g_CFireEffectStakesDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DF860,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_StakePool
+};
+WatcomStaticDestructorNode g_CFireEffectSparksDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DF86C,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_SparkPool
+};
+WatcomStaticDestructorNode DAT_005FC510 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DF878,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CFirefly_ARRAY_01cba2b8
+};
+WatcomStaticDestructorNode DAT_005FC520 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DF884,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CGlassParticle_ARRAY_01cbc0f0
+};
+WatcomStaticDestructorNode g_CFireEffectFireballsDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DF890,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_FireballPool
+};
+WatcomStaticDestructorNode g_CFireEffectRocksDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DF89C,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_RockPool
+};
+WatcomStaticDestructorNode DAT_005FC550 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DF8A8,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CLeaf_ARRAY_01cf3b88
+};
+WatcomStaticDestructorNode g_CFireEffectTossesDestructorNodes = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DF8B4,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_TossPool
+};
+WatcomStaticDestructorNode g_CFireEffectShellsDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DF8C0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_ShellPool
+};
+WatcomStaticDestructorNode g_CFireEffectPopcornsDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DF8CC,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_PopcornPool
+};
+WatcomStaticDestructorNode g_CFireEffectRainDropsDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005DF8D8,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_RainDropPool
+};
+WatcomStaticDestructorNode DAT_005FE280 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E01B0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&SNotesSection_ARRAY_01d0d214
+};
+WatcomStaticDestructorNode DAT_005FE290 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E01BC,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&SNotesMap_ARRAY_01d0e370
+};
+WatcomStaticDestructorNode DAT_005FE2A0 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E01C8,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d19bac
+};
+WatcomStaticDestructorNode DAT_005FE2B0 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E01D4,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_ARRAY_01d19bc0
+};
+WatcomStaticDestructorNode DAT_005FE2C0 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E01E0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d19c38
+};
+WatcomStaticDestructorNode DAT_005FE2D0 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E01EC,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d19c4c
+};
+WatcomStaticDestructorNode DAT_005FE2E0 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E01F8,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d19c60
+};
+WatcomStaticDestructorNode DAT_005FE2F0 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E0204,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d19c74
+};
+WatcomStaticDestructorNode DAT_005FE300 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E0210,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d19c88
+};
+WatcomStaticDestructorNode DAT_005FE310 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E021C,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d19c9c
+};
+WatcomStaticDestructorNode DAT_005FE320 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E0228,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d19cb0
+};
+WatcomStaticDestructorNode DAT_005FE330 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E0234,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d19cc4
+};
+WatcomStaticDestructorNode DAT_005FE340 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E0240,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d19cd8
+};
+WatcomStaticDestructorNode DAT_005FE350 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E024C,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_STextViewInstance
+};
+WatcomStaticDestructorNode DAT_005FE360 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E0258,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CFieldNotesInstance
+};
+WatcomStaticDestructorNode g_CDemonLightDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E06A0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CDemonLightInstance
+};
+WatcomStaticDestructorNode g_CGameDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E06AC,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CGameInstance
+};
+WatcomStaticDestructorNode g_CPickListDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E06B8,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CPickList
+};
+WatcomStaticDestructorNode DAT_005FE950 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E06C4,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CDemonFilter_01d22af8
+};
+WatcomStaticDestructorNode DAT_005FE960 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E06D0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_ARRAY_01d22b4c
+};
+WatcomStaticDestructorNode g_CGoreDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E0E00,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CGoreInstance
+};
+WatcomStaticDestructorNode DAT_005FED14 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E0E0C,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_BloodParticles
+};
+WatcomStaticDestructorNode g_CGroundDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E1020,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CGroundInstance
+};
 
 // int
 int g_CDemonActorClassVersion = 0x7;

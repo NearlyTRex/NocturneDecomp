@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 CMatrix3x4f * __stack2_esi core_zombprie_cpp_CZombiePriest_getCarryObjToBodyXForm_FUN_0058ecd0(CZombiePriest *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
@@ -32,10 +34,10 @@ CMatrix3x4f * __stack2_esi core_zombprie_cpp_CZombiePriest_getCarryObjToBodyXFor
   uint uStack_10;
   
   bVar5 = 0;
-  iVar2 = *(int *)(&this_ptr->field_0x25a8 + hand_index * 0x78);
+  iVar2 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   if (hand_index == 1) {
     iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
-                      (*(uint *)(&this_ptr->field_0x25b0 + hand_index * 0x78),
+                      ((this_ptr->base).base.carry_hands[hand_index].carry_actor,
                        g_CElephantGunClassInfo.name_hash);
     if (iVar1 == 0) {
       auStack_38[3] = 0xbdcccccd;
@@ -104,7 +106,8 @@ CMatrix3x4f * __stack2_esi core_zombprie_cpp_CZombiePriest_getCarryObjToBodyXFor
     }
   }
   core_xform_cpp_FUN_00583940(auStack_c0,auStack_74 + 2,auStack_74 + 8);
-  core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(auStack_c0,&this_ptr->field_0xfd8 + iVar2 * 0x30);
+  core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
+            (auStack_c0,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar2);
   pfVar3 = (float *)&stack0xffffff10;
   pCVar4 = out_matrix;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {

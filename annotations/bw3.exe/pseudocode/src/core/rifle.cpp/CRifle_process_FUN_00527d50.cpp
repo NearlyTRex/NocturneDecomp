@@ -9,7 +9,7 @@
 void __cdecl core_rifle_cpp_CRifle_process_FUN_00527d50(CRifle *this_ptr,float delta_time)
 
 {
-  *(uint *)&this_ptr->field_0x598 = 1;
-  core_weapon_cpp_CWeapon_process_FUN_0057b160((CWeapon *)this_ptr,delta_time);
+  this_ptr->processed = 1;
+  core_weapon_cpp_CWeapon_process_FUN_0057b160(&this_ptr->base,delta_time);
   return;
 }

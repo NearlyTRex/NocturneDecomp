@@ -51,7 +51,7 @@ void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_004221c0(CBugs *this_ptr
   
   bVar7 = 0;
   (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
-  if ((*(int *)&this_ptr->field_0x1bd30 != 0) &&
+  if ((this_ptr->allow_swarm != 0) &&
      (pCVar1 = (this_ptr->base).victim, pCVar1 != (CCharacter *)0x0)) {
     afStack_80[2] =
          (this_ptr->base).base.base.location.position.x - (pCVar1->base).location.position.x;
@@ -68,14 +68,14 @@ void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_004221c0(CBugs *this_ptr
       core_bugs_cpp_CBugs_setSwarmTarget_FUN_00423cd0(this_ptr,&((this_ptr->base).victim)->base);
       if (this_ptr->state == BUGS_STATE_ATTACK) {
         core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422570(this_ptr,delta_time);
-        *(uint *)&this_ptr->field_0x1be94 = 1;
-        *(uint *)&this_ptr->field_0x1be98 = 0x41200000;
+        this_ptr->has_attacked = 1;
+        this_ptr->attack_timer = 10.0;
         return;
       }
       goto LAB_0042229f;
     }
   }
-  if ((*(int *)&this_ptr->field_0x1bd2c != 0) &&
+  if ((this_ptr->allow_chase != 0) &&
      (pCVar1 = (this_ptr->base).victim, pCVar1 != (CCharacter *)0x0)) {
     this_ptr_00 = (*((pCVar1->base).vtable._ub)->getPathMap)(&pCVar1->base);
     if (this_ptr_00 == (CPathMap *)0x0) {

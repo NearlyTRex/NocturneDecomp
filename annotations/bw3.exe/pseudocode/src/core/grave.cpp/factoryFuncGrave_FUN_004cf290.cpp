@@ -11,7 +11,7 @@ void core_grave_cpp_factoryFuncGrave_FUN_004cf290(void)
 {
   CGrave *this_ptr;
   
-  this_ptr = (CGrave *)debugAllocTracked1(0x3b0);
+  this_ptr = (CGrave *)operator_new(0x3b0);
   if (this_ptr == (CGrave *)0x0) {
     return;
   }

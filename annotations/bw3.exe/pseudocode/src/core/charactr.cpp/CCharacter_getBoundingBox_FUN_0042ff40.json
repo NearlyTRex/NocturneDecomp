@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 104,
+    "complexity_score": 98,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
+    "pseudocode_lines": 23,
     "suspect_count": 6,
     "suspect_types": [
       "shadow_pointer_walk",
       "unaffected_reg",
-      "unnamed_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 40
+    "total_lines": 39
   },
   "cross_references": [],
   "function": {
@@ -123,35 +122,35 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x2788",
-      "severity": "mild",
-      "text": "puVar2 = (uint *)&this_ptr->field_0x2788;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 20,
+      "line": 19,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "pCVar4 = unaff_ESI;",
+      "text": "pCVar2 = unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 26,
+      "line": 25,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 24,
-      "match": "pCVar4 = (T *)&(pCVar4->FIELD).SUBFIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 15,
+      "match": "pCVar2 = (T *)&(pCVar2->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar4 = (CBoundingBox3D *)&(pCVar4->min).y;",
+      "text": "pCVar2 = (CBoundingBox3D *)&(pCVar2->min).y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 23,
+      "match": "pCVar2 = (T *)&(pCVar2->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar2 = (CBoundingBox3D *)&(pCVar2->min).y;",
       "type": "shadow_pointer_walk"
     },
     {

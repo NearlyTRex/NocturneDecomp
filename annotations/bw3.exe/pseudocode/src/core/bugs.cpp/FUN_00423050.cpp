@@ -54,19 +54,19 @@ void core_bugs_cpp_FUN_00423050(CBugs *param_1,SBug *param_2,float param_3)
   float local_130;
   float local_12c;
   float local_128;
-  uint local_124;
+  float local_124;
   float local_120;
-  uint local_11c;
+  float local_11c;
   float local_118;
   float local_114;
   float local_110;
-  uint local_10c;
+  float local_10c;
   float local_108;
-  uint local_104;
+  float local_104;
   float local_100;
   float local_fc;
   float local_f8;
-  uint local_f4;
+  float local_f4;
   float local_e8;
   float local_e4;
   float local_e0;
@@ -107,7 +107,7 @@ void core_bugs_cpp_FUN_00423050(CBugs *param_1,SBug *param_2,float param_3)
   float local_4c;
   float local_48;
   float local_44;
-  uint local_40;
+  float local_40;
   float local_24;
   float local_20;
   float local_1c;
@@ -115,8 +115,8 @@ void core_bugs_cpp_FUN_00423050(CBugs *param_1,SBug *param_2,float param_3)
   
   bVar10 = 0;
   local_1a0 = param_3;
-  if (*(int *)&param_2->field_0x2c < 0) {
-    pCVar6 = param_1->deformable_model_ptr->skinned_vertices_buffer + *(int *)&param_2->field_0x30;
+  if (param_2->current_vertex < 0) {
+    pCVar6 = param_1->deformable_model_ptr->skinned_vertices_buffer + param_2->dest_vertex;
     local_160 = (float)pCVar6->x * _DAT_005dcbb8;
     local_15c = (float)pCVar6->y * _DAT_005dcbb8;
     local_158 = (float)pCVar6->z * _DAT_005dcbb8;
@@ -125,51 +125,51 @@ void core_bugs_cpp_FUN_00423050(CBugs *param_1,SBug *param_2,float param_3)
     iVar9 = core_bugs_cpp_FUN_00422a00(param_1,param_2,local_1a0,&stack0xfffffea0);
     if (iVar9 != 0) {
       core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004239c0(param_1,param_2);
-      *(uint *)&param_2->field_0x34 = 0;
+      param_2->interp_t = 0.0;
       return;
     }
   }
   else {
-    if (*(float *)&param_2->field_0x38 <= 0.0) {
+    if (param_2->crawl_duration <= 0.0) {
       core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004239c0(param_1,param_2);
-      *(uint *)&param_2->field_0x34 = 0;
+      param_2->interp_t = 0.0;
     }
     else {
       iVar9 = 0;
-      local_198 = _DAT_005dcbcc / *(float *)&param_2->field_0x38;
+      local_198 = _DAT_005dcbcc / param_2->crawl_duration;
       while( true ) {
-        local_19c = *(float *)&param_2->field_0x34;
-        fVar2 = local_1a0 * local_198 + *(float *)&param_2->field_0x34;
-        *(float *)&param_2->field_0x34 = fVar2;
+        local_19c = param_2->interp_t;
+        fVar2 = local_1a0 * local_198 + param_2->interp_t;
+        param_2->interp_t = fVar2;
         if (fVar2 < 1.0) break;
         core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004239c0(param_1,param_2);
         local_1a0 = local_1a0 - (1.0 - local_19c) / local_198;
-        *(float *)&param_2->field_0x34 = *(float *)&param_2->field_0x34 + _DAT_005b7891;
+        param_2->interp_t = param_2->interp_t + _DAT_005b7891;
         if ((local_1a0 < (float)_DAT_005b7899) || (iVar9 = iVar9 + 1, 2 < iVar9)) break;
       }
-      if (*(float *)&param_2->field_0x34 < 0.0) {
-        *(uint *)&param_2->field_0x34 = 0;
+      if (param_2->interp_t < 0.0) {
+        param_2->interp_t = 0.0;
       }
-      if (1.0 < *(float *)&param_2->field_0x34) {
-        *(uint *)&param_2->field_0x34 = 0x3f800000;
+      if (1.0 < param_2->interp_t) {
+        param_2->interp_t = 1.0;
       }
     }
-    pCVar6 = param_1->deformable_model_ptr->skinned_vertices_buffer + *(int *)&param_2->field_0x2c;
+    pCVar6 = param_1->deformable_model_ptr->skinned_vertices_buffer + param_2->current_vertex;
     local_13c = (float)pCVar6->x * _DAT_005dcbb8;
     local_138 = (float)pCVar6->y * _DAT_005dcbb8;
     local_134 = (float)pCVar6->z * _DAT_005dcbb8;
-    pCVar6 = param_1->deformable_model_ptr->skinned_vertices_buffer + *(int *)&param_2->field_0x30;
+    pCVar6 = param_1->deformable_model_ptr->skinned_vertices_buffer + param_2->dest_vertex;
     local_e8 = (float)pCVar6->x * _DAT_005dcbb8;
     local_e4 = (float)pCVar6->y * _DAT_005dcbb8;
     local_e0 = (float)pCVar6->z * _DAT_005dcbb8;
-    local_154 = local_e8 * *(float *)&param_2->field_0x34;
-    local_150 = local_e4 * *(float *)&param_2->field_0x34;
-    local_14c = local_e0 * *(float *)&param_2->field_0x34;
+    local_154 = local_e8 * param_2->interp_t;
+    local_150 = local_e4 * param_2->interp_t;
+    local_14c = local_e0 * param_2->interp_t;
     local_dc = local_154;
     (&stack0xffffff28)[(uint)bVar10 * 0xfffffffe] = (&stack0xfffffeb0)[(uint)bVar10 * 0xfffffffe];
     *(uint *)((int)&stack0xffffff2c + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
          *(uint *)((int)&stack0xfffffeb4 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
-    local_18 = 1.0 - *(float *)&param_2->field_0x34;
+    local_18 = 1.0 - param_2->interp_t;
     pCVar11 = &param_1->model_world_matrix;
     local_100 = local_13c * local_18;
     local_fc = local_138 * local_18;
@@ -193,10 +193,10 @@ void core_bugs_cpp_FUN_00423050(CBugs *param_1,SBug *param_2,float param_3)
          (float)*(uint *)(&stack0xffffffc4 + (uint)bVar10 * -8);
     *(uint *)((int)&stack0xfffffefc + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
          *(uint *)(&stack0xffffffc8 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
-    if ((uint *)&param_2->field_0x8 != &stack0xfffffef4) {
-      *(uint *)&param_2->field_0x8 = local_10c;
-      *(float *)&param_2->field_0xc = local_108;
-      *(uint *)&param_2->field_0x10 = local_104;
+    if (&param_2->position != (CVector3f *)&stack0xfffffef4) {
+      (param_2->position).x = local_10c;
+      (param_2->position).y = local_108;
+      (param_2->position).z = local_104;
     }
     local_58 = local_e8 - local_13c;
     local_54 = local_e4 - local_138;
@@ -206,22 +206,25 @@ void core_bugs_cpp_FUN_00423050(CBugs *param_1,SBug *param_2,float param_3)
          (float)*(uint *)((int)&stack0xffffffac + (uint)bVar10 * -8);
     *(uint *)((int)&stack0xfffffe9c + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
          *(uint *)((int)&stack0xffffffb0 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
-    iVar9 = *(int *)(param_1->swarm_vertices + *(int *)&param_2->field_0x2c * 0x28 + 4);
+    iVar9 = param_1->swarm_vertices[param_2->current_vertex].first_edge_data;
     iVar1 = param_1->lod_index;
     pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
                        (param_1->deformable_model_ptr);
-    pSVar8 = pCVar7->tri_data_ptr[iVar1] + iVar9 * 0x12;
-    pCVar6 = param_1->deformable_model_ptr->skinned_vertices_buffer + *(ushort *)pSVar8;
+    pSVar8 = pCVar7->tri_data_ptr[iVar1] + iVar9;
+    pCVar6 = param_1->deformable_model_ptr->skinned_vertices_buffer +
+             (pSVar8->vertex_indices).vertex_index_0;
     local_13c = (float)pCVar6->x * _DAT_005dcbb8;
     local_138 = (float)pCVar6->y * _DAT_005dcbb8;
     local_134 = (float)pCVar6->z * _DAT_005dcbb8;
-    pCVar6 = param_1->deformable_model_ptr->skinned_vertices_buffer + *(ushort *)(pSVar8 + 2);
+    pCVar6 = param_1->deformable_model_ptr->skinned_vertices_buffer +
+             (pSVar8->vertex_indices).vertex_index_1;
     local_e8 = (float)pCVar6->x * _DAT_005dcbb8;
     fVar2 = (float)pCVar6->y * _DAT_005dcbb8;
     local_e4 = fVar2;
     fVar3 = (float)pCVar6->z * _DAT_005dcbb8;
     local_e0 = fVar3;
-    pCVar6 = param_1->deformable_model_ptr->skinned_vertices_buffer + *(ushort *)(pSVar8 + 4);
+    pCVar6 = param_1->deformable_model_ptr->skinned_vertices_buffer +
+             (pSVar8->vertex_indices).vertex_index_2;
     local_c4 = (float)pCVar6->x * _DAT_005dcbb8;
     fVar4 = (float)pCVar6->y * _DAT_005dcbb8;
     local_c0 = fVar4;
@@ -323,10 +326,10 @@ void core_bugs_cpp_FUN_00423050(CBugs *param_1,SBug *param_2,float param_3)
          (float)*(uint *)(&stack0xffffff10 + (uint)bVar10 * -8);
     *(uint *)((int)&stack0xfffffee4 + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
          *(uint *)(&stack0xffffff14 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
-    if ((uint *)&param_2->field_0x14 != &stack0xfffffedc) {
-      *(uint *)&param_2->field_0x14 = local_124;
-      *(float *)&param_2->field_0x18 = local_120;
-      *(uint *)&param_2->field_0x1c = local_11c;
+    if (&param_2->orientation != (CVector3f *)&stack0xfffffedc) {
+      (param_2->orientation).x = local_124;
+      (param_2->orientation).y = local_120;
+      (param_2->orientation).z = local_11c;
       return;
     }
   }

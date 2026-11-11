@@ -13,12 +13,12 @@ CAngelDemon * core_hotdemon_cpp_CAngelDemon_ctor_FUN_004d6410(CAngelDemon *this_
 {
   CHotDemon *pCVar1;
   
-  pCVar1 = core_hotdemon_cpp_CHotDemon_ctor_FUN_004d5430((CHotDemon *)this_ptr);
+  pCVar1 = core_hotdemon_cpp_CHotDemon_ctor_FUN_004d5430(&this_ptr->base);
   (pCVar1->base).base.base.vtable._ub = &g_CAngelDemonVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
             (&(pCVar1->base).base.model,"hotdemon.dfm");
   (pCVar1->base).base.hit_points = 60.0;
-  *(uint *)&(pCVar1->base).field_0xce5c = 0x41c80000;
-  *(uint *)&(pCVar1->base).field_0xce60 = 0x41a00000;
+  (pCVar1->base).attack_damage = 25.0;
+  (pCVar1->base).pain_threshold = 20.0;
   return (CAngelDemon *)pCVar1;
 }

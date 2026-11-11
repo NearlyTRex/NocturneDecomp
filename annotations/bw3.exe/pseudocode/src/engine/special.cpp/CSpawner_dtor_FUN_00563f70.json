@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 61,
+    "complexity_score": 36,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 21,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
     "total_lines": 68
   },
@@ -119,28 +118,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x1d0",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&this_ptr->field_0x1d0,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 19,
       "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar1[-1].field_0x21d4,1);",
+      "text": "((CDemonActor *)(pCVar1[-1].part_data.visibility_flags + 0x25),1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x21d4",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar1[-1].field_0x21d4,1);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

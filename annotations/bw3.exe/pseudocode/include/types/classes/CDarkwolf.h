@@ -2,15 +2,26 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CMorph.h"
 
 // Structure: CDarkwolf
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 56472 (CWhitewolf same size, adds nothing); CDarkwolf_ctor 00598780: CMorph ctor at +0xd064, zeroes +0xd05c
 // Ghidra size: 0xdc98 (56472 bytes)
 #pragma pack(push, 1)
 typedef struct CDarkwolf {
-    char field_0[56472]; // 0x0
+    CEnemy base; // 0x0, derived
+    char field_53332[8]; // 0xd054
+    int is_morph_partner; // 0xd05c, ctor 0 (morph-8, same slot as CStylerDemon+0xd05c); no reader found
+    struct CDemonActor* morph_target; // 0xd060, setup createActorByName("CTawiscara") stored, model wolfbrn.dfm; process addActorToList when morph_time>=1 then 0; renderOpaque morph source
+    CMorph morph; // 0xd064, ctor CMorph_ctor; renderOpaque CMorph calls; dtor
+    float morph_time; // 0xdc90, archive "morphTime" (version>=2); setup 0; process += dt*k
+    uint sfx_handle; // 0xdc94, process: dog_howl.wav handle
 } CDarkwolf;
 #pragma pack(pop)
 

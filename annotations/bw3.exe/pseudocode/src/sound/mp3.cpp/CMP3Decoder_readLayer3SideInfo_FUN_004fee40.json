@@ -2,19 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 520,
-    "complexity_score": 311,
+    "complexity_score": 504,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 226,
-    "suspect_count": 7,
+    "pseudocode_lines": 239,
+    "suspect_count": 24,
     "suspect_types": [
+      "pointer_cast",
       "pointer_truncation",
+      "shadow_pointer_walk",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 746
+    "total_lines": 759
   },
   "cross_references": [
     {
@@ -329,52 +331,188 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 69,
+      "match": "(uint *)((int)(pSVar2 + 2) +",
+      "severity": "moderate",
+      "text": "*(uint *)((int)(pSVar2 + 2) + 0x44) = uVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 71,
+      "match": "(uint *)((int)(pSVar2 + 2) +",
+      "severity": "moderate",
+      "text": "*(uint *)((int)(pSVar2 + 2) + 0x24) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 90,
+      "match": "(uint *)((int)side_info_array",
+      "severity": "moderate",
+      "text": "*(uint *)((int)side_info_array->channels[local_30].granules[0].subblock_gain + uVar3) =",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 98,
       "match": "DAT_01d94b98",
       "severity": "mild",
       "text": "core_main_c_FUN_004e4330(\"Side info bad: block_type == 0 in split block.  File: %s\",&DAT_01d94b98);",
       "type": "undefined_data"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 172,
+      "match": "(uint *)((int)side_info_array",
+      "severity": "moderate",
+      "text": "*(uint *)((int)side_info_array->channels[local_34].granules[0].table_select +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 177,
+      "match": "(uint *)((int)side_info_array",
+      "severity": "moderate",
+      "text": "*(uint *)((int)side_info_array->channels[local_34].granules[0].subblock_gain +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 183,
+      "match": "(uint *)((int)side_info_array",
+      "severity": "moderate",
+      "text": "*(uint *)((int)side_info_array->channels[local_34].granules[0].subblock_gain +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 203,
+      "match": "(uint *)((int)side_info_array",
+      "severity": "moderate",
+      "text": "*(uint *)((int)side_info_array->channels[local_34].granules[0].subblock_gain +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 207,
+      "match": "(int *)((int)side_info_array",
+      "severity": "moderate",
+      "text": "iVar10 = *(int *)((int)side_info_array->channels[local_34].granules[0].table_select +",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 202,
+      "line": 212,
       "match": "DAT_01d94b98",
       "severity": "mild",
       "text": "core_main_c_FUN_004e4330(\"Side info bad: block_type == 0 in split block.  File: %s\",&DAT_01d94b98);",
       "type": "undefined_data"
     },
     {
-      "description": "Pointer value `pSVar7` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 85,
-      "match": "(uint)pSVar7",
+      "description": "Complex pointer cast",
+      "line": 215,
+      "match": "(int *)((int)side_info_array",
       "severity": "moderate",
-      "text": "uVar3 = (uint)pSVar7 ^ (uint)(pSVar5 + 8);",
+      "text": "(*(int *)((int)side_info_array->channels[local_34].granules[0].table_select +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `&pSVar2[1].scalefac_scale` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 65,
+      "match": "(int)&pSVar2[1].scalefac_scale",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&pSVar2[1].scalefac_scale + iVar10 + 0x34) = uVar3;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `(pSVar5 + 8)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 85,
-      "match": "(uint)(pSVar5 + 8)",
+      "description": "Pointer value `(pSVar2 + 2)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 69,
+      "match": "(int)(pSVar2 + 2)",
       "severity": "moderate",
-      "text": "uVar3 = (uint)pSVar7 ^ (uint)(pSVar5 + 8);",
+      "text": "*(uint *)((int)(pSVar2 + 2) + 0x44) = uVar3;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pSVar7` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 191,
-      "match": "(uint)pSVar7",
+      "description": "Pointer value `(pSVar2 + 2)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 71,
+      "match": "(int)(pSVar2 + 2)",
       "severity": "moderate",
-      "text": "uVar3 = (uint)pSVar7 ^ (uint)(pSVar6 + 8);",
+      "text": "*(uint *)((int)(pSVar2 + 2) + 0x24) = 0;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `(pSVar6 + 8)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 191,
-      "match": "(uint)(pSVar6 + 8)",
+      "description": "Pointer value `piVar6` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 86,
+      "match": "(uint)piVar6",
       "severity": "moderate",
-      "text": "uVar3 = (uint)pSVar7 ^ (uint)(pSVar6 + 8);",
+      "text": "uVar3 = (uint)piVar6 ^ (uint)(pSVar2 + 2);",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(pSVar2 + 2)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 86,
+      "match": "(uint)(pSVar2 + 2)",
+      "severity": "moderate",
+      "text": "uVar3 = (uint)piVar6 ^ (uint)(pSVar2 + 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 180,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "*(uint *)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 217,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "*(uint *)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 65,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&pSVar2[1].scalefac_scale + iVar10 + 0x34) = uVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_28` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&local_28->vertices[0].a`). Replace `local_28->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 113,
+      "match": "local_28 = (T *)&local_28->FIELD[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "local_28 = (SMpegLayer3SideInfo *)&local_28->channels[0].granules[1].scalefac_scale;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_48` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&local_48->vertices[0].a`). Replace `local_48->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 116,
+      "match": "local_48 = (T *)&local_48->FIELD[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "local_48 = (SMpegLayer3SideInfo *)&local_48->channels[0].granules[1].scalefac_scale;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_3c` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&local_3c->vertices[0].a`). Replace `local_3c->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 117,
+      "match": "local_3c = (T *)&local_3c->FIELD[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "local_3c = (SMpegLayer3SideInfo *)&local_3c->channels[0].granules[1].scalefac_scale;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_38` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&local_38->vertices[0].a`). Replace `local_38->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 118,
+      "match": "local_38 = (T *)&local_38->FIELD[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "local_38 = (SMpegLayer3SideInfo *)&local_38->channels[0].granules[1].scalefac_scale;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

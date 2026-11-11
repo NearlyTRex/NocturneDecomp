@@ -15,7 +15,8 @@ struct CDemonActor;
 #pragma pack(push, 1)
 typedef struct CGhoul {
     CEnemy base; // 0x0
-    char field_53332[8]; // 0xd054
+    uint sfx_handle; // 0xd054
+    int burp_timer; // 0xd058
     int spasm_timer; // 0xd05c
     int arise_timer; // 0xd060
     int pending_eat_state; // 0xd064

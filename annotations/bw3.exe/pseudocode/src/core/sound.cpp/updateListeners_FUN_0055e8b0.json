@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 431,
-    "complexity_score": 419,
+    "complexity_score": 394,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 31,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 239,
-    "suspect_count": 14,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals",
       "warning_type_propagation"
@@ -202,7 +201,7 @@
     },
     {
       "addr": "01d21570",
-      "name": "g_CGameInstance.field564_0x264",
+      "name": "g_CGameInstance.goggles_active",
       "type": "undefined4",
       "value": null
     },
@@ -864,14 +863,6 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 73,
-      "match": "field_0x264",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x264 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 96,
       "match": "&stack0xfffffe4c",
@@ -910,14 +901,6 @@
       "severity": "moderate",
       "text": "*(float *)((int)local_120 + (uint)bVar7 * 0xfffffff8) = afStack_cc[(uint)bVar7 * -2 + 3];",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 162,
-      "match": "field_0x264",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x264 == 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",

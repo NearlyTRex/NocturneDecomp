@@ -2,23 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 410,
-    "complexity_score": 416,
+    "complexity_score": 375,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 211,
-    "suspect_count": 17,
+    "pseudocode_lines": 210,
+    "suspect_count": 13,
     "suspect_types": [
+      "pointer_cast",
       "pointer_stride_bytecount",
-      "primitive_walker_cast",
+      "pointer_truncation",
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 621
+    "total_lines": 620
   },
   "cross_references": [
     {
@@ -421,22 +421,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 76,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "iVar7 = *(int *)&pCVar4->players[0].field_0x48;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 81,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "pCVar4 = (CNetGame *)&pCVar4->players[0].field_0x60;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 87,
       "match": "DAT_01dc5cf8",
@@ -445,60 +429,36 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 101,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&this_ptr->players[this_ptr->local_player_index].field_0x48;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 135,
-      "match": "(uint *)&pCVar4->players[",
+      "description": "Complex pointer cast",
+      "line": 139,
+      "match": "(SPlayerInput *)((int)pSVar8",
       "severity": "moderate",
-      "text": "puVar6 = (uint *)&pCVar4->players[0].field_0x4c;",
-      "type": "primitive_walker_cast"
+      "text": "pSVar8 = (SPlayerInput *)((int)pSVar8 + (uint)bVar12 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 135,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "puVar6 = (uint *)&pCVar4->players[0].field_0x4c;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 140,
+      "match": "(SPlayerInput *)((int)pSVar10",
+      "severity": "moderate",
+      "text": "pSVar10 = (SPlayerInput *)((int)pSVar10 + (uint)bVar12 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 143,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "pCVar4 = (CNetGame *)&pCVar4->players[0].field_0x60;",
-      "type": "unnamed_field"
+      "description": "Pointer value `pSVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 139,
+      "match": "(int)pSVar8",
+      "severity": "moderate",
+      "text": "pSVar8 = (SPlayerInput *)((int)pSVar8 + (uint)bVar12 * -8 + 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 155,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&this_ptr->players[this_ptr->local_player_index].field_0x48 -",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 156,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "*(int *)&local_1c->field_0x48;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 165,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "local_14 = *(int *)&pSVar1->field_0x48;",
-      "type": "unnamed_field"
+      "description": "Pointer value `pSVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 140,
+      "match": "(int)pSVar10",
+      "severity": "moderate",
+      "text": "pSVar10 = (SPlayerInput *)((int)pSVar10 + (uint)bVar12 * -8 + 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
@@ -521,7 +481,7 @@
       "line": 81,
       "match": "pCVar4 = (T *)&pCVar4->FIELD[N].SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar4 = (CNetGame *)&pCVar4->players[0].field_0x60;",
+      "text": "pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action_state.use_item;",
       "type": "shadow_pointer_walk"
     },
     {
@@ -529,7 +489,15 @@
       "line": 143,
       "match": "pCVar4 = (T *)&pCVar4->FIELD[N].SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar4 = (CNetGame *)&pCVar4->players[0].field_0x60;",
+      "text": "pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action_state.use_item;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pSVar5->vertices[0].a`). Replace `pSVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 144,
+      "match": "pSVar5 = (T *)&pSVar5->FIELD[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar5 = (SSimFrame *)&pSVar5->player_input[0].strafe_speed;",
       "type": "shadow_pointer_walk"
     },
     {

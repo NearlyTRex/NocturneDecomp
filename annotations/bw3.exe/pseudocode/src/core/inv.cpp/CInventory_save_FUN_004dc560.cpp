@@ -15,40 +15,39 @@ void __cdecl core_inv_cpp_CInventory_save_FUN_004dc560(CInventory *this_ptr,_FIL
   
   FUN_005a3140(file_handle,"%s{ // Inventory\n");
   core_actor_cpp_adjustIndentationLevel_FUN_0040afa0(1);
-  *(uint *)(this_ptr + 0x334) = 2;
+  this_ptr->save_version = 2;
   FUN_005a3140(file_handle,"%s// fileVersion\n",&DAT_005f0990);
-  FUN_005a3140
-            (file_handle,"%s%d\n",&DAT_005f0990,*(uint *)(this_ptr + 0x334));
+  FUN_005a3140(file_handle,"%s%d\n",&DAT_005f0990,this_ptr->save_version);
   FUN_005a3140(file_handle,"%s// itemCount\n",&DAT_005f0990);
-  FUN_005a3140
-            (file_handle,"%s%d\n",&DAT_005f0990,*(uint *)(this_ptr + 0x10));
+  FUN_005a3140(file_handle,"%s%d\n",&DAT_005f0990,this_ptr->item_count);
   iVar1 = 0;
   pCVar2 = this_ptr;
   iVar3 = -1;
-  if (0 < *(int *)(this_ptr + 0x10)) {
+  if (0 < this_ptr->item_count) {
     do {
       iVar3 = iVar1;
-      if (*(int *)(this_ptr + 0x338) == *(int *)(pCVar2 + 0x14)) break;
+      if (this_ptr->selected_weapon == (CWeapon *)pCVar2->items[0]) break;
       iVar1 = iVar1 + 1;
-      pCVar2 = pCVar2 + 4;
+      pCVar2 = (CInventory *)&pCVar2->owner;
       iVar3 = -1;
-    } while (iVar1 < *(int *)(this_ptr + 0x10));
+    } while (iVar1 < this_ptr->item_count);
   }
   FUN_005a3140(file_handle,"%s// currentWeapon\n",&DAT_005f0990,iVar3);
   FUN_005a3140(file_handle,"%s%d\n",&DAT_005f0990,iVar3);
   FUN_005a3140(file_handle,"%s// battery strength\n",&DAT_005f0990);
-  FUN_005a3140(file_handle,"%s%f\n",&DAT_005f0990,(double)*(float *)this_ptr);
+  FUN_005a3140
+            (file_handle,"%s%f\n",&DAT_005f0990,(double)this_ptr->battery_charge);
   FUN_005a3140(file_handle,"%s// actor name list\n");
   core_inv_cpp_CInventory_saveItems_FUN_004dc700(this_ptr,file_handle);
   iVar3 = 0;
   FUN_005a3140(file_handle,"%s// actor data list\n");
   pCVar2 = this_ptr;
-  if (0 < *(int *)(this_ptr + 0x10)) {
+  if (0 < this_ptr->item_count) {
     do {
       iVar3 = iVar3 + 1;
-      core_actor_cpp_CDemonActor_save_FUN_0040aff0(*(CDemonActor **)(pCVar2 + 0x14),file_handle);
-      pCVar2 = pCVar2 + 4;
-    } while (iVar3 < *(int *)(this_ptr + 0x10));
+      core_actor_cpp_CDemonActor_save_FUN_0040aff0(pCVar2->items[0],file_handle);
+      pCVar2 = (CInventory *)&pCVar2->owner;
+    } while (iVar3 < this_ptr->item_count);
   }
   core_actor_cpp_adjustIndentationLevel_FUN_0040afa0(-1);
   FUN_005a3140(file_handle,"%s} // End inventory\n",&DAT_005f0990);

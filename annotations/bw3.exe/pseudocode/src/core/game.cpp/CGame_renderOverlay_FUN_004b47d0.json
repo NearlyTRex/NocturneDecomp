@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 430,
-    "complexity_score": 345,
+    "complexity_score": 310,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 16,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 160,
-    "suspect_count": 16,
+    "suspect_count": 13,
     "suspect_types": [
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
@@ -503,22 +502,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0xb80",
-      "severity": "mild",
-      "text": "pcVar7 = &this_ptr->field_0xb80;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0xb80",
-      "severity": "mild",
-      "text": "(_DAT_01549aa0,0,0x27f,10,0xf8,0,&this_ptr->field_0xb80);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 75,
       "match": "DAT_005fba1c",
@@ -557,14 +540,6 @@
       "severity": "mild",
       "text": "iVar4 = DAT_005fba1c - iVar4;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 109,
-      "match": "field_0x24c",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x24c == 0) && (0 < this_ptr->status_display_count)) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

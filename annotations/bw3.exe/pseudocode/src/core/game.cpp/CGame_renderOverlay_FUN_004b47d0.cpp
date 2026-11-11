@@ -47,7 +47,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b47d0(CGame *this_ptr)
   local_5c = DAT_005fba1c;
   local_64 = DAT_005fba1c;
   iVar6 = -1;
-  pcVar7 = &this_ptr->field_0xb80;
+  pcVar7 = this_ptr->end_timer_text;
   do {
     if (iVar6 == 0) break;
     iVar6 = iVar6 + -1;
@@ -56,7 +56,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b47d0(CGame *this_ptr)
   } while (cVar1 != '\0');
   if (iVar6 != -2) {
     engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004b0fa0
-              (_DAT_01549aa0,0,0x27f,10,0xf8,0,&this_ptr->field_0xb80);
+              (_DAT_01549aa0,0,0x27f,10,0xf8,0,this_ptr->end_timer_text);
   }
   if (ABS(this_ptr->message_timer) != 0.0) {
     if (1.0 <= this_ptr->message_timer) {
@@ -113,7 +113,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b47d0(CGame *this_ptr)
     _sprintf(local_164,"?%d - %s" + 1);
     engine_font_cpp_FUN_004b0a20(pCVar8,local_164,iVar5 * 2,(iVar4 - iVar6) - iVar5,0xf8,0);
   }
-  if ((*(int *)&this_ptr->field_0x24c == 0) && (0 < this_ptr->status_display_count)) {
+  if ((this_ptr->letterbox_mode == 0) && (0 < this_ptr->status_display_count)) {
     iVar5 = local_60 >> 0x1f;
     iVar6 = local_60 + iVar5 * -4;
     local_44 = local_5c / 0x28;

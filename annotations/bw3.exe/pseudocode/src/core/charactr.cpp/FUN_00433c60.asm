@@ -49,7 +49,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 DAT_007e2cb0
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field112_0x15ac84
+;   undefined4 g_CDemonSetInstance.active_fog.temperature
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b00
@@ -137,7 +137,7 @@ section .text
         ;   XREF to: 00433cc0 (UNCONDITIONAL_JUMP)  ; LAB_00433cc0
     MOV EAX,[0x00603b28]                ; 00433d20 | g_CDemonSetPtr
         ;   Label: LAB_00433d20
-    FLD float ptr [EAX + 0x15ac84]      ; 00433d25 | g_CDemonSetInstance.field112_0x15ac84
+    FLD float ptr [EAX + 0x15ac84]      ; 00433d25 | g_CDemonSetInstance.active_fog.temperature
     FCOMP double ptr [0x005b8866]       ; 00433d2b | DAT_005b8866
     FNSTSW AX                           ; 00433d31
     SAHF                                ; 00433d33

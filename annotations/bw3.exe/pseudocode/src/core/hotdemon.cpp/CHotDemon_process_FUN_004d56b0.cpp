@@ -29,10 +29,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004d56b0(CHotDemon *this_pt
   float fVar13;
   EBloodType blood_type;
   float max_distance;
-  SDamageInfo aSStack_1a0 [4];
-  uint uStack_19c;
-  CHotDemon *pCStack_16c;
-  CHotDemon *pCStack_168;
+  SDamageInfo SStack_1a0;
   uint uStack_164;
   float afStack_160 [5];
   CVector3f CStack_14c;
@@ -97,18 +94,17 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004d56b0(CHotDemon *this_pt
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  fStack_34 = delta_time * *(float *)&(this_ptr->base).field_0xcdcc;
+  fStack_34 = delta_time * (this_ptr->base).speed;
   pCVar1 = &(this_ptr->base).base.model;
   while (0.0 < fStack_34) {
     iVar5 = core_motion_cpp_CMotionController_advance_FUN_004fbb70(&pCVar1->base,afStack_ac + 0x1e);
     core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0((CCharacter *)this_ptr,iVar5);
   }
-  fVar13 = *(float *)&(this_ptr->base).field_0xcdcc;
-  *(float *)&(this_ptr->base).base.field_0x2524 =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
+  fVar13 = (this_ptr->base).speed;
+  (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   core_charactr_cpp_FUN_00434850(this_ptr,delta_time * fVar13);
   pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCVar1->base);
-  iVar5 = *(int *)(pSVar6 + 0x24);
+  iVar5 = pSVar6->state_index;
   iStack_18 = iVar5;
   iVar7 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660
                     ((CCharacter *)this_ptr,delta_time);
@@ -155,11 +151,11 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004d56b0(CHotDemon *this_pt
               iVar5 = 8;
             }
             core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_20,iVar5,1);
-            iVar5 = sound_sndmain_cpp_FUN_00556700(*(uint *)&this_ptr->field_0xd054);
+            iVar5 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handles[0]);
             if (iVar5 == 0) {
               uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                 ((CDemonActor *)this_ptr,"hotdemon-attack.wav");
-              *(uint *)&this_ptr->field_0xd054 = uVar8;
+              this_ptr->sfx_handles[0] = uVar8;
             }
           }
         }
@@ -262,11 +258,11 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004d56b0(CHotDemon *this_pt
               }
               core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
                         (&(this_ptr->base).base.model.base,iVar5,1);
-              iVar5 = sound_sndmain_cpp_FUN_00556700(*(uint *)&this_ptr->field_0xd054);
+              iVar5 = sound_sndmain_cpp_FUN_00556700(this_ptr->sfx_handles[0]);
               if (iVar5 == 0) {
                 uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                   ((CDemonActor *)this_ptr,"hotdemon-attack.wav");
-                *(uint *)&this_ptr->field_0xd054 = uVar8;
+                this_ptr->sfx_handles[0] = uVar8;
               }
               (this_ptr->base).attack_cooldown = 2.0;
             }
@@ -287,13 +283,14 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004d56b0(CHotDemon *this_pt
       break;
     case 2:
     case 8:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(aSStack_1a0);
-      uStack_19c = *(uint *)&(this_ptr->base).field_0xce5c;
-      pCStack_16c = this_ptr;
-      pCStack_168 = this_ptr;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(&SStack_1a0);
+      SStack_1a0.damage_amount = (this_ptr->base).attack_damage;
+      SStack_1a0.attacker = (CDemonActor *)this_ptr;
+      SStack_1a0.wielder = (CDemonActor *)this_ptr;
       core_xform_cpp_FUN_00583260
-                (&DAT_02cfd900,&(this_ptr->base).base.model.field_0xe80 + _DAT_01d5baf4 * 0x30,
-                 0x3ecccccd,aSStack_1a0);
+                (&DAT_02cfd900,
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01d5baf4,
+                 0x3ecccccd,&SStack_1a0);
       pfVar11 = afStack_13c + 0x11;
       afStack_f8[0] = (float)uStack_164;
       afStack_13c[(uint)bVar9 * -2 + 0x12] = afStack_160[(uint)bVar9 * -2];

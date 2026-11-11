@@ -14,7 +14,7 @@
 ;   undefined4 DAT_006045f8
 ;
 ; Called Functions:
-;   core_fire.cpp_FUN_004a3f70
+;   core_fire.cpp_CFireEffect_createRing_FUN_004a3f70
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
 ;   core_weapon.cpp_CWeapon_fire_FUN_0057b880
 ;
@@ -55,8 +55,8 @@ section .text
     PUSH EAX                            ; 004a4d4a
     MOV ESI,dword ptr [0x005fc5a0]      ; 004a4d4b | DAT_005fc5a0
     PUSH ESI                            ; 004a4d51
-    CALL core_fire.cpp_FUN_004a3f70     ; 004a4d52
-        ;   XREF to: 004a3f70 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3f70()
+    CALL core_fire.cpp_CFireEffect_createRing_FUN_004a3f70 ; 004a4d52
+        ;   XREF to: 004a3f70 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRing_FUN_004a3f70(CFireEffect * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4)
     ADD ESP,0x10                        ; 004a4d57
     LEA EAX,[ESP + 0xc]                 ; 004a4d5a
     PUSH EAX                            ; 004a4d5e

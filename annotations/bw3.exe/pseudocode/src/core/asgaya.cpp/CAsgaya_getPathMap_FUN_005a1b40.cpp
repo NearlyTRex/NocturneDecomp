@@ -9,5 +9,5 @@
 CPathMap * __cdecl core_asgaya_cpp_CAsgaya_getPathMap_FUN_005a1b40(CAsgaya *this_ptr)
 
 {
-  return (CPathMap *)&this_ptr->field_0x206c8;
+  return &this_ptr->path_map;
 }

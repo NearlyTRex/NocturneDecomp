@@ -14,7 +14,7 @@
 ;   void* PTR_MultiByteToWideChar_005b3604 = 001b408a
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005a3650
+;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_unknown.c_FUN_005a3770
 ;   crt_unknown.c_FUN_005afd50
 ;   GetModuleFileNameA
@@ -51,8 +51,8 @@ section .text
     RET                                 ; 005ade03
     PUSH 0x208                          ; 005ade04
         ;   Label: LAB_005ade04
-    CALL crt_unknown.c_FUN_005a3650     ; 005ade09
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 005ade09
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     MOV EBX,EAX                         ; 005ade0e
     ADD ESP,0x4                         ; 005ade10
     TEST EAX,EAX                        ; 005ade13

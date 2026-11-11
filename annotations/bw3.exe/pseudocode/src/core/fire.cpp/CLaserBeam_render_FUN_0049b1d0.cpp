@@ -32,34 +32,16 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_0049b1d0(CLaserBeam *this_ptr)
   float local_394;
   float local_390;
   float local_380;
-  SMRGLPrimitivePoly local_378 [4];
-  uint local_374;
-  uint local_370;
-  uint local_36c;
-  uint local_368;
-  uint local_364;
-  uint local_360;
-  uint local_35c;
-  uint local_358;
-  uint local_354;
-  uint local_350;
-  uint local_34c;
-  uint local_348;
-  uint local_344;
-  uint local_340;
-  uint local_33c;
-  uint local_338;
-  uint local_334;
-  SMRGLPrimitivePoly local_330 [4];
-  uint local_32c;
-  uint local_328;
-  uint local_324;
-  uint local_320;
-  uint local_31c;
-  uint local_318;
-  uint local_314;
+  byte local_378 [76];
+  int local_32c;
+  int local_328;
+  int local_324;
+  int local_320;
+  int local_31c;
+  int local_318;
+  int local_314;
   int local_310;
-  uint local_30c;
+  int local_30c;
   int local_308;
   int local_304;
   uint local_300;
@@ -264,7 +246,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_0049b1d0(CLaserBeam *this_ptr)
     }
   }
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(DAT_005f2afc,0);
-  if ((0.0 < local_390) && (*(int *)&g_CGamePtr->field_0xc != 0)) {
+  if ((0.0 < local_390) && (g_CGamePtr->halo_mode != 0)) {
     fVar1 = this_ptr->beam_width;
     fVar3 = 1.0 - local_390 * (float)_DAT_005c0608;
     local_380 = local_380 * fVar3;
@@ -317,26 +299,26 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_0049b1d0(CLaserBeam *this_ptr)
       local_13c.x = (int)ROUND(local_28 * _DAT_005df8e4);
       local_13c.y = (int)ROUND(local_28 * _DAT_005df8e4);
       local_13c.z = (int)ROUND(_DAT_005df8e4 * 0.0);
-      engine_special_cpp_FUN_005632a3
-                ((SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr,&local_13c);
+      engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_13c)
+      ;
       local_c4 = -local_c4;
       local_d0.x = (int)ROUND(local_c4 * _DAT_005df8e4);
       local_d0.y = (int)ROUND(local_c0 * _DAT_005df8e4);
       local_d0.z = (int)ROUND(local_bc * _DAT_005df8e4);
       engine_special_cpp_FUN_005632a3
-                ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x30),&local_d0);
+                (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_d0);
       local_c0 = -local_c0;
       local_a0.x = (int)ROUND(local_c4 * _DAT_005df8e4);
       local_a0.y = (int)ROUND(local_c0 * _DAT_005df8e4);
       local_a0.z = (int)ROUND(local_bc * _DAT_005df8e4);
       engine_special_cpp_FUN_005632a3
-                ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x60),&local_a0);
+                (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_a0);
       local_c4 = -local_c4;
       local_f4.x = (int)ROUND(local_c4 * _DAT_005df8e4);
       local_f4.y = (int)ROUND(local_c0 * _DAT_005df8e4);
       local_f4.z = (int)ROUND(local_bc * _DAT_005df8e4);
       engine_special_cpp_FUN_005632a3
-                ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x90),&local_f4);
+                (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_f4);
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
                 (DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005fcafc);
       local_2e8.base.count = 4;
@@ -349,33 +331,33 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_0049b1d0(CLaserBeam *this_ptr)
       pSVar8 = DAT_005f2afc->vertex_buffer_ptr;
       round();
       local_74 = (int)ROUND(fVar11);
-      *(int *)(pSVar8 + 0x2c) = local_74;
-      *(int *)(this_ptr_00->vertex_buffer_ptr + 0x20) = (this_ptr->color).r;
-      *(int *)(this_ptr_00->vertex_buffer_ptr + 0x24) = (this_ptr->color).g;
-      *(int *)(this_ptr_00->vertex_buffer_ptr + 0x28) = (this_ptr->color).b;
+      pSVar8->a = local_74;
+      this_ptr_00->vertex_buffer_ptr->r = (this_ptr->color).r;
+      this_ptr_00->vertex_buffer_ptr->g = (this_ptr->color).g;
+      this_ptr_00->vertex_buffer_ptr->b = (this_ptr->color).b;
       local_2cc = 1;
-      *(int *)(this_ptr_00->vertex_buffer_ptr + 0x5c) = local_74;
-      *(int *)(this_ptr_00->vertex_buffer_ptr + 0x50) = (this_ptr->color).r;
-      *(int *)(this_ptr_00->vertex_buffer_ptr + 0x54) = (this_ptr->color).g;
-      *(int *)(this_ptr_00->vertex_buffer_ptr + 0x58) = (this_ptr->color).b;
+      this_ptr_00->vertex_buffer_ptr[1].a = local_74;
+      this_ptr_00->vertex_buffer_ptr[1].r = (this_ptr->color).r;
+      this_ptr_00->vertex_buffer_ptr[1].g = (this_ptr->color).g;
+      this_ptr_00->vertex_buffer_ptr[1].b = (this_ptr->color).b;
       local_2c8 = 2;
-      *(int *)(this_ptr_00->vertex_buffer_ptr + 0x8c) = local_74;
-      *(int *)(this_ptr_00->vertex_buffer_ptr + 0x80) = (this_ptr->color).r;
-      *(int *)(this_ptr_00->vertex_buffer_ptr + 0x84) = (this_ptr->color).g;
-      *(int *)(this_ptr_00->vertex_buffer_ptr + 0x88) = (this_ptr->color).b;
+      this_ptr_00->vertex_buffer_ptr[2].a = local_74;
+      this_ptr_00->vertex_buffer_ptr[2].r = (this_ptr->color).r;
+      this_ptr_00->vertex_buffer_ptr[2].g = (this_ptr->color).g;
+      this_ptr_00->vertex_buffer_ptr[2].b = (this_ptr->color).b;
       local_2c4 = 3;
-      *(int *)(this_ptr_00->vertex_buffer_ptr + 0xbc) = local_74;
-      *(int *)(this_ptr_00->vertex_buffer_ptr + 0xb0) = (this_ptr->color).r;
-      *(int *)(this_ptr_00->vertex_buffer_ptr + 0xb4) = (this_ptr->color).g;
-      *(int *)(this_ptr_00->vertex_buffer_ptr + 0xb8) = (this_ptr->color).b;
-      *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x18) = 0xf80000;
-      *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x1c) = 0xf80000;
-      *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x48) = 0x80000;
-      *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x4c) = 0xf80000;
-      *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x78) = 0x80000;
-      *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x7c) = 0x80000;
-      *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xa8) = 0xf80000;
-      *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xac) = 0x80000;
+      this_ptr_00->vertex_buffer_ptr[3].a = local_74;
+      this_ptr_00->vertex_buffer_ptr[3].r = (this_ptr->color).r;
+      this_ptr_00->vertex_buffer_ptr[3].g = (this_ptr->color).g;
+      this_ptr_00->vertex_buffer_ptr[3].b = (this_ptr->color).b;
+      this_ptr_00->vertex_buffer_ptr->u = 0xf80000;
+      this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
+      this_ptr_00->vertex_buffer_ptr[1].u = 0x80000;
+      this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;
+      this_ptr_00->vertex_buffer_ptr[2].u = 0x80000;
+      this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
+      this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;
+      this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
       engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046c510(this_ptr_00,&local_2e8)
       ;
       engine_matrix_c_pop_FUN_0046d080();
@@ -416,20 +398,20 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_0049b1d0(CLaserBeam *this_ptr)
         fVar12 = (float10)fsin(fVar11);
         fVar11 = (float10)fcos(fVar11);
         pSVar8 = DAT_005f2afc->vertex_buffer_ptr;
-        pSVar9 = DAT_005f2afc->vertex_buffer_ptr + 0x90;
+        pSVar9 = DAT_005f2afc->vertex_buffer_ptr + 3;
         for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *(uint *)pSVar9 = *(uint *)pSVar8;
-          pSVar8 = pSVar8 + ((uint)bVar10 * -2 + 1) * 4;
-          pSVar9 = pSVar9 + ((uint)bVar10 * -2 + 1) * 4;
+          (pSVar9->projected_vertex).transformed_x = (pSVar8->projected_vertex).transformed_x;
+          pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);
+          pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);
         }
         pSVar8 = pCVar5->vertex_buffer_ptr;
         local_68 = (float)fVar12;
-        pSVar9 = pSVar8 + 0x30;
-        pSVar8 = pSVar8 + 0x60;
+        pSVar9 = pSVar8 + 1;
+        pSVar8 = pSVar8 + 2;
         for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *(uint *)pSVar8 = *(uint *)pSVar9;
-          pSVar9 = pSVar9 + ((uint)bVar10 * -2 + 1) * 4;
-          pSVar8 = pSVar8 + ((uint)bVar10 * -2 + 1) * 4;
+          (pSVar8->projected_vertex).transformed_x = (pSVar9->projected_vertex).transformed_x;
+          pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);
+          pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);
         }
         local_70 = (float)fVar11;
         local_224 = 0.0;
@@ -438,7 +420,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_0049b1d0(CLaserBeam *this_ptr)
         local_280.x = (int)ROUND(local_22c * _DAT_005df8e4);
         local_280.y = (int)ROUND(local_228 * _DAT_005df8e4);
         local_280.z = (int)ROUND(_DAT_005df8e4 * 0.0);
-        engine_special_cpp_FUN_005632a3((SProjectedVertex *)pCVar5->vertex_buffer_ptr,&local_280);
+        engine_special_cpp_FUN_005632a3(&pCVar5->vertex_buffer_ptr->projected_vertex,&local_280);
         local_22c = local_70 * local_38;
         local_228 = local_68 * local_38;
         local_224 = fVar2 + (float)_DAT_005c0640;
@@ -446,7 +428,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_0049b1d0(CLaserBeam *this_ptr)
         local_238.y = (int)ROUND(local_228 * _DAT_005df8e4);
         local_238.z = (int)ROUND(local_224 * _DAT_005df8e4);
         engine_special_cpp_FUN_005632a3
-                  ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x30),&local_238);
+                  (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_238);
         iVar7 = local_1c;
         if (local_1c != 0) {
           fVar11 = (float10)local_44;
@@ -475,18 +457,18 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_0049b1d0(CLaserBeam *this_ptr)
             local_2ec = 0x800000;
             local_314 = 0x800000;
           }
-          *(int *)(DAT_005f2afc->vertex_buffer_ptr + 0x20) = (this_ptr->color).r;
-          *(int *)(pCVar5->vertex_buffer_ptr + 0x24) = (this_ptr->color).g;
-          *(int *)(pCVar5->vertex_buffer_ptr + 0x28) = (this_ptr->color).b;
-          *(int *)(pCVar5->vertex_buffer_ptr + 0x50) = (this_ptr->color).r;
-          *(int *)(pCVar5->vertex_buffer_ptr + 0x54) = (this_ptr->color).g;
-          *(int *)(pCVar5->vertex_buffer_ptr + 0x58) = (this_ptr->color).b;
-          *(int *)(pCVar5->vertex_buffer_ptr + 0x80) = (this_ptr->color).r;
-          *(int *)(pCVar5->vertex_buffer_ptr + 0x84) = (this_ptr->color).g;
-          *(int *)(pCVar5->vertex_buffer_ptr + 0x88) = (this_ptr->color).b;
-          *(int *)(pCVar5->vertex_buffer_ptr + 0xb0) = (this_ptr->color).r;
-          *(int *)(pCVar5->vertex_buffer_ptr + 0xb4) = (this_ptr->color).g;
-          *(int *)(pCVar5->vertex_buffer_ptr + 0xb8) = (this_ptr->color).b;
+          DAT_005f2afc->vertex_buffer_ptr->r = (this_ptr->color).r;
+          pCVar5->vertex_buffer_ptr->g = (this_ptr->color).g;
+          pCVar5->vertex_buffer_ptr->b = (this_ptr->color).b;
+          pCVar5->vertex_buffer_ptr[1].r = (this_ptr->color).r;
+          pCVar5->vertex_buffer_ptr[1].g = (this_ptr->color).g;
+          pCVar5->vertex_buffer_ptr[1].b = (this_ptr->color).b;
+          pCVar5->vertex_buffer_ptr[2].r = (this_ptr->color).r;
+          pCVar5->vertex_buffer_ptr[2].g = (this_ptr->color).g;
+          pCVar5->vertex_buffer_ptr[2].b = (this_ptr->color).b;
+          pCVar5->vertex_buffer_ptr[3].r = (this_ptr->color).r;
+          pCVar5->vertex_buffer_ptr[3].g = (this_ptr->color).g;
+          pCVar5->vertex_buffer_ptr[3].b = (this_ptr->color).b;
           local_310 = local_304;
           local_308 = local_2fc;
           local_2f8 = local_2ec;
@@ -498,15 +480,16 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_0049b1d0(CLaserBeam *this_ptr)
           local_2c = (int)ROUND(fVar11);
           if (uVar6 == 0) {
             engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,local_2c);
-            engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_0046c800(DAT_005f2afc,local_330)
-            ;
+            engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_0046c800
+                      (DAT_005f2afc,(SMRGLPrimitivePoly *)(local_378 + 0x48));
           }
           else {
-            *(int *)(DAT_005f2afc->vertex_buffer_ptr + 0x2c) = local_2c;
-            *(uint *)(pCVar5->vertex_buffer_ptr + 0x5c) = 0;
-            *(uint *)(pCVar5->vertex_buffer_ptr + 0x8c) = 0;
-            *(int *)(pCVar5->vertex_buffer_ptr + 0xbc) = local_2c;
-            engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0046c5e0(pCVar5,local_330);
+            DAT_005f2afc->vertex_buffer_ptr->a = local_2c;
+            pCVar5->vertex_buffer_ptr[1].a = 0;
+            pCVar5->vertex_buffer_ptr[2].a = 0;
+            pCVar5->vertex_buffer_ptr[3].a = local_2c;
+            engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0046c5e0
+                      (pCVar5,(SMRGLPrimitivePoly *)(local_378 + 0x48));
           }
         }
         local_30 = local_30 + 0x100;
@@ -560,62 +543,60 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_0049b1d0(CLaserBeam *this_ptr)
     local_298.x = (int)ROUND(_DAT_005df8e4 * 0.4);
     local_298.y = (int)ROUND(_DAT_005df8e4 * 0.4);
     local_298.z = (int)ROUND(_DAT_005df8e4 * 0.0);
-    engine_special_cpp_FUN_005632a3((SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr,&local_298);
+    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_298);
     local_1a8 = -local_1a8;
     local_dc.x = (int)ROUND(local_1a8 * _DAT_005df8e4);
     local_dc.y = (int)ROUND(local_1a4 * _DAT_005df8e4);
     local_dc.z = (int)ROUND(local_1a0 * _DAT_005df8e4);
-    engine_special_cpp_FUN_005632a3
-              ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x30),&local_dc);
+    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_dc);
     local_1a4 = -local_1a4;
     local_b8.x = (int)ROUND(local_1a8 * _DAT_005df8e4);
     local_b8.y = (int)ROUND(local_1a4 * _DAT_005df8e4);
     local_b8.z = (int)ROUND(local_1a0 * _DAT_005df8e4);
-    engine_special_cpp_FUN_005632a3
-              ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x60),&local_b8);
+    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_b8);
     local_1a8 = -local_1a8;
     local_94[0].x = (int)ROUND(local_1a8 * _DAT_005df8e4);
     local_94[0].y = (int)ROUND(local_1a4 * _DAT_005df8e4);
     local_94[0].z = (int)ROUND(local_1a0 * _DAT_005df8e4);
-    engine_special_cpp_FUN_005632a3
-              ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x90),local_94);
+    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,local_94);
     pCVar5 = DAT_005f2afc;
-    local_374 = 4;
-    local_364 = 0;
-    local_368 = 0;
-    local_36c = 0;
-    local_370 = 0;
-    local_360 = 0;
-    local_33c = 3;
-    local_35c = 0;
-    local_358 = 0;
-    local_350 = 0x1000000;
-    local_344 = 0x1000000;
-    local_340 = 0x1000000;
-    local_334 = 0x1000000;
-    local_354 = 1;
-    local_348 = 2;
-    local_34c = 0;
-    local_338 = 0;
-    *(int *)(DAT_005f2afc->vertex_buffer_ptr + 0x20) = (this_ptr->color).r;
-    *(int *)(pCVar5->vertex_buffer_ptr + 0x24) = (this_ptr->color).g;
-    *(int *)(pCVar5->vertex_buffer_ptr + 0x28) = (this_ptr->color).b;
-    *(int *)(pCVar5->vertex_buffer_ptr + 0x50) = (this_ptr->color).r;
-    *(int *)(pCVar5->vertex_buffer_ptr + 0x54) = (this_ptr->color).g;
-    *(int *)(pCVar5->vertex_buffer_ptr + 0x58) = (this_ptr->color).b;
-    *(int *)(pCVar5->vertex_buffer_ptr + 0x80) = (this_ptr->color).r;
-    *(int *)(pCVar5->vertex_buffer_ptr + 0x84) = (this_ptr->color).g;
-    *(int *)(pCVar5->vertex_buffer_ptr + 0x88) = (this_ptr->color).b;
-    *(int *)(pCVar5->vertex_buffer_ptr + 0xb0) = (this_ptr->color).r;
-    *(int *)(pCVar5->vertex_buffer_ptr + 0xb4) = (this_ptr->color).g;
-    *(int *)(pCVar5->vertex_buffer_ptr + 0xb8) = (this_ptr->color).b;
+    local_378._4_4_ = 4;
+    local_378._20_4_ = 0;
+    local_378._16_4_ = 0;
+    local_378._12_4_ = 0;
+    local_378._8_4_ = 0;
+    local_378._24_4_ = 0;
+    local_378._60_4_ = 3;
+    local_378._28_4_ = 0;
+    local_378._32_4_ = 0;
+    local_378._40_4_ = 0x1000000;
+    local_378._52_4_ = 0x1000000;
+    local_378._56_4_ = 0x1000000;
+    local_378._68_4_ = 0x1000000;
+    local_378._36_4_ = 1;
+    local_378._48_4_ = 2;
+    local_378._44_4_ = 0;
+    local_378._64_4_ = 0;
+    DAT_005f2afc->vertex_buffer_ptr->r = (this_ptr->color).r;
+    pCVar5->vertex_buffer_ptr->g = (this_ptr->color).g;
+    pCVar5->vertex_buffer_ptr->b = (this_ptr->color).b;
+    pCVar5->vertex_buffer_ptr[1].r = (this_ptr->color).r;
+    pCVar5->vertex_buffer_ptr[1].g = (this_ptr->color).g;
+    pCVar5->vertex_buffer_ptr[1].b = (this_ptr->color).b;
+    pCVar5->vertex_buffer_ptr[2].r = (this_ptr->color).r;
+    pCVar5->vertex_buffer_ptr[2].g = (this_ptr->color).g;
+    pCVar5->vertex_buffer_ptr[2].b = (this_ptr->color).b;
+    pCVar5->vertex_buffer_ptr[3].r = (this_ptr->color).r;
+    pCVar5->vertex_buffer_ptr[3].g = (this_ptr->color).g;
+    pCVar5->vertex_buffer_ptr[3].b = (this_ptr->color).b;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(pCVar5,1);
     local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(32768.0,40959.0);
     fVar11 = (float10)local_14 * (float10)local_394;
     round();
     local_18 = (int)ROUND(fVar11);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,local_18);
-    engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_0046c800(DAT_005f2afc,local_378);
+    engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_0046c800
+              (DAT_005f2afc,(SMRGLPrimitivePoly *)local_378);
     engine_matrix_c_pop_FUN_0046d080();
   }
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);

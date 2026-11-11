@@ -14,8 +14,8 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0050ff60
 ;   core_main.c_FUN_004e4330
 ;   crt_memory.c___vec_new_FUN_005a5584
+;   crt_memory.c_operator_new_array_FUN_005a40df
 ;   crt_stdio.c_fread_FUN_005a3890
-;   crt_unknown.c_FUN_005a40df
 ;
 ; *****************************************************************************
 
@@ -99,8 +99,8 @@ section .text
     IMUL EAX,EAX,0x24                   ; 00510379
     ADD EAX,0x4                         ; 0051037c
     PUSH EAX                            ; 0051037f
-    CALL crt_unknown.c_FUN_005a40df     ; 00510380
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a40df()
+    CALL crt_memory.c_operator_new_array_FUN_005a40df ; 00510380
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
     ADD ESP,0x4                         ; 00510385
     PUSH EAX                            ; 00510388
     CALL crt_memory.c___vec_new_FUN_005a5584 ; 00510389

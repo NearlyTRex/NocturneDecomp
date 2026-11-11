@@ -19,7 +19,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 DAT_01bdd7e4
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field180_0xe4
+;   undefined4 g_CGameInstance.show_crosshair
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -52,7 +52,7 @@ section .text
     JZ 0x0057bb93                       ; 0057bb83
         ;   XREF to: 0057bb93 (CONDITIONAL_JUMP)  ; LAB_0057bb93
     MOV EAX,[0x005fe9dc]                ; 0057bb85 | g_CGamePtr | g_CGameInstance
-    CMP dword ptr [EAX + 0xe4],0x0      ; 0057bb8a | g_CGameInstance.field180_0xe4
+    CMP dword ptr [EAX + 0xe4],0x0      ; 0057bb8a | g_CGameInstance.show_crosshair
     JNZ 0x0057bba1                      ; 0057bb91
         ;   XREF to: 0057bba1 (CONDITIONAL_JUMP)  ; LAB_0057bba1
     ADD ESP,0xa8                        ; 0057bb93

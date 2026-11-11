@@ -55,9 +55,9 @@ void core_fire_cpp_FUN_00496e00(uint *param_1)
   *pfVar1 = *pfVar1 + local_24;
   param_1[2] = (float)param_1[2] + local_20;
   param_1[3] = (float)param_1[3] + local_1c;
-  local_18 = *(float *)&pCVar2->field_0x15ac70 * local_c;
-  local_14 = *(float *)&pCVar2->field_0x15ac74 * local_c;
-  local_10 = *(float *)&pCVar2->field_0x15ac78 * local_c;
+  local_18 = (pCVar2->active_fog).scroll.x * local_c;
+  local_14 = (pCVar2->active_fog).scroll.y * local_c;
+  local_10 = (pCVar2->active_fog).scroll.z * local_c;
   local_3c = local_18;
   *(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * -8) =
        *(uint *)((int)&stack0xffffffec + (uint)bVar3 * -8);

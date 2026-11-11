@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 396,
-    "complexity_score": 733,
+    "complexity_score": 688,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 228,
-    "suspect_count": 46,
+    "suspect_count": 42,
     "suspect_types": [
       "pointer_cast",
       "raw_address_pointer_store",
       "stack_alignment_array",
       "stack_param",
       "stack_ref",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals",
       "warning_type_propagation"
@@ -247,22 +246,6 @@
       "type": "raw_address_pointer_store"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 77,
-      "match": "field_0x25b0",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x25b0 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 80,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408bf0(item,&this_ptr->field_0x20);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 82,
       "match": "(uint *)((int)afStack_68",
@@ -293,22 +276,6 @@
       "severity": "moderate",
       "text": "*(uint *)(&stack0xfffffee4 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xe) * 4);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 111,
-      "match": "field_0x2628",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x2628 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 125,
-      "match": "field_0x2628",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x2628 != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Complex pointer cast",

@@ -176,9 +176,9 @@
 ;   undefined4 DAT_005b9140
 ;   undefined4 DAT_005dd3b0
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 g_CDemonSetInstance.field92_0x15ac70
-;   undefined4 g_CDemonSetInstance.field96_0x15ac74
-;   undefined4 g_CDemonSetInstance.field100_0x15ac78
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.x
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.y
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
@@ -464,9 +464,9 @@ section .text
     LEA EDI,[ESP + 0x208]               ; 0043e690
     LEA ESI,[ESI + 0x15ac70]            ; 0043e697
     ADD ESP,0x8                         ; 0043e69d
-    MOVSD ES:EDI,ESI                    ; 0043e6a0 | g_CDemonSetInstance.field92_0x15ac70
-    MOVSD ES:EDI,ESI                    ; 0043e6a1 | g_CDemonSetInstance.field96_0x15ac74
-    MOVSD ES:EDI,ESI                    ; 0043e6a2 | g_CDemonSetInstance.field100_0x15ac78
+    MOVSD ES:EDI,ESI                    ; 0043e6a0 | g_CDemonSetInstance.active_fog.scroll.x
+    MOVSD ES:EDI,ESI                    ; 0043e6a1 | g_CDemonSetInstance.active_fog.scroll.y
+    MOVSD ES:EDI,ESI                    ; 0043e6a2 | g_CDemonSetInstance.active_fog.scroll.z
     FLD float ptr [ESP + 0x204]         ; 0043e6a3
     FMUL ST0                            ; 0043e6aa
     MOV EAX,dword ptr [ESP + 0xc]       ; 0043e6ac
@@ -528,15 +528,15 @@ section .text
         ;   Label: LAB_0043e78c
     MOV EAX,[0x00603b28]                ; 0043e78f | g_CDemonSetPtr
     FMUL double ptr [0x005b9138]        ; 0043e794 | DAT_005b9138
-    FLD float ptr [EAX + 0x15ac70]      ; 0043e79a | g_CDemonSetInstance.field92_0x15ac70
+    FLD float ptr [EAX + 0x15ac70]      ; 0043e79a | g_CDemonSetInstance.active_fog.scroll.x
     FXCH                                ; 0043e7a0
     FSTP float ptr [ESP]                ; 0043e7a2
     FMUL float ptr [ESP]                ; 0043e7a5
     FSTP float ptr [ESP + 0xa4]         ; 0043e7a8
-    FLD float ptr [EAX + 0x15ac74]      ; 0043e7af | g_CDemonSetInstance.field96_0x15ac74
+    FLD float ptr [EAX + 0x15ac74]      ; 0043e7af | g_CDemonSetInstance.active_fog.scroll.y
     FMUL float ptr [ESP]                ; 0043e7b5
     FSTP float ptr [ESP + 0xa8]         ; 0043e7b8
-    FLD float ptr [EAX + 0x15ac78]      ; 0043e7bf | g_CDemonSetInstance.field100_0x15ac78
+    FLD float ptr [EAX + 0x15ac78]      ; 0043e7bf | g_CDemonSetInstance.active_fog.scroll.z
     FMUL float ptr [ESP]                ; 0043e7c5
     LEA EDI,[ESP + 0x230]               ; 0043e7c8
     LEA ESI,[ESP + 0xa4]                ; 0043e7cf

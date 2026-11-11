@@ -11,7 +11,7 @@ void unkafter_hostage_cpp_FUN_00454b30(void)
 {
   CDemnfolk *this_ptr;
   
-  this_ptr = (CDemnfolk *)debugAllocTracked1(0xd14c);
+  this_ptr = (CDemnfolk *)operator_new(0xd14c);
   if (this_ptr == (CDemnfolk *)0x0) {
     return;
   }

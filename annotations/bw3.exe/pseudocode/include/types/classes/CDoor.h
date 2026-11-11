@@ -49,7 +49,9 @@ typedef struct CDoor {
     int plot_as_box_in_shadow; // 0x9d4
     EDoorOpenSides allowed_sides; // 0x9d8
     int allow_bullet_holes; // 0x9dc
-    char field_2528[108]; // 0x9e0
+    float shake_me_strength; // 0x9e0, Added in this build
+    char shake_me_event[100]; // 0x9e4, Added in this build
+    int handle_vertex_index; // 0xa48, Added in this build
 } CDoor;
 #pragma pack(pop)
 

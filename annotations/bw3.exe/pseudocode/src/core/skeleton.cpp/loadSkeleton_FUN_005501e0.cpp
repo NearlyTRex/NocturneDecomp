@@ -17,7 +17,7 @@ CSkeleton * core_skeleton_cpp_loadSkeleton_FUN_005501e0(char *param_1)
   char *str1;
   
   iVar3 = 0;
-  str1 = &g_SkeletonPool[0].field_0x1de28;
+  str1 = g_SkeletonPool[0].loaded_filename;
   do {
     iVar1 = _stricmp(str1,param_1);
     if (iVar1 == 0) {

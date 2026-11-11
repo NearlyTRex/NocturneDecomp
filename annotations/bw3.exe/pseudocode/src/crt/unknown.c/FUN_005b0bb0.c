@@ -24,7 +24,7 @@ uint FUN_005b0bb0(void)
       }
     }
     if (_DAT_02d25920 == (int *)0x0) {
-      piVar1 = FUN_005a3650(5);
+      piVar1 = (int *)malloc(5);
     }
     else {
       piVar1 = (int *)realloc(_DAT_02d25924,5);

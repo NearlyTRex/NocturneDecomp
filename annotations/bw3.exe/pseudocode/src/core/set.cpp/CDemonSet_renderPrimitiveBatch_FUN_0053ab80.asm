@@ -30,8 +30,8 @@
 ;   undefined4 DAT_005f2afc
 ;   CGame* g_CGamePtr = 01d2130c
 ;   undefined4 DAT_01bdd7e4
-;   undefined4 g_CGameInstance.field484_0x214
-;   undefined4 g_CGameInstance.field488_0x218
+;   undefined4 g_CGameInstance.suppress_set_geometry
+;   undefined4 g_CGameInstance.render_mode
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_renderEnvMapBatchQuad_FUN_0053a420
@@ -53,10 +53,10 @@ section .text
     MOV EBP,dword ptr [ESP + 0x40]      ; 0053ab8b
     MOV EDI,dword ptr [ESP + 0x44]      ; 0053ab8f
     MOV EAX,[0x005fe9dc]                ; 0053ab93 | g_CGamePtr
-    CMP dword ptr [EAX + 0x214],0x0     ; 0053ab98 | g_CGameInstance.field484_0x214
+    CMP dword ptr [EAX + 0x214],0x0     ; 0053ab98 | g_CGameInstance.suppress_set_geometry
     JNZ 0x0053ac46                      ; 0053ab9f
         ;   XREF to: 0053ac46 (CONDITIONAL_JUMP)  ; LAB_0053ac46
-    CMP dword ptr [EAX + 0x218],0x0     ; 0053aba5 | g_CGameInstance.field488_0x218
+    CMP dword ptr [EAX + 0x218],0x0     ; 0053aba5 | g_CGameInstance.render_mode
     JNZ 0x0053ac4e                      ; 0053abac
         ;   XREF to: 0053ac4e (CONDITIONAL_JUMP)  ; LAB_0053ac4e
     CMP dword ptr [EBX + 0x15ac88],0x0  ; 0053abb2

@@ -89,13 +89,14 @@ void __cdecl core_door_cpp_CDoor_archive_FUN_00464cd0(CDoor *this_ptr)
     core_actor_cpp_archiveString_FUN_0040b680(this_ptr->locked_sound,"lockedSound");
   }
   if (0xb < g_CDoorClassVersion) {
-    core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x9e4,"shakeMeEvent");
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x9e0,"shakeMeStrength");
+    core_actor_cpp_archiveString_FUN_0040b680(this_ptr->shake_me_event,"shakeMeEvent");
+    core_actor_cpp_archiveFloat_FUN_0040b830
+              (&this_ptr->shake_me_strength,"shakeMeStrength");
   }
   if (g_CDoorClassVersion < 0xd) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040b8b0
-            ((int *)&this_ptr->field_0xa48,"handleVertexIndex");
+            (&this_ptr->handle_vertex_index,"handleVertexIndex");
   return;
 }

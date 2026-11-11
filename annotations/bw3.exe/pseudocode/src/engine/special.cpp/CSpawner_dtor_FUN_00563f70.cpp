@@ -20,10 +20,10 @@ CSpawner * engine_special_cpp_CSpawner_dtor_FUN_00563f70(CSpawner *this_ptr,uint
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80
-                     ((CDeformableModelInstance *)&this_ptr->field_0x1d0,0);
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80(&this_ptr->spawn_model,0);
   pCVar2 = (CSpawner *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar1[-1].field_0x21d4,1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408770
+                     ((CDemonActor *)(pCVar1[-1].part_data.visibility_flags + 0x25),1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

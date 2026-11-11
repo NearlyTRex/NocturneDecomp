@@ -127,7 +127,7 @@ int FUN_004d3c90(CHero *param_1);
 
 // Original: core_hero.cpp_FUN_004d3e20
 // Address: 004d3e20
-bool FUN_004d3e20(CEnemy *param_1,char *param_2);
+bool FUN_004d3e20(CHero *param_1,char *param_2);
 
 // Original: core_hero.cpp_FUN_004d4090
 // Address: 004d4090

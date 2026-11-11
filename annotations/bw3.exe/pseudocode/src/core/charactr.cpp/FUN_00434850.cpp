@@ -12,7 +12,7 @@ void core_charactr_cpp_FUN_00434850(int param_1,float param_2)
   float fVar1;
   int iVar2;
   
-  if (*(int *)&g_CGamePtr->field_0x24c == 0) {
+  if (g_CGamePtr->letterbox_mode == 0) {
     fVar1 = *(float *)(param_1 + 0x252c);
   }
   else {

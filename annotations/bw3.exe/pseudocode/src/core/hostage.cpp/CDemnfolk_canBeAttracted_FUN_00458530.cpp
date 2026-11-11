@@ -12,7 +12,7 @@
 int __cdecl core_hostage_cpp_CDemnfolk_canBeAttracted_FUN_00458530(CDemnfolk *this_ptr,CDemonActor *grabber)
 
 {
-  byte *puVar1;
+  CDeformableModelInstance *pCVar1;
   float fVar2;
   byte bVar3;
   float afStackY_106c [1014];
@@ -40,17 +40,17 @@ int __cdecl core_hostage_cpp_CDemnfolk_canBeAttracted_FUN_00458530(CDemnfolk *th
   float fStack_c;
   
   bVar3 = 0;
-  puVar1 = &this_ptr->field_0x158;
-  fStack_c = (float)core_motion_cpp_FUN_004fc350(puVar1,0xd);
+  pCVar1 = &(this_ptr->base).base.model;
+  fStack_c = (float)core_motion_cpp_FUN_004fc350(pCVar1,0xd);
   if (fStack_c <= 0.0) {
     return 0;
   }
-  core_skeleton_cpp_FUN_0054dcc0(puVar1,*(uint *)&this_ptr->field_0xd0ec);
+  core_skeleton_cpp_FUN_0054dcc0(pCVar1,this_ptr->bone_indices[1]);
   fStack_84 = fStack_24;
   *(float *)((int)&stack0xffffff80 + (uint)bVar3 * -8) = afStack_20[(uint)bVar3 * -2];
   *(float *)((int)&stack0xffffff84 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
        afStack_20[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
-  core_skeleton_cpp_FUN_0054dcc0(puVar1,*(uint *)&this_ptr->field_0xd0f0);
+  core_skeleton_cpp_FUN_0054dcc0(pCVar1,this_ptr->bone_indices[2]);
   fVar2 = fStack_84;
   fStack_3c = fStack_54;
   afStack_50[(uint)bVar3 * -2 + 6] = afStack_50[(uint)bVar3 * -2];

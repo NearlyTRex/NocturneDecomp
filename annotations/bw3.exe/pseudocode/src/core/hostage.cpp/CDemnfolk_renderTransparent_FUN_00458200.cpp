@@ -49,8 +49,8 @@ int __cdecl core_hostage_cpp_CDemnfolk_renderTransparent_FUN_00458200(CDemnfolk 
   float fStack_14;
   
   bVar4 = 0;
-  if ((*(int *)&this_ptr->field_0x27bc != 0) && (*(int *)&this_ptr->field_0xd0d8 != 0)) {
-    core_skeleton_cpp_FUN_0054d9c0(&this_ptr->field_0x158,*(uint *)&this_ptr->field_0xd0e8);
+  if (((this_ptr->base).base.was_rendered_opaque != 0) && (this_ptr->is_miner_zombie != 0)) {
+    core_skeleton_cpp_FUN_0054d9c0(&(this_ptr->base).base.model,this_ptr->bone_indices[0]);
     puVar2 = auStack_124;
     puVar3 = auStack_154;
     for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -120,9 +120,9 @@ int __cdecl core_hostage_cpp_CDemnfolk_renderTransparent_FUN_00458200(CDemnfolk 
          afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
     core_dlight_cpp_renderConeLightGeometry_FUN_0045f5a0(position,rotation,fov,falloff);
   }
-  if (*(int *)&this_ptr->field_0x27bc == 0) {
-    return *(int *)&this_ptr->field_0x27bc;
+  if ((this_ptr->base).base.was_rendered_opaque == 0) {
+    return (this_ptr->base).base.was_rendered_opaque;
   }
   core_charactr_cpp_CCharacter_renderTransparent_FUN_0042f510((CCharacter *)this_ptr);
-  return *(int *)&this_ptr->field_0x27bc;
+  return (this_ptr->base).base.was_rendered_opaque;
 }

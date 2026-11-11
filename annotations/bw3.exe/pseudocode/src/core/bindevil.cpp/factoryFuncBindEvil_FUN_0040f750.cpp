@@ -11,7 +11,7 @@ void core_bindevil_cpp_factoryFuncBindEvil_FUN_0040f750(void)
 {
   CBindEvil *this_ptr;
   
-  this_ptr = (CBindEvil *)debugAllocTracked1(0x5a0);
+  this_ptr = (CBindEvil *)operator_new(0x5a0);
   if (this_ptr == (CBindEvil *)0x0) {
     return;
   }

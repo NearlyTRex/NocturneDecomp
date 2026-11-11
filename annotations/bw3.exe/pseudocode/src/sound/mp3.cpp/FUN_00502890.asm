@@ -26,10 +26,10 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
 ;   crt_math.c_round_FUN_005a3120
+;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fseek_FUN_005a457c
 ;   crt_stdio.c_ftell_FUN_005a5d00
-;   crt_unknown.c_FUN_005a3650
 ;   crt_unknown.c_FUN_005a3770
 ;   sound_mp3.cpp_calculateMpegFrame_FUN_004fd150
 ;   sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_004fdc50
@@ -88,8 +88,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x50]      ; 00502901
     PUSH EAX                            ; 00502905
     MOV dword ptr [EBX + 0x8],EAX       ; 00502906
-    CALL crt_unknown.c_FUN_005a3650     ; 00502909
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 00502909
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 0050290e
     MOV dword ptr [EBX + 0x4],EAX       ; 00502911
     TEST EAX,EAX                        ; 00502914

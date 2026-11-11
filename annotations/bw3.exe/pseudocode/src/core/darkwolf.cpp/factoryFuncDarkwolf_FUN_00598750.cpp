@@ -11,7 +11,7 @@ void core_darkwolf_cpp_factoryFuncDarkwolf_FUN_00598750(void)
 {
   CDarkwolf *this_ptr;
   
-  this_ptr = (CDarkwolf *)debugAllocTracked1(0xdc98);
+  this_ptr = (CDarkwolf *)operator_new(0xdc98);
   if (this_ptr == (CDarkwolf *)0x0) {
     return;
   }

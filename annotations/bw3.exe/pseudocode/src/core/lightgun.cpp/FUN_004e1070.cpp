@@ -34,6 +34,7 @@ uint core_lightgun_cpp_FUN_004e1070(CCharacter *param_1)
   float fVar16;
   CDemonSet *this_ptr_02;
   double in_stack_fffffcec;
+  float fStack_2fc;
   float fStack_2d0;
   CCharacter *pCStack_2cc;
   float fStack_2c8;
@@ -341,8 +342,9 @@ uint core_lightgun_cpp_FUN_004e1070(CCharacter *param_1)
           (param_1->model).bone_origins[0x54].z = CStack_48.z;
         }
         core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0((SDamageInfo *)&stack0xfffffcf4);
-        (*(((param_1->base).vtable._uc)->_uc).getGrabbed)
-                  (param_1,SUB84(in_stack_fffffcec,0),(int)((ulonglong)in_stack_fffffcec >> 0x20));
+        fStack_2fc = (float)(*(((param_1->base).vtable._uc)->_uc).getGrabbed)
+                                      (param_1,SUB84(in_stack_fffffcec,0),
+                                       (int)((ulonglong)in_stack_fffffcec >> 0x20));
         pCStack_2cc = param_1;
         pCStack_2c4 = (*((param_1->base).vtable._ub)->getCarrier)(&param_1->base);
         (**(code **)(*(int *)((int)fStack_20 + 0x154) + 0x108))();

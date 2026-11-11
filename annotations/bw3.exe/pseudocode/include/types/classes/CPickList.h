@@ -13,7 +13,8 @@
 #pragma pack(push, 1)
 typedef struct CPickList {
     CStrList base; // 0x0
-    char field_16[68]; // 0x10
+    int tab_column_widths[16]; // 0x10, Added in this build
+    int tab_column_count; // 0x50
     int selected_index; // 0x54
     int state_flag; // 0x58
     char ok_button_text[100]; // 0x5c

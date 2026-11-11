@@ -9,71 +9,67 @@
 void __cdecl core_emitter_cpp_CEmitter_archive_FUN_00488bb0(CEmitter *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_archive_FUN_0040c280((CDemonActor *)this_ptr);
+  core_actor_cpp_CDemonActor_archive_FUN_0040c280(&this_ptr->base);
   core_actor_cpp_archiveInteger_FUN_0040b8b0
-            ((int *)&this_ptr->field_0x158,"?emitterType" + 1);
-  core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->field_0x15c,"emitterSize");
-  core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x16c,"eventOn");
-  core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x1d0,"eventOff");
+            ((int *)&this_ptr->emitter_type,"?emitterType" + 1);
+  core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->emitter_size,"emitterSize");
+  core_actor_cpp_archiveString_FUN_0040b680(this_ptr->event_on,"eventOn");
+  core_actor_cpp_archiveString_FUN_0040b680(this_ptr->event_off,"eventOff");
   if (1 < g_CEmitterClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b8b0
-              ((int *)&this_ptr->field_0x168,"emitterState");
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->emitter_state,"emitterState");
   }
-  if (*(int *)&this_ptr->field_0x158 == 3) {
-    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x23c,"laserR");
-    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x240,"laserG");
-    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x244,"laserB");
+  if (this_ptr->emitter_type == EMITTER_TYPE_LASER) {
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&(this_ptr->laser_color).r,"laserR");
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&(this_ptr->laser_color).g,"laserG");
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&(this_ptr->laser_color).b,"laserB");
     if (2 < g_CEmitterClassVersion) {
-      core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x238,"laserType")
-      ;
+      core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->laser_type,"laserType");
     }
   }
   if (2 < g_CEmitterClassVersion) {
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x234,"maxEmitTime");
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x468,"emitPeriod");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->max_emit_time,"maxEmitTime");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->emit_period,"emitPeriod");
   }
   if (3 < g_CEmitterClassVersion) {
-    core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0
-              (&this_ptr->field_0x248,"modelName");
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x3c4,"rockSpeed");
+    core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0(&this_ptr->model,"modelName")
+    ;
+    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->rock_speed,"rockSpeed");
   }
   if (4 < g_CEmitterClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b8b0
-              ((int *)&this_ptr->field_0x3e4,"periodicFlag");
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x3e8,"maxWaitTime");
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->periodic_flag,"periodicFlag");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->max_wait_time,"maxWaitTime");
   }
   if (5 < g_CEmitterClassVersion) {
-    core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x3f0,"destActor");
+    core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->dest_actor,"destActor");
   }
   if (6 < g_CEmitterClassVersion) {
-    core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x3f8,"wavName");
-    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x460,"sfxType");
+    core_actor_cpp_archiveString_FUN_0040b680(this_ptr->wav_name,"wavName");
+    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->sfx_type,"sfxType");
   }
   if (7 < g_CEmitterClassVersion) {
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x3c8,"windResist");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->wind_resist,"windResist");
   }
   if (8 < g_CEmitterClassVersion) {
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x3f4,"soundRadius");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->sound_radius,"soundRadius");
   }
   if (9 < g_CEmitterClassVersion) {
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x3cc,"maxSpeed");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->max_speed,"maxSpeed");
   }
   if (10 < g_CEmitterClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b8b0
-              ((int *)&this_ptr->field_0x3d0,"EFireflyType");
-    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x3d4,"fizzle");
-    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x3d8,"bright");
-    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x3dc,"deltaMult");
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->firefly_type,"EFireflyType");
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->fizzle,"fizzle");
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->bright,"bright");
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->delta_mult,"deltaMult");
   }
   if (0xb < g_CEmitterClassVersion) {
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x3e0,"FFSize");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->ff_size,"FFSize");
   }
   if (0xc < g_CEmitterClassVersion) {
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x4b8,"emitRadius");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->emit_radius,"emitRadius");
   }
   if (g_CEmitterClassVersion < 0xe) {
     return;
   }
-  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x4bc,"bloodVel");
+  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->blood_velocity,"bloodVel");
   return;
 }

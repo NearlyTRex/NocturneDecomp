@@ -11,7 +11,7 @@ void core_elephant_cpp_factoryFuncElephantGun_FUN_00486b70(void)
 {
   CElephantGun *this_ptr;
   
-  this_ptr = (CElephantGun *)debugAllocTracked1(0x5a0);
+  this_ptr = (CElephantGun *)operator_new(0x5a0);
   if (this_ptr == (CElephantGun *)0x0) {
     return;
   }

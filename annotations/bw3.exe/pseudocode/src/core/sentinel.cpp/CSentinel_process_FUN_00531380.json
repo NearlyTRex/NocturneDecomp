@@ -2,24 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1172,
-    "complexity_score": 897,
+    "complexity_score": 825,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 607,
-    "suspect_count": 25,
+    "pseudocode_lines": 600,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memset",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 1779
+    "total_lines": 1772
   },
   "cross_references": [],
   "function": {
@@ -362,72 +361,24 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 120,
-      "match": "field_0xcdcc",
-      "severity": "mild",
-      "text": "afStack_3c[0] = delta_time * *(float *)&(this_ptr->base).field_0xcdcc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 186,
-      "match": "field_0xcdcc",
-      "severity": "mild",
-      "text": "fVar14 = *(float *)&(this_ptr->base).field_0xcdcc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 187,
-      "match": "field_0x2524",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr->base).base.field_0x2524 =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 196,
-      "match": "field_0x3270",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).base.field_0x3270 = 0x3f000000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 219,
-      "match": "field_0x3270",
-      "severity": "mild",
-      "text": "*(uint *)&(this_ptr->base).base.field_0x3270 = 0x40000000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 444,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "puStack_40 = &(this_ptr->base).base.model.field_0xe80;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 447,
+      "line": 441,
       "match": "DAT_02cfd900",
       "severity": "mild",
-      "text": "(&DAT_02cfd900,puStack_40 + _DAT_01ed7864 * 0x30,0x3f800000,aSStack_290);",
+      "text": "core_xform_cpp_FUN_00583260(&DAT_02cfd900,pCStack_40 + _DAT_01ed7864,0x3f800000,&SStack_290);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 466,
+      "line": 459,
       "match": "DAT_02cfd900",
       "severity": "mild",
-      "text": "(&DAT_02cfd900,puStack_40 + _DAT_01ed785c * 0x30,0x3f800000,aSStack_290);",
+      "text": "core_xform_cpp_FUN_00583260(&DAT_02cfd900,pCStack_40 + _DAT_01ed785c,0x3f800000,&SStack_290);",
       "type": "undefined_data"
     },
     {
       "description": "Pointer value `&CStack_170` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 496,
+      "line": 489,
       "match": "(int)&CStack_170",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_170 + (uint)bVar10 * -8 + 4) = afStack_160[(uint)bVar10 * -2 + 9];",
@@ -435,7 +386,7 @@
     },
     {
       "description": "Pointer value `&CStack_170` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 498,
+      "line": 491,
       "match": "(int)&CStack_170",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_170 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
@@ -443,7 +394,7 @@
     },
     {
       "description": "Pointer value `&CStack_1dc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 594,
+      "line": 587,
       "match": "(int)&CStack_1dc",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_1dc + (uint)bVar10 * -8 + 4) = afStack_dc[(uint)bVar10 * -2 + 3];",
@@ -451,7 +402,7 @@
     },
     {
       "description": "Pointer value `&CStack_1dc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 595,
+      "line": 588,
       "match": "(int)&CStack_1dc",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_1dc + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
@@ -459,7 +410,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 115,
+      "line": 111,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -467,7 +418,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 292,
+      "line": 287,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -475,7 +426,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 376,
+      "line": 371,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -483,7 +434,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 562,
+      "line": 555,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -491,7 +442,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 597,
+      "line": 590,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -499,7 +450,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 600,
+      "line": 593,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -507,7 +458,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 496,
+      "line": 489,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_170 + (uint)bVar10 * -8 + 4) = afStack_160[(uint)bVar10 * -2 + 9];",
@@ -515,7 +466,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 498,
+      "line": 491,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_170 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
@@ -523,7 +474,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 594,
+      "line": 587,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_1dc + (uint)bVar10 * -8 + 4) = afStack_dc[(uint)bVar10 * -2 + 3];",
@@ -531,7 +482,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 595,
+      "line": 588,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_1dc + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",

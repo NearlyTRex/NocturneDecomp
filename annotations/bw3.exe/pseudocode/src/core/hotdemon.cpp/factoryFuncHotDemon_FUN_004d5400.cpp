@@ -11,7 +11,7 @@ void core_hotdemon_cpp_factoryFuncHotDemon_FUN_004d5400(void)
 {
   CHotDemon *this_ptr;
   
-  this_ptr = (CHotDemon *)debugAllocTracked1(0xd088);
+  this_ptr = (CHotDemon *)operator_new(0xd088);
   if (this_ptr == (CHotDemon *)0x0) {
     return;
   }

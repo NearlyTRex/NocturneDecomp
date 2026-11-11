@@ -29,10 +29,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c5350(CGargoyle *this_pt
   float fVar13;
   float fVar14;
   float max_distance;
-  SDamageInfo aSStack_17c [4];
-  float fStack_178;
-  CGargoyle *pCStack_148;
-  CGargoyle *pCStack_144;
+  SDamageInfo SStack_17c;
   float fStack_140;
   float afStack_13c [4];
   float fStack_12c;
@@ -87,10 +84,10 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c5350(CGargoyle *this_pt
   if (iVar4 == 0) {
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
                        (&(this_ptr->base).base.model.base);
-    if (*(int *)(pSVar5 + 0x24) == 8) {
+    if (pSVar5->state_index == 8) {
       return;
     }
-    if (*(int *)(pSVar5 + 0x24) == 5) {
+    if (pSVar5->state_index == 5) {
       return;
     }
   }
@@ -99,18 +96,17 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c5350(CGargoyle *this_pt
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  fStack_38 = delta_time * *(float *)&(this_ptr->base).field_0xcdcc;
+  fStack_38 = delta_time * (this_ptr->base).speed;
   pCStack_1c = &(this_ptr->base).base.model.base;
   while (0.0 < fStack_38) {
     iVar4 = core_motion_cpp_CMotionController_advance_FUN_004fbb70(pCStack_1c,&fStack_38);
     core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0((CCharacter *)this_ptr,iVar4);
   }
-  fVar13 = *(float *)&(this_ptr->base).field_0xcdcc;
-  *(float *)&(this_ptr->base).base.field_0x2524 =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
+  fVar13 = (this_ptr->base).speed;
+  (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   core_charactr_cpp_FUN_00434850(this_ptr,delta_time * fVar13);
   pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(pCStack_1c);
-  iVar4 = *(int *)(pSVar5 + 0x24);
+  iVar4 = pSVar5->state_index;
   iStack_2c = iVar4;
   iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660
                     ((CCharacter *)this_ptr,delta_time);
@@ -314,14 +310,15 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004c5350(CGargoyle *this_pt
       }
       break;
     case 3:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(aSStack_17c);
-      fStack_178 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(3.0,5.0);
-      pCStack_148 = this_ptr;
-      pCStack_144 = this_ptr;
-      fStack_14 = fStack_178;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(&SStack_17c);
+      SStack_17c.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(3.0,5.0);
+      SStack_17c.attacker = (CDemonActor *)this_ptr;
+      SStack_17c.wielder = (CDemonActor *)this_ptr;
+      fStack_14 = SStack_17c.damage_amount;
       core_xform_cpp_FUN_00583260
-                (&DAT_02cfd900,&(this_ptr->base).base.model.field_0xe80 + _DAT_01d22cac * 0x30,
-                 0x3ecccccd,aSStack_17c);
+                (&DAT_02cfd900,
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01d22cac,
+                 0x3ecccccd,&SStack_17c);
       pfVar11 = afStack_13c + 0x14;
       afStack_ec[0] = (float)uStack_8c;
       afStack_13c[(uint)bVar9 * -2 + 0x15] = afStack_a0[(uint)bVar9 * -2 + 6];

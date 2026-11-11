@@ -17,21 +17,21 @@
   },
   "cross_references": [
     {
-      "addr": "00573f50",
-      "from_addr": "00573f9b",
-      "name": "support_trstream.cpp_FUN_00573f50",
+      "addr": "00574080",
+      "from_addr": "005740f1",
+      "name": "support_trstream.cpp_CInStreamFile_openHandle_FUN_00574080",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00573fc0",
       "from_addr": "0057404d",
-      "name": "support_trstream.cpp_FUN_00573fc0",
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00574080",
-      "from_addr": "005740f1",
-      "name": "support_trstream.cpp_FUN_00574080",
+      "addr": "00573f50",
+      "from_addr": "00573f9b",
+      "name": "support_trstream.cpp_CInStreamFile_open_FUN_00573f50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -56,7 +56,7 @@
     {
       "addr": "005a3650",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3650"
+      "name": "crt_memory.c_malloc_FUN_005a3650"
     },
     {
       "addr": "00573e70",
@@ -158,7 +158,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "pvVar1 = FUN_005a3650(*(int *)(param_1 + 0x20) + 0x1f);",
+      "text": "pvVar1 = malloc(*(int *)(param_1 + 0x20) + 0x1f);",
       "type": "unnamed_param"
     },
     {

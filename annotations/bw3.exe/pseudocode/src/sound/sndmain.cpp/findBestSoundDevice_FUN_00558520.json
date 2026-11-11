@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 108,
+    "complexity_score": 66,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 73,
-    "suspect_count": 3,
-    "suspect_types": [
-      "sibling_array_undersized"
-    ],
-    "total_lines": 203
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 66,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 196
   },
   "cross_references": [
     {
@@ -167,30 +165,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "SSoundDeviceInfo local_468[256] is smaller than sibling SSoundDeviceInfo arrays in this function (largest is [264]). Likely Ghidra split a SSoundDeviceInfo[264] source array; cross-check the asm loop bound and resize in a .keep.",
-      "line": 9,
-      "match": "SSoundDeviceInfo local_468[256] vs sibling SSoundDeviceInfo[264]",
-      "severity": "moderate",
-      "text": "SSoundDeviceInfo local_468[256];",
-      "type": "sibling_array_undersized"
-    },
-    {
-      "description": "SSoundDeviceInfo local_350[256] is smaller than sibling SSoundDeviceInfo arrays in this function (largest is [264]). Likely Ghidra split a SSoundDeviceInfo[264] source array; cross-check the asm loop bound and resize in a .keep.",
-      "line": 12,
-      "match": "SSoundDeviceInfo local_350[256] vs sibling SSoundDeviceInfo[264]",
-      "severity": "moderate",
-      "text": "SSoundDeviceInfo local_350[256];",
-      "type": "sibling_array_undersized"
-    },
-    {
-      "description": "SSoundDeviceInfo local_120[256] is smaller than sibling SSoundDeviceInfo arrays in this function (largest is [264]). Likely Ghidra split a SSoundDeviceInfo[264] source array; cross-check the asm loop bound and resize in a .keep.",
-      "line": 16,
-      "match": "SSoundDeviceInfo local_120[256] vs sibling SSoundDeviceInfo[264]",
-      "severity": "moderate",
-      "text": "SSoundDeviceInfo local_120[256];",
-      "type": "sibling_array_undersized"
-    }
-  ]
+  "suspects": []
 }

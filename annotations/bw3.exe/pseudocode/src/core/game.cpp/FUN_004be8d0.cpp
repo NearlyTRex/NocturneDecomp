@@ -31,11 +31,11 @@ void core_game_cpp_FUN_004be8d0(CGame *param_1,int param_2)
   param_1->total_kill_count = 0;
   param_1->total_game_time = 0.0;
   param_1->total_play_time = 0.0;
-  *(uint *)&param_1->field_0x294 = 0xbf800000;
+  param_1->end_timer = -1.0;
   core_game_cpp_FUN_004c4d10(param_1);
   uVar2 = _DAT_01c5b0e0;
   _DAT_01c5b0e0 = _DAT_01549aa8;
-  *(uint *)&param_1->field_0x258 = 0;
+  param_1->is_loading = 0;
   iVar4 = _fopen("pod.ini",&DAT_005c37df);
   if (iVar4 != 0) {
     _fclose(iVar4);
@@ -67,7 +67,7 @@ void core_game_cpp_FUN_004be8d0(CGame *param_1,int param_2)
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
   }
-  core_fldnotes_cpp_FUN_004ab7a0(g_CFieldNotesPtr);
+  core_fldnotes_cpp_CFieldNotes_clear_FUN_004ab7a0(g_CFieldNotesPtr);
   core_event_cpp_FUN_00494880(0x01C6E360);
   load_flags = 1;
   iVar4 = _stricmp(&DAT_01d225c8,local_11c);

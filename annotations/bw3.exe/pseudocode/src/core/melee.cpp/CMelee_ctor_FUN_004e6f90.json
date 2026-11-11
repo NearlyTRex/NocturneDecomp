@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 114,
+    "complexity_score": 99,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 64,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy"
     ],
     "total_lines": 157
@@ -110,14 +109,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x568",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar2->base).field_0x568 = 0;",
-      "type": "unnamed_field"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 33,

@@ -20,7 +20,7 @@
     {
       "addr": "004a9f30",
       "from_addr": "004a9fd7",
-      "name": "core_fldnotes.cpp_FUN_004a9f30",
+      "name": "core_fldnotes.cpp_SNotesMap_load_FUN_004a9f30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -51,7 +51,7 @@
     {
       "addr": "005a3650",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3650"
+      "name": "crt_memory.c_malloc_FUN_005a3650"
     },
     {
       "addr": "0040d400",
@@ -130,7 +130,7 @@
       {
         "call_addr": "004a9fd7",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004a9f30",
+        "caller": "core_fldnotes.cpp_SNotesMap_load_FUN_004a9f30",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -262,7 +262,7 @@
       "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "pcVar1 = FUN_005a3650(param_2 * param_3);",
+      "text": "pcVar1 = (char *)malloc(param_2 * param_3);",
       "type": "unnamed_param"
     },
     {
@@ -270,7 +270,7 @@
       "line": 13,
       "match": "param_3",
       "severity": "mild",
-      "text": "pcVar1 = FUN_005a3650(param_2 * param_3);",
+      "text": "pcVar1 = (char *)malloc(param_2 * param_3);",
       "type": "unnamed_param"
     },
     {
@@ -286,7 +286,7 @@
       "line": 20,
       "match": "param_2",
       "severity": "mild",
-      "text": "pcVar1 = FUN_005a3650(param_2 * param_3);",
+      "text": "pcVar1 = (char *)malloc(param_2 * param_3);",
       "type": "unnamed_param"
     },
     {
@@ -294,7 +294,7 @@
       "line": 20,
       "match": "param_3",
       "severity": "mild",
-      "text": "pcVar1 = FUN_005a3650(param_2 * param_3);",
+      "text": "pcVar1 = (char *)malloc(param_2 * param_3);",
       "type": "unnamed_param"
     },
     {

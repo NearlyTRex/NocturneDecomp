@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 496,
+    "complexity_score": 431,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 71,
-    "suspect_count": 41,
+    "suspect_count": 35,
     "suspect_types": [
       "suspect_float",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 216
@@ -328,16 +327,8 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&(param_1->base).field_0x3270 = 0x3fc00000;",
+      "text": "(param_1->base).collision_cylinder_radius = 1.5;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x3270",
-      "severity": "mild",
-      "text": "*(uint *)&(param_1->base).field_0x3270 = 0x3fc00000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -392,16 +383,8 @@
       "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xce5c = 0x41700000;",
+      "text": "param_1->attack_damage = 15.0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 57,
-      "match": "field_0xce5c",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xce5c = 0x41700000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Likely misinterpreted integer as float",
@@ -416,16 +399,8 @@
       "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xce5c = 0x41c80000;",
+      "text": "param_1->attack_damage = 25.0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 60,
-      "match": "field_0xce5c",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xce5c = 0x41c80000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Likely misinterpreted integer as float",
@@ -440,32 +415,16 @@
       "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xce5c = 0x41f00000;",
+      "text": "param_1->attack_damage = 30.0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0xce5c",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xce5c = 0x41f00000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 64,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xce60 = 0x41a00000;",
+      "text": "param_1->pain_threshold = 20.0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 64,
-      "match": "field_0xce60",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xce60 = 0x41a00000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -480,16 +439,8 @@
       "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xce60 = 0x41a00000;",
+      "text": "param_1->pain_threshold = 20.0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 70,
-      "match": "field_0xce60",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xce60 = 0x41a00000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

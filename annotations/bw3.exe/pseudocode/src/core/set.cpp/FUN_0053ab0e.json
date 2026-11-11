@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 171,
+    "complexity_score": 147,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 14,
+    "pseudocode_lines": 17,
+    "suspect_count": 12,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unnamed_param"
     ],
-    "total_lines": 69
+    "total_lines": 70
   },
   "cross_references": [],
   "function": {
@@ -27,7 +26,7 @@
     ],
     "convention": "unknown",
     "name": "core_set.cpp_FUN_0053ab0e",
-    "signature": "void core_set_cpp_FUN_0053ab0e(CDemonSet *param_1,SMRGLHeaderPrimitive *param_2,int param_3,int param_4)"
+    "signature": "void core_set_cpp_FUN_0053ab0e(CDemonSet *param_1,SMRGLPrimitiveTriangle *param_2,int param_3,int param_4)"
   },
   "function_calls": [
     {
@@ -107,7 +106,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_set_cpp_FUN_0053ab0e(CDemonSet *param_1,SMRGLHeaderPrimitive *param_2,int param_3,int param_4)",
+      "text": "void core_set_cpp_FUN_0053ab0e(CDemonSet *param_1,SMRGLPrimitiveTriangle *param_2,int param_3,int param_4)",
       "type": "unnamed_param"
     },
     {
@@ -115,7 +114,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_set_cpp_FUN_0053ab0e(CDemonSet *param_1,SMRGLHeaderPrimitive *param_2,int param_3,int param_4)",
+      "text": "void core_set_cpp_FUN_0053ab0e(CDemonSet *param_1,SMRGLPrimitiveTriangle *param_2,int param_3,int param_4)",
       "type": "unnamed_param"
     },
     {
@@ -123,7 +122,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_set_cpp_FUN_0053ab0e(CDemonSet *param_1,SMRGLHeaderPrimitive *param_2,int param_3,int param_4)",
+      "text": "void core_set_cpp_FUN_0053ab0e(CDemonSet *param_1,SMRGLPrimitiveTriangle *param_2,int param_3,int param_4)",
       "type": "unnamed_param"
     },
     {
@@ -131,24 +130,8 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "void core_set_cpp_FUN_0053ab0e(CDemonSet *param_1,SMRGLHeaderPrimitive *param_2,int param_3,int param_4)",
+      "text": "void core_set_cpp_FUN_0053ab0e(CDemonSet *param_1,SMRGLPrimitiveTriangle *param_2,int param_3,int param_4)",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x214",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x214 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x218",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x218 != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -160,58 +143,58 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_renderEnvMapBatchTri_FUN_0053a3f0(param_1,param_2,param_3,0xffff);",
+      "text": "(param_1,&param_2->base,param_3,0xffff);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 12,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_renderEnvMapBatchTri_FUN_0053a3f0(param_1,param_2,param_3,0xffff);",
+      "text": "(param_1,&param_2->base,param_3,0xffff);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 12,
       "match": "param_3",
       "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_renderEnvMapBatchTri_FUN_0053a3f0(param_1,param_2,param_3,0xffff);",
+      "text": "(param_1,&param_2->base,param_3,0xffff);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLPrimitiveTriangle *)param_2,param_3,param_4);",
+      "text": "(DAT_005f2afc,param_2,param_3,param_4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 17,
       "match": "param_3",
       "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLPrimitiveTriangle *)param_2,param_3,param_4);",
+      "text": "(DAT_005f2afc,param_2,param_3,param_4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 17,
       "match": "param_4",
       "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLPrimitiveTriangle *)param_2,param_3,param_4);",
+      "text": "(DAT_005f2afc,param_2,param_3,param_4);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 17,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLPrimitiveTriangle *)param_2,param_3,param_4);",
+      "text": "(DAT_005f2afc,param_2,param_3,param_4);",
       "type": "undefined_data"
     }
   ]

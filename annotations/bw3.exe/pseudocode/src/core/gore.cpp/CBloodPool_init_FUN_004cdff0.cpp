@@ -13,22 +13,22 @@ void __cdecl core_gore_cpp_CBloodPool_init_FUN_004cdff0(CBloodPool *this_ptr,CVe
 {
   CDemonSet *pCVar1;
   int iVar2;
-  uint uVar3;
+  float fVar3;
   
   iVar2 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,3);
   pCVar1 = g_CDemonSetPtr;
-  *(int *)&this_ptr->field_0x18 = iVar2;
-  *(float *)&this_ptr->field_0x4 = position->x;
-  uVar3 = core_setcolid_cpp_FUN_0053bc80(pCVar1,position,0);
-  *(uint *)&this_ptr->field_0x8 = uVar3;
-  *(float *)&this_ptr->field_0xc = position->z;
+  this_ptr->texture_variant = iVar2;
+  (this_ptr->position).x = position->x;
+  fVar3 = (float)core_setcolid_cpp_FUN_0053bc80(pCVar1,position,0);
+  (this_ptr->position).y = fVar3;
+  fVar3 = (this_ptr->position).y;
+  (this_ptr->position).z = position->z;
   this_ptr->age = 0.0;
-  *(float *)&this_ptr->field_0x8 = *(float *)&this_ptr->field_0x8 + _DAT_005c46e9;
-  (this_ptr->position_fixed).x = (int)ROUND(*(float *)&this_ptr->field_0x4 * _DAT_005e0e18);
-  (this_ptr->position_fixed).y = (int)ROUND(*(float *)&this_ptr->field_0x8 * _DAT_005e0e18);
-  (this_ptr->position_fixed).z = (int)ROUND(*(float *)&this_ptr->field_0xc * _DAT_005e0e18);
-  *(EBloodType *)&this_ptr->field_0x10 = blood_type;
-  *(uint *)&this_ptr->field_0x14 =
-       *(uint *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x2c);
+  (this_ptr->position).y = fVar3 + _DAT_005c46e9;
+  (this_ptr->position_fixed).x = (int)ROUND((this_ptr->position).x * _DAT_005e0e18);
+  (this_ptr->position_fixed).y = (int)ROUND((this_ptr->position).y * _DAT_005e0e18);
+  (this_ptr->position_fixed).z = (int)ROUND((this_ptr->position).z * _DAT_005e0e18);
+  this_ptr->blood_type = blood_type;
+  this_ptr->area_id = *(int *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x2c);
   return;
 }

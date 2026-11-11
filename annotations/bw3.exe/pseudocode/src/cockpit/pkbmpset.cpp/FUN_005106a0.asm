@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
 ;   crt_memory.c___vec_new_FUN_005a5584
-;   crt_unknown.c_FUN_005a40df
+;   crt_memory.c_operator_new_array_FUN_005a40df
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   unkafter_pkbitmap.cpp_FUN_00510670
 ;
@@ -51,8 +51,8 @@ section .text
     SHL EDI,0x2                         ; 005106dc
     LEA EAX,[EDI + 0x4]                 ; 005106df
     PUSH EAX                            ; 005106e2
-    CALL crt_unknown.c_FUN_005a40df     ; 005106e3
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a40df()
+    CALL crt_memory.c_operator_new_array_FUN_005a40df ; 005106e3
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
     ADD ESP,0x4                         ; 005106e8
     PUSH EAX                            ; 005106eb
     CALL crt_memory.c___vec_new_FUN_005a5584 ; 005106ec

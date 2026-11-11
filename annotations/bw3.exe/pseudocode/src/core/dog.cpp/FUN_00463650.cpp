@@ -11,7 +11,7 @@ void core_dog_cpp_FUN_00463650(void)
 {
   CDogForest *this_ptr;
   
-  this_ptr = (CDogForest *)debugAllocTracked1(0xd064);
+  this_ptr = (CDogForest *)operator_new(0xd064);
   if (this_ptr == (CDogForest *)0x0) {
     return;
   }

@@ -11,7 +11,7 @@ void core_flintlck_cpp_factoryFuncFlintlock_FUN_004ae7b0(void)
 {
   CFlintlock *this_ptr;
   
-  this_ptr = (CFlintlock *)debugAllocTracked1(0x594);
+  this_ptr = (CFlintlock *)operator_new(0x594);
   if (this_ptr == (CFlintlock *)0x0) {
     return;
   }

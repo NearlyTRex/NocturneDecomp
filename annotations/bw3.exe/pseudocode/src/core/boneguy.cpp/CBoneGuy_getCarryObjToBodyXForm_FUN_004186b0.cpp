@@ -11,6 +11,7 @@
 CMatrix3x4f * __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004186b0(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
+  CDemonActor *this_ptr_00;
   int iVar1;
   uint *puVar2;
   float *pfVar3;
@@ -19,7 +20,8 @@ CMatrix3x4f * __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_
   CMatrix3x4f *pCVar6;
   byte bVar7;
   float afStackY_10ac [967];
-  CVector3f *this_ptr_00;
+  CBoundingBox3D *in_stack_fffffe7c;
+  CVector3f *this_ptr_01;
   float fStack_148;
   float fStack_138;
   float fStack_128;
@@ -54,18 +56,20 @@ CMatrix3x4f * __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_
   float fStack_34;
   float fStack_30;
   float fStack_2c;
-  float afStack_28 [3];
+  uint uStack_28;
+  uint uStack_24;
+  uint uStack_20;
   CVector3f CStack_1c;
   int iStack_10;
   
   bVar7 = 0;
-  iVar1 = *(int *)((this_ptr->base).base.carry_hands + hand_index * 0x78 + 8);
-  iStack_10 = *(int *)((this_ptr->base).base.carry_hands + hand_index * 0x78);
+  this_ptr_00 = (this_ptr->base).base.carry_hands[hand_index].carry_actor;
+  iStack_10 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   afStack_78[3] = -2.536;
   afStack_78[2] = -0.771;
   afStack_78[4] = 2.536;
   core_xform_cpp_FUN_00583940(auStack_124,&DAT_02cfd900,afStack_78 + 2);
-  (**(code **)(*(int *)(iVar1 + 0x154) + 0x1c))(iVar1);
+  (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,in_stack_fffffe7c);
   pfVar3 = afStack_dc;
   pfVar4 = &fStack_f4;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -74,22 +78,22 @@ CMatrix3x4f * __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_
     pfVar4 = pfVar4 + (uint)bVar7 * -2 + 1;
   }
   core_actor_cpp_CVector3f_ctor_FUN_0040d220(&CStack_64);
-  this_ptr_00 = &CStack_1c;
+  this_ptr_01 = &CStack_1c;
   CStack_64.x = fStack_f4 + fStack_e8;
   CStack_64.y = fStack_f0 + fStack_e4;
   CStack_64.z = fStack_ec + fStack_e0;
   fStack_40 = fStack_f4 + fStack_e8;
   afStack_54[(uint)bVar7 * -2 + 6] = *(float *)((int)&CStack_64 + (uint)bVar7 * -8 + 4);
   afStack_54[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
-       *(float *)((int)&CStack_64 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-  core_actor_cpp_CVector3f_ctor_FUN_0040d220(this_ptr_00);
+       *(float *)((int)&CStack_64 + ((uint)bVar7 * -2 + (uint)bVar7 * -2) * 4 + 8);
+  core_actor_cpp_CVector3f_ctor_FUN_0040d220(this_ptr_01);
   CStack_1c.x = fStack_40 * _DAT_005b6f7a;
   CStack_1c.y = fStack_3c * _DAT_005b6f7a;
   CStack_1c.z = fStack_38 * _DAT_005b6f7a;
   fStack_94 = fStack_40 * _DAT_005b6f7a;
   afStack_a8[(uint)bVar7 * -2 + 6] = *(float *)((int)&CStack_1c + (uint)bVar7 * -8 + 4);
   afStack_a8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
-       *(float *)((int)&CStack_1c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+       *(float *)((int)&CStack_1c + ((uint)bVar7 * -2 + (uint)bVar7 * -2) * 4 + 8);
   fStack_8c = fStack_ec + (float)_DAT_005b6f82;
   afStack_a8[2] = fStack_94;
   afStack_a8[(uint)bVar7 * -2 + 3] = afStack_a8[(uint)bVar7 * -2 + 6];
@@ -100,11 +104,10 @@ CMatrix3x4f * __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_
     uStack_84 = afStack_a8[3];
     uStack_80 = uStack_98;
   }
-  afStack_28[1] = 0.209;
-  afStack_28[2] = -0.082;
-  afStack_28[0] = 0.032;
-  core_xform_cpp_FUN_00583260
-            (afStack_54 + 0xb,&(this_ptr->base).base.model.field_0xe80 + iStack_10 * 0x30);
+  uStack_24 = 0x3e560419;
+  uStack_20 = 0xbda7ef9e;
+  uStack_28 = 0x3d03126f;
+  core_xform_cpp_FUN_00583260();
   fStack_58 = fStack_7c;
   afStack_54[(uint)bVar7 * -2] = afStack_78[(uint)bVar7 * -2];
   afStack_54[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
@@ -114,8 +117,7 @@ CMatrix3x4f * __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_
     afStack_c0[3] = afStack_54[0];
     fStack_b0 = afStack_54[1];
   }
-  core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
-            (auStack_124,&(this_ptr->base).base.model.field_0xe80 + iStack_10 * 0x30);
+  core_xform_cpp_multiplyMatrix3x4_FUN_005833e0();
   puVar2 = (uint *)&stack0xfffffe7c;
   puVar5 = (uint *)&stack0xfffffeac;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -123,7 +125,7 @@ CMatrix3x4f * __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_
     puVar2 = puVar2 + (uint)bVar7 * -2 + 1;
     puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
   }
-  core_xform_cpp_FUN_00583260(afStack_a8 + 8,&stack0xfffffeac);
+  core_xform_cpp_FUN_00583260();
   afStack_54[2] = fStack_c4;
   afStack_54[(uint)bVar7 * -2 + 3] = afStack_c0[(uint)bVar7 * -2];
   afStack_54[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =

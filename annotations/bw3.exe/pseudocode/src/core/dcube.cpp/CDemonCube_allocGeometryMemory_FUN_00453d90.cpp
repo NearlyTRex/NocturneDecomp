@@ -16,35 +16,36 @@ void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00453d90(CDemonCu
   void *pvVar3;
   SVoxelGrid *pSVar4;
   
-  pCVar1 = (CVector3f *)FUN_005a40df(this_ptr->vertex_count * 0xc);
+  pCVar1 = (CVector3f *)operator_new_array(this_ptr->vertex_count * 0xc);
   this_ptr->vertex_buffer = pCVar1;
   if (pCVar1 == (CVector3f *)0x0) {
     _DAT_01d71de0 = "..\\core\\dcube.cpp";
     _DAT_01d71de4 = 0x600;
     core_main_c_FUN_004e4330("CDemonCube::allocMemory - Out of vertex memory");
   }
-  pCVar2 = (CDemonCubeTriangle *)FUN_005a40df(this_ptr->triangle_count << 5);
+  pCVar2 = (CDemonCubeTriangle *)
+           operator_new_array(this_ptr->triangle_count << 5);
   this_ptr->triangle_buffer = pCVar2;
   if (pCVar2 == (CDemonCubeTriangle *)0x0) {
     _DAT_01d71de0 = "..\\core\\dcube.cpp";
     _DAT_01d71de4 = 0x602;
     core_main_c_FUN_004e4330("CDemonCube::allocMemory - Out of tri memory");
   }
-  pvVar3 = FUN_005a3650(this_ptr->triangle_count);
+  pvVar3 = malloc(this_ptr->triangle_count);
   this_ptr->ground_type_memory = pvVar3;
   if (pvVar3 == (void *)0x0) {
     _DAT_01d71de0 = "..\\core\\dcube.cpp";
     _DAT_01d71de4 = 0x604;
     core_main_c_FUN_004e4330("CDemonCube::allocMemory - Out of ground type memory");
   }
-  pSVar4 = FUN_005a3650(0x40);
+  pSVar4 = (SVoxelGrid *)malloc(0x40);
   this_ptr->voxel_buffer1 = pSVar4;
   if (pSVar4 == (SVoxelGrid *)0x0) {
     _DAT_01d71de0 = "..\\core\\dcube.cpp";
     _DAT_01d71de4 = 0x606;
     core_main_c_FUN_004e4330("CDemonCube::allocMemory - Out of voxel memory");
   }
-  pSVar4 = FUN_005a3650(0x40);
+  pSVar4 = (SVoxelGrid *)malloc(0x40);
   this_ptr->voxel_buffer2 = pSVar4;
   if (pSVar4 != (SVoxelGrid *)0x0) {
     return;

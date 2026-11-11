@@ -2,7 +2,7 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 232,
-    "complexity_score": 224,
+    "complexity_score": 219,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
@@ -13,7 +13,6 @@
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 311
@@ -201,20 +200,20 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 55,
-      "match": "field_0x148",
-      "severity": "mild",
-      "text": "*(uint *)(&SNotesSection_ARRAY_01d0d214[0].field_0x148 + iStack_18) = 0x215;",
-      "type": "unnamed_field"
+      "match": "(uint *)((int)SNotesSection_ARRAY_01d0d214",
+      "severity": "moderate",
+      "text": "*(uint *)((int)SNotesSection_ARRAY_01d0d214[0].entries + iStack_18 + -0xc) = 0x215;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 56,
-      "match": "field_0x14c",
-      "severity": "mild",
-      "text": "*(int *)(&SNotesSection_ARRAY_01d0d214[0].field_0x14c + iStack_18) = iVar3;",
-      "type": "unnamed_field"
+      "match": "(int *)((int)SNotesSection_ARRAY_01d0d214",
+      "severity": "moderate",
+      "text": "*(int *)((int)SNotesSection_ARRAY_01d0d214[0].entries + iStack_18 + -8) = iVar3;",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",

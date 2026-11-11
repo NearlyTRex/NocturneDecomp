@@ -22,7 +22,7 @@ int __cdecl engine_font_cpp_CBitFont_calculateCharacterHeight_FUN_004b09c0(CBitF
       pbVar2 = char_bitmap;
       if (0 < char_width) {
         do {
-          if ((uint)*pbVar2 != *(uint *)(this_ptr + 0x4208)) {
+          if ((uint)*pbVar2 != this_ptr->load_flags) {
             local_14 = iVar3 + 1;
             break;
           }

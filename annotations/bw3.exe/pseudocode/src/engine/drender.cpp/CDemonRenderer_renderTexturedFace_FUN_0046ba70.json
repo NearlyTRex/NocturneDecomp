@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 97,
+    "complexity_score": 110,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 47,
-    "suspect_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 45,
+    "suspect_count": 5,
     "suspect_types": [
+      "shadow_pointer_walk",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 156
+    "total_lines": 154
   },
   "cross_references": [
     {
@@ -202,7 +203,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 33,
       "match": "DAT_005fba20",
       "severity": "mild",
       "text": "if (DAT_005fba20 == 0x20) {",
@@ -210,7 +211,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 41,
       "match": "DAT_01bdd818",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160(this_ptr,3,(int *)&DAT_01bdd818);",
@@ -218,11 +219,19 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 47,
       "match": "DAT_01bdd818",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160(this_ptr,3,(int *)&DAT_01bdd818);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 25,
+      "match": "pSVar3 = (T *)&(pSVar3->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar3 = (SInputFace *)&(pSVar3->vertex_indices).vertex_index_1;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

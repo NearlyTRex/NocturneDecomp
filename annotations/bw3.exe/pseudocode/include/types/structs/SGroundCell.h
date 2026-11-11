@@ -6,10 +6,11 @@
 #include "system/basetypes.h"
 
 // Structure: SGroundCell
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x4 (4 bytes)
 #pragma pack(push, 1)
 typedef struct SGroundCell {
+    short height; // 0x0
+    short color; // 0x2
 } SGroundCell;
 #pragma pack(pop)
 

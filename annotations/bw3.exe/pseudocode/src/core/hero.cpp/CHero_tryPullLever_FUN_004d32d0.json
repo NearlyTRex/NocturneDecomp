@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 273,
+    "complexity_score": 274,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 58,
+    "pseudocode_lines": 59,
     "suspect_count": 18,
     "suspect_types": [
       "bit_int_float_compare",
@@ -18,7 +18,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 196
+    "total_lines": 197
   },
   "cross_references": [
     {
@@ -320,7 +320,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 31,
       "match": "(uint *)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "(*(uint *)((int)g_CDemonSetPtr->actors + local_14),",
@@ -328,7 +328,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 35,
+      "line": 36,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
       "text": "(&stack0xffffffc4)[(uint)bVar3 * 0xfffffffe] =",
@@ -336,7 +336,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 36,
+      "line": 37,
       "match": "&stack0xffffffd0",
       "severity": "moderate",
       "text": "(float)*(uint *)(&stack0xffffffd0 + (uint)bVar3 * -8);",
@@ -344,7 +344,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 37,
+      "line": 38,
       "match": "&stack0xffffffc8",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
@@ -352,7 +352,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 38,
+      "line": 39,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
@@ -360,7 +360,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 41,
+      "line": 42,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
       "text": "core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&stack0xffffffc0);",
@@ -368,7 +368,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 42,
+      "line": 43,
       "match": "&stack0xffffffb8",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffb8 + (uint)bVar3 * -8) =",
@@ -376,7 +376,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 43,
+      "line": 44,
       "match": "&stack0xffffffac",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffac + (uint)bVar3 * -8);",
@@ -384,7 +384,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 44,
+      "line": 45,
       "match": "&stack0xffffffbc",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffbc + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
@@ -392,7 +392,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 45,
+      "line": 46,
       "match": "&stack0xffffffb0",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffb0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
@@ -400,7 +400,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffc8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 37,
+      "line": 38,
       "match": "(int)&stack0xffffffc8",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
@@ -408,7 +408,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffb8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 42,
+      "line": 43,
       "match": "(int)&stack0xffffffb8",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffb8 + (uint)bVar3 * -8) =",
@@ -416,7 +416,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 37,
+      "line": 38,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
@@ -424,7 +424,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 42,
+      "line": 43,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffb8 + (uint)bVar3 * -8) =",
@@ -432,7 +432,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f860a93 is the IEEE 754 bit pattern of 1.0472f. Rewrite in a .keep as a plain float compare against 1.0472f.",
-      "line": 47,
+      "line": 48,
       "match": "(int)local_20 < 0x3f860a93",
       "severity": "moderate",
       "text": "if ((int)local_20 < 0x3f860a93) {",

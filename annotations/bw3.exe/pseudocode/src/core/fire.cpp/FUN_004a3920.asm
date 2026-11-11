@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_FUN_004a3920(CFireEffect *param_1,CVector3f *param_2,UOrientationVector *param_3,CVector3f *param_4,float param_5,undefined4 param_6)
+; void core_fire_cpp_FUN_004a3920(CFireEffect *param_1,CVector3f *param_2,UOrientationVector *param_3,CVector3f *param_4,float param_5,uint param_6)
 ;
 ;
 ; XREF[1]:

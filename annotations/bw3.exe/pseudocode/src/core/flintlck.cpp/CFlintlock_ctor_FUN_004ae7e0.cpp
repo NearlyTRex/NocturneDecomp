@@ -13,7 +13,7 @@ CFlintlock * core_flintlck_cpp_CFlintlock_ctor_FUN_004ae7e0(CFlintlock *this_ptr
 {
   CWeapon *pCVar1;
   
-  pCVar1 = core_weapon_cpp_CWeapon_ctor_FUN_0057ad70((CWeapon *)this_ptr);
+  pCVar1 = core_weapon_cpp_CWeapon_ctor_FUN_0057ad70(&this_ptr->base);
   (pCVar1->base).vtable._ub = &g_CFlintlockVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
             (&pCVar1->model,"flintlock.kfm");
@@ -21,7 +21,7 @@ CFlintlock * core_flintlck_cpp_CFlintlock_ctor_FUN_004ae7e0(CFlintlock *this_ptr
   pCVar1->fire_mode = FIRE_MODE_SINGLE;
   pCVar1->can_penetrate = 1;
   pCVar1->bolt_velocity = 50.0;
-  *(uint *)&pCVar1->field_0x574 = 0;
-  *(uint *)&pCVar1->field_0x56c = 0xb;
+  pCVar1->weapon_class = 0;
+  pCVar1->ammo_type = AMMO_TYPE_BULLET;
   return (CFlintlock *)pCVar1;
 }

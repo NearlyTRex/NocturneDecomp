@@ -27,7 +27,7 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0045aae0
-;   core_fire.cpp_FUN_004a3af0
+;   core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0
 ;   core_fire.cpp_FUN_004a3c50
 ;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005372f0
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
@@ -159,8 +159,8 @@ section .text
     MOV EDI,dword ptr [0x005fc5a0]      ; 0048a5c3 | DAT_005fc5a0
     PUSH EDI                            ; 0048a5c9
     MOV EBP,0x3                         ; 0048a5ca
-    CALL core_fire.cpp_FUN_004a3af0     ; 0048a5cf
-        ;   XREF to: 004a3af0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3af0()
+    CALL core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0 ; 0048a5cf
+        ;   XREF to: 004a3af0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_count, ...)
         ;   Label: LAB_0048a5cf
     ADD ESP,0x18                        ; 0048a5d4
     FLD float ptr [EBX + 0x5a4]         ; 0048a5d7
@@ -684,8 +684,8 @@ section .text
     PUSH EDI                            ; 0048ae70
     MOV dword ptr [ESP + 0x22c],ECX     ; 0048ae71
     MOV dword ptr [ESP + 0x230],EDX     ; 0048ae78
-    CALL core_fire.cpp_FUN_004a3af0     ; 0048ae7f
-        ;   XREF to: 004a3af0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3af0()
+    CALL core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0 ; 0048ae7f
+        ;   XREF to: 004a3af0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_count, ...)
     ADD ESP,0x18                        ; 0048ae84
     LEA EAX,[EBX + 0x20]                ; 0048ae87
     PUSH EAX                            ; 0048ae8a
@@ -709,8 +709,8 @@ section .text
     PUSH EAX                            ; 0048aebe
     MOV ECX,dword ptr [0x005fc5a0]      ; 0048aebf | DAT_005fc5a0
     PUSH ECX                            ; 0048aec5
-    CALL core_fire.cpp_FUN_004a3af0     ; 0048aec6
-        ;   XREF to: 004a3af0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3af0()
+    CALL core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0 ; 0048aec6
+        ;   XREF to: 004a3af0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_count, ...)
     ADD ESP,0x18                        ; 0048aecb
     PUSH 0x7                            ; 0048aece
     PUSH 0x0                            ; 0048aed0

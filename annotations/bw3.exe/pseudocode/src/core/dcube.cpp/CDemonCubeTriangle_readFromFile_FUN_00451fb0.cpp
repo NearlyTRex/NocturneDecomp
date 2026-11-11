@@ -12,9 +12,9 @@ void __cdecl core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_00451fb0(CDemonC
 
 {
   _fread(&DAT_01548b7c,3,4,file_handle);
-  *(CVector3f **)this_ptr = vertex_buffer_base + _DAT_01548b7c;
-  *(CVector3f **)(this_ptr + 4) = vertex_buffer_base + _DAT_01548b80;
-  *(CVector3f **)(this_ptr + 8) = vertex_buffer_base + _DAT_01548b84;
-  _fread(this_ptr + 0xc,0x14,1,file_handle);
+  (this_ptr->triangle).vertices[0] = vertex_buffer_base + _DAT_01548b7c;
+  (this_ptr->triangle).vertices[1] = vertex_buffer_base + _DAT_01548b80;
+  (this_ptr->triangle).vertices[2] = vertex_buffer_base + _DAT_01548b84;
+  _fread(&(this_ptr->triangle).normal,0x14,1,file_handle);
   return;
 }

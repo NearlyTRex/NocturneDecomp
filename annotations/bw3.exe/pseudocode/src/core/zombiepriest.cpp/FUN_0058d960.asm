@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_zombiepriest_cpp_FUN_0058d960(CEnemy *param_1,float param_2)
+; void core_zombiepriest_cpp_FUN_0058d960(CZombiePriest *param_1,float param_2)
 ;
 ;
 ; Referenced Globals:
@@ -808,8 +808,8 @@ section .text
     JBE 0x0058dc68                      ; 0058e256
         ;   XREF to: 0058dc68 (CONDITIONAL_JUMP)  ; caseD_7
     PUSH EBX                            ; 0058e25c
-    CALL core_mobster.cpp_CMobster_startFiringAttack_FUN_0058f4a0 ; 0058e25d
-        ;   XREF to: 0058f4a0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_startFiringAttack_FUN_0058f4a0(CMobster * this_ptr)
+    CALL core_zombprie.cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0 ; 0058e25d
+        ;   XREF to: 0058f4a0 (UNCONDITIONAL_CALL)  ; void core_zombprie.cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0(CZombiePriest * this_ptr)
     ADD ESP,0x4                         ; 0058e262
     JMP 0x0058dc68                      ; 0058e265
         ;   XREF to: 0058dc68 (UNCONDITIONAL_JUMP)  ; caseD_7
@@ -1319,8 +1319,8 @@ section .text
     JC 0x0058e7a9                       ; 0058e80d
         ;   XREF to: 0058e7a9 (CONDITIONAL_JUMP)  ; LAB_0058e7a9
     PUSH EBX                            ; 0058e80f
-    CALL core_mobster.cpp_CMobster_startFiringAttack_FUN_0058f4a0 ; 0058e810
-        ;   XREF to: 0058f4a0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_startFiringAttack_FUN_0058f4a0(CMobster * this_ptr)
+    CALL core_zombprie.cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0 ; 0058e810
+        ;   XREF to: 0058f4a0 (UNCONDITIONAL_CALL)  ; void core_zombprie.cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0(CZombiePriest * this_ptr)
     ADD ESP,0x4                         ; 0058e815
     JMP 0x0058e7a9                      ; 0058e818
         ;   XREF to: 0058e7a9 (UNCONDITIONAL_JUMP)  ; LAB_0058e7a9

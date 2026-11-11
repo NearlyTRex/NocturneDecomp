@@ -33,7 +33,7 @@ int __cdecl core_charactr_cpp_CCharacter_renderTransparent_FUN_0042f510(CCharact
     DAT_007e2b30 = DAT_007e2b30 | 1;
   }
   bVar1 = false;
-  if ((*(int *)&this_ptr->field_0x27a8 != 0) && (this_ptr->smoke_occluded == 0)) {
+  if ((this_ptr->is_spectral != 0) && (this_ptr->smoke_occluded == 0)) {
     fVar6 = (float10)_DAT_007e2cb0 + (float10)_DAT_005b837a;
     _DAT_007e2cb0 = (float)fVar6;
     fVar7 = (float10)fsin(fVar6);

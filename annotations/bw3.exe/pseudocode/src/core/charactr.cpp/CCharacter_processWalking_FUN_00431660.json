@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 288,
-    "complexity_score": 460,
+    "complexity_score": 415,
     "cross_reference_count": 35,
     "function_call_count": 9,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 125,
-    "suspect_count": 29,
+    "suspect_count": 25,
     "suspect_types": [
       "bit_int_float_compare",
       "pointer_cast",
@@ -16,7 +16,6 @@
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
@@ -634,38 +633,6 @@
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffcc + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 79,
-      "match": "field_0x2528",
-      "severity": "mild",
-      "text": "fStack_1c = *(float *)&this_ptr->field_0x2528;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 90,
-      "match": "field_0x27a8",
-      "severity": "mild",
-      "text": "if ((((0.0 <= this_ptr->walk_min_distance) && (*(int *)&this_ptr->field_0x27a8 == 0)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 107,
-      "match": "field_0xcdc8",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0xcdc8 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 126,
-      "match": "field_0xcdc8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xcdc8 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer value `&local_30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

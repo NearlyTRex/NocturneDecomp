@@ -11,20 +11,20 @@ int __cdecl core_burncrss_cpp_CBurncross_renderOpaque_FUN_00425360(CBurncross *t
 {
   int iVar1;
   int iVar2;
-  byte *puVar3;
+  CDemonActor *this_ptr_00;
   
-  iVar1 = core_weapon_cpp_CWeapon_renderOpaque_FUN_0057af80((CWeapon *)this_ptr);
-  if (*(int *)&this_ptr->field_0x2d4 != 2) {
+  iVar1 = core_weapon_cpp_CWeapon_renderOpaque_FUN_0057af80(&this_ptr->base);
+  if ((this_ptr->base).weapon_state != WEAPON_STATE_IN_HAND) {
     iVar2 = core_actor_cpp_castToClassHash_FUN_0040c840
-                      (*(uint *)&this_ptr->field_0x304,g_CEnemyClassInfo.name_hash);
+                      ((this_ptr->base).carried_by_actor,g_CEnemyClassInfo.name_hash);
     if (iVar2 == 0) {
       return iVar1;
     }
   }
-  puVar3 = &this_ptr->field_0x5a8;
+  this_ptr_00 = &this_ptr->flames[0].base;
   do {
-    (**(code **)(*(int *)(puVar3 + 0x154) + 0x14))(puVar3);
-    puVar3 = puVar3 + 0x2a4;
-  } while (puVar3 != &this_ptr->field_0x1ac8);
+    (*((UActorVTable *)(this_ptr_00->actor_name + 0x154))->_ub->renderTransparent)(this_ptr_00);
+    this_ptr_00 = (CDemonActor *)&this_ptr_00[1].next_actor;
+  } while (this_ptr_00 != (CDemonActor *)&this_ptr->flame_intensity);
   return iVar1;
 }

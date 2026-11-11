@@ -20,7 +20,7 @@ CBurncross * core_burncrss_cpp_CBurncross_dtor_FUN_00425420(CBurncross *this_ptr
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  iVar1 = core_burncrss_cpp_FUN_00425490(&this_ptr->field_0x5a8,0);
+  iVar1 = core_burncrss_cpp_FUN_00425490(this_ptr->flames,0);
   pCVar2 = (CBurncross *)core_weapon_cpp_CWeapon_dtor_FUN_0057aed0((CWeapon *)(iVar1 + -0x5a8),1);
   if ((flags & 2) == 0) {
     return pCVar2;

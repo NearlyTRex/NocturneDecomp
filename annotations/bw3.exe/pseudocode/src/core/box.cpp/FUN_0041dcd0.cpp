@@ -51,7 +51,8 @@ uint core_box_cpp_FUN_0041dcd0(float *param_1)
     local_28.y = (int)ROUND(afStack_48[3] * _DAT_005dc948);
     local_28.z = (int)ROUND(local_38 * _DAT_005dc948);
     engine_special_cpp_FUN_005632a3((SProjectedVertex *)(*0x01BDD7E4 + iVar2),&local_28);
-    if (((byte)DAT_005f2afc->vertex_buffer_ptr[iVar2 + 0x13] & 0x80) == 0) {
+    if ((*(byte *)((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).screen_x + iVar2 + 3) &
+        0x80) == 0) {
       local_18 = 0;
     }
     else {

@@ -6,11 +6,15 @@
 #include "system/basetypes.h"
 
 // Structure: CInStreamMemory
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 20; ctor 00574120 calls the in-stream base ctor then zeroes +4..+0x10
 // Ghidra size: 0x14 (20 bytes)
 #pragma pack(push, 1)
 typedef struct CInStreamMemory {
-    char field_0[20]; // 0x0
+    void* vtable; // 0x0, stream vtable pointer; the abstract base ctor (00572530) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB
+    char* data; // 0x4, open 00574440 / openOwned 00574470 store the buffer arg; getChar 00574230 reads data[position]; close 005743f0 frees it when owns_data
+    int size; // 0x8, open stores the length arg; reads, seek and isEof bound position against it
+    int position; // 0xc, getChar increments it; seek 00574350 sets it; tell returns it
+    int owns_data; // 0x10, open sets 0, openOwned sets 1; close frees data only when non-zero
 } CInStreamMemory;
 #pragma pack(pop)
 

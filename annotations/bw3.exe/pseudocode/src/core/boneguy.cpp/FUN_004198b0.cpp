@@ -11,7 +11,7 @@ void core_boneguy_cpp_FUN_004198b0(void)
 {
   CSkeletonForest *this_ptr;
   
-  this_ptr = (CSkeletonForest *)debugAllocTracked1(0xd698);
+  this_ptr = (CSkeletonForest *)operator_new(0xd698);
   if (this_ptr == (CSkeletonForest *)0x0) {
     return;
   }

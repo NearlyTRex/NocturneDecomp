@@ -9,38 +9,39 @@
 int core_hero_cpp_FUN_004d3c90(CHero *param_1)
 
 {
+  CDemonActor *actor_ptr;
   int iVar1;
   
-  if (*(CDemonActor **)(param_1 + 0x20a24) == (CDemonActor *)0x0) {
+  actor_ptr = (param_1->inventory).selected_item;
+  if (actor_ptr == (CDemonActor *)0x0) {
     return 0;
   }
-  iVar1 = core_actor_cpp_isOfClass_FUN_0040c790
-                    (*(CDemonActor **)(param_1 + 0x20a24),"N@CHealthItem" + 2);
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040c790(actor_ptr,"N@CHealthItem" + 2);
   if (iVar1 != 0) {
     iVar1 = core_inv_cpp_CInventory_select_FUN_004dcb40
-                      ((CInventory *)(param_1 + 0x206e8),*(CDemonActor **)(param_1 + 0x20a24));
+                      (&param_1->inventory,(param_1->inventory).selected_item);
     return iVar1;
   }
   iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
-                    (*(uint *)(param_1 + 0x20a24),g_CBoxActorClassInfo.name_hash);
+                    ((param_1->inventory).selected_item,g_CBoxActorClassInfo.name_hash);
   if (iVar1 != 0) {
     iVar1 = _stricmp((char *)(iVar1 + 0x1d0),"journal.kfm");
     if (iVar1 == 0) {
-      *(uint *)&g_CFieldNotesPtr->field_0x40 = (uint)(*(int *)&g_CFieldNotesPtr->field_0x40 == 0);
+      g_CFieldNotesPtr->is_displayed = (uint)(g_CFieldNotesPtr->is_displayed == 0);
       return 0;
     }
   }
   iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
-                    (*(uint *)(param_1 + 0x20a24),g_CBoxActorClassInfo.name_hash);
+                    ((param_1->inventory).selected_item,g_CBoxActorClassInfo.name_hash);
   if (iVar1 != 0) {
     iVar1 = _stricmp((char *)(iVar1 + 0x1d0),"lantern.kfm");
     if (iVar1 == 0) {
-      *(uint *)(param_1 + 0xcdec) = 1;
+      (param_1->player_input).action_state.light = 1;
       return 0;
     }
   }
   iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
-                    (*(uint *)(param_1 + 0x20a24),g_CBoxActorClassInfo.name_hash);
+                    ((param_1->inventory).selected_item,g_CBoxActorClassInfo.name_hash);
   if (iVar1 != 0) {
     iVar1 = _stricmp((char *)(iVar1 + 0x1d0),"voodoo_d.kfm");
     if (iVar1 == 0) {
@@ -48,7 +49,7 @@ int core_hero_cpp_FUN_004d3c90(CHero *param_1)
       return 0;
     }
   }
-  iVar1 = (**(code **)(*(int *)(param_1 + 0x154) + 0x148))(param_1);
+  iVar1 = (*(((param_1->base).base.vtable._ue)->_ue).randomize)((CEnemy *)param_1);
   if (iVar1 != 0) {
     return 0;
   }
@@ -57,6 +58,6 @@ int core_hero_cpp_FUN_004d3c90(CHero *param_1)
     return 0;
   }
   iVar1 = core_inv_cpp_CInventory_select_FUN_004dcb40
-                    ((CInventory *)(param_1 + 0x206e8),*(CDemonActor **)(param_1 + 0x20a24));
+                    (&param_1->inventory,(param_1->inventory).selected_item);
   return iVar1;
 }

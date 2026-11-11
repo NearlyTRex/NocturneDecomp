@@ -12,9 +12,9 @@
 ;
 ; XREF[27]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_00491f40 at 00492f48
-;   core_fldnotes.cpp_FUN_004a8680 at 004a86c1
-;   core_fldnotes.cpp_FUN_004aa810 at 004ab331
+;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810 at 004ab331
 ;   core_fldnotes.cpp_FUN_004abe00 at 004ac378
+;   core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004a8680 at 004a86c1
 ;   core_game.cpp_FUN_004b6f30 at 004b7400
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052bb19
 ;   core_set.cpp_FUN_00532b80 at 00532fae

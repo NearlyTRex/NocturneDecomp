@@ -82,16 +82,13 @@ LAB_0040cbcf:
     iVar4 = core_actor_cpp_isOfClass_FUN_0040c790(this_ptr,"CShadow");
     if (iVar4 == 0) {
       iVar4 = core_actor_cpp_getRandomInt_FUN_0040cea0(1,3);
-      *(int *)this_ptr->footstep_sound_code = iVar4;
+      this_ptr->footstep_particle_count = iVar4;
     }
     else {
-      this_ptr->footstep_sound_code[0] = '\x01';
-      this_ptr->footstep_sound_code[1] = '\0';
-      this_ptr->footstep_sound_code[2] = '\0';
-      this_ptr->footstep_sound_code[3] = '\0';
+      this_ptr->footstep_particle_count = 1;
     }
     iVar4 = 0;
-    if (0 < *(int *)this_ptr->footstep_sound_code) {
+    if (0 < this_ptr->footstep_particle_count) {
       do {
         fStack_30 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.7853982,1.5707964);
         fStack_14 = fStack_30;
@@ -109,8 +106,9 @@ LAB_0040cbcf:
           CStack_6c.z = position->z;
         }
         iVar4 = iVar4 + 1;
-        core_fire_cpp_FUN_004a2930(0x01C73654,position,afStack_60,0);
-      } while (iVar4 < *(int *)this_ptr->footstep_sound_code);
+        core_fire_cpp_CFireEffect_createLeaf_FUN_004a2930
+                  (0x01C73654,position,afStack_60,(CKeyFramedModel *)0x0,0x41700000);
+      } while (iVar4 < this_ptr->footstep_particle_count);
     }
   }
   core_ground_cpp_getGroundTypeCode_FUN_004cf9a0(ground_type);

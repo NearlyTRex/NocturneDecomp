@@ -67,15 +67,17 @@ void core_setutil_cpp_FUN_005430dc(int param_1)
       CStack_50.z = (int)ROUND(fStack_3c * _DAT_005e3d18);
       iStack_8 = iVar5;
       engine_special_cpp_FUN_005632a3
-                ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + iVar3),&CStack_50);
+                ((SProjectedVertex *)
+                 ((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_x + iVar3),
+                 &CStack_50);
       pCVar2 = DAT_005f2afc;
-      *(uint *)(DAT_005f2afc->vertex_buffer_ptr + iVar3 + 0x18) = 0x800000;
-      *(uint *)(pCVar2->vertex_buffer_ptr + iVar3 + 0x1c) = 0x800000;
+      *(uint *)((int)&DAT_005f2afc->vertex_buffer_ptr->u + iVar3) = 0x800000;
+      *(uint *)((int)&pCVar2->vertex_buffer_ptr->v + iVar3) = 0x800000;
       fVar6 = (float10)*(float *)(param_1 + 0x11c4) * (float10)_DAT_005d1172;
       pSVar1 = pCVar2->vertex_buffer_ptr;
       round();
       iStack_8 = (int)ROUND(fVar6);
-      *(int *)(pSVar1 + iVar3 + 0x20) = iStack_8;
+      *(int *)((int)&pSVar1->r + iVar3) = iStack_8;
       iVar4 = *extraout_EDX;
       fVar6 = (float10)*(float *)(param_1 + 0x11c8) * (float10)_DAT_005d1172;
       round();

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_cloth_cpp_FUN_0043c330(CKeyFramedModel *param_1,char *param_2)
+; int core_cloth_cpp_FUN_0043c330(CCloth *param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x138]:1  local_138

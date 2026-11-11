@@ -11,7 +11,7 @@ void core_bat_cpp_factoryFuncBat_FUN_0040edb0(void)
 {
   CBat *this_ptr;
   
-  this_ptr = (CBat *)debugAllocTracked1(0x388);
+  this_ptr = (CBat *)operator_new(0x388);
   if (this_ptr == (CBat *)0x0) {
     return;
   }

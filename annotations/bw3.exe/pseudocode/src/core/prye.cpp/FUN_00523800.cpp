@@ -96,7 +96,7 @@ void core_prye_cpp_FUN_00523800(CDemonActor *param_1)
   }
   (**(code **)(*(int *)(*(int *)(param_1[0x186].actor_name + 0x14) + 0x154) + 0xe0))
             (*(int *)(param_1[0x186].actor_name + 0x14));
-  piStack_20 = &param_1[0x185].is_editor_hidden;
+  piStack_20 = &param_1[0x185].render_needs_update;
   uStack_2c = _DAT_01ed36e8;
   UStack_120 = (UActorVTable)local_6c;
   aUStack_11c[(uint)bVar4 * -2] = aUStack_8c[(uint)bVar4 * -2 + 9];

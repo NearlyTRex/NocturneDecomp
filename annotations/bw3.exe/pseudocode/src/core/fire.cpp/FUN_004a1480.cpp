@@ -52,13 +52,13 @@ void core_fire_cpp_FUN_004a1480(void)
   pCVar1 = g_SparkPool;
   do {
     pCVar2 = pCVar1 + 1;
-    *(uint *)&pCVar1->field_0x24 = 0;
+    (pCVar1->base).lifetime_remaining = 0.0;
     pCVar1 = pCVar2;
   } while (pCVar2 != (CSpark *)&DAT_01cba2b4);
   pCVar15 = CFirefly_ARRAY_01cba2b8;
   do {
     pCVar3 = pCVar15 + 1;
-    *(uint *)&pCVar15->field_0x24 = 0;
+    (pCVar15->base).lifetime_remaining = 0.0;
     pCVar15 = pCVar3;
   } while (pCVar3 != (CFirefly *)&DAT_01cbb9b8);
   puVar4 = (uint *)&DAT_01cbb9bc;
@@ -72,7 +72,7 @@ void core_fire_cpp_FUN_004a1480(void)
   pCVar5 = CGlassParticle_ARRAY_01cbc0f0;
   do {
     pCVar6 = pCVar5 + 1;
-    *(uint *)&pCVar5->field_0x24 = 0;
+    (pCVar5->base).lifetime_remaining = 0.0;
     pCVar5 = pCVar6;
   } while (pCVar6 != (CGlassParticle *)&DAT_01cefd10);
   puVar8 = (byte *)0x1cefd14;
@@ -85,28 +85,28 @@ void core_fire_cpp_FUN_004a1480(void)
   pCVar9 = g_FireballPool;
   do {
     pCVar10 = pCVar9 + 1;
-    *(uint *)&pCVar9->field_0x24 = 0;
+    (pCVar9->base).lifetime_remaining = 0.0;
     pCVar9 = pCVar10;
   } while (pCVar10 != (CFireball *)&DAT_01cf2780);
   _DAT_01cf2780 = 0;
   pCVar11 = g_RockPool;
   do {
     pCVar12 = pCVar11 + 1;
-    *(uint *)&pCVar11->field_0x24 = 0;
+    (pCVar11->base).lifetime_remaining = 0.0;
     pCVar11 = pCVar12;
   } while (pCVar12 != (CRock *)&DAT_01cf3b84);
   _DAT_01cf3b84 = 0;
   pCVar13 = CLeaf_ARRAY_01cf3b88;
   do {
     pCVar14 = pCVar13 + 1;
-    *(uint *)&pCVar13->field_0x24 = 0;
+    (pCVar13->base).lifetime_remaining = 0.0;
     pCVar13 = pCVar14;
   } while (pCVar14 != (CLeaf *)&DAT_01cf5088);
   _DAT_01cba2b4 = 0;
   pCVar15 = CFirefly_ARRAY_01cba2b8;
   do {
     pCVar3 = pCVar15 + 1;
-    *(uint *)&pCVar15->field_0x24 = 0;
+    (pCVar15->base).lifetime_remaining = 0.0;
     pCVar15 = pCVar3;
   } while (pCVar3 != (CFirefly *)&DAT_01cbb9b8);
   pCVar16 = (CExplosion *)0x1cf6090;
@@ -149,21 +149,21 @@ void core_fire_cpp_FUN_004a1480(void)
   pCVar18 = g_ShellPool;
   do {
     pCVar19 = pCVar18 + 1;
-    *(uint *)&pCVar18->field_0x24 = 0;
+    (pCVar18->base).lifetime_remaining = 0.0;
     pCVar18 = pCVar19;
   } while (pCVar19 != (CShell *)&DAT_01d03b88);
   _DAT_01d03b88 = 0;
   pCVar20 = g_PopcornPool;
   do {
     pCVar21 = pCVar20 + 1;
-    *(uint *)&pCVar20->field_0x24 = 0;
+    (pCVar20->base).lifetime_remaining = 0.0;
     pCVar20 = pCVar21;
   } while (pCVar21 != (CPopcorn *)&DAT_01d07b8c);
   _DAT_01d07b8c = 0;
   pCVar22 = g_RainDropPool;
   do {
     pCVar23 = pCVar22 + 1;
-    *(uint *)&pCVar22->field_0x24 = 0;
+    (pCVar22->base).lifetime_remaining = 0.0;
     pCVar22 = pCVar23;
   } while (pCVar23 != (CRainDrop *)&DAT_01d0bb90);
   pCVar17 = (CLightningBolt *)0x1d0bb94;

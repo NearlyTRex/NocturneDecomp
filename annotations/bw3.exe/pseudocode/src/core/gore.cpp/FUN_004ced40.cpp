@@ -16,7 +16,7 @@ CFlies * core_gore_cpp_FUN_004ced40(uint param_1,float *param_2,int param_3,floa
   CFlies *this_ptr;
   CFlies *this_ptr_00;
   
-  this_ptr = (CFlies *)debugAllocTracked1(0x2a20);
+  this_ptr = (CFlies *)operator_new(0x2a20);
   this_ptr_00 = (CFlies *)0x0;
   if (this_ptr != (CFlies *)0x0) {
     this_ptr_00 = core_flies_cpp_CFlies_ctor_FUN_004ad7b0(this_ptr);
@@ -30,7 +30,7 @@ CFlies * core_gore_cpp_FUN_004ced40(uint param_1,float *param_2,int param_3,floa
   (this_ptr_00->base).location.position.x = *param_2;
   (this_ptr_00->base).location.position.y = param_2[1];
   (this_ptr_00->base).location.position.z = param_2[2];
-  iVar1 = *(int *)0x01D81080;
+  iVar1 = 0x01D81080->current_set_index;
   this_ptr_00->fly_count = 0;
   (this_ptr_00->base).location.area_id = iVar1;
   this_ptr_00->gather_count = param_3;

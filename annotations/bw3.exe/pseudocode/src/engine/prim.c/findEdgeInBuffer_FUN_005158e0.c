@@ -18,11 +18,11 @@ SSoftwareEdge * __cdecl engine_prim_c_findEdgeInBuffer_FUN_005158e0(int y_value,
   iVar2 = 0;
   if (0 < _DAT_01ed2c88) {
     do {
-      if ((y_value == *(int *)pSVar1) && (pSVar1 != edge_ptr)) {
+      if ((y_value == (pSVar1->base).y_min) && (pSVar1 != edge_ptr)) {
         return pSVar1;
       }
       iVar2 = iVar2 + 1;
-      pSVar1 = pSVar1 + 0x50;
+      pSVar1 = pSVar1 + 1;
     } while (iVar2 < _DAT_01ed2c88);
   }
   return (SSoftwareEdge *)0x0;

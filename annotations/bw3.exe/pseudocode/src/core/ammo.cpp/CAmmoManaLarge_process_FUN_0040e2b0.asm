@@ -15,7 +15,7 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
-;   core_fire.cpp_FUN_004a3af0
+;   core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0
 ;
 ; *****************************************************************************
 
@@ -90,8 +90,8 @@ section .text
     PUSH EAX                            ; 0040e377
     MOV EDX,dword ptr [0x005fc5a0]      ; 0040e378 | DAT_005fc5a0
     PUSH EDX                            ; 0040e37e
-    CALL core_fire.cpp_FUN_004a3af0     ; 0040e37f
-        ;   XREF to: 004a3af0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3af0()
+    CALL core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0 ; 0040e37f
+        ;   XREF to: 004a3af0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_count, ...)
     ADD ESP,0x18                        ; 0040e384
     ADD ESP,0x30                        ; 0040e387
     POP EDI                             ; 0040e38a

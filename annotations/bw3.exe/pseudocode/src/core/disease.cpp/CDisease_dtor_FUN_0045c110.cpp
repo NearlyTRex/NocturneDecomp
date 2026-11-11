@@ -19,7 +19,7 @@ CDisease * core_disease_cpp_CDisease_dtor_FUN_0045c110(CDisease *this_ptr,uint f
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = (CDisease *)core_weapon_cpp_CWeapon_dtor_FUN_0057aed0((CWeapon *)this_ptr,1);
+  pCVar1 = (CDisease *)core_weapon_cpp_CWeapon_dtor_FUN_0057aed0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

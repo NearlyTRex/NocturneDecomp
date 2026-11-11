@@ -41,7 +41,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_00418f90(CBoneGuy *t
     pCVar1 = DAT_005f2afc;
     g_CDemonSetPtr->disable_directional_lighting = 0;
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(pCVar1);
-    if (0.0 < *(float *)&(this_ptr->base).base.field_0x3254) {
+    if (0.0 < (this_ptr->base).base.bind_time) {
       core_charactr_cpp_FUN_0042f310((CCharacter *)this_ptr);
     }
   }

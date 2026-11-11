@@ -11,28 +11,29 @@
 void __cdecl sound_sndmain_cpp_FUN_00555bf0(CSfxOptions *this_ptr)
 
 {
-  uint uVar1;
+  float fVar1;
   
-  *(uint *)this_ptr = 0;
-  *(uint *)&this_ptr->field_0x14 = 0;
-  *(uint *)&this_ptr->field_0x18 = 0;
-  *(uint *)&this_ptr->field_0x1c = 0;
-  *(uint *)&this_ptr->field_0x20 = 0;
-  *(uint *)&this_ptr->field_0x2c = 0;
-  *(uint *)&this_ptr->field_0x30 = 0;
-  *(uint *)&this_ptr->field_0x34 = 0;
-  *(uint *)&this_ptr->field_0x38 = 0x3f800000;
-  *(uint *)&this_ptr->field_0x3c = 0x3f800000;
-  *(ulonglong *)&this_ptr->field_0xc = *(ulonglong *)&this_ptr->field_0x14;
-  *(uint *)&this_ptr->field_0x28 = *(uint *)&this_ptr->field_0x2c;
-  *(ulonglong *)&this_ptr->field_0x4 = *(ulonglong *)&this_ptr->field_0xc;
-  *(uint *)&this_ptr->field_0x24 = *(uint *)&this_ptr->field_0x28;
-  memset(&this_ptr->field_0x44,0,8);
-  *(uint *)&this_ptr->field_0x50 = 0;
-  *(uint *)&this_ptr->field_0x54 = 0;
-  *(uint *)&this_ptr->field_0x58 = 0;
-  uVar1 = _DAT_005e4824;
-  *(uint *)&this_ptr->field_0x5c = 0;
-  *(uint *)&this_ptr->field_0x40 = uVar1;
+  this_ptr->channel_index = 0;
+  *(uint *)&(this_ptr->position).z = 0;
+  *(uint *)((int)&(this_ptr->position).z + 4) = 0;
+  this_ptr->position_source_ptr = (void *)0x0;
+  this_ptr->position_format = 0;
+  (this_ptr->velocity).z = 0.0;
+  this_ptr->velocity_source_ptr = (void *)0x0;
+  this_ptr->velocity_format = 0;
+  this_ptr->current_volume = 1.0;
+  this_ptr->base_frequency = 1.0;
+  (this_ptr->position).y = (this_ptr->position).z;
+  (this_ptr->velocity).y = (this_ptr->velocity).z;
+  fVar1 = (this_ptr->velocity).y;
+  (this_ptr->position).x = (this_ptr->position).y;
+  (this_ptr->velocity).x = fVar1;
+  memset(this_ptr->userdata,0,8);
+  *(uint *)&this_ptr->playback_position = 0;
+  *(uint *)((int)&this_ptr->playback_position + 4) = 0;
+  this_ptr->playback_position_type = 0;
+  fVar1 = _DAT_005e4824;
+  this_ptr->dead = 0;
+  this_ptr->delay_remaining = fVar1;
   return;
 }

@@ -27,7 +27,7 @@ CBugs * core_bugs_cpp_CBugs_dtor_FUN_00424330(CBugs *this_ptr,uint flags)
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80
                      ((CDeformableModelInstance *)(pCVar2[-0x1b].filenames[7] + 8),0);
   pCVar4 = (CBugs *)core_actor_cpp_CDemonActor_dtor_FUN_00408770
-                              ((CDemonActor *)&pCVar3[-1].field_0x224c,1);
+                              ((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);
   if ((flags & 2) == 0) {
     return pCVar4;
   }

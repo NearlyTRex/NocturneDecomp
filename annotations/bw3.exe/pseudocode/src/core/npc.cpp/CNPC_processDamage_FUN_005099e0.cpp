@@ -17,7 +17,7 @@ void __cdecl core_npc_cpp_CNPC_processDamage_FUN_005099e0(CNPC *this_ptr,SDamage
   
   pCVar3 = (*((this_ptr->base).base.vtable._ub)->getActorType)((CDemonActor *)this_ptr);
   if (pCVar3 == &g_CNPCClassInfo) {
-    fVar2 = (this_ptr->base).hit_points - *(float *)(damage_info + 4);
+    fVar2 = (this_ptr->base).hit_points - damage_info->damage_amount;
     this_ptr_00 = &(this_ptr->base).model;
     (this_ptr->base).hit_points = fVar2;
     if (fVar2 <= 0.0) {
@@ -27,7 +27,7 @@ void __cdecl core_npc_cpp_CNPC_processDamage_FUN_005099e0(CNPC *this_ptr,SDamage
       core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0(&this_ptr->base);
       core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00509900((CNPC *)this_ptr_00,&DAT_005cb644);
     }
-    else if ((0.0 < *(float *)(damage_info + 4)) &&
+    else if ((0.0 < damage_info->damage_amount) &&
             ((this_ptr->base).grabbed_by == (CDemonActor *)0x0)) {
       iVar4 = core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00509900
                         ((CNPC *)this_ptr_00,&DAT_005cb648);

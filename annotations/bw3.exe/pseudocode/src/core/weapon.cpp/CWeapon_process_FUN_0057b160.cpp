@@ -41,7 +41,7 @@ void __cdecl core_weapon_cpp_CWeapon_process_FUN_0057b160(CWeapon *this_ptr,floa
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0(&this_ptr->base);
   if (((this_ptr->carried_by_actor == *(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04)) &&
-      (*(int *)&g_CGamePtr->field_0x26c != 0)) && (this_ptr->can_attach_light != 0)) {
+      (g_CGamePtr->flashlight_active != 0)) && (this_ptr->can_attach_light != 0)) {
     (*(((this_ptr->base).vtable._uc)->_uc).getGrabber)((CCharacter *)this_ptr);
     if (0.0 < g_CDemonLightInstance.volumetric_intensity) {
       core_set_cpp_CDemonSet_addDynamicLight_FUN_00537270(g_CDemonSetPtr,&g_CDemonLightInstance);

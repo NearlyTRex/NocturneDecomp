@@ -9,31 +9,32 @@
 void __cdecl core_pryemorp_cpp_CPryeMorph_archive_FUN_00527a90(CPryeMorph *this_ptr)
 
 {
-  core_npc_cpp_CNPC_archive_FUN_00509800((CNPC *)this_ptr);
-  core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x206c8,"transformEvent");
-  core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x2072c,"targetModelName");
-  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x21440,"morphTime");
+  CDeformableModelInstance *model_ptr;
+  
+  core_npc_cpp_CNPC_archive_FUN_00509800(&this_ptr->base);
+  core_actor_cpp_archiveString_FUN_0040b680(this_ptr->transform_event,"transformEvent");
+  core_actor_cpp_archiveString_FUN_0040b680(this_ptr->target_model_name,"targetModelName");
+  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->morph_time,"morphTime");
   if ((1 < g_CPryeMorphClassVersion) && (g_CPryeMorphClassVersion < 5)) {
-    core_actor_cpp_archiveDeformableModelInstance_FUN_0040ba30
-              ((CDeformableModelInstance *)&this_ptr->field_0x158,"modelName");
-    core_actor_cpp_archiveMotionState_FUN_0040bab0
-              ((CMotionController *)&this_ptr->field_0x158,"motion state");
+    model_ptr = &(this_ptr->base).base.model;
+    core_actor_cpp_archiveDeformableModelInstance_FUN_0040ba30(model_ptr,"modelName");
+    core_actor_cpp_archiveMotionState_FUN_0040bab0(&model_ptr->base,"motion state");
   }
   if (2 < g_CPryeMorphClassVersion) {
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x21444,"morphSize");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->morph_size,"morphSize");
   }
   if (3 < g_CPryeMorphClassVersion) {
-    core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x2074c,"nameOfTarget");
+    core_actor_cpp_archiveString_FUN_0040b680(this_ptr->name_of_target,"nameOfTarget");
   }
   if (5 < g_CPryeMorphClassVersion) {
-    core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x207ac,"transformWav");
+    core_actor_cpp_archiveString_FUN_0040b680(this_ptr->transform_wav,"transformWav");
   }
   if (6 < g_CPryeMorphClassVersion) {
-    core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x2076c,"targetClass");
+    core_actor_cpp_archiveString_FUN_0040b680(this_ptr->target_class,"targetClass");
   }
   if (g_CPryeMorphClassVersion < 8) {
     return;
   }
-  core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x2078c,"targetState");
+  core_actor_cpp_archiveString_FUN_0040b680(this_ptr->target_state,"targetState");
   return;
 }

@@ -35,8 +35,8 @@
 ;   sound_mp3.cpp_CMP3Decoder_seek_FUN_00502bc0
 ;   sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_00555aa0
 ;   sound_sndmain.cpp_FUN_00555900
-;   unkafter_turret.cpp_FUN_00573cf0
-;   unkafter_turret.cpp_FUN_00573d60
+;   unkafter_turret.cpp_CInStreamFile_isOpen_FUN_00573d60
+;   unkafter_turret.cpp_CInStreamFile_seek_FUN_00573cf0
 ;
 ; *****************************************************************************
 
@@ -148,8 +148,8 @@ section .text
     LEA ESI,[EBX + 0x17c]               ; 005538e8
         ;   Label: LAB_005538e8
     PUSH ESI                            ; 005538ee
-    CALL unkafter_turret.cpp_FUN_00573d60 ; 005538ef
-        ;   XREF to: 00573d60 (UNCONDITIONAL_CALL)  ; undefined unkafter_turret.cpp_FUN_00573d60()
+    CALL unkafter_turret.cpp_CInStreamFile_isOpen_FUN_00573d60 ; 005538ef
+        ;   XREF to: 00573d60 (UNCONDITIONAL_CALL)  ; bool unkafter_turret.cpp_CInStreamFile_isOpen_FUN_00573d60(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 005538f4
     TEST EAX,EAX                        ; 005538f7
     JZ 0x00553927                       ; 005538f9
@@ -165,8 +165,8 @@ section .text
     ADD EAX,EDX                         ; 00553913
     PUSH EAX                            ; 00553915
     PUSH ESI                            ; 00553916
-    CALL unkafter_turret.cpp_FUN_00573cf0 ; 00553917
-        ;   XREF to: 00573cf0 (UNCONDITIONAL_CALL)  ; undefined unkafter_turret.cpp_FUN_00573cf0()
+    CALL unkafter_turret.cpp_CInStreamFile_seek_FUN_00573cf0 ; 00553917
+        ;   XREF to: 00573cf0 (UNCONDITIONAL_CALL)  ; undefined4 unkafter_turret.cpp_CInStreamFile_seek_FUN_00573cf0(CInStreamFile * this_ptr, int param_2, uint param_3)
     ADD ESP,0xc                         ; 0055391c
     ADD ESP,0xc                         ; 0055391f
     POP EBP                             ; 00553922

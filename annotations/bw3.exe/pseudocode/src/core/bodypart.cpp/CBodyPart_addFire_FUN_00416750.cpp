@@ -26,10 +26,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_00416750(CBodyPart *this_pt
   bVar8 = 0;
   iVar4 = this_ptr->fire_count;
   if (iVar4 < 2) {
-    pCVar5 = (CVector3f *)(this_ptr->fires + iVar4);
+    pCVar5 = &this_ptr->fires[iVar4].local_position;
     this_ptr->fire_count = iVar4 + 1;
     if (pCVar5 != position) {
-      pCVar5->x = position->x;
+      ((CVector3f *)&pCVar5->x)->x = position->x;
       pCVar5->y = position->y;
       pCVar5->z = position->z;
     }
@@ -39,7 +39,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_00416750(CBodyPart *this_pt
          *(uint *)(&stack0xffffffec + (uint)bVar8 * -8);
     *(uint *)((int)&stack0xffffffe4 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
          *(uint *)(&stack0xfffffff0 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
-    pCVar5[3].z = local_24;
+    (((CLocation *)&pCVar5[3].z)->position).x = local_24;
     pCVar5[4].x = local_20;
     pCVar5[4].y = local_1c;
     core_flame_cpp_CFlame_setup_FUN_004a5aa0((CFlame *)(pCVar5 + 1));
@@ -70,7 +70,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_00416750(CBodyPart *this_pt
       } while (iVar4 < this_ptr->tri_count);
     }
     fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(4.0,5.0);
-    *(float *)&this_ptr->field_0xccc = fVar3;
+    this_ptr->fire_time_remaining = (int)fVar3;
   }
   return;
 }

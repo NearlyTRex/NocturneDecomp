@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 183,
+    "complexity_score": 72,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
-    "suspect_count": 14,
+    "pseudocode_lines": 27,
+    "suspect_count": 3,
     "suspect_types": [
-      "unnamed_field",
+      "unrolled_memcpy",
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 84
+    "total_lines": 83
   },
   "cross_references": [
     {
@@ -146,107 +146,19 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x14 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if ((CVector3f *)&this_ptr->field_0x4 != position) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 11,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x4 = position->x;",
-      "type": "unnamed_field"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->position).x = position->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x8 = position->y;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0xc = position->z;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(EBloodType *)&this_ptr->field_0x18 = blood_type;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x24 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x20 = *(uint *)&this_ptr->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x20 = *(uint *)&this_ptr->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1c = *(uint *)&this_ptr->field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1c = *(uint *)&this_ptr->field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10 =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
       "line": 26,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "*(uint *)&this_ptr->field_0x24 = 0;",
+      "text": "(this_ptr->rotation).z = 0.0;",
       "type": "unrolled_memset"
     }
   ]

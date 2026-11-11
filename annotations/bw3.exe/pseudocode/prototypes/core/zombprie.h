@@ -9,6 +9,10 @@
 // Address: 0058ecd0
 CMatrix3x4f * __stack2_esi CZombiePriest::getCarryObjToBodyXForm(CZombiePriest *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
+// Original: core_zombprie.cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0
+// Address: 0058f4a0
+void __cdecl CZombiePriest::startFiringAttack(CZombiePriest *this_ptr);
+
 // Original: core_zombprie.cpp_CZombiePriest_archive_FUN_0058f510
 // Address: 0058f510
 void __cdecl CZombiePriest::archive(CZombiePriest *this_ptr);

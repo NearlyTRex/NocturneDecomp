@@ -8,6 +8,7 @@
   {
     "kind":"class",
     "name":"CAsciiUnarmor",
+    "parent":"CCodec",
     "size":12
   },
   {
@@ -20,6 +21,7 @@
   {
     "kind":"class",
     "name":"CBindEvil",
+    "parent":"CWeapon",
     "size":1440
   },
   {
@@ -44,6 +46,80 @@
         "offset":332
       }
     ]
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCameraView_getFogValueAtPosition",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonCamera",
+          "ptr":1
+        }
+      },
+      {
+        "name":"world_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      },
+      {
+        "name":"projected_vertex",
+        "type":{
+          "kind":"struct",
+          "name":"SProjectedVertex",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCameraView_setupPerspectiveAndFog",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonCamera",
+          "ptr":1
+        }
+      },
+      {
+        "name":"position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"projected_vertex",
+        "type":{
+          "kind":"struct",
+          "name":"SProjectedVertex",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"funcdef",
@@ -290,6 +366,7 @@
   {
     "kind":"class",
     "name":"CFlintlock",
+    "parent":"CWeapon",
     "size":1428
   },
   {
@@ -355,8 +432,46 @@
     "size":64
   },
   {
+    "kind":"funcdef",
+    "name":"CParticle_setup",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CParticle",
+          "ptr":1
+        }
+      },
+      {
+        "name":"position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"velocity",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CRifle",
+    "parent":"CWeapon",
     "size":1440
   },
   {
@@ -395,6 +510,7 @@
   {
     "kind":"class",
     "name":"CStorm",
+    "parent":"CWeapon",
     "size":1428
   },
   {
@@ -496,6 +612,21 @@
   },
   {
     "kind":"enum",
+    "name":"EEmitterSoundType",
+    "size":4,
+    "values":[
+      {
+        "name":"EMITTER_SOUND_NORMAL",
+        "value":0
+      },
+      {
+        "name":"EMITTER_SOUND_ONE_SHOT",
+        "value":1
+      }
+    ]
+  },
+  {
+    "kind":"enum",
     "name":"EHealthBarMode",
     "size":4,
     "values":[
@@ -510,6 +641,33 @@
       {
         "name":"HEALTH_BAR_ALWAYS",
         "value":2
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EHeroTask",
+    "size":4,
+    "values":[
+      {
+        "name":"HERO_TASK_STAND",
+        "value":0
+      },
+      {
+        "name":"HERO_TASK_FOLLOW",
+        "value":1
+      },
+      {
+        "name":"HERO_TASK_KILL",
+        "value":2
+      },
+      {
+        "name":"HERO_TASK_GUARD",
+        "value":3
+      },
+      {
+        "name":"HERO_TASK_SUSPEND",
+        "value":4
       }
     ]
   },
@@ -563,8 +721,13 @@
   },
   {
     "kind":"struct",
+    "name":"SHardwareEdge",
+    "size":56
+  },
+  {
+    "kind":"struct",
     "name":"SLod",
-    "size":1
+    "size":8
   },
   {
     "kind":"struct",
@@ -574,7 +737,7 @@
   {
     "kind":"struct",
     "name":"SPartInstanceData",
-    "size":1
+    "size":480
   },
   {
     "kind":"struct",
@@ -583,7 +746,17 @@
   },
   {
     "kind":"struct",
+    "name":"STextureCacheEntry",
+    "size":96
+  },
+  {
+    "kind":"struct",
+    "name":"STimerBlock",
+    "size":364
+  },
+  {
+    "kind":"struct",
     "name":"SVoxelCubeMetadata",
-    "size":1
+    "size":88
   }
 ]

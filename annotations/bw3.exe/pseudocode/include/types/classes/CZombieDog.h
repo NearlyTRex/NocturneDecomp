@@ -11,7 +11,9 @@
 #pragma pack(push, 1)
 typedef struct CZombieDog {
     CEnemy base; // 0x0
-    char field_53332[16]; // 0xd054
+    int bone_indices[2]; // 0xd054
+    uint sfx_handle; // 0xd05c
+    int dog_variant; // 0xd060, Added in this build
 } CZombieDog;
 #pragma pack(pop)
 

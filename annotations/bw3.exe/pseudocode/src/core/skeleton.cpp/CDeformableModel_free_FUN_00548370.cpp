@@ -33,7 +33,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_free_FUN_00548370(CDeformableMod
   }
   this_ptr->num_texture_sets = 0;
   this_ptr->num_textures = 0;
-  memset(&this_ptr->field_0xc0,0,0xb40);
+  memset(this_ptr->texture_sets,0,0xb40);
   this_ptr->num_parts = 0;
   this_ptr->num_lods = 0;
   this_ptr->model_filename[0] = '\0';

@@ -17,8 +17,8 @@ int __cdecl core_health_cpp_CHealthItem_renderOpaque_FUN_004d1f10(CHealthItem *t
   uint auStack_24 [6];
   
   bVar4 = 0;
-  core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0((CDemonActor *)this_ptr);
-  (**(code **)(*(int *)&this_ptr->field_0x154 + 0x1c))(this_ptr,0);
+  core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0(&this_ptr->base);
+  (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
   puVar2 = auStack_3c;
   puVar3 = auStack_24;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -28,11 +28,11 @@ int __cdecl core_health_cpp_CHealthItem_renderOpaque_FUN_004d1f10(CHealthItem *t
   }
   iVar1 = core_box_cpp_FUN_0041daf0(auStack_24);
   if (iVar1 == 0) {
-    core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830((CDemonActor *)this_ptr);
+    core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830(&this_ptr->base);
     return 0;
   }
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
-            ((CKeyFramedModelInstance *)&this_ptr->field_0x158,*(float *)&this_ptr->field_0x2dc,-1);
-  core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830((CDemonActor *)this_ptr);
+            (&this_ptr->model,this_ptr->anim_frame,-1);
+  core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830(&this_ptr->base);
   return iVar1;
 }

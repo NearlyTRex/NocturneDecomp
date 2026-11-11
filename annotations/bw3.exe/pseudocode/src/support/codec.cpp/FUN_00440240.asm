@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   support_codec.cpp_FUN_00441580 at 0044158e
+;   support_codec.cpp_CAsciiArmor_flush_FUN_00441580 at 0044158e
 ;
 ; *****************************************************************************
 

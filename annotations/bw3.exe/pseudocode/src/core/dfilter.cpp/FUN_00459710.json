@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 356,
+    "complexity_score": 341,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 56,
-    "suspect_count": 27,
+    "suspect_count": 26,
     "suspect_types": [
-      "alloc_magic_size",
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
@@ -67,14 +66,14 @@
       "name": "core_main.c_FUN_004e4330"
     },
     {
+      "addr": "005a3cb2",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_FUN_005a3cb2"
+    },
+    {
       "addr": "005a3d00",
       "is_variadic": false,
       "name": "crt_string.c__strcmp_FUN_005a3d00"
-    },
-    {
-      "addr": "005a3cb2",
-      "is_variadic": false,
-      "name": "crt_unknown.c_debugAllocTracked1_FUN_005a3cb2"
     }
   ],
   "globals": [
@@ -395,14 +394,6 @@
       "severity": "moderate",
       "text": "param_1[iVar4 + 0x281] = (int)pCVar3;",
       "type": "pointer_truncation"
-    },
-    {
-      "description": "Allocation size hardcodes 0x4c == sizeof(CDemonFilter). Replace the magic with sizeof(CDemonFilter) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 44,
-      "match": "(CDemonFilter*) alloc stride 0x4c",
-      "severity": "moderate",
-      "text": "(CDemonFilter *)debugAllocTracked1(0x4c)",
-      "type": "alloc_magic_size"
     },
     {
       "call_site_count": 2,

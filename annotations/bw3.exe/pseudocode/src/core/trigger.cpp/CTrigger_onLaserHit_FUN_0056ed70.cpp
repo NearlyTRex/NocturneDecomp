@@ -11,11 +11,11 @@ void __cdecl core_trigger_cpp_CTrigger_onLaserHit_FUN_0056ed70(CTrigger *this_pt
 {
   core_actor_cpp_CDemonActor_onLaserHit_FUN_004096c0(&this_ptr->base,laser_info);
   if ((this_ptr->trigger_cause == TRIGGER_CAUSE_LASER) &&
-     (this_ptr->laser_type == *(int *)(laser_info + 8))) {
+     (this_ptr->laser_type == laser_info->laser_type)) {
     this_ptr->event_flag = 1;
   }
-  *(uint *)(laser_info + 0x50) = 0;
-  *(uint *)(laser_info + 0x48) = 0x3f800000;
-  *(uint *)(laser_info + 0x4c) = *(uint *)(laser_info + 0x44);
+  laser_info->transparency = 0.0;
+  laser_info->reflectivity = 1.0;
+  laser_info->stored_angle = laser_info->incidence_angle;
   return;
 }

@@ -1,0 +1,239 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 76,
+    "complexity_score": 142,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 32,
+    "suspect_count": 9,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 108
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0049a2c0",
+    "address_range": [
+      [
+        "0049a2c0",
+        "0049a378"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CLeaf_render_FUN_0049a2c0",
+    "signature": "void __cdecl core_fire_cpp_CLeaf_render_FUN_0049a2c0(CLeaf *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0041daf0",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_0041daf0"
+    },
+    {
+      "addr": "00460f20",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00460f20"
+    },
+    {
+      "addr": "005375c0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_setLightingParameters_FUN_005375c0"
+    },
+    {
+      "addr": "0046cee0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0046cee0"
+    },
+    {
+      "addr": "0046ce90",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90"
+    },
+    {
+      "addr": "0046d4c0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0"
+    },
+    {
+      "addr": "0046d080",
+      "is_variadic": false,
+      "name": "engine_matrix.c_pop_FUN_0046d080"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f2afc",
+      "name": "DAT_005f2afc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "01bdd7e4",
+      "name": "DAT_01bdd7e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed78c8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "02cfd900",
+      "name": "DAT_02cfd900",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.90625,
+    "instruction_count": 64,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 2,
+      "CALL": 7,
+      "CBRANCH": 2,
+      "COPY": 52,
+      "INT_ADD": 24,
+      "INT_AND": 21,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 21,
+      "INT_LESS": 1,
+      "INT_MULT": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 10,
+      "INT_SUB": 35,
+      "INT_ZEXT": 2,
+      "LOAD": 10,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 32
+    },
+    "pcode_op_count": 250
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLeaf *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,(CVector3f *)this_ptr);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,&this_ptr->rotation,(CVector3i *)0x0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(CBoundingBox3D *)((int)pCVar2",
+      "severity": "moderate",
+      "text": "pCVar2 = (CBoundingBox3D *)((int)pCVar2 + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(CVector3f *)((int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CVector3f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_02cfd900",
+      "severity": "mild",
+      "text": "(g_CDemonSetPtr,(CVector3f *)this_ptr,(UOrientationVector *)&DAT_02cfd900,&CStack_28,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,0xffff);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)pCVar2",
+      "severity": "moderate",
+      "text": "pCVar2 = (CBoundingBox3D *)((int)pCVar2 + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 22,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CVector3f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 19,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CParticle",
+        "offset": 8,
+        "vtable_addr": "005df994"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -81,10 +81,10 @@ int __cdecl core_prye_cpp_CPrye_canReachPickup_FUN_005267c0(CPrye *this_ptr,CDem
   }
   switch(pickup_type) {
   case 1:
-    if (*(int *)&this_ptr->field_0x25b0 != 0) {
+    if ((this_ptr->base).base.carry_hands[0].carry_actor != (CDemonActor *)0x0) {
       return 0;
     }
-    core_actor_cpp_FUN_00408bf0(item,&this_ptr->field_0x20);
+    core_actor_cpp_FUN_00408bf0(item,&(this_ptr->base).base.base.location);
     fStack_2c = fStack_ec;
     *(uint *)((int)afStack_68 + ((uint)bVar6 * -2 + 0x10) * 4) =
          *(uint *)(&stack0xfffffee4 + ((uint)bVar6 * -2 + 0xd) * 4);
@@ -115,7 +115,7 @@ int __cdecl core_prye_cpp_CPrye_canReachPickup_FUN_005267c0(CPrye *this_ptr,CDem
     }
     break;
   case 2:
-    if (*(int *)&this_ptr->field_0x2628 != 0) {
+    if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
       return 0;
     }
     uStack_b8 = 0x40400000;
@@ -129,7 +129,7 @@ int __cdecl core_prye_cpp_CPrye_canReachPickup_FUN_005267c0(CPrye *this_ptr,CDem
     break;
   case 3:
   case 4:
-    if (*(int *)&this_ptr->field_0x2628 != 0) {
+    if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
       return 0;
     }
     if ((item != (CDemonActor *)0x0) &&

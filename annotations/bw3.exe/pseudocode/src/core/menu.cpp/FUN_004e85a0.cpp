@@ -59,7 +59,7 @@ void __cdecl core_menu_cpp_FUN_004e85a0(void)
     core_set_cpp_CDemonSet_setFlatColor_FUN_0053b100(this_ptr,50000,50000,0x10000);
     pcVar6 = &DAT_005c73f6;
     g_CDemonSetPtr->ambient_base_quick = 0xdac;
-    core_moon_cpp_FUN_004f9670(&g_CMoonInstance);
+    core_moon_cpp_CMoon_render_FUN_004f9670(&g_CMoonInstance);
     pcVar8 = &DAT_00606730;
     g_CDemonSetPtr->rendering_mode = 0;
     do {
@@ -133,7 +133,7 @@ void __cdecl core_menu_cpp_FUN_004e85a0(void)
     }
     pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_00508960(pcVar6);
     _sprintf((char *)0x1d73800,pcVar6);
-    *(uint *)&g_CGamePtr->field_0xc = 0;
+    g_CGamePtr->halo_mode = 0;
     if (_DAT_02cf5fcc == 0) {
       pcVar6 = "3D Hardware : Off";
     }
@@ -237,7 +237,7 @@ void __cdecl core_menu_cpp_FUN_004e85a0(void)
     } while (cVar1 != '\0');
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Monitor Calibration");
     _sprintf((char *)0x1d73c00,pcVar7);
-    if (*(int *)&g_CGamePtr->field_0x10 == 0) {
+    if (g_CGamePtr->subtitle_mode == 0) {
       pcVar7 = "Subtitles : Off";
     }
     else {
@@ -254,7 +254,7 @@ void __cdecl core_menu_cpp_FUN_004e85a0(void)
       pcVar6[1] = cVar1;
       pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
-    if (*(int *)&g_CGamePtr->field_0xe0 == 0) {
+    if (g_CGamePtr->show_hero_numbers == 0) {
       pcVar7 = "Health/Mana Numbers : Off";
     }
     else {
@@ -271,7 +271,7 @@ void __cdecl core_menu_cpp_FUN_004e85a0(void)
       pcVar6[1] = cVar1;
       pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
-    if (*(int *)&g_CGamePtr->field_0xe4 == 0) {
+    if (g_CGamePtr->show_crosshair == 0) {
       pcVar7 = "Display Crosshair : Off";
     }
     else {
@@ -436,15 +436,15 @@ LAB_004e8c41:
       uVar3 = _DAT_01d74024;
       break;
     case 5:
-      *(uint *)&g_CGamePtr->field_0x10 = (uint)(*(int *)&g_CGamePtr->field_0x10 == 0);
+      g_CGamePtr->subtitle_mode = (uint)(g_CGamePtr->subtitle_mode == 0);
       uVar3 = _DAT_01d74024;
       break;
     case 6:
-      *(uint *)&g_CGamePtr->field_0xe0 = (uint)(*(int *)&g_CGamePtr->field_0xe0 == 0);
+      g_CGamePtr->show_hero_numbers = (uint)(g_CGamePtr->show_hero_numbers == 0);
       uVar3 = _DAT_01d74024;
       break;
     case 7:
-      *(uint *)&g_CGamePtr->field_0xe4 = (uint)(*(int *)&g_CGamePtr->field_0xe4 == 0);
+      g_CGamePtr->show_crosshair = (uint)(g_CGamePtr->show_crosshair == 0);
       uVar3 = _DAT_01d74024;
     }
     _DAT_01d74024 = uVar3;

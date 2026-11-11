@@ -97,8 +97,8 @@ void __cdecl core_elephant_cpp_CElephantGun_renderAimBeam_FUN_004876d0(CElephant
   }
   core_fire_cpp_CFireEffect_createLaserCone_FUN_004a2b10
             (0x01C73654,&CStack_c0,&CStack_60,1.0,0,0xff,0,
-             *(float *)&this_ptr->field_0x594 * _DAT_005bd9dc * _DAT_005bd9e0);
-  *(uint *)&this_ptr->field_0x598 = 1;
+             this_ptr->spread_angle * _DAT_005bd9dc * _DAT_005bd9e0);
+  this_ptr->muzzle_flash_active = 1;
   fStack_54 = CStack_60.x - CStack_c0.x;
   afStack_50[0] = CStack_60.y - CStack_c0.y;
   afStack_50[1] = CStack_60.z - CStack_c0.z;
@@ -106,7 +106,7 @@ void __cdecl core_elephant_cpp_CElephantGun_renderAimBeam_FUN_004876d0(CElephant
   afStack_b0[(uint)bVar4 * -2 + 3] = afStack_50[(uint)bVar4 * -2];
   afStack_b0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
        afStack_50[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-  *(float *)&this_ptr->field_0x59c =
+  this_ptr->projectile_distance =
        SQRT(fStack_a0 * fStack_a0 + afStack_b0[2] * afStack_b0[2] + afStack_b0[3] * afStack_b0[3]);
   return;
 }

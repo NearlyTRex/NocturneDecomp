@@ -19,11 +19,11 @@ CFirestaff * core_firestff_cpp_CFirestaff_ctor_FUN_004a4ad0(CFirestaff *this_ptr
   float fVar5;
   CWeapon *pCVar6;
   int iVar7;
-  byte *puVar8;
+  CFirestaff *pCVar8;
   CFirestaff *pCVar9;
   int iVar10;
   
-  pCVar6 = core_weapon_cpp_CWeapon_ctor_FUN_0057ad70((CWeapon *)this_ptr);
+  pCVar6 = core_weapon_cpp_CWeapon_ctor_FUN_0057ad70(&this_ptr->base);
   iVar7 = __arrinit(pCVar6[1].base.create_event + 8,0xc,&g_CFlameTypeInfo)
   ;
   pCVar1 = (CFirestaff *)(iVar7 + -0x614);
@@ -54,26 +54,26 @@ CFirestaff * core_firestff_cpp_CFirestaff_ctor_FUN_004a4ad0(CFirestaff *this_ptr
   *(uint *)(iVar7 + 0x1fb0) = 0;
   pCVar9 = pCVar1;
   do {
-    puVar8 = &pCVar9->field_0x2a4;
-    *(uint *)&pCVar9->field_0x76c = 0x3f000000;
-    *(uint *)&pCVar9->field_0x770 = 0x3f800000;
-    *(uint *)&pCVar9->field_0x774 = 0x3f000000;
-    *(uint *)&pCVar9->field_0x7bc = 0;
-    *(uint *)&pCVar9->field_0x7c0 = 0;
+    pCVar8 = (CFirestaff *)((pCVar9->base).model.model_name + 0xd4);
+    pCVar9->flames[0].flame_size.x = 0.5;
+    pCVar9->flames[0].flame_size.y = 1.0;
+    pCVar9->flames[0].flame_size.z = 0.5;
+    pCVar9->flames[0].which_flame = FLAME_TYPE_TORCH;
+    pCVar9->flames[0].globe_scalar = 0.0;
     fVar5 = _DAT_005c0b0d;
-    pCVar9 = (CFirestaff *)puVar8;
-  } while (puVar8 != (byte *)(iVar7 + 0x199c));
+    pCVar9 = pCVar8;
+  } while (pCVar8 != (CFirestaff *)(iVar7 + 0x199c));
   iVar10 = 0;
   fVar3 = (float)_DAT_005c0b1d;
   fVar4 = (float)_DAT_005c0b05;
   pCVar9 = pCVar1;
   do {
     fVar2 = (float)iVar10 * fVar4 + fVar3;
-    *(float *)&pCVar9->field_0x76c = fVar2;
-    *(float *)&pCVar9->field_0x774 = fVar2;
+    pCVar9->flames[0].flame_size.x = fVar2;
+    pCVar9->flames[0].flame_size.z = fVar2;
     iVar10 = iVar10 + 1;
-    *(float *)&pCVar9->field_0x770 = fVar2 * fVar5;
-    pCVar9 = (CFirestaff *)&pCVar9->field_0x2a4;
+    pCVar9->flames[0].flame_size.y = fVar2 * fVar5;
+    pCVar9 = (CFirestaff *)((pCVar9->base).model.model_name + 0xd4);
   } while (iVar10 < 6);
   iVar10 = 6;
   fVar3 = (float)_DAT_005c0b1d;

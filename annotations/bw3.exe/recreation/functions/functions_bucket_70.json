@@ -1719,14 +1719,25 @@
       "00491aa0",
       "00556c60"
     ],
-    "conv":"unknown",
+    "cls":"CAudioRecPuzzle",
+    "conv":"__cdecl",
     "instructions":457,
-    "method":"FUN_00411d70",
-    "name":"unkafter_alphabit.cpp_FUN_00411d70",
-    "receiver":false,
+    "method":"load",
+    "name":"unkafter_alphabit.cpp_CAudioRecPuzzle_load_FUN_00411d70",
+    "params":[
+      {
+        "name":"param_2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"unkafter/alphabit.cpp",
@@ -1734,17 +1745,28 @@
   },
   {
     "addr":"004129f0",
-    "conv":"unknown",
+    "cls":"CAudioRecPuzzle",
+    "conv":"__cdecl",
     "data_refs":[
       "005dbed8"
     ],
     "instructions":39,
-    "method":"FUN_004129f0",
-    "name":"unkafter_bmppuzzl.cpp_FUN_004129f0",
-    "receiver":false,
+    "method":"isButtonHovered",
+    "name":"unkafter_bmppuzzl.cpp_CAudioRecPuzzle_isButtonHovered_FUN_004129f0",
+    "params":[
+      {
+        "name":"param_2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"longlong",
       "ptr":0
     },
     "tu":"unkafter/bmppuzzl.cpp",
@@ -1752,14 +1774,14 @@
   },
   {
     "addr":"004131f0",
-    "cls":"COptimize",
+    "cls":"CAudioRecPuzzle",
     "conv":"__cdecl",
     "data_refs":[
       "005dbed4"
     ],
     "instructions":3,
-    "method":"getMaxPolygonSides",
-    "name":"shape_superopt.cpp_COptimize_getMaxPolygonSides_FUN_004131f0",
+    "method":"getTransportState",
+    "name":"shape_superopt.cpp_CAudioRecPuzzle_getTransportState_FUN_004131f0",
     "receiver":true,
     "ret":{
       "kind":"builtin",
@@ -3753,17 +3775,18 @@
   },
   {
     "addr":"00441970",
-    "conv":"unknown",
+    "cls":"CInStreamPipe",
+    "conv":"__cdecl",
     "data_refs":[
       "005dd55c"
     ],
     "instructions":18,
-    "method":"FUN_00441970",
-    "name":"support_codec.cpp_FUN_00441970",
-    "receiver":false,
+    "method":"ungetChar",
+    "name":"support_codec.cpp_CInStreamPipe_ungetChar_FUN_00441970",
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
+      "kind":"undefined",
+      "name":"undefined4",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -3776,14 +3799,49 @@
       "004e4330",
       "005a3650"
     ],
-    "conv":"unknown",
+    "cls":"CInStreamPipe",
+    "conv":"__cdecl",
     "instructions":46,
-    "method":"FUN_00441bf0",
-    "name":"support_codec.cpp_FUN_00441bf0",
-    "receiver":false,
+    "method":"open",
+    "name":"support_codec.cpp_CInStreamPipe_open_FUN_00441bf0",
+    "params":[
+      {
+        "name":"param_2",
+        "type":{
+          "kind":"undefined",
+          "name":"undefined4",
+          "ptr":0
+        }
+      },
+      {
+        "name":"param_3",
+        "type":{
+          "kind":"undefined",
+          "name":"undefined4",
+          "ptr":0
+        }
+      },
+      {
+        "name":"param_4",
+        "type":{
+          "kind":"undefined",
+          "name":"undefined4",
+          "ptr":0
+        }
+      },
+      {
+        "name":"param_5",
+        "type":{
+          "kind":"builtin",
+          "name":"ulong",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
+      "kind":"undefined",
+      "name":"undefined4",
       "ptr":0
     },
     "tu":"support/codec.cpp",
@@ -8030,8 +8088,8 @@
     ],
     "conv":"unknown",
     "instructions":27,
-    "method":"FUN_0049a170",
-    "name":"core_fire.cpp_FUN_0049a170",
+    "method":"loadLeafAssets",
+    "name":"core_fire.cpp_loadLeafAssets_FUN_0049a170",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -8165,15 +8223,16 @@
       "004a3c50",
       "005a3120"
     ],
-    "conv":"unknown",
+    "cls":"CRing",
+    "conv":"__cdecl",
     "instructions":502,
-    "method":"FUN_0049fdf0",
-    "name":"core_fire.cpp_FUN_0049fdf0",
-    "receiver":false,
+    "method":"process",
+    "name":"core_fire.cpp_CRing_process_FUN_0049fdf0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"int",
+      "ptr":1
     },
     "tu":"core/fire.cpp",
     "variadic":false
@@ -8401,14 +8460,57 @@
     "calls":[
       "0049e1a0"
     ],
-    "conv":"unknown",
+    "cls":"CFireEffect",
+    "conv":"__cdecl",
     "instructions":37,
-    "method":"FUN_004a3af0",
-    "name":"core_fire.cpp_FUN_004a3af0",
-    "receiver":false,
+    "method":"createGunFlames",
+    "name":"core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0",
+    "params":[
+      {
+        "name":"position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"euler_angles",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"flame_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"flame_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"flame_style",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -8547,14 +8649,41 @@
     "calls":[
       "0049fce0"
     ],
-    "conv":"unknown",
+    "cls":"CFireEffect",
+    "conv":"__cdecl",
     "instructions":35,
-    "method":"FUN_004a3f70",
-    "name":"core_fire.cpp_FUN_004a3f70",
-    "receiver":false,
+    "method":"createRing",
+    "name":"core_fire.cpp_CFireEffect_createRing_FUN_004a3f70",
+    "params":[
+      {
+        "name":"param_2",
+        "type":{
+          "kind":"undefined",
+          "name":"undefined4",
+          "ptr":0
+        }
+      },
+      {
+        "name":"param_3",
+        "type":{
+          "kind":"undefined",
+          "name":"undefined4",
+          "ptr":0
+        }
+      },
+      {
+        "name":"param_4",
+        "type":{
+          "kind":"undefined",
+          "name":"undefined4",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fire.cpp",
@@ -9082,14 +9211,15 @@
       "004a88d0",
       "004aa780"
     ],
-    "conv":"unknown",
+    "cls":"SPageResource",
+    "conv":"__cdecl",
     "instructions":10,
-    "method":"FUN_004a8370",
-    "name":"unkaddr_004a76f0.cpp_FUN_004a8370",
-    "receiver":false,
+    "method":"ctor",
+    "name":"unkaddr_004a76f0.cpp_SPageResource_ctor_FUN_004a8370",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"unkaddr/004a76f0.cpp",
@@ -9097,14 +9227,15 @@
   },
   {
     "addr":"004a8470",
-    "conv":"unknown",
+    "cls":"SPageResource",
+    "conv":"__cdecl",
     "instructions":5,
-    "method":"FUN_004a8470",
-    "name":"core_fldnotes.cpp_FUN_004a8470",
-    "receiver":false,
+    "method":"onMouse",
+    "name":"core_fldnotes.cpp_SPageResource_onMouse_FUN_004a8470",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"bool",
       "ptr":0
     },
     "tu":"core/fldnotes.cpp",
@@ -9119,14 +9250,15 @@
       "004b0a20",
       "004b30f0"
     ],
-    "conv":"unknown",
+    "cls":"SPageResourceText",
+    "conv":"__cdecl",
     "instructions":88,
-    "method":"FUN_004a8570",
-    "name":"core_fldnotes.cpp_FUN_004a8570",
-    "receiver":false,
+    "method":"draw",
+    "name":"core_fldnotes.cpp_SPageResourceText_draw_FUN_004a8570",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fldnotes.cpp",
@@ -9144,14 +9276,15 @@
       "004a9300",
       "004b30f0"
     ],
-    "conv":"unknown",
+    "cls":"STextView",
+    "conv":"__cdecl",
     "instructions":60,
-    "method":"FUN_004a9270",
-    "name":"core_fldnotes.cpp_FUN_004a9270",
-    "receiver":false,
+    "method":"newLine",
+    "name":"core_fldnotes.cpp_STextView_newLine_FUN_004a9270",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fldnotes.cpp",
@@ -9165,14 +9298,25 @@
     "calls":[
       "004b2a80"
     ],
-    "conv":"unknown",
+    "cls":"STextView",
+    "conv":"__cdecl",
     "instructions":43,
-    "method":"FUN_004a9770",
-    "name":"core_fldnotes.cpp_FUN_004a9770",
-    "receiver":false,
+    "method":"wordFits",
+    "name":"core_fldnotes.cpp_STextView_wordFits_FUN_004a9770",
+    "params":[
+      {
+        "name":"param_2",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
+      "kind":"undefined",
+      "name":"undefined4",
       "ptr":0
     },
     "tu":"core/fldnotes.cpp",
@@ -9186,14 +9330,15 @@
     "calls":[
       "00481f20"
     ],
-    "conv":"unknown",
+    "cls":"SNotesEntry",
+    "conv":"__cdecl",
     "instructions":12,
-    "method":"FUN_004a98f0",
-    "name":"core_fldnotes.cpp_FUN_004a98f0",
-    "receiver":false,
+    "method":"ctor",
+    "name":"core_fldnotes.cpp_SNotesEntry_ctor_FUN_004a98f0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fldnotes.cpp",
@@ -9201,24 +9346,15 @@
   },
   {
     "addr":"004a9b70",
+    "cls":"SNotesSection",
     "conv":"unknown",
     "data_refs":[
       "005e02e4"
     ],
     "instructions":7,
-    "method":"NotesSection_ctor",
-    "name":"core_fldnotes.cpp_NotesSection_ctor_FUN_004a9b70",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"struct",
-          "name":"SNotesSection",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"ctor",
+    "name":"core_fldnotes.cpp_SNotesSection_ctor_FUN_004a9b70",
+    "receiver":true,
     "ret":{
       "kind":"struct",
       "name":"SNotesSection",
@@ -9233,22 +9369,15 @@
       "0040d300",
       "004a9eb0"
     ],
+    "cls":"SNotesMap",
     "conv":"unknown",
     "data_refs":[
       "005e030c"
     ],
     "instructions":18,
-    "method":"NotesMap_dtor",
-    "name":"core_fldnotes.cpp_NotesMap_dtor_FUN_004a9e70",
+    "method":"dtor",
+    "name":"core_fldnotes.cpp_SNotesMap_dtor_FUN_004a9e70",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"struct",
-          "name":"SNotesMap",
-          "ptr":1
-        }
-      },
       {
         "name":"flags",
         "type":{
@@ -9258,7 +9387,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"struct",
       "name":"SNotesMap",
@@ -9272,14 +9401,41 @@
     "callers":[
       "004aa200"
     ],
-    "conv":"unknown",
+    "cls":"SNotesMap",
+    "conv":"__cdecl",
     "instructions":32,
-    "method":"FUN_004aa2f0",
-    "name":"core_fldnotes.cpp_FUN_004aa2f0",
-    "receiver":false,
+    "method":"revealPixel",
+    "name":"core_fldnotes.cpp_SNotesMap_revealPixel_FUN_004aa2f0",
+    "params":[
+      {
+        "name":"param_2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"param_3",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"param_4",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/fldnotes.cpp",
@@ -12440,14 +12596,15 @@
       "00559120",
       "00560d70"
     ],
-    "conv":"unknown",
+    "cls":"CMoon",
+    "conv":"__cdecl",
     "instructions":187,
-    "method":"FUN_004f9670",
-    "name":"core_moon.cpp_FUN_004f9670",
-    "receiver":false,
+    "method":"render",
+    "name":"core_moon.cpp_CMoon_render_FUN_004f9670",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/moon.cpp",
@@ -14064,19 +14221,12 @@
       "0053ed80",
       "0054dbd0"
     ],
+    "cls":"CPrye",
     "conv":"__cdecl",
     "instructions":424,
-    "method":"FUN_00524170",
-    "name":"unkafter_prye.cpp_FUN_00524170",
+    "method":"updateArmRecoilBlend",
+    "name":"core_prye.cpp_CPrye_updateArmRecoilBlend_FUN_00524170",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CStranger",
-          "ptr":1
-        }
-      },
       {
         "name":"delta_time",
         "type":{
@@ -14094,13 +14244,13 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
       "ptr":0
     },
-    "tu":"unkafter/prye.cpp",
+    "tu":"core/prye.cpp",
     "variadic":false
   },
   {
@@ -17719,17 +17869,28 @@
     "calls":[
       "00573b90"
     ],
-    "conv":"unknown",
+    "cls":"CInStreamFile",
+    "conv":"__cdecl",
     "data_refs":[
       "005e5a8c"
     ],
     "instructions":47,
-    "method":"FUN_00573af0",
-    "name":"unkafter_turret.cpp_FUN_00573af0",
-    "receiver":false,
+    "method":"ungetChar",
+    "name":"unkafter_turret.cpp_CInStreamFile_ungetChar_FUN_00573af0",
+    "params":[
+      {
+        "name":"param_2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
+      "kind":"undefined",
+      "name":"undefined4",
       "ptr":0
     },
     "tu":"unkafter/turret.cpp",
@@ -17743,17 +17904,36 @@
       "00551d20",
       "005537c0"
     ],
-    "conv":"unknown",
+    "cls":"CInStreamFile",
+    "conv":"__cdecl",
     "data_refs":[
       "005e5a98"
     ],
     "instructions":27,
-    "method":"FUN_00573cf0",
-    "name":"unkafter_turret.cpp_FUN_00573cf0",
-    "receiver":false,
+    "method":"seek",
+    "name":"unkafter_turret.cpp_CInStreamFile_seek_FUN_00573cf0",
+    "params":[
+      {
+        "name":"param_2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"param_3",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
+      "kind":"undefined",
+      "name":"undefined4",
       "ptr":0
     },
     "tu":"unkafter/turret.cpp",
@@ -17783,17 +17963,36 @@
   },
   {
     "addr":"005742f0",
-    "conv":"unknown",
+    "cls":"CInStreamMemory",
+    "conv":"__cdecl",
     "data_refs":[
       "005e5ad4"
     ],
     "instructions":46,
-    "method":"FUN_005742f0",
-    "name":"support_trstream.cpp_FUN_005742f0",
-    "receiver":false,
+    "method":"read",
+    "name":"support_trstream.cpp_CInStreamMemory_read_FUN_005742f0",
+    "params":[
+      {
+        "name":"param_2",
+        "type":{
+          "kind":"undefined",
+          "name":"undefined4",
+          "ptr":1
+        }
+      },
+      {
+        "name":"param_3",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"uint",
       "ptr":0
     },
     "tu":"support/trstream.cpp",
@@ -17807,17 +18006,18 @@
     "calls":[
       "005a3770"
     ],
-    "conv":"unknown",
+    "cls":"CInStreamMemory",
+    "conv":"__cdecl",
     "data_refs":[
       "005e5ae8"
     ],
     "instructions":18,
-    "method":"FUN_005743f0",
-    "name":"support_trstream.cpp_FUN_005743f0",
-    "receiver":false,
+    "method":"close",
+    "name":"support_trstream.cpp_CInStreamMemory_close_FUN_005743f0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"support/trstream.cpp",
@@ -17825,17 +18025,36 @@
   },
   {
     "addr":"00574470",
-    "conv":"unknown",
+    "cls":"CInStreamMemory",
+    "conv":"__cdecl",
     "data_refs":[
       "005e5af0"
     ],
     "instructions":14,
-    "method":"FUN_00574470",
-    "name":"support_trstream.cpp_FUN_00574470",
-    "receiver":false,
+    "method":"openOwned",
+    "name":"support_trstream.cpp_CInStreamMemory_openOwned_FUN_00574470",
+    "params":[
+      {
+        "name":"param_2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"param_3",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"support/trstream.cpp",
@@ -17846,17 +18065,18 @@
     "calls":[
       "004e4330"
     ],
-    "conv":"unknown",
+    "cls":"COutStreamDebug",
+    "conv":"__cdecl",
     "data_refs":[
       "005e5b80"
     ],
     "instructions":9,
-    "method":"FUN_00574f70",
-    "name":"support_trstream.cpp_FUN_00574f70",
-    "receiver":false,
+    "method":"seek",
+    "name":"support_trstream.cpp_COutStreamDebug_seek_FUN_00574f70",
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
+      "kind":"undefined",
+      "name":"undefined4",
       "ptr":0
     },
     "tu":"support/trstream.cpp",

@@ -16,8 +16,8 @@
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CGore* g_CGorePtr = 01d22e44
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field452_0x1f4
-;   undefined4 g_CGameInstance.field544_0x250
+;   undefined4 g_CGameInstance.god_mode_enabled
+;   undefined4 g_CGameInstance.allow_damage_flag
 ;   undefined4 g_CTommyGunClassInfo.name_hash
 ;
 ; Called Functions:
@@ -52,12 +52,12 @@ section .text
     JNZ 0x0052404f                      ; 00523e67
         ;   XREF to: 0052404f (CONDITIONAL_JUMP)  ; LAB_0052404f
     MOV EAX,[0x005fe9dc]                ; 00523e6d | g_CGamePtr
-    CMP dword ptr [EAX + 0x1f4],0x0     ; 00523e72 | g_CGameInstance.field452_0x1f4
+    CMP dword ptr [EAX + 0x1f4],0x0     ; 00523e72 | g_CGameInstance.god_mode_enabled
     JNZ 0x00524056                      ; 00523e79
         ;   XREF to: 00524056 (CONDITIONAL_JUMP)  ; LAB_00524056
     MOV EAX,[0x005fe9dc]                ; 00523e7f | g_CGamePtr
         ;   Label: LAB_00523e7f
-    MOV EDI,dword ptr [EAX + 0x250]     ; 00523e84 | g_CGameInstance.field544_0x250
+    MOV EDI,dword ptr [EAX + 0x250]     ; 00523e84 | g_CGameInstance.allow_damage_flag
     TEST EDI,EDI                        ; 00523e8a
     JNZ 0x00523e91                      ; 00523e8c
         ;   XREF to: 00523e91 (CONDITIONAL_JUMP)  ; LAB_00523e91

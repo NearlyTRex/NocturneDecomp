@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_fldnotes_cpp_FUN_004abb30(undefined4 param_1,undefined4 param_2)
+; undefined4 core_fldnotes_cpp_FUN_004abb30(undefined4 param_1,char *param_2)
 ;
 ;
 ; XREF[1]:
@@ -11,7 +11,7 @@
 ;   undefined4 DAT_01d0d210
 ;
 ; Called Functions:
-;   core_fldnotes.cpp_FUN_004a9c30
+;   core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a9c30
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH EDI                            ; 004abb4b
         ;   Label: LAB_004abb4b
     PUSH ESI                            ; 004abb4c
-    CALL core_fldnotes.cpp_FUN_004a9c30 ; 004abb4d
-        ;   XREF to: 004a9c30 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a9c30()
+    CALL core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a9c30 ; 004abb4d
+        ;   XREF to: 004a9c30 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a9c30(SNotesSection * this_ptr, char * param_2)
     ADD ESP,0x8                         ; 004abb52
     MOV EDX,EAX                         ; 004abb55
     TEST EAX,EAX                        ; 004abb57

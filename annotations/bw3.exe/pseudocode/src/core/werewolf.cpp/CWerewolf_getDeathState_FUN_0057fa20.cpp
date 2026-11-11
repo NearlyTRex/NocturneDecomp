@@ -17,7 +17,7 @@ EDeathState __cdecl core_werewolf_cpp_CWerewolf_getDeathState_FUN_0057fa20(CWere
   }
   pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
                      (&(this_ptr->base).base.model.base);
-  uVar1 = *(uint *)(pSVar2 + 0x24);
+  uVar1 = pSVar2->state_index;
   if (0xb < uVar1) {
     if (uVar1 < 0xd) {
       return DEATH_STATE_DYING;

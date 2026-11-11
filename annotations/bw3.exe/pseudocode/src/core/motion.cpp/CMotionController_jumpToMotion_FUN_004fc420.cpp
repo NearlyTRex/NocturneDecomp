@@ -14,7 +14,7 @@ void __cdecl core_motion_cpp_CMotionController_jumpToMotion_FUN_004fc420(CMotion
   int iVar1;
   
   if (target_frame_number == _DAT_005c9d68) {
-    iVar1 = (**(code **)(this_ptr->vtable + 4))
+    iVar1 = (*this_ptr->vtable->findPatchToFrame)
                       (this_ptr,this_ptr->current_motion_index,this_ptr->current_frame_number,
                        target_motion_index);
     target_frame_number = (float)iVar1;

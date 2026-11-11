@@ -7,6 +7,7 @@
 #include "types/classes/CBox.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/COrientation.h"
 #include "types/classes/CVector3f.h"
 #include "types/enums/EBoxActorPickupType.h"
 #include "types/enums/EGroundType.h"
@@ -36,7 +37,15 @@ typedef struct CBoxActor {
     EGroundType ground_type; // 0x5f0
     int plot_in_shadow_flag; // 0x5f4
     int collision_flag; // 0x5f8
-    char field_1532[236]; // 0x5fc
+    int dont_use_normals; // 0x5fc
+    char use_event[100]; // 0x600
+    char fade_event[100]; // 0x664, Added in this build
+    int allowed_melee_attack_types; // 0x6c8
+    int block_virtual_director_flag; // 0x6cc
+    COrientation cam_orientation; // 0x6d0, Added in this build
+    float fade_timer; // 0x6dc, Added in this build
+    float fade_time; // 0x6e0, Added in this build
+    int fade_alpha; // 0x6e4, Added in this build
 } CBoxActor;
 #pragma pack(pop)
 

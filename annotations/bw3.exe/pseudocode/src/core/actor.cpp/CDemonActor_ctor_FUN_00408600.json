@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 127,
+    "complexity_score": 126,
     "cross_reference_count": 43,
     "function_call_count": 2,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 67,
+    "pseudocode_lines": 66,
     "suspect_count": 5,
     "suspect_types": [
       "undefined_data",
       "unrolled_strcpy"
     ],
-    "total_lines": 165
+    "total_lines": 164
   },
   "cross_references": [
     {
@@ -524,7 +524,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 21,
       "match": "DAT_005b53cd",
       "severity": "mild",
       "text": "pcVar3 = &DAT_005b53cd;",
@@ -532,7 +532,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 53,
       "match": "DAT_005b53d2",
       "severity": "mild",
       "text": "pcVar3 = &DAT_005b53d2;",
@@ -540,7 +540,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 56,
       "match": "DAT_0078a123",
       "severity": "mild",
       "text": "*(byte **)(iVar2 + -0xc4) = &DAT_0078a123;",
@@ -548,7 +548,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 29,
+      "line": 28,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -556,7 +556,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 58,
+      "line": 57,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

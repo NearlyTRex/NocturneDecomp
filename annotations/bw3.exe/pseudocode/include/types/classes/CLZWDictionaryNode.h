@@ -6,10 +6,13 @@
 #include "system/basetypes.h"
 
 // Structure: CLZWDictionaryNode
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x10 (16 bytes)
 #pragma pack(push, 1)
 typedef struct CLZWDictionaryNode {
+    int code; // 0x0
+    int parent_index; // 0x4
+    int first_child; // 0x8
+    int next_sibling; // 0xc
 } CLZWDictionaryNode;
 #pragma pack(pop)
 

@@ -2,12 +2,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 489,
-    "complexity_score": 475,
+    "complexity_score": 480,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 215,
+    "pseudocode_lines": 220,
     "suspect_count": 24,
     "suspect_types": [
       "pointer_truncation",
@@ -15,7 +15,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 704
+    "total_lines": 709
   },
   "cross_references": [
     {
@@ -466,7 +466,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 199,
+      "line": 204,
       "match": "DAT_00603974",
       "severity": "mild",
       "text": "iVar3 = local_18 - DAT_00603974;",
@@ -474,7 +474,7 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 200,
+      "line": 205,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "bVar13 = SBORROW4(local_18,DAT_00603974);",
@@ -482,7 +482,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 200,
+      "line": 205,
       "match": "DAT_00603974",
       "severity": "mild",
       "text": "bVar13 = SBORROW4(local_18,DAT_00603974);",
@@ -490,7 +490,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 211,
+      "line": 216,
       "match": "DAT_0060b014",
       "severity": "mild",
       "text": "local_64[iVar3] = (int)(&DAT_0060b014 + iVar9 * 0xc);",
@@ -498,7 +498,7 @@
     },
     {
       "description": "Pointer value `(&DAT_0060b014 + iVar9 * 0xc)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 211,
+      "line": 216,
       "match": "(int)(&DAT_0060b014 + iVar9 * 0xc)",
       "severity": "moderate",
       "text": "local_64[iVar3] = (int)(&DAT_0060b014 + iVar9 * 0xc);",

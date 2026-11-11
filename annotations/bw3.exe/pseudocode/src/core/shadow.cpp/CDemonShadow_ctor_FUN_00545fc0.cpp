@@ -13,13 +13,13 @@ CDemonShadow * core_shadow_cpp_CDemonShadow_ctor_FUN_00545fc0(CDemonShadow *this
 {
   CShadow *pCVar1;
   
-  pCVar1 = core_shadow_cpp_CShadow_ctor_FUN_00543500((CShadow *)this_ptr);
-  *(CEnemy_full_vtable **)&pCVar1->field_0x154 = &g_CDemonShadowVTable;
+  pCVar1 = core_shadow_cpp_CShadow_ctor_FUN_00543500(&this_ptr->base);
+  (pCVar1->base).base.base.vtable._ub = &g_CDemonShadowVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
-            ((CDeformableModelInstance *)&pCVar1->field_0x158,"shadowbeast.dfm");
-  *(uint *)&pCVar1->field_0x2538 = 0x42700000;
-  *(uint *)&pCVar1->field_0xce5c = 0x41f00000;
-  *(uint *)&pCVar1->field_0xce60 = 0x41a00000;
-  *(uint *)&pCVar1->field_0xd0a8 = 3;
+            (&(pCVar1->base).base.model,"shadowbeast.dfm");
+  (pCVar1->base).base.hit_points = 60.0;
+  (pCVar1->base).attack_damage = 30.0;
+  (pCVar1->base).pain_threshold = 20.0;
+  pCVar1->shadow_variant = 3;
   return (CDemonShadow *)pCVar1;
 }

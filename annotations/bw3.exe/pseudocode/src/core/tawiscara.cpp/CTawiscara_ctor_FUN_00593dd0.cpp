@@ -12,29 +12,29 @@
 CTawiscara * core_tawiscara_cpp_CTawiscara_ctor_FUN_00593dd0(CTawiscara *this_ptr)
 
 {
-  uint uVar1;
-  uint uVar2;
-  uint uVar3;
+  float fVar1;
+  float fVar2;
+  float fVar3;
   CTawiscara *pCVar4;
   
-  pCVar4 = (CTawiscara *)core_enemy_cpp_CEnemy_ctor_FUN_00488fd0((CEnemy *)this_ptr);
-  ((UActorVTable *)&pCVar4->field_0x154)->_ub = &g_CTawiscaraVTable._ub;
+  pCVar4 = (CTawiscara *)core_enemy_cpp_CEnemy_ctor_FUN_00488fd0(&this_ptr->base);
+  (pCVar4->base).base.base.vtable._ub = &g_CTawiscaraVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
-            ((CDeformableModelInstance *)&pCVar4->field_0x158,(char *)0x5d9254);
-  *(uint *)&pCVar4->field_0x326c = 0x3f800000;
-  *(uint *)&pCVar4->field_0x3270 = 0x40000000;
-  *(uint *)&pCVar4->field_0xd054 = 0;
-  *(uint *)&pCVar4->field_0xd06c = 1;
-  *(uint *)&pCVar4->field_0xd080 = 0;
-  uVar1 = _DAT_005e7520;
-  *(uint *)&pCVar4->field_0xd084 = 0x40a00000;
-  uVar2 = _DAT_005e7524;
-  *(uint *)&pCVar4->field_0xd088 = 0;
-  uVar3 = 0x41200000;
-  *(uint *)&pCVar4->field_0xd08c = 0;
-  *(uint *)&pCVar4->field_0xd090 = 0;
-  *(uint *)&pCVar4->field_0x3274 = uVar1;
-  *(uint *)&pCVar4->field_0x3278 = uVar2;
-  *(uint *)&pCVar4->field_0xd094 = uVar3;
+            (&(pCVar4->base).base.model,(char *)0x5d9254);
+  (pCVar4->base).base.collision_cylinder_height = 1.0;
+  (pCVar4->base).base.collision_cylinder_radius = 2.0;
+  pCVar4->type = WEREWOLF_TYPE_TRAIN;
+  pCVar4->light_up_eyes = 1;
+  pCVar4->chain_anchor = (CDemonActor *)0x0;
+  fVar1 = _DAT_005e7520;
+  pCVar4->chain_length = 5.0;
+  fVar2 = _DAT_005e7524;
+  pCVar4->alpha1 = (CDemonActor *)0x0;
+  fVar3 = 0x41200000;
+  pCVar4->alpha2 = (CDemonActor *)0x0;
+  pCVar4->phase = 0;
+  (pCVar4->base).base.ai_detection_range_min = fVar1;
+  (pCVar4->base).base.ai_detection_range_max = fVar2;
+  pCVar4->phase_timer = fVar3;
   return pCVar4;
 }

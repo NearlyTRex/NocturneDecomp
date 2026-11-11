@@ -37,13 +37,13 @@ void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00507370(CNetGame
   if (0 < this_ptr->player_count) {
     do {
       if (iVar3 == this_ptr->local_player_index) {
-        *(int *)&pCVar4->players[0].field_0x34 = _DAT_01da6484;
+        pCVar4->players[0].player_id = _DAT_01da6484;
       }
       else {
-        *(int *)&pCVar4->players[0].field_0x38 = _DAT_01da6478 + iVar2 + -0x1e0000;
+        pCVar4->players[0].last_update_time = (_DAT_01da6478 + iVar2) - 0x1e0000;
       }
       iVar3 = iVar3 + 1;
-      pCVar4 = (CNetGame *)&pCVar4->players[0].field_0x60;
+      pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action_state.use_item;
     } while (iVar3 < this_ptr->player_count);
   }
   _DAT_01da6478 = _DAT_01da6478 + iVar2;

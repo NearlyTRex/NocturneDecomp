@@ -11,29 +11,29 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_004fdef0(CFileBit
 {
   int iVar1;
   uint uVar2;
-  SMpegSubbandScalefactors *pSVar3;
+  uint *puVar3;
   int iVar4;
-  SMpegSubbandAllocation *pSVar5;
+  int *piVar5;
   int local_14;
   
   local_14 = 0;
-  iVar1 = *(int *)(frame + 0x10);
+  iVar1 = frame->channel_count;
   do {
     iVar4 = 0;
     if (0 < iVar1) {
-      pSVar3 = scalefactors + local_14;
-      pSVar5 = allocation_indices + local_14;
+      puVar3 = (uint *)((int)&scalefactors->codes + local_14);
+      piVar5 = (int *)((int)allocation_indices->bit_allocations + local_14);
       do {
-        if (*(int *)pSVar5 == 0) {
-          *(uint *)pSVar3 = 0x3f;
+        if (*piVar5 == 0) {
+          *puVar3 = 0x3f;
         }
         else {
           uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0(this_ptr,6);
-          *(uint *)pSVar3 = uVar2;
+          *puVar3 = uVar2;
         }
-        pSVar3 = pSVar3 + 0x180;
+        puVar3 = puVar3 + 0x60;
         iVar4 = iVar4 + 1;
-        pSVar5 = pSVar5 + 0x80;
+        piVar5 = piVar5 + 0x20;
       } while (iVar4 < iVar1);
     }
     local_14 = local_14 + 4;

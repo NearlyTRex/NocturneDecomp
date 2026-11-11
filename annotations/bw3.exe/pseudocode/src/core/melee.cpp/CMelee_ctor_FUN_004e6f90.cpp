@@ -20,7 +20,7 @@ CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_004e6f90(CMelee *this_ptr)
             (&(pCVar2->base).model,(char *)0x5c7051);
   (pCVar2->base).weapon_type = WEAPON_TYPE_MELEE;
   pCVar2->ammo_type = AMMO_TYPE_NONE;
-  *(uint *)&(pCVar2->base).field_0x568 = 0;
+  (pCVar2->base).ammo_count = 0;
   (pCVar2->base).is_spread_weapon = 0;
   (pCVar2->base).fire_mode = FIRE_MODE_AUTOMATIC;
   (pCVar2->base).can_penetrate = 0;

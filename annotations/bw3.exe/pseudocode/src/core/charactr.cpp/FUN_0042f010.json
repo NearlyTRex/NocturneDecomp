@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 235,
-    "complexity_score": 473,
+    "complexity_score": 458,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 103,
-    "suspect_count": 32,
+    "suspect_count": 31,
     "suspect_types": [
       "displaced_global_access",
       "extra_output",
@@ -17,7 +17,6 @@
       "pointer_truncation",
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -423,19 +422,11 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 83,
-      "match": "field_0x0",
-      "severity": "mild",
-      "text": "pbVar11 = &pCVar5->vertex_data_ptr[iVar1]->field_0x0 + local_1c;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 89,
       "match": "DAT_007e2cf4",
       "severity": "mild",
-      "text": "fVar13 = (float10)*(float *)(pbVar8 + 4) * (float10)(float)(&DAT_007e2cf4)[pbVar10[1]];",
+      "text": "fVar13 = (float10)*(float *)(puVar8 + 4) * (float10)(float)(&DAT_007e2cf4)[puVar10[1]];",
       "type": "undefined_data"
     },
     {
@@ -443,7 +434,7 @@
       "line": 91,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "pbVar8 = (byte *)(extraout_ECX + 4);",
+      "text": "puVar8 = (uchar *)(extraout_ECX + 4);",
       "type": "extra_output"
     },
     {

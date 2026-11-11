@@ -19,9 +19,9 @@ int __cdecl engine_prim_c_FUN_00515b80(SMRGLPrimitiveTriangle *triangle)
   int local_1c;
   int local_18;
   
-  iVar1 = *(int *)(triangle + 0x18);
-  iVar4 = *(int *)(triangle + 0x24);
-  iVar5 = *(int *)(triangle + 0x30);
+  iVar1 = triangle->vertices[0].vertex_index;
+  iVar4 = triangle->vertices[1].vertex_index;
+  iVar5 = triangle->vertices[2].vertex_index;
   iVar3 = iVar4 * 0x30;
   if (DAT_007303fc == 1) {
     local_24 = (&DAT_0060b024)[iVar4 * 0xc] - (&DAT_0060b024)[iVar1 * 0xc];

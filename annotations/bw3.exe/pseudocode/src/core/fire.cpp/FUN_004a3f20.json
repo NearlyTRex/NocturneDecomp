@@ -2,18 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 139,
+    "complexity_score": 99,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 14,
-    "suspect_count": 10,
+    "suspect_count": 7,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_field",
       "unnamed_param",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
     "total_lines": 44
@@ -42,7 +40,7 @@
     ],
     "convention": "unknown",
     "name": "core_fire.cpp_FUN_004a3f20",
-    "signature": "void core_fire_cpp_FUN_004a3f20(undefined4 param_1,undefined4 param_2,undefined4 param_3)"
+    "signature": "void core_fire_cpp_FUN_004a3f20(undefined4 param_1,CVector3f *param_2,CVector3f *param_3)"
   },
   "function_calls": [],
   "globals": [
@@ -54,13 +52,13 @@
     },
     {
       "addr": "01d07bb4",
-      "name": "g_RainDropPool[0].field36_0x24",
+      "name": "g_RainDropPool[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d07bcc",
-      "name": "g_RainDropPool[0].field60_0x3c",
+      "name": "g_RainDropPool[0].base.vtable",
       "type": "undefined4",
       "value": null
     }
@@ -207,7 +205,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004a3f20(uint param_1,uint param_2,uint param_3)",
+      "text": "void core_fire_cpp_FUN_004a3f20(uint param_1,CVector3f *param_2,CVector3f *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -215,7 +213,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004a3f20(uint param_1,uint param_2,uint param_3)",
+      "text": "void core_fire_cpp_FUN_004a3f20(uint param_1,CVector3f *param_2,CVector3f *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -223,31 +221,15 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004a3f20(uint param_1,uint param_2,uint param_3)",
+      "text": "void core_fire_cpp_FUN_004a3f20(uint param_1,CVector3f *param_2,CVector3f *param_3)",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 9,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(*(code *)**(uint **)&g_RainDropPool[_DAT_01d07b8c].field_0x3c)",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "(*(code *)**(uint **)&g_RainDropPool[_DAT_01d07b8c].field_0x3c)",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 10,
       "match": "param_2",
       "severity": "mild",
-      "text": "(g_RainDropPool + _DAT_01d07b8c,param_2,param_3);",
+      "text": "(&g_RainDropPool[_DAT_01d07b8c].base,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
@@ -255,16 +237,8 @@
       "line": 10,
       "match": "param_3",
       "severity": "mild",
-      "text": "(g_RainDropPool + _DAT_01d07b8c,param_2,param_3);",
+      "text": "(&g_RainDropPool[_DAT_01d07b8c].base,param_2,param_3);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&g_RainDropPool[_DAT_01d07b8c].field_0x24 = 0x3e800000;",
-      "type": "unnamed_field"
     },
     {
       "call_site_count": 6,

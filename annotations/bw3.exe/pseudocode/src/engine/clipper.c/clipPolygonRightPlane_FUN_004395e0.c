@@ -29,8 +29,8 @@ int __cdecl engine_clipper_c_clipPolygonRightPlane_FUN_004395e0(SRenderVertex **
     do {
       iVar3 = DAT_007e4d50;
       pSVar1 = *ppSStack_14;
-      bVar2 = *(int *)(pSVar6 + 8) <= *(int *)pSVar6;
-      if (*(int *)(pSVar1 + 8) <= *(int *)pSVar1) {
+      bVar2 = (pSVar6->projected_vertex).transformed_z <= (pSVar6->projected_vertex).transformed_x;
+      if ((pSVar1->projected_vertex).transformed_z <= (pSVar1->projected_vertex).transformed_x) {
         bVar2 = bVar2 | 2;
       }
       iVar4 = iVar5;

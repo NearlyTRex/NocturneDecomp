@@ -55,7 +55,7 @@
 ;   core_game.cpp_CGame_saveClockTime_FUN_004b4430
 ;   core_game.cpp_FUN_004b4440
 ;   core_menu.cpp_FUN_004e7860
-;   core_moon.cpp_FUN_004f9670
+;   core_moon.cpp_CMoon_render_FUN_004f9670
 ;   core_set.cpp_CDemonSet_setFlatColor_FUN_0053b100
 ;   core_sound.cpp_CSound_configure_FUN_005607d0
 ;   crt_math.c_round_FUN_005a3120
@@ -115,8 +115,8 @@ section .text
     MOV EAX,[0x00603b28]                ; 004e9568 | g_CDemonSetPtr
     PUSH 0x1d72cb0                      ; 004e956d
     MOV dword ptr [EAX + 0x15ae94],0xdac ; 004e9572 | g_CDemonSetInstance.ambient_base_quick
-    CALL core_moon.cpp_FUN_004f9670     ; 004e957c
-        ;   XREF to: 004f9670 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_004f9670()
+    CALL core_moon.cpp_CMoon_render_FUN_004f9670 ; 004e957c
+        ;   XREF to: 004f9670 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_render_FUN_004f9670(CMoon * this_ptr)
     MOV EAX,[0x00603b28]                ; 004e9581 | g_CDemonSetPtr
     ADD ESP,0x4                         ; 004e9586
     XOR EBX,EBX                         ; 004e9589

@@ -283,7 +283,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 15,
       "match": "DAT_005c0202",
       "severity": "mild",
       "text": "FUN_005a3140(file_handle,&DAT_005c0202,5);",
@@ -291,66 +291,66 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 18,
       "match": "DAT_005c021b",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c021b,*(uint *)this_ptr);",
+      "text": "FUN_005a3140(file_handle,&DAT_005c021b,(this_ptr->events).count);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 23,
       "match": "DAT_005c021f",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c021f,pCVar2);",
+      "text": "FUN_005a3140(file_handle,&DAT_005c021f,pacVar2);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 29,
       "match": "DAT_005c023f",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c023f,*(uint *)(this_ptr + 0xc84));",
+      "text": "FUN_005a3140(file_handle,&DAT_005c023f,(this_ptr->current_events).count);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_005c0243",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c0243,pCVar2);",
+      "text": "FUN_005a3140(file_handle,&DAT_005c0243,pacVar2);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 40,
       "match": "DAT_005c0266",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c0266,*(uint *)(this_ptr + 0x258c));",
+      "text": "FUN_005a3140(file_handle,&DAT_005c0266,(this_ptr->persistent_events).count);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 45,
       "match": "DAT_005c026a",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c026a,pCVar2);",
+      "text": "FUN_005a3140(file_handle,&DAT_005c026a,pacVar2);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 50,
       "match": "DAT_005c0293",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c0293,*(uint *)(this_ptr + 0x3210));",
+      "text": "FUN_005a3140(file_handle,&DAT_005c0293,(this_ptr->timers).count);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 64,
       "match": "DAT_005c02c3",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c02c3,*(uint *)(this_ptr + 0x337c));",
+      "text": "FUN_005a3140(file_handle,&DAT_005c02c3,(this_ptr->counters).count);",
       "type": "undefined_data"
     },
     {
@@ -358,7 +358,7 @@
       "line": 78,
       "match": "DAT_005c02fb",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c02fb,*(uint *)(this_ptr + 0x34e8));",
+      "text": "FUN_005a3140(file_handle,&DAT_005c02fb,(this_ptr->actor_vars).count);",
       "type": "undefined_data"
     },
     {
@@ -366,7 +366,7 @@
       "line": 91,
       "match": "DAT_005c0323",
       "severity": "mild",
-      "text": "iVar1 = FUN_005a3140(file_handle,&DAT_005c0323,*(uint *)(this_ptr + 0x1908));",
+      "text": "iVar1 = FUN_005a3140(file_handle,&DAT_005c0323,(this_ptr->game_flags).count);",
       "type": "undefined_data"
     },
     {
@@ -374,7 +374,7 @@
       "line": 96,
       "match": "DAT_005c0327",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c0327,pCVar2);",
+      "text": "FUN_005a3140(file_handle,&DAT_005c0327,pacVar2);",
       "type": "undefined_data"
     }
   ]

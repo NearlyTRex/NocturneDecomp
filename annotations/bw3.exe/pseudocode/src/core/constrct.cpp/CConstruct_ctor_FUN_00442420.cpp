@@ -21,9 +21,9 @@ CConstruct * core_constrct_cpp_CConstruct_ctor_FUN_00442420(CConstruct *this_ptr
   char *pcVar6;
   char *pcVar7;
   
-  pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00488fd0((CEnemy *)this_ptr);
+  pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00488fd0(&this_ptr->base);
   dest = (void *)__arrinit
-                           (&pCVar4[1].base.base.previous_transform_state.position.z,0x18,
+                           (&pCVar4[1].base.base.previous_transform_state.position.y,0x18,
                             &g_SBoneGuyBoxTypeInfo);
   pcVar5 = (char *)0x5b941e;
   *(CConstruct_full_vtable **)((int)dest + -0xd030) = &g_CConstructVTable;

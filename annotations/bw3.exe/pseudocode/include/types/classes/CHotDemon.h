@@ -11,7 +11,8 @@
 #pragma pack(push, 1)
 typedef struct CHotDemon {
     CEnemy base; // 0x0
-    char field_53332[52]; // 0xd054
+    uint sfx_handles[2]; // 0xd054
+    char dead[44]; // 0xd05c
 } CHotDemon;
 #pragma pack(pop)
 

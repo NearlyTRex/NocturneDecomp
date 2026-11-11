@@ -165,7 +165,7 @@ section .text
     MOV dword ptr [EAX + 0x240],ECX     ; 004b8184
     MOV EAX,[0x005fe4b0]                ; 004b818a | g_CFieldNotesPtr
     MOV dword ptr [0x01d22200],ECX      ; 004b818f | DAT_01d22200
-    MOV dword ptr [EAX + 0x40],ECX      ; 004b8195 | g_CFieldNotesInstance.field64_0x40
+    MOV dword ptr [EAX + 0x40],ECX      ; 004b8195 | g_CFieldNotesInstance.is_displayed
     CALL unkafter_alphabit.cpp_FUN_00411a40 ; 004b8198
         ;   XREF to: 00411a40 (UNCONDITIONAL_CALL)  ; undefined unkafter_alphabit.cpp_FUN_00411a40()
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b819d
@@ -427,10 +427,10 @@ section .text
         ;   XREF to: 004b84af (CONDITIONAL_JUMP)  ; LAB_004b84af
     MOV EAX,[0x005fe4b0]                ; 004b847e | g_CFieldNotesPtr
     MOV dword ptr [EBX + 0x264],0x0     ; 004b8483
-    CMP dword ptr [EAX + 0x40],0x0      ; 004b848d | g_CFieldNotesInstance.field64_0x40
+    CMP dword ptr [EAX + 0x40],0x0      ; 004b848d | g_CFieldNotesInstance.is_displayed
     JZ 0x004b849a                       ; 004b8491
         ;   XREF to: 004b849a (CONDITIONAL_JUMP)  ; LAB_004b849a
-    MOV dword ptr [EAX + 0x40],0x0      ; 004b8493 | g_CFieldNotesInstance.field64_0x40
+    MOV dword ptr [EAX + 0x40],0x0      ; 004b8493 | g_CFieldNotesInstance.is_displayed
     MOV EBX,dword ptr [0x007dffb4]      ; 004b849a | DAT_007dffb4
         ;   Label: LAB_004b849a
     TEST EBX,EBX                        ; 004b84a0
@@ -625,7 +625,7 @@ section .text
         ;   XREF to: 004b82d9 (UNCONDITIONAL_JUMP)  ; LAB_004b82d9
     MOV EAX,[0x005fe4b0]                ; 004b86ae | g_CFieldNotesPtr
         ;   Label: LAB_004b86ae
-    CMP dword ptr [EAX + 0x40],0x0      ; 004b86b3 | g_CFieldNotesInstance.field64_0x40
+    CMP dword ptr [EAX + 0x40],0x0      ; 004b86b3 | g_CFieldNotesInstance.is_displayed
     JNZ 0x004b83a7                      ; 004b86b7
         ;   XREF to: 004b83a7 (CONDITIONAL_JUMP)  ; LAB_004b83a7
     XOR EAX,EAX                         ; 004b86bd
@@ -759,12 +759,12 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b8855
     MOV dword ptr [EAX + 0x224],EBX     ; 004b8858
     MOV EAX,[0x005fe4b0]                ; 004b885e | g_CFieldNotesPtr
-    MOV ECX,dword ptr [EAX + 0x40]      ; 004b8863 | g_CFieldNotesInstance.field64_0x40
+    MOV ECX,dword ptr [EAX + 0x40]      ; 004b8863 | g_CFieldNotesInstance.is_displayed
     ADD ESP,0x4                         ; 004b8866
     TEST ECX,ECX                        ; 004b8869
     JZ 0x004b8875                       ; 004b886b
         ;   XREF to: 004b8875 (CONDITIONAL_JUMP)  ; LAB_004b8875
-    MOV dword ptr [EAX + 0x40],EBX      ; 004b886d | g_CFieldNotesInstance.field64_0x40
+    MOV dword ptr [EAX + 0x40],EBX      ; 004b886d | g_CFieldNotesInstance.is_displayed
     JMP 0x004b8719                      ; 004b8870
         ;   XREF to: 004b8719 (UNCONDITIONAL_JUMP)  ; LAB_004b8719
     MOV ESI,dword ptr [0x007dffb4]      ; 004b8875 | DAT_007dffb4

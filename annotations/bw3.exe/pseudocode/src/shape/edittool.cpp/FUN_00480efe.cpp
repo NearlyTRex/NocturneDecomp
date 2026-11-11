@@ -35,7 +35,7 @@ void shape_edittool_cpp_FUN_00480efe(uint param_1,float param_2,uint param_3)
     _DAT_01d71de4 = 0xa7;
     core_main_c_FUN_004e4330();
   }
-  _DAT_01c5bae0 = *(uint *)(_DAT_01c5b0e0 + 0x41e8);
+  _DAT_01c5bae0 = _DAT_01c5b0e0->max_char_width;
   uStackY_40 = 0x480f31;
   _DAT_01c5bae4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(_DAT_01c5b0e0,0x6a);
   iVar2 = _DAT_01c5baec;

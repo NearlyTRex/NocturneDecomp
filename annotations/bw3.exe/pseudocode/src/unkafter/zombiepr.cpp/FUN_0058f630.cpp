@@ -72,10 +72,10 @@ LAB_0058f6c3:
   if (param_1[1].model.bone_origins[0x20].z == *param_2) {
     local_1c = 0.06;
   }
-  if (*(int *)&g_CGamePtr->field_0x204 != 0) {
+  if (g_CGamePtr->gratuitous_dismemberment != 0) {
     local_1c = 1.0;
   }
-  if (*(int *)&g_CGamePtr->field_0x14 == 0) {
+  if (g_CGamePtr->blood_flag == 0) {
     local_1c = 0.0;
   }
   iVar1 = core_actor_cpp_randomChance_FUN_0040cf40(local_1c);
@@ -110,8 +110,8 @@ LAB_0058f6c3:
     }
     core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_00434810(param_1,"limb?.wav");
     core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_004157c0(body_part);
-    if (*(int *)(&(param_1->model).field_0x2140 + (int)param_1[1].model.bone_origins[0x21].x * 4) ==
-        0) {
+    if ((param_1->model).part_data.visibility_flags[(int)param_1[1].model.bone_origins[0x21].x] == 0
+       ) {
       param_2[1] = 9999.0;
     }
     param_2[2] = param_2[2] * (float)_DAT_005d8cc8;

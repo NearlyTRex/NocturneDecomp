@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdarg.h"
 #include "types/classes/CBitFont.h"
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CGame.h"
@@ -17,7 +18,7 @@
 
 void engine_font_cpp_FUN_004b0170(int param_1,float param_2);
 void __cdecl engine_font_cpp_CBitFont_loadNewBitmap_FUN_004b0190(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags);
-void engine_font_cpp_FUN_004b01ce(CBitFont *param_1,CBitFont *param_2);
+void engine_font_cpp_FUN_004b01ce(CBitFont *param_1,char *param_2);
 void engine_font_cpp_FUN_004b0480(CBitFont *param_1);
 void __cdecl engine_font_cpp_CBitFont_setInitializedFlag_FUN_004b0500(CBitFont *this_ptr);
 void engine_font_cpp_FUN_004b0510(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5);
@@ -25,16 +26,16 @@ int __cdecl engine_font_cpp_CBitFont_calculateCharacterHeight_FUN_004b09c0(CBitF
 int engine_font_cpp_FUN_004b0a20(CBitFont *param_1,byte *param_2,int param_3,int param_4,int param_5,int param_6);
 int __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_004b0cb0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextF_FUN_004b0ce0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
-int __cdecl engine_font_cpp_CBitFont_drawTextFV_FUN_004b0d30(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_7);
+int __cdecl engine_font_cpp_CBitFont_drawTextFV_FUN_004b0d30(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextRight_FUN_004b0da0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenter_FUN_004b0ea0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterF_FUN_004b0ee0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
-int __cdecl engine_font_cpp_CBitFont_drawTextCenterFV_FUN_004b0f30(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_7);
+int __cdecl engine_font_cpp_CBitFont_drawTextCenterFV_FUN_004b0f30(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004b0fa0(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004b0ff0(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *format_string);
-int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004b1040(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_8);
+int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004b1040(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterInClip_FUN_004b10b0(CBitFont *this_ptr,int y,int color_mode,int color_value,char *text);
-int __cdecl engine_font_cpp_CBitFont_printCenterFV_FUN_004b1150(CBitFont *this_ptr,int y,int color_mode,int color_value,undefined4 format_string,undefined4 param_6);
+int __cdecl engine_font_cpp_CBitFont_printCenterFV_FUN_004b1150(CBitFont *this_ptr,int y,int color_mode,int color_value,char *format_string,va_list_t args);
 void __cdecl engine_font_cpp_setShadowColor_FUN_004b11b0(uint red,uint green,uint blue);
 int __cdecl engine_font_cpp_getDefaultTextColor_FUN_004b12e0(void);
 void __cdecl engine_font_cpp_setDefaultTextColor_FUN_004b1300(int text_color);

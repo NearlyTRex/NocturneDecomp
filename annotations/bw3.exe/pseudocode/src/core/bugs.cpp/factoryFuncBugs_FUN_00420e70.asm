@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_bugs.cpp_CBugs_ctor_FUN_00420ea0
-;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x1bea4                        ; 00420e70
         ;   Label: core_bugs.cpp_factoryFuncBugs_FUN_00420e70
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 00420e75
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00420e75
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 00420e7a
     TEST EAX,EAX                        ; 00420e7d
     JNZ 0x00420e82                      ; 00420e7f

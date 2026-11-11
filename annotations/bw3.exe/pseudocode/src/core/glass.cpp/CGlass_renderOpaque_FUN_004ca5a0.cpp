@@ -44,7 +44,7 @@ int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004ca5a0(CGlass *this_ptr)
     iStack_10 = core_box_cpp_FUN_0041daf0(auStack_40);
     iVar2 = 0;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-              (DAT_005f2afc,&this_ptr->glass_texture);
+              (DAT_005f2afc,(SMRGLTextureBasic *)&this_ptr->glass_texture);
     pCVar3 = this_ptr->broken_vertices;
     input_vertices = this_ptr->render_vertices;
     pCVar4 = input_vertices;
@@ -78,7 +78,7 @@ int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004ca5a0(CGlass *this_ptr)
         pCVar5->broken_quads[0].base.surface_normal.C.i = 0;
         pCVar5->broken_quads[0].base.surface_normal.D.i = 0;
         engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_0046c800(this_ptr_00,poly);
-        poly = poly + 0x48;
+        poly = (SMRGLPrimitivePoly *)(poly->vertices + 4);
         pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);
       } while (iVar2 < this_ptr->broken_polygon_count);
     }

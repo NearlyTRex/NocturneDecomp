@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void unkafter_prye_cpp_FUN_00524940(CCharacter *param_1,float param_2)
+; void unkafter_prye_cpp_FUN_00524940(CHero *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xa4]:4  local_a4

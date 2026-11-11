@@ -4,12 +4,13 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/unions/UMpegSubbandScalefactorCodes.h"
 
 // Structure: SMpegSubbandScalefactors
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x180 (384 bytes)
 #pragma pack(push, 1)
 typedef struct SMpegSubbandScalefactors {
+    UMpegSubbandScalefactorCodes codes; // 0x0
 } SMpegSubbandScalefactors;
 #pragma pack(pop)
 

@@ -108,7 +108,7 @@
 ;   CGame* g_CGamePtr = 01d2130c
 ;   undefined4 DAT_01bdd7e4
 ;   undefined4 DAT_01c6e24c
-;   undefined4 g_CGameInstance.field3_0xc
+;   undefined4 g_CGameInstance.halo_mode
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_FUN_0045b800
@@ -142,7 +142,7 @@ section .text
     JZ 0x0045dec6                       ; 0045deb9
         ;   XREF to: 0045dec6 (CONDITIONAL_JUMP)  ; LAB_0045dec6
     MOV EAX,[0x005fe9dc]                ; 0045debb | g_CGamePtr
-    CMP dword ptr [EAX + 0xc],0x2       ; 0045dec0 | g_CGameInstance.field3_0xc
+    CMP dword ptr [EAX + 0xc],0x2       ; 0045dec0 | g_CGameInstance.halo_mode
     JZ 0x0045decd                       ; 0045dec4
         ;   XREF to: 0045decd (CONDITIONAL_JUMP)  ; LAB_0045decd
     MOV ESP,EBP                         ; 0045dec6

@@ -11,7 +11,7 @@ void core_ammo_cpp_factoryFuncAmmo_FUN_0040de30(void)
 {
   CAmmo *this_ptr;
   
-  this_ptr = (CAmmo *)debugAllocTracked1(800);
+  this_ptr = (CAmmo *)operator_new(800);
   if (this_ptr == (CAmmo *)0x0) {
     return;
   }

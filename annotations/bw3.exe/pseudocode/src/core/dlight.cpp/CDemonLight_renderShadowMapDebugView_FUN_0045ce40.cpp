@@ -64,7 +64,7 @@ LAB_0045cf67:
           }
         }
       }
-      if (*(int *)&g_CGamePtr->field_0x208 != 0) {
+      if (g_CGamePtr->camera_debug_enabled != 0) {
         engine_2d_c_drawTextCenteredXYColor_FUN_00402710
                   (screen_x,screen_x + display_size,screen_y + display_size + -0xb,
                    (this_ptr->base).camera_name);

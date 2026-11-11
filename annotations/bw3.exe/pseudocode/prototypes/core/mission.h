@@ -107,7 +107,7 @@ void __cdecl CDemonMission::process(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_FUN_004f722c
 // Address: 004f722c
-void FUN_004f722c(CDemonMission *param_1,CDemonMission *param_2);
+void FUN_004f722c(CDemonMission *param_1,char *param_2);
 
 // Original: core_mission.cpp_CDemonMission_run_FUN_004f72a0
 // Address: 004f72a0

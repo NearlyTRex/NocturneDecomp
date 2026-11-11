@@ -300,7 +300,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_00491f40(CEventList *this
           } while (cVar1 != '\0');
           return -1;
         }
-        local_104 = *(uint *)&g_CFieldNotesPtr->field_0x40;
+        local_104 = g_CFieldNotesPtr->is_displayed;
         *parse_position = *parse_position + local_dc;
       }
       else {
@@ -623,9 +623,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_00491f40(CEventList *this
               local_104 = 0;
               if ((-1 < g_CDemonSetPtr->selected_camera_index) &&
                  (iVar8 = _stricmp
-                                    ((char *)(g_CDemonSetPtr->cameras +
-                                             g_CDemonSetPtr->selected_camera_index),local_510),
-                 iVar8 == 0)) {
+                                    (g_CDemonSetPtr->cameras[g_CDemonSetPtr->selected_camera_index].
+                                     name,local_510), iVar8 == 0)) {
                 local_104 = 1;
               }
               *parse_position = *parse_position + local_bc;
@@ -1127,7 +1126,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_00491f40(CEventList *this
                             } while (cVar1 != '\0');
                             return -1;
                           }
-                          local_104 = (uint)(*(int *)&g_CGamePtr->field_0x18 != 0);
+                          local_104 = (uint)(g_CGamePtr->nudity_flag != 0);
                           *parse_position = *parse_position + local_68;
                         }
                         else {
@@ -1218,7 +1217,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_00491f40(CEventList *this
                               if (pCVar11 == 0x0FFFFFFF) {
                                 local_104 = (uint)pCVar11 ^ (uint)0x0FFFFFFF;
                               }
-                              else if (*(float *)&(pCVar11->base).field_0x27b4 <= 0.0) {
+                              else if ((pCVar11->base).speech_timer <= 0.0) {
                                 local_104 = 0;
                               }
                               else {

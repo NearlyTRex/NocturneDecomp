@@ -30,9 +30,9 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
 ;   crt_ctype.c_toupper_FUN_005a4120
+;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fread_FUN_005a3890
-;   crt_unknown.c_FUN_005a3650
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_boss.c_modelStructNotSupported2_FUN_0041ac60
 ;   engine_dosio.cpp_FUN_004659c0
@@ -129,8 +129,8 @@ section .text
     ADD ESP,0x4                         ; 004f7fe2
     PUSH ESI                            ; 004f7fe5
         ;   Label: LAB_004f7fe5
-    CALL crt_unknown.c_FUN_005a3650     ; 004f7fe6
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 004f7fe6
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 004f7feb
     MOV EDI,EAX                         ; 004f7fee
     TEST EAX,EAX                        ; 004f7ff0

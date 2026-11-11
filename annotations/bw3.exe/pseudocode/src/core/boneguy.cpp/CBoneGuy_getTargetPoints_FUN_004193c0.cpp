@@ -25,7 +25,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_getTargetPoints_FUN_004193c0(CBoneGuy *thi
   float afStack_1c [5];
   
   bVar1 = 0;
-  if (*(int *)&this_ptr->field_0xd0e4 != 0) {
+  if (this_ptr->blown_up != 0) {
     return 0;
   }
   core_skeleton_cpp_FUN_0054dcc0(&(this_ptr->base).base.model,DAT_007e1620);

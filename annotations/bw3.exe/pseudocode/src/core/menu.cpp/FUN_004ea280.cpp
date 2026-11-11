@@ -19,7 +19,7 @@ void __cdecl core_menu_cpp_FUN_004ea280(int initialize_systems)
   
   local_10 = 0;
   if (initialize_systems != 0) {
-    core_moon_cpp_FUN_004f94a0(&g_CMoonInstance);
+    core_moon_cpp_CMoon_init_FUN_004f94a0(&g_CMoonInstance);
     core_sound_cpp_CSound_configure_FUN_005607d0(0x02CF5680);
   }
   iVar3 = 0x1d75478;
@@ -36,7 +36,7 @@ void __cdecl core_menu_cpp_FUN_004ea280(int initialize_systems)
     g_CDemonSetPtr->rendering_mode = 1;
     core_set_cpp_CDemonSet_setFlatColor_FUN_0053b100(this_ptr,50000,50000,0x10000);
     g_CDemonSetPtr->ambient_base_quick = 0xdac;
-    core_moon_cpp_FUN_004f9670(&g_CMoonInstance);
+    core_moon_cpp_CMoon_render_FUN_004f9670(&g_CMoonInstance);
     g_CDemonSetPtr->rendering_mode = 0;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00508960("?Graphic Options" + 1);
     _sprintf((char *)0x1d75478,pcVar2);
@@ -46,7 +46,7 @@ void __cdecl core_menu_cpp_FUN_004ea280(int initialize_systems)
     _sprintf((char *)0x1d75678,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Credits");
     _sprintf((char *)0x1d75778,pcVar2);
-    *(uint *)&g_CGamePtr->field_0xd8 = 9;
+    g_CGamePtr->hero_number = HERO_TYPE_MOLOCH|HERO_TYPE_SVETLANA;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Option Menu");
     iVar1 = core_menu_cpp_FUN_004e7860((char **)0x1d75878,4,&local_10,200,pcVar2);
     wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
@@ -58,9 +58,9 @@ void __cdecl core_menu_cpp_FUN_004ea280(int initialize_systems)
       core_menu_cpp_FUN_004e94f0();
       break;
     case 2:
-      _DAT_01d737d8 = *(int *)&g_CGamePtr->field_0xd4;
+      _DAT_01d737d8 = g_CGamePtr->game_control;
       core_menu_cpp_FUN_004e8f80();
-      if (_DAT_01d737d8 != *(int *)&g_CGamePtr->field_0xd4) {
+      if (_DAT_01d737d8 != g_CGamePtr->game_control) {
         core_menu_cpp_FUN_004eae80();
       }
       break;
@@ -71,7 +71,7 @@ void __cdecl core_menu_cpp_FUN_004ea280(int initialize_systems)
     iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);
   } while (iVar1 == 0);
   if (initialize_systems != 0) {
-    core_moon_cpp_FUN_004f9580(&g_CMoonInstance);
+    core_moon_cpp_CMoon_free_FUN_004f9580(&g_CMoonInstance);
     core_sound_cpp_CSound_reset_FUN_00560930(0x02CF5680);
     core_inivar_cpp_writeIniData_FUN_004d95c0();
     return;

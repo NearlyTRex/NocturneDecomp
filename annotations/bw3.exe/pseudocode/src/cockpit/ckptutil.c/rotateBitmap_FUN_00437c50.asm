@@ -11,9 +11,9 @@
 ; Called Functions:
 ;   cockpit_ckptutil.c_applyActPalette_FUN_00434f90
 ;   core_main.c_FUN_004e4330
+;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fgetc_FUN_005a32b0
-;   crt_unknown.c_FUN_005a3650
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_dosio.cpp_FUN_004659c0
 ;
@@ -128,8 +128,8 @@ section .text
     RET                                 ; 00437d50
     PUSH EAX                            ; 00437d51
         ;   Label: LAB_00437d51
-    CALL crt_unknown.c_FUN_005a3650     ; 00437d52
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 00437d52
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 00437d57
     MOV dword ptr [ESP + 0x74],EAX      ; 00437d5a
     TEST EAX,EAX                        ; 00437d5e

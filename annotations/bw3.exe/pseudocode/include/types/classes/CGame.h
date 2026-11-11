@@ -7,6 +7,9 @@ struct CVector3f;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/enums/EAimMode.h"
+#include "types/enums/EControlMode.h"
+#include "types/enums/EHeroType.h"
 
 // Structure: CGame
 // Ghidra size: 0xb90 (2960 bytes)
@@ -15,11 +18,46 @@ typedef struct CGame {
     int game_pixx; // 0x0
     int game_pixy; // 0x4
     int game_bpp; // 0x8
-    char field_12[28]; // 0xc
-    int quimby_flag; // 0x28
-    int shadow_flag; // 0x2c
-    int key_walk; // 0x30
-    char field_52[120]; // 0x34
+    int halo_mode; // 0xc
+    int subtitle_mode; // 0x10
+    int blood_flag; // 0x14
+    int nudity_flag; // 0x18
+    int foul_language_flag; // 0x1c
+    int quimby_flag; // 0x20
+    int shadow_flag; // 0x24
+    int key_walk; // 0x28
+    int key_backup; // 0x2c
+    int key_run; // 0x30
+    int key_strafe; // 0x34
+    int key_strafe_left; // 0x38
+    int key_strafe_right; // 0x3c
+    int key_right; // 0x40
+    int key_left; // 0x44
+    int key_fire; // 0x48
+    int key_action; // 0x4c, Added in this build
+    int key_use_item; // 0x50
+    int key_light; // 0x54
+    int key_infrared; // 0x58
+    int key_field_notes; // 0x5c, Added in this build
+    int key_map; // 0x60, Added in this build
+    int key_compass; // 0x64, Added in this build
+    int key_voodoo_doll; // 0x68, Added in this build
+    int key_draw; // 0x6c
+    int key_jump; // 0x70
+    int key_quick_turn; // 0x74, Added in this build
+    int key_point_up; // 0x78
+    int key_point_down; // 0x7c
+    int key_weapon_1; // 0x80
+    int key_weapon_2; // 0x84
+    int key_weapon_3; // 0x88
+    int key_weapon_4; // 0x8c
+    int key_weapon_5; // 0x90
+    int key_next_weapon; // 0x94
+    int key_prev_weapon; // 0x98
+    int key_next_item; // 0x9c
+    int key_prev_item; // 0xa0
+    int key_item_desc; // 0xa4
+    int key_next_ammo; // 0xa8
     int invert_mouse_y_axis; // 0xac
     int always_run; // 0xb0
     int x_mouse_sensitivity; // 0xb4
@@ -30,12 +68,60 @@ typedef struct CGame {
     int x_stick_max; // 0xc8
     int y_stick_min; // 0xcc
     int y_stick_max; // 0xd0
-    char field_212[412]; // 0xd4
+    EControlMode game_control; // 0xd4
+    EHeroType hero_number; // 0xd8
+    EAimMode aim_mode; // 0xdc
+    int show_hero_numbers; // 0xe0, Added in this build
+    int show_crosshair; // 0xe4, Added in this build
+    int cinematic_skip_in_progress; // 0xe8
+    int puzzle_difficulty_mode; // 0xec, Added in this build
+    int combat_difficulty_mode; // 0xf0, Added in this build
+    char debug_info_string[256]; // 0xf4
+    int god_mode_enabled; // 0x1f4
+    int freeze_enemies_enabled; // 0x1f8
+    int event_processing_enabled; // 0x1fc
+    int subtitle_system_enabled; // 0x200
+    int gratuitous_dismemberment; // 0x204
+    int camera_debug_enabled; // 0x208
+    int debug_toggle_flag; // 0x20c
+    float time_scale_factor; // 0x210
+    int suppress_set_geometry; // 0x214
+    int render_mode; // 0x218
+    int editor_tools_enabled; // 0x21c
+    int is_paused; // 0x220
+    int wait_for_keypress; // 0x224
+    int big_hat_cheat; // 0x228
+    int skip_frame_render; // 0x22c
+    int profile_mode; // 0x230
+    int developer_mode_enabled; // 0x234
+    int head_of_horror_cheat; // 0x238
+    int geometry_debug_enabled; // 0x23c
+    int collision_render_enabled; // 0x240
+    int player_hit_flag; // 0x244
+    int gamma; // 0x248
+    int letterbox_mode; // 0x24c
+    int allow_damage_flag; // 0x250
+    int allow_enemy_attack_flag; // 0x254
+    int is_loading; // 0x258
+    int hero_controls_blocked; // 0x25c
+    int is_processing; // 0x260
+    int goggles_active; // 0x264
+    int special_view_active; // 0x268, Added in this build
+    int flashlight_active; // 0x26c
     float total_game_time; // 0x270
     int damageable_enemy_count; // 0x274
     float total_play_time; // 0x278
     int total_kill_count; // 0x27c
-    char field_640[140]; // 0x280
+    int screen_clear_count; // 0x280, Added in this build
+    int act_completion_state; // 0x284
+    int slow_motion_mode; // 0x288, Added in this build
+    float slow_motion_timer; // 0x28c, Added in this build
+    int new_set_event_pending; // 0x290, Added in this build
+    float end_timer; // 0x294, Added in this build
+    char music_name[100]; // 0x298, Added in this build
+    uint music_sfx_handle; // 0x2fc, Added in this build
+    double music_position; // 0x300, Added in this build
+    float music_volume; // 0x308, Added in this build
     int clocktime; // 0x30c
     int delta_time_int; // 0x310
     float delta_time_float; // 0x314
@@ -48,7 +134,7 @@ typedef struct CGame {
     int console_enabled; // 0x330
     char message_text[256]; // 0x334
     float message_timer; // 0x434
-    char field_1080[4]; // 0x438
+    float bitmap_display_time; // 0x438, Added in this build
     int status_display_count; // 0x43c
     char status_bar_names[5][256]; // 0x440
     float status_bar_values[5]; // 0x940
@@ -60,7 +146,9 @@ typedef struct CGame {
     float debug_fudge_step; // 0xa74
     int need_chapter_reload; // 0xa78
     char chapter_reload_filename[256]; // 0xa7c
-    char field_2940[20]; // 0xb7c
+    int show_customizable_keys; // 0xb7c
+    char end_timer_text[12]; // 0xb80, Added in this build
+    void* vtable; // 0xb8c, Added in this build
 } CGame;
 #pragma pack(pop)
 

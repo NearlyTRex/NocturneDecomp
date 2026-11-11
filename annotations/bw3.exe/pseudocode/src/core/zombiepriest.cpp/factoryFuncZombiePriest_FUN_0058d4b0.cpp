@@ -11,7 +11,7 @@ void core_zombiepriest_cpp_factoryFuncZombiePriest_FUN_0058d4b0(void)
 {
   CZombiePriest *this_ptr;
   
-  this_ptr = (CZombiePriest *)debugAllocTracked1(0xd114);
+  this_ptr = (CZombiePriest *)operator_new(0xd114);
   if (this_ptr == (CZombiePriest *)0x0) {
     return;
   }

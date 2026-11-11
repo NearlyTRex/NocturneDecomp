@@ -9,5 +9,5 @@
 CPathMap * __cdecl core_spireagl_cpp_CSpiritEagle_getPathMap_FUN_00599e30(CSpiritEagle *this_ptr)
 
 {
-  return (CPathMap *)&this_ptr->field_0xcdcc;
+  return &this_ptr->path_map;
 }

@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 518,
-    "complexity_score": 360,
+    "complexity_score": 367,
     "cross_reference_count": 2,
     "function_call_count": 33,
     "global_count": 43,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 160,
-    "suspect_count": 18,
+    "pseudocode_lines": 162,
+    "suspect_count": 19,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 678
+    "total_lines": 680
   },
   "cross_references": [
     {
@@ -165,6 +164,16 @@
       "name": "support_newmsg.cpp_getLocalizedString_FUN_00508960"
     },
     {
+      "addr": "00573f50",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_open_FUN_00573f50"
+    },
+    {
+      "addr": "005749a0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_COutStreamFile_close_FUN_005749a0"
+    },
+    {
       "addr": "005747c0",
       "is_variadic": false,
       "name": "support_trstream.cpp_COutStreamFile_ctor_FUN_005747c0"
@@ -175,24 +184,19 @@
       "name": "support_trstream.cpp_COutStreamFile_dtor_FUN_00574850"
     },
     {
-      "addr": "00573f50",
+      "addr": "005749d0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_00573f50"
+      "name": "support_trstream.cpp_COutStreamFile_open_FUN_005749d0"
     },
     {
       "addr": "005748e0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005748e0"
+      "name": "support_trstream.cpp_COutStreamFile_write_FUN_005748e0"
     },
     {
-      "addr": "005749a0",
+      "addr": "00573db0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005749a0"
-    },
-    {
-      "addr": "005749d0",
-      "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005749d0"
+      "name": "unkafter_turret.cpp_CInStreamFile_close_FUN_00573db0"
     },
     {
       "addr": "005738c0",
@@ -203,11 +207,6 @@
       "addr": "00573a40",
       "is_variadic": false,
       "name": "unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40"
-    },
-    {
-      "addr": "00573db0",
-      "is_variadic": false,
-      "name": "unkafter_turret.cpp_FUN_00573db0"
     }
   ],
   "globals": [
@@ -807,14 +806,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 111,
-      "match": "field_0x294",
-      "severity": "mild",
-      "text": "(double)this_ptr->total_game_time,(double)*(float *)&this_ptr->field_0x294,",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 117,
       "match": "DAT_007df9c0",
@@ -824,7 +815,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 151,
+      "line": 132,
+      "match": "DAT_005c365f",
+      "severity": "mild",
+      "text": "iVar2 = support_trstream_cpp_COutStreamFile_open_FUN_005749d0(&local_1c,local_28c,&DAT_005c365f)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 140,
+      "match": "DAT_005fea0c",
+      "severity": "mild",
+      "text": "support_trstream_cpp_COutStreamFile_write_FUN_005748e0(&local_1c,&DAT_005fea0c,4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 153,
       "match": "DAT_01d225c8",
       "severity": "mild",
       "text": "pcVar3 = &DAT_01d225c8;",
@@ -848,7 +855,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 152,
+      "line": 154,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

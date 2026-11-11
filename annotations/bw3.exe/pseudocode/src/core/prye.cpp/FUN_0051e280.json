@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 215,
+    "complexity_score": 214,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 45,
+    "pseudocode_lines": 44,
     "suspect_count": 14,
     "suspect_types": [
       "param_count_too_few",
@@ -17,7 +17,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 123
+    "total_lines": 122
   },
   "cross_references": [
     {
@@ -233,7 +233,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "this_ptr = (CDeformableModelInstance *)(param_1 + 0x158);",
@@ -241,7 +241,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "(this_ptr,*(uint *)(param_1 + 0x20c78),",
@@ -249,7 +249,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x20c48) * (float)_DAT_005cd3c7,0xffffffff);",
@@ -257,7 +257,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "core_xform_cpp_FUN_00585de0(_DAT_01ed36dc * 0x10 + param_1 + 0x808);",
@@ -265,7 +265,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 45,
       "match": "param_2",
       "severity": "mild",
       "text": "core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_0054f850(this_ptr,param_2);",
@@ -273,7 +273,7 @@
     },
     {
       "description": "Pointer value `&local_48` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 39,
+      "line": 38,
       "match": "(int)&local_48",
       "severity": "moderate",
       "text": "pfVar1 = (float *)((int)&local_48 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
@@ -281,7 +281,7 @@
     },
     {
       "description": "Pointer value `&local_48` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 40,
+      "line": 39,
       "match": "(int)&local_48",
       "severity": "moderate",
       "text": "*(float *)((int)&local_48 + (uint)bVar2 * -8 + 4) = afStack_34[(uint)bVar2 * -2];",
@@ -289,7 +289,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 39,
+      "line": 38,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pfVar1 = (float *)((int)&local_48 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
@@ -297,7 +297,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 40,
+      "line": 39,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_48 + (uint)bVar2 * -8 + 4) = afStack_34[(uint)bVar2 * -2];",

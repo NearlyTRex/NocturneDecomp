@@ -2,18 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 157,
+    "complexity_score": 163,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 28,
     "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
+      "shadow_pointer_walk",
       "unnamed_param"
     ],
-    "total_lines": 96
+    "total_lines": 97
   },
   "cross_references": [
     {
@@ -128,23 +129,15 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)param_1 == 0x20) {",
+      "text": "iVar1 = (param_1->base).type;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_model_c_FUN_004f80f0(*(uint *)(param_1 + 0x14));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar2 = param_1;",
+      "text": "engine_model_c_FUN_004f80f0(param_1[1].child_count);",
       "type": "unnamed_param"
     },
     {
@@ -152,36 +145,28 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 8)) {",
+      "text": "pSVar2 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar1 < *(int *)(param_1 + 8));",
+      "text": "if (0 < param_1->child_count) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005a3770(param_1);",
+      "text": "} while (iVar1 < param_1->child_count);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)param_1 != 0x26) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_005a3770(param_1);",
@@ -189,11 +174,27 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_005a3770(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_boss_c_modelStructNotSupported3_FUN_0041ac90(param_1);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 18,
+      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar2 = (SMRGLHeaderExtended *)&(pSVar2->base).count;",
+      "type": "shadow_pointer_walk"
     },
     {
       "call_site_count": 1,

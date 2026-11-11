@@ -9,16 +9,18 @@
 void __cdecl core_styler_cpp_CStyler_archive_FUN_0059dee0(CStyler *this_ptr)
 
 {
-  core_enemy_cpp_CEnemy_archive_FUN_00489120((CEnemy *)this_ptr);
-  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0xcdcc,"?speed" + 1);
-  core_actor_cpp_archiveDeformableModelInstance_FUN_0040ba30
-            ((CDeformableModelInstance *)&this_ptr->field_0x158,"modelName");
-  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0xcddc,"guardDistance");
-  core_actor_cpp_archiveMotionState_FUN_0040bab0
-            ((CMotionController *)&this_ptr->field_0x158,"motion state");
+  CDeformableModelInstance *model_ptr;
+  
+  core_enemy_cpp_CEnemy_archive_FUN_00489120(&this_ptr->base);
+  core_actor_cpp_archiveFloat_FUN_0040b830(&(this_ptr->base).speed,"?speed" + 1);
+  model_ptr = &(this_ptr->base).base.model;
+  core_actor_cpp_archiveDeformableModelInstance_FUN_0040ba30(model_ptr,"modelName");
+  core_actor_cpp_archiveFloat_FUN_0040b830
+            (&(this_ptr->base).guard_distance,"guardDistance");
+  core_actor_cpp_archiveMotionState_FUN_0040bab0(&model_ptr->base,"motion state");
   if (g_CStylerClassVersion < 2) {
     return;
   }
-  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x487c4,"morphTime");
+  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->morph_time,"morphTime");
   return;
 }

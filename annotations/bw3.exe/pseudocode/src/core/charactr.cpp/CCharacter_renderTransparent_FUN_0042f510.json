@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 167,
-    "complexity_score": 218,
+    "complexity_score": 203,
     "cross_reference_count": 6,
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 78,
-    "suspect_count": 12,
+    "suspect_count": 11,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -448,14 +447,6 @@
       "severity": "mild",
       "text": "DAT_007e2b30 = DAT_007e2b30 | 1;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x27a8",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x27a8 != 0) && (this_ptr->smoke_occluded == 0)) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

@@ -26,9 +26,9 @@ CHero * __cdecl core_hero_cpp_closestHeroToPoint_FUN_004d22c0(CLocation *locatio
     do {
       pCVar1 = *(CHero **)(iVar5 + 0x1d5ba04);
       if ((pCVar1 != (CHero *)0x0) &&
-         (fVar2 = *(float *)(pCVar1 + 0x20) - (location->position).x,
-         fVar4 = *(float *)(pCVar1 + 0x24) - (location->position).y,
-         fVar3 = *(float *)(pCVar1 + 0x28) - (location->position).z,
+         (fVar2 = (pCVar1->base).base.location.position.x - (location->position).x,
+         fVar4 = (pCVar1->base).base.location.position.y - (location->position).y,
+         fVar3 = (pCVar1->base).base.location.position.z - (location->position).z,
          fVar2 = fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2, fVar2 < fStack_1c)) {
         pCVar6 = pCVar1;
         fStack_1c = fVar2;

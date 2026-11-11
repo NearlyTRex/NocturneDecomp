@@ -25,7 +25,7 @@ void __cdecl core_ammobox_cpp_CAmmoBox_addToInventory_FUN_0040e720(CAmmoBox *thi
   if (this_ptr->ammo_count == 0) {
     return;
   }
-  pCVar2 = (CAmmo *)debugAllocTracked1(800);
+  pCVar2 = (CAmmo *)operator_new(800);
   this_ptr_00 = (CAmmo *)0x0;
   if (pCVar2 != (CAmmo *)0x0) {
     this_ptr_00 = core_ammo_cpp_CAmmo_ctor_FUN_0040de60(pCVar2);
@@ -36,7 +36,7 @@ void __cdecl core_ammobox_cpp_CAmmoBox_addToInventory_FUN_0040e720(CAmmoBox *thi
     core_main_c_FUN_004e4330("Out of memory");
   }
   core_ammo_cpp_CAmmo_setAmmoCount_FUN_0040e070(this_ptr_00,this_ptr->ammo_count);
-  *(EAmmoBoxType *)&this_ptr_00->field_0x318 = this_ptr->ammo_type;
+  this_ptr_00->ammo_type = this_ptr->ammo_type;
   (*((this_ptr_00->base).vtable._ub)->setup)(&this_ptr_00->base);
   pcVar3 = "Some_ammo";
   pCVar2 = this_ptr_00;

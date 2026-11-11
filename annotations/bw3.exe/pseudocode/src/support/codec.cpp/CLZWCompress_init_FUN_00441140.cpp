@@ -12,9 +12,9 @@ void __cdecl support_codec_cpp_CLZWCompress_init_FUN_00441140(CLZWCompress *this
   support_codec_cpp_CLZWDictionary_init_FUN_00440c50
             (&this_ptr->dictionary,this_ptr->buffer_size,this_ptr->num_bits);
   support_codec_cpp_resetBitBuffer_FUN_004400d0(&(this_ptr->dictionary).bit_state);
-  *(uint *)&this_ptr->field_0x30 = 0xffffffff;
-  *(uint *)&this_ptr->field_0x34 = 0xffffffff;
-  *(uint *)&this_ptr->field_0x38 = 0xffffffff;
-  *(uint *)&this_ptr->field_0x3c = 0xffffffff;
+  this_ptr->current_code = -1;
+  this_ptr->pending_code = -1;
+  this_ptr->prev_code = -1;
+  this_ptr->pending_char_code = -1;
   return;
 }

@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_wateract.cpp_CWaterActor_ctor_FUN_00577d90
-;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x2b23c                        ; 00577d60
         ;   Label: core_wateract.cpp_factoryFuncWaterActor_FUN_00577d60
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 00577d65
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00577d65
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 00577d6a
     TEST EAX,EAX                        ; 00577d6d
     JNZ 0x00577d72                      ; 00577d6f

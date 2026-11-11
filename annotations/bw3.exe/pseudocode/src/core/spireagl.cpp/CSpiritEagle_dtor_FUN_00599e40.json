@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 81,
+    "complexity_score": 68,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 31,
-    "suspect_count": 4,
+    "pseudocode_lines": 33,
+    "suspect_count": 3,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
-    "total_lines": 108
+    "total_lines": 110
   },
   "cross_references": [],
   "function": {
@@ -141,16 +140,16 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x20874",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 22,
+      "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "pCVar1 = core_morph_cpp_CMorph_dtor_FUN_004fa8c0((CMorph *)&this_ptr->field_0x20874,0);",
-      "type": "unnamed_field"
+      "text": "((CClothList *)(pCVar1[-1].models[1].textures + 0xe),0);",
+      "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 25,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "iVar4 = unkafter_armour_cpp_FUN_00410370(pCVar3[-1].height_cache_tags[4] + 0x2f,0);",
@@ -158,19 +157,11 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 29,
+      "line": 31,
       "match": "pCVar5[-1].",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar5[-1].field_0x224c,1);",
+      "text": "((CDemonActor *)(pCVar5[-1].part_data.texture_set_indices + 7),1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x224c",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar5[-1].field_0x224c,1);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

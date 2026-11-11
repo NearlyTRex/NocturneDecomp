@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_ladder.cpp_CLadder_ctor_FUN_004df650
-;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x300                          ; 004df620
         ;   Label: core_ladder.cpp_factoryFuncLadder_FUN_004df620
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 004df625
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004df625
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 004df62a
     TEST EAX,EAX                        ; 004df62d
     JNZ 0x004df632                      ; 004df62f

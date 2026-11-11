@@ -15,7 +15,7 @@ CBird * unkafter_bird_cpp_CBird_ctor_FUN_0040f9f0(CBird *this_ptr)
   CPathMap *pCVar2;
   float fVar3;
   
-  pCVar1 = core_charactr_cpp_CCharacter_ctor_FUN_0042ac20((CCharacter *)this_ptr);
+  pCVar1 = core_charactr_cpp_CCharacter_ctor_FUN_0042ac20(&this_ptr->base);
   pCVar2 = core_path_cpp_CPathMap_ctor_FUN_0050acc0((CPathMap *)(pCVar1 + 1));
   pCVar2[-1].height_cache[0x45][0x19] = (int)&g_CBirdVTable;
   pCVar2[-1].height_cache_tags[0][0x43] = 0x3f19999a;

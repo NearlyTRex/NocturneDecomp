@@ -113,12 +113,12 @@ section .text
     JZ 0x004bb187                       ; 004bb135
         ;   XREF to: 004bb187 (CONDITIONAL_JUMP)  ; LAB_004bb187
     MOV EAX,[0x005fe9dc]                ; 004bb137 | g_CGamePtr
-    CMP dword ptr [EAX + 0x238],0x29a   ; 004bb13c | g_CGameInstance.field520_0x238
+    CMP dword ptr [EAX + 0x238],0x29a   ; 004bb13c | g_CGameInstance.head_of_horror_cheat
     JZ 0x004bb187                       ; 004bb146
         ;   XREF to: 004bb187 (CONDITIONAL_JUMP)  ; LAB_004bb187
     PUSH 0x40a00000                     ; 004bb148
     PUSH 0x5c296c                       ; 004bb14d | = "The horror has been unleashed."
-    MOV dword ptr [EAX + 0x238],0x29a   ; 004bb152 | g_CGameInstance.field520_0x238
+    MOV dword ptr [EAX + 0x238],0x29a   ; 004bb152 | g_CGameInstance.head_of_horror_cheat
     CALL support_newmsg.cpp_getLocalizedString_FUN_00508960 ; 004bb15c
         ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)
     ADD ESP,0x4                         ; 004bb161

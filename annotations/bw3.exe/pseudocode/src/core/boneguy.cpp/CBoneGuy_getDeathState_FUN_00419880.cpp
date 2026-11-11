@@ -12,7 +12,7 @@ EDeathState __cdecl core_boneguy_cpp_CBoneGuy_getDeathState_FUN_00419880(CBoneGu
   EDeathState EVar1;
   
   EVar1 = core_charactr_cpp_CCharacter_getDeathState_FUN_00431000((CCharacter *)this_ptr);
-  if ((EVar1 == DEATH_STATE_ALIVE) && (*(int *)&this_ptr->field_0xd0e4 != 0)) {
+  if ((EVar1 == DEATH_STATE_ALIVE) && (this_ptr->blown_up != 0)) {
     return ~DEATH_STATE_DYING;
   }
   return EVar1;

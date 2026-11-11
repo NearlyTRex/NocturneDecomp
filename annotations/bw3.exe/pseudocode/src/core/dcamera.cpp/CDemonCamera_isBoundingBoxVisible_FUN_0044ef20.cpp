@@ -11,7 +11,7 @@
 int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max)
 
 {
-  int iVar1;
+  uint *puVar1;
   int iVar2;
   uint uVar3;
   float10 fVar4;
@@ -105,7 +105,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20(CDem
   local_68 = local_114;
   local_54 = local_110;
   engine_special_cpp_FUN_005632a3
-            ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x124e00),&local_e8);
+            (&DAT_005f2afc->vertex_buffer_ptr[0x61a0].projected_vertex,&local_e8);
   local_dc = bbox_min->x;
   local_d8 = bbox_min->y;
   local_d4 = bbox_max->z;
@@ -116,7 +116,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20(CDem
   local_64 = local_d8;
   local_60 = local_d4;
   engine_special_cpp_FUN_005632a3
-            ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x124e30),&local_d0);
+            (&DAT_005f2afc->vertex_buffer_ptr[0x61a1].projected_vertex,&local_d0);
   local_88 = bbox_min->x;
   local_84 = bbox_min->y;
   local_80 = bbox_min->z;
@@ -127,7 +127,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20(CDem
   local_4c = local_84;
   local_28 = local_80;
   engine_special_cpp_FUN_005632a3
-            ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x124e60),&local_f4);
+            (&DAT_005f2afc->vertex_buffer_ptr[0x61a2].projected_vertex,&local_f4);
   local_124 = bbox_max->x;
   local_120 = bbox_min->y;
   local_11c = bbox_min->z;
@@ -138,7 +138,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20(CDem
   local_18 = local_124;
   local_14 = local_11c;
   engine_special_cpp_FUN_005632a3
-            ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x124e90),&local_10c);
+            (&DAT_005f2afc->vertex_buffer_ptr[0x61a3].projected_vertex,&local_10c);
   local_a0 = bbox_max->x;
   local_9c = bbox_max->y;
   local_98 = bbox_max->z;
@@ -149,7 +149,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20(CDem
   local_3c = local_a0;
   local_38 = local_9c;
   engine_special_cpp_FUN_005632a3
-            ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x124ec0),&local_130);
+            (&DAT_005f2afc->vertex_buffer_ptr[0x61a4].projected_vertex,&local_130);
   local_94 = bbox_min->x;
   local_90 = bbox_max->y;
   local_8c = bbox_max->z;
@@ -160,7 +160,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20(CDem
   local_44 = local_90;
   local_40 = local_8c;
   engine_special_cpp_FUN_005632a3
-            ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x124ef0),&local_ac);
+            (&DAT_005f2afc->vertex_buffer_ptr[0x61a5].projected_vertex,&local_ac);
   local_100 = bbox_min->x;
   local_fc = bbox_max->y;
   local_f8 = bbox_min->z;
@@ -171,7 +171,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20(CDem
   local_20 = local_fc;
   local_1c = local_f8;
   engine_special_cpp_FUN_005632a3
-            ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x124f20),&local_7c);
+            (&DAT_005f2afc->vertex_buffer_ptr[0x61a6].projected_vertex,&local_7c);
   local_c4 = bbox_max->x;
   local_c0 = bbox_max->y;
   local_bc = bbox_min->z;
@@ -182,13 +182,13 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20(CDem
   local_30 = local_c0;
   local_2c = local_bc;
   engine_special_cpp_FUN_005632a3
-            ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x124f50),&local_b8);
+            (&DAT_005f2afc->vertex_buffer_ptr[24999].projected_vertex,&local_b8);
   uVar3 = 0xffffffff;
   iVar2 = 0x124e00;
   do {
-    iVar1 = iVar2 + 0x10;
+    puVar1 = (uint *)((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).screen_x + iVar2);
     iVar2 = iVar2 + 0x30;
-    uVar3 = uVar3 & *(uint *)(DAT_005f2afc->vertex_buffer_ptr + iVar1);
+    uVar3 = uVar3 & *puVar1;
   } while (iVar2 != 1200000);
   iVar2 = 1;
   if (((uVar3 & 0x80000000) != 0) && ((char)uVar3 != '\0')) {

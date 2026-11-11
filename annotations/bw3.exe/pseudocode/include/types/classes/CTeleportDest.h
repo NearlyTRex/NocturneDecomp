@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
 
 // Structure: CTeleportDest
 // Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x158 (344 bytes)
 #pragma pack(push, 1)
 typedef struct CTeleportDest {
-    char field_0[344]; // 0x0
+    CDemonActor base; // 0x0
 } CTeleportDest;
 #pragma pack(pop)
 

@@ -9,23 +9,23 @@
 void core_motion_cpp_FUN_004fc2c0(CMotionController *param_1)
 
 {
-  SMotion SVar1;
+  char cVar1;
   SMotion *pSVar2;
-  SMotion *pSVar3;
+  char *pcVar3;
   
   if (param_1->motion_list_ptr != (CMotionList *)0x0) {
     if (param_1->current_motion_name[0] == '\0') {
       pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(param_1);
-      pSVar3 = (SMotion *)param_1->current_motion_name;
+      pcVar3 = param_1->current_motion_name;
       do {
-        SVar1 = *pSVar2;
-        *pSVar3 = SVar1;
-        if (SVar1 == (SMotion)0x0) break;
-        SVar1 = pSVar2[1];
-        pSVar2 = pSVar2 + 2;
-        pSVar3[1] = SVar1;
-        pSVar3 = pSVar3 + 2;
-      } while (SVar1 != (SMotion)0x0);
+        cVar1 = pSVar2->motion_name[0];
+        *pcVar3 = cVar1;
+        if (cVar1 == '\0') break;
+        cVar1 = pSVar2->motion_name[1];
+        pSVar2 = (SMotion *)(pSVar2->motion_name + 2);
+        pcVar3[1] = cVar1;
+        pcVar3 = pcVar3 + 2;
+      } while (cVar1 != '\0');
       param_1->motion_list_ptr = (CMotionList *)0x0;
       return;
     }

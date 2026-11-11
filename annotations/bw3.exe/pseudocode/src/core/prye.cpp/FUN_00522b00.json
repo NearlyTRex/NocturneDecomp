@@ -2,25 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 906,
-    "complexity_score": 942,
+    "complexity_score": 973,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 387,
-    "suspect_count": 51,
+    "pseudocode_lines": 383,
+    "suspect_count": 54,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "self_copy_guard",
       "stack_alignment_array",
+      "suspect_float",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 1293
+    "total_lines": 1289
   },
   "cross_references": [
     {
@@ -454,7 +455,7 @@
       "line": 97,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_34 = (CDemonActorTransformState *)&param_1[0x185].is_editor_hidden;",
+      "text": "local_34 = &param_1[0x185].render_needs_update;",
       "type": "unnamed_param"
     },
     {
@@ -470,7 +471,7 @@
       "line": 99,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_34 = &param_1[0x185].previous_transform_state;",
+      "text": "local_34 = &param_1[0x185].dead2;",
       "type": "unnamed_param"
     },
     {
@@ -714,6 +715,22 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Likely misinterpreted integer as float",
+      "line": 380,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "if ((((float)local_34[7] == 1.4013e-45) &&",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 153,
+      "match": "(int)local_44",
+      "severity": "moderate",
+      "text": "local_34[1] = (int)local_44;",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Pointer value `&CStack_114` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 206,
       "match": "(int)&CStack_114",
@@ -727,6 +744,14 @@
       "match": "(int)&CStack_114",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_114 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 378,
+      "match": "(int)pCVar8",
+      "severity": "moderate",
+      "text": "local_34[2] = (int)pCVar8;",
       "type": "pointer_truncation"
     },
     {

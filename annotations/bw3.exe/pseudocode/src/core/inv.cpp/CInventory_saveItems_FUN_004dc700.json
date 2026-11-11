@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 34,
+    "complexity_score": 49,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 19,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "shadow_pointer_walk",
       "undefined_data"
     ],
     "total_lines": 58
@@ -155,6 +156,14 @@
       "severity": "mild",
       "text": "FUN_005a3140(file_handle,\"%s%s \\\"%s\\\"\\n\",&DAT_005f0990,pcVar1,this_ptr_00);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar2->owner`). Replace `pCVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 18,
+      "match": "pCVar2 = (T *)&pCVar2->FIELD",
+      "severity": "moderate",
+      "text": "pCVar2 = (CInventory *)&pCVar2->owner;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

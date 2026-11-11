@@ -38,13 +38,13 @@ uint core_fire_cpp_FUN_0049d090(CDemonActor *param_1)
   float local_18;
   
   bVar6 = 0;
-  fVar1 = param_1[2].previous_transform_state.position.y;
+  fVar1 = param_1[2].previous_transform_state.position.x;
   uVar2 = (uint)(ushort)((ushort)(0.0 < fVar1) << 8 | (ushort)NAN(fVar1) << 10 |
                         (ushort)(fVar1 == 0.0) << 0xe);
   if (0.0 < fVar1) {
     local_1c = g_CGamePtr->delta_time_float;
-    fVar1 = param_1[2].previous_transform_state.position.y - local_1c;
-    param_1[2].previous_transform_state.position.y = fVar1;
+    fVar1 = param_1[2].previous_transform_state.position.x - local_1c;
+    param_1[2].previous_transform_state.position.x = fVar1;
     local_18 = local_1c;
     if (0.0 < fVar1) {
       if (local_54 + 2 != (float *)&param_1[1].validation_magic) {
@@ -68,20 +68,20 @@ uint core_fire_cpp_FUN_0049d090(CDemonActor *param_1)
       if (((0.0 < SQRT(local_74 * local_74 + local_7c * local_7c)) ||
           (local_54[3] < (float)param_1[1].direction_hint)) &&
          ((float)_DAT_005c0760 <
-          param_1[2].previous_transform_state.position.z -
-          param_1[2].previous_transform_state.position.y)) {
+          param_1[2].previous_transform_state.position.y -
+          param_1[2].previous_transform_state.position.x)) {
         iVar5 = *(int *)param_1->actor_name;
         pfVar4 = &param_1[1].location.position.z;
         if (iVar5 == 1) {
-          core_fire_cpp_FUN_004a3f70(0x01C73654,pfVar4,1,0);
+          core_fire_cpp_CFireEffect_createRing_FUN_004a3f70(0x01C73654,pfVar4,1,0);
           core_sound_cpp_CSound_playActorSound_FUN_005609d0
                     (0x02CF5680,param_1,"wp_bindevil.wav",(CVector3f *)pfVar4);
-          param_1[2].previous_transform_state.position.y = 0.0;
+          param_1[2].previous_transform_state.position.x = 0.0;
         }
         else if (iVar5 == 2) {
           core_fire_cpp_FUN_004a36e0(0x01C73654,pfVar4,0x41000000,0x42c80000,0x40800000,3);
           core_fire_cpp_FUN_0049cca0(pfVar4);
-          param_1[2].previous_transform_state.position.y = 0.0;
+          param_1[2].previous_transform_state.position.x = 0.0;
         }
         else if (iVar5 == 3) {
           iVar5 = 0;
@@ -92,7 +92,7 @@ uint core_fire_cpp_FUN_0049d090(CDemonActor *param_1)
             iVar5 = iVar5 + 1;
             core_fire_cpp_FUN_004a3f20(0x01C73654,pfVar4,0);
           } while (iVar5 < 0x10);
-          param_1[2].previous_transform_state.position.y = 0.0;
+          param_1[2].previous_transform_state.position.x = 0.0;
         }
       }
       uVar2 = *(uint *)param_1->actor_name;
@@ -134,11 +134,11 @@ uint core_fire_cpp_FUN_0049d090(CDemonActor *param_1)
       core_fire_cpp_FUN_004a36e0
                 (0x01C73654,&param_1[1].location.position.z,0x41800000,0x42c80000,0x40800000,0);
       uVar2 = sound_sndmain_cpp_killSfx_FUN_00556be0
-                        ((uint)param_1[2].previous_transform_state.orientation.vec.x);
+                        ((uint)param_1[2].previous_transform_state.position.z);
       break;
     case 1:
       pfVar4 = &param_1[1].location.position.z;
-      core_fire_cpp_FUN_004a3f70(0x01C73654,pfVar4,1,0);
+      core_fire_cpp_CFireEffect_createRing_FUN_004a3f70(0x01C73654,pfVar4,1,0);
       uVar2 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
                         (0x02CF5680,param_1,"wp_bindevil.wav",(CVector3f *)pfVar4);
       return uVar2;

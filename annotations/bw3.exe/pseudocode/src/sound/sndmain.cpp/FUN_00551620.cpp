@@ -68,7 +68,8 @@ void sound_sndmain_cpp_FUN_00551620(char *param_1)
   }
   engine_dosio_cpp_makePath_FUN_00465e80(local_358,(char *)0x0,(char *)0x0,local_158,&DAT_005d2549);
   unkafter_turret_cpp_CInStreamFile_ctor_FUN_005738c0(&local_58);
-  iVar6 = support_trstream_cpp_FUN_00573fc0(&local_58,"sound",local_358,1);
+  iVar6 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0
+                    (&local_58,"sound",local_358,1);
   if (iVar6 != 0) {
     local_20 = param_1 + 0x11c;
     local_28 = param_1 + 0x118;

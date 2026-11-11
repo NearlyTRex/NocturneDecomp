@@ -16,13 +16,13 @@ void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_0049a480(CMuzzleFlash *this_p
   float local_10;
   float local_c;
   
-  if (*(int *)this_ptr != 2) {
+  if (this_ptr->frames_remaining != 2) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
-            (DAT_005f2afc,(CVector3f *)&this_ptr->field_0x4);
+            (DAT_005f2afc,&this_ptr->position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
-            (DAT_005f2afc,(CVector3f *)&this_ptr->field_0x10,(CVector3f *)0x0);
+            (DAT_005f2afc,&this_ptr->rotation,(CVector3f *)0x0);
   local_28.z = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.0,6.2831855);
   local_28.x = 0.0;
   local_28.y = 0.0;

@@ -17,17 +17,13 @@ float FUN_00517ce0(undefined4 param_1,undefined4 param_2,float param_3,int param
 // Address: 00517d50
 undefined4 FUN_00517d50(int param_1);
 
-// Original: unkafter_prye.cpp_FUN_00524170
-// Address: 00524170
-void __cdecl FUN_00524170(CStranger *this_ptr,float delta_time,int is_weapon_active);
-
 // Original: unkafter_prye.cpp_FUN_00524800
 // Address: 00524800
 void FUN_00524800(int param_1);
 
 // Original: unkafter_prye.cpp_FUN_00524940
 // Address: 00524940
-void FUN_00524940(CCharacter *param_1,float param_2);
+void FUN_00524940(CHero *param_1,float param_2);
 
 // Original: unkafter_prye.cpp_FUN_00525930
 // Address: 00525930

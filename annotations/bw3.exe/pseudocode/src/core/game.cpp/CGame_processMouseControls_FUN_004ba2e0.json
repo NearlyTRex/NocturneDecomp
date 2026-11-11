@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 173,
-    "complexity_score": 117,
+    "complexity_score": 102,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 11,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 52,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 225
@@ -297,16 +296,8 @@
       "line": 41,
       "match": "DAT_01c6cef0",
       "severity": "mild",
-      "text": "if ((&DAT_01c6cef0)[*(int *)&this_ptr->field_0x34] == '\\0') {",
+      "text": "if ((&DAT_01c6cef0)[this_ptr->key_strafe] == '\\0') {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "if ((&DAT_01c6cef0)[*(int *)&this_ptr->field_0x34] == '\\0') {",
-      "type": "unnamed_field"
     }
   ]
 }

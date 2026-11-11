@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint support_codec_cpp_FUN_004416e0(int param_1,byte param_2)
+; uint support_codec_cpp_FUN_004416e0(CCheesyCipher *param_1,byte param_2)
 ;
 ;
 ; XREF[1]:
@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
-;   support_codec.cpp_FUN_004417d0
+;   support_codec.cpp_CCheesyCipher_advanceKey_FUN_004417d0
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
         ;   Label: support_codec.cpp_FUN_004416e0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004416e1
     PUSH EBX                            ; 004416e5
-    CALL support_codec.cpp_FUN_004417d0 ; 004416e6
-        ;   XREF to: 004417d0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_004417d0()
+    CALL support_codec.cpp_CCheesyCipher_advanceKey_FUN_004417d0 ; 004416e6
+        ;   XREF to: 004417d0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CCheesyCipher_advanceKey_FUN_004417d0(CCheesyCipher * this_ptr)
     MOV EAX,dword ptr [EBX + 0x4]       ; 004416eb
     ADD ESP,0x4                         ; 004416ee
     TEST EAX,EAX                        ; 004416f1

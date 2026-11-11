@@ -17,6 +17,14 @@ undefined4 * __cdecl ::_vec_delete(int param_1,undefined4 param_2);
 // Address: 005a30d7
 int __cdecl ::_arrinit(int param_1,uint param_2,int param_3);
 
+// Original: crt_memory.c_malloc_FUN_005a3650
+// Address: 005a3650
+void * __cdecl malloc(ulong size);
+
+// Original: crt_memory.c_operator_new_FUN_005a3cb2
+// Address: 005a3cb2
+void * operator::new(ulong param_1);
+
 // Original: crt_memory.c___arrfini_FUN_005a3de6
 // Address: 005a3de6
 undefined4 __cdecl ::_arrfini(undefined4 param_1,undefined4 param_2,undefined4 param_3);
@@ -24,6 +32,14 @@ undefined4 __cdecl ::_arrfini(undefined4 param_1,undefined4 param_2,undefined4 p
 // Original: crt_memory.c_realloc_FUN_005a3e50
 // Address: 005a3e50
 void * __cdecl realloc(void *ptr,ulong new_size);
+
+// Original: crt_memory.c_operator_new_array_FUN_005a40df
+// Address: 005a40df
+void operator::new_array(undefined4 param_1);
+
+// Original: crt_memory.c_calloc_FUN_005a4b20
+// Address: 005a4b20
+void calloc(int param_1,int param_2);
 
 // Original: crt_memory.c___vec_new_FUN_005a5584
 // Address: 005a5584

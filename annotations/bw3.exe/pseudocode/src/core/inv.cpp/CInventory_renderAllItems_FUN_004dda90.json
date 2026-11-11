@@ -2,21 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 911,
-    "complexity_score": 663,
+    "complexity_score": 624,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 288,
-    "suspect_count": 35,
+    "pseudocode_lines": 289,
+    "suspect_count": 31,
     "suspect_types": [
       "extra_output",
       "raw_address_constant",
+      "raw_address_pointer_store",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1199
+    "total_lines": 1200
   },
   "cross_references": [
     {
@@ -268,19 +268,19 @@
     },
     {
       "addr": "01d1a09c",
-      "name": "g_CFieldNotesInstance.field64_0x40",
+      "name": "g_CFieldNotesInstance.is_displayed",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d213ec",
-      "name": "g_CGameInstance.field176_0xe0",
+      "name": "g_CGameInstance.show_hero_numbers",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21558",
-      "name": "g_CGameInstance.field540_0x24c",
+      "name": "g_CGameInstance.letterbox_mode",
       "type": "undefined4",
       "value": null
     },
@@ -662,20 +662,12 @@
       "type": "extra_output"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x24c",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x24c != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CFieldNotesPtr->field_0x40 != 0) {",
-      "type": "unnamed_field"
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 51,
+      "match": "*(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04",
+      "severity": "moderate",
+      "text": "if (this_ptr->owner != *(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04)) {",
+      "type": "raw_address_pointer_store"
     },
     {
       "description": "Undefined global data reference",
@@ -690,20 +682,20 @@
       "line": 66,
       "match": "DAT_005fba1c",
       "severity": "mild",
-      "text": "if ((DAT_005fba1c < 0x180) && (*(int *)(this_ptr + 0x454) == 0)) {",
+      "text": "if ((DAT_005fba1c < 0x180) && (this_ptr->render_mode_flag == 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 75,
       "match": "DAT_005fba1c",
       "severity": "mild",
-      "text": "if ((DAT_005fba1c < 0x180) && (*(int *)(this_ptr + 0x454) == 0)) {",
+      "text": "if ((DAT_005fba1c < 0x180) && (this_ptr->render_mode_flag == 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 88,
       "match": "DAT_005c661d",
       "severity": "mild",
       "text": "pcVar7 = &DAT_005c661d;",
@@ -711,7 +703,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 92,
       "match": "DAT_005c6617",
       "severity": "mild",
       "text": "_sprintf(local_164,&DAT_005c6617);",
@@ -719,7 +711,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
+      "line": 95,
       "match": "DAT_005c661a",
       "severity": "mild",
       "text": "_sprintf(local_164,&DAT_005c661a);",
@@ -727,7 +719,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 105,
+      "line": 106,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "(local_44,local_164,(DAT_005fba18 - iVar5) - iVar2,(DAT_005fba1c - iVar5) - local_14,",
@@ -735,7 +727,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 105,
+      "line": 106,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "(local_44,local_164,(DAT_005fba18 - iVar5) - iVar2,(DAT_005fba1c - iVar5) - local_14,",
@@ -743,7 +735,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 125,
+      "line": 126,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "iVar3 = (DAT_005fba1c - iVar3) + iVar5;",
@@ -751,7 +743,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 126,
+      "line": 127,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "local_20 = (DAT_005fba18 - iVar4) + iVar5;",
@@ -759,15 +751,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 144,
+      "line": 145,
       "match": "DAT_005fba1c",
       "severity": "mild",
-      "text": "if ((DAT_005fba1c < 0x180) && (*(int *)(this_ptr + 0x454) == 0)) {",
+      "text": "if ((DAT_005fba1c < 0x180) && (this_ptr->render_mode_flag == 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 156,
+      "line": 157,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "(local_44,local_364,(DAT_005fba18 - iVar5) - iVar2,",
@@ -775,7 +767,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 157,
+      "line": 158,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "(DAT_005fba1c - iVar5) - (int)local_60,0xf8);",
@@ -783,7 +775,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 167,
+      "line": 168,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "iVar3 = (DAT_005fba1c - iVar3) + iVar5;",
@@ -791,7 +783,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 168,
+      "line": 169,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "local_30 = (DAT_005fba18 - iVar4) + iVar5;",
@@ -799,7 +791,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 201,
+      "line": 202,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if (DAT_005fba1c < 0x180) {",
@@ -807,7 +799,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 207,
+      "line": 208,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "iVar4 = (DAT_005fba18 + -4) - local_5c;",
@@ -815,7 +807,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 221,
+      "line": 222,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "(&CAlphaBitmap_01d708b8,iVar4,local_64 + 4,0,local_64,extraout_ECX);",
@@ -823,23 +815,15 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 226,
+      "line": 227,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "(&CAlphaBitmap_01d70890,iVar4,local_64 + 4,0,local_64,extraout_EDX);",
       "type": "extra_output"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 228,
-      "match": "field_0xe0",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0xe0 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 234,
+      "line": 235,
       "match": "DAT_005c6640",
       "severity": "mild",
       "text": "_sprintf(local_464,&DAT_005c6640);",
@@ -847,7 +831,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 237,
+      "line": 238,
       "match": "DAT_005c6643",
       "severity": "mild",
       "text": "_sprintf(local_464,&DAT_005c6643);",
@@ -855,7 +839,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 240,
+      "line": 241,
       "match": "DAT_005c6645",
       "severity": "mild",
       "text": "_sprintf(local_464,&DAT_005c6645);",
@@ -863,7 +847,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 254,
+      "line": 255,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if (DAT_005fba1c < 0x180) {",
@@ -871,31 +855,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 260,
+      "line": 261,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "iVar3 = (DAT_005fba1c + -4) - local_2c * iVar3;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 271,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "if (((*(int *)(this_ptr + 0xc) != 0) && (*(int *)&g_CFieldNotesPtr->field_0x40 == 0)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 272,
-      "match": "field_0x24c",
-      "severity": "mild",
-      "text": "(*(int *)&g_CGamePtr->field_0x24c == 0)) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Raw hex address 0x1d5be88 assigned to bare local `iVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 129,
+      "line": 130,
       "match": "0x1d5be88",
       "severity": "moderate",
       "text": "iVar5 = 0x1d5be88;",
@@ -903,7 +871,7 @@
     },
     {
       "description": "Raw hex address 0x1d5c888 assigned to bare local `iVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 171,
+      "line": 172,
       "match": "0x1d5c888",
       "severity": "moderate",
       "text": "iVar5 = 0x1d5c888;",
@@ -911,7 +879,7 @@
     },
     {
       "description": "Raw hex address 0x1d5d288 assigned to bare local `iVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 262,
+      "line": 263,
       "match": "0x1d5d288",
       "severity": "moderate",
       "text": "iVar5 = 0x1d5d288;",

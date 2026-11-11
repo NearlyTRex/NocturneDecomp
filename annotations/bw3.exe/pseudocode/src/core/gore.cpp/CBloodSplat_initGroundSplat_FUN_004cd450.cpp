@@ -13,11 +13,11 @@ void __cdecl core_gore_cpp_CBloodSplat_initGroundSplat_FUN_004cd450(CBloodSplat 
 {
   int iVar1;
   
-  *(uint *)&this_ptr->field_0x14 = 0;
-  if ((CVector3f *)&this_ptr->field_0x4 != position) {
-    *(float *)&this_ptr->field_0x4 = position->x;
-    *(float *)&this_ptr->field_0x8 = position->y;
-    *(float *)&this_ptr->field_0xc = position->z;
+  this_ptr->is_wall_splat = 0;
+  if (&this_ptr->position != position) {
+    (this_ptr->position).x = position->x;
+    (this_ptr->position).y = position->y;
+    (this_ptr->position).z = position->z;
   }
   iVar1 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,3);
   this_ptr->texture_variant = iVar1;
@@ -28,12 +28,11 @@ void __cdecl core_gore_cpp_CBloodSplat_initGroundSplat_FUN_004cd450(CBloodSplat 
   (this_ptr->normal_fixed).x = 0;
   (this_ptr->normal_fixed).y = 0xffff;
   (this_ptr->normal_fixed).z = 0;
-  *(EBloodType *)&this_ptr->field_0x18 = blood_type;
+  this_ptr->blood_type = blood_type;
   this_ptr->expired = 0;
-  *(uint *)&this_ptr->field_0x24 = 0;
-  *(uint *)&this_ptr->field_0x20 = *(uint *)&this_ptr->field_0x24;
-  *(uint *)&this_ptr->field_0x1c = *(uint *)&this_ptr->field_0x20;
-  *(uint *)&this_ptr->field_0x10 =
-       *(uint *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x2c);
+  (this_ptr->rotation).z = 0.0;
+  (this_ptr->rotation).y = (this_ptr->rotation).z;
+  (this_ptr->rotation).x = (this_ptr->rotation).y;
+  this_ptr->area_id = *(int *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x2c);
   return;
 }

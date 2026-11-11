@@ -13,30 +13,29 @@
 void __cdecl core_constrct_cpp_CConstruct_setup_FUN_004425f0(CConstruct *this_ptr)
 
 {
-  byte *this_ptr_00;
+  CDeformableModelInstance *this_ptr_00;
   uint uVar1;
   int iVar2;
   CSkeleton *this_ptr_01;
   CDeformableModel *this_ptr_02;
-  float10 fVar3;
+  int iVar3;
+  float10 fVar4;
   
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
                     (0x01C6E360,"COMBATMODEHARD");
   if (iVar2 == 0) {
-    *(uint *)&this_ptr->field_0xd858 = 0x3f400000;
+    this_ptr->difficulty_speed_scale = 0.75;
   }
   else {
-    *(uint *)&this_ptr->field_0xd858 = 0x3f800000;
+    this_ptr->difficulty_speed_scale = 1.0;
   }
-  core_enemy_cpp_CEnemy_setup_FUN_00489110((CEnemy *)this_ptr);
-  this_ptr_00 = &this_ptr->field_0x158;
-  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0
-            ((CDeformableModelInstance *)this_ptr_00);
-  fVar3 = (float10)*(float *)&this_ptr->field_0x2538;
+  core_enemy_cpp_CEnemy_setup_FUN_00489110(&this_ptr->base);
+  this_ptr_00 = &(this_ptr->base).base.model;
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(this_ptr_00);
+  fVar4 = (float10)(this_ptr->base).base.hit_points;
   round();
-  *(int *)&this_ptr->field_0xd17c = (int)ROUND(fVar3);
-  this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
-                          ((CDeformableModelInstance *)this_ptr_00);
+  this_ptr->initial_hit_points = (int)ROUND(fVar4);
+  this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(this_ptr_00);
   DAT_007f8e64 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
                            (this_ptr_01,"Bip01 Head",1);
   DAT_007f8e68 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Dummy05",1)
@@ -65,90 +64,90 @@ void __cdecl core_constrct_cpp_CConstruct_setup_FUN_004425f0(CConstruct *this_pt
                            (this_ptr_01,"Bip01 Spine",1);
   _DAT_007f8e98 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine1",1);
-  this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
-                          ((CDeformableModelInstance *)this_ptr_00);
+  this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(this_ptr_00);
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
                     (this_ptr_02,&DAT_005b9506,1);
-  *(int *)&this_ptr->field_0xd0b8 = iVar2;
+  this_ptr->part_indices[0] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
                     (this_ptr_02,"torso",1);
-  *(int *)&this_ptr->field_0xd0bc = iVar2;
+  this_ptr->part_indices[1] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
                     (this_ptr_02,"lforearm",1);
-  *(int *)&this_ptr->field_0xd0c0 = iVar2;
+  this_ptr->part_indices[2] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
                     (this_ptr_02,&DAT_005b951a,1);
-  *(int *)&this_ptr->field_0xd0c4 = iVar2;
+  this_ptr->part_indices[3] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
                     (this_ptr_02,"rforearm",1);
-  *(int *)&this_ptr->field_0xd0c8 = iVar2;
+  this_ptr->part_indices[4] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
                     (this_ptr_02,&DAT_005b9528,1);
-  *(int *)&this_ptr->field_0xd0cc = iVar2;
+  this_ptr->part_indices[5] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
                     (this_ptr_02,"waist",1);
-  *(int *)&this_ptr->field_0xd0d0 = iVar2;
+  this_ptr->part_indices[6] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
                     (this_ptr_02,"lthigh",1);
-  *(int *)&this_ptr->field_0xd0d8 = iVar2;
+  this_ptr->part_indices[8] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
                     (this_ptr_02,"lshin",1);
-  *(int *)&this_ptr->field_0xd0dc = iVar2;
+  this_ptr->part_indices[9] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
                     (this_ptr_02,"rthigh",1);
-  *(int *)&this_ptr->field_0xd0e0 = iVar2;
-  iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
+  this_ptr->part_indices[10] = iVar2;
+  iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0054a310
                     (this_ptr_02,"rshin",1);
-  *(uint *)&this_ptr->field_0xd0f0 = 0;
-  *(int *)&this_ptr->field_0xd0e4 = iVar2;
-  if (*(int *)&this_ptr->field_0x3268 == 0) {
-    uVar1 = *(uint *)&this_ptr->field_0xd84c;
+  this_ptr->sfx_handles[0] = 0;
+  iVar2 = (this_ptr->base).base.been_damaged;
+  this_ptr->part_indices[0xb] = iVar3;
+  if (iVar2 == 0) {
+    uVar1 = this_ptr->construct_variant;
     if (uVar1 == 0) {
-      *(uint *)&this_ptr->field_0xce5c = 0x41200000;
-      *(uint *)&this_ptr->field_0xce60 = 0x41200000;
-      *(uint *)&this_ptr->field_0x2538 = 0x42340000;
-      fVar3 = (float10)*(float *)&this_ptr->field_0x2538;
+      (this_ptr->base).attack_damage = 10.0;
+      (this_ptr->base).pain_threshold = 10.0;
+      (this_ptr->base).base.hit_points = 45.0;
+      fVar4 = (float10)(this_ptr->base).base.hit_points;
       round();
-      *(int *)&this_ptr->field_0xd17c = (int)ROUND(fVar3);
+      this_ptr->initial_hit_points = (int)ROUND(fVar4);
       return;
     }
     if (1 < uVar1) {
       if (uVar1 == 2) {
-        *(uint *)&this_ptr->field_0xce5c = 0x41a00000;
-        *(uint *)&this_ptr->field_0xce60 = 0x41200000;
-        *(uint *)&this_ptr->field_0x2538 = 0x42820000;
-        *(uint *)&this_ptr->field_0xd85c = 2;
-        fVar3 = (float10)*(float *)&this_ptr->field_0x2538;
+        (this_ptr->base).attack_damage = 20.0;
+        (this_ptr->base).pain_threshold = 10.0;
+        (this_ptr->base).base.hit_points = 65.0;
+        this_ptr->trail_texture_type = 2;
+        fVar4 = (float10)(this_ptr->base).base.hit_points;
         round();
-        *(int *)&this_ptr->field_0xd17c = (int)ROUND(fVar3);
+        this_ptr->initial_hit_points = (int)ROUND(fVar4);
         return;
       }
-      fVar3 = (float10)*(float *)&this_ptr->field_0x2538;
+      fVar4 = (float10)(this_ptr->base).base.hit_points;
       round();
-      *(int *)&this_ptr->field_0xd17c = (int)ROUND(fVar3);
+      this_ptr->initial_hit_points = (int)ROUND(fVar4);
       return;
     }
-    *(uint *)&this_ptr->field_0xce5c = 0x41700000;
-    *(uint *)&this_ptr->field_0xce60 = 0x41200000;
-    *(uint *)&this_ptr->field_0xd85c = 3;
-    *(uint *)&this_ptr->field_0x2538 = 0x425c0000;
-    fVar3 = (float10)*(float *)&this_ptr->field_0x2538;
+    (this_ptr->base).attack_damage = 15.0;
+    (this_ptr->base).pain_threshold = 10.0;
+    this_ptr->trail_texture_type = 3;
+    (this_ptr->base).base.hit_points = 55.0;
+    fVar4 = (float10)(this_ptr->base).base.hit_points;
     round();
-    *(int *)&this_ptr->field_0xd17c = (int)ROUND(fVar3);
+    this_ptr->initial_hit_points = (int)ROUND(fVar4);
     return;
   }
-  uVar1 = *(uint *)&this_ptr->field_0xd84c;
+  uVar1 = this_ptr->construct_variant;
   if (uVar1 == 0) {
-    *(uint *)&this_ptr->field_0xd17c = 0x2d;
+    this_ptr->initial_hit_points = 0x2d;
     return;
   }
   if (1 < uVar1) {
     if (uVar1 == 2) {
-      *(uint *)&this_ptr->field_0xd17c = 0x41;
+      this_ptr->initial_hit_points = 0x41;
       return;
     }
     return;
   }
-  *(uint *)&this_ptr->field_0xd17c = 0x37;
+  this_ptr->initial_hit_points = 0x37;
   return;
 }

@@ -22,7 +22,7 @@ CVector3f * __cdecl core_exorcism_cpp_CExorcism_getMuzzlePoint_FUN_0048b5d0(CExo
   float afStack_10 [2];
   
   bVar2 = 0;
-  core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_0057b820((CWeapon *)this_ptr,in_stack_ffffffd4);
+  core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_0057b820(&this_ptr->base,in_stack_ffffffd4);
   pCStack_14 = in_stack_ffffffd4;
   afStack_10[(uint)bVar2 * -2] = *(float *)(&stack0xffffffd8 + (uint)bVar2 * -8);
   afStack_10[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =

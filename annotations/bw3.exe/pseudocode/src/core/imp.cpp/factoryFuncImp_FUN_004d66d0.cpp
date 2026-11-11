@@ -11,7 +11,7 @@ void core_imp_cpp_factoryFuncImp_FUN_004d66d0(void)
 {
   CImp *this_ptr;
   
-  this_ptr = (CImp *)debugAllocTracked1(0xd08c);
+  this_ptr = (CImp *)operator_new(0xd08c);
   if (this_ptr == (CImp *)0x0) {
     return;
   }

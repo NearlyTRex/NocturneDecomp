@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 138,
+    "complexity_score": 108,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 68,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "alloc_magic_size",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -81,7 +79,7 @@
     {
       "addr": "005a3cb2",
       "is_variadic": false,
-      "name": "crt_unknown.c_debugAllocTracked1_FUN_005a3cb2"
+      "name": "crt_memory.c_operator_new_FUN_005a3cb2"
     },
     {
       "addr": "0047ce80",
@@ -255,14 +253,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "*(uint *)&actor->field_0x158 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 40,
       "match": "field-by-field struct copy",
@@ -277,14 +267,6 @@
       "severity": "moderate",
       "text": "(pUVar3->vec).x = (pCVar2->orient).vec.x;",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Allocation size hardcodes 0x17c == sizeof(CHeroPlaceholder). Replace the magic with sizeof(CHeroPlaceholder) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 34,
-      "match": "(CHeroPlaceholder*) alloc stride 0x17c",
-      "severity": "moderate",
-      "text": "(CHeroPlaceholder *)debugAllocTracked1(0x17c)",
-      "type": "alloc_magic_size"
     }
   ]
 }

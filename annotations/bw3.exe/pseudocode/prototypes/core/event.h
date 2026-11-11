@@ -79,7 +79,7 @@ int __cdecl CEventList::executeCommandString(CEventList *this_ptr,char *command_
 
 // Original: core_event.cpp_FUN_0048c2e0
 // Address: 0048c2e0
-int FUN_0048c2e0(CEventList *param_1,CEventList *param_2);
+int FUN_0048c2e0(CEventList *param_1,char *param_2);
 
 // Original: core_event.cpp_CEventList_resolveVariable_FUN_00491a10
 // Address: 00491a10
@@ -115,7 +115,7 @@ int __cdecl CEventList::evaluateLogicalExpr(CEventList *this_ptr,char *expressio
 
 // Original: core_event.cpp_FUN_004946f0
 // Address: 004946f0
-void FUN_004946f0(CEventList *param_1,CEventList *param_2,int param_3);
+void FUN_004946f0(CEventList *param_1,char *param_2,int param_3);
 
 // Original: core_event.cpp_FUN_00494880
 // Address: 00494880
@@ -123,7 +123,7 @@ void FUN_00494880(int param_1);
 
 // Original: core_event.cpp_FUN_004948e0
 // Address: 004948e0
-void FUN_004948e0(CEventList *param_1,CEventList *param_2,int param_3);
+void FUN_004948e0(CEventList *param_1,char *param_2,int param_3);
 
 // Original: core_event.cpp_CEventList_setTimerEvent_FUN_00494a70
 // Address: 00494a70

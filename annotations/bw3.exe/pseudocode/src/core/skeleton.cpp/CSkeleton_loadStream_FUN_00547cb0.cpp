@@ -15,7 +15,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00547cb0(CSkeleton *this
   int iVar2;
   CQuaternion4f *pCVar3;
   float *pfVar4;
-  SBone *pSVar5;
+  int *piVar5;
   float *pfVar6;
   int iVar7;
   int local_24;
@@ -58,11 +58,11 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00547cb0(CSkeleton *this
   } while (iVar1 != 10);
   iVar1 = 0;
   if (0 < this_ptr->bone_count) {
-    pSVar5 = this_ptr->bone_list + 0x20;
+    piVar5 = &this_ptr->bone_list[0].parent_index;
     do {
-      _fscanf(file_handle,"\"%[^\"]\",%d\n",this_ptr->bone_list + iVar1 * 0x24,pSVar5);
+      _fscanf(file_handle,"\"%[^\"]\",%d\n",this_ptr->bone_list + iVar1,piVar5);
       iVar1 = iVar1 + 1;
-      pSVar5 = pSVar5 + 0x24;
+      piVar5 = piVar5 + 9;
     } while (iVar1 < this_ptr->bone_count);
   }
   do {
@@ -98,7 +98,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00547cb0(CSkeleton *this
   if (0 < this_ptr->frame_count) {
     iVar7 = 0;
     do {
-      iVar2 = *(int *)&this_ptr->field_0x1ec94 + iVar7;
+      iVar2 = (int)&this_ptr->frame_positions_1->x + iVar7;
       _fscanf(file_handle,"%f,%f,%f\n",iVar2,iVar2 + 4,iVar2 + 8);
       iVar1 = iVar1 + 1;
       iVar7 = iVar7 + 0xc;
@@ -112,18 +112,18 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00547cb0(CSkeleton *this
   if (0 < this_ptr->frame_count) {
     iVar7 = 0;
     do {
-      iVar2 = *(int *)&this_ptr->field_0x1ec98 + iVar7;
+      iVar2 = (int)&this_ptr->frame_positions_2->x + iVar7;
       _fscanf(file_handle,"%f,%f,%f\n",iVar2,iVar2 + 4,iVar2 + 8);
       iVar1 = iVar1 + 1;
       iVar7 = iVar7 + 0xc;
     } while (iVar1 < this_ptr->frame_count);
   }
-  if (((byte)file_handle[0xc] & 0x20) != 0) {
+  if ((file_handle->_flag & 0x20) != 0) {
     _DAT_01d71de0 = "..\\core\\skeleton.cpp";
     _DAT_01d71de4 = 0x150;
     core_main_c_FUN_004e4330("CSkeleton::loadStream - error reading file.");
   }
-  core_motion_cpp_FUN_004fb280((CMotionList *)this_ptr,file_handle);
+  core_motion_cpp_FUN_004fb280(&this_ptr->motion_list,file_handle);
   if (2 < local_24) {
     do {
       iVar1 = _fgetc(file_handle);
@@ -141,7 +141,7 @@ LAB_00547ffe:
       } while (iVar1 < this_ptr->bone_count);
     }
   }
-  if (((byte)file_handle[0xc] & 0x20) != 0) {
+  if ((file_handle->_flag & 0x20) != 0) {
     _DAT_01d71de0 = "..\\core\\skeleton.cpp";
     _DAT_01d71de4 = 0x16b;
     core_main_c_FUN_004e4330("CSkeleton::loadStream - error reading file.");

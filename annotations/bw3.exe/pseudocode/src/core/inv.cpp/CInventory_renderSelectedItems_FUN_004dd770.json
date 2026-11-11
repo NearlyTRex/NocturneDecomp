@@ -2,20 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 403,
+    "complexity_score": 401,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 93,
+    "pseudocode_lines": 91,
     "suspect_count": 29,
     "suspect_types": [
       "extra_output",
+      "raw_address_pointer_store",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 371
+    "total_lines": 369
   },
   "cross_references": [
     {
@@ -109,7 +109,7 @@
     },
     {
       "addr": "01d21558",
-      "name": "g_CGameInstance.field540_0x24c",
+      "name": "g_CGameInstance.letterbox_mode",
       "type": "undefined4",
       "value": null
     },
@@ -310,12 +310,12 @@
       "type": "extra_output"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x24c",
-      "severity": "mild",
-      "text": "if ((*(int *)&g_CGamePtr->field_0x24c == 0) &&",
-      "type": "unnamed_field"
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 21,
+      "match": "*(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04",
+      "severity": "moderate",
+      "text": "(this_ptr->owner == *(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04))) {",
+      "type": "raw_address_pointer_store"
     },
     {
       "description": "Undefined global data reference",
@@ -330,7 +330,7 @@
       "line": 30,
       "match": "DAT_005fba1c",
       "severity": "mild",
-      "text": "if ((DAT_005fba1c < 0x180) && (*(int *)(this_ptr + 0x454) == 0)) {",
+      "text": "if ((DAT_005fba1c < 0x180) && (this_ptr->render_mode_flag == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -423,15 +423,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 64,
       "match": "DAT_005fba1c",
       "severity": "mild",
-      "text": "if ((DAT_005fba1c < 0x180) && (*(int *)(this_ptr + 0x454) == 0)) {",
+      "text": "if ((DAT_005fba1c < 0x180) && (this_ptr->render_mode_flag == 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 71,
+      "line": 70,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "iVar5 = DAT_005fba18 - iVar7;",
@@ -439,7 +439,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 71,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "iVar6 = DAT_005fba1c - iVar7;",
@@ -447,7 +447,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 78,
+      "line": 77,
       "match": "extraout_ECX_00",
       "severity": "moderate",
       "text": "iVar4 = extraout_ECX_00;",
@@ -455,7 +455,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 82,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "(DAT_005fba18 - iVar4,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
@@ -463,7 +463,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 82,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "(DAT_005fba18 - iVar4,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
@@ -471,7 +471,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 82,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "(DAT_005fba18 - iVar4,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
@@ -479,7 +479,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 82,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "(DAT_005fba18 - iVar4,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
@@ -487,7 +487,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 87,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "(DAT_005fba18 - iVar3,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
@@ -495,7 +495,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 87,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "(DAT_005fba18 - iVar3,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
@@ -503,7 +503,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 87,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "(DAT_005fba18 - iVar3,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",
@@ -511,7 +511,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 87,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "(DAT_005fba18 - iVar3,DAT_005fba1c - iVar4,DAT_005fba18 + -1,DAT_005fba1c + -1,",

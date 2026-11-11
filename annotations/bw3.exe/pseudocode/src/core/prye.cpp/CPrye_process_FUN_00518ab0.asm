@@ -16,7 +16,7 @@
 ;   undefined4 DAT_005e3504
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field564_0x264
+;   undefined4 g_CGameInstance.goggles_active
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; Called Functions:
@@ -91,7 +91,7 @@ section .text
     ADD ESP,0x8                         ; 00518b55
     MOV EAX,[0x005fe9dc]                ; 00518b58 | g_CGamePtr
         ;   Label: LAB_00518b58
-    CMP dword ptr [EAX + 0x264],0x0     ; 00518b5d | g_CGameInstance.field564_0x264
+    CMP dword ptr [EAX + 0x264],0x0     ; 00518b5d | g_CGameInstance.goggles_active
     SETNZ AL                            ; 00518b64
     MOV ECX,dword ptr [EBX + 0x20cf8]   ; 00518b67
     MOVZX ESI,AL                        ; 00518b6d

@@ -12,13 +12,12 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00507fd0(CNetGame *th
 
 {
   int iVar1;
-  uint *puVar2;
-  uint *puVar3;
+  SPlayerInput *pSVar2;
+  int *piVar3;
   byte bVar4;
-  uint local_50;
-  byte local_4c;
-  uint local_4b;
-  uint local_47 [13];
+  SNetPacketHeader local_50;
+  int local_4b;
+  int local_47 [13];
   
   bVar4 = 0;
   if (this_ptr->connection_type != CONNECTION_CLIENT) {
@@ -41,18 +40,17 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00507fd0(CNetGame *th
     _DAT_01d71de4 = 0xa2c;
     core_main_c_FUN_004e4330("CNetGame::sendSimFrameAck - I'm not in player list");
   }
-  local_50 = 0x3d;
-  local_4c = 0x10;
-  local_4b = *(uint *)&this_ptr->players[this_ptr->local_player_index].field_0x48;
-  puVar2 = (uint *)&this_ptr->players[this_ptr->local_player_index].field_0x4c;
-  puVar3 = local_47;
+  local_50.size = 0x3d;
+  local_50.type = PACKET_PLAYER_INPUT;
+  local_4b = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
+  pSVar2 = &this_ptr->players[this_ptr->local_player_index].player_input;
+  piVar3 = local_47;
   for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    *piVar3 = (pSVar2->action_state).walk;
+    pSVar2 = (SPlayerInput *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);
+    piVar3 = piVar3 + (uint)bVar4 * -2 + 1;
   }
-  core_netgame_cpp_CNetGame_send_FUN_00505870
-            (this_ptr,this_ptr->server_player_index,(SNetPacketHeader *)&local_50);
+  core_netgame_cpp_CNetGame_send_FUN_00505870(this_ptr,this_ptr->server_player_index,&local_50);
   _DAT_01da6488 = _DAT_01da6478;
   return;
 }

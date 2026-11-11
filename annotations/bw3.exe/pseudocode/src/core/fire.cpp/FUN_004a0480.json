@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 251,
+    "complexity_score": 186,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 46,
-    "suspect_count": 18,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_constant",
       "stack_ref",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 135
@@ -215,54 +214,6 @@
       "severity": "mild",
       "text": "*(int *)(param_1->actor_name + 4) = iVar1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "puVar4 = &g_CDemonSetPtr->cameras[iVar1].field_0x100;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x104",
-      "severity": "mild",
-      "text": "local_10 = *(uint *)&g_CDemonSetPtr->cameras[iVar1].field_0x104;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "local_c = *(uint *)&g_CDemonSetPtr->cameras[iVar1].field_0x108;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x10c",
-      "severity": "mild",
-      "text": "puVar4 = &g_CDemonSetPtr->cameras[iVar1].field_0x10c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "local_1c = *(uint *)&g_CDemonSetPtr->cameras[iVar1].field_0x110;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x114",
-      "severity": "mild",
-      "text": "local_18 = *(uint *)&g_CDemonSetPtr->cameras[iVar1].field_0x114;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

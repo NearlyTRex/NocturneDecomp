@@ -33,8 +33,8 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00505a30(CNetGame *this_ptr)
   
   if (this_ptr->connection_type != CONNECTION_NONE) {
     uStack_30 = DAT_0060728c;
-    *(uint *)&this_ptr->players[this_ptr->local_player_index].field_0x3c = 1;
-    *(uint *)&this_ptr->players[this_ptr->local_player_index].field_0x44 = 0;
+    this_ptr->players[this_ptr->local_player_index].local_sync_stage = 1;
+    this_ptr->players[this_ptr->local_player_index].ready_flag = 0;
     DAT_0060728c = 0;
     this_ptr->network_mode = NET_MODE_LOBBY;
     if (this_ptr->connection_type == CONNECTION_HOST) {
@@ -63,9 +63,9 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00505a30(CNetGame *this_ptr)
       iVar4 = 0x37;
       iStack_28 = 0;
       for (iStack_20 = 0; iStack_20 < g_CNetGamePtr->player_count; iStack_20 = iStack_20 + 1) {
-        pcStack_1c = &g_CNetGamePtr->players[0].field_0x0 + iStack_28;
+        pcStack_1c = g_CNetGamePtr->players[0].name + iStack_28;
         engine_2d_c_drawText_FUN_00401fe0(pcStack_1c,0,iVar4);
-        if (_DAT_02cfd89c == *(int *)(pcStack_1c + 0x1c)) {
+        if (_DAT_02cfd89c == ((SNetworkAddr *)(pcStack_1c + 0x1c))->ip_address) {
           pcVar6 = "(Local)";
           pcVar8 = acStack_130;
           do {
@@ -154,24 +154,24 @@ LAB_00505c5c:
       pCVar5 = this_ptr;
       if (0 < this_ptr->player_count) {
         do {
-          *(uint *)&pCVar5->players[0].field_0x48 = 0;
+          pCVar5->players[0].sim_frame_index = 0;
           iVar4 = iVar4 + 1;
-          pCVar5 = (CNetGame *)&pCVar5->players[0].field_0x60;
+          pCVar5 = (CNetGame *)&pCVar5->players[0].player_input.action_state.use_item;
         } while (iVar4 < this_ptr->player_count);
       }
       this_ptr->has_pending_sim_frame = 0;
       if (this_ptr->connection_type == CONNECTION_HOST) {
-        *(int *)&this_ptr->players[this_ptr->local_player_index].field_0x34 = _DAT_01da6484;
+        this_ptr->players[this_ptr->local_player_index].player_id = _DAT_01da6484;
         iVar4 = 0;
         bVar2 = true;
         pCVar5 = this_ptr;
         if (0 < this_ptr->player_count) {
           do {
-            if (*(int *)&pCVar5->players[0].field_0x44 == 0) {
+            if (pCVar5->players[0].ready_flag == 0) {
               bVar2 = false;
             }
-            if (_DAT_01da6484 != *(int *)&pCVar5->players[0].field_0x34) {
-              iStack_18 = _DAT_01da6478 - *(int *)&pCVar5->players[0].field_0x38;
+            if (_DAT_01da6484 != pCVar5->players[0].player_id) {
+              iStack_18 = _DAT_01da6478 - pCVar5->players[0].last_update_time;
               fStack_138 = (float)iStack_18 * (float)_DAT_005cac11;
               if (fStack_138 < 0.0) {
                 fStack_138 = 0.0;
@@ -185,7 +185,7 @@ LAB_00505c5c:
               bVar2 = false;
             }
             iVar4 = iVar4 + 1;
-            pCVar5 = (CNetGame *)&pCVar5->players[0].field_0x60;
+            pCVar5 = (CNetGame *)&pCVar5->players[0].player_input.action_state.use_item;
           } while (iVar4 < this_ptr->player_count);
         }
         if ((bVar2) && (1 < this_ptr->player_count)) {
@@ -244,7 +244,7 @@ LAB_00505c5c:
       }
       if ((this_ptr->connection_type == CONNECTION_CLIENT) && (DAT_00603454 != 0)) {
         iStack_18 = _DAT_01da6478 -
-                    *(int *)&this_ptr->players[this_ptr->local_player_index].field_0x40;
+                    this_ptr->players[this_ptr->local_player_index].state_change_time;
         fStack_134 = (float)iStack_18 * (float)_DAT_005cac11;
         if (fStack_134 < 0.0) {
           fStack_134 = 0.0;
@@ -260,8 +260,8 @@ LAB_00505c5c:
       if (iVar4 != 0) goto LAB_00505d65;
       iVar4 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x1c);
       if (iVar4 != 0) {
-        *(uint *)&this_ptr->players[this_ptr->local_player_index].field_0x44 =
-             (uint)(*(int *)&this_ptr->players[this_ptr->local_player_index].field_0x44 == 0);
+        this_ptr->players[this_ptr->local_player_index].ready_flag =
+             (uint)(this_ptr->players[this_ptr->local_player_index].ready_flag == 0);
         if (this_ptr->connection_type == CONNECTION_HOST) {
           core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00507370(this_ptr);
         }

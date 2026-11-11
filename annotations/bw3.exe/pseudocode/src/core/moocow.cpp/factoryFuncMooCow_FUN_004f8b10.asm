@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_moocow.cpp_CMooCow_ctor_FUN_004f8b40
-;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xcdf0                         ; 004f8b10
         ;   Label: core_moocow.cpp_factoryFuncMooCow_FUN_004f8b10
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 004f8b15
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004f8b15
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 004f8b1a
     TEST EAX,EAX                        ; 004f8b1d
     JNZ 0x004f8b22                      ; 004f8b1f

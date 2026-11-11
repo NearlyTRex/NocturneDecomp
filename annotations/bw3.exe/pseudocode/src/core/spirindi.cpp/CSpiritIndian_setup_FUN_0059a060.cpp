@@ -6,95 +6,97 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void __cdecl core_spirindi_cpp_CSpiritIndian_setup_FUN_0059a060(CSpiritIndian *this_ptr)
 
 {
-  byte *this_ptr_00;
-  byte *this_ptr_01;
-  char cVar1;
-  int iVar2;
+  UOrientationVector *pUVar1;
+  CLocation *position;
+  CDeformableModelInstance *this_ptr_00;
+  CMorph *this_ptr_01;
+  char cVar2;
+  CPryeMorph *pCVar3;
+  UOrientationVector *pUVar4;
   CMotionList *this_ptr_02;
-  char *pcVar3;
-  char *pcVar4;
+  char *pcVar5;
+  int iVar6;
   
-  core_npc_cpp_CNPC_setup_FUN_00509020((CNPC *)this_ptr);
-  if (*(int *)&this_ptr->field_0x27a8 != 0) {
-    *(uint *)&this_ptr->field_0xfc = 1;
+  core_npc_cpp_CNPC_setup_FUN_00509020(&this_ptr->base);
+  if ((this_ptr->base).base.is_spectral != 0) {
+    (this_ptr->base).base.base.is_transparent = 1;
   }
-  iVar2 = core_actor_cpp_createActorByName_FUN_0040c4f0("CPryeMorph");
-  *(int *)&this_ptr->field_0x34170 = iVar2;
+  pCVar3 = (CPryeMorph *)core_actor_cpp_createActorByName_FUN_0040c4f0("CPryeMorph");
+  this_ptr->morph_actor = pCVar3;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
-            ((CDeformableModelInstance *)(iVar2 + 0x158),"bwp3_prye_morph.dfm");
+            (&(pCVar3->base).base.model,"bwp3_prye_morph.dfm");
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0
-            ((CDeformableModelInstance *)(*(int *)&this_ptr->field_0x34170 + 0x158));
-  core_cloth_cpp_CClothList_load_FUN_0043f920((CClothList *)&this_ptr->field_0x33fa4);
+            (&(this_ptr->morph_actor->base).base.model);
+  core_cloth_cpp_CClothList_load_FUN_0043f920(&this_ptr->cloth_list);
+  pUVar1 = &(this_ptr->base).base.base.orient;
+  position = &(this_ptr->base).base.base.location;
   core_cloth_cpp_CClothList_setup_FUN_0043fbc0
-            ((CClothList *)&this_ptr->field_0x33fa4,(CVector3f *)&this_ptr->field_0x20,
-             (CVector3f *)&this_ptr->field_0x30,
-             (CDeformableModelInstance *)(*(int *)&this_ptr->field_0x34170 + 0x158));
+            (&this_ptr->cloth_list,&position->position,&pUVar1->vec,
+             &(this_ptr->morph_actor->base).base.model);
   core_cloth_cpp_CClothList_process_FUN_0043fc00
-            ((CClothList *)&this_ptr->field_0x2f08,(CVector3f *)&this_ptr->field_0x20,
-             (CVector3f *)&this_ptr->field_0x30,0.05,*(float *)&this_ptr->field_0x2504,
-             (CDeformableModelInstance *)(*(int *)&this_ptr->field_0x34170 + 0x158));
-  if (*(int *)&this_ptr->field_0x27a8 != 0) {
-    *(uint *)&this_ptr->field_0xfc = 1;
+            (&(this_ptr->base).base.cloth_list,&position->position,&pUVar1->vec,0.05,
+             (this_ptr->base).base.closest_distance_threshold,
+             &(this_ptr->morph_actor->base).base.model);
+  if ((this_ptr->base).base.is_spectral != 0) {
+    (this_ptr->base).base.base.is_transparent = 1;
   }
-  pcVar3 = "prye_morph";
-  pcVar4 = *(char **)&this_ptr->field_0x34170;
+  pcVar5 = "prye_morph";
+  pCVar3 = this_ptr->morph_actor;
   do {
-    cVar1 = *pcVar3;
-    *pcVar4 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
-    pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
-  } while (cVar1 != '\0');
-  iVar2 = *(int *)&this_ptr->field_0x34170;
-  *(uint *)(iVar2 + 0x20) = *(uint *)&this_ptr->field_0x20;
-  *(uint *)(iVar2 + 0x24) = *(uint *)&this_ptr->field_0x24;
-  *(uint *)(iVar2 + 0x28) = *(uint *)&this_ptr->field_0x28;
-  *(uint *)(iVar2 + 0x2c) = *(uint *)&this_ptr->field_0x2c;
-  iVar2 = *(int *)&this_ptr->field_0x34170;
-  if ((uint *)(iVar2 + 0x30) != (uint *)&this_ptr->field_0x30) {
-    *(uint *)(iVar2 + 0x30) = *(uint *)&this_ptr->field_0x30;
-    *(uint *)(iVar2 + 0x34) = *(uint *)&this_ptr->field_0x34;
-    *(uint *)(iVar2 + 0x38) = *(uint *)&this_ptr->field_0x38;
+    cVar2 = *pcVar5;
+    (pCVar3->base).base.base.actor_name[0] = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pcVar5[1];
+    pcVar5 = pcVar5 + 2;
+    (pCVar3->base).base.base.actor_name[1] = cVar2;
+    pCVar3 = (CPryeMorph *)((pCVar3->base).base.base.actor_name + 2);
+  } while (cVar2 != '\0');
+  pCVar3 = this_ptr->morph_actor;
+  (pCVar3->base).base.base.location.position.x = (this_ptr->base).base.base.location.position.x;
+  (pCVar3->base).base.base.location.position.y = (this_ptr->base).base.base.location.position.y;
+  (pCVar3->base).base.base.location.position.z = (this_ptr->base).base.base.location.position.z;
+  (pCVar3->base).base.base.location.area_id = (this_ptr->base).base.base.location.area_id;
+  pCVar3 = this_ptr->morph_actor;
+  pUVar1 = &(this_ptr->base).base.base.orient;
+  pUVar4 = &(pCVar3->base).base.base.orient;
+  if (pUVar4 != pUVar1) {
+    (pUVar4->vec).x = (pUVar1->vec).x;
+    (pCVar3->base).base.base.orient.vec.y = (this_ptr->base).base.base.orient.vec.y;
+    (pCVar3->base).base.base.orient.vec.z = (this_ptr->base).base.base.orient.vec.z;
   }
-  *(uint *)(*(int *)&this_ptr->field_0x34170 + 0x27b8) = 0x3f800000;
-  (*(code *)**(uint **)(*(int *)&this_ptr->field_0x34170 + 0x154))
-            (*(int *)&this_ptr->field_0x34170);
-  iVar2 = 1;
-  pcVar4 = "stand";
+  (this_ptr->morph_actor->base).base.size_scale = 1.0;
+  (*((this_ptr->morph_actor->base).base.base.vtable._ub)->setup)
+            ((CDemonActor *)this_ptr->morph_actor);
+  iVar6 = 1;
+  pcVar5 = "stand";
   this_ptr_02 = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310
-                          ((CMotionController *)(*(int *)&this_ptr->field_0x34170 + 0x158));
-  iVar2 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004fb9c0(this_ptr_02,pcVar4,iVar2);
+                          (&(this_ptr->morph_actor->base).base.model.base);
+  iVar6 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004fb9c0(this_ptr_02,pcVar5,iVar6);
   core_motion_cpp_CMotionController_jumpToMotion_FUN_004fc420
-            ((CMotionController *)(*(int *)&this_ptr->field_0x34170 + 0x158),iVar2,0.0);
+            (&(this_ptr->morph_actor->base).base.model.base,iVar6,0.0);
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0054c090
-            ((CDeformableModelInstance *)(*(int *)&this_ptr->field_0x34170 + 0x158));
+            (&(this_ptr->morph_actor->base).base.model);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10
-            ((CDeformableModelInstance *)(*(int *)&this_ptr->field_0x34170 + 0x158));
-  this_ptr_00 = &this_ptr->field_0x158;
-  core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0054c090
-            ((CDeformableModelInstance *)this_ptr_00);
-  core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10
-            ((CDeformableModelInstance *)this_ptr_00);
-  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0
-            ((CDeformableModelInstance *)this_ptr_00);
-  this_ptr_01 = &this_ptr->field_0x34174;
+            (&(this_ptr->morph_actor->base).base.model);
+  this_ptr_00 = &(this_ptr->base).base.model;
+  core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0054c090(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10(this_ptr_00);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(this_ptr_00);
+  this_ptr_01 = &this_ptr->morph;
   core_morph_cpp_CMorph_addPartFromKeyframedModel_FUN_004fab10
-            ((CMorph *)this_ptr_01,1,*(CKeyFramedModel **)&this_ptr->field_0x34138,0);
+            (this_ptr_01,1,&(this_ptr->cloth_list).cloths[0]->model,0);
+  core_morph_cpp_CMorph_setupModelFromDeformable_FUN_004fa9c0(this_ptr_01,0,this_ptr_00);
   core_morph_cpp_CMorph_setupModelFromDeformable_FUN_004fa9c0
-            ((CMorph *)this_ptr_01,0,(CDeformableModelInstance *)this_ptr_00);
-  core_morph_cpp_CMorph_setupModelFromDeformable_FUN_004fa9c0
-            ((CMorph *)this_ptr_01,1,
-             (CDeformableModelInstance *)(*(int *)&this_ptr->field_0x34170 + 0x158));
-  core_morph_cpp_CMorph_getReady_FUN_004fac10((CMorph *)this_ptr_01);
-  *(uint *)&this_ptr->field_0x34da0 = 0;
+            (this_ptr_01,1,&(this_ptr->morph_actor->base).base.model);
+  core_morph_cpp_CMorph_getReady_FUN_004fac10(this_ptr_01);
+  this_ptr->morph_time = 0.0;
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0054c110(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0054c110
-            ((CDeformableModelInstance *)this_ptr_00);
-  core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0054c110
-            ((CDeformableModelInstance *)(*(int *)&this_ptr->field_0x34170 + 0x158));
+            (&(this_ptr->morph_actor->base).base.model);
   return;
 }

@@ -14,7 +14,7 @@ int __cdecl core_zombie_cpp_CZombie_isInvulnerable_FUN_0058cbe0(CZombie *this_pt
   
   pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
                      (&(this_ptr->base).base.model.base);
-  iVar1 = *(int *)(pSVar2 + 0x24);
+  iVar1 = pSVar2->state_index;
   if ((((iVar1 != 0xf) && (iVar1 != 0x16)) && (iVar1 != 0x17)) && (iVar1 != 0x15)) {
     return 0;
   }

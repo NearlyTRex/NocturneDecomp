@@ -2,14 +2,18 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CWayPoint;
+
 // Dependencies
 #include "system/basetypes.h"
 
 // Structure: SWayPointAdjacency
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x8 (8 bytes)
 #pragma pack(push, 1)
 typedef struct SWayPointAdjacency {
+    struct CWayPoint* waypoint; // 0x0
+    float distance; // 0x4
 } SWayPointAdjacency;
 #pragma pack(pop)
 

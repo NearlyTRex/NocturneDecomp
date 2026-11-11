@@ -11,6 +11,6 @@ void __cdecl core_firestff_cpp_CFirestaff_fillAttackDamageInfo_FUN_004a4cd0(CFir
 {
   core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040aca0
             ((CDemonActor *)this_ptr,attack_flags,out_damage_info,victim);
-  *(uint *)(out_damage_info + 4) = 0x41700000;
+  out_damage_info->damage_amount = 15.0;
   return;
 }

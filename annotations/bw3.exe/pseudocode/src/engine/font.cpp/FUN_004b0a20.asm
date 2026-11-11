@@ -13,9 +13,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[23]:
-;   core_fldnotes.cpp_FUN_004a8570 at 004a858e
-;   core_fldnotes.cpp_FUN_004aa490 at 004aa572
 ;   core_fldnotes.cpp_FUN_004abe00 at 004ac107
+;   core_fldnotes.cpp_SNotesMap_draw_FUN_004aa490 at 004aa572
+;   core_fldnotes.cpp_SPageResourceText_draw_FUN_004a8570 at 004a858e
 ;   core_game.cpp_CGame_renderOverlay_FUN_004b47d0 at 004b4a5e
 ;   core_game.cpp_FUN_004b503e at 004b5066
 ;   core_game.cpp_FUN_004b51e0 at 004b5274

@@ -14,7 +14,10 @@ typedef struct CLightningBolt {
     CVector3f start_position; // 0x4
     float start_width; // 0x10
     float lifetime; // 0x14
-    char field_24[24]; // 0x18
+    float end_width; // 0x18
+    CVector3f end_position; // 0x1c
+    float end_spread; // 0x28
+    int render_alpha; // 0x2c, Added in this build
 } CLightningBolt;
 #pragma pack(pop)
 

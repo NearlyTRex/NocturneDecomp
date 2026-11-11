@@ -2,24 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 526,
+    "complexity_score": 399,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 246,
-    "suspect_count": 24,
+    "pseudocode_lines": 244,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
+      "raw_address_pointer_store",
       "stack_alignment_array",
       "stack_param",
       "stack_ref",
-      "unnamed_field",
-      "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 349
+    "total_lines": 347
   },
   "cross_references": [],
   "function": {
@@ -153,7 +152,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 21,
+      "line": 19,
       "match": "afStackY_1068",
       "severity": "moderate",
       "text": "float afStackY_1068 [984];",
@@ -161,71 +160,31 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 20,
       "match": "in_stack_ffffff10",
       "severity": "moderate",
       "text": "CBoundingBox3D *in_stack_ffffff10;",
       "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x300",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x300 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 58,
+      "line": 56,
       "match": "in_stack_ffffff10",
       "severity": "moderate",
       "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff10);",
       "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 76,
-      "match": "field_0x36c",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x36c == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 79,
-      "match": "field_0x36c",
-      "severity": "mild",
-      "text": "*(CDemonActor **)&this_ptr->field_0x36c = pCVar6;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 81,
-      "match": "field_0x36c",
-      "severity": "mild",
-      "text": "iVar8 = *(int *)&this_ptr->field_0x36c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 89,
-      "match": "field_0x36c",
-      "severity": "mild",
-      "text": "uVar5 = *(uint *)&this_ptr->field_0x36c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 92,
-      "match": "field_0x300",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x300 = uVar5;",
-      "type": "unnamed_field"
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 63,
+      "match": "*(CDemonActor **)(iVar10 + 0x1d5ba04",
+      "severity": "moderate",
+      "text": "pCVar5 = *(CDemonActor **)(iVar10 + 0x1d5ba04);",
+      "type": "raw_address_pointer_store"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 99,
+      "line": 97,
       "match": "in_stack_ffffff10",
       "severity": "moderate",
       "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff10);",
@@ -233,106 +192,50 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 100,
+      "line": 98,
       "match": "&stack0xffffff50",
       "severity": "moderate",
-      "text": "puVar10 = (uint *)&stack0xffffff50;",
+      "text": "puVar8 = (uint *)&stack0xffffff50;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 101,
+      "line": 99,
       "match": "&stack0xffffff30",
       "severity": "moderate",
-      "text": "puVar11 = (uint *)&stack0xffffff30;",
+      "text": "puVar9 = (uint *)&stack0xffffff30;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 126,
+      "line": 124,
       "match": "&stack0xffffff68",
       "severity": "moderate",
       "text": "if (&stack0xffffff68 != afStack_7c + 0xe) {",
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 161,
-      "match": "field_0x370",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)&this_ptr->field_0x370 - delta_time;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 162,
-      "match": "field_0x370",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x370 = fVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 164,
-      "match": "field_0x370",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x370 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 179,
-      "match": "(int *)((int)g_CDemonSetPtr",
+      "line": 177,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "iVar9 = *(int *)((int)g_CDemonSetPtr->actors + iVar12);",
+      "text": "pCVar5 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar10);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 180,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar7 = (**(code **)(*(int *)(iVar9 + 0x154) + 0x5c))(iVar9);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 183,
-      "match": "field_0x300",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x300 = iVar9;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 199,
+      "line": 197,
       "match": "(CTrigger **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "actor_ptr = *(CTrigger **)((int)g_CDemonSetPtr->actors + iVar12);",
+      "text": "actor_ptr = *(CTrigger **)((int)g_CDemonSetPtr->actors + iVar10);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 210,
-      "match": "field_0x300",
-      "severity": "mild",
-      "text": "*(CTrigger **)&this_ptr->field_0x300 = actor_ptr;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 245,
-      "match": "field_0x300",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x300 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 102,
+      "line": 100,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar8 = 6; iVar8 != 0; iVar8 = iVar8 + -1) {",
+      "text": "for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {",
       "type": "unrolled_memcpy"
     }
   ],

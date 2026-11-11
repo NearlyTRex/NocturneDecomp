@@ -2,13 +2,13 @@
 // Address: 004a2e20
 // Address Range: [[004a2e20, 004a36df]]
 // Convention: unknown
-// Signature: void core_fire_cpp_FUN_004a2e20(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,undefined4 param_12,undefined4 param_13,undefined4 param_14,undefined4 param_15,undefined4 param_16,undefined4 param_17,undefined4 param_18,undefined4 param_19,undefined4 param_20,float param_21,float param_22,float param_23,float param_24,int param_25)
+// Signature: void core_fire_cpp_FUN_004a2e20(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,float param_13,float param_14,float param_15,float param_16,float param_17,float param_18,float param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_fire_cpp_FUN_004a2e20(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,uint param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)
+void core_fire_cpp_FUN_004a2e20(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,float param_13,float param_14,float param_15,float param_16,float param_17,float param_18,float param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)
 
 {
   float fVar1;
@@ -25,21 +25,21 @@ void core_fire_cpp_FUN_004a2e20(CFireEffect *param_1,float *param_2,float *param
   float local_168;
   float local_15c;
   float local_158;
-  uint local_154;
-  uint local_150;
-  uint local_14c;
+  float local_154;
+  float local_150;
+  float local_14c;
   float fStack_148;
   float fStack_144;
   float fStack_140;
-  uint local_13c;
-  uint local_138;
-  uint local_134;
-  uint local_130;
-  uint local_124;
-  uint local_120;
-  uint local_11c;
+  float local_13c;
+  float local_138;
+  float local_134;
+  float local_130;
+  float local_124;
+  float local_120;
+  float local_11c;
   CVector3f local_118;
-  uint local_10c;
+  float local_10c;
   float afStack_108 [4];
   float local_f8;
   CVector3f local_f4;
@@ -58,7 +58,7 @@ void core_fire_cpp_FUN_004a2e20(CFireEffect *param_1,float *param_2,float *param
   float local_90;
   float local_8c;
   float local_88 [3];
-  uint local_7c;
+  float local_7c;
   float local_70;
   float local_6c;
   float local_68;

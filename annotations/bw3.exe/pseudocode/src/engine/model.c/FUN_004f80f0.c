@@ -13,21 +13,22 @@ void engine_model_c_FUN_004f80f0(SMRGLHeaderExtended *param_1)
   SMRGLHeaderExtended *pSVar2;
   
   if (param_1 != (SMRGLHeaderExtended *)0x0) {
-    if (*(int *)param_1 == 0x20) {
-      engine_model_c_FUN_004f80f0(*(uint *)(param_1 + 0x14));
+    iVar1 = (param_1->base).type;
+    if (iVar1 == 0x20) {
+      engine_model_c_FUN_004f80f0(param_1[1].child_count);
       iVar1 = 0;
       pSVar2 = param_1;
-      if (0 < *(int *)(param_1 + 8)) {
+      if (0 < param_1->child_count) {
         do {
           iVar1 = iVar1 + 1;
-          engine_model_c_FUN_004f80f0(*(uint *)(pSVar2 + 0x118));
-          pSVar2 = pSVar2 + 4;
-        } while (iVar1 < *(int *)(param_1 + 8));
+          engine_model_c_FUN_004f80f0(pSVar2[0x17].base.count);
+          pSVar2 = (SMRGLHeaderExtended *)&(pSVar2->base).count;
+        } while (iVar1 < param_1->child_count);
       }
       FUN_005a3770(param_1);
       return;
     }
-    if (*(int *)param_1 != 0x26) {
+    if (iVar1 != 0x26) {
       FUN_005a3770(param_1);
       return;
     }

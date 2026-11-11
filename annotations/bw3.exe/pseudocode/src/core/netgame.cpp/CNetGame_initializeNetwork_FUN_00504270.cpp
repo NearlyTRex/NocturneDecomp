@@ -11,34 +11,33 @@
 int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_00504270(CNetGame *this_ptr)
 
 {
-  byte *this_ptr_00;
+  CSocket *this_ptr_00;
   int iVar1;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0
             (g_CEditorToolsPtr,"?Initializing network..." + 1);
-  this_ptr_00 = &this_ptr->field_0x180;
-  support_trisock_cpp_CSocket_closeSocket_FUN_0056fc30((CSocket *)this_ptr_00);
-  iVar1 = support_trisock_cpp_CSocket_createUDPSocket_FUN_0056f930((CSocket *)this_ptr_00);
+  this_ptr_00 = &this_ptr->socket;
+  support_trisock_cpp_CSocket_closeSocket_FUN_0056fc30(this_ptr_00);
+  iVar1 = support_trisock_cpp_CSocket_createUDPSocket_FUN_0056f930(this_ptr_00);
   if (iVar1 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40
               (g_CEditorToolsPtr,"Can't create datagram socket");
     return 0;
   }
-  iVar1 = support_trisock_cpp_CSocket_setSocketBlocking_FUN_0056fd60((CSocket *)this_ptr_00,0);
+  iVar1 = support_trisock_cpp_CSocket_setSocketBlocking_FUN_0056fd60(this_ptr_00,0);
   if (iVar1 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40
               (g_CEditorToolsPtr,"Can't turn off blocking mode for socket");
     return 0;
   }
-  iVar1 = support_trisock_cpp_CSocket_bindSocket_FUN_0056f970((CSocket *)this_ptr_00,0x1ddf);
+  iVar1 = support_trisock_cpp_CSocket_bindSocket_FUN_0056f970(this_ptr_00,0x1ddf);
   if (iVar1 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40
               (g_CEditorToolsPtr,"Can't bind UDP socket");
     return 0;
   }
   iVar1 = support_trisock_cpp_CSocket_getSocketName_FUN_0056fd00
-                    ((CSocket *)this_ptr_00,
-                     (SNetworkAddr *)&this_ptr->players[this_ptr->local_player_index].field_0x1c);
+                    (this_ptr_00,&this_ptr->players[this_ptr->local_player_index].addr);
   if (iVar1 != 0) {
     core_netgame_cpp_CNetGame_flushIncomingPackets_FUN_00504c10(this_ptr);
     _DAT_01da6478 = 1;

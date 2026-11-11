@@ -20,8 +20,8 @@ CHeroPlaceholder * core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d4ae0(CHeroPlaceho
   pCVar2 = (CHeroPlaceholder *)core_actor_cpp_CDemonActor_ctor_FUN_00408600(&this_ptr->base);
   (pCVar2->base).vtable._ub = &g_CHeroPlaceholderVTable;
   (pCVar2->base).is_transparent = 1;
-  pcVar4 = &pCVar2->field_0x15c;
-  *(uint *)&pCVar2->field_0x158 = 0;
+  pcVar4 = pCVar2->hero_name;
+  pCVar2->index = 0;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;

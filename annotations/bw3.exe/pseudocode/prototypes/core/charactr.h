@@ -147,7 +147,7 @@ void __cdecl CCharacter::addDamageDecal(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_FUN_0042fbd0
 // Address: 0042fbd0
-void FUN_0042fbd0(CCharacter *param_1,CVector3f *param_2,undefined4 param_3,EFlameType param_4,float param_5,int param_6,undefined4 param_7);
+void FUN_0042fbd0(CCharacter *param_1,CVector3f *param_2,undefined4 param_3,EFlameType param_4,float param_5,int param_6,float param_7);
 
 // Original: core_charactr.cpp_FUN_0042fc90
 // Address: 0042fc90

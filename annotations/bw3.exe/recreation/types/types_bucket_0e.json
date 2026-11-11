@@ -2,6 +2,7 @@
   {
     "kind":"class",
     "name":"CBlunderbus",
+    "parent":"CWeapon",
     "size":1432
   },
   {
@@ -433,6 +434,7 @@
   {
     "kind":"class",
     "name":"CDemonDog",
+    "parent":"CZombieDog",
     "size":53348
   },
   {
@@ -479,6 +481,7 @@
   {
     "kind":"class",
     "name":"CHealthItemSmall",
+    "parent":"CHealthItem",
     "size":740
   },
   {
@@ -527,11 +530,12 @@
     "kind":"class",
     "name":"CInventory",
     "rtti_file":"core/inv.cpp",
-    "size":1
+    "size":1136
   },
   {
     "kind":"class",
     "name":"CMattanntote",
+    "parent":"CEnemy",
     "size":61596
   },
   {
@@ -544,7 +548,7 @@
     "kind":"class",
     "name":"CMorph",
     "rtti_file":"core/morph.cpp",
-    "size":1
+    "size":3116
   },
   {
     "kind":"class",
@@ -554,8 +558,67 @@
     "size":960
   },
   {
+    "kind":"funcdef",
+    "name":"CPod_dismount",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CPod",
+          "ptr":1
+        }
+      },
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CPod_mount",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CPod",
+          "ptr":1
+        }
+      },
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CShadowsc",
+    "parent":"CEnemy",
     "size":53356
   },
   {
@@ -646,6 +709,11 @@
     "size":360
   },
   {
+    "kind":"class",
+    "name":"CVector3d",
+    "size":24
+  },
+  {
     "kind":"funcdef",
     "name":"CWeapon_getDamage",
     "params":[
@@ -676,16 +744,19 @@
   {
     "kind":"class",
     "name":"CZombieIndian",
+    "parent":"CZombie",
     "size":53580
   },
   {
     "kind":"class",
     "name":"CZombiePriest",
+    "parent":"CEnemy",
     "size":53524
   },
   {
     "kind":"class",
     "name":"CZombieSpirit",
+    "parent":"CZombie",
     "size":53580
   },
   {
@@ -717,6 +788,25 @@
   },
   {
     "kind":"enum",
+    "name":"EGasMaskState",
+    "size":4,
+    "values":[
+      {
+        "name":"GAS_MASK_AWAY",
+        "value":0
+      },
+      {
+        "name":"GAS_MASK_IN_HAND",
+        "value":1
+      },
+      {
+        "name":"GAS_MASK_ON_FACE",
+        "value":2
+      }
+    ]
+  },
+  {
+    "kind":"enum",
     "name":"EWeatherType",
     "size":4,
     "values":[
@@ -742,7 +832,7 @@
   {
     "kind":"struct",
     "name":"SLaserInfo",
-    "size":1
+    "size":84
   },
   {
     "kind":"struct",
@@ -753,7 +843,7 @@
   {
     "kind":"struct",
     "name":"SMotionTransition",
-    "size":1
+    "size":24
   },
   {
     "kind":"struct",
@@ -763,7 +853,7 @@
   {
     "kind":"struct",
     "name":"SSimFrame",
-    "size":1
+    "size":116
   },
   {
     "kind":"struct",

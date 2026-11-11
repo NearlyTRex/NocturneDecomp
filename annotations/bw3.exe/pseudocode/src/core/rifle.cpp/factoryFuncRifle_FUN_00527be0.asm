@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_rifle.cpp_CRifle_ctor_FUN_00527c10
-;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x5a0                          ; 00527be0
         ;   Label: core_rifle.cpp_factoryFuncRifle_FUN_00527be0
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 00527be5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00527be5
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 00527bea
     TEST EAX,EAX                        ; 00527bed
     JNZ 0x00527bf2                      ; 00527bef

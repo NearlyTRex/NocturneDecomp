@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 60,
+    "complexity_score": 86,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 45,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 46,
+    "suspect_count": 3,
     "suspect_types": [
+      "alloc_magic_size",
       "warning_overlapping_globals"
     ],
-    "total_lines": 155
+    "total_lines": 156
   },
   "cross_references": [
     {
@@ -43,12 +44,12 @@
     {
       "addr": "005a3650",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3650"
+      "name": "crt_memory.c_malloc_FUN_005a3650"
     },
     {
       "addr": "005a40df",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a40df"
+      "name": "crt_memory.c_operator_new_array_FUN_005a40df"
     }
   ],
   "globals": [
@@ -200,6 +201,22 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Allocation size hardcodes 0x40 == sizeof(SVoxelGrid). Replace the magic with sizeof(SVoxelGrid) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 34,
+      "match": "(SVoxelGrid*) alloc stride 0x40",
+      "severity": "moderate",
+      "text": "(SVoxelGrid *)malloc(0x40)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x40 == sizeof(SVoxelGrid). Replace the magic with sizeof(SVoxelGrid) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 41,
+      "match": "(SVoxelGrid*) alloc stride 0x40",
+      "severity": "moderate",
+      "text": "(SVoxelGrid *)malloc(0x40)",
+      "type": "alloc_magic_size"
     }
   ]
 }

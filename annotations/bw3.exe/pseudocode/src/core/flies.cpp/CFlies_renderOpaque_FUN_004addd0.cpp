@@ -11,37 +11,21 @@
 int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004addd0(CFlies *this_ptr)
 
 {
-  CDemonRenderer *pCVar1;
-  int iVar2;
-  uint uVar3;
-  int iVar4;
-  uint *puVar5;
+  short *psVar1;
+  CDemonRenderer *pCVar2;
+  int iVar3;
+  uint uVar4;
+  int iVar5;
+  SMRGLVertex *pSVar6;
   float *out_basis;
-  SRenderVertex *pSVar6;
   SRenderVertex *pSVar7;
-  uint *puVar8;
-  SRenderVertex *pSVar9;
-  byte bVar10;
-  float10 fVar11;
+  SRenderVertex *pSVar8;
+  SMRGLVertex *pSVar9;
+  SRenderVertex *pSVar10;
+  byte bVar11;
+  float10 fVar12;
   float afStackY_1030 [982];
-  SMRGLPrimitivePoly aSStack_c0 [4];
-  uint uStack_bc;
-  uint uStack_b8;
-  uint uStack_b4;
-  uint uStack_b0;
-  uint uStack_ac;
-  uint uStack_a8;
-  uint uStack_a4;
-  uint uStack_a0;
-  uint uStack_9c;
-  uint uStack_98;
-  uint uStack_94;
-  uint uStack_90;
-  uint uStack_8c;
-  uint uStack_88;
-  uint auStack_78 [6];
-  uint auStack_60 [3];
-  CVector3i CStack_54;
+  SMRGLPrimitivePoly SStack_c0;
   float fStack_48;
   float afStack_44 [8];
   int iStack_24;
@@ -50,83 +34,83 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004addd0(CFlies *this_ptr)
   int iStack_18;
   int iStack_14;
   
-  bVar10 = 0;
-  iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);
-  if (iVar2 != 0) {
+  bVar11 = 0;
+  iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);
+  if (iVar3 != 0) {
     return 0;
   }
   this_ptr->is_visible = 0;
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0(&this_ptr->base);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
-  puVar5 = auStack_78;
-  puVar8 = auStack_60;
-  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar8 = *puVar5;
-    puVar5 = puVar5 + (uint)bVar10 * -2 + 1;
-    puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
+  pSVar6 = SStack_c0.vertices + 4;
+  pSVar9 = SStack_c0.vertices + 6;
+  for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pSVar9->vertex_index = pSVar6->vertex_index;
+    pSVar6 = (SMRGLVertex *)((int)pSVar6 + ((uint)bVar11 * -2 + 1) * 4);
+    pSVar9 = (SMRGLVertex *)((int)pSVar9 + ((uint)bVar11 * -2 + 1) * 4);
   }
-  iStack_24 = core_box_cpp_FUN_0041daf0(auStack_60);
-  iVar2 = _DAT_01d1a0dc;
+  iStack_24 = core_box_cpp_FUN_0041daf0(SStack_c0.vertices + 6);
+  iVar3 = _DAT_01d1a0dc;
   if (iStack_24 != 0) {
     this_ptr->is_visible = 1;
-    if (iVar2 == 0) {
+    if (iVar3 == 0) {
       out_basis = (float *)0x1d1a124;
-      iVar2 = 0;
+      iVar3 = 0;
       do {
-        iVar4 = iVar2 + 1;
-        iStack_14 = iVar2;
+        iVar5 = iVar3 + 1;
+        iStack_14 = iVar3;
         core_spline_cpp_FUN_00567630
-                  (out_basis,((float)iVar2 + (float)_DAT_005c1c61) * (float)_DAT_005c1c51,0.0);
+                  (out_basis,((float)iVar3 + (float)_DAT_005c1c61) * (float)_DAT_005c1c51,0.0);
         out_basis = out_basis + 8;
-        iVar2 = iVar4;
-      } while (iVar4 < 0x40);
+        iVar3 = iVar5;
+      } while (iVar5 < 0x40);
       _DAT_01d1a0dc = 1;
     }
-    pCVar1 = DAT_005f2afc;
+    pCVar2 = DAT_005f2afc;
     if (_DAT_01c6cee8 == 0) {
       engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0046d3d0(DAT_005f2afc,0,0,0);
-      uVar3 = _DAT_01c6e24c >> 8;
-      _DAT_01d1a11c = uVar3 | uVar3 << 8 | uVar3 << 0x10;
+      uVar4 = _DAT_01c6e24c >> 8;
+      _DAT_01d1a11c = uVar4 | uVar4 << 8 | uVar4 << 0x10;
       _DAT_01d1a120 = _DAT_01d1a11c ^ 0xffffff;
     }
     else {
-      uStack_bc = 3;
-      uStack_ac = 0;
-      uStack_b0 = 0;
-      uStack_b4 = 0;
-      uStack_b8 = 0;
-      uStack_a8 = 0;
-      uStack_a4 = 0x800000;
-      uStack_a0 = 0x800000;
-      uStack_98 = 0x800000;
-      uStack_94 = 0x800000;
-      uStack_8c = 0x800000;
-      uStack_88 = 0x800000;
-      uStack_9c = 1;
-      uStack_90 = 2;
-      *(uint *)(DAT_005f2afc->vertex_buffer_ptr + 0x20) = 0;
-      *(uint *)(pCVar1->vertex_buffer_ptr + 0x24) = 0;
-      *(uint *)(pCVar1->vertex_buffer_ptr + 0x28) = 0;
-      *(uint *)(pCVar1->vertex_buffer_ptr + 0x50) = 0;
-      *(uint *)(pCVar1->vertex_buffer_ptr + 0x54) = 0;
-      *(uint *)(pCVar1->vertex_buffer_ptr + 0x58) = 0;
-      *(uint *)(pCVar1->vertex_buffer_ptr + 0x80) = 0;
-      *(uint *)(pCVar1->vertex_buffer_ptr + 0x84) = 0;
-      iVar2 = _DAT_01c6e24c;
-      *(uint *)(pCVar1->vertex_buffer_ptr + 0x88) = 0;
-      iVar2 = 0xffff - iVar2;
-      *(int *)(pCVar1->vertex_buffer_ptr + 0x2c) = iVar2;
-      *(int *)(pCVar1->vertex_buffer_ptr + 0x5c) = iVar2;
-      *(int *)(pCVar1->vertex_buffer_ptr + 0x8c) = iVar2;
+      SStack_c0.base.base.count = 3;
+      SStack_c0.base.surface_normal.D.i = 0;
+      SStack_c0.base.surface_normal.C.i = 0;
+      SStack_c0.base.surface_normal.B.i = 0;
+      SStack_c0.base.surface_normal.A.i = 0;
+      SStack_c0.vertices[0].vertex_index = 0;
+      SStack_c0.vertices[0].texture_u = 0x800000;
+      SStack_c0.vertices[0].texture_v = 0x800000;
+      SStack_c0.vertices[1].texture_u = 0x800000;
+      SStack_c0.vertices[1].texture_v = 0x800000;
+      SStack_c0.vertices[2].texture_u = 0x800000;
+      SStack_c0.vertices[2].texture_v = 0x800000;
+      SStack_c0.vertices[1].vertex_index = 1;
+      SStack_c0.vertices[2].vertex_index = 2;
+      DAT_005f2afc->vertex_buffer_ptr->r = 0;
+      pCVar2->vertex_buffer_ptr->g = 0;
+      pCVar2->vertex_buffer_ptr->b = 0;
+      pCVar2->vertex_buffer_ptr[1].r = 0;
+      pCVar2->vertex_buffer_ptr[1].g = 0;
+      pCVar2->vertex_buffer_ptr[1].b = 0;
+      pCVar2->vertex_buffer_ptr[2].r = 0;
+      pCVar2->vertex_buffer_ptr[2].g = 0;
+      iVar3 = _DAT_01c6e24c;
+      pCVar2->vertex_buffer_ptr[2].b = 0;
+      iVar3 = 0xffff - iVar3;
+      pCVar2->vertex_buffer_ptr->a = iVar3;
+      pCVar2->vertex_buffer_ptr[1].a = iVar3;
+      pCVar2->vertex_buffer_ptr[2].a = iVar3;
       engine_texture_cpp_FUN_0056aa10(0x5fe8c8);
     }
     iStack_20 = 0;
     if (0 < this_ptr->fly_count) {
       pSStack_1c = this_ptr->flies;
       do {
-        fVar11 = (float10)pSStack_1c->t * (float10)_DAT_005c1c59;
-        iVar2 = round();
-        iStack_18 = (int)ROUND(fVar11);
+        fVar12 = (float10)pSStack_1c->t * (float10)_DAT_005c1c59;
+        iVar3 = round();
+        iStack_18 = (int)ROUND(fVar12);
         if (iStack_18 < 0) {
           iStack_18 = 0;
         }
@@ -134,49 +118,51 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004addd0(CFlies *this_ptr)
           iStack_18 = 0x3f;
         }
         core_spline_cpp_FUN_00567860
-                  (iStack_18 * 0x20 + 0x1d1a124,iVar2 + 4,iVar2 + 0x10,iVar2 + 0x1c,iVar2 + 0x28);
+                  (iStack_18 * 0x20 + 0x1d1a124,iVar3 + 4,iVar3 + 0x10,iVar3 + 0x1c,iVar3 + 0x28);
         fStack_48 = afStack_44[2];
-        afStack_44[(uint)bVar10 * -2] = afStack_44[(uint)bVar10 * -2 + 3];
-        afStack_44[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-             afStack_44[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
+        afStack_44[(uint)bVar11 * -2] = afStack_44[(uint)bVar11 * -2 + 3];
+        afStack_44[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
+             afStack_44[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
         fStack_48 = (float)(int)ROUND(fStack_48 * _DAT_005e0400);
         afStack_44[0] = (float)(int)ROUND(afStack_44[0] * _DAT_005e0400);
         afStack_44[1] = (float)(int)ROUND(afStack_44[1] * _DAT_005e0400);
         engine_special_cpp_FUN_005632a3
-                  ((SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr,&CStack_54);
-        pCVar1 = DAT_005f2afc;
-        pSVar7 = DAT_005f2afc->vertex_buffer_ptr;
-        if (((byte)pSVar7[0x13] & 0x80) == 0) {
-          iVar4 = *(int *)(pSVar7 + 0x14) >> 0x10;
-          iVar2 = *(int *)(pSVar7 + 0x10) >> 0x10;
+                  (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,
+                   (CVector3i *)(SStack_c0.vertices + 7));
+        pCVar2 = DAT_005f2afc;
+        pSVar8 = DAT_005f2afc->vertex_buffer_ptr;
+        if ((int)((pSVar8->projected_vertex).screen_x & -0x80000000) == 0) {
+          iVar5 = (pSVar8->projected_vertex).screen_y >> 0x10;
+          iVar3 = (pSVar8->projected_vertex).screen_x >> 0x10;
           if (_DAT_01c6cee8 == 0) {
-            engine_prim_c_replaceWWithDepth_FUN_00515a80(pSVar7,1);
-            if ((((-1 < iVar2) && (iVar2 < DAT_005fba18)) && (-1 < iVar4)) && (iVar4 < DAT_005fba1c)
+            engine_prim_c_replaceWWithDepth_FUN_00515a80(pSVar8,1);
+            if ((((-1 < iVar3) && (iVar3 < DAT_005fba18)) && (-1 < iVar5)) && (iVar5 < DAT_005fba1c)
                ) {
-              core_flies_cpp_drawFlyPixel_FUN_004add00(iVar2,iVar4,*(int *)(pSVar7 + 8));
+              core_flies_cpp_drawFlyPixel_FUN_004add00
+                        (iVar3,iVar5,(pSVar8->projected_vertex).transformed_z);
             }
           }
-          else if ((iVar2 < DAT_005fba18 + -1) && (iVar4 < DAT_005fba1c + -1)) {
-            *(ushort *)(pSVar7 + 0x10) = 0;
-            *(ushort *)(pSVar7 + 0x14) = 0;
-            pSVar6 = pSVar7;
-            pSVar9 = pCVar1->vertex_buffer_ptr + 0x30;
-            for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-              *(uint *)pSVar9 = *(uint *)pSVar6;
-              pSVar6 = pSVar6 + ((uint)bVar10 * -2 + 1) * 4;
-              pSVar9 = pSVar9 + ((uint)bVar10 * -2 + 1) * 4;
+          else if ((iVar3 < DAT_005fba18 + -1) && (iVar5 < DAT_005fba1c + -1)) {
+            *(ushort *)&(pSVar8->projected_vertex).screen_x = 0;
+            *(ushort *)&(pSVar8->projected_vertex).screen_y = 0;
+            pSVar7 = pSVar8;
+            pSVar10 = pCVar2->vertex_buffer_ptr + 1;
+            for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+              (pSVar10->projected_vertex).transformed_x = (pSVar7->projected_vertex).transformed_x;
+              pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar11 * -2 + 1) * 4);
+              pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar11 * -2 + 1) * 4);
             }
-            pSVar6 = pCVar1->vertex_buffer_ptr + 0x60;
-            for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-              *(uint *)pSVar6 = *(uint *)pSVar7;
-              pSVar7 = pSVar7 + ((uint)bVar10 * -2 + 1) * 4;
-              pSVar6 = pSVar6 + ((uint)bVar10 * -2 + 1) * 4;
+            pSVar7 = pCVar2->vertex_buffer_ptr + 2;
+            for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+              (pSVar7->projected_vertex).transformed_x = (pSVar8->projected_vertex).transformed_x;
+              pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar11 * -2 + 1) * 4);
+              pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar11 * -2 + 1) * 4);
             }
-            *(short *)(pCVar1->vertex_buffer_ptr + 0x42) =
-                 *(short *)(pCVar1->vertex_buffer_ptr + 0x42) + 1;
-            *(short *)(pCVar1->vertex_buffer_ptr + 0x76) =
-                 *(short *)(pCVar1->vertex_buffer_ptr + 0x76) + 1;
-            engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0046b8f0(pCVar1,aSStack_c0,999)
+            psVar1 = (short *)((int)&pCVar2->vertex_buffer_ptr[1].projected_vertex.screen_x + 2);
+            *psVar1 = *psVar1 + 1;
+            *(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) =
+                 *(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) + 1;
+            engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0046b8f0(pCVar2,&SStack_c0,999)
             ;
           }
         }

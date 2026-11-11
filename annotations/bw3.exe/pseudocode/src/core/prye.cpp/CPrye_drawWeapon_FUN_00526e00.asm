@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field572_0x26c
+;   undefined4 g_CGameInstance.flashlight_active
 ;
 ; *****************************************************************************
 
@@ -24,12 +24,12 @@ section .text
     JNZ 0x00526e20                      ; 00526e10
         ;   XREF to: 00526e20 (CONDITIONAL_JUMP)  ; LAB_00526e20
     MOV EAX,[0x005fe9dc]                ; 00526e12 | g_CGamePtr | g_CGameInstance
-    CMP dword ptr [EAX + 0x26c],0x0     ; 00526e17 | g_CGameInstance.field572_0x26c
+    CMP dword ptr [EAX + 0x26c],0x0     ; 00526e17 | g_CGameInstance.flashlight_active
     JNZ 0x00526e21                      ; 00526e1e
         ;   XREF to: 00526e21 (CONDITIONAL_JUMP)  ; LAB_00526e21
     RET                                 ; 00526e20
         ;   Label: LAB_00526e20
-    MOV dword ptr [EAX + 0x26c],0x0     ; 00526e21 | g_CGameInstance.field572_0x26c
+    MOV dword ptr [EAX + 0x26c],0x0     ; 00526e21 | g_CGameInstance.flashlight_active
         ;   Label: LAB_00526e21
     RET                                 ; 00526e2b
 

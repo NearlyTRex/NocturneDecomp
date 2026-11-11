@@ -16,13 +16,13 @@ void __cdecl core_cow_cpp_CZombieCow_processDamage_FUN_004459b0(CZombieCow *this
   int iVar4;
   
   core_cow_cpp_CZombieCow_processDismemberment_FUN_00445730(this_ptr,damage_info);
-  fVar1 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&this_ptr_00->base);
-    if ((*(int *)(pSVar2 + 0x24) == 5) || (*(int *)(pSVar2 + 0x24) == 4)) goto LAB_004459f0;
+    if ((pSVar2->state_index == 5) || (pSVar2->state_index == 4)) goto LAB_004459f0;
     iVar4 = 4;
   }
   else {

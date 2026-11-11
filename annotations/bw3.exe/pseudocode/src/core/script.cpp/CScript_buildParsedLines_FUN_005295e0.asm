@@ -27,8 +27,8 @@
 ;   core_main.c_FUN_004e4330
 ;   core_script.cpp_CScript_freeParsedLines_FUN_00528da0
 ;   core_script.cpp_trimLine_FUN_00528790
+;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_memory.c_realloc_FUN_005a3e50
-;   crt_unknown.c_FUN_005a3650
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_00482440
 ;   shape_edittool.cpp_FUN_00486af0
 ;
@@ -117,8 +117,8 @@ section .text
     DEC ECX                             ; 00529699
     INC ECX                             ; 0052969a
     PUSH ECX                            ; 0052969b
-    CALL crt_unknown.c_FUN_005a3650     ; 0052969c
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 0052969c
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     MOV ECX,dword ptr [EBX + 0x2c]      ; 005296a1
     MOV EDI,dword ptr [EBX + 0x30]      ; 005296a4
     MOV dword ptr [EDI + ECX*0x8 + 0x4],EAX ; 005296a7

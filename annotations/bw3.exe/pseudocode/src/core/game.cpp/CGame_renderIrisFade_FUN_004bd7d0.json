@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 189,
+    "complexity_score": 174,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 44,
-    "suspect_count": 12,
+    "suspect_count": 11,
     "suspect_types": [
       "bit_int_float_compare",
       "extra_output",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 144
@@ -100,7 +99,7 @@
     },
     {
       "addr": "01d1a09c",
-      "name": "g_CFieldNotesInstance.field64_0x40",
+      "name": "g_CFieldNotesInstance.is_displayed",
       "type": "undefined4",
       "value": null
     },
@@ -225,14 +224,6 @@
       "severity": "moderate",
       "text": "int extraout_EDX;",
       "type": "extra_output"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "if ((_DAT_01d22c84 != 0) && (*(int *)&g_CFieldNotesPtr->field_0x40 == 0)) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

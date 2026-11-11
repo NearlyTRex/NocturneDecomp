@@ -11,7 +11,7 @@ void core_burncrss_cpp_factoryFuncBurncross_FUN_00424400(void)
 {
   CBurncross *this_ptr;
   
-  this_ptr = (CBurncross *)debugAllocTracked1(0x1acc);
+  this_ptr = (CBurncross *)operator_new(0x1acc);
   if (this_ptr == (CBurncross *)0x0) {
     return;
   }

@@ -38,13 +38,13 @@ void __cdecl core_wateract_cpp_CWaterActor_archive_FUN_00578af0(CWaterActor *thi
     core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->round_flag,"roundFlag");
   }
   if (5 < g_CWaterActorClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x28c,&DAT_005d734d);
-    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x290,&DAT_005d7352);
-    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x294,&DAT_005d7357);
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&(this_ptr->color).r,&DAT_005d734d);
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&(this_ptr->color).g,&DAT_005d7352);
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&(this_ptr->color).b,&DAT_005d7357);
   }
   if (g_CWaterActorClassVersion < 7) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x298,"is_lava");
+  core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->is_lava,"is_lava");
   return;
 }

@@ -23,7 +23,7 @@ void FUN_0043c300(int param_1);
 
 // Original: core_cloth.cpp_FUN_0043c330
 // Address: 0043c330
-int FUN_0043c330(CKeyFramedModel *param_1,char *param_2);
+int FUN_0043c330(CCloth *param_1,char *param_2);
 
 // Original: core_cloth.cpp_FUN_0043c8a0
 // Address: 0043c8a0
@@ -31,7 +31,7 @@ void __cdecl FUN_0043c8a0(CCloth *this_ptr);
 
 // Original: core_cloth.cpp_FUN_0043cb00
 // Address: 0043cb00
-void FUN_0043cb00(CCloth *param_1,CCloth *param_2,CCloth *param_3,CDeformableModelInstance *param_4);
+void FUN_0043cb00(CCloth *param_1,float *param_2,float *param_3,CDeformableModelInstance *param_4);
 
 // Original: core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043d680
 // Address: 0043d680

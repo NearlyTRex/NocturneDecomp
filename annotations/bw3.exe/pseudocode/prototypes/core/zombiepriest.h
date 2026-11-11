@@ -35,7 +35,7 @@ void FUN_0058d5e0(CEnemy *param_1);
 
 // Original: core_zombiepriest.cpp_FUN_0058d960
 // Address: 0058d960
-void FUN_0058d960(CEnemy *param_1,float param_2);
+void FUN_0058d960(CZombiePriest *param_1,float param_2);
 
 // Original: core_zombiepriest.cpp_FUN_0058e8d0
 // Address: 0058e8d0

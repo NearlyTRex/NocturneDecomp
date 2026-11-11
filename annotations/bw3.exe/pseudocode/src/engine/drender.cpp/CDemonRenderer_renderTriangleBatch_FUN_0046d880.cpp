@@ -24,10 +24,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleBatch_FUN_0046d880(
     do {
       iVar1 = iVar1 + 1;
       engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_0046e160
-                (this_ptr,(SMRGLHeaderPrimitive *)primitive_array,render_flags);
-      primitive_array =
-           (SMRGLPrimitiveTriangle *)
-           &(((SMRGLHeaderPrimitive *)((int)primitive_array + 0x30))->surface_normal).B;
+                (this_ptr,&primitive_array->base,render_flags);
+      primitive_array = primitive_array + 1;
     } while (iVar1 < primitive_count);
   }
   return;

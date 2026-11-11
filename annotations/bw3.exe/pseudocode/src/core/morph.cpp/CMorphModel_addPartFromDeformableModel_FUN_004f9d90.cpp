@@ -17,7 +17,7 @@ void __cdecl core_morph_cpp_CMorphModel_addPartFromDeformableModel_FUN_004f9d90(
   iVar1 = model_ptr->cached_skinned_lod_index;
   core_morph_cpp_CMorphModel_addPartFromVertexBuffer_FUN_004f9c40
             (this_ptr,pCVar2->vertex_count[iVar1],model_ptr->skinned_vertices_buffer,
-             pCVar2->tri_count[iVar1],pCVar2->tri_data_ptr[iVar1],(STextureSet *)&pCVar2->field_0xc0
-             ,pCVar2->index_data_ptr[iVar1]);
+             pCVar2->tri_count[iVar1],pCVar2->tri_data_ptr[iVar1],pCVar2->texture_sets,
+             pCVar2->index_data_ptr[iVar1]);
   return;
 }

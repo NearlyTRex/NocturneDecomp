@@ -10,6 +10,6 @@ void __cdecl core_morph_cpp_CMorph_updateModelFromDeformable_FUN_004fab90(CMorph
 
 {
   core_morph_cpp_CMorphModel_animateFromDeformableModel_FUN_004f9f50
-            ((CMorphModel *)(this_ptr + model_index * 0x608),part_index,model_ptr);
+            (this_ptr->models + model_index,part_index,model_ptr);
   return;
 }

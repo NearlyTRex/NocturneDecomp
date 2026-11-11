@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 137,
+    "complexity_score": 54,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 37,
-    "suspect_count": 9,
+    "pseudocode_lines": 39,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 93
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -175,75 +174,11 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x2788",
-      "severity": "mild",
-      "text": "if ((uint *)&this_ptr->field_0x2788 != &local_24) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x2788",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2788 = local_24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x278c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x278c = local_20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x2790",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2790 = local_1c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x2794",
-      "severity": "mild",
-      "text": "if ((uint *)&this_ptr->field_0x2794 != &local_18) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x2794",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2794 = local_18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x2798",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2798 = local_14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x279c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x279c = local_10;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 22,
+      "line": 23,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     }
   ]

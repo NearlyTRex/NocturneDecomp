@@ -20,8 +20,8 @@
 ;   undefined4 g_CEnemyClassInfo.name_hash
 ;   undefined4 DAT_01c5bc4c
 ;   undefined4 DAT_01c5db8c
-;   undefined4 g_CGameInstance.field456_0x1f8
-;   undefined4 g_CGameInstance.field548_0x254
+;   undefined4 g_CGameInstance.freeze_enemies_enabled
+;   undefined4 g_CGameInstance.allow_enemy_attack_flag
 ;   undefined4 g_CDemonSetInstance.character_count
 ;
 ; Called Functions:
@@ -74,10 +74,10 @@ section .text
         ;   XREF to: 00489767 (UNCONDITIONAL_JUMP)  ; LAB_00489767
     MOV EAX,[0x005fe9dc]                ; 00489792 | g_CGamePtr
         ;   Label: LAB_00489792
-    CMP dword ptr [EAX + 0x1f8],0x0     ; 00489797 | g_CGameInstance.field456_0x1f8
+    CMP dword ptr [EAX + 0x1f8],0x0     ; 00489797 | g_CGameInstance.freeze_enemies_enabled
     JNZ 0x004897a9                      ; 0048979e
         ;   XREF to: 004897a9 (CONDITIONAL_JUMP)  ; LAB_004897a9
-    CMP dword ptr [EAX + 0x254],0x0     ; 004897a0 | g_CGameInstance.field548_0x254
+    CMP dword ptr [EAX + 0x254],0x0     ; 004897a0 | g_CGameInstance.allow_enemy_attack_flag
     JNZ 0x004897d1                      ; 004897a7
         ;   XREF to: 004897d1 (CONDITIONAL_JUMP)  ; LAB_004897d1
     MOV EAX,dword ptr [EBP + 0x14]      ; 004897a9

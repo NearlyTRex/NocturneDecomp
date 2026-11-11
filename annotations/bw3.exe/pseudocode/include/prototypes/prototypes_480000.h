@@ -113,7 +113,7 @@ void shape_edittool_cpp_FUN_00486120(int param_1,int param_2);
 int __cdecl shape_edittool_cpp_CEdButton_wasClicked_FUN_00486440(CEdButton *this_ptr);
 int __cdecl shape_edittool_cpp_calculateButtonWidth_FUN_004864f0(char *button_text);
 int __cdecl shape_edittool_cpp_FUN_00486580(char *button_text);
-void shape_edittool_cpp_FUN_0048666e(CEdCheck *param_1,undefined4 param_2,undefined4 param_3,CEdCheck *param_4);
+void shape_edittool_cpp_FUN_0048666e(CEdCheck *param_1,int param_2,int param_3,char *param_4);
 void shape_edittool_cpp_FUN_0048675e(int param_1);
 int __cdecl shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_00486780(CEdCheck *this_ptr);
 int __cdecl shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_004867c0(CEdCheck *this_ptr);
@@ -194,5 +194,5 @@ void __cdecl core_event_cpp_CEventList_reset_FUN_0048bfd0(CEventList *this_ptr);
 void __cdecl core_event_cpp_CEventList_process_FUN_0048c020(CEventList *this_ptr);
 int __cdecl core_event_cpp_CEventList_executeCommands_FUN_0048c150(CEventList *this_ptr,char *commands);
 int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_0048c170(CEventList *this_ptr,char *command_string);
-int core_event_cpp_FUN_0048c2e0(CEventList *param_1,CEventList *param_2);
+int core_event_cpp_FUN_0048c2e0(CEventList *param_1,char *param_2);
 

@@ -23,8 +23,8 @@
 ;   undefined4 DAT_00600284
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 DAT_006045f8
-;   undefined4 g_CGameInstance.field164_0xd4
-;   undefined4 g_CGameInstance.field168_0xd8
+;   undefined4 g_CGameInstance.game_control
+;   undefined4 g_CGameInstance.hero_number
 ;   undefined4 DAT_01d70a78
 ;   undefined4 DAT_01d737d8
 ;   CDemonSet g_CDemonSetInstance
@@ -40,9 +40,9 @@
 ;   core_menu.cpp_FUN_004e8f80
 ;   core_menu.cpp_FUN_004e94f0
 ;   core_menu.cpp_FUN_004eae80
-;   core_moon.cpp_FUN_004f94a0
-;   core_moon.cpp_FUN_004f9580
-;   core_moon.cpp_FUN_004f9670
+;   core_moon.cpp_CMoon_free_FUN_004f9580
+;   core_moon.cpp_CMoon_init_FUN_004f94a0
+;   core_moon.cpp_CMoon_render_FUN_004f9670
 ;   core_set.cpp_CDemonSet_setFlatColor_FUN_0053b100
 ;   core_sound.cpp_CSound_configure_FUN_005607d0
 ;   core_sound.cpp_CSound_reset_FUN_00560930
@@ -98,8 +98,8 @@ section .text
     MOV EAX,[0x00603b28]                ; 004ea2f9 | g_CDemonSetPtr
     PUSH 0x1d72cb0                      ; 004ea2fe
     MOV dword ptr [EAX + 0x15ae94],0xdac ; 004ea303 | g_CDemonSetInstance.ambient_base_quick
-    CALL core_moon.cpp_FUN_004f9670     ; 004ea30d
-        ;   XREF to: 004f9670 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_004f9670()
+    CALL core_moon.cpp_CMoon_render_FUN_004f9670 ; 004ea30d
+        ;   XREF to: 004f9670 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_render_FUN_004f9670(CMoon * this_ptr)
     ADD ESP,0x4                         ; 004ea312
     MOV EAX,[0x00603b28]                ; 004ea315 | g_CDemonSetPtr
     PUSH 0x5c78e6                       ; 004ea31a | s_Graphic_Options_005c78e5+1
@@ -141,7 +141,7 @@ section .text
     ADD ESP,0x8                         ; 004ea38d
     MOV EAX,[0x005fe9dc]                ; 004ea390 | g_CGamePtr
     PUSH 0x5c791c                       ; 004ea395 | = "Option Menu"
-    MOV dword ptr [EAX + 0xd8],0x9      ; 004ea39a | g_CGameInstance.field168_0xd8
+    MOV dword ptr [EAX + 0xd8],0x9      ; 004ea39a | g_CGameInstance.hero_number
     CALL support_newmsg.cpp_getLocalizedString_FUN_00508960 ; 004ea3a4
         ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)
     ADD ESP,0x4                         ; 004ea3a9
@@ -187,8 +187,8 @@ section .text
     RET                                 ; 004ea40c
     PUSH 0x1d72cb0                      ; 004ea40d
         ;   Label: LAB_004ea40d
-    CALL core_moon.cpp_FUN_004f94a0     ; 004ea412
-        ;   XREF to: 004f94a0 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_004f94a0()
+    CALL core_moon.cpp_CMoon_init_FUN_004f94a0 ; 004ea412
+        ;   XREF to: 004f94a0 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_init_FUN_004f94a0(CMoon * this_ptr)
     ADD ESP,0x4                         ; 004ea417
     MOV EBX,dword ptr [0x006045f8]      ; 004ea41a | DAT_006045f8
     PUSH EBX                            ; 004ea420
@@ -204,13 +204,13 @@ section .text
         ;   XREF to: 004ea3de (UNCONDITIONAL_JUMP)  ; default
     MOV EAX,[0x005fe9dc]                ; 004ea435 | g_CGamePtr
         ;   Label: caseD_2
-    MOV EAX,dword ptr [EAX + 0xd4]      ; 004ea43a | g_CGameInstance.field164_0xd4
+    MOV EAX,dword ptr [EAX + 0xd4]      ; 004ea43a | g_CGameInstance.game_control
     MOV [0x01d737d8],EAX                ; 004ea440 | DAT_01d737d8
     CALL core_menu.cpp_FUN_004e8f80     ; 004ea445
         ;   XREF to: 004e8f80 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_FUN_004e8f80()
     MOV EBX,dword ptr [0x005fe9dc]      ; 004ea44a | g_CGamePtr
     MOV EAX,[0x01d737d8]                ; 004ea450 | DAT_01d737d8
-    CMP EAX,dword ptr [EBX + 0xd4]      ; 004ea455 | g_CGameInstance.field164_0xd4
+    CMP EAX,dword ptr [EBX + 0xd4]      ; 004ea455 | g_CGameInstance.game_control
     JZ 0x004ea3de                       ; 004ea45b
         ;   XREF to: 004ea3de (CONDITIONAL_JUMP)  ; default
     CALL core_menu.cpp_FUN_004eae80     ; 004ea45d
@@ -232,8 +232,8 @@ section .text
         ;   XREF to: 004ea3de (UNCONDITIONAL_JUMP)  ; default
     PUSH 0x1d72cb0                      ; 004ea489
         ;   Label: LAB_004ea489
-    CALL core_moon.cpp_FUN_004f9580     ; 004ea48e
-        ;   XREF to: 004f9580 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_004f9580()
+    CALL core_moon.cpp_CMoon_free_FUN_004f9580 ; 004ea48e
+        ;   XREF to: 004f9580 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_free_FUN_004f9580(CMoon * this_ptr)
     ADD ESP,0x4                         ; 004ea493
     MOV EBX,dword ptr [0x006045f8]      ; 004ea496 | DAT_006045f8
     PUSH EBX                            ; 004ea49c

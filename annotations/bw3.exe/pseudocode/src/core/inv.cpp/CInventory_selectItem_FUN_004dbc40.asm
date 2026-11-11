@@ -17,7 +17,7 @@
 ;   TerminatedCString s_CWeapon_005c62bd
 ;   TerminatedCString s_CAmmo_005c62c5
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 g_CGameInstance.field564_0x264
+;   undefined4 g_CGameInstance.goggles_active
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040c790
@@ -34,7 +34,7 @@ section .text
     PUSH EBP                            ; 004dbc43
     MOV ESI,dword ptr [ESP + 0x14]      ; 004dbc44
     MOV EAX,[0x005fe9dc]                ; 004dbc48 | g_CGamePtr
-    CMP dword ptr [EAX + 0x264],0x0     ; 004dbc4d | g_CGameInstance.field564_0x264
+    CMP dword ptr [EAX + 0x264],0x0     ; 004dbc4d | g_CGameInstance.goggles_active
     JNZ 0x004dbca3                      ; 004dbc54
         ;   XREF to: 004dbca3 (CONDITIONAL_JUMP)  ; LAB_004dbca3
     CMP dword ptr [ESI + 0x33c],0x0     ; 004dbc56

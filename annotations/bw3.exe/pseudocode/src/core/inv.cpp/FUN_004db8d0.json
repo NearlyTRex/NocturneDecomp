@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 177,
+    "complexity_score": 147,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 37,
-    "suspect_count": 11,
+    "suspect_count": 9,
     "suspect_types": [
-      "alloc_magic_size",
       "shadow_pointer_walk",
-      "unnamed_field",
       "unnamed_param",
       "unrolled_strcpy",
       "warning_overlapping_globals"
@@ -51,7 +49,7 @@
     {
       "addr": "005a3cb2",
       "is_variadic": false,
-      "name": "crt_unknown.c_debugAllocTracked1_FUN_005a3cb2"
+      "name": "crt_memory.c_operator_new_FUN_005a3cb2"
     }
   ],
   "globals": [
@@ -156,16 +154,8 @@
       "line": 26,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x318 = *(uint *)(param_2 + 0x56c);",
+      "text": "this_ptr->ammo_type = *(EAmmoType *)(param_2 + 0x56c);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x318",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x318 = *(uint *)(param_2 + 0x56c);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -190,14 +180,6 @@
       "severity": "moderate",
       "text": "pCVar2 = (CAmmo *)((pCVar2->base).actor_name + 2);",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Allocation size hardcodes 0x320 == sizeof(CAmmo). Replace the magic with sizeof(CAmmo) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 15,
-      "match": "(CAmmo*) alloc stride 0x320",
-      "severity": "moderate",
-      "text": "(CAmmo *)debugAllocTracked1(800)",
-      "type": "alloc_magic_size"
     }
   ]
 }

@@ -12,8 +12,8 @@ void __cdecl core_tvbat_cpp_CTVBat_processDamage_FUN_00576130(CTVBat *this_ptr,S
   float fVar1;
   CGore *this_ptr_00;
   
-  if (*(int *)&(this_ptr->base).base.field_0x27b0 == 0) {
-    fVar1 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
+  if ((this_ptr->base).base.is_invulnerable == 0) {
+    fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
     (this_ptr->base).base.hit_points = fVar1;
     this_ptr_00 = g_CGorePtr;
     if (fVar1 <= 0.0) {

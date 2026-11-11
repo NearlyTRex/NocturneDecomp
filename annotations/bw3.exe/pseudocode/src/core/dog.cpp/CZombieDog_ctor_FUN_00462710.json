@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 100,
+    "complexity_score": 35,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 20,
-    "suspect_count": 7,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 47
@@ -178,54 +177,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x326c",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar3->base).base.field_0x326c = 0x3f400000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x3270",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar3->base).base.field_0x3270 = 0x3fc00000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0xd05c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0xd05c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0xd060",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0xd060 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x3274",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar3->base).base.field_0x3274 = uVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x3278",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar3->base).base.field_0x3278 = uVar2;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

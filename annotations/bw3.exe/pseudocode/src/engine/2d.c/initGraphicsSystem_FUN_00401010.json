@@ -2,18 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 83,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 33,
+    "pseudocode_lines": 34,
     "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 124
+    "total_lines": 125
   },
   "cross_references": [
     {
@@ -49,7 +49,12 @@
     {
       "addr": "00573fc0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_00573fc0"
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0"
+    },
+    {
+      "addr": "00573db0",
+      "is_variadic": false,
+      "name": "unkafter_turret.cpp_CInStreamFile_close_FUN_00573db0"
     },
     {
       "addr": "005738c0",
@@ -64,12 +69,7 @@
     {
       "addr": "00573c00",
       "is_variadic": false,
-      "name": "unkafter_turret.cpp_FUN_00573c00"
-    },
-    {
-      "addr": "00573db0",
-      "is_variadic": false,
-      "name": "unkafter_turret.cpp_FUN_00573db0"
+      "name": "unkafter_turret.cpp_CInStreamFile_read_FUN_00573c00"
     },
     {
       "addr": "005798f0",
@@ -244,10 +244,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 29,
       "match": "DAT_005b5030",
       "severity": "mild",
-      "text": "iVar2 = support_trstream_cpp_FUN_00573fc0(&local_30,&DAT_005b5030,\"default.act\",1);",
+      "text": "(&local_30,&DAT_005b5030,\"default.act\",1);",
       "type": "undefined_data"
     }
   ]

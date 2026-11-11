@@ -4,13 +4,17 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CWeapon.h"
 
 // Structure: CDisease
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 1444; ctor 0045bf80, fire 0045c040
 // Ghidra size: 0x5a4 (1444 bytes)
 #pragma pack(push, 1)
 typedef struct CDisease {
-    char field_0[1444]; // 0x0
+    CWeapon base; // 0x0, derived
+    char field_1428[4]; // 0x594
+    CVector3f toss_velocity; // 0x598, ctor zeroes +0x598..+0x5a0; fire passes &+0x598 as the velocity arg of core_fire FUN_004a39d0 and re-zeroes it
 } CDisease;
 #pragma pack(pop)
 

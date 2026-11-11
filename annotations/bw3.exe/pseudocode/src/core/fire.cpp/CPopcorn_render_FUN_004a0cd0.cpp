@@ -11,7 +11,7 @@
 void __cdecl core_fire_cpp_CPopcorn_render_FUN_004a0cd0(CPopcorn *this_ptr)
 
 {
-  SProjectedVertex *output;
+  SRenderVertex *vertex_ptr;
   int iVar1;
   byte bVar2;
   int aiStackY_1060 [1002];
@@ -35,13 +35,12 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004a0cd0(CPopcorn *this_ptr)
   CVector3i CStack_18;
   
   bVar2 = 0;
-  output = (SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr;
-  CStack_48.x = (int)ROUND(*(float *)this_ptr * _DAT_005df8e4);
-  CStack_48.y = (int)ROUND(*(float *)&this_ptr->field_0x4 * _DAT_005df8e4);
-  CStack_48.z = (int)ROUND(*(float *)&this_ptr->field_0x8 * _DAT_005df8e4);
-  engine_special_cpp_FUN_0056356c(output,&CStack_48);
-  iVar1 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0046e6b0
-                    (DAT_005f2afc,(SRenderVertex *)output);
+  vertex_ptr = DAT_005f2afc->vertex_buffer_ptr;
+  CStack_48.x = (int)ROUND((this_ptr->base).position.x * _DAT_005df8e4);
+  CStack_48.y = (int)ROUND((this_ptr->base).position.y * _DAT_005df8e4);
+  CStack_48.z = (int)ROUND((this_ptr->base).position.z * _DAT_005df8e4);
+  engine_special_cpp_FUN_0056356c(&vertex_ptr->projected_vertex,&CStack_48);
+  iVar1 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0046e6b0(DAT_005f2afc,vertex_ptr);
   if (iVar1 == 0) {
     return;
   }
@@ -61,31 +60,28 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004a0cd0(CPopcorn *this_ptr)
   CStack_18.x = (int)ROUND(_DAT_005df8e4 * -0.125);
   CStack_18.y = (int)ROUND(_DAT_005df8e4 * -0.125);
   CStack_18.z = (int)ROUND(_DAT_005df8e4 * 0.0);
-  engine_special_cpp_FUN_005632a3((SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr,&CStack_18);
+  engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_18);
   uStack_30 = 0x3e000000;
   uStack_2c = 0xbe000000;
   uStack_28 = 0;
   CStack_3c.x = (int)ROUND(_DAT_005df8e4 * 0.125);
   CStack_3c.y = (int)ROUND(_DAT_005df8e4 * -0.125);
   CStack_3c.z = (int)ROUND(_DAT_005df8e4 * 0.0);
-  engine_special_cpp_FUN_005632a3
-            ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x30),&CStack_3c);
+  engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&CStack_3c);
   uStack_30 = 0x3e000000;
   uStack_2c = 0x3e000000;
   uStack_28 = 0;
   CStack_6c.x = (int)ROUND(_DAT_005df8e4 * 0.125);
   CStack_6c.y = (int)ROUND(_DAT_005df8e4 * 0.125);
   CStack_6c.z = (int)ROUND(_DAT_005df8e4 * 0.0);
-  engine_special_cpp_FUN_005632a3
-            ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x60),&CStack_6c);
+  engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_6c);
   uStack_30 = 0xbe000000;
   uStack_2c = 0x3e000000;
   uStack_28 = 0;
   CStack_54.x = (int)ROUND(_DAT_005df8e4 * -0.125);
   CStack_54.y = (int)ROUND(_DAT_005df8e4 * 0.125);
   CStack_54.z = (int)ROUND(_DAT_005df8e4 * 0.0);
-  engine_special_cpp_FUN_005632a3
-            ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x90),&CStack_54);
+  engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&CStack_54);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
             (DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005fdbc4);
   (**(code **)(*(int *)(DAT_007e2a54 + 0x3c) + 4))(DAT_007e2a54,this_ptr,0);
@@ -98,9 +94,9 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004a0cd0(CPopcorn *this_ptr)
   _DAT_0060b0bc = 0x80000;
   DAT_0060b040 = 0xffff - _DAT_01c6e24c;
   _DAT_0060b0c0 = 0x80000;
-  CStack_24.x = (int)ROUND(*(float *)this_ptr * _DAT_005df8e4);
-  CStack_24.y = (int)ROUND(*(float *)&this_ptr->field_0x4 * _DAT_005df8e4);
-  CStack_24.z = (int)ROUND(*(float *)&this_ptr->field_0x8 * _DAT_005df8e4);
+  CStack_24.x = (int)ROUND((this_ptr->base).position.x * _DAT_005df8e4);
+  CStack_24.y = (int)ROUND((this_ptr->base).position.y * _DAT_005df8e4);
+  CStack_24.z = (int)ROUND((this_ptr->base).position.z * _DAT_005df8e4);
   DAT_0060b070 = DAT_0060b040;
   _DAT_0060b0a0 = DAT_0060b040;
   _DAT_0060b0d0 = DAT_0060b040;

@@ -11,12 +11,12 @@
 void __cdecl core_exorcism_cpp_CExorcism_setWeaponState_FUN_0048b640(CExorcism *this_ptr,int weapon_state)
 
 {
-  if ((*(int *)&this_ptr->field_0x2d4 == 2) && (weapon_state == 1)) {
+  if (((this_ptr->base).weapon_state == WEAPON_STATE_IN_HAND) && (weapon_state == 1)) {
     sound_sndmain_cpp_killSfx_FUN_00556be0(_DAT_01c6e35c);
-    *(uint *)&this_ptr->field_0x598 = 0;
+    this_ptr->is_firing = 0;
     _DAT_01c6e35c = 0;
-    *(uint *)&this_ptr->field_0x594 = 0;
+    this_ptr->was_firing_prev_frame = 0;
   }
-  core_weapon_cpp_CWeapon_setWeaponState_FUN_0057b7f0((CWeapon *)this_ptr,weapon_state);
+  core_weapon_cpp_CWeapon_setWeaponState_FUN_0057b7f0(&this_ptr->base,weapon_state);
   return;
 }

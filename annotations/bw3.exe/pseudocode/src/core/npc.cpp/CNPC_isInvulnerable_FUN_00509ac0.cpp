@@ -9,5 +9,5 @@
 int __cdecl core_npc_cpp_CNPC_isInvulnerable_FUN_00509ac0(CNPC *this_ptr)
 
 {
-  return (uint)(*(int *)&this_ptr->field_0x206a8 == 0);
+  return (uint)(this_ptr->shoot_me == 0);
 }

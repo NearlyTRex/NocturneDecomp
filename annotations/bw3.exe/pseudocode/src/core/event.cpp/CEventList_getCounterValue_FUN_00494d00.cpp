@@ -13,7 +13,7 @@ int __cdecl core_event_cpp_CEventList_getCounterValue_FUN_00494d00(CEventList *t
   
   iVar1 = core_event_cpp_CEventList_findCounter_FUN_00494e20(this_ptr,str);
   if (-1 < iVar1) {
-    return *(int *)(this_ptr + iVar1 * 4 + 0x34c0);
+    return (this_ptr->counters).values[iVar1];
   }
   return 0;
 }

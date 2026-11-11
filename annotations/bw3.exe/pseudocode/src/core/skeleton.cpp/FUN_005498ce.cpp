@@ -41,10 +41,10 @@ void core_skeleton_cpp_FUN_005498ce(CDeformableModel *param_1,int param_2)
       iVar1 = *DAT_005f2afc;
       if ((*(byte *)(iVar1 + 0x124f63) & 0x80) == 0) {
         engine_2d_c_drawText_FUN_00401fe0
-                  ((char *)text,*(int *)(iVar1 + 0x124f60) >> 0x10,
+                  (text->bone_name,*(int *)(iVar1 + 0x124f60) >> 0x10,
                    *(int *)(iVar1 + 0x124f64) >> 0x10);
       }
-      text = text + 0x24;
+      text = text + 1;
       iStack_14 = iStack_14 + 0x30;
       iStack_18 = iStack_18 + 1;
     } while (iStack_18 < pCStack_1c->bone_count);

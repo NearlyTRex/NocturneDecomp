@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 491,
-    "complexity_score": 475,
+    "complexity_score": 313,
     "cross_reference_count": 2,
     "function_call_count": 26,
     "global_count": 26,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 195,
-    "suspect_count": 25,
+    "pseudocode_lines": 198,
+    "suspect_count": 9,
     "suspect_types": [
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 686
+    "total_lines": 689
   },
   "cross_references": [
     {
@@ -144,7 +143,12 @@
     {
       "addr": "00573fc0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_00573fc0"
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0"
+    },
+    {
+      "addr": "00573db0",
+      "is_variadic": false,
+      "name": "unkafter_turret.cpp_CInStreamFile_close_FUN_00573db0"
     },
     {
       "addr": "005738c0",
@@ -159,17 +163,12 @@
     {
       "addr": "00573c00",
       "is_variadic": false,
-      "name": "unkafter_turret.cpp_FUN_00573c00"
+      "name": "unkafter_turret.cpp_CInStreamFile_read_FUN_00573c00"
     },
     {
       "addr": "00573cf0",
       "is_variadic": false,
-      "name": "unkafter_turret.cpp_FUN_00573cf0"
-    },
-    {
-      "addr": "00573db0",
-      "is_variadic": false,
-      "name": "unkafter_turret.cpp_FUN_00573db0"
+      "name": "unkafter_turret.cpp_CInStreamFile_seek_FUN_00573cf0"
     },
     {
       "addr": "00581c70",
@@ -324,7 +323,7 @@
     },
     {
       "addr": "02cebf30",
-      "name": "g_SfxSamples[1].field8_0x15c",
+      "name": "g_SfxSamples[1].is_user_sample",
       "type": "undefined4",
       "value": null
     },
@@ -465,16 +464,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "&& (*(int *)&g_SfxSamples[_DAT_02cebc20].field_0x15c == 0)) &&",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 57,
       "match": "DAT_02cdafb0",
       "severity": "mild",
       "text": "if ((DAT_02cdafb0 & 1) == 0) {",
@@ -482,7 +473,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 58,
       "match": "DAT_02cdafb0",
       "severity": "mild",
       "text": "DAT_02cdafb0 = DAT_02cdafb0 | 1;",
@@ -490,7 +481,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 58,
       "match": "DAT_02cdafb0",
       "severity": "mild",
       "text": "DAT_02cdafb0 = DAT_02cdafb0 | 1;",
@@ -498,159 +489,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 88,
       "match": "DAT_005d2895",
       "severity": "mild",
-      "text": "iVar6 = _stricmp(&local_23c,&DAT_005d2895);",
+      "text": "iVar7 = _stricmp(&local_23c,&DAT_005d2895);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 96,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x178 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 97,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "iVar6 = sound_sndmain_cpp_FUN_00551000(&local_3c,&pCVar5->field_0x178,pCVar5);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 103,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x15c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 104,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x160 = 0xffffffff;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 106,
-      "match": "field_0x164",
-      "severity": "mild",
-      "text": "*(int *)&pCVar5->field_0x164 = iVar6;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 107,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "*(int *)&pCVar5->field_0x16c = iVar6;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 108,
-      "match": "field_0x170",
-      "severity": "mild",
-      "text": "*(int *)&pCVar5->field_0x170 = iVar6;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 110,
-      "match": "field_0x168",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x168 = uVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 113,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "unkafter_turret_cpp_FUN_00573cf0(&local_3c,*(uint *)&pCVar5->field_0x178,0);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 141,
+      "line": 144,
       "match": "DAT_005d28fc",
       "severity": "mild",
-      "text": "iVar6 = _stricmp(&local_23c,&DAT_005d28fc);",
+      "text": "iVar7 = _stricmp(&local_23c,&DAT_005d28fc);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 166,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x15c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 167,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x160 = 0xffffffff;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 169,
-      "match": "field_0x164",
-      "severity": "mild",
-      "text": "*(int *)&pCVar5->field_0x164 = iVar6;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 170,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "*(int *)&pCVar5->field_0x16c = iVar6;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 171,
-      "match": "field_0x170",
-      "severity": "mild",
-      "text": "*(int *)&pCVar5->field_0x170 = iVar6;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 173,
-      "match": "field_0x168",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x168 = uVar3;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 65,
+      "line": 66,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 72,
-      "match": "pCVar7 = (T *)((pCVar7->FIELD).SUBFIELD...ARRAY + CONST)",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 73,
+      "match": "pCVar8 = (T *)((pCVar8->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
-      "text": "pCVar7 = (CSfxSample *)((pCVar7->sample_info).name + 2);",
+      "text": "pCVar8 = (CSfxSample *)((pCVar8->sample_info).name + 2);",
       "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 79,
+      "line": 80,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

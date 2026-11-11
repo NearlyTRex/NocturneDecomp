@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 114,
+    "complexity_score": 39,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 8,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
-      "unresolved_funcptr"
+      "shadow_pointer_walk"
     ],
     "total_lines": 95
   },
@@ -107,68 +106,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x304",
-      "severity": "mild",
-      "text": "(*(uint *)&this_ptr->field_0x304,g_CHeroClassInfo.name_hash);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x58c",
-      "severity": "mild",
-      "text": "if ((((iVar2 == 0) || (*(int *)&this_ptr->field_0x58c <= *(int *)(iVar2 + 0x20b80))) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x588",
-      "severity": "mild",
-      "text": "(iVar1 != 0)) && (*(int *)&this_ptr->field_0x588 == 0x10000)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x2d4",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x2d4 != 2) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x304",
-      "severity": "mild",
-      "text": "(*(uint *)&this_ptr->field_0x304,g_CEnemyClassInfo.name_hash),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x614",
-      "severity": "mild",
-      "text": "puVar3 = &this_ptr->field_0x614;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 22,
-      "match": "code *",
+      "description": "Watcom shadow-pointer walk \u2014 `this_ptr_00` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*this_ptr_00) + offsetof(subfield)` equals the real array stride. Replace `this_ptr_00->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 23,
+      "match": "this_ptr_00 = (T *)&this_ptr_00[N].SUBFIELD",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(puVar3 + 0x154) + 0x14))(puVar3);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x25c4",
-      "severity": "mild",
-      "text": "} while (puVar3 != &this_ptr->field_0x25c4);",
-      "type": "unnamed_field"
+      "text": "this_ptr_00 = (CDemonActor *)&this_ptr_00[1].next_actor;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

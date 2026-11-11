@@ -8,8 +8,8 @@
 ;
 ; XREF[40]:
 ;   core_door.cpp_CDoor_getMoveType_FUN_00465380 at 00465406
-;   core_fldnotes.cpp_FUN_004a9950 at 004a9b02
 ;   core_fldnotes.cpp_FUN_004abe00 at 004ac624
+;   core_fldnotes.cpp_SNotesEntry_layout_FUN_004a9950 at 004a9b02
 ;   core_game.cpp_CGame_displayActStats_FUN_004bfb50 at 004bfc8d
 ;   core_game.cpp_CGame_finishAct_FUN_004bfee0 at 004c0023
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bb15c

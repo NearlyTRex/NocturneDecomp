@@ -22,7 +22,7 @@
 ;   core_dlight.cpp_CDemonLight_ctor_FUN_0045c180
 ;   core_dlight.cpp_CDemonLight_init_FUN_0045c2a0
 ;   core_main.c_FUN_004e4330
-;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     SUB ESP,0x4                         ; 00542944
     MOV EBP,dword ptr [ESP + 0x18]      ; 00542947
     PUSH 0x2fac                         ; 0054294b
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 00542950
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00542950
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 00542955
     TEST EAX,EAX                        ; 00542958
     JNZ 0x00542a6e                      ; 0054295a

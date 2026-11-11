@@ -20,9 +20,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004642f0(CDoor *this_ptr,float delt
   char *commands;
   CBoundingBox3D *in_stack_fffffef8;
   float *pfVar8;
-  byte auStack_100 [24];
-  float fStack_e8;
-  float fStack_e4;
+  SCollisionInfo SStack_100;
   uint auStack_d8 [4];
   uint auStack_c8 [2];
   float fStack_c0;
@@ -160,14 +158,14 @@ LAB_004643c7:
     while( true ) {
       if (g_CDemonSetPtr->character_count <= iStack_1c) break;
       iVar4 = *(int *)((int)g_CDemonSetPtr->characters + iStack_18);
-      core_setcolid_cpp_SCollisionInfo_ctor_FUN_0053ed80((SCollisionInfo *)auStack_100);
-      iVar3 = (**(code **)(*(int *)(iVar4 + 0x154) + 0x3c))(iVar4,auStack_100);
+      core_setcolid_cpp_SCollisionInfo_ctor_FUN_0053ed80(&SStack_100);
+      iVar3 = (**(code **)(*(int *)(iVar4 + 0x154) + 0x3c))(iVar4,&SStack_100);
       pCVar2 = pCStack_4c;
       if (((iVar3 == 2) &&
-          ((float)auStack_100._20_4_ + *(float *)(iVar4 + 0x24) <=
+          (SStack_100.cylinder_bottom_y + *(float *)(iVar4 + 0x24) <=
            (this_ptr->base).location.position.y + fStack_b0)) &&
-         ((this_ptr->base).location.position.y + fStack_bc <= fStack_e8 + *(float *)(iVar4 + 0x24)))
-      {
+         ((this_ptr->base).location.position.y + fStack_bc <=
+          SStack_100.cylinder_top_y + *(float *)(iVar4 + 0x24))) {
         fStack_9c = *(float *)(iVar4 + 0x20) - (pCStack_14->position).x;
         afStack_98[0] = *(float *)(iVar4 + 0x24) - (pCStack_14->position).y;
         pfVar8 = afStack_74 + 2;
@@ -186,13 +184,15 @@ LAB_004643c7:
           fStack_a4 = afStack_74[0];
           fStack_a0 = afStack_74[1];
         }
-        fStack_40 = fStack_a8 + fStack_e4;
-        if (((fStack_c0 <= fStack_40) && (fStack_48 = fStack_a8 - fStack_e4, fStack_48 <= fStack_b4)
-            ) && ((fStack_b8 <= fStack_a0 + fStack_e4 &&
-                  (fStack_44 = fStack_a0 - fStack_e4, fStack_44 <= fStack_ac)))) {
+        fStack_40 = fStack_a8 + SStack_100.cylinder_radius;
+        if (((fStack_c0 <= fStack_40) &&
+            (fStack_48 = fStack_a8 - SStack_100.cylinder_radius, fStack_48 <= fStack_b4)) &&
+           ((fStack_b8 <= fStack_a0 + SStack_100.cylinder_radius &&
+            (fStack_44 = fStack_a0 - SStack_100.cylinder_radius, fStack_44 <= fStack_ac)))) {
           if (((fStack_c0 <= fStack_48) && (fStack_40 <= fStack_b4)) &&
-             ((fStack_b8 <= fStack_44 && (fStack_a0 + fStack_e4 <= fStack_ac)))) goto LAB_00464830;
-          fVar1 = fStack_e4 * fStack_e4;
+             ((fStack_b8 <= fStack_44 && (fStack_a0 + SStack_100.cylinder_radius <= fStack_ac))))
+          goto LAB_00464830;
+          fVar1 = SStack_100.cylinder_radius * SStack_100.cylinder_radius;
           fStack_28 = SQRT(fVar1 - (fStack_b4 - fStack_a8) * (fStack_b4 - fStack_a8));
           fStack_38 = fStack_a0 + fStack_28;
           fStack_28 = fStack_a0 - fStack_28;

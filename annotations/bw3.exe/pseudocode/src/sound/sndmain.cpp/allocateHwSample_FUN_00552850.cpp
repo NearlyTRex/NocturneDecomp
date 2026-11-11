@@ -29,7 +29,7 @@ int sound_sndmain_cpp_allocateHwSample_FUN_00552850(void)
         }
         if ((((g_SfxSamples[iVar1].ref_count == 0) && (g_SfxSamples[iVar1].buffer_id != 0)) &&
             (g_SfxSamples[iVar1].taken == 0)) &&
-           ((*(int *)&g_SfxSamples[iVar1].field_0x15c == 0 &&
+           ((g_SfxSamples[iVar1].is_user_sample == 0 &&
             (g_SfxSamples[_DAT_02cebc20].locked_length == 0)))) {
           sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00553520(g_SfxSamples + iVar1);
           break;

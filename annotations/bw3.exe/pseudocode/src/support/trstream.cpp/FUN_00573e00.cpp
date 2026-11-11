@@ -15,7 +15,7 @@ void support_trstream_cpp_FUN_00573e00(int param_1)
   
   support_trstream_cpp_FUN_00573e70(param_1);
   *(uint *)(param_1 + 0x20) = 0x1000;
-  pvVar1 = FUN_005a3650(*(int *)(param_1 + 0x20) + 0x1f);
+  pvVar1 = malloc(*(int *)(param_1 + 0x20) + 0x1f);
   *(void **)(param_1 + 0x14) = pvVar1;
   if (pvVar1 == (void *)0x0) {
     _DAT_01d71de0 = "..\\support\\trstream.cpp";

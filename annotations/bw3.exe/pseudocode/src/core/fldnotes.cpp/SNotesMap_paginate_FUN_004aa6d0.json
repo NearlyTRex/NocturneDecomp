@@ -1,0 +1,244 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 78,
+    "complexity_score": 131,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 31,
+    "suspect_count": 8,
+    "suspect_types": [
+      "extra_output",
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 109
+  },
+  "cross_references": [
+    {
+      "addr": "004a9950",
+      "from_addr": "004a9a5d",
+      "name": "core_fldnotes.cpp_SNotesEntry_layout_FUN_004a9950",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004aa6d0",
+    "address_range": [
+      [
+        "004aa6d0",
+        "004aa77d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_SNotesMap_paginate_FUN_004aa6d0",
+    "signature": "undefined4 __cdecl core_fldnotes_cpp_SNotesMap_paginate_FUN_004aa6d0(SNotesMap *this_ptr,STextView *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "004aa780",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_SPageResourceMap_ctor_FUN_004aa780"
+    },
+    {
+      "addr": "004a8ed0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextView_addText_FUN_004a8ed0"
+    },
+    {
+      "addr": "004a9150",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextView_placeResource_FUN_004a9150"
+    },
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a3cb2",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_FUN_005a3cb2"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c116a",
+      "name": "s_core_fldnotes_cpp_005c116a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c117f",
+      "name": "s_Out_of_memory_005c117f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c118d",
+      "name": "DAT_005c118d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c1192",
+      "name": "s_core_fldnotes_cpp_005c1192",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c11a7",
+      "name": "s_NotesMap_paginate_unable_005c11a7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004a9a5d",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_SNotesEntry_layout_FUN_004a9950",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7333333333333334,
+    "instruction_count": 60,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 1,
+      "CALL": 7,
+      "CBRANCH": 4,
+      "COPY": 50,
+      "INT_ADD": 18,
+      "INT_AND": 26,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 22,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 11,
+      "INT_SUB": 22,
+      "LOAD": 11,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 22
+    },
+    "pcode_op_count": 224
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SNotesMap *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint __cdecl core_fldnotes_cpp_SNotesMap_paginate_FUN_004aa6d0(SNotesMap *this_ptr,STextView *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "uint *extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 16,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "puVar1 = extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = core_fldnotes_cpp_STextView_placeResource_FUN_004a9150(param_2,puVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_fldnotes_cpp_STextView_addText_FUN_004a8ed0(param_2,&DAT_005c118d);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_005c118d",
+      "severity": "mild",
+      "text": "core_fldnotes_cpp_STextView_addText_FUN_004a8ed0(param_2,&DAT_005c118d);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = core_fldnotes_cpp_STextView_placeResource_FUN_004a9150(param_2,puVar1);",
+      "type": "unnamed_param"
+    }
+  ]
+}

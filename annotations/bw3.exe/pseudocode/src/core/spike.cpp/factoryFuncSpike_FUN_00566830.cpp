@@ -11,7 +11,7 @@ void core_spike_cpp_factoryFuncSpike_FUN_00566830(void)
 {
   CSpike *this_ptr;
   
-  this_ptr = (CSpike *)debugAllocTracked1(0x560);
+  this_ptr = (CSpike *)operator_new(0x560);
   if (this_ptr == (CSpike *)0x0) {
     return;
   }

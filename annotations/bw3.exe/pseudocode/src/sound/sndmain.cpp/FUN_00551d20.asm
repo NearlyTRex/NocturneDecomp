@@ -200,8 +200,8 @@ section .text
     PUSH 0x5d2899                       ; 00551e81 | = "sound"
     LEA EAX,[ESP + 0x20c]               ; 00551e86
     PUSH EAX                            ; 00551e8d
-    CALL support_trstream.cpp_FUN_00573fc0 ; 00551e8e
-        ;   XREF to: 00573fc0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00573fc0()
+    CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0 ; 00551e8e
+        ;   XREF to: 00573fc0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0(CInStreamFile * this_ptr, undefined4 param_2, undefined4 param_3, int param_4)
     ADD ESP,0x10                        ; 00551e93
     TEST EAX,EAX                        ; 00551e96
     JZ 0x00552027                       ; 00551e98
@@ -250,8 +250,8 @@ section .text
     PUSH EDX                            ; 00551f44
     LEA EAX,[ESP + 0x208]               ; 00551f45
     PUSH EAX                            ; 00551f4c
-    CALL unkafter_turret.cpp_FUN_00573cf0 ; 00551f4d
-        ;   XREF to: 00573cf0 (UNCONDITIONAL_CALL)  ; undefined unkafter_turret.cpp_FUN_00573cf0()
+    CALL unkafter_turret.cpp_CInStreamFile_seek_FUN_00573cf0 ; 00551f4d
+        ;   XREF to: 00573cf0 (UNCONDITIONAL_CALL)  ; undefined4 unkafter_turret.cpp_CInStreamFile_seek_FUN_00573cf0(CInStreamFile * this_ptr, int param_2, uint param_3)
     ADD ESP,0xc                         ; 00551f52
     MOV ECX,dword ptr [EBP + 0x110]     ; 00551f55
     PUSH ECX                            ; 00551f5b
@@ -321,7 +321,7 @@ section .text
     CMP EDX,EBP                         ; 00551ffb
     JNZ 0x00551d80                      ; 00551ffd
         ;   XREF to: 00551d80 (CONDITIONAL_JUMP)  ; LAB_00551d80
-    MOV EDX,dword ptr [EAX + 0x2cebd80] ; 00552003 | g_SfxSamples[1].field8_0x15c
+    MOV EDX,dword ptr [EAX + 0x2cebd80] ; 00552003 | g_SfxSamples[1].is_user_sample
     CMP EBP,EDX                         ; 00552009
     JNZ 0x00551d80                      ; 0055200b
         ;   XREF to: 00551d80 (CONDITIONAL_JUMP)  ; LAB_00551d80
@@ -360,16 +360,16 @@ section .text
     MOV EDI,EAX                         ; 0055206f
     LEA EAX,[ESP + 0x208]               ; 00552071
     PUSH EAX                            ; 00552078
-    CALL unkafter_turret.cpp_FUN_00573c00 ; 00552079
-        ;   XREF to: 00573c00 (UNCONDITIONAL_CALL)  ; undefined unkafter_turret.cpp_FUN_00573c00()
+    CALL unkafter_turret.cpp_CInStreamFile_read_FUN_00573c00 ; 00552079
+        ;   XREF to: 00573c00 (UNCONDITIONAL_CALL)  ; int unkafter_turret.cpp_CInStreamFile_read_FUN_00573c00(CInStreamFile * this_ptr, undefined4 * param_2, uint param_3)
     ADD ESP,0xc                         ; 0055207e
     CMP EAX,EDI                         ; 00552081
     JNZ 0x00552113                      ; 00552083
         ;   XREF to: 00552113 (CONDITIONAL_JUMP)  ; LAB_00552113
     LEA EAX,[ESP + 0x200]               ; 00552089
     PUSH EAX                            ; 00552090
-    CALL unkafter_turret.cpp_FUN_00573db0 ; 00552091
-        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; undefined unkafter_turret.cpp_FUN_00573db0()
+    CALL unkafter_turret.cpp_CInStreamFile_close_FUN_00573db0 ; 00552091
+        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; undefined4 unkafter_turret.cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile * this_ptr)
     MOV EAX,dword ptr [EBP + 0x104]     ; 00552096
     ADD ESP,0x4                         ; 0055209c
     CMP EAX,0x10                        ; 0055209f

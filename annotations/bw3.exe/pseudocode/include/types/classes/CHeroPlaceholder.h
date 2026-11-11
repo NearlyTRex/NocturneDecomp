@@ -7,11 +7,13 @@
 #include "types/classes/CDemonActor.h"
 
 // Structure: CHeroPlaceholder
+// RTTI 380; archive (bw3 hero.cpp) 'index' +0x158, 'heroName' +0x15c.
 // Ghidra size: 0x17c (380 bytes)
 #pragma pack(push, 1)
 typedef struct CHeroPlaceholder {
     CDemonActor base; // 0x0
-    char field_344[36]; // 0x158
+    int index; // 0x158, archive 'index'
+    char hero_name[32]; // 0x15c, archive 'heroName' (archiveString); ctor copies "CDoc"; ends at the RTTI size
 } CHeroPlaceholder;
 #pragma pack(pop)
 

@@ -31,7 +31,7 @@ uint core_menu_cpp_FUN_004e7dc0(void)
   iVar5 = 0x7fffffff;
   local_14 = 0;
   while( true ) {
-    core_moon_cpp_FUN_004f9670(&g_CMoonInstance);
+    core_moon_cpp_CMoon_render_FUN_004f9670(&g_CMoonInstance);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Center gamepad, press ENTER")
     ;
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(_DAT_01549aa0,pcVar2);
@@ -54,7 +54,7 @@ uint core_menu_cpp_FUN_004e7dc0(void)
     g_CDemonSetPtr->rendering_mode = 1;
     core_set_cpp_CDemonSet_setFlatColor_FUN_0053b100(this_ptr,50000,50000,0x10000);
     g_CDemonSetPtr->ambient_base_quick = 0xdac;
-    core_moon_cpp_FUN_004f9670(&g_CMoonInstance);
+    core_moon_cpp_CMoon_render_FUN_004f9670(&g_CMoonInstance);
     g_CDemonSetPtr->rendering_mode = 0;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Move gamepad in all directions, press ENTER")
     ;
@@ -95,6 +95,6 @@ uint core_menu_cpp_FUN_004e7dc0(void)
 LAB_004e8077:
   pCVar1 = g_CGamePtr;
   g_CGamePtr->x_center = 0;
-  *(uint *)&pCVar1->field_0xd4 = 0;
+  pCVar1->game_control = CONTROL_MODE_KEYBOARD;
   return 0;
 }

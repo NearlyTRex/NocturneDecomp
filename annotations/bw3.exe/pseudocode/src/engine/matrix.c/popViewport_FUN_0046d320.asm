@@ -11,7 +11,7 @@
 ;   core_inv.cpp_FUN_004dbe70 at 004dc3b1
 ;   core_setdir.cpp_FUN_0053f940 at 0053fec0
 ;   core_setdir.cpp_FUN_00540cf0 at 00540e54
-;   unkafter_bmppuzzl.cpp_FUN_00412c50 at 00412eab
+;   unkafter_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00412c50 at 00412eab
 ;
 ; Called Functions:
 ;   engine_matrix.c_popViewport_FUN_004e6c50

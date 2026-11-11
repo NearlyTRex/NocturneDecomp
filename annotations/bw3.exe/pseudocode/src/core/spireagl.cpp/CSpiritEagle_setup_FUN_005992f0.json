@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 524,
+    "complexity_score": 159,
     "cross_reference_count": 0,
     "function_call_count": 16,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 89,
-    "suspect_count": 42,
+    "suspect_count": 5,
     "suspect_types": [
-      "unnamed_field",
-      "unresolved_funcptr",
-      "unrolled_strcpy"
+      "shadow_pointer_walk",
+      "unrolled_memcpy",
+      "unrolled_strcpy",
+      "warning_type_propagation"
     ],
     "total_lines": 288
   },
@@ -207,340 +208,44 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x20870",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x20870 = iVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x20870",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(*(int *)&this_ptr->field_0x20870 + 0x158));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x206a8",
-      "severity": "mild",
-      "text": "core_cloth_cpp_CClothList_load_FUN_0043f920((CClothList *)&this_ptr->field_0x206a8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x206a8",
-      "severity": "mild",
-      "text": "((CClothList *)&this_ptr->field_0x206a8,(CVector3f *)&this_ptr->field_0x20,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "((CClothList *)&this_ptr->field_0x206a8,(CVector3f *)&this_ptr->field_0x20,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "(CVector3f *)&this_ptr->field_0x30,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x20870",
-      "severity": "mild",
-      "text": "(CDeformableModelInstance *)(*(int *)&this_ptr->field_0x20870 + 0x158));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x2f08",
-      "severity": "mild",
-      "text": "((CClothList *)&this_ptr->field_0x2f08,(CVector3f *)&this_ptr->field_0x20,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "((CClothList *)&this_ptr->field_0x2f08,(CVector3f *)&this_ptr->field_0x20,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "(CVector3f *)&this_ptr->field_0x30,0.05,*(float *)&this_ptr->field_0x2504,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x2504",
-      "severity": "mild",
-      "text": "(CVector3f *)&this_ptr->field_0x30,0.05,*(float *)&this_ptr->field_0x2504,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x20870",
-      "severity": "mild",
-      "text": "(CDeformableModelInstance *)(*(int *)&this_ptr->field_0x20870 + 0x158));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x27a8",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x27a8 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0xfc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xfc = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x20870",
-      "severity": "mild",
-      "text": "pcVar4 = *(char **)&this_ptr->field_0x20870;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x20870",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&this_ptr->field_0x20870;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x20) = *(uint *)&this_ptr->field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x24) = *(uint *)&this_ptr->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x28) = *(uint *)&this_ptr->field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x2c) = *(uint *)&this_ptr->field_0x2c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x20870",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&this_ptr->field_0x20870;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "if ((uint *)(iVar2 + 0x30) != (uint *)&this_ptr->field_0x30) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x30) = *(uint *)&this_ptr->field_0x30;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x34) = *(uint *)&this_ptr->field_0x34;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x38) = *(uint *)&this_ptr->field_0x38;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x20870",
-      "severity": "mild",
-      "text": "*(uint *)(*(int *)&this_ptr->field_0x20870 + 0x27b8) = 0x3f800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 55,
-      "match": "code *",
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
       "severity": "moderate",
-      "text": "(*(code *)**(uint **)(*(int *)&this_ptr->field_0x20870 + 0x154))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x20870",
-      "severity": "mild",
-      "text": "(*(code *)**(uint **)(*(int *)&this_ptr->field_0x20870 + 0x154))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x20870",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x20870);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 60,
-      "match": "field_0x20870",
-      "severity": "mild",
-      "text": "((CMotionController *)(*(int *)&this_ptr->field_0x20870 + 0x158));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0x20870",
-      "severity": "mild",
-      "text": "((CMotionController *)(*(int *)&this_ptr->field_0x20870 + 0x158),iVar2,0.0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0x20870",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(*(int *)&this_ptr->field_0x20870 + 0x158));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0x20870",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(*(int *)&this_ptr->field_0x20870 + 0x158));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 68,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "this_ptr_00 = &this_ptr->field_0x158;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 75,
-      "match": "field_0x20874",
-      "severity": "mild",
-      "text": "this_ptr_01 = &this_ptr->field_0x20874;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 77,
-      "match": "field_0x2083c",
-      "severity": "mild",
-      "text": "((CMorph *)this_ptr_01,1,*(CKeyFramedModel **)&this_ptr->field_0x2083c,0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 82,
-      "match": "field_0x20870",
-      "severity": "mild",
-      "text": "(CDeformableModelInstance *)(*(int *)&this_ptr->field_0x20870 + 0x158));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 84,
-      "match": "field_0x214a0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x214a0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 88,
-      "match": "field_0x20870",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(*(int *)&this_ptr->field_0x20870 + 0x158));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 89,
-      "match": "field_0xfc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xfc = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 90,
-      "match": "field_0xf8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xf8 = 0;",
-      "type": "unnamed_field"
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 34,
+      "line": 39,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 49,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar3->base).base.base.location.position.x = (this_ptr->base).base.location.position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 57,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar4->vec).x = (pUVar1->vec).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 46,
+      "match": "pCVar3 = (T *)((pCVar3->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar3 = (CPryeMorph *)((pCVar3->base).base.base.actor_name + 2);",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

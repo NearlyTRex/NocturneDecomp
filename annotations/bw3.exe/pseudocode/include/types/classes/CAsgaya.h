@@ -2,15 +2,32 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CExorcism;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CNPC.h"
+#include "types/classes/CPathMap.h"
 
 // Structure: CAsgaya
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 212948; CNPC + own CPathMap + CNPC-style fields + own
 // Ghidra size: 0x33fd4 (212948 bytes)
 #pragma pack(push, 1)
 typedef struct CAsgaya {
-    char field_0[212948]; // 0x0
+    CNPC base; // 0x0, existing base
+    CPathMap path_map; // 0x206c8, CAsgaya_ctor@005a0a10 CPathMap_ctor(this+0x206c8) after CNPC_ctor; getPathMap@005a1b40 returns it; dtor
+    int shoot_me; // 0x33fa4, archive@005a1aa0 "shootMe"; isInvulnerable@005a1b20; ctor zeroes
+    int pool_me; // 0x33fa8, archive "poolMe"; process@005a0be0 sets after createBloodPool; renderTransparent returns 0 when set
+    float speed; // 0x33fac, archive "speed"; ctor random; setup sets 0.75; process dt*speed
+    char field_212912[4]; // 0x33fb0
+    int bible_spawned; // 0x33fb4, process: when 0 creates CExorcism "Bible" into +0x33fd0, then sets 1; ctor zeroes
+    int bone_indices[2]; // 0x33fb8, setup@005a0b00 findBone "Bip01 R Hand" -> +0x33fb8, "Bip01 L Hand" -> +0x33fbc; process uses both for cast effects
+    int cast_count; // 0x33fc0, setup zeroes; process increments (<6) and jumps to motion "indian_cast"
+    int appear_state; // 0x33fc4, ctor -1; process: APPEAR state sets 1, DISAPPEAR sets 0; renderTransparent picks fade direction
+    float fade_timer; // 0x33fc8, process: set to +0x206c4 on APPEAR/DISAPPEAR, -= dt, clamp 0; renderTransparent alpha = fade_timer/+0x206c4
+    int render_alpha; // 0x33fcc, ctor 0xffff; renderTransparent ROUND(fade)->alpha, setRenderAlpha(render_alpha)
+    struct CExorcism* bible; // 0x33fd0, process: createActorByName("CExorcism"), named "Bible", addActorToList, vtable calls +0xe8/+0xe4
 } CAsgaya;
 #pragma pack(pop)
 

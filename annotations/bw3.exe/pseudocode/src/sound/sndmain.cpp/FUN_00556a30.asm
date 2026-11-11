@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_sndmain_cpp_FUN_00556a30(uint param_1,undefined4 param_2)
+; undefined4 sound_sndmain_cpp_FUN_00556a30(uint param_1,void *param_2)
 ;
 ;
 ; XREF[1]:

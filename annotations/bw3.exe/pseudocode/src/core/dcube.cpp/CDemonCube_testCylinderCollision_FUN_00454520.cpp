@@ -11,7 +11,7 @@
 void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_00454520(CDemonCube *this_ptr,SIntersectXZCylinder *cylinder)
 
 {
-  uint *puVar1;
+  CVector3f *pCVar1;
   int iVar2;
   int iVar3;
   int iVar4;
@@ -23,7 +23,7 @@ void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_00454520(CDemon
     iVar5 = 0;
     do {
       iVar2 = core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_00452810
-                        (this_ptr->triangle_buffer + iVar5,cylinder);
+                        ((int)(this_ptr->triangle_buffer->triangle).vertices + iVar5,cylinder);
       if (iVar2 != 0) {
         iVar4 = iVar3;
       }
@@ -32,23 +32,23 @@ void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_00454520(CDemon
     } while (iVar3 < this_ptr->triangle_count);
   }
   if (-1 < iVar4) {
-    puVar1 = *(uint **)(this_ptr->triangle_buffer + iVar4 * 0x20);
-    if (puVar1 != (uint *)&DAT_01548b58) {
-      _DAT_01548b58 = *puVar1;
-      _DAT_01548b60 = puVar1[2];
-      _DAT_01548b5c = puVar1[1];
+    pCVar1 = this_ptr->triangle_buffer[iVar4].triangle.vertices[0];
+    if (pCVar1 != (CVector3f *)&DAT_01548b58) {
+      _DAT_01548b58 = pCVar1->x;
+      _DAT_01548b60 = pCVar1->z;
+      _DAT_01548b5c = pCVar1->y;
     }
-    puVar1 = *(uint **)(this_ptr->triangle_buffer + iVar4 * 0x20 + 4);
-    if (puVar1 != (uint *)&DAT_01548b64) {
-      _DAT_01548b64 = *puVar1;
-      _DAT_01548b6c = puVar1[2];
-      _DAT_01548b68 = puVar1[1];
+    pCVar1 = this_ptr->triangle_buffer[iVar4].triangle.vertices[1];
+    if (pCVar1 != (CVector3f *)&DAT_01548b64) {
+      _DAT_01548b64 = pCVar1->x;
+      _DAT_01548b6c = pCVar1->z;
+      _DAT_01548b68 = pCVar1->y;
     }
-    puVar1 = *(uint **)(this_ptr->triangle_buffer + iVar4 * 0x20 + 8);
-    if (puVar1 != (uint *)&DAT_01548b70) {
-      _DAT_01548b74 = puVar1[1];
-      _DAT_01548b78 = puVar1[2];
-      _DAT_01548b70 = *puVar1;
+    pCVar1 = this_ptr->triangle_buffer[iVar4].triangle.vertices[2];
+    if (pCVar1 != (CVector3f *)&DAT_01548b70) {
+      _DAT_01548b74 = pCVar1->y;
+      _DAT_01548b78 = pCVar1->z;
+      _DAT_01548b70 = pCVar1->x;
       return;
     }
   }

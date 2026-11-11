@@ -2,20 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 154,
+    "complexity_score": 168,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 64,
-    "suspect_count": 7,
+    "pseudocode_lines": 63,
+    "suspect_count": 8,
     "suspect_types": [
+      "alloc_magic_size",
       "undefined_data",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 190
+    "total_lines": 189
   },
   "cross_references": [
     {
@@ -54,14 +55,14 @@
       "name": "core_script.cpp_trimLine_FUN_00528790"
     },
     {
+      "addr": "005a3650",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005a3650"
+    },
+    {
       "addr": "005a3e50",
       "is_variadic": false,
       "name": "crt_memory.c_realloc_FUN_005a3e50"
-    },
-    {
-      "addr": "005a3650",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3650"
     },
     {
       "addr": "00482440",
@@ -223,15 +224,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 24,
       "match": "DAT_01ed6008",
       "severity": "mild",
-      "text": "pcVar8 = &DAT_01ed6008;",
+      "text": "pcVar7 = &DAT_01ed6008;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 27,
       "match": "DAT_01ed6008",
       "severity": "mild",
       "text": "if (DAT_01ed6008 != '\\0') {",
@@ -239,7 +240,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 38,
       "match": "DAT_01ed6008",
       "severity": "mild",
       "text": "pcVar3 = &DAT_01ed6008;",
@@ -247,15 +248,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 52,
       "match": "DAT_01ed6008",
       "severity": "mild",
-      "text": "pcVar8 = &DAT_01ed6008;",
+      "text": "pcVar7 = &DAT_01ed6008;",
       "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 55,
+      "line": 54,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -263,11 +264,19 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 40,
+      "line": 39,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
+    },
+    {
+      "description": "Allocation size hardcodes 0x8 == sizeof(SScriptLine). Replace the magic with sizeof(SScriptLine) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 28,
+      "match": "(SScriptLine*) alloc stride 0x8",
+      "severity": "moderate",
+      "text": "(SScriptLine *)realloc (this_ptr->parsed_lines,(this_ptr->parsed_line_count + 1) * 8)",
+      "type": "alloc_magic_size"
     }
   ]
 }

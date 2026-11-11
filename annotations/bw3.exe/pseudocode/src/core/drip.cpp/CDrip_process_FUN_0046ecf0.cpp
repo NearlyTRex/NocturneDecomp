@@ -18,7 +18,7 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0046ecf0(CDrip *this_ptr,float delt
   float fVar4;
   CKeyFramedModel *model_ptr;
   int iVar5;
-  CDrip **ppCVar6;
+  CDemonActor **ppCVar6;
   uint *puVar7;
   int iVar8;
   byte bVar9;
@@ -28,10 +28,7 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0046ecf0(CDrip *this_ptr,float delt
   float10 fVar13;
   float afStackY_1054 [988];
   CBoundingBox3D *in_stack_ffffff28;
-  SDamageInfo aSStack_c8 [4];
-  float fStack_c4;
-  CDrip *pCStack_94;
-  CDrip *pCStack_90;
+  SDamageInfo SStack_c8;
   uint auStack_84 [3];
   float fStack_78;
   float fStack_6c;
@@ -62,7 +59,7 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0046ecf0(CDrip *this_ptr,float delt
     (this_ptr->base).location.position.y = fVar3 * delta_time + (this_ptr->base).location.position.y
     ;
     (*pCVar1->getBoundingBox)(&this_ptr->base,in_stack_ffffff28);
-    ppCVar6 = &pCStack_94;
+    ppCVar6 = &SStack_c8.attacker;
     puVar7 = auStack_84;
     for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
       *puVar7 = *ppCVar6;
@@ -122,14 +119,14 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0046ecf0(CDrip *this_ptr,float delt
     while( true ) {
       if (g_CDemonSetPtr->character_count <= iVar5) break;
       iVar2 = *(int *)((int)g_CDemonSetPtr->characters + iVar8);
-      core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(aSStack_c8);
-      fStack_c4 = this_ptr->damage;
-      pCStack_94 = this_ptr;
-      pCStack_90 = this_ptr;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(&SStack_c8);
+      SStack_c8.damage_amount = this_ptr->damage;
+      SStack_c8.attacker = &this_ptr->base;
+      SStack_c8.wielder = &this_ptr->base;
       iVar8 = iVar8 + 4;
       iVar5 = iVar5 + 1;
       (**(code **)(*(int *)(iVar2 + 0x154) + 0x100))
-                (iVar2,&(this_ptr->base).location,0x3f800000,aSStack_c8);
+                (iVar2,&(this_ptr->base).location,0x3f800000,&SStack_c8);
     }
   }
   else if ((this_ptr->auto_drop != 0) &&

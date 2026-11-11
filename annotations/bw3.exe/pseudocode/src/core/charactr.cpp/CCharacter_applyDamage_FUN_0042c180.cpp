@@ -10,17 +10,15 @@ void __cdecl core_charactr_cpp_CCharacter_applyDamage_FUN_0042c180(CCharacter *t
 
 {
   EDeathState EVar1;
-  SDamageInfo aSStack_40 [4];
-  float fStack_3c;
-  int iStack_10;
+  SDamageInfo SStack_40;
   
   EVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
   if (0 < (int)EVar1) {
     return;
   }
-  core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(aSStack_40);
-  iStack_10 = damage_type;
-  fStack_3c = damage_amount;
-  (*(((this_ptr->base).vtable._uc)->_uc).processDamage)(this_ptr,aSStack_40);
+  core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(&SStack_40);
+  SStack_40.damage_type = damage_type;
+  SStack_40.damage_amount = damage_amount;
+  (*(((this_ptr->base).vtable._uc)->_uc).processDamage)(this_ptr,&SStack_40);
   return;
 }

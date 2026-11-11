@@ -12,7 +12,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_00478
 
 {
   CDemonCube *this_ptr_00;
-  byte bVar1;
+  uchar *puVar1;
+  byte bVar2;
   int aiStackY_1028 [1014];
   int local_40;
   int local_3c;
@@ -23,22 +24,22 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_00478
   int local_28;
   int local_1c;
   
-  bVar1 = 0;
+  bVar2 = 0;
   core_dtrace_cpp_FUN_00477a10(this_ptr,world_position);
   local_34 = local_28;
-  *(uint *)((int)&stack0xffffffd0 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffdc + (uint)bVar1 * -8);
-  *(uint *)((int)&stack0xffffffd4 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffe0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
+  *(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8) =
+       *(uint *)(&stack0xffffffdc + (uint)bVar2 * -8);
+  *(uint *)((int)&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
+       *(uint *)(&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
   if ((((-1 < local_34) && (-1 < local_30)) && (-1 < local_2c)) &&
      (((local_34 < (this_ptr->grid_coord).x && (local_30 < (this_ptr->grid_coord).y)) &&
       (local_2c < (this_ptr->grid_coord).z)))) {
     core_dtrace_cpp_FUN_00477ac0(this_ptr,world_position);
     local_40 = local_1c;
-    *(uint *)((int)&stack0xffffffc4 + (uint)bVar1 * -8) =
-         *(uint *)(&stack0xffffffe8 + (uint)bVar1 * -8);
-    *(uint *)((int)&stack0xffffffc8 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-         *(uint *)(&stack0xffffffec + (uint)bVar1 * -8 + (uint)bVar1 * -8);
+    *(uint *)((int)&stack0xffffffc4 + (uint)bVar2 * -8) =
+         *(uint *)(&stack0xffffffe8 + (uint)bVar2 * -8);
+    *(uint *)((int)&stack0xffffffc8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
+         *(uint *)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);
     local_40 = local_40 % 8;
     local_3c = local_3c % 8;
     local_38 = local_38 % 8;
@@ -52,14 +53,11 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_00478
     if (this_ptr_00->voxel_buffer1 == (SVoxelGrid *)0x0) {
       core_dcube_cpp_CDemonCube_allocVoxelMemory_FUN_00453d10(this_ptr_00);
     }
-    local_3c = local_38 * 8 + local_3c;
-    this_ptr_00->voxel_buffer1[local_3c] =
-         (SVoxelGrid)
-         ((byte)this_ptr_00->voxel_buffer1[local_3c] & ((&DAT_005fb0e8)[local_40] ^ 0xff));
-    this_ptr_00->voxel_buffer1[local_3c] =
-         (SVoxelGrid)
-         ((byte)this_ptr_00->voxel_buffer1[local_3c] |
-         (byte)this_ptr_00->voxel_buffer2[local_3c] & (&DAT_005fb0e8)[local_40]);
+    puVar1 = this_ptr_00->voxel_buffer1->voxels[local_38] + local_3c;
+    *puVar1 = *puVar1 & ((&DAT_005fb0e8)[local_40] ^ 0xff);
+    puVar1 = this_ptr_00->voxel_buffer1->voxels[local_38] + local_3c;
+    *puVar1 = *puVar1 | this_ptr_00->voxel_buffer2->voxels[local_38][local_3c] &
+                        (&DAT_005fb0e8)[local_40];
     return;
   }
   return;

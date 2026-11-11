@@ -13,14 +13,14 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d0d210
-;   undefined4 SNotesSection_ARRAY_01d0d214[0].field320_0x140
-;   undefined4 SNotesSection_ARRAY_01d0d214[0].field324_0x144
-;   undefined4 SNotesSection_ARRAY_01d0d214[0].field328_0x148
-;   undefined4 SNotesSection_ARRAY_01d0d214[0].field332_0x14c
-;   undefined4 SNotesSection_ARRAY_01d0d214[1].field320_0x140
-;   undefined4 SNotesSection_ARRAY_01d0d214[1].field324_0x144
-;   undefined4 SNotesSection_ARRAY_01d0d214[1].field328_0x148
-;   undefined4 SNotesSection_ARRAY_01d0d214[1].field332_0x14c
+;   undefined4 SNotesSection_ARRAY_01d0d214[0].first_page
+;   undefined4 SNotesSection_ARRAY_01d0d214[0].page_count
+;   undefined4 SNotesSection_ARRAY_01d0d214[0].tab_x
+;   undefined4 SNotesSection_ARRAY_01d0d214[0].tab_y
+;   undefined4 SNotesSection_ARRAY_01d0d214[1].first_page
+;   undefined4 SNotesSection_ARRAY_01d0d214[1].page_count
+;   undefined4 SNotesSection_ARRAY_01d0d214[1].tab_x
+;   undefined4 SNotesSection_ARRAY_01d0d214[1].tab_y
 ;   undefined4 DAT_01d19ba8
 ;
 ; *****************************************************************************
@@ -42,8 +42,8 @@ section .text
     XOR ECX,ECX                         ; 004a80ec
     IMUL ESI,EDX,0x2e4                  ; 004a80ee
         ;   Label: LAB_004a80ee
-    MOV EBX,dword ptr [ESI + 0x1d0d35c] ; 004a80f4 | SNotesSection_ARRAY_01d0d214[0].field328_0x148 | SNotesSection_ARRAY_01d0d214[1].field328_0x148
-    MOV EBP,dword ptr [ESI + 0x1d0d360] ; 004a80fa | SNotesSection_ARRAY_01d0d214[0].field332_0x14c | SNotesSection_ARRAY_01d0d214[1].field332_0x14c
+    MOV EBX,dword ptr [ESI + 0x1d0d35c] ; 004a80f4 | SNotesSection_ARRAY_01d0d214[0].tab_x | SNotesSection_ARRAY_01d0d214[1].tab_x
+    MOV EBP,dword ptr [ESI + 0x1d0d360] ; 004a80fa | SNotesSection_ARRAY_01d0d214[0].tab_y | SNotesSection_ARRAY_01d0d214[1].tab_y
     MOV ESI,dword ptr [ECX + 0x1d19bcc] ; 004a8100
     ADD ESI,EBX                         ; 004a8106
     MOV dword ptr [ESP + 0x4],ESI       ; 004a8108
@@ -51,11 +51,11 @@ section .text
     ADD ESI,EBP                         ; 004a8112
     MOV EDI,dword ptr [0x01d19ba8]      ; 004a8114 | DAT_01d19ba8
     MOV dword ptr [ESP],ESI             ; 004a811a
-    MOV ESI,dword ptr [EAX + 0x140]     ; 004a811d | SNotesSection_ARRAY_01d0d214[0].field320_0x140 | SNotesSection_ARRAY_01d0d214[1].field320_0x140
+    MOV ESI,dword ptr [EAX + 0x140]     ; 004a811d | SNotesSection_ARRAY_01d0d214[0].first_page | SNotesSection_ARRAY_01d0d214[1].first_page
     CMP EDI,ESI                         ; 004a8123
     JL 0x004a816c                       ; 004a8125
         ;   XREF to: 004a816c (CONDITIONAL_JUMP)  ; LAB_004a816c
-    ADD ESI,dword ptr [EAX + 0x144]     ; 004a8127 | SNotesSection_ARRAY_01d0d214[0].field324_0x144 | SNotesSection_ARRAY_01d0d214[1].field324_0x144
+    ADD ESI,dword ptr [EAX + 0x144]     ; 004a8127 | SNotesSection_ARRAY_01d0d214[0].page_count | SNotesSection_ARRAY_01d0d214[1].page_count
     CMP ESI,EDI                         ; 004a812d
     JLE 0x004a816c                      ; 004a812f
         ;   XREF to: 004a816c (CONDITIONAL_JUMP)  ; LAB_004a816c

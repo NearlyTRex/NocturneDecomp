@@ -16,13 +16,13 @@ void core_xform_cpp_FUN_00586eb0(CEnemy *param_1,SDamageInfo *param_2)
   uint uVar4;
   int force_immediate;
   
-  fVar1 = (param_1->base).hit_points - *(float *)(param_2 + 4);
+  fVar1 = (param_1->base).hit_points - param_2->damage_amount;
   this_ptr = &(param_1->base).model;
   (param_1->base).hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (param_1->base).hit_points = 0.0;
     pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&this_ptr->base);
-    iVar2 = *(int *)(pSVar3 + 0x24);
+    iVar2 = pSVar3->state_index;
     if ((((iVar2 == 0x13) || (iVar2 == 0x10)) || (iVar2 == 0x14)) ||
        (((iVar2 == 0x11 || (iVar2 == 0x15)) || (iVar2 == 0x12)))) goto LAB_00586ef3;
     force_immediate = 1;

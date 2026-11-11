@@ -1,0 +1,145 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 129,
+    "complexity_score": 72,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 57,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_strcpy"
+    ],
+    "total_lines": 186
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004a8a00",
+    "address_range": [
+      [
+        "004a8a00",
+        "004a8b83"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_SPageResourceTwanaEntry_draw_FUN_004a8a00",
+    "signature": "void __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_draw_FUN_004a8a00(SPageResourceTwanaEntry *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0048c150",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_executeCommands_FUN_0048c150"
+    },
+    {
+      "addr": "005a28f0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005a28f0"
+    },
+    {
+      "addr": "005a3260",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005a3260"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
+    },
+    {
+      "addr": "0040d6f0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d6f0"
+    },
+    {
+      "addr": "0040d460",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fba60",
+      "name": "DAT_005fba60",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.62037037037037,
+    "instruction_count": 108,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BRANCH": 1,
+      "CALL": 7,
+      "CBRANCH": 6,
+      "COPY": 80,
+      "INT_ADD": 54,
+      "INT_AND": 67,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 55,
+      "INT_LEFT": 2,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 18,
+      "INT_SLESS": 29,
+      "INT_SUB": 40,
+      "INT_XOR": 2,
+      "LOAD": 21,
+      "POPCOUNT": 27,
+      "RETURN": 1,
+      "STORE": 46
+    },
+    "pcode_op_count": 499
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SPageResourceTwanaEntry *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 32,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 4,
+        "vtable_addr": "005e02c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

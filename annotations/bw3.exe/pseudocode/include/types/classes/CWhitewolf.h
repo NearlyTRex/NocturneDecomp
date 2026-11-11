@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDarkwolf.h"
 
 // Structure: CWhitewolf
-// Stub: size from Watcom RTTI, fields not yet recovered
+// registered under CDarkwolf (registerActorClass); size 56472 from RTTI; no fields of its own
 // Ghidra size: 0xdc98 (56472 bytes)
 #pragma pack(push, 1)
 typedef struct CWhitewolf {
-    char field_0[56472]; // 0x0
+    CDarkwolf base; // 0x0, parent class
 } CWhitewolf;
 #pragma pack(pop)
 

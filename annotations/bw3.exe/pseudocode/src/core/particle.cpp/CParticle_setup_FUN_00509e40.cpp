@@ -19,22 +19,22 @@ void __cdecl core_particle_cpp_CParticle_setup_FUN_00509e40(CParticle *this_ptr,
   float10 fVar6;
   float10 fVar7;
   
-  *(uint *)(this_ptr + 0x1c) = 0xc2000000;
-  *(uint *)(this_ptr + 0x20) = 0;
-  *(uint *)(this_ptr + 0x18) = 0;
-  if ((CVector3f *)this_ptr != position) {
-    *(float *)this_ptr = position->x;
-    *(float *)(this_ptr + 4) = position->y;
-    *(float *)(this_ptr + 8) = position->z;
+  (this_ptr->acceleration).y = -32.0;
+  (this_ptr->acceleration).z = 0.0;
+  (this_ptr->acceleration).x = 0.0;
+  if (this_ptr != (CParticle *)position) {
+    (this_ptr->position).x = position->x;
+    (this_ptr->position).y = position->y;
+    (this_ptr->position).z = position->z;
   }
   if (velocity != (CVector3f *)0x0) {
-    if ((CVector3f *)(this_ptr + 0xc) != velocity) {
-      ((CVector3f *)(this_ptr + 0xc))->x = velocity->x;
-      *(float *)(this_ptr + 0x10) = velocity->y;
-      *(float *)(this_ptr + 0x14) = velocity->z;
+    if (&this_ptr->velocity != velocity) {
+      (this_ptr->velocity).x = velocity->x;
+      (this_ptr->velocity).y = velocity->y;
+      (this_ptr->velocity).z = velocity->z;
     }
-    *(uint *)(this_ptr + 0x24) = 0x40a00000;
-    *(uint *)(this_ptr + 0x38) = 0;
+    this_ptr->lifetime_remaining = 5.0;
+    this_ptr->was_in_solid = 0;
     return;
   }
   fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.7853982,1.5707964);
@@ -44,10 +44,10 @@ void __cdecl core_particle_cpp_CParticle_setup_FUN_00509e40(CParticle *this_ptr,
   fVar5 = (float10)fsin((float10)fVar2);
   fVar6 = (float10)fsin((float10)fVar1);
   fVar7 = (float10)_DAT_005cb659;
-  *(float *)(this_ptr + 0x10) = (float)(fVar6 * fVar7);
-  *(float *)(this_ptr + 0xc) = (float)(fVar3 * fVar7 * fVar4);
-  *(float *)(this_ptr + 0x14) = (float)(fVar5 * fVar7 * fVar4);
-  *(uint *)(this_ptr + 0x24) = 0x40a00000;
-  *(uint *)(this_ptr + 0x38) = 0;
+  (this_ptr->velocity).y = (float)(fVar6 * fVar7);
+  (this_ptr->velocity).x = (float)(fVar3 * fVar7 * fVar4);
+  (this_ptr->velocity).z = (float)(fVar5 * fVar7 * fVar4);
+  this_ptr->lifetime_remaining = 5.0;
+  this_ptr->was_in_solid = 0;
   return;
 }

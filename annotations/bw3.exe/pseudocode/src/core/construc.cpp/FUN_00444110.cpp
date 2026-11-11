@@ -36,8 +36,8 @@ void core_construc_cpp_FUN_00444110(CCharacter *param_1)
   
   bVar11 = 0;
   core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0(param_1);
-  *(uint *)&param_1[1].model.field_0x920 = 1;
-  *(uint *)&param_1[1].model.field_0x92c = 0;
+  param_1[1].model.bone_transform.pose_data.bone_rotations[0x27].w = 1.4013e-45;
+  param_1[1].model.bone_transform.pose_data.bone_rotations[0x27].z = 0.0;
   local_20 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(&param_1->model);
   fVar6 = (float)local_20->num_parts;
   param_1[1].model.bone_origins[0x2b].x = fVar6;
@@ -65,9 +65,9 @@ void core_construc_cpp_FUN_00444110(CCharacter *param_1)
       part_index = param_1[1].model.bone_origins[0x1a].y;
       bVar10 = fVar6 == part_index;
       if (bVar10) {
-        *(float *)&param_1[1].model.field_0x924 = part_index;
+        param_1[1].model.bone_transform.pose_data.bone_rotations[0x27].x = part_index;
         body_part->dont_pick_me_up = 0;
-        *(uint *)&body_part->field_0xcc8 = 1;
+        body_part->render_disabled = 1;
       }
       else {
         body_part->dont_pick_me_up = 1;

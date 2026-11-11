@@ -29,13 +29,13 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_p
   byte bVar11;
   float afStackY_104c [993];
   CPathMap *delta_time;
-  uint uStack_a0;
-  uint uStack_9c;
-  uint uStack_98;
-  uint uStack_7c;
-  uint uStack_70;
-  uint uStack_6c;
-  uint uStack_68;
+  float fStack_a0;
+  float fStack_9c;
+  float fStack_98;
+  EDamageType EStack_7c;
+  float fStack_70;
+  float fStack_6c;
+  float fStack_68;
   float local_64;
   CPathMap *local_58;
   float fStack_54;
@@ -63,7 +63,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_p
       iVar4 = iVar4 + 1;
     } while (iVar4 < this_ptr->actor_count);
   }
-  if (*(int *)&g_CGamePtr->field_0x230 != 0) {
+  if (g_CGamePtr->profile_mode != 0) {
     local_48 = wincore_winrun_cpp_getTime_FUN_005806a0();
     local_24 = 0;
   }
@@ -103,16 +103,16 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_p
                 *(uint *)(&stack0xffffffa4 + (uint)bVar11 * -8 + (uint)bVar11 * -8) =
                      puVar9[(uint)bVar11 * -2 + 1];
                 DAT_007df974 = pCVar2;
-                if (*(int *)&g_CGamePtr->field_0x230 == 2) {
+                if (g_CGamePtr->profile_mode == 2) {
                   local_2c = wincore_winrun_cpp_getTime_FUN_005806a0();
                 }
                 (*((DAT_007df974->vtable)._ub)->process)(DAT_007df974,(float)delta_time);
-                if (*(int *)&g_CGamePtr->field_0x230 == 2) {
+                if (g_CGamePtr->profile_mode == 2) {
                   iVar5 = wincore_winrun_cpp_getTime_FUN_005806a0();
                   *(int *)(iVar4 + 0x207bad8) = iVar5 - local_24;
                   *(CDemonActor **)(iVar4 + 0x207da18) = DAT_007df974;
                 }
-                if (*(int *)&g_CGamePtr->field_0x230 != 0) {
+                if (g_CGamePtr->profile_mode != 0) {
                   local_1c = (CDemonSet *)((int)&local_1c->camera_count + 1);
                   iVar4 = iVar4 + 4;
                 }
@@ -165,11 +165,11 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_p
           }
           else if (iStack_4c == 0) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0((SDamageInfo *)&stack0xffffff54);
-            uStack_7c = 4;
+            EStack_7c = DAMAGE_TYPE_FALL_APART;
             if (&stack0xffffff60 != &stack0xffffff90) {
-              uStack_a0 = uStack_70;
-              uStack_9c = uStack_6c;
-              uStack_98 = uStack_68;
+              fStack_a0 = fStack_70;
+              fStack_9c = fStack_6c;
+              fStack_98 = fStack_68;
             }
             (**(code **)(*(int *)(local_38 + 0x154) + 0x108))(local_38);
           }
@@ -187,7 +187,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_p
         this_ptr_02 = (CTrigger *)core_actor_cpp_castToClassHash_FUN_0040c840(pCVar8->actors[0]);
         if (((this_ptr_02 != (CTrigger *)0x0) &&
             (this_ptr_02->trigger_cause == TRIGGER_CAUSE_DAMAGE)) &&
-           (this_ptr_02->field_0x308 == '\0')) {
+           (this_ptr_02->damage_actor_wildcard_name[0] == '\0')) {
           fStack_50 = 0.0;
           iVar5 = core_fire_cpp_FUN_004a3790
                             (0x01C73654,&(this_ptr_02->base).location,0,0,&fStack_50);
@@ -205,8 +205,8 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_005353e0(CDemonSet *this_p
         pCVar8 = (CDemonSet *)pCVar8->cameras;
       } while (iVar4 < this_ptr->actor_count);
     }
-    if (*(int *)&g_CGamePtr->field_0x230 != 0) {
-      if (*(int *)&g_CGamePtr->field_0x230 == 2) {
+    if (g_CGamePtr->profile_mode != 0) {
+      if (g_CGamePtr->profile_mode == 2) {
         local_30 = 0;
         local_40 = local_24 + -1;
         local_34 = 0;

@@ -11,7 +11,7 @@
 CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_0056b370(CTommyGun *this_ptr)
 
 {
-  uint uVar1;
+  float fVar1;
   CTommyGun *pCVar2;
   
   pCVar2 = (CTommyGun *)core_weapon_cpp_CWeapon_ctor_FUN_0057ad70(&this_ptr->base);
@@ -25,9 +25,9 @@ CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_0056b370(CTommyGun *thi
   (pCVar2->base).bolt_velocity = 100.0;
   (pCVar2->base).fire_cooldown = 1;
   pCVar2->sfx_handles[0] = 0;
-  uVar1 = _DAT_005e53bc;
+  fVar1 = _DAT_005e53bc;
   pCVar2->sfx_handles[1] = 0;
   pCVar2->fire_frames_remaining = 0;
-  *(uint *)&(pCVar2->base).field_0x564 = uVar1;
+  (pCVar2->base).weight = fVar1;
   return pCVar2;
 }

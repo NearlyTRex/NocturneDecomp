@@ -2,22 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 327,
-    "complexity_score": 484,
+    "complexity_score": 192,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 114,
-    "suspect_count": 34,
+    "pseudocode_lines": 112,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "unnamed_field",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 441
+    "total_lines": 439
   },
   "cross_references": [],
   "function": {
@@ -235,230 +233,6 @@
       "severity": "moderate",
       "text": "float afStackY_1018 [1009];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0xd070",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_killSfx_FUN_00556be0(*(uint *)&this_ptr->field_0xd070);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CMotionController *)&this_ptr->field_0x158,0x16,1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x2538",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)&this_ptr->field_0x2538 - *(float *)(damage_info + 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "this_ptr_00 = &this_ptr->field_0x158;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x2538",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x2538 = fVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x2540",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2540 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x2538",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2538 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0xd054",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0xd054 == 0) && (g_CDemonSetPtr->last_switch_area_invalid != 0))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "if (*(float *)&this_ptr->field_0x20 <= (float)_DAT_005d9459) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "if ((double)*(float *)&this_ptr->field_0x20 < _DAT_005d9461) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x34 = 0x3fc90fdb;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 60,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x34 = 0xbfc90fdb;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0xd078",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_killSfx_FUN_00556be0(*(uint *)&this_ptr->field_0xd078);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 64,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar3 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 64,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "uVar3 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 66,
-      "match": "field_0xd078",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xd078 = uVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 67,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0xa8))(this_ptr,0x32,0x41c80000);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0xa8))(this_ptr,0x32,0x41c80000);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 71,
-      "match": "field_0xd054",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0xd054 != 2) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 79,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CMotionController *)&this_ptr->field_0x158,9,1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 83,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CMotionController *)&this_ptr->field_0x158,10,1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 89,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CMotionController *)&this_ptr->field_0x158,iVar4,1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 97,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CMotionController *)&this_ptr->field_0x158,0x10,1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 101,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CMotionController *)&this_ptr->field_0x158,0x11,1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 109,
-      "match": "field_0xd078",
-      "severity": "mild",
-      "text": "iVar4 = sound_sndmain_cpp_FUN_00556700(*(uint *)&this_ptr->field_0xd078);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 111,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar3 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 111,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "uVar3 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 113,
-      "match": "field_0xd078",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xd078 = uVar3;",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer value `&CStack_30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

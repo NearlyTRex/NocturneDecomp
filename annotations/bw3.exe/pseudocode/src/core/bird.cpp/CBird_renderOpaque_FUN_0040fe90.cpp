@@ -11,9 +11,9 @@ int __cdecl core_bird_cpp_CBird_renderOpaque_FUN_0040fe90(CBird *this_ptr)
 {
   int iVar1;
   
-  if (*(int *)&this_ptr->field_0x206ac == 0) {
-    if (*(int *)&this_ptr->field_0x27a8 == 0) {
-      iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042e220((CCharacter *)this_ptr);
+  if (this_ptr->pool_me == 0) {
+    if ((this_ptr->base).is_spectral == 0) {
+      iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042e220(&this_ptr->base);
       return iVar1;
     }
     iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);
@@ -22,9 +22,9 @@ int __cdecl core_bird_cpp_CBird_renderOpaque_FUN_0040fe90(CBird *this_ptr)
                           (0x01C6E360,"heroCanSee"), iVar1 == 0)) {
       return 0;
     }
-    if (((*(int *)&this_ptr->field_0x27a8 != 0) && (*(int *)&g_CGamePtr->field_0x264 != 0)) &&
+    if ((((this_ptr->base).is_spectral != 0) && (g_CGamePtr->goggles_active != 0)) &&
        (iVar1 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,2), iVar1 == 1)) {
-      iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042e220((CCharacter *)this_ptr);
+      iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042e220(&this_ptr->base);
       return iVar1;
     }
   }

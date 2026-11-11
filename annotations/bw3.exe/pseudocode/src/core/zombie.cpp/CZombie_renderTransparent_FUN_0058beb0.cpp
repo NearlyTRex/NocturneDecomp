@@ -45,9 +45,8 @@ int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_0058beb0(CZombie *this
   float fStack_1c;
   
   bVar4 = 0;
-  if (((this_ptr->base).base.was_rendered_opaque != 0) && (*(int *)&this_ptr->field_0xd0d8 != 0)) {
-    core_skeleton_cpp_FUN_0054d9c0
-              (&(this_ptr->base).base.model,*(uint *)&this_ptr->field_0xd0e8);
+  if (((this_ptr->base).base.was_rendered_opaque != 0) && (this_ptr->is_miner_zombie != 0)) {
+    core_skeleton_cpp_FUN_0054d9c0(&(this_ptr->base).base.model,this_ptr->bone_indices[0]);
     puVar2 = (uint *)&stack0xfffffeac;
     puVar3 = (uint *)&stack0xfffffedc;
     for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

@@ -47,7 +47,7 @@ void core_charactr_cpp_FUN_004310e0(CCharacter *param_1,int param_2,float param_
   local_48 = local_6c;
   local_40 = local_64;
   if (0.0 <= param_3) {
-    if ((*(int *)&param_1->field_0x27a8 == 0) &&
+    if ((param_1->is_spectral == 0) &&
        ((((float)_DAT_005b8466 < ABS(local_44) || ((float)_DAT_005b846e < ABS(local_6c))) ||
         ((float)_DAT_005b846e < ABS(local_64))))) {
       local_68 = local_44;
@@ -128,7 +128,7 @@ LAB_004312a4:
     *param_5 = 1;
   }
   local_1c = param_1->turn_angle_accumulator;
-  local_28 = *(float *)&param_1->field_0x2528;
+  local_28 = param_1->turn_speed;
   fVar4 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(local_1c);
   fVar3 = -local_28;
   if ((fVar3 <= fVar4) && (fVar3 = fVar4, local_28 < fVar4)) {

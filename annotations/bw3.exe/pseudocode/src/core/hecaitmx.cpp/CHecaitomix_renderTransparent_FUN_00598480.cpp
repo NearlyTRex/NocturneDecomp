@@ -11,7 +11,8 @@
 int __cdecl core_hecaitmx_cpp_CHecaitomix_renderTransparent_FUN_00598480(CHecaitomix *this_ptr)
 
 {
-  CDemonRenderer *this_ptr_00;
+  CDeformableModelInstance *this_ptr_00;
+  CDemonRenderer *this_ptr_01;
   int iVar1;
   uint *puVar2;
   uint *puVar3;
@@ -20,11 +21,12 @@ int __cdecl core_hecaitmx_cpp_CHecaitomix_renderTransparent_FUN_00598480(CHecait
   uint auStack_20 [6];
   
   bVar4 = 0;
-  if (*(int *)&this_ptr->field_0xcdd0 != 0) {
+  if ((this_ptr->base).pool_me != 0) {
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0((CDemonActor *)this_ptr);
-  (**(code **)(*(int *)&this_ptr->field_0x154 + 0x1c))(this_ptr,0);
+  (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
+            ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
   puVar2 = auStack_20;
   puVar3 = auStack_38;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -33,24 +35,24 @@ int __cdecl core_hecaitmx_cpp_CHecaitomix_renderTransparent_FUN_00598480(CHecait
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
   iVar1 = core_box_cpp_FUN_0041daf0(auStack_38);
-  this_ptr_00 = DAT_005f2afc;
+  this_ptr_01 = DAT_005f2afc;
   if (iVar1 != 0) {
-    *(uint *)&this_ptr->field_0x27bc = 1;
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
-              (this_ptr_00,*(int *)&this_ptr->field_0xd074);
+    iVar1 = this_ptr->render_alpha;
+    (this_ptr->base).base.was_rendered_opaque = 1;
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(this_ptr_01,iVar1);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(DAT_005f2afc,1);
+    this_ptr_00 = &(this_ptr->base).base.model;
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0
-              ((CDeformableModelInstance *)&this_ptr->field_0x158,-1,0x2e7,1,0);
+              (this_ptr_00,-1,0x2e7,1,0);
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(DAT_005f2afc);
     if (_DAT_01d8e40c != 0) {
-      core_motion_cpp_FUN_004fcdc0
-                ((CMotionController *)&this_ptr->field_0x158,(CDemonActor *)this_ptr);
+      core_motion_cpp_FUN_004fcdc0(&this_ptr_00->base,(CDemonActor *)this_ptr);
     }
-    if (0.0 < *(float *)&this_ptr->field_0x3254) {
+    if (0.0 < (this_ptr->base).base.bind_time) {
       core_charactr_cpp_FUN_0042f310((CCharacter *)this_ptr);
     }
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830((CDemonActor *)this_ptr);
-  return *(int *)&this_ptr->field_0x27bc;
+  return (this_ptr->base).base.was_rendered_opaque;
 }

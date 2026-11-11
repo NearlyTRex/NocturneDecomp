@@ -20,7 +20,7 @@ int __cdecl core_script_cpp_CScript_findDialogEntry_FUN_00530990(CScript *this_p
     iVar3 = 0;
     do {
       iVar1 = _stricmp
-                        ((char *)(this_ptr->dialog_entries + iVar3),local_110);
+                        (this_ptr->dialog_entries->wav_name + iVar3,local_110);
       if (iVar1 == 0) {
         return iVar2;
       }

@@ -9,9 +9,9 @@
 CPopcorn * __cdecl core_fire_cpp_CPopcorn_ctor_FUN_004a4580(CPopcorn *this_ptr)
 
 {
-  CPopcorn *pCVar1;
+  CParticle *pCVar1;
   
-  pCVar1 = (CPopcorn *)core_particle_cpp_CParticle_ctor_FUN_00509e10((CParticle *)this_ptr);
-  *(byte ***)&pCVar1->field_0x3c = &g_CPopcornVTable;
-  return pCVar1;
+  pCVar1 = core_particle_cpp_CParticle_ctor_FUN_00509e10(&this_ptr->base);
+  pCVar1->vtable = (CParticle_vtable *)&g_CPopcornVTable;
+  return (CPopcorn *)pCVar1;
 }

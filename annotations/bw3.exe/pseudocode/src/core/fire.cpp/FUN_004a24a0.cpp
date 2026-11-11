@@ -29,7 +29,7 @@ void core_fire_cpp_FUN_004a24a0(void)
   core_fire_cpp_loadStakeAssets_FUN_00497a30();
   core_fire_cpp_loadFireBallAssets_FUN_004992f0();
   core_fire_cpp_loadRockAssets_FUN_0049a000();
-  core_fire_cpp_FUN_0049a170();
+  core_fire_cpp_loadLeafAssets_FUN_0049a170();
   core_fire_cpp_loadLightningBoltAssets_FUN_0049e170();
   core_fire_cpp_loadGunFlashAssets_FUN_0049a630();
   core_fire_cpp_FUN_0049f380(1);

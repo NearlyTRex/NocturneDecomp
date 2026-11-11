@@ -9,46 +9,47 @@
 void __cdecl core_hostage_cpp_CDemnfolk_archive_FUN_004583c0(CDemnfolk *this_ptr)
 
 {
-  core_enemy_cpp_CEnemy_archive_FUN_00489120((CEnemy *)this_ptr);
-  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0xcdcc,"speed");
+  core_enemy_cpp_CEnemy_archive_FUN_00489120(&this_ptr->base);
+  core_actor_cpp_archiveFloat_FUN_0040b830(&(this_ptr->base).speed,"speed");
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040ba30
-            ((CDeformableModelInstance *)&this_ptr->field_0x158,"modelName");
+            (&(this_ptr->base).base.model,"modelName");
   if (1 < g_CDemnfolkClassVersion) {
     if (g_CDemnfolkClassVersion < 0xb) {
-      core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0xcddc,"guardDistance");
+      core_actor_cpp_archiveFloat_FUN_0040b830
+                (&(this_ptr->base).guard_distance,"guardDistance");
     }
     core_actor_cpp_archiveMotionState_FUN_0040bab0
-              ((CMotionController *)&this_ptr->field_0x158,"motion state");
+              (&(this_ptr->base).base.model.base,"motion state");
   }
   if (2 < g_CDemnfolkClassVersion) {
     core_actor_cpp_archivePartStatus_FUN_0040bba0
-              ((CDeformableModelInstance *)&this_ptr->field_0x158,"partStatus");
+              (&(this_ptr->base).base.model,"partStatus");
     if (g_CDemnfolkClassVersion < 7) {
-      core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x2628,"carriedActor");
+      core_actor_cpp_archiveActor_FUN_0040b930
+                (&(this_ptr->base).base.carry_hands[1].carry_actor,"carriedActor");
     }
   }
   if (3 < g_CDemnfolkClassVersion) {
     core_actor_cpp_archiveString_FUN_0040b680
-              (&this_ptr->field_0xd074,"riseFromGraveCondition");
+              (this_ptr->rise_from_grave_condition,"riseFromGraveCondition");
   }
   if (4 < g_CDemnfolkClassVersion) {
-    core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0xd06c,"graveActor");
+    core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->grave_actor,"graveActor");
   }
   if ((5 < g_CDemnfolkClassVersion) && (g_CDemnfolkClassVersion < 9)) {
-    core_actor_cpp_archiveClothList_FUN_0040bf20(&this_ptr->field_0x2f08,"clothList");
+    core_actor_cpp_archiveClothList_FUN_0040bf20
+              (&(this_ptr->base).base.cloth_list,"clothList");
   }
   if (7 < g_CDemnfolkClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b8b0
-              ((int *)&this_ptr->field_0xd0d8,"isMinerZombie");
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->is_miner_zombie,"isMinerZombie");
   }
   if (9 < g_CDemnfolkClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b8b0
-              ((int *)&this_ptr->field_0xd0e0,"alwaysChaseFast");
+              (&this_ptr->always_chase_fast,"alwaysChaseFast");
   }
   if (g_CDemnfolkClassVersion < 0xc) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040b8b0
-            ((int *)&this_ptr->field_0xd0dc,"isIndoorDemon");
+  core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->is_indoor_demon,"isIndoorDemon");
   return;
 }

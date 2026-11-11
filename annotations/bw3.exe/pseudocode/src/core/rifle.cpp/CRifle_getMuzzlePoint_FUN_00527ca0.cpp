@@ -17,7 +17,7 @@ CVector3f * __cdecl core_rifle_cpp_CRifle_getMuzzlePoint_FUN_00527ca0(CRifle *th
   CBoundingBox3D *pCVar3;
   float *pfVar4;
   byte bVar5;
-  byte auStack_23d4 [9124];
+  CDeformableModelInstance CStack_23d4;
   float afStack_30 [3];
   float fStack_24;
   float fStack_20;
@@ -26,10 +26,9 @@ CVector3f * __cdecl core_rifle_cpp_CRifle_getMuzzlePoint_FUN_00527ca0(CRifle *th
   float afStack_14 [2];
   
   bVar5 = 0;
-  core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0054bf00
-            ((CDeformableModelInstance *)auStack_23d4);
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
-                     ((CKeyFramedModelInstance *)&this_ptr->field_0x158);
+  core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0054bf00(&CStack_23d4);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(&(this_ptr->base).model)
+  ;
   pCVar3 = &pCVar1->bounds;
   pfVar4 = afStack_30;
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -37,7 +36,8 @@ CVector3f * __cdecl core_rifle_cpp_CRifle_getMuzzlePoint_FUN_00527ca0(CRifle *th
     pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
     pfVar4 = pfVar4 + (uint)bVar5 * -2 + 1;
   }
-  iVar2 = _strcmp(&this_ptr->field_0x1d0,"LITEDESLILE.kfm");
+  iVar2 = _strcmp
+                    ((this_ptr->base).model.model_name,"LITEDESLILE.kfm");
   if (iVar2 == 0) {
     afStack_14[1] = fStack_1c + (float)_DAT_005cdb11;
     afStack_14[0] = fStack_20 + (float)_DAT_005cdb09;
@@ -47,8 +47,7 @@ CVector3f * __cdecl core_rifle_cpp_CRifle_getMuzzlePoint_FUN_00527ca0(CRifle *th
     afStack_14[1] = fStack_1c;
   }
   fStack_18 = fStack_24 * _DAT_005cdb19;
-  core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80
-            ((CDeformableModelInstance *)auStack_23d4,0);
+  core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80(&CStack_23d4,0);
   pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);
   unaff_ESI->x = fStack_18;
   *pfVar4 = afStack_14[(uint)bVar5 * -2];

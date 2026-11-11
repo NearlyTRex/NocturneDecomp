@@ -113,7 +113,7 @@
   {
     "kind":"class",
     "name":"CDemonCubeTriangle",
-    "size":1
+    "size":32
   },
   {
     "kind":"class",
@@ -124,6 +124,7 @@
   {
     "kind":"class",
     "name":"CDisease",
+    "parent":"CWeapon",
     "size":1444
   },
   {
@@ -155,7 +156,7 @@
   {
     "kind":"class",
     "name":"CFont",
-    "size":1
+    "size":27208
   },
   {
     "kind":"class",
@@ -209,11 +210,104 @@
     "size":380
   },
   {
+    "kind":"funcdef",
+    "name":"CKeys_getKeyState",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CKeys",
+          "ptr":1
+        }
+      },
+      {
+        "name":"key_code",
+        "type":{
+          "kind":"enum",
+          "name":"EInputCodeType",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
+    "name":"CKeys_vtable",
+    "size":12,
+    "vtable_slots":[
+      {
+        "name":"getKeyState",
+        "offset":0
+      },
+      {
+        "name":"getAndClearKeyState",
+        "offset":4
+      },
+      {
+        "name":"clearKeyPresses",
+        "offset":8
+      }
+    ]
+  },
+  {
     "kind":"class",
     "name":"CLightActor",
     "parent":"CBoxActor",
     "rtti_file":"core/box.cpp",
     "size":14068
+  },
+  {
+    "kind":"funcdef",
+    "name":"CMotionController_findPatchToFrame",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CMotionController",
+          "ptr":1
+        }
+      },
+      {
+        "name":"source_motion_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"source_frame",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"target_motion_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -229,13 +323,14 @@
   {
     "kind":"class",
     "name":"CRock",
+    "parent":"CParticle",
     "rtti_file":"core/emitter.cpp",
     "size":80
   },
   {
     "kind":"class",
     "name":"CSocket",
-    "size":1
+    "size":4
   },
   {
     "kind":"funcdef",
@@ -313,19 +408,13 @@
   },
   {
     "kind":"class",
-    "name":"CTentacle",
-    "parent":"CEnemy",
-    "rtti_file":"core/tentacle.cpp",
-    "size":1
-  },
-  {
-    "kind":"class",
     "name":"CTerrain",
-    "size":1
+    "size":8
   },
   {
     "kind":"class",
     "name":"CTheHand",
+    "parent":"CEnemy",
     "size":53452
   },
   {
@@ -352,6 +441,7 @@
   {
     "kind":"class",
     "name":"CZombieDemon",
+    "parent":"CZombie",
     "size":53580
   },
   {
@@ -397,14 +487,34 @@
     ]
   },
   {
+    "kind":"enum",
+    "name":"EHeroControlType",
+    "size":4,
+    "values":[
+      {
+        "name":"HERO_CONTROL_PLAYER",
+        "value":0
+      },
+      {
+        "name":"HERO_CONTROL_NETWORK",
+        "value":1
+      },
+      {
+        "name":"HERO_CONTROL_AI",
+        "value":2
+      }
+    ]
+  },
+  {
     "kind":"struct",
     "name":"SCoronaLightEntry",
-    "size":1
+    "size":78724
   },
   {
     "kind":"struct",
     "name":"SMRGLPrimitivePoly",
-    "size":1
+    "parent":"SMRGLHeaderPrimitive",
+    "size":120
   },
   {
     "kind":"struct",
@@ -414,6 +524,6 @@
   {
     "kind":"struct",
     "name":"SPoseData",
-    "size":1
+    "size":1612
   }
 ]

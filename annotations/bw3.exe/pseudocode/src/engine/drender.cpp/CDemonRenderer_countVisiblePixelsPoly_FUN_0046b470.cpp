@@ -19,20 +19,20 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b47
   
   _DAT_01bdd810 = 0;
   if ((this_ptr->plane_culling_enabled == 0) ||
-     (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403920(poly + 8), iVar3 != 0)) {
+     (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403920(&(poly->base).surface_normal), iVar3 != 0)) {
     iVar3 = 0;
     local_14 = 0xffffffff;
-    if (0 < *(int *)(poly + 4)) {
+    if (0 < (poly->base).base.count) {
       iVar2 = 0;
       pSVar4 = poly;
       do {
-        iVar1 = *(int *)(pSVar4 + 0x18);
+        iVar1 = pSVar4->vertices[0].vertex_index;
         *(int *)(&DAT_01bdd818 + iVar2) = iVar1;
         iVar2 = iVar2 + 4;
-        pSVar4 = pSVar4 + 0xc;
+        pSVar4 = (SMRGLPrimitivePoly *)&(pSVar4->base).surface_normal.B;
         iVar3 = iVar3 + 1;
-        local_14 = local_14 & *(uint *)(this_ptr->vertex_buffer_ptr + iVar1 * 0x30 + 0x10);
-      } while (iVar3 < *(int *)(poly + 4));
+        local_14 = local_14 & this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
+      } while (iVar3 < (poly->base).base.count);
     }
     if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
       if (this_ptr->shadow_pass_active == 0) {
@@ -46,7 +46,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b47
         core_main_c_FUN_004e4330("Can't use demonZFacetCount in shadow mode!");
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160
-                (this_ptr,*(int *)(poly + 4),(int *)&DAT_01bdd818);
+                (this_ptr,(poly->base).base.count,(int *)&DAT_01bdd818);
       iVar3 = _DAT_01bdd810;
     }
     else {

@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 754,
-    "complexity_score": 376,
+    "complexity_score": 331,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 53,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 271,
-    "suspect_count": 9,
+    "suspect_count": 5,
     "suspect_types": [
-      "alloc_magic_size",
       "undefined_data",
       "warning_overlapping_globals"
     ],
@@ -45,7 +44,7 @@
     {
       "addr": "005a3cb2",
       "is_variadic": false,
-      "name": "crt_unknown.c_debugAllocTracked1_FUN_005a3cb2"
+      "name": "crt_memory.c_operator_new_FUN_005a3cb2"
     },
     {
       "addr": "004af790",
@@ -490,38 +489,6 @@
       "severity": "mild",
       "text": "pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_0057fd50(pCVar3,&DAT_006034c0,10,0,0);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Allocation size hardcodes 0x6b80 == sizeof(CWinFont). Replace the magic with sizeof(CWinFont) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 214,
-      "match": "(CWinFont*) alloc stride 0x6b80",
-      "severity": "moderate",
-      "text": "(CWinFont *)debugAllocTracked1(0x6b80)",
-      "type": "alloc_magic_size"
-    },
-    {
-      "description": "Allocation size hardcodes 0x6b80 == sizeof(CWinFont). Replace the magic with sizeof(CWinFont) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 229,
-      "match": "(CWinFont*) alloc stride 0x6b80",
-      "severity": "moderate",
-      "text": "(CWinFont *)debugAllocTracked1(0x6b80)",
-      "type": "alloc_magic_size"
-    },
-    {
-      "description": "Allocation size hardcodes 0x6b80 == sizeof(CWinFont). Replace the magic with sizeof(CWinFont) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 244,
-      "match": "(CWinFont*) alloc stride 0x6b80",
-      "severity": "moderate",
-      "text": "(CWinFont *)debugAllocTracked1(0x6b80)",
-      "type": "alloc_magic_size"
-    },
-    {
-      "description": "Allocation size hardcodes 0x6b80 == sizeof(CWinFont). Replace the magic with sizeof(CWinFont) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 259,
-      "match": "(CWinFont*) alloc stride 0x6b80",
-      "severity": "moderate",
-      "text": "(CWinFont *)debugAllocTracked1(0x6b80)",
-      "type": "alloc_magic_size"
     }
   ]
 }

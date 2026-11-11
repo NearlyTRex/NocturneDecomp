@@ -20,7 +20,7 @@ uint __cdecl core_script_cpp_CScript_computeChecksum_FUN_00531030(CScript *this_
   if (0 < this_ptr->parsed_line_count) {
     iVar3 = 0;
     do {
-      pbVar2 = *(byte **)(this_ptr->parsed_lines + iVar3 + 4);
+      pbVar2 = *(byte **)((int)&this_ptr->parsed_lines->text + iVar3);
       bVar1 = *pbVar2;
       while (bVar1 != 0) {
         bVar1 = *pbVar2;

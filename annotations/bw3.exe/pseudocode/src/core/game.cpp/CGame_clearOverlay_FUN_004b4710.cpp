@@ -10,7 +10,7 @@ void __cdecl core_game_cpp_CGame_clearOverlay_FUN_004b4710(CGame *this_ptr)
 
 {
   this_ptr->status_display_count = 0;
-  this_ptr->field_0xb80 = 0;
+  this_ptr->end_timer_text[0] = '\0';
   this_ptr->message_timer = 0.0;
   return;
 }

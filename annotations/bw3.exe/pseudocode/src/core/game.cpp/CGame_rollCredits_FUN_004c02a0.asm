@@ -50,11 +50,11 @@
 ;   core_game.cpp_FUN_004b4440
 ;   core_main.c_FUN_004e4330
 ;   crt_math.c_round_FUN_005a3120
+;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fgets_FUN_005a3f00
 ;   crt_string.c__strcmp_FUN_005a3d00
 ;   crt_string.c__strncpy_FUN_005a4ee0
-;   crt_unknown.c_FUN_005a3650
 ;   crt_unknown.c_FUN_005a3770
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_2d.c_fillRectColor_FUN_004031c0
@@ -378,8 +378,8 @@ section .text
     DEC ECX                             ; 004c066a
     ADD ECX,0xa                         ; 004c066b
     PUSH ECX                            ; 004c066e
-    CALL crt_unknown.c_FUN_005a3650     ; 004c066f
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 004c066f
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 004c0674
     MOV dword ptr [ESP + EBP*0x1 + 0x8],EAX ; 004c0677
     TEST EAX,EAX                        ; 004c067b

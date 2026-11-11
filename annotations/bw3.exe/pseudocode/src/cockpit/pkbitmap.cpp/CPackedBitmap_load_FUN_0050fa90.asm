@@ -22,8 +22,8 @@
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_FUN_0050f230
 ;   core_main.c_FUN_004e4330
+;   crt_memory.c_operator_new_array_FUN_005a40df
 ;   crt_memory.c_realloc_FUN_005a3e50
-;   crt_unknown.c_FUN_005a40df
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
@@ -56,8 +56,8 @@ section .text
     INC EAX                             ; 0050fad6
     SHL EAX,0x2                         ; 0050fad7
     PUSH EAX                            ; 0050fada
-    CALL crt_unknown.c_FUN_005a40df     ; 0050fadb
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a40df()
+    CALL crt_memory.c_operator_new_array_FUN_005a40df ; 0050fadb
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
     ADD ESP,0x4                         ; 0050fae0
     MOV dword ptr [EBP + 0x20],EAX      ; 0050fae3
     TEST EAX,EAX                        ; 0050fae6

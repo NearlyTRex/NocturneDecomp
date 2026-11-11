@@ -22,11 +22,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00415350(CBodyPart *this_pt
   byte bVar8;
   float afStackY_100c [994];
   CBoundingBox3D *in_stack_ffffff88;
-  SDamageInfo aSStack_70 [4];
-  float fStack_6c;
-  uint uStack_40;
-  CBodyPart *pCStack_3c;
-  CBodyPart *pCStack_38;
+  SDamageInfo SStack_70;
   float fStack_24;
   float fStack_20;
   float afStack_1c [3];
@@ -81,13 +77,14 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00415350(CBodyPart *this_pt
              (iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
                                 (0x01C6E360,"disableBodyPartDamage"), iVar6 == 0)) {
             (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff88);
-            core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(aSStack_70);
-            fStack_6c = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(10.0,15.0);
-            pCStack_3c = this_ptr;
-            pCStack_38 = this_ptr;
-            uStack_40 = 0x70;
+            core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(&SStack_70);
+            SStack_70.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(10.0,15.0)
+            ;
+            SStack_70.attacker = &this_ptr->base;
+            SStack_70.wielder = &this_ptr->base;
+            SStack_70.damage_type = DAMAGE_TYPE_BODY_PART;
             core_setcolid_cpp_FUN_0053ed10
-                      (g_CDemonSetPtr,afStack_1c,&(this_ptr->base).location,aSStack_70);
+                      (g_CDemonSetPtr,afStack_1c,&(this_ptr->base).location,&SStack_70);
             core_bodypart_cpp_CBodyPart_processFires_FUN_00415570(this_ptr,delta_time);
             return;
           }

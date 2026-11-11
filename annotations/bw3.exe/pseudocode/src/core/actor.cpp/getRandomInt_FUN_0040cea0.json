@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 55,
+    "complexity_score": 40,
     "cross_reference_count": 73,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 25,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 93
@@ -191,6 +190,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004a29d0",
+      "from_addr": "004a2a2a",
+      "name": "core_fire.cpp_CFireEffect_createFirefly_FUN_004a29d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004a23c0",
       "from_addr": "004a2417",
       "name": "core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0",
@@ -200,12 +205,6 @@
       "addr": "00497290",
       "from_addr": "0049739d",
       "name": "core_fire.cpp_FUN_00497290",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a29d0",
-      "from_addr": "004a2a2a",
-      "name": "core_fire.cpp_FUN_004a29d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -437,15 +436,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004132c0",
-      "from_addr": "0041335a",
-      "name": "unkafter_superopt.cpp_FUN_004132c0",
+      "addr": "004133c0",
+      "from_addr": "00413b62",
+      "name": "unkafter_superopt.cpp_CChemPuzzle_load_FUN_004133c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004133c0",
-      "from_addr": "00413b62",
-      "name": "unkafter_superopt.cpp_FUN_004133c0",
+      "addr": "004132c0",
+      "from_addr": "0041335a",
+      "name": "unkafter_superopt.cpp_CChemPuzzle_reset_FUN_004132c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -512,7 +511,7 @@
     },
     {
       "addr": "01d2156c",
-      "name": "g_CGameInstance.field560_0x260",
+      "name": "g_CGameInstance.is_processing",
       "type": "undefined4",
       "value": null
     }
@@ -743,14 +742,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x260",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x260 == 0) {",
-      "type": "unnamed_field"
     }
   ]
 }

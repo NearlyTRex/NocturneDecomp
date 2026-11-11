@@ -13,12 +13,12 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0
 {
   int hierarchy_distance;
   int start_bone_index;
-  byte *puVar1;
+  CQuaternion4f *pCVar1;
   uint *puVar2;
   uint *puVar3;
   byte bVar4;
-  CSkeleton *apCStackY_1808 [1522];
-  uint uStack_2c;
+  float afStackY_1808 [1522];
+  float fStack_2c;
   CSkeleton *local_1c;
   CDeformableModelInstance *local_18;
   float fStack_14;
@@ -29,7 +29,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0
     local_1c = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(this_ptr);
     if (0 < local_1c->bone_count) {
       local_18 = this_ptr;
-      puVar1 = &this_ptr->field_0x6b0;
+      pCVar1 = (this_ptr->bone_transform).pose_data.bone_rotations;
       do {
         hierarchy_distance =
              core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_005481d0
@@ -37,9 +37,9 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0
         if (-1 < hierarchy_distance) {
           fStack_14 = (*blend_callback)(start_bone_index,bone_index,blend_weight,hierarchy_distance,
                                         this_ptr);
-          core_xform_cpp_slerpQuaternion_FUN_00585b20(puVar1,source_quaternions,fStack_14);
+          core_xform_cpp_slerpQuaternion_FUN_00585b20(pCVar1,source_quaternions,fStack_14);
           puVar2 = (uint *)((int)local_18 + (uint)bVar4 * -8 + 0x6b4);
-          *(uint *)&local_18->field_0x6b0 = uStack_2c;
+          (local_18->bone_transform).pose_data.bone_rotations[0].w = fStack_2c;
           puVar3 = puVar2 + (uint)bVar4 * -2 + 1;
           *puVar2 = *(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8);
           *puVar3 = *(uint *)(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8);
@@ -48,7 +48,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0
                 ((int)(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8) +
                 ((uint)bVar4 * -2 + 1) * 4);
         }
-        puVar1 = puVar1 + 0x10;
+        pCVar1 = pCVar1 + 1;
         start_bone_index = start_bone_index + 1;
         local_18 = (CDeformableModelInstance *)&(local_18->base).tween_speed;
       } while (start_bone_index < local_1c->bone_count);

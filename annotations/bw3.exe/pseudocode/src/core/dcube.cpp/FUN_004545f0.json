@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 208,
+    "complexity_score": 218,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 68,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -285,31 +285,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 38,
       "match": "DAT_01548b58",
       "severity": "mild",
-      "text": "if (puVar1 != (uint *)&DAT_01548b58) {",
+      "text": "if (pCVar1 != (CVector3f *)&DAT_01548b58) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 44,
       "match": "DAT_01548b64",
       "severity": "mild",
-      "text": "if (puVar1 != (uint *)&DAT_01548b64) {",
+      "text": "if (pCVar1 != (CVector3f *)&DAT_01548b64) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 50,
       "match": "DAT_01548b70",
       "severity": "mild",
-      "text": "if (puVar1 != (uint *)&DAT_01548b70) {",
+      "text": "if (pCVar1 != (CVector3f *)&DAT_01548b70) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 55,
       "match": "(byte *)((int)this_ptr",
       "severity": "moderate",
       "text": "*output_material = (uint)*(byte *)((int)this_ptr->ground_type_memory + iVar4);",
@@ -338,6 +338,14 @@
       "severity": "moderate",
       "text": "output_normal->x = local_28.x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 26,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "((CDemonCubeTriangle *)",
+      "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

@@ -29,7 +29,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00477bc0(CDemon
       pSVar1 = this_ptr->cube_data[iVar2 * (this_ptr->grid_coord).y * iVar5 + iVar3 + iVar4 * iVar5]
                .voxel_buffer1;
       if (pSVar1 != (SVoxelGrid *)0x0) {
-        return (uint)(((byte)pSVar1[(voxel_coords->z & 7U) * 8 + (voxel_coords->y & 7U)] &
+        return (uint)((pSVar1->voxels[voxel_coords->z & 7][voxel_coords->y & 7] &
                       (&DAT_005fb0e8)[voxel_coords->x & 7]) != 0);
       }
     }

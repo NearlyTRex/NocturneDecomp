@@ -14,8 +14,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00460890(CKeyFram
   int iVar1;
   uchar *puVar2;
   int iVar3;
-  byte *puVar4;
-  CKeyFramedModelPart *pCVar5;
+  char *pcVar4;
+  int *piVar5;
   int iVar6;
   int local_48;
   int local_44;
@@ -137,7 +137,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00460890(CKeyFram
     } while (local_1c < this_ptr->poly_count);
   }
   if (local_2c != 0) {
-    puVar2 = (uchar *)FUN_005a40df(this_ptr->poly_count);
+    puVar2 = (uchar *)operator_new_array(this_ptr->poly_count);
     this_ptr->env_map_opac_list = puVar2;
     if (puVar2 == (uchar *)0x0) {
       _DAT_01d71de0 = "..\\core\\dmodel.cpp";
@@ -165,11 +165,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00460890(CKeyFram
   } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
   iVar3 = 0;
   if (0 < this_ptr->texture_count) {
-    puVar4 = &this_ptr->field_0x12c;
+    pcVar4 = this_ptr->texture_list[0].texture_name;
     do {
-      _fscanf(file,"%[^\n]\n",puVar4);
+      _fscanf(file,"%[^\n]\n",pcVar4);
       iVar3 = iVar3 + 1;
-      puVar4 = puVar4 + 0x48;
+      pcVar4 = pcVar4 + 0x48;
     } while (iVar3 < this_ptr->texture_count);
   }
   iVar3 = 1;
@@ -179,14 +179,14 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00460890(CKeyFram
   } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
   iVar3 = 0;
   if (0 < this_ptr->part_count) {
-    pCVar5 = this_ptr->part_list + 4;
+    piVar5 = &this_ptr->part_list[0].poly_count;
     do {
-      _fscanf(file,"%d,%d\n",this_ptr->part_list + iVar3 * 8,pCVar5);
+      _fscanf(file,"%d,%d\n",this_ptr->part_list + iVar3,piVar5);
       iVar3 = iVar3 + 1;
-      pCVar5 = pCVar5 + 8;
+      piVar5 = piVar5 + 2;
     } while (iVar3 < this_ptr->part_count);
   }
-  if (((byte)file[0xc] & 0x20) != 0) {
+  if ((file->_flag & 0x20) != 0) {
     _DAT_01d71de0 = "..\\core\\dmodel.cpp";
     _DAT_01d71de4 = 0x197;
     core_main_c_FUN_004e4330("Error reading KFM model");

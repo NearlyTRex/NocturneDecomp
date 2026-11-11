@@ -3,6 +3,7 @@
 #pragma once
 
 // Forward declarations
+struct CCharacter;
 struct CDemonActor;
 struct SDialogEntry;
 struct SScriptLine;
@@ -21,7 +22,7 @@ typedef struct CScript {
     struct CDemonActor* focus_actor; // 0xc
     int focus_actor_changed; // 0x10
     int focus_actor_locked; // 0x14
-    char field_24[4]; // 0x18
+    struct CCharacter* monster_vision_actor; // 0x18, Added in this build
     int script_state; // 0x1c
     int dialog_entry_count; // 0x20
     struct SDialogEntry* dialog_entries; // 0x24

@@ -15,7 +15,7 @@ CAsgaya * core_asgaya_cpp_CAsgaya_ctor_FUN_005a0a10(CAsgaya *this_ptr)
   CPathMap *pCVar2;
   float fVar3;
   
-  pCVar1 = core_npc_cpp_CNPC_ctor_FUN_00508f40((CNPC *)this_ptr);
+  pCVar1 = core_npc_cpp_CNPC_ctor_FUN_00508f40(&this_ptr->base);
   pCVar2 = core_path_cpp_CPathMap_ctor_FUN_0050acc0((CPathMap *)(pCVar1 + 1));
   pCVar2[-2].height_cache[0x45][0x11] = (int)&g_CAsgayaVTable;
   pCVar2[-2].height_cache_tags[0][0x3b] = 0x3f19999a;

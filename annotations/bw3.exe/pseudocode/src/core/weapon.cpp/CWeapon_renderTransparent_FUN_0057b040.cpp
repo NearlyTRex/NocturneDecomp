@@ -28,14 +28,14 @@ int __cdecl core_weapon_cpp_CWeapon_renderTransparent_FUN_0057b040(CWeapon *this
     puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
   }
   iVar2 = core_box_cpp_FUN_0041daf0(auStack_28);
-  if (*(int *)&this_ptr->field_0x588 == 0x10000) {
+  if (this_ptr->render_alpha == 0x10000) {
     core_actor_cpp_FUN_004087d0(&this_ptr->base);
   }
   else {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0(&this_ptr->base);
     if (iVar2 != 0) {
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
-                (DAT_005f2afc,*(int *)&this_ptr->field_0x588);
+                (DAT_005f2afc,this_ptr->render_alpha);
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
                 (&this_ptr->model,0.0,0x267);
     }

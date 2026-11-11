@@ -42,10 +42,10 @@
 ;   core_game.cpp_FUN_004b4440
 ;   core_game.cpp_FUN_004ba490
 ;   core_main.c_FUN_004e4330
+;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fread_FUN_005a3890
 ;   crt_string.c_splitpath_FUN_005a5128
-;   crt_unknown.c_FUN_005a3650
 ;   crt_unknown.c_FUN_005a3770
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_dosio.cpp_FUN_004659c0
@@ -214,8 +214,8 @@ section .text
     MOV EAX,dword ptr [EAX + 0xa68]     ; 004bee10
     IMUL EAX,dword ptr [EDX + 0xa6c]    ; 004bee16
     PUSH EAX                            ; 004bee1d
-    CALL crt_unknown.c_FUN_005a3650     ; 004bee1e
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 004bee1e
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 004bee23
     MOV dword ptr [ESP + 0xa14],EAX     ; 004bee26
     TEST EAX,EAX                        ; 004bee2d

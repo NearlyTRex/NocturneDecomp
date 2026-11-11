@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 107,
+    "complexity_score": 72,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
-    "suspect_count": 8,
+    "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 31
@@ -52,7 +51,7 @@
     ],
     "convention": "unknown",
     "name": "sound_sndmain.cpp_FUN_00556ab0",
-    "signature": "undefined4 sound_sndmain_cpp_FUN_00556ab0(uint param_1,undefined4 param_2)"
+    "signature": "undefined4 sound_sndmain_cpp_FUN_00556ab0(uint param_1,float param_2)"
   },
   "function_calls": [
     {
@@ -192,7 +191,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint sound_sndmain_cpp_FUN_00556ab0(uint param_1,uint param_2)",
+      "text": "uint sound_sndmain_cpp_FUN_00556ab0(uint param_1,float param_2)",
       "type": "unnamed_param"
     },
     {
@@ -200,7 +199,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint sound_sndmain_cpp_FUN_00556ab0(uint param_1,uint param_2)",
+      "text": "uint sound_sndmain_cpp_FUN_00556ab0(uint param_1,float param_2)",
       "type": "unnamed_param"
     },
     {
@@ -216,32 +215,8 @@
       "line": 11,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)&(pCVar1->options).field_0x38 = param_2;",
+      "text": "(pCVar1->options).current_volume = param_2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar1->options).field_0x38 = param_2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "pCVar1->field_0x118 = pCVar1->field_0x118 | 8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "pCVar1->field_0x118 = pCVar1->field_0x118 | 8;",
-      "type": "unnamed_field"
     },
     {
       "call_site_count": 6,

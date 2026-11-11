@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 50,
+    "complexity_score": 64,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
-    "suspect_count": 1,
+    "pseudocode_lines": 34,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_stride_bytecount"
+      "pointer_stride_bytecount",
+      "shadow_pointer_walk"
     ],
-    "total_lines": 108
+    "total_lines": 107
   },
   "cross_references": [
     {
@@ -197,7 +198,15 @@
   },
   "suspects": [
     {
-      "description": "mem* byte count hardcodes an element stride (((iVar2 + -1) - iVar3) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 33,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "severity": "moderate",
+      "text": "pCVar3 = (CInventory *)&pCVar3->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((iVar4 - iVar2) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
       "line": 24,
       "match": "memmove",
       "severity": "moderate",

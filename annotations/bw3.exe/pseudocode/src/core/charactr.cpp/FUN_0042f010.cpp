@@ -19,12 +19,12 @@ void core_charactr_cpp_FUN_0042f010(int param_1)
   int iVar6;
   int *piVar7;
   int extraout_ECX;
-  byte *pbVar8;
+  uchar *puVar8;
   int extraout_ECX_00;
   int iVar9;
   int extraout_EDX;
-  byte *pbVar10;
-  byte *pbVar11;
+  uchar *puVar10;
+  uchar *puVar11;
   CDeformableModelInstance *this_ptr;
   CDeformableModel *pCVar12;
   float10 fVar13;
@@ -87,16 +87,16 @@ void core_charactr_cpp_FUN_0042f010(int param_1)
   }
   local_1c = 0;
   for (iVar6 = 0; iVar6 < pCVar5->vertex_count[iVar1]; iVar6 = iVar6 + 1) {
-    pbVar11 = &pCVar5->vertex_data_ptr[iVar1]->field_0x0 + local_1c;
+    puVar11 = pCVar5->vertex_data_ptr[iVar1]->bone_indices + local_1c + -1;
     local_30 = 0.0;
     iVar9 = 0;
-    pbVar8 = pbVar11;
-    pbVar10 = pbVar11;
-    while (iVar9 < (int)(uint)*pbVar11) {
-      fVar13 = (float10)*(float *)(pbVar8 + 4) * (float10)(float)(&DAT_007e2cf4)[pbVar10[1]];
+    puVar8 = puVar11;
+    puVar10 = puVar11;
+    while (iVar9 < (int)(uint)*puVar11) {
+      fVar13 = (float10)*(float *)(puVar8 + 4) * (float10)(float)(&DAT_007e2cf4)[puVar10[1]];
       round();
-      pbVar8 = (byte *)(extraout_ECX + 4);
-      pbVar10 = pbVar10 + 1;
+      puVar8 = (uchar *)(extraout_ECX + 4);
+      puVar10 = puVar10 + 1;
       local_30 = (float)(int)ROUND(fVar13) + local_30;
       iVar9 = extraout_EDX + 1;
     }

@@ -13,6 +13,7 @@ void unkafter_prye_cpp_FUN_005263c0(CCharacter *param_1)
 {
   CDemonActor_vtable *pCVar1;
   CFlame *pCVar2;
+  CDemonActor *this_ptr;
   float fVar3;
   uint uVar4;
   int iVar5;
@@ -37,12 +38,13 @@ void unkafter_prye_cpp_FUN_005263c0(CCharacter *param_1)
   if (param_1[2].flames[0x15].base.health == 0) {
     return;
   }
-  iVar5 = *(int *)(param_1[2].flames[0x15].base.create_event + 0x44);
-  if (iVar5 == 0) {
-    iVar5 = *(int *)&param_1->field_0x2628;
+  this_ptr = *(CDemonActor **)(param_1[2].flames[0x15].base.create_event + 0x44);
+  if (this_ptr == (CDemonActor *)0x0) {
+    this_ptr = param_1->carry_hands[1].carry_actor;
   }
-  else if (*(int *)(iVar5 + 0x2e0) != 7) goto LAB_00526426;
-  if ((iVar5 != 0) && (uVar4 = (**(code **)(*(int *)(iVar5 + 0x154) + 0x74))(iVar5), uVar4 != 0)) {
+  else if (this_ptr[2].orient.vec.x != 9.80909e-45) goto LAB_00526426;
+  if ((this_ptr != (CDemonActor *)0x0) &&
+     (uVar4 = (*((this_ptr->vtable)._ub)->getAllowedMeleeAttackTypes)(this_ptr), uVar4 != 0)) {
     iVar7 = 0;
     iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,3);
     *(int *)(param_1[2].flames[0x15].base.create_event + 0x50) = iVar5;
@@ -133,8 +135,8 @@ LAB_00526426:
     if ((((float)_DAT_005cd987 <= fVar3) &&
         (1.0 <= *(float *)(param_1[2].flames[0x15].base.create_event + 0x14))) &&
        (*(float *)(param_1[2].flames[0x15].base.create_event + 0x10) <= 0.0)) {
-      if (0.0 < *(float *)&param_1->field_0x3254) {
-        if (*(int *)&param_1->field_0x3258 == 4) {
+      if (0.0 < param_1->bind_time) {
+        if (param_1->bind_type == 4) {
           param_1[2].flames[0x14].enemy_burn_index = 1;
         }
       }

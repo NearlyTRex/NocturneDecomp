@@ -9,5 +9,5 @@
 int __cdecl core_spirbear_cpp_CSpiritBear_isInvulnerable_FUN_0059b510(CSpiritBear *this_ptr)
 
 {
-  return (uint)(*(int *)&this_ptr->field_0x34160 == 0);
+  return (uint)(this_ptr->shoot_me == 0);
 }

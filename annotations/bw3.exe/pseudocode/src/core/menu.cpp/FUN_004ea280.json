@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 195,
-    "complexity_score": 165,
+    "complexity_score": 130,
     "cross_reference_count": 2,
     "function_call_count": 18,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 70,
-    "suspect_count": 7,
+    "suspect_count": 4,
     "suspect_types": [
       "raw_address_constant",
       "raw_address_pointer_store",
-      "unnamed_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
@@ -91,19 +90,19 @@
       "name": "core_menu.cpp_FUN_004eae80"
     },
     {
-      "addr": "004f94a0",
-      "is_variadic": false,
-      "name": "core_moon.cpp_FUN_004f94a0"
-    },
-    {
       "addr": "004f9580",
       "is_variadic": false,
-      "name": "core_moon.cpp_FUN_004f9580"
+      "name": "core_moon.cpp_CMoon_free_FUN_004f9580"
+    },
+    {
+      "addr": "004f94a0",
+      "is_variadic": false,
+      "name": "core_moon.cpp_CMoon_init_FUN_004f94a0"
     },
     {
       "addr": "004f9670",
       "is_variadic": false,
-      "name": "core_moon.cpp_FUN_004f9670"
+      "name": "core_moon.cpp_CMoon_render_FUN_004f9670"
     },
     {
       "addr": "0053b100",
@@ -199,13 +198,13 @@
     },
     {
       "addr": "01d213e0",
-      "name": "g_CGameInstance.field164_0xd4",
+      "name": "g_CGameInstance.game_control",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d213e4",
-      "name": "g_CGameInstance.field168_0xd8",
+      "name": "g_CGameInstance.hero_number",
       "type": "undefined4",
       "value": null
     },
@@ -333,30 +332,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0xd8",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0xd8 = 9;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0xd4",
-      "severity": "mild",
-      "text": "_DAT_01d737d8 = *(int *)&g_CGamePtr->field_0xd4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0xd4",
-      "severity": "mild",
-      "text": "if (_DAT_01d737d8 != *(int *)&g_CGamePtr->field_0xd4) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",

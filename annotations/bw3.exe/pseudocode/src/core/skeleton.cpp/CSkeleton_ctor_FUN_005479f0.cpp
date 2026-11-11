@@ -19,8 +19,8 @@ CSkeleton * core_skeleton_cpp_CSkeleton_ctor_FUN_005479f0(CSkeleton *this_ptr)
   pCVar1->bone_count = 0;
   pCVar1->frame_count = 0;
   pCVar1->bone_angle_frames = (CQuaternion4f *)0x0;
-  *(uint *)&pCVar1->field_0x1ec94 = 0;
-  *(uint *)&pCVar1->field_0x1ec98 = 0;
-  pCVar1->field_0x1de28 = 0;
+  pCVar1->frame_positions_1 = (CVector3f *)0x0;
+  pCVar1->frame_positions_2 = (CVector3f *)0x0;
+  pCVar1->loaded_filename[0] = '\0';
   return pCVar1;
 }

@@ -9,14 +9,12 @@
 void __cdecl core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_00507f90(CNetGame *this_ptr,SNetworkAddr *dest_addr,int payload)
 
 {
-  uint local_10;
-  byte local_c;
+  SNetPacketHeader local_10;
   int local_b;
   
-  local_c = 0xd;
+  local_10.type = PACKET_DISCONNECT;
   local_b = payload;
-  local_10 = 9;
-  core_netgame_cpp_CNetGame_sendPacket_FUN_005058d0
-            (this_ptr,dest_addr,(SNetPacketHeader *)&local_10);
+  local_10.size = 9;
+  core_netgame_cpp_CNetGame_sendPacket_FUN_005058d0(this_ptr,dest_addr,&local_10);
   return;
 }

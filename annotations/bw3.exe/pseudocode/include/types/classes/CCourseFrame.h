@@ -4,12 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CQuaternion4f.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CCourseFrame
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// CCourse load reads "%f,%f,%f, %f,%f,%f,%f" to +0..+0x18 stepping 0x1c; evaluate interpolates frames[i*0x1c] position and slerps frames[i*0x1c + 0xc] (bw1 00447db0/00447fb0, bw3 00444970/00444b70, bw2 course.cpp same format string)
+// Ghidra size: 0x1c (28 bytes)
 #pragma pack(push, 1)
 typedef struct CCourseFrame {
+    CVector3f pos; // 0x0
+    CQuaternion4f orient; // 0xc
 } CCourseFrame;
 #pragma pack(pop)
 

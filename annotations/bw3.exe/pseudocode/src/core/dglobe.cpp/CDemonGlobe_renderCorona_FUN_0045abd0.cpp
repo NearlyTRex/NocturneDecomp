@@ -69,7 +69,9 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0045abd0(CDemonGlobe *
       local_38.z = (int)ROUND(local_3c * _DAT_005de380);
       iVar1 = iVar1 + 0xc;
       engine_special_cpp_FUN_005632a3
-                ((SProjectedVertex *)(0x01BDD7E4->vertex_buffer_ptr + iVar2),&local_38);
+                ((SProjectedVertex *)
+                 ((int)&(0x01BDD7E4->vertex_buffer_ptr->projected_vertex).transformed_x + iVar2),
+                 &local_38);
       iVar2 = iVar2 + 0x30;
     } while (iVar1 != 0x2e8);
     iVar1 = 0;

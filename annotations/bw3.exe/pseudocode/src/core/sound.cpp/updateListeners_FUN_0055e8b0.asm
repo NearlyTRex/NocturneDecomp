@@ -115,7 +115,7 @@ section .text
     SUB ESP,0x1b4                       ; 0055e8b6
     AND ESP,0xfffffff8                  ; 0055e8bc
     MOV EAX,[0x005fe9dc]                ; 0055e8bf | g_CGamePtr
-    CMP dword ptr [EAX + 0x264],0x0     ; 0055e8c4 | g_CGameInstance.field564_0x264
+    CMP dword ptr [EAX + 0x264],0x0     ; 0055e8c4 | g_CGameInstance.goggles_active
     JNZ 0x0055eb52                      ; 0055e8cb
         ;   XREF to: 0055eb52 (CONDITIONAL_JUMP)  ; LAB_0055eb52
     LEA EDI,[ESP + 0xd4]                ; 0055e8d1
@@ -259,7 +259,7 @@ section .text
         ;   XREF to: 00557080 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00557080()
     MOV EAX,[0x005fe9dc]                ; 0055eb1d | g_CGamePtr
     ADD ESP,0x24                        ; 0055eb22
-    MOV EDX,dword ptr [EAX + 0x264]     ; 0055eb25 | g_CGameInstance.field564_0x264
+    MOV EDX,dword ptr [EAX + 0x264]     ; 0055eb25 | g_CGameInstance.goggles_active
     MOV dword ptr [0x02cf5698],EBX      ; 0055eb2b | DAT_02cf5698
     TEST EDX,EDX                        ; 0055eb31
     JZ 0x0055ebd0                       ; 0055eb33

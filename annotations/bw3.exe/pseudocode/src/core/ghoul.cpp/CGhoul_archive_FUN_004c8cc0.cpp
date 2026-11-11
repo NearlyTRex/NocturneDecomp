@@ -11,7 +11,7 @@ void __cdecl core_ghoul_cpp_CGhoul_archive_FUN_004c8cc0(CGhoul *this_ptr)
 {
   core_enemy_cpp_CEnemy_archive_FUN_00489120(&this_ptr->base);
   if (g_CGhoulClassVersion < 4) {
-    core_actor_cpp_archiveFloat_FUN_0040b830(&(this_ptr->base).field_0xcdcc,"?speed" + 1);
+    core_actor_cpp_archiveFloat_FUN_0040b830(&(this_ptr->base).speed,"?speed" + 1);
   }
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040ba30
             (&(this_ptr->base).base.model,"modelName");

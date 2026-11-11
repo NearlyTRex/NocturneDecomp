@@ -11,12 +11,12 @@ void __cdecl core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040aca0(CDemon
 {
   CDemonActor *pCVar1;
   
-  *(uint *)(out_damage_info + 4) = 0x40a00000;
-  *(uint *)(out_damage_info + 0x30) = 0x67;
-  *(uint *)(out_damage_info + 0x2c) = 0x3e4ccccd;
-  *(uint *)(out_damage_info + 8) = 0x3ecccccd;
-  *(CDemonActor **)(out_damage_info + 0x34) = this_ptr;
+  out_damage_info->damage_amount = 5.0;
+  out_damage_info->damage_type = DAMAGE_TYPE_ATTACK_BLADE;
+  out_damage_info->dismember_prob = 0.2;
+  out_damage_info->gore_multiplier = 0.4;
+  out_damage_info->attacker = this_ptr;
   pCVar1 = (*((this_ptr->vtable)._ub)->getCarrier)(this_ptr);
-  *(CDemonActor **)(out_damage_info + 0x38) = pCVar1;
+  out_damage_info->wielder = pCVar1;
   return;
 }

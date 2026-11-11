@@ -25,26 +25,25 @@ int __cdecl core_npc_cpp_CNPC_renderTransparent_FUN_005095f0(CNPC *this_ptr)
   uint local_28 [6];
   
   bVar7 = 0;
-  if (((*(int *)&this_ptr->field_0x206b8 != -1) || (*(int *)&(this_ptr->base).field_0x27a8 != 0)) ||
-     (*(int *)&(this_ptr->base).field_0xcdc4 != 0)) {
-    if ((*(int *)&(this_ptr->base).field_0x27a8 != 0) &&
+  if (((this_ptr->fade_state != -1) || ((this_ptr->base).is_spectral != 0)) ||
+     ((this_ptr->base).additive != 0)) {
+    if (((this_ptr->base).is_spectral != 0) &&
        (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
                           (0x01C6E360,"heroCanSee"), iVar3 == 0)) {
       return 0;
     }
-    if (*(int *)&this_ptr->field_0x206ac == 0) {
-      if (0.0 < *(float *)&this_ptr->field_0x206c0) {
-        if (*(int *)&this_ptr->field_0x206b8 == 0) {
-          fVar8 = ((float10)*(float *)&this_ptr->field_0x206c0 /
-                  (float10)*(float *)&this_ptr->field_0x206c4) * (float10)_DAT_005cb5d0;
+    if (this_ptr->pool_me == 0) {
+      if (0.0 < this_ptr->fade_timer) {
+        if (this_ptr->fade_state == 0) {
+          fVar8 = ((float10)this_ptr->fade_timer / (float10)this_ptr->fade_time) *
+                  (float10)_DAT_005cb5d0;
         }
         else {
-          fVar8 = ((float10)1 -
-                  (float10)*(float *)&this_ptr->field_0x206c0 /
-                  (float10)*(float *)&this_ptr->field_0x206c4) * (float10)_DAT_005cb5d8;
+          fVar8 = ((float10)1 - (float10)this_ptr->fade_timer / (float10)this_ptr->fade_time) *
+                  (float10)_DAT_005cb5d8;
         }
         round();
-        *(int *)&this_ptr->field_0x206b4 = (int)ROUND(fVar8);
+        this_ptr->fade_alpha = (int)ROUND(fVar8);
         iVar3 = 0;
         if (0 < (this_ptr->base).cloth_list.count) {
           fVar1 = (float)_DAT_005cb5e0;
@@ -52,8 +51,8 @@ int __cdecl core_npc_cpp_CNPC_renderTransparent_FUN_005095f0(CNPC *this_ptr)
           pCVar4 = this_ptr;
           do {
             iVar3 = iVar3 + 1;
-            *(float *)((pCVar4->base).cloth_list.cloths[0] + 0x37b18) =
-                 ((float)*(int *)&this_ptr->field_0x206b4 + fVar2) * fVar1;
+            (pCVar4->base).cloth_list.cloths[0]->weight =
+                 ((float)this_ptr->fade_alpha + fVar2) * fVar1;
             pCVar4 = (CNPC *)((pCVar4->base).base.actor_name + 4);
           } while (iVar3 < (this_ptr->base).cloth_list.count);
         }
@@ -71,11 +70,11 @@ int __cdecl core_npc_cpp_CNPC_renderTransparent_FUN_005095f0(CNPC *this_ptr)
       iVar3 = core_box_cpp_FUN_0041daf0(local_40);
       this_ptr_01 = DAT_005f2afc;
       if (iVar3 != 0) {
-        iVar3 = *(int *)&this_ptr->field_0x206b4;
+        iVar3 = this_ptr->fade_alpha;
         (this_ptr->base).was_rendered_opaque = 1;
         engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(this_ptr_01,iVar3);
         engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0
-                  (DAT_005f2afc,(uint)(*(int *)&(this_ptr->base).field_0xcdc4 != 0));
+                  (DAT_005f2afc,(uint)((this_ptr->base).additive != 0));
         engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(DAT_005f2afc,1);
         this_ptr_00 = &(this_ptr->base).model;
         core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0

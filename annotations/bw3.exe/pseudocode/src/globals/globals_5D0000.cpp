@@ -3860,10 +3860,10 @@ WatcomTypeInfo g_CAudioRecPuzzleTypeInfo = {
 };
 WatcomTypeInfo g_buttonStructTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)unkafter_superopt_cpp_buttonStruct_ctor_FUN_00414480,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)unkafter_superopt_cpp_SButtonStruct_ctor_FUN_00414480,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005a2870,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_superopt_cpp_buttonStruct_dtor_FUN_00414490,
-    .instance_size = 0x0000002C /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_superopt_cpp_SButtonStruct_dtor_FUN_00414490,
+    .instance_size = (int)sizeof(SButtonStruct),
     .class_name = (char *)s_buttonStruct_CAudioRecPu_005f0cdf
 };
 WatcomTypeInfo g_CChemPuzzleTypeInfo = {

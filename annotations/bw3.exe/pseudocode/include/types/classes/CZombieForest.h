@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CZombie.h"
 
 // Structure: CZombieForest
-// Stub: size from Watcom RTTI, fields not yet recovered
+// registered under CZombie (registerActorClass); size 53580 from its new; no fields of its own
 // Ghidra size: 0xd14c (53580 bytes)
 #pragma pack(push, 1)
 typedef struct CZombieForest {
-    char field_0[53580]; // 0x0
+    CZombie base; // 0x0, parent class
 } CZombieForest;
 #pragma pack(pop)
 

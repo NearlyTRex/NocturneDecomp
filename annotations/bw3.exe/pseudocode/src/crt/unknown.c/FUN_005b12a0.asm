@@ -11,7 +11,7 @@
 ;   undefined4 DAT_02d25928
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005a3650
+;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_unknown.c_FUN_005a3770
 ;   crt_unknown.c_FUN_005ab400
 ;   crt_unknown.c_FUN_005b08a0
@@ -64,8 +64,8 @@ section .text
     MOV dword ptr [ESP + 0x10],EAX      ; 005b12ef
     ADD EAX,EBX                         ; 005b12f3
     PUSH EAX                            ; 005b12f5
-    CALL crt_unknown.c_FUN_005a3650     ; 005b12f6
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 005b12f6
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 005b12fb
     MOV EBX,EAX                         ; 005b12fe
     MOV dword ptr [ESP + 0x8],EAX       ; 005b1300
@@ -107,8 +107,8 @@ section .text
         ;   XREF to: 005b138f (CONDITIONAL_JUMP)  ; LAB_005b138f
     INC EAX                             ; 005b134b
     PUSH EAX                            ; 005b134c
-    CALL crt_unknown.c_FUN_005a3650     ; 005b134d
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 005b134d
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 005b1352
     MOV EDX,EAX                         ; 005b1355
     MOV dword ptr [ESP + 0xc],EAX       ; 005b1357
@@ -196,8 +196,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 005b1404
     IMUL EAX,ESI                        ; 005b1408
     PUSH EAX                            ; 005b140b
-    CALL crt_unknown.c_FUN_005a3650     ; 005b140c
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 005b140c
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     MOV EBX,EAX                         ; 005b1411
     ADD ESP,0x4                         ; 005b1413
     TEST EAX,EAX                        ; 005b1416

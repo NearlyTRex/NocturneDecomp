@@ -68,8 +68,8 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_0042b9e0(CCharacter *th
   float local_14;
   
   bVar7 = 0;
-  local_1c = *(float *)&this_ptr->field_0x2524;
-  local_20 = *(float *)&this_ptr->field_0x2528;
+  local_1c = this_ptr->walk_step_speed;
+  local_20 = this_ptr->turn_speed;
   local_134 = SQRT(direction->x * direction->x + direction->z * direction->z);
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(direction);
   local_b8 = local_d0;
@@ -110,8 +110,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_0042b9e0(CCharacter *th
   fVar6 = (float)_DAT_005b821e;
   (this_ptr->model).accumulated_root_motion.x = (this_ptr->model).accumulated_root_motion.y;
   local_64 = local_134 * fVar4 + fVar6 + ABS(local_140) * fVar3 * fVar2;
-  if ((*(int *)&this_ptr->field_0x27a8 != 0) || ((local_24 < local_64 && (ABS(local_114) <= 1.0))))
-  {
+  if ((this_ptr->is_spectral != 0) || ((local_24 < local_64 && (ABS(local_114) <= 1.0)))) {
     pfVar1 = &(this_ptr->position_delta).z;
     local_5c = -local_1c;
     local_30 = local_24 - local_134;
@@ -156,7 +155,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_0042b9e0(CCharacter *th
       fVar6 = local_20;
     }
     this_ptr->turn_angle_accumulator = fVar6;
-    if (*(int *)&this_ptr->field_0x27a8 != 0) {
+    if (this_ptr->is_spectral != 0) {
       fVar6 = -local_1c;
       local_114 = local_114 - direction->y;
       if ((fVar6 <= local_114) && (fVar6 = local_114, local_1c < local_114)) {

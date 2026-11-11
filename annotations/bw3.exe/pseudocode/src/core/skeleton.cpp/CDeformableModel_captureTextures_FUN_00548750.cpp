@@ -19,7 +19,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_captureTextures_FUN_00548750(CDe
   iVar2 = 0;
   core_skeleton_cpp_CDeformableModel_bindSkeleton_FUN_0054a2c0(this_ptr,skeleton_ptr);
   if (0 < this_ptr->num_texture_sets) {
-    local_14 = (SMRGLTextureBasic *)&this_ptr->field_0xc0;
+    local_14 = (SMRGLTextureBasic *)this_ptr->texture_sets;
     do {
       iVar1 = 0;
       texture = local_14;

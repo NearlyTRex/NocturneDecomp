@@ -17,7 +17,7 @@
 ;   TerminatedCString s_WARNING_Infinite_loop_de_005cdde0
 ;   CEditorTools* g_CEditorToolsPtr = 01c5b0e4
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 g_CGameInstance.field184_0xe8
+;   undefined4 g_CGameInstance.cinematic_skip_in_progress
 ;   undefined4 DAT_01ed6808
 ;   undefined4 DAT_01ed6810
 ;   undefined4 DAT_01ed7014
@@ -53,7 +53,7 @@ section .text
     JZ 0x00528e9e                       ; 00528e27
         ;   XREF to: 00528e9e (CONDITIONAL_JUMP)  ; LAB_00528e9e
     MOV EAX,[0x005fe9dc]                ; 00528e2d | g_CGamePtr
-    CMP dword ptr [EAX + 0xe8],0x0      ; 00528e32 | g_CGameInstance.field184_0xe8
+    CMP dword ptr [EAX + 0xe8],0x0      ; 00528e32 | g_CGameInstance.cinematic_skip_in_progress
     JZ 0x00528e3e                       ; 00528e39
         ;   XREF to: 00528e3e (CONDITIONAL_JUMP)  ; LAB_00528e3e
     MOV dword ptr [EBX + 0x1c],EDX      ; 00528e3b

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 65,
+    "complexity_score": 41,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
-    "suspect_count": 3,
+    "pseudocode_lines": 26,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
-    "total_lines": 84
+    "total_lines": 85
   },
   "cross_references": [],
   "function": {
@@ -131,28 +130,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x385c",
-      "severity": "mild",
-      "text": "iVar1 = unkafter_armour_cpp_FUN_00410370(&this_ptr->field_0x385c,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 23,
+      "line": 24,
       "match": "pCVar3[-1].",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar3[-1].field_0x224c,1);",
+      "text": "((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x224c",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar3[-1].field_0x224c,1);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

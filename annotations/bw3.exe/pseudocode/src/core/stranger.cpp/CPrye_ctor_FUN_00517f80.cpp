@@ -11,59 +11,62 @@
 CPrye * core_stranger_cpp_CPrye_ctor_FUN_00517f80(CPrye *this_ptr)
 
 {
-  uint uVar1;
+  float fVar1;
+  float fVar2;
   CPrye *this_ptr_00;
   
-  this_ptr_00 = (CPrye *)core_hero_cpp_CHero_ctor_FUN_004d24b0((CHero *)this_ptr);
-  *(CHero_full_vtable **)&this_ptr_00->field_0x154 = &g_CPryeVTable;
+  this_ptr_00 = (CPrye *)core_hero_cpp_CHero_ctor_FUN_004d24b0(&this_ptr->base);
+  (this_ptr_00->base).base.base.vtable._ub = &g_CPryeVTable._ub;
   core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(this_ptr_00);
-  *(uint *)&this_ptr_00->field_0x20bcc = 0;
-  *(uint *)&this_ptr_00->field_0x20bd0 = 0;
-  *(uint *)&this_ptr_00->field_0x20bd4 = 0;
-  *(uint *)&this_ptr_00->field_0x20bd8 = 0xbf060a92;
-  *(uint *)&this_ptr_00->field_0x20bf8 = 0;
-  *(uint *)&this_ptr_00->field_0x20bf0 = 0;
-  *(uint *)&this_ptr_00->field_0x20be8 = 0;
-  *(uint *)&this_ptr_00->field_0x20be0 = 0;
-  *(uint *)&this_ptr_00->field_0x20bf4 = 0;
-  *(uint *)&this_ptr_00->field_0x20bfc = 0;
-  *(uint *)&this_ptr_00->field_0x20c18 = 0;
-  *(uint *)&this_ptr_00->field_0x20c10 = 0;
-  *(uint *)&this_ptr_00->field_0x20c08 = 0;
-  *(uint *)&this_ptr_00->field_0x20c00 = 0;
-  *(uint *)&this_ptr_00->field_0x20c14 = 0;
-  *(uint *)&this_ptr_00->field_0x20c1c = 0;
-  *(uint *)&this_ptr_00->field_0x20c80 = 0;
-  *(uint *)&this_ptr_00->field_0x20c20 = 0;
-  *(uint *)&this_ptr_00->field_0x20c28 = 0;
-  *(uint *)&this_ptr_00->field_0x20c30 = 0;
-  *(uint *)&this_ptr_00->field_0x20c34 = 0;
-  uVar1 = 0x41200000;
-  *(uint *)&this_ptr_00->field_0x20ca4 = 0xf149f2ca;
-  *(uint *)&this_ptr_00->field_0x20c8c = 0xf149f2ca;
-  *(uint *)&this_ptr_00->field_0x20bdc = uVar1;
-  *(uint *)&this_ptr_00->field_0x20bec = *(uint *)&this_ptr_00->field_0x20be8;
-  *(uint *)&this_ptr_00->field_0x20be4 = *(uint *)&this_ptr_00->field_0x20be0;
-  *(uint *)&this_ptr_00->field_0x20c0c = *(uint *)&this_ptr_00->field_0x20c08;
-  *(uint *)&this_ptr_00->field_0x20c04 = *(uint *)&this_ptr_00->field_0x20c00;
+  this_ptr_00->guns_drawn = 0;
+  this_ptr_00->guns_drawn_blend = 0.0;
+  this_ptr_00->frame_cleared = 0.0;
+  this_ptr_00->aim_pitch = -0.5235988;
+  (this_ptr_00->right_arm_aim).aim_target = (CDemonActor *)0x0;
+  (this_ptr_00->right_arm_aim).recoil_timer = 0.0;
+  (this_ptr_00->right_arm_aim).target_pitch = 0.0;
+  (this_ptr_00->right_arm_aim).aim_pitch = 0.0;
+  (this_ptr_00->right_arm_aim).kickback_factor = 0.0;
+  (this_ptr_00->right_arm_aim).aim_lock_state = 0;
+  (this_ptr_00->left_arm_aim).aim_target = (CDemonActor *)0x0;
+  (this_ptr_00->left_arm_aim).recoil_timer = 0.0;
+  (this_ptr_00->left_arm_aim).target_pitch = 0.0;
+  (this_ptr_00->left_arm_aim).aim_pitch = 0.0;
+  (this_ptr_00->left_arm_aim).kickback_factor = 0.0;
+  (this_ptr_00->left_arm_aim).aim_lock_state = 0;
+  this_ptr_00->arm_recoil_blend = 0.0;
+  this_ptr_00->ladder_to_descend = (CLadder *)0x0;
+  this_ptr_00->dual_wield_side = 0;
+  this_ptr_00->melee_attack_index = 0;
+  this_ptr_00->interact_blend = 0.0;
+  fVar1 = 0x41200000;
+  (this_ptr_00->carry_object_bbox).max.x = -1e+30;
+  (this_ptr_00->carry_object_world_center).x = -1e+30;
+  this_ptr_00->aim_speed_factor = fVar1;
+  fVar1 = (this_ptr_00->left_arm_aim).target_pitch;
+  fVar2 = (this_ptr_00->left_arm_aim).aim_pitch;
+  (this_ptr_00->right_arm_aim).target_yaw = (this_ptr_00->right_arm_aim).target_pitch;
+  (this_ptr_00->right_arm_aim).aim_yaw = (this_ptr_00->right_arm_aim).aim_pitch;
+  (this_ptr_00->left_arm_aim).target_yaw = fVar1;
+  (this_ptr_00->left_arm_aim).aim_yaw = fVar2;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
-            ((CDeformableModelInstance *)&this_ptr_00->field_0x158,(char *)0x5cca9f);
-  *(uint *)&this_ptr_00->field_0x2f00 = 0;
-  *(uint *)&this_ptr_00->field_0x20c24 = 0;
-  *(uint *)&this_ptr_00->field_0x20c44 = 0;
-  *(uint *)&this_ptr_00->field_0x20c48 = 0;
-  *(uint *)&this_ptr_00->field_0x20c74 = 0;
-  *(uint *)&this_ptr_00->field_0x20c70 = *(uint *)&this_ptr_00->field_0x20c74;
-  *(uint *)&this_ptr_00->field_0x20c6c = *(uint *)&this_ptr_00->field_0x20c70;
-  *(uint *)&this_ptr_00->field_0x20c78 = 0xffffffff;
-  *(uint *)&this_ptr_00->field_0x20c2c = 0;
-  *(uint *)&this_ptr_00->field_0x20c4c = 0;
-  *(uint *)&this_ptr_00->field_0x20c50 = 0;
-  *(uint *)&this_ptr_00->field_0x20b64 = 0;
-  *(uint *)&this_ptr_00->field_0x20c7c = 0;
-  *(uint *)&this_ptr_00->field_0x20c84 = 0;
-  *(uint *)&this_ptr_00->field_0x20b60 = 0;
-  *(uint *)&this_ptr_00->field_0x27c0 = 1;
+            (&(this_ptr_00->base).base.model,(char *)0x5cca9f);
+  (this_ptr_00->base).base.layer_action_index = 0;
+  this_ptr_00->weapon = (CWeapon *)0x0;
+  this_ptr_00->turn_angle = 0.0;
+  this_ptr_00->turn_blend_weight = 0.0;
+  (this_ptr_00->pending_velocity).z = 0.0;
+  (this_ptr_00->pending_velocity).y = (this_ptr_00->pending_velocity).z;
+  (this_ptr_00->pending_velocity).x = (this_ptr_00->pending_velocity).y;
+  this_ptr_00->turn_motion_index = -1;
+  this_ptr_00->can_grab_weapon = 0;
+  this_ptr_00->turn_blend_timer = 0.0;
+  this_ptr_00->turn_elapsed = 0.0;
+  (this_ptr_00->base).action_pending = 0;
+  this_ptr_00->pickup_facing_reversed = 0;
+  this_ptr_00->airborne_timer = 0.0;
+  (this_ptr_00->base).staff_blocked = 0;
+  (this_ptr_00->base).base.gun_flame_ignitable = 1;
   core_charactr_cpp_CCharacter_addLayerAction_FUN_004337e0
             ((CCharacter *)this_ptr_00,0,1,"draw_stand2holsters",0);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_004337e0
@@ -130,8 +133,7 @@ CPrye * core_stranger_cpp_CPrye_ctor_FUN_00517f80(CPrye *this_ptr)
             ((CCharacter *)this_ptr_00,0x11,0x11,"draw_vileThrow",1);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_004337e0
             ((CCharacter *)this_ptr_00,0x12,0x12,"heal_shake",1);
-  core_cloth_cpp_CClothList_add_FUN_0043fa40
-            ((CClothList *)&this_ptr_00->field_0x2f08,(char *)0x5ccd24);
-  *(uint *)&this_ptr_00->field_0x20d00 = 0;
+  core_cloth_cpp_CClothList_add_FUN_0043fa40(&(this_ptr_00->base).base.cloth_list,(char *)0x5ccd24);
+  this_ptr_00->fall_velocity_snapshot = 0.0;
   return this_ptr_00;
 }

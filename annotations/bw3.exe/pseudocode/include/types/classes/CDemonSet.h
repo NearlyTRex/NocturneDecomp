@@ -9,15 +9,22 @@ struct CMirror;
 #include "system/basetypes.h"
 #include "types/classes/C3DSCamera.h"
 #include "types/classes/C3DSLight.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CCharacter.h"
+#include "types/classes/CColor3f.h"
 #include "types/classes/CColor3i.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonFilter.h"
 #include "types/classes/CEnemy.h"
 #include "types/classes/CGlass.h"
+#include "types/classes/CMatrix3x3f.h"
+#include "types/classes/CRect.h"
+#include "types/classes/CVector2i.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/classes/CWayPoint.h"
 #include "types/enums/EWeatherType.h"
+#include "types/structs/SFog.h"
 #include "types/structs/SRayQueryState.h"
 #include "types/structs/SRoom.h"
 #include "types/structs/SVDBox.h"
@@ -40,7 +47,8 @@ typedef struct CDemonSet {
     int collision_part_index; // 0x14d148
     int collision_bone_index; // 0x14d14c
     float min_ambient_value; // 0x14d150
-    char field_1364308[16]; // 0x14d154
+    CVector3f directional_light_dir; // 0x14d154, Added in this build
+    float directional_light_intensity; // 0x14d160, Added in this build
     int actor_count; // 0x14d164
     struct CDemonActor* actors[2000]; // 0x14d168
     int character_count; // 0x14f0a8
@@ -55,7 +63,8 @@ typedef struct CDemonSet {
     struct CDemonActor* collidable_actors[2000]; // 0x156dbc
     int renderable_actor_count; // 0x158cfc
     struct CDemonActor* renderable_actors[2000]; // 0x158d00
-    char field_1420352[72]; // 0x15ac40
+    SFog scene_fog; // 0x15ac40
+    SFog active_fog; // 0x15ac64
     int per_pixel_lighting_enabled; // 0x15ac88
     int default_master_reverb; // 0x15ac8c
     int lighting_quality_mode; // 0x15ac90
@@ -66,7 +75,9 @@ typedef struct CDemonSet {
     int use_enviro_model; // 0x15aca4
     char enviro_model_name[16]; // 0x15aca8
     int player_on_train; // 0x15acb8
-    char field_1420476[12]; // 0x15acbc
+    float altitude_reference_y; // 0x15acbc, Added in this build
+    int set_file_version; // 0x15acc0
+    int actor_list_capacity; // 0x15acc4
     int mirror_glass_actor_count; // 0x15acc8
     struct CGlass* mirror_glass_actors[100]; // 0x15accc
     int last_switch_area_invalid; // 0x15ae5c
@@ -94,7 +105,6 @@ typedef struct CDemonSet {
     SVDBox vdir_boxes[250]; // 0x15b42c
     int default_ground_type; // 0x15f694
     SRayQueryState ray_query; // 0x15f698
-    char field_1439385[19]; // 0x15f699
     int ignore_list_count; // 0x15f6ac
     int collision_flag; // 0x15f6b0
     struct CDemonActor* ignore_list[10]; // 0x15f6b4

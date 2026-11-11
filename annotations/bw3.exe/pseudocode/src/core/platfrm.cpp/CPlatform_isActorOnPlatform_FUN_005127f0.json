@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 202,
-    "complexity_score": 324,
+    "complexity_score": 237,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 94,
-    "suspect_count": 20,
+    "pseudocode_lines": 92,
+    "suspect_count": 12,
     "suspect_types": [
       "stack_alignment_array",
       "stack_ref",
       "unaffected_reg",
       "unrolled_memcpy",
-      "warning_overlapping_globals",
-      "warning_type_propagation"
+      "warning_overlapping_globals"
     ],
-    "total_lines": 296
+    "total_lines": 294
   },
   "cross_references": [
     {
@@ -192,16 +191,8 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Overlapping global symbols",
-      "line": 3,
+      "line": 2,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -209,7 +200,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 13,
+      "line": 12,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "float unaff_ESI;",
@@ -217,7 +208,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 17,
+      "line": 16,
       "match": "afStackY_1028",
       "severity": "moderate",
       "text": "float afStackY_1028 [988];",
@@ -241,55 +232,23 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 52,
-      "match": "&stack0xffffff90",
-      "severity": "moderate",
-      "text": "puVar6 = (uint *)&stack0xffffff90;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 53,
-      "match": "&stack0xffffffa8",
-      "severity": "moderate",
-      "text": "puVar7 = &stack0xffffffa8;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
       "line": 60,
       "match": "&stack0xfffffff4",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xfffffff4 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)(&stack0xfffffff4 + (uint)bVar8 * -8) = auStack_3c[(uint)bVar8 * -2];",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 61,
-      "match": "&stack0xffffffc4",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffc4 + (uint)bVar8 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 62,
       "match": "&stack0xfffffff8",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xfffffff8 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
       "type": "stack_ref"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 63,
-      "match": "&stack0xffffffc8",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffc8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 65,
+      "line": 64,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "(fStack_50 <= unaff_ESI + fStack_7c)) &&",
@@ -297,7 +256,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 66,
+      "line": 65,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "(((unaff_ESI - fStack_7c <= fStack_44 && (fStack_54 <= fVar2 + fStack_80)) &&",
@@ -305,42 +264,18 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 73,
-      "match": "&stack0xffffffe4",
+      "line": 74,
+      "match": "&stack0xfffffff4",
       "severity": "moderate",
-      "text": "pfVar10 = &stack0xffffffe4;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 75,
-      "match": "&stack0xffffffe8",
-      "severity": "moderate",
-      "text": "(&stack0xffffffe8)[(uint)bVar8 * 0xfffffffe] =",
+      "text": "afStack_18[(uint)bVar8 * -2] = *(float *)(&stack0xfffffff4 + (uint)bVar8 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 76,
-      "match": "&stack0xfffffff4",
-      "severity": "moderate",
-      "text": "(float)*(uint *)(&stack0xfffffff4 + (uint)bVar8 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 77,
-      "match": "&stack0xffffffec",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffec + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 78,
       "match": "&stack0xfffffff8",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xfffffff8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
+      "text": "*(float *)(&stack0xfffffff8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
       "type": "stack_ref"
     },
     {

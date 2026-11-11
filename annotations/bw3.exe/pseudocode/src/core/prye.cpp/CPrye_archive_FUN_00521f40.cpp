@@ -9,37 +9,42 @@
 void __cdecl core_prye_cpp_CPrye_archive_FUN_00521f40(CPrye *this_ptr)
 
 {
-  core_hero_cpp_CHero_archive_FUN_004d27b0((CHero *)this_ptr);
+  core_hero_cpp_CHero_archive_FUN_004d27b0(&this_ptr->base);
   if ((1 < g_CPryeClassVersion) && (g_CPryeClassVersion < 5)) {
-    core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x20b98,"@objectToPickUp" + 1)
+    core_actor_cpp_archiveActor_FUN_0040b930
+              (&(this_ptr->base).object_to_pick_up,"@objectToPickUp" + 1);
+    core_actor_cpp_archiveActor_FUN_0040b930(&(this_ptr->base).door_to_open,"doorToOpen");
+    core_actor_cpp_archiveActor_FUN_0040b930(&(this_ptr->base).lever_to_pull,"leverToPull")
     ;
-    core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x20b94,"doorToOpen");
-    core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x20ba0,"leverToPull");
-    core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x20ba4,"ladderToClimb");
+    core_actor_cpp_archiveActor_FUN_0040b930
+              (&(this_ptr->base).ladder_to_climb,"ladderToClimb");
   }
   if (g_CPryeClassVersion == 2) {
-    core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x25b0,"lhCarryObject");
-    core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x2628,"rhCarryObject");
+    core_actor_cpp_archiveActor_FUN_0040b930
+              (&(this_ptr->base).base.carry_hands[0].carry_actor,"lhCarryObject");
+    core_actor_cpp_archiveActor_FUN_0040b930
+              (&(this_ptr->base).base.carry_hands[1].carry_actor,"rhCarryObject");
   }
   if (3 < g_CPryeClassVersion) {
-    core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x20c20,"ladderToDescend");
+    core_actor_cpp_archiveActor_FUN_0040b930
+              (&this_ptr->ladder_to_descend,"ladderToDescend");
   }
   if (5 < g_CPryeClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x20bcc,"gunsDrawn")
-    ;
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->guns_drawn,"gunsDrawn");
   }
   if (6 < g_CPryeClassVersion) {
-    core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x20c24,"weapon");
+    core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->weapon,"weapon");
   }
   if (7 < g_CPryeClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b8b0
-              ((int *)&this_ptr->field_0x20b64,"actionPending");
+              (&(this_ptr->base).action_pending,"actionPending");
   }
   if (g_CPryeClassVersion < 9) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040b8b0
-            ((int *)&this_ptr->field_0x2f00,"layerActionIndex");
-  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x2f04,"layerActionT");
+            (&(this_ptr->base).base.layer_action_index,"layerActionIndex");
+  core_actor_cpp_archiveFloat_FUN_0040b830
+            (&(this_ptr->base).base.layer_action_t,"layerActionT");
   return;
 }

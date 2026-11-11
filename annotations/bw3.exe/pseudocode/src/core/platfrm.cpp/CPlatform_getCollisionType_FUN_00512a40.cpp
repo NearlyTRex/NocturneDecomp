@@ -15,6 +15,6 @@ ECollisionType __cdecl core_platfrm_cpp_CPlatform_getCollisionType_FUN_00512a40(
   if (pCVar1->collision_triangle_list == (CDemonTriangle *)0x0) {
     return COLLISION_TYPE_MESH;
   }
-  *(CKeyFramedModelInstance **)&collision_info->field_0x24 = &this_ptr->model;
+  collision_info->keyframed_model = &this_ptr->model;
   return COLLISION_TYPE_MESH;
 }

@@ -52,17 +52,17 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_004dda90(CInventory *thi
   CBitFont *local_18;
   int local_14;
   
-  if (*(int *)&g_CGamePtr->field_0x24c != 0) {
+  if (g_CGamePtr->letterbox_mode != 0) {
     return;
   }
-  if (*(int *)(this_ptr + 4) != *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04)) {
+  if (this_ptr->owner != *(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04)) {
     return;
   }
-  if (*(int *)&g_CFieldNotesPtr->field_0x40 != 0) {
-    *(uint *)(this_ptr + 0x344) = 0;
-    *(uint *)(this_ptr + 0x34c) = 0;
-    *(uint *)(this_ptr + 0x350) = 0;
-    *(uint *)(this_ptr + 0x340) = 0;
+  if (g_CFieldNotesPtr->is_displayed != 0) {
+    this_ptr->item_highlight_timer = 0.0;
+    this_ptr->message_display_timer = 0.0;
+    this_ptr->ammo_detail_timer = 0.0;
+    this_ptr->weapon_highlight_timer = 0.0;
   }
   if (DAT_005fba1c != _DAT_01d70a34) {
     core_inv_cpp_loadAssets_FUN_004da570();
@@ -70,31 +70,32 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_004dda90(CInventory *thi
   local_58 = _DAT_01c6cee8;
   local_44 = _DAT_01549ab4;
   _DAT_01c6cee8 = 0;
-  if ((DAT_005fba1c < 0x180) && (*(int *)(this_ptr + 0x454) == 0)) {
+  if ((DAT_005fba1c < 0x180) && (this_ptr->render_mode_flag == 0)) {
     local_44 = _DAT_01549abc;
   }
-  if ((*(int *)(this_ptr + 0x338) == 0) || (*(float *)(this_ptr + 0x340) <= 0.0)) goto LAB_004ddcd0;
+  if ((this_ptr->selected_weapon == (CWeapon *)0x0) || (this_ptr->weapon_highlight_timer <= 0.0))
+  goto LAB_004ddcd0;
   iVar5 = 0x10;
   local_50 = 0x70;
   iVar3 = 0x00000060;
   iVar4 = 0x000000D0;
-  if ((DAT_005fba1c < 0x180) && (*(int *)(this_ptr + 0x454) == 0)) {
+  if ((DAT_005fba1c < 0x180) && (this_ptr->render_mode_flag == 0)) {
     iVar4 = 0x000000D0 / 2;
     iVar3 = 0x00000060 / 2;
     iVar5 = 8;
     local_50 = 0x28;
   }
   iVar2 = core_actor_cpp_isOfClass_FUN_0040c790
-                    (*(CDemonActor **)(this_ptr + 0x338),"GCHolycross" + 1);
+                    (&this_ptr->selected_weapon->base,"GCHolycross" + 1);
   if (iVar2 == 0) {
-    if (*(int *)(*(int *)(this_ptr + 0x338) + 0x570) == 0) {
+    if (this_ptr->selected_weapon->infinite_ammo == 0) {
       iVar2 = core_actor_cpp_castToClassHash_FUN_0040c840
-                        (*(uint *)(*(int *)(this_ptr + 0x338) + 0x304));
+                        (this_ptr->selected_weapon->carried_by_actor);
       if (iVar2 == 0) {
         pcVar7 = &DAT_005c661d;
         goto LAB_004de3dc;
       }
-      if (*(int *)(*(int *)(this_ptr + 0x338) + 0x56c) == 10) {
+      if (this_ptr->selected_weapon->ammo_type == AMMO_TYPE_MANA) {
         _sprintf(local_164,&DAT_005c6617);
       }
       else {
@@ -112,16 +113,16 @@ LAB_004de3dc:
               (local_44,local_164,(DAT_005fba18 - iVar5) - iVar2,(DAT_005fba1c - iVar5) - local_14,
                0xf8);
   }
-  if (*(int *)(this_ptr + 0x454) != 0) {
-    iVar2 = core_inv_cpp_FUN_004dd310(this_ptr,*(uint *)(this_ptr + 0x338));
+  if (this_ptr->render_mode_flag != 0) {
+    iVar2 = core_inv_cpp_FUN_004dd310(this_ptr,this_ptr->selected_weapon);
     if (iVar2 == 0) {
       core_inv_cpp_getItemDescription_FUN_004d9eb0();
-      core_inv_cpp_getItemDisplayName_FUN_004d9e40(*(uint *)(this_ptr + 0x338));
+      core_inv_cpp_getItemDisplayName_FUN_004d9e40(this_ptr->selected_weapon);
       pcVar7 = "%s\n\n%s";
     }
     else {
       core_inv_cpp_getItemDescription_FUN_004d9eb0();
-      core_inv_cpp_getItemDisplayName_FUN_004d9e40(*(uint *)(this_ptr + 0x338));
+      core_inv_cpp_getItemDisplayName_FUN_004d9e40(this_ptr->selected_weapon);
       pcVar7 = "%s\n\n%s";
     }
     _sprintf(local_564,pcVar7);
@@ -143,18 +144,18 @@ LAB_004de3dc:
     }
   }
 LAB_004ddcd0:
-  if ((*(int *)(this_ptr + 0x33c) != 0) && (0.0 < *(float *)(this_ptr + 0x344))) {
+  if ((this_ptr->selected_item != (CDemonActor *)0x0) && (0.0 < this_ptr->item_highlight_timer)) {
     iVar5 = 0x10;
     local_48 = 0x70;
     iVar3 = 0x00000060;
     iVar4 = 0x000000D0;
-    if ((DAT_005fba1c < 0x180) && (*(int *)(this_ptr + 0x454) == 0)) {
+    if ((DAT_005fba1c < 0x180) && (this_ptr->render_mode_flag == 0)) {
       iVar4 = 0x000000D0 / 2;
       iVar3 = 0x00000060 / 2;
       iVar5 = 8;
       local_48 = 0x28;
     }
-    iVar2 = core_actor_cpp_castToClassHash_FUN_0040c840(*(uint *)(this_ptr + 0x33c));
+    iVar2 = core_actor_cpp_castToClassHash_FUN_0040c840(this_ptr->selected_item);
     if (iVar2 != 0) {
       _sprintf(local_364,"%d x%3.0f%%");
       local_60 = (float)engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(local_44,0x58);
@@ -163,9 +164,9 @@ LAB_004ddcd0:
                 (local_44,local_364,(DAT_005fba18 - iVar5) - iVar2,
                  (DAT_005fba1c - iVar5) - (int)local_60,0xf8);
     }
-    if (*(int *)(this_ptr + 0x454) != 0) {
+    if (this_ptr->render_mode_flag != 0) {
       core_inv_cpp_getItemDescription_FUN_004d9eb0();
-      core_inv_cpp_getItemDisplayName_FUN_004d9e40(*(uint *)(this_ptr + 0x33c));
+      core_inv_cpp_getItemDisplayName_FUN_004d9e40(this_ptr->selected_item);
       _sprintf(local_264,"%s\n\n%s");
       local_28 = local_44;
       local_60 = (float)engine_font_cpp_FUN_004b2e40(local_44,local_264,0x1d5c888,10,0x100);
@@ -185,10 +186,10 @@ LAB_004ddcd0:
       }
     }
   }
-  if ((0.0 < *(float *)(this_ptr + 0x344)) || (0.0 < *(float *)(this_ptr + 0x348))) {
-    local_56c = *(float *)(this_ptr + 0x348);
-    if (local_56c < *(float *)(this_ptr + 0x344)) {
-      local_56c = *(float *)(this_ptr + 0x344);
+  if ((0.0 < this_ptr->item_highlight_timer) || (0.0 < this_ptr->inventory_display_timer)) {
+    local_56c = this_ptr->inventory_display_timer;
+    if (local_56c < this_ptr->item_highlight_timer) {
+      local_56c = this_ptr->item_highlight_timer;
     }
     local_4c = 0xffff;
     if (local_56c < 1.0) {
@@ -232,7 +233,7 @@ LAB_004ddcd0:
     engine_alphabit_cpp_FUN_0040d8a0
               (&CAlphaBitmap_01d70890,iVar4,local_64 + 4,0,local_64,extraout_EDX);
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d6f0(&CAlphaBitmap_01d708a4,iVar4,4,local_14);
-    if (*(int *)&g_CGamePtr->field_0xe0 != 0) {
+    if (g_CGamePtr->show_hero_numbers != 0) {
       iVar5 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
       if ((0x3f800000 < *(int *)(iVar5 + 0x2538)) || (*(float *)(iVar5 + 0x2538) <= 0.0)) {
         fVar6 = (float10)*(float *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x2538);
@@ -248,7 +249,7 @@ LAB_004ddcd0:
       engine_font_cpp_FUN_004b0a20(local_44,local_464,iVar4 + 0x1c,iVar3 + -6,0xfc);
     }
   }
-  fVar1 = *(float *)(this_ptr + 0x34c);
+  fVar1 = this_ptr->message_display_timer;
   if (0.0 < fVar1) {
     local_54 = 0xffff;
     if (fVar1 < 1.0) {
@@ -261,7 +262,7 @@ LAB_004ddcd0:
     if (DAT_005fba1c < 0x180) {
       local_18 = _DAT_01549abc;
     }
-    iVar3 = engine_font_cpp_FUN_004b2e40(local_18,this_ptr + 0x354,0x1d5d288,10,0x100);
+    iVar3 = engine_font_cpp_FUN_004b2e40(local_18,this_ptr->message_text,0x1d5d288,10,0x100);
     local_1c = iVar3;
     local_2c = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(local_18,0x58);
     iVar3 = (DAT_005fba1c + -4) - local_2c * iVar3;
@@ -275,8 +276,8 @@ LAB_004ddcd0:
       } while (iVar4 < local_1c);
     }
   }
-  if (((*(int *)(this_ptr + 0xc) != 0) && (*(int *)&g_CFieldNotesPtr->field_0x40 == 0)) &&
-     (*(int *)&g_CGamePtr->field_0x24c == 0)) {
+  if (((this_ptr->show_sps != 0) && (g_CFieldNotesPtr->is_displayed == 0)) &&
+     (g_CGamePtr->letterbox_mode == 0)) {
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d6f0(&CAlphaBitmap_01d708cc,2,2,0xffff);
     iVar3 = _DAT_01d70a20;
     if (_DAT_01d70a20 == -1) {

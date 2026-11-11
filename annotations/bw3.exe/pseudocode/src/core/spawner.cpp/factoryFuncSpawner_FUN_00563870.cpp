@@ -11,7 +11,7 @@ void core_spawner_cpp_factoryFuncSpawner_FUN_00563870(void)
 {
   CSpawner *this_ptr;
   
-  this_ptr = (CSpawner *)debugAllocTracked1(0x2574);
+  this_ptr = (CSpawner *)operator_new(0x2574);
   if (this_ptr == (CSpawner *)0x0) {
     return;
   }

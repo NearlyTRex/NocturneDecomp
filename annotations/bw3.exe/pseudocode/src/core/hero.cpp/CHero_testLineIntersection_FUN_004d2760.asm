@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 g_CGameInstance.field452_0x1f4
+;   undefined4 g_CGameInstance.god_mode_enabled
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_testLineIntersection_FUN_00408da0
@@ -24,7 +24,7 @@ section .text
         ;   Label: core_hero.cpp_CHero_testLineIntersection_FUN_004d2760
     MOV EDX,dword ptr [ESP + 0x8]       ; 004d2761
     MOV EAX,[0x005fe9dc]                ; 004d2765 | g_CGamePtr
-    CMP dword ptr [EAX + 0x1f4],0x0     ; 004d276a | g_CGameInstance.field452_0x1f4
+    CMP dword ptr [EAX + 0x1f4],0x0     ; 004d276a | g_CGameInstance.god_mode_enabled
     JNZ 0x004d277f                      ; 004d2771
         ;   XREF to: 004d277f (CONDITIONAL_JUMP)  ; LAB_004d277f
     TEST dword ptr [EDX + 0xcdcc],0x7fffffff ; 004d2773

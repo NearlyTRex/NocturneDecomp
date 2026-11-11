@@ -80,7 +80,7 @@ void core_charactr_cpp_FUN_0042d500(CDemonActor *param_1)
   pCVar6 = param_1;
   do {
     if (pCVar6[0x98].vtable._ub != (CDemonActor_vtable *)0xffffffff) {
-      pcVar1 = param_1[0x19].footstep_sound_code + (int)pCVar6[0x98].vtable._ub * 4 + -0x1c;
+      pcVar1 = param_1[0x19].footstep_sound_code + (int)pCVar6[0x98].vtable._ub * 4 + -0x20;
       pcVar1[0] = '\0';
       pcVar1[1] = '\0';
       pcVar1[2] = '\0';
@@ -88,7 +88,7 @@ void core_charactr_cpp_FUN_0042d500(CDemonActor *param_1)
     }
     if (*(int *)(pCVar6[0x99].actor_name + 0xc) != -1) {
       pcVar1 = param_1[0x19].footstep_sound_code +
-               *(int *)(pCVar6[0x99].actor_name + 0xc) * 4 + -0x1c;
+               *(int *)(pCVar6[0x99].actor_name + 0xc) * 4 + -0x20;
       pcVar1[0] = '\0';
       pcVar1[1] = '\0';
       pcVar1[2] = '\0';
@@ -96,28 +96,29 @@ void core_charactr_cpp_FUN_0042d500(CDemonActor *param_1)
     }
     pCVar2 = pCVar6 + 0x99;
     pCVar6 = (CDemonActor *)(pCVar6->actor_name + 4);
-    pcVar1 = param_1[0x19].footstep_sound_code + *(int *)(pCVar2->actor_name + 0x1c) * 4 + -0x1c;
+    pcVar1 = param_1[0x19].footstep_sound_code + *(int *)(pCVar2->actor_name + 0x1c) * 4 + -0x20;
     pcVar1[0] = '\0';
     pcVar1[1] = '\0';
     pcVar1[2] = '\0';
     pcVar1[3] = '\0';
   } while (pCVar6 != (CDemonActor *)(param_1->actor_name + 0x10));
   fVar7 = (float)_DAT_01c5fad0 * _DAT_005b82ce;
-  param_1[0x98].is_editor_hidden = (int)((float)param_1[0x98].is_editor_hidden - fVar7);
-  if (param_1[0x98].render_needs_update == 1) {
-    if ((float)param_1[0x98].is_editor_hidden <= 0.0) {
+  iVar3 = param_1[0x98].previous_transform_state.dirty_flags;
+  param_1[0x98].render_needs_update = (int)((float)param_1[0x98].render_needs_update - fVar7);
+  if (iVar3 == 1) {
+    if ((float)param_1[0x98].render_needs_update <= 0.0) {
       fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(5.0,8.0);
+      param_1[0x98].previous_transform_state.orientation.vec.x = 0.0;
       param_1[0x98].previous_transform_state.orientation.vec.y = 0.0;
-      param_1[0x98].previous_transform_state.orientation.vec.z = 0.0;
-      param_1[0x98].render_needs_update = 0;
-      param_1[0x98].is_editor_hidden = (int)fVar4;
+      param_1[0x98].previous_transform_state.dirty_flags = 0;
+      param_1[0x98].render_needs_update = (int)fVar4;
     }
   }
-  else if ((float)param_1[0x98].is_editor_hidden <= 0.0) {
-    param_1[0x98].previous_transform_state.orientation.vec.z = 4.2039e-45;
-    param_1[0x98].render_needs_update = 1;
-    param_1[0x98].is_editor_hidden = 0x3d4ccccd;
+  else if ((float)param_1[0x98].render_needs_update <= 0.0) {
     param_1[0x98].previous_transform_state.orientation.vec.y = 4.2039e-45;
+    param_1[0x98].previous_transform_state.dirty_flags = 1;
+    param_1[0x98].render_needs_update = 0x3d4ccccd;
+    param_1[0x98].previous_transform_state.orientation.vec.x = 4.2039e-45;
   }
   param_1[0x98].next_actor = (CDemonActor *)((float)param_1[0x98].next_actor - fVar7);
   if ((float)param_1[0x98].next_actor <= 0.0) {
@@ -125,35 +126,33 @@ void core_charactr_cpp_FUN_0042d500(CDemonActor *param_1)
     if (param_1 == pCVar6) {
       pCVar6[0x98].next_actor = (CDemonActor *)0x3e19999a;
       uVar5 = rand();
-      pCVar6[0x98].previous_transform_state.dirty_flags = uVar5 & 3;
+      pCVar6[0x98].previous_transform_state.orientation.vec.z = (float)(uVar5 & 3);
     }
     else {
-      param_1[0x98].previous_transform_state.dirty_flags = 0;
+      param_1[0x98].previous_transform_state.orientation.vec.z = 0.0;
       param_1[0x98].next_actor = (CDemonActor *)0x0;
     }
   }
   if (*(int *)(param_1[0x98].footstep_sound_code +
-              *(int *)((int)&param_1[0x98].previous_transform_state.orientation + 4) * 4 + 0x38) !=
-      -1) {
+              *(int *)&param_1[0x98].previous_transform_state.orientation * 4 + 0x34) != -1) {
     core_charactr_cpp_FUN_0042d390
               (this_ptr,param_1[0x98].prev_actor,
                *(int *)(param_1[0x98].footstep_sound_code +
-                       *(int *)((int)&param_1[0x98].previous_transform_state.orientation + 4) * 4 +
-                       0x38));
+                       *(int *)&param_1[0x98].previous_transform_state.orientation * 4 + 0x34));
   }
   if (*(int *)(param_1[0x99].actor_name +
-              *(int *)((int)&param_1[0x98].previous_transform_state.orientation + 8) * 4 + 0xc) !=
+              *(int *)((int)&param_1[0x98].previous_transform_state.orientation + 4) * 4 + 0xc) !=
       -1) {
     core_charactr_cpp_FUN_0042d390
               (this_ptr,param_1[0x98].prev_actor,
                *(int *)(param_1[0x99].actor_name +
-                       *(int *)((int)&param_1[0x98].previous_transform_state.orientation + 8) * 4 +
+                       *(int *)((int)&param_1[0x98].previous_transform_state.orientation + 4) * 4 +
                        0xc));
   }
   core_charactr_cpp_FUN_0042d390
             (this_ptr,param_1[0x98].prev_actor,
              *(uint *)
               (param_1[0x99].actor_name +
-              param_1[0x98].previous_transform_state.dirty_flags * 4 + 0x1c));
+              *(int *)((int)&param_1[0x98].previous_transform_state.orientation + 8) * 4 + 0x1c));
   return;
 }

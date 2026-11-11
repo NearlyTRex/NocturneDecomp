@@ -9,18 +9,18 @@
 int __cdecl core_netgame_cpp_CNetGame_findPlayerByAddr_FUN_00505900(CNetGame *this_ptr,SNetworkAddr *addr)
 
 {
-  int *piVar1;
+  SNetworkAddr *pSVar1;
   int iVar2;
   
   iVar2 = 0;
   if (0 < this_ptr->player_count) {
-    piVar1 = (int *)&this_ptr->players[0].field_0x1c;
+    pSVar1 = &this_ptr->players[0].addr;
     do {
-      if (((short)piVar1[1] == *(short *)(addr + 4)) && (*(int *)addr == *piVar1)) {
+      if ((pSVar1->port == addr->port) && (addr->ip_address == pSVar1->ip_address)) {
         return iVar2;
       }
       iVar2 = iVar2 + 1;
-      piVar1 = piVar1 + 0x20;
+      pSVar1 = pSVar1 + 0x10;
     } while (iVar2 < this_ptr->player_count);
   }
   return -1;

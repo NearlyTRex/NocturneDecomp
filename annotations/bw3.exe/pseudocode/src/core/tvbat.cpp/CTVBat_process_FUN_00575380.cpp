@@ -39,10 +39,7 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_00575380(CTVBat *this_ptr,float d
   float fStack_1e8;
   float fStack_1e4;
   float fStack_1e0;
-  SDamageInfo aSStack_1dc [4];
-  uint uStack_1d8;
-  float fStack_1d0;
-  CTVBat *pCStack_1a8;
+  byte auStack_1dc [56];
   CTVBat *pCStack_1a4;
   float fStack_18c;
   float fStack_188;
@@ -307,9 +304,10 @@ LAB_0057549b:
   fStack_28 = (float)fVar19;
   fStack_1c = (float)-fVar20;
   if (((this_ptr->base).victim != (CCharacter *)0x0) && (this_ptr->follow_orders != 0)) {
-    core_setcolid_cpp_SCollisionInfo_ctor_FUN_0053ed80((SCollisionInfo *)&pCStack_1a8);
+    core_setcolid_cpp_SCollisionInfo_ctor_FUN_0053ed80((SCollisionInfo *)(auStack_1dc + 0x34));
     pCVar9 = (this_ptr->base).victim;
-    (*((pCVar9->base).vtable._ub)->getCollisionType)(&pCVar9->base,(SCollisionInfo *)&pCStack_1a8);
+    (*((pCVar9->base).vtable._ub)->getCollisionType)
+              (&pCVar9->base,(SCollisionInfo *)(auStack_1dc + 0x34));
     pCVar9 = (this_ptr->base).victim;
     fStack_e8 = (this_ptr->base).base.base.location.position.x - (pCVar9->base).location.position.x;
     afStack_e4[0] =
@@ -327,13 +325,13 @@ LAB_0057549b:
     }
     if (((fStack_18c <= afStack_e4[3]) && (afStack_e4[3] <= fStack_188)) &&
        (fStack_1e4 < (float)_DAT_005d701f)) {
-      core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(aSStack_1dc);
-      uStack_1d8 = 0x3f800000;
-      pCStack_1a8 = this_ptr;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0((SDamageInfo *)auStack_1dc);
+      auStack_1dc._4_4_ = 1.0;
+      auStack_1dc._52_4_ = this_ptr;
       pCStack_1a4 = this_ptr;
       pCVar9 = (this_ptr->base).victim;
-      (*(((pCVar9->base).vtable._uc)->_uc).processDamage)(pCVar9,aSStack_1dc);
-      if (0.0 < fStack_1d0) {
+      (*(((pCVar9->base).vtable._uc)->_uc).processDamage)(pCVar9,(SDamageInfo *)auStack_1dc);
+      if (0.0 < (float)auStack_1dc._12_4_) {
         core_gore_cpp_CGore_spawnBloodBurst_FUN_004ce9c0
                   (g_CGorePtr,&(this_ptr->base).base.base.location.position,(CVector3f *)0x0,3,
                    BLOOD_TYPE_RED);

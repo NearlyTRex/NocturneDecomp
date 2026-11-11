@@ -11,7 +11,7 @@ void core_spireagl_cpp_factoryFuncSpiritEagle_FUN_005991a0(void)
 {
   CSpiritEagle *this_ptr;
   
-  this_ptr = (CSpiritEagle *)debugAllocTracked1(0x214ac);
+  this_ptr = (CSpiritEagle *)operator_new(0x214ac);
   if (this_ptr == (CSpiritEagle *)0x0) {
     return;
   }

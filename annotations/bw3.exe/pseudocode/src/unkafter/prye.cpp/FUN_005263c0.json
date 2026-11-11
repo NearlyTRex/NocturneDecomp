@@ -2,21 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 802,
+    "complexity_score": 774,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 187,
-    "suspect_count": 59,
+    "pseudocode_lines": 189,
+    "suspect_count": 56,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_field",
+      "suspect_float",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 519
+    "total_lines": 521
   },
   "cross_references": [
     {
@@ -199,7 +199,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = *(int *)(param_1[1].base.actor_name + 0x14);",
@@ -207,7 +207,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar2 = param_1[2].flames + 0x15;",
@@ -215,7 +215,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->grabbed_by != (CDemonActor *)0x0) {",
@@ -223,7 +223,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1[2].flames[0x14].render_corona != 0) {",
@@ -231,7 +231,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1[2].flames[0x15].base.health == 0) {",
@@ -239,39 +239,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = *(int *)(param_1[2].flames[0x15].base.create_event + 0x44);",
+      "text": "this_ptr = *(CDemonActor **)(param_1[2].flames[0x15].base.create_event + 0x44);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = *(int *)&param_1->field_0x2628;",
+      "text": "this_ptr = param_1->carry_hands[1].carry_actor;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x2628",
-      "severity": "mild",
-      "text": "iVar5 = *(int *)&param_1->field_0x2628;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Likely misinterpreted integer as float",
       "line": 38,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "if ((iVar5 != 0) && (uVar4 = (**(code **)(*(int *)(iVar5 + 0x154) + 0x74))(iVar5), uVar4 != 0)) {",
-      "type": "unresolved_funcptr"
+      "match": "9.80909e-45",
+      "severity": "mild",
+      "text": "else if (this_ptr[2].orient.vec.x != 9.80909e-45) goto LAB_00526426;",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1[2].flames[0x15].base.create_event + 0x50) = iVar5;",
@@ -279,7 +271,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = *(int *)(param_1[2].flames[0x15].base.create_event + 0x50) + 1;",
@@ -287,7 +279,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1[2].flames[0x15].base.create_event + 0x50) = iVar5;",
@@ -295,7 +287,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar2 = param_1[2].flames + 0x15;",
@@ -303,7 +295,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(uint *)(param_1[2].flames[0x15].base.create_event + 0x44),",
@@ -311,7 +303,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
       "text": "switch(*(uint *)(param_1[2].flames[0x15].base.create_event + 0x50)) {",
@@ -319,7 +311,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 68,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(*(int *)(param_1[2].flames[0x15].base.create_event + 0x44) + 0x56c) == 9) {",
@@ -327,7 +319,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 76,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = *(int *)(param_1[2].flames[0x15].base.create_event + 0x50);",
@@ -335,26 +327,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->layer_action_t = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->layer_action_index = iVar5 + 0xd;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 77,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar1 = (param_1->base).vtable._ub;",
+      "text": "param_1->layer_action_t = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -362,7 +338,7 @@
       "line": 78,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[2].flames[0x14].render_corona = 7;",
+      "text": "param_1->layer_action_index = iVar5 + 0xd;",
       "type": "unnamed_param"
     },
     {
@@ -370,23 +346,31 @@
       "line": 79,
       "match": "param_1",
       "severity": "mild",
+      "text": "pCVar1 = (param_1->base).vtable._ub;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 80,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[2].flames[0x14].render_corona = 7;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
       "text": "(*pCVar1->playSound)(&param_1->base,\"?wp_holystaff.wav\" + 1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 89,
+      "line": 91,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = *(int *)(param_1[2].flames[0x15].base.create_event + 0x44);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 125,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60(param_1,iVar5);",
       "type": "unnamed_param"
     },
     {
@@ -394,12 +378,20 @@
       "line": 127,
       "match": "param_1",
       "severity": "mild",
+      "text": "fVar3 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60(param_1,iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 129,
+      "match": "param_1",
+      "severity": "mild",
       "text": "(1.0 <= *(float *)(param_1[2].flames[0x15].base.create_event + 0x14))) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 128,
+      "line": 130,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(float *)(param_1[2].flames[0x15].base.create_event + 0x10) <= 0.0)) {",
@@ -407,39 +399,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 129,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0.0 < *(float *)&param_1->field_0x3254) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 129,
-      "match": "field_0x3254",
-      "severity": "mild",
-      "text": "if (0.0 < *(float *)&param_1->field_0x3254) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 130,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x3258 == 4) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 130,
-      "match": "field_0x3258",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x3258 == 4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 131,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0.0 < param_1->bind_time) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 132,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->bind_type == 4) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 133,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2].flames[0x14].enemy_burn_index = 1;",
@@ -447,7 +423,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 135,
+      "line": 137,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2].flames[0x14].enemy_burn_index = 0;",
@@ -455,7 +431,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 137,
+      "line": 139,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = *(int *)(param_1[2].flames[0x15].base.create_event + 0x44);",
@@ -463,7 +439,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 138,
+      "line": 140,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*(int *)(iVar5 + 0x154) + 0xe8))(iVar5);",
@@ -471,7 +447,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 140,
+      "line": 142,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = *(int *)(param_1[2].flames[0x15].base.create_event + 0x44);",
@@ -479,7 +455,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 146,
+      "line": 148,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->layer_action_t = 0.0;",
@@ -487,7 +463,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 147,
+      "line": 149,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2].flames[0x14].render_corona = 10;",
@@ -495,7 +471,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 148,
+      "line": 150,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->layer_action_index = 0x1c;",
@@ -503,7 +479,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 152,
+      "line": 154,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(uint *)(param_1[2].flames[0x15].base.create_event + 0x44),",
@@ -511,7 +487,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 155,
+      "line": 157,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->layer_action_t = 0.0;",
@@ -519,7 +495,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 156,
+      "line": 158,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2].flames[0x14].render_corona = 0xb;",
@@ -527,7 +503,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 157,
+      "line": 159,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->layer_action_index = 0x1b;",
@@ -535,7 +511,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 163,
+      "line": 165,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->layer_action_t = 0.0;",
@@ -543,7 +519,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 164,
+      "line": 166,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2].flames[0x14].render_corona = 0xc;",
@@ -551,7 +527,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 165,
+      "line": 167,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->layer_action_index = 0x1f;",
@@ -559,7 +535,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 169,
+      "line": 171,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->layer_action_t = 0.0;",
@@ -567,7 +543,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 170,
+      "line": 172,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2].flames[0x14].render_corona = 0xd;",
@@ -575,7 +551,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 171,
+      "line": 173,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->layer_action_index = 0x20;",
@@ -583,7 +559,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 174,
+      "line": 176,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar5 + 0x154) + 0xe4))(iVar5);",
@@ -591,7 +567,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 175,
+      "line": 177,
       "match": "param_1",
       "severity": "mild",
       "text": "core_prye_cpp_FUN_0051f360(param_1,0);",
@@ -599,7 +575,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 176,
+      "line": 178,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(*(int *)(param_1[2].flames[0x15].base.create_event + 0x44) + 0x2dc) == 2) {",
@@ -607,18 +583,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 177,
+      "line": 179,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->layer_action_t = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 178,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->layer_action_index = 8;",
       "type": "unnamed_param"
     },
     {
@@ -626,12 +594,20 @@
       "line": 180,
       "match": "param_1",
       "severity": "mild",
+      "text": "param_1->layer_action_index = 8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 182,
+      "match": "param_1",
+      "severity": "mild",
       "text": "if (*(int *)(*(int *)(param_1[2].flames[0x15].base.create_event + 0x44) + 0x2dc) == 1) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 181,
+      "line": 183,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->layer_action_t = 0.0;",
@@ -639,7 +615,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 182,
+      "line": 184,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->layer_action_index = 0x19;",

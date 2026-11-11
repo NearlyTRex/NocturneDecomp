@@ -11,7 +11,7 @@ void core_tvbat_cpp_factoryFuncTVBat_FUN_00575000(void)
 {
   CTVBat *this_ptr;
   
-  this_ptr = (CTVBat *)debugAllocTracked1(0xd28c);
+  this_ptr = (CTVBat *)operator_new(0xd28c);
   if (this_ptr == (CTVBat *)0x0) {
     return;
   }

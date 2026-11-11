@@ -26,7 +26,7 @@ int __cdecl core_hero_cpp_FUN_004d3b20(CHero *this_ptr)
   int local_18;
   
   bVar2 = 0;
-  local_20 = *(CDemonActor **)(this_ptr + 0x20a24);
+  local_20 = (this_ptr->inventory).selected_item;
   if (local_20 != (CDemonActor *)0x0) {
     local_18 = 0;
     for (local_1c = 0; local_1c < g_CDemonSetPtr->actor_count; local_1c = local_1c + 1) {
@@ -52,10 +52,10 @@ int __cdecl core_hero_cpp_FUN_004d3b20(CHero *this_ptr)
           *(uint *)(&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
                *(uint *)(&stack0xffffffb8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
           if (ABS(local_40) <= (float)_DAT_005c4de5) {
-            *(uint *)(this_ptr + 0x20b7c) = 0;
-            *(uint *)(this_ptr + 0x20b68) = 6;
-            *(CDemonActor **)(this_ptr + 0x20b6c) = local_20;
-            *(CDemonActor **)(this_ptr + 0x20b70) = local_20;
+            this_ptr->hero_action_range = 0.0;
+            this_ptr->hero_action = 6;
+            this_ptr->hero_action_actor = local_20;
+            this_ptr->hero_action_target = local_20;
             return 1;
           }
         }

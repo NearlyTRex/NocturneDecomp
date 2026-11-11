@@ -12,8 +12,8 @@ EDeathState __cdecl core_styldemo_cpp_CStylerDemon_getDeathState_FUN_005a0180(CS
   SMotion *pSVar1;
   
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
-                     ((CMotionController *)&this_ptr->field_0x158);
-  switch(*(uint *)(pSVar1 + 0x24)) {
+                     (&(this_ptr->base).base.model.base);
+  switch(pSVar1->state_index) {
   case 5:
   case 0xe:
     return DEATH_STATE_DYING;

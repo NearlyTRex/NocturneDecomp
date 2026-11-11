@@ -12,77 +12,82 @@ void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_0043d830(CCloth *thi
 
 {
   int iVar1;
-  int iVar2;
-  uint *puVar3;
+  CVector3f *pCVar2;
+  float *pfVar3;
   uint *puVar4;
-  byte bVar5;
-  uint auStackY_100c [944];
-  uint local_144;
-  uint local_140;
-  uint local_13c;
-  uint local_134;
-  uint local_130;
-  uint local_12c;
-  uint local_124;
-  uint local_120;
-  uint local_11c;
-  uint local_a8;
+  float *pfVar5;
+  uint *puVar6;
+  byte bVar7;
+  float afStackY_100c [944];
+  float local_144;
+  float local_140;
+  float local_13c;
+  float local_134;
+  float local_130;
+  float local_12c;
+  float local_124;
+  float local_120;
+  float local_11c;
+  float local_a8;
   uint local_98;
   uint local_88;
-  uint local_24;
+  float local_24;
   uint local_20;
   uint local_1c;
-  uint local_18;
-  uint local_14 [2];
+  float local_18;
+  float local_14;
+  float local_10;
   
-  bVar5 = 0;
-  iVar2 = bone_index * 0xac;
+  bVar7 = 0;
   core_xform_cpp_inverse_FUN_00584560
-            (&model_ptr->field_0xe80 + *(int *)(this_ptr + iVar2 + 0x37b90) * 0x30);
-  puVar3 = (uint *)&stack0xffffffac;
-  puVar4 = (uint *)&stack0xffffff7c;
+            ((model_ptr->bone_transform).bone_model_matrices +
+             this_ptr->collide_bones[bone_index].parent_bone_index);
+  puVar4 = (uint *)&stack0xffffffac;
+  puVar6 = (uint *)&stack0xffffff7c;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar4 = *puVar3;
-    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+    *puVar6 = *puVar4;
+    puVar4 = puVar4 + (uint)bVar7 * -2 + 1;
+    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
   }
-  core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(&stack0xffffff7c,this_ptr + iVar2 + 0x37b98);
-  puVar3 = (uint *)&stack0xfffffeec;
-  puVar4 = &stack0xfffffebc;
+  core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
+            (&stack0xffffff7c,&this_ptr->collide_bones[bone_index].world_matrix);
+  pfVar3 = (float *)&stack0xfffffeec;
+  pfVar5 = &stack0xfffffebc;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar4 = *puVar3;
-    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+    *pfVar5 = *pfVar3;
+    pfVar3 = pfVar3 + (uint)bVar7 * -2 + 1;
+    pfVar5 = pfVar5 + (uint)bVar7 * -2 + 1;
   }
-  *(uint *)(this_ptr + iVar2 + 0x37bc8) = local_144;
-  *(uint *)(this_ptr + iVar2 + 0x37bcc) = local_134;
-  *(uint *)(this_ptr + iVar2 + 0x37bd0) = local_124;
-  *(uint *)(this_ptr + iVar2 + 0x37bd4) = local_140;
-  *(uint *)(this_ptr + iVar2 + 0x37bd8) = local_130;
-  *(uint *)(this_ptr + iVar2 + 0x37bdc) = local_120;
-  *(uint *)(this_ptr + iVar2 + 0x37be0) = local_13c;
-  *(uint *)(this_ptr + iVar2 + 0x37be4) = local_12c;
-  *(uint *)(this_ptr + iVar2 + 0x37be8) = local_11c;
+  this_ptr->collide_bones[bone_index].local_matrix.m[0].x = local_144;
+  this_ptr->collide_bones[bone_index].local_matrix.m[0].y = local_134;
+  this_ptr->collide_bones[bone_index].local_matrix.m[0].z = local_124;
+  this_ptr->collide_bones[bone_index].local_matrix.m[1].x = local_140;
+  this_ptr->collide_bones[bone_index].local_matrix.m[1].y = local_130;
+  this_ptr->collide_bones[bone_index].local_matrix.m[1].z = local_120;
+  this_ptr->collide_bones[bone_index].local_matrix.m[2].x = local_13c;
+  this_ptr->collide_bones[bone_index].local_matrix.m[2].y = local_12c;
+  this_ptr->collide_bones[bone_index].local_matrix.m[2].z = local_11c;
   core_xform_cpp_inverse_FUN_00584560(&stack0xfffffebc);
-  puVar3 = (uint *)&stack0xffffff1c;
-  puVar4 = (uint *)&stack0xffffff4c;
+  puVar4 = (uint *)&stack0xffffff1c;
+  puVar6 = (uint *)&stack0xffffff4c;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar4 = *puVar3;
-    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+    *puVar6 = *puVar4;
+    puVar4 = puVar4 + (uint)bVar7 * -2 + 1;
+    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
   }
+  pCVar2 = &this_ptr->collide_bones[bone_index].position_offset;
   local_24 = local_a8;
   local_20 = local_98;
   local_1c = local_88;
   local_18 = local_a8;
-  local_14[(uint)bVar5 * -2] = (&stack0xffffffe0)[(uint)bVar5 * 0xfffffffe];
-  local_14[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-       (&stack0xffffffe0)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-  if (this_ptr + iVar2 + 0x37bf0 == (CCloth *)&local_18) {
+  (&stack0xffffffe0)[(uint)bVar7 * -2 + 3] = (&stack0xffffffe0)[(uint)bVar7 * 0xfffffffe];
+  (&stack0xffffffe0)[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
+       (&stack0xffffffe0)[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+  if (pCVar2 == (CVector3f *)&stack0xffffffe8) {
     return;
   }
-  *(uint *)(this_ptr + iVar2 + 0x37bf0) = local_18;
-  *(uint *)(this_ptr + iVar2 + 0x37bf4) = local_14[0];
-  *(uint *)(this_ptr + iVar2 + 0x37bf8) = local_14[1];
+  pCVar2->x = local_18;
+  this_ptr->collide_bones[bone_index].position_offset.y = local_14;
+  this_ptr->collide_bones[bone_index].position_offset.z = local_10;
   return;
 }

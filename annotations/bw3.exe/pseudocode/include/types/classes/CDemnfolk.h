@@ -2,15 +2,41 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+struct CDoor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CDemnfolk
-// Stub: size from Watcom RTTI, fields not yet recovered
+// CZombie-style tail with grave/indoor flags
 // Ghidra size: 0xd14c (53580 bytes)
 #pragma pack(push, 1)
 typedef struct CDemnfolk {
-    char field_0[53580]; // 0x0
+    CEnemy base; // 0x0, derived; unchanged
+    float pickup_range_factor; // 0xd054, CDemnfolk_ctor 00454b60 getRandomFloatFromRange(0.3,1.0)
+    int pickup_seed; // 0xd058, CDemnfolk_ctor 00454b60 getRandomInt(0,0xff)
+    float pickup_scan_timer; // 0xd05c, CDemnfolk_ctor 00454b60 zeroes; pickup helper
+    float pickup_approach_progress; // 0xd060, CDemnfolk_ctor 00454b60 zeroes; pickup helper FADD
+    struct CDemonActor* pickup_target; // 0xd064, process FUN_00455080 picks up and clears
+    int object_shape_class; // 0xd068, CDemnfolk_ctor 00454b60 2; getCarryObjToBodyXForm reads
+    struct CDemonActor* grave_actor; // 0xd06c, CDemnfolk_archive 004583c0 archiveActor "graveActor"; process FUN_00455080 reads as CGrave*
+    struct CDoor* target_door; // 0xd070, CDemnfolk_ctor 00454b60 zeroes; CZombie target_door slot
+    char rise_from_grave_condition[100]; // 0xd074, CDemnfolk_archive 004583c0 "riseFromGraveCondition"; process FUN_00455080 evaluateCondition
+    int is_miner_zombie; // 0xd0d8, CDemnfolk_archive 004583c0 "isMinerZombie"; renderTransparent
+    int is_indoor_demon; // 0xd0dc, CDemnfolk_archive 004583c0 "isIndoorDemon"
+    int always_chase_fast; // 0xd0e0, CDemnfolk_archive 004583c0 "alwaysChaseFast"
+    int is_female; // 0xd0e4, CDemnfolk_ctor 00454b60 zeroes; CDemnfolk_processDamage 00458950 picks sound variant on it
+    int bone_indices[11]; // 0xd0e8, setup FUN_00454d20 findBone; getTargetPoints/canBeAttracted
+    int part_indices[7]; // 0xd114, setup FUN_00454d20 findPartByName; index part status +0x2298
+    float pain_cooldown; // 0xd130, CDemnfolk_processDamage 00458950 sets 2.0 when <=0
+    float bleedout_timer; // 0xd134, CDemnfolk_ctor 00454b60/setup FUN_00454d20 zero
+    uint sfx_handles[2]; // 0xd138, [0] CDemnfolk_processDamage 00458950 hurt sound, [1] process FUN_00455080 sound; ctor zeroes
+    float rise_delay; // 0xd140, process FUN_00455080 FADD/FSTP like CZombie rise_delay
+    float buried_timer; // 0xd144, process FUN_00455080 counts down like CZombie buried_timer
+    float difficulty_speed_scale; // 0xd148, CDemnfolk_ctor 00454b60 0.75 / 1.0; process FUN_00455080 FMUL
 } CDemnfolk;
 #pragma pack(pop)
 

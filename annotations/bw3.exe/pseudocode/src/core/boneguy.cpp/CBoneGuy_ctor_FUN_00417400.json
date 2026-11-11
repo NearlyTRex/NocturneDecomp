@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 751,
+    "complexity_score": 766,
     "cross_reference_count": 5,
     "function_call_count": 8,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 86,
-    "suspect_count": 63,
+    "suspect_count": 64,
     "suspect_types": [
+      "derived_field_index_pun",
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
@@ -758,6 +759,13 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffd8 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
       "type": "pointer_cast"
+    },
+    {
+      "description": "'pCVar4[1].base.base.create_event + 0x24' walks 1 x sizeof(CEnemy) (0xd054) + offsetof(base.base.create_event) (0x78) + 0x24 = 0xd0f0, which is exactly offsetof(CBoneGuy, boxes). Ghidra had no CBoneGuy type here and reached the field by index arithmetic; write it as ((CBoneGuy *)pCVar4)->boxes (\u00a7de-pun/\u00a712). Ambiguous: CConstruct::sfx_handles, CDemnfolk::bone_indices[2], CZombie::bone_indices[2] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 33,
+      "severity": "moderate",
+      "text": "(pCVar4[1].base.base.create_event + 0x24,0x14,&g_SBoneGuyBoxTypeInfo);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

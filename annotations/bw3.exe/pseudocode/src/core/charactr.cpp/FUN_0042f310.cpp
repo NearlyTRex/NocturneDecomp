@@ -17,7 +17,7 @@ void __cdecl core_charactr_cpp_FUN_0042f310(CCharacter *this_ptr)
   CDeformableModel *this_ptr_01;
   float10 fVar3;
   CBoundingBox3D *bounding_box;
-  SPose aSStack_1ab0 [6816];
+  SPose SStack_1ab0;
   
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,1);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,0xc000);
@@ -30,11 +30,11 @@ void __cdecl core_charactr_cpp_FUN_0042f310(CCharacter *this_ptr)
   _DAT_007e2aec = iVar2 % 6;
   DAT_005f2afc->skip_uv_extraction = 1;
   iVar2 = (iVar2 % 6) * 0x18;
-  if ((*(uint *)&this_ptr->field_0x3254 & 0x7fffffff) == 0) {
+  if (ABS(this_ptr->bind_time) == 0.0) {
     engine_texture_cpp_FUN_0056aa10(&DAT_005f0f74 + iVar2);
   }
   else {
-    iVar1 = *(int *)&this_ptr->field_0x3258;
+    iVar1 = this_ptr->bind_type;
     if (iVar1 == 0) {
       engine_texture_cpp_FUN_0056aa10(&DAT_005f1124 + iVar2);
     }
@@ -52,7 +52,7 @@ void __cdecl core_charactr_cpp_FUN_0042f310(CCharacter *this_ptr)
     }
   }
   this_ptr_00 = &this_ptr->model;
-  core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_0054f850(this_ptr_00,aSStack_1ab0)
+  core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_0054f850(this_ptr_00,&SStack_1ab0)
   ;
   core_skeleton_cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_0054e340
             (this_ptr_00,1.1,-1);
@@ -65,7 +65,7 @@ void __cdecl core_charactr_cpp_FUN_0042f310(CCharacter *this_ptr)
             (this_ptr_00,DAT_007e2ae8,0);
   core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_0054e5a0(this_ptr_00,0x267,1);
   DAT_005f2afc->skip_uv_extraction = 0;
-  core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_0054f920(this_ptr_00,aSStack_1ab0)
+  core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_0054f920(this_ptr_00,&SStack_1ab0)
   ;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
   return;

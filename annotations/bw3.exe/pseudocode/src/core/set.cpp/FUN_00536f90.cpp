@@ -25,7 +25,7 @@ void core_set_cpp_FUN_00536f90(CDemonSet *param_1)
   CVector3f CStack_50;
   CVector3f local_44;
   CVector3f CStack_38;
-  int local_2c;
+  char *local_2c;
   int local_28;
   int iStack_24;
   int iStack_20;
@@ -36,7 +36,7 @@ void core_set_cpp_FUN_00536f90(CDemonSet *param_1)
   bVar6 = 0;
   _DAT_0207babc = 0;
   _DAT_0207bab8 = 0;
-  if ((*(int *)&g_CGamePtr->field_0x24c == 0) &&
+  if ((g_CGamePtr->letterbox_mode == 0) &&
      (iVar1 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04), iVar1 != 0)) {
     if (*(int *)(iVar1 + 0x20b68) != 0) {
       _DAT_0207bab8 = *(int *)(iVar1 + 0x20b70);
@@ -48,7 +48,7 @@ void core_set_cpp_FUN_00536f90(CDemonSet *param_1)
   }
   local_28 = param_1->sorted_render_actor_count + -1;
   if (-1 < local_28) {
-    local_2c = (int)param_1->cameras + param_1->sorted_render_actor_count * 4 + -8;
+    local_2c = param_1->cameras[0].name + param_1->sorted_render_actor_count * 4 + -8;
     do {
       iVar1 = *(int *)(local_2c + 0x15f700);
       if (*(int *)(iVar1 + 0xfc) == 0) {

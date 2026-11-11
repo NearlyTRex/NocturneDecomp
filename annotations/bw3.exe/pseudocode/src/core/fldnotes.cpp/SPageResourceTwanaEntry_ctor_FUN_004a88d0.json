@@ -1,0 +1,200 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 56,
+    "complexity_score": 68,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 28,
+    "suspect_count": 3,
+    "suspect_types": [
+      "extra_output",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 84
+  },
+  "cross_references": [
+    {
+      "addr": "004a9330",
+      "from_addr": "004a9665",
+      "name": "core_fldnotes.cpp_STextView_handleTag_FUN_004a9330",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a88d0",
+    "address_range": [
+      [
+        "004a88d0",
+        "004a8977"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_fldnotes.cpp_SPageResourceTwanaEntry_ctor_FUN_004a88d0",
+    "signature": "SPageResourceTwanaEntry * core_fldnotes_cpp_SPageResourceTwanaEntry_ctor_FUN_004a88d0(SPageResourceTwanaEntry *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a30d7",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005a30d7"
+    },
+    {
+      "addr": "005a28f0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005a28f0"
+    },
+    {
+      "addr": "004a8370",
+      "is_variadic": false,
+      "name": "unkaddr_004a76f0.cpp_SPageResource_ctor_FUN_004a8370"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c0d9f",
+      "name": "s_core_fldnotes_cpp_005c0d9f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c0db4",
+      "name": "s_Can_t_have_more_than_one_005c0db4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dbf20",
+      "name": "g_CAlphaBitmapTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "005e02c4",
+      "name": "g_SPageResourceTwanaEntryVTable",
+      "type": "void*",
+      "value": "004a8980"
+    },
+    {
+      "addr": "01d0cfa0",
+      "name": "DAT_01d0cfa0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004a9665",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_STextView_handleTag_FUN_004a9330",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4791666666666665,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 5,
+      "CBRANCH": 1,
+      "COPY": 38,
+      "INT_ADD": 19,
+      "INT_AND": 15,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 14,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 7,
+      "INT_SUB": 18,
+      "LOAD": 6,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 22
+    },
+    "pcode_op_count": 167
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SPageResourceTwanaEntry *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "iVar3 = __arrinit(extraout_EAX + 0xdc,3,&g_CAlphaBitmapTypeInfo);",
+      "type": "extra_output"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 0,
+        "vtable_addr": "005e03a4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

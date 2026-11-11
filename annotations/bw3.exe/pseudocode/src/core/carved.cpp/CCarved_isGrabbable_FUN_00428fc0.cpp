@@ -15,6 +15,6 @@ int __cdecl core_carved_cpp_CCarved_isGrabbable_FUN_00428fc0(CCarved *this_ptr,C
   if (iVar1 != 0) {
     return 1;
   }
-  iVar1 = core_enemy_cpp_CEnemy_isGrabbable_FUN_0048a200((CEnemy *)this_ptr,grabber);
+  iVar1 = core_enemy_cpp_CEnemy_isGrabbable_FUN_0048a200(&this_ptr->base,grabber);
   return iVar1;
 }

@@ -28,16 +28,16 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_00554140(CSfxSl
   }
   iVar3 = DAT_0060422c;
   if (DAT_0060422c < 2) {
-    *(uint *)&this_ptr->field_0xb0 = 0;
+    this_ptr->channel_target_buffer_offsets[0] = 0;
   }
-  else if (((this_ptr->options).field_0x4c & 1) == 0) {
+  else if (((this_ptr->options).flags & 1) == 0) {
     fVar1 = (1.0 / _DAT_005e4844) * DAT_00604240;
     fVar2 = (float)DAT_00604230;
     iVar4 = 99999;
     pCVar5 = this_ptr;
     if (0 < DAT_0060422c) {
       do {
-        fVar7 = (float10)*(float *)&pCVar5->field_0x70 * (float10)(fVar2 * fVar1);
+        fVar7 = (float10)pCVar5->distance_to_speakers[0] * (float10)(fVar2 * fVar1);
         round();
         iVar6 = (int)ROUND(fVar7);
         *(int *)(extraout_EDX + 0xb0) = iVar6;
@@ -51,8 +51,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_00554140(CSfxSl
     if (0 < iVar3) {
       do {
         iVar6 = iVar6 + 1;
-        *(int *)&this_ptr->field_0xb0 = *(int *)&this_ptr->field_0xb0 - iVar4;
-        this_ptr = (CSfxSlot *)&(this_ptr->options).field_0x4;
+        this_ptr->channel_target_buffer_offsets[0] =
+             this_ptr->channel_target_buffer_offsets[0] - iVar4;
+        this_ptr = (CSfxSlot *)&(this_ptr->options).position;
       } while (iVar6 < iVar3);
       DAT_0060422c = iVar3;
       return;
@@ -63,8 +64,8 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_00554140(CSfxSl
     if (0 < DAT_0060422c) {
       do {
         iVar4 = iVar4 + 1;
-        *(uint *)&this_ptr->field_0xb0 = 0;
-        this_ptr = (CSfxSlot *)&(this_ptr->options).field_0x4;
+        this_ptr->channel_target_buffer_offsets[0] = 0;
+        this_ptr = (CSfxSlot *)&(this_ptr->options).position;
       } while (iVar4 < DAT_0060422c);
     }
   }

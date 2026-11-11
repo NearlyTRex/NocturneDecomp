@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 212,
+    "complexity_score": 216,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 77,
-    "suspect_count": 10,
+    "pseudocode_lines": 76,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
       "stack_alignment_array",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 247
+    "total_lines": 246
   },
   "cross_references": [
     {
@@ -288,12 +287,12 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "this_ptr_00 = (CSkeleton *)&this_ptr_00->field_0x24;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(CMatrix3x4f *)((int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Pointer value `&local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -312,8 +311,16 @@
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 71,
+      "match": "(int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 69,
+      "line": 68,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -336,11 +343,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `this_ptr_00` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&this_ptr_00->owner`). Replace `this_ptr_00->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `this_ptr_00` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `this_ptr_00->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 43,
-      "match": "this_ptr_00 = (T *)&this_ptr_00->FIELD",
+      "match": "this_ptr_00 = (T *)((this_ptr_00->FIELD).ARRAY[N] + CONST)",
       "severity": "moderate",
-      "text": "this_ptr_00 = (CSkeleton *)&this_ptr_00->field_0x24;",
+      "text": "this_ptr_00 = (CSkeleton *)((this_ptr_00->motion_list).state_names[1] + 2);",
       "type": "shadow_pointer_walk"
     },
     {

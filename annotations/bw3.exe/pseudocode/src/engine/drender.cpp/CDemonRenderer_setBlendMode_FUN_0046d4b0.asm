@@ -17,7 +17,7 @@
 ;   core_dlight.cpp_FUN_0045d530 at 0045da56
 ;   core_dlight.cpp_FUN_0045e69e at 0045e726
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_0045f5a0 at 0045f614
-;   core_fire.cpp_CGlassParticle_render_FUN_0049a9f0 at 0049abd3
+;   core_fire.cpp_CFirefly_render_FUN_00498b40 at 00498c6b
 ;   ... and 30 more
 ;
 ; Called Functions:

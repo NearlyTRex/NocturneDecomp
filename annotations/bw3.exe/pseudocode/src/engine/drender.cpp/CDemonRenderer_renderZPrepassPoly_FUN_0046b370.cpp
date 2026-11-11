@@ -19,24 +19,25 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderZPrepassPoly_FUN_0046b370(C
   uint local_14;
   
   if ((this_ptr->plane_culling_enabled == 0) ||
-     (iVar4 = engine_3d_c_isVisiblePlane_FUN_00403920(poly + 8), iVar4 != 0)) {
+     (iVar4 = engine_3d_c_isVisiblePlane_FUN_00403920(&(poly->base).surface_normal), iVar4 != 0)) {
     iVar4 = 0;
     local_14 = 0xffffffff;
     local_18 = 0;
-    if (0 < *(int *)(poly + 4)) {
+    if (0 < (poly->base).base.count) {
       iVar2 = 0;
       pSVar3 = poly;
       do {
-        iVar1 = *(int *)(pSVar3 + 0x18);
+        iVar1 = pSVar3->vertices[0].vertex_index;
         *(int *)(&DAT_01bdd818 + iVar2) = iVar1;
-        local_14 = local_14 & *(uint *)(this_ptr->vertex_buffer_ptr + iVar1 * 0x30 + 0x10);
-        if (((byte)this_ptr->vertex_buffer_ptr[iVar1 * 0x30 + 0x13] & 0x80) != 0) {
+        local_14 = local_14 & this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
+        if ((int)(this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x & -0x80000000) != 0)
+        {
           local_18 = 1;
         }
         iVar2 = iVar2 + 4;
         iVar4 = iVar4 + 1;
-        pSVar3 = pSVar3 + 0xc;
-      } while (iVar4 < *(int *)(poly + 4));
+        pSVar3 = (SMRGLPrimitivePoly *)&(pSVar3->base).surface_normal.B;
+      } while (iVar4 < (poly->base).base.count);
     }
     if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
       iVar4 = this_ptr->face_capture_enabled;
@@ -54,7 +55,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderZPrepassPoly_FUN_0046b370(C
         _DAT_01c6b5cc = core_dstrendr_cpp_renderDepth16BitConditional_FUN_0046f9f4;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160
-                (this_ptr,*(int *)(poly + 4),(int *)&DAT_01bdd818);
+                (this_ptr,(poly->base).base.count,(int *)&DAT_01bdd818);
       this_ptr->face_capture_enabled = iVar4;
     }
   }

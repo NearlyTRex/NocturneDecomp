@@ -20,8 +20,8 @@ void __cdecl core_weapon_cpp_CWeapon_archive_FUN_0057b2a0(CWeapon *this_ptr)
   if (3 < g_CWeaponClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b8b0
               ((int *)&this_ptr->weapon_state,"weaponState");
-    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x568,"ammoCount");
-    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x56c,"ammoType");
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->ammo_count,"ammoCount");
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->ammo_type,"ammoType");
   }
   if (g_CWeaponClassVersion == 5) {
     core_actor_cpp_archiveLocalizedString_FUN_0040b7a0(local_10c,"descriptiveName");

@@ -2,15 +2,31 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CPryeMorph;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCharacter.h"
+#include "types/classes/CClothList.h"
+#include "types/classes/CMorph.h"
+#include "types/classes/CPathMap.h"
 
 // Structure: CSpiritEagle
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 136364; CCharacter + CPathMap + CClothList + CNPC-style fields + CPryeMorph morph (cf. nocedit CPassenger morph/morph_time)
 // Ghidra size: 0x214ac (136364 bytes)
 #pragma pack(push, 1)
 typedef struct CSpiritEagle {
-    char field_0[136364]; // 0x0
+    CCharacter base; // 0x0, existing base
+    CPathMap path_map; // 0xcdcc, CSpiritEagle_ctor@005991d0 CPathMap_ctor(this+0xcdcc); getPathMap@00599e30 returns it
+    CClothList cloth_list; // 0x206a8, ctor: CClothList_ctor(path_map+0x138dc), count=1 and filenames[0] copied at +0x206ac; setup@005992f0 CClothList_load/setup(this+0x206a8), reads cloths[0] at +0x2083c
+    int shoot_me; // 0x20864, archive@00599bc0 "shootMe"; isInvulnerable@00599e10
+    int pool_me; // 0x20868, archive "poolMe"; process@00599540 set after createBloodPool
+    float speed; // 0x2086c, archive "speed"; ctor FSTP random 0.9..1.1
+    struct CPryeMorph* morph_actor; // 0x20870, setup: createActorByName("CPryeMorph") stored; deformable init bwp3_prye_morph.dfm via +0x158; process adds it to mission list when morph_time>=1 then clears
+    CMorph morph; // 0x20874, ctor CMorph_ctor(cloth_list+0x1cc); setup CMorph_setupModelFromDeformable/addPart/getReady; renderOpaque CMorph_render; dtor CMorph_dtor
+    float morph_time; // 0x214a0, archive (version>=2) "morphTime"; process += dt*k; renderOpaque CMorph_render(morph, morph_time); setup zeroes
+    char field_136356[8]; // 0x214a4
 } CSpiritEagle;
 #pragma pack(pop)
 

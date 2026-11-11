@@ -18,7 +18,7 @@ void __cdecl core_elephant_cpp_CElephantGun_process_FUN_00486c30(CElephantGun *t
   float fStack_10;
   
   bVar1 = 0;
-  if (*(int *)&this_ptr->field_0x598 != 0) {
+  if (this_ptr->muzzle_flash_active != 0) {
     g_CDemonLightInstance.light_enabled_flag = 1;
     (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
     *(uint *)(&stack0xffffffcc + (uint)bVar1 * -8) =
@@ -39,13 +39,13 @@ void __cdecl core_elephant_cpp_CElephantGun_process_FUN_00486c30(CElephantGun *t
     }
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
               (&g_CDemonLightInstance.base.base.rotation_matrix,&(this_ptr->base).base.orient.vec);
-    g_CDemonLightInstance.base.max_distance = *(float *)&this_ptr->field_0x59c;
+    g_CDemonLightInstance.base.max_distance = this_ptr->projectile_distance;
     g_CDemonLightInstance.base.base.focal_length = 112.0;
     core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_0045fab0(&g_CDemonLightInstance,1.0);
     g_CDemonLightInstance.antialiasing_enabled = 0;
     core_set_cpp_CDemonSet_addDynamicLight_FUN_00537270(g_CDemonSetPtr,&g_CDemonLightInstance);
   }
-  *(uint *)&this_ptr->field_0x598 = 0;
+  this_ptr->muzzle_flash_active = 0;
   core_weapon_cpp_CWeapon_process_FUN_0057b160(&this_ptr->base,in_stack_0000000c);
   return;
 }

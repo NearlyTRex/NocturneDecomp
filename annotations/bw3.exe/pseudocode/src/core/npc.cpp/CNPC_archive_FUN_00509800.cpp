@@ -23,20 +23,20 @@ void __cdecl core_npc_cpp_CNPC_archive_FUN_00509800(CNPC *this_ptr)
     core_actor_cpp_archiveMotionState_FUN_0040bab0(&model_ptr->base,"motion state");
   }
   if (3 < g_CNPCClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x206a8,"shootMe");
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->shoot_me,"shootMe");
   }
   if (4 < g_CNPCClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x206ac,"poolMe");
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->pool_me,"poolMe");
   }
   if (5 < g_CNPCClassVersion) {
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x206b0,"speed");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->speed,"speed");
   }
   if (6 < g_CNPCClassVersion) {
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x206c4,"fadeTime");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->fade_time,"fadeTime");
   }
   if (g_CNPCClassVersion < 8) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x206bc,"startOpc");
+  core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->start_opcode,"startOpc");
   return;
 }

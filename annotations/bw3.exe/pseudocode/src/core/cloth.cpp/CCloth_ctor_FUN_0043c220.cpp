@@ -12,7 +12,7 @@ CCloth * __cdecl core_cloth_cpp_CCloth_ctor_FUN_0043c220(CCloth *this_ptr)
   CKeyFramedModel *pCVar1;
   int iVar2;
   
-  pCVar1 = core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00460490((CKeyFramedModel *)this_ptr);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00460490(&this_ptr->model);
   iVar2 = __arrinit(pCVar1 + 1,800,&g_SClothVertexTypeInfo);
   iVar2 = __arrinit(iVar2 + 0x377b8,0x32,&g_SClothBoneTypeInfo);
   *(uint *)(iVar2 + 0x2fac) = 0;

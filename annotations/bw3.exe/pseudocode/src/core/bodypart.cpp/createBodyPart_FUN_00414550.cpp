@@ -23,7 +23,7 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00414550(CVector3f *pos
   float10 fVar8;
   float10 fVar9;
   
-  this_ptr = (CBodyPart *)debugAllocTracked1(0xf34);
+  this_ptr = (CBodyPart *)operator_new(0xf34);
   this_ptr_00 = (CBodyPart *)0x0;
   if (this_ptr != (CBodyPart *)0x0) {
     this_ptr_00 = core_bodypart_cpp_CBodyPart_ctor_FUN_00414750(this_ptr);
@@ -44,7 +44,7 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00414550(CVector3f *pos
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0(&this_ptr_00->base);
   if (scale_source == (CDemonActor *)0x0) {
-    iVar2 = *(int *)0x01D81080;
+    iVar2 = 0x01D81080->current_set_index;
   }
   else {
     iVar2 = (scale_source->location).area_id;

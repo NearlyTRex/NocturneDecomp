@@ -13,19 +13,19 @@ void __cdecl core_prye_cpp_CPrye_toggleGoggles_FUN_005270a0(CPrye *this_ptr)
   uint uVar2;
   
   uVar2 = g_CGogglesClassInfo.name_hash;
-  iVar1 = core_inv_cpp_FUN_004db9e0((CInventory *)&this_ptr->field_0x206e8,"CGoggles");
+  iVar1 = core_inv_cpp_FUN_004db9e0(&(this_ptr->base).inventory,"CGoggles");
   iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840(iVar1,uVar2);
   if (iVar1 == 0) {
-    if (*(int *)&g_CGamePtr->field_0x264 == 0) {
+    if (g_CGamePtr->goggles_active == 0) {
       return;
     }
   }
   else {
     *(uint *)(iVar1 + 0x2d4) = (uint)(*(int *)(iVar1 + 0x2d4) == 0);
-    if (*(int *)&g_CGamePtr->field_0x264 == 0) {
+    if (g_CGamePtr->goggles_active == 0) {
       return;
     }
   }
-  (*(code *)**(uint **)&g_CGamePtr->field_0xb8c)(g_CGamePtr,0);
+  (**(code **)g_CGamePtr->vtable)(g_CGamePtr,0);
   return;
 }

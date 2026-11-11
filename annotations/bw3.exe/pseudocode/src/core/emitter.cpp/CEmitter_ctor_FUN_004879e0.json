@@ -182,7 +182,7 @@
       "type": "pointer_cast"
     },
     {
-      "description": "'(CKeyFramedModelInstance *)&pCVar2[1].platform_orientation_delta.y' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(platform_orientation_delta.y) (0xf0) + 0x0 = 0x248, which is exactly offsetof(CChain, move_wav_name[44]). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar2)->move_wav_name[44] (\u00a7de-pun/\u00a712). Ambiguous: CFlame::off_event[44], CTrigger::on_event[36], CWaterActor::move_down_event[48] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'(CKeyFramedModelInstance *)&pCVar2[1].platform_orientation_delta.y' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(platform_orientation_delta.y) (0xf0) + 0x0 = 0x248, which is exactly offsetof(CChain, move_wav_name[44]). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar2)->move_wav_name[44] (\u00a7de-pun/\u00a712). Ambiguous: CEmitter::model, CFlame::off_event[44], CTrigger::on_event[36] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 15,
       "severity": "moderate",
       "text": "((CKeyFramedModelInstance *)&pCVar2[1].platform_orientation_delta.y);",

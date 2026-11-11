@@ -80,7 +80,8 @@ uint core_prye_cpp_FUN_00520dec(CCharacter *param_1)
   param_1[2].flames[0x15].base.orient_matrix.m[0].x = 0.0;
   fStack_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60(param_1,0);
   if ((float)_DAT_005cd517 <= fStack_14) {
-    if ((*(int *)&param_1->field_0x25b0 == 0) && (*(int *)&param_1->field_0x2628 == 0)) {
+    if ((param_1->carry_hands[0].carry_actor == (CDemonActor *)0x0) &&
+       (param_1->carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
       pCStack_24 = &(param_1->base).location;
       iStack_20 = 0;
       iStack_1c = 0;

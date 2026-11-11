@@ -17,7 +17,7 @@ void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_004662b0(CDemonPart *this_ptr)
   
   core_dpart_cpp_FUN_004663b0(this_ptr);
   if (this_ptr->vertex_count != 0) {
-    pCVar1 = (CVector3i *)FUN_005a4b20(this_ptr->vertex_count,0xc);
+    pCVar1 = (CVector3i *)calloc(this_ptr->vertex_count,0xc);
     this_ptr->vertex_positions = pCVar1;
     if (pCVar1 == (CVector3i *)0x0) {
       _sprintf(acStack_10c,"CDemonPart::alloc - Out of vertex %d memory!");
@@ -25,7 +25,7 @@ void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_004662b0(CDemonPart *this_ptr)
       _DAT_01d71de0 = "..\\core\\dpart.cpp";
       core_main_c_FUN_004e4330(acStack_10c);
     }
-    pCVar1 = (CVector3i *)FUN_005a4b20(this_ptr->vertex_count,0xc);
+    pCVar1 = (CVector3i *)calloc(this_ptr->vertex_count,0xc);
     this_ptr->vertex_normals = pCVar1;
     if (pCVar1 == (CVector3i *)0x0) {
       _DAT_01d71de0 = "..\\core\\dpart.cpp";
@@ -34,7 +34,7 @@ void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_004662b0(CDemonPart *this_ptr)
     }
   }
   if (this_ptr->face_count != 0) {
-    pSVar2 = (SSurfacePlane *)FUN_005a4b20(this_ptr->face_count,0x20);
+    pSVar2 = (SSurfacePlane *)calloc(this_ptr->face_count,0x20);
     this_ptr->face_data = pSVar2;
     if (pSVar2 == (SSurfacePlane *)0x0) {
       _DAT_01d71de0 = "..\\core\\dpart.cpp";

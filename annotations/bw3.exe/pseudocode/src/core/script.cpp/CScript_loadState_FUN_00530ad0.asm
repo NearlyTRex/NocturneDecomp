@@ -79,7 +79,7 @@ section .text
     MOV EAX,[0x005fe9dc]                ; 00530b2f | g_CGamePtr
     ADD ESP,0xc                         ; 00530b34
     ADD EAX,0x24c                       ; 00530b37
-    PUSH EAX                            ; 00530b3c | g_CGameInstance.field540_0x24c
+    PUSH EAX                            ; 00530b3c | g_CGameInstance.letterbox_mode
     PUSH 0x5cfd3f                       ; 00530b3d | DAT_005cfd3f
     PUSH EDI                            ; 00530b42
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 00530b43

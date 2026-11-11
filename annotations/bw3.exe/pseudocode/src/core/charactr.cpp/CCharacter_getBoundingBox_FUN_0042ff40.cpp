@@ -11,24 +11,23 @@ CBoundingBox3D * __cdecl core_charactr_cpp_CCharacter_getBoundingBox_FUN_0042ff4
 {
   int iVar1;
   CBoundingBox3D *unaff_ESI;
-  uint *puVar2;
+  CBoundingBox3D *pCVar2;
   float *pfVar3;
-  CBoundingBox3D *pCVar4;
   float afStack_1c [6];
   
-  puVar2 = (uint *)&this_ptr->field_0x2788;
+  pCVar2 = &this_ptr->cached_bounding_box;
   pfVar3 = afStack_1c;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *pfVar3 = (float)*puVar2;
-    puVar2 = puVar2 + 1;
+    *pfVar3 = (pCVar2->min).x;
+    pCVar2 = (CBoundingBox3D *)&(pCVar2->min).y;
     pfVar3 = pfVar3 + 1;
   }
   pfVar3 = afStack_1c;
-  pCVar4 = unaff_ESI;
+  pCVar2 = unaff_ESI;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    (pCVar4->min).x = *pfVar3;
+    (pCVar2->min).x = *pfVar3;
     pfVar3 = pfVar3 + 1;
-    pCVar4 = (CBoundingBox3D *)&(pCVar4->min).y;
+    pCVar2 = (CBoundingBox3D *)&(pCVar2->min).y;
   }
   return unaff_ESI;
 }

@@ -9,5 +9,5 @@
 ECollisionType __cdecl core_ammo_cpp_CAmmo_getCollisionType_FUN_0040e060(CAmmo *this_ptr,SCollisionInfo *collision_info)
 
 {
-  return (uint)(*(int *)collision_info == 4);
+  return (uint)((collision_info->ray_query).ray_type == 4);
 }

@@ -44,7 +44,7 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_005723d0(CTerrain *this_ptr,in
   uVar5 = round();
   local_20.y = (int)uVar5 + (int)((ulonglong)uVar5 >> 0x20);
   local_14 = (int)ROUND(fVar4);
-  local_20.z = (iVar1 + local_14) - *(int *)this_ptr;
+  local_20.z = (iVar1 + local_14) - this_ptr->animation_counter;
   engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_0046cb70(DAT_005f2afc,&local_20);
   core_ground_cpp_CGround_render_FUN_004d0910(g_CGroundPtr);
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90

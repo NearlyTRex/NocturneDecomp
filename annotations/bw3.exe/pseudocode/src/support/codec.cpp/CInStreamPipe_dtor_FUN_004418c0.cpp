@@ -19,8 +19,8 @@ CInStreamPipe * support_codec_cpp_CInStreamPipe_dtor_FUN_004418c0(CInStreamPipe 
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  *(byte ***)this_ptr = &g_CInStreamPipeVTable;
-  support_codec_cpp_FUN_00441b60(this_ptr);
+  this_ptr->vtable = &g_CInStreamPipeVTable;
+  support_codec_cpp_CInStreamPipe_close_FUN_00441b60(this_ptr);
   pCVar1 = (CInStreamPipe *)unkafter_turret_cpp_FUN_00572540(this_ptr,1);
   if ((flags & 2) == 0) {
     return pCVar1;

@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 62,
+    "complexity_score": 27,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 45
@@ -113,30 +112,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x2d4",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x2d4 == 2) && (weapon_state == 1)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x598",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x598 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x594",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x594 = 0;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

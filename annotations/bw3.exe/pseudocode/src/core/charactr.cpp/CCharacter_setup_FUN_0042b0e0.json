@@ -2,22 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 274,
-    "complexity_score": 317,
+    "complexity_score": 199,
     "cross_reference_count": 6,
     "function_call_count": 16,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 117,
-    "suspect_count": 17,
+    "pseudocode_lines": 119,
+    "suspect_count": 6,
     "suspect_types": [
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
-      "unresolved_funcptr",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 391
+    "total_lines": 393
   },
   "cross_references": [
     {
@@ -347,16 +345,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x3284",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x3284 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 25,
       "match": "DAT_007e2b34",
       "severity": "mild",
       "text": "((CKeyFramedModelInstance *)&DAT_007e2b34,\"stake_b.kfm\");",
@@ -364,95 +354,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 27,
       "match": "DAT_007e2b34",
       "severity": "mild",
       "text": "((CKeyFramedModelInstance *)&DAT_007e2b34);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x25b0",
-      "severity": "mild",
-      "text": "iVar9 = *(int *)&pCVar4->field_0x25b0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 31,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "pCVar6 = (CCharacter *)(**(code **)(*(int *)(iVar9 + 0x154) + 0x94))(iVar9);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 33,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar9 + 0x154) + 0x88))(iVar9,this_ptr);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x27b8",
-      "severity": "mild",
-      "text": "(this_ptr->model).scale_factor = *(float *)&this_ptr->field_0x27b8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x2774",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x2774 = iVar9;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x27a4",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x27a4 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 76,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar6->fires[0].field_0x14 = 0x40000000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 108,
-      "match": "field_0xcdc4",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0xcdc4 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 112,
-      "match": "field_0x2764",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2764 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 114,
-      "match": "field_0x2760",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2760 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 97,
+      "line": 99,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -460,7 +370,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 78,
+      "line": 80,
       "match": "pCVar4 = (T *)&(pCVar4->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar4 = (CCharacter *)&(pCVar4->model).bone_origins[0x14].y;",
@@ -468,7 +378,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 79,
+      "line": 81,
       "match": "pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar6 = (CCharacter *)((pCVar6->base).actor_name + 0x18);",

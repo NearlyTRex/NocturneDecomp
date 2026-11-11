@@ -11,20 +11,19 @@
 void __cdecl core_mission_cpp_CDemonMission_removeAllActors_FUN_004f6d70(CDemonMission *this_ptr)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   CDemonSet *this_ptr_00;
   
-  iVar1 = *(int *)(this_ptr + 0x143c);
-  while (iVar1 != 0) {
-    core_mission_cpp_CDemonMission_removeActor_FUN_004f6ca0
-              (this_ptr,*(CDemonActor **)(this_ptr + 0x143c),1);
-    iVar1 = *(int *)(this_ptr + 0x143c);
+  pCVar1 = this_ptr->first_actor;
+  while (pCVar1 != (CDemonActor *)0x0) {
+    core_mission_cpp_CDemonMission_removeActor_FUN_004f6ca0(this_ptr,this_ptr->first_actor,1);
+    pCVar1 = this_ptr->first_actor;
   }
   core_mission_cpp_CDemonMission_buildSetActorList_FUN_004f6bf0(this_ptr);
   this_ptr_00 = g_CDemonSetPtr;
   _DAT_01d5ba00 = 0;
-  *(uint *)(this_ptr + 0x1454) = 0xffffffff;
+  this_ptr->prepared_set_index = -1;
   core_setcolid_cpp_CDemonSet_commitVoxelBuffer_FUN_0053ef40(this_ptr_00);
-  *(uint *)(this_ptr + 0x1018) = 0;
+  this_ptr->delete_queue_count = 0;
   return;
 }

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 312,
-    "complexity_score": 223,
+    "complexity_score": 222,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 113,
+    "pseudocode_lines": 112,
     "suspect_count": 9,
     "suspect_types": [
       "concat_reconstruction",
@@ -15,7 +15,7 @@
       "undefined_data",
       "unknown_field"
     ],
-    "total_lines": 425
+    "total_lines": 424
   },
   "cross_references": [
     {
@@ -219,7 +219,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 99,
       "match": "DAT_006019e0",
       "severity": "mild",
       "text": "*(uint *)(&DAT_006019e0 +",
@@ -227,7 +227,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 113,
+      "line": 112,
       "match": "._2_2_",
       "severity": "mild",
       "text": "local_16 = CONCAT22(local_16._2_2_ + 1,(ushort)local_16);",
@@ -251,7 +251,7 @@
     },
     {
       "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 72,
+      "line": 71,
       "match": "CONCAT22",
       "severity": "moderate",
       "text": "local_1a = CONCAT22(3,(ushort)local_1a);",
@@ -259,7 +259,7 @@
     },
     {
       "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 81,
+      "line": 80,
       "match": "CONCAT22",
       "severity": "moderate",
       "text": "local_1a = CONCAT22(4,(ushort)local_1a);",
@@ -267,7 +267,7 @@
     },
     {
       "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 89,
+      "line": 88,
       "match": "CONCAT22",
       "severity": "moderate",
       "text": "local_1a = CONCAT22(5,(ushort)local_1a);",
@@ -275,7 +275,7 @@
     },
     {
       "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 113,
+      "line": 112,
       "match": "CONCAT22",
       "severity": "moderate",
       "text": "local_16 = CONCAT22(local_16._2_2_ + 1,(ushort)local_16);",
@@ -283,7 +283,7 @@
     },
     {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 100,
+      "line": 99,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "severity": "moderate",
       "text": "*(uint *)(&DAT_006019e0 +",

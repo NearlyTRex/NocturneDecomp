@@ -23,7 +23,7 @@ CAsgaya * core_asgaya_cpp_CAsgaya_dtor_FUN_005a1b50(CAsgaya *this_ptr,uint flags
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = core_path_cpp_CPathMap_dtor_FUN_0050ad40((CPathMap *)&this_ptr->field_0x206c8,0);
+  pCVar1 = core_path_cpp_CPathMap_dtor_FUN_0050ad40(&this_ptr->path_map,0);
   pCVar1 = core_path_cpp_CPathMap_dtor_FUN_0050ad40
                      ((CPathMap *)&pCVar1[-2].last_pathfinding_result,0);
   iVar2 = unkafter_armour_cpp_FUN_00410370(pCVar1[-1].height_cache_tags[4] + 0x2f,0);
@@ -31,7 +31,8 @@ CAsgaya * core_asgaya_cpp_CAsgaya_dtor_FUN_005a1b50(CAsgaya *this_ptr,uint flags
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80
                      ((CDeformableModelInstance *)(pCVar3[-0x1b].filenames[7] + 8),0);
   pCVar5 = (CAsgaya *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar4[-1].field_0x224c,1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408770
+                     ((CDemonActor *)(pCVar4[-1].part_data.texture_set_indices + 7),1);
   if ((flags & 2) == 0) {
     return pCVar5;
   }

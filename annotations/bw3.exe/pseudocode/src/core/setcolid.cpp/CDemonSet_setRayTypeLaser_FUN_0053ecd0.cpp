@@ -9,10 +9,10 @@
 void __cdecl core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_0053ecd0(CDemonSet *this_ptr,int laser_type,int color_r,int color_g,int color_b)
 
 {
-  *(uint *)&this_ptr->ray_query = 3;
-  *(int *)&this_ptr->field_0x15f69c = laser_type;
-  *(int *)&this_ptr->field_0x15f6a0 = color_r;
-  *(int *)&this_ptr->field_0x15f6a4 = color_g;
-  *(int *)&this_ptr->field_0x15f6a8 = color_b;
+  (this_ptr->ray_query).ray_type = 3;
+  (this_ptr->ray_query).laser_type = laser_type;
+  (this_ptr->ray_query).laser_color.r = color_r;
+  (this_ptr->ray_query).laser_color.g = color_g;
+  (this_ptr->ray_query).laser_color.b = color_b;
   return;
 }

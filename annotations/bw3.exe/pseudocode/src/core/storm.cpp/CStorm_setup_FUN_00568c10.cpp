@@ -9,7 +9,7 @@
 void __cdecl core_storm_cpp_CStorm_setup_FUN_00568c10(CStorm *this_ptr)
 
 {
-  core_weapon_cpp_CWeapon_setup_FUN_0057af40((CWeapon *)this_ptr);
+  core_weapon_cpp_CWeapon_setup_FUN_0057af40(&this_ptr->base);
   sound_sndmain_cpp_FUN_00556230("wp_nomana.wav");
   sound_sndmain_cpp_FUN_00556230("wp_storm.wav");
   core_weather_cpp_FUN_0057d420(0x02D0C1A0,5);

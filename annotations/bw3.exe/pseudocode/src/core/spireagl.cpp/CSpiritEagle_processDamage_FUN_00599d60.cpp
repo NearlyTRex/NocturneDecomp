@@ -9,28 +9,30 @@
 void __cdecl core_spireagl_cpp_CSpiritEagle_processDamage_FUN_00599d60(CSpiritEagle *this_ptr,SDamageInfo *damage_info)
 
 {
-  float fVar1;
-  CDemonActorType *pCVar2;
-  byte *puVar3;
+  CDemonActor_vtable *pCVar1;
+  float fVar2;
+  CDemonActorType *pCVar3;
+  byte *puVar4;
   
-  pCVar2 = (CDemonActorType *)(**(code **)(*(int *)&this_ptr->field_0x154 + 0xcc))(this_ptr);
-  if (pCVar2 == &g_CSpiritEagleClassInfo) {
-    fVar1 = *(float *)&this_ptr->field_0x2538 - *(float *)(damage_info + 4);
-    *(float *)&this_ptr->field_0x2538 = fVar1;
-    if (fVar1 <= 0.0) {
-      *(uint *)&this_ptr->field_0x2538 = 0;
-      (**(code **)(*(int *)&this_ptr->field_0x154 + 0xa8))(this_ptr,0x32,0x41c80000);
-      core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0((CCharacter *)this_ptr);
-      puVar3 = &DAT_005d9a11;
+  pCVar3 = (*((this_ptr->base).base.vtable._ub)->getActorType)((CDemonActor *)this_ptr);
+  if (pCVar3 == &g_CSpiritEagleClassInfo) {
+    fVar2 = (this_ptr->base).hit_points - damage_info->damage_amount;
+    (this_ptr->base).hit_points = fVar2;
+    if (fVar2 <= 0.0) {
+      pCVar1 = (this_ptr->base).base.vtable._ub;
+      (this_ptr->base).hit_points = 0.0;
+      (*pCVar1->spawnFlies)((CDemonActor *)this_ptr,0x32,25.0);
+      core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0(&this_ptr->base);
+      puVar4 = &DAT_005d9a11;
     }
     else {
-      if ((*(float *)(damage_info + 4) <= 0.0) || (*(int *)&this_ptr->field_0x26fc != 0))
-      goto LAB_00599dc3;
-      puVar3 = &DAT_005d9a15;
+      if ((damage_info->damage_amount <= 0.0) || ((this_ptr->base).grabbed_by != (CDemonActor *)0x0)
+         ) goto LAB_00599dc3;
+      puVar4 = &DAT_005d9a15;
     }
-    core_spireagl_cpp_FUN_00599c80(&this_ptr->field_0x158,puVar3);
+    core_spireagl_cpp_FUN_00599c80(&(this_ptr->base).model,puVar4);
   }
 LAB_00599dc3:
-  core_charactr_cpp_CCharacter_processDamage_FUN_00430d60((CCharacter *)this_ptr,damage_info);
+  core_charactr_cpp_CCharacter_processDamage_FUN_00430d60(&this_ptr->base,damage_info);
   return;
 }

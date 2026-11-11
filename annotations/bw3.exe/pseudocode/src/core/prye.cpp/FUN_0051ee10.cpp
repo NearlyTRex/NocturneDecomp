@@ -113,7 +113,7 @@ void core_prye_cpp_FUN_0051ee10(int param_1,int param_2)
     local_1c = (CDeformableModelInstance *)(param_1 + 0x158);
     pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(local_1c);
     iVar8 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004fb9c0
-                      ((CMotionList *)pCVar2,motion_name,iVar8);
+                      (&pCVar2->motion_list,motion_name,iVar8);
     pCVar1 = local_1c;
     local_30 = (float)core_motion_cpp_FUN_004fca20(local_1c,iVar8,*(uint *)(param_1 + 0x2f04))
     ;

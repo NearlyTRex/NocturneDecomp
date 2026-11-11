@@ -29,7 +29,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
-;   crt_unknown.c_FUN_005a3650
+;   crt_memory.c_malloc_FUN_005a3650
 ;   engine_mini3d.cpp_FUN_004efd80
 ;   engine_mini3d.cpp_FUN_004f12b0
 ;   engine_mini3d.cpp_FUN_004f2cf0
@@ -199,8 +199,8 @@ section .text
         ;   XREF to: 004f3009 (UNCONDITIONAL_JUMP)  ; LAB_004f3009
     PUSH 0x57e40                        ; 004f3037
         ;   Label: LAB_004f3037
-    CALL crt_unknown.c_FUN_005a3650     ; 004f303c
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 004f303c
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 004f3041
     MOV [0x01d7a6ac],EAX                ; 004f3044 | DAT_01d7a6ac
     TEST EAX,EAX                        ; 004f3049
@@ -216,8 +216,8 @@ section .text
     ADD ESP,0x4                         ; 004f306d
     PUSH 0xea60                         ; 004f3070
         ;   Label: LAB_004f3070
-    CALL crt_unknown.c_FUN_005a3650     ; 004f3075
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 004f3075
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 004f307a
     MOV [0x01d7a6b0],EAX                ; 004f307d | DAT_01d7a6b0
     TEST EAX,EAX                        ; 004f3082

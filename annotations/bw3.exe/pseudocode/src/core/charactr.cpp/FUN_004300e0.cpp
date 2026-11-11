@@ -120,7 +120,7 @@ void core_charactr_cpp_FUN_004300e0(CCharacter *param_1,CVector3f *param_2,CBoun
        afStack_94[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
   if (param_1->is_fully_burned == 0) {
     core_gore_cpp_CGore_spawnBloodBurst_FUN_004ce9c0
-              (g_CGorePtr,&CStack_8c,param_2,100,*(EBloodType *)&param_1->field_0x27a0);
+              (g_CGorePtr,&CStack_8c,param_2,100,param_1->blood_type);
   }
   else {
     param_1->fire_count = 0;

@@ -10,7 +10,7 @@ int __cdecl engine_font_cpp_CBitFont_getCharYOffset_FUN_004b3120(CBitFont *this_
 
 {
   if ((-1 < char_code) && (char_code < 0x100)) {
-    return *(int *)(this_ptr + char_code * 4 + 0x3de8);
+    return this_ptr->char_y_offsets[char_code];
   }
   return 0;
 }

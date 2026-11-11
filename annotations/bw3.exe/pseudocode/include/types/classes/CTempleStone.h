@@ -2,6 +2,9 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CBoxActor.h"
@@ -11,7 +14,7 @@
 #pragma pack(push, 1)
 typedef struct CTempleStone {
     CBoxActor base; // 0x0
-    char field_1768[4]; // 0x6e8
+    struct CDemonActor* dest_actor; // 0x6e8
 } CTempleStone;
 #pragma pack(pop)
 

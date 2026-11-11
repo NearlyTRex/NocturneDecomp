@@ -155,7 +155,7 @@ void __cdecl core_mission_cpp_CDemonMission_setTeleportTarget_FUN_004f6ed0(CDemo
 void core_mission_cpp_FUN_004f6f10(int param_1,undefined4 param_2,undefined4 param_3);
 void core_mission_cpp_FUN_004f6f80(int *param_1);
 void __cdecl core_mission_cpp_CDemonMission_process_FUN_004f70a0(CDemonMission *this_ptr);
-void core_mission_cpp_FUN_004f722c(CDemonMission *param_1,CDemonMission *param_2);
+void core_mission_cpp_FUN_004f722c(CDemonMission *param_1,char *param_2);
 void __cdecl core_mission_cpp_CDemonMission_run_FUN_004f72a0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_setMissionName_FUN_004f7460(CDemonMission *this_ptr,char *name);
 void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_004f7490(CDemonMission *this_ptr,char *out_buf,char *base_name);
@@ -190,10 +190,10 @@ CMooCow * core_moocow_cpp_CMooCow_dtor_FUN_004f9310(CMooCow *this_ptr,uint flags
 void core_moon_cpp_staticInit_FUN_004f93a0(void);
 CMoon * core_moon_cpp_CMoon_ctor_FUN_004f9410(CMoon *this_ptr);
 CMoon * core_moon_cpp_CMoon_dtor_FUN_004f9450(CMoon *this_ptr,uint flags);
-void core_moon_cpp_FUN_004f94a0(int *param_1);
-void core_moon_cpp_FUN_004f9580(int *param_1);
-void core_moon_cpp_FUN_004f9600(undefined4 param_1,float param_2);
-void core_moon_cpp_FUN_004f9670(int param_1);
+void __cdecl core_moon_cpp_CMoon_init_FUN_004f94a0(CMoon *this_ptr);
+void __cdecl core_moon_cpp_CMoon_free_FUN_004f9580(CMoon *this_ptr);
+void __cdecl core_moon_cpp_CMoon_update_FUN_004f9600(CMoon *this_ptr,float param_2);
+void __cdecl core_moon_cpp_CMoon_render_FUN_004f9670(CMoon *this_ptr);
 int __cdecl core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_004f99b0(CMoon *this_ptr);
 CAlphaBitmap * core_moon_cpp_CAlphaBitmap_arrdtor30_FUN_004f99d0(CAlphaBitmap *this_ptr,uint flags);
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_ctor_FUN_004f9a20(CMorphModel *this_ptr);

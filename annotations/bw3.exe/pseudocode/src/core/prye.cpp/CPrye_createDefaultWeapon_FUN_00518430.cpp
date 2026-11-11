@@ -11,13 +11,14 @@
 void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_ptr)
 
 {
+  CInventory *this_ptr_00;
   char cVar1;
   uint uVar2;
   CDemonActor *pCVar3;
   char *pcVar4;
   CDemonActor *pCVar5;
   
-  core_inv_cpp_CInventory_initialize_FUN_004da4e0((CInventory *)&this_ptr->field_0x206e8);
+  core_inv_cpp_CInventory_initialize_FUN_004da4e0(&(this_ptr->base).inventory);
   uVar2 = core_actor_cpp_createActorByName_FUN_0040c4f0
                     ("CFlintlock",g_CWeaponClassInfo.name_hash);
   pCVar3 = (CDemonActor *)core_actor_cpp_castToClassHash_FUN_0040c840(uVar2);
@@ -37,9 +38,9 @@ void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_pt
     pCVar5->actor_name[1] = cVar1;
     pCVar5 = (CDemonActor *)(pCVar5->actor_name + 2);
   } while (cVar1 != '\0');
-  core_inv_cpp_FUN_004da880((CInventory *)&this_ptr->field_0x206e8,pCVar3,1);
-  core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40
-            ((CInventory *)&this_ptr->field_0x206e8,(CDemonActor *)0x0,5,1);
+  this_ptr_00 = &(this_ptr->base).inventory;
+  core_inv_cpp_FUN_004da880(this_ptr_00,pCVar3,1);
+  core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40(this_ptr_00,(CDemonActor *)0x0,5,1);
   uVar2 = core_actor_cpp_createActorByName_FUN_0040c4f0
                     ("CHolycross",g_CWeaponClassInfo.name_hash);
   pCVar3 = (CDemonActor *)core_actor_cpp_castToClassHash_FUN_0040c840(uVar2);
@@ -59,7 +60,7 @@ void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_pt
     pCVar5->actor_name[1] = cVar1;
     pCVar5 = (CDemonActor *)(pCVar5->actor_name + 2);
   } while (cVar1 != '\0');
-  core_inv_cpp_FUN_004da880((CInventory *)&this_ptr->field_0x206e8,pCVar3,1);
+  core_inv_cpp_FUN_004da880(&(this_ptr->base).inventory,pCVar3,1);
   uVar2 = core_actor_cpp_createActorByName_FUN_0040c4f0("CLightActor",DAT_007e1a50);
   pCVar3 = (CDemonActor *)core_actor_cpp_castToClassHash_FUN_0040c840(uVar2);
   if (pCVar3 == (CDemonActor *)0x0) {
@@ -80,7 +81,7 @@ void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_pt
     pCVar5 = (CDemonActor *)(pCVar5->actor_name + 2);
   } while (cVar1 != '\0');
   (*((pCVar3->vtable)._ub)->setup)(pCVar3);
-  core_inv_cpp_FUN_004da880((CInventory *)&this_ptr->field_0x206e8,pCVar3,1);
+  core_inv_cpp_FUN_004da880(&(this_ptr->base).inventory,pCVar3,1);
   uVar2 = core_actor_cpp_createActorByName_FUN_0040c4f0
                     ("CBoxActor",g_CBoxActorClassInfo.name_hash);
   pCVar3 = (CDemonActor *)core_actor_cpp_castToClassHash_FUN_0040c840(uVar2);
@@ -102,6 +103,6 @@ void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_pt
     pCVar5->actor_name[1] = cVar1;
     pCVar5 = (CDemonActor *)(pCVar5->actor_name + 2);
   } while (cVar1 != '\0');
-  core_inv_cpp_FUN_004da880((CInventory *)&this_ptr->field_0x206e8,pCVar3,1);
+  core_inv_cpp_FUN_004da880(&(this_ptr->base).inventory,pCVar3,1);
   return;
 }

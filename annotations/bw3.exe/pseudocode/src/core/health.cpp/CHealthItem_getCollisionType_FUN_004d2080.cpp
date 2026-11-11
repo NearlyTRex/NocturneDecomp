@@ -9,5 +9,5 @@
 ECollisionType __cdecl core_health_cpp_CHealthItem_getCollisionType_FUN_004d2080(CHealthItem *this_ptr,SCollisionInfo *collision_info)
 
 {
-  return (uint)(*(int *)collision_info == 4);
+  return (uint)((collision_info->ray_query).ray_type == 4);
 }

@@ -15,7 +15,6 @@ struct CDemonActor;
 #pragma pack(push, 1)
 typedef struct CWerewolf {
     CEnemy base; // 0x0
-    char field_48828[4504]; // 0xbebc
     EWerewolfType type; // 0xd054
     int bone_indices[5]; // 0xd058
     int light_up_eyes; // 0xd06c

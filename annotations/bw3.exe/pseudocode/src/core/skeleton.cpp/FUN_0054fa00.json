@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 306,
+    "complexity_score": 271,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 61,
-    "suspect_count": 20,
+    "suspect_count": 17,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -16,7 +16,6 @@
       "shadow_pointer_walk",
       "stack_alignment_array",
       "unaffected_reg",
-      "unnamed_field",
       "unnamed_param",
       "unrolled_memcpy"
     ],
@@ -271,36 +270,12 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x274c",
-      "severity": "mild",
-      "text": "local_18 = &local_20->field_0x274c;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_1c = &param_1->field_0xe80;",
+      "text": "local_1c = (param_1->bone_transform).bone_model_matrices;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "local_1c = &param_1->field_0xe80;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x30ac",
-      "severity": "mild",
-      "text": "if (*(int *)&local_20->field_0x30ac == 2) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",

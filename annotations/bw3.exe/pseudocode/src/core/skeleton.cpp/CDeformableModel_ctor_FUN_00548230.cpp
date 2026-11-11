@@ -16,7 +16,7 @@ CDeformableModel * core_skeleton_cpp_CDeformableModel_ctor_FUN_00548230(CDeforma
   CDeformableModel *pCVar3;
   SLod *pSVar4;
   
-  iVar2 = __arrinit(&this_ptr->field_0x2290,100,&g_CVectorTypeInfo);
+  iVar2 = __arrinit(this_ptr->bone_origins,100,&g_CVectorTypeInfo);
   iVar2 = __arrinit(iVar2 + 0x4bc,100,&g_CBoundingBox3DTypeInfo);
   pCVar1 = (CDeformableModel *)(iVar2 + -0x274c);
   pCVar3 = pCVar1;

@@ -9,48 +9,48 @@
 void __cdecl engine_font_cpp_CBitFont_reset_FUN_004af7d0(CBitFont *this_ptr)
 
 {
-  CBitFont *pCVar1;
+  char (*pacVar1) [80];
   CBitFont *pCVar2;
   CBitFont *pCVar3;
   
-  *(uint *)this_ptr = 0;
+  this_ptr->bitmap_count = 0;
   pCVar2 = this_ptr;
   pCVar3 = this_ptr;
   do {
-    pCVar1 = pCVar2 + 4;
-    pCVar3[4] = (CBitFont)0x0;
-    *(uint *)(pCVar2 + 0x194) = 0;
-    pCVar3 = pCVar3 + 0x50;
-    *(uint *)(pCVar2 + 0x1a4) = 0;
-    pCVar2 = pCVar1;
-  } while (pCVar1 != this_ptr + 0x10);
-  this_ptr[0x144] = (CBitFont)0x0;
+    pacVar1 = pCVar2->bitmap_files;
+    pCVar3->bitmap_files[0][0] = '\0';
+    pCVar2->bitmap_data[0] = (void *)0x0;
+    pCVar3 = (CBitFont *)(pCVar3->bitmap_files[0] + 0x4c);
+    pCVar2->bitmap_widths[0] = 0;
+    pCVar2 = (CBitFont *)pacVar1;
+  } while (pacVar1 != (char (*) [80])(this_ptr->bitmap_files[0] + 0xc));
+  this_ptr->font_filename[0] = '\0';
   pCVar2 = this_ptr;
   do {
-    pCVar3 = pCVar2 + 4;
-    *(uint *)(pCVar2 + 0x21e8) = 0;
-    *(uint *)(pCVar2 + 0x35e8) = 0;
-    *(uint *)(pCVar2 + 0x39e8) = 0;
-    *(uint *)(pCVar2 + 0x3de8) = 0;
-    *(uint *)(pCVar2 + 0x1de8) = 0;
-    pCVar2 = pCVar3;
-  } while (pCVar3 != this_ptr + 0x400);
-  *(uint *)(this_ptr + 0x41ec) = 0;
-  *(uint *)(this_ptr + 0x41f0) = 0;
-  *(uint *)(this_ptr + 0x41f4) = 1;
-  *(uint *)(this_ptr + 0x41f8) = 2;
-  *(uint *)(this_ptr + 0x3668) = 8;
-  *(uint *)(this_ptr + 0x41fc) = 2;
-  *(uint *)(this_ptr + 0x4200) = 1;
-  *(uint *)(this_ptr + 0x4204) = 0;
-  *(uint *)(this_ptr + 0x1de4) = 0;
-  *(uint *)(this_ptr + 0x420c) = 0;
-  *(uint *)(this_ptr + 0x4210) = 0;
-  *(uint *)(this_ptr + 0x4214) = 0;
-  *(uint *)(this_ptr + 0x1dcc) = 0;
-  *(uint *)(this_ptr + 0x1dd4) = 0;
-  *(uint *)(this_ptr + 0x1dd8) = 0;
-  *(uint *)(this_ptr + 0x1ddc) = 0;
-  *(uint *)(this_ptr + 0x41e8) = 0;
+    pacVar1 = pCVar2->bitmap_files;
+    pCVar2->char_bitmap_index[0] = 0;
+    pCVar2->char_widths[0] = 0;
+    pCVar2->char_heights[0] = 0;
+    pCVar2->char_y_offsets[0] = 0;
+    pCVar2->char_positions[0] = (uchar *)0x0;
+    pCVar2 = (CBitFont *)pacVar1;
+  } while (pacVar1 != (char (*) [80])(this_ptr->palette_data + 0x24c));
+  this_ptr->max_char_height = 0;
+  this_ptr->current_line_height = 0;
+  this_ptr->char_spacing = 1;
+  this_ptr->line_spacing = 2;
+  this_ptr->char_widths[0x20] = 8;
+  this_ptr->shadow_offset_x = 2;
+  this_ptr->shadow_offset_y = 1;
+  this_ptr->rendering_ready = 0;
+  this_ptr->is_initialized = 0;
+  this_ptr->use_3d_rendering = 0;
+  this_ptr->win_font_enabled = 0;
+  this_ptr->win_font_helper = (CWinFont *)0x0;
+  this_ptr->accel_vertex_alloc = (void *)0x0;
+  this_ptr->accel_indices = (void *)0x0;
+  this_ptr->accel_vertex_count = 0;
+  this_ptr->accel_index_count = 0;
+  this_ptr->max_char_width = 0;
   return;
 }

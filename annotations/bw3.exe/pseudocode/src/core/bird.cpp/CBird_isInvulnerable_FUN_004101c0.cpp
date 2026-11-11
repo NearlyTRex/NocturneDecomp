@@ -9,5 +9,5 @@
 int __cdecl core_bird_cpp_CBird_isInvulnerable_FUN_004101c0(CBird *this_ptr)
 
 {
-  return (uint)(*(int *)&this_ptr->field_0x206a8 == 0);
+  return (uint)(this_ptr->shoot_me == 0);
 }

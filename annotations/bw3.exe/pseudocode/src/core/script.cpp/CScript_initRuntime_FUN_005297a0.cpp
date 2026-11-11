@@ -30,13 +30,13 @@ void __cdecl core_script_cpp_CScript_initRuntime_FUN_005297a0(CScript *this_ptr)
   iVar4 = _DAT_01d5ba14;
   this_ptr->who_is_speaking = (CDemonActor *)0x0;
   pCVar2 = *(CDemonActor **)(iVar4 * 4 + 0x1d5ba04);
-  *(uint *)&this_ptr->field_0x18 = 0;
+  this_ptr->monster_vision_actor = (CCharacter *)0x0;
   this_ptr->focus_actor = pCVar2;
   pCVar3 = g_CGamePtr;
   this_ptr->focus_actor_changed = 1;
-  *(uint *)&pCVar3->field_0x250 = 1;
-  *(uint *)&pCVar3->field_0x254 = 1;
-  *(uint *)&pCVar3->field_0x24c = 0;
+  pCVar3->allow_damage_flag = 1;
+  pCVar3->allow_enemy_attack_flag = 1;
+  pCVar3->letterbox_mode = 0;
   _DAT_01ed7010 = 0;
   this_ptr->message_duration = -1.0;
   this_ptr->saved_cmd_index = -1;

@@ -4,13 +4,19 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EBloodType.h"
 
 // Structure: CFootstep
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x44 (68 bytes)
 #pragma pack(push, 1)
 typedef struct CFootstep {
-    char field_0[68]; // 0x0
+    int expired; // 0x0
+    EBloodType blood_type; // 0x4
+    int area_id; // 0x8, Added in this build
+    CVector3f corners[4]; // 0xc
+    int alpha; // 0x3c
+    int is_bloody; // 0x40
 } CFootstep;
 #pragma pack(pop)
 

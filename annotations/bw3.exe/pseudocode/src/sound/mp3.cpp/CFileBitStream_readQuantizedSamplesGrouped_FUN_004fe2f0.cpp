@@ -10,33 +10,35 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_004fe2
 
 {
   int iVar1;
-  int iVar2;
+  SMpegAllocationEntry *pSVar2;
   int iVar3;
-  uint *puVar4;
+  SMpegAllocationEntry *pSVar4;
   uint uVar5;
   uint uVar6;
-  SMpegSubbandScalefactors *pSVar7;
-  SMpegSubbandScalefactors *pSVar8;
+  uint *puVar7;
+  uint *puVar8;
   int iVar9;
-  int iVar10;
-  int local_4c;
+  uint *puVar10;
+  uint *puVar11;
+  int iVar12;
+  SMpegAllocationEntry *local_4c;
   int local_48;
   int local_2c;
   int local_20;
-  SMpegSubbandAllocation *local_1c;
+  int *local_1c;
   SMpegSubbandScalefactors *local_18;
   
-  iVar1 = *(int *)(frame + 0x10);
-  iVar10 = *(int *)(frame + 0x18);
-  iVar9 = *(int *)(frame + 0x14);
-  iVar2 = *(int *)(frame + 8);
+  iVar1 = frame->channel_count;
+  iVar12 = frame->sblimit;
+  iVar9 = frame->js_bound;
+  pSVar2 = frame->allocation_entries;
   local_2c = 0;
-  if (0 < iVar10) {
+  if (0 < iVar12) {
     local_48 = 0;
-    local_4c = iVar2;
+    local_4c = pSVar2;
     do {
       local_18 = sample_array;
-      local_1c = allocation_array + local_48;
+      local_1c = (int *)((int)allocation_array->bit_allocations + local_48);
       local_20 = 0;
       while( true ) {
         iVar3 = iVar1;
@@ -44,72 +46,72 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_004fe2
           iVar3 = 1;
         }
         if (iVar3 <= local_20) break;
-        if (*(int *)local_1c == 0) {
-          pSVar7 = local_18 + local_48;
+        if (*local_1c == 0) {
+          puVar8 = (uint *)((int)&local_18->codes + local_48);
           do {
-            *(uint *)pSVar7 = 0;
-            pSVar7 = pSVar7 + 0x80;
-          } while (pSVar7 != local_18 + local_48 + 0x180);
+            *puVar8 = 0;
+            puVar8 = puVar8 + 0x20;
+          } while (puVar8 != (uint *)((int)&local_18[1].codes + local_48));
         }
         else {
-          puVar4 = (uint *)(*(int *)local_1c * 0x10 + iVar2 + local_2c * 0x100);
-          if (puVar4[2] == 3) {
-            pSVar7 = local_18 + local_48;
+          pSVar4 = pSVar2 + local_2c * 0x10 + *local_1c;
+          if (pSVar4->mode_flag == 3) {
+            puVar11 = (uint *)((int)&local_18->codes + local_48);
             do {
-              pSVar8 = pSVar7 + 0x80;
+              puVar10 = puVar11 + 0x20;
               uVar5 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0
-                                (this_ptr,*(int *)(*(int *)(allocation_array +
-                                                           local_48 + local_20 * 0x80) * 0x10 +
-                                                   local_4c + 4));
-              *(uint *)pSVar7 = uVar5;
-              pSVar7 = pSVar8;
-            } while (pSVar8 != local_18 + local_48 + 0x180);
+                                (this_ptr,local_4c[*(int *)((int)allocation_array[local_20].
+                                                                 bit_allocations + local_48)].
+                                          bit_count);
+              *puVar11 = uVar5;
+              puVar11 = puVar10;
+            } while (puVar10 != (uint *)((int)&local_18[1].codes + local_48));
           }
           else {
-            uVar5 = *puVar4;
-            uVar6 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0(this_ptr,puVar4[1]);
-            pSVar7 = local_18 + local_48;
+            uVar5 = pSVar4->value_range;
+            uVar6 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0(this_ptr,pSVar4->bit_count);
+            puVar11 = (uint *)((int)&local_18->codes + local_48);
             do {
-              *(uint *)pSVar7 = uVar6 % uVar5;
+              *puVar11 = uVar6 % uVar5;
               uVar6 = uVar6 / uVar5;
-              pSVar7 = pSVar7 + 0x80;
-            } while (pSVar7 != local_18 + local_48 + 0x180);
+              puVar11 = puVar11 + 0x20;
+            } while (puVar11 != (uint *)((int)&local_18[1].codes + local_48));
           }
         }
         if ((iVar1 == 2) && (iVar9 <= local_2c)) {
-          pSVar7 = sample_array + local_48;
+          puVar8 = (uint *)((int)&sample_array->codes + local_48);
           do {
-            pSVar8 = pSVar7 + 0x80;
-            *(uint *)(pSVar7 + 0x180) = *(uint *)pSVar7;
-            pSVar7 = pSVar8;
-          } while (pSVar8 != sample_array + local_48 + 0x180);
+            puVar7 = puVar8 + 0x20;
+            puVar8[0x60] = *puVar8;
+            puVar8 = puVar7;
+          } while (puVar7 != (uint *)((int)&sample_array[1].codes + local_48));
         }
-        local_1c = local_1c + 0x80;
+        local_1c = local_1c + 0x20;
         local_20 = local_20 + 1;
-        local_18 = local_18 + 0x180;
+        local_18 = local_18 + 1;
       }
       local_48 = local_48 + 4;
-      local_4c = local_4c + 0x100;
+      local_4c = local_4c + 0x10;
       local_2c = local_2c + 1;
-    } while (local_2c < iVar10);
+    } while (local_2c < iVar12);
   }
-  if (iVar10 < 0x20) {
-    iVar10 = iVar10 * 4;
+  if (iVar12 < 0x20) {
+    iVar12 = iVar12 * 4;
     do {
       iVar9 = 0;
       if (0 < iVar1) {
         do {
-          pSVar7 = sample_array + iVar10 + iVar9 * 0x180;
+          puVar8 = (uint *)((int)&sample_array[iVar9].codes + iVar12);
           do {
-            pSVar8 = pSVar7 + 0x80;
-            *(uint *)pSVar7 = 0;
-            pSVar7 = pSVar8;
-          } while (pSVar8 != sample_array + iVar10 + 0x180 + iVar9 * 0x180);
+            puVar7 = puVar8 + 0x20;
+            *puVar8 = 0;
+            puVar8 = puVar7;
+          } while (puVar7 != (uint *)((int)&sample_array[iVar9 + 1].codes + iVar12));
           iVar9 = iVar9 + 1;
         } while (iVar9 < iVar1);
       }
-      iVar10 = iVar10 + 4;
-    } while (iVar10 < 0x80);
+      iVar12 = iVar12 + 4;
+    } while (iVar12 < 0x80);
   }
   return;
 }

@@ -11,7 +11,7 @@ void core_ammo_cpp_FUN_0040e230(void)
 {
   CAmmoManaLarge *this_ptr;
   
-  this_ptr = (CAmmoManaLarge *)debugAllocTracked1(800);
+  this_ptr = (CAmmoManaLarge *)operator_new(800);
   if (this_ptr == (CAmmoManaLarge *)0x0) {
     return;
   }

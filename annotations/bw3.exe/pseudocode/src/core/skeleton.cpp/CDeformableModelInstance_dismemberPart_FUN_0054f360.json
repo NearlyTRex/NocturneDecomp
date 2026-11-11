@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 59,
+    "complexity_score": 25,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 24,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 99
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 100
   },
   "cross_references": [
     {
@@ -132,30 +130,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x2140 + part_index * 4) = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x2230",
-      "severity": "mild",
-      "text": "this_ptr->skinned_vertices_buffer,*(int *)(&this_ptr->field_0x2230 + part_index * 4));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x2140 + part_index * 4) = 0;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

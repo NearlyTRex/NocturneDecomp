@@ -17,7 +17,7 @@ CMatrix3x4f * __stack2_esi core_prye_cpp_CPrye_getCarryObjToBodyXForm_FUN_005247
   
   bVar4 = 0;
   core_prye_cpp_FUN_0051f490
-            (this_ptr,*(uint *)(&this_ptr->field_0x25b0 + hand_index * 0x78),hand_index);
+            (this_ptr,(this_ptr->base).base.carry_hands[hand_index].carry_actor,hand_index);
   pfVar2 = afStack_38;
   pCVar3 = out_matrix;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

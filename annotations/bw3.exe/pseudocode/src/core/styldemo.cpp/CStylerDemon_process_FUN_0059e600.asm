@@ -282,7 +282,7 @@ section .text
     JZ 0x0059e8fa                       ; 0059e8d2
         ;   XREF to: 0059e8fa (CONDITIONAL_JUMP)  ; LAB_0059e8fa
     MOV EAX,[0x005fe9dc]                ; 0059e8d4 | g_CGamePtr
-    MOV dword ptr [EAX + 0x244],0x1     ; 0059e8d9 | g_CGameInstance.field532_0x244
+    MOV dword ptr [EAX + 0x244],0x1     ; 0059e8d9 | g_CGameInstance.player_hit_flag
     MOV EAX,[0x01d5ba14]                ; 0059e8e3 | DAT_01d5ba14
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 0059e8e8
     MOV dword ptr [EBX + 0xcde4],EAX    ; 0059e8ef
@@ -1743,8 +1743,8 @@ section .text
     FSTP float ptr [EBP + 0xfffffd76]   ; 0059fa1d
     PUSH EDI                            ; 0059fa23
     FSTP float ptr [EBP + 0xfffffd7a]   ; 0059fa24
-    CALL core_fire.cpp_FUN_004a3af0     ; 0059fa2a
-        ;   XREF to: 004a3af0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3af0()
+    CALL core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0 ; 0059fa2a
+        ;   XREF to: 004a3af0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_count, ...)
     ADD ESP,0x18                        ; 0059fa2f
     JMP 0x0059f486                      ; 0059fa32
         ;   XREF to: 0059f486 (UNCONDITIONAL_JUMP)  ; caseD_1a

@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 182,
-    "complexity_score": 460,
+    "complexity_score": 445,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 85,
-    "suspect_count": 33,
+    "suspect_count": 32,
     "suspect_types": [
       "fast_sqrt_inline",
       "pointer_cast",
       "stack_alignment_array",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unrolled_memcpy",
       "warning_overlapping_globals",
@@ -408,16 +407,8 @@
       "line": 79,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0.0 < *(float *)&param_1->field_0x3254) {",
+      "text": "if (0.0 < param_1->bind_time) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 79,
-      "match": "field_0x3254",
-      "severity": "mild",
-      "text": "if (0.0 < *(float *)&param_1->field_0x3254) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

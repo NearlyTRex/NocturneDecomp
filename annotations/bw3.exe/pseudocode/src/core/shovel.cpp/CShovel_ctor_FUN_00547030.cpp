@@ -16,8 +16,8 @@ CShovel * __cdecl core_shovel_cpp_CShovel_ctor_FUN_00547030(CShovel *this_ptr)
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(&pCVar1->model,(char *)0x5d153e)
   ;
   pCVar1->weapon_type = WEAPON_TYPE_MELEE;
-  *(uint *)&pCVar1->field_0x56c = 0xffffffff;
-  *(uint *)&pCVar1->field_0x568 = 0;
+  pCVar1->ammo_type = AMMO_TYPE_NONE;
+  pCVar1->ammo_count = 0;
   pCVar1->is_spread_weapon = 0;
   pCVar1->fire_mode = FIRE_MODE_AUTOMATIC;
   pCVar1->can_penetrate = 0;

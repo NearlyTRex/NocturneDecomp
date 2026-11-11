@@ -142,7 +142,7 @@ section .text
         ;   Label: LAB_004b7019
     MOV EAX,[0x005fe4b0]                ; 004b701e | g_CFieldNotesPtr
         ;   Label: LAB_004b701e
-    CMP dword ptr [EAX + 0x40],0x0      ; 004b7023 | g_CFieldNotesInstance.field64_0x40
+    CMP dword ptr [EAX + 0x40],0x0      ; 004b7023 | g_CFieldNotesInstance.is_displayed
     JZ 0x004b7a0a                       ; 004b7027
         ;   XREF to: 004b7a0a (CONDITIONAL_JUMP)  ; LAB_004b7a0a
     MOV ECX,dword ptr [0x007dffb4]      ; 004b702d | DAT_007dffb4
@@ -277,7 +277,7 @@ section .text
     CALL core_netgame.cpp_CNetGame_processServerFrame_FUN_00507790 ; 004b71fc
         ;   XREF to: 00507790 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_processServerFrame_FUN_00507790(CNetGame * this_ptr)
     MOV EAX,[0x005fe4b0]                ; 004b7201 | g_CFieldNotesPtr
-    MOV EDI,dword ptr [EAX + 0x40]      ; 004b7206 | g_CFieldNotesInstance.field64_0x40
+    MOV EDI,dword ptr [EAX + 0x40]      ; 004b7206 | g_CFieldNotesInstance.is_displayed
     ADD ESP,0x4                         ; 004b7209
     TEST EDI,EDI                        ; 004b720c
     JZ 0x004b7a59                       ; 004b720e
@@ -322,7 +322,7 @@ section .text
     CALL engine_special.cpp_FUN_00565820 ; 004b729b
         ;   XREF to: 00565820 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00565820()
     MOV EAX,[0x005fe4b0]                ; 004b72a0 | g_CFieldNotesPtr
-    CMP dword ptr [EAX + 0x40],0x0      ; 004b72a5 | g_CFieldNotesInstance.field64_0x40
+    CMP dword ptr [EAX + 0x40],0x0      ; 004b72a5 | g_CFieldNotesInstance.is_displayed
     JZ 0x004b7a87                       ; 004b72a9
         ;   XREF to: 004b7a87 (CONDITIONAL_JUMP)  ; LAB_004b7a87
     PUSH EAX                            ; 004b72af | g_CFieldNotesInstance
@@ -454,7 +454,7 @@ section .text
     ADD ESP,0x14                        ; 004b740a
     MOV EDX,dword ptr [EAX + 0x15aeb8]  ; 004b740d | g_CDemonSetInstance.selected_camera_index
     IMUL EDX,EDX,0x1a4                  ; 004b7413
-    MOV ECX,dword ptr [EDX + EAX*0x1 + 0x150] ; 004b7419 | g_CDemonSetInstance.cameras[0].field332_0x14c
+    MOV ECX,dword ptr [EDX + EAX*0x1 + 0x150] ; 004b7419 | g_CDemonSetInstance.cameras[0].camera_group
     PUSH ECX                            ; 004b7420
     PUSH 0x2038f8c                      ; 004b7421
     LEA EAX,[ESP + 0x164]               ; 004b7426

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_FUN_004a3f20(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void core_fire_cpp_FUN_004a3f20(undefined4 param_1,CVector3f *param_2,CVector3f *param_3)
 ;
 ;
 ; XREF[2]:
@@ -10,8 +10,8 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d07b8c
-;   undefined4 g_RainDropPool[0].field36_0x24
-;   undefined4 g_RainDropPool[0].field60_0x3c
+;   undefined4 g_RainDropPool[0].base.lifetime_remaining
+;   undefined4 g_RainDropPool[0].base.vtable
 ;
 ; *****************************************************************************
 
@@ -29,7 +29,7 @@ section .text
     PUSH ESI                            ; 004a3f36
     ADD EAX,0x1d07b90                   ; 004a3f37
     PUSH EAX                            ; 004a3f3c
-    MOV EDX,dword ptr [EAX + 0x3c]      ; 004a3f3d | g_RainDropPool[0].field60_0x3c
+    MOV EDX,dword ptr [EAX + 0x3c]      ; 004a3f3d | g_RainDropPool[0].base.vtable
     CALL dword ptr [EDX]                ; 004a3f40
     MOV EBX,dword ptr [0x01d07b8c]      ; 004a3f42 | DAT_01d07b8c
     MOV EAX,EBX                         ; 004a3f48
@@ -37,7 +37,7 @@ section .text
     ADD EAX,0x1d07b90                   ; 004a3f4d
     ADD ESP,0xc                         ; 004a3f52
     INC EBX                             ; 004a3f55
-    MOV dword ptr [EAX + 0x24],0x3e800000 ; 004a3f56 | g_RainDropPool[0].field36_0x24
+    MOV dword ptr [EAX + 0x24],0x3e800000 ; 004a3f56 | g_RainDropPool[0].base.lifetime_remaining
     CMP EBX,0x100                       ; 004a3f5d
     JL 0x004a3f67                       ; 004a3f63
         ;   XREF to: 004a3f67 (CONDITIONAL_JUMP)  ; LAB_004a3f67

@@ -11,6 +11,7 @@
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SMRGLTextureModel.h"
 #include "types/structs/SMRGLVertex.h"
 
 // Structure: CGlass
@@ -19,8 +20,7 @@
 typedef struct CGlass {
     CDemonActor base; // 0x0
     CVector3f glass_size; // 0x158
-    SMRGLTextureBasic glass_texture; // 0x164
-    char field_380[48]; // 0x17c
+    SMRGLTextureModel glass_texture; // 0x164, Added in this build
     int opacity; // 0x1ac
     int shattered; // 0x1b0
     char break_event[100]; // 0x1b4

@@ -16,9 +16,9 @@ void core_tawiscara_cpp_FUN_00593e80(CEnemy *param_1)
   float fVar3;
   SMotion *pSVar4;
   
-  if (*(int *)&(param_1->base).field_0x3268 == 0) {
-    *(uint *)&param_1->field_0xce5c = 0x41700000;
-    *(uint *)&param_1->field_0xce60 = 0x41200000;
+  if ((param_1->base).been_damaged == 0) {
+    param_1->attack_damage = 15.0;
+    param_1->pain_threshold = 10.0;
     (param_1->base).hit_points = 100.0;
   }
   this_ptr = &(param_1->base).model;
@@ -42,7 +42,7 @@ void core_tawiscara_cpp_FUN_00593e80(CEnemy *param_1)
   iVar2 = *(int *)param_1[1].base.base.actor_name;
   param_1[1].base.base.orient_matrix.m[0].z = fVar3;
   if (iVar2 == 0) {
-    *(uint *)&(param_1->base).field_0x3270 = 0x3fc00000;
+    (param_1->base).collision_cylinder_radius = 1.5;
   }
   pCVar1 = &param_1[1].base;
   (pCVar1->base).actor_name[0x1c] = '\0';
@@ -55,7 +55,7 @@ void core_tawiscara_cpp_FUN_00593e80(CEnemy *param_1)
   param_1[1].base.base.location.position.x = fVar3;
   pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
                      (&(param_1->base).model.base);
-  if (*(int *)(pSVar4 + 0x24) == 0xd) {
+  if (pSVar4->state_index == 0xd) {
     (param_1->base).health_bar_mode = HEALTH_BAR_NONE;
     return;
   }

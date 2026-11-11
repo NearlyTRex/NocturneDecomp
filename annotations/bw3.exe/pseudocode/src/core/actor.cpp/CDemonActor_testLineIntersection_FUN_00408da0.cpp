@@ -32,7 +32,7 @@ int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00408da0(CDemonA
   
   bVar2 = 0;
   core_setcolid_cpp_SCollisionInfo_ctor_FUN_0053ed80(&local_94);
-  local_94._0_4_ = 0;
+  local_94.ray_query.ray_type = 0;
   EVar1 = (*((this_ptr->vtable)._ub)->getCollisionType)(this_ptr,&local_94);
   if (EVar1 == COLLISION_TYPE_CYLINDER) {
     puVar6 = auStack_54;

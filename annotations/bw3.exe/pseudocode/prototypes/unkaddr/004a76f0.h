@@ -23,7 +23,7 @@ undefined4 FUN_004a7950(byte *param_1,byte *param_2,byte *param_3);
 
 // Original: unkaddr_004a76f0.cpp_FUN_004a79f0
 // Address: 004a79f0
-int FUN_004a79f0(undefined4 param_1,int *param_2);
+int FUN_004a79f0(char *param_1,int *param_2);
 
 // Original: unkaddr_004a76f0.cpp_FUN_004a7a70
 // Address: 004a7a70
@@ -61,13 +61,13 @@ undefined4 FUN_004a826e(void);
 // Address: 004a82ee
 void FUN_004a82ee(void);
 
-// Original: unkaddr_004a76f0.cpp_FUN_004a8370
+// Original: unkaddr_004a76f0.cpp_SPageResource_ctor_FUN_004a8370
 // Address: 004a8370
-void FUN_004a8370(undefined4 *param_1);
+void __cdecl SPageResource::ctor(SPageResource *this_ptr);
 
-// Original: unkaddr_004a76f0.cpp_FUN_004a83a0
+// Original: unkaddr_004a76f0.cpp_SPageResource_dtor_FUN_004a83a0
 // Address: 004a83a0
-int FUN_004a83a0(int param_1);
+int __cdecl SPageResource::dtor(SPageResource *this_ptr);
 
 // Original: unkaddr_004a76f0.cpp_CAlphaBitmap_arrdtor6_FUN_004ad430
 // Address: 004ad430

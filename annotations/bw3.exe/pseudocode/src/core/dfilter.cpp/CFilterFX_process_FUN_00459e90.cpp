@@ -15,7 +15,7 @@ void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_00459e90(CFilterFX *this_ptr
   uint extraout_ECX;
   uint uVar2;
   SMovieFrame *pSVar3;
-  SMovieFrame *pSVar4;
+  uchar *puVar4;
   byte bVar5;
   float10 fVar6;
   
@@ -30,17 +30,17 @@ void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_00459e90(CFilterFX *this_ptr
     }
     fVar6 = (float10)this_ptr->current_frame;
     round();
-    pSVar3 = this_ptr->movie_data + (int)ROUND(fVar6) * 0x2000;
-    pSVar4 = (SMovieFrame *)(pCVar1->data_buffer + 0x1000);
+    pSVar3 = this_ptr->movie_data + (int)ROUND(fVar6);
+    puVar4 = pCVar1->data_buffer + 0x1000;
     for (uVar2 = extraout_ECX >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
-      *(uint *)pSVar4 = *(uint *)pSVar3;
-      pSVar3 = pSVar3 + (uint)bVar5 * -8 + 4;
-      pSVar4 = pSVar4 + (uint)bVar5 * -8 + 4;
+      *(uint *)puVar4 = *(uint *)pSVar3->pixels;
+      pSVar3 = (SMovieFrame *)((int)pSVar3 + (uint)bVar5 * -8 + 4);
+      puVar4 = puVar4 + (uint)bVar5 * -8 + 4;
     }
     for (uVar2 = extraout_ECX & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
-      *pSVar4 = *pSVar3;
-      pSVar3 = pSVar3 + (uint)bVar5 * -2 + 1;
-      pSVar4 = pSVar4 + (uint)bVar5 * -2 + 1;
+      *puVar4 = pSVar3->pixels[0];
+      pSVar3 = (SMovieFrame *)((int)pSVar3 + (uint)bVar5 * -2 + 1);
+      puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
     }
   }
   return;

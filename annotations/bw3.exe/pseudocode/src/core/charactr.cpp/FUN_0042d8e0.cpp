@@ -13,7 +13,7 @@ void core_charactr_cpp_FUN_0042d8e0(CCharacter *param_1)
   
   if (param_1->is_fully_burned == 0) {
     core_charactr_cpp_FUN_0042d500(param_1);
-    if (*(int *)&param_1->field_0xcdc4 == 0) {
+    if (param_1->additive == 0) {
       core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0
                 (&param_1->model,-1,0xffffffff,1,0);
     }
@@ -27,18 +27,18 @@ void core_charactr_cpp_FUN_0042d8e0(CCharacter *param_1)
   }
   iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);
   if (iVar1 == 0) {
-    if (*(int *)&param_1->field_0x27a4 == 0) {
+    if (param_1->is_ethereal == 0) {
       core_charactr_cpp_FUN_0042f010(param_1);
     }
     if (0.0 < param_1->stagger_amount) {
       core_charactr_cpp_FUN_0042f310(param_1);
     }
-    if (0.0 < *(float *)&param_1->field_0x3254) {
+    if (0.0 < param_1->bind_time) {
       core_charactr_cpp_FUN_0042f310(param_1);
     }
   }
   core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042e3a0(param_1);
-  if (*(int *)&g_CGamePtr->field_0x240 == 0) {
+  if (g_CGamePtr->collision_render_enabled == 0) {
     return;
   }
   core_charactr_cpp_FUN_0042d9f0(param_1);

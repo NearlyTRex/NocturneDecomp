@@ -18,11 +18,11 @@
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 DAT_01bdd7e4
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field11_0x14
-;   undefined4 g_BloodParticles[0].field36_0x24
-;   undefined4 g_BloodParticles[0].field60_0x3c
-;   undefined4 g_BloodParticles[1].field36_0x24
-;   undefined4 g_BloodParticles[1].field60_0x3c
+;   undefined4 g_CGameInstance.blood_flag
+;   undefined4 g_BloodParticles[0].base.lifetime_remaining
+;   undefined4 g_BloodParticles[0].base.vtable
+;   undefined4 g_BloodParticles[1].base.lifetime_remaining
+;   undefined4 g_BloodParticles[1].base.vtable
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -41,7 +41,7 @@ section .text
     MOV EBP,ESP                         ; 004ce5b3
     AND ESP,0xfffffff8                  ; 004ce5b5
     MOV EAX,[0x005fe9dc]                ; 004ce5b8 | g_CGamePtr | g_CGameInstance
-    CMP dword ptr [EAX + 0x14],0x0      ; 004ce5bd | g_CGameInstance.field11_0x14
+    CMP dword ptr [EAX + 0x14],0x0      ; 004ce5bd | g_CGameInstance.blood_flag
     JNZ 0x004ce5c9                      ; 004ce5c1
         ;   XREF to: 004ce5c9 (CONDITIONAL_JUMP)  ; LAB_004ce5c9
     MOV ESP,EBP                         ; 004ce5c3
@@ -75,7 +75,7 @@ section .text
         ;   XREF to: 004ccaf0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodParticle_setupRenderState_FUN_004ccaf0(CBloodParticle * this_ptr)
     LEA ESI,[EBX + 0x4800]              ; 004ce5ff
     ADD ESP,0x4                         ; 004ce605
-    FLD float ptr [EBX + 0x24]          ; 004ce608 | g_BloodParticles[0].field36_0x24 | g_BloodParticles[1].field36_0x24
+    FLD float ptr [EBX + 0x24]          ; 004ce608 | g_BloodParticles[0].base.lifetime_remaining | g_BloodParticles[1].base.lifetime_remaining
         ;   Label: LAB_004ce608
     FLDZ                                ; 004ce60b
     FCOMPP                              ; 004ce60d
@@ -84,7 +84,7 @@ section .text
     JNC 0x004ce61e                      ; 004ce612
         ;   XREF to: 004ce61e (CONDITIONAL_JUMP)  ; LAB_004ce61e
     PUSH EBX                            ; 004ce614
-    MOV EAX,dword ptr [EBX + 0x3c]      ; 004ce615 | g_BloodParticles[0].field60_0x3c | g_BloodParticles[1].field60_0x3c
+    MOV EAX,dword ptr [EBX + 0x3c]      ; 004ce615 | g_BloodParticles[0].base.vtable | g_BloodParticles[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 004ce618
     ADD ESP,0x4                         ; 004ce61b
     ADD EBX,0x48                        ; 004ce61e

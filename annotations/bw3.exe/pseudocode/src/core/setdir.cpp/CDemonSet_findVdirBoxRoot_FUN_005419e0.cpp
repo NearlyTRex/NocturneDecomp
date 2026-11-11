@@ -15,11 +15,11 @@ int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_005419e0(CDemonSet *th
   iVar1 = box_index;
   do {
     iVar2 = iVar1;
-    iVar1 = *(int *)&this_ptr->vdir_boxes[iVar2].field_0x40;
+    iVar1 = this_ptr->vdir_boxes[iVar2].parent_index;
   } while (-1 < iVar1);
   while (box_index != iVar2) {
-    iVar1 = *(int *)&this_ptr->vdir_boxes[box_index].field_0x40;
-    *(int *)&this_ptr->vdir_boxes[box_index].field_0x40 = iVar2;
+    iVar1 = this_ptr->vdir_boxes[box_index].parent_index;
+    this_ptr->vdir_boxes[box_index].parent_index = iVar2;
     box_index = iVar1;
   }
   return iVar2;

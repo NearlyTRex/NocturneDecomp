@@ -64,7 +64,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_0041fb90(CBoxActor *this_pt
     core_actor_cpp_archiveInteger_FUN_0040b8b0
               (&(this_ptr->base).is_transparent,"isTransparent");
     core_actor_cpp_archiveInteger_FUN_0040b8b0
-              ((int *)&this_ptr->field_0x5fc,"dontUseNormals");
+              (&this_ptr->dont_use_normals,"dontUseNormals");
   }
   if (g_CBoxActorClassVersion == 9) {
     core_actor_cpp_archiveString_FUN_0040b680(local_10c,"descriptiveName");
@@ -74,28 +74,28 @@ void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_0041fb90(CBoxActor *this_pt
               (&this_ptr->constrain_extents_actor,"constrainExtentsActor");
   }
   if (0xb < g_CBoxActorClassVersion) {
-    core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x600,"useEvent");
+    core_actor_cpp_archiveString_FUN_0040b680(this_ptr->use_event,"useEvent");
   }
   if (0xc < g_CBoxActorClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b8b0
-              ((int *)&this_ptr->field_0x6c8,"allowedMeleeAttackTypes");
+              (&this_ptr->allowed_melee_attack_types,"allowedMeleeAttackTypes");
   }
   if (0xd < g_CBoxActorClassVersion) {
     core_actor_cpp_archiveString_FUN_0040b680(this_ptr->push_sound,"pushSound");
   }
   if (0xe < g_CBoxActorClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b8b0
-              ((int *)&this_ptr->field_0x6cc,"blockVirtualDirectorFlag");
+              (&this_ptr->block_virtual_director_flag,"blockVirtualDirectorFlag");
   }
   if (0xf < g_CBoxActorClassVersion) {
-    core_actor_cpp_archiveOrientation_FUN_0040b4a0(&this_ptr->field_0x6d0,"camOrient");
+    core_actor_cpp_archiveOrientation_FUN_0040b4a0(&this_ptr->cam_orientation,"camOrient");
   }
   if (0x10 < g_CBoxActorClassVersion) {
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x6e0,"fadeTime");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->fade_time,"fadeTime");
   }
   if (g_CBoxActorClassVersion < 0x12) {
     return;
   }
-  core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x664,"fadeEvent");
+  core_actor_cpp_archiveString_FUN_0040b680(this_ptr->fade_event,"fadeEvent");
   return;
 }

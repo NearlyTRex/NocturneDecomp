@@ -108,8 +108,8 @@ void __cdecl core_water_cpp_CWater_render_FUN_00577760(CWater *this_ptr,int rend
         local_48[0].x = (int)ROUND(_DAT_005e5e7c * 0.0);
         local_48[0].y = (int)ROUND(local_78.y * _DAT_005e5e7c);
         local_48[0].z = (int)ROUND(_DAT_005e5e7c * 0.0);
-        engine_special_cpp_FUN_005632a3
-                  ((SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr,local_48);
+        engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,local_48)
+        ;
         local_78.x = this_ptr->tile_size;
         if (this_ptr->wave_animation_enabled != 0) {
           local_14 = iVar1 + 1;
@@ -122,7 +122,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00577760(CWater *this_ptr,int rend
         local_60.y = (int)ROUND(local_78.y * _DAT_005e5e7c);
         local_60.z = (int)ROUND(local_78.z * _DAT_005e5e7c);
         engine_special_cpp_FUN_005632a3
-                  ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x30),&local_60);
+                  (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_60);
         local_78.z = this_ptr->tile_size;
         if (this_ptr->wave_animation_enabled != 0) {
           local_14 = iVar1 + 1;
@@ -135,7 +135,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00577760(CWater *this_ptr,int rend
         local_6c.y = (int)ROUND(local_78.y * _DAT_005e5e7c);
         local_6c.z = (int)ROUND(local_78.z * _DAT_005e5e7c);
         engine_special_cpp_FUN_005632a3
-                  ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x60),&local_6c);
+                  (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_6c);
         local_78.x = 0.0;
         if (this_ptr->wave_animation_enabled != 0) {
           fVar3 = (float10)fsin((float10)(iVar2 + 1) * (float10)_DAT_005d71c3 *
@@ -148,7 +148,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00577760(CWater *this_ptr,int rend
         local_54.y = (int)ROUND(local_78.y * _DAT_005e5e7c);
         local_54.z = (int)ROUND(local_78.z * _DAT_005e5e7c);
         engine_special_cpp_FUN_005632a3
-                  ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x90),&local_54);
+                  (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_54);
         if (this_ptr->wave_animation_enabled == 0) {
           if (_DAT_01c6cee8 == 0) {
             if (render_mode == 0) {

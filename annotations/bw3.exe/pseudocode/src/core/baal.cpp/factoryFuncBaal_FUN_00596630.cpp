@@ -11,7 +11,7 @@ void core_baal_cpp_factoryFuncBaal_FUN_00596630(void)
 {
   CBaal *this_ptr;
   
-  this_ptr = (CBaal *)debugAllocTracked1(0xd0bc);
+  this_ptr = (CBaal *)operator_new(0xd0bc);
   if (this_ptr == (CBaal *)0x0) {
     return;
   }

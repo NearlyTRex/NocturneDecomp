@@ -2,11 +2,11 @@
 // Address: 0042fbd0
 // Address Range: [[0042fbd0, 0042fc8c]]
 // Convention: unknown
-// Signature: void core_charactr_cpp_FUN_0042fbd0(CCharacter *param_1,CVector3f *param_2,undefined4 param_3,EFlameType param_4,float param_5,int param_6,undefined4 param_7)
+// Signature: void core_charactr_cpp_FUN_0042fbd0(CCharacter *param_1,CVector3f *param_2,undefined4 param_3,EFlameType param_4,float param_5,int param_6,float param_7)
 
 #include "nocturne.h"
 
-void core_charactr_cpp_FUN_0042fbd0(CCharacter *param_1,CVector3f *param_2,uint param_3,EFlameType param_4,float param_5,int param_6,uint param_7)
+void core_charactr_cpp_FUN_0042fbd0(CCharacter *param_1,CVector3f *param_2,uint param_3,EFlameType param_4,float param_5,int param_6,float param_7)
 
 {
   int iVar1;
@@ -24,7 +24,7 @@ void core_charactr_cpp_FUN_0042fbd0(CCharacter *param_1,CVector3f *param_2,uint 
     pCVar3 = param_1;
     if (0 < param_1->fire_count) {
       do {
-        if (iVar1 == *(int *)&pCVar3->fires[0].field_0x4) {
+        if (iVar1 == pCVar3->fires[0].bone_index) {
           return;
         }
         iVar2 = iVar2 + 1;
@@ -33,7 +33,7 @@ void core_charactr_cpp_FUN_0042fbd0(CCharacter *param_1,CVector3f *param_2,uint 
     }
     param_1->pending_flame_type = param_4;
     param_1->flame_scale = param_5;
-    *(uint *)&param_1->field_0x3260 = param_7;
+    param_1->on_fire_time = param_7;
     skeleton = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
                          (&param_1->model);
     core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042e4b0(param_1,skeleton,iVar1);

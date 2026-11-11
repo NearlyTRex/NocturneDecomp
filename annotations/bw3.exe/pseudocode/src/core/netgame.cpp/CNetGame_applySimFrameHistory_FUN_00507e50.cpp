@@ -11,41 +11,40 @@
 void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00507e50(CNetGame *this_ptr,SSimFrame *sim_frame)
 
 {
-  int *piVar1;
+  int iVar1;
   int iVar2;
-  int iVar3;
-  SSimFrame *pSVar4;
-  int iVar5;
-  SSimFrame *pSVar6;
-  uint *puVar7;
-  byte bVar8;
+  SSimFrame *pSVar3;
+  int iVar4;
+  SPlayerInput *pSVar5;
+  int *piVar6;
+  byte bVar7;
   
-  bVar8 = 0;
+  bVar7 = 0;
   if (this_ptr->local_player_index < 0) {
     _DAT_01d71de0 = "..\\core\\netgame.cpp";
     _DAT_01d71de4 = 0x9cd;
     core_main_c_FUN_004e4330("CNetGame::applySimFrameHistory - I'm not in the player list!");
   }
-  this_ptr->random_seed = *(uint *)(sim_frame + 4);
-  core_game_cpp_CGame_slamDT_FUN_004bf3a0(g_CGamePtr,*(float *)(sim_frame + 8));
-  iVar2 = 0;
+  this_ptr->random_seed = sim_frame->random_seed;
+  core_game_cpp_CGame_slamDT_FUN_004bf3a0(g_CGamePtr,sim_frame->delta_time);
+  iVar1 = 0;
   if (0 < this_ptr->player_count) {
-    iVar5 = 0;
-    pSVar4 = sim_frame;
+    iVar4 = 0;
+    pSVar3 = sim_frame;
     do {
-      piVar1 = (int *)(iVar5 + 0x1d5ba04);
-      iVar5 = iVar5 + 4;
-      pSVar6 = pSVar4 + 0xc;
-      puVar7 = (uint *)(*piVar1 + 0xcdd4);
-      for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar7 = *(uint *)pSVar6;
-        pSVar6 = pSVar6 + (uint)bVar8 * -8 + 4;
-        puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
+      piVar6 = (int *)(iVar4 + 0x1d5ba04);
+      iVar4 = iVar4 + 4;
+      pSVar5 = pSVar3->player_input;
+      piVar6 = (int *)(*piVar6 + 0xcdd4);
+      for (iVar2 = 0xd; iVar2 != 0; iVar2 = iVar2 + -1) {
+        *piVar6 = (pSVar5->action_state).walk;
+        pSVar5 = (SPlayerInput *)((int)pSVar5 + (uint)bVar7 * -8 + 4);
+        piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
       }
-      iVar2 = iVar2 + 1;
-      pSVar4 = pSVar4 + 0x34;
-    } while (iVar2 < this_ptr->player_count);
+      iVar1 = iVar1 + 1;
+      pSVar3 = (SSimFrame *)&pSVar3->player_input[0].strafe_speed;
+    } while (iVar1 < this_ptr->player_count);
   }
-  *(int *)&this_ptr->players[this_ptr->local_player_index].field_0x48 = *(int *)sim_frame + 1;
+  this_ptr->players[this_ptr->local_player_index].sim_frame_index = sim_frame->sequence_number + 1;
   return;
 }

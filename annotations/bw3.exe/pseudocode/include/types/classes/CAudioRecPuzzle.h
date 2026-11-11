@@ -4,13 +4,39 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CAlphaBitmap.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/structs/SButtonStruct.h"
 
 // Structure: CAudioRecPuzzle
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 3116; ctor 00411b50: puzzle base ctor 00411960, CAlphaBitmap at +4, arrinit 50 buttonStructs at 0x54, two CKeyFramedModelInstance at 0x8ec/0xa68, vtable at +0; bw3 drops bw1's dial_sfx/0x54/switch_sfx block, so everything from reel_angle on sits 12 bytes lower
 // Ghidra size: 0xc2c (3116 bytes)
 #pragma pack(push, 1)
 typedef struct CAudioRecPuzzle {
-    char field_0[3116]; // 0x0
+    void* vtable; // 0x0, puzzle vtable pointer: the shared puzzle base ctor (00411960) stores the base vtable at +0 and registers the object in the global puzzle list; the base has no fields, no RTTI and no type in the DB, so it is modelled as this field
+    CAlphaBitmap background; // 0x4, load 00411d70 loads 'radioback' 640x480 into this+4; render 004123c0 displays it first
+    int cursor_index; // 0x18, render displays pointer bitmap [cursor_index] at the cursor; hover/knob code sets 0..3
+    int button_count; // 0x1c, addButton 00412320 increments it; load resets 0
+    int selected_button; // 0x20, hitTestButtons 00412bc0 stores the hit index; process and the switch/knob slots compare it
+    int mouse_button; // 0x24, onMouse 00412c30 stores the new button state
+    int previous_mouse_button; // 0x28, onMouse moves the old mouse_button here
+    int click_handled; // 0x2c, onMouse zeroes it; process sets 1 after handling one click
+    int playback_started; // 0x30, process sets 1 after calling playClip (00412ee0) and 0 when the clip sound ends
+    int transport_state; // 0x34, load sets 1; moveTransportSwitch 00412a60 steps it 0..2; render spins the reel forward at 0 and back at 2; getter slot returns +0x34
+    int knob_positions[3]; // 0x38, reset 00411c30 sets 2; turnKnob 00412b00 steps entry i in 0..4; getter slots return +0x38/+0x3c/+0x40
+    int speed_setting; // 0x44, reset sets 3; process sets it from the 5 speed buttons; render scales the reel speed by speed_setting+1
+    int previous_speed_setting; // 0x48, process copies speed_setting here before changing it and compares the two
+    int power_on; // 0x4c, load sets 1; the power button toggles it; process exits the puzzle when 0
+    float reel_angle; // 0x50, reset zeroes it; render advances it by dt and normalizeAngleToPi and passes it to renderReel 00412c50
+    SButtonStruct buttons[50]; // 0x54, ctor 00411b50 arrinit 50 buttonStructs at +0x54; addButton writes this+0x54+i*0x2c
+    CKeyFramedModelInstance reel_model; // 0x8ec, ctor constructs it; reset sets 'audioreel.kfm'; load preCaches it; renderReel draws it
+    CKeyFramedModelInstance reel_shadow_model; // 0xa68, ctor constructs it; reset sets 'audioreelshadow.kfm'; renderReel draws it when the shadow arg is 0
+    int cursor_offset_x[4]; // 0xbe4, reset stores 3,0x14,2,0x12; render subtracts [cursor_index] from the cursor x
+    int cursor_offset_y[4]; // 0xbf4, reset stores 2,6,6,6; render subtracts [cursor_index] from the cursor y
+    int recording_id; // 0xc04, load sets 1 or 2 by the AudioPuzzleTelOsMah/AudioPuzzleMary flags; playClip formats 'AR%d_' with it
+    uint clip_sfx[3]; // 0xc08, playClip stores three CSound_playSound handles; process polls the first and kills all three when stopped
+    int solution[5]; // 0xc14, reset sets 2s; load stores the flag-specific answer; process compares knob 0..2, speed and transport against it
+    int solved; // 0xc28, load zeroes it; process sets 1 and fires 'AudioPuzzleSuccess'; next process exits the puzzle
 } CAudioRecPuzzle;
 #pragma pack(pop)
 

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 82,
+    "complexity_score": 37,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field"
+      "undefined_data"
     ],
     "total_lines": 98
   },
@@ -83,7 +82,7 @@
     },
     {
       "addr": "01d21570",
-      "name": "g_CGameInstance.field564_0x264",
+      "name": "g_CGameInstance.goggles_active",
       "type": "undefined4",
       "value": null
     }
@@ -140,44 +139,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x206ac",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x206ac == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x27a8",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x27a8 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 12,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x27a8",
-      "severity": "mild",
-      "text": "if (((*(int *)&this_ptr->field_0x27a8 != 0) && (*(int *)&g_CGamePtr->field_0x264 != 0)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x264",
-      "severity": "mild",
-      "text": "if (((*(int *)&this_ptr->field_0x27a8 != 0) && (*(int *)&g_CGamePtr->field_0x264 != 0)) &&",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

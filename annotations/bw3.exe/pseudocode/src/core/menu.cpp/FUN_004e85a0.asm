@@ -39,7 +39,7 @@
 ;   core_game.cpp_FUN_004b4440
 ;   core_menu.cpp_FUN_004e7860
 ;   core_menu.cpp_showCalibrationTest_FUN_004e84d0
-;   core_moon.cpp_FUN_004f9670
+;   core_moon.cpp_CMoon_render_FUN_004f9670
 ;   core_set.cpp_CDemonSet_setFlatColor_FUN_0053b100
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_special.cpp_buildCardList_FUN_00566400
@@ -124,8 +124,8 @@ section .text
     PUSH 0x1d72cb0                      ; 004e8687
     MOV ESI,0x5c73f6                    ; 004e868c | DAT_005c73f6
     MOV dword ptr [EAX + 0x15ae94],0xdac ; 004e8691 | g_CDemonSetInstance.ambient_base_quick
-    CALL core_moon.cpp_FUN_004f9670     ; 004e869b
-        ;   XREF to: 004f9670 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_004f9670()
+    CALL core_moon.cpp_CMoon_render_FUN_004f9670 ; 004e869b
+        ;   XREF to: 004f9670 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_render_FUN_004f9670(CMoon * this_ptr)
     MOV EAX,[0x00603b28]                ; 004e86a0 | g_CDemonSetPtr
     ADD ESP,0x4                         ; 004e86a5
     MOV EDI,0x606730                    ; 004e86a8 | DAT_00606730
@@ -230,7 +230,7 @@ section .text
         ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004e8816
     MOV EAX,[0x005fe9dc]                ; 004e8819 | g_CGamePtr
-    MOV dword ptr [EAX + 0xc],0x0       ; 004e881e | g_CGameInstance.field3_0xc
+    MOV dword ptr [EAX + 0xc],0x0       ; 004e881e | g_CGameInstance.halo_mode
     TEST EBP,EBP                        ; 004e8825
     JZ 0x004e8aeb                       ; 004e8827
         ;   XREF to: 004e8aeb (CONDITIONAL_JUMP)  ; LAB_004e8aeb
@@ -325,7 +325,7 @@ section .text
     CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004e8906
         ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EAX,[0x005fe9dc]                ; 004e890b | g_CGamePtr
-    MOV ECX,dword ptr [EAX + 0x10]      ; 004e8910 | g_CGameInstance.field7_0x10
+    MOV ECX,dword ptr [EAX + 0x10]      ; 004e8910 | g_CGameInstance.subtitle_mode
     ADD ESP,0x8                         ; 004e8913
     TEST ECX,ECX                        ; 004e8916
     JZ 0x004e8bae                       ; 004e8918
@@ -354,7 +354,7 @@ section .text
     POP EDI                             ; 004e894b
         ;   Label: LAB_004e894b
     MOV EAX,[0x005fe9dc]                ; 004e894c | g_CGamePtr
-    CMP dword ptr [EAX + 0xe0],0x0      ; 004e8951 | g_CGameInstance.field176_0xe0
+    CMP dword ptr [EAX + 0xe0],0x0      ; 004e8951 | g_CGameInstance.show_hero_numbers
     JZ 0x004e8bb8                       ; 004e8958
         ;   XREF to: 004e8bb8 (CONDITIONAL_JUMP)  ; LAB_004e8bb8
     PUSH 0x5c7572                       ; 004e895e | = "Health/Mana Numbers : On"
@@ -381,7 +381,7 @@ section .text
     POP EDI                             ; 004e898b
         ;   Label: LAB_004e898b
     MOV EAX,[0x005fe9dc]                ; 004e898c | g_CGamePtr
-    CMP dword ptr [EAX + 0xe4],0x0      ; 004e8991 | g_CGameInstance.field180_0xe4
+    CMP dword ptr [EAX + 0xe4],0x0      ; 004e8991 | g_CGameInstance.show_crosshair
     JZ 0x004e8bc2                       ; 004e8998
         ;   XREF to: 004e8bc2 (CONDITIONAL_JUMP)  ; LAB_004e8bc2
     PUSH 0x5c75a5                       ; 004e899e | = "Display Crosshair : On"
@@ -847,26 +847,26 @@ section .text
         ;   XREF to: 004e8a48 (UNCONDITIONAL_JUMP)  ; default
     MOV EAX,[0x005fe9dc]                ; 004e8ed1 | g_CGamePtr
         ;   Label: caseD_5
-    CMP dword ptr [EAX + 0x10],0x0      ; 004e8ed6 | g_CGameInstance.field7_0x10
+    CMP dword ptr [EAX + 0x10],0x0      ; 004e8ed6 | g_CGameInstance.subtitle_mode
     SETZ DL                             ; 004e8eda
     AND EDX,0xff                        ; 004e8edd
-    MOV dword ptr [EAX + 0x10],EDX      ; 004e8ee3 | g_CGameInstance.field7_0x10
+    MOV dword ptr [EAX + 0x10],EDX      ; 004e8ee3 | g_CGameInstance.subtitle_mode
     JMP 0x004e8a48                      ; 004e8ee6
         ;   XREF to: 004e8a48 (UNCONDITIONAL_JUMP)  ; default
     MOV EAX,[0x005fe9dc]                ; 004e8eeb | g_CGamePtr
         ;   Label: caseD_6
-    CMP dword ptr [EAX + 0xe0],0x0      ; 004e8ef0 | g_CGameInstance.field176_0xe0
+    CMP dword ptr [EAX + 0xe0],0x0      ; 004e8ef0 | g_CGameInstance.show_hero_numbers
     SETZ DL                             ; 004e8ef7
     AND EDX,0xff                        ; 004e8efa
-    MOV dword ptr [EAX + 0xe0],EDX      ; 004e8f00 | g_CGameInstance.field176_0xe0
+    MOV dword ptr [EAX + 0xe0],EDX      ; 004e8f00 | g_CGameInstance.show_hero_numbers
     JMP 0x004e8a48                      ; 004e8f06
         ;   XREF to: 004e8a48 (UNCONDITIONAL_JUMP)  ; default
     MOV EAX,[0x005fe9dc]                ; 004e8f0b | g_CGamePtr
         ;   Label: caseD_7
-    CMP dword ptr [EAX + 0xe4],0x0      ; 004e8f10 | g_CGameInstance.field180_0xe4
+    CMP dword ptr [EAX + 0xe4],0x0      ; 004e8f10 | g_CGameInstance.show_crosshair
     SETZ DL                             ; 004e8f17
     AND EDX,0xff                        ; 004e8f1a
-    MOV dword ptr [EAX + 0xe4],EDX      ; 004e8f20 | g_CGameInstance.field180_0xe4
+    MOV dword ptr [EAX + 0xe4],EDX      ; 004e8f20 | g_CGameInstance.show_crosshair
     JMP 0x004e8a48                      ; 004e8f26
         ;   XREF to: 004e8a48 (UNCONDITIONAL_JUMP)  ; default
 

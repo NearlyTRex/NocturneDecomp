@@ -2,6 +2,7 @@
   {
     "kind":"class",
     "name":"CBird",
+    "parent":"CCharacter",
     "size":132796
   },
   {
@@ -9,6 +10,64 @@
     "name":"CBloodSplat",
     "rtti_file":"core/gore.cpp",
     "size":72
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCameraView_saveAlphaTransform",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonCamera",
+          "ptr":1
+        }
+      },
+      {
+        "name":"alpha_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCameraView_testVisibility",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonCamera",
+          "ptr":1
+        }
+      },
+      {
+        "name":"corners",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"funcdef",
@@ -42,6 +101,7 @@
   {
     "kind":"class",
     "name":"CDemnfolk",
+    "parent":"CEnemy",
     "size":53580
   },
   {
@@ -226,6 +286,7 @@
   {
     "kind":"class",
     "name":"CDemonPod",
+    "parent":"CPod",
     "rtti_file":"engine/pod.cpp",
     "size":408
   },
@@ -246,11 +307,13 @@
   {
     "kind":"class",
     "name":"CGoggles",
+    "parent":"CDemonActor",
     "size":728
   },
   {
     "kind":"class",
     "name":"CHeal",
+    "parent":"CWeapon",
     "size":1436
   },
   {
@@ -298,6 +361,7 @@
   {
     "kind":"class",
     "name":"CLava",
+    "parent":"CWaterActor",
     "size":176700
   },
   {
@@ -342,6 +406,7 @@
   {
     "kind":"class",
     "name":"CRainDrop",
+    "parent":"CParticle",
     "rtti_file":"core/emitter.cpp",
     "size":64
   },
@@ -449,6 +514,7 @@
   {
     "kind":"class",
     "name":"CSpiritBear",
+    "parent":"CNPC",
     "size":216484
   },
   {
@@ -485,6 +551,29 @@
     "parent":"CEnemy",
     "rtti_file":"core/werewolf.cpp",
     "size":53404
+  },
+  {
+    "kind":"enum",
+    "name":"EControlMode",
+    "size":4,
+    "values":[
+      {
+        "name":"CONTROL_MODE_KEYBOARD",
+        "value":0
+      },
+      {
+        "name":"CONTROL_MODE_MOUSE",
+        "value":1
+      },
+      {
+        "name":"CONTROL_MODE_GAMEPAD",
+        "value":2
+      },
+      {
+        "name":"CONTROL_MODE_POINT_AND_CLICK",
+        "value":3
+      }
+    ]
   },
   {
     "kind":"enum",
@@ -581,7 +670,7 @@
   {
     "kind":"struct",
     "name":"SFogGrid",
-    "size":1
+    "size":4128
   },
   {
     "kind":"struct",
@@ -597,7 +686,7 @@
   {
     "kind":"struct",
     "name":"SMpegSubbandScalefactors",
-    "size":1
+    "size":384
   },
   {
     "kind":"struct",
@@ -607,16 +696,16 @@
   {
     "kind":"struct",
     "name":"SPlayerActionState",
-    "size":1
+    "size":40
   },
   {
     "kind":"struct",
     "name":"SSwarmVertex",
-    "size":1
+    "size":40
   },
   {
     "kind":"struct",
     "name":"SWayPointAdjacency",
-    "size":1
+    "size":8
   }
 ]

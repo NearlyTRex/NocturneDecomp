@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 160,
+    "complexity_score": 161,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
+    "pseudocode_lines": 56,
     "suspect_count": 10,
     "suspect_types": [
       "extra_output"
     ],
-    "total_lines": 187
+    "total_lines": 188
   },
   "cross_references": [
     {
@@ -249,15 +249,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 48,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "fVar3 = (frame_number - (float)(*(int *)(extraout_EDX + 100) - *(int *)(extraout_EDX + 0x68))) /",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 48,
+      "line": 49,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "fVar3 = (frame_number - (float)(*(int *)(extraout_EDX + 100) - *(int *)(extraout_EDX + 0x68))) /",
@@ -268,12 +260,20 @@
       "line": 49,
       "match": "extraout_EDX",
       "severity": "moderate",
+      "text": "fVar3 = (frame_number - (float)(*(int *)(extraout_EDX + 100) - *(int *)(extraout_EDX + 0x68))) /",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 50,
+      "match": "extraout_EDX",
+      "severity": "moderate",
       "text": "(float)*(int *)(extraout_EDX + 0x68);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 52,
+      "line": 53,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "*extraout_ECX = *out_frame2;",

@@ -15,6 +15,6 @@ int __cdecl core_hostage_cpp_CDemnfolk_isGrabbable_FUN_00458ec0(CDemnfolk *this_
   if (iVar1 != 0) {
     return 1;
   }
-  iVar1 = core_enemy_cpp_CEnemy_isGrabbable_FUN_0048a200((CEnemy *)this_ptr,grabber);
+  iVar1 = core_enemy_cpp_CEnemy_isGrabbable_FUN_0048a200(&this_ptr->base,grabber);
   return iVar1;
 }

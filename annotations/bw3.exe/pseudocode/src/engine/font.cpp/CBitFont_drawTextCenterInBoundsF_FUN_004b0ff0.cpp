@@ -14,6 +14,7 @@ int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004b0ff0(CBitFo
   
   local_14 = &stack0x00000020;
   iVar1 = engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004b1040
-                    (this_ptr,left_x,right_x,y,color_mode,color_value,format_string,&local_14);
+                    (this_ptr,left_x,right_x,y,color_mode,color_value,format_string,
+                     (va_list_t)&local_14);
   return iVar1;
 }

@@ -40,9 +40,10 @@ void core_emitter_cpp_FUN_00487c80(int param_1)
   
   bVar3 = 0;
   pCVar2 = core_hero_cpp_closestHeroToPoint_FUN_004d22c0((CLocation *)(param_1 + 0x20));
-  afStack_7c[0] = *(float *)(pCVar2 + 0x20) - (((CLocation *)(param_1 + 0x20))->position).x;
-  afStack_7c[1] = *(float *)(pCVar2 + 0x24) - *(float *)(param_1 + 0x24);
-  afStack_7c[2] = *(float *)(pCVar2 + 0x28) - *(float *)(param_1 + 0x28);
+  afStack_7c[0] =
+       (pCVar2->base).base.location.position.x - (((CLocation *)(param_1 + 0x20))->position).x;
+  afStack_7c[1] = (pCVar2->base).base.location.position.y - *(float *)(param_1 + 0x24);
+  afStack_7c[2] = (pCVar2->base).base.location.position.z - *(float *)(param_1 + 0x28);
   fStack_68 = CStack_88.z;
   afStack_7c[(uint)bVar3 * -2 + 6] = afStack_7c[(uint)bVar3 * -2];
   afStack_7c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7] =

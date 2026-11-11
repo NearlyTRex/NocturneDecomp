@@ -6,10 +6,10 @@
 #include "system/basetypes.h"
 
 // Structure: SMpegSubbandSamples
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x900 (2304 bytes)
 #pragma pack(push, 1)
 typedef struct SMpegSubbandSamples {
+    float samples[32][18]; // 0x0
 } SMpegSubbandSamples;
 #pragma pack(pop)
 

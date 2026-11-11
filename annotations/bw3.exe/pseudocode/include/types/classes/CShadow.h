@@ -2,15 +2,46 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CShadow
-// Stub: size from Watcom RTTI, fields not yet recovered
+// CWerewolf-style tail; ctor 00543500, setup FUN_00543680, process FUN_005438d0, archive FUN_00545910; subclass ctors
 // Ghidra size: 0xd0e8 (53480 bytes)
 #pragma pack(push, 1)
 typedef struct CShadow {
-    char field_0[53480]; // 0x0
+    CEnemy base; // 0x0, derived; unchanged
+    int type; // 0xd054, ctor zeroes; setup/process compare
+    int bone_indices[7]; // 0xd058, setup findBone
+    int light_up_eyes; // 0xd074, ctor; archive (bw2 key "lightUpEyes")
+    uint sfx_handle; // 0xd078, setup zeroes; sound players FUN_00545000..
+    float howl_cooldown; // 0xd07c, setup random; process
+    uint sfx_handles[2]; // 0xd080, setup zeroes; process
+    struct CDemonActor* chain_anchor; // 0xd088, ctor zeroes; chain FUN_00545c80
+    float chain_length; // 0xd08c, ctor 5.0; chain FUN_00545c80 FCOMP
+    struct CDemonActor* alpha1; // 0xd090, ctor zeroes; bw2 "alpha1" slot
+    struct CDemonActor* alpha2; // 0xd094, ctor zeroes; bw2 "alpha2" slot
+    float eye_glow_phase; // 0xd098, ctor zeroes; process FADD
+    int phase; // 0xd09c, ctor zeroes; bw2 "phase" slot
+    float phase_timer; // 0xd0a0, ctor global; process counts down
+    int is_shadow_beast; // 0xd0a4, setup SHADOWBEAST/WERE_HEADLESS check
+    int shadow_variant; // 0xd0a8, ctor 0, CShadowForest ctor 1, CSpiritShadow ctor 2, CDemonShadow ctor 3
+    char field_53420[16]; // 0xd0ac
+    int walk_target; // 0xd0bc, process walk helper target
+    int walk_status; // 0xd0c0, process walk helper out-param
+    float walk_timeout; // 0xd0c4, ctor zeroes; process counts down
+    float periodic_timer; // 0xd0c8, ctor; process counts down
+    int attack_loop_count; // 0xd0cc, process INC/CMP
+    int is_opaque; // 0xd0d0, setup/process; renderOpaque
+    float fade_scale; // 0xd0d4, ctor 1.0; process
+    int fade_alpha; // 0xd0d8, process FISTP; renderTransparent
+    int corona_added; // 0xd0dc, ctor zeroes; process sets
+    int scared_by_light; // 0xd0e0, ctor 1; archive "scaredByLight" (FUN_00545910)
+    float difficulty_speed_scale; // 0xd0e4, ctor 0.75 / 1.0; process FMUL
 } CShadow;
 #pragma pack(pop)
 

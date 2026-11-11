@@ -138,7 +138,7 @@ void core_dlight_cpp_FUN_0045e69e(int param_1)
           CStack_c0.y = (int)ROUND(fStack_98 * _DAT_005de4f0);
           CStack_c0.z = (int)ROUND(fStack_94 * _DAT_005de4f0);
           engine_special_cpp_FUN_005632a3
-                    ((SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr,&CStack_c0);
+                    (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_c0);
           fStack_94 = fStack_2c;
           if (fStack_20 < fStack_2c) {
             fStack_94 = fStack_20;
@@ -149,7 +149,7 @@ void core_dlight_cpp_FUN_0045e69e(int param_1)
           CStack_90.y = (int)ROUND(fStack_98 * _DAT_005de4f0);
           CStack_90.z = (int)ROUND(fStack_94 * _DAT_005de4f0);
           engine_special_cpp_FUN_005632a3
-                    ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x30),&CStack_90);
+                    (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&CStack_90);
           fStack_94 = fStack_2c;
           if (fStack_24 < fStack_2c) {
             fStack_94 = fStack_24;
@@ -160,7 +160,7 @@ void core_dlight_cpp_FUN_0045e69e(int param_1)
           CStack_84.y = (int)ROUND(fStack_98 * _DAT_005de4f0);
           CStack_84.z = (int)ROUND(fStack_94 * _DAT_005de4f0);
           engine_special_cpp_FUN_005632a3
-                    ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x60),&CStack_84);
+                    (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_84);
           fStack_94 = fStack_28;
           if (fStack_24 < fStack_28) {
             fStack_94 = fStack_24;
@@ -171,33 +171,33 @@ void core_dlight_cpp_FUN_0045e69e(int param_1)
           aCStack_78[0].y = (int)ROUND(fStack_98 * _DAT_005de4f0);
           aCStack_78[0].z = (int)ROUND(fStack_94 * _DAT_005de4f0);
           engine_special_cpp_FUN_005632a3
-                    ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x90),aCStack_78);
+                    (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,aCStack_78);
           pCVar11 = DAT_005f2afc;
-          *(int *)(DAT_005f2afc->vertex_buffer_ptr + 0x2c) = iStack_30;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0x28) = 0xffff;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0x24) = 0xffff;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0x20) = 0xffff;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0x18) = 0xf80000;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0x1c) = 0xf80000;
-          *(int *)(pCVar11->vertex_buffer_ptr + 0x5c) = iStack_30;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0x58) = 0xffff;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0x54) = 0xffff;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0x50) = 0xffff;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0x48) = 0x80000;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0x4c) = 0xf80000;
-          *(int *)(pCVar11->vertex_buffer_ptr + 0x8c) = iStack_34;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0x88) = 0xffff;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0x84) = 0xffff;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0x80) = 0xffff;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0x78) = 0x80000;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0x7c) = 0x80000;
-          *(int *)(pCVar11->vertex_buffer_ptr + 0xbc) = iStack_34;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0xb8) = 0xffff;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0xb4) = 0xffff;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0xb0) = 0xffff;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0xa8) = 0xf80000;
+          DAT_005f2afc->vertex_buffer_ptr->a = iStack_30;
+          pCVar11->vertex_buffer_ptr->b = 0xffff;
+          pCVar11->vertex_buffer_ptr->g = 0xffff;
+          pCVar11->vertex_buffer_ptr->r = 0xffff;
+          pCVar11->vertex_buffer_ptr->u = 0xf80000;
+          pCVar11->vertex_buffer_ptr->v = 0xf80000;
+          pCVar11->vertex_buffer_ptr[1].a = iStack_30;
+          pCVar11->vertex_buffer_ptr[1].b = 0xffff;
+          pCVar11->vertex_buffer_ptr[1].g = 0xffff;
+          pCVar11->vertex_buffer_ptr[1].r = 0xffff;
+          pCVar11->vertex_buffer_ptr[1].u = 0x80000;
+          pCVar11->vertex_buffer_ptr[1].v = 0xf80000;
+          pCVar11->vertex_buffer_ptr[2].a = iStack_34;
+          pCVar11->vertex_buffer_ptr[2].b = 0xffff;
+          pCVar11->vertex_buffer_ptr[2].g = 0xffff;
+          pCVar11->vertex_buffer_ptr[2].r = 0xffff;
+          pCVar11->vertex_buffer_ptr[2].u = 0x80000;
+          pCVar11->vertex_buffer_ptr[2].v = 0x80000;
+          pCVar11->vertex_buffer_ptr[3].a = iStack_34;
+          pCVar11->vertex_buffer_ptr[3].b = 0xffff;
+          pCVar11->vertex_buffer_ptr[3].g = 0xffff;
+          pCVar11->vertex_buffer_ptr[3].r = 0xffff;
+          pCVar11->vertex_buffer_ptr[3].u = 0xf80000;
           iVar1 = iVar1 + 1;
-          *(uint *)(pCVar11->vertex_buffer_ptr + 0xac) = 0x80000;
+          pCVar11->vertex_buffer_ptr[3].v = 0x80000;
           SStack_e8.surface_normal.D.i = 0;
           SStack_e8.surface_normal.C.i = 0;
           SStack_e8.base.count = 4;

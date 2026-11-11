@@ -7,12 +7,12 @@
 #include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CHero.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CPrye.h"
 #include "types/classes/CPryeMorph.h"
 #include "types/classes/CRifle.h"
 #include "types/classes/CScript.h"
-#include "types/classes/CStranger.h"
 #include "types/classes/CVector3f.h"
 #include "types/enums/EDeathState.h"
 #include "types/structs/SDamageInfo.h"
@@ -34,10 +34,10 @@ float * core_prye_cpp_FUN_0052294e(float *param_1,float *param_2);
 void core_prye_cpp_FUN_00522b00(CDemonActor *param_1,int param_2,float param_3);
 void core_prye_cpp_FUN_00523800(CDemonActor *param_1);
 void __cdecl core_prye_cpp_CPrye_processDamage_FUN_00523e50(CPrye *this_ptr,SDamageInfo *damage_info);
-void __cdecl unkafter_prye_cpp_FUN_00524170(CStranger *this_ptr,float delta_time,int is_weapon_active);
+void __cdecl core_prye_cpp_CPrye_updateArmRecoilBlend_FUN_00524170(CPrye *this_ptr,float delta_time,int is_weapon_active);
 CMatrix3x4f * __stack2_esi core_prye_cpp_CPrye_getCarryObjToBodyXForm_FUN_005247b0(CPrye *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void unkafter_prye_cpp_FUN_00524800(int param_1);
-void unkafter_prye_cpp_FUN_00524940(CCharacter *param_1,float param_2);
+void unkafter_prye_cpp_FUN_00524940(CHero *param_1,float param_2);
 void unkafter_prye_cpp_FUN_00525930(int param_1);
 void __cdecl core_prye_cpp_CPrye_doHeroAction_FUN_00525a20(CPrye *this_ptr);
 int __cdecl core_prye_cpp_CPrye_canDoHeroAction_FUN_005260b0(CPrye *this_ptr,int action_type);

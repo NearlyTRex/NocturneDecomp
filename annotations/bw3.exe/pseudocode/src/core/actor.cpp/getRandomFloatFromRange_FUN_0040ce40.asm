@@ -29,7 +29,7 @@
 ;   undefined4 DAT_005b5ee5
 ;   undefined4 DAT_005b5ee9
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 g_CGameInstance.field560_0x260
+;   undefined4 g_CGameInstance.is_processing
 ;
 ; Called Functions:
 ;   core_actor.cpp_generateRandomValue_FUN_0040cdd0
@@ -44,7 +44,7 @@ section .text
     FLD float ptr [ESP + 0x18]          ; 0040ce43
     MOV EAX,[0x005fe9dc]                ; 0040ce47 | g_CGamePtr
     FSUB float ptr [ESP + 0x14]         ; 0040ce4c
-    MOV EDX,dword ptr [EAX + 0x260]     ; 0040ce50 | g_CGameInstance.field560_0x260
+    MOV EDX,dword ptr [EAX + 0x260]     ; 0040ce50 | g_CGameInstance.is_processing
     FSTP float ptr [ESP + 0x4]          ; 0040ce56
     TEST EDX,EDX                        ; 0040ce5a
     JZ 0x0040ce8b                       ; 0040ce5c

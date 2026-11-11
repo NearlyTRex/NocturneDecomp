@@ -18,67 +18,64 @@ int __cdecl core_kedward_cpp_CKedward_renderTransparent_FUN_00591680(CKedward *t
   float10 fVar3;
   ulonglong uVar4;
   
-  fVar2 = (float)*(int *)&this_ptr->field_0xd070 * (float)_DAT_005d8ebc * (float)_DAT_005d8ec4;
-  if (*(int *)&this_ptr->field_0xd068 == 0) {
-    fVar3 = ((float10)fVar2 * (float10)*(float *)&this_ptr->field_0xd064) /
-            (float10)*(float *)&this_ptr->field_0xd06c;
+  fVar2 = (float)this_ptr->fade_out_opacity * (float)_DAT_005d8ebc * (float)_DAT_005d8ec4;
+  if (this_ptr->fading_in == 0) {
+    fVar3 = ((float10)fVar2 * (float10)this_ptr->fade_timer) / (float10)this_ptr->max_fade_time;
     uVar4 = round();
-    *(int *)&this_ptr->field_0xd060 = (int)uVar4 - (int)ROUND(fVar3);
-    if (*(int *)&this_ptr->field_0xd094 == 0) {
-      if (*(float *)&this_ptr->field_0xd064 == *(float *)&this_ptr->field_0xd06c) {
-        *(int *)&this_ptr->field_0xd08c = (int)((ulonglong)uVar4 >> 0x20);
+    this_ptr->render_alpha = (int)uVar4 - (int)ROUND(fVar3);
+    if (this_ptr->cini_flag == 0) {
+      if (this_ptr->fade_timer == this_ptr->max_fade_time) {
+        this_ptr->fade_state = (int)((ulonglong)uVar4 >> 0x20);
       }
       else {
-        *(uint *)&this_ptr->field_0xd08c = 0xffffffff;
+        this_ptr->fade_state = -1;
       }
     }
   }
   else {
-    fVar3 = ((float10)fVar2 * (float10)*(float *)&this_ptr->field_0xd064) /
-            (float10)*(float *)&this_ptr->field_0xd06c +
-            (float10)(((float)_DAT_005d8eb4 - (float)*(int *)&this_ptr->field_0xd070) *
+    fVar3 = ((float10)fVar2 * (float10)this_ptr->fade_timer) / (float10)this_ptr->max_fade_time +
+            (float10)(((float)_DAT_005d8eb4 - (float)this_ptr->fade_out_opacity) *
                       (float)_DAT_005d8ebc * (float)_DAT_005d8ec4);
-    iVar1 = *(int *)&this_ptr->field_0xd094;
+    iVar1 = this_ptr->cini_flag;
     round();
-    *(int *)&this_ptr->field_0xd060 = (int)ROUND(fVar3);
+    this_ptr->render_alpha = (int)ROUND(fVar3);
     if (iVar1 == 0) {
-      if (*(float *)&this_ptr->field_0xd064 == *(float *)&this_ptr->field_0xd06c) {
-        *(uint *)&this_ptr->field_0xd08c = 1;
+      if (this_ptr->fade_timer == this_ptr->max_fade_time) {
+        this_ptr->fade_state = 1;
       }
       else {
-        *(uint *)&this_ptr->field_0xd08c = 0xffffffff;
+        this_ptr->fade_state = -1;
       }
     }
   }
-  if ((*(int *)&this_ptr->field_0xd060 < 1000) && (*(int *)&this_ptr->field_0xd094 != 0)) {
+  if ((this_ptr->render_alpha < 1000) && (this_ptr->cini_flag != 0)) {
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0((CDemonActor *)this_ptr);
   this_ptr_00 = DAT_005f2afc;
-  *(uint *)&this_ptr->field_0x27bc = 1;
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
-            (this_ptr_00,*(int *)&this_ptr->field_0xd060);
+  iVar1 = this_ptr->render_alpha;
+  (this_ptr->base).base.was_rendered_opaque = 1;
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(this_ptr_00,iVar1);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0
-            (DAT_005f2afc,(uint)(*(int *)&this_ptr->field_0xcdc4 != 0));
-  if (*(int *)&this_ptr->field_0xd094 != 0) {
+            (DAT_005f2afc,(uint)((this_ptr->base).base.additive != 0));
+  if (this_ptr->cini_flag != 0) {
     unaff_ESI = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);
     engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046d520(DAT_005f2afc,0);
   }
   engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(DAT_005f2afc,1);
   core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0
-            ((CDeformableModelInstance *)&this_ptr->field_0x158,-1,0x2e7,1,0);
+            (&(this_ptr->base).base.model,-1,0x2e7,1,0);
   engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(DAT_005f2afc);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
-  if (0.0 < *(float *)&this_ptr->field_0x3254) {
+  if (0.0 < (this_ptr->base).base.bind_time) {
     core_charactr_cpp_FUN_0042f310((CCharacter *)this_ptr);
   }
   if (_DAT_01d8e40c != 0) {
-    core_motion_cpp_FUN_004fcdc0
-              ((CMotionController *)&this_ptr->field_0x158,(CDemonActor *)this_ptr);
+    core_motion_cpp_FUN_004fcdc0(&(this_ptr->base).base.model.base,(CDemonActor *)this_ptr);
   }
-  if (*(int *)&this_ptr->field_0xd094 != 0) {
+  if (this_ptr->cini_flag != 0) {
     engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046d520(DAT_005f2afc,unaff_ESI);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830((CDemonActor *)this_ptr);
-  return *(int *)&this_ptr->field_0x27bc;
+  return (this_ptr->base).base.was_rendered_opaque;
 }

@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CColor3i.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CVector3f.h"
 #include "types/enums/EWaterActorState.h"
@@ -30,7 +31,8 @@ typedef struct CWaterActor {
     EWaterActorState state; // 0x280
     float patch_size; // 0x284
     int round_flag; // 0x288
-    char field_652[16]; // 0x28c
+    CColor3i color; // 0x28c
+    int is_lava; // 0x298, Added in this build
     int vertex_count; // 0x29c
     SWaterVertex vertices[1000]; // 0x2a0
     float inv_delta_time; // 0x7fa0

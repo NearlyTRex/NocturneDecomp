@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
-;   crt_unknown.c_FUN_005a3650
+;   crt_memory.c_malloc_FUN_005a3650
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     RET                                 ; 004ede49
     PUSH 0x9c440                        ; 004ede4a
         ;   Label: LAB_004ede4a
-    CALL crt_unknown.c_FUN_005a3650     ; 004ede4f
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 004ede4f
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 004ede54
     MOV [0x01d76f5c],EAX                ; 004ede57 | DAT_01d76f5c
     TEST EAX,EAX                        ; 004ede5c

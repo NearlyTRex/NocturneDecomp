@@ -9,7 +9,7 @@
 void __cdecl core_npc_cpp_CNPC_renderBackground_FUN_00509530(CNPC *this_ptr,int layer_flag)
 
 {
-  if (*(int *)&this_ptr->field_0x206ac != 0) {
+  if (this_ptr->pool_me != 0) {
     if (layer_flag != 0) {
       (this_ptr->base).render_active = 1;
     }

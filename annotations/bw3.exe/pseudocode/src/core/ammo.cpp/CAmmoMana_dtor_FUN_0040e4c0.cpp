@@ -11,7 +11,7 @@
 CAmmoMana * core_ammo_cpp_CAmmoMana_dtor_FUN_0040e4c0(CAmmoMana *this_ptr,uint flags)
 
 {
-  CAmmoMana *pCVar1;
+  CDemonActor *pCVar1;
   void *ptr;
   
   if ((flags & 4) != 0) {
@@ -19,10 +19,10 @@ CAmmoMana * core_ammo_cpp_CAmmoMana_dtor_FUN_0040e4c0(CAmmoMana *this_ptr,uint f
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = (CAmmoMana *)core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)this_ptr,1);
+  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)this_ptr,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return (CAmmoMana *)pCVar1;
   }
   FUN_005a30c4(pCVar1);
-  return pCVar1;
+  return (CAmmoMana *)pCVar1;
 }

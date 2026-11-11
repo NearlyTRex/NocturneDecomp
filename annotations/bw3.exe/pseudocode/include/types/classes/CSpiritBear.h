@@ -2,15 +2,31 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CPryeMorph;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CClothList.h"
+#include "types/classes/CMorph.h"
+#include "types/classes/CNPC.h"
+#include "types/classes/CPathMap.h"
 
 // Structure: CSpiritBear
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 216484; CNPC + own CPathMap + CClothList + CNPC-style fields + CPryeMorph morph
 // Ghidra size: 0x34da4 (216484 bytes)
 #pragma pack(push, 1)
 typedef struct CSpiritBear {
-    char field_0[216484]; // 0x0
+    CNPC base; // 0x0, existing base
+    CPathMap path_map; // 0x206c8, CSpiritBear_ctor@0059aaa0 CPathMap_ctor(this+0x206c8) after CNPC_ctor; getPathMap returns it
+    CClothList cloth_list; // 0x33fa4, ctor CClothList_ctor(path_map+0x138dc), count=1, filenames[0] copied at +0x33fa8; setup@0059aba0 reads cloths[0] at +0x34138
+    int shoot_me; // 0x34160, archive@0059b4a0 "shootMe"; isInvulnerable
+    int pool_me; // 0x34164, archive "poolMe"; process sets after blood pool
+    float speed; // 0x34168, archive "speed"; ctor FSTP random; process FMUL dt
+    int current_motion_type; // 0x3416c, process@0059ae00 stores getCurrentMotion()+0x24 and tests 0x91/0x92 (morph motions)
+    struct CPryeMorph* morph_actor; // 0x34170, setup@0059aba0 createActorByName("CPryeMorph"); process adds to mission list when morph_time>=1
+    CMorph morph; // 0x34174, ctor CMorph_ctor(cloth_list+0x1d0); setup/renderOpaque/dtor CMorph_*
+    float morph_time; // 0x34da0, setup zeroes; process += dt*k; renderOpaque CMorph_render(morph, morph_time)
 } CSpiritBear;
 #pragma pack(pop)
 

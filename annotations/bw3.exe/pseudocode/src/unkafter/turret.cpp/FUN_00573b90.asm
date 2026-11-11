@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   unkafter_turret.cpp_FUN_00573aa0 at 00573aac
-;   unkafter_turret.cpp_FUN_00573af0 at 00573b35
-;   unkafter_turret.cpp_FUN_00573b60 at 00573b6a
+;   unkafter_turret.cpp_CInStreamFile_getChar_FUN_00573aa0 at 00573aac
+;   unkafter_turret.cpp_CInStreamFile_peekChar_FUN_00573b60 at 00573b6a
+;   unkafter_turret.cpp_CInStreamFile_ungetChar_FUN_00573af0 at 00573b35
 ;
 ; Called Functions:
 ;   support_trstream.cpp_FUN_00573eb0

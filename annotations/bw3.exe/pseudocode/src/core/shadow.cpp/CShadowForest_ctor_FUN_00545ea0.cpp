@@ -13,13 +13,13 @@ CShadowForest * core_shadow_cpp_CShadowForest_ctor_FUN_00545ea0(CShadowForest *t
 {
   CShadow *pCVar1;
   
-  pCVar1 = core_shadow_cpp_CShadow_ctor_FUN_00543500((CShadow *)this_ptr);
-  *(CEnemy_full_vtable **)&pCVar1->field_0x154 = &g_CShadowForestVTable;
+  pCVar1 = core_shadow_cpp_CShadow_ctor_FUN_00543500(&this_ptr->base);
+  (pCVar1->base).base.base.vtable._ub = &g_CShadowForestVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
-            ((CDeformableModelInstance *)&pCVar1->field_0x158,"@shadowbeast.dfm" + 1);
-  *(uint *)&pCVar1->field_0x2538 = 0x42200000;
-  *(uint *)&pCVar1->field_0xce5c = 0x41700000;
-  *(uint *)&pCVar1->field_0xce60 = 0x41a00000;
-  *(uint *)&pCVar1->field_0xd0a8 = 1;
+            (&(pCVar1->base).base.model,"@shadowbeast.dfm" + 1);
+  (pCVar1->base).base.hit_points = 40.0;
+  (pCVar1->base).attack_damage = 15.0;
+  (pCVar1->base).pain_threshold = 20.0;
+  pCVar1->shadow_variant = 1;
   return (CShadowForest *)pCVar1;
 }

@@ -12,10 +12,10 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0050f9e0
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadStoredACTFile_FUN_00510fb0
 ;   core_main.c_FUN_004e4330
+;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fread_FUN_005a3890
 ;   crt_stdio.c_fseek_FUN_005a457c
-;   crt_unknown.c_FUN_005a3650
 ;   crt_unknown.c_FUN_005a3770
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_dosio.cpp_FUN_004659c0
@@ -46,8 +46,8 @@ section .text
         ;   Label: LAB_00510ac6
     IMUL EBP,dword ptr [ESI + 0x20]     ; 00510ac9
     PUSH EBP                            ; 00510acd
-    CALL crt_unknown.c_FUN_005a3650     ; 00510ace
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 00510ace
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 00510ad3
     MOV dword ptr [ESP + 0x130],EAX     ; 00510ad6
     TEST EAX,EAX                        ; 00510add

@@ -4,13 +4,26 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCharacter.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CWeapon.h"
 
 // Structure: CLightStaff
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 1544; ctor 004e0f70, process 004e2050, setWeaponState 004e3e60
 // Ghidra size: 0x608 (1544 bytes)
 #pragma pack(push, 1)
 typedef struct CLightStaff {
-    char field_0[1544]; // 0x0
+    CWeapon base; // 0x0, derived
+    int chain_active; // 0x594, ctor 0; process gates the chain/sound on it and clears it when no target or chain_count > 2; setWeaponState zeroes
+    int chain_count; // 0x598, process increments per chain step, bounds the target scan, indexes chain_targets
+    float chain_timer; // 0x59c, process subtracts dt, re-arms 0.1 at <= 0
+    CVector3f chain_pos; // 0x5a0, process passes &+0x5a0 to core_fire FUN_004a3c50 and copies the new hit point into +0x5a0/+0x5a4/+0x5a8
+    struct CCharacter* chain_targets[4]; // 0x5ac, process stores the hit actor at +0x5ac + chain_count*4 (chain_count <= 3) and skips actors already listed; writes target +0x3258
+    float flicker_timer; // 0x5bc, ctor 0.1; process subtracts dt, re-arms 0.1
+    int flicker_frame; // 0x5c0, ctor 0; process steps 1..4 and switches on it
+    uint sfx_handle; // 0x5c4, ctor 0; process isSfxPlaying/playActorSound/killSfx; setWeaponState killSfx
+    CDemonGlobe globe; // 0x5c8, ctor precomputeAttenuation(+0x5c8) and sets +0x5e4/+0x5e8/+0x604; process setPosition, writes intensity, addCoronaGlobe
 } CLightStaff;
 #pragma pack(pop)
 

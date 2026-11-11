@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 69,
+    "complexity_score": 34,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 9,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
       "unresolved_funcptr"
     ],
     "total_lines": 27
@@ -44,13 +43,13 @@
     },
     {
       "addr": "01d21570",
-      "name": "g_CGameInstance.field564_0x264",
+      "name": "g_CGameInstance.goggles_active",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21e98",
-      "name": "g_CGameInstance.field763_0xb8c",
+      "name": "g_CGameInstance.vtable",
       "type": "undefined4",
       "value": null
     }
@@ -98,44 +97,20 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x264",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x264 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 6,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)**(uint **)&g_CGamePtr->field_0xb8c)(g_CGamePtr,1);",
+      "text": "(**(code **)g_CGamePtr->vtable)(g_CGamePtr,1);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0xb8c",
-      "severity": "mild",
-      "text": "(*(code *)**(uint **)&g_CGamePtr->field_0xb8c)(g_CGamePtr,1);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 9,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)**(uint **)&g_CGamePtr->field_0xb8c)(g_CGamePtr,0);",
+      "text": "(**(code **)g_CGamePtr->vtable)(g_CGamePtr,0);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0xb8c",
-      "severity": "mild",
-      "text": "(*(code *)**(uint **)&g_CGamePtr->field_0xb8c)(g_CGamePtr,0);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

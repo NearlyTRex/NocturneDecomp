@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 137,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 52,
-    "suspect_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 53,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field"
+      "preinc_loop_idiom",
+      "shadow_pointer_walk"
     ],
-    "total_lines": 118
+    "total_lines": 119
   },
   "cross_references": [
     {
@@ -116,68 +117,20 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "puVar4 = &pCVar5->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom shadow-pointer walk (two-step form) \u2014 `pCVar5` is advanced into scratch `pCVar4`, then rebound via a later `pCVar5 = pCVar4;`. Functionally identical to the single-line self-update; replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer and drop both the advance line and the rebind.",
       "line": 42,
-      "match": "field_0xf068",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0xf068 = 0;",
-      "type": "unnamed_field"
+      "match": "pCVar4 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST); ...; pCVar5 = pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMattanntote *)((pCVar5->base).base.base.actor_name + 4);",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar5` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar5 = pCVar5;` self-assign, two-var `tmp = &pCVar5->field; pCVar5 = tmp;` ping-pong, or a bare `pCVar5 = pCVar5 + N;` advance followed by a `*pCVar5 =` store \u2014 plus a constant-index store on `pCVar5`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
       "line": 47,
-      "match": "field_0x2a4",
-      "severity": "mild",
-      "text": "puVar4 = &pCVar5->field_0x2a4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0xd210",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0xd210 = 0x3f800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0xd214",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0xd214 = 0x3fc00000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0xd218",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0xd218 = 0x3f800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0xd260",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0xd260 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0xd264",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0xd264 = 0;",
-      "type": "unnamed_field"
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
     }
   ],
   "vtable_info": {

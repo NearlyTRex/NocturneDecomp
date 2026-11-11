@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_cloth_cpp_FUN_0043cb00(CCloth *param_1,CCloth *param_2,CCloth *param_3,CDeformableModelInstance *param_4)
+; void core_cloth_cpp_FUN_0043cb00(CCloth *param_1,float *param_2,float *param_3,CDeformableModelInstance *param_4)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x168]:4  local_168

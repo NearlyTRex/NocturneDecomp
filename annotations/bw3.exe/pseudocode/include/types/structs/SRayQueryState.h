@@ -4,12 +4,15 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CColor3i.h"
 
 // Structure: SRayQueryState
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x14 (20 bytes)
 #pragma pack(push, 1)
 typedef struct SRayQueryState {
+    int ray_type; // 0x0
+    int laser_type; // 0x4
+    CColor3i laser_color; // 0x8
 } SRayQueryState;
 #pragma pack(pop)
 

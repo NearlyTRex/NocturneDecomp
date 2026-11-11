@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 213,
-    "complexity_score": 248,
+    "complexity_score": 98,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 83,
-    "suspect_count": 16,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "warning_type_propagation"
     ],
     "total_lines": 296
   },
@@ -183,132 +183,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0xd12c",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&this_ptr->field_0xd12c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + iVar2 * 4) == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "if ((*(int *)(&(this_ptr->base).base.model.field_0x2140 + *(int *)&this_ptr->field_0xd12c * 4)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0xd12c",
-      "severity": "mild",
-      "text": "if ((*(int *)(&(this_ptr->base).base.model.field_0x2140 + *(int *)&this_ptr->field_0xd12c * 4)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "((*(int *)(&(this_ptr->base).base.model.field_0x2140 + *(int *)&this_ptr->field_0xd11c * 4)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0xd11c",
-      "severity": "mild",
-      "text": "((*(int *)(&(this_ptr->base).base.model.field_0x2140 + *(int *)&this_ptr->field_0xd11c * 4)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "!= 0 || (*(int *)(&(this_ptr->base).base.model.field_0x2140 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0xd114",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0xd114 * 4) != 0)))) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0xd138",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_killSfx_FUN_00556be0(*(uint *)&this_ptr->field_0xd138);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0xd0e0",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0xd0e0 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0xd130",
-      "severity": "mild",
-      "text": "if (*(float *)&this_ptr->field_0xd130 <= 0.0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 66,
-      "match": "field_0xd130",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xd130 = 0x40000000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0xd138",
-      "severity": "mild",
-      "text": "iVar2 = sound_sndmain_cpp_FUN_00556700(*(uint *)&this_ptr->field_0xd138);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 69,
-      "match": "field_0xd0e0",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0xd0e0 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 72,
-      "match": "field_0xd138",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xd138 = uVar4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 78,
-      "match": "field_0xd138",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xd138 = uVar4;",
-      "type": "unnamed_field"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     }
   ],
   "vtable_info": {

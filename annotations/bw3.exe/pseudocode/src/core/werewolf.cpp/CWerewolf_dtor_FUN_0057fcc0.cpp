@@ -27,7 +27,8 @@ CWerewolf * core_werewolf_cpp_CWerewolf_dtor_FUN_0057fcc0(CWerewolf *this_ptr,ui
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80
                      ((CDeformableModelInstance *)(pCVar2[-0x1b].filenames[7] + 8),0);
   pCVar4 = (CWerewolf *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar3[-1].field_0x224c,1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408770
+                     ((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);
   if ((flags & 2) == 0) {
     return pCVar4;
   }

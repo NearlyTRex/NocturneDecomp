@@ -10,7 +10,7 @@ void __cdecl engine_font_cpp_CBitFont_loadNewBitmap_FUN_004b0190(CBitFont *this_
 
 {
   engine_font_cpp_FUN_004b0480(this_ptr);
-  *(int *)(this_ptr + 0x4208) = load_flags;
+  this_ptr->load_flags = load_flags;
   engine_font_cpp_CBitFont_loadBitmap_FUN_004af920(this_ptr,filename,width,height,first_char);
   return;
 }

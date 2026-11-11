@@ -19,7 +19,8 @@ void __cdecl cockpit_pkbmpset_cpp_FUN_005106a0(CPackedBitmapSet *this_ptr,int bi
   if (bitmap_count < 1) {
     return;
   }
-  uVar1 = FUN_005a40df(bitmap_count * 0x24 + 4,bitmap_count,&g_CPackedBitmapTypeInfo);
+  uVar1 = operator_new_array
+                    (bitmap_count * 0x24 + 4,bitmap_count,&g_CPackedBitmapTypeInfo);
   pCVar2 = (CPackedBitmap *)__vec_new(uVar1);
   this_ptr->bitmap_array = pCVar2;
   if (pCVar2 == (CPackedBitmap *)0x0) {

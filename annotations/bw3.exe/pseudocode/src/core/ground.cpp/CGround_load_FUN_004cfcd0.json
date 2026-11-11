@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 335,
-    "complexity_score": 306,
+    "complexity_score": 305,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 156,
+    "pseudocode_lines": 155,
     "suspect_count": 13,
     "suspect_types": [
       "undefined_data",
@@ -15,7 +15,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 491
+    "total_lines": 490
   },
   "cross_references": [
     {
@@ -399,7 +399,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 97,
       "match": "DAT_005c49c2",
       "severity": "mild",
       "text": "local_28 = &DAT_005c49c2;",
@@ -407,7 +407,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 99,
+      "line": 98,
       "match": "DAT_005c49bb",
       "severity": "mild",
       "text": "local_2c = &DAT_005c49bb;",
@@ -415,7 +415,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 127,
+      "line": 126,
       "match": "DAT_005c49be",
       "severity": "mild",
       "text": "pcVar6 = &DAT_005c49be;",
@@ -439,7 +439,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 101,
+      "line": 100,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -447,7 +447,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 128,
+      "line": 127,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -463,7 +463,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 111,
+      "line": 110,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

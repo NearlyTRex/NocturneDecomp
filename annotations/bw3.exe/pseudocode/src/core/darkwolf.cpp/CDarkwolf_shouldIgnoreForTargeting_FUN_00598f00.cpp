@@ -12,6 +12,6 @@ int __cdecl core_darkwolf_cpp_CDarkwolf_shouldIgnoreForTargeting_FUN_00598f00(CD
   SMotion *pSVar1;
   
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
-                     ((CMotionController *)&this_ptr->field_0x158);
-  return (uint)(*(int *)(pSVar1 + 0x24) == 7);
+                     (&(this_ptr->base).base.model.base);
+  return (uint)(pSVar1->state_index == 7);
 }

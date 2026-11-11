@@ -41,9 +41,8 @@ void __cdecl core_script_cpp_CScript_executeInitSection_FUN_00529920(CScript *th
           _DAT_01d71de0 = "..\\core\\script.cpp";
           _DAT_01d71de4 = 0x447;
           core_main_c_FUN_004e4330
-                    ("Error processing script.\nLine: %d\nText: %s\nWhat's wrong: %s\n",
-                     *(uint *)(this_ptr->parsed_lines + iVar1 * 8),
-                     *(uint *)(this_ptr->parsed_lines + iVar1 * 8 + 4),&DAT_01ed6810);
+                    ("Error processing script.\nLine: %d\nText: %s\nWhat's wrong: %s\n",this_ptr->parsed_lines[iVar1].line_number,
+                     this_ptr->parsed_lines[iVar1].text,&DAT_01ed6810);
         }
         if (iVar3 == this_ptr->next_cmd) break;
         iVar2 = iVar2 + 1;

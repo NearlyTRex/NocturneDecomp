@@ -12,8 +12,8 @@
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
+      "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 770
@@ -55,6 +55,11 @@
       "name": "core_main.c_FUN_004e4330"
     },
     {
+      "addr": "005a40df",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_array_FUN_005a40df"
+    },
+    {
       "addr": "005a32b0",
       "is_variadic": false,
       "name": "crt_stdio.c_fgetc_FUN_005a32b0"
@@ -63,11 +68,6 @@
       "addr": "005a3230",
       "is_variadic": false,
       "name": "crt_stdio.c_fscanf_FUN_005a3230"
-    },
-    {
-      "addr": "005a40df",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a40df"
     }
   ],
   "globals": [
@@ -450,14 +450,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 161,
-      "match": "field_0x12c",
-      "severity": "mild",
-      "text": "puVar4 = &this_ptr->field_0x12c;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Pointer value `&this_ptr->vertex_list->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 96,
       "match": "(int)&this_ptr->vertex_list->x",
@@ -480,6 +472,14 @@
       "severity": "moderate",
       "text": "local_14 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `piVar5` was initialized to the address of an array element's subfield (`piVar5 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*piVar5)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `piVar5->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 179,
+      "match": "piVar5 = piVar5 + N",
+      "severity": "moderate",
+      "text": "piVar5 = piVar5 + 2;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

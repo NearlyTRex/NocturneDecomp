@@ -2,15 +2,37 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+struct CDoor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CCarved
-// Stub: size from Watcom RTTI, fields not yet recovered
+// CZombie-style tail; ctor/setup/process/processDamage/archive
 // Ghidra size: 0xd0dc (53468 bytes)
 #pragma pack(push, 1)
 typedef struct CCarved {
-    char field_0[53468]; // 0x0
+    CEnemy base; // 0x0, derived; unchanged
+    float pickup_range_factor; // 0xd054, CCarved_ctor 00425960 = getRandomFloatFromRange(0.3,1.0); CZombie slot
+    int pickup_seed; // 0xd058, CCarved_ctor 00425960 = getRandomInt(0,0xff); CZombie slot
+    float pickup_scan_timer; // 0xd05c, CCarved_ctor 00425960 zeroes; pickup helper FLD/FSTP
+    float pickup_approach_progress; // 0xd060, CCarved_ctor 00425960 zeroes; pickup helper FADD
+    struct CDemonActor* pickup_target; // 0xd064, CCarved_process 00425da0 picks up it ("%s picked up %s using hand %d") then clears
+    int object_shape_class; // 0xd068, CCarved_process 00425da0 passes it to the hand-index helper; getCarryObjToBodyXForm reads
+    struct CDoor* target_door; // 0xd06c, CCarved_process 00425da0 CDoor_setSwingRange + "zombie-bang-door?.wav"
+    int always_chase_fast; // 0xd070, CCarved_archive 00428650 "alwaysChaseFast"; CCarved_ctor 00425960 zeroes
+    int is_female; // 0xd074, CCarved_setup 00425ab0 zeroes; CCarved_process 00425da0/CCarved_processDamage 00428a80 pick demn_* sound variant on it
+    int bone_indices[11]; // 0xd078, CCarved_setup 00425ab0 findBone Head, L/R Forearm, L/R UpperArm, L/R Foot, L/R Hand, Spine, Spine2
+    int part_indices[7]; // 0xd0a4, CCarved_setup 00425ab0 findPartByName larm01,l4arm01,rarm01,r4arm01,waist01,torso01,head01; indexes part status +0x2298
+    float pain_cooldown; // 0xd0c0, CCarved_processDamage 00428a80 sets 2.0 when <=0; CCarved_process 00425da0 decrements
+    float bleedout_timer; // 0xd0c4, CCarved_setup 00425ab0 zeroes; CCarved_process 00425da0 accumulates, -1 when done
+    uint sfx_handles[2]; // 0xd0c8, [0] CCarved_processDamage 00428a80 hurt sound, [1] CCarved_process 00425da0 groan/chase sound; isSfxPlaying/killSfx
+    float rise_delay; // 0xd0d0, CCarved_ctor 00425960 zeroes only; CZombie rise_delay slot
+    float buried_timer; // 0xd0d4, CCarved_ctor 00425960 zeroes only; CZombie buried_timer slot
+    float difficulty_speed_scale; // 0xd0d8, CCarved_ctor 00425960 0.75 / 1.0 by COMBATMODEHARD; CCarved_process 00425da0 delta*speed*this
 } CCarved;
 #pragma pack(pop)
 

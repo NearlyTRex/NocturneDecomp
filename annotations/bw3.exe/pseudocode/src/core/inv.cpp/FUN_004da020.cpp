@@ -70,7 +70,7 @@ LAB_004da0b1:
               }
               uVar8 = core_sound_cpp_CSound_playSound_FUN_005609b0
                                 (0x02CF5680,(void *)0x0,"voodoo1.wav");
-              *(uint *)&this_ptr->field_0x27ac = uVar8;
+              this_ptr->spectral_sound_handle = uVar8;
               *(uint *)(iVar6 + 0x1d70a24) = uVar8;
               iVar10 = iVar10 + 1;
               iVar9 = iVar9 + 4;
@@ -89,7 +89,7 @@ LAB_004da0b1:
               }
               uVar8 = core_sound_cpp_CSound_playSound_FUN_005609b0
                                 (0x02CF5680,(void *)0x0,"voodoo2.wav");
-              *(uint *)&this_ptr->field_0x27ac = uVar8;
+              this_ptr->spectral_sound_handle = uVar8;
               *(uint *)(iVar6 + 0x1d70a24) = uVar8;
               iVar10 = iVar10 + 1;
               iVar9 = iVar9 + 4;
@@ -109,7 +109,7 @@ LAB_004da0b1:
             }
             uVar8 = core_sound_cpp_CSound_playSound_FUN_005609b0
                               (0x02CF5680,(void *)0x0,"voodoo3.wav");
-            *(uint *)&this_ptr->field_0x27ac = uVar8;
+            this_ptr->spectral_sound_handle = uVar8;
             *(uint *)(iVar6 + 0x1d70a24) = uVar8;
             iVar10 = iVar10 + 1;
             iVar9 = iVar9 + 4;
@@ -129,7 +129,7 @@ LAB_004da0b1:
           }
           uVar8 = core_sound_cpp_CSound_playSound_FUN_005609b0
                             (0x02CF5680,(void *)0x0,"voodoo4.wav");
-          *(uint *)&this_ptr->field_0x27ac = uVar8;
+          this_ptr->spectral_sound_handle = uVar8;
           *(uint *)(iVar6 + 0x1d70a24) = uVar8;
           iVar10 = iVar10 + 1;
           iVar9 = iVar9 + 4;

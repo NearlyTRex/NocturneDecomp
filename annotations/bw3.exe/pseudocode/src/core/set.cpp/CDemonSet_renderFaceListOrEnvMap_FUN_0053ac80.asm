@@ -17,8 +17,8 @@
 ;   CGame* g_CGamePtr = 01d2130c
 ;   undefined4 DAT_01bdd7e4
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field484_0x214
-;   undefined4 g_CGameInstance.field488_0x218
+;   undefined4 g_CGameInstance.suppress_set_geometry
+;   undefined4 g_CGameInstance.render_mode
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_0053a6c0
@@ -33,10 +33,10 @@ section .text
         ;   Label: core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0053ac80
     PUSH EBP                            ; 0053ac81
     MOV EAX,[0x005fe9dc]                ; 0053ac82 | g_CGamePtr | g_CGameInstance
-    CMP dword ptr [EAX + 0x214],0x0     ; 0053ac87 | g_CGameInstance.field484_0x214
+    CMP dword ptr [EAX + 0x214],0x0     ; 0053ac87 | g_CGameInstance.suppress_set_geometry
     JNZ 0x0053acca                      ; 0053ac8e
         ;   XREF to: 0053acca (CONDITIONAL_JUMP)  ; LAB_0053acca
-    CMP dword ptr [EAX + 0x218],0x0     ; 0053ac90 | g_CGameInstance.field488_0x218
+    CMP dword ptr [EAX + 0x218],0x0     ; 0053ac90 | g_CGameInstance.render_mode
     JZ 0x0053acac                       ; 0053ac97
         ;   XREF to: 0053acac (CONDITIONAL_JUMP)  ; LAB_0053acac
     MOV EBX,dword ptr [0x005f2afc]      ; 0053ac99 | DAT_005f2afc

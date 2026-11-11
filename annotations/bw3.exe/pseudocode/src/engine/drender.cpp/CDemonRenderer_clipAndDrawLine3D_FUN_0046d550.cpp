@@ -25,18 +25,18 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046d550(CD
   
   bVar6 = 0;
   _DAT_01c6b5c0 = DAT_007303dc;
-  pSVar3 = this_ptr->vertex_buffer_ptr + vertex_index1 * 0x30;
+  pSVar3 = this_ptr->vertex_buffer_ptr + vertex_index1;
   piVar4 = aiStack_40;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *piVar4 = *(int *)pSVar3;
-    pSVar3 = pSVar3 + 4;
+    *piVar4 = (pSVar3->projected_vertex).transformed_x;
+    pSVar3 = (SRenderVertex *)&(pSVar3->projected_vertex).transformed_y;
     piVar4 = piVar4 + 1;
   }
-  pSVar3 = this_ptr->vertex_buffer_ptr + vertex_index2 * 0x30;
+  pSVar3 = this_ptr->vertex_buffer_ptr + vertex_index2;
   piVar4 = aiStack_a0;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *piVar4 = *(uint *)pSVar3;
-    pSVar3 = pSVar3 + 4;
+    *piVar4 = (pSVar3->projected_vertex).transformed_x;
+    pSVar3 = (SRenderVertex *)&(pSVar3->projected_vertex).transformed_y;
     piVar4 = piVar4 + 1;
   }
   if (((uStack_30 & uStack_90 & 0x80000000) == 0) || ((char)(uStack_30 & uStack_90) == '\0')) {
@@ -134,27 +134,30 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046d550(CD
           (-aiStack_a0[1] == aiStack_a0[2] || -aiStack_a0[2] < aiStack_a0[1])))))) &&
        ((0 < aiStack_40[2] && (0 < aiStack_a0[2])))) {
       piVar4 = aiStack_40;
-      pSVar3 = this_ptr->vertex_buffer_ptr + 0x124f20;
+      pSVar3 = this_ptr->vertex_buffer_ptr + 0x61a6;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-        *(int *)pSVar3 = *piVar4;
+        (pSVar3->projected_vertex).transformed_x = *piVar4;
         piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
-        pSVar3 = pSVar3 + ((uint)bVar6 * -2 + 1) * 4;
+        pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);
       }
       piVar4 = aiStack_a0;
-      pSVar3 = this_ptr->vertex_buffer_ptr + 0x124f50;
+      pSVar3 = this_ptr->vertex_buffer_ptr + 24999;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-        *(int *)pSVar3 = *piVar4;
+        (pSVar3->projected_vertex).transformed_x = *piVar4;
         piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
-        pSVar3 = pSVar3 + ((uint)bVar6 * -2 + 1) * 4;
+        pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);
       }
       engine_matrix_c_projectCachedPointUnchecked_FUN_004e5630(0x61a6);
       engine_matrix_c_projectCachedPointUnchecked_FUN_004e5630(24999);
-      engine_prim_c_replaceWWithDepth_FUN_00515a80(this_ptr->vertex_buffer_ptr + 0x124f20,2);
+      engine_prim_c_replaceWWithDepth_FUN_00515a80(this_ptr->vertex_buffer_ptr + 0x61a6,2);
       pSVar3 = this_ptr->vertex_buffer_ptr;
       engine_2d_c_drawLine3D_FUN_00401310
-                (*(int *)(pSVar3 + 0x124f30) >> 0x10,*(int *)(pSVar3 + 0x124f34) >> 0x10,
-                 *(uint *)(pSVar3 + 0x124f28),*(int *)(pSVar3 + 0x124f60) >> 0x10,
-                 *(int *)(pSVar3 + 0x124f64) >> 0x10,*(uint *)(pSVar3 + 0x124f58));
+                (pSVar3[0x61a6].projected_vertex.screen_x >> 0x10,
+                 pSVar3[0x61a6].projected_vertex.screen_y >> 0x10,
+                 pSVar3[0x61a6].projected_vertex.transformed_z,
+                 pSVar3[24999].projected_vertex.screen_x >> 0x10,
+                 pSVar3[24999].projected_vertex.screen_y >> 0x10,
+                 pSVar3[24999].projected_vertex.transformed_z);
       return;
     }
   }

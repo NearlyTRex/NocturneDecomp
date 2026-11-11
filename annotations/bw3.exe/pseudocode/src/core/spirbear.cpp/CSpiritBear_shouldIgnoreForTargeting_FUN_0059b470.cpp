@@ -12,6 +12,6 @@ int __cdecl core_spirbear_cpp_CSpiritBear_shouldIgnoreForTargeting_FUN_0059b470(
   SMotion *pSVar1;
   
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
-                     ((CMotionController *)&this_ptr->field_0x158);
-  return (uint)(*(int *)(pSVar1 + 0x24) == 0x92);
+                     (&(this_ptr->base).base.model.base);
+  return (uint)(pSVar1->state_index == 0x92);
 }

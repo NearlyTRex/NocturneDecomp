@@ -83,7 +83,7 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00431660(CCharacter 
             this_ptr->walk_state = WALK_STATE_WALKING;
           }
           fStack_18 = this_ptr->turn_angle_accumulator;
-          fStack_1c = *(float *)&this_ptr->field_0x2528;
+          fStack_1c = this_ptr->turn_speed;
           fVar7 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(fStack_18);
           fVar6 = -fStack_1c;
           if ((fVar6 <= fVar7) && (fVar6 = fVar7, fStack_1c < fVar7)) {
@@ -94,7 +94,7 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00431660(CCharacter 
         return 1;
       }
       pCVar4 = this_ptr->walk_to_target;
-      if ((((0.0 <= this_ptr->walk_min_distance) && (*(int *)&this_ptr->field_0x27a8 == 0)) &&
+      if ((((0.0 <= this_ptr->walk_min_distance) && (this_ptr->is_spectral == 0)) &&
           (iVar3 = core_actor_cpp_castToClassHash_FUN_0040c840
                              (pCVar4,g_CWayPointClassInfo.name_hash), iVar3 != 0)) &&
          (pCVar4 = (CDemonActor *)core_charactr_cpp_FUN_004349d0(this_ptr,iVar3),
@@ -111,7 +111,7 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00431660(CCharacter 
     }
     this_ptr->walk_state = WALK_STATE_IDLE;
     this_ptr->walk_timeout = 0.0;
-    if (*(int *)&this_ptr->field_0xcdc8 == 0) {
+    if (this_ptr->walk_immediate_pending == 0) {
       pCVar4 = this_ptr->walk_to_target;
       (this_ptr->base).location.position.x = (pCVar4->location).position.x;
       (this_ptr->base).location.position.y = (pCVar4->location).position.y;
@@ -130,7 +130,7 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00431660(CCharacter 
       (*(((this_ptr->base).vtable._uc)->_uc).clearDoorTarget)(this_ptr);
     }
     iVar3 = 1;
-    *(uint *)&this_ptr->field_0xcdc8 = 0;
+    this_ptr->walk_immediate_pending = 0;
   }
   return iVar3;
 }

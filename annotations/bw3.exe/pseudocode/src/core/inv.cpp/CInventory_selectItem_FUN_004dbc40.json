@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 88,
+    "complexity_score": 95,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 73,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 70,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 229
+    "total_lines": 226
   },
   "cross_references": [
     {
@@ -85,7 +85,7 @@
     },
     {
       "addr": "01d21570",
-      "name": "g_CGameInstance.field564_0x264",
+      "name": "g_CGameInstance.goggles_active",
       "type": "undefined4",
       "value": null
     }
@@ -198,12 +198,20 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x264",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x264 != 0) {",
-      "type": "unnamed_field"
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 26,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "severity": "moderate",
+      "text": "pCVar3 = (CInventory *)&pCVar3->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 43,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "severity": "moderate",
+      "text": "pCVar3 = (CInventory *)&pCVar3->owner;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

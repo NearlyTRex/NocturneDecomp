@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 44,
+    "complexity_score": 9,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 9,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 25
   },
   "cross_references": [],
@@ -43,7 +41,7 @@
     },
     {
       "addr": "01d21578",
-      "name": "g_CGameInstance.field572_0x26c",
+      "name": "g_CGameInstance.flashlight_active",
       "type": "undefined4",
       "value": null
     }
@@ -101,32 +99,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x20bcc",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x20bcc = drawn;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x26c",
-      "severity": "mild",
-      "text": "if ((drawn == 0) && (*(int *)&g_CGamePtr->field_0x26c != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x26c",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0x26c = 0;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

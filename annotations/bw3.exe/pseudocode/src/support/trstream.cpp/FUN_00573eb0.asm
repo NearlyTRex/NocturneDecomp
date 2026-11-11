@@ -7,8 +7,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   unkafter_turret.cpp_CInStreamFile_read_FUN_00573c00 at 00573c5e
 ;   unkafter_turret.cpp_FUN_00573b90 at 00573be1
-;   unkafter_turret.cpp_FUN_00573c00 at 00573c5e
 ;
 ; Referenced Globals:
 ;   void* PTR_ReadFile_005b3618 = 001b4100

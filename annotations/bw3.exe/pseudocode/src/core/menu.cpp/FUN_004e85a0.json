@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 815,
-    "complexity_score": 1080,
+    "complexity_score": 975,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 74,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 445,
-    "suspect_count": 58,
+    "suspect_count": 48,
     "suspect_types": [
       "dropped_loop_counter",
       "raw_address_constant",
       "raw_address_pointer_store",
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr",
       "unrolled_strcat",
       "unrolled_strcpy",
@@ -68,7 +67,7 @@
     {
       "addr": "004f9670",
       "is_variadic": false,
-      "name": "core_moon.cpp_FUN_004f9670"
+      "name": "core_moon.cpp_CMoon_render_FUN_004f9670"
     },
     {
       "addr": "0053b100",
@@ -359,25 +358,25 @@
     },
     {
       "addr": "01d21318",
-      "name": "g_CGameInstance.field3_0xc",
+      "name": "g_CGameInstance.halo_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d2131c",
-      "name": "g_CGameInstance.field7_0x10",
+      "name": "g_CGameInstance.subtitle_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d213ec",
-      "name": "g_CGameInstance.field176_0xe0",
+      "name": "g_CGameInstance.show_hero_numbers",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d213f0",
-      "name": "g_CGameInstance.field180_0xe4",
+      "name": "g_CGameInstance.show_crosshair",
       "type": "undefined4",
       "value": null
     },
@@ -806,14 +805,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 129,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0xc = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 141,
       "match": "DAT_01d73a00",
@@ -878,14 +869,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 233,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x10 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 240,
       "match": "DAT_01d73d00",
@@ -894,28 +877,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 250,
-      "match": "field_0xe0",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0xe0 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 257,
       "match": "DAT_01d73e00",
       "severity": "mild",
       "text": "pcVar6 = &DAT_01d73e00;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 267,
-      "match": "field_0xe4",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0xe4 == 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -964,54 +931,6 @@
       "severity": "mild",
       "text": "if (*(int *)(&DAT_01d740a8 + _DAT_01d74020 * 4) == 0x121a) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 432,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0x10 = (uint)(*(int *)&g_CGamePtr->field_0x10 == 0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 432,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0x10 = (uint)(*(int *)&g_CGamePtr->field_0x10 == 0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 436,
-      "match": "field_0xe0",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0xe0 = (uint)(*(int *)&g_CGamePtr->field_0xe0 == 0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 436,
-      "match": "field_0xe0",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0xe0 = (uint)(*(int *)&g_CGamePtr->field_0xe0 == 0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 440,
-      "match": "field_0xe4",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0xe4 = (uint)(*(int *)&g_CGamePtr->field_0xe4 == 0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 440,
-      "match": "field_0xe4",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0xe4 = (uint)(*(int *)&g_CGamePtr->field_0xe4 == 0);",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",

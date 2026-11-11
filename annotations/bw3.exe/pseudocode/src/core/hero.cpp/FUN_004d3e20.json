@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 468,
+    "complexity_score": 399,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 93,
-    "suspect_count": 34,
+    "pseudocode_lines": 89,
+    "suspect_count": 28,
     "suspect_types": [
       "bit_int_float_compare",
       "param_count_too_few",
       "pointer_cast",
-      "suspect_float",
       "unnamed_param",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 301
+    "total_lines": 297
   },
   "cross_references": [
     {
@@ -39,7 +38,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_hero.cpp_FUN_004d3e20",
-    "signature": "bool core_hero_cpp_FUN_004d3e20(CEnemy *param_1,char *param_2)"
+    "signature": "bool core_hero_cpp_FUN_004d3e20(CHero *param_1,char *param_2)"
   },
   "function_calls": [
     {
@@ -288,7 +287,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "bool core_hero_cpp_FUN_004d3e20(CEnemy *param_1,char *param_2)",
+      "text": "bool core_hero_cpp_FUN_004d3e20(CHero *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -296,31 +295,23 @@
       "line": 5,
       "match": "param_2",
       "severity": "mild",
-      "text": "bool core_hero_cpp_FUN_004d3e20(CEnemy *param_1,char *param_2)",
+      "text": "bool core_hero_cpp_FUN_004d3e20(CHero *param_1,char *param_2)",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 26,
-      "match": "5.60519e-45",
-      "severity": "mild",
-      "text": "return param_1[2].base.flames[0x13].base.orient.vec.z == 5.60519e-45;",
-      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "return param_1[2].base.flames[0x13].base.orient.vec.z == 5.60519e-45;",
+      "text": "return param_1->hero_action == 4;",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 28,
-      "match": "(CEnemy **)((int)g_CDemonSetPtr",
+      "match": "(CHero **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "this_ptr = *(CEnemy **)((int)g_CDemonSetPtr->actors + local_24);",
+      "text": "this_ptr = *(CHero **)((int)g_CDemonSetPtr->actors + local_24);",
       "type": "pointer_cast"
     },
     {
@@ -384,7 +375,7 @@
       "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CHero *)param_1,(CDemonActor *)this_ptr,iVar2,&local_28);",
+      "text": "(param_1,(CDemonActor *)this_ptr,iVar2,&local_28);",
       "type": "unnamed_param"
     },
     {
@@ -397,58 +388,50 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CInventory *)&param_1[2].base.flames[0x11].base.collision_disabled,",
+      "text": "core_inv_cpp_FUN_004da880(&param_1->inventory,(CDemonActor *)this_ptr,1);",
       "type": "unnamed_param"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 66,
-      "match": "7.00649e-44",
-      "severity": "mild",
-      "text": "(param_1[2].base.flames[0x13].base.orient_matrix.m[2].x == 7.00649e-44)) {",
-      "type": "suspect_float"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1[2].base.flames[0x13].base.orient_matrix.m[2].x == 7.00649e-44)) {",
+      "text": "if ((*(int *)(iVar2 + 0x318) == 0xb) && (param_1->bullets == 0x32)) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 71,
-      "match": "(float *)((int)(param_1[2].base.flames[0x13].base.orient_matrix.m + 1) +",
-      "severity": "moderate",
-      "text": "(*(float *)((int)(param_1[2].base.flames[0x13].base.orient_matrix.m + 1) + 8)",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(float *)((int)(param_1[2].base.flames[0x13].base.orient_matrix.m + 1) + 8)",
+      "text": "if ((*(int *)(iStack_20 + 0x318) != 10) || (param_1->mana != 100))",
       "type": "unnamed_param"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 72,
-      "match": "1.4013e-43",
+      "description": "Unnamed function parameter",
+      "line": 75,
+      "match": "param_1",
       "severity": "mild",
-      "text": "!= 1.4013e-43)) goto code_r0x004d400c;",
-      "type": "suspect_float"
+      "text": "param_1->hero_action_actor = (CDemonActor *)0x0;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 76,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[2].base.flames[0x13].base.orient_matrix.m[0].x = 0.0;",
+      "text": "param_1->hero_action_target = (CDemonActor *)0x0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 77,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->hero_action = 5;",
       "type": "unnamed_param"
     },
     {
@@ -456,23 +439,31 @@
       "line": 80,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[2].base.flames[0x13].base.orient_matrix.m[0].y = 0.0;",
+      "text": "iVar2 = (*(((param_1->base).base.vtable._ue)->_ue).randomize)((CEnemy *)param_1);",
       "type": "unnamed_param"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 81,
-      "match": "7.00649e-45",
+      "description": "Unnamed function parameter",
+      "line": 80,
+      "match": "param_1",
       "severity": "mild",
-      "text": "param_1[2].base.flames[0x13].base.orient.vec.z = 7.00649e-45;",
-      "type": "suspect_float"
+      "text": "iVar2 = (*(((param_1->base).base.vtable._ue)->_ue).randomize)((CEnemy *)param_1);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[2].base.flames[0x13].base.orient.vec.z = 7.00649e-45;",
+      "text": "param_1->hero_action = 4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 83,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->hero_action_actor = (CDemonActor *)this_ptr;",
       "type": "unnamed_param"
     },
     {
@@ -480,47 +471,7 @@
       "line": 84,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = (*(((param_1->base).base.vtable._ue)->_ue).randomize)(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = (*(((param_1->base).base.vtable._ue)->_ue).randomize)(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 86,
-      "match": "5.60519e-45",
-      "severity": "mild",
-      "text": "param_1[2].base.flames[0x13].base.orient.vec.z = 5.60519e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 86,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].base.flames[0x13].base.orient.vec.z = 5.60519e-45;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].base.flames[0x13].base.orient_matrix.m[0].x = (float)this_ptr;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 88,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].base.flames[0x13].base.orient_matrix.m[0].y = (float)this_ptr;",
+      "text": "param_1->hero_action_target = (CDemonActor *)this_ptr;",
       "type": "unnamed_param"
     },
     {

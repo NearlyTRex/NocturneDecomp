@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 59,
+    "complexity_score": 45,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 9,
-    "suspect_count": 4,
+    "pseudocode_lines": 10,
+    "suspect_count": 3,
     "suspect_types": [
-      "unnamed_field",
       "unnamed_param"
     ],
-    "total_lines": 28
+    "total_lines": 29
   },
   "cross_references": [],
   "function": {
@@ -96,19 +95,11 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 8,
+      "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((EVar1 == DEATH_STATE_ALIVE) && (*(int *)&param_1[1].model.field_0x920 != 0)) {",
+      "text": "(param_1[1].model.bone_transform.pose_data.bone_rotations[0x27].w != 0.0)) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x920",
-      "severity": "mild",
-      "text": "if ((EVar1 == DEATH_STATE_ALIVE) && (*(int *)&param_1[1].model.field_0x920 != 0)) {",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

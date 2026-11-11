@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 g_CDemonPodInstance.field404_0x194
+;   undefined4 g_CDemonPodInstance.base.vtable
 ;
 ; Called Functions:
 ;   crt_stdlib.c__atexit_FUN_005a3e13
@@ -22,7 +22,7 @@ section .text
     ADD ESP,0x4                         ; 005152ba
     MOV EDX,0x5e3494                    ; 005152bd
     PUSH 0x60394c                       ; 005152c2
-    MOV dword ptr [0x01ed2c84],EDX      ; 005152c7 | g_CDemonPodInstance.field404_0x194
+    MOV dword ptr [0x01ed2c84],EDX      ; 005152c7 | g_CDemonPodInstance.base.vtable
     CALL crt_stdlib.c__atexit_FUN_005a3e13 ; 005152cd
         ;   XREF to: 005a3e13 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005a3e13()
     ADD ESP,0x4                         ; 005152d2

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 95,
+    "complexity_score": 80,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 50,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy"
     ],
     "total_lines": 165
@@ -172,14 +171,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0xcc8",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0xcc8 == 0) {",
-      "type": "unnamed_field"
-    },
     {
       "description": "Undefined global data reference",
       "line": 43,

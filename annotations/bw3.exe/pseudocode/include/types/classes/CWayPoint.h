@@ -12,10 +12,8 @@
 #pragma pack(push, 1)
 typedef struct CWayPoint {
     CTrigger base; // 0x0
-    char field_880[4]; // 0x370
     int num_adjacent_waypoints; // 0x374
     SWayPointAdjacency adjacency[60]; // 0x378
-    char field_948[420]; // 0x3b4
     float pathfind_cost; // 0x558
 } CWayPoint;
 #pragma pack(pop)

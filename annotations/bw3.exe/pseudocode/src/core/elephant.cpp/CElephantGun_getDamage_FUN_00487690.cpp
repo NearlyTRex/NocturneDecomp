@@ -11,7 +11,7 @@ float __cdecl core_elephant_cpp_CElephantGun_getDamage_FUN_00487690(CElephantGun
 {
   float fVar1;
   
-  if (*(int *)&(this_ptr->base).field_0x56c == 6) {
+  if ((this_ptr->base).ammo_type == AMMO_TYPE_BLANKS) {
     return 0.0;
   }
   fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(450.0,600.0);

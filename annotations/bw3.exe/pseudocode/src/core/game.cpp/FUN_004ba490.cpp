@@ -21,11 +21,11 @@ void core_game_cpp_FUN_004ba490(void)
   memset(dest,value,count);
   memset(&DAT_01d21fa0,0,600);
   _DAT_01d221fc = g_CDemonSetPtr->selected_camera_index;
-  if ((*(int *)&g_CFieldNotesPtr->field_0x40 == 0) && (DAT_007dffb4 == 0)) {
-    _DAT_01d221f8 = *(int *)&g_CFieldNotesPtr->field_0x40;
+  if ((g_CFieldNotesPtr->is_displayed == 0) && (DAT_007dffb4 == 0)) {
+    _DAT_01d221f8 = g_CFieldNotesPtr->is_displayed;
     wincore_winrun_cpp_setCursorPosition_FUN_005809d0(DAT_005fba18 / 2,DAT_005fba1c / 2);
   }
-  if (*(int *)&g_CFieldNotesPtr->field_0x40 != 0) {
+  if (g_CFieldNotesPtr->is_displayed != 0) {
     _DAT_01d22b48 = 0xffffffff;
   }
   if (DAT_007dffb4 == 0) {

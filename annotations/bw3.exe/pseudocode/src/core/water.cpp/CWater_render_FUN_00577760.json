@@ -772,10 +772,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 105,
+      "line": 104,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr,local_48);",
+      "text": "engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,local_48)",
       "type": "undefined_data"
     },
     {
@@ -783,7 +783,7 @@
       "line": 118,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x30),&local_60);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_60);",
       "type": "undefined_data"
     },
     {
@@ -791,7 +791,7 @@
       "line": 131,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x60),&local_6c);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_6c);",
       "type": "undefined_data"
     },
     {
@@ -799,7 +799,7 @@
       "line": 144,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x90),&local_54);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_54);",
       "type": "undefined_data"
     },
     {

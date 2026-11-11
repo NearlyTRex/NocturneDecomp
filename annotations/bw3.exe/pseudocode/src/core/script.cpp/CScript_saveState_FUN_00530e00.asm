@@ -63,7 +63,7 @@ section .text
         ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
     MOV EAX,[0x005fe9dc]                ; 00530e35 | g_CGamePtr
     ADD ESP,0x8                         ; 00530e3a
-    MOV EDX,dword ptr [EAX + 0x24c]     ; 00530e3d | g_CGameInstance.field540_0x24c
+    MOV EDX,dword ptr [EAX + 0x24c]     ; 00530e3d | g_CGameInstance.letterbox_mode
     PUSH EDX                            ; 00530e43
     PUSH 0x5cfe33                       ; 00530e44 | DAT_005cfe33
     PUSH EDI                            ; 00530e49
@@ -76,7 +76,7 @@ section .text
         ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
     MOV EAX,[0x005fe9dc]                ; 00530e5d | g_CGamePtr
     ADD ESP,0x8                         ; 00530e62
-    MOV ECX,dword ptr [EAX + 0x250]     ; 00530e65 | g_CGameInstance.field544_0x250
+    MOV ECX,dword ptr [EAX + 0x250]     ; 00530e65 | g_CGameInstance.allow_damage_flag
     PUSH ECX                            ; 00530e6b
     PUSH 0x5cfe52                       ; 00530e6c | DAT_005cfe52
     PUSH EDI                            ; 00530e71
@@ -89,7 +89,7 @@ section .text
         ;   XREF to: 005a3140 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3140()
     MOV EAX,[0x005fe9dc]                ; 00530e85 | g_CGamePtr
     ADD ESP,0x8                         ; 00530e8a
-    MOV EBX,dword ptr [EAX + 0x254]     ; 00530e8d | g_CGameInstance.field548_0x254
+    MOV EBX,dword ptr [EAX + 0x254]     ; 00530e8d | g_CGameInstance.allow_enemy_attack_flag
     PUSH EBX                            ; 00530e93
     PUSH 0x5cfe76                       ; 00530e94 | DAT_005cfe76
     PUSH EDI                            ; 00530e99

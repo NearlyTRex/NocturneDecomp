@@ -11,7 +11,7 @@ void core_dog_cpp_FUN_004636e0(void)
 {
   CDemonDog *this_ptr;
   
-  this_ptr = (CDemonDog *)debugAllocTracked1(0xd064);
+  this_ptr = (CDemonDog *)operator_new(0xd064);
   if (this_ptr == (CDemonDog *)0x0) {
     return;
   }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_0048666e(CEdCheck *param_1,undefined4 param_2,undefined4 param_3,CEdCheck *param_4)
+; void shape_edittool_cpp_FUN_0048666e(CEdCheck *param_1,int param_2,int param_3,char *param_4)
 ;
 ;
 ; Referenced Globals:

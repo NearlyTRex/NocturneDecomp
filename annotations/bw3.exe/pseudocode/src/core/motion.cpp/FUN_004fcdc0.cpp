@@ -49,15 +49,15 @@ void __cdecl core_motion_cpp_FUN_004fcdc0(CMotionController *this_ptr,CDemonActo
     local_2c.y = (int)ROUND(local_34 * _DAT_005e2c60);
     local_2c.z = (int)ROUND(_DAT_005e2c60 * 0.0);
     engine_special_cpp_FUN_005632a3
-              ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x124f50),&local_2c);
+              (&DAT_005f2afc->vertex_buffer_ptr[24999].projected_vertex,&local_2c);
     pSVar2 = DAT_005f2afc->vertex_buffer_ptr;
-    if (((byte)pSVar2[0x124f63] & 0x80) == 0) {
-      iVar5 = *(int *)(pSVar2 + 0x124f64) >> 0x10;
-      local_14 = (*(int *)(pSVar2 + 0x124f60) >> 0x10) + -0x23;
+    if ((int)(pSVar2[24999].projected_vertex.screen_x & -0x80000000) == 0) {
+      iVar5 = pSVar2[24999].projected_vertex.screen_y >> 0x10;
+      local_14 = (pSVar2[24999].projected_vertex.screen_x >> 0x10) + -0x23;
       engine_2d_c_drawText_FUN_00401fe0(actor->actor_name,local_14,iVar5 + -0x21);
       if ((this_ptr->state_index < 0) ||
          (pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(this_ptr),
-         *(int *)(pSVar3 + 0x24) == this_ptr->state_index)) {
+         pSVar3->state_index == this_ptr->state_index)) {
         pcVar4 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_004fc320(this_ptr);
         pcVar8 = &stack0xffffff40;
         do {

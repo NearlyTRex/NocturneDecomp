@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 148,
+    "complexity_score": 163,
     "cross_reference_count": 29,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 88,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
       "unrolled_strcpy"
     ],
@@ -422,6 +423,13 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "'(CKeyFramedModelInstance *)&pCVar2[1].base.process_disabled' walks 1 x sizeof(CCharacter) (0xcdcc) + offsetof(base.process_disabled) (0x104) + 0x0 = 0xced0, which is exactly offsetof(CEnemy, spawn_model). Ghidra had no CEnemy type here and reached the field by index arithmetic; write it as ((CEnemy *)pCVar2)->spawn_model (\u00a7de-pun/\u00a712).",
+      "line": 14,
+      "severity": "moderate",
+      "text": "((CKeyFramedModelInstance *)&pCVar2[1].base.process_disabled);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

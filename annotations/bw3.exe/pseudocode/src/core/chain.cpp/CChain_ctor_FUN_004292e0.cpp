@@ -17,7 +17,7 @@ CChain * __cdecl core_chain_cpp_CChain_ctor_FUN_004292e0(CChain *this_ptr)
   
   pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408600(&this_ptr->base);
   iVar3 = __arrinit
-                    (&pCVar2[1].previous_transform_state.orientation,0x14,&g_SChainVertexTypeInfo);
+                    (&pCVar2[1].previous_transform_state.position.z,0x14,&g_SChainVertexTypeInfo);
   *(CDemonActor_vtable **)(iVar3 + -0x138) = &g_CChainVTable;
   *(uint *)(iVar3 + -0x134) = 10;
   *(uint *)(iVar3 + -0x130) = 0x40a00000;

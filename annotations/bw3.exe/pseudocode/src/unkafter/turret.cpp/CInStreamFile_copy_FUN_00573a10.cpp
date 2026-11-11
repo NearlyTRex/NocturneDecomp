@@ -14,6 +14,6 @@ CInStreamFile * unkafter_turret_cpp_CInStreamFile_copy_FUN_00573a10(CInStreamFil
   CInStreamFile *pCVar1;
   
   pCVar1 = (CInStreamFile *)unkafter_turret_cpp_FUN_00572530(this_ptr);
-  *(byte ***)pCVar1 = &g_CInStreamFileVTable;
+  pCVar1->vtable = &g_CInStreamFileVTable;
   return pCVar1;
 }

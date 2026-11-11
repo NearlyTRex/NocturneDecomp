@@ -4,13 +4,26 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCharacter.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CRing
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 484; ctor 004a4600 only arrinits two 16-entry CVector arrays at +0x30 and +0xf0 (no base, no vtable); static pool of 10 at 0x1d0bb94 (stride 0x1e4 in createRing 004a3f70 / CFireEffect loops)
 // Ghidra size: 0x1e4 (484 bytes)
 #pragma pack(push, 1)
 typedef struct CRing {
-    char field_0[484]; // 0x0
+    int ring_type; // 0x0, activate 0049fce0 stores arg 3; process 0049fdf0 branches on 0 (damage + sparks) / 1 (pushes non-hero characters)
+    CVector3f center; // 0x4, activate copies the position arg and lifts .y to ground+1
+    char field_16[4]; // 0x10
+    float lifetime; // 0x14, activate sets 2.0; process subtracts dt and stops at 0; the pool reset zeroes it through the folded CLightningBolt_reset 0049f410 (+0x14 = 0)
+    char field_24[20]; // 0x18
+    struct CCharacter* owner; // 0x2c, activate stores arg 4; process skips the actor equal to it
+    CVector3f points[16]; // 0x30, ctor arrinit CVector x16 at +0x30; activate sets each to center; process moves each by its direction*speed*dt and spawns trail segments between neighbours
+    CVector3f directions[16]; // 0xf0, ctor arrinit CVector x16 at +0xf0; activate stores (cos i*k, 0, sin i*k)
+    float segment_timer; // 0x1b0, activate sets 0.05; process counts it down and re-arms it after spawning trail segments
+    float radius; // 0x1b4, activate zeroes it; process grows it by speed*dt and hits characters whose distance is within radius+1
+    struct CCharacter* hit_actors[10]; // 0x1b8, process records each character it hit (up to 10) and skips ones already listed
+    int hit_count; // 0x1e0, activate zeroes it; process bounds the hit list by it and increments
 } CRing;
 #pragma pack(pop)
 

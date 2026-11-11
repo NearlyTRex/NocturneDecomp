@@ -13,7 +13,7 @@ CStorm * core_storm_cpp_CStorm_ctor_FUN_00568ab0(CStorm *this_ptr)
 {
   CWeapon *pCVar1;
   
-  pCVar1 = core_weapon_cpp_CWeapon_ctor_FUN_0057ad70((CWeapon *)this_ptr);
+  pCVar1 = core_weapon_cpp_CWeapon_ctor_FUN_0057ad70(&this_ptr->base);
   (pCVar1->base).vtable._ub = &g_CStormVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
             (&pCVar1->model,"rainvial.kfm");
@@ -22,10 +22,10 @@ CStorm * core_storm_cpp_CStorm_ctor_FUN_00568ab0(CStorm *this_ptr)
   pCVar1->weapon_type = WEAPON_TYPE_BARON|WEAPON_TYPE_FLASHLIGHT;
   pCVar1->can_penetrate = 1;
   pCVar1->bolt_velocity = 50.0;
-  *(uint *)&pCVar1->field_0x56c = 10;
-  *(uint *)&pCVar1->field_0x58c = 0x23;
-  *(uint *)&pCVar1->field_0x574 = 3;
-  *(uint *)&pCVar1->field_0x57c = 0;
-  *(uint *)&pCVar1->field_0x578 = 2;
+  pCVar1->ammo_type = AMMO_TYPE_MANA;
+  pCVar1->ammo_per_shot = 0x23;
+  pCVar1->weapon_class = 3;
+  pCVar1->draw_crosshair = 0;
+  pCVar1->number_of_hands_needed = 2;
   return (CStorm *)pCVar1;
 }

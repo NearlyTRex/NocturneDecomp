@@ -13,30 +13,30 @@ void core_fire_cpp_FUN_004a0480(CDemonActor *param_1)
   CSound *this_ptr;
   int *piVar2;
   uint uVar3;
-  byte *puVar4;
-  uint local_20;
-  uint local_1c;
-  uint local_18;
-  uint local_14;
-  uint local_10;
-  uint local_c;
+  CVector3f *pCVar4;
+  float local_20;
+  float local_1c;
+  float local_18;
+  float local_14;
+  float local_10;
+  float local_c;
   
   piVar2 = 0x02D0C1A0;
   iVar1 = *0x02D0C1A0;
   *(int *)(param_1->actor_name + 4) = iVar1;
   if (iVar1 == 0) {
     iVar1 = g_CDemonSetPtr->selected_camera_index;
-    puVar4 = &g_CDemonSetPtr->cameras[iVar1].field_0x100;
-    if (&local_14 != (uint *)puVar4) {
-      local_14 = *(uint *)puVar4;
-      local_10 = *(uint *)&g_CDemonSetPtr->cameras[iVar1].field_0x104;
-      local_c = *(uint *)&g_CDemonSetPtr->cameras[iVar1].field_0x108;
+    pCVar4 = &g_CDemonSetPtr->cameras[iVar1].position;
+    if ((CVector3f *)&local_14 != pCVar4) {
+      local_14 = pCVar4->x;
+      local_10 = g_CDemonSetPtr->cameras[iVar1].position.y;
+      local_c = g_CDemonSetPtr->cameras[iVar1].position.z;
     }
-    puVar4 = &g_CDemonSetPtr->cameras[iVar1].field_0x10c;
-    if (&local_20 != (uint *)puVar4) {
-      local_20 = *(uint *)puVar4;
-      local_1c = *(uint *)&g_CDemonSetPtr->cameras[iVar1].field_0x110;
-      local_18 = *(uint *)&g_CDemonSetPtr->cameras[iVar1].field_0x114;
+    pCVar4 = &g_CDemonSetPtr->cameras[iVar1].orientation;
+    if ((CVector3f *)&local_20 != pCVar4) {
+      local_20 = pCVar4->x;
+      local_1c = g_CDemonSetPtr->cameras[iVar1].orientation.y;
+      local_18 = g_CDemonSetPtr->cameras[iVar1].orientation.z;
     }
     core_weather_cpp_FUN_0057d050(0x02D0C1A0,5);
     core_weather_cpp_FUN_0057d1a0(0x02D0C1A0,&local_14,&local_20);

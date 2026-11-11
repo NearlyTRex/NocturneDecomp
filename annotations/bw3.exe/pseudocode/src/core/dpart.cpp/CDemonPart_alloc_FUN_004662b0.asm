@@ -16,7 +16,7 @@
 ; Called Functions:
 ;   core_dpart.cpp_FUN_004663b0
 ;   core_main.c_FUN_004e4330
-;   crt_unknown.c_FUN_005a4b20
+;   crt_memory.c_calloc_FUN_005a4b20
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
@@ -51,8 +51,8 @@ section .text
     PUSH 0xc                            ; 004662e5
         ;   Label: LAB_004662e5
     PUSH EDX                            ; 004662e7
-    CALL crt_unknown.c_FUN_005a4b20     ; 004662e8
-        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a4b20()
+    CALL crt_memory.c_calloc_FUN_005a4b20 ; 004662e8
+        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_calloc_FUN_005a4b20()
     ADD ESP,0x8                         ; 004662ed
     MOV dword ptr [EBX + 0x2c],EAX      ; 004662f0
     TEST EAX,EAX                        ; 004662f3
@@ -79,8 +79,8 @@ section .text
         ;   Label: LAB_0046632d
     MOV EDX,dword ptr [EBX + 0x20]      ; 0046632f
     PUSH EDX                            ; 00466332
-    CALL crt_unknown.c_FUN_005a4b20     ; 00466333
-        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a4b20()
+    CALL crt_memory.c_calloc_FUN_005a4b20 ; 00466333
+        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_calloc_FUN_005a4b20()
     ADD ESP,0x8                         ; 00466338
     MOV dword ptr [EBX + 0x30],EAX      ; 0046633b
     TEST EAX,EAX                        ; 0046633e
@@ -101,8 +101,8 @@ section .text
     PUSH 0x20                           ; 0046636c
         ;   Label: LAB_0046636c
     PUSH EBP                            ; 0046636e
-    CALL crt_unknown.c_FUN_005a4b20     ; 0046636f
-        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a4b20()
+    CALL crt_memory.c_calloc_FUN_005a4b20 ; 0046636f
+        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_calloc_FUN_005a4b20()
     ADD ESP,0x8                         ; 00466374
     MOV dword ptr [EBX + 0x34],EAX      ; 00466377
     TEST EAX,EAX                        ; 0046637a

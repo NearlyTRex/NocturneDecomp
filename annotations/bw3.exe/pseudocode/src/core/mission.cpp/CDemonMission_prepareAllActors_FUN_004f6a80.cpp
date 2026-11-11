@@ -11,7 +11,7 @@ void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_004f6a80(CDemon
 {
   char *pcVar1;
   int iVar2;
-  int iVar3;
+  CDemonActor *pCVar3;
   int iVar4;
   int iVar5;
   uint uVar6;
@@ -21,20 +21,20 @@ void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_004f6a80(CDemon
   core_level_cpp_FUN_004e0000(0x01D70AB8,pcVar1,uVar6);
   core_skeleton_cpp_FUN_005503c0();
   iVar5 = 0;
-  for (iVar3 = *(int *)(this_ptr + 0x143c); iVar3 != 0; iVar3 = *(int *)(iVar3 + 0x14c)) {
+  for (pCVar3 = this_ptr->first_actor; pCVar3 != (CDemonActor *)0x0; pCVar3 = pCVar3->next_actor) {
     iVar5 = iVar5 + 1;
-    (**(code **)(*(int *)(iVar3 + 0x154) + 4))(iVar3);
+    (*((pCVar3->vtable)._ub)->markResourcesInUse)(pCVar3);
   }
-  if (*(int *)(this_ptr + 0x1008) == 0) {
+  if (this_ptr->is_in_editor == 0) {
     core_skeleton_cpp_FUN_005503f0();
   }
-  iVar3 = *(int *)(this_ptr + 0x143c);
+  pCVar3 = this_ptr->first_actor;
   iVar4 = 0;
-  if (iVar3 != 0) {
+  if (pCVar3 != (CDemonActor *)0x0) {
     iVar2 = iVar5 * 3 >> 0x1f;
     do {
       iVar4 = iVar4 + 1;
-      (*(code *)**(uint **)(iVar3 + 0x154))(iVar3);
+      (*((pCVar3->vtable)._ub)->setup)(pCVar3);
       if (iVar4 == (int)((iVar5 + (iVar5 >> 0x1f) * -4) - (uint)((iVar5 >> 0x1f) << 1 < 0)) >> 2) {
         uVar6 = 0;
         pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Setting up actors");
@@ -50,9 +50,9 @@ void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_004f6a80(CDemon
         pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Setting up actors");
         core_level_cpp_FUN_004e0000(0x01D70AB8,pcVar1,uVar6);
       }
-      iVar3 = *(int *)(iVar3 + 0x14c);
-    } while (iVar3 != 0);
+      pCVar3 = pCVar3->next_actor;
+    } while (pCVar3 != (CDemonActor *)0x0);
   }
-  *(uint *)(this_ptr + 0x1454) = *(uint *)this_ptr;
+  this_ptr->prepared_set_index = this_ptr->current_set_index;
   return;
 }

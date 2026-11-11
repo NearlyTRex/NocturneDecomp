@@ -24,7 +24,7 @@ int __cdecl core_hino_cpp_CHino_getTargetPoints_FUN_0059d410(CHino *this_ptr,CVe
   uint auStack_18 [2];
   
   bVar1 = 0;
-  core_skeleton_cpp_FUN_0054dcc0(&this_ptr->field_0x158,_DAT_02d24c4c);
+  core_skeleton_cpp_FUN_0054dcc0(&(this_ptr->base).base.model,_DAT_02d24c4c);
   CStack_28.x = fStack_1c;
   *(uint *)((int)&CStack_28 + (uint)bVar1 * -8 + 4) = auStack_18[(uint)bVar1 * -2];
   *(uint *)((int)&CStack_28 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
@@ -34,7 +34,7 @@ int __cdecl core_hino_cpp_CHino_getTargetPoints_FUN_0059d410(CHino *this_ptr,CVe
     out_points_array->y = CStack_28.y;
     out_points_array->z = CStack_28.z;
   }
-  core_skeleton_cpp_FUN_0054dcc0(&this_ptr->field_0x158,_DAT_02d24c70);
+  core_skeleton_cpp_FUN_0054dcc0(&(this_ptr->base).base.model,_DAT_02d24c70);
   CStack_40.x = fStack_4c;
   *(float *)((int)&CStack_40 + (uint)bVar1 * -8 + 4) = afStack_48[(uint)bVar1 * -2];
   *(float *)((int)&CStack_40 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
@@ -44,7 +44,7 @@ int __cdecl core_hino_cpp_CHino_getTargetPoints_FUN_0059d410(CHino *this_ptr,CVe
     out_points_array[1].y = CStack_40.y;
     out_points_array[1].z = CStack_40.z;
   }
-  core_skeleton_cpp_FUN_0054dcc0(&this_ptr->field_0x158,_DAT_02d24c78);
+  core_skeleton_cpp_FUN_0054dcc0(&(this_ptr->base).base.model,_DAT_02d24c78);
   CStack_58.x = fStack_34;
   *(float *)((int)&CStack_58 + (uint)bVar1 * -8 + 4) = afStack_30[(uint)bVar1 * -2];
   *(float *)((int)&CStack_58 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =

@@ -4,12 +4,18 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3i.h"
 
 // Structure: SMRGLModelBounds
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// getMRGLBounds pair 004f8170 returns a 13-dword struct (MOV ECX,0xd; MOVSD.REP) built on the stack: min/max read back at +0x4/+0x8/+0x10/+0x14, center at +0x18..+0x20, radius = round(sqrt(sum extent^2)) at +0x24, extent = max(|min|,|max|) per axis at +0x28..+0x30
+// Ghidra size: 0x34 (52 bytes)
 #pragma pack(push, 1)
 typedef struct SMRGLModelBounds {
+    CVector3i min_scaled; // 0x0
+    CVector3i max_scaled; // 0xc
+    CVector3i center_scaled; // 0x18
+    int radius_scaled; // 0x24
+    CVector3i extent; // 0x28
 } SMRGLModelBounds;
 #pragma pack(pop)
 

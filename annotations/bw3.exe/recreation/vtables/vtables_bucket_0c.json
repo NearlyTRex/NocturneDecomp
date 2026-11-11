@@ -15,12 +15,12 @@
       },
       {
         "addr":"00441530",
-        "name":"support_codec.cpp_FUN_00441530",
+        "name":"support_codec.cpp_CAsciiArmor_encode_FUN_00441530",
         "offset":8
       },
       {
         "addr":"00441580",
-        "name":"support_codec.cpp_FUN_00441580",
+        "name":"support_codec.cpp_CAsciiArmor_flush_FUN_00441580",
         "offset":12
       },
       {
@@ -52,11 +52,10 @@
   },
   {
     "addr":"005dd9c4",
-    "owner":"CEnemy",
+    "owner":"CConstructRed",
     "slots":[
       {
         "addr":"004425f0",
-        "foreign":"CConstruct",
         "name":"core_constrct.cpp_CConstruct_setup_FUN_004425f0",
         "offset":0
       },
@@ -72,13 +71,11 @@
       },
       {
         "addr":"00442a20",
-        "foreign":"CConstruct",
         "name":"core_constrct.cpp_CConstruct_process_FUN_00442a20",
         "offset":12
       },
       {
         "addr":"00443c90",
-        "foreign":"CConstruct",
         "name":"core_constrct.cpp_CConstruct_renderOpaque_FUN_00443c90",
         "offset":16
       },
@@ -164,7 +161,6 @@
       },
       {
         "addr":"00444010",
-        "foreign":"CConstruct",
         "name":"core_constrct.cpp_CConstruct_getTargetPoints_FUN_00444010",
         "offset":84
       },
@@ -320,13 +316,11 @@
       },
       {
         "addr":"00444660",
-        "foreign":"CConstructRed",
         "name":"core_construc.cpp_CConstructRed_dtor_FUN_00444660",
         "offset":208
       },
       {
         "addr":"00443ca0",
-        "foreign":"CConstruct",
         "name":"core_constrct.cpp_CConstruct_archive_FUN_00443ca0",
         "offset":212
       },
@@ -392,7 +386,6 @@
       },
       {
         "addr":"00443f00",
-        "foreign":"CConstruct",
         "name":"core_constrct.cpp_CConstruct_processDamage_FUN_00443f00",
         "offset":264
       },
@@ -906,7 +899,7 @@
   },
   {
     "addr":"005de9c4",
-    "owner":"CZombieDog",
+    "owner":"CEtherealDog",
     "slots":[
       {
         "addr":"00462790",
@@ -1165,13 +1158,11 @@
       },
       {
         "addr":"004637a0",
-        "foreign":"CEtherealDog",
         "name":"core_dog.cpp_CEtherealDog_getActorType_FUN_004637a0",
         "offset":204
       },
       {
         "addr":"00463810",
-        "foreign":"CEtherealDog",
         "name":"core_dog.cpp_CEtherealDog_dtor_FUN_00463810",
         "offset":208
       },
@@ -1328,12 +1319,32 @@
     ]
   },
   {
+    "addr":"005e02c4",
+    "owner":"SPageResourceTwanaEntry",
+    "slots":[
+      {
+        "addr":"004a8980",
+        "name":"core_fldnotes.cpp_SPageResourceTwanaEntry_dtor_FUN_004a8980",
+        "offset":0
+      },
+      {
+        "addr":"004a8a00",
+        "name":"core_fldnotes.cpp_SPageResourceTwanaEntry_draw_FUN_004a8a00",
+        "offset":4
+      },
+      {
+        "addr":"004a8470",
+        "name":"core_fldnotes.cpp_SPageResource_onMouse_FUN_004a8470",
+        "offset":8
+      }
+    ]
+  },
+  {
     "addr":"005e17c4",
-    "owner":"CWeapon",
+    "owner":"CHolycross",
     "slots":[
       {
         "addr":"004d52e0",
-        "foreign":"CHolycross",
         "name":"core_holycrss.cpp_CHolycross_setup_FUN_004d52e0",
         "offset":0
       },
@@ -1479,7 +1490,6 @@
       },
       {
         "addr":"004d51c0",
-        "foreign":"CHolycross",
         "name":"core_holycrss.cpp_CHolycross_getAllowedMeleeAttackTypes_FUN_004d51c0",
         "offset":116
       },
@@ -1490,13 +1500,11 @@
       },
       {
         "addr":"004d51d0",
-        "foreign":"CHolycross",
         "name":"core_holycrss.cpp_CHolycross_fillAttackDamageInfo_FUN_004d51d0",
         "offset":124
       },
       {
         "addr":"004d5260",
-        "foreign":"CHolycross",
         "name":"core_holycrss.cpp_CHolycross_playAttackHitEffects_FUN_004d5260",
         "offset":128
       },
@@ -1592,13 +1600,11 @@
       },
       {
         "addr":"004d50c0",
-        "foreign":"CHolycross",
         "name":"core_holycrss.cpp_CHolycross_getActorType_FUN_004d50c0",
         "offset":204
       },
       {
         "addr":"004d5320",
-        "foreign":"CHolycross",
         "name":"core_holycrss.cpp_CHolycross_dtor_FUN_004d5320",
         "offset":208
       },
@@ -1624,7 +1630,6 @@
       },
       {
         "addr":"004d5170",
-        "foreign":"CHolycross",
         "name":"core_holycrss.cpp_CHolycross_fire_FUN_004d5170",
         "offset":228
       },
@@ -1635,7 +1640,6 @@
       },
       {
         "addr":"004d5190",
-        "foreign":"CHolycross",
         "name":"core_holycrss.cpp_CHolycross_getDamage_FUN_004d5190",
         "offset":236
       },
@@ -1934,7 +1938,7 @@
   },
   {
     "addr":"005e3ec4",
-    "owner":"CEnemy",
+    "owner":"CShadowForest",
     "slots":[
       {
         "addr":"00543680",
@@ -2198,7 +2202,6 @@
       },
       {
         "addr":"00546140",
-        "foreign":"CShadowForest",
         "name":"core_shadow.cpp_CShadowForest_dtor_FUN_00546140",
         "offset":208
       },
@@ -2686,64 +2689,65 @@
       },
       {
         "addr":"00574230",
-        "name":"support_trstream.cpp_FUN_00574230",
+        "name":"support_trstream.cpp_CInStreamMemory_getChar_FUN_00574230",
         "offset":4
       },
       {
         "addr":"00574280",
-        "name":"support_trstream.cpp_FUN_00574280",
+        "name":"support_trstream.cpp_CInStreamMemory_ungetChar_FUN_00574280",
         "offset":8
       },
       {
         "addr":"005742c0",
-        "name":"support_trstream.cpp_FUN_005742c0",
+        "name":"support_trstream.cpp_CInStreamMemory_peekChar_FUN_005742c0",
         "offset":12
       },
       {
         "addr":"005742f0",
-        "name":"support_trstream.cpp_FUN_005742f0",
+        "name":"support_trstream.cpp_CInStreamMemory_read_FUN_005742f0",
         "offset":16
       },
       {
         "addr":"00574350",
-        "name":"support_trstream.cpp_FUN_00574350",
+        "name":"support_trstream.cpp_CInStreamMemory_seek_FUN_00574350",
         "offset":20
       },
       {
         "addr":"005743a0",
-        "name":"support_trstream.cpp_FUN_005743a0",
+        "name":"support_trstream.cpp_CInStreamMemory_tell_FUN_005743a0",
         "offset":24
       },
       {
         "addr":"00573d60",
-        "name":"unkafter_turret.cpp_FUN_00573d60",
+        "foreign":"CInStreamFile",
+        "name":"unkafter_turret.cpp_CInStreamFile_isOpen_FUN_00573d60",
         "offset":28
       },
       {
         "addr":"005743c0",
-        "name":"support_trstream.cpp_FUN_005743c0",
+        "name":"support_trstream.cpp_CInStreamMemory_isEof_FUN_005743c0",
         "offset":32
       },
       {
         "addr":"005743f0",
-        "name":"support_trstream.cpp_FUN_005743f0",
+        "name":"support_trstream.cpp_CInStreamMemory_close_FUN_005743f0",
         "offset":36
       },
       {
         "addr":"00574440",
-        "name":"support_trstream.cpp_FUN_00574440",
+        "name":"support_trstream.cpp_CInStreamMemory_open_FUN_00574440",
         "offset":40
       },
       {
         "addr":"00574470",
-        "name":"support_trstream.cpp_FUN_00574470",
+        "name":"support_trstream.cpp_CInStreamMemory_openOwned_FUN_00574470",
         "offset":44
       }
     ]
   },
   {
     "addr":"005e5fc4",
-    "owner":"CWaterActor",
+    "owner":"CLava",
     "slots":[
       {
         "addr":"00577ee0",
@@ -3002,13 +3006,11 @@
       },
       {
         "addr":"00579010",
-        "foreign":"CLava",
         "name":"core_wateract.cpp_CLava_getActorType_FUN_00579010",
         "offset":204
       },
       {
         "addr":"00579050",
-        "foreign":"CLava",
         "name":"core_wateract.cpp_CLava_dtor_FUN_00579050",
         "offset":208
       },
@@ -3442,11 +3444,10 @@
   },
   {
     "addr":"005e81c4",
-    "owner":"CEnemy",
+    "owner":"CHino",
     "slots":[
       {
         "addr":"0059b770",
-        "foreign":"CHino",
         "name":"core_hino.cpp_CHino_setup_FUN_0059b770",
         "offset":0
       },
@@ -3462,7 +3463,6 @@
       },
       {
         "addr":"0059b960",
-        "foreign":"CHino",
         "name":"core_hino.cpp_CHino_process_FUN_0059b960",
         "offset":12
       },
@@ -3473,7 +3473,6 @@
       },
       {
         "addr":"0059d120",
-        "foreign":"CHino",
         "name":"core_hino.cpp_CHino_renderTransparent_FUN_0059d120",
         "offset":20
       },
@@ -3524,7 +3523,6 @@
       },
       {
         "addr":"0059d640",
-        "foreign":"CHino",
         "name":"core_hino.cpp_CHino_getCollisionType_FUN_0059d640",
         "offset":60
       },
@@ -3555,7 +3553,6 @@
       },
       {
         "addr":"0059d410",
-        "foreign":"CHino",
         "name":"core_hino.cpp_CHino_getTargetPoints_FUN_0059d410",
         "offset":84
       },
@@ -3706,19 +3703,16 @@
       },
       {
         "addr":"0059b660",
-        "foreign":"CHino",
         "name":"core_hino.cpp_CHino_getActorType_FUN_0059b660",
         "offset":204
       },
       {
         "addr":"0059d660",
-        "foreign":"CHino",
         "name":"core_hino.cpp_CHino_dtor_FUN_0059d660",
         "offset":208
       },
       {
         "addr":"0059d310",
-        "foreign":"CHino",
         "name":"core_hino.cpp_CHino_archive_FUN_0059d310",
         "offset":212
       },
@@ -3784,7 +3778,6 @@
       },
       {
         "addr":"0059d360",
-        "foreign":"CHino",
         "name":"core_hino.cpp_CHino_processDamage_FUN_0059d360",
         "offset":264
       },
@@ -3830,7 +3823,6 @@
       },
       {
         "addr":"0059d510",
-        "foreign":"CHino",
         "name":"core_hino.cpp_CHino_getCarryObjToBodyXForm_FUN_0059d510",
         "offset":300
       },

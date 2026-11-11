@@ -52,7 +52,7 @@ LAB_004f7f46:
     _DAT_01d71de0 = "..\\engine\\model.c";
     core_main_c_FUN_004e4330(local_5c);
   }
-  piVar2 = FUN_005a3650(size);
+  piVar2 = (int *)malloc(size);
   if (piVar2 == (int *)0x0) {
     _sprintf(local_5c,"Out of model memory: %s");
     _DAT_01d71de0 = "..\\engine\\model.c";

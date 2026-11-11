@@ -77,7 +77,7 @@ section .text
     SUB ESP,0x74                        ; 00536996
     MOV EBX,dword ptr [0x006039e0]      ; 00536999 | g_CScriptPtr
     MOV EDX,0x1d1e360                   ; 0053699f
-    MOV EBX,dword ptr [EBX + 0x18]      ; 005369a4 | g_CScriptInstance.field6_0x18
+    MOV EBX,dword ptr [EBX + 0x18]      ; 005369a4 | g_CScriptInstance.monster_vision_actor
     MOV dword ptr [EBP + -0x4],EDX      ; 005369a7
     TEST EBX,EBX                        ; 005369aa
     JNZ 0x005369b5                      ; 005369ac

@@ -85,10 +85,10 @@ uint core_carved_cpp_FUN_00427bc0(CCharacter *param_1,float param_2)
     local_18 = (float *)core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(5.0,10.0);
     param_1[1].model.bone_origins[0x12].z = (float)local_18;
   }
-  if (*(int *)&param_1->field_0x25b0 != 0) {
+  if (param_1->carry_hands[0].carry_actor != (CDemonActor *)0x0) {
     return 0;
   }
-  if (*(int *)&param_1->field_0x2628 != 0) {
+  if (param_1->carry_hands[1].carry_actor != (CDemonActor *)0x0) {
     return 0;
   }
   if (0.0 < param_1[1].model.bone_origins[0x13].x) {

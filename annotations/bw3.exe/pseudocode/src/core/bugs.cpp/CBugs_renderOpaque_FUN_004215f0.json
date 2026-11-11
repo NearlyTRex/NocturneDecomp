@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 162,
-    "complexity_score": 287,
+    "complexity_score": 241,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 77,
-    "suspect_count": 17,
+    "pseudocode_lines": 76,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -16,10 +16,9 @@
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 239
+    "total_lines": 238
   },
   "cross_references": [],
   "function": {
@@ -195,30 +194,6 @@
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x13460",
-      "severity": "mild",
-      "text": "puStack_18 = &this_ptr->field_0x13460;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "pCStack_c = (CVector3f *)&this_ptr->bugs[0].field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "translation = (CVector3f *)&this_ptr->bugs[0].field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 49,
       "match": "DAT_005f2afc",
@@ -233,14 +208,6 @@
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,0xffff);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 66,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(puStack_18 + *(int *)&pSStack_10->field_0x4 * 0x17c),0.0,0x2e7);",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer value `&CStack_40` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -292,7 +259,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCStack_c` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCStack_c) + offsetof(subfield)` equals the real array stride. Replace `pCStack_c->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 68,
+      "line": 67,
       "match": "pCStack_c = (T *)&pCStack_c[N].SUBFIELD",
       "severity": "moderate",
       "text": "pCStack_c = (CVector3f *)&pCStack_c[5].y;",
@@ -300,7 +267,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `translation` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*translation) + offsetof(subfield)` equals the real array stride. Replace `translation->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 70,
+      "line": 69,
       "match": "translation = (T *)&translation[N].SUBFIELD",
       "severity": "moderate",
       "text": "translation = (CVector3f *)&translation[5].y;",

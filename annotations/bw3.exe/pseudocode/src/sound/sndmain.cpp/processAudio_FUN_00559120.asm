@@ -7,7 +7,7 @@
 ; undefined8       Stack[-0x8]:8  local_8
 ;
 ; XREF[2]:
-;   core_moon.cpp_FUN_004f9670 at 004f967b
+;   core_moon.cpp_CMoon_render_FUN_004f9670 at 004f967b
 ;   sound_sndmain.cpp_audioThreadProc_FUN_00558d20 at 00558d37
 ;
 ; Referenced Globals:

@@ -14,30 +14,29 @@ void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_004a2830(CFireEffect *
   int iVar1;
   int iVar2;
   int iVar3;
-  CFireball *pCVar4;
+  CFireball *this_ptr_00;
   
   iVar1 = _DAT_01cefe7c;
   iVar3 = _DAT_01cefe7c * 0xa4;
   iVar2 = _DAT_01cefe7c + 1;
-  pCVar4 = g_FireballPool + _DAT_01cefe7c;
+  this_ptr_00 = g_FireballPool + _DAT_01cefe7c;
   _DAT_01cefe7c = iVar2;
   if (0x3f < iVar2) {
     _DAT_01cefe7c = 0;
   }
-  (*(code *)**(uint **)&g_FireballPool[iVar1].field_0x3c)(pCVar4,position,velocity);
+  (*(g_FireballPool[iVar1].base.vtable)->setup)(&this_ptr_00->base,position,velocity);
   iVar2 = core_actor_cpp_getRandomInt_FUN_0040cea0(0xc000,0xffff);
-  *(int *)&g_FireballPool[iVar1].field_0x40 = iVar2;
+  g_FireballPool[iVar1].timer = iVar2;
   if (lighting_active == 0) {
-    *(uint *)&g_FireballPool[iVar1].field_0x44 = 0x2000;
+    g_FireballPool[iVar1].fade_rate = 0x2000;
   }
   else {
-    *(uint *)&g_FireballPool[iVar1].field_0x44 = 0x8000;
+    g_FireballPool[iVar1].fade_rate = 0x8000;
   }
-  *(int *)&g_FireballPool[iVar1].field_0x4c = lighting_active;
-  *(uint *)&g_FireballPool[iVar1].field_0x48 = 0;
-  *(uint *)&g_FireballPool[iVar1].field_0x60 = sfx_handle;
-  sound_sndmain_cpp_FUN_00556930(sfx_handle,pCVar4);
-  sound_sndmain_cpp_FUN_00556a30(*(uint *)&g_FireballPool[iVar1].field_0x60,iVar3 + 0x1cefe8c)
-  ;
+  g_FireballPool[iVar1].lighting_active = lighting_active;
+  g_FireballPool[iVar1].first_update_flag = 0;
+  g_FireballPool[iVar1].sfx_handle = sfx_handle;
+  sound_sndmain_cpp_FUN_00556930(sfx_handle,this_ptr_00);
+  sound_sndmain_cpp_FUN_00556a30(g_FireballPool[iVar1].sfx_handle,iVar3 + 0x1cefe8c);
   return;
 }

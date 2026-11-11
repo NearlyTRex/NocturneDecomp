@@ -2,20 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 203,
+    "complexity_score": 247,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 63,
-    "suspect_count": 12,
+    "pseudocode_lines": 62,
+    "suspect_count": 16,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr",
       "unrolled_strcpy"
     ],
-    "total_lines": 232
+    "total_lines": 231
   },
   "cross_references": [
     {
@@ -291,7 +292,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 20,
       "match": "DAT_00604368",
       "severity": "mild",
       "text": "puVar3 = &DAT_00604368;",
@@ -299,7 +300,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 27,
       "match": "DAT_0060423c",
       "severity": "mild",
       "text": "if ((-1 < DAT_0060423c) &&",
@@ -307,7 +308,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 28,
       "match": "DAT_0060423c",
       "severity": "mild",
       "text": "(iVar2 = sound_sndmain_cpp_getSoundDeviceCount_FUN_00558430(), DAT_0060423c < iVar2)) {",
@@ -315,31 +316,47 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 29,
       "match": "DAT_0060423c",
       "severity": "mild",
       "text": "sound_sndmain_cpp_getSoundDeviceInfo_FUN_005584c0(DAT_0060423c,&local_29c);",
       "type": "undefined_data"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(char *)((int)pSVar4",
+      "severity": "moderate",
+      "text": "cVar1 = *(char *)((int)pSVar4 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(SSoundDeviceInfo *)((int)pSVar4",
+      "severity": "moderate",
+      "text": "pSVar4 = (SSoundDeviceInfo *)((int)pSVar4 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(code **)((int)ini_file",
+      "severity": "moderate",
+      "text": "(**(code **)((int)ini_file->vtable + 8))(ini_file,\"DeviceName\",local_184);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 42,
+      "line": 41,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)&ini_file->field_0x200 + 8))(ini_file,\"DeviceName\",local_184);",
+      "text": "(**(code **)((int)ini_file->vtable + 8))(ini_file,\"DeviceName\",local_184);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x200",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&ini_file->field_0x200 + 8))(ini_file,\"DeviceName\",local_184);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 43,
       "match": "DAT_005d3e40",
       "severity": "mild",
       "text": "engine_ini_cpp_FUN_004d8c90(ini_file,&DAT_005d3e40,iStack_18);",
@@ -347,7 +364,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 45,
       "match": "DAT_005d3e4e",
       "severity": "mild",
       "text": "engine_ini_cpp_FUN_004d8c90(ini_file,&DAT_005d3e4e,iStack_1c);",
@@ -355,7 +372,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 52,
       "match": "DAT_005d3e6b",
       "severity": "mild",
       "text": "engine_ini_cpp_FUN_004d8c90(ini_file,&DAT_005d3e6b,iVar2);",
@@ -363,7 +380,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 53,
       "match": "DAT_00604224",
       "severity": "mild",
       "text": "if (0 < DAT_00604224) {",
@@ -371,15 +388,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 62,
       "match": "DAT_00604224",
       "severity": "mild",
       "text": "} while (channel_index < DAT_00604224);",
       "type": "undefined_data"
     },
     {
+      "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 35,
+      "match": "(int)pSVar4",
+      "severity": "moderate",
+      "text": "cVar1 = *(char *)((int)pSVar4 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(int)pSVar4",
+      "severity": "moderate",
+      "text": "pSVar4 = (SSoundDeviceInfo *)((int)pSVar4 + 2);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 32,
+      "line": 31,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

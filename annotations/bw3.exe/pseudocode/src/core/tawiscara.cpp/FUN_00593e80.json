@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 344,
+    "complexity_score": 299,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 54,
-    "suspect_count": 28,
+    "suspect_count": 24,
     "suspect_types": [
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 162
@@ -148,48 +147,24 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&(param_1->base).field_0x3268 == 0) {",
+      "text": "if ((param_1->base).been_damaged == 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x3268",
-      "severity": "mild",
-      "text": "if (*(int *)&(param_1->base).field_0x3268 == 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xce5c = 0x41700000;",
+      "text": "param_1->attack_damage = 15.0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0xce5c",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xce5c = 0x41700000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xce60 = 0x41200000;",
+      "text": "param_1->pain_threshold = 10.0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0xce60",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xce60 = 0x41200000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -292,16 +267,8 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&(param_1->base).field_0x3270 = 0x3fc00000;",
+      "text": "(param_1->base).collision_cylinder_radius = 1.5;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x3270",
-      "severity": "mild",
-      "text": "*(uint *)&(param_1->base).field_0x3270 = 0x3fc00000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

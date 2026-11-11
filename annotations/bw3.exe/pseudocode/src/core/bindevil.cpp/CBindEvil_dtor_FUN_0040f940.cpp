@@ -19,7 +19,7 @@ CBindEvil * core_bindevil_cpp_CBindEvil_dtor_FUN_0040f940(CBindEvil *this_ptr,ui
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = (CBindEvil *)core_weapon_cpp_CWeapon_dtor_FUN_0057aed0((CWeapon *)this_ptr,1);
+  pCVar1 = (CBindEvil *)core_weapon_cpp_CWeapon_dtor_FUN_0057aed0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

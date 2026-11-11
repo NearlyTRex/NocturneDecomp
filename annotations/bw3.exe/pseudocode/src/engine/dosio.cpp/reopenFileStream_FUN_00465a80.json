@@ -2,20 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 290,
+    "complexity_score": 321,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 30,
-    "suspect_count": 24,
+    "pseudocode_lines": 31,
+    "suspect_count": 26,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "raw_address_constant",
       "unaffected_reg",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 118
+    "total_lines": 119
   },
   "cross_references": [],
   "function": {
@@ -193,7 +195,7 @@
       "line": 14,
       "match": "param_4",
       "severity": "mild",
-      "text": "ios_clear((ios *)(param_4 + *(int *)(*(int *)param_4 + 4)),0);",
+      "text": "ios_clear((ios *)((int)&param_4->_ptr + *(int *)(param_4->_ptr + 4)),0)",
       "type": "unnamed_param"
     },
     {
@@ -201,21 +203,13 @@
       "line": 14,
       "match": "param_4",
       "severity": "mild",
-      "text": "ios_clear((ios *)(param_4 + *(int *)(*(int *)param_4 + 4)),0);",
+      "text": "ios_clear((ios *)((int)&param_4->_ptr + *(int *)(param_4->_ptr + 4)),0)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 16,
       "match": "param_1",
-      "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_00465660(acStack_214,param_1,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_5",
       "severity": "mild",
       "text": "engine_dosio_cpp_FUN_00465660(acStack_214,param_1,param_5);",
       "type": "unnamed_param"
@@ -223,6 +217,14 @@
     {
       "description": "Unnamed function parameter",
       "line": 16,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "engine_dosio_cpp_FUN_00465660(acStack_214,param_1,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
       "match": "param_6",
       "severity": "mild",
       "text": "if ((param_6 & 0x52) == 0) {",
@@ -230,7 +232,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 20,
       "match": "param_4",
       "severity": "mild",
       "text": "openFile(param_4,acStack_114,param_6,_DAT_005e8800);",
@@ -238,7 +240,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 20,
       "match": "param_6",
       "severity": "mild",
       "text": "openFile(param_4,acStack_114,param_6,_DAT_005e8800);",
@@ -246,7 +248,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 20,
+      "line": 21,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "if (unaff_EBX != 0) {",
@@ -254,26 +256,18 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 22,
+      "line": 23,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "istream_seekg(param_4 + 0x44,unaff_EBX);",
+      "text": "istream_seekg(&param_4[2]._handle,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 23,
       "match": "param_4",
       "severity": "mild",
-      "text": "istream_seekg(param_4 + 0x44,unaff_EBX);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 != (char *)0x0) {",
+      "text": "istream_seekg(&param_4[2]._handle,unaff_EBX);",
       "type": "unnamed_param"
     },
     {
@@ -281,12 +275,20 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
+      "text": "if (param_1 != (char *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
       "text": "_mkdir(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 32,
       "match": "param_4",
       "severity": "mild",
       "text": "openFile(param_4,acStack_214,param_6,_DAT_005e8800);",
@@ -294,19 +296,35 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 32,
       "match": "param_6",
       "severity": "mild",
       "text": "openFile(param_4,acStack_214,param_6,_DAT_005e8800);",
       "type": "unnamed_param"
     },
     {
+      "description": "Pointer value `&param_4->_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 14,
+      "match": "(int)&param_4->_ptr",
+      "severity": "moderate",
+      "text": "ios_clear((ios *)((int)&param_4->_ptr + *(int *)(param_4->_ptr + 4)),0)",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Raw hex address 0x465b48 assigned to bare local `uStack_210`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_210` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 21,
+      "line": 22,
       "match": "0x465b48",
       "severity": "moderate",
       "text": "uStack_210 = 0x465b48;",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 14,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "ios_clear((ios *)((int)&param_4->_ptr + *(int *)(param_4->_ptr + 4)),0)",
+      "type": "pointer_cast"
     }
   ]
 }

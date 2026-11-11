@@ -9,9 +9,9 @@
 void __cdecl core_prye_cpp_CPrye_drawWeapon_FUN_00526e00(CPrye *this_ptr,int drawn)
 
 {
-  *(int *)&this_ptr->field_0x20bcc = drawn;
-  if ((drawn == 0) && (*(int *)&g_CGamePtr->field_0x26c != 0)) {
-    *(uint *)&g_CGamePtr->field_0x26c = 0;
+  this_ptr->guns_drawn = drawn;
+  if ((drawn == 0) && (g_CGamePtr->flashlight_active != 0)) {
+    g_CGamePtr->flashlight_active = 0;
     return;
   }
   return;

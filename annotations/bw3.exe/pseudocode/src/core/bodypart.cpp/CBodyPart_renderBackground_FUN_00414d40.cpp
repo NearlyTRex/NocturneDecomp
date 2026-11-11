@@ -19,7 +19,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00414d40(CBodyPart
   uint auStack_20 [6];
   
   bVar6 = 0;
-  if (*(int *)&this_ptr->field_0xcc8 == 0) {
+  if (this_ptr->render_disabled == 0) {
     if (this_ptr->render_in_background == 0) {
       if ((((layer_flag != 0) && (this_ptr->carried_by_actor == (CDemonActor *)0x0)) &&
           ((this_ptr->physics_box).is_valid == 0)) &&

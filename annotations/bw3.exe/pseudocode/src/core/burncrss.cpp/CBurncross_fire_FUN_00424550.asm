@@ -32,9 +32,9 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_charactr.cpp_FUN_0042fbd0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
+;   core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
 ;   core_fire.cpp_FUN_004a2090
-;   core_fire.cpp_FUN_004a3af0
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004cc5d0
 ;   core_glass.cpp_FUN_004cc040
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10
@@ -682,8 +682,8 @@ section .text
     PUSH EAX                            ; 00424dec | g_CDemonSetInstance.collision_impact_position.x
     MOV EAX,[0x005fc5a0]                ; 00424ded | DAT_005fc5a0
     PUSH EAX                            ; 00424df2
-    CALL core_fire.cpp_FUN_004a3af0     ; 00424df3
-        ;   XREF to: 004a3af0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3af0()
+    CALL core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0 ; 00424df3
+        ;   XREF to: 004a3af0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_count, ...)
     MOV EAX,[0x00603b28]                ; 00424df8 | g_CDemonSetPtr
     ADD ESP,0x18                        ; 00424dfd
     ADD EAX,0x14d138                    ; 00424e00

@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[8]:
-;   core_fldnotes.cpp_FUN_004ac900 at 004acb03
+;   core_fldnotes.cpp_CFieldNotes_loadState_FUN_004ac900 at 004acb03
 ;   core_main.c_FUN_004e44e0 at 004e4890
 ;   core_prye.cpp_FUN_0051b550 at 0051c00b
 ;   core_prye.cpp_FUN_00520d20 at 00520d8e

@@ -9,8 +9,8 @@
 void __cdecl core_podmain_cpp_staticInit_FUN_005152b0(void)
 
 {
-  engine_pod_cpp_CPod_ctor_FUN_00514320((CPod *)&g_CDemonPodInstance);
-  g_CDemonPodInstance._404_4_ = &g_CDemonPodVTable;
+  engine_pod_cpp_CPod_ctor_FUN_00514320(&g_CDemonPodInstance.base);
+  g_CDemonPodInstance.base.vtable = (CPod_vtable *)&g_CDemonPodVTable;
   _atexit();
   return;
 }

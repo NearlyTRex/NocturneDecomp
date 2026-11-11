@@ -11,9 +11,10 @@
 int __cdecl core_asgaya_cpp_CAsgaya_renderTransparent_FUN_005a17e0(CAsgaya *this_ptr)
 
 {
+  CDeformableModelInstance *this_ptr_00;
   float fVar1;
   float fVar2;
-  CDemonRenderer *this_ptr_00;
+  CDemonRenderer *this_ptr_01;
   CAsgaya *pCVar3;
   int iVar4;
   uint *puVar5;
@@ -24,36 +25,36 @@ int __cdecl core_asgaya_cpp_CAsgaya_renderTransparent_FUN_005a17e0(CAsgaya *this
   uint auStack_28 [6];
   
   bVar7 = 0;
-  if (*(int *)&this_ptr->field_0x33fa8 != 0) {
+  if (this_ptr->pool_me != 0) {
     return 0;
   }
-  if (0.0 < *(float *)&this_ptr->field_0x33fc8) {
-    if (*(int *)&this_ptr->field_0x33fc4 == 0) {
-      fVar8 = ((float10)*(float *)&this_ptr->field_0x33fc8 /
-              (float10)*(float *)&this_ptr->field_0x206c4) * (float10)_DAT_005da636;
+  if (0.0 < this_ptr->fade_timer) {
+    if (this_ptr->appear_state == 0) {
+      fVar8 = ((float10)this_ptr->fade_timer / (float10)(this_ptr->base).fade_time) *
+              (float10)_DAT_005da636;
     }
     else {
-      fVar8 = ((float10)1 -
-              (float10)*(float *)&this_ptr->field_0x33fc8 /
-              (float10)*(float *)&this_ptr->field_0x206c4) * (float10)_DAT_005da63e;
+      fVar8 = ((float10)1 - (float10)this_ptr->fade_timer / (float10)(this_ptr->base).fade_time) *
+              (float10)_DAT_005da63e;
     }
     round();
-    *(int *)&this_ptr->field_0x33fcc = (int)ROUND(fVar8);
+    this_ptr->render_alpha = (int)ROUND(fVar8);
     iVar4 = 0;
-    if (0 < *(int *)&this_ptr->field_0x2f08) {
+    if (0 < (this_ptr->base).base.cloth_list.count) {
       fVar1 = (float)_DAT_005da646;
       fVar2 = (float)_DAT_005da64e;
       pCVar3 = this_ptr;
       do {
         iVar4 = iVar4 + 1;
-        *(float *)(*(int *)&pCVar3->field_0x309c + 0x37b18) =
-             ((float)*(int *)&this_ptr->field_0x33fcc + fVar2) * fVar1;
-        pCVar3 = (CAsgaya *)&pCVar3->field_0x4;
-      } while (iVar4 < *(int *)&this_ptr->field_0x2f08);
+        (pCVar3->base).base.cloth_list.cloths[0]->weight =
+             ((float)this_ptr->render_alpha + fVar2) * fVar1;
+        pCVar3 = (CAsgaya *)((pCVar3->base).base.base.actor_name + 4);
+      } while (iVar4 < (this_ptr->base).base.cloth_list.count);
     }
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0((CDemonActor *)this_ptr);
-  (**(code **)(*(int *)&this_ptr->field_0x154 + 0x1c))(this_ptr,0);
+  (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
+            ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
   puVar5 = auStack_40;
   puVar6 = auStack_28;
   for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -62,19 +63,19 @@ int __cdecl core_asgaya_cpp_CAsgaya_renderTransparent_FUN_005a17e0(CAsgaya *this
     puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
   }
   iVar4 = core_box_cpp_FUN_0041daf0(auStack_28);
-  this_ptr_00 = DAT_005f2afc;
+  this_ptr_01 = DAT_005f2afc;
   if (iVar4 != 0) {
-    *(uint *)&this_ptr->field_0x27bc = 1;
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
-              (this_ptr_00,*(int *)&this_ptr->field_0x33fcc);
+    iVar4 = this_ptr->render_alpha;
+    (this_ptr->base).base.was_rendered_opaque = 1;
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(this_ptr_01,iVar4);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(DAT_005f2afc,1);
+    this_ptr_00 = &(this_ptr->base).base.model;
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0
-              ((CDeformableModelInstance *)&this_ptr->field_0x158,-1,0x2e7,1,0);
+              (this_ptr_00,-1,0x2e7,1,0);
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(DAT_005f2afc);
     if (_DAT_01d8e40c != 0) {
-      core_motion_cpp_FUN_004fcdc0
-                ((CMotionController *)&this_ptr->field_0x158,(CDemonActor *)this_ptr);
+      core_motion_cpp_FUN_004fcdc0(&this_ptr_00->base,(CDemonActor *)this_ptr);
     }
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830((CDemonActor *)this_ptr);

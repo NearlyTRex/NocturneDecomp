@@ -149,7 +149,7 @@
       "type": "pointer_cast"
     },
     {
-      "description": "'pCVar2[1].create_event + 0x4c' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(create_event) (0x78) + 0x4c = 0x21c, which is exactly offsetof(CBarrier, effect_class_name_list[180]). Ghidra had no CBarrier type here and reached the field by index arithmetic; write it as ((CBarrier *)pCVar2)->effect_class_name_list[180] (\u00a7de-pun/\u00a712). Ambiguous: CChain::move_wav_name, CFlame::off_event, CGlass::mirror also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar2[1].create_event + 0x4c' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(create_event) (0x78) + 0x4c = 0x21c, which is exactly offsetof(CBarrier, effect_class_name_list[180]). Ghidra had no CBarrier type here and reached the field by index arithmetic; write it as ((CBarrier *)pCVar2)->effect_class_name_list[180] (\u00a7de-pun/\u00a712). Ambiguous: CChain::move_wav_name, CEmitter::event_off[76], CFlame::off_event also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 13,
       "severity": "moderate",
       "text": "pCVar3 = core_mirror_cpp_CMirror_ctor_FUN_004f3fc0((CMirror *)(pCVar2[1].create_event + 0x4c));",

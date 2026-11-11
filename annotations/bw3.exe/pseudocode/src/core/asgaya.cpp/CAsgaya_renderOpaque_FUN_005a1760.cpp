@@ -17,11 +17,12 @@ int __cdecl core_asgaya_cpp_CAsgaya_renderOpaque_FUN_005a1760(CAsgaya *this_ptr)
   uint auStack_1c [6];
   
   bVar4 = 0;
-  if (*(int *)&this_ptr->field_0x24fc != 0) {
+  if ((this_ptr->base).base.render_active != 0) {
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0((CDemonActor *)this_ptr);
-  (**(code **)(*(int *)&this_ptr->field_0x154 + 0x1c))(this_ptr,0);
+  (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
+            ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
   puVar2 = auStack_34;
   puVar3 = auStack_1c;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {

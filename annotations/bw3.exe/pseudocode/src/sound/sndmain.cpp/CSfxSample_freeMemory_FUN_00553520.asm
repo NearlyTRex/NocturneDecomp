@@ -32,7 +32,7 @@
 ;   sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_00553630
 ;   sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_005535e0
 ;   sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00553760
-;   unkafter_turret.cpp_FUN_00573db0
+;   unkafter_turret.cpp_CInStreamFile_close_FUN_00573db0
 ;
 ; *****************************************************************************
 
@@ -75,8 +75,8 @@ section .text
         ;   Label: LAB_00553578
     PUSH EAX                            ; 0055357e
     MOV dword ptr [EBX + 0x174],0x0     ; 0055357f
-    CALL unkafter_turret.cpp_FUN_00573db0 ; 00553589
-        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; undefined unkafter_turret.cpp_FUN_00573db0()
+    CALL unkafter_turret.cpp_CInStreamFile_close_FUN_00573db0 ; 00553589
+        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; undefined4 unkafter_turret.cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile * this_ptr)
     MOV byte ptr [EBX],0x0              ; 0055358e
     MOV dword ptr [EBX + 0x150],0x0     ; 00553591
     MOV dword ptr [EBX + 0x15c],0x0     ; 0055359b

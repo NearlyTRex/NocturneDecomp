@@ -15,9 +15,9 @@ int __cdecl sound_sndmain_cpp_setSfxFade_FUN_00556c10(uint sfx_handle,float targ
   if (pCVar1 == (CSfxSlot *)0x0) {
     return 0;
   }
-  *(float *)&pCVar1->field_0xfc = target_volume;
-  *(float *)&pCVar1->field_0x100 = fade_duration;
-  *(float *)&pCVar1->field_0x104 = (float)stop_after_fade;
+  pCVar1->fade_target_volume = target_volume;
+  pCVar1->fade_time_remaining = fade_duration;
+  pCVar1->stop_after_fade = (float)stop_after_fade;
   sound_sndmain_cpp_FUN_00556fd0();
   return 1;
 }

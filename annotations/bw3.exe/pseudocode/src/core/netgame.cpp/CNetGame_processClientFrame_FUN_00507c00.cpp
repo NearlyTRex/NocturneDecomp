@@ -31,7 +31,7 @@ void __cdecl core_netgame_cpp_CNetGame_processClientFrame_FUN_00507c00(CNetGame 
     if (this_ptr->connection_type == CONNECTION_CLIENT) {
 LAB_00507c65:
       iVar4 = 0;
-      uVar5 = *(uint *)&this_ptr->players[this_ptr->local_player_index].field_0x48;
+      uVar5 = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
       if (0 < _DAT_01dc5c80) {
         iVar2 = 0;
         do {
@@ -42,7 +42,7 @@ LAB_00507c65:
                         (this_ptr,(SSimFrame *)(iVar2 + 0x1dc5c84));
               core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00507fd0(this_ptr);
               uVar5 = uVar5 ^ uVar1;
-              iVar4 = *(int *)&this_ptr->players[this_ptr->local_player_index].field_0x48;
+              iVar4 = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
               if (0 < _DAT_01dc5c80) {
                 iVar2 = 0;
                 local_18 = &DAT_01dc5cf8;
@@ -66,7 +66,7 @@ LAB_00507c65:
                 return;
               }
               iVar3 = 0;
-              while (*(int *)&this_ptr->players[this_ptr->local_player_index].field_0x48 !=
+              while (this_ptr->players[this_ptr->local_player_index].sim_frame_index !=
                      *(int *)(iVar3 + 0x1dc5c84)) {
                 iVar3 = iVar3 + 0x74;
                 iVar2 = iVar2 + 1;

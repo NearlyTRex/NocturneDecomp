@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 498,
-    "complexity_score": 920,
+    "complexity_score": 912,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 225,
-    "suspect_count": 65,
+    "pseudocode_lines": 227,
+    "suspect_count": 64,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -16,11 +16,11 @@
       "unaffected_reg",
       "undefined_data",
       "unnamed_param",
-      "unresolved_funcptr",
       "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 723
+    "total_lines": 725
   },
   "cross_references": [],
   "function": {
@@ -221,8 +221,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -230,7 +238,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 5,
       "match": "param_1",
       "severity": "mild",
       "text": "uint core_charactr_cpp_FUN_00434190(CCharacter *param_1,float param_2)",
@@ -238,7 +246,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 5,
       "match": "param_2",
       "severity": "mild",
       "text": "uint core_charactr_cpp_FUN_00434190(CCharacter *param_1,float param_2)",
@@ -246,7 +254,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 13,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "float *unaff_EBP;",
@@ -254,7 +262,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 13,
+      "line": 15,
       "match": "afStackY_1124",
       "severity": "moderate",
       "text": "float afStackY_1124 [989];",
@@ -262,7 +270,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 65,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0.0 <= param_1->hero_proximity_timer) {",
@@ -270,34 +278,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCStack_14 = (CHero *)&(param_1->base).location;",
+      "text": "pCStack_14 = &(param_1->base).location;",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 67,
+      "line": 69,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "core_actor_cpp_FUN_00408bf0(pCVar2,unaff_EBP);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 78,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "fStack_10c = *unaff_EBP - *(float *)(pCVar2 + 0x20);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 79,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "fStack_108 = unaff_EBP[1] - *(float *)(pCVar2 + 0x24);",
+      "text": "core_actor_cpp_FUN_00408bf0(this_ptr,unaff_EBP);",
       "type": "unaffected_reg"
     },
     {
@@ -305,7 +297,7 @@
       "line": 80,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "fStack_104 = unaff_EBP[2] - *(float *)(pCVar2 + 0x28);",
+      "text": "fStack_10c = *unaff_EBP - (this_ptr->base).base.location.position.x;",
       "type": "unaffected_reg"
     },
     {
@@ -313,20 +305,20 @@
       "line": 81,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "fStack_e8 = *unaff_EBP - *(float *)(pCVar2 + 0x20);",
+      "text": "fStack_108 = unaff_EBP[1] - (this_ptr->base).base.location.position.y;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 91,
-      "match": "code *",
+      "description": "Unaffected register variable",
+      "line": 82,
+      "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)(pCVar2 + 0x154) + 0x148))(pCVar2);",
-      "type": "unresolved_funcptr"
+      "text": "fStack_104 = unaff_EBP[2] - (this_ptr->base).base.location.position.z;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 95,
+      "line": 97,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar4 = &param_1->move_away_target;",
@@ -334,7 +326,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 132,
+      "line": 134,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->move_away_target).y = CStack_130.y;",
@@ -342,7 +334,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 133,
+      "line": 135,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->move_away_target).z = CStack_130.z;",
@@ -350,7 +342,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 136,
+      "line": 138,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,pCVar4,(CPathMap *)0x0,(CVector3f *)&DAT_02cfd900,0.0,0.0);",
@@ -358,7 +350,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 136,
+      "line": 138,
       "match": "DAT_02cfd900",
       "severity": "mild",
       "text": "(param_1,pCVar4,(CPathMap *)0x0,(CVector3f *)&DAT_02cfd900,0.0,0.0);",
@@ -366,7 +358,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 138,
+      "line": 140,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->walk_stuck_timer = 0.0;",
@@ -374,7 +366,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 139,
+      "line": 141,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->hero_proximity_timer = -4.0;",
@@ -382,7 +374,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 149,
+      "line": 151,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_1->hero_proximity_timer + param_2;",
@@ -390,34 +382,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 149,
+      "line": 151,
       "match": "param_1",
       "severity": "mild",
       "text": "param_2 = param_1->hero_proximity_timer + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 149,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_1->hero_proximity_timer + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 150,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->hero_proximity_timer = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 150,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1->hero_proximity_timer = param_2;",
       "type": "unnamed_param"
     },
     {
@@ -425,12 +393,36 @@
       "line": 151,
       "match": "param_2",
       "severity": "mild",
+      "text": "param_2 = param_1->hero_proximity_timer + param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 152,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->hero_proximity_timer = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 152,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_1->hero_proximity_timer = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 153,
+      "match": "param_2",
+      "severity": "mild",
       "text": "if (param_2 < (float)_DAT_005b8906) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 156,
+      "line": 158,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar4 = &param_1->move_away_target;",
@@ -438,7 +430,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 192,
+      "line": 194,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->move_away_target).y = CStack_c4.y;",
@@ -446,7 +438,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 193,
+      "line": 195,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->move_away_target).z = CStack_c4.z;",
@@ -454,7 +446,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 196,
+      "line": 198,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,pCVar4,(CPathMap *)0x0,(CVector3f *)&DAT_02cfd900,0.0,0.0);",
@@ -462,7 +454,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 196,
+      "line": 198,
       "match": "DAT_02cfd900",
       "severity": "mild",
       "text": "(param_1,pCVar4,(CPathMap *)0x0,(CVector3f *)&DAT_02cfd900,0.0,0.0);",
@@ -470,7 +462,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 198,
+      "line": 200,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->walk_stuck_timer = 0.0;",
@@ -478,7 +470,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 199,
+      "line": 201,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->hero_proximity_timer = -5.0;",
@@ -486,7 +478,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 205,
+      "line": 207,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_console_cpp_FUN_00441ff0(g_CConsolePtr,\"%s was in the way, but couldn't figure out where to move!\\n\",param_1)",
@@ -494,7 +486,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 207,
+      "line": 209,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->hero_proximity_timer = 0.0;",
@@ -502,7 +494,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 214,
+      "line": 216,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_1->hero_proximity_timer + param_2;",
@@ -510,34 +502,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 214,
+      "line": 216,
       "match": "param_1",
       "severity": "mild",
       "text": "param_2 = param_1->hero_proximity_timer + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 214,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_1->hero_proximity_timer + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 215,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->hero_proximity_timer = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 215,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1->hero_proximity_timer = param_2;",
       "type": "unnamed_param"
     },
     {
@@ -545,13 +513,29 @@
       "line": 216,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((param_2 < 0.0) && (param_1->walk_stuck_timer <= (float)_DAT_005b88e6)) {",
+      "text": "param_2 = param_1->hero_proximity_timer + param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 216,
+      "line": 217,
       "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->hero_proximity_timer = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 217,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_1->hero_proximity_timer = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 218,
+      "match": "param_2",
       "severity": "mild",
       "text": "if ((param_2 < 0.0) && (param_1->walk_stuck_timer <= (float)_DAT_005b88e6)) {",
       "type": "unnamed_param"
@@ -559,6 +543,14 @@
     {
       "description": "Unnamed function parameter",
       "line": 218,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_2 < 0.0) && (param_1->walk_stuck_timer <= (float)_DAT_005b88e6)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 220,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,&param_1->move_away_target,(CPathMap *)0x0,",
@@ -566,7 +558,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 218,
+      "line": 220,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,&param_1->move_away_target,(CPathMap *)0x0,",
@@ -574,7 +566,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 219,
+      "line": 221,
       "match": "DAT_02cfd900",
       "severity": "mild",
       "text": "(CVector3f *)&DAT_02cfd900,0.0,0.0);",
@@ -582,7 +574,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 223,
+      "line": 225,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->hero_proximity_timer = 0.0;",
@@ -590,7 +582,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 227,
+      "line": 229,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->hero_proximity_timer = 0.0;",
@@ -598,7 +590,7 @@
     },
     {
       "description": "Pointer value `&CStack_a0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 108,
+      "line": 110,
       "match": "(int)&CStack_a0",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_a0 + (uint)bVar5 * -8 + 4) = afStack_60[(uint)bVar5 * -2 + 6];",
@@ -606,7 +598,7 @@
     },
     {
       "description": "Pointer value `&CStack_a0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 109,
+      "line": 111,
       "match": "(int)&CStack_a0",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_a0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
@@ -614,7 +606,7 @@
     },
     {
       "description": "Pointer value `&CStack_130` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 127,
+      "line": 129,
       "match": "(int)&CStack_130",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_130 + (uint)bVar5 * -8 + 4) = afStack_120[(uint)bVar5 * -2];",
@@ -622,7 +614,7 @@
     },
     {
       "description": "Pointer value `&CStack_130` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 128,
+      "line": 130,
       "match": "(int)&CStack_130",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_130 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
@@ -630,7 +622,7 @@
     },
     {
       "description": "Pointer value `&CStack_b8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 168,
+      "line": 170,
       "match": "(int)&CStack_b8",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_b8 + (uint)bVar5 * -8 + 4) = afStack_120[(uint)bVar5 * -2 + 3];",
@@ -638,7 +630,7 @@
     },
     {
       "description": "Pointer value `&CStack_b8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 169,
+      "line": 171,
       "match": "(int)&CStack_b8",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_b8 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
@@ -646,7 +638,7 @@
     },
     {
       "description": "Pointer value `&CStack_c4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 187,
+      "line": 189,
       "match": "(int)&CStack_c4",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_c4 + (uint)bVar5 * -8 + 4) = afStack_a8[(uint)bVar5 * -2];",
@@ -654,7 +646,7 @@
     },
     {
       "description": "Pointer value `&CStack_c4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 188,
+      "line": 190,
       "match": "(int)&CStack_c4",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_c4 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
@@ -662,7 +654,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 131,
+      "line": 133,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar4->x = CStack_130.x;",
@@ -670,7 +662,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 191,
+      "line": 193,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar4->x = CStack_c4.x;",
@@ -678,7 +670,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 108,
+      "line": 110,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_a0 + (uint)bVar5 * -8 + 4) = afStack_60[(uint)bVar5 * -2 + 6];",
@@ -686,7 +678,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 109,
+      "line": 111,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_a0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
@@ -694,7 +686,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 127,
+      "line": 129,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_130 + (uint)bVar5 * -8 + 4) = afStack_120[(uint)bVar5 * -2];",
@@ -702,7 +694,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 128,
+      "line": 130,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_130 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
@@ -710,7 +702,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 168,
+      "line": 170,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_b8 + (uint)bVar5 * -8 + 4) = afStack_120[(uint)bVar5 * -2 + 3];",
@@ -718,7 +710,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 169,
+      "line": 171,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_b8 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
@@ -726,7 +718,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 187,
+      "line": 189,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_c4 + (uint)bVar5 * -8 + 4) = afStack_a8[(uint)bVar5 * -2];",
@@ -734,7 +726,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 188,
+      "line": 190,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_c4 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",

@@ -11,7 +11,7 @@ void core_flashlit_cpp_factoryFuncFlashlight_FUN_004a7520(void)
 {
   CFlashlight *this_ptr;
   
-  this_ptr = (CFlashlight *)debugAllocTracked1(0x594);
+  this_ptr = (CFlashlight *)operator_new(0x594);
   if (this_ptr == (CFlashlight *)0x0) {
     return;
   }

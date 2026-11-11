@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 53,
+    "complexity_score": 58,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 28,
     "suspect_count": 2,
     "suspect_types": [
       "derived_field_index_pun",
       "warning_overlapping_globals"
     ],
-    "total_lines": 54
+    "total_lines": 59
   },
   "cross_references": [
     {
@@ -153,7 +153,7 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "'pCVar3[1].base.base.actor_name + 0x10' walks 1 x sizeof(CEnemy) (0xd054) + offsetof(base.base.actor_name) (0x0) + 0x10 = 0xd064, which is exactly offsetof(CGargoyle, part_indices[4]). Ghidra had no CGargoyle type here and reached the field by index arithmetic; write it as ((CGargoyle *)pCVar3)->part_indices[4] (\u00a7de-pun/\u00a712). Ambiguous: CGhoul::pending_eat_state, CImp::part_indices[1], CWerewolf::bone_indices[3] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar3[1].base.base.actor_name + 0x10' walks 1 x sizeof(CEnemy) (0xd054) + offsetof(base.base.actor_name) (0x0) + 0x10 = 0xd064, which is exactly offsetof(CBaal, fade_timer). Ghidra had no CBaal type here and reached the field by index arithmetic; write it as ((CBaal *)pCVar3)->fade_timer (\u00a7de-pun/\u00a712). Ambiguous: CBoneGuy::pickup_target, CCarved::pickup_target, CConstruct::fall_event[16] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 15,
       "severity": "moderate",
       "text": "((CMorph *)(pCVar3[1].base.base.actor_name + 0x10));",

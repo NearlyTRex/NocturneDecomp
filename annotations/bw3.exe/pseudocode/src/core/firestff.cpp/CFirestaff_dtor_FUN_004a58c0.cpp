@@ -20,7 +20,7 @@ CFirestaff * core_firestff_cpp_CFirestaff_dtor_FUN_004a58c0(CFirestaff *this_ptr
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  iVar1 = core_firestff_cpp_FUN_004a5930(&this_ptr->field_0x614,0);
+  iVar1 = core_firestff_cpp_FUN_004a5930(this_ptr->flames,0);
   pCVar2 = (CFirestaff *)core_weapon_cpp_CWeapon_dtor_FUN_0057aed0((CWeapon *)(iVar1 + -0x614),1);
   if ((flags & 2) == 0) {
     return pCVar2;

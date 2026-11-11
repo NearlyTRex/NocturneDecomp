@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 236,
-    "complexity_score": 133,
+    "complexity_score": 118,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 88,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
@@ -195,7 +194,7 @@
     },
     {
       "addr": "01d213e0",
-      "name": "g_CGameInstance.field164_0xd4",
+      "name": "g_CGameInstance.game_control",
       "type": "undefined4",
       "value": null
     },
@@ -391,14 +390,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0xd4",
-      "severity": "mild",
-      "text": "_DAT_01d737d8 = *(uint *)&g_CGamePtr->field_0xd4;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

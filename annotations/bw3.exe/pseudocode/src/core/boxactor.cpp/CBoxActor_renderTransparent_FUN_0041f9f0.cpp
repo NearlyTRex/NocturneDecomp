@@ -23,11 +23,11 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderTransparent_FUN_0041f9f0(CBoxActor
   bVar5 = 0;
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(&this_ptr->model);
   if (0 < pCVar1->poly_count) {
-    if (0.0 <= *(float *)&this_ptr->field_0x6dc) {
-      fVar6 = ((float10)*(float *)&this_ptr->field_0x6dc / (float10)*(float *)&this_ptr->field_0x6e0
-              ) * (float10)_DAT_005b7505;
+    if (0.0 <= this_ptr->fade_timer) {
+      fVar6 = ((float10)this_ptr->fade_timer / (float10)this_ptr->fade_time) *
+              (float10)_DAT_005b7505;
       round();
-      *(int *)&this_ptr->field_0x6e4 = (int)ROUND(fVar6);
+      this_ptr->fade_alpha = (int)ROUND(fVar6);
     }
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
               (0x01BDD7E4,&(this_ptr->base).location.position);
@@ -42,16 +42,16 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderTransparent_FUN_0041f9f0(CBoxActor
       puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
     }
     iVar2 = core_box_cpp_FUN_0041daf0(auStack_20);
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
-              (DAT_005f2afc,*(int *)&this_ptr->field_0x6e4);
-    if (*(int *)&this_ptr->field_0x5fc != 0) {
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,this_ptr->fade_alpha)
+    ;
+    if (this_ptr->dont_use_normals != 0) {
       g_CDemonSetPtr->disable_directional_lighting = 1;
     }
     if (iVar2 != 0) {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
                 (&this_ptr->model,this_ptr->anim_frame,-1);
     }
-    if (*(int *)&this_ptr->field_0x5fc != 0) {
+    if (this_ptr->dont_use_normals != 0) {
       g_CDemonSetPtr->disable_directional_lighting = 0;
     }
     engine_matrix_c_pop_FUN_0046d080();

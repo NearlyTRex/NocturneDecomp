@@ -19,7 +19,7 @@ int __cdecl shape_edittool_cpp_CPickList_handleInput_FUN_00483550(CPickList *thi
   byte bVar7;
   
   bVar7 = 0;
-  iVar2 = (**(code **)(*(int *)0x01D70A78 + 4))(0x01D70A78,0x1c);
+  iVar2 = (*0x01D70A78->vtable->getAndClearKeyState)(0x01D70A78,DIK_RETURN);
   if (iVar2 != 0) {
     if (this_ptr->selection_state == 1) {
       return -1;
@@ -31,30 +31,30 @@ int __cdecl shape_edittool_cpp_CPickList_handleInput_FUN_00483550(CPickList *thi
       return 0;
     }
   }
-  iVar2 = (**(code **)(*(int *)0x01D70A78 + 4))(0x01D70A78,1);
+  iVar2 = (*0x01D70A78->vtable->getAndClearKeyState)(0x01D70A78,DIK_ESCAPE);
   if (iVar2 != 0) {
     return -1;
   }
-  iVar2 = (*(code *)**(uint **)0x01D70A78)(0x01D70A78,0x1d);
+  iVar2 = (*0x01D70A78->vtable->getKeyState)(0x01D70A78,DIK_LCONTROL);
   if (iVar2 != 0) {
-    iVar2 = (**(code **)(*(int *)0x01D70A78 + 4))(0x01D70A78,0x52);
+    iVar2 = (*0x01D70A78->vtable->getAndClearKeyState)(0x01D70A78,DIK_NUMPAD0);
     if (iVar2 != 0) {
       shape_edittool_cpp_CStrList_copyToClipboard_FUN_00482740(&this_ptr->base);
     }
-    iVar2 = (**(code **)(*(int *)0x01D70A78 + 4))(0x01D70A78,0x2e);
+    iVar2 = (*0x01D70A78->vtable->getAndClearKeyState)(0x01D70A78,DIK_C);
     if (iVar2 != 0) {
       shape_edittool_cpp_CStrList_copyToClipboard_FUN_00482740(&this_ptr->base);
     }
   }
   iVar5 = 0;
-  iVar2 = (*(code *)**(uint **)0x01D70A78)(0x01D70A78,0x2a);
+  iVar2 = (*0x01D70A78->vtable->getKeyState)(0x01D70A78,DIK_LSHIFT);
   if ((iVar2 == 0) &&
-     (iVar2 = (**(code **)(*(int *)0x01D70A78 + 4))(0x01D70A78,0xf), iVar2 != 0)) {
+     (iVar2 = (*0x01D70A78->vtable->getAndClearKeyState)(0x01D70A78,DIK_TAB), iVar2 != 0)) {
     iVar5 = 1;
   }
-  iVar2 = (*(code *)**(uint **)0x01D70A78)(0x01D70A78,0x2a);
+  iVar2 = (*0x01D70A78->vtable->getKeyState)(0x01D70A78,DIK_LSHIFT);
   if ((iVar2 != 0) &&
-     (iVar2 = (**(code **)(*(int *)0x01D70A78 + 4))(0x01D70A78,0xf), iVar2 != 0)) {
+     (iVar2 = (*0x01D70A78->vtable->getAndClearKeyState)(0x01D70A78,DIK_TAB), iVar2 != 0)) {
     iVar5 = -1;
   }
   iVar2 = 0;
@@ -94,45 +94,45 @@ LAB_0048365a:
           do {
             iVar2 = wincore_winrun_cpp_wasKeyPressed_FUN_00580800();
             if (iVar2 == 0) {
-              iVar2 = (**(code **)(*(int *)0x01D70A78 + 4))(0x01D70A78,0x48);
+              iVar2 = (*0x01D70A78->vtable->getAndClearKeyState)(0x01D70A78,DIK_NUMPAD8);
               if (iVar2 != 0) {
                 this_ptr->search_text_buffer[0] = '\0';
                 this_ptr->current_index = this_ptr->current_index + -1;
               }
-              iVar2 = (**(code **)(*(int *)0x01D70A78 + 4))(0x01D70A78,0x50);
+              iVar2 = (*0x01D70A78->vtable->getAndClearKeyState)(0x01D70A78,DIK_NUMPAD2);
               if (iVar2 != 0) {
                 this_ptr->search_text_buffer[0] = '\0';
                 this_ptr->current_index = this_ptr->current_index + 1;
               }
-              iVar2 = (**(code **)(*(int *)0x01D70A78 + 4))(0x01D70A78,0x47);
+              iVar2 = (*0x01D70A78->vtable->getAndClearKeyState)(0x01D70A78,DIK_NUMPAD7);
               if (iVar2 != 0) {
                 this_ptr->search_text_buffer[0] = '\0';
                 this_ptr->current_index = 0;
               }
-              iVar2 = (**(code **)(*(int *)0x01D70A78 + 4))(0x01D70A78,0x4f);
+              iVar2 = (*0x01D70A78->vtable->getAndClearKeyState)(0x01D70A78,DIK_NUMPAD1);
               if (iVar2 != 0) {
                 iVar2 = (this_ptr->base).item_count;
                 this_ptr->search_text_buffer[0] = '\0';
                 this_ptr->current_index = iVar2;
               }
-              iVar2 = (**(code **)(*(int *)0x01D70A78 + 4))(0x01D70A78,0x49);
+              iVar2 = (*0x01D70A78->vtable->getAndClearKeyState)(0x01D70A78,DIK_NUMPAD9);
               if (iVar2 != 0) {
                 this_ptr->search_text_buffer[0] = '\0';
                 this_ptr->current_index = this_ptr->current_index - this_ptr->page_size;
                 this_ptr->scroll_top = this_ptr->scroll_top - this_ptr->page_size;
               }
-              iVar2 = (**(code **)(*(int *)0x01D70A78 + 4))(0x01D70A78,0x51);
+              iVar2 = (*0x01D70A78->vtable->getAndClearKeyState)(0x01D70A78,DIK_NUMPAD3);
               if (iVar2 != 0) {
                 this_ptr->search_text_buffer[0] = '\0';
                 this_ptr->current_index = this_ptr->current_index + this_ptr->page_size;
                 this_ptr->scroll_top = this_ptr->scroll_top + this_ptr->page_size;
               }
-              iVar2 = (**(code **)(*(int *)0x01D70A78 + 4))(0x01D70A78,0x4b);
+              iVar2 = (*0x01D70A78->vtable->getAndClearKeyState)(0x01D70A78,DIK_NUMPAD4);
               if (iVar2 != 0) {
                 this_ptr->search_text_buffer[0] = '\0';
                 this_ptr->current_index = this_ptr->current_index - this_ptr->rows_per_column;
               }
-              iVar2 = (**(code **)(*(int *)0x01D70A78 + 4))(0x01D70A78,0x4d);
+              iVar2 = (*0x01D70A78->vtable->getAndClearKeyState)(0x01D70A78,DIK_NUMPAD6);
               if (iVar2 != 0) {
                 this_ptr->search_text_buffer[0] = '\0';
                 this_ptr->current_index = this_ptr->current_index + this_ptr->rows_per_column;

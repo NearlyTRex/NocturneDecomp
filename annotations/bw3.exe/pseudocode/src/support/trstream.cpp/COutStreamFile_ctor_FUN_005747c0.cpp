@@ -14,7 +14,7 @@ COutStreamFile * support_trstream_cpp_COutStreamFile_ctor_FUN_005747c0(COutStrea
   COutStreamFile *pCVar1;
   
   pCVar1 = (COutStreamFile *)support_trstream_cpp_FUN_005744a0(this_ptr);
-  *(byte ***)pCVar1 = &g_COutStreamFileVTable;
-  *(uint *)&pCVar1->field_0x4 = 0;
+  pCVar1->vtable = &g_COutStreamFileVTable;
+  pCVar1->file = (_FILE *)0x0;
   return pCVar1;
 }

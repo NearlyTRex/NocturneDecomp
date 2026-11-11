@@ -16,7 +16,6 @@
 #pragma pack(push, 1)
 typedef struct CLightActor {
     CBoxActor base; // 0x0
-    char field_1644[124]; // 0x66c
     ELightActorType light_actor_type; // 0x6e8
     CDemonLight light; // 0x6ec
     CVector3f blight_pos; // 0x3698

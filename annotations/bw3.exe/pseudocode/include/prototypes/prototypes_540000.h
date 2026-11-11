@@ -248,7 +248,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVe
 CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(CDeformableModelInstance *this_ptr);
 CSkeleton * __cdecl core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(CDeformableModelInstance *this_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance *this_ptr,char *model_name);
-int core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,undefined4 param_6,undefined4 param_7,int param_8,undefined4 param_9);
+int core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,undefined4 param_6,undefined4 param_7,int param_8,float param_9);
 void __cdecl core_skeleton_cpp_FUN_0054edb0(CDeformableModelInstance *this_ptr,int motion_index,float animation_time,SPose *output_bone_data);
 void core_skeleton_cpp_FUN_0054efa0(int param_1,undefined4 param_2,undefined4 param_3,float param_4);
 void core_skeleton_cpp_FUN_0054f040(CDeformableModelInstance *param_1,float param_2,float param_3);

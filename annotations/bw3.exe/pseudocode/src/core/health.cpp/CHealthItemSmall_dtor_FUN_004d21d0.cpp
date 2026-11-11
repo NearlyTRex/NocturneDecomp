@@ -11,7 +11,7 @@
 CHealthItemSmall * core_health_cpp_CHealthItemSmall_dtor_FUN_004d21d0(CHealthItemSmall *this_ptr,uint flags)
 
 {
-  CHealthItemSmall *pCVar1;
+  CDemonActor *pCVar1;
   void *ptr;
   
   if ((flags & 4) != 0) {
@@ -19,11 +19,10 @@ CHealthItemSmall * core_health_cpp_CHealthItemSmall_dtor_FUN_004d21d0(CHealthIte
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = (CHealthItemSmall *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)this_ptr,1);
+  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)this_ptr,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return (CHealthItemSmall *)pCVar1;
   }
   FUN_005a30c4(pCVar1);
-  return pCVar1;
+  return (CHealthItemSmall *)pCVar1;
 }

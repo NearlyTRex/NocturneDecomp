@@ -27,11 +27,11 @@ void __cdecl CPrye::process(CPrye *this_ptr,float delta_time);
 
 // Original: core_prye.cpp_FUN_00518cd0
 // Address: 00518cd0
-void FUN_00518cd0(CCharacter *param_1,float param_2);
+void FUN_00518cd0(UOrientationVector *param_1,float param_2);
 
 // Original: core_prye.cpp_FUN_0051b550
 // Address: 0051b550
-void FUN_0051b550(CCharacter *param_1,float param_2);
+void FUN_0051b550(CHero *param_1,float param_2);
 
 // Original: core_prye.cpp_FUN_0051c0a0
 // Address: 0051c0a0
@@ -124,6 +124,10 @@ void FUN_00523800(CDemonActor *param_1);
 // Original: core_prye.cpp_CPrye_processDamage_FUN_00523e50
 // Address: 00523e50
 void __cdecl CPrye::processDamage(CPrye *this_ptr,SDamageInfo *damage_info);
+
+// Original: core_prye.cpp_CPrye_updateArmRecoilBlend_FUN_00524170
+// Address: 00524170
+void __cdecl CPrye::updateArmRecoilBlend(CPrye *this_ptr,float delta_time,int is_weapon_active);
 
 // Original: core_prye.cpp_CPrye_getCarryObjToBodyXForm_FUN_005247b0
 // Address: 005247b0

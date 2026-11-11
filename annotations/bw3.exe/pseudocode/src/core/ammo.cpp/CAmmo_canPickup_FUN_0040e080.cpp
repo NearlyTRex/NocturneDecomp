@@ -15,7 +15,7 @@ int __cdecl core_ammo_cpp_CAmmo_canPickup_FUN_0040e080(CAmmo *this_ptr,CDemonAct
   iVar1 = core_actor_cpp_isOfClass_FUN_0040c790(picker,"CHero");
   iVar2 = 0;
   if (iVar1 != 0) {
-    if ((*(int *)&this_ptr->field_0x318 != 10) && (*(int *)&this_ptr->field_0x318 != 0xb)) {
+    if ((this_ptr->ammo_type != AMMO_TYPE_MANA) && (this_ptr->ammo_type != AMMO_TYPE_BULLET)) {
       return 2;
     }
     iVar2 = 5;

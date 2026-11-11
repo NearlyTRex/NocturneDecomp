@@ -90,7 +90,7 @@ section .text
     SUB ESP,0x568                       ; 004dda96
     AND ESP,0xfffffff8                  ; 004dda9c
     MOV EAX,[0x005fe9dc]                ; 004dda9f | g_CGamePtr
-    CMP dword ptr [EAX + 0x24c],0x0     ; 004ddaa4 | g_CGameInstance.field540_0x24c
+    CMP dword ptr [EAX + 0x24c],0x0     ; 004ddaa4 | g_CGameInstance.letterbox_mode
     JNZ 0x004de349                      ; 004ddaab
         ;   XREF to: 004de349 (CONDITIONAL_JUMP)  ; LAB_004de349
     MOV EAX,dword ptr [EBP + 0x14]      ; 004ddab1
@@ -100,7 +100,7 @@ section .text
     JNZ 0x004de349                      ; 004ddac4
         ;   XREF to: 004de349 (CONDITIONAL_JUMP)  ; LAB_004de349
     MOV EAX,[0x005fe4b0]                ; 004ddaca | g_CFieldNotesPtr
-    CMP dword ptr [EAX + 0x40],0x0      ; 004ddacf | g_CFieldNotesInstance.field64_0x40
+    CMP dword ptr [EAX + 0x40],0x0      ; 004ddacf | g_CFieldNotesInstance.is_displayed
     JNZ 0x004de350                      ; 004ddad3
         ;   XREF to: 004de350 (CONDITIONAL_JUMP)  ; LAB_004de350
     MOV ESI,dword ptr [0x005fba1c]      ; 004ddad9 | DAT_005fba1c
@@ -576,7 +576,7 @@ section .text
     CALL engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d6f0 ; 004de0e7
         ;   XREF to: 0040d6f0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d6f0(CAlphaBitmap * this_ptr, int x, int y, int alpha)
     MOV EAX,[0x005fe9dc]                ; 004de0ec | g_CGamePtr
-    MOV EDX,dword ptr [EAX + 0xe0]      ; 004de0f1 | g_CGameInstance.field176_0xe0
+    MOV EDX,dword ptr [EAX + 0xe0]      ; 004de0f1 | g_CGameInstance.show_hero_numbers
     ADD ESP,0x10                        ; 004de0f7
     TEST EDX,EDX                        ; 004de0fa
     JZ 0x004de1ce                       ; 004de0fc
@@ -725,11 +725,11 @@ section .text
     JZ 0x004de33d                       ; 004de2e7
         ;   XREF to: 004de33d (CONDITIONAL_JUMP)  ; LAB_004de33d
     MOV EAX,[0x005fe4b0]                ; 004de2e9 | g_CFieldNotesPtr
-    CMP dword ptr [EAX + 0x40],0x0      ; 004de2ee | g_CFieldNotesInstance.field64_0x40
+    CMP dword ptr [EAX + 0x40],0x0      ; 004de2ee | g_CFieldNotesInstance.is_displayed
     JNZ 0x004de33d                      ; 004de2f2
         ;   XREF to: 004de33d (CONDITIONAL_JUMP)  ; LAB_004de33d
     MOV EAX,[0x005fe9dc]                ; 004de2f4 | g_CGamePtr
-    CMP dword ptr [EAX + 0x24c],0x0     ; 004de2f9 | g_CGameInstance.field540_0x24c
+    CMP dword ptr [EAX + 0x24c],0x0     ; 004de2f9 | g_CGameInstance.letterbox_mode
     JNZ 0x004de33d                      ; 004de300
         ;   XREF to: 004de33d (CONDITIONAL_JUMP)  ; LAB_004de33d
     PUSH 0xffff                         ; 004de302

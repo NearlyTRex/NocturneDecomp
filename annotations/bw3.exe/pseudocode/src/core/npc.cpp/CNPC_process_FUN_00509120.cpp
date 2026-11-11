@@ -48,7 +48,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_00509120(CNPC *this_ptr,float delta_t
   if (iVar5 == 0) {
     return;
   }
-  if ((-1 < *(int *)&this_ptr->field_0x206b8) || (*(int *)&this_ptr->field_0x206b8 == -1)) {
+  if ((-1 < this_ptr->fade_state) || (this_ptr->fade_state == -1)) {
     core_charactr_cpp_FUN_00433c60(this_ptr,delta_time);
   }
   (this_ptr->base).model.accumulated_root_motion.z = 0.0;
@@ -56,7 +56,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_00509120(CNPC *this_ptr,float delta_t
        (this_ptr->base).model.accumulated_root_motion.z;
   (this_ptr->base).model.accumulated_root_motion.x =
        (this_ptr->base).model.accumulated_root_motion.y;
-  fStack_90 = delta_time * *(float *)&this_ptr->field_0x206b0;
+  fStack_90 = delta_time * this_ptr->speed;
   uStack_14 = 0;
   pCVar1 = &(this_ptr->base).model;
   while (0.0 < fStack_90) {
@@ -65,8 +65,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_00509120(CNPC *this_ptr,float delta_t
   }
   EVar6 = (*(((this_ptr->base).base.vtable._uc)->_uc).getDeathState)(&this_ptr->base);
   if ((((1 < (int)EVar6) && ((this_ptr->base).base.lifecycle_state == ACTOR_CREATED)) &&
-      (*(int *)&this_ptr->field_0x206ac == 0)) &&
-     ((this_ptr->base).base.standing_platform == (CPlatform *)0x0)) {
+      (this_ptr->pool_me == 0)) && ((this_ptr->base).base.standing_platform == (CPlatform *)0x0)) {
     core_skeleton_cpp_FUN_0054dbd0(pCVar1,0);
     pfVar10 = afStack_64 + 2;
     afStack_64[2] = (float)uStack_50;
@@ -81,29 +80,29 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_00509120(CNPC *this_ptr,float delta_t
     *(float *)((int)&CStack_80 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
          afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10];
     core_gore_cpp_CGore_createBloodPool_FUN_004cec40(g_CGorePtr,pCVar8,blood_type);
-    *(uint *)&this_ptr->field_0x206ac = 1;
+    this_ptr->pool_me = 1;
     uStack_14 = 1;
   }
-  fVar3 = *(float *)&this_ptr->field_0x206b0;
-  *(float *)&(this_ptr->base).field_0x2524 = (this_ptr->base).model.accumulated_root_motion.z;
+  fVar3 = this_ptr->speed;
+  (this_ptr->base).walk_step_speed = (this_ptr->base).model.accumulated_root_motion.z;
   core_charactr_cpp_FUN_00434850(this_ptr,delta_time * fVar3);
   iVar5 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660(&this_ptr->base,delta_time);
   pCVar1 = &(this_ptr->base).model;
   if (iVar5 == 0) {
     pcVar9 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_004fc320(&pCVar1->base);
     iVar5 = _strcmp(pcVar9,"APPEAR");
-    if ((iVar5 == 0) && (*(int *)&this_ptr->field_0x206b8 < 1)) {
-      *(uint *)&this_ptr->field_0x206b8 = 1;
+    if ((iVar5 == 0) && (this_ptr->fade_state < 1)) {
+      this_ptr->fade_state = 1;
       (this_ptr->base).base.is_transparent = 1;
-      *(uint *)&this_ptr->field_0x206c0 = *(uint *)&this_ptr->field_0x206c4;
+      this_ptr->fade_timer = this_ptr->fade_time;
       (this_ptr->base).base.is_renderable = 0;
     }
     iVar5 = _strcmp(pcVar9,"DISAPPEAR");
-    if ((iVar5 == 0) && (*(int *)&this_ptr->field_0x206b8 != 0)) {
-      *(uint *)&this_ptr->field_0x206b8 = 0;
+    if ((iVar5 == 0) && (this_ptr->fade_state != 0)) {
+      this_ptr->fade_state = 0;
       (this_ptr->base).base.is_transparent = 1;
       (this_ptr->base).base.is_renderable = 0;
-      *(uint *)&this_ptr->field_0x206c0 = *(uint *)&this_ptr->field_0x206c4;
+      this_ptr->fade_timer = this_ptr->fade_time;
     }
     goto LAB_005092c8;
   }
@@ -140,11 +139,11 @@ LAB_0050947c:
   (this_ptr->base).model.accumulated_root_motion.x =
        (this_ptr->base).model.accumulated_root_motion.y;
 LAB_005092c8:
-  if (0.0 < *(float *)&this_ptr->field_0x206c0) {
-    *(float *)&this_ptr->field_0x206c0 = *(float *)&this_ptr->field_0x206c0 - delta_time;
+  if (0.0 < this_ptr->fade_timer) {
+    this_ptr->fade_timer = this_ptr->fade_timer - delta_time;
   }
-  if (*(float *)&this_ptr->field_0x206c0 < 0.0) {
-    *(uint *)&this_ptr->field_0x206c0 = 0;
+  if (this_ptr->fade_timer < 0.0) {
+    this_ptr->fade_timer = 0.0;
   }
   core_charactr_cpp_FUN_0042c1e0(this_ptr,delta_time);
   fStack_68 = (this_ptr->base).velocity.x * delta_time;

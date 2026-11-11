@@ -5,12 +5,13 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/windef.h"
+#include "types/classes/CFont.h"
 
 // Structure: CWinFont
 // Ghidra size: 0x6b80 (27520 bytes)
 #pragma pack(push, 1)
 typedef struct CWinFont {
-    char field_0[27208]; // 0x0
+    CFont base; // 0x0
     HDC device_context_handle; // 0x6a48
     HBITMAP dib_handle; // 0x6a4c
     HFONT font_handle; // 0x6a50

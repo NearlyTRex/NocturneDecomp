@@ -19,7 +19,7 @@ void FUN_0057bda0(CWeather *param_1);
 
 // Original: core_weather.cpp_FUN_0057c2c0
 // Address: 0057c2c0
-undefined4 FUN_0057c2c0(void);
+float FUN_0057c2c0(void);
 
 // Original: core_weather.cpp_FUN_0057c2e0
 // Address: 0057c2e0

@@ -37,7 +37,7 @@
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   CConsole g_CConsoleInstance
 ;   undefined4 g_CFlameCanClassInfo.name_hash
-;   undefined4 g_CGameInstance.field512_0x230
+;   undefined4 g_CGameInstance.profile_mode
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   undefined4 g_CGlassClassInfo.name_hash
 ;   ... and 4 more
@@ -83,7 +83,7 @@ section .text
     LEA EAX,[EAX]                       ; 0053540a
     MOV EAX,[0x005fe9dc]                ; 00535410 | g_CGamePtr
         ;   Label: LAB_00535410
-    CMP dword ptr [EAX + 0x230],0x0     ; 00535415 | g_CGameInstance.field512_0x230
+    CMP dword ptr [EAX + 0x230],0x0     ; 00535415 | g_CGameInstance.profile_mode
     JNZ 0x0053553f                      ; 0053541c
         ;   XREF to: 0053553f (CONDITIONAL_JUMP)  ; LAB_0053553f
     XOR EAX,EAX                         ; 00535422
@@ -192,7 +192,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0053557a
     MOVSD ES:EDI,ESI                    ; 0053557b
     MOVSD ES:EDI,ESI                    ; 0053557c
-    CMP dword ptr [EAX + 0x230],0x2     ; 0053557d | g_CGameInstance.field512_0x230
+    CMP dword ptr [EAX + 0x230],0x2     ; 0053557d | g_CGameInstance.profile_mode
     JNZ 0x00535592                      ; 00535584
         ;   XREF to: 00535592 (CONDITIONAL_JUMP)  ; LAB_00535592
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 00535586
@@ -205,7 +205,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x154]     ; 0053559b
     CALL dword ptr [EDX + 0xc]          ; 005355a1
     MOV EAX,[0x005fe9dc]                ; 005355a4 | g_CGamePtr
-    MOV EDX,dword ptr [EAX + 0x230]     ; 005355a9 | g_CGameInstance.field512_0x230
+    MOV EDX,dword ptr [EAX + 0x230]     ; 005355a9 | g_CGameInstance.profile_mode
     ADD ESP,0x8                         ; 005355af
     CMP EDX,0x2                         ; 005355b2
     JNZ 0x005355d6                      ; 005355b5
@@ -219,7 +219,7 @@ section .text
     MOV dword ptr [EBX + 0x207da18],EAX ; 005355d0
     MOV EAX,[0x005fe9dc]                ; 005355d6 | g_CGamePtr
         ;   Label: LAB_005355d6
-    CMP dword ptr [EAX + 0x230],0x0     ; 005355db | g_CGameInstance.field512_0x230
+    CMP dword ptr [EAX + 0x230],0x0     ; 005355db | g_CGameInstance.profile_mode
     JZ 0x005355f6                       ; 005355e2
         ;   XREF to: 005355f6 (CONDITIONAL_JUMP)  ; LAB_005355f6
     MOV EDI,dword ptr [ESP + 0x8c]      ; 005355e4
@@ -466,7 +466,7 @@ section .text
         ;   XREF to: 005356aa (CONDITIONAL_JUMP)  ; LAB_005356aa
     MOV EAX,[0x005fe9dc]                ; 00535843 | g_CGamePtr
         ;   Label: LAB_00535843
-    MOV ESI,dword ptr [EAX + 0x230]     ; 00535848 | g_CGameInstance.field512_0x230
+    MOV ESI,dword ptr [EAX + 0x230]     ; 00535848 | g_CGameInstance.profile_mode
     TEST ESI,ESI                        ; 0053584e
     JZ 0x005359d0                       ; 00535850
         ;   XREF to: 005359d0 (CONDITIONAL_JUMP)  ; LAB_005359d0

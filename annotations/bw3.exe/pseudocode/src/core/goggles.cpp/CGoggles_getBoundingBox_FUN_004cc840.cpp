@@ -18,8 +18,7 @@ CBoundingBox3D * __cdecl core_goggles_cpp_CGoggles_getBoundingBox_FUN_004cc840(C
   float afStack_20 [6];
   
   bVar5 = 0;
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
-                     ((CKeyFramedModelInstance *)&this_ptr->field_0x158);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(&this_ptr->model);
   pCVar3 = pCVar1->frame_bounds;
   pfVar4 = afStack_20;
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {

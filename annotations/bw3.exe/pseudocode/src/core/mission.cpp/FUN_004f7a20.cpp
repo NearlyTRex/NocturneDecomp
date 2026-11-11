@@ -20,7 +20,7 @@ void __cdecl core_mission_cpp_FUN_004f7a20(CDemonMission *this_ptr)
   CPickList local_3cc;
   
   shape_edittool_cpp_CPickList_ctor_FUN_004831c0(&local_3cc);
-  pCVar2 = *(CDemonActor **)(this_ptr + 0x143c);
+  pCVar2 = this_ptr->first_actor;
   while( true ) {
     if (pCVar2 == (CDemonActor *)0x0) {
       if (local_3cc.base.item_count < 1) {
@@ -38,12 +38,12 @@ void __cdecl core_mission_cpp_FUN_004f7a20(CDemonMission *this_ptr)
             _DAT_01d71de4 = 0x6e6;
             core_main_c_FUN_004e4330("Hell froze finding hero.");
           }
-          this_ptr_00 = (CHeroPlaceholder *)debugAllocTracked1(0x17c);
+          this_ptr_00 = (CHeroPlaceholder *)operator_new(0x17c);
           actor = (CHeroPlaceholder *)0x0;
           if (this_ptr_00 != (CHeroPlaceholder *)0x0) {
             actor = core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d4ae0(this_ptr_00);
           }
-          *(uint *)&actor->field_0x158 = 0;
+          actor->index = 0;
           (actor->base).location.position.x = (pCVar2->location).position.x;
           (actor->base).location.position.y = (pCVar2->location).position.y;
           (actor->base).location.position.z = (pCVar2->location).position.z;

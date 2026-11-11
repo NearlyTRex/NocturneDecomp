@@ -9,5 +9,5 @@
 CPathMap * __cdecl core_spirbear_cpp_CSpiritBear_getPathMap_FUN_0059b530(CSpiritBear *this_ptr)
 
 {
-  return (CPathMap *)&this_ptr->field_0x206c8;
+  return &this_ptr->path_map;
 }

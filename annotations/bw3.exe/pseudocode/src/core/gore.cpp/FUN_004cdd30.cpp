@@ -42,31 +42,28 @@ void core_gore_cpp_FUN_004cdd30(uint *param_1,int param_2)
     local_30.x = (int)ROUND(_DAT_005e0e18 * -1.333);
     local_30.y = (int)ROUND(_DAT_005e0e18 * 0.0);
     local_30.z = (int)ROUND(_DAT_005e0e18 * -1.333);
-    engine_special_cpp_FUN_005632a3((SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr,&local_30);
+    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_30);
     local_24 = 0x3faa9fbe;
     local_20 = 0;
     local_1c = 0xbfaa9fbe;
     local_48.x = (int)ROUND(_DAT_005e0e18 * 1.333);
     local_48.y = (int)ROUND(_DAT_005e0e18 * 0.0);
     local_48.z = (int)ROUND(_DAT_005e0e18 * -1.333);
-    engine_special_cpp_FUN_005632a3
-              ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x30),&local_48);
+    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_48);
     local_24 = 0x3faa9fbe;
     local_20 = 0;
     local_1c = 0x3faa9fbe;
     local_18.x = (int)ROUND(_DAT_005e0e18 * 1.333);
     local_18.y = (int)ROUND(_DAT_005e0e18 * 0.0);
     local_18.z = (int)ROUND(_DAT_005e0e18 * 1.333);
-    engine_special_cpp_FUN_005632a3
-              ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x60),&local_18);
+    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_18);
     local_24 = 0xbfaa9fbe;
     local_20 = 0;
     local_1c = 0x3faa9fbe;
     local_3c.x = (int)ROUND(_DAT_005e0e18 * -1.333);
     local_3c.y = (int)ROUND(_DAT_005e0e18 * 0.0);
     local_3c.z = (int)ROUND(_DAT_005e0e18 * 1.333);
-    engine_special_cpp_FUN_005632a3
-              ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x90),&local_3c);
+    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_3c);
     core_gore_cpp_FUN_004cc970(param_1[4],&DAT_0060b034,&DAT_0060b038,&DAT_0060b03c);
     core_gore_cpp_FUN_004cc970(param_1[4],&DAT_0060b064,&DAT_0060b068,&DAT_0060b06c);
     core_gore_cpp_FUN_004cc970(param_1[4],&DAT_0060b094,&DAT_0060b098,&DAT_0060b09c);

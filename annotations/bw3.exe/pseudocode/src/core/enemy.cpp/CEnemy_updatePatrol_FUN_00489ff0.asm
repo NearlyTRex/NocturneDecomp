@@ -24,7 +24,7 @@
 ;   undefined4 s_Capture_005bdcf6+1
 ;   undefined4 DAT_005fba60
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 g_CGameInstance.field456_0x1f8
+;   undefined4 g_CGameInstance.freeze_enemies_enabled
 ;
 ; Called Functions:
 ;   core_charactr.cpp_FUN_004333e0
@@ -38,7 +38,7 @@ section .text
         ;   Label: core_enemy.cpp_CEnemy_updatePatrol_FUN_00489ff0
     MOV EBX,dword ptr [ESP + 0x8]       ; 00489ff1
     MOV EAX,[0x005fe9dc]                ; 00489ff5 | g_CGamePtr
-    CMP dword ptr [EAX + 0x1f8],0x0     ; 00489ffa | g_CGameInstance.field456_0x1f8
+    CMP dword ptr [EAX + 0x1f8],0x0     ; 00489ffa | g_CGameInstance.freeze_enemies_enabled
     JNZ 0x0048a01b                      ; 0048a001
         ;   XREF to: 0048a01b (CONDITIONAL_JUMP)  ; LAB_0048a01b
     PUSH 0x5bdcf7                       ; 0048a003 | s_Capture_005bdcf6+1

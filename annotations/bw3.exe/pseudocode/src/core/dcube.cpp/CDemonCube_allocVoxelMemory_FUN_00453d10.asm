@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
-;   crt_unknown.c_FUN_005a4b20
+;   crt_memory.c_calloc_FUN_005a4b20
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 00453d12
     PUSH 0x1                            ; 00453d16
     PUSH 0x40                           ; 00453d18
-    CALL crt_unknown.c_FUN_005a4b20     ; 00453d1a
-        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a4b20()
+    CALL crt_memory.c_calloc_FUN_005a4b20 ; 00453d1a
+        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_calloc_FUN_005a4b20()
     ADD ESP,0x8                         ; 00453d1f
     MOV dword ptr [EBX],EAX             ; 00453d22
     TEST EAX,EAX                        ; 00453d24
@@ -52,8 +52,8 @@ section .text
     PUSH 0x1                            ; 00453d4d
         ;   Label: LAB_00453d4d
     PUSH 0x40                           ; 00453d4f
-    CALL crt_unknown.c_FUN_005a4b20     ; 00453d51
-        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a4b20()
+    CALL crt_memory.c_calloc_FUN_005a4b20 ; 00453d51
+        ;   XREF to: 005a4b20 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_calloc_FUN_005a4b20()
     ADD ESP,0x8                         ; 00453d56
     MOV dword ptr [EBX + 0x4],EAX       ; 00453d59
     TEST EAX,EAX                        ; 00453d5c

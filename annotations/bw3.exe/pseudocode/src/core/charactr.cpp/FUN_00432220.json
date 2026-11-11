@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 152,
+    "complexity_score": 151,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 21,
     "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param"
     ],
-    "total_lines": 65
+    "total_lines": 64
   },
   "cross_references": [
     {
@@ -132,7 +132,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = *(int *)(param_1 + 0x2754);",
+      "text": "iVar1 = *(int *)(param_1 + 0x2754);",
       "type": "unnamed_param"
     },
     {
@@ -145,7 +145,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x2758) =",
@@ -153,10 +153,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2 * *(float *)(pCVar1 + iVar2 + 0x1c48) + *(float *)(param_1 + 0x2758);",
+      "text": "param_2 * pCVar2->motions[iVar1].fps + *(float *)(param_1 + 0x2758);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_2 * pCVar2->motions[iVar1].fps + *(float *)(param_1 + 0x2758);",
       "type": "unnamed_param"
     },
     {
@@ -164,7 +172,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_2 * *(float *)(pCVar1 + iVar2 + 0x1c48) + *(float *)(param_1 + 0x2758);",
+      "text": "if ((float)pCVar2->motions[iVar1].frame_count <= *(float *)(param_1 + 0x2758)) {",
       "type": "unnamed_param"
     },
     {
@@ -172,7 +180,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((float)*(int *)(pCVar1 + iVar2 + 0x1c8c) <= *(float *)(param_1 + 0x2758)) {",
+      "text": "if (*(int *)(param_1 + 0x275c) != 1) {",
       "type": "unnamed_param"
     },
     {
@@ -180,20 +188,12 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x275c) != 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2754) = 0xffffffff;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2758) = 0;",

@@ -19,14 +19,13 @@ void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00507450(CNetGame *th
   SNetPlayer *pSVar6;
   char *pcVar7;
   byte bVar8;
-  uint uStack_c8;
-  byte uStack_c4;
+  SNetPacketHeader SStack_c8;
   uint uStack_c3;
   uint uStack_bf;
   char acStack_bb [80];
   int iStack_6b;
   char acStack_67 [20];
-  uint auStack_53 [15];
+  EHeroType aEStack_53 [15];
   char *pcStack_14;
   
   bVar8 = 0;
@@ -41,8 +40,8 @@ void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00507450(CNetGame *th
     _DAT_01d71de4 = 0x8ae;
     core_main_c_FUN_004e4330("CNetGame::send - invalid player index");
   }
-  uStack_c4 = 0xb;
-  uStack_c8 = 0xb1;
+  SStack_c8.type = PACKET_GAME_SETTINGS;
+  SStack_c8.size = 0xb1;
   __arrinit(acStack_67,2,&g_SPlayerTypeInfo);
   uStack_bf = this_ptr->random_seed;
   uStack_c3 = _DAT_01da6484;
@@ -67,30 +66,30 @@ void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00507450(CNetGame *th
     pCVar2 = this_ptr;
 LAB_00507570:
     do {
-      cVar1 = *(char *)pSVar6;
+      cVar1 = pSVar6->name[0];
       *pcVar7 = cVar1;
       if (cVar1 != '\0') {
-        cVar1 = pSVar6->field_0x1;
-        pSVar6 = (SNetPlayer *)&pSVar6->field_0x2;
+        cVar1 = pSVar6->name[1];
+        pSVar6 = (SNetPlayer *)(pSVar6->name + 2);
         pcVar7[1] = cVar1;
         pcVar7 = pcVar7 + 2;
         if (cVar1 != '\0') goto LAB_00507570;
       }
-      auStack_53[iVar3 * 10] = *(uint *)&pCVar2->players[0].field_0x1c;
-      auStack_53[iVar3 * 10 + (uint)bVar8 * -2 + 1] =
-           *(uint *)((int)pCVar2 + (uint)bVar8 * -8 + 0x40);
-      auStack_53[iVar3 * 10 + 4] = *(uint *)&pCVar2->players[0].field_0x44;
-      auStack_53[iVar3 * 10 + 2] = *(uint *)&pCVar2->players[0].field_0x14;
+      aEStack_53[iVar3 * 10] = pCVar2->players[0].addr.ip_address;
+      aEStack_53[iVar3 * 10 + (uint)bVar8 * -2 + 1] =
+           *(EHeroType *)((int)pCVar2 + (uint)bVar8 * -8 + 0x40);
+      aEStack_53[iVar3 * 10 + 4] = pCVar2->players[0].ready_flag;
+      aEStack_53[iVar3 * 10 + 2] = pCVar2->players[0].hero_number;
       pSVar6 = pSVar4 + 1;
-      auStack_53[iVar3 * 10 + 3] = *(uint *)&pCVar2->players[0].field_0x18;
+      aEStack_53[iVar3 * 10 + 3] = pCVar2->players[0].aim_mode;
       iVar3 = iVar3 + 1;
       pcVar7 = pcStack_14 + 0x28;
       pcStack_14 = pcVar7;
       pSVar4 = pSVar6;
-      pCVar2 = (CNetGame *)&pCVar2->players[0].field_0x60;
+      pCVar2 = (CNetGame *)&pCVar2->players[0].player_input.action_state.use_item;
     } while (iVar3 < this_ptr->player_count);
   }
-  core_netgame_cpp_CNetGame_send_FUN_00505870(this_ptr,player_index,(SNetPacketHeader *)&uStack_c8);
+  core_netgame_cpp_CNetGame_send_FUN_00505870(this_ptr,player_index,&SStack_c8);
   iVar3 = wincore_winrun_cpp_getTime_FUN_005806a0();
   _DAT_01da6474 = iVar3 / 0x12 - _DAT_01da6474;
   if (_DAT_01da6474 < 0) {
@@ -101,6 +100,6 @@ LAB_00507570:
   }
   _DAT_01da6478 = _DAT_01da6478 + _DAT_01da6474;
   _DAT_01da6474 = iVar3 / 0x12;
-  *(int *)&this_ptr->players[player_index].field_0x38 = _DAT_01da6478;
+  this_ptr->players[player_index].last_update_time = _DAT_01da6478;
   return;
 }

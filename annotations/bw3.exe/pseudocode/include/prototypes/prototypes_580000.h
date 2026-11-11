@@ -15,7 +15,6 @@
 #include "types/classes/CEnemy.h"
 #include "types/classes/CKedward.h"
 #include "types/classes/CMatrix3x4f.h"
-#include "types/classes/CMobster.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CWinFont.h"
@@ -205,11 +204,11 @@ void core_zombiepriest_cpp_factoryFuncZombiePriest_FUN_0058d4b0(void);
 CDemonActorType * core_zombiepriest_cpp_CZombiePriest_getActorType_FUN_0058d4d0(CZombiePriest *this_ptr);
 CZombiePriest * core_zombiepriest_cpp_CZombiePriest_ctor_FUN_0058d4e0(CZombiePriest *this_ptr);
 void core_zombiepriest_cpp_FUN_0058d5e0(CEnemy *param_1);
-void core_zombiepriest_cpp_FUN_0058d960(CEnemy *param_1,float param_2);
+void core_zombiepriest_cpp_FUN_0058d960(CZombiePriest *param_1,float param_2);
 void core_zombiepriest_cpp_FUN_0058e8d0(int param_1,float param_2);
 CMatrix3x4f * __stack2_esi core_zombprie_cpp_CZombiePriest_getCarryObjToBodyXForm_FUN_0058ecd0(CZombiePriest *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 undefined4 unkafter_zombiepr_cpp_FUN_0058efb0(CCharacter *param_1,float param_2);
-void __cdecl core_mobster_cpp_CMobster_startFiringAttack_FUN_0058f4a0(CMobster *this_ptr);
+void __cdecl core_zombprie_cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0(CZombiePriest *this_ptr);
 void __cdecl core_zombprie_cpp_CZombiePriest_archive_FUN_0058f510(CZombiePriest *this_ptr);
 undefined4 unkafter_zombiepr_cpp_FUN_0058f610(void);
 void unkafter_zombiepr_cpp_FUN_0058f630(CCharacter *param_1,float *param_2);

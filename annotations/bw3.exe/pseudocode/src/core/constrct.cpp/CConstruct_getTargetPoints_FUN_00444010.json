@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 322,
+    "complexity_score": 287,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 47,
-    "suspect_count": 24,
+    "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy"
     ],
     "total_lines": 143
@@ -132,48 +131,24 @@
       "line": 17,
       "match": "DAT_007f8e64",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054dcc0(&this_ptr->field_0x158,DAT_007f8e64);",
+      "text": "core_skeleton_cpp_FUN_0054dcc0(&(this_ptr->base).base.model,DAT_007f8e64);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054dcc0(&this_ptr->field_0x158,DAT_007f8e64);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 27,
       "match": "DAT_007f8e94",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054dcc0(&this_ptr->field_0x158,DAT_007f8e94);",
+      "text": "core_skeleton_cpp_FUN_0054dcc0(&(this_ptr->base).base.model,DAT_007f8e94);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054dcc0(&this_ptr->field_0x158,DAT_007f8e94);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 37,
       "match": "DAT_007f8e9c",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054dcc0(&this_ptr->field_0x158,DAT_007f8e9c);",
+      "text": "core_skeleton_cpp_FUN_0054dcc0(&(this_ptr->base).base.model,DAT_007f8e9c);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054dcc0(&this_ptr->field_0x158,DAT_007f8e9c);",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",

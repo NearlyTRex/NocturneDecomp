@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 141,
+    "complexity_score": 165,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 13,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 46,
-    "suspect_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 45,
+    "suspect_count": 11,
     "suspect_types": [
+      "shadow_pointer_walk",
       "undefined_data"
     ],
-    "total_lines": 207
+    "total_lines": 206
   },
   "cross_references": [
     {
@@ -241,15 +242,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 13,
       "match": "DAT_005f0990",
       "severity": "mild",
-      "text": "(file_handle,\"%s%d\\n\",&DAT_005f0990,*(uint *)(this_ptr + 0x334));",
+      "text": "FUN_005a3140(file_handle,\"%s%d\\n\",&DAT_005f0990,this_ptr->save_version);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 14,
       "match": "DAT_005f0990",
       "severity": "mild",
       "text": "FUN_005a3140(file_handle,\"%s// itemCount\\n\",&DAT_005f0990);",
@@ -257,15 +258,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 15,
       "match": "DAT_005f0990",
       "severity": "mild",
-      "text": "(file_handle,\"%s%d\\n\",&DAT_005f0990,*(uint *)(this_ptr + 0x10));",
+      "text": "FUN_005a3140(file_handle,\"%s%d\\n\",&DAT_005f0990,this_ptr->item_count);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 28,
       "match": "DAT_005f0990",
       "severity": "mild",
       "text": "FUN_005a3140(file_handle,\"%s// currentWeapon\\n\",&DAT_005f0990,iVar3);",
@@ -273,7 +274,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 29,
       "match": "DAT_005f0990",
       "severity": "mild",
       "text": "FUN_005a3140(file_handle,\"%s%d\\n\",&DAT_005f0990,iVar3);",
@@ -281,7 +282,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 30,
       "match": "DAT_005f0990",
       "severity": "mild",
       "text": "FUN_005a3140(file_handle,\"%s// battery strength\\n\",&DAT_005f0990);",
@@ -289,19 +290,35 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 32,
       "match": "DAT_005f0990",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,\"%s%f\\n\",&DAT_005f0990,(double)*(float *)this_ptr);",
+      "text": "(file_handle,\"%s%f\\n\",&DAT_005f0990,(double)this_ptr->battery_charge);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 46,
       "match": "DAT_005f0990",
       "severity": "mild",
       "text": "FUN_005a3140(file_handle,\"%s} // End inventory\\n\",&DAT_005f0990);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar2->owner`). Replace `pCVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 24,
+      "match": "pCVar2 = (T *)&pCVar2->FIELD",
+      "severity": "moderate",
+      "text": "pCVar2 = (CInventory *)&pCVar2->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar2->owner`). Replace `pCVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 42,
+      "match": "pCVar2 = (T *)&pCVar2->FIELD",
+      "severity": "moderate",
+      "text": "pCVar2 = (CInventory *)&pCVar2->owner;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

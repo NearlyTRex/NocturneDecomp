@@ -40,7 +40,7 @@ float core_setdir_cpp_FUN_0053f5d0(void)
       in_stack_000000a4 = in_stack_000000a4 + iVar1;
     } while (iVar3 < iVar4);
   }
-  if (*(int *)&g_CGamePtr->field_0x20c != 0) {
+  if (g_CGamePtr->debug_toggle_flag != 0) {
     puVar2 = (uint *)(*(int *)(unaff_EBP + 0x20) * 0x3000 + 0x241351c);
     iVar3 = 0;
     do {
@@ -67,7 +67,7 @@ float core_setdir_cpp_FUN_0053f5d0(void)
       do {
         engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0046b2c0(DAT_005f2afc,poly);
         iVar3 = iVar3 + 1;
-        poly = poly + 0x48;
+        poly = (SMRGLPrimitivePoly *)(poly->vertices + 4);
       } while (iVar3 < in_stack_000000c0);
     }
   }

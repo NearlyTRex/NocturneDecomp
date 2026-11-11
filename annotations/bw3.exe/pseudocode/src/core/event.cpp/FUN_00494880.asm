@@ -13,8 +13,8 @@
 ;   TerminatedCString s_puzzleModeHard_005bfe6c
 ;   TerminatedCString s_combatModeHard_005bfe7b
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 g_CGameInstance.field188_0xec
-;   undefined4 g_CGameInstance.field192_0xf0
+;   undefined4 g_CGameInstance.puzzle_difficulty_mode
+;   undefined4 g_CGameInstance.combat_difficulty_mode
 ;
 ; Called Functions:
 ;   core_event.cpp_FUN_004948e0
@@ -28,13 +28,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00494881
     MOV EAX,[0x005fe9dc]                ; 00494885 | g_CGamePtr
     MOV dword ptr [EBX + 0x1908],0x0    ; 0049488a
-    MOV EDX,dword ptr [EAX + 0xec]      ; 00494894 | g_CGameInstance.field188_0xec
+    MOV EDX,dword ptr [EAX + 0xec]      ; 00494894 | g_CGameInstance.puzzle_difficulty_mode
     CMP EDX,0x1                         ; 0049489a
     JZ 0x004948b1                       ; 0049489d
         ;   XREF to: 004948b1 (CONDITIONAL_JUMP)  ; LAB_004948b1
     MOV EAX,[0x005fe9dc]                ; 0049489f | g_CGamePtr
         ;   Label: LAB_0049489f
-    MOV ECX,dword ptr [EAX + 0xf0]      ; 004948a4 | g_CGameInstance.field192_0xf0
+    MOV ECX,dword ptr [EAX + 0xf0]      ; 004948a4 | g_CGameInstance.combat_difficulty_mode
     CMP ECX,0x1                         ; 004948aa
     JZ 0x004948c2                       ; 004948ad
         ;   XREF to: 004948c2 (CONDITIONAL_JUMP)  ; LAB_004948c2

@@ -4,14 +4,20 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/enums/EBloodType.h"
 
 // Structure: CBloodSplat
 // Ghidra size: 0x48 (72 bytes)
 #pragma pack(push, 1)
 typedef struct CBloodSplat {
     int expired; // 0x0
-    char field_4[36]; // 0x4
+    CVector3f position; // 0x4
+    int area_id; // 0x10, Added in this build
+    int is_wall_splat; // 0x14
+    EBloodType blood_type; // 0x18
+    CVector3f rotation; // 0x1c
     float age; // 0x28
     int texture_variant; // 0x2c
     CVector3i position_fixed; // 0x30

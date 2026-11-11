@@ -18,11 +18,11 @@ void __cdecl core_bugs_cpp_CBugs_setup_FUN_00421060(CBugs *this_ptr)
   float fVar4;
   int iVar5;
   int iVar6;
-  uint *puVar7;
+  CVector3f *pCVar7;
   SBug *pSVar8;
   char *pcVar9;
-  uint *puVar10;
-  uint *puStack_2c;
+  CVector3f *pCVar10;
+  CVector3f *pCStack_2c;
   int iStack_28;
   CKeyFramedModelInstance *pCStack_20;
   char *pcStack_1c;
@@ -34,13 +34,13 @@ void __cdecl core_bugs_cpp_CBugs_setup_FUN_00421060(CBugs *this_ptr)
   this_ptr->model_count = 1;
   iVar6 = 0;
   if (0 < this_ptr->model_count) {
-    pcVar9 = &this_ptr->field_0x134d8;
+    pcVar9 = this_ptr->models[0].model_name;
     do {
       if (*pcVar9 == '\0') {
         iVar5 = this_ptr->model_count + -1;
         this_ptr->model_count = iVar5;
         if (iVar6 < iVar5) {
-          pCStack_20 = (CKeyFramedModelInstance *)((int)this_ptr->bugs + iVar6 * 0x17c + 0x6404);
+          pCStack_20 = this_ptr->models + iVar6;
           pcStack_1c = (char *)((int)this_ptr->ground_heights + iVar6 * 0x17c + 0x78);
           iVar5 = iVar6;
           do {
@@ -53,8 +53,7 @@ void __cdecl core_bugs_cpp_CBugs_setup_FUN_00421060(CBugs *this_ptr)
         }
       }
       else {
-        core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00462580
-                  ((CKeyFramedModelInstance *)((int)this_ptr->bugs + iVar6 * 0x17c + 0x6404));
+        core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00462580(this_ptr->models + iVar6);
         pcVar9 = pcVar9 + 0x17c;
         iVar6 = iVar6 + 1;
       }
@@ -64,34 +63,34 @@ void __cdecl core_bugs_cpp_CBugs_setup_FUN_00421060(CBugs *this_ptr)
   if (0 < this_ptr->count) {
     fVar1 = _DAT_005dcbc8 * _DAT_005b7729;
     fVar2 = _DAT_005dcbc8 * _DAT_005b772d;
-    puVar10 = (uint *)&this_ptr->bugs[0].field_0x20;
-    puVar7 = (uint *)&this_ptr->bugs[0].field_0x14;
-    puStack_2c = (uint *)&this_ptr->bugs[0].field_0x8;
+    pCVar10 = &this_ptr->bugs[0].dest_position;
+    pCVar7 = &this_ptr->bugs[0].orientation;
+    pCStack_2c = &this_ptr->bugs[0].position;
     do {
       pSVar8 = this_ptr->bugs + iStack_28;
-      *(uint *)pSVar8 = 0;
+      pSVar8->state = 0;
       iVar6 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,this_ptr->model_count + -1);
       fVar4 = fVar1 * (float)_DAT_005b7731;
       min_value = fVar2 * (float)_DAT_005b7731;
-      *(int *)&pSVar8->field_0x4 = iVar6;
+      pSVar8->model_index = iVar6;
       fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(min_value,fVar4);
-      *(uint *)&pSVar8->field_0xc = 0;
-      *(float *)&pSVar8->field_0x8 = fVar3;
+      (pSVar8->position).y = 0.0;
+      (pSVar8->position).x = fVar3;
       fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(min_value,fVar4);
-      *(float *)&pSVar8->field_0x10 = fVar4;
-      puVar7[2] = 0;
-      puVar7[1] = puVar7[2];
-      *puVar7 = puVar7[1];
+      (pSVar8->position).z = fVar4;
+      pCVar7->z = 0.0;
+      pCVar7->y = pCVar7->z;
+      pCVar7->x = pCVar7->y;
       fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-3.1415927,3.1415927);
-      *(float *)&pSVar8->field_0x18 = fVar4;
-      if (puVar10 != puStack_2c) {
-        *puVar10 = puVar7[-3];
-        puVar10[1] = puVar7[-2];
-        puVar10[2] = puVar7[-1];
+      (pSVar8->orientation).y = fVar4;
+      if (pCVar10 != pCStack_2c) {
+        pCVar10->x = pCVar7[-1].x;
+        pCVar10->y = pCVar7[-1].y;
+        pCVar10->z = pCVar7[-1].z;
       }
-      puVar10 = puVar10 + 0x10;
-      puVar7 = puVar7 + 0x10;
-      puStack_2c = puStack_2c + 0x10;
+      pCVar10 = (CVector3f *)((int)(pCVar10 + 5) + 4);
+      pCVar7 = (CVector3f *)((int)(pCVar7 + 5) + 4);
+      pCStack_2c = (CVector3f *)((int)(pCStack_2c + 5) + 4);
       iStack_28 = iStack_28 + 1;
     } while (iStack_28 < this_ptr->count);
   }

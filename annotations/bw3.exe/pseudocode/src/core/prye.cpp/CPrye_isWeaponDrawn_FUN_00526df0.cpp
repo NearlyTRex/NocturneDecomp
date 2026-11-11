@@ -9,5 +9,5 @@
 int __cdecl core_prye_cpp_CPrye_isWeaponDrawn_FUN_00526df0(CPrye *this_ptr)
 
 {
-  return *(int *)&this_ptr->field_0x20bcc;
+  return this_ptr->guns_drawn;
 }

@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/winsock.h"
 
 // Structure: SSocket
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 'Socket' size 4; its copy ctor 0056f8a0 ('Should never be called!') sits beside the CSocket methods (ctor 0056f8d0); same layout as nocedit's CSocket
 // Ghidra size: 0x4 (4 bytes)
 #pragma pack(push, 1)
 typedef struct SSocket {
-    char field_0[4]; // 0x0
+    _SOCKET handle; // 0x0, ctor 0056f8d0 stores -1; createSocket stores socket(); closeSocket closesocket()s and resets -1; isSocketValid tests != -1
 } SSocket;
 #pragma pack(pop)
 

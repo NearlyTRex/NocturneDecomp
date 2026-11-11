@@ -315,15 +315,15 @@ double __cdecl getSfxPlaybackPosition(uint sfx_handle,uint output_format);
 
 // Original: sound_sndmain.cpp_FUN_00556930
 // Address: 00556930
-undefined4 FUN_00556930(uint param_1,undefined4 param_2);
+undefined4 FUN_00556930(uint param_1,void *param_2);
 
 // Original: sound_sndmain.cpp_FUN_00556a30
 // Address: 00556a30
-undefined4 FUN_00556a30(uint param_1,undefined4 param_2);
+undefined4 FUN_00556a30(uint param_1,void *param_2);
 
 // Original: sound_sndmain.cpp_FUN_00556ab0
 // Address: 00556ab0
-undefined4 FUN_00556ab0(uint param_1,undefined4 param_2);
+undefined4 FUN_00556ab0(uint param_1,float param_2);
 
 // Original: sound_sndmain.cpp_FUN_00556ae0
 // Address: 00556ae0
@@ -331,7 +331,7 @@ int __cdecl FUN_00556ae0(uint sfx_handle,float base_frequency);
 
 // Original: sound_sndmain.cpp_setSfxUserData_FUN_00556b40
 // Address: 00556b40
-undefined4 setSfxUserData(uint param_1,int param_2,undefined4 param_3);
+undefined4 setSfxUserData(uint param_1,int param_2,void *param_3);
 
 // Original: sound_sndmain.cpp_killSfx_FUN_00556be0
 // Address: 00556be0

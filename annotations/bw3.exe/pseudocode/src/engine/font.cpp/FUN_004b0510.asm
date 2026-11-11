@@ -33,8 +33,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
+;   crt_memory.c_operator_new_array_FUN_005a40df
 ;   crt_unknown.c_FUN_005a30b6
-;   crt_unknown.c_FUN_005a40df
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004b09c0
 ;
@@ -54,8 +54,8 @@ section .text
     IMUL EBX,EDX                        ; 004b052f
     LEA EAX,[EDX*0x4 + 0x0]             ; 004b0532
     PUSH EAX                            ; 004b0539
-    CALL crt_unknown.c_FUN_005a40df     ; 004b053a
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a40df()
+    CALL crt_memory.c_operator_new_array_FUN_005a40df ; 004b053a
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
     ADD ESP,0x4                         ; 004b053f
     MOV dword ptr [ESP + 0x12c],EAX     ; 004b0542
     TEST EAX,EAX                        ; 004b0549

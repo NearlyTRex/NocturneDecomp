@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 254,
+    "complexity_score": 179,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 94,
-    "suspect_count": 13,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
@@ -193,30 +192,6 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x594",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x594 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x598",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x598 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x304",
-      "severity": "mild",
-      "text": "(*(uint *)&this_ptr->field_0x304,g_CHeroClassInfo.name_hash);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 52,
       "match": "code *",
@@ -239,38 +214,6 @@
       "severity": "moderate",
       "text": "puVar3 = &stack0xffffff78;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 89,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(CVector3f *)&this_ptr->field_0x20);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 90,
-      "match": "field_0x300",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x300 = 0x40400000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 95,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(CVector3f *)&this_ptr->field_0x20);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 96,
-      "match": "field_0x300",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x300 = 0x3f800000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

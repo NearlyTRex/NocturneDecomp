@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_ammo_cpp_CAmmoMana_process_FUN_0040e140(CAmmoMana *this_ptr,float delta_time)
@@ -17,45 +16,40 @@ void __cdecl core_ammo_cpp_CAmmoMana_process_FUN_0040e140(CAmmoMana *this_ptr,fl
   float fVar3;
   byte bVar4;
   float afStackY_1024 [1012];
-  uint uStack_3c;
-  float fStack_38;
-  uint uStack_34;
-  uint uStack_30;
-  float fStack_2c;
-  uint uStack_28;
-  uint uStack_24;
-  float fStack_20;
-  uint uStack_1c;
+  CVector3f CStack_3c;
+  float fStack_30;
+  float afStack_2c [2];
+  CVector3f CStack_24;
   float fStack_18;
   float fStack_14;
   int iStack_10;
   
   bVar4 = 0;
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
-                     ((CKeyFramedModelInstance *)&this_ptr->field_0x158);
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(&(this_ptr->base).model)
+  ;
   fStack_18 = delta_time * _DAT_005b6109;
   iVar1 = pCVar2->frame_count + -1;
   fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.95,1.05);
   iStack_10 = iVar1;
   fStack_14 = (float)iVar1;
-  fVar3 = fVar3 * fStack_18 + *(float *)&this_ptr->field_0x31c;
-  *(float *)&this_ptr->field_0x31c = fVar3;
+  fVar3 = fVar3 * fStack_18 + (this_ptr->base).anim_frame;
+  (this_ptr->base).anim_frame = fVar3;
   if (fStack_14 <= fVar3) {
-    *(float *)&this_ptr->field_0x31c = *(float *)&this_ptr->field_0x31c - fStack_14;
+    (this_ptr->base).anim_frame = (this_ptr->base).anim_frame - fStack_14;
   }
-  uStack_30 = *(uint *)&this_ptr->field_0x20;
-  fStack_2c = *(float *)&this_ptr->field_0x24 + _DAT_005b610d;
-  uStack_28 = *(uint *)&this_ptr->field_0x28;
-  uStack_3c = *(uint *)&this_ptr->field_0x20;
-  (&stack0xffffffc8)[(uint)bVar4 * 0xfffffffe] =
-       (float)*(uint *)((int)&stack0xffffffd4 + (uint)bVar4 * -8);
-  *(uint *)((int)&stack0xffffffcc + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-       *(uint *)((int)&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  if (&stack0xffffffdc != &stack0xffffffc4) {
-    uStack_24 = uStack_3c;
-    fStack_20 = fStack_38;
-    uStack_1c = uStack_34;
+  fStack_30 = (this_ptr->base).base.location.position.x;
+  afStack_2c[0] = (this_ptr->base).base.location.position.y + _DAT_005b610d;
+  afStack_2c[1] = (this_ptr->base).base.location.position.z;
+  CStack_3c.x = fStack_30;
+  *(float *)((int)&CStack_3c + (uint)bVar4 * -8 + 4) = afStack_2c[(uint)bVar4 * -2];
+  *(float *)((int)&CStack_3c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+       afStack_2c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+  if (&CStack_24 != &CStack_3c) {
+    CStack_24.x = CStack_3c.x;
+    CStack_24.y = CStack_3c.y;
+    CStack_24.z = CStack_3c.z;
   }
-  core_fire_cpp_FUN_004a3af0(0x01C73654,&stack0xffffffdc,&DAT_02cfd900,1,0,4);
+  core_fire_cpp_CFireEffect_createGunFlames_FUN_004a3af0
+            (0x01C73654,&CStack_24,(CVector3f *)&DAT_02cfd900,1,0,4);
   return;
 }

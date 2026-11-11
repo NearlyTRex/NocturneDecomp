@@ -22,15 +22,15 @@ int __cdecl core_mission_cpp_FUN_004f7590(CDemonMission *this_ptr)
   else {
     if (*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) != 0) {
       core_mission_cpp_CDemonMission_prepareAllActors_FUN_004f6a80(this_ptr);
-      *(uint *)(this_ptr + 0x1450) = 0xffffffff;
+      (this_ptr->pending_teleport).area_id = -1;
       this_ptr_00 = 0x01C6E360;
-      *(uint *)(this_ptr + 0x144c) = 0;
-      *(uint *)(this_ptr + 0x1448) = *(uint *)(this_ptr + 0x144c);
-      *(uint *)(this_ptr + 0x1444) = *(uint *)(this_ptr + 0x1448);
+      (this_ptr->pending_teleport).position.z = 0.0;
+      (this_ptr->pending_teleport).position.y = (this_ptr->pending_teleport).position.z;
+      (this_ptr->pending_teleport).position.x = (this_ptr->pending_teleport).position.y;
       core_event_cpp_CEventList_reset_FUN_0048bfd0(this_ptr_00);
       pCVar1 = g_CGamePtr;
-      *(uint *)&g_CGamePtr->field_0x24c = 0;
-      *(uint *)&pCVar1->field_0x294 = 0xbf800000;
+      g_CGamePtr->letterbox_mode = 0;
+      pCVar1->end_timer = -1.0;
       core_mission_cpp_FUN_004f6de0
                 (this_ptr,*(uint *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x2c));
       uVar2 = 0;

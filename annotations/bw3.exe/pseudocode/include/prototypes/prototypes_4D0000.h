@@ -13,7 +13,6 @@
 #include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
-#include "types/classes/CEnemy.h"
 #include "types/classes/CGround.h"
 #include "types/classes/CGun.h"
 #include "types/classes/CHeal.h"
@@ -122,7 +121,7 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004d38b0(CHero *this_
 void __cdecl core_hero_cpp_CHero_stopNearbyInteraction_FUN_004d3af0(CHero *this_ptr);
 int __cdecl core_hero_cpp_FUN_004d3b20(CHero *this_ptr);
 int core_hero_cpp_FUN_004d3c90(CHero *param_1);
-bool core_hero_cpp_FUN_004d3e20(CEnemy *param_1,char *param_2);
+bool core_hero_cpp_FUN_004d3e20(CHero *param_1,char *param_2);
 undefined4 core_hero_cpp_FUN_004d4090(int param_1);
 void __cdecl core_hero_cpp_FUN_004d4160(CHero *this_ptr,int hand_index);
 void __cdecl core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004d41a0(CHero *this_ptr,int hand_index);

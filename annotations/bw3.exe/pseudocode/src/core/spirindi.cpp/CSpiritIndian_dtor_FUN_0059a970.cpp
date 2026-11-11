@@ -24,8 +24,9 @@ CSpiritIndian * core_spirindi_cpp_CSpiritIndian_dtor_FUN_0059a970(CSpiritIndian 
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = core_morph_cpp_CMorph_dtor_FUN_004fa8c0((CMorph *)&this_ptr->field_0x34174,0);
-  pCVar2 = core_cloth_cpp_CClothList_dtor_FUN_0043f900((CClothList *)(pCVar1 + -0x1d0),0);
+  pCVar1 = core_morph_cpp_CMorph_dtor_FUN_004fa8c0(&this_ptr->morph,0);
+  pCVar2 = core_cloth_cpp_CClothList_dtor_FUN_0043f900
+                     ((CClothList *)(pCVar1[-1].models[1].textures[0xd].texture_name + 0x3c),0);
   pCVar3 = core_path_cpp_CPathMap_dtor_FUN_0050ad40
                      ((CPathMap *)(pCVar2[-0xb5].filenames[6] + 0x1c),0);
   pCVar3 = core_path_cpp_CPathMap_dtor_FUN_0050ad40
@@ -35,7 +36,8 @@ CSpiritIndian * core_spirindi_cpp_CSpiritIndian_dtor_FUN_0059a970(CSpiritIndian 
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80
                      ((CDeformableModelInstance *)(pCVar2[-0x1b].filenames[7] + 8),0);
   pCVar6 = (CSpiritIndian *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar5[-1].field_0x224c,1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408770
+                     ((CDemonActor *)(pCVar5[-1].part_data.texture_set_indices + 7),1);
   if ((flags & 2) == 0) {
     return pCVar6;
   }

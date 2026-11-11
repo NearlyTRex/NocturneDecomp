@@ -11,12 +11,12 @@ int __cdecl engine_texture_cpp_CTextureCache_getTextureCacheStats_FUN_0056a700(C
 {
   int iVar1;
   
-  if (*(int *)this_ptr == 0) {
+  if (this_ptr->wrap_indicator == 0) {
     iVar1 = 0;
-    if (0 < *(int *)(this_ptr + 0x18004)) {
+    if (0 < this_ptr->current_texture_count) {
       do {
         iVar1 = iVar1 + 1;
-      } while (iVar1 < *(int *)(this_ptr + 0x18004));
+      } while (iVar1 < this_ptr->current_texture_count);
     }
     iVar1 = _sprintf(output_buffer,"Total: %d, 32: %d, 64: %d, 128: %d, 256: %d, 512: %d, 1024: %d");
     return iVar1;

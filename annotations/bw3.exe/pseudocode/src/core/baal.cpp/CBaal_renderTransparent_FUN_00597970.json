@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 304,
+    "complexity_score": 135,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 22,
+    "pseudocode_lines": 60,
+    "suspect_count": 6,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
-      "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 189
+    "total_lines": 190
   },
   "cross_references": [],
   "function": {
@@ -192,123 +190,11 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0xd070",
-      "severity": "mild",
-      "text": "fStack_14 = (float)*(int *)&this_ptr->field_0xd070 * (float)_DAT_005d9699 * (float)_DAT_005d96a1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0xd070",
-      "severity": "mild",
-      "text": "fStack_18 = ((float)_DAT_005d9691 - (float)*(int *)&this_ptr->field_0xd070) * (float)_DAT_005d9699",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0xd068",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0xd068 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0xd064",
-      "severity": "mild",
-      "text": "fVar5 = ((float10)fStack_14 * (float10)*(float *)&this_ptr->field_0xd064) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0xd06c",
-      "severity": "mild",
-      "text": "(float10)*(float *)&this_ptr->field_0xd06c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0xd060",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0xd060 = iVar1 - iStack_1c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0xd064",
-      "severity": "mild",
-      "text": "fVar5 = ((float10)fStack_14 * (float10)*(float *)&this_ptr->field_0xd064) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0xd06c",
-      "severity": "mild",
-      "text": "(float10)*(float *)&this_ptr->field_0xd06c + (float10)fStack_18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0xd060",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0xd060 = (int)ROUND(fVar5);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 37,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x1c))(this_ptr,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x1c))(this_ptr,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 47,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "this_ptr_00 = DAT_005f2afc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x27bc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x27bc = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0xd060",
-      "severity": "mild",
-      "text": "(this_ptr_00,*(int *)&this_ptr->field_0xd060);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);",
+      "text": "this_ptr_01 = DAT_005f2afc;",
       "type": "undefined_data"
     },
     {
@@ -316,44 +202,28 @@
       "line": 52,
       "match": "DAT_005f2afc",
       "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(DAT_005f2afc,1);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&this_ptr->field_0x158,-1,0x2e7,1,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 57,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(DAT_005f2afc);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CMotionController *)&this_ptr->field_0x158,(CDemonActor *)this_ptr);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 62,
-      "match": "field_0x27bc",
-      "severity": "mild",
-      "text": "return *(int *)&this_ptr->field_0x27bc;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 40,
+      "line": 41,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",

@@ -5,9 +5,9 @@
 ;
 ;
 ; Called Functions:
+;   support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_00574ac0
 ;   support_trstream.cpp_COutStreamMemory_dtor_FUN_00574b50
-;   support_trstream.cpp_FUN_00574ac0
-;   support_trstream.cpp_FUN_00574d00
+;   support_trstream.cpp_COutStreamMemory_tell_FUN_00574d00
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     PUSH ECX                            ; 004408f5
     LEA EAX,[ESP + 0x8]                 ; 004408f6
     PUSH EAX                            ; 004408fa
-    CALL support_trstream.cpp_FUN_00574ac0 ; 004408fb
-        ;   XREF to: 00574ac0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00574ac0()
+    CALL support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_00574ac0 ; 004408fb
+        ;   XREF to: 00574ac0 (UNCONDITIONAL_CALL)  ; undefined4 * support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_00574ac0(COutStreamMemory * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 00440900
     MOV EBX,ESP                         ; 00440903
     PUSH EBX                            ; 00440905
@@ -47,8 +47,8 @@ section .text
     MOV EAX,ESP                         ; 00440922
         ;   Label: LAB_00440922
     PUSH EAX                            ; 00440924
-    CALL support_trstream.cpp_FUN_00574d00 ; 00440925
-        ;   XREF to: 00574d00 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00574d00()
+    CALL support_trstream.cpp_COutStreamMemory_tell_FUN_00574d00 ; 00440925
+        ;   XREF to: 00574d00 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_COutStreamMemory_tell_FUN_00574d00(COutStreamMemory * this_ptr)
     ADD ESP,0x4                         ; 0044092a
     MOV EDX,dword ptr [EDI]             ; 0044092d
     PUSH 0x0                            ; 0044092f

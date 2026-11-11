@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 175,
+    "complexity_score": 151,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 30,
-    "suspect_count": 13,
+    "pseudocode_lines": 31,
+    "suspect_count": 11,
     "suspect_types": [
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 92
+    "total_lines": 93
   },
   "cross_references": [],
   "function": {
@@ -136,7 +135,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "core_netgame_cpp_CNetGame_disconnect_FUN_005043b0(param_1,0);",
@@ -144,31 +143,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->player_count = 0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0xdc",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&pCVar1->field_0xdc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0xd8",
-      "severity": "mild",
-      "text": "hero_number = *(int *)&pCVar1->field_0xd8;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "name = param_1->player_name;",
@@ -176,18 +159,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = core_netgame_cpp_CNetGame_addPlayer_FUN_00505950(param_1,addr,name,hero_number,iVar2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->local_player_index = iVar2;",
+      "text": "iVar2 = core_netgame_cpp_CNetGame_addPlayer_FUN_00505950(param_1,addr,name,hero_number,aim_mode);",
       "type": "unnamed_param"
     },
     {
@@ -195,7 +170,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->server_player_index = iVar2;",
+      "text": "param_1->local_player_index = iVar2;",
       "type": "unnamed_param"
     },
     {
@@ -203,12 +178,20 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
+      "text": "param_1->server_player_index = iVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
       "text": "iVar2 = core_netgame_cpp_CNetGame_initializeNetwork_FUN_00504270(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->network_mode = NET_MODE_LOBBY;",
@@ -216,7 +199,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->connection_type = CONNECTION_HOST;",

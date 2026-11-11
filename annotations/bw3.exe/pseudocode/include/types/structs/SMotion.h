@@ -2,14 +2,42 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct SMotionTransition;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SMotionSignal.h"
 
 // Structure: SMotion
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// motion load 004fb280 (version <= 3): stride 0x120 (48 dwords); transitions malloc'd (count*0x18); version 3 adds a %d,%d line stored to +0x68/+0x6c (defaults 1 and frame_count)
+// Ghidra size: 0x120 (288 bytes)
 #pragma pack(push, 1)
 typedef struct SMotion {
+    char motion_name[32]; // 0x0, "%[^"]",%f,%d,%d,%d -> +0,+0x20,+0x24,+0x60,+0x64
+    float fps; // 0x20, bw1 00524ba0 advances frame by delta_time * [+0x20]
+    int state_index; // 0x24
+    int exit_forward_from_frame; // 0x28, %d,%d,%f -> +0x28,+0x34,+0x38
+    int unused1; // 0x2c, nocedit padding between pinned fields
+    int exit_forward_cmd; // 0x30, %d,%f,%d: first value stored to +0x30; 00524ba0 switch on [+0x30]
+    int exit_forward_to_motion; // 0x34
+    float exit_forward_to_frame; // 0x38
+    float exit_forward_tween_time; // 0x3c
+    int exit_forward_set_new_state; // 0x40
+    char unused2[12]; // 0x44, nocedit padding between pinned fields
+    int exit_backward_to_motion; // 0x50, %d,%f -> +0x50,+0x54
+    float exit_backward_to_frame; // 0x54
+    char unused3[8]; // 0x58, nocedit padding between pinned fields
+    int frame_start; // 0x60
+    int frame_count; // 0x64
+    int frame_step; // 0x68, bw1 00525240/00524ba0: source frame = frame_start + frame_number / [+0x68]; defaults 1
+    int stored_frame_count; // 0x6c, bw1 00525240: last frame = frame_start + [+0x6c] - 1; defaults to frame_count
+    int transition_count; // 0x70, read, then malloc(count*0x18) stored at +0x74
+    struct SMotionTransition* transitions; // 0x74, %d,%d,%d,%f,%f,%d per 0x18 element; freed by 00523910 (+0x1c9c from list = motion+0x74)
+    int signal_count; // 0x78, 00524ba0 loop bound
+    SMotionSignal signals[15]; // 0x7c, %d,%d pairs at +0x7c/+0x80 stepping 8; 00524ba0 reads frame +0x7c, value +0x80
+    int marker_count; // 0xf4, version>=2; save 00523e2e loop on +0xf4
+    int markers[10]; // 0xf8, one %d per marker stepping 4 from +0xf8; ends at 0x120
 } SMotion;
 #pragma pack(pop)
 

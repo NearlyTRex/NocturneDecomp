@@ -5,13 +5,22 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CCharacter.h"
+#include "types/classes/CPathMap.h"
 
 // Structure: CNPC
 // Ghidra size: 0x206c8 (132808 bytes)
 #pragma pack(push, 1)
 typedef struct CNPC {
     CCharacter base; // 0x0
-    char field_52684[80124]; // 0xcdcc
+    CPathMap path_map; // 0xcdcc
+    int shoot_me; // 0x206a8
+    int pool_me; // 0x206ac
+    float speed; // 0x206b0, Added in this build
+    int fade_alpha; // 0x206b4, Added in this build
+    int fade_state; // 0x206b8, Added in this build
+    int start_opcode; // 0x206bc, Added in this build
+    float fade_timer; // 0x206c0, Added in this build
+    float fade_time; // 0x206c4, Added in this build
 } CNPC;
 #pragma pack(pop)
 

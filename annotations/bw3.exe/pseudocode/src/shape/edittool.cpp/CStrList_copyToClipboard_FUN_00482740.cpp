@@ -37,7 +37,7 @@ void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00482740(CStrList *
       iVar4 = iVar4 + ~uVar3;
     } while (iVar5 < this_ptr->item_count);
   }
-  pcVar2 = (char *)FUN_005a40df(iVar4 + 1);
+  pcVar2 = (char *)operator_new_array(iVar4 + 1);
   if (pcVar2 == (char *)0x0) {
     _DAT_01d71de0 = "..\\shape\\edittool.cpp";
     _DAT_01d71de4 = 0xd4d;

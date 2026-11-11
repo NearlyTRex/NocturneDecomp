@@ -2,25 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 143,
-    "complexity_score": 273,
+    "complexity_score": 237,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 78,
-    "suspect_count": 15,
+    "pseudocode_lines": 77,
+    "suspect_count": 12,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
       "pointer_truncation",
       "stack_param",
       "stack_ref",
-      "unnamed_field",
       "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 221
+    "total_lines": 220
   },
   "cross_references": [
     {
@@ -136,7 +135,7 @@
     },
     {
       "addr": "02cebf30",
-      "name": "g_SfxSamples[1].field8_0x15c",
+      "name": "g_SfxSamples[1].is_user_sample",
       "type": "undefined4",
       "value": null
     },
@@ -340,24 +339,8 @@
       "type": "extra_output"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x168",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_005514c0(*(int *)&this_ptr->field_0x168);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x168",
-      "severity": "mild",
-      "text": "(this_ptr->sample_data,*(ulong *)&this_ptr->field_0x168);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 37,
+      "line": 36,
       "match": "&stack0xfffffd50",
       "severity": "moderate",
       "text": "puVar5 = (uint *)&stack0xfffffd50;",
@@ -365,7 +348,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 39,
       "match": "(CSfxSample *)((int)pCVar4",
       "severity": "moderate",
       "text": "pCVar4 = (CSfxSample *)((int)pCVar4 + (uint)bVar7 * -8 + 4);",
@@ -373,7 +356,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 43,
+      "line": 42,
       "match": "&stack0xfffffd50",
       "severity": "moderate",
       "text": "puVar5 = (uint *)&stack0xfffffd50;",
@@ -381,23 +364,15 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 52,
+      "line": 51,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*_DAT_02cf3280 + 0x30))(_DAT_02cf3280,local_160);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "((*(int *)&g_SfxSamples[iVar2].field_0x15c == 0 &&",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 40,
+      "line": 39,
       "match": "(int)pCVar4",
       "severity": "moderate",
       "text": "pCVar4 = (CSfxSample *)((int)pCVar4 + (uint)bVar7 * -8 + 4);",
@@ -405,7 +380,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 38,
+      "line": 37,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0x54; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -413,7 +388,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 45,
+      "line": 44,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0x54; iVar2 != 0; iVar2 = iVar2 + -1) {",

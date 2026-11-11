@@ -4,13 +4,18 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CMuzzleFlash
-// Stub: size from Watcom RTTI, fields not yet recovered
+// init 0049a390 and process 0049a450 identical to bw1's; RTTI 92.
 // Ghidra size: 0x5c (92 bytes)
 #pragma pack(push, 1)
 typedef struct CMuzzleFlash {
-    char field_0[92]; // 0x0
+    int frames_remaining; // 0x0, MOV [EBP],2
+    CVector3f position; // 0x4, LEA [EBP+0x4] copy
+    CVector3f rotation; // 0x10, LEA [EBP+0x10]
+    CDemonGlobe light; // 0x1c, LEA [EBP+0x1c] to CDemonGlobe_setPosition; [+0x3c]=0x8000
 } CMuzzleFlash;
 #pragma pack(pop)
 

@@ -23,19 +23,19 @@ void core_shadow_cpp_FUN_005459b0(CEnemy *param_1,SDamageInfo *param_2)
   float fStack_14;
   
   bVar4 = 0;
-  if (*(int *)(param_2 + 0x30) == 0x6c) {
+  if (param_2->damage_type == DAMAGE_TYPE_BURN) {
     core_shadow_cpp_FUN_00545000(param_1);
     fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(15.0,30.0);
-    *(float *)(param_2 + 4) = fStack_14 * (float)_DAT_005d13be * *(float *)(param_2 + 4);
-    core_actor_cpp_FUN_00408b80(param_1,param_2 + 0x1c);
+    param_2->damage_amount = fStack_14 * (float)_DAT_005d13be * param_2->damage_amount;
+    core_actor_cpp_FUN_00408b80(param_1,&param_2->impact_direction);
   }
   pCStack_18 = &(param_1->base).model.base;
-  fVar1 = (param_1->base).hit_points - *(float *)(param_2 + 4);
+  fVar1 = (param_1->base).hit_points - param_2->damage_amount;
   (param_1->base).hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (param_1->base).hit_points = 0.0;
     pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(pCStack_18);
-    iVar2 = *(int *)(pSVar3 + 0x24);
+    iVar2 = pSVar3->state_index;
     if ((((iVar2 != 0xf) && (iVar2 != 0xd)) && (iVar2 != 0x10)) && (iVar2 != 0xe)) {
       core_actor_cpp_FUN_00408bf0(param_1,*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x20);
       uStack_38 = uStack_44;
@@ -58,10 +58,9 @@ void core_shadow_cpp_FUN_005459b0(CEnemy *param_1,SDamageInfo *param_2)
   }
   else {
     if ((*(int *)param_1[1].base.base.actor_name != 2) &&
-       (iVar2 = unkafter_enemy_cpp_FUN_0048a1b0(param_1,*(uint *)(param_2 + 4)), iVar2 != 0))
-    {
+       (iVar2 = unkafter_enemy_cpp_FUN_0048a1b0(param_1,param_2->damage_amount), iVar2 != 0)) {
       pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(pCStack_18);
-      iVar2 = *(int *)(pSVar3 + 0x24);
+      iVar2 = pSVar3->state_index;
       if ((((iVar2 == 0) || ((iVar2 == 5 || (iVar2 == 0xc)))) || (iVar2 == 6)) || (iVar2 == 7)) {
         iVar2 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,2);
         if (iVar2 == 0) {

@@ -12,21 +12,21 @@ void __cdecl core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(CEnemy *this_ptr,S
   CCharacter *pCVar1;
   int iVar2;
   
-  if (*(int *)&(this_ptr->base).field_0x27b0 != 0) {
+  if ((this_ptr->base).is_invulnerable != 0) {
     core_event_cpp_CEventList_executeCommands_FUN_0048c150
               (0x01C6E360,"@@ShotInvulnerable" + 2);
     return;
   }
   (*(((this_ptr->base).base.vtable._uc)->_uc).releaseVictim)(&this_ptr->base);
   core_charactr_cpp_CCharacter_processDamage_FUN_00430d60(&this_ptr->base,damage_info);
-  if (0.0 < *(float *)(damage_info + 4)) {
+  if (0.0 < damage_info->damage_amount) {
     pCVar1 = (CCharacter *)
              core_actor_cpp_castToClassHash_FUN_0040c840
-                       (*(uint *)(damage_info + 0x38),g_CCharacterClassInfo.name_hash);
+                       (damage_info->wielder,g_CCharacterClassInfo.name_hash);
     if (pCVar1 == (CCharacter *)0x0) {
       pCVar1 = (CCharacter *)
                core_actor_cpp_castToClassHash_FUN_0040c840
-                         (*(uint *)(damage_info + 0x34),g_CCharacterClassInfo.name_hash);
+                         (damage_info->attacker,g_CCharacterClassInfo.name_hash);
     }
     if (pCVar1 != (CCharacter *)0x0) {
       iVar2 = (CBugs *)core_actor_cpp_castToClassHash_FUN_0040c840(pCVar1,g_CBugsClassInfo.name_hash);
@@ -37,10 +37,10 @@ void __cdecl core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(CEnemy *this_ptr,S
       }
     }
   }
-  if (((((*(uint *)&(this_ptr->base).field_0x3254 & 0x7fffffff) != 0) &&
-       (*(int *)&(this_ptr->base).field_0x3258 == 0)) && (*(int *)(damage_info + 0x30) == 0x71)) &&
-     ((this_ptr->base).hit_points <= 0.0)) {
-    sound_sndmain_cpp_killSfx_FUN_00556be0(*(uint *)&(this_ptr->base).field_0x325c);
+  if ((((ABS((this_ptr->base).bind_time) != 0.0) && ((this_ptr->base).bind_type == 0)) &&
+      (damage_info->damage_type == DAMAGE_TYPE_HOLY_CROSS)) && ((this_ptr->base).hit_points <= 0.0))
+  {
+    sound_sndmain_cpp_killSfx_FUN_00556be0((this_ptr->base).bind_sound_handle);
     core_charactr_cpp_FUN_0042ff70(this_ptr);
     return;
   }

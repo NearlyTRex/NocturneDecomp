@@ -8,9 +8,9 @@
 ; int              Stack[0x8]:4   char_code
 ;
 ; XREF[36]:
-;   core_fldnotes.cpp_FUN_004a8490 at 004a84f9
-;   core_fldnotes.cpp_FUN_004a8570 at 004a85ab
-;   core_fldnotes.cpp_FUN_004a9270 at 004a928d
+;   core_fldnotes.cpp_SPageResourceText_ctor_FUN_004a8490 at 004a84f9
+;   core_fldnotes.cpp_SPageResourceText_draw_FUN_004a8570 at 004a85ab
+;   core_fldnotes.cpp_STextView_newLine_FUN_004a9270 at 004a928d
 ;   core_game.cpp_CGame_displayActStats_FUN_004bfb50 at 004bfe55
 ;   core_game.cpp_CGame_finishAct_FUN_004bfee0 at 004c0206
 ;   core_game.cpp_CGame_renderOverlay_FUN_004b47d0 at 004b49de

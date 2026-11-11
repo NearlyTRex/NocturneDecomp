@@ -43,27 +43,25 @@ int __cdecl core_ground_cpp_CGround_getHeightAtPosition_FUN_004d09b0(CGround *th
     if (iVar7 < iVar6) {
       iVar10 = this_ptr->width * uVar5;
       pSVar1 = this_ptr->terrain_data;
-      iVar9 = (int)*(short *)(pSVar1 + (uVar13 + iVar10) * 4) * this_ptr->height_scale;
+      iVar9 = (int)pSVar1[uVar13 + iVar10].height * this_ptr->height_scale;
       iVar10 = this_ptr->height_scale *
-               (int)*(short *)(pSVar1 + ((uVar12 & this_ptr->width_minus_1) + iVar10) * 4);
+               (int)pSVar1[(uVar12 & this_ptr->width_minus_1) + iVar10].height;
       lVar3 = (longlong)iVar6 * (longlong)(iVar9 - iVar10);
       lVar4 = (longlong)iVar7 *
               (longlong)
               (this_ptr->height_scale *
-               (int)*(short *)(pSVar1 + (uVar13 + (uVar8 & this_ptr->height_minus_1) *
-                                                  this_ptr->width) * 4) - iVar9);
+               (int)pSVar1[uVar13 + (uVar8 & this_ptr->height_minus_1) * this_ptr->width].height -
+              iVar9);
       return ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
              iVar10 + ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
     }
     uVar12 = this_ptr->width_minus_1 & uVar12;
     pSVar1 = this_ptr->terrain_data;
-    iVar9 = this_ptr->height_scale *
-            (int)*(short *)(pSVar1 + (uVar5 * this_ptr->width + uVar12) * 4);
+    iVar9 = this_ptr->height_scale * (int)pSVar1[uVar5 * this_ptr->width + uVar12].height;
     iVar10 = this_ptr->width * (uVar8 & this_ptr->height_minus_1);
-    iVar11 = this_ptr->height_scale * (int)*(short *)(pSVar1 + (iVar10 + uVar12) * 4);
+    iVar11 = this_ptr->height_scale * (int)pSVar1[iVar10 + uVar12].height;
     lVar3 = (longlong)iVar6 *
-            (longlong)
-            ((int)*(short *)(pSVar1 + (uVar13 + iVar10) * 4) * this_ptr->height_scale - iVar11);
+            (longlong)((int)pSVar1[uVar13 + iVar10].height * this_ptr->height_scale - iVar11);
     lVar4 = (longlong)iVar7 * (longlong)(iVar11 - iVar9);
     return ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
            iVar9 + ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
@@ -71,28 +69,25 @@ int __cdecl core_ground_cpp_CGround_getHeightAtPosition_FUN_004d09b0(CGround *th
   if (iVar7 < iVar6) {
     iVar9 = this_ptr->width * uVar5;
     pSVar1 = this_ptr->terrain_data;
-    iVar10 = this_ptr->height_scale * (int)*(short *)(pSVar1 + (uVar13 + iVar9) * 4);
-    iVar9 = (int)*(short *)(pSVar1 + ((this_ptr->width_minus_1 & uVar12) + iVar9) * 4) *
-            this_ptr->height_scale;
+    iVar10 = this_ptr->height_scale * (int)pSVar1[uVar13 + iVar9].height;
+    iVar9 = (int)pSVar1[(this_ptr->width_minus_1 & uVar12) + iVar9].height * this_ptr->height_scale;
     lVar3 = (longlong)iVar6 * (longlong)(iVar9 - iVar10);
     lVar4 = (longlong)iVar7 *
             (longlong)
             (this_ptr->height_scale *
-             (int)*(short *)(pSVar1 + ((uVar12 & this_ptr->height_minus_1) +
-                                      (uVar8 & this_ptr->height_minus_1) * this_ptr->width) * 4) -
-            iVar9);
+             (int)pSVar1[(uVar12 & this_ptr->height_minus_1) +
+                         (uVar8 & this_ptr->height_minus_1) * this_ptr->width].height - iVar9);
     return ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
            iVar10 + ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
   }
   pSVar1 = this_ptr->terrain_data;
-  iVar11 = (int)*(short *)(pSVar1 + (uVar5 * this_ptr->width + uVar13) * 4) * this_ptr->height_scale
-  ;
+  iVar11 = (int)pSVar1[uVar5 * this_ptr->width + uVar13].height * this_ptr->height_scale;
   iVar9 = (uVar8 & this_ptr->height_minus_1) * this_ptr->width;
-  iVar10 = this_ptr->height_scale * (int)*(short *)(pSVar1 + (uVar13 + iVar9) * 4);
+  iVar10 = this_ptr->height_scale * (int)pSVar1[uVar13 + iVar9].height;
   lVar3 = (longlong)iVar6 *
           (longlong)
-          ((int)*(short *)(pSVar1 + ((uVar12 & this_ptr->width_minus_1) + iVar9) * 4) *
-           this_ptr->height_scale - iVar10);
+          ((int)pSVar1[(uVar12 & this_ptr->width_minus_1) + iVar9].height * this_ptr->height_scale -
+          iVar10);
   lVar4 = (longlong)iVar7 * (longlong)(iVar10 - iVar11);
   return ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
          iVar11 + ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);

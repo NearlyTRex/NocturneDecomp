@@ -10,7 +10,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_archive_FUN_0057f5b0(CWerewolf *this_pt
 
 {
   core_enemy_cpp_CEnemy_archive_FUN_00489120(&this_ptr->base);
-  core_actor_cpp_archiveFloat_FUN_0040b830(&(this_ptr->base).field_0xcdcc,"?speed" + 1);
+  core_actor_cpp_archiveFloat_FUN_0040b830(&(this_ptr->base).speed,"?speed" + 1);
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040ba30
             (&(this_ptr->base).base.model,"modelName");
   if (g_CWerewolfClassVersion < 3) {

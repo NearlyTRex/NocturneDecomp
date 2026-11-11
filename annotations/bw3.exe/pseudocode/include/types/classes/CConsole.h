@@ -10,7 +10,7 @@
 #pragma pack(push, 1)
 typedef struct CConsole {
     int file_logging_enabled; // 0x0
-    char field_4[4]; // 0x4
+    int field_0x4; // 0x4, Added in this build
     char console_buffer[4000]; // 0x8
     int current_column; // 0xfa8
     int current_row; // 0xfac

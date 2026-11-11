@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004d7fb0(CImp *this_ptr,CVector3f *out_points_array)
@@ -29,7 +30,7 @@ int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004d7fb0(CImp *this_ptr,CVecto
   
   bVar3 = 0;
   iVar2 = 0;
-  if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[10] * 4) != 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] != 0) {
     core_skeleton_cpp_FUN_0054dcc0(&(this_ptr->base).base.model,_DAT_01d5bc0c);
     CStack_4c.x = afStack_78[2];
     *(float *)((int)&CStack_4c + (uint)bVar3 * -8 + 4) = afStack_78[(uint)bVar3 * -2 + 3];
@@ -42,7 +43,7 @@ int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004d7fb0(CImp *this_ptr,CVecto
     }
     iVar2 = 1;
   }
-  if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[0] * 4) != 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
     core_skeleton_cpp_FUN_0054dcc0(&(this_ptr->base).base.model,_DAT_01d5bc20);
     pCVar1 = out_points_array + iVar2;
     CStack_88.x = fStack_34;
@@ -56,7 +57,7 @@ int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004d7fb0(CImp *this_ptr,CVecto
     }
     iVar2 = iVar2 + 1;
   }
-  if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[2] * 4) != 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
     core_skeleton_cpp_FUN_0054dcc0(&(this_ptr->base).base.model,_DAT_01d5bc24);
     pCVar1 = out_points_array + iVar2;
     CStack_1c.x = fStack_7c;
@@ -70,7 +71,7 @@ int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004d7fb0(CImp *this_ptr,CVecto
     }
     iVar2 = iVar2 + 1;
   }
-  if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[8] * 4) != 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[8]] != 0) {
     core_skeleton_cpp_FUN_0054dcc0(&(this_ptr->base).base.model,_DAT_01d5bc30);
     pCVar1 = out_points_array + iVar2;
     CStack_28.x = fStack_64;
@@ -84,7 +85,7 @@ int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004d7fb0(CImp *this_ptr,CVecto
     }
     iVar2 = iVar2 + 1;
   }
-  if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[9] * 4) == 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[9]] == 0) {
     return iVar2;
   }
   core_skeleton_cpp_FUN_0054dcc0(&(this_ptr->base).base.model,_DAT_01d5bc38);

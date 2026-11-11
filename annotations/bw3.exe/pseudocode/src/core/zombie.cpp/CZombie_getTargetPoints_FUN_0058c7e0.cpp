@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_zombie_cpp_CZombie_getTargetPoints_FUN_0058c7e0(CZombie *this_ptr,CVector3f *out_points_array)
@@ -33,8 +34,7 @@ int __cdecl core_zombie_cpp_CZombie_getTargetPoints_FUN_0058c7e0(CZombie *this_p
   int iStack_14;
   
   bVar3 = 0;
-  core_skeleton_cpp_FUN_0054dcc0
-            (&(this_ptr->base).base.model,*(uint *)&this_ptr->field_0xd10c);
+  core_skeleton_cpp_FUN_0054dcc0(&(this_ptr->base).base.model,this_ptr->bone_indices[9]);
   CStack_7c.x = fStack_88;
   *(float *)((int)&CStack_7c + (uint)bVar3 * -8 + 4) = afStack_84[(uint)bVar3 * -2];
   *(float *)((int)&CStack_7c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
@@ -50,9 +50,8 @@ int __cdecl core_zombie_cpp_CZombie_getTargetPoints_FUN_0058c7e0(CZombie *this_p
   do {
     switch((iStack_1c + (this_ptr->base).base.base.direction_hint) % 4) {
     case 0:
-      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + *(int *)&this_ptr->field_0xd114 * 4)
-          != 0) {
-        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,*(uint *)&this_ptr->field_0xd0fc);
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
+        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,this_ptr->bone_indices[5]);
         CStack_40.x = fStack_34;
         *(float *)((int)&CStack_40 + (uint)bVar3 * -8 + 4) = afStack_30[(uint)bVar3 * -2];
         *(float *)((int)&CStack_40 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
@@ -77,9 +76,8 @@ LAB_0058c92b:
       }
       break;
     case 1:
-      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + *(int *)&this_ptr->field_0xd11c * 4)
-          != 0) {
-        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,*(uint *)&this_ptr->field_0xd100);
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
+        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,this_ptr->bone_indices[6]);
         CStack_94.x = afStack_60[2];
         *(float *)((int)&CStack_94 + (uint)bVar3 * -8 + 4) = afStack_60[(uint)bVar3 * -2 + 3];
         *(float *)((int)&CStack_94 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
@@ -95,9 +93,8 @@ LAB_0058c92b:
       }
       break;
     case 2:
-      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + *(int *)&this_ptr->field_0xd12c * 4)
-          != 0) {
-        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,*(uint *)&this_ptr->field_0xd0e8);
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[6]] != 0) {
+        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,this_ptr->bone_indices[0]);
         pCVar2 = out_points_array + iStack_14;
         CStack_28.x = fStack_a0;
         *(uint *)((int)&CStack_28 + (uint)bVar3 * -8 + 4) =
@@ -114,9 +111,8 @@ LAB_0058c928:
       }
       break;
     case 3:
-      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + *(int *)&this_ptr->field_0xd128 * 4)
-          != 0) {
-        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,*(uint *)&this_ptr->field_0xd110);
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[5]] != 0) {
+        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,this_ptr->bone_indices[10]);
         CStack_4c.x = fStack_64;
         *(float *)((int)&CStack_4c + (uint)bVar3 * -8 + 4) = afStack_60[(uint)bVar3 * -2];
         *(float *)((int)&CStack_4c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =

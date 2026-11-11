@@ -2,18 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 273,
-    "complexity_score": 267,
+    "complexity_score": 207,
     "cross_reference_count": 7,
     "function_call_count": 17,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 102,
-    "suspect_count": 14,
+    "suspect_count": 9,
     "suspect_types": [
-      "primitive_walker_cast",
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 375
@@ -446,46 +444,6 @@
       "severity": "mild",
       "text": "engine_matrix_c_FUN_0046d0d0(DAT_005f2afc,0x3e800000);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x194",
-      "severity": "mild",
-      "text": "visible_cube_count = *(int *)&this_ptr->cameras[iVar1].field_0x194;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x198",
-      "severity": "mild",
-      "text": "(visible_cube_indices = *(int **)&this_ptr->cameras[iVar1].field_0x198,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 40,
-      "match": "(int *)&this_ptr->cameras[",
-      "severity": "moderate",
-      "text": "(int *)&this_ptr->cameras[this_ptr->selected_camera_index].field_0x194,",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x194",
-      "severity": "mild",
-      "text": "(int *)&this_ptr->cameras[this_ptr->selected_camera_index].field_0x194,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x198",
-      "severity": "mild",
-      "text": "(int **)&this_ptr->cameras[this_ptr->selected_camera_index].field_0x198);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

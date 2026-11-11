@@ -17,8 +17,8 @@ int __cdecl sound_sndmain_cpp_FUN_00556ae0(uint sfx_handle,float base_frequency)
   pCVar1 = sound_sndmain_cpp_FUN_00552f10(sfx_handle,1);
   iVar2 = 0;
   if (pCVar1 != (CSfxSlot *)0x0) {
-    *(float *)&(pCVar1->options).field_0x3c = base_frequency;
-    pCVar1->field_0x118 = pCVar1->field_0x118 | 0x10;
+    (pCVar1->options).base_frequency = base_frequency;
+    *(byte *)&pCVar1->changed_flags = (byte)pCVar1->changed_flags | 0x10;
     if ((pCVar1->hardware_buffer_handle != 0) && (_DAT_02cf3280 != (int *)0x0)) {
       (**(code **)(*_DAT_02cf3280 + 0x44))(_DAT_02cf3280,pCVar1,0x10);
     }

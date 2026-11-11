@@ -44,7 +44,7 @@ section .text
     PUSH EDI                            ; 004eaa62
     MOV EBX,dword ptr [ESP + 0x10]      ; 004eaa63
     MOV EDX,dword ptr [0x005fe9dc]      ; 004eaa67 | g_CGamePtr
-    MOV EDX,dword ptr [EDX + 0xd4]      ; 004eaa6d | g_CGameInstance.field164_0xd4
+    MOV EDX,dword ptr [EDX + 0xd4]      ; 004eaa6d | g_CGameInstance.game_control
     XOR ESI,ESI                         ; 004eaa73
     MOV dword ptr [0x01d737d8],EDX      ; 004eaa75 | DAT_01d737d8
     CMP EBX,0x257                       ; 004eaa7b

@@ -30,10 +30,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
   uint *puVar14;
   EBloodType blood_type;
   float max_distance;
-  SDamageInfo aSStack_1fc [4];
-  uint uStack_1f8;
-  CZombieDog *pCStack_1c8;
-  CZombieDog *pCStack_1c4;
+  SDamageInfo SStack_1fc;
   uint uStack_1c0;
   float afStack_1bc [4];
   float fStack_1ac;
@@ -116,7 +113,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  fStack_44 = delta_time * *(float *)&(this_ptr->base).field_0xcdcc;
+  fStack_44 = delta_time * (this_ptr->base).speed;
   pCVar2 = &(this_ptr->base).base.model;
   while (0.0 < fStack_44) {
     iVar6 = core_motion_cpp_CMotionController_advance_FUN_004fbb70(&pCVar2->base,afStack_138 + 0x3d)
@@ -124,15 +121,13 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
     core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0((CCharacter *)this_ptr,iVar6);
   }
   pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCVar2->base);
-  fVar13 = *(float *)&(this_ptr->base).field_0xcdcc;
-  iVar6 = *(int *)(pSVar7 + 0x24);
-  *(float *)&(this_ptr->base).base.field_0x2524 =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
+  fVar13 = (this_ptr->base).speed;
+  iVar6 = pSVar7->state_index;
+  (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   iStack_28 = iVar6;
   core_charactr_cpp_FUN_00434850(this_ptr,delta_time * fVar13);
   if (iVar6 == 8) {
-    *(float *)&(this_ptr->base).base.field_0x2528 =
-         *(float *)&(this_ptr->base).base.field_0x2528 * (float)_DAT_005bbc44;
+    (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)_DAT_005bbc44;
   }
   iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00431660
                     ((CCharacter *)this_ptr,delta_time);
@@ -214,11 +209,11 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
           }
           core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_1c,iVar6,1);
           iVar6 = core_sound_cpp_CSound_isSoundPlaying_FUN_00560af0
-                            (0x02CF5680,*(uint *)&this_ptr->field_0xd05c);
+                            (0x02CF5680,this_ptr->sfx_handle);
           if (iVar6 == 0) {
             uVar9 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                               ((CDemonActor *)this_ptr,"dog5.wav");
-            *(uint *)&this_ptr->field_0xd05c = uVar9;
+            this_ptr->sfx_handle = uVar9;
           }
         }
       }
@@ -395,14 +390,14 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
     case 10:
     case 0xb:
     case 0xc:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(aSStack_1fc);
-      uStack_1f8 = *(uint *)&(this_ptr->base).field_0xce5c;
-      pCStack_1c8 = this_ptr;
-      pCStack_1c4 = this_ptr;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(&SStack_1fc);
+      SStack_1fc.damage_amount = (this_ptr->base).attack_damage;
+      SStack_1fc.attacker = (CDemonActor *)this_ptr;
+      SStack_1fc.wielder = (CDemonActor *)this_ptr;
       core_xform_cpp_FUN_00583260
                 (&DAT_02cfd900,
-                 &(this_ptr->base).base.model.field_0xe80 + *(int *)&this_ptr->field_0xd058 * 0x30,
-                 0x3f333333,aSStack_1fc);
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices +
+                 this_ptr->bone_indices[1],0x3f333333,&SStack_1fc);
       pfVar11 = afStack_138 + 0x1d;
       afStack_c4[0] = (float)uStack_94;
       afStack_138[(uint)bVar10 * -2 + 0x1e] = afStack_138[(uint)bVar10 * -2 + 0x2a];
@@ -416,12 +411,11 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,f
       afStack_138[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x22] =
            afStack_138[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x13];
       core_enemy_cpp_FUN_004893f0(pCVar8,pfVar11);
-      iVar6 = core_sound_cpp_CSound_isSoundPlaying_FUN_00560af0
-                        (0x02CF5680,*(uint *)&this_ptr->field_0xd05c);
+      iVar6 = core_sound_cpp_CSound_isSoundPlaying_FUN_00560af0(0x02CF5680,this_ptr->sfx_handle);
       if (iVar6 == 0) {
         uVar9 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"dog5.wav");
-        *(uint *)&this_ptr->field_0xd05c = uVar9;
+        this_ptr->sfx_handle = uVar9;
       }
       break;
     case 0x13:

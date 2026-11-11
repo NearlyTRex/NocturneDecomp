@@ -4,12 +4,15 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SMRGLHeaderBasic.h"
+#include "types/structs/SMRGLTextureModel.h"
 
 // Structure: STextureSet
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// loadStream 00549a60: texture name read at +0xc0 + set*0x240 + tex*0x48 + 8 for set < num_texture_sets (+0xb8), tex < num_textures (+0xbc); CDeformableModel texture_sets 0xc0..0xc00 = 5 x 576
+// Ghidra size: 0x240 (576 bytes)
 #pragma pack(push, 1)
 typedef struct STextureSet {
+    SMRGLTextureModel textures[8]; // 0x0
 } STextureSet;
 #pragma pack(pop)
 

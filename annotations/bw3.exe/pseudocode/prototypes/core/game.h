@@ -263,7 +263,7 @@ void __cdecl CGame::rollCredits(CGame *this_ptr);
 
 // Original: core_game.cpp_FUN_004c07b0
 // Address: 004c07b0
-void FUN_004c07b0(int param_1,undefined4 *param_2);
+void FUN_004c07b0(float param_1,undefined4 *param_2);
 
 // Original: core_game.cpp_FUN_004c4870
 // Address: 004c4870

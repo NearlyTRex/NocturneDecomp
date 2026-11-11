@@ -4,13 +4,26 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CFlame.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CWeapon.h"
+#include "types/enums/EFlameType.h"
 
 // Structure: CBurncross
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 6860; CBurncross_ctor 00424430: CWeapon ctor, __arrinit(+0x5a8, 8, CFlame), +0x1ac8 = 0
 // Ghidra size: 0x1acc (6860 bytes)
 #pragma pack(push, 1)
 typedef struct CBurncross {
-    char field_0[6860]; // 0x0
+    CWeapon base; // 0x0, derived
+    float fire_cooldown; // 0x594, fire: return if >0, set 0.25; process -= dt clamp 0
+    int unknown_598; // 0x598, ctor zeroes; no reader found
+    int firing; // 0x59c, fire sets 1 (0 on no mana); process moves it to +0x5a0 and clears; setWeaponState clears
+    int was_firing; // 0x5a0, process: = firing; setWeaponState clears
+    uint sfx_handle; // 0x5a4, fire: wp_burningcross.wav handle; process/setWeaponState killSfx
+    CFlame flames[8]; // 0x5a8, ctor __arrinit 8 CFlame; process/renderOpaque loop step 0x2a4 to +0x1ac8; dtor FUN_00425490
+    float flame_intensity; // 0x1ac8, process: grows while firing clamp 1.0, decays otherwise; scales flame sizes (+0x158..)
 } CBurncross;
 #pragma pack(pop)
 

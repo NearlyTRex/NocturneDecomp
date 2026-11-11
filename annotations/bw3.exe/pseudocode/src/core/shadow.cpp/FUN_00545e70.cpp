@@ -11,7 +11,7 @@ void core_shadow_cpp_FUN_00545e70(void)
 {
   CShadowForest *this_ptr;
   
-  this_ptr = (CShadowForest *)debugAllocTracked1(0xd0e8);
+  this_ptr = (CShadowForest *)operator_new(0xd0e8);
   if (this_ptr == (CShadowForest *)0x0) {
     return;
   }

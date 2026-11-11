@@ -12,19 +12,23 @@ void __cdecl core_holycrss_cpp_CHolycross_fillAttackDamageInfo_FUN_004d51d0(CHol
 
 {
   uint uVar1;
-  uint uVar2;
+  float fVar2;
   int iVar3;
+  int unaff_EDI;
+  uint in_stack_0000001c;
+  CDemonActor *in_stack_fffffff0;
   
   core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040aca0
             ((CDemonActor *)this_ptr,attack_flags,out_damage_info,victim);
-  uVar2 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0xec))(this_ptr);
+  fVar2 = (float)(*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
+                           ((CCharacter *)this_ptr,in_stack_fffffff0,unaff_EDI);
   uVar1 = g_CCharacterClassInfo.name_hash;
-  *(uint *)(out_damage_info + 0x30) = 0x71;
-  *(uint *)(out_damage_info + 4) = uVar2;
-  iVar3 = core_actor_cpp_castToClassHash_FUN_0040c840(victim,uVar1);
+  out_damage_info->damage_type = DAMAGE_TYPE_HOLY_CROSS;
+  out_damage_info->damage_amount = fVar2;
+  iVar3 = core_actor_cpp_castToClassHash_FUN_0040c840(in_stack_0000001c,uVar1);
   if (((iVar3 != 0) && ((*(uint *)(iVar3 + 0x3254) & 0x7fffffff) != 0)) &&
      (*(int *)(iVar3 + 0x3258) == 0)) {
-    *(float *)(out_damage_info + 4) = *(float *)(out_damage_info + 4) * _DAT_005c51db;
+    out_damage_info->damage_amount = out_damage_info->damage_amount * _DAT_005c51db;
     return;
   }
   return;

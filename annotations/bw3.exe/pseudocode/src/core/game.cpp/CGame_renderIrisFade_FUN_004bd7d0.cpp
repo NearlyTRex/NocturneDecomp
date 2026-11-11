@@ -18,7 +18,7 @@ void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004bd7d0(CGame *this_ptr)
   int iVar4;
   float10 fVar5;
   
-  if ((_DAT_01d22c84 != 0) && (*(int *)&g_CFieldNotesPtr->field_0x40 == 0)) {
+  if ((_DAT_01d22c84 != 0) && (g_CFieldNotesPtr->is_displayed == 0)) {
     if ((_DAT_01d22c84 < 4) && ((_DAT_01d22c84 != 1 && (0x3f7fffff < (int)_DAT_01d22c88)))) {
       core_game_cpp_calculateIrisFadeCenter_FUN_004bd6a0();
       if (DAT_005fba20 == 0x20) {

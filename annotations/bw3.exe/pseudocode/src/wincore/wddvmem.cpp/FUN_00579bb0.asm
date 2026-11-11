@@ -33,8 +33,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
+;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_memory.c_memset_FUN_005a28f0
-;   crt_unknown.c_FUN_005a3650
 ;   crt_unknown.c_FUN_005a3770
 ;   engine_2d.c_setupViewportAndClipping_FUN_00401810
 ;   wincore_wddvmem.cpp_setupColorPalette_FUN_0057a770
@@ -132,8 +132,8 @@ section .text
     IMUL ECX,dword ptr [0x005fba1c]     ; 00579caf | DAT_005fba1c
     IMUL EAX,ECX                        ; 00579cb6
     PUSH EAX                            ; 00579cb9
-    CALL crt_unknown.c_FUN_005a3650     ; 00579cba
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 00579cba
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 00579cbf
     MOV [0x0060b010],EAX                ; 00579cc2 | DAT_0060b010
     TEST EAX,EAX                        ; 00579cc7
@@ -153,8 +153,8 @@ section .text
     SHL EAX,0x2                         ; 00579cf9
     ADD EAX,0x40                        ; 00579cfc
     PUSH EAX                            ; 00579cff
-    CALL crt_unknown.c_FUN_005a3650     ; 00579d00
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 00579d00
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 00579d05
     MOV [0x02d0bcf0],EAX                ; 00579d08 | DAT_02d0bcf0
     TEST EAX,EAX                        ; 00579d0d

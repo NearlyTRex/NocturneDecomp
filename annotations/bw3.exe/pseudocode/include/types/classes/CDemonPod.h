@@ -4,13 +4,13 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CPod.h"
 
 // Structure: CDemonPod
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x198 (408 bytes)
 #pragma pack(push, 1)
 typedef struct CDemonPod {
-    char field_0[408]; // 0x0
+    CPod base; // 0x0
 } CDemonPod;
 #pragma pack(pop)
 

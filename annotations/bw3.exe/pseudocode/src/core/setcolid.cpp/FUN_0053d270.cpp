@@ -13,7 +13,7 @@ float core_setcolid_cpp_FUN_0053d270(CDemonSet *param_1,float param_2,CBoundingB
 {
   CDemonActor *pCVar1;
   float fVar2;
-  int iVar3;
+  CDeformableModelInstance *pCVar3;
   EGroundType EVar4;
   ECollisionType EVar5;
   byte bVar6;
@@ -105,22 +105,22 @@ float core_setcolid_cpp_FUN_0053d270(CDemonSet *param_1,float param_2,CBoundingB
     local_64.z = local_74;
     core_box_cpp_CBoundingBox3D_expand_FUN_0041d840(&local_d0,&local_64);
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_0053ed80(&local_114);
-    local_114._0_1_ = param_1->ray_query;
-    local_114._1_3_ = *(undefined3 *)&param_1->field_0x15f699;
-    local_114._4_4_ = *(uint *)&param_1->field_0x15f69c;
-    local_114._8_4_ = *(uint *)&param_1->field_0x15f6a0;
-    local_114._12_4_ = *(uint *)&param_1->field_0x15f6a4;
-    local_114._16_4_ = *(uint *)&param_1->field_0x15f6a8;
+    local_114.ray_query.ray_type = (param_1->ray_query).ray_type;
+    local_114.ray_query.laser_type = (param_1->ray_query).laser_type;
+    local_114.ray_query.laser_color.r = (param_1->ray_query).laser_color.r;
+    local_114.ray_query.laser_color.g = (param_1->ray_query).laser_color.g;
+    local_114.ray_query.laser_color.b = (param_1->ray_query).laser_color.b;
     local_20 = 0;
     if (0 < param_1->collidable_actor_count) {
       local_18 = &param_1->collision_normal;
       local_1c = param_1;
       do {
         pCVar1 = local_1c->collidable_actors[0];
-        iVar3 = core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_0053d770(param_1,pCVar1);
-        if (iVar3 == 0) {
-          local_114._32_4_ = iVar3;
-          local_114._36_4_ = iVar3;
+        pCVar3 = (CDeformableModelInstance *)
+                 core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_0053d770(param_1,pCVar1);
+        if (pCVar3 == (CDeformableModelInstance *)0x0) {
+          local_114.deformable_model = pCVar3;
+          local_114.keyframed_model = (CKeyFramedModelInstance *)pCVar3;
           EVar5 = (*((pCVar1->vtable)._ub)->getCollisionType)(pCVar1,&local_114);
           if (EVar5 != COLLISION_TYPE_NONE) {
             fStack_118 = (float)core_actor_cpp_FUN_004091b0

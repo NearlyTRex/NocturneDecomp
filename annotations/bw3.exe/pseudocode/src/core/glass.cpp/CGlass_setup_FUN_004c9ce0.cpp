@@ -75,7 +75,7 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004c9ce0(CGlass *this_ptr)
   bVar11 = 0;
   core_actor_cpp_CDemonActor_setup_FUN_00408890(&this_ptr->base);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-            (DAT_005f2afc,&this_ptr->glass_texture);
+            (DAT_005f2afc,(SMRGLTextureBasic *)&this_ptr->glass_texture);
   if (this_ptr->mirror_flag != 0) {
     uStack_40 = 0;
     fStack_44 = 0.0;

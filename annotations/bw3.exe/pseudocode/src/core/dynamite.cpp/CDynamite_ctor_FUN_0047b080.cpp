@@ -15,7 +15,7 @@ CDynamite * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0047b080(CDynamite *thi
   (pCVar1->base).base.vtable._ub = &g_CDynamiteVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
             (&(pCVar1->base).model,"dynamitestick.kfm");
-  *(uint *)&(pCVar1->base).field_0x564 = 0x3f800000;
+  (pCVar1->base).weight = 1.0;
   (pCVar1->toss_velocity).z = 0.0;
   (pCVar1->toss_velocity).y = (pCVar1->toss_velocity).z;
   (pCVar1->toss_velocity).x = (pCVar1->toss_velocity).y;

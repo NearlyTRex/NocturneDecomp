@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[3]:
-;   core_fldnotes.cpp_FUN_004a8f30 at 004a9045
-;   core_fldnotes.cpp_FUN_004aa810 at 004aaaeb
+;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810 at 004aaaeb
+;   core_fldnotes.cpp_STextView_layoutChunk_FUN_004a8f30 at 004a9045
 ;   unkaddr_004a76f0.cpp_FUN_004a7920 at 004a793e
 ;
 ; Referenced Globals:

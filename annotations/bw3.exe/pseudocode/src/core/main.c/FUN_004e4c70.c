@@ -23,7 +23,7 @@ void core_main_c_FUN_004e4c70(void)
   engine_3d_c_freeTextureCache_FUN_004037a0();
   core_dfont_cpp_FUN_0045a8d0();
   wincore_winrun_cpp_doNothing2_FUN_00581cf0();
-  engine_pod_cpp_CPod_cleanup_FUN_00514650((CPod *)g_CDemonPodPtr);
+  engine_pod_cpp_CPod_cleanup_FUN_00514650(&g_CDemonPodPtr->base);
   core_inivar_cpp_writeIniData_FUN_004d95c0();
   return;
 }

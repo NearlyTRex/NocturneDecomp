@@ -7,9 +7,9 @@
 ; CAlphaBitmap *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[20]:
-;   core_fldnotes.cpp_FUN_004a8680 at 004a869c
-;   core_fldnotes.cpp_NotesMap_ctor_FUN_004a9e10 at 004a9e19
-;   core_fldnotes.cpp_PageResource_Bitmap_ctor_FUN_004a8650 at 004a8661
+;   core_fldnotes.cpp_SNotesMap_ctor_FUN_004a9e10 at 004a9e19
+;   core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004a8680 at 004a869c
+;   core_fldnotes.cpp_SPageResourceBitmap_ctor_FUN_004a8650 at 004a8661
 ;   core_game.cpp_CGame_displayActStats_FUN_004bfb50 at 004bfb62
 ;   core_game.cpp_CGame_finishAct_FUN_004bfee0 at 004bff2c
 ;   core_game.cpp_CGame_rollCredits_FUN_004c02a0 at 004c02dc

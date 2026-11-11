@@ -36,7 +36,7 @@ uint FUN_005b12a0(CHAR *param_1)
       return 0xffffffff;
     }
     uVar3 = (int)pCVar1 - (int)param_1;
-    lpName = FUN_005a3650(uVar3 + 1);
+    lpName = malloc(uVar3 + 1);
     if (lpName == (LPCSTR)0x0) {
       return 0xffffffff;
     }
@@ -58,7 +58,7 @@ uint FUN_005b12a0(CHAR *param_1)
       pCStack_18 = (LPCSTR)0x0;
     }
     else {
-      pCStack_18 = FUN_005a3650(uVar3 + 1);
+      pCStack_18 = malloc(uVar3 + 1);
       if (pCStack_18 == (CHAR *)0x0) {
         FUN_005a3770(lpName);
         return 0xffffffff;
@@ -90,7 +90,7 @@ uint FUN_005b12a0(CHAR *param_1)
     uVar2 = 0;
     if (_DAT_02d25928 != 0) {
       iVar5 = FUN_005b1970(param_1);
-      pvVar6 = FUN_005a3650((iVar5 + 1) * 2);
+      pvVar6 = malloc((iVar5 + 1) * 2);
       if (pvVar6 == (void *)0x0) {
         FUN_005ab400(5);
         return 0xffffffff;

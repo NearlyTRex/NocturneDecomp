@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 90,
+    "complexity_score": 47,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 30,
-    "suspect_count": 5,
+    "pseudocode_lines": 32,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 115
+    "total_lines": 117
   },
   "cross_references": [
     {
@@ -49,7 +48,7 @@
     {
       "addr": "005a40df",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a40df"
+      "name": "crt_memory.c_operator_new_array_FUN_005a40df"
     }
   ],
   "globals": [
@@ -181,38 +180,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x1ec94",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1ec94 = uVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x1ec98",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1ec98 = uVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x1ec94",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x1ec94 != 0)) && (*(int *)&this_ptr->field_0x1ec98 != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x1ec98",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x1ec94 != 0)) && (*(int *)&this_ptr->field_0x1ec98 != 0)) {",
-      "type": "unnamed_field"
     }
   ]
 }

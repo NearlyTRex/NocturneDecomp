@@ -9,36 +9,33 @@
 void __cdecl core_kedward_cpp_CKedward_processDamage_FUN_005918e0(CKedward *this_ptr,SDamageInfo *damage_info)
 
 {
-  byte *this_ptr_00;
+  CDeformableModelInstance *this_ptr_00;
   float fVar1;
   SMotion *pSVar2;
   int iVar3;
   
-  fVar1 = *(float *)(damage_info + 4);
-  *(uint *)&this_ptr->field_0xcde0 = 0x3f99999a;
-  fVar1 = *(float *)&this_ptr->field_0x2538 - fVar1;
-  this_ptr_00 = &this_ptr->field_0x158;
-  *(float *)&this_ptr->field_0x2538 = fVar1;
+  fVar1 = damage_info->damage_amount;
+  (this_ptr->base).attack_cooldown = 1.2;
+  fVar1 = (this_ptr->base).base.hit_points - fVar1;
+  this_ptr_00 = &(this_ptr->base).base.model;
+  (this_ptr->base).base.hit_points = fVar1;
   if (0.0 < fVar1) {
-    iVar3 = unkafter_enemy_cpp_FUN_0048a1b0(this_ptr,*(uint *)(damage_info + 4));
+    iVar3 = unkafter_enemy_cpp_FUN_0048a1b0(this_ptr,damage_info->damage_amount);
     if (iVar3 != 0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
-                ((CMotionController *)this_ptr_00,6,1);
-      core_enemy_cpp_CEnemy_processDamage_FUN_00489b80((CEnemy *)this_ptr,damage_info);
+      core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&this_ptr_00->base,6,1);
+      core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(&this_ptr->base,damage_info);
       return;
     }
   }
   else {
-    *(uint *)&this_ptr->field_0x2540 = 0;
-    *(uint *)&this_ptr->field_0x2538 = 0;
-    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
-                       ((CMotionController *)this_ptr_00);
-    if ((*(int *)(pSVar2 + 0x24) != 8) && (*(int *)(pSVar2 + 0x24) != 7)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
-                ((CMotionController *)this_ptr_00,7,1);
-      (**(code **)(*(int *)&this_ptr->field_0x154 + 0xa8))(this_ptr,0x32,0x41c80000);
+    (this_ptr->base).base.health_bar_mode = HEALTH_BAR_NONE;
+    (this_ptr->base).base.hit_points = 0.0;
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&this_ptr_00->base);
+    if ((pSVar2->state_index != 8) && (pSVar2->state_index != 7)) {
+      core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&this_ptr_00->base,7,1);
+      (*((this_ptr->base).base.base.vtable._ub)->spawnFlies)((CDemonActor *)this_ptr,0x32,25.0);
     }
   }
-  core_enemy_cpp_CEnemy_processDamage_FUN_00489b80((CEnemy *)this_ptr,damage_info);
+  core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(&this_ptr->base,damage_info);
   return;
 }

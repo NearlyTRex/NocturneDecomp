@@ -41,7 +41,7 @@ uint core_styldemo_cpp_FUN_005a0480(int param_1,int param_2)
   }
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
                      ((CMotionController *)(param_1 + 0x158));
-  local_1c = *(int *)(pSVar1 + 0x24);
+  local_1c = pSVar1->state_index;
   local_18 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
   local_20 = local_18;
   local_14 = (float)param_2;

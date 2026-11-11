@@ -19,8 +19,8 @@ COutStreamMemory * support_trstream_cpp_COutStreamMemory_dtor_FUN_00574b50(COutS
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  *(byte ***)this_ptr = &g_COutStreamMemoryVTable;
-  support_trstream_cpp_FUN_00574d10(this_ptr);
+  this_ptr->vtable = &g_COutStreamMemoryVTable;
+  support_trstream_cpp_COutStreamMemory_close_FUN_00574d10(this_ptr);
   pCVar1 = (COutStreamMemory *)support_trstream_cpp_FUN_005744a0(this_ptr,1);
   if ((flags & 2) == 0) {
     return pCVar1;

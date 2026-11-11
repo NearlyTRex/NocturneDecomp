@@ -14,7 +14,7 @@ void __cdecl core_gore_cpp_CFootstep_init_FUN_004ce170(CFootstep *this_ptr,CVect
   CFootstep *pCVar1;
   float fVar2;
   int iVar3;
-  byte *puVar4;
+  CVector3f *pCVar4;
   float10 fVar5;
   float10 fVar6;
   float local_40;
@@ -28,7 +28,7 @@ void __cdecl core_gore_cpp_CFootstep_init_FUN_004ce170(CFootstep *this_ptr,CVect
   iVar3 = 0;
   pCVar1 = this_ptr;
   do {
-    puVar4 = &pCVar1->field_0xc;
+    pCVar4 = pCVar1->corners;
     fVar5 = (float10)fsin((float10)(orientation->vec).y);
     fVar6 = (float10)fcos((float10)(orientation->vec).y);
     fVar5 = fVar5 * (float10)_DAT_005c4739;
@@ -48,26 +48,25 @@ void __cdecl core_gore_cpp_CFootstep_init_FUN_004ce170(CFootstep *this_ptr,CVect
     local_18 = (float)core_dtrace_cpp_FUN_00473cd0
                                 (&g_CDemonRaytraceInstance,&local_34,&local_40,0,0);
     fVar2 = (local_30 - local_18 * (float)_DAT_005c4741) + _DAT_005c474d;
-    if ((float *)puVar4 != &local_34) {
-      *(float *)puVar4 = local_34;
-      *(float *)&pCVar1->field_0x10 = fVar2;
-      *(float *)&pCVar1->field_0x14 = local_2c;
+    if (pCVar4 != (CVector3f *)&local_34) {
+      pCVar4->x = local_34;
+      pCVar1->corners[0].y = fVar2;
+      pCVar1->corners[0].z = local_2c;
     }
     iVar3 = iVar3 + 4;
-    pCVar1 = (CFootstep *)puVar4;
+    pCVar1 = (CFootstep *)pCVar4;
   } while (iVar3 != 0x10);
-  puVar4 = &this_ptr->field_0xc;
+  pCVar4 = this_ptr->corners;
   do {
-    if ((float)_DAT_005c4739 < ABS(*(float *)&this_ptr->field_0x10 - *(float *)(puVar4 + 0x10))) {
-      *(uint *)(puVar4 + 0x10) = *(uint *)&this_ptr->field_0x10;
+    if ((float)_DAT_005c4739 < ABS(this_ptr->corners[0].y - pCVar4[1].y)) {
+      pCVar4[1].y = this_ptr->corners[0].y;
     }
-    puVar4 = puVar4 + 0xc;
-  } while (puVar4 != &this_ptr->field_0x30);
-  *(uint *)this_ptr = 0;
-  *(int *)&this_ptr->field_0x3c = alpha;
-  *(int *)&this_ptr->field_0x40 = is_bloody;
-  *(EBloodType *)&this_ptr->field_0x4 = blood_type;
-  *(uint *)&this_ptr->field_0x8 =
-       *(uint *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x2c);
+    pCVar4 = pCVar4 + 1;
+  } while (pCVar4 != this_ptr->corners + 3);
+  this_ptr->expired = 0;
+  this_ptr->alpha = alpha;
+  this_ptr->is_bloody = is_bloody;
+  this_ptr->blood_type = blood_type;
+  this_ptr->area_id = *(int *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x2c);
   return;
 }

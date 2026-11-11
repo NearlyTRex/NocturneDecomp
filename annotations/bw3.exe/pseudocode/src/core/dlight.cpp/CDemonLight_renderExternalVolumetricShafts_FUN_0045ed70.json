@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 597,
-    "complexity_score": 502,
+    "complexity_score": 477,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 257,
-    "suspect_count": 21,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "undefined_data",
       "unknown_type",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 854
@@ -197,13 +196,13 @@
     },
     {
       "addr": "01d21318",
-      "name": "g_CGameInstance.field3_0xc",
+      "name": "g_CGameInstance.halo_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02032548",
-      "name": "g_CDemonSetInstance.field108_0x15ac80",
+      "name": "g_CDemonSetInstance.active_fog.density_multiplier",
       "type": "undefined4",
       "value": null
     }
@@ -858,22 +857,6 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 81,
-      "match": "field_0x15ac80",
-      "severity": "mild",
-      "text": "((float)_DAT_005bb544 <= *(float *)&g_CDemonSetPtr->field_0x15ac80)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 82,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "(*(int *)&g_CGamePtr->field_0xc != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 83,
       "match": "DAT_005f2afc",
@@ -910,7 +893,7 @@
       "line": 198,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr,&local_e0);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_e0);",
       "type": "undefined_data"
     },
     {
@@ -918,7 +901,7 @@
       "line": 209,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x30),&local_164);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_164);",
       "type": "undefined_data"
     },
     {
@@ -926,7 +909,7 @@
       "line": 220,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x60),&local_134);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_134);",
       "type": "undefined_data"
     },
     {
@@ -934,7 +917,7 @@
       "line": 231,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x90),&local_110);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_110);",
       "type": "undefined_data"
     },
     {
@@ -950,7 +933,7 @@
       "line": 233,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "*(int *)(DAT_005f2afc->vertex_buffer_ptr + 0x20) = local_6c;",
+      "text": "DAT_005f2afc->vertex_buffer_ptr->r = local_6c;",
       "type": "undefined_data"
     },
     {

@@ -11,7 +11,7 @@ void core_blundrbs_cpp_factoryFuncBlunderbus_FUN_004103c0(void)
 {
   CBlunderbus *this_ptr;
   
-  this_ptr = (CBlunderbus *)debugAllocTracked1(0x598);
+  this_ptr = (CBlunderbus *)operator_new(0x598);
   if (this_ptr == (CBlunderbus *)0x0) {
     return;
   }

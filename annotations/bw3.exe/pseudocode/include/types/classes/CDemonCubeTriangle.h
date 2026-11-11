@@ -4,12 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/STriangleRef.h"
 
 // Structure: CDemonCubeTriangle
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x20 (32 bytes)
 #pragma pack(push, 1)
 typedef struct CDemonCubeTriangle {
+    STriangleRef triangle; // 0x0
+    uint dominant_axis; // 0x1c
 } CDemonCubeTriangle;
 #pragma pack(pop)
 

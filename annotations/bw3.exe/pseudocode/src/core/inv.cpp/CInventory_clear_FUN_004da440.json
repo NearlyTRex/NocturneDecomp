@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 53,
+    "complexity_score": 39,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
-    "suspect_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 24,
+    "suspect_count": 1,
     "suspect_types": [
-      "unresolved_funcptr",
       "warning_unreachable"
     ],
-    "total_lines": 77
+    "total_lines": 78
   },
   "cross_references": [
     {
@@ -150,14 +149,6 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x004da4a0) */",
       "type": "warning_unreachable"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 23,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0xd0))(iVar1,2);",
-      "type": "unresolved_funcptr"
     }
   ]
 }

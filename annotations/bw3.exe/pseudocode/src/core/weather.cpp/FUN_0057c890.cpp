@@ -11,7 +11,7 @@
 void __cdecl core_weather_cpp_FUN_0057c890(CWeather *this_ptr)
 
 {
-  SProjectedVertex *output;
+  SRenderVertex *vertex_ptr;
   float fVar1;
   CDemonRenderer *pCVar2;
   int iVar3;
@@ -65,14 +65,14 @@ void __cdecl core_weather_cpp_FUN_0057c890(CWeather *this_ptr)
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
                 (DAT_005f2afc,(SMRGLTextureBasic *)&DAT_006071f4);
       pCVar2 = DAT_005f2afc;
-      *(uint *)(DAT_005f2afc->vertex_buffer_ptr + 0x18) = 0x80000;
-      *(uint *)(pCVar2->vertex_buffer_ptr + 0x1c) = 0x80000;
-      *(uint *)(pCVar2->vertex_buffer_ptr + 0x48) = 0x780000;
-      *(uint *)(pCVar2->vertex_buffer_ptr + 0x4c) = 0x80000;
-      *(uint *)(pCVar2->vertex_buffer_ptr + 0x78) = 0x780000;
-      *(uint *)(pCVar2->vertex_buffer_ptr + 0x7c) = 0xf80000;
-      *(uint *)(pCVar2->vertex_buffer_ptr + 0xa8) = 0x80000;
-      *(uint *)(pCVar2->vertex_buffer_ptr + 0xac) = 0xf80000;
+      DAT_005f2afc->vertex_buffer_ptr->u = 0x80000;
+      pCVar2->vertex_buffer_ptr->v = 0x80000;
+      pCVar2->vertex_buffer_ptr[1].u = 0x780000;
+      pCVar2->vertex_buffer_ptr[1].v = 0x80000;
+      pCVar2->vertex_buffer_ptr[2].u = 0x780000;
+      pCVar2->vertex_buffer_ptr[2].v = 0xf80000;
+      pCVar2->vertex_buffer_ptr[3].u = 0x80000;
+      pCVar2->vertex_buffer_ptr[3].v = 0xf80000;
     }
     else {
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
@@ -102,13 +102,12 @@ void __cdecl core_weather_cpp_FUN_0057c890(CWeather *this_ptr)
     if (0 < (int)this_ptr[1].weather_type) {
       world_position = (CVector3f *)&DAT_02d0c208;
       do {
-        output = (SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr;
+        vertex_ptr = DAT_005f2afc->vertex_buffer_ptr;
         local_c0.x = (int)ROUND(world_position->x * _DAT_005e6360);
         local_c0.y = (int)ROUND(world_position->y * _DAT_005e6360);
         local_c0.z = (int)ROUND(world_position->z * _DAT_005e6360);
-        engine_special_cpp_FUN_0056356c(output,&local_c0);
-        iVar3 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0046e6b0
-                          (DAT_005f2afc,(SRenderVertex *)output);
+        engine_special_cpp_FUN_0056356c(&vertex_ptr->projected_vertex,&local_c0);
+        iVar3 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0046e6b0(DAT_005f2afc,vertex_ptr);
         if (iVar3 != 0) {
           engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
                     (DAT_005f2afc,world_position);
@@ -124,15 +123,15 @@ void __cdecl core_weather_cpp_FUN_0057c890(CWeather *this_ptr)
             local_18 = ((int)(uVar5 & 0xc) >> 2) * 0x400000;
             iVar4 = (uVar5 & 3) * 0x400000;
             iVar3 = iVar4 + 0x80000;
-            *(int *)(DAT_005f2afc->vertex_buffer_ptr + 0x18) = iVar3;
-            *(int *)(pCVar2->vertex_buffer_ptr + 0x1c) = local_18 + 0x80000;
+            DAT_005f2afc->vertex_buffer_ptr->u = iVar3;
+            pCVar2->vertex_buffer_ptr->v = local_18 + 0x80000;
             iVar4 = iVar4 + 0x380000;
-            *(int *)(pCVar2->vertex_buffer_ptr + 0x48) = iVar4;
-            *(int *)(pCVar2->vertex_buffer_ptr + 0x4c) = local_18 + 0x80000;
-            *(int *)(pCVar2->vertex_buffer_ptr + 0x78) = iVar4;
-            *(int *)(pCVar2->vertex_buffer_ptr + 0x7c) = local_18 + 0x380000;
-            *(int *)(pCVar2->vertex_buffer_ptr + 0xa8) = iVar3;
-            *(int *)(pCVar2->vertex_buffer_ptr + 0xac) = local_18 + 0x380000;
+            pCVar2->vertex_buffer_ptr[1].u = iVar4;
+            pCVar2->vertex_buffer_ptr[1].v = local_18 + 0x80000;
+            pCVar2->vertex_buffer_ptr[2].u = iVar4;
+            pCVar2->vertex_buffer_ptr[2].v = local_18 + 0x380000;
+            pCVar2->vertex_buffer_ptr[3].u = iVar3;
+            pCVar2->vertex_buffer_ptr[3].v = local_18 + 0x380000;
           }
           local_20 = -local_14;
           local_24 = local_10;
@@ -141,25 +140,25 @@ void __cdecl core_weather_cpp_FUN_0057c890(CWeather *this_ptr)
           local_54.y = (int)ROUND(local_20 * _DAT_005e6360);
           local_54.z = (int)ROUND(_DAT_005e6360 * 0.0);
           engine_special_cpp_FUN_005632a3
-                    ((SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr,&local_54);
+                    (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_54);
           local_24 = -local_24;
           local_a8.x = (int)ROUND(local_24 * _DAT_005e6360);
           local_a8.y = (int)ROUND(local_20 * _DAT_005e6360);
           local_a8.z = (int)ROUND(local_1c * _DAT_005e6360);
           engine_special_cpp_FUN_005632a3
-                    ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x30),&local_a8);
+                    (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_a8);
           local_20 = -local_20;
           local_60.x = (int)ROUND(local_24 * _DAT_005e6360);
           local_60.y = (int)ROUND(local_20 * _DAT_005e6360);
           local_60.z = (int)ROUND(local_1c * _DAT_005e6360);
           engine_special_cpp_FUN_005632a3
-                    ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x60),&local_60);
+                    (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_60);
           local_24 = -local_24;
           local_9c.x = (int)ROUND(local_24 * _DAT_005e6360);
           local_9c.y = (int)ROUND(local_20 * _DAT_005e6360);
           local_9c.z = (int)ROUND(local_1c * _DAT_005e6360);
           engine_special_cpp_FUN_005632a3
-                    ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x90),&local_9c);
+                    (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_9c);
           engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730(DAT_005f2afc,&local_f4)
           ;
           engine_matrix_c_pop_FUN_0046d080();
@@ -172,14 +171,14 @@ void __cdecl core_weather_cpp_FUN_0057c890(CWeather *this_ptr)
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
                 (DAT_005f2afc,(SMRGLTextureBasic *)&DAT_0060720c);
       pCVar2 = DAT_005f2afc;
-      *(uint *)(DAT_005f2afc->vertex_buffer_ptr + 0x18) = 0x80000;
-      *(uint *)(pCVar2->vertex_buffer_ptr + 0x1c) = 0x80000;
-      *(uint *)(pCVar2->vertex_buffer_ptr + 0x48) = 0x780000;
-      *(uint *)(pCVar2->vertex_buffer_ptr + 0x4c) = 0x80000;
-      *(uint *)(pCVar2->vertex_buffer_ptr + 0x78) = 0x780000;
-      *(uint *)(pCVar2->vertex_buffer_ptr + 0x7c) = 0xf80000;
-      *(uint *)(pCVar2->vertex_buffer_ptr + 0xa8) = 0x80000;
-      *(uint *)(pCVar2->vertex_buffer_ptr + 0xac) = 0xf80000;
+      DAT_005f2afc->vertex_buffer_ptr->u = 0x80000;
+      pCVar2->vertex_buffer_ptr->v = 0x80000;
+      pCVar2->vertex_buffer_ptr[1].u = 0x780000;
+      pCVar2->vertex_buffer_ptr[1].v = 0x80000;
+      pCVar2->vertex_buffer_ptr[2].u = 0x780000;
+      pCVar2->vertex_buffer_ptr[2].v = 0xf80000;
+      pCVar2->vertex_buffer_ptr[3].u = 0x80000;
+      pCVar2->vertex_buffer_ptr[3].v = 0xf80000;
       iVar3 = 0;
       if (0 < (int)this_ptr[1].weather_type) {
         local_8 = 0;
@@ -205,25 +204,25 @@ void __cdecl core_weather_cpp_FUN_0057c890(CWeather *this_ptr)
             local_b4.y = (int)ROUND(_DAT_005e6360 * 0.0);
             local_b4.z = (int)ROUND(_DAT_005e6360 * 0.0);
             engine_special_cpp_FUN_005632a3
-                      ((SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr,&local_b4);
+                      (&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_b4);
             local_30 = -local_30;
             local_cc.x = (int)ROUND(local_30 * _DAT_005e6360);
             local_cc.y = (int)ROUND(local_2c * _DAT_005e6360);
             local_cc.z = (int)ROUND(local_28 * _DAT_005e6360);
             engine_special_cpp_FUN_005632a3
-                      ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x30),&local_cc);
+                      (&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_cc);
             local_2c = 0.4;
             local_6c.x = (int)ROUND(local_30 * _DAT_005e6360);
             local_6c.y = (int)ROUND(_DAT_005e6360 * 0.4);
             local_6c.z = (int)ROUND(local_28 * _DAT_005e6360);
             engine_special_cpp_FUN_005632a3
-                      ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x60),&local_6c);
+                      (&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_6c);
             local_30 = -local_30;
             local_3c.x = (int)ROUND(local_30 * _DAT_005e6360);
             local_3c.y = (int)ROUND(local_2c * _DAT_005e6360);
             local_3c.z = (int)ROUND(local_28 * _DAT_005e6360);
             engine_special_cpp_FUN_005632a3
-                      ((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x90),&local_3c);
+                      (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_3c);
             engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
                       (DAT_005f2afc,&local_f4);
             engine_matrix_c_pop_FUN_0046d080();

@@ -19,7 +19,7 @@
 ;   core_fire.cpp_CCrater_process_FUN_0049d8b0 at 0049d931
 ;   core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_004a2010 at 004a2028
 ;   core_fire.cpp_CFireball_process_FUN_00499350 at 0049943f
-;   core_fire.cpp_FUN_0049e390 at 0049e4c4
+;   core_fire.cpp_CGunFlame_process_FUN_0049e390 at 0049e4c4
 ;   core_flame.cpp_CFlame_process_FUN_004a5b10 at 004a5c21
 ;
 ; Referenced Globals:

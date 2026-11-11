@@ -13,11 +13,11 @@ CHealthItemSmall * core_health_cpp_CHealthItemSmall_ctor_FUN_004d2180(CHealthIte
 {
   CHealthItem *pCVar1;
   
-  pCVar1 = core_health_cpp_CHealthItem_ctor_FUN_004d1d80((CHealthItem *)this_ptr);
-  *(CDemonActor_vtable **)&pCVar1->field_0x154 = &g_CHealthItemSmallVTable;
+  pCVar1 = core_health_cpp_CHealthItem_ctor_FUN_004d1d80(&this_ptr->base);
+  (pCVar1->base).vtable._ub = &g_CHealthItemSmallVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
-            ((CKeyFramedModelInstance *)&pCVar1->field_0x158,"health_sm.kfm");
-  *(uint *)&pCVar1->field_0x2d8 = 0x41200000;
-  *(uint *)&pCVar1->field_0x2e0 = 1;
+            (&pCVar1->model,"health_sm.kfm");
+  pCVar1->hp_restored = 10.0;
+  pCVar1->automatic_use = 1;
   return (CHealthItemSmall *)pCVar1;
 }

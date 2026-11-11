@@ -11,8 +11,8 @@
 void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042b450(CCharacter *this_ptr)
 
 {
-  CCharacter *pCVar1;
-  int iVar2;
+  SCarryHand *pSVar1;
+  CCharacter *pCVar2;
   byte bVar3;
   int aiStackY_1050 [1015];
   uint *puVar4;
@@ -39,15 +39,16 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042b450(CCharacter *this_
         do {
           core_actor_cpp_archiveInteger_FUN_0040b8b0(aiStack_28 + 3,"carry hand");
           core_actor_cpp_archiveActor_FUN_0040b930
-                    (this_ptr->carry_hands + aiStack_28[3] * 0x78 + 8,"carry actor");
+                    (&this_ptr->carry_hands[aiStack_28[3]].carry_actor,"carry actor");
           core_xform_cpp_setIdentityMatrix3x4_FUN_005835d0
-                    (this_ptr->carry_hands + aiStack_28[3] * 0x78 + 0xc);
-          *(uint *)(this_ptr->carry_hands + aiStack_28[3] * 0x78 + 0x40) = 0x3f800000;
+                    (&this_ptr->carry_hands[aiStack_28[3]].initial_carry_transform);
+          this_ptr->carry_hands[aiStack_28[3]].blend_factor = 1.0;
           if (0xc < g_CCharacterClassVersion) {
             core_actor_cpp_archiveVector_FUN_0040b400(local_38,"carry pos");
             core_actor_cpp_archiveOrientation_FUN_0040b4a0(local_50,"carry orient");
             core_xform_cpp_FUN_00583940
-                      (this_ptr->carry_hands + aiStack_28[3] * 0x78 + 0xc,local_38,local_50);
+                      (&this_ptr->carry_hands[aiStack_28[3]].initial_carry_transform,local_38,
+                       local_50);
           }
           local_14 = local_14 + 1;
         } while (local_14 < aiStack_28[2]);
@@ -55,31 +56,31 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042b450(CCharacter *this_
     }
     else {
       local_18 = 0;
-      pCVar1 = this_ptr;
+      pCVar2 = this_ptr;
       do {
-        if (*(int *)&pCVar1->field_0x25b0 != 0) {
+        if (pCVar2->carry_hands[0].carry_actor != (CDemonActor *)0x0) {
           local_18 = local_18 + 1;
         }
-        pCVar1 = (CCharacter *)(pCVar1->base).create_event;
-      } while (pCVar1 != (CCharacter *)&(this_ptr->base).platform_orientation_delta.y);
+        pCVar2 = (CCharacter *)(pCVar2->base).create_event;
+      } while (pCVar2 != (CCharacter *)&(this_ptr->base).platform_orientation_delta.y);
       local_14 = 2;
       core_actor_cpp_archiveInteger_FUN_0040b8b0(aiStack_28 + 4,"numCarryHands");
       local_14 = 0;
       do {
         puVar4 = &stack0xffffff98;
-        if (*(int *)(this_ptr->carry_hands + local_14 * 0x78 + 8) != 0) {
+        if (this_ptr->carry_hands[local_14].carry_actor != (CDemonActor *)0x0) {
           core_actor_cpp_archiveInteger_FUN_0040b8b0(aiStack_28 + 5,"carry hand");
           core_actor_cpp_archiveActor_FUN_0040b930
-                    (this_ptr->carry_hands + local_14 * 0x78 + 8,"carry actor");
+                    (&this_ptr->carry_hands[local_14].carry_actor,"carry actor");
           if (0xc < g_CCharacterClassVersion) {
-            core_xform_cpp_FUN_00584450(this_ptr->carry_hands + local_14 * 0x78 + 0xc);
-            iVar2 = local_14 * 0x78;
+            core_xform_cpp_FUN_00584450(&this_ptr->carry_hands[local_14].initial_carry_transform);
+            pSVar1 = this_ptr->carry_hands + local_14;
             local_68 = local_5c;
             *(uint *)((int)&stack0xffffff9c + (uint)bVar3 * 0xfffffffe * 4) =
                  *(uint *)(local_38 + (uint)bVar3 * -8 + -0x20);
             aiStack_40[(uint)bVar3 * -2 + (uint)bVar3 * -2 + -8] =
                  *(int *)(local_38 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + -0x1c);
-            core_xform_cpp_matrixToEulerAngles_FUN_00583b10(this_ptr->carry_hands + iVar2 + 0xc);
+            core_xform_cpp_matrixToEulerAngles_FUN_00583b10(&pSVar1->initial_carry_transform);
             pcVar5 = "carry pos";
             local_44 = local_2c;
             aiStack_40[(uint)bVar3 * -2] = aiStack_28[(uint)bVar3 * -2];
@@ -94,7 +95,7 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042b450(CCharacter *this_
     }
   }
   if (2 < g_CCharacterClassVersion) {
-    core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x2698,"talkToMeEvent");
+    core_actor_cpp_archiveString_FUN_0040b680(this_ptr->talk_to_me_event,"talkToMeEvent");
   }
   if (3 < g_CCharacterClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->grabbed_by,"grabbedBy");
@@ -102,7 +103,7 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042b450(CCharacter *this_
     core_actor_cpp_archiveClothList_FUN_0040bf20(&this_ptr->cloth_list,"clothList");
   }
   if (4 < g_CCharacterClassVersion) {
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x27b8,"sizeScale");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->size_scale,"sizeScale");
   }
   if (g_CCharacterClassVersion < 6) {
     this_ptr->max_hit_points = this_ptr->hit_points;
@@ -115,26 +116,24 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042b450(CCharacter *this_
     core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->max_hit_points,"maxHitPoints");
   }
   if (6 < g_CCharacterClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b8b0
-              ((int *)&this_ptr->field_0x27a8,"spectralFlag");
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->is_spectral,"spectralFlag");
   }
   if (7 < g_CCharacterClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b8b0
-              ((int *)&this_ptr->field_0x27b0,"invulnerableFlag");
+              (&this_ptr->is_invulnerable,"invulnerableFlag");
   }
   if (8 < g_CCharacterClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b8b0
-              ((int *)&this_ptr->field_0x27a4,"etheralFlag");
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->is_ethereal,"etheralFlag");
   }
   if (9 < g_CCharacterClassVersion) {
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x3254,"bind_time");
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x3260,"on_fire_time");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->bind_time,"bind_time");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->on_fire_time,"on_fire_time");
   }
   if (10 < g_CCharacterClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x3258,"bind_type");
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->bind_type,"bind_type");
   }
   if (0xb < g_CCharacterClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0xcdc4,"additive");
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->additive,"additive");
   }
   if (0xc < g_CCharacterClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->walk_to_target,"scriptWalkDest");
@@ -149,7 +148,6 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042b450(CCharacter *this_
   if (g_CCharacterClassVersion < 0xe) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x3268,"been_damaged")
-  ;
+  core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->been_damaged,"been_damaged");
   return;
 }

@@ -12,7 +12,10 @@
 typedef struct CExplosion {
     CVector3f position; // 0x0
     float lifetime; // 0xc
-    char field_16[16]; // 0x10
+    float scale; // 0x10
+    float gore_multiplier; // 0x14
+    int flip_flag; // 0x18
+    int explosion_type; // 0x1c, Added in this build
 } CExplosion;
 #pragma pack(pop)
 

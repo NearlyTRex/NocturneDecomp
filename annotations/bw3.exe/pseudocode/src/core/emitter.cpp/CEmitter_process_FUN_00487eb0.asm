@@ -21,7 +21,7 @@
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CGore* g_CGorePtr = 01d22e44
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 g_CGameInstance.field19_0x1c
+;   undefined4 g_CGameInstance.foul_language_flag
 ;   undefined4 DAT_01d5ba14
 ;   ... and 1 more
 ;
@@ -36,11 +36,11 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
 ;   core_emitter.cpp_FUN_00488ea0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
+;   core_fire.cpp_CFireEffect_createFirefly_FUN_004a29d0
+;   core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0
+;   core_fire.cpp_CFireEffect_createLeaf_FUN_004a2930
 ;   core_fire.cpp_CFireEffect_createRock_FUN_004a28e0
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004a2560
-;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
-;   core_fire.cpp_FUN_004a2930
-;   core_fire.cpp_FUN_004a29d0
 ;   ... and 12 more
 ;
 ; *****************************************************************************
@@ -101,7 +101,7 @@ section .text
     JZ 0x00487f5f                       ; 00487f48
         ;   XREF to: 00487f5f (CONDITIONAL_JUMP)  ; LAB_00487f5f
     MOV EAX,[0x005fe9dc]                ; 00487f4a | g_CGamePtr
-    MOV EDX,dword ptr [EAX + 0x1c]      ; 00487f4f | g_CGameInstance.field19_0x1c
+    MOV EDX,dword ptr [EAX + 0x1c]      ; 00487f4f | g_CGameInstance.foul_language_flag
     MOV ESI,0x1                         ; 00487f52
     TEST EDX,EDX                        ; 00487f57
     JZ 0x00488110                       ; 00487f59
@@ -290,8 +290,8 @@ section .text
     PUSH ESI                            ; 00488193
     MOV EDI,dword ptr [0x005fc5a0]      ; 00488194 | DAT_005fc5a0
     PUSH EDI                            ; 0048819a
-    CALL core_fire.cpp_FUN_004a29d0     ; 0048819b
-        ;   XREF to: 004a29d0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a29d0()
+    CALL core_fire.cpp_CFireEffect_createFirefly_FUN_004a29d0 ; 0048819b
+        ;   XREF to: 004a29d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createFirefly_FUN_004a29d0(CFireEffect * this_ptr, undefined4 param_2, undefined4 param_3, int param_4, ...)
     ADD ESP,0x24                        ; 004881a0
     JMP 0x00487fe8                      ; 004881a3
         ;   XREF to: 00487fe8 (UNCONDITIONAL_JUMP)  ; LAB_00487fe8
@@ -497,8 +497,8 @@ section .text
     PUSH EAX                            ; 00488492
     MOV EDI,dword ptr [0x005fc5a0]      ; 00488493 | DAT_005fc5a0
     PUSH EDI                            ; 00488499
-    CALL core_fire.cpp_FUN_004a2930     ; 0048849a
-        ;   XREF to: 004a2930 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a2930()
+    CALL core_fire.cpp_CFireEffect_createLeaf_FUN_004a2930 ; 0048849a
+        ;   XREF to: 004a2930 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLeaf_FUN_004a2930(CFireEffect * this_ptr, undefined4 param_2, undefined4 param_3, CKeyFramedModel * param_4, ...)
     ADD ESP,0x14                        ; 0048849f
     MOV EAX,dword ptr [EBX + 0x20]      ; 004884a2
     MOV dword ptr [ESP + 0x84],EAX      ; 004884a5
@@ -527,8 +527,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004884f9
     MOVSD ES:EDI,ESI                    ; 004884fa
     MOVSD ES:EDI,ESI                    ; 004884fb
-    CALL core_fire.cpp_FUN_004a3af0     ; 004884fc
-        ;   XREF to: 004a3af0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3af0()
+    CALL core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0 ; 004884fc
+        ;   XREF to: 004a3af0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_count, ...)
     MOV ECX,dword ptr [0x01d5ba14]      ; 00488501 | DAT_01d5ba14
     LEA EDI,[ESP + 0x12c]               ; 00488507
     MOV ECX,dword ptr [ECX*0x4 + 0x1d5ba04] ; 0048850e

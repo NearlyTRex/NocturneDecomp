@@ -17,6 +17,6 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_004315c0(CC
   pCVar1 = (this_ptr->base).vtable._uc;
   this_ptr->walk_max_distance = 1e+30;
   (*(pCVar1->_uc).setWalkTimeout)(this_ptr,2.0);
-  *(uint *)&this_ptr->field_0xcdc8 = 1;
+  this_ptr->walk_immediate_pending = 1;
   return;
 }

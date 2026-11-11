@@ -49,9 +49,9 @@ int FUN_00573830(int *param_1);
 // Address: 005738c0
 CInStreamFile * CInStreamFile::ctor(CInStreamFile *this_ptr);
 
-// Original: unkafter_turret.cpp_FUN_00573920
+// Original: unkafter_turret.cpp_CInStreamFile_ctorOpen_FUN_00573920
 // Address: 00573920
-undefined4 * FUN_00573920(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+undefined4 * __cdecl CInStreamFile::ctorOpen(CInStreamFile *this_ptr,LPCSTR param_2,int param_3);
 
 // Original: unkafter_turret.cpp_CInStreamFile_copy_FUN_00573a10
 // Address: 00573a10
@@ -61,42 +61,42 @@ CInStreamFile * CInStreamFile::copy(CInStreamFile *this_ptr,CInStreamFile *other
 // Address: 00573a40
 CInStreamFile * CInStreamFile::dtor(CInStreamFile *this_ptr,uint flags);
 
-// Original: unkafter_turret.cpp_FUN_00573aa0
+// Original: unkafter_turret.cpp_CInStreamFile_getChar_FUN_00573aa0
 // Address: 00573aa0
-int FUN_00573aa0(int param_1);
+int __cdecl CInStreamFile::getChar(CInStreamFile *this_ptr);
 
-// Original: unkafter_turret.cpp_FUN_00573af0
+// Original: unkafter_turret.cpp_CInStreamFile_ungetChar_FUN_00573af0
 // Address: 00573af0
-undefined4 FUN_00573af0(int param_1,int param_2);
+undefined4 __cdecl CInStreamFile::ungetChar(CInStreamFile *this_ptr,int param_2);
 
-// Original: unkafter_turret.cpp_FUN_00573b60
+// Original: unkafter_turret.cpp_CInStreamFile_peekChar_FUN_00573b60
 // Address: 00573b60
-int FUN_00573b60(int param_1);
+int __cdecl CInStreamFile::peekChar(CInStreamFile *this_ptr);
 
 // Original: unkafter_turret.cpp_FUN_00573b90
 // Address: 00573b90
 uint FUN_00573b90(int param_1,int param_2);
 
-// Original: unkafter_turret.cpp_FUN_00573c00
+// Original: unkafter_turret.cpp_CInStreamFile_read_FUN_00573c00
 // Address: 00573c00
-int FUN_00573c00(int param_1,undefined4 *param_2,uint param_3);
+int __cdecl CInStreamFile::read(CInStreamFile *this_ptr,undefined4 *param_2,uint param_3);
 
-// Original: unkafter_turret.cpp_FUN_00573cf0
+// Original: unkafter_turret.cpp_CInStreamFile_seek_FUN_00573cf0
 // Address: 00573cf0
-undefined4 FUN_00573cf0(int param_1,int param_2,uint param_3);
+undefined4 __cdecl CInStreamFile::seek(CInStreamFile *this_ptr,int param_2,uint param_3);
 
-// Original: unkafter_turret.cpp_FUN_00573d40
+// Original: unkafter_turret.cpp_CInStreamFile_tell_FUN_00573d40
 // Address: 00573d40
-undefined4 FUN_00573d40(int param_1);
+undefined4 __cdecl CInStreamFile::tell(CInStreamFile *this_ptr);
 
-// Original: unkafter_turret.cpp_FUN_00573d60
+// Original: unkafter_turret.cpp_CInStreamFile_isOpen_FUN_00573d60
 // Address: 00573d60
-bool FUN_00573d60(int param_1);
+bool __cdecl CInStreamFile::isOpen(CInStreamFile *this_ptr);
 
-// Original: unkafter_turret.cpp_FUN_00573d80
+// Original: unkafter_turret.cpp_CInStreamFile_isEof_FUN_00573d80
 // Address: 00573d80
-undefined4 FUN_00573d80(int param_1);
+undefined4 __cdecl CInStreamFile::isEof(CInStreamFile *this_ptr);
 
-// Original: unkafter_turret.cpp_FUN_00573db0
+// Original: unkafter_turret.cpp_CInStreamFile_close_FUN_00573db0
 // Address: 00573db0
-undefined4 FUN_00573db0(int param_1);
+undefined4 __cdecl CInStreamFile::close(CInStreamFile *this_ptr);

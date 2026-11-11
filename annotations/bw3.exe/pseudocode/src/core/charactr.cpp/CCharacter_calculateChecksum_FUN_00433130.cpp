@@ -20,7 +20,7 @@ void __cdecl core_charactr_cpp_CCharacter_calculateChecksum_FUN_00433130(CCharac
   }
   core_actor_cpp_crc32ProcessString_FUN_0040d1c0(out_crc,string_00);
   string = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&(this_ptr->model).base);
-  core_actor_cpp_crc32ProcessString_FUN_0040d1c0(out_crc,(char *)string);
+  core_actor_cpp_crc32ProcessString_FUN_0040d1c0(out_crc,string->motion_name);
   core_actor_cpp_crc32ProcessInt_FUN_0040d180
             (out_crc,(int)(this_ptr->model).base.current_frame_number);
   return;

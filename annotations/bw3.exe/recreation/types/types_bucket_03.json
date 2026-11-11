@@ -9,6 +9,7 @@
   {
     "kind":"class",
     "name":"CCarved",
+    "parent":"CEnemy",
     "size":53468
   },
   {
@@ -184,6 +185,7 @@
   {
     "kind":"class",
     "name":"CDogForest",
+    "parent":"CZombieDog",
     "size":53348
   },
   {
@@ -215,6 +217,7 @@
   {
     "kind":"class",
     "name":"CShadowForest",
+    "parent":"CShadow",
     "size":53480
   },
   {
@@ -323,6 +326,7 @@
   {
     "kind":"class",
     "name":"CSpiritIndian",
+    "parent":"CNPC",
     "size":216484
   },
   {
@@ -402,6 +406,129 @@
       {
         "name":"AMMO_TYPE_MERCURY",
         "value":8
+      },
+      {
+        "name":"AMMO_TYPE_STAGGER",
+        "value":9
+      },
+      {
+        "name":"AMMO_TYPE_MANA",
+        "value":10
+      },
+      {
+        "name":"AMMO_TYPE_BULLET",
+        "value":11
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EDamageType",
+    "size":4,
+    "values":[
+      {
+        "name":"DAMAGE_TYPE_GENERIC",
+        "value":0
+      },
+      {
+        "name":"DAMAGE_TYPE_DROWN",
+        "value":1
+      },
+      {
+        "name":"DAMAGE_TYPE_FALL",
+        "value":2
+      },
+      {
+        "name":"DAMAGE_TYPE_EXPLODE",
+        "value":3
+      },
+      {
+        "name":"DAMAGE_TYPE_FALL_APART",
+        "value":4
+      },
+      {
+        "name":"DAMAGE_TYPE_SHATTER",
+        "value":5
+      },
+      {
+        "name":"DAMAGE_TYPE_ELECTROCUTE",
+        "value":6
+      },
+      {
+        "name":"DAMAGE_TYPE_CHOPPED",
+        "value":7
+      },
+      {
+        "name":"DAMAGE_TYPE_CRUSHED",
+        "value":8
+      },
+      {
+        "name":"DAMAGE_TYPE_IMPALE",
+        "value":9
+      },
+      {
+        "name":"DAMAGE_TYPE_FIRE",
+        "value":10
+      },
+      {
+        "name":"DAMAGE_TYPE_UNUSED",
+        "value":11
+      },
+      {
+        "name":"DAMAGE_TYPE_ATTACK_GENERIC",
+        "value":100
+      },
+      {
+        "name":"DAMAGE_TYPE_ATTACK_BULLET",
+        "value":101
+      },
+      {
+        "name":"DAMAGE_TYPE_ATTACK_FIRE",
+        "value":102
+      },
+      {
+        "name":"DAMAGE_TYPE_ATTACK_BLADE",
+        "value":103
+      },
+      {
+        "name":"DAMAGE_TYPE_ATTACK_STAKE",
+        "value":104
+      },
+      {
+        "name":"DAMAGE_TYPE_ATTACK_GAS",
+        "value":105
+      },
+      {
+        "name":"DAMAGE_TYPE_ATTACK_ELECTROCUTE",
+        "value":106
+      },
+      {
+        "name":"DAMAGE_TYPE_PIERCING",
+        "value":107
+      },
+      {
+        "name":"DAMAGE_TYPE_BURN",
+        "value":108
+      },
+      {
+        "name":"DAMAGE_TYPE_SHADOW",
+        "value":109
+      },
+      {
+        "name":"DAMAGE_TYPE_GUN_FLAME",
+        "value":110
+      },
+      {
+        "name":"DAMAGE_TYPE_EXORCISM",
+        "value":111
+      },
+      {
+        "name":"DAMAGE_TYPE_BODY_PART",
+        "value":112
+      },
+      {
+        "name":"DAMAGE_TYPE_HOLY_CROSS",
+        "value":113
       }
     ]
   },
@@ -413,7 +540,7 @@
   {
     "kind":"struct",
     "name":"SBone",
-    "size":1
+    "size":36
   },
   {
     "kind":"struct",
@@ -423,17 +550,17 @@
   {
     "kind":"struct",
     "name":"SFace",
-    "size":1
+    "size":32
   },
   {
     "kind":"struct",
     "name":"SIntersectXZCylinder",
-    "size":1
+    "size":92
   },
   {
     "kind":"struct",
     "name":"SLineStrip",
-    "size":1
+    "size":8
   },
   {
     "kind":"struct",
@@ -444,22 +571,23 @@
   {
     "kind":"struct",
     "name":"SMRGLPrimitiveTriangle",
-    "size":1
+    "parent":"SMRGLHeaderPrimitive",
+    "size":60
   },
   {
     "kind":"struct",
     "name":"SMpegLayer3GranuleInfo",
-    "size":1
+    "size":72
   },
   {
     "kind":"struct",
     "name":"SNetworkAddr",
-    "size":1
+    "size":8
   },
   {
     "kind":"struct",
     "name":"SPlayerInput",
-    "size":1
+    "size":52
   },
   {
     "kind":"struct",

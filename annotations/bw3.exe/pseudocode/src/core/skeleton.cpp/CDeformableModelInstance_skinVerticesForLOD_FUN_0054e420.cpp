@@ -15,9 +15,9 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0
   CVector3i *output_buffer;
   SPartInstanceData *part_data;
   
-  part_data = (SPartInstanceData *)&this_ptr->field_0x2140;
+  part_data = &this_ptr->part_data;
   output_buffer = this_ptr->skinned_vertices_buffer;
-  bone_matrices = (CMatrix3x4f *)&this_ptr->field_0xe80;
+  bone_matrices = (this_ptr->bone_transform).bone_model_matrices;
   lod_index_00 = lod_index;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(this_ptr);
   core_skeleton_cpp_FUN_00548850(this_ptr_00,lod_index_00,bone_matrices,&output_buffer->x,part_data)

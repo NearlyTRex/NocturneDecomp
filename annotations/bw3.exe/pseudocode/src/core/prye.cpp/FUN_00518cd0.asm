@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_prye_cpp_FUN_00518cd0(CCharacter *param_1,float param_2)
+; void core_prye_cpp_FUN_00518cd0(UOrientationVector *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x408]:1  local_408
@@ -1078,11 +1078,11 @@ section .text
         ;   XREF to: 0051b45e (CONDITIONAL_JUMP)  ; LAB_0051b45e
     MOV EAX,[0x005fe9dc]                ; 00519a27 | g_CGamePtr
     MOV dword ptr [EBX + 0x20bcc],0x0   ; 00519a2c
-    CMP dword ptr [EAX + 0x26c],0x0     ; 00519a36 | g_CGameInstance.field572_0x26c
+    CMP dword ptr [EAX + 0x26c],0x0     ; 00519a36 | g_CGameInstance.flashlight_active
     JZ 0x00519a5b                       ; 00519a3d
         ;   XREF to: 00519a5b (CONDITIONAL_JUMP)  ; LAB_00519a5b
     PUSH 0x5cd12c                       ; 00519a3f | = "flashlit.wav"
-    MOV dword ptr [EAX + 0x26c],0x0     ; 00519a44 | g_CGameInstance.field572_0x26c
+    MOV dword ptr [EAX + 0x26c],0x0     ; 00519a44 | g_CGameInstance.flashlight_active
     PUSH EBX                            ; 00519a4e
     MOV EAX,dword ptr [EBX + 0x154]     ; 00519a4f
     CALL dword ptr [EAX + 0x2c]         ; 00519a55
@@ -1164,7 +1164,7 @@ section .text
     JNZ 0x0051b4d2                      ; 00519b67
         ;   XREF to: 0051b4d2 (CONDITIONAL_JUMP)  ; LAB_0051b4d2
     MOV EAX,[0x005fe9dc]                ; 00519b6d | g_CGamePtr
-    MOV dword ptr [EAX + 0x26c],0x0     ; 00519b72 | g_CGameInstance.field572_0x26c
+    MOV dword ptr [EAX + 0x26c],0x0     ; 00519b72 | g_CGameInstance.flashlight_active
     CMP dword ptr [ESP + 0x4b0],0x0     ; 00519b7c
         ;   Label: LAB_00519b7c
     JZ 0x00519b92                       ; 00519b84
@@ -1262,8 +1262,8 @@ section .text
     PUSH EAX                            ; 00519c89
     PUSH dword ptr [EBP + 0x18]         ; 00519c8a
     PUSH EBX                            ; 00519c8d
-    CALL unkafter_prye.cpp_FUN_00524170 ; 00519c8e
-        ;   XREF to: 00524170 (UNCONDITIONAL_CALL)  ; void unkafter_prye.cpp_FUN_00524170(CStranger * this_ptr, float delta_time, int is_weapon_active)
+    CALL core_prye.cpp_CPrye_updateArmRecoilBlend_FUN_00524170 ; 00519c8e
+        ;   XREF to: 00524170 (UNCONDITIONAL_CALL)  ; void core_prye.cpp_CPrye_updateArmRecoilBlend_FUN_00524170(CPrye * this_ptr, float delta_time, int is_weapon_active)
     ADD ESP,0xc                         ; 00519c93
     PUSH EBX                            ; 00519c96
     CALL unkafter_prye.cpp_FUN_00526cf0 ; 00519c97
@@ -3120,7 +3120,7 @@ section .text
     JNZ 0x00519b7c                      ; 0051b4da
         ;   XREF to: 00519b7c (CONDITIONAL_JUMP)  ; LAB_00519b7c
     MOV EAX,[0x005fe9dc]                ; 0051b4e0 | g_CGamePtr
-    MOV dword ptr [EAX + 0x26c],ESI     ; 0051b4e5 | g_CGameInstance.field572_0x26c
+    MOV dword ptr [EAX + 0x26c],ESI     ; 0051b4e5 | g_CGameInstance.flashlight_active
     JMP 0x00519b7c                      ; 0051b4eb
         ;   XREF to: 00519b7c (UNCONDITIONAL_JUMP)  ; LAB_00519b7c
     FLD float ptr [EBP + 0x18]          ; 0051b4f0

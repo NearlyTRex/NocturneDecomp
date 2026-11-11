@@ -9,7 +9,7 @@
 ECollisionType __cdecl core_wateract_cpp_CWaterActor_getCollisionType_FUN_00578d00(CWaterActor *this_ptr,SCollisionInfo *collision_info)
 
 {
-  if (*(int *)collision_info == 3) {
+  if ((collision_info->ray_query).ray_type == 3) {
     return COLLISION_TYPE_CUSTOM;
   }
   return COLLISION_TYPE_NONE;

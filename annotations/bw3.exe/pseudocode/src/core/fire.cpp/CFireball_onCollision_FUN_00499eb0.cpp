@@ -11,8 +11,8 @@ int __cdecl core_fire_cpp_CFireball_onCollision_FUN_00499eb0(CFireball *this_ptr
 {
   int iVar1;
   
-  sound_sndmain_cpp_killSfx_FUN_00556be0(*(uint *)&this_ptr->field_0x60);
-  if (*(int *)&this_ptr->field_0x4c == 0) {
+  sound_sndmain_cpp_killSfx_FUN_00556be0(this_ptr->sfx_handle);
+  if (this_ptr->lighting_active == 0) {
     iVar1 = 0;
     do {
       core_fire_cpp_CFireEffect_createFireball_FUN_004a2830
@@ -24,11 +24,11 @@ int __cdecl core_fire_cpp_CFireball_onCollision_FUN_00499eb0(CFireball *this_ptr
     core_set_cpp_CDemonSet_initCameraShake_FUN_0053b440(g_CDemonSetPtr,100.0,0.0,0.0,1.0);
     sound_sndmain_cpp_pushSfxOptions_FUN_00555fd0();
     sound_sndmain_cpp_FUN_00555c90
-              ((double)*(float *)this_ptr,(double)*(float *)&this_ptr->field_0x4,
-               (double)*(float *)&this_ptr->field_0x8);
+              ((double)(this_ptr->base).position.x,(double)(this_ptr->base).position.y,
+               (double)(this_ptr->base).position.z);
   }
   else {
-    if (*(int *)&this_ptr->field_0x4c != 2) {
+    if (this_ptr->lighting_active != 2) {
       return 0;
     }
     iVar1 = 0;
@@ -39,8 +39,8 @@ int __cdecl core_fire_cpp_CFireball_onCollision_FUN_00499eb0(CFireball *this_ptr
     } while (iVar1 < 8);
     sound_sndmain_cpp_pushSfxOptions_FUN_00555fd0();
     sound_sndmain_cpp_FUN_00555c90
-              ((double)*(float *)this_ptr,(double)*(float *)&this_ptr->field_0x4,
-               (double)*(float *)&this_ptr->field_0x8);
+              ((double)(this_ptr->base).position.x,(double)(this_ptr->base).position.y,
+               (double)(this_ptr->base).position.z);
     sound_sndmain_cpp_FUN_00555df0(0.8);
   }
   sound_sndmain_cpp_FUN_00556240();

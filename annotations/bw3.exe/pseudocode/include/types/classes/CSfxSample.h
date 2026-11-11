@@ -2,8 +2,12 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CMP3Decoder;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CInStreamFile.h"
 #include "types/classes/CSampleInfo.h"
 
 // Structure: CSfxSample
@@ -18,7 +22,15 @@ typedef struct CSfxSample {
     int taken; // 0x150
     int ref_count; // 0x154
     int buffer_id; // 0x158
-    char field_348[76]; // 0x15c
+    int is_user_sample; // 0x15c, Added in this build
+    int streaming_slot_index; // 0x160
+    int streaming_buffer_size; // 0x164
+    int data_size_bytes; // 0x168, Added in this build
+    int stream_read_position; // 0x16c
+    int stream_write_position; // 0x170
+    struct CMP3Decoder* mp3_data; // 0x174
+    int file_offset; // 0x178
+    CInStreamFile file_stream; // 0x17c, Added in this build
     int locked_offset; // 0x1a8
     int locked_length; // 0x1ac
 } CSfxSample;

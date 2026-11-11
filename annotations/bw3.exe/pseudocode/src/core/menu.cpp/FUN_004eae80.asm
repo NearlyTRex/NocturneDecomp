@@ -61,7 +61,7 @@ section .text
     PUSH EBP                            ; 004eae81
     SUB ESP,0xc8c                       ; 004eae82
     MOV EAX,[0x005fe9dc]                ; 004eae88 | g_CGamePtr
-    CMP dword ptr [EAX + 0xd4],0x2      ; 004eae8d | g_CGameInstance.field164_0xd4
+    CMP dword ptr [EAX + 0xd4],0x2      ; 004eae8d | g_CGameInstance.game_control
     JNZ 0x004eaea3                      ; 004eae94
         ;   XREF to: 004eaea3 (CONDITIONAL_JUMP)  ; LAB_004eaea3
     CMP dword ptr [EAX + 0xbc],0x0      ; 004eae96 | g_CGameInstance.x_center
@@ -75,7 +75,7 @@ section .text
     MOV EAX,[0x005fe9dc]                ; 004eaeae | g_CGamePtr
         ;   Label: LAB_004eaeae
     XOR ESI,ESI                         ; 004eaeb3
-    MOV EDI,dword ptr [EAX + 0xd4]      ; 004eaeb5 | g_CGameInstance.field164_0xd4
+    MOV EDI,dword ptr [EAX + 0xd4]      ; 004eaeb5 | g_CGameInstance.game_control
     MOV dword ptr [0x01d75c98],ESI      ; 004eaebb | DAT_01d75c98
     CMP EDI,0x3                         ; 004eaec1
     JZ 0x004eb4cf                       ; 004eaec4
@@ -103,7 +103,7 @@ section .text
         ;   Label: LAB_004eaf0f
     IMUL EDI,EAX,0x28                   ; 004eaf14
     ADD EDI,0x1d75d20                   ; 004eaf17
-    MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eaf1d | DAT_01d75c9c | g_CGameInstance.field54_0x48
+    MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eaf1d | DAT_01d75c9c | g_CGameInstance.key_fire
     PUSH EDI                            ; 004eaf24
     MOV AL,byte ptr [ESI]               ; 004eaf25
         ;   Label: LAB_004eaf25
@@ -146,7 +146,7 @@ section .text
         ;   Label: LAB_004eaf90
     IMUL EDI,EAX,0x28                   ; 004eaf95
     ADD EDI,0x1d75d20                   ; 004eaf98
-    MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eaf9e | DAT_01d75ca0 | g_CGameInstance.field58_0x4c
+    MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eaf9e | DAT_01d75ca0 | g_CGameInstance.key_action
     PUSH EDI                            ; 004eafa5 | DAT_01d75d48
     MOV AL,byte ptr [ESI]               ; 004eafa6
         ;   Label: LAB_004eafa6
@@ -664,7 +664,7 @@ section .text
         ;   Label: LAB_004eb5a0
     IMUL EDI,EAX,0x28                   ; 004eb5a5
     ADD EDI,0x1d75d20                   ; 004eb5a8
-    MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb5ae | DAT_01d75cd0 | g_CGameInstance.field62_0x50
+    MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb5ae | DAT_01d75cd0 | g_CGameInstance.key_use_item
     PUSH EDI                            ; 004eb5b5 | DAT_01d75f28
     MOV AL,byte ptr [ESI]               ; 004eb5b6
         ;   Label: LAB_004eb5b6
@@ -707,7 +707,7 @@ section .text
         ;   Label: LAB_004eb621
     IMUL EDI,EAX,0x28                   ; 004eb626
     ADD EDI,0x1d75d20                   ; 004eb629
-    MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb62f | DAT_01d75cd4 | g_CGameInstance.field66_0x54
+    MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb62f | DAT_01d75cd4 | g_CGameInstance.key_light
     PUSH EDI                            ; 004eb636 | DAT_01d75f50
     MOV AL,byte ptr [ESI]               ; 004eb637
         ;   Label: LAB_004eb637
@@ -1137,7 +1137,7 @@ section .text
         ;   Label: LAB_004ebb3d
     IMUL EDI,EAX,0x28                   ; 004ebb42
     ADD EDI,0x1d75d20                   ; 004ebb45
-    MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004ebb4b | DAT_01d75cfc | g_CGameInstance.field130_0x94
+    MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004ebb4b | DAT_01d75cfc | g_CGameInstance.key_next_weapon
     PUSH EDI                            ; 004ebb52 | DAT_01d760e0
     MOV AL,byte ptr [ESI]               ; 004ebb53
         ;   Label: LAB_004ebb53
@@ -1180,7 +1180,7 @@ section .text
         ;   Label: LAB_004ebbc1
     IMUL EDI,EAX,0x28                   ; 004ebbc6
     ADD EDI,0x1d75d20                   ; 004ebbc9
-    MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004ebbcf | DAT_01d75d00 | g_CGameInstance.field134_0x98
+    MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004ebbcf | DAT_01d75d00 | g_CGameInstance.key_prev_weapon
     PUSH EDI                            ; 004ebbd6 | DAT_01d76108
     MOV AL,byte ptr [ESI]               ; 004ebbd7
         ;   Label: LAB_004ebbd7
@@ -1223,7 +1223,7 @@ section .text
         ;   Label: LAB_004ebc45
     IMUL EDI,EAX,0x28                   ; 004ebc4a
     ADD EDI,0x1d75d20                   ; 004ebc4d
-    MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004ebc53 | DAT_01d75d04 | g_CGameInstance.field138_0x9c
+    MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004ebc53 | DAT_01d75d04 | g_CGameInstance.key_next_item
     PUSH EDI                            ; 004ebc5a | DAT_01d76130
     MOV AL,byte ptr [ESI]               ; 004ebc5b
         ;   Label: LAB_004ebc5b
@@ -1266,7 +1266,7 @@ section .text
         ;   Label: LAB_004ebcc9
     IMUL EDI,EAX,0x28                   ; 004ebcce
     ADD EDI,0x1d75d20                   ; 004ebcd1
-    MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004ebcd7 | DAT_01d75d08 | g_CGameInstance.field142_0xa0
+    MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004ebcd7 | DAT_01d75d08 | g_CGameInstance.key_prev_item
     PUSH EDI                            ; 004ebcde | DAT_01d76158
     MOV AL,byte ptr [ESI]               ; 004ebcdf
         ;   Label: LAB_004ebcdf
@@ -1312,7 +1312,7 @@ section .text
     XOR EBX,EBX                         ; 004ebd41
     MOV EAX,dword ptr [EBX + 0x1d75c9c] ; 004ebd43 | DAT_01d75c9c | DAT_01d75ca0
         ;   Label: LAB_004ebd43
-    MOV EBP,dword ptr [EAX]             ; 004ebd49 | g_CGameInstance.field54_0x48 | g_CGameInstance.field58_0x4c
+    MOV EBP,dword ptr [EAX]             ; 004ebd49 | g_CGameInstance.key_fire | g_CGameInstance.key_action
     PUSH EBP                            ; 004ebd4b
     CALL core_menu.cpp_getKeyDisplayName_FUN_004eaa60 ; 004ebd4c
         ;   XREF to: 004eaa60 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004eaa60(EInputCodeType key_code)
@@ -1524,7 +1524,7 @@ section .text
         ;   XREF to: 004ebeaf (UNCONDITIONAL_JUMP)  ; LAB_004ebeaf
     MOV EAX,[0x005fe9dc]                ; 004ebf41 | g_CGamePtr
         ;   Label: default
-    CMP dword ptr [EAX + 0xd4],0x2      ; 004ebf46 | g_CGameInstance.field164_0xd4
+    CMP dword ptr [EAX + 0xd4],0x2      ; 004ebf46 | g_CGameInstance.game_control
     JZ 0x004ebfa7                       ; 004ebf4d
         ;   XREF to: 004ebfa7 (CONDITIONAL_JUMP)  ; LAB_004ebfa7
     MOV ESI,0xffffffff                  ; 004ebf4f
@@ -1580,7 +1580,7 @@ section .text
     JL 0x004ebf56                       ; 004ebfb9
         ;   XREF to: 004ebf56 (CONDITIONAL_JUMP)  ; LAB_004ebf56
     MOV EAX,[0x005fe9dc]                ; 004ebfbb | g_CGamePtr
-    CMP dword ptr [EAX + 0xd4],0x3      ; 004ebfc0 | g_CGameInstance.field164_0xd4
+    CMP dword ptr [EAX + 0xd4],0x3      ; 004ebfc0 | g_CGameInstance.game_control
     JNZ 0x004ebfd9                      ; 004ebfc7
         ;   XREF to: 004ebfd9 (CONDITIONAL_JUMP)  ; LAB_004ebfd9
     CMP ESI,0x200                       ; 004ebfc9
@@ -1666,7 +1666,7 @@ section .text
         ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0()
         ;   Label: LAB_004ec07e
     MOV EAX,[0x005fe9dc]                ; 004ec083 | g_CGamePtr
-    CMP dword ptr [EAX + 0xd4],0x2      ; 004ec088 | g_CGameInstance.field164_0xd4
+    CMP dword ptr [EAX + 0xd4],0x2      ; 004ec088 | g_CGameInstance.game_control
     JZ 0x004ec1cb                       ; 004ec08f
         ;   XREF to: 004ec1cb (CONDITIONAL_JUMP)  ; LAB_004ec1cb
     MOV ESI,0xffffffff                  ; 004ec095
@@ -1692,7 +1692,7 @@ section .text
     JL 0x004ec09c                       ; 004ec0bb
         ;   XREF to: 004ec09c (CONDITIONAL_JUMP)  ; LAB_004ec09c
     MOV EAX,[0x005fe9dc]                ; 004ec0bd | g_CGamePtr
-    CMP dword ptr [EAX + 0xd4],0x3      ; 004ec0c2 | g_CGameInstance.field164_0xd4
+    CMP dword ptr [EAX + 0xd4],0x3      ; 004ec0c2 | g_CGameInstance.game_control
     JNZ 0x004ec1e5                      ; 004ec0c9
         ;   XREF to: 004ec1e5 (CONDITIONAL_JUMP)  ; LAB_004ec1e5
     CMP ESI,0x200                       ; 004ec0cf
@@ -1765,7 +1765,7 @@ section .text
     ADD ESP,0x8                         ; 004ec16e
     MOV EAX,[0x005fe9dc]                ; 004ec171 | g_CGamePtr
         ;   Label: LAB_004ec171
-    CMP dword ptr [EAX + 0xd4],0x2      ; 004ec176 | g_CGameInstance.field164_0xd4
+    CMP dword ptr [EAX + 0xd4],0x2      ; 004ec176 | g_CGameInstance.game_control
     JZ 0x004ec204                       ; 004ec17d
         ;   XREF to: 004ec204 (CONDITIONAL_JUMP)  ; LAB_004ec204
     MOV ESI,0xffffffff                  ; 004ec183
@@ -1839,7 +1839,7 @@ section .text
     JL 0x004ec18a                       ; 004ec219
         ;   XREF to: 004ec18a (CONDITIONAL_JUMP)  ; LAB_004ec18a
     MOV EAX,[0x005fe9dc]                ; 004ec21f | g_CGamePtr
-    CMP dword ptr [EAX + 0xd4],0x3      ; 004ec224 | g_CGameInstance.field164_0xd4
+    CMP dword ptr [EAX + 0xd4],0x3      ; 004ec224 | g_CGameInstance.game_control
     JNZ 0x004ec245                      ; 004ec22b
         ;   XREF to: 004ec245 (CONDITIONAL_JUMP)  ; LAB_004ec245
     CMP ESI,0x200                       ; 004ec22d
@@ -1885,11 +1885,11 @@ section .text
     MOV ESI,dword ptr [EBX + 0x1d75c9c] ; 004ec28c | DAT_01d75ca0
         ;   Label: LAB_004ec28c
     MOV EDI,dword ptr [ECX + 0x1d75c9c] ; 004ec292 | DAT_01d75c9c
-    MOV EDX,dword ptr [ESI]             ; 004ec298 | g_CGameInstance.field58_0x4c
+    MOV EDX,dword ptr [ESI]             ; 004ec298 | g_CGameInstance.key_action
     CMP EDX,dword ptr [EDI]             ; 004ec29a
     JNZ 0x004ec267                      ; 004ec29c
         ;   XREF to: 004ec267 (CONDITIONAL_JUMP)  ; LAB_004ec267
-    MOV dword ptr [ESI],0x257           ; 004ec29e | g_CGameInstance.field58_0x4c
+    MOV dword ptr [ESI],0x257           ; 004ec29e | g_CGameInstance.key_action
     JMP 0x004ec267                      ; 004ec2a4
         ;   XREF to: 004ec267 (UNCONDITIONAL_JUMP)  ; LAB_004ec267
     MOV dword ptr [ESP + 0xc90],EAX     ; 004ec2a6
@@ -1911,7 +1911,7 @@ section .text
         ;   XREF to: 004832b0 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004832b0(CPickList * this_ptr, uint flags)
     MOV EAX,[0x005fe9dc]                ; 004ec2da | g_CGamePtr
     XOR EBX,EBX                         ; 004ec2df
-    MOV EDI,dword ptr [EAX + 0xd4]      ; 004ec2e1 | g_CGameInstance.field164_0xd4
+    MOV EDI,dword ptr [EAX + 0xd4]      ; 004ec2e1 | g_CGameInstance.game_control
     ADD ESP,0x8                         ; 004ec2e7
     CMP EDI,0x3                         ; 004ec2ea
     JZ 0x004ec45e                       ; 004ec2ed
@@ -2007,7 +2007,7 @@ section .text
     PUSH EAX                            ; 004ec3e7
     MOV EAX,[0x005fe9dc]                ; 004ec3e8 | g_CGamePtr
     ADD EAX,0x48                        ; 004ec3ed
-    PUSH EAX                            ; 004ec3f0 | g_CGameInstance.field54_0x48
+    PUSH EAX                            ; 004ec3f0 | g_CGameInstance.key_fire
     CALL core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0 ; 004ec3f1
         ;   XREF to: 004eacb0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 004ec3f6
@@ -2073,7 +2073,7 @@ section .text
     PUSH EAX                            ; 004ec49e
     MOV EAX,[0x005fe9dc]                ; 004ec49f | g_CGamePtr
     ADD EAX,0x4c                        ; 004ec4a4
-    PUSH EAX                            ; 004ec4a7 | g_CGameInstance.field58_0x4c
+    PUSH EAX                            ; 004ec4a7 | g_CGameInstance.key_action
     CALL core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0 ; 004ec4a8
         ;   XREF to: 004eacb0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 004ec4ad
@@ -2085,7 +2085,7 @@ section .text
     PUSH EAX                            ; 004ec4bf
     MOV EAX,[0x005fe9dc]                ; 004ec4c0 | g_CGamePtr
     ADD EAX,0x50                        ; 004ec4c5
-    PUSH EAX                            ; 004ec4c8 | g_CGameInstance.field62_0x50
+    PUSH EAX                            ; 004ec4c8 | g_CGameInstance.key_use_item
     CALL core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0 ; 004ec4c9
         ;   XREF to: 004eacb0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 004ec4ce
@@ -2097,7 +2097,7 @@ section .text
     PUSH EAX                            ; 004ec4e0
     MOV EAX,[0x005fe9dc]                ; 004ec4e1 | g_CGamePtr
     ADD EAX,0x54                        ; 004ec4e6
-    PUSH EAX                            ; 004ec4e9 | g_CGameInstance.field66_0x54
+    PUSH EAX                            ; 004ec4e9 | g_CGameInstance.key_light
     CALL core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0 ; 004ec4ea
         ;   XREF to: 004eacb0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 004ec4ef
@@ -2219,7 +2219,7 @@ section .text
     PUSH EAX                            ; 004ec636
     MOV EAX,[0x005fe9dc]                ; 004ec637 | g_CGamePtr
     ADD EAX,0x94                        ; 004ec63c
-    PUSH EAX                            ; 004ec641 | g_CGameInstance.field130_0x94
+    PUSH EAX                            ; 004ec641 | g_CGameInstance.key_next_weapon
     CALL core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0 ; 004ec642
         ;   XREF to: 004eacb0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 004ec647
@@ -2231,7 +2231,7 @@ section .text
     PUSH EAX                            ; 004ec659
     MOV EAX,[0x005fe9dc]                ; 004ec65a | g_CGamePtr
     ADD EAX,0x98                        ; 004ec65f
-    PUSH EAX                            ; 004ec664 | g_CGameInstance.field134_0x98
+    PUSH EAX                            ; 004ec664 | g_CGameInstance.key_prev_weapon
     CALL core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0 ; 004ec665
         ;   XREF to: 004eacb0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 004ec66a
@@ -2243,7 +2243,7 @@ section .text
     PUSH EAX                            ; 004ec67c
     MOV EAX,[0x005fe9dc]                ; 004ec67d | g_CGamePtr
     ADD EAX,0x9c                        ; 004ec682
-    PUSH EAX                            ; 004ec687 | g_CGameInstance.field138_0x9c
+    PUSH EAX                            ; 004ec687 | g_CGameInstance.key_next_item
     CALL core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0 ; 004ec688
         ;   XREF to: 004eacb0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 004ec68d
@@ -2255,7 +2255,7 @@ section .text
     PUSH EAX                            ; 004ec69f
     MOV EAX,[0x005fe9dc]                ; 004ec6a0 | g_CGamePtr
     ADD EAX,0xa0                        ; 004ec6a5
-    PUSH EAX                            ; 004ec6aa | g_CGameInstance.field142_0xa0
+    PUSH EAX                            ; 004ec6aa | g_CGameInstance.key_prev_item
     CALL core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0 ; 004ec6ab
         ;   XREF to: 004eacb0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 004ec6b0

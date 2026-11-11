@@ -14,7 +14,7 @@ void __cdecl core_gore_cpp_CGore_renderDecals_FUN_004ce630(CGore *this_ptr,int r
   int iVar1;
   int iVar2;
   
-  if (*(int *)&g_CGamePtr->field_0x14 != 0) {
+  if (g_CGamePtr->blood_flag != 0) {
     core_gore_cpp_CBloodSplat_setupRenderState_FUN_004cd600((CBloodSplat *)0x1d276bc);
     if (render_all == 0) {
       iVar2 = 0;

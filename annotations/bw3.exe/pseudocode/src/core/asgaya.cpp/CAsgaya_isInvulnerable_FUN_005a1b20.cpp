@@ -9,5 +9,5 @@
 int __cdecl core_asgaya_cpp_CAsgaya_isInvulnerable_FUN_005a1b20(CAsgaya *this_ptr)
 
 {
-  return (uint)(*(int *)&this_ptr->field_0x33fa4 == 0);
+  return (uint)(this_ptr->shoot_me == 0);
 }

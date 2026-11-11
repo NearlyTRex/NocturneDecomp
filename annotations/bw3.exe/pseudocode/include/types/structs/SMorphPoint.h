@@ -4,12 +4,15 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: SMorphPoint
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// CMorphModel_rotatePoints 004fa490: points walked stepping 0x10; [+0] used as index (SHL 4) into ref points, position floats at +4/+8/+0xc
+// Ghidra size: 0x10 (16 bytes)
 #pragma pack(push, 1)
 typedef struct SMorphPoint {
+    int vertex_index; // 0x0
+    CVector3f position; // 0x4
 } SMorphPoint;
 #pragma pack(pop)
 

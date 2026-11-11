@@ -42,12 +42,12 @@ typedef struct CDemonActor {
     CVector3i scale; // 0x108
     int blood_effect_timer; // 0x114
     uint blood_effect_color; // 0x118
-    char footstep_sound_code[4]; // 0x11c
-    int dead1; // 0x120
-    int dead2; // 0x124
-    CDemonActorTransformState previous_transform_state; // 0x128
-    int render_needs_update; // 0x144
-    int is_editor_hidden; // 0x148
+    int footstep_particle_count; // 0x11c, Added in this build
+    char footstep_sound_code[4]; // 0x120
+    int dead1; // 0x124
+    int dead2; // 0x128
+    CDemonActorTransformState previous_transform_state; // 0x12c
+    int render_needs_update; // 0x148
     struct CDemonActor* next_actor; // 0x14c
     struct CDemonActor* prev_actor; // 0x150
     UActorVTable vtable; // 0x154

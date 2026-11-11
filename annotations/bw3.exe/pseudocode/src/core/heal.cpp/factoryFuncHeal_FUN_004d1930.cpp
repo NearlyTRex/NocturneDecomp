@@ -11,7 +11,7 @@ void core_heal_cpp_factoryFuncHeal_FUN_004d1930(void)
 {
   CHeal *this_ptr;
   
-  this_ptr = (CHeal *)debugAllocTracked1(0x59c);
+  this_ptr = (CHeal *)operator_new(0x59c);
   if (this_ptr == (CHeal *)0x0) {
     return;
   }

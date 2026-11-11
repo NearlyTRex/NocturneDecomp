@@ -11,7 +11,7 @@ void core_curtain_cpp_factoryFuncCurtain_FUN_00446320(void)
 {
   CCurtain *this_ptr;
   
-  this_ptr = (CCurtain *)debugAllocTracked1(0x65b38);
+  this_ptr = (CCurtain *)operator_new(0x65b38);
   if (this_ptr == (CCurtain *)0x0) {
     return;
   }

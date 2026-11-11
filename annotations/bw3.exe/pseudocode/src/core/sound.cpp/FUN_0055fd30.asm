@@ -24,9 +24,9 @@
 ;   undefined4 DAT_005fba60
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field92_0x15ac70
-;   undefined4 g_CDemonSetInstance.field96_0x15ac74
-;   undefined4 g_CDemonSetInstance.field100_0x15ac78
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.x
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.y
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.z
 ;   undefined4 g_CDemonSetInstance.player_on_train
 ;   undefined4 DAT_02cf568c
 ;   undefined4 DAT_02cf5690
@@ -150,9 +150,9 @@ section .text
     CMP dword ptr [EAX + 0x15acb8],0x0  ; 0055fe3c | g_CDemonSetInstance.player_on_train
     JZ 0x0055feae                       ; 0055fe43
         ;   XREF to: 0055feae (CONDITIONAL_JUMP)  ; LAB_0055feae
-    FLD float ptr [EAX + 0x15ac70]      ; 0055fe45 | g_CDemonSetInstance.field92_0x15ac70
-    FLD float ptr [EAX + 0x15ac74]      ; 0055fe4b | g_CDemonSetInstance.field96_0x15ac74
-    FLD float ptr [EAX + 0x15ac78]      ; 0055fe51 | g_CDemonSetInstance.field100_0x15ac78
+    FLD float ptr [EAX + 0x15ac70]      ; 0055fe45 | g_CDemonSetInstance.active_fog.scroll.x
+    FLD float ptr [EAX + 0x15ac74]      ; 0055fe4b | g_CDemonSetInstance.active_fog.scroll.y
+    FLD float ptr [EAX + 0x15ac78]      ; 0055fe51 | g_CDemonSetInstance.active_fog.scroll.z
     LEA EDI,[ESP + 0x8]                 ; 0055fe57
     LEA ESI,[ESP + 0x14]                ; 0055fe5b
     FXCH ST2                            ; 0055fe5f

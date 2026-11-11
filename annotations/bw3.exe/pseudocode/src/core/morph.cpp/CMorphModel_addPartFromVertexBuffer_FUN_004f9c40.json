@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 262,
+    "complexity_score": 78,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 42,
-    "suspect_count": 21,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 38,
+    "suspect_count": 3,
     "suspect_types": [
-      "unnamed_field",
+      "alloc_magic_size",
       "warning_overlapping_globals"
     ],
-    "total_lines": 181
+    "total_lines": 177
   },
   "cross_references": [
     {
@@ -214,164 +214,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0xc + *(int *)this_ptr * 0x10) =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x54;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x4 + *(int *)this_ptr * 0x10) = vertex_count;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x10 + *(int *)this_ptr * 0x10) =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x5c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x5c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x8 + *(int *)this_ptr * 0x10) = tri_count;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x54 =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Allocation size hardcodes 0x10 == sizeof(SMorphPoint). Replace the magic with sizeof(SMorphPoint) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
       "line": 21,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x54 + *(int *)(&this_ptr->field_0x4 + *(int *)this_ptr * 0x10);",
-      "type": "unnamed_field"
+      "match": "(SMorphPoint*) alloc stride 0x10",
+      "severity": "moderate",
+      "text": "(SMorphPoint *)realloc(this_ptr->points,this_ptr->num_points << 4)",
+      "type": "alloc_magic_size"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x54 + *(int *)(&this_ptr->field_0x4 + *(int *)this_ptr * 0x10);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x5c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x5c =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Allocation size hardcodes 0x3c == sizeof(SMRGLPrimitiveTriangle). Replace the magic with sizeof(SMRGLPrimitiveTriangle) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
       "line": 23,
-      "match": "field_0x5c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x5c + *(int *)(&this_ptr->field_0x8 + *(int *)this_ptr * 0x10);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x5c + *(int *)(&this_ptr->field_0x8 + *(int *)this_ptr * 0x10);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "(*(void **)&this_ptr->field_0x58,*(int *)&this_ptr->field_0x54 << 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "(*(void **)&this_ptr->field_0x58,*(int *)&this_ptr->field_0x54 << 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x58 = pvVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "(*(void **)&this_ptr->field_0x60,*(int *)&this_ptr->field_0x5c * 0x3c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x5c",
-      "severity": "mild",
-      "text": "(*(void **)&this_ptr->field_0x60,*(int *)&this_ptr->field_0x5c * 0x3c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x60 = pvVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x58 == 0) || (*(int *)&this_ptr->field_0x60 == 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x58 == 0) || (*(int *)&this_ptr->field_0x60 == 0)) {",
-      "type": "unnamed_field"
+      "match": "(SMRGLPrimitiveTriangle*) alloc stride 0x3c",
+      "severity": "moderate",
+      "text": "(SMRGLPrimitiveTriangle *)realloc(this_ptr->faces,this_ptr->num_faces * 0x3c)",
+      "type": "alloc_magic_size"
     }
   ]
 }

@@ -5,42 +5,42 @@
 // Function prototypes for unkafter/bmppuzzl.cpp
 // Generated from Ghidra function signatures
 
-// Original: unkafter_bmppuzzl.cpp_FUN_004123c0
+// Original: unkafter_bmppuzzl.cpp_CAudioRecPuzzle_render_FUN_004123c0
 // Address: 004123c0
-void FUN_004123c0(int *param_1);
+void __cdecl CAudioRecPuzzle::render(CAudioRecPuzzle *this_ptr);
 
-// Original: unkafter_bmppuzzl.cpp_FUN_00412530
+// Original: unkafter_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_00412530
 // Address: 00412530
-void FUN_00412530(int *param_1);
+void __cdecl CAudioRecPuzzle::process(CAudioRecPuzzle *this_ptr);
 
-// Original: unkafter_bmppuzzl.cpp_FUN_004129f0
+// Original: unkafter_bmppuzzl.cpp_CAudioRecPuzzle_isButtonHovered_FUN_004129f0
 // Address: 004129f0
-longlong FUN_004129f0(int param_1,int param_2);
+longlong __cdecl CAudioRecPuzzle::isButtonHovered(CAudioRecPuzzle *this_ptr,int param_2);
 
 // Original: unkafter_bmppuzzl.cpp_FUN_00412a50
 // Address: 00412a50
 void FUN_00412a50(void);
 
-// Original: unkafter_bmppuzzl.cpp_FUN_00412a60
+// Original: unkafter_bmppuzzl.cpp_CAudioRecPuzzle_moveTransportSwitch_FUN_00412a60
 // Address: 00412a60
-void FUN_00412a60(int param_1);
+void __cdecl CAudioRecPuzzle::moveTransportSwitch(CAudioRecPuzzle *this_ptr);
 
-// Original: unkafter_bmppuzzl.cpp_FUN_00412b00
+// Original: unkafter_bmppuzzl.cpp_CAudioRecPuzzle_turnKnob_FUN_00412b00
 // Address: 00412b00
-void FUN_00412b00(int param_1,int param_2);
+void __cdecl CAudioRecPuzzle::turnKnob(CAudioRecPuzzle *this_ptr,int param_2);
 
-// Original: unkafter_bmppuzzl.cpp_FUN_00412bc0
+// Original: unkafter_bmppuzzl.cpp_CAudioRecPuzzle_hitTestButtons_FUN_00412bc0
 // Address: 00412bc0
-undefined4 FUN_00412bc0(int param_1,int param_2,int param_3);
+undefined4 __cdecl CAudioRecPuzzle::hitTestButtons(CAudioRecPuzzle *this_ptr,int param_2,int param_3);
 
-// Original: unkafter_bmppuzzl.cpp_FUN_00412c30
+// Original: unkafter_bmppuzzl.cpp_CAudioRecPuzzle_onMouse_FUN_00412c30
 // Address: 00412c30
-void FUN_00412c30(int param_1);
+void __cdecl CAudioRecPuzzle::onMouse(CAudioRecPuzzle *this_ptr);
 
-// Original: unkafter_bmppuzzl.cpp_FUN_00412c50
+// Original: unkafter_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00412c50
 // Address: 00412c50
-void FUN_00412c50(int param_1,int param_2,int param_3,float param_4,int param_5);
+void __cdecl CAudioRecPuzzle::renderReel(CAudioRecPuzzle *this_ptr,int param_2,int param_3,float param_4,int param_5);
 
-// Original: unkafter_bmppuzzl.cpp_FUN_00412ee0
+// Original: unkafter_bmppuzzl.cpp_CAudioRecPuzzle_playClip_FUN_00412ee0
 // Address: 00412ee0
-void FUN_00412ee0(void *param_1,undefined4 param_2,int param_3);
+void __cdecl CAudioRecPuzzle::playClip(CAudioRecPuzzle *this_ptr,undefined4 param_2,int param_3);

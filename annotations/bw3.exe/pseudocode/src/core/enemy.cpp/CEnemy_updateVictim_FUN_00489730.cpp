@@ -41,10 +41,10 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00489730(CEnemy *this_ptr,fl
   float fStack_14;
   
   bVar7 = 0;
-  fStack_60 = *(float *)&this_ptr->field_0xce58;
-  pCVar1 = *(CCharacter **)&this_ptr->field_0xd04c;
+  fStack_60 = this_ptr->victim_height;
+  pCVar1 = this_ptr->script_victim;
   if (pCVar1 == (CCharacter *)0x0) {
-    if (((*(int *)&g_CGamePtr->field_0x1f8 != 0) || (*(int *)&g_CGamePtr->field_0x254 == 0)) ||
+    if (((g_CGamePtr->freeze_enemies_enabled != 0) || (g_CGamePtr->allow_enemy_attack_flag == 0)) ||
        (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
                           (0x01C6E360,"?Capture" + 1), iVar3 != 0)) {
       this_ptr->is_in_combat = 0;
@@ -76,7 +76,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00489730(CEnemy *this_ptr,fl
                                (&this_ptr_01->base), EVar4 == DEATH_STATE_ALIVE)) &&
            ((iVar3 = (*((this_ptr_01->base).base.vtable._ub)->shouldIgnoreForTargeting)
                                ((CDemonActor *)this_ptr_01), iVar3 == 0 &&
-            ((*(float *)&(this_ptr_01->base).field_0x27b4 <= 0.0 && (this_ptr_01 != this_ptr)))))) {
+            (((this_ptr_01->base).speech_timer <= 0.0 && (this_ptr_01 != this_ptr)))))) {
           fStack_44 = (this_ptr_01->base).base.location.position.x - (pCStack_2c->position).x;
           afStack_40[0] = (this_ptr_01->base).base.location.position.y - (pCStack_2c->position).y;
           afStack_40[1] = (this_ptr_01->base).base.location.position.z - (pCStack_2c->position).z;
@@ -123,7 +123,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00489730(CEnemy *this_ptr,fl
           engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"%s can see hero\n",this_ptr);
           return;
         }
-        if ((((*(int *)&this_ptr->field_0xd050 != 0) || (this_ptr_00 == pCVar1)) &&
+        if ((((this_ptr->allow_pathfind_to_new_targets != 0) || (this_ptr_00 == pCVar1)) &&
             (this_ptr_02 = (*((this_ptr_00->base).vtable._ub)->getPathMap)(&this_ptr_00->base),
             this_ptr_02 != (CPathMap *)0x0)) &&
            (iVar6 = core_path_cpp_CPathMap_findPathWithRetry_FUN_0050c680

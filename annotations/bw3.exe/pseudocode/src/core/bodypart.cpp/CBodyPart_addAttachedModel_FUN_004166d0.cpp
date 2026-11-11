@@ -14,10 +14,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_004166d0(CBodyPart
   
   iVar1 = this_ptr->attached_model_count;
   if (iVar1 < 3) {
-    pCVar2 = (CVector3f *)(this_ptr->attached_models + iVar1);
+    pCVar2 = &this_ptr->attached_models[iVar1].position_offset;
     this_ptr->attached_model_count = iVar1 + 1;
     if (pCVar2 != position_offset) {
-      pCVar2->x = position_offset->x;
+      ((CVector3f *)&pCVar2->x)->x = position_offset->x;
       pCVar2->y = position_offset->y;
       pCVar2->z = position_offset->z;
     }

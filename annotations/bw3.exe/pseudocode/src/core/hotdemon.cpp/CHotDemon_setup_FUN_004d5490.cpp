@@ -15,7 +15,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_setup_FUN_004d5490(CHotDemon *this_ptr)
   CSkeleton *this_ptr_01;
   char *model_name;
   
-  if (*(int *)&g_CGamePtr->field_0x18 == 0) {
+  if (g_CGamePtr->nudity_flag == 0) {
     model_name = "hotdemonx.dfm";
   }
   else {
@@ -62,7 +62,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_setup_FUN_004d5490(CHotDemon *this_ptr)
   _DAT_01d5bb18 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_01,"Bip01 Spine2",1);
   core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(this_ptr_00);
-  *(uint *)&this_ptr->field_0xd054 = 0;
-  *(uint *)&this_ptr->field_0xd058 = 0;
+  this_ptr->sfx_handles[0] = 0;
+  this_ptr->sfx_handles[1] = 0;
   return;
 }

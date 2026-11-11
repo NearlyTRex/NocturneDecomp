@@ -14,7 +14,7 @@ CSpawner * engine_special_cpp_CSpawner_ctor_FUN_005638a0(CSpawner *this_ptr)
   CDemonActor *pCVar1;
   CDeformableModelInstance *pCVar2;
   
-  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_00408600((CDemonActor *)this_ptr);
+  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_00408600(&this_ptr->base);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0054bf00
                      ((CDeformableModelInstance *)pCVar1[1].create_event);
   pCVar2[-1].bounding_box.min.x = (float)&g_CSpawnerVTable;
@@ -24,7 +24,7 @@ CSpawner * engine_special_cpp_CSpawner_ctor_FUN_005638a0(CSpawner *this_ptr)
   pCVar2[-0xffffffff00000001].model_name[0x43] = 'A';
   *(byte *)((int)&pCVar2[-1].accumulated_root_motion.y + 2) = 0;
   pCVar2[-1].model_name[0x18] = '\0';
-  *(uint *)&pCVar2[-1].field_0x22d4 = 1;
+  pCVar2[-1].part_data.texture_set_indices[0x29] = 1;
   pCVar2[-0xffffffff00000001].model_name[0x44] = '\0';
   pCVar2[-0xffffffff00000001].model_name[0x45] = '\0';
   pCVar2[-0xffffffff00000001].model_name[0x46] = '\0';
@@ -46,5 +46,5 @@ CSpawner * engine_special_cpp_CSpawner_ctor_FUN_005638a0(CSpawner *this_ptr)
   pCVar2[-0xffffffff00000001].model_name[0x4e] = '\0';
   pCVar2[-0xffffffff00000001].model_name[0x4f] = '\0';
   pCVar2[-1].model_ptr = (CDeformableModel *)0x42c80000;
-  return (CSpawner *)&pCVar2[-1].field_0x21d4;
+  return (CSpawner *)(pCVar2[-1].part_data.visibility_flags + 0x25);
 }

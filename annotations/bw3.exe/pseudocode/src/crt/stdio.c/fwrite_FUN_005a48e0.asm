@@ -10,7 +10,7 @@
 ;   core_setdir.cpp_FUN_00540c40 at 00540c97
 ;   engine_pcx.c_saveScreenshotGeneral_FUN_0050da60 at 0050db74
 ;   engine_pod.cpp_FUN_005149bc at 00514b31
-;   support_trstream.cpp_FUN_005748e0 at 00574904
+;   support_trstream.cpp_COutStreamFile_write_FUN_005748e0 at 00574904
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005a7f3c_006079a0 = 005a7f3c

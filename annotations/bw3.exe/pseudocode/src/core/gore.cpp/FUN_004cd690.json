@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 355,
-    "complexity_score": 658,
+    "complexity_score": 655,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 24,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 133,
+    "pseudocode_lines": 130,
     "suspect_count": 50,
     "suspect_types": [
       "extra_output",
@@ -16,7 +16,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 488
+    "total_lines": 485
   },
   "cross_references": [
     {
@@ -682,28 +682,28 @@
       "line": 55,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_005632a3((SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr,&local_80)",
+      "text": "engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_80);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 63,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x30),&local_38);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_38);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 71,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x60),&local_74);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_74);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 82,
+      "line": 81,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 != 0) {",
@@ -711,7 +711,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 83,
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = 1;",
@@ -719,7 +719,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 90,
+      "line": 89,
       "match": "param_1",
       "severity": "mild",
       "text": "(DAT_005f2afc,(SMRGLTextureBasic *)(&DAT_005fed4c + param_1[0xb] * 0x18));",
@@ -727,7 +727,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 89,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,(SMRGLTextureBasic *)(&DAT_005fed4c + param_1[0xb] * 0x18));",
@@ -735,7 +735,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 89,
       "match": "DAT_005fed4c",
       "severity": "mild",
       "text": "(DAT_005f2afc,(SMRGLTextureBasic *)(&DAT_005fed4c + param_1[0xb] * 0x18));",
@@ -743,39 +743,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 96,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_005632a3((SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr,&local_50)",
+      "text": "engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_50);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 106,
+      "line": 104,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x30),&local_2c);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_2c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 112,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x60),&local_8c);",
+      "text": "(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_8c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 124,
+      "line": 121,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x90),input);",
+      "text": "engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,input);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 125,
+      "line": 122,
       "match": "param_1",
       "severity": "mild",
       "text": "core_gore_cpp_FUN_004cc970(param_1[6],&DAT_0060b034,&DAT_0060b038,&DAT_0060b03c);",
@@ -783,7 +783,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 125,
+      "line": 122,
       "match": "DAT_0060b034",
       "severity": "mild",
       "text": "core_gore_cpp_FUN_004cc970(param_1[6],&DAT_0060b034,&DAT_0060b038,&DAT_0060b03c);",
@@ -791,7 +791,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 125,
+      "line": 122,
       "match": "DAT_0060b038",
       "severity": "mild",
       "text": "core_gore_cpp_FUN_004cc970(param_1[6],&DAT_0060b034,&DAT_0060b038,&DAT_0060b03c);",
@@ -799,7 +799,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 125,
+      "line": 122,
       "match": "DAT_0060b03c",
       "severity": "mild",
       "text": "core_gore_cpp_FUN_004cc970(param_1[6],&DAT_0060b034,&DAT_0060b038,&DAT_0060b03c);",
@@ -807,7 +807,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 126,
+      "line": 123,
       "match": "param_1",
       "severity": "mild",
       "text": "core_gore_cpp_FUN_004cc970(param_1[6],&DAT_0060b064,&DAT_0060b068,&DAT_0060b06c);",
@@ -815,7 +815,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 126,
+      "line": 123,
       "match": "DAT_0060b064",
       "severity": "mild",
       "text": "core_gore_cpp_FUN_004cc970(param_1[6],&DAT_0060b064,&DAT_0060b068,&DAT_0060b06c);",
@@ -823,7 +823,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 126,
+      "line": 123,
       "match": "DAT_0060b068",
       "severity": "mild",
       "text": "core_gore_cpp_FUN_004cc970(param_1[6],&DAT_0060b064,&DAT_0060b068,&DAT_0060b06c);",
@@ -831,7 +831,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 126,
+      "line": 123,
       "match": "DAT_0060b06c",
       "severity": "mild",
       "text": "core_gore_cpp_FUN_004cc970(param_1[6],&DAT_0060b064,&DAT_0060b068,&DAT_0060b06c);",
@@ -839,7 +839,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 127,
+      "line": 124,
       "match": "param_1",
       "severity": "mild",
       "text": "core_gore_cpp_FUN_004cc970(param_1[6],&DAT_0060b094,&DAT_0060b098,&DAT_0060b09c);",
@@ -847,7 +847,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 127,
+      "line": 124,
       "match": "DAT_0060b094",
       "severity": "mild",
       "text": "core_gore_cpp_FUN_004cc970(param_1[6],&DAT_0060b094,&DAT_0060b098,&DAT_0060b09c);",
@@ -855,7 +855,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 127,
+      "line": 124,
       "match": "DAT_0060b098",
       "severity": "mild",
       "text": "core_gore_cpp_FUN_004cc970(param_1[6],&DAT_0060b094,&DAT_0060b098,&DAT_0060b09c);",
@@ -863,7 +863,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 127,
+      "line": 124,
       "match": "DAT_0060b09c",
       "severity": "mild",
       "text": "core_gore_cpp_FUN_004cc970(param_1[6],&DAT_0060b094,&DAT_0060b098,&DAT_0060b09c);",
@@ -871,7 +871,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 128,
+      "line": 125,
       "match": "param_1",
       "severity": "mild",
       "text": "core_gore_cpp_FUN_004cc970(param_1[6],&DAT_0060b0c4,&DAT_0060b0c8,&DAT_0060b0cc);",
@@ -879,7 +879,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 128,
+      "line": 125,
       "match": "DAT_0060b0c4",
       "severity": "mild",
       "text": "core_gore_cpp_FUN_004cc970(param_1[6],&DAT_0060b0c4,&DAT_0060b0c8,&DAT_0060b0cc);",
@@ -887,7 +887,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 128,
+      "line": 125,
       "match": "DAT_0060b0c8",
       "severity": "mild",
       "text": "core_gore_cpp_FUN_004cc970(param_1[6],&DAT_0060b0c4,&DAT_0060b0c8,&DAT_0060b0cc);",
@@ -895,7 +895,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 128,
+      "line": 125,
       "match": "DAT_0060b0cc",
       "severity": "mild",
       "text": "core_gore_cpp_FUN_004cc970(param_1[6],&DAT_0060b0c4,&DAT_0060b0c8,&DAT_0060b0cc);",
@@ -903,7 +903,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 130,
+      "line": 127,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,(SMRGLHeaderPrimitive *)0x1d22e48);",
@@ -911,7 +911,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 131,
+      "line": 128,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1[5] == 1) {",

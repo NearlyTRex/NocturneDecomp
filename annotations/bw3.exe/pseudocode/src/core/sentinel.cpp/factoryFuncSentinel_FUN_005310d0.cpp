@@ -11,7 +11,7 @@ void core_sentinel_cpp_factoryFuncSentinel_FUN_005310d0(void)
 {
   CSentinel *this_ptr;
   
-  this_ptr = (CSentinel *)debugAllocTracked1(0xd05c);
+  this_ptr = (CSentinel *)operator_new(0xd05c);
   if (this_ptr == (CSentinel *)0x0) {
     return;
   }

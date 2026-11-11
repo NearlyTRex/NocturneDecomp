@@ -21,8 +21,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
+;   crt_memory.c_operator_new_array_FUN_005a40df
 ;   crt_unknown.c_FUN_005a30b6
-;   crt_unknown.c_FUN_005a40df
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_00482440
 ;   shape_edittool.cpp_FUN_00480e30
@@ -69,8 +69,8 @@ section .text
     INC EBP                             ; 00482780
         ;   Label: LAB_00482780
     PUSH EBP                            ; 00482781
-    CALL crt_unknown.c_FUN_005a40df     ; 00482782
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a40df()
+    CALL crt_memory.c_operator_new_array_FUN_005a40df ; 00482782
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
     ADD ESP,0x4                         ; 00482787
     MOV dword ptr [ESP],EAX             ; 0048278a
     TEST EAX,EAX                        ; 0048278d

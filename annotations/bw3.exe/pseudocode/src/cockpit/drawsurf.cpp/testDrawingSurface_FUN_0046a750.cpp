@@ -66,14 +66,14 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_0046a750(CBitFont *test
     cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsWrapper_FUN_0046a250
               ((CDrawSurface *)&stack0x0000005c,0x5c,0x6c,0x20,(char *)0x5bc3d1);
     cockpit_drawsurf_cpp_setCurrentFont_FUN_00467f20(test_font);
-    *(uint *)(test_font + 0x4204) = 0;
+    test_font->rendering_ready = 0;
     cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedWrapper_FUN_00469e40
               ((CDrawSurface *)&stack0x00000070,5,0x2a,"Hello");
     cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedWrapper_FUN_00469e40
               ((CDrawSurface *)&stack0x00000080,-5,0x39,"Hello");
     cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedWrapper_FUN_00469e40
               ((CDrawSurface *)&stack0x00000090,0xb9,0x39,"Hello");
-    *(uint *)(test_font + 0x4204) = 1;
+    test_font->rendering_ready = 1;
     cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedWrapper_FUN_00469e40
               ((CDrawSurface *)&stack0x000000a0,-5,0x48,"Hello");
     cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedWrapper_FUN_00469e40
@@ -114,7 +114,7 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_0046a750(CBitFont *test
               ((CDrawSurface *)&stack0x000000f0,0,0,0x13,9);
     iVar2 = DAT_005fba1c / 2 + 0x66;
     iVar3 = DAT_005fba1c - iVar2;
-    iVar1 = *(int *)(test_font + 0x41f0);
+    iVar1 = test_font->current_line_height;
     cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_00467900
               ((CDrawSurface *)&stack0x00000184,DAT_005fba18 / 2,iVar2,0xc9,iVar3,
                (CDrawSurface *)0x0);
@@ -126,7 +126,7 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_0046a750(CBitFont *test
               ((CDrawSurface *)&stack0x00000190);
     cockpit_drawsurf_cpp_setColor_FUN_00467a70(0xf9);
     cockpit_drawsurf_cpp_setCurrentFont_FUN_00467f20(test_font);
-    *(uint *)(test_font + 0x4204) = 1;
+    test_font->rendering_ready = 1;
     cockpit_drawsurf_cpp_FUN_00469e70();
     cockpit_drawsurf_cpp_FUN_00469f40();
     cockpit_drawsurf_cpp_FUN_0046a010();
@@ -170,7 +170,7 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_0046a750(CBitFont *test
               ((CDrawSurface *)&stack0x000001dc);
     cockpit_drawsurf_cpp_setColor_FUN_00467a70(0xf9);
     cockpit_drawsurf_cpp_setCurrentFont_FUN_00467f20((CBitFont *)0x0);
-    *(uint *)(test_font + 0x4204) = 1;
+    test_font->rendering_ready = 1;
     cockpit_drawsurf_cpp_FUN_00469e70();
     cockpit_drawsurf_cpp_FUN_00469f40();
     cockpit_drawsurf_cpp_FUN_0046a010();

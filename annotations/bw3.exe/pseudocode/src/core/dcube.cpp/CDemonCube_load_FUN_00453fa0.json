@@ -2,17 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 82,
+    "complexity_score": 183,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 47,
-    "suspect_count": 3,
+    "pseudocode_lines": 48,
+    "suspect_count": 12,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "unrolled_memcpy"
     ],
-    "total_lines": 180
+    "total_lines": 181
   },
   "cross_references": [
     {
@@ -130,8 +132,80 @@
   },
   "suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(CDemonCubeTriangle *)((int)(this_ptr->triangle_buffer->triangle).vertices",
+      "severity": "moderate",
+      "text": "((CDemonCubeTriangle *)((int)(this_ptr->triangle_buffer->triangle).vertices + iVar3)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(SVoxelGrid *)((int)pSVar2",
+      "severity": "moderate",
+      "text": "pSVar2 = (SVoxelGrid *)((int)pSVar2 + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(SVoxelGrid *)((int)pSVar4",
+      "severity": "moderate",
+      "text": "pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(SVoxelGrid *)((int)pSVar2",
+      "severity": "moderate",
+      "text": "pSVar2 = (SVoxelGrid *)((int)pSVar2 + (uint)bVar5 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(SVoxelGrid *)((int)pSVar4",
+      "severity": "moderate",
+      "text": "pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pSVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)pSVar2",
+      "severity": "moderate",
+      "text": "pSVar2 = (SVoxelGrid *)((int)pSVar2 + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 41,
+      "match": "(int)pSVar4",
+      "severity": "moderate",
+      "text": "pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)pSVar2",
+      "severity": "moderate",
+      "text": "pSVar2 = (SVoxelGrid *)((int)pSVar2 + (uint)bVar5 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)pSVar4",
+      "severity": "moderate",
+      "text": "pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 37,
+      "line": 38,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0x10; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -139,7 +213,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 42,
+      "line": 43,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {",

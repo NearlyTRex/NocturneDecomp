@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 29,
+    "complexity_score": 14,
     "cross_reference_count": 24,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 14,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 49
   },
   "cross_references": [
@@ -205,7 +203,7 @@
     },
     {
       "addr": "01d21504",
-      "name": "g_CGameInstance.field456_0x1f8",
+      "name": "g_CGameInstance.freeze_enemies_enabled",
       "type": "undefined4",
       "value": null
     }
@@ -377,14 +375,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x1f8",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x1f8 == 0) {",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

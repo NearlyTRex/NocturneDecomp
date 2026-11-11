@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 187,
-    "complexity_score": 109,
+    "complexity_score": 88,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 4,
+    "pseudocode_lines": 58,
+    "suspect_count": 2,
     "suspect_types": [
-      "unresolved_funcptr",
+      "shadow_pointer_walk",
       "warning_overlapping_globals"
     ],
-    "total_lines": 246
+    "total_lines": 245
   },
   "cross_references": [
     {
@@ -249,28 +249,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 33,
-      "match": "code *",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar4` self-updates via pointer arithmetic on its own `motion_name` field (which decays to a pointer), `+ CONST`; `offsetof(motion_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pSVar4`. Replace those `pSVar4->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 30,
+      "match": "pSVar4 = (T *)(pSVar4->motion_name + CONST)",
       "severity": "moderate",
-      "text": "(**(code **)(this_ptr->vtable + 8))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 41,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(this_ptr->vtable + 8))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 55,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(this_ptr->vtable + 4))",
-      "type": "unresolved_funcptr"
+      "text": "pSVar4 = (SMotion *)(pSVar4->motion_name + 8);",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

@@ -4,13 +4,22 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CMatrix3x4f.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CTheHand
-// Stub: size from Watcom RTTI, fields not yet recovered
+// CTentacle-style tail
 // Ghidra size: 0xd0cc (53452 bytes)
 #pragma pack(push, 1)
 typedef struct CTheHand {
-    char field_0[53452]; // 0x0
+    CEnemy base; // 0x0, derived; unchanged
+    float wait_timer; // 0xd054, CTheHand_ctor 0056c060 zeroes; CTentacle wait_timer slot
+    float chase_timer; // 0xd058, CTheHand_ctor 0056c060 zeroes; CTentacle chase_timer slot
+    float target_blend; // 0xd05c, CTheHand_process 0056c140 zeroes / accumulates delta; CTheHand_attractActorToward 0056ca00 passes it as blend
+    CMatrix3x4f target_matrix; // 0xd060, CTheHand_process 0056c140 copies 12 dwords; CTheHand_attractActorToward 0056ca00 passes &this+off
+    CMatrix3x4f prev_target_matrix; // 0xd090, CTheHand_process 0056c140/CTheHand_attractActorToward 0056ca00 pass as second matrix
+    CVector3f target_point; // 0xd0c0, CTheHand_process 0056c140 stores a transformed point x/y/z
 } CTheHand;
 #pragma pack(pop)
 

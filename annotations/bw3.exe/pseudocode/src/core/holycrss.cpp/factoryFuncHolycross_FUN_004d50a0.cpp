@@ -11,7 +11,7 @@ void core_holycrss_cpp_factoryFuncHolycross_FUN_004d50a0(void)
 {
   CHolycross *this_ptr;
   
-  this_ptr = (CHolycross *)debugAllocTracked1(0x594);
+  this_ptr = (CHolycross *)operator_new(0x594);
   if (this_ptr == (CHolycross *)0x0) {
     return;
   }

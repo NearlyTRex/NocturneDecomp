@@ -2,15 +2,28 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCloth.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CMorph.h"
 
 // Structure: CStyler
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 296904; CStyler_ctor 0059d750: CEnemy ctor, CCloth ctor at +0xd054, CMorph ctor at cloth+0x3ab44 (=+0x47b98); CClothList_load allocs CCloth as 0x3ab30
 // Ghidra size: 0x487c8 (296904 bytes)
 #pragma pack(push, 1)
 typedef struct CStyler {
-    char field_0[296904]; // 0x0
+    CEnemy base; // 0x0, derived
+    CCloth cloth; // 0xd054, ctor: ADD EAX,0xd054 -> CCloth_ctor; dtor FUN_0043c280(morph-0x3ab44)
+    char field_293764[8]; // 0x47b84
+    int unknown_47b8c; // 0x47b8c, ctor MOV [EBX+0x47b8c],0; no reader found in styler.cpp or elsewhere in bw3
+    int is_morph_partner; // 0x47b90, ctor 0; CStylerDemon_setup sets +0x47b90=1 on the CStyler it creates; CStyler_setup/process/renderOpaque skip demon spawn + morph when set
+    struct CDemonActor* demon; // 0x47b94, CStyler_setup: createActorByName("CStylerDemon") stored; process copies position to it, addActorToList when morph_time>=1
+    CMorph morph; // 0x47b98, ctor CMorph_ctor; setup CMorph_setupModelFromDeformable/getReady; dtor CMorph_dtor
+    float morph_time; // 0x487c4, CStyler_archive "morphTime" (version>=2); setup 0; process += dt*k, render passes to CMorph
 } CStyler;
 #pragma pack(pop)
 

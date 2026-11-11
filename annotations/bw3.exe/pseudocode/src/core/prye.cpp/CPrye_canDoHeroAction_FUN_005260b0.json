@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 222,
-    "complexity_score": 111,
+    "complexity_score": 86,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 71,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 293
@@ -142,22 +141,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x20b64",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x20b64 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "puVar1 = &this_ptr->field_0x158;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

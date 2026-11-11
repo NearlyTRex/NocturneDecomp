@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 194,
+    "complexity_score": 167,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 39,
-    "suspect_count": 14,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 42,
+    "suspect_count": 11,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 144
+    "total_lines": 147
   },
   "cross_references": [
     {
@@ -247,64 +247,24 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x5c",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x5c) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(iVar3 + *(int *)&this_ptr->field_0x60);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 31,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)(&this_ptr->field_0x68 + iVar1 * 0x48));",
+      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)(this_ptr->textures + iVar1));",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)(&this_ptr->field_0x68 + iVar1 * 0x48));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "poly = (SMRGLPrimitivePoly *)(*(int *)&this_ptr->field_0x60 + iVar3);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 39,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0046b8f0(DAT_005f2afc,poly,0x267);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x5c",
-      "severity": "mild",
-      "text": "} while (iVar2 < *(int *)&this_ptr->field_0x5c);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 42,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(DAT_005f2afc);",
@@ -312,7 +272,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 43,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(DAT_005f2afc,0);",
@@ -320,11 +280,27 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 44,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(DAT_005f2afc,1);",
       "type": "undefined_data"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 35,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.type +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 27,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).",
+      "type": "pointer_cast"
     }
   ]
 }

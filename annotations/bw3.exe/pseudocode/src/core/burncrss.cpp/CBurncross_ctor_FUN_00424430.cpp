@@ -14,9 +14,9 @@ CBurncross * core_burncrss_cpp_CBurncross_ctor_FUN_00424430(CBurncross *this_ptr
   CWeapon *pCVar1;
   int iVar2;
   CBurncross *pCVar3;
-  byte *puVar4;
+  CBurncross *pCVar4;
   
-  pCVar1 = core_weapon_cpp_CWeapon_ctor_FUN_0057ad70((CWeapon *)this_ptr);
+  pCVar1 = core_weapon_cpp_CWeapon_ctor_FUN_0057ad70(&this_ptr->base);
   iVar2 = __arrinit(pCVar1[1].base.actor_name + 0x14,8,&g_CFlameTypeInfo);
   *(CWeapon_full_vtable **)(iVar2 + -0x454) = &g_CBurncrossVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
@@ -36,14 +36,14 @@ CBurncross * core_burncrss_cpp_CBurncross_ctor_FUN_00424430(CBurncross *this_ptr
   *(uint *)(iVar2 + -0x10) = 0;
   pCVar3 = (CBurncross *)(iVar2 + -0x5a8);
   do {
-    puVar4 = &pCVar3->field_0x2a4;
-    *(uint *)&pCVar3->field_0x700 = 0x3f000000;
-    *(uint *)&pCVar3->field_0x704 = 0x3f800000;
-    *(uint *)&pCVar3->field_0x708 = 0x3f000000;
-    *(uint *)&pCVar3->field_0x750 = 0;
-    *(uint *)&pCVar3->field_0x754 = 0;
-    pCVar3 = (CBurncross *)puVar4;
-  } while (puVar4 != (byte *)(iVar2 + 0xf78));
+    pCVar4 = (CBurncross *)((pCVar3->base).model.model_name + 0xd4);
+    pCVar3->flames[0].flame_size.x = 0.5;
+    pCVar3->flames[0].flame_size.y = 1.0;
+    pCVar3->flames[0].flame_size.z = 0.5;
+    pCVar3->flames[0].which_flame = FLAME_TYPE_TORCH;
+    pCVar3->flames[0].globe_scalar = 0.0;
+    pCVar3 = pCVar4;
+  } while (pCVar4 != (CBurncross *)(iVar2 + 0xf78));
   *(uint *)(iVar2 + 0x1520) = 0;
   return (CBurncross *)(iVar2 + -0x5a8);
 }

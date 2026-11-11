@@ -14,10 +14,11 @@ CMattanntote * core_mattnntt_cpp_CMattanntote_ctor_FUN_00591ba0(CMattanntote *th
   CMattanntote *pCVar1;
   CEnemy *pCVar2;
   int iVar3;
-  byte *puVar4;
+  CMattanntote *pCVar4;
   CMattanntote *pCVar5;
+  float *pfVar6;
   
-  pCVar2 = core_enemy_cpp_CEnemy_ctor_FUN_00488fd0((CEnemy *)this_ptr);
+  pCVar2 = core_enemy_cpp_CEnemy_ctor_FUN_00488fd0(&this_ptr->base);
   iVar3 = __arrinit(&pCVar2[1].base.base.health,0xc,&g_CFlameTypeInfo);
   pCVar1 = (CMattanntote *)(iVar3 + -0xd0b8);
   *(CEnemy_full_vtable **)(iVar3 + -0xcf64) = &g_CMattanntoteVTable;
@@ -45,19 +46,19 @@ CMattanntote * core_mattnntt_cpp_CMattanntote_ctor_FUN_00591ba0(CMattanntote *th
   *(uint *)(iVar3 + -0x54) = *(uint *)(iVar3 + -0x4c);
   pCVar5 = pCVar1;
   do {
-    puVar4 = &pCVar5->field_0x4;
-    *(uint *)&pCVar5->field_0xf068 = 0;
-    pCVar5 = (CMattanntote *)puVar4;
-  } while (puVar4 != (byte *)(iVar3 + -0xd084));
+    pCVar4 = (CMattanntote *)((pCVar5->base).base.base.actor_name + 4);
+    pCVar5->sfx_handles[0] = 0;
+    pCVar5 = pCVar4;
+  } while (pCVar4 != (CMattanntote *)(iVar3 + -0xd084));
   pCVar5 = pCVar1;
   do {
-    puVar4 = &pCVar5->field_0x2a4;
-    *(uint *)&pCVar5->field_0xd210 = 0x3f800000;
-    *(uint *)&pCVar5->field_0xd214 = 0x3fc00000;
-    *(uint *)&pCVar5->field_0xd218 = 0x3f800000;
-    *(uint *)&pCVar5->field_0xd260 = 0;
-    *(uint *)&pCVar5->field_0xd264 = 0;
-    pCVar5 = (CMattanntote *)puVar4;
-  } while (puVar4 != (byte *)(iVar3 + -0xc628));
+    pfVar6 = &(pCVar5->base).base.model.bone_origins[0x14].y;
+    pCVar5->flames[0].flame_size.x = 1.0;
+    pCVar5->flames[0].flame_size.y = 1.5;
+    pCVar5->flames[0].flame_size.z = 1.0;
+    pCVar5->flames[0].which_flame = FLAME_TYPE_TORCH;
+    pCVar5->flames[0].globe_scalar = 0.0;
+    pCVar5 = (CMattanntote *)pfVar6;
+  } while (pfVar6 != (float *)(iVar3 + -0xc628));
   return pCVar1;
 }

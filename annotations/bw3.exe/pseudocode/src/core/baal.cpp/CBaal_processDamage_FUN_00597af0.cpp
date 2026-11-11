@@ -9,41 +9,40 @@
 void __cdecl core_baal_cpp_CBaal_processDamage_FUN_00597af0(CBaal *this_ptr,SDamageInfo *damage_info)
 
 {
-  byte *this_ptr_00;
-  float fVar1;
-  int iVar2;
-  SMotion *pSVar3;
+  CDeformableModelInstance *this_ptr_00;
+  CCharacter_full_vtable *pCVar1;
+  float fVar2;
+  int iVar3;
+  SMotion *pSVar4;
   
-  if (*(int *)(damage_info + 0x30) != 0x70) {
-    fVar1 = *(float *)&this_ptr->field_0x2538 - *(float *)(damage_info + 4);
-    this_ptr_00 = &this_ptr->field_0x158;
-    *(float *)&this_ptr->field_0x2538 = fVar1;
-    if (fVar1 <= 0.0) {
-      *(uint *)&this_ptr->field_0x2540 = 0;
-      *(uint *)&this_ptr->field_0x2538 = 0;
-      (**(code **)(*(int *)&this_ptr->field_0x154 + 0x128))(this_ptr,0,0);
-      pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
-                         ((CMotionController *)this_ptr_00);
-      if ((*(int *)(pSVar3 + 0x24) != 9) && (*(int *)(pSVar3 + 0x24) != 8)) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
-                  ((CMotionController *)this_ptr_00,8,1);
-        (**(code **)(*(int *)&this_ptr->field_0x154 + 0xa8))(this_ptr,0x32,0x41c80000);
-        core_enemy_cpp_CEnemy_processDamage_FUN_00489b80((CEnemy *)this_ptr,damage_info);
+  if (damage_info->damage_type != DAMAGE_TYPE_BODY_PART) {
+    fVar2 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
+    this_ptr_00 = &(this_ptr->base).base.model;
+    (this_ptr->base).base.hit_points = fVar2;
+    if (fVar2 <= 0.0) {
+      (this_ptr->base).base.health_bar_mode = HEALTH_BAR_NONE;
+      pCVar1 = (this_ptr->base).base.base.vtable._uc;
+      (this_ptr->base).base.hit_points = 0.0;
+      (*(pCVar1->_uc).dropCarriedObject)((CCharacter *)this_ptr,0,(CVector3f *)0x0);
+      pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&this_ptr_00->base);
+      if ((pSVar4->state_index != 9) && (pSVar4->state_index != 8)) {
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&this_ptr_00->base,8,1);
+        (*((this_ptr->base).base.base.vtable._ub)->spawnFlies)((CDemonActor *)this_ptr,0x32,25.0);
+        core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(&this_ptr->base,damage_info);
         return;
       }
     }
     else {
-      iVar2 = unkafter_enemy_cpp_FUN_0048a1b0(this_ptr,*(uint *)(damage_info + 4));
-      if (iVar2 != 0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
-                  ((CMotionController *)this_ptr_00,7,1);
+      iVar3 = unkafter_enemy_cpp_FUN_0048a1b0(this_ptr,damage_info->damage_amount);
+      if (iVar3 != 0) {
+        core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&this_ptr_00->base,7,1);
       }
-      iVar2 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
-      if (0x5a < iVar2) {
+      iVar3 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
+      if (0x5a < iVar3) {
         core_baal_cpp_FUN_00597be0(this_ptr,0);
       }
     }
-    core_enemy_cpp_CEnemy_processDamage_FUN_00489b80((CEnemy *)this_ptr,damage_info);
+    core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(&this_ptr->base,damage_info);
   }
   return;
 }

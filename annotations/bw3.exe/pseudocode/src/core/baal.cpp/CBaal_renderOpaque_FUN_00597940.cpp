@@ -11,7 +11,7 @@ int __cdecl core_baal_cpp_CBaal_renderOpaque_FUN_00597940(CBaal *this_ptr)
 {
   int iVar1;
   
-  if (*(int *)&this_ptr->field_0x33a0 < 1) {
+  if ((this_ptr->base).base.fire_count < 1) {
     iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042e220((CCharacter *)this_ptr);
     return iVar1;
   }

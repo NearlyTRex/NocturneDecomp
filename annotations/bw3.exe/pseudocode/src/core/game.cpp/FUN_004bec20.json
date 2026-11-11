@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 488,
-    "complexity_score": 977,
+    "complexity_score": 890,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 182,
-    "suspect_count": 74,
+    "pseudocode_lines": 180,
+    "suspect_count": 66,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "unrolled_strcat",
@@ -22,7 +21,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 670
+    "total_lines": 668
   },
   "cross_references": [
     {
@@ -71,6 +70,11 @@
       "name": "core_main.c_FUN_004e4330"
     },
     {
+      "addr": "005a3650",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005a3650"
+    },
+    {
       "addr": "005a3a90",
       "is_variadic": false,
       "name": "crt_stdio.c_fclose_FUN_005a3a90"
@@ -84,11 +88,6 @@
       "addr": "005a5128",
       "is_variadic": false,
       "name": "crt_string.c_splitpath_FUN_005a5128"
-    },
-    {
-      "addr": "005a3650",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3650"
     },
     {
       "addr": "005a3770",
@@ -529,16 +528,8 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe8 = 0;",
+      "text": "param_1->cinematic_skip_in_progress = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0xe8",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe8 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -713,7 +704,7 @@
       "line": 112,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_18 = FUN_005a3650(param_1->bitmap_width * param_1->bitmap_height);",
+      "text": "local_18 = malloc(param_1->bitmap_width * param_1->bitmap_height);",
       "type": "unnamed_param"
     },
     {
@@ -721,7 +712,7 @@
       "line": 112,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_18 = FUN_005a3650(param_1->bitmap_width * param_1->bitmap_height);",
+      "text": "local_18 = malloc(param_1->bitmap_width * param_1->bitmap_height);",
       "type": "unnamed_param"
     },
     {
@@ -881,16 +872,8 @@
       "line": 153,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0xd4 == 2) {",
+      "text": "if (param_1->game_control == CONTROL_MODE_GAMEPAD) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 153,
-      "match": "field_0xd4",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0xd4 == 2) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -905,7 +888,7 @@
       "line": 158,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,*(uint *)&param_1->field_0x48),",
+      "text": "(iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,param_1->key_fire), iVar2 != 0)) ||",
       "type": "unresolved_funcptr"
     },
     {
@@ -913,108 +896,60 @@
       "line": 158,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,*(uint *)&param_1->field_0x48),",
+      "text": "(iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,param_1->key_fire), iVar2 != 0)) ||",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 158,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "(iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,*(uint *)&param_1->field_0x48),",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 160,
+      "line": 159,
       "match": "param_1",
       "severity": "mild",
-      "text": "((_DAT_01d22b44 != 1 && (*(float *)&param_1->field_0x438 < 0.0)))) break;",
+      "text": "(_DAT_01c5fae4 != 0)) || ((_DAT_01d22b44 != 1 && (param_1->bitmap_display_time < 0.0))))",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 160,
-      "match": "field_0x438",
-      "severity": "mild",
-      "text": "((_DAT_01d22b44 != 1 && (*(float *)&param_1->field_0x438 < 0.0)))) break;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 162,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)&param_1->field_0x438 =",
+      "text": "param_1->bitmap_display_time = param_1->bitmap_display_time - g_CGamePtr->delta_time_float;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 162,
-      "match": "field_0x438",
-      "severity": "mild",
-      "text": "*(float *)&param_1->field_0x438 =",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 163,
+      "line": 162,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)&param_1->field_0x438 - g_CGamePtr->delta_time_float;",
+      "text": "param_1->bitmap_display_time = param_1->bitmap_display_time - g_CGamePtr->delta_time_float;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 163,
-      "match": "field_0x438",
-      "severity": "mild",
-      "text": "*(float *)&param_1->field_0x438 - g_CGamePtr->delta_time_float;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 166,
+      "line": 165,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,*(uint *)&param_1->field_0x48),",
+      "text": "(iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,param_1->key_fire), iVar2 != 0))) {",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 166,
+      "line": 165,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,*(uint *)&param_1->field_0x48),",
+      "text": "(iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,param_1->key_fire), iVar2 != 0))) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 166,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "(iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,*(uint *)&param_1->field_0x48),",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 168,
+      "line": 166,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0xd4 == 2) {",
+      "text": "if (param_1->game_control == CONTROL_MODE_GAMEPAD) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 168,
-      "match": "field_0xd4",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0xd4 == 2) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 169,
+      "line": 167,
       "match": "param_1",
       "severity": "mild",
       "text": "core_game_cpp_CGame_resetKeyState_FUN_004b93e0(param_1);",
@@ -1022,7 +957,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 177,
+      "line": 175,
       "match": "param_1",
       "severity": "mild",
       "text": "core_game_cpp_FUN_004ba490(param_1);",
@@ -1030,7 +965,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 178,
+      "line": 176,
       "match": "param_1",
       "severity": "mild",
       "text": "core_game_cpp_CGame_saveClockTime_FUN_004b4430(param_1);",
@@ -1038,7 +973,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 179,
+      "line": 177,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->bitmap_filename[0] = '\\0';",
@@ -1046,7 +981,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 184,
+      "line": 182,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->bitmap_filename[0] = '\\0';",

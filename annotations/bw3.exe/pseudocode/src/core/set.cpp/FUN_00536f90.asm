@@ -18,7 +18,7 @@
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 DAT_01bdd7e4
-;   undefined4 g_CGameInstance.field540_0x24c
+;   undefined4 g_CGameInstance.letterbox_mode
 ;   undefined4 DAT_01d5ba14
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 DAT_0207bab8
@@ -47,7 +47,7 @@ section .text
     XOR EDX,EDX                         ; 00536f9b
     MOV EAX,[0x005fe9dc]                ; 00536f9d | g_CGamePtr
     MOV dword ptr [0x0207babc],EDX      ; 00536fa2 | DAT_0207babc
-    MOV EBX,dword ptr [EAX + 0x24c]     ; 00536fa8 | g_CGameInstance.field540_0x24c
+    MOV EBX,dword ptr [EAX + 0x24c]     ; 00536fa8 | g_CGameInstance.letterbox_mode
     MOV dword ptr [0x0207bab8],EDX      ; 00536fae | DAT_0207bab8
     TEST EBX,EBX                        ; 00536fb4
     JNZ 0x0053700d                      ; 00536fb6

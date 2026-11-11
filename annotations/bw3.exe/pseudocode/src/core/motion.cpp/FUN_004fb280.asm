@@ -37,9 +37,9 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
+;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_stdio.c_fgetc_FUN_005a32b0
 ;   crt_stdio.c_fscanf_FUN_005a3230
-;   crt_unknown.c_FUN_005a3650
 ;   unkafter_morph.cpp_FUN_004fb210
 ;
 ; *****************************************************************************
@@ -314,8 +314,8 @@ section .text
         ;   XREF to: 004fb52e (CONDITIONAL_JUMP)  ; LAB_004fb52e
     IMUL EAX,EBX,0x18                   ; 004fb4a7
     PUSH EAX                            ; 004fb4aa
-    CALL crt_unknown.c_FUN_005a3650     ; 004fb4ab
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 004fb4ab
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 004fb4b0
     MOV dword ptr [ESI + 0x74],EAX      ; 004fb4b3
     TEST EAX,EAX                        ; 004fb4b6

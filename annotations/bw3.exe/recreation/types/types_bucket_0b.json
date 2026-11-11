@@ -45,6 +45,7 @@
   {
     "kind":"class",
     "name":"CConstructRed",
+    "parent":"CConstruct",
     "size":55392
   },
   {
@@ -245,6 +246,7 @@
   {
     "kind":"class",
     "name":"CExorcism",
+    "parent":"CWeapon",
     "size":1580
   },
   {
@@ -253,6 +255,33 @@
     "parent":"CWeapon",
     "rtti_file":"core/flashlit.cpp",
     "size":1428
+  },
+  {
+    "kind":"class",
+    "name":"CFont_vtable",
+    "size":20,
+    "vtable_slots":[
+      {
+        "name":"ctor",
+        "offset":0
+      },
+      {
+        "name":"drawText",
+        "offset":4
+      },
+      {
+        "name":"getStringWidth",
+        "offset":8
+      },
+      {
+        "name":"getStringHeight",
+        "offset":12
+      },
+      {
+        "name":"getLineSpacing",
+        "offset":16
+      }
+    ]
   },
   {
     "kind":"funcdef",
@@ -278,7 +307,7 @@
   {
     "kind":"class",
     "name":"CLZWDictionaryNode",
-    "size":1
+    "size":16
   },
   {
     "kind":"class",
@@ -301,12 +330,14 @@
   {
     "kind":"class",
     "name":"CPopcorn",
+    "parent":"CParticle",
     "rtti_file":"core/emitter.cpp",
     "size":64
   },
   {
     "kind":"class",
     "name":"CSkeletonDemon",
+    "parent":"CBoneGuy",
     "size":54936
   },
   {
@@ -521,17 +552,17 @@
   {
     "kind":"struct",
     "name":"SInputFace",
-    "size":1
+    "size":18
   },
   {
     "kind":"struct",
     "name":"SMRGLPoint",
-    "size":1
+    "size":16
   },
   {
     "kind":"struct",
     "name":"SMpegStereoSubbandSamples",
-    "size":1
+    "size":4608
   },
   {
     "kind":"struct",
@@ -540,8 +571,13 @@
   },
   {
     "kind":"struct",
+    "name":"SNotesMapAnnotation",
+    "size":212
+  },
+  {
+    "kind":"struct",
     "name":"SPose",
-    "size":1
+    "size":6812
   },
   {
     "kind":"struct",

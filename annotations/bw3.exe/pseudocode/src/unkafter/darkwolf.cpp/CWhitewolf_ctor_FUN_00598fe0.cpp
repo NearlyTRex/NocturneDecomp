@@ -13,12 +13,12 @@ CWhitewolf * unkafter_darkwolf_cpp_CWhitewolf_ctor_FUN_00598fe0(CWhitewolf *this
 {
   CDarkwolf *pCVar1;
   
-  pCVar1 = unkafter_darkwolf_cpp_CDarkwolf_ctor_FUN_00598780((CDarkwolf *)this_ptr);
-  *(CEnemy_full_vtable **)&pCVar1->field_0x154 = &g_CWhitewolfVTable;
+  pCVar1 = unkafter_darkwolf_cpp_CDarkwolf_ctor_FUN_00598780(&this_ptr->base);
+  (pCVar1->base).base.base.vtable._ub = &g_CWhitewolfVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
-            ((CDeformableModelInstance *)&pCVar1->field_0x158,(char *)0x5d98bf);
-  *(uint *)&pCVar1->field_0x2538 = 0x41f00000;
-  *(uint *)&pCVar1->field_0xce5c = 0x41200000;
-  *(uint *)&pCVar1->field_0xce60 = 0x41200000;
+            (&(pCVar1->base).base.model,(char *)0x5d98bf);
+  (pCVar1->base).base.hit_points = 30.0;
+  (pCVar1->base).attack_damage = 10.0;
+  (pCVar1->base).pain_threshold = 10.0;
   return (CWhitewolf *)pCVar1;
 }

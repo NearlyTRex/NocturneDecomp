@@ -2,14 +2,14 @@
 // Address: 004c07b0
 // Address Range: [[004c07b0, 004c4867]]
 // Convention: unknown
-// Signature: void core_game_cpp_FUN_004c07b0(int param_1,undefined4 *param_2)
+// Signature: void core_game_cpp_FUN_004c07b0(float param_1,undefined4 *param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_game_cpp_FUN_004c07b0(int param_1,uint *param_2)
+void core_game_cpp_FUN_004c07b0(float param_1,uint *param_2)
 
 {
   CCharacter *this_ptr;
@@ -392,7 +392,7 @@ void core_game_cpp_FUN_004c07b0(int param_1,uint *param_2)
     local_90 = 0x280;
     local_ac = 0x1e0;
   }
-  if (*(int *)(param_1 + 0x328) != 0) {
+  if (*(int *)((int)param_1 + 0x328) != 0) {
     local_ac = 0xf0;
     local_90 = 0x140;
   }
@@ -411,23 +411,26 @@ void core_game_cpp_FUN_004c07b0(int param_1,uint *param_2)
   local_860 = 2.0;
   local_80 = 0.2;
   memset(param_2,0,0x34);
-  if ((&DAT_01d21fa0)[*(int *)(param_1 + 0x50)] == (&DAT_01c6cef0)[*(int *)(param_1 + 0x50)]) {
+  if ((&DAT_01d21fa0)[*(int *)((int)param_1 + 0x50)] ==
+      (&DAT_01c6cef0)[*(int *)((int)param_1 + 0x50)]) {
     param_2[5] = 0;
   }
   else {
-    param_2[5] = (uint)(byte)(&DAT_01c6cef0)[*(int *)(param_1 + 0x50)];
+    param_2[5] = (uint)(byte)(&DAT_01c6cef0)[*(int *)((int)param_1 + 0x50)];
   }
-  if ((&DAT_01d21fa0)[*(int *)(param_1 + 0x54)] == (&DAT_01c6cef0)[*(int *)(param_1 + 0x54)]) {
+  if ((&DAT_01d21fa0)[*(int *)((int)param_1 + 0x54)] ==
+      (&DAT_01c6cef0)[*(int *)((int)param_1 + 0x54)]) {
     param_2[6] = 0;
   }
   else {
-    param_2[6] = (uint)(byte)(&DAT_01c6cef0)[*(int *)(param_1 + 0x54)];
+    param_2[6] = (uint)(byte)(&DAT_01c6cef0)[*(int *)((int)param_1 + 0x54)];
   }
-  if ((&DAT_01d21fa0)[*(int *)(param_1 + 0x6c)] == (&DAT_01c6cef0)[*(int *)(param_1 + 0x6c)]) {
+  if ((&DAT_01d21fa0)[*(int *)((int)param_1 + 0x6c)] ==
+      (&DAT_01c6cef0)[*(int *)((int)param_1 + 0x6c)]) {
     param_2[7] = 0;
   }
   else {
-    param_2[7] = (uint)(byte)(&DAT_01c6cef0)[*(int *)(param_1 + 0x6c)];
+    param_2[7] = (uint)(byte)(&DAT_01c6cef0)[*(int *)((int)param_1 + 0x6c)];
   }
   iVar7 = (**(code **)(*0x01D70A78 + 4))();
   if (iVar7 != 0) {
@@ -506,7 +509,7 @@ void core_game_cpp_FUN_004c07b0(int param_1,uint *param_2)
     _DAT_01d22c30 = 1e+30;
     _DAT_01d1e324 = 0;
   }
-  if (*(int *)(param_1 + 0x264) != 0) {
+  if (*(int *)((int)param_1 + 0x264) != 0) {
     if ((_DAT_01c5fae4 & 1) != 0) {
       if ((float10)0 < (float10)(local_4c - local_90 / 2) / (float10)(local_ac / 2)) {
         param_2[1] = 1;
@@ -514,11 +517,11 @@ void core_game_cpp_FUN_004c07b0(int param_1,uint *param_2)
       else {
         *param_2 = 1;
       }
-      if (*(int *)(param_1 + 0xb0) == 0) {
-        bVar15 = (&DAT_01c6cef0)[*(int *)(param_1 + 0x30)];
+      if (*(int *)((int)param_1 + 0xb0) == 0) {
+        bVar15 = (&DAT_01c6cef0)[*(int *)((int)param_1 + 0x30)];
       }
       else {
-        bVar15 = (&DAT_01c6cef0)[*(int *)(param_1 + 0x30)] == '\0';
+        bVar15 = (&DAT_01c6cef0)[*(int *)((int)param_1 + 0x30)] == '\0';
       }
       param_2[2] = (uint)bVar15;
     }
@@ -1266,11 +1269,11 @@ LAB_004c3ec2:
         _DAT_01d1e334 = 1;
       }
 LAB_004c3ed9:
-      if (*(int *)(param_1 + 0xb0) == 0) {
-        bVar16 = (&DAT_01c6cef0)[*(int *)(param_1 + 0x30)];
+      if (*(int *)((int)param_1 + 0xb0) == 0) {
+        bVar16 = (&DAT_01c6cef0)[*(int *)((int)param_1 + 0x30)];
       }
       else {
-        bVar16 = (&DAT_01c6cef0)[*(int *)(param_1 + 0x30)] == '\0';
+        bVar16 = (&DAT_01c6cef0)[*(int *)((int)param_1 + 0x30)] == '\0';
       }
       param_2[2] = (uint)bVar16;
       if (param_2[2] == 0) {
@@ -1289,7 +1292,7 @@ LAB_004c3ed9:
           local_844 = 2.0;
         }
       }
-      local_844 = local_844 - *(float *)(param_1 + 0x314);
+      local_844 = local_844 - *(float *)((int)param_1 + 0x314);
       iVar8 = core_actor_cpp_castToClassHash_FUN_0040c840();
       iStack_a4 = iVar8;
       pCStack_a0 = (CDemonActor *)core_actor_cpp_castToClassHash_FUN_0040c840();
@@ -1412,7 +1415,7 @@ LAB_004c3ed9:
                   _DAT_01d1e330 = fStack_630;
                   _DAT_01d1e32c = fStack_634;
                 }
-                if (&stack0x00000000 != &g_BloodParticles[5].field_0x24) {
+                if ((float *)&stack0x00000000 != &g_BloodParticles[5].base.lifetime_remaining) {
                   _DAT_01d22c30 = afStack_418[2];
                   _DAT_01d22c34 = afStack_418[3];
                   _DAT_01d22c38 = fStack_408;
@@ -1591,7 +1594,7 @@ LAB_004c3ed9:
           afStack_4b4[(uint)bVar15 * -2 + 0x12] = afStack_1b4[(uint)bVar15 * -2];
           afStack_4b4[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 0x13] =
                afStack_1b4[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1];
-          if (&stack0x00000000 != &g_BloodParticles[6].field_0x3c) {
+          if ((CParticle_vtable **)&stack0x00000000 != &g_BloodParticles[6].base.vtable) {
             _DAT_01d22c30 = fStack_470;
             _DAT_01d22c34 = fStack_46c;
             _DAT_01d22c38 = fStack_468;
@@ -1693,7 +1696,7 @@ LAB_004c3ed9:
               _DAT_01d1e32c = afStack_4b4[3];
               _DAT_01d1e330 = fStack_4a4;
             }
-            if (&stack0x00000000 != &g_BloodParticles[7].field_0x30) {
+            if ((float *)&stack0x00000000 != &g_BloodParticles[7].base.previous_position.y) {
               _DAT_01d22c30 = afStack_4b4[2];
               _DAT_01d22c34 = afStack_4b4[3];
               _DAT_01d22c38 = fStack_4a4;
@@ -1833,14 +1836,14 @@ LAB_004c3ecc:
        afStack_5e0[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 7];
   fStack_48 = SQRT(fStack_144 * fStack_144 + fStack_14c * fStack_14c + fStack_148 * fStack_148);
   fStack_58 = fStack_48;
-  if (0.0 < *(float *)(param_1 + 0x314)) {
-    fStack_58 = fStack_48 / *(float *)(param_1 + 0x314);
+  if (0.0 < *(float *)((int)param_1 + 0x314)) {
+    fStack_58 = fStack_48 / *(float *)((int)param_1 + 0x314);
   }
   if (_DAT_005c3c50 <= fStack_58) {
     _DAT_01d1e344 = 0.0;
   }
   else {
-    _DAT_01d1e344 = *(float *)(param_1 + 0x314) + _DAT_01d1e344;
+    _DAT_01d1e344 = *(float *)((int)param_1 + 0x314) + _DAT_01d1e344;
     if (((0x3effffff < (int)_DAT_01d1e344) && (_DAT_01d1e334 = 0, _DAT_01d1e320 != 0)) &&
        (_DAT_01d1e320 = 0, iStack_b4 == 0)) {
       param_2[3] = 1;

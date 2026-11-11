@@ -44,12 +44,12 @@ int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_0058c1e0(CZombie *this_pt
   if (fStack_c <= 0.0) {
     return 0;
   }
-  core_skeleton_cpp_FUN_0054dcc0(pCVar1,*(uint *)&this_ptr->field_0xd0ec);
+  core_skeleton_cpp_FUN_0054dcc0(pCVar1,this_ptr->bone_indices[1]);
   fStack_84 = fStack_24;
   *(float *)((int)&stack0xffffff80 + (uint)bVar3 * -8) = afStack_50[(uint)bVar3 * -2 + 0xc];
   *(float *)((int)&stack0xffffff84 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
        afStack_50[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xd];
-  core_skeleton_cpp_FUN_0054dcc0(pCVar1,*(uint *)&this_ptr->field_0xd0f0);
+  core_skeleton_cpp_FUN_0054dcc0(pCVar1,this_ptr->bone_indices[2]);
   fVar2 = fStack_84;
   fStack_3c = fStack_54;
   afStack_50[(uint)bVar3 * -2 + 6] = afStack_50[(uint)bVar3 * -2];

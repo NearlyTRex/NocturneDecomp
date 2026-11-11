@@ -4,15 +4,33 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/signal.h"
+#include "system/time.h"
+#include "system/winnt.h"
 
 // =============================================================================
 // WATCOM - System Header
 // =============================================================================
 
 // Structure: ThreadData
-// Stub: no RTTI in this build, size and fields not yet recovered
 #pragma pack(push, 1)
 typedef struct ThreadData {
+    uint stack_limit;
+    int errno_value;
+    DWORD windows_error_code;
+    uint random_seed;
+    uchar unknown_10[4];
+    _tm localtime_buffer;
+    char asctime_buffer[26];
+    char padding_0x52[2];
+    struct EXCEPTION_REGISTRATION_RECORD* seh_frame;
+    void* exception_info;
+    SignalHandlerEntry signal_handlers[15];
+    char padding_0xd4[6];
+    void* cleanup_data;
+    HANDLE thread_handle;
+    uchar unknown_E2[18];
+    uint heap_info;
 } ThreadData;
 #pragma pack(pop)
 
@@ -46,18 +64,36 @@ typedef struct WatcomInheritanceLayout {
 } WatcomInheritanceLayout;
 
 // Structure: WatcomStat
-// Stub: no RTTI in this build, size and fields not yet recovered
 #pragma pack(push, 1)
 typedef struct WatcomStat {
+    int _st_dev;
+    uint _st_ino;
+    ushort _st_mode;
+    short _st_nlink;
+    ulong _st_uid;
+    short _st_gid;
+    int _st_rdev;
+    long _st_size;
+    time_t _st_atime;
+    time_t _st_mtime;
+    time_t _st_ctime;
+    time_t _st_btime;
+    ulong _st_attr;
+    ulong _st_archivedID;
+    ulong _st_updatedID;
+    ushort _st_inheritedRightsMask;
+    uchar _st_originatingNameSpace;
+    uchar _st_name[13];
 } WatcomStat;
 #pragma pack(pop)
 
 // Structure: WatcomStaticDestructorNode
-// Stub: no RTTI in this build, size and fields not yet recovered
-#pragma pack(push, 1)
 typedef struct WatcomStaticDestructorNode {
+    struct WatcomStaticDestructorNode* next;
+    struct WatcomDestructorCall* destructor_info;
+    int registration_type;
+    void* object_instance;
 } WatcomStaticDestructorNode;
-#pragma pack(pop)
 
 // Structure: WatcomThunkedDestructor
 typedef struct WatcomThunkedDestructor {
@@ -66,9 +102,11 @@ typedef struct WatcomThunkedDestructor {
 } WatcomThunkedDestructor;
 
 // Structure: WatcomTypeArrayInfo
-// Stub: no RTTI in this build, size and fields not yet recovered
 #pragma pack(push, 1)
 typedef struct WatcomTypeArrayInfo {
+    int obj_count;
+    struct WatcomTypeInfo* type_info;
+    void** obj_array;
 } WatcomTypeArrayInfo;
 #pragma pack(pop)
 

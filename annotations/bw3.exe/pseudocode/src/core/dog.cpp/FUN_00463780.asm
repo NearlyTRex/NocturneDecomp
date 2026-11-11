@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_dog.cpp_CEtherealDog_ctor_FUN_004637b0
-;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xd064                         ; 00463780
         ;   Label: core_dog.cpp_FUN_00463780
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 00463785
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00463785
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 0046378a
     TEST EAX,EAX                        ; 0046378d
     JNZ 0x00463792                      ; 0046378f

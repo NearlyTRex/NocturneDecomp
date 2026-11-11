@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_FUN_004a3ed0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void core_fire_cpp_FUN_004a3ed0(undefined4 param_1,CVector3f *param_2,CVector3f *param_3)
 ;
 ;
 ; XREF[1]:
@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d03b88
-;   undefined4 g_PopcornPool[0].field60_0x3c
+;   undefined4 g_PopcornPool[0].base.vtable
 ;
 ; *****************************************************************************
 
@@ -27,7 +27,7 @@ section .text
     PUSH EBX                            ; 004a3ee4
     ADD EAX,0x1d03b8c                   ; 004a3ee5
     PUSH EAX                            ; 004a3eea
-    MOV EDX,dword ptr [EAX + 0x3c]      ; 004a3eeb | g_PopcornPool[0].field60_0x3c
+    MOV EDX,dword ptr [EAX + 0x3c]      ; 004a3eeb | g_PopcornPool[0].base.vtable
     CALL dword ptr [EDX]                ; 004a3eee
     MOV ESI,dword ptr [0x01d03b88]      ; 004a3ef0 | DAT_01d03b88
     INC ESI                             ; 004a3ef6

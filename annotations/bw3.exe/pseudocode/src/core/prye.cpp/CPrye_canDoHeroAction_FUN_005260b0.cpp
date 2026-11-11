@@ -11,7 +11,7 @@
 int __cdecl core_prye_cpp_CPrye_canDoHeroAction_FUN_005260b0(CPrye *this_ptr,int action_type)
 
 {
-  byte *puVar1;
+  CDeformableModelInstance *pCVar1;
   float fVar2;
   float fVar3;
   float fVar4;
@@ -31,25 +31,25 @@ int __cdecl core_prye_cpp_CPrye_canDoHeroAction_FUN_005260b0(CPrye *this_ptr,int
   float fVar18;
   float fVar19;
   
-  if (*(int *)&this_ptr->field_0x20b64 != 0) {
+  if ((this_ptr->base).action_pending != 0) {
     return 0;
   }
-  puVar1 = &this_ptr->field_0x158;
-  fVar2 = (float)core_motion_cpp_FUN_004fc350(puVar1,0);
-  fVar3 = (float)core_motion_cpp_FUN_004fc350(puVar1,1);
-  fVar4 = (float)core_motion_cpp_FUN_004fc350(puVar1,4);
-  fVar5 = (float)core_motion_cpp_FUN_004fc350(puVar1,7);
-  fVar6 = (float)core_motion_cpp_FUN_004fc350(puVar1,8);
-  fVar7 = (float)core_motion_cpp_FUN_004fc350(puVar1,9);
-  fVar8 = (float)core_motion_cpp_FUN_004fc350(puVar1,10);
-  fVar9 = (float)core_motion_cpp_FUN_004fc350(puVar1,0xb);
-  fVar10 = (float)core_motion_cpp_FUN_004fc350(puVar1,0xc);
-  fVar11 = (float)core_motion_cpp_FUN_004fc350(puVar1,0xd);
-  fVar12 = (float)core_motion_cpp_FUN_004fc350(puVar1,0xe);
-  fVar13 = (float)core_motion_cpp_FUN_004fc350(puVar1,0xf);
-  fVar14 = (float)core_motion_cpp_FUN_004fc350(puVar1,0x10);
-  fVar15 = (float)core_motion_cpp_FUN_004fc350(puVar1,5);
-  fVar16 = (float)core_motion_cpp_FUN_004fc350(puVar1,6);
+  pCVar1 = &(this_ptr->base).base.model;
+  fVar2 = (float)core_motion_cpp_FUN_004fc350(pCVar1,0);
+  fVar3 = (float)core_motion_cpp_FUN_004fc350(pCVar1,1);
+  fVar4 = (float)core_motion_cpp_FUN_004fc350(pCVar1,4);
+  fVar5 = (float)core_motion_cpp_FUN_004fc350(pCVar1,7);
+  fVar6 = (float)core_motion_cpp_FUN_004fc350(pCVar1,8);
+  fVar7 = (float)core_motion_cpp_FUN_004fc350(pCVar1,9);
+  fVar8 = (float)core_motion_cpp_FUN_004fc350(pCVar1,10);
+  fVar9 = (float)core_motion_cpp_FUN_004fc350(pCVar1,0xb);
+  fVar10 = (float)core_motion_cpp_FUN_004fc350(pCVar1,0xc);
+  fVar11 = (float)core_motion_cpp_FUN_004fc350(pCVar1,0xd);
+  fVar12 = (float)core_motion_cpp_FUN_004fc350(pCVar1,0xe);
+  fVar13 = (float)core_motion_cpp_FUN_004fc350(pCVar1,0xf);
+  fVar14 = (float)core_motion_cpp_FUN_004fc350(pCVar1,0x10);
+  fVar15 = (float)core_motion_cpp_FUN_004fc350(pCVar1,5);
+  fVar16 = (float)core_motion_cpp_FUN_004fc350(pCVar1,6);
   fVar18 = (float)_DAT_005cd95f;
   switch(action_type) {
   case 4:

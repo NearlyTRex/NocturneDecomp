@@ -45,7 +45,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00414a60(CBodyPart *
           local_18 = iVar1;
         }
         engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0046b8f0
-                  (DAT_005f2afc,(SMRGLPrimitivePoly *)(this_ptr->faces + iVar3),render_flags);
+                  (DAT_005f2afc,
+                   (SMRGLPrimitivePoly *)
+                   ((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.
+                          type + iVar3),render_flags);
         iVar2 = iVar2 + 1;
         iVar3 = iVar3 + 0x3c;
         local_14 = local_14 + 4;

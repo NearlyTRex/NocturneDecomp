@@ -179,15 +179,15 @@
       "line": 44,
       "match": "(int *)((int)scalefactor_dest",
       "severity": "moderate",
-      "text": "} while (piVar3 != (int *)((int)scalefactor_dest + iVar1 + granule * 0xf8));",
+      "text": "} while (piVar2 != (int *)((int)scalefactor_dest + iVar8 + granule * 0xf8));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 68,
-      "match": "(int *)((int)piVar4",
+      "match": "(int *)((int)piVar3",
       "severity": "moderate",
-      "text": "} while (piVar2 != (int *)((int)piVar4 + iVar1));",
+      "text": "} while (piVar1 != (int *)((int)piVar3 + iVar8));",
       "type": "pointer_cast"
     },
     {
@@ -195,23 +195,23 @@
       "line": 86,
       "match": "(int *)((int)scalefactor_dest",
       "severity": "moderate",
-      "text": "*(int *)((int)scalefactor_dest + iVar8) = *piVar4;",
+      "text": "*(int *)((int)scalefactor_dest + iVar8) = *piVar3;",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `piVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 68,
-      "match": "(int)piVar4",
+      "match": "(int)piVar3",
       "severity": "moderate",
-      "text": "} while (piVar2 != (int *)((int)piVar4 + iVar1));",
+      "text": "} while (piVar1 != (int *)((int)piVar3 + iVar8));",
       "type": "pointer_truncation"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via pointer arithmetic on its own `filename` field (which decays to a pointer), `+ CONST`; `offsetof(filename) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar6`. Replace those `pCVar6->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via pointer arithmetic on its own `filename` field (which decays to a pointer), `+ CONST`; `offsetof(filename) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar5`. Replace those `pCVar5->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
       "line": 27,
-      "match": "pCVar6 = (T *)(pCVar6->filename + CONST)",
+      "match": "pCVar5 = (T *)(pCVar5->filename + CONST)",
       "severity": "moderate",
-      "text": "pCVar6 = (CMP3Decoder *)(pCVar6->filename + 4);",
+      "text": "pCVar5 = (CMP3Decoder *)(pCVar5->filename + 4);",
       "type": "shadow_pointer_walk"
     },
     {

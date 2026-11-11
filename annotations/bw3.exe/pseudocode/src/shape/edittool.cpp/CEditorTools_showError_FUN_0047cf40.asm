@@ -11,10 +11,10 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[27]:
-;   core_fldnotes.cpp_FUN_004aa810 at 004aaa5d
-;   core_fldnotes.cpp_FUN_004aba10 at 004abac1
-;   core_fldnotes.cpp_FUN_004abb90 at 004abc86
-;   core_fldnotes.cpp_FUN_004abcb0 at 004abd61
+;   core_fldnotes.cpp_CFieldNotes_completeTask_FUN_004abcb0 at 004abd61
+;   core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004aba10 at 004abac1
+;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810 at 004aaa5d
+;   core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004abb90 at 004abc86
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bc17f
 ;   core_game.cpp_FUN_004bda10 at 004bdf0e
 ;   core_game.cpp_FUN_004bdfb0 at 004be4d1

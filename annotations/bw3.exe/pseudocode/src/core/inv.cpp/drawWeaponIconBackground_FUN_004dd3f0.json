@@ -384,7 +384,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(DAT_005f2afc->vertex_buffer_ptr + 0x10) = param_1 * iVar1;",
+      "text": "(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).screen_x = param_1 * iVar1;",
       "type": "unnamed_param"
     },
     {
@@ -392,7 +392,7 @@
       "line": 28,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "*(int *)(DAT_005f2afc->vertex_buffer_ptr + 0x10) = param_1 * iVar1;",
+      "text": "(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).screen_x = param_1 * iVar1;",
       "type": "undefined_data"
     },
     {
@@ -400,7 +400,7 @@
       "line": 29,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(int *)(this_ptr->vertex_buffer_ptr + 0x14) = param_2 * iVar2;",
+      "text": "(this_ptr->vertex_buffer_ptr->projected_vertex).screen_y = param_2 * iVar2;",
       "type": "unnamed_param"
     },
     {
@@ -408,7 +408,7 @@
       "line": 33,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(int *)(this_ptr->vertex_buffer_ptr + 0x40) = iVar1 * param_3;",
+      "text": "this_ptr->vertex_buffer_ptr[1].projected_vertex.screen_x = iVar1 * param_3;",
       "type": "unnamed_param"
     },
     {
@@ -416,7 +416,7 @@
       "line": 34,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(int *)(this_ptr->vertex_buffer_ptr + 0x44) = param_2 * iVar2;",
+      "text": "this_ptr->vertex_buffer_ptr[1].projected_vertex.screen_y = param_2 * iVar2;",
       "type": "unnamed_param"
     },
     {
@@ -424,7 +424,7 @@
       "line": 38,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(int *)(this_ptr->vertex_buffer_ptr + 0x70) = iVar1 * param_3;",
+      "text": "this_ptr->vertex_buffer_ptr[2].projected_vertex.screen_x = iVar1 * param_3;",
       "type": "unnamed_param"
     },
     {
@@ -432,7 +432,7 @@
       "line": 39,
       "match": "param_4",
       "severity": "mild",
-      "text": "*(int *)(this_ptr->vertex_buffer_ptr + 0x74) = iVar2 * param_4;",
+      "text": "this_ptr->vertex_buffer_ptr[2].projected_vertex.screen_y = iVar2 * param_4;",
       "type": "unnamed_param"
     },
     {
@@ -440,7 +440,7 @@
       "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(this_ptr->vertex_buffer_ptr + 0xa0) = param_1 * iVar1;",
+      "text": "this_ptr->vertex_buffer_ptr[3].projected_vertex.screen_x = param_1 * iVar1;",
       "type": "unnamed_param"
     },
     {
@@ -448,7 +448,7 @@
       "line": 44,
       "match": "param_4",
       "severity": "mild",
-      "text": "*(int *)(this_ptr->vertex_buffer_ptr + 0xa4) = iVar2 * param_4;",
+      "text": "this_ptr->vertex_buffer_ptr[3].projected_vertex.screen_y = iVar2 * param_4;",
       "type": "unnamed_param"
     },
     {

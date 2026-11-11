@@ -12,7 +12,7 @@
 int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004d32d0(CHero *this_ptr)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   int iVar2;
   byte bVar3;
   float afStackY_1040 [1014];
@@ -21,7 +21,7 @@ int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004d32d0(CHero *this_ptr)
   float local_3c;
   float local_38;
   float local_34;
-  CHero *local_28;
+  CLocation *local_28;
   float local_24;
   float local_20;
   float local_1c;
@@ -30,14 +30,15 @@ int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004d32d0(CHero *this_ptr)
   
   bVar3 = 0;
   local_24 = 1e+30;
-  local_28 = this_ptr + 0x20;
+  local_28 = &(this_ptr->base).base.location;
   local_14 = 0;
   for (local_18 = 0; local_18 < g_CDemonSetPtr->actor_count; local_18 = local_18 + 1) {
-    iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
-                      (*(uint *)((int)g_CDemonSetPtr->actors + local_14),
-                       g_CLeverClassInfo.name_hash);
-    if (iVar1 != 0) {
-      core_actor_cpp_FUN_00408bf0(this_ptr,iVar1 + 0x20);
+    pCVar1 = (CDemonActor *)
+             core_actor_cpp_castToClassHash_FUN_0040c840
+                       (*(uint *)((int)g_CDemonSetPtr->actors + local_14),
+                        g_CLeverClassInfo.name_hash);
+    if (pCVar1 != (CDemonActor *)0x0) {
+      core_actor_cpp_FUN_00408bf0(this_ptr,&pCVar1->location);
       local_40 = local_34;
       (&stack0xffffffc4)[(uint)bVar3 * 0xfffffffe] =
            (float)*(uint *)(&stack0xffffffd0 + (uint)bVar3 * -8);
@@ -52,12 +53,12 @@ int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004d32d0(CHero *this_ptr)
              *(uint *)(&stack0xffffffb0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
         local_20 = ABS(local_48);
         if ((int)local_20 < 0x3f860a93) {
-          iVar2 = core_lever_cpp_FUN_004e0a30(iVar1,local_28);
+          iVar2 = core_lever_cpp_FUN_004e0a30(pCVar1,local_28);
           if ((iVar2 != 0) && (local_1c = -local_20, local_1c <= local_24)) {
-            *(uint *)(this_ptr + 0x20b68) = 8;
-            *(uint *)(this_ptr + 0x20b7c) = 0;
-            *(int *)(this_ptr + 0x20b6c) = iVar1;
-            *(int *)(this_ptr + 0x20b70) = iVar1;
+            this_ptr->hero_action = 8;
+            this_ptr->hero_action_range = 0.0;
+            this_ptr->hero_action_actor = pCVar1;
+            this_ptr->hero_action_target = pCVar1;
             local_24 = local_1c;
           }
         }
@@ -65,5 +66,5 @@ int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004d32d0(CHero *this_ptr)
     }
     local_14 = local_14 + 4;
   }
-  return (uint)(*(int *)(this_ptr + 0x20b68) == 8);
+  return (uint)(this_ptr->hero_action == 8);
 }

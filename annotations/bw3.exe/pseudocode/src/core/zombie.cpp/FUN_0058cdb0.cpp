@@ -11,7 +11,7 @@ void core_zombie_cpp_FUN_0058cdb0(void)
 {
   CZombieSpirit *this_ptr;
   
-  this_ptr = (CZombieSpirit *)debugAllocTracked1(0xd14c);
+  this_ptr = (CZombieSpirit *)operator_new(0xd14c);
   if (this_ptr == (CZombieSpirit *)0x0) {
     return;
   }

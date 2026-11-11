@@ -28,7 +28,7 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00459d00(CFilterFX *this_p
     }
     _fscanf(p_Var1,0x5bac58,this_ptr);
     _fclose(p_Var1);
-    pSVar2 = FUN_005a3650(this_ptr->frame_count << 0xd);
+    pSVar2 = (SMovieFrame *)malloc(this_ptr->frame_count << 0xd);
     this_ptr->movie_data = pSVar2;
     _sprintf(acStack_108,(char *)0x5bac5c);
     p_Var1 = engine_dosio_cpp_FUN_004659c0(filename,acStack_108,(char *)0x5bac63);
@@ -40,8 +40,8 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00459d00(CFilterFX *this_p
     _fread(this_ptr->movie_data,0x2000,this_ptr->frame_count,p_Var1);
     _fclose(p_Var1);
     for (iVar3 = 0; iVar3 < this_ptr->frame_count * 0x2000; iVar3 = iVar3 + 1) {
-      this_ptr->movie_data[iVar3] =
-           SUB41((uint)((int)(uint)(byte)this_ptr->movie_data[iVar3] >> 2) / 2,0);
+      this_ptr->movie_data->pixels[iVar3] =
+           (uchar)((uint)((int)(uint)this_ptr->movie_data->pixels[iVar3] >> 2) / 2);
     }
     this_ptr->current_frame = 0.0;
     return;

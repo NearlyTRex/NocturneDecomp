@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 148,
-    "complexity_score": 448,
+    "complexity_score": 433,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 73,
-    "suspect_count": 34,
+    "suspect_count": 33,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy"
     ],
     "total_lines": 221
@@ -138,14 +137,6 @@
       "severity": "moderate",
       "text": "float afStackY_1068 [1014];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0xd0e4",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0xd0e4 != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

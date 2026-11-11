@@ -11,7 +11,7 @@ void core_storm_cpp_factoryFuncStorm_FUN_00568a80(void)
 {
   CStorm *this_ptr;
   
-  this_ptr = (CStorm *)debugAllocTracked1(0x594);
+  this_ptr = (CStorm *)operator_new(0x594);
   if (this_ptr == (CStorm *)0x0) {
     return;
   }

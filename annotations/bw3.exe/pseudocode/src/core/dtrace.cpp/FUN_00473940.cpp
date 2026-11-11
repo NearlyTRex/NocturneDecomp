@@ -73,7 +73,7 @@ void core_dtrace_cpp_FUN_00473940(CDemonRaytrace *param_1,_FILE *param_2)
       iVar2 = iVar2 + 0x34;
     }
   }
-  if (((byte)param_2[0xc] & 0x20) == 0) {
+  if ((param_2->_flag & 0x20) == 0) {
     return;
   }
   _DAT_01d71de0 = "..\\core\\dtrace.cpp";

@@ -10,6 +10,7 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonPod.h"
+#include "types/classes/CHero.h"
 #include "types/classes/CPackedBitmap.h"
 #include "types/classes/CPackedBitmapSet.h"
 #include "types/classes/CPlatform.h"
@@ -26,6 +27,7 @@
 #include "types/structs/SPose.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SSoftwareEdge.h"
+#include "types/unions/UOrientationVector.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x510000
@@ -125,8 +127,8 @@ CPrye * core_stranger_cpp_CPrye_ctor_FUN_00517f80(CPrye *this_ptr);
 void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_ptr);
 void __cdecl core_prye_cpp_CPrye_setup_FUN_00518680(CPrye *this_ptr);
 void __cdecl core_prye_cpp_CPrye_process_FUN_00518ab0(CPrye *this_ptr,float delta_time);
-void core_prye_cpp_FUN_00518cd0(CCharacter *param_1,float param_2);
-void core_prye_cpp_FUN_0051b550(CCharacter *param_1,float param_2);
+void core_prye_cpp_FUN_00518cd0(UOrientationVector *param_1,float param_2);
+void core_prye_cpp_FUN_0051b550(CHero *param_1,float param_2);
 undefined4 core_prye_cpp_FUN_0051c0a0(int param_1);
 undefined4 core_prye_cpp_FUN_0051c0f0(void);
 void core_prye_cpp_FUN_0051c100(int param_1);

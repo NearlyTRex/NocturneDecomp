@@ -15,7 +15,7 @@ int __cdecl core_health_cpp_CHealthItem_canPickup_FUN_004d2090(CHealthItem *this
   iVar1 = core_actor_cpp_isOfClass_FUN_0040c790(picker,"CHero");
   iVar2 = 0;
   if (iVar1 != 0) {
-    if (*(int *)&this_ptr->field_0x2e0 == 0) {
+    if (this_ptr->automatic_use == 0) {
       return 2;
     }
     iVar2 = 5;

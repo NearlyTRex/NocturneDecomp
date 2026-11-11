@@ -50,9 +50,9 @@ float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_00578d30(CWat
       pSStack_1c = this_ptr->vertices;
       do {
         core_dtri_cpp_CDemonTriangle_buildCollision_FUN_00478a50
-                  (&CStack_c8,(CVector3f *)(pSStack_1c + pSVar3->vertices[0].vertex_index),
-                   (CVector3f *)(pSStack_1c + pSVar3->vertices[1].vertex_index),
-                   (CVector3f *)(pSStack_1c + pSVar3->vertices[2].vertex_index));
+                  (&CStack_c8,&pSStack_1c[pSVar3->vertices[0].vertex_index].local_position,
+                   &pSStack_1c[pSVar3->vertices[1].vertex_index].local_position,
+                   &pSStack_1c[pSVar3->vertices[2].vertex_index].local_position);
         fVar1 = (float)core_dtri_cpp_rayTriangleIntersection_FUN_00478ac0
                                  (&CStack_c8,ray_origin,ray_direction);
         fStack_14 = fVar1;

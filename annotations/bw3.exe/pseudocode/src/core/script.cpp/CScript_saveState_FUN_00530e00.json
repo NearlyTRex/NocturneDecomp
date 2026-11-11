@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 218,
+    "complexity_score": 183,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 32,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 43,
-    "suspect_count": 16,
+    "suspect_count": 13,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 251
@@ -224,19 +223,19 @@
     },
     {
       "addr": "01d21558",
-      "name": "g_CGameInstance.field540_0x24c",
+      "name": "g_CGameInstance.letterbox_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d2155c",
-      "name": "g_CGameInstance.field544_0x250",
+      "name": "g_CGameInstance.allow_damage_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21560",
-      "name": "g_CGameInstance.field548_0x254",
+      "name": "g_CGameInstance.allow_enemy_attack_flag",
       "type": "undefined4",
       "value": null
     },
@@ -347,48 +346,24 @@
       "line": 13,
       "match": "DAT_005cfe33",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005cfe33,*(uint *)&g_CGamePtr->field_0x24c);",
+      "text": "FUN_005a3140(file_handle,&DAT_005cfe33,g_CGamePtr->letterbox_mode);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x24c",
-      "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005cfe33,*(uint *)&g_CGamePtr->field_0x24c);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 15,
       "match": "DAT_005cfe52",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005cfe52,*(uint *)&g_CGamePtr->field_0x250);",
+      "text": "FUN_005a3140(file_handle,&DAT_005cfe52,g_CGamePtr->allow_damage_flag);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x250",
-      "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005cfe52,*(uint *)&g_CGamePtr->field_0x250);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 17,
       "match": "DAT_005cfe76",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005cfe76,*(uint *)&g_CGamePtr->field_0x254);",
+      "text": "FUN_005a3140(file_handle,&DAT_005cfe76,g_CGamePtr->allow_enemy_attack_flag);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x254",
-      "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005cfe76,*(uint *)&g_CGamePtr->field_0x254);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

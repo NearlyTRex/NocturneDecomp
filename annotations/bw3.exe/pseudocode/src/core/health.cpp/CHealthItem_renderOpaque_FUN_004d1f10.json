@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 93,
+    "complexity_score": 43,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 28,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
-      "unresolved_funcptr",
       "unrolled_memcpy"
     ],
     "total_lines": 85
@@ -106,38 +104,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x1c))(this_ptr,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x1c))(this_ptr,0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&this_ptr->field_0x158,*(float *)&this_ptr->field_0x2dc,-1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x2dc",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&this_ptr->field_0x158,*(float *)&this_ptr->field_0x2dc,-1);",
-      "type": "unnamed_field"
-    },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 17,

@@ -15,7 +15,7 @@ int __cdecl core_actor_cpp_randomChance_FUN_0040cf40(float probability_threshold
   uint uVar2;
   int iVar3;
   
-  if (*(int *)&g_CGamePtr->field_0x260 == 0) {
+  if (g_CGamePtr->is_processing == 0) {
     iVar3 = rand();
     fVar1 = (float)iVar3 * _DAT_005b5f01;
   }

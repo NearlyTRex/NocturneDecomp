@@ -19,7 +19,7 @@ CBlunderbus * core_blundrbs_cpp_CBlunderbus_dtor_FUN_00411890(CBlunderbus *this_
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = (CBlunderbus *)core_weapon_cpp_CWeapon_dtor_FUN_0057aed0((CWeapon *)this_ptr,1);
+  pCVar1 = (CBlunderbus *)core_weapon_cpp_CWeapon_dtor_FUN_0057aed0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

@@ -11,6 +11,6 @@
 CFieldNotes * core_fldnotes_cpp_CFieldNotes_ctor_FUN_004aa7d0(CFieldNotes *this_ptr)
 
 {
-  *(byte *)this_ptr = 0;
+  this_ptr->file_name[0] = '\0';
   return this_ptr;
 }

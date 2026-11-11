@@ -21,7 +21,7 @@ int __cdecl core_script_cpp_CScript_skipCinematic_FUN_00530530(CScript *this_ptr
   core_script_cpp_CScript_resetDialogState_FUN_00530500(this_ptr);
   iVar2 = 0;
   this_ptr->next_cmd = this_ptr->saved_cmd_index;
-  while ((*(int *)&g_CGamePtr->field_0x24c != 0 && (this_ptr->mission_ended == 0))) {
+  while ((g_CGamePtr->letterbox_mode != 0 && (this_ptr->mission_ended == 0))) {
     local_c = 0.25;
     iVar1 = core_script_cpp_CScript_step_FUN_00529a70(this_ptr,&local_c);
     if (iVar1 < 0) {
@@ -34,7 +34,7 @@ int __cdecl core_script_cpp_CScript_skipCinematic_FUN_00530530(CScript *this_ptr
       _DAT_01d71de0 = "..\\core\\script.cpp";
       core_main_c_FUN_004e4330
                 ("Infinite loop detected trying to skip cinematic, at script line %d",
-                 *(uint *)(this_ptr->parsed_lines + this_ptr->next_cmd * 8));
+                 this_ptr->parsed_lines[this_ptr->next_cmd].line_number);
     }
   }
   return 1;

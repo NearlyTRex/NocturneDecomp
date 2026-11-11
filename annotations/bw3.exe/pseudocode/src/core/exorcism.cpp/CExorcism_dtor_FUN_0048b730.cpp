@@ -19,7 +19,7 @@ CExorcism * core_exorcism_cpp_CExorcism_dtor_FUN_0048b730(CExorcism *this_ptr,ui
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = (CExorcism *)core_weapon_cpp_CWeapon_dtor_FUN_0057aed0((CWeapon *)this_ptr,1);
+  pCVar1 = (CExorcism *)core_weapon_cpp_CWeapon_dtor_FUN_0057aed0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

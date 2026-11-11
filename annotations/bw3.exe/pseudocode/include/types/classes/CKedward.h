@@ -4,13 +4,34 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CKedward
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 53464; ctor 0058fd70, setup 0058fe70, process 00590010, renderTransparent 00591680, archive 005919f0, FUN_005919a0; fade block at the same offsets as CBaal
 // Ghidra size: 0xd0d8 (53464 bytes)
 #pragma pack(push, 1)
 typedef struct CKedward {
-    char field_0[53464]; // 0x0
+    CEnemy base; // 0x0, derived
+    float countdown_timer; // 0xd054, ctor zeroes; process subtracts dt while > 0
+    int unknown_0xd058; // 0xd058, setup zeroes; nothing reads it
+    int unknown_0xd05c; // 0xd05c, setup zeroes; nothing reads it
+    int render_alpha; // 0xd060, ctor 0x10000; renderTransparent computes it and passes it to setRenderAlpha, compares < 1000
+    float fade_timer; // 0xd064, ctor = max_fade_time; process adds dt, clamps; reset to 0 when fading_in flips
+    int fading_in; // 0xd068, ctor 1; process toggles 0/1 on fade events; renderTransparent picks the formula
+    float max_fade_time; // 0xd06c, ctor 2.0; archive "maxFadeTime"
+    int fade_out_opacity; // 0xd070, ctor 0x4b; archive "fadeOutOpacity"
+    int bone_hand; // 0xd074, setup findBone "Bip01 R Hand"; process bone matrix index *0x30
+    int vanished; // 0xd078, ctor 0; process sets 1 with vanish_timer=4.0 when fade-out starts, clears when vanish_timer runs out; selects the walk branch
+    float vanish_timer; // 0xd07c, ctor 0; process sets 4.0/0.5, subtracts dt, clears vanished/speed_boosted at <= 0
+    float attack_cooldown; // 0xd080, ctor 0; process subtracts dt (clamp 0), gates on <= 0, sets 1.0
+    int speed_boosted; // 0xd084, ctor 0; process sets 1 when it raises +0xcdcc; FUN_005919a0 picks motion state 2 while set
+    int speed_boost_latched; // 0xd088, ctor 0; process sets 1 alongside speed_boosted, clears when vanish_timer ends
+    int fade_state; // 0xd08c, ctor 1; renderTransparent sets 1 / -1 / 0 from fade_timer == max_fade_time; process tests == 0
+    int unknown_0xd090; // 0xd090, ctor zeroes; nothing reads it
+    int cini_flag; // 0xd094, archive "ciniFlag"; setup picks the _invis model; process/renderTransparent branch on it
+    CVector3f walk_target; // 0xd098, process builds a point near the target (+0xcde4 position + random offset) and passes it to CCharacter_walkToPoint
+    uint sfx_handles[13]; // 0xd0a4, ctor loop zeroes 13 dwords; process plays motion-event sounds into +0xbc54 + event*4 for events 0x514.. (= +0xd0a4..)
 } CKedward;
 #pragma pack(pop)
 

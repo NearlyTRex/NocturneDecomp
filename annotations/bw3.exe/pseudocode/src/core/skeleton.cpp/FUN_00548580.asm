@@ -19,8 +19,8 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
 ;   core_skeleton.cpp_CDeformableModel_free_FUN_00548370
+;   crt_memory.c_operator_new_array_FUN_005a40df
 ;   crt_unknown.c_FUN_005a30b6
-;   crt_unknown.c_FUN_005a40df
 ;   crt_unknown.c_FUN_005a556a
 ;
 ; *****************************************************************************
@@ -88,8 +88,8 @@ section .text
     ADD EAX,EDX                         ; 00548621
     SHL EAX,0x2                         ; 00548623
     PUSH EAX                            ; 00548626
-    CALL crt_unknown.c_FUN_005a40df     ; 00548627
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a40df()
+    CALL crt_memory.c_operator_new_array_FUN_005a40df ; 00548627
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
     ADD ESP,0x4                         ; 0054862c
     PUSH EAX                            ; 0054862f
     CALL crt_unknown.c_FUN_005a556a     ; 00548630
@@ -102,8 +102,8 @@ section .text
     ADD ESP,0xc                         ; 00548647
     ADD EAX,EAX                         ; 0054864a
     PUSH EAX                            ; 0054864c
-    CALL crt_unknown.c_FUN_005a40df     ; 0054864d
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a40df()
+    CALL crt_memory.c_operator_new_array_FUN_005a40df ; 0054864d
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
     MOV dword ptr [EBX + 0x7c],EAX      ; 00548652
     MOV EDX,dword ptr [EBX + 0x68]      ; 00548655
     MOV EAX,dword ptr [EBX + 0x54]      ; 00548658
@@ -111,8 +111,8 @@ section .text
     ADD ESP,0x4                         ; 0054865d
     SHL EAX,0x2                         ; 00548660
     PUSH EAX                            ; 00548663
-    CALL crt_unknown.c_FUN_005a40df     ; 00548664
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a40df()
+    CALL crt_memory.c_operator_new_array_FUN_005a40df ; 00548664
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
     ADD ESP,0x4                         ; 00548669
     MOV ECX,dword ptr [EBX + 0x68]      ; 0054866c
     MOV dword ptr [EBX + 0x90],EAX      ; 0054866f
@@ -121,8 +121,8 @@ section .text
         ;   XREF to: 005486c1 (CONDITIONAL_JUMP)  ; LAB_005486c1
     LEA EAX,[ECX*0x4 + 0x0]             ; 00548679
     PUSH EAX                            ; 00548680
-    CALL crt_unknown.c_FUN_005a40df     ; 00548681
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a40df()
+    CALL crt_memory.c_operator_new_array_FUN_005a40df ; 00548681
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
     ADD ESP,0x4                         ; 00548686
     MOV dword ptr [EBX + 0xa4],EAX      ; 00548689
     LEA EAX,[EDI*0x4 + 0x0]             ; 0054868f

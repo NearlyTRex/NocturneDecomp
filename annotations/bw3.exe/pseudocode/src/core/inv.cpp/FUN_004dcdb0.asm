@@ -54,7 +54,7 @@ section .text
         ;   XREF to: 004dcf30 (CONDITIONAL_JUMP)  ; LAB_004dcf30
     MOV EAX,[0x005fe9dc]                ; 004dcdcd | g_CGamePtr
         ;   Label: LAB_004dcdcd
-    CMP dword ptr [EAX + 0x264],0x0     ; 004dcdd2 | g_CGameInstance.field564_0x264
+    CMP dword ptr [EAX + 0x264],0x0     ; 004dcdd2 | g_CGameInstance.goggles_active
     JZ 0x004dcfd0                       ; 004dcdd9
         ;   XREF to: 004dcfd0 (CONDITIONAL_JUMP)  ; LAB_004dcfd0
     MOV dword ptr [EBX + 0x344],0x0     ; 004dcddf
@@ -206,13 +206,13 @@ section .text
         ;   XREF to: 004dcdcd (UNCONDITIONAL_JUMP)  ; LAB_004dcdcd
     MOV EDX,dword ptr [0x005fe4b0]      ; 004dcfd0 | g_CFieldNotesPtr
         ;   Label: LAB_004dcfd0
-    CMP dword ptr [EDX + 0x40],0x0      ; 004dcfd6 | g_CFieldNotesInstance.field64_0x40
+    CMP dword ptr [EDX + 0x40],0x0      ; 004dcfd6 | g_CFieldNotesInstance.is_displayed
     JNZ 0x004dcddf                      ; 004dcfda
         ;   XREF to: 004dcddf (CONDITIONAL_JUMP)  ; LAB_004dcddf
     CMP dword ptr [0x007dffb4],0x0      ; 004dcfe0 | DAT_007dffb4
     JNZ 0x004dcddf                      ; 004dcfe7
         ;   XREF to: 004dcddf (CONDITIONAL_JUMP)  ; LAB_004dcddf
-    CMP dword ptr [EAX + 0x24c],0x0     ; 004dcfed | g_CGameInstance.field540_0x24c
+    CMP dword ptr [EAX + 0x24c],0x0     ; 004dcfed | g_CGameInstance.letterbox_mode
     JNZ 0x004dcddf                      ; 004dcff4
         ;   XREF to: 004dcddf (CONDITIONAL_JUMP)  ; LAB_004dcddf
     JMP 0x004dce07                      ; 004dcffa

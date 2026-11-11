@@ -23,7 +23,6 @@
 #include "types/classes/CFlame.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CMotionController.h"
-#include "types/classes/COptimize.h"
 #include "types/classes/CPathMap.h"
 #include "types/classes/CSkeletonDemon.h"
 #include "types/classes/CSkeletonForest.h"
@@ -75,42 +74,42 @@ void unkafter_alphabit_cpp_FUN_00411a40(void);
 void unkafter_alphabit_cpp_FUN_00411a90(void);
 CAudioRecPuzzle * unkafter_alphabit_cpp_CAudioRecPuzzle_ctor_FUN_00411b50(CAudioRecPuzzle *this_ptr);
 CAudioRecPuzzle * unkafter_alphabit_cpp_CAudioRecPuzzle_dtor_FUN_00411bb0(CAudioRecPuzzle *this_ptr,uint flags);
-void unkafter_alphabit_cpp_FUN_00411c30(int param_1);
+void __cdecl unkafter_alphabit_cpp_CAudioRecPuzzle_reset_FUN_00411c30(CAudioRecPuzzle *this_ptr);
 void unkafter_alphabit_cpp_FUN_00411d60(void);
-void unkafter_alphabit_cpp_FUN_00411d70(int *param_1,int param_2);
-void core_bmppuzzl_cpp_FUN_00412320(int param_1,int param_2,char *param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9);
-void unkafter_bmppuzzl_cpp_FUN_004123c0(int *param_1);
-void unkafter_bmppuzzl_cpp_FUN_00412530(int *param_1);
-longlong unkafter_bmppuzzl_cpp_FUN_004129f0(int param_1,int param_2);
+void __cdecl unkafter_alphabit_cpp_CAudioRecPuzzle_load_FUN_00411d70(CAudioRecPuzzle *this_ptr,int param_2);
+void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00412320(CAudioRecPuzzle *this_ptr,int param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8,int param_9);
+void __cdecl unkafter_bmppuzzl_cpp_CAudioRecPuzzle_render_FUN_004123c0(CAudioRecPuzzle *this_ptr);
+void __cdecl unkafter_bmppuzzl_cpp_CAudioRecPuzzle_process_FUN_00412530(CAudioRecPuzzle *this_ptr);
+longlong __cdecl unkafter_bmppuzzl_cpp_CAudioRecPuzzle_isButtonHovered_FUN_004129f0(CAudioRecPuzzle *this_ptr,int param_2);
 void unkafter_bmppuzzl_cpp_FUN_00412a50(void);
-void unkafter_bmppuzzl_cpp_FUN_00412a60(int param_1);
-void unkafter_bmppuzzl_cpp_FUN_00412b00(int param_1,int param_2);
-undefined4 unkafter_bmppuzzl_cpp_FUN_00412bc0(int param_1,int param_2,int param_3);
-void unkafter_bmppuzzl_cpp_FUN_00412c30(int param_1);
-void unkafter_bmppuzzl_cpp_FUN_00412c50(int param_1,int param_2,int param_3,float param_4,int param_5);
-void unkafter_bmppuzzl_cpp_FUN_00412ee0(void *param_1,undefined4 param_2,int param_3);
-undefined4 shape_superopt_cpp_FUN_004131b0(int param_1);
-undefined4 shape_superopt_cpp_FUN_004131c0(int param_1);
-undefined4 shape_superopt_cpp_FUN_004131d0(int param_1);
-undefined4 shape_superopt_cpp_FUN_004131e0(int param_1);
-int __cdecl shape_superopt_cpp_COptimize_getMaxPolygonSides_FUN_004131f0(COptimize *this_ptr);
+void __cdecl unkafter_bmppuzzl_cpp_CAudioRecPuzzle_moveTransportSwitch_FUN_00412a60(CAudioRecPuzzle *this_ptr);
+void __cdecl unkafter_bmppuzzl_cpp_CAudioRecPuzzle_turnKnob_FUN_00412b00(CAudioRecPuzzle *this_ptr,int param_2);
+undefined4 __cdecl unkafter_bmppuzzl_cpp_CAudioRecPuzzle_hitTestButtons_FUN_00412bc0(CAudioRecPuzzle *this_ptr,int param_2,int param_3);
+void __cdecl unkafter_bmppuzzl_cpp_CAudioRecPuzzle_onMouse_FUN_00412c30(CAudioRecPuzzle *this_ptr);
+void __cdecl unkafter_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_00412c50(CAudioRecPuzzle *this_ptr,int param_2,int param_3,float param_4,int param_5);
+void __cdecl unkafter_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00412ee0(CAudioRecPuzzle *this_ptr,undefined4 param_2,int param_3);
+int __cdecl shape_superopt_cpp_CAudioRecPuzzle_getKnob0Position_FUN_004131b0(CAudioRecPuzzle *this_ptr);
+int __cdecl shape_superopt_cpp_CAudioRecPuzzle_getKnob1Position_FUN_004131c0(CAudioRecPuzzle *this_ptr);
+int __cdecl shape_superopt_cpp_CAudioRecPuzzle_getKnob2Position_FUN_004131d0(CAudioRecPuzzle *this_ptr);
+int __cdecl shape_superopt_cpp_CAudioRecPuzzle_getSpeedSetting_FUN_004131e0(CAudioRecPuzzle *this_ptr);
+int __cdecl shape_superopt_cpp_CAudioRecPuzzle_getTransportState_FUN_004131f0(CAudioRecPuzzle *this_ptr);
 CChemPuzzle * unkafter_superopt_cpp_CChemPuzzle_ctor_FUN_00413200(CChemPuzzle *this_ptr);
 CChemPuzzle * unkafter_superopt_cpp_CChemPuzzle_dtor_FUN_00413240(CChemPuzzle *this_ptr,uint flags);
-int unkafter_superopt_cpp_FUN_004132c0(int param_1);
+int __cdecl unkafter_superopt_cpp_CChemPuzzle_reset_FUN_004132c0(CChemPuzzle *this_ptr);
 void unkafter_superopt_cpp_FUN_004133b0(void);
-void unkafter_superopt_cpp_FUN_004133c0(int *param_1,int param_2);
-void unkafter_superopt_cpp_FUN_00413cd0(int param_1,int param_2,char *param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9);
-void unkafter_superopt_cpp_FUN_00413d50(int param_1);
-void unkafter_superopt_cpp_FUN_00413e30(int *param_1);
-undefined4 unkafter_superopt_cpp_FUN_00414330(int param_1,int param_2);
-undefined4 unkafter_superopt_cpp_FUN_004143a0(int param_1,int param_2,int param_3);
-void unkafter_superopt_cpp_FUN_00414420(int param_1);
-char * unkafter_superopt_cpp_FUN_00414440(void);
-undefined * unkafter_superopt_cpp_FUN_00414450(void);
+void __cdecl unkafter_superopt_cpp_CChemPuzzle_load_FUN_004133c0(CChemPuzzle *this_ptr,int param_2);
+void __cdecl unkafter_superopt_cpp_CChemPuzzle_addButton_FUN_00413cd0(CChemPuzzle *this_ptr,int param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8,int param_9);
+void __cdecl unkafter_superopt_cpp_CChemPuzzle_render_FUN_00413d50(CChemPuzzle *this_ptr);
+void __cdecl unkafter_superopt_cpp_CChemPuzzle_process_FUN_00413e30(CChemPuzzle *this_ptr);
+undefined4 __cdecl unkafter_superopt_cpp_CChemPuzzle_isButtonHovered_FUN_00414330(CChemPuzzle *this_ptr,int param_2);
+undefined4 __cdecl unkafter_superopt_cpp_CChemPuzzle_hitTestButtons_FUN_004143a0(CChemPuzzle *this_ptr,int param_2,int param_3);
+void __cdecl unkafter_superopt_cpp_CChemPuzzle_onMouse_FUN_00414420(CChemPuzzle *this_ptr);
+char * __cdecl unkafter_superopt_cpp_CAudioRecPuzzle_getName_FUN_00414440(CAudioRecPuzzle *this_ptr);
+undefined * __cdecl unkafter_superopt_cpp_CChemPuzzle_getName_FUN_00414450(CChemPuzzle *this_ptr);
 void unkafter_superopt_cpp_FUN_00414460(CAlphaBitmap *param_1);
 void unkafter_superopt_cpp_FUN_00414470(CAlphaBitmap *param_1);
-SButtonStruct * unkafter_superopt_cpp_buttonStruct_ctor_FUN_00414480(SButtonStruct *this_ptr);
-SButtonStruct * unkafter_superopt_cpp_buttonStruct_dtor_FUN_00414490(SButtonStruct *this_ptr,uint flags);
+SButtonStruct * unkafter_superopt_cpp_SButtonStruct_ctor_FUN_00414480(SButtonStruct *this_ptr);
+SButtonStruct * unkafter_superopt_cpp_SButtonStruct_dtor_FUN_00414490(SButtonStruct *this_ptr,uint flags);
 void unkafter_superopt_cpp_FUN_004144a0(undefined4 param_1);
 void unkafter_superopt_cpp_FUN_004144c0(undefined4 param_1);
 CAlphaBitmap * engine_alphabit_cpp_CAlphaBitmap_arrdtor5_FUN_004144e0(CAlphaBitmap *this_ptr,uint flags);

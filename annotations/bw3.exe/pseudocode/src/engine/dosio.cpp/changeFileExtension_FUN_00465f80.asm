@@ -12,7 +12,7 @@
 ; undefined        Stack[-0x8]:1  local_8
 ;
 ; XREF[2]:
-;   core_fldnotes.cpp_FUN_004aa810 at 004ab4d0
+;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810 at 004ab4d0
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00569790 at 005698cd
 ;
 ; Called Functions:

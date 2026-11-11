@@ -11,7 +11,9 @@
 #pragma pack(push, 1)
 typedef struct CElephantGun {
     CWeapon base; // 0x0
-    char field_1428[12]; // 0x594
+    float spread_angle; // 0x594
+    int muzzle_flash_active; // 0x598
+    float projectile_distance; // 0x59c
 } CElephantGun;
 #pragma pack(pop)
 

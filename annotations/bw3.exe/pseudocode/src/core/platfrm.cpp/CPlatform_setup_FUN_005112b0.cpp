@@ -23,11 +23,8 @@ void __cdecl core_platfrm_cpp_CPlatform_setup_FUN_005112b0(CPlatform *this_ptr)
   pCVar1 = (CPlatform *)((this_ptr->model).model_name + 0x38);
   pCVar2 = this_ptr;
   do {
-    while (actor = *(CDemonActor **)pCVar2->attach_actors, actor != (CDemonActor *)0x0) {
-      pCVar2->attach_actors[0] = (SPlatformAttachment)0x0;
-      pCVar2->attach_actors[1] = (SPlatformAttachment)0x0;
-      pCVar2->attach_actors[2] = (SPlatformAttachment)0x0;
-      pCVar2->attach_actors[3] = (SPlatformAttachment)0x0;
+    while (actor = pCVar2->attach_actors[0].actor, actor != (CDemonActor *)0x0) {
+      pCVar2->attach_actors[0].actor = (CDemonActor *)0x0;
       core_platfrm_cpp_CPlatform_attachActor_FUN_00512aa0(this_ptr,actor);
       pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
       if (pCVar2 == pCVar1) {

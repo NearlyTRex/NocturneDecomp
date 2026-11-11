@@ -83,7 +83,7 @@ int core_shadow_cpp_FUN_00545710(CCharacter *param_1)
         if (_DAT_01d8e40c != 0) {
           core_motion_cpp_FUN_004fcdc0(&(param_1->model).base,&param_1->base);
         }
-        if (0.0 < *(float *)&param_1->field_0x3254) {
+        if (0.0 < param_1->bind_time) {
           core_charactr_cpp_FUN_0042f310(param_1);
         }
         core_charactr_cpp_CCharacter_renderFlames_FUN_0042f6f0(param_1);

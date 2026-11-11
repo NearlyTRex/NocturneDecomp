@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 150,
+    "complexity_score": 137,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 90,
-    "suspect_count": 4,
+    "pseudocode_lines": 92,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 275
+    "total_lines": 277
   },
   "cross_references": [
     {
@@ -325,7 +324,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 9,
+      "line": 11,
       "match": "afStackY_1080",
       "severity": "moderate",
       "text": "float afStackY_1080 [1008];",
@@ -336,16 +335,8 @@
       "line": 43,
       "match": "(CHero **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "pCVar1 = *(CHero **)((int)g_CDemonSetPtr->actors + local_20);",
+      "text": "this_ptr_00 = *(CHero **)((int)g_CDemonSetPtr->actors + local_20);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 68,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(pCVar1 + 0x154) + 0x98))(pCVar1,&iStack_b8);",
-      "type": "unresolved_funcptr"
     }
   ]
 }

@@ -16,7 +16,7 @@
 ;   undefined4 DAT_005fba60
 ;   CFieldNotes* g_CFieldNotesPtr = 01d1a05c
 ;   undefined4 g_CBoxActorClassInfo.name_hash
-;   undefined4 g_CFieldNotesInstance.field64_0x40
+;   undefined4 g_CFieldNotesInstance.is_displayed
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
@@ -145,13 +145,13 @@ section .text
     RET                                 ; 004d3d9a
     MOV EAX,[0x005fe4b0]                ; 004d3d9b | g_CFieldNotesPtr
         ;   Label: LAB_004d3d9b
-    MOV EDX,dword ptr [EAX + 0x40]      ; 004d3da0 | g_CFieldNotesInstance.field64_0x40
+    MOV EDX,dword ptr [EAX + 0x40]      ; 004d3da0 | g_CFieldNotesInstance.is_displayed
     XOR EBX,EBX                         ; 004d3da3
     TEST EDX,EDX                        ; 004d3da5
     SETZ AL                             ; 004d3da7
     MOV BL,AL                           ; 004d3daa
     MOV EAX,[0x005fe4b0]                ; 004d3dac | g_CFieldNotesPtr
-    MOV dword ptr [EAX + 0x40],EBX      ; 004d3db1 | g_CFieldNotesInstance.field64_0x40
+    MOV dword ptr [EAX + 0x40],EBX      ; 004d3db1 | g_CFieldNotesInstance.is_displayed
     XOR EAX,EAX                         ; 004d3db4
     POP EBP                             ; 004d3db6
     POP EDI                             ; 004d3db7

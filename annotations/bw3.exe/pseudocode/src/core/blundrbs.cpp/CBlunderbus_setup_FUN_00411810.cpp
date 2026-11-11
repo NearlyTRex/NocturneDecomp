@@ -9,7 +9,7 @@
 void __cdecl core_blundrbs_cpp_CBlunderbus_setup_FUN_00411810(CBlunderbus *this_ptr)
 
 {
-  core_weapon_cpp_CWeapon_setup_FUN_0057af40((CWeapon *)this_ptr);
+  core_weapon_cpp_CWeapon_setup_FUN_0057af40(&this_ptr->base);
   sound_sndmain_cpp_FUN_00556230();
   sound_sndmain_cpp_FUN_00556230();
   sound_sndmain_cpp_FUN_00556230();

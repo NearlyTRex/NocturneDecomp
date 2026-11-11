@@ -32,7 +32,7 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004ba540(CGame *this_ptr)
   if (_DAT_01d22200 != 0) {
     return;
   }
-  if (*(int *)&this_ptr->field_0xe8 != 0) goto LAB_004ba56c;
+  if (this_ptr->cinematic_skip_in_progress != 0) goto LAB_004ba56c;
   iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78);
   if (iVar5 != 0) {
     core_event_cpp_CEventList_executeCommands_FUN_0048c150(0x01C6E360,"GoToMap");
@@ -47,20 +47,20 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004ba540(CGame *this_ptr)
   iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78);
   pCVar2 = g_CFieldNotesPtr;
   if (iVar5 != 0) {
-    if (*(int *)&g_CFieldNotesPtr->field_0x40 == 0) {
-      *(uint *)&g_CFieldNotesPtr->field_0x40 = 1;
-      if (*(int *)&this_ptr->field_0x24c != 0) {
-        *(uint *)&pCVar2->field_0x40 = 0;
+    if (g_CFieldNotesPtr->is_displayed == 0) {
+      g_CFieldNotesPtr->is_displayed = 1;
+      if (this_ptr->letterbox_mode != 0) {
+        pCVar2->is_displayed = 0;
       }
       if (DAT_007dffb4 == 0) goto LAB_004baa7c;
     }
-    *(uint *)&g_CFieldNotesPtr->field_0x40 = 0;
+    g_CFieldNotesPtr->is_displayed = 0;
   }
 LAB_004baa7c:
-  if (*(char *)g_CFieldNotesPtr == '\0') {
-    *(uint *)&g_CFieldNotesPtr->field_0x40 = 0;
+  if (g_CFieldNotesPtr->file_name[0] == '\0') {
+    g_CFieldNotesPtr->is_displayed = 0;
   }
-  if ((((*(int *)&this_ptr->field_0x234 != 0) &&
+  if ((((this_ptr->developer_mode_enabled != 0) &&
        (iVar5 = (**(code **)*0x01D70A78)(0x01D70A78), iVar5 != 0)) &&
       (iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78), iVar5 != 0)) &&
      (iVar5 = 1 - this_ptr->is_game_active, this_ptr->is_game_active = iVar5, iVar5 != 0)) {
@@ -88,11 +88,11 @@ LAB_004baa7c:
     core_set_cpp_CDemonSet_setCameraView_FUN_00534890(g_CDemonSetPtr,this_ptr->camera_view_index);
   }
 LAB_004ba56c:
-  if (((*(int *)&this_ptr->field_0x234 != 0) &&
+  if (((this_ptr->developer_mode_enabled != 0) &&
       (iVar5 = (**(code **)*0x01D70A78)(0x01D70A78), iVar5 != 0)) &&
      (iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78), iVar5 != 0)) {
-    iVar5 = 1 - *(int *)&this_ptr->field_0x220;
-    *(int *)&this_ptr->field_0x220 = iVar5;
+    iVar5 = 1 - this_ptr->is_paused;
+    this_ptr->is_paused = iVar5;
     if (iVar5 == 0) {
       core_sound_cpp_FUN_0055fd30(0x02CF5680);
     }
@@ -101,17 +101,17 @@ LAB_004ba56c:
       core_sound_cpp_CSound_shutdown_FUN_0055fee0(0x02CF5680);
     }
   }
-  if ((((*(int *)&this_ptr->field_0x234 != 0) ||
+  if ((((this_ptr->developer_mode_enabled != 0) ||
        (pcVar9 = getenv("SPOOKHOUSE"), pcVar9 != (char *)0x0)) &&
       (iVar5 = (**(code **)*0x01D70A78)(0x01D70A78), iVar5 != 0)) &&
      (iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78), iVar5 != 0)) {
-    *(int *)&this_ptr->field_0x208 = 1 - *(int *)&this_ptr->field_0x208;
+    this_ptr->camera_debug_enabled = 1 - this_ptr->camera_debug_enabled;
   }
   iVar5 = (**(code **)*0x01D70A78)(0x01D70A78);
   if ((iVar5 != 0) && (iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78), iVar5 != 0)) {
     _DAT_01d8e40c = (uint)(_DAT_01d8e40c == 0);
   }
-  if (((*(int *)&this_ptr->field_0x200 == 0) &&
+  if (((this_ptr->subtitle_system_enabled == 0) &&
       (iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78), iVar5 != 0)) ||
      ((iVar5 = (**(code **)*0x01D70A78)(0x01D70A78), iVar5 != 0 &&
       (iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78), iVar5 != 0)))) {
@@ -125,7 +125,7 @@ LAB_004ba56c:
       core_sound_cpp_FUN_0055fd30(0x02CF5680);
     }
   }
-  if ((((*(int *)&this_ptr->field_0x234 != 0) &&
+  if ((((this_ptr->developer_mode_enabled != 0) &&
        (iVar5 = (**(code **)*0x01D70A78)(0x01D70A78), iVar5 != 0)) &&
       (iVar6 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78), iVar5 = DAT_005fba1c, iVar6 != 0)) &&
      (0x1df < DAT_005fba1c)) {
@@ -138,15 +138,15 @@ LAB_004ba56c:
     core_set_cpp_CDemonSet_reinitCamera_FUN_005353b0
               (g_CDemonSetPtr,clear_enabled,clear_enabled,iVar5);
   }
-  if (((*(int *)&this_ptr->field_0x234 != 0) && (_DAT_01d22c40 == 0)) &&
+  if (((this_ptr->developer_mode_enabled != 0) && (_DAT_01d22c40 == 0)) &&
      ((iVar5 = (**(code **)*0x01D70A78)(0x01D70A78), iVar5 != 0 &&
       ((iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78), iVar5 != 0 && (0x1df < DAT_005fba1c)
        ))))) {
-    *(uint *)&this_ptr->field_0x20c = (uint)(*(int *)&this_ptr->field_0x20c == 0);
+    this_ptr->debug_toggle_flag = (uint)(this_ptr->debug_toggle_flag == 0);
   }
   iVar5 = (**(code **)*0x01D70A78)(0x01D70A78);
   if (((iVar5 != 0) && (iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78), iVar5 != 0)) &&
-     (*(int *)&this_ptr->field_0x24c == 0)) {
+     (this_ptr->letterbox_mode == 0)) {
     core_game_cpp_FUN_004bda10(this_ptr,(char *)0x0);
   }
   iVar5 = (**(code **)*0x01D70A78)(0x01D70A78);
@@ -154,7 +154,7 @@ LAB_004ba56c:
     core_game_cpp_FUN_004bda10(this_ptr,(char *)0x0);
   }
   iVar5 = (**(code **)*0x01D70A78)(0x01D70A78);
-  if ((iVar5 != 0) && (*(int *)&this_ptr->field_0x24c == 0)) {
+  if ((iVar5 != 0) && (this_ptr->letterbox_mode == 0)) {
     core_game_cpp_FUN_004bda10(this_ptr,(char *)0x0);
   }
   iVar5 = (**(code **)*0x01D70A78)(0x01D70A78);
@@ -162,13 +162,13 @@ LAB_004ba56c:
     core_game_cpp_CGame_promptLoadGame_FUN_004bfa40(this_ptr);
   }
   iVar5 = (**(code **)*0x01D70A78)(0x01D70A78);
-  if ((iVar5 != 0) && (*(int *)&this_ptr->field_0x24c == 0)) {
+  if ((iVar5 != 0) && (this_ptr->letterbox_mode == 0)) {
     core_game_cpp_FUN_004bda10(this_ptr,"quicksavedgame.sav");
     fVar11 = 2.0;
     pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Quick Save");
     core_game_cpp_CGame_displayMessage_FUN_004b46b0(this_ptr,pcVar9,fVar11);
   }
-  if ((*(int *)&this_ptr->field_0x200 == 0) &&
+  if ((this_ptr->subtitle_system_enabled == 0) &&
      (iVar5 = (**(code **)*0x01D70A78)(0x01D70A78), iVar5 != 0)) {
     p_Var8 = engine_dosio_cpp_FUN_004659c0
                        (&DAT_005c28a2,"quicksavedgame.sav",&DAT_005c288c);
@@ -202,21 +202,21 @@ LAB_004ba56c:
   }
   iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78);
   if (iVar5 != 0) {
-    *(uint *)&this_ptr->field_0xb7c = (uint)(*(int *)&this_ptr->field_0xb7c == 0);
+    this_ptr->show_customizable_keys = (uint)(this_ptr->show_customizable_keys == 0);
   }
-  if (((*(int *)&this_ptr->field_0x234 != 0) ||
+  if (((this_ptr->developer_mode_enabled != 0) ||
       (pcVar9 = getenv("SPOOKHOUSE"), pcVar9 != (char *)0x0)) &&
      (iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78), iVar5 != 0)) {
     this_ptr->console_enabled = (uint)(this_ptr->console_enabled == 0);
   }
-  if (*(int *)&this_ptr->field_0x220 == 0) {
+  if (this_ptr->is_paused == 0) {
     if ((g_CScriptPtr->script_state != 2) &&
        (iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78), pCVar4 = g_CDemonSetPtr, iVar5 != 0)
        ) {
       this_ptr->screen_clear_enabled = 1;
       core_set_cpp_CDemonSet_reinitCamera_FUN_005353b0(pCVar4,0,0,0xf0);
       pCVar3 = g_CScriptPtr;
-      *(uint *)&this_ptr->field_0x200 = 1;
+      this_ptr->subtitle_system_enabled = 1;
       if (pCVar3->script_state == 1) {
         pCVar3->script_state = 0;
       }
@@ -224,7 +224,7 @@ LAB_004ba56c:
         pCVar3->script_state = 1;
       }
     }
-    if (*(int *)&this_ptr->field_0x200 != 0) {
+    if (this_ptr->subtitle_system_enabled != 0) {
       if ((g_CScriptPtr->script_state == 2) &&
          (iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78), iVar5 != 0)) {
         g_CScriptPtr->script_state = 1;
@@ -241,32 +241,32 @@ LAB_004ba56c:
   }
   iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78);
   if (iVar5 != 0) {
-    iVar5 = *(int *)&this_ptr->field_0x248 + -0x400;
-    *(int *)&this_ptr->field_0x248 = iVar5;
+    iVar5 = this_ptr->gamma + -0x400;
+    this_ptr->gamma = iVar5;
     if (iVar5 < 0x8000) {
-      *(uint *)&this_ptr->field_0x248 = 0x8000;
+      this_ptr->gamma = 0x8000;
     }
     _sprintf(acStack_11c,"Gamma : %f");
     core_game_cpp_CGame_displayMessage_FUN_004b46b0(this_ptr,acStack_11c,1.0);
-    core_set_cpp_CDemonSet_setGamma_FUN_0053b1c0(g_CDemonSetPtr,*(int *)&this_ptr->field_0x248);
+    core_set_cpp_CDemonSet_setGamma_FUN_0053b1c0(g_CDemonSetPtr,this_ptr->gamma);
   }
   iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78);
   if (iVar5 != 0) {
-    iVar5 = *(int *)&this_ptr->field_0x248 + 0x400;
-    *(int *)&this_ptr->field_0x248 = iVar5;
+    iVar5 = this_ptr->gamma + 0x400;
+    this_ptr->gamma = iVar5;
     if (0x10000 < iVar5) {
-      *(uint *)&this_ptr->field_0x248 = 0x10000;
+      this_ptr->gamma = 0x10000;
     }
     _sprintf(acStack_21c,"Gamma : %f");
     core_game_cpp_CGame_displayMessage_FUN_004b46b0(this_ptr,acStack_21c,1.0);
-    core_set_cpp_CDemonSet_setGamma_FUN_0053b1c0(g_CDemonSetPtr,*(int *)&this_ptr->field_0x248);
+    core_set_cpp_CDemonSet_setGamma_FUN_0053b1c0(g_CDemonSetPtr,this_ptr->gamma);
   }
-  if (((*(int *)&this_ptr->field_0x234 != 0) &&
+  if (((this_ptr->developer_mode_enabled != 0) &&
       (iVar5 = (**(code **)*0x01D70A78)(0x01D70A78), iVar5 != 0)) &&
      (iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78), iVar5 != 0)) {
     g_CDemonSetPtr->camera_enabled_flag = (uint)(g_CDemonSetPtr->camera_enabled_flag == 0);
   }
-  if (((*(int *)&this_ptr->field_0x234 != 0) &&
+  if (((this_ptr->developer_mode_enabled != 0) &&
       (iVar5 = (**(code **)*0x01D70A78)(0x01D70A78), iVar5 != 0)) &&
      (iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78), iVar5 != 0)) {
     fStack_1c = 0.02;
