@@ -362,9 +362,17 @@ void nocturne_trigl_envmap_pass_end(void);
 // at those sites on NOCTURNE_AUTHENTIC_MENU_FONT.
 #include "core/menu_font.h"
 
+// The front end's 640x480 layout drawn at the game's resolution
+// (nocturne_layout*, nocturne_front_end_*), reached from the front-end screens.
+#include "core/front_end_layout.h"
+
 // The moon backdrop, start-y and cancel test every front-end list shares
 // (nocturne_menu_*), reached from the main menu, Options and Graphics Options.
 #include "core/menu_screen.h"
+
+// CMoon::render at the front end's layout (nocturne_moon_render), reached from
+// the top of its keep. Gated there on NOCTURNE_AUTHENTIC_MENU.
+#include "core/moon_render.h"
 
 // The front end as pages, and how a menu list is drawn (nocturne_main_menu,
 // nocturne_options_menu, nocturne_graphics_options_menu,

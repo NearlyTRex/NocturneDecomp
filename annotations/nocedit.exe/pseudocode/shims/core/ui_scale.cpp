@@ -691,14 +691,20 @@ int nocturne_ui_draw_text_f(struct CBitFont *bit_font, char *text, int x, int y,
     return (int)std::lround(pen - (float)x);
 }
 
+// An OS font draws at its own size (nocturne_ui_draw_text_f), so it measures
+// at it too.
+static bool ui_win_font(struct CBitFont *font) {
+    return font != 0 && ((CBitFont *)font)->win_font_enabled != 0;
+}
+
 int nocturne_ui_text_width_f(struct CBitFont *font, char *text, float scale) {
-    scale = ui_usable(scale);
+    scale = ui_win_font(font) ? 1.0f : ui_usable(scale);
     const int width = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)font, text);
     return (int)std::lround((float)width * scale);
 }
 
 int nocturne_ui_char_height_f(struct CBitFont *font, int character_code, float scale) {
-    scale = ui_usable(scale);
+    scale = ui_win_font(font) ? 1.0f : ui_usable(scale);
     const int height =
         engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)font, character_code);
     return (int)std::lround((float)height * scale);

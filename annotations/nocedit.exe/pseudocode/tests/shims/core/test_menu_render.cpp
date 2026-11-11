@@ -111,7 +111,7 @@ NOCTURNE_TEST(the_corners) {
 NOCTURNE_TEST(a_wide_front_end_centres_the_layout) {
     const std::string plain = "Nocturne 1999 Terminal Reality Inc.  Patent Pending.";
     stand.reset();
-    stand.menu_left = 106;
+    stand.layout = {1.0f, 106, 0};
     stand.first_half = 1;
     int selected = 0;
     render(&selected, 250, (char *)"Title");
@@ -123,6 +123,29 @@ NOCTURNE_TEST(a_wide_front_end_centres_the_layout) {
     CHECK(stand.of(plain)[0].x == 0x27f + 212 - (int)plain.size() * 8);
     CHECK_EQ(stand.of(g_MenuTrademarkGlyph)[0].x, 0x206 + 106);
     CHECK_EQ(stand.of("v1.2.3")[0].x, 4);
+}
+
+// At the game's resolution the layout is drawn larger: every line where the
+// layout puts it and at its scale, the corners scaled with it.
+NOCTURNE_TEST(a_larger_front_end_scales_the_layout) {
+    const std::string plain = "Nocturne 1999 Terminal Reality Inc.  Patent Pending.";
+    stand.reset();
+    stand.layout = {2.25f, 240, 0};
+    stand.first_half = 1;
+    int selected = 0;
+    render(&selected, 250, (char *)"Title");
+    const menu_render_support::Drawn title = stand.of("Title")[0];
+    CHECK_EQ(title.x, 240 + 360);
+    CHECK_EQ(title.y, 563);
+    CHECK_EQ(title.scale, 2.25f);
+    int shimmers = 0;
+    for (const menu_render_support::Drawn &d : stand.drawn)
+        shimmers += d.x == 240 + 356 ? 1 : 0;
+    CHECK_EQ(shimmers, 5);
+    CHECK_EQ(stand.of(plain)[0].x, 1918 - 936);
+    CHECK_EQ(stand.of(plain)[0].y, 1055);
+    CHECK_EQ(stand.of("v1.2.3")[0].x, 9);
+    CHECK_EQ(stand.of("v1.2.3")[0].scale, 2.25f);
 }
 
 // Up and down move the cursor, wrapping, and say input happened.

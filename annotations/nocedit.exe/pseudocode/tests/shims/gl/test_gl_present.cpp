@@ -310,6 +310,25 @@ NOCTURNE_TEST(a_frame_is_letterboxed_onto_the_window_and_swapped) {
     CHECK_EQ(v.y, 240u);
 }
 
+// A picture keeps its own shape on a wide game: a 4:3 movie in a 16:9 mode is
+// pillarboxed where a frame would be stretched to the mode.
+NOCTURNE_TEST(a_picture_keeps_its_own_shape) {
+    gl_recorder::State &s = up();
+    stand.drawable_width = 1920;
+    stand.drawable_height = 1080;
+    nocturne_gl_set_logical_size(1920, 1080);
+    present(320, 240);
+    Viewport v = quad_viewport(s);
+    CHECK_EQ(v.w, 1920u);
+    std::vector<unsigned char> pixels = frame(320, 240, 24);
+    nocturne_gl_present_picture(pixels.data(), 320, 240, 320 * 3, 24);
+    v = quad_viewport(s);
+    CHECK_EQ(v.w, 1440u);
+    CHECK_EQ(v.h, 1080u);
+    CHECK_EQ(v.x, 240u);
+    CHECK_EQ(stand.swaps, 2);
+}
+
 // The time inside each swap is added up, and a shutdown does not take it back.
 NOCTURNE_TEST(the_time_in_the_swap_is_added_up) {
     up();

@@ -875,3 +875,26 @@ char *__cdecl wincore_winrun_cpp_getKeyName_FUN_005f3980(EInputCodeType keycode)
     snprintf(name, sizeof(name), "Key %d", keycode);
     return name;
 }
+
+// The front end's layout as the screen's own, and its fangs, which the pages
+// never show.
+NocturneLayout nocturne_layout(void) {
+    const NocturneLayout layout = {1.0f, 0, 0};
+    return layout;
+}
+void nocturne_front_end_mode(int *width, int *height) {
+    *width = g_WindowWidth;
+    *height = g_WindowHeight;
+}
+int nocturne_front_end_set_mode(void) {
+    return 1;
+}
+void nocturne_layout_display(struct CAlphaBitmap *, int, int, int) {}
+void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_00402a80(void) {}
+CAlphaBitmap *__cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap *bitmap) {
+    return bitmap;
+}
+CAlphaBitmap *__cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap *bitmap,
+                                                                         uint) {
+    return bitmap;
+}

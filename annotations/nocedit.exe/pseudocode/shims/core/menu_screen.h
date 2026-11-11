@@ -23,6 +23,8 @@
 #define NOCTURNE_MENU_ROWS_UNTITLED(lines) ((lines) * 2 + 1)
 #define NOCTURNE_MENU_ROWS_TITLED(lines) ((lines) + 4)
 
+struct CGame;
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -47,29 +49,27 @@ int nocturne_menu_start_y(int rows);
 // logo, lifted as that is only when the list would otherwise run off.
 int nocturne_menu_titled_y(int lines);
 
-// The width the front end runs at, 480 lines tall: the picked resolution's
-// aspect, so a wide screen gets a wide menu — 848 at 16:9. 640 for 4:3 and
-// narrower, without acceleration (the moon's widening needs the renderer), and
-// always under NOCTURNE_AUTHENTIC_MENU=1. A multiple of 16, as every shipped
-// mode is and clearScreen needs, and no wider than 1280.
-int nocturne_menu_width(void);
-
-// The left edge of the front end's 640-wide layout — logo, lists, the screens
-// it draws at fixed positions — centred on the screen.
+// The left edge of the front end's layout (core/front_end_layout.h) on the
+// screen: 0 under NOCTURNE_AUTHENTIC_MENU=1.
 int nocturne_menu_left(void);
 
-// The moon's 3D on a wider front end. CMoon::render projects it into a 640x480
-// viewport, and an overlay pass (renderer/trigl_device.h) stretches that across
-// the screen's width; the projection is widened to match, so the sky and its
-// bats fill the screen at their own proportions rather than stretched.
-// CDemonRenderer's rotation matrix already corrects the vertical for the
-// window's width over the viewport's (buildRotationMatrix), so widening the
-// field of view by the same ratio is all it takes. Returns the field of view to
-// project at: `field_of_view` itself on a 640-wide screen, or when the
-// software rasteriser is drawing (it draws at the screen's width already),
-// where nothing is done.
+// The moon's 3D on a front end larger than 640x480. CMoon::render projects it
+// into a 640x480 viewport, and an overlay pass (renderer/trigl_device.h)
+// stretches that over the whole screen; the projection is widened by how much
+// wider than 4:3 the screen is, so the sky and its bats fill it at their own
+// proportions rather than stretched. CDemonRenderer's rotation matrix already
+// corrects the vertical for the window's width over the viewport's
+// (buildRotationMatrix), so widening the field of view by the same ratio is all
+// it takes. Returns the field of view to project at: `field_of_view` itself at
+// 640x480, or when the software rasteriser is drawing (it draws at the
+// screen's own size already), where nothing is done.
 float nocturne_menu_scene_begin(float field_of_view);
 void nocturne_menu_scene_end(void);
+
+// CGame::setScreenResolutionAndDisplayFangs under NOCTURNE_AUTHENTIC_MENU=0,
+// whose keep calls it at its top: the front end's mode (nocturne_front_end_mode)
+// where the screen is in another, and the fangs drawn over the layout.
+void nocturne_front_end_fangs(struct CGame *game);
 
 // 1 when the player has asked to leave: Escape, or the window closing — which
 // the Options screen treats as a quit, so a menu must not sit spinning through

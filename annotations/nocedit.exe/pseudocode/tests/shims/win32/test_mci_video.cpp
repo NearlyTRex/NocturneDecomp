@@ -225,6 +225,7 @@ NOCTURNE_TEST(a_movie_plays_its_length_and_says_once_that_it_ended) {
     CHECK(stand.presents >= 5);
     CHECK_EQ(stand.present_width, 32);
     CHECK_EQ(stand.present_bpp, 24);
+    CHECK_EQ(stand.present_own_shape, 1); // at the movie's shape, not the mode's
     // Ended is ended: nothing further to notify.
     CHECK_EQ(mci_video_pump_frame(), 0);
     CHECK_EQ(mci_video_is_playing(), 0);

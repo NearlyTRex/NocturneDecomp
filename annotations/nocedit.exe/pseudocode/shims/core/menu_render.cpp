@@ -7,6 +7,8 @@
 
 #include "core/menu_render.h"
 
+#include "core/front_end_layout.h"
+#include "core/ui_scale.h"
 #include "nocturne.h"
 
 #include <cstring>
@@ -44,43 +46,48 @@ int line_height(CBitFont *font) {
     return engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(font, 'X');
 }
 
-void draw_shimmer(CBitFont *font, char *line, int y) {
+// `text` with its top left at layout (x, y), as large as the layout is drawn.
+void draw_text(const NocturneLayout &layout, CBitFont *font, char *text, int x, int y, int colour,
+               int shadow) {
+    nocturne_ui_draw_text_f(font, text, nocturne_layout_x(layout, x), nocturne_layout_y(layout, y),
+                            colour, shadow, layout.scale);
+}
+
+void draw_shimmer(const NocturneLayout &layout, CBitFont *font, char *line, int y) {
     for (int i = 0; i < kShimmerCopies; i++) {
         const unsigned dx = nocturne_rng_fx();
         const unsigned dy = nocturne_rng_fx();
         const unsigned alpha = nocturne_rng_fx();
         engine_3d_c_setRenderAlpha_FUN_00406d80((int)(((long long)alpha * kLineAlpha) >> 16));
-        engine_font_cpp_CBitFont_drawText_FUN_004cda80(
-            font, line, (int)(dx & 3) + kShimmerLeft + nocturne_menu_left(), (int)(dy & 3) - 2 + y,
-            kChosenColour, -1);
+        draw_text(layout, font, line, (int)(dx & 3) + kShimmerLeft, (int)(dy & 3) - 2 + y,
+                  kChosenColour, -1);
     }
 }
 
-void draw_corners() {
+// The copyright and the version keep to the screen's bottom corners and the
+// trademark to the logo; the editor build's lines to the screen's top left.
+void draw_corners(const NocturneLayout &layout) {
     engine_3d_c_setRenderAlpha_FUN_00406d80(kOpaque);
     char *copyright = (char *)(g_UseOSFonts == 0 ? kCopyright : kCopyrightOs);
-    const int width =
-        engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_SmallEditorFont, copyright);
+    const int width = nocturne_ui_text_width_f(g_SmallEditorFont, copyright, layout.scale);
     const int height =
         engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_SmallEditorFont, copyright);
-    // The copyright keeps to the screen's corner; the trademark to the logo's.
-    const int right = kCornerRight + nocturne_menu_left() * 2;
-    engine_font_cpp_CBitFont_drawText_FUN_004cda80(g_SmallEditorFont, copyright, right - width,
-                                                   kCornerBottom - height, kLineColour, 0);
+    const int bottom = nocturne_layout_y(layout, kCornerBottom - height);
+    const int right = nocturne_layout_x(layout, kCornerRight) + layout.left;
+    nocturne_ui_draw_text_f(g_SmallEditorFont, copyright, right - width, bottom, kLineColour, 0,
+                            layout.scale);
     engine_3d_c_setRenderAlpha_FUN_00406d80(kTrademarkAlpha);
-    engine_font_cpp_CBitFont_drawText_FUN_004cda80(g_SmallEditorFont, g_MenuTrademarkGlyph,
-                                                   kTrademarkX + nocturne_menu_left(), kTrademarkY,
-                                                   kLineColour, 0);
-    engine_font_cpp_CBitFont_drawText_FUN_004cda80(g_SmallEditorFont,
-                                                   (char *)nocturne_version_short(), kVersionX,
-                                                   kCornerBottom - height, kLineColour, 0);
+    draw_text(layout, g_SmallEditorFont, g_MenuTrademarkGlyph, kTrademarkX, kTrademarkY,
+              kLineColour, 0);
+    nocturne_ui_draw_text_f(g_SmallEditorFont, (char *)nocturne_version_short(),
+                            nocturne_layout_length(layout, kVersionX), bottom, kLineColour, 0,
+                            layout.scale);
     engine_3d_c_setRenderAlpha_FUN_00406d80(kOpaque);
 #if NOCTURNE_EDITOR_BUILD
-    engine_font_cpp_CBitFont_drawText_FUN_004cda80(
-        g_SmallEditorFont, (char *)"NON-RELEASE EDITOR BUILD", 0, 0, kLineColour, 0);
-    engine_font_cpp_CBitFont_drawText_FUN_004cda80(g_SmallEditorFont,
-                                                   (char *)"Press CTRL+D to access the editor menu",
-                                                   0, 0x14, kLineColour, 0);
+    nocturne_ui_draw_text_f(g_SmallEditorFont, (char *)"NON-RELEASE EDITOR BUILD", 0, 0,
+                            kLineColour, 0, layout.scale);
+    nocturne_ui_draw_text_f(g_SmallEditorFont, (char *)"Press CTRL+D to access the editor menu", 0,
+                            nocturne_layout_length(layout, 0x14), kLineColour, 0, layout.scale);
 #endif
 }
 
@@ -92,11 +99,11 @@ bool taken(EInputCodeType key) {
 
 extern "C" int nocturne_menu_render(char **lines, int count, int *selected, int y, char *title) {
     CBitFont *font = g_ThemeFont;
-    // The list sits where it does on the 640-wide layout, centred on a wider
-    // screen.
-    const int x = kMenuX + nocturne_menu_left();
+    // The list sits where it does on the layout, `y` and the line heights in
+    // its rows.
+    const NocturneLayout layout = nocturne_layout();
     if (title != nullptr) {
-        engine_font_cpp_CBitFont_drawText_FUN_004cda80(font, title, x, y, kTitleColour, 0);
+        draw_text(layout, font, title, kMenuX, y, kTitleColour, 0);
         y += line_height(font) * 2;
     }
     for (int i = 0; i < count; i++) {
@@ -106,15 +113,15 @@ extern "C" int nocturne_menu_render(char **lines, int count, int *selected, int 
             colour = kChosenFlatColour;
             if (core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_0052a3f0(&g_CMoonInstance) != 0) {
                 colour = kChosenColour;
-                draw_shimmer(font, lines[i], y);
+                draw_shimmer(layout, font, lines[i], y);
             }
         }
         engine_3d_c_setRenderAlpha_FUN_00406d80(kLineAlpha);
-        engine_font_cpp_CBitFont_drawText_FUN_004cda80(font, lines[i], x, y, colour, -1);
+        draw_text(layout, font, lines[i], kMenuX, y, colour, -1);
         // A titled list is single-spaced.
         y += title != nullptr ? height : height * 2;
     }
-    draw_corners();
+    draw_corners(layout);
 
     // The line the cursor was on decides whether left and right answer it.
     const bool has_value = strchr(lines[*selected], ':') != nullptr;

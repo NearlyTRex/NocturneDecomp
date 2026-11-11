@@ -123,8 +123,11 @@ void __cdecl engine_special_cpp_renderAlphaRow16_FUN_005b55f7(ushort *destPixels
     stand.rows16.push_back({destPixels, pixelCount, globalAlpha, srcIndices[0]});
 }
 
-void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(CAlphaBitmap *, int, int, int) {
+void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(CAlphaBitmap *, int x, int y,
+                                                                   int) {
     stand.displayed.push_back("display");
+    stand.displayed_at.push_back(x);
+    stand.displayed_at.push_back(y);
 }
 
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap *, int, int, int,
@@ -186,9 +189,70 @@ void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(CDemonRe
     stand.viewports.push_back(-1);
 }
 
-extern "C" int nocturne_trigl_device_begin_overlay(float scale_x, float, float, float) {
+extern "C" int nocturne_trigl_device_begin_overlay(float scale_x, float scale_y, float, float) {
     stand.overlays.push_back(scale_x);
+    stand.overlays_y.push_back(scale_y);
     return stand.overlay_opens;
+}
+
+// --- the front end's mode and its fangs ------------------------------------------
+
+SAlphaEntry g_AlphaTable[256] = {};
+int g_BlendMode = 0;
+uint g_Hardware32BitPalette[256] = {};
+CDemonMission *g_CDemonMissionPtr = nullptr;
+
+extern "C" int nocturne_upscaler_get(void) {
+    return stand.upscaler;
+}
+
+int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(int width, int height,
+                                                                 int bits_per_pixel) {
+    stand.modes.push_back(std::to_string(width) + "x" + std::to_string(height) + "x" +
+                          std::to_string(bits_per_pixel));
+    if (stand.refused.count(width) != 0)
+        return 0;
+    ui_support::screen(width, height, bits_per_pixel);
+    return 1;
+}
+
+void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_00402a80(void) {
+    stand.resets++;
+}
+
+void __cdecl engine_special_cpp_clearScreen_FUN_005b3e70(void) {
+    stand.clears++;
+}
+
+void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void) {
+    stand.swaps++;
+}
+
+CAlphaBitmap *__cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap *bitmap) {
+    *bitmap = CAlphaBitmap();
+    return bitmap;
+}
+
+void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(CAlphaBitmap *bitmap,
+                                                                char *filename, int width,
+                                                                int height) {
+    // Opaque, every pixel index 1; one picture loaded at a time.
+    static std::vector<char> s_raw;
+    static std::vector<char> s_opa;
+    stand.loaded.push_back(std::string(filename) + " " + std::to_string(width) + "x" +
+                           std::to_string(height));
+    s_raw.assign((size_t)width * (size_t)height, 1);
+    s_opa.assign((size_t)width * (size_t)height, (char)0xff);
+    bitmap->raw = s_raw.data();
+    bitmap->opa = s_opa.data();
+    bitmap->width = width;
+    bitmap->height = height;
+}
+
+CAlphaBitmap *__cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap *bitmap,
+                                                                         uint) {
+    stand.freed++;
+    return bitmap;
 }
 
 extern "C" void nocturne_trigl_device_end_overlay(void) {
