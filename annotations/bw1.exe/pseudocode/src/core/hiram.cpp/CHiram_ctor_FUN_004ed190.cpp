@@ -19,7 +19,7 @@ CHiram * __cdecl core_hiram_cpp_CHiram_ctor_FUN_004ed190(CHiram *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
             (&(pCVar2->base).base.model,"hiram.dfm");
   pcVar3 = "killHiram";
-  pcVar4 = &pCVar2->field_0x1fab8;
+  pcVar4 = pCVar2->kill_event;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;

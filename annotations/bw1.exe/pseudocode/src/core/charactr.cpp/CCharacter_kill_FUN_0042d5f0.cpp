@@ -10,29 +10,25 @@ void __cdecl core_charactr_cpp_CCharacter_kill_FUN_0042d5f0(CCharacter *this_ptr
 
 {
   EDeathState EVar1;
-  SDamageInfo aSStack_44 [4];
-  uint uStack_40;
-  CVector3f CStack_38;
-  float fStack_2c;
-  int iStack_14;
+  SDamageInfo SStack_44;
   
   EVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
   if (0 < (int)EVar1) {
     return;
   }
   sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handle);
-  core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(aSStack_44);
-  uStack_40 = 0x461c3c00;
-  iStack_14 = damage_type;
-  if ((damage_direction != (CVector3f *)0x0) && (&CStack_38 != damage_direction)) {
-    CStack_38.x = damage_direction->x;
-    CStack_38.y = damage_direction->y;
-    CStack_38.z = damage_direction->z;
+  core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&SStack_44);
+  SStack_44.damage_amount = 9999.0;
+  SStack_44.damage_type = damage_type;
+  if ((damage_direction != (CVector3f *)0x0) && (&SStack_44.impact_point != damage_direction)) {
+    SStack_44.impact_point.x = damage_direction->x;
+    SStack_44.impact_point.y = damage_direction->y;
+    SStack_44.impact_point.z = damage_direction->z;
   }
   if (0.0 <= impact_force) {
-    fStack_2c = impact_force;
+    SStack_44.impact_force = impact_force;
   }
-  (*(((this_ptr->base).vtable._uc)->_uc).processDamage)(this_ptr,aSStack_44);
+  (*(((this_ptr->base).vtable._uc)->_uc).processDamage)(this_ptr,&SStack_44);
   core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_004328c0(this_ptr);
   return;
 }

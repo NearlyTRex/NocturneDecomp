@@ -19,30 +19,30 @@ int engine_font_cpp_FUN_004c1dd0(CBitFont *param_1,byte *param_2,int param_3,int
   uint character_code;
   float10 fVar5;
   
-  if ((*(int *)(param_1 + 0x420c) != 0) && (_DAT_01c50948 != 0)) {
-    if (*(int *)(param_1 + 0x4210) == 0) {
+  if ((param_1->use_3d_rendering != 0) && (_DAT_01c50948 != 0)) {
+    if (param_1->win_font_enabled == 0) {
       iVar1 = unkafter_font_cpp_FUN_004c47f0(param_1,param_2,param_3,param_4,param_5);
     }
     else {
       iVar1 = unkafter_palette_cpp_FUN_00531ee0
-                        (*(uint *)(param_1 + 0x4214),param_2,param_3,param_4,param_5,param_6);
+                        (param_1->win_font_helper,param_2,param_3,param_4,param_5,param_6);
     }
     return iVar1;
   }
   pbVar3 = param_2;
-  if (*(int *)(param_1 + 0x4210) == 0) {
+  if (param_1->win_font_enabled == 0) {
     iVar1 = param_3;
-    if (*(int *)(param_1 + 0x420c) != 0) {
+    if (param_1->use_3d_rendering != 0) {
       fVar5 = (float10)_DAT_01d224c0 * (float10)_DAT_005e0a56;
       round();
-      *(uint *)(param_1 + 0x1de0) = extraout_ECX | (int)ROUND(fVar5) << 0x18;
+      param_1->accel_color = extraout_ECX | (int)ROUND(fVar5) << 0x18;
     }
     while (character_code = (uint)*param_2, character_code != 0) {
       if (character_code == 0xd) {
         param_2 = param_2 + 1;
       }
       else if (character_code == 10) {
-        param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);
+        param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;
         param_2 = param_2 + 1;
         iVar1 = param_3;
       }
@@ -69,14 +69,14 @@ LAB_004c1e74:
         *pbVar4 = 0;
       }
       unkafter_palette_cpp_FUN_00531ee0
-                (*(uint *)(param_1 + 0x4214),pbVar3,param_3,param_4,param_5,param_6);
-      unkafter_palette_cpp_FUN_005320b0(*(uint *)(param_1 + 0x4214));
+                (param_1->win_font_helper,pbVar3,param_3,param_4,param_5,param_6);
+      unkafter_palette_cpp_FUN_005320b0(param_1->win_font_helper);
       if (pbVar4 == (byte *)0x0) {
         return 0;
       }
       *pbVar4 = 10;
       param_2 = pbVar4 + 1;
-      param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);
+      param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;
       pbVar3 = param_2;
     }
   } while( true );

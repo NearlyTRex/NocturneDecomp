@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 79,
+    "complexity_score": 34,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 19,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 45
@@ -127,38 +126,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x2fec",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar3->base).base.field_0x2fec = 0x3f19999a;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x2ff0",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar3->base).base.field_0x2ff0 = 0x40000000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x2ff4",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar3->base).base.field_0x2ff4 = uVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x2ff8",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar3->base).base.field_0x2ff8 = uVar2;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

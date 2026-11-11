@@ -11,7 +11,7 @@ void core_dracbrid_cpp_factoryFuncDraculaBride_FUN_0047b080(void)
 {
   CDraculaBride *this_ptr;
   
-  this_ptr = (CDraculaBride *)debugAllocTracked1(0xc410);
+  this_ptr = (CDraculaBride *)operator_new(0xc410);
   if (this_ptr == (CDraculaBride *)0x0) {
     return;
   }

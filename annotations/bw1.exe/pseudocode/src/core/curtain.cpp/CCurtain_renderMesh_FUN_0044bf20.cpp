@@ -89,7 +89,7 @@ LAB_0044c074:
       for (iVar2 = 0; iVar2 < (this_ptr->mesh).grid_cols * (this_ptr->mesh).grid_rows * 2;
           iVar2 = iVar2 + 1) {
         engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_00483120(DAT_00612560,pSVar6);
-        pSVar6 = pSVar6 + 0x48;
+        pSVar6 = (SMRGLPrimitivePoly *)(pSVar6->vertices + 4);
       }
     }
     else {
@@ -109,7 +109,7 @@ LAB_0044c074:
       for (iVar2 = 0; iVar2 < (this_ptr->mesh).grid_cols * (this_ptr->mesh).grid_rows * 2;
           iVar2 = iVar2 + 1) {
         engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_00483120(DAT_00612560,pSVar6);
-        pSVar6 = pSVar6 + 0x48;
+        pSVar6 = (SMRGLPrimitivePoly *)(pSVar6->vertices + 4);
       }
     }
     else {

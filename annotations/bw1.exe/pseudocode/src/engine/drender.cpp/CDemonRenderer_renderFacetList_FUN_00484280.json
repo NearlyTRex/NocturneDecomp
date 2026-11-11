@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 230,
+    "complexity_score": 212,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 125,
-    "suspect_count": 9,
+    "pseudocode_lines": 117,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 370
+    "total_lines": 362
   },
   "cross_references": [
     {
@@ -319,7 +319,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 64,
       "match": "DAT_00612568",
       "severity": "mild",
       "text": "*(SMRGLPrimitiveQuad **)(&DAT_00612568 + local_18) = primitive_array;",
@@ -327,7 +327,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 81,
       "match": "DAT_00612568",
       "severity": "mild",
       "text": "(this_ptr->vertex_buffer_ptr,&DAT_00612568,iVar3,_DAT_01c51d14);",
@@ -335,7 +335,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 57,
+      "line": 49,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +",
@@ -343,26 +343,18 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 83,
+      "line": 100,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +",
       "type": "pointer_cast"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 108,
-      "match": "(int)&NAME used in byte-offset arithmetic",
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 75,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
-      "text": "((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 123,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +",
+      "text": "((int)&(((SMRGLPrimitiveTriangle *)(primitive_array->vertices + -2))->base).base.",
       "type": "pointer_cast"
     }
   ]

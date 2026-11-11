@@ -307,15 +307,15 @@ undefined4 FUN_00573760(uint param_1,undefined4 param_2,undefined4 param_3,undef
 
 // Original: sound_sndmain.cpp_FUN_005737d0
 // Address: 005737d0
-undefined4 FUN_005737d0(uint param_1,undefined4 param_2);
+undefined4 FUN_005737d0(uint param_1,void *param_2);
 
 // Original: sound_sndmain.cpp_FUN_005738d0
 // Address: 005738d0
-undefined4 FUN_005738d0(uint param_1,undefined4 param_2);
+undefined4 FUN_005738d0(uint param_1,void *param_2);
 
 // Original: sound_sndmain.cpp_FUN_00573950
 // Address: 00573950
-undefined4 FUN_00573950(uint param_1,undefined4 param_2);
+undefined4 FUN_00573950(uint param_1,float param_2);
 
 // Original: sound_sndmain.cpp_FUN_00573980
 // Address: 00573980
@@ -323,7 +323,7 @@ int __cdecl FUN_00573980(uint sfx_handle,float base_frequency);
 
 // Original: sound_sndmain.cpp_setSfxUserData_FUN_005739e0
 // Address: 005739e0
-undefined4 setSfxUserData(uint param_1,int param_2,undefined4 param_3);
+undefined4 setSfxUserData(uint param_1,int param_2,void *param_3);
 
 // Original: sound_sndmain.cpp_killSfx_FUN_00573a80
 // Address: 00573a80

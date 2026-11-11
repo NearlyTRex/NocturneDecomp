@@ -12,7 +12,7 @@ void core_doc_cpp_FUN_004724a0(CDemonActor *param_1,int param_2,float param_3)
 
 {
   float fVar1;
-  int *piVar2;
+  float *pfVar2;
   uint uVar3;
   int iVar4;
   float fVar5;
@@ -73,7 +73,7 @@ void core_doc_cpp_FUN_004724a0(CDemonActor *param_1,int param_2,float param_3)
   float local_3c;
   float local_38;
   int iStack_34;
-  int *local_30;
+  float *local_30;
   float fStack_2c;
   CDemonActor *pCStack_28;
   float fStack_24;
@@ -83,21 +83,21 @@ void core_doc_cpp_FUN_004724a0(CDemonActor *param_1,int param_2,float param_3)
   float fStack_14;
   
   bVar7 = 0;
-  local_30 = &param_1[0x17c].previous_transform_state.dirty_flags;
+  local_30 = &param_1[0x17c].previous_transform_state.orientation.vec.z;
   if (param_2 == 1) {
-    local_30 = &param_1[0x17c].dead1;
+    local_30 = (float *)param_1[0x17c].footstep_sound_code;
   }
   if (*(int *)(param_1[0x17d].actor_name + 0xc) == 0) {
-    local_30[3] = 0;
-    local_30[1] = 0;
+    local_30[3] = 0.0;
+    local_30[1] = 0.0;
     iVar6 = *(int *)(param_1[0x1c].actor_name + param_2 * 0x78 + 0x10);
     uVar3 = 0;
     if (iVar6 != 0) {
       uVar3 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x74))(iVar6);
     }
     if ((uVar3 & 4) == 0) {
-      local_30[2] = 0;
-      *local_30 = 0;
+      local_30[2] = 0.0;
+      *local_30 = 0.0;
       return;
     }
     iVar6 = 3;
@@ -106,8 +106,8 @@ void core_doc_cpp_FUN_004724a0(CDemonActor *param_1,int param_2,float param_3)
     iVar6 = *(int *)(*(int *)(param_1[0x17d].actor_name + 0xc) + 0x2e0);
   }
   if (param_2 == 0) {
-    local_30[2] = 0;
-    *local_30 = 0;
+    local_30[2] = 0.0;
+    *local_30 = 0.0;
     return;
   }
   local_64 = _DAT_01b68824;
@@ -120,32 +120,32 @@ void core_doc_cpp_FUN_004724a0(CDemonActor *param_1,int param_2,float param_3)
   }
   local_38 = -0.5235988;
   fVar5 = *(float *)(param_1[0x90].create_event + 0xc) * _DAT_005da2c4 * (float)_DAT_005da2cc *
-          param_3 + (float)*local_30;
-  local_30[1] = 0;
-  *local_30 = (int)fVar5;
+          param_3 + *local_30;
+  local_30[1] = 0.0;
+  *local_30 = fVar5;
   if (fVar5 < 0xBF860A92) {
-    *local_30 = (int)0xBF860A92;
+    *local_30 = 0xBF860A92;
   }
-  if (0x3F9C61AA < (float)*local_30) {
-    *local_30 = (int)0x3F9C61AA;
+  if (0x3F9C61AA < *local_30) {
+    *local_30 = 0x3F9C61AA;
   }
-  if ((float)local_30[3] < -0.5235988) {
-    local_30[3] = -0x40f9f56e;
+  if (local_30[3] < -0.5235988) {
+    local_30[3] = -0.5235988;
   }
-  if (local_3c < (float)local_30[3]) {
-    local_30[3] = (int)local_3c;
+  if (local_3c < local_30[3]) {
+    local_30[3] = local_3c;
   }
-  if ((float)local_30[1] < -0.5235988) {
-    local_30[1] = -0x40f9f56e;
+  if (local_30[1] < -0.5235988) {
+    local_30[1] = -0.5235988;
   }
-  if (local_3c < (float)local_30[1]) {
-    local_30[1] = (int)local_3c;
+  if (local_3c < local_30[1]) {
+    local_30[1] = local_3c;
   }
-  local_30[7] = 0;
-  fStack_40 = (float)local_30[1];
-  fStack_44 = (float)*local_30;
+  local_30[7] = 0.0;
+  fStack_40 = local_30[1];
+  fStack_44 = *local_30;
   if ((iVar6 == 3) || (fVar5 = param_1[0x179].orient_matrix.m[1].y, fVar5 != 0.0)) {
-    local_30[3] = (int)fStack_40;
+    local_30[3] = fStack_40;
   }
   else {
     iVar4 = *(int *)(param_1[0x17d].actor_name + 0xc);
@@ -189,14 +189,14 @@ void core_doc_cpp_FUN_004724a0(CDemonActor *param_1,int param_2,float param_3)
       }
     }
     core_actor_cpp_FUN_00408b40(param_1,afStack_f8 + 0xb);
-    piVar2 = local_30;
+    pfVar2 = local_30;
     CStack_108.x = afStack_164[2];
     *(float *)((int)&CStack_108 + (uint)bVar7 * -8 + 4) = afStack_164[(uint)bVar7 * -2 + 3];
     *(float *)((int)&CStack_108 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
          afStack_164[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
-    CStack_18c.x = (float)*piVar2;
+    CStack_18c.x = *pfVar2;
     CStack_18c.z = 0.0;
-    CStack_18c.y = (float)local_30[1];
+    CStack_18c.y = local_30[1];
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(&CStack_1b4,&CStack_18c);
     afStack_bc[2] = 0.0;
     afStack_bc[3] = 0.0;
@@ -303,7 +303,7 @@ void core_doc_cpp_FUN_004724a0(CDemonActor *param_1,int param_2,float param_3)
                 if (iVar4 == 0) {
                   fStack_40 = fStack_8c;
                   fStack_44 = fStack_90;
-                  local_30[7] = 1;
+                  local_30[7] = 1.4013e-45;
                   param_1[0x17d].location.position.z = 2.0;
                   fStack_2c = fVar5;
                 }
@@ -330,9 +330,9 @@ void core_doc_cpp_FUN_004724a0(CDemonActor *param_1,int param_2,float param_3)
       fStack_50 = fVar5;
     }
   }
-  fStack_58 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_40 - (float)local_30[3]);
+  fStack_58 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_40 - local_30[3]);
   fStack_14 = fStack_58;
-  fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_44 - (float)local_30[2]);
+  fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_44 - local_30[2]);
   fStack_60 = -fStack_50;
   if (fStack_58 < fStack_60) {
     fStack_58 = fStack_60;
@@ -348,15 +348,14 @@ void core_doc_cpp_FUN_004724a0(CDemonActor *param_1,int param_2,float param_3)
   if (fStack_50 < fStack_54) {
     fStack_54 = fStack_50;
   }
-  fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60((float)local_30[3] + fStack_58);
-  local_30[3] = (int)fStack_14;
-  fVar5 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60((float)local_30[2] + fStack_54);
-  local_30[2] = (int)fVar5;
-  local_30[5] = 0x3f800000;
-  if ((((float)local_30[7] == 1.4013e-45) &&
-      (ABS((float)local_30[3] - fStack_40) < (float)_DAT_005da2ec)) &&
-     (ABS((float)local_30[2] - fStack_44) < (float)_DAT_005da2ec)) {
-    local_30[7] = 2;
+  fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(local_30[3] + fStack_58);
+  local_30[3] = fStack_14;
+  fVar5 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(local_30[2] + fStack_54);
+  local_30[2] = fVar5;
+  local_30[5] = 1.0;
+  if (((local_30[7] == 1.4013e-45) && (ABS(local_30[3] - fStack_40) < (float)_DAT_005da2ec)) &&
+     (ABS(local_30[2] - fStack_44) < (float)_DAT_005da2ec)) {
+    local_30[7] = 2.8026e-45;
     return;
   }
   return;

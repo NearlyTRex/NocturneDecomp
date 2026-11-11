@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 159,
+    "complexity_score": 129,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 69,
-    "suspect_count": 7,
+    "suspect_count": 4,
     "suspect_types": [
+      "pointer_truncation",
       "raw_address_pointer_store",
       "shadow_pointer_walk",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 213
@@ -229,44 +229,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x15f69c",
-      "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x20af5d0) = *(uint *)&this_ptr->field_0x15f69c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x15f6a0",
-      "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x20af5d4) = *(uint *)&this_ptr->field_0x15f6a0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x15f6a4",
-      "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x20af5d8) = *(uint *)&this_ptr->field_0x15f6a4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x15f6a8",
-      "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x20af5dc) = *(uint *)&this_ptr->field_0x15f6a8;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
       "line": 68,
       "match": "*(CDemonActor **)(iVar2 + 0x20af660",
       "severity": "moderate",
       "text": "*(CDemonActor **)(iVar2 + 0x20af660) = this_ptr->collision_actor;",
       "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Pointer value `pCVar3->ignore_list[0]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)pCVar3->ignore_list[0]",
+      "severity": "moderate",
+      "text": "piVar5[7] = (int)pCVar3->ignore_list[0];",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",

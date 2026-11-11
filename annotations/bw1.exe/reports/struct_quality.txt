@@ -4,32 +4,28 @@ STRUCT QUALITY REPORT
 
 SUMMARY
 ----------------------------------------------------------------------
-Total structs:              450
-Fully clean structs:        449
-Structs with issues:        1
-Unreferenced structs:       35
+Total structs:              472
+Fully clean structs:        462
+Structs with issues:        10
+Unreferenced structs:       27
 
-Total fields:               2252
-Clean fields:               2251
-Unknown (unk*) fields:      0
-Padding (pad*) fields:      0
-Reserved (reserved*) fields:1
+Total fields:               3858
+Clean fields:               3848
+Unknown (unk*) fields:      6
+Padding (pad*) fields:      2
+Reserved (reserved*) fields:2
 Default (field_*) fields:   0
-Overall field quality:      100.0%
+Overall field quality:      99.7%
 
 ======================================================================
-UNREFERENCED STRUCTS (35)
+UNREFERENCED STRUCTS (27)
 ----------------------------------------------------------------------
 These structs are not referenced in any source or header file.
 
-  CActorProperty                            /Nocturne/Class/Game
-  CLeakChecker                              /Nocturne/Class/Game
-  COrientation                              /Nocturne/Class/Game
   CP2D                                      /Nocturne/Class/Game
   CPickList_full_vtable                     /Nocturne/Class/Game
   SCPUInfo                                  /Nocturne/Struct/Game
   SCoronaLightEntry                         /Nocturne/Struct/Game
-  SDamageDecal                              /Nocturne/Struct/Game
   SDisplayListSortEntry                     /Nocturne/Struct/Game
   SEdge                                     /Nocturne/Struct/Game
   SFogGrid                                  /Nocturne/Struct/Game
@@ -42,7 +38,6 @@ These structs are not referenced in any source or header file.
   SMRGLPrimitiveTriangleIndex               /Nocturne/Struct/Game
   SMpegScalefactorBandData                  /Nocturne/Struct/Game
   SMpegStereoSubbandSamples                 /Nocturne/Struct/Game
-  SMpegSubbandSamples                       /Nocturne/Struct/Game
   SNetPacket_ChatMessage                    /Nocturne/Struct/Game
   SNetPacket_GameSettings                   /Nocturne/Struct/Game
   SNetPacket_PlayerAnnounce                 /Nocturne/Struct/Game
@@ -51,28 +46,60 @@ These structs are not referenced in any source or header file.
   SNetPacket_ServerAccept                   /Nocturne/Struct/Game
   SNetPacket_SimFrame                       /Nocturne/Struct/Game
   SNetPacket_Simple                         /Nocturne/Struct/Game
-  SPlayerActionState                        /Nocturne/Struct/Game
   SRecordingDeviceInfo                      /Nocturne/Struct/Game
-  SScriptXRef                               /Nocturne/Struct/Game
   SStereoBuffers                            /Nocturne/Struct/Game
   SStereoGains                              /Nocturne/Struct/Game
-  STriangleRef                              /Nocturne/Struct/Game
 
 ======================================================================
-STRUCTS WITH PROBLEMATIC FIELDS (1)
+STRUCTS WITH PROBLEMATIC FIELDS (10)
 ----------------------------------------------------------------------
+
+SMRGLSkyTexture                            66.7% complete  (2/3 fields clean)
+  Issues: 1 reserved
+  Fields: reserved
+
+SNetworkAddr                               66.7% complete  (2/3 fields clean)
+  Issues: 1 padding
+  Fields: padding
+
+CLightPis                                  87.5% complete  (7/8 fields clean)
+  Issues: 1 unknown
+  Fields: unknown_0x58c
+
+CShadowsc                                  88.9% complete  (8/9 fields clean)
+  Issues: 1 unknown
+  Fields: unknown_0xc290
 
 CExternalRenderer                          90.0% complete  (9/10 fields clean)
   Issues: 1 reserved
   Fields: reserved
 
+SMpegFrameHeader                           91.7% complete  (11/12 fields clean)
+  Issues: 1 padding
+  Fields: padding
+
+CConstruct                                 93.3% complete  (14/15 fields clean)
+  Issues: 1 unknown
+  Fields: unknown_0xc324
+
+STextView                                  94.7% complete  (18/19 fields clean)
+  Issues: 1 unknown
+  Fields: unknown_0x30
+
+CDemnfolk                                  95.8% complete  (23/24 fields clean)
+  Issues: 1 unknown
+  Fields: unknown_0xc364
+
+CAudioRecPuzzle                            96.3% complete  (26/27 fields clean)
+  Issues: 1 unknown
+  Fields: unknown_0x54
+
 ======================================================================
-FULLY CLEAN STRUCTS (449)
+FULLY CLEAN STRUCTS (462)
 ----------------------------------------------------------------------
   C3DSCamera
   C3DSLight
   CActorDestination
-  CActorProperty
   CAlphaBitmap
   CAmmo
   CAmmoBox
@@ -80,7 +107,6 @@ FULLY CLEAN STRUCTS (449)
   CArmour
   CAsciiArmor
   CAsciiUnarmor
-  CAudioRecPuzzle
   CBackgroundActor
   CBaron
   CBaronWeapon
@@ -125,7 +151,6 @@ FULLY CLEAN STRUCTS (449)
   CColor3f
   CColor3i
   CConsole
-  CConstruct
   CConstruct_full_vtable
   CConstruct_vtable
   CConveyor
@@ -138,7 +163,6 @@ FULLY CLEAN STRUCTS (449)
   CCurtain
   CDeformableModel
   CDeformableModelInstance
-  CDemnfolk
   CDemnfolk_full_vtable
   CDemnfolk_vtable
   CDemonActor
@@ -198,6 +222,7 @@ FULLY CLEAN STRUCTS (449)
   CFlashlight
   CFlies
   CFont
+  CFont_vtable
   CFootstep
   CFrankenstienMachine
   CGabriella
@@ -237,6 +262,7 @@ FULLY CLEAN STRUCTS (449)
   CKeyFramedModelInstance
   CKeyFramedModelPart
   CKeys
+  CKeys_vtable
   CLZWCompress
   CLZWDecompress
   CLZWDictionary
@@ -245,13 +271,11 @@ FULLY CLEAN STRUCTS (449)
   CLarva
   CLaserBeam
   CLeaf
-  CLeakChecker
   CLevelLoader
   CLever
   CLightActor
   CLightCone
   CLightGun
-  CLightPis
   CLightningBolt
   CLocation
   CMP3Decoder
@@ -283,7 +307,6 @@ FULLY CLEAN STRUCTS (449)
   CMuzzleFlash
   CNPC
   CNetGame
-  COptimize
   COrientation
   COutStreamDebug
   COutStreamFile
@@ -292,6 +315,7 @@ FULLY CLEAN STRUCTS (449)
   CPackedBitmap
   CPackedBitmapSet
   CParticle
+  CParticle_vtable
   CPassenger
   CPathMap
   CPendulum
@@ -319,7 +343,6 @@ FULLY CLEAN STRUCTS (449)
   CSfxSample
   CSfxSlot
   CShadow
-  CShadowsc
   CShell
   CShotgun
   CShovel
@@ -362,6 +385,8 @@ FULLY CLEAN STRUCTS (449)
   CTurret
   CVampireBoss
   CVector2d
+  CVector2i
+  CVector3d
   CVector3f
   CVector3i
   CVehicle
@@ -380,6 +405,7 @@ FULLY CLEAN STRUCTS (449)
   CZombie
   CZombieCow
   CZombieDog
+  SActorVarBlock
   SArmAimData
   SBitBuffer
   SBodyPartFire
@@ -399,6 +425,7 @@ FULLY CLEAN STRUCTS (449)
   SCollisionInfo
   SCollisionReturnInfo
   SCoronaLightEntry
+  SCounterBlock
   SCurtainMeshData
   SCurtainVertex
   SDamageDecal
@@ -408,16 +435,19 @@ FULLY CLEAN STRUCTS (449)
   SDjienBox
   SDynamicLight
   SEdge
+  SEventNameBlock
   SFace
   SFire
   SFly
   SFog
   SFogGrid
+  SFogGridPlane
   SFoundFileInfo
   SFreaky
   SGameSettingsPlayer
   SGem
   SGroundCell
+  SHardwareEdge
   SHuffmanTable
   SInputFace
   SInteractionInfo
@@ -432,6 +462,7 @@ FULLY CLEAN STRUCTS (449)
   SMRGLHeaderBasic
   SMRGLHeaderExtended
   SMRGLHeaderPrimitive
+  SMRGLKeyframe
   SMRGLKeyframeModel
   SMRGLModelBounds
   SMRGLPoint
@@ -440,18 +471,21 @@ FULLY CLEAN STRUCTS (449)
   SMRGLPrimitiveQuad
   SMRGLPrimitiveTriangle
   SMRGLPrimitiveTriangleIndex
-  SMRGLSkyTexture
   SMRGLTextureBasic
   SMRGLTextureModel
   SMRGLVertex
+  SMorphPart
   SMorphPoint
   SMotion
+  SMotionSignal
   SMotionTransition
   SMovieFrame
+  SMpegAllocationEntry
   SMpegFrame
-  SMpegFrameHeader
   SMpegLayer3GranuleInfo
+  SMpegLayer3ScalefactorGranule
   SMpegLayer3SideInfo
+  SMpegLayer3SideInfoChannel
   SMpegScalefactorBandData
   SMpegStereoSubbandSamples
   SMpegSubbandAllocation
@@ -469,9 +503,12 @@ FULLY CLEAN STRUCTS (449)
   SNetPacket_SimFrame
   SNetPacket_Simple
   SNetPlayer
-  SNetworkAddr
+  SNotesEntry
   SNotesMap
+  SNotesMapAnnotation
+  SNotesMapSet
   SNotesSection
+  SPageResource
   SPageResourceBitmap
   SPageResourceMap
   SPageResourceText
@@ -488,6 +525,7 @@ FULLY CLEAN STRUCTS (449)
   SPoseData
   SProjectedVertex
   SProjectionParams
+  SRGBColor
   SRGBColorPalette
   SRayQueryState
   SRaytraceState
@@ -497,7 +535,8 @@ FULLY CLEAN STRUCTS (449)
   SRoom
   SScrape
   SScriptLine
-  SScriptXRef
+  SSfxBlock
+  SSfxEntry
   SSimFrame
   SSocket
   SSoftwareEdge
@@ -506,8 +545,10 @@ FULLY CLEAN STRUCTS (449)
   SStereoGains
   SSurfacePlane
   SSwarmVertex
-  STextView
+  STextPage
+  STextureCacheEntry
   STextureSet
+  STimerBlock
   STrainNoise
   STrianglePackedIndices
   STriangleRef

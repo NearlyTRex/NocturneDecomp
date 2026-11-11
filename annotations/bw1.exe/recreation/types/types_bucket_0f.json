@@ -32,6 +32,35 @@
   },
   {
     "kind":"funcdef",
+    "name":"CCameraView_dtor",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCameraView",
+          "ptr":1
+        }
+      },
+      {
+        "name":"flags",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"class",
+      "name":"CCameraView",
+      "ptr":1
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
     "name":"CCharacter_hasDoorTarget",
     "params":[
       {
@@ -223,7 +252,7 @@
     "kind":"class",
     "name":"CEdCheck",
     "rtti_file":"shape/edittool.cpp",
-    "size":1
+    "size":236
   },
   {
     "kind":"class",
@@ -246,7 +275,28 @@
   {
     "kind":"class",
     "name":"CKeyFramedModelPart",
-    "size":1
+    "size":8
+  },
+  {
+    "kind":"funcdef",
+    "name":"CKeys_clearKeypresses",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CKeys",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -307,7 +357,29 @@
   {
     "kind":"class",
     "name":"CMooCow",
+    "parent":"CCharacter",
     "size":49652
+  },
+  {
+    "kind":"funcdef",
+    "name":"CParticle_process",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CParticle",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"funcdef",
@@ -516,12 +588,17 @@
   {
     "kind":"struct",
     "name":"SGroundCell",
-    "size":1
+    "size":4
+  },
+  {
+    "kind":"struct",
+    "name":"SMotionSignal",
+    "size":8
   },
   {
     "kind":"struct",
     "name":"SMpegFrameHeader",
-    "size":1
+    "size":48
   },
   {
     "kind":"struct",
@@ -536,12 +613,13 @@
   {
     "kind":"struct",
     "name":"SPageResourceTwanaCharacter",
+    "parent":"SPageResourceBitmap",
     "size":76
   },
   {
     "kind":"struct",
     "name":"SRecordingDeviceInfo",
-    "size":1
+    "size":264
   },
   {
     "kind":"struct",
@@ -551,11 +629,11 @@
   {
     "kind":"struct",
     "name":"SStereoBuffers",
-    "size":1
+    "size":8
   },
   {
     "kind":"struct",
     "name":"STextureSet",
-    "size":1
+    "size":576
   }
 ]

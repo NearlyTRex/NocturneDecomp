@@ -97,12 +97,11 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_00592320(CSuccubus *this_pt
               (&(this_ptr->hotdemon_model).base,afStack_48 + 8);
   }
   fVar19 = (this_ptr->base).speed;
-  *(float *)&(this_ptr->base).base.field_0x2524 =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
+  (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   core_charactr_cpp_FUN_00435320(this_ptr,delta_time * fVar19);
   pCStack_1c = &(this_ptr->base).base.model.base;
   pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(pCStack_1c);
-  uVar12 = *(uint *)(pSVar10 + 0x24);
+  uVar12 = pSVar10->state_index;
   iVar9 = core_charactr_cpp_CCharacter_processWalking_FUN_00432240
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar9 == 0) {
@@ -261,13 +260,13 @@ LAB_0059247c:
   pSStack_20 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&pCVar15->base);
   fStack_24 = (this_ptr->base).base.model.base.current_frame_number;
   core_motion_cpp_CMotionController_jumpToMotionByName_FUN_00524ae0
-            (&(this_ptr->hotdemon_model).base,(char *)pSStack_20,fStack_24);
+            (&(this_ptr->hotdemon_model).base,pSStack_20->motion_name,fStack_24);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_00567580
             (&this_ptr->hotdemon_model);
   if ((this_ptr->morph_started != 0) &&
      (fVar19 = this_ptr->morph_timer + delta_time, this_ptr->morph_timer = fVar19,
      _DAT_00606278 < fVar19)) {
-    this_ptr_00 = (CHotDemon *)debugAllocTracked1(0xc29c);
+    this_ptr_00 = (CHotDemon *)operator_new(0xc29c);
     pCVar11 = (CHotDemon *)0x0;
     if (this_ptr_00 != (CHotDemon *)0x0) {
       pCVar11 = core_hotdemon_cpp_CHotDemon_ctor_FUN_004efa10(this_ptr_00);
@@ -306,7 +305,7 @@ LAB_0059247c:
       (*((pCStack_18->base).base.base.vtable._ub)->setup)((CDemonActor *)pCStack_18);
       pCVar15 = &(pCStack_18->base).base.model;
       core_motion_cpp_CMotionController_jumpToMotionByName_FUN_00524ae0
-                (&pCVar15->base,(char *)pSStack_20,fStack_24);
+                (&pCVar15->base,pSStack_20->motion_name,fStack_24);
       core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_00567580(pCVar15);
       pCVar11 = pCStack_18;
       (pCStack_18->base).base.base.scale.x = (this_ptr->base).base.base.scale.x;

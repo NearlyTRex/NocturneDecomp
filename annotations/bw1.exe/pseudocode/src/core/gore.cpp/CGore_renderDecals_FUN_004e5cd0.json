@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 120,
+    "complexity_score": 105,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 90,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 281
@@ -95,7 +94,7 @@
     },
     {
       "addr": "01ccf3a4",
-      "name": "g_CGameInstance.field11_0x14",
+      "name": "g_CGameInstance.blood_flag",
       "type": "undefined4",
       "value": null
     },
@@ -238,14 +237,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x14 != 0) {",
-      "type": "unnamed_field"
     }
   ]
 }

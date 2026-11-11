@@ -31,10 +31,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004efc90(CHotDemon *this_pt
   EBloodType blood_type;
   SDamageInfo *damage_info;
   float max_distance;
-  SDamageInfo aSStack_1a0 [4];
-  float fStack_19c;
-  CHotDemon *pCStack_16c;
-  CHotDemon *pCStack_168;
+  SDamageInfo SStack_1a0;
   CVector3f CStack_164;
   float fStack_158;
   float afStack_154 [5];
@@ -104,11 +101,10 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004efc90(CHotDemon *this_pt
     core_charactr_cpp_CCharacter_processMotion_FUN_00434a80((CCharacter *)this_ptr,iVar5);
   }
   fVar12 = (this_ptr->base).speed;
-  *(float *)&(this_ptr->base).base.field_0x2524 =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
+  (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   core_charactr_cpp_FUN_00435320(this_ptr,delta_time * fVar12);
   pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&pCVar1->base);
-  iVar5 = *(int *)(pSVar6 + 0x24);
+  iVar5 = pSVar6->state_index;
   iStack_1c = iVar5;
   iVar7 = core_charactr_cpp_CCharacter_processWalking_FUN_00432240
                     ((CCharacter *)this_ptr,delta_time);
@@ -287,15 +283,16 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004efc90(CHotDemon *this_pt
       break;
     case 2:
     case 8:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(aSStack_1a0);
-      fStack_19c = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(7.0,15.0);
-      damage_info = aSStack_1a0;
-      pCStack_16c = this_ptr;
-      pCStack_168 = this_ptr;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&SStack_1a0);
+      SStack_1a0.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(7.0,15.0);
+      damage_info = &SStack_1a0;
+      SStack_1a0.attacker = (CDemonActor *)this_ptr;
+      SStack_1a0.wielder = (CDemonActor *)this_ptr;
       fVar12 = 0.4;
-      fStack_14 = fStack_19c;
+      fStack_14 = SStack_1a0.damage_amount;
       core_xform_cpp_FUN_005b5080
-                (&DAT_02c8af28,&(this_ptr->base).base.model.field_0xe80 + _DAT_01d06bd4 * 0x30);
+                (&DAT_02c8af28,
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01d06bd4);
       pfVar10 = afStack_124 + 8;
       afStack_104[0] = (float)uStack_110;
       afStack_124[(uint)bVar9 * -2 + 9] = afStack_124[(uint)bVar9 * -2 + 6];

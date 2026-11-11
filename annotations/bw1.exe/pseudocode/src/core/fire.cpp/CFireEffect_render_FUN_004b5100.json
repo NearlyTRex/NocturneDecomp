@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 408,
-    "complexity_score": 757,
+    "complexity_score": 537,
     "cross_reference_count": 4,
     "function_call_count": 18,
     "global_count": 50,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 182,
-    "suspect_count": 55,
+    "suspect_count": 33,
     "suspect_types": [
       "pointer_cast",
+      "pointer_truncation",
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
@@ -84,6 +84,11 @@
       "name": "core_fire.cpp_CFireball_setupRenderState_FUN_004ae550"
     },
     {
+      "addr": "004ad9c0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFirefly_setupRenderState_FUN_004ad9c0"
+    },
+    {
       "addr": "004b2ea0",
       "is_variadic": false,
       "name": "core_fire.cpp_CGunFlame_render_FUN_004b2ea0"
@@ -132,11 +137,6 @@
       "addr": "004b3d20",
       "is_variadic": false,
       "name": "core_fire.cpp_CTrail_render_FUN_004b3d20"
-    },
-    {
-      "addr": "004ad9c0",
-      "is_variadic": false,
-      "name": "core_fire.cpp_FUN_004ad9c0"
     },
     {
       "addr": "00551c30",
@@ -194,49 +194,49 @@
     },
     {
       "addr": "01c986d8",
-      "name": "g_SparkPool[0].field36_0x24",
+      "name": "g_SparkPool[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c986f0",
-      "name": "g_SparkPool[0].field60_0x3c",
+      "name": "g_SparkPool[0].base.vtable",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c9872c",
-      "name": "g_SparkPool[1].field36_0x24",
+      "name": "g_SparkPool[1].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c98744",
-      "name": "g_SparkPool[1].field60_0x3c",
+      "name": "g_SparkPool[1].base.vtable",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c9dadc",
-      "name": "CFirefly_ARRAY_01c9dab8[0].field36_0x24",
+      "name": "CFirefly_ARRAY_01c9dab8[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c9daf4",
-      "name": "CFirefly_ARRAY_01c9dab8[0].field60_0x3c",
+      "name": "CFirefly_ARRAY_01c9dab8[0].base.vtable",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c9db38",
-      "name": "CFirefly_ARRAY_01c9dab8[1].field36_0x24",
+      "name": "CFirefly_ARRAY_01c9dab8[1].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c9db50",
-      "name": "CFirefly_ARRAY_01c9dab8[1].field60_0x3c",
+      "name": "CFirefly_ARRAY_01c9dab8[1].base.vtable",
       "type": "undefined4",
       "value": null
     },
@@ -254,25 +254,25 @@
     },
     {
       "addr": "01c9f914",
-      "name": "g_GlassParticlePool[0].field36_0x24",
+      "name": "g_GlassParticlePool[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c9f92c",
-      "name": "g_GlassParticlePool[0].field60_0x3c",
+      "name": "g_GlassParticlePool[0].base.vtable",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c9f9b8",
-      "name": "g_GlassParticlePool[1].field36_0x24",
+      "name": "g_GlassParticlePool[1].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c9f9d0",
-      "name": "g_GlassParticlePool[1].field60_0x3c",
+      "name": "g_GlassParticlePool[1].base.vtable",
       "type": "undefined4",
       "value": null
     },
@@ -290,73 +290,73 @@
     },
     {
       "addr": "01ca9e84",
-      "name": "g_FireballPool[0].field36_0x24",
+      "name": "g_FireballPool[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ca9e9c",
-      "name": "g_FireballPool[0].field60_0x3c",
+      "name": "g_FireballPool[0].base.vtable",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ca9f28",
-      "name": "g_FireballPool[1].field36_0x24",
+      "name": "g_FireballPool[1].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ca9f40",
-      "name": "g_FireballPool[1].field60_0x3c",
+      "name": "g_FireballPool[1].base.vtable",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cac788",
-      "name": "g_RockPool[0].field36_0x24",
+      "name": "g_RockPool[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cac7a0",
-      "name": "g_RockPool[0].field60_0x3c",
+      "name": "g_RockPool[0].base.vtable",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cac7d8",
-      "name": "g_RockPool[1].field36_0x24",
+      "name": "g_RockPool[1].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cac7f0",
-      "name": "g_RockPool[1].field60_0x3c",
+      "name": "g_RockPool[1].base.vtable",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cadb8c",
-      "name": "CLeaf_ARRAY_01cadb68[0].field36_0x24",
+      "name": "CLeaf_ARRAY_01cadb68[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cadba4",
-      "name": "CLeaf_ARRAY_01cadb68[0].field60_0x3c",
+      "name": "CLeaf_ARRAY_01cadb68[0].base.vtable",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cadbe0",
-      "name": "CLeaf_ARRAY_01cadb68[1].field36_0x24",
+      "name": "CLeaf_ARRAY_01cadb68[1].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cadbf8",
-      "name": "CLeaf_ARRAY_01cadb68[1].field60_0x3c",
+      "name": "CLeaf_ARRAY_01cadb68[1].base.vtable",
       "type": "undefined4",
       "value": null
     },
@@ -386,61 +386,61 @@
     },
     {
       "addr": "01cbae84",
-      "name": "g_ShellPool[0].field60_0x3c",
+      "name": "g_ShellPool[0].base.vtable",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cbaee4",
-      "name": "g_ShellPool[1].field60_0x3c",
+      "name": "g_ShellPool[1].base.vtable",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cbc130",
-      "name": "g_PopcornPool[0].field36_0x24",
+      "name": "g_PopcornPool[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cbc148",
-      "name": "g_PopcornPool[0].field60_0x3c",
+      "name": "g_PopcornPool[0].base.vtable",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cbc170",
-      "name": "g_PopcornPool[1].field36_0x24",
+      "name": "g_PopcornPool[1].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cbc188",
-      "name": "g_PopcornPool[1].field60_0x3c",
+      "name": "g_PopcornPool[1].base.vtable",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc0134",
-      "name": "g_RainDropPool[0].field36_0x24",
+      "name": "g_RainDropPool[0].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc014c",
-      "name": "g_RainDropPool[0].field60_0x3c",
+      "name": "g_RainDropPool[0].base.vtable",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc0174",
-      "name": "g_RainDropPool[1].field36_0x24",
+      "name": "g_RainDropPool[1].base.lifetime_remaining",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc018c",
-      "name": "g_RainDropPool[1].field60_0x3c",
+      "name": "g_RainDropPool[1].base.vtable",
       "type": "undefined4",
       "value": null
     },
@@ -623,155 +623,43 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "if (0.0 < *(float *)&pCVar2->field_0x24) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 43,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&pCVar2->field_0x3c + 8))(pCVar2);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&pCVar2->field_0x3c + 8))(pCVar2);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 46,
       "match": "DAT_01cadb64",
       "severity": "mild",
-      "text": "} while (pCVar2 != (CRock *)&DAT_01cadb64);",
+      "text": "} while (this_ptr_00 != (CRock *)&DAT_01cadb64);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "if (0.0 < *(float *)&pCVar3->field_0x24) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 50,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&pCVar3->field_0x3c + 8))(pCVar3);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&pCVar3->field_0x3c + 8))(pCVar3);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 53,
       "match": "DAT_01caf068",
       "severity": "mild",
-      "text": "} while (pCVar3 != (CLeaf *)&DAT_01caf068);",
+      "text": "} while (this_ptr_01 != (CLeaf *)&DAT_01caf068);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "if (0.0 < *(float *)&pCVar4->field_0x24) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 57,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&pCVar4->field_0x3c + 8))(pCVar4);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 57,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&pCVar4->field_0x3c + 8))(pCVar4);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 60,
       "match": "DAT_01c9f1b8",
       "severity": "mild",
-      "text": "} while (pCVar4 != (CFirefly *)&DAT_01c9f1b8);",
+      "text": "} while (pCVar2 != (CFirefly *)&DAT_01c9f1b8);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 64,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "if (0.0 < *(float *)&pCVar5->field_0x24) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 65,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&pCVar5->field_0x3c + 8))(pCVar5);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&pCVar5->field_0x3c + 8))(pCVar5);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 68,
       "match": "DAT_01cac760",
       "severity": "mild",
-      "text": "} while (pCVar5 != (CFireball *)&DAT_01cac760);",
+      "text": "} while (this_ptr_02 != (CFireball *)&DAT_01cac760);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 71,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&pCVar6->field_0x3c + 8))(pCVar6);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 71,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&pCVar6->field_0x3c + 8))(pCVar6);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 73,
       "match": "DAT_01cbc108",
       "severity": "mild",
-      "text": "} while (pCVar6 != (CShell *)&DAT_01cbc108);",
+      "text": "} while (this_ptr_03 != (CShell *)&DAT_01cbc108);",
       "type": "undefined_data"
     },
     {
@@ -779,7 +667,7 @@
       "line": 74,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "iVar11 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);",
+      "text": "iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);",
       "type": "undefined_data"
     },
     {
@@ -803,7 +691,7 @@
       "line": 91,
       "match": "DAT_01c58aa0",
       "severity": "mild",
-      "text": "this_ptr_00 = (CSmokeParticle *)&DAT_01c58aa0;",
+      "text": "this_ptr_04 = (CSmokeParticle *)&DAT_01c58aa0;",
       "type": "undefined_data"
     },
     {
@@ -819,7 +707,7 @@
       "line": 98,
       "match": "DAT_01c6eaa0",
       "severity": "mild",
-      "text": "} while (this_ptr_00 != (CSmokeParticle *)&DAT_01c6eaa0);",
+      "text": "} while (this_ptr_04 != (CSmokeParticle *)&DAT_01c6eaa0);",
       "type": "undefined_data"
     },
     {
@@ -827,7 +715,7 @@
       "line": 99,
       "match": "DAT_01c9f1bc",
       "severity": "mild",
-      "text": "this_ptr_01 = (CMuzzleFlash *)&DAT_01c9f1bc;",
+      "text": "this_ptr_05 = (CMuzzleFlash *)&DAT_01c9f1bc;",
       "type": "undefined_data"
     },
     {
@@ -835,103 +723,31 @@
       "line": 105,
       "match": "DAT_01c9f8ec",
       "severity": "mild",
-      "text": "} while (this_ptr_01 != (CMuzzleFlash *)&DAT_01c9f8ec);",
+      "text": "} while (this_ptr_05 != (CMuzzleFlash *)&DAT_01c9f8ec);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 118,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "if (0.0 < *(float *)&pCVar7->field_0x24) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 119,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&pCVar7->field_0x3c + 8))(pCVar7);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 119,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&pCVar7->field_0x3c + 8))(pCVar7);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 122,
       "match": "DAT_01c9dab4",
       "severity": "mild",
-      "text": "} while (pCVar7 != (CSpark *)&DAT_01c9dab4);",
+      "text": "} while (this_ptr_07 != (CSpark *)&DAT_01c9dab4);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 126,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "if (0.0 < *(float *)&pCVar4->field_0x24) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 127,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&pCVar4->field_0x3c + 8))(pCVar4);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 127,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&pCVar4->field_0x3c + 8))(pCVar4);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 130,
       "match": "DAT_01c9f1b8",
       "severity": "mild",
-      "text": "} while (pCVar4 != (CFirefly *)&DAT_01c9f1b8);",
+      "text": "} while (pCVar2 != (CFirefly *)&DAT_01c9f1b8);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 133,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "if (0.0 < *(float *)&pCVar8->field_0x24) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 134,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&pCVar8->field_0x3c + 8))(pCVar8);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 134,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&pCVar8->field_0x3c + 8))(pCVar8);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 144,
       "match": "DAT_01ca9e5c",
       "severity": "mild",
-      "text": "} while (this_ptr_03 != (CBulletTrail *)&DAT_01ca9e5c);",
+      "text": "} while (this_ptr_09 != (CBulletTrail *)&DAT_01ca9e5c);",
       "type": "undefined_data"
     },
     {
@@ -939,7 +755,7 @@
       "line": 149,
       "match": "DAT_01cb0188",
       "severity": "mild",
-      "text": "} while (this_ptr_04 != (CExplosion *)&DAT_01cb0188);",
+      "text": "} while (this_ptr_10 != (CExplosion *)&DAT_01cb0188);",
       "type": "undefined_data"
     },
     {
@@ -947,7 +763,7 @@
       "line": 154,
       "match": "DAT_01cb4f5c",
       "severity": "mild",
-      "text": "} while (this_ptr_05 != (CToss *)&DAT_01cb4f5c);",
+      "text": "} while (this_ptr_11 != (CToss *)&DAT_01cb4f5c);",
       "type": "undefined_data"
     },
     {
@@ -955,7 +771,7 @@
       "line": 155,
       "match": "DAT_01cb5824",
       "severity": "mild",
-      "text": "this_ptr_06 = (CGunFlame *)&DAT_01cb5824;",
+      "text": "this_ptr_12 = (CGunFlame *)&DAT_01cb5824;",
       "type": "undefined_data"
     },
     {
@@ -963,7 +779,7 @@
       "line": 159,
       "match": "DAT_01cb9e74",
       "severity": "mild",
-      "text": "} while (this_ptr_06 != (CGunFlame *)&DAT_01cb9e74);",
+      "text": "} while (this_ptr_12 != (CGunFlame *)&DAT_01cb9e74);",
       "type": "undefined_data"
     },
     {
@@ -971,7 +787,7 @@
       "line": 164,
       "match": "DAT_01cba030",
       "severity": "mild",
-      "text": "} while (this_ptr_07 != (CLightningBolt *)&DAT_01cba030);",
+      "text": "} while (this_ptr_13 != (CLightningBolt *)&DAT_01cba030);",
       "type": "undefined_data"
     },
     {
@@ -979,64 +795,72 @@
       "line": 169,
       "match": "DAT_01cbae44",
       "severity": "mild",
-      "text": "} while (this_ptr_08 != (CTrail *)&DAT_01cbae44);",
+      "text": "} while (this_ptr_14 != (CTrail *)&DAT_01cbae44);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 172,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "if (0.0 < *(float *)&pCVar9->field_0x24) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 173,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&pCVar9->field_0x3c + 8))(pCVar9);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 173,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&pCVar9->field_0x3c + 8))(pCVar9);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 176,
       "match": "DAT_01cc010c",
       "severity": "mild",
-      "text": "} while (pCVar9 != (CPopcorn *)&DAT_01cc010c);",
+      "text": "} while (&this_ptr_15->base != (CParticle *)&DAT_01cc010c);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 179,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "if (0.0 < *(float *)&pCVar10->field_0x24) {",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 180,
+      "match": "(CDemonActorType *)((int)pCVar3",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 8))(pCVar3);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 180,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)&pCVar10->field_0x3c + 8))(pCVar10);",
+      "text": "(**(code **)(*(int *)((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 8))(pCVar3);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
+      "line": 182,
+      "match": "(CDemonActorType *)((int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CRainDrop *)(((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 180,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&pCVar10->field_0x3c + 8))(pCVar10);",
-      "type": "unnamed_field"
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 8))(pCVar3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 182,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CRainDrop *)(((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 180,
+      "match": "(CDemonActorType *)((int)pCVar3 + 0x3c)",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 8))(pCVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 182,
+      "match": "(CDemonActorType *)((int)pCVar3 + 0x3c)",
+      "severity": "moderate",
+      "text": "pCVar3 = (CRainDrop *)(((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 4);",
+      "type": "pointer_cast"
     }
   ]
 }

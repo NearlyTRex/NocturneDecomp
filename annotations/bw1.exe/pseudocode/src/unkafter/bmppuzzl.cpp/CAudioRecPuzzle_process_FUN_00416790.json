@@ -1,0 +1,482 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 531,
+    "complexity_score": 588,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 14,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 233,
+    "suspect_count": 32,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "raw_address_pointer_store",
+      "shadow_pointer_walk",
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 764
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00416790",
+    "address_range": [
+      [
+        "00416790",
+        "00416ce8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "unkafter_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_00416790",
+    "signature": "void __cdecl unkafter_bmppuzzl_cpp_CAudioRecPuzzle_process_FUN_00416790(CAudioRecPuzzle *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a1b70",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_executeCommands_FUN_004a1b70"
+    },
+    {
+      "addr": "005735a0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005735a0"
+    },
+    {
+      "addr": "00573a80",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_00573a80"
+    },
+    {
+      "addr": "00572d20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_startSfx_FUN_00572d20"
+    },
+    {
+      "addr": "00415be0",
+      "is_variadic": false,
+      "name": "unkafter_alphabit.cpp_FUN_00415be0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d3f4a",
+      "name": "s_AudioRecPuzzleActive_005d3f4a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3f5f",
+      "name": "s_REC_FOWARD_SWITCH_WAV_005d3f5f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3f75",
+      "name": "s_ExitFromPuzzle_005d3f75",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3f84",
+      "name": "s_rec_on_switch_wav_005d3f84",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3f96",
+      "name": "s_rec_forward_switch_wav_005d3f96",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3fad",
+      "name": "s_AudioPuzzleSuccess_005d3fad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3fc2",
+      "name": "DAT_005d3fc2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b4d0",
+      "name": "DAT_0061b4d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061f2a4",
+      "name": "DAT_0061f2a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007c397c",
+      "name": "DAT_007c397c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4353c",
+      "name": "DAT_01c4353c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c43540",
+      "name": "DAT_01c43540",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c43544",
+      "name": "DAT_01c43544",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1bca0",
+      "name": "DAT_01d1bca0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.2,
+    "instruction_count": 395,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 49,
+      "BOOL_OR": 9,
+      "BRANCH": 19,
+      "CALL": 12,
+      "CALLIND": 7,
+      "CBRANCH": 60,
+      "COPY": 283,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_ABS": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 167,
+      "INT_AND": 327,
+      "INT_CARRY": 36,
+      "INT_EQUAL": 269,
+      "INT_LEFT": 14,
+      "INT_LESS": 56,
+      "INT_MULT": 7,
+      "INT_NOTEQUAL": 18,
+      "INT_OR": 30,
+      "INT_SBORROW": 56,
+      "INT_SCARRY": 52,
+      "INT_SLESS": 139,
+      "INT_SUB": 118,
+      "INT_XOR": 12,
+      "INT_ZEXT": 4,
+      "LOAD": 79,
+      "POPCOUNT": 129,
+      "RETURN": 3,
+      "STORE": 92
+    },
+    "pcode_op_count": 2054
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAudioRecPuzzle *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 26,
+      "match": "*(code **)(*0x01D1BCA0",
+      "severity": "moderate",
+      "text": "(**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x200);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 26,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x200);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(code **)((int)this_ptr",
+      "severity": "moderate",
+      "text": "iVar7 = (**(code **)((int)this_ptr->vtable + 0x2c))(this_ptr,iVar7,uVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 35,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar7 = (**(code **)((int)this_ptr->vtable + 0x2c))(this_ptr,iVar7,uVar3);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_007c397c",
+      "severity": "mild",
+      "text": "DAT_007c397c = 0xffffffff;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_007c397c",
+      "severity": "mild",
+      "text": "if (DAT_007c397c == -1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_007c397c",
+      "severity": "mild",
+      "text": "DAT_007c397c = _DAT_01c4353c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_007c397c",
+      "severity": "mild",
+      "text": "if (_DAT_005d3fc2 < ABS((double)(_DAT_01c4353c - DAT_007c397c))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(code **)((int)this_ptr",
+      "severity": "moderate",
+      "text": "(**(code **)((int)this_ptr->vtable + 0x34))(this_ptr);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 57,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)((int)this_ptr->vtable + 0x34))(this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(code **)((int)this_ptr",
+      "severity": "moderate",
+      "text": "(**(code **)((int)this_ptr->vtable + 0x38))(this_ptr,iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 61,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)((int)this_ptr->vtable + 0x38))(this_ptr,iVar7);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(code **)((int)this_ptr",
+      "severity": "moderate",
+      "text": "iVar6 = (**(code **)((int)this_ptr->vtable + 0x54))(this_ptr,iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 70,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar6 = (**(code **)((int)this_ptr->vtable + 0x54))(this_ptr,iVar7);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 143,
+      "match": "(code **)((int)this_ptr",
+      "severity": "moderate",
+      "text": "(**(code **)((int)this_ptr->vtable + 0x58))(this_ptr,iVar2,iVar6,iVar1,iVar7,iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 143,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)((int)this_ptr->vtable + 0x58))(this_ptr,iVar2,iVar6,iVar1,iVar7,iVar5);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 165,
+      "match": "DAT_007c397c",
+      "severity": "mild",
+      "text": "DAT_007c397c = -1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 184,
+      "match": "(code **)((int)this_ptr",
+      "severity": "moderate",
+      "text": "iVar7 = (**(code **)((int)this_ptr->vtable + 0x54))(this_ptr,uVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 184,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar7 = (**(code **)((int)this_ptr->vtable + 0x54))(this_ptr,uVar8);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer value `&this_ptr->buttons[9].height` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 119,
+      "match": "(int)&this_ptr->buttons[9].height",
+      "severity": "moderate",
+      "text": "iVar5 = (int)&this_ptr->buttons[9].height + iVar7;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 119,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar5 = (int)&this_ptr->buttons[9].height + iVar7;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 99,
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "severity": "moderate",
+      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->click_handled;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 128,
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "severity": "moderate",
+      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->background;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 175,
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "severity": "moderate",
+      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->click_handled;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 181,
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "severity": "moderate",
+      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->click_handled;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 193,
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "severity": "moderate",
+      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->click_handled;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 200,
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "severity": "moderate",
+      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->click_handled;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 207,
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "severity": "moderate",
+      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->click_handled;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 218,
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "severity": "moderate",
+      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->click_handled;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 228,
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "severity": "moderate",
+      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->click_handled;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 235,
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "severity": "moderate",
+      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->click_handled;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CAudioRecPuzzle",
+        "offset": 32,
+        "vtable_addr": "005fc974"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -4,21 +4,23 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CParticle.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/STriangleVertices.h"
 
 // Structure: CGlassParticle
 // Ghidra size: 0xa4 (164 bytes)
 #pragma pack(push, 1)
 typedef struct CGlassParticle {
-    char field_0[64]; // 0x0
+    CParticle base; // 0x0
     int lifetime; // 0x40
     SMRGLTextureBasic texture; // 0x44
     CVector3f euler_angles; // 0x5c
     CVector3i uv_u_per_vertex; // 0x68
     CVector3i uv_v_per_vertex; // 0x74
-    char field_128[36]; // 0x80
+    STriangleVertices triangle_delta; // 0x80
 } CGlassParticle;
 #pragma pack(pop)
 

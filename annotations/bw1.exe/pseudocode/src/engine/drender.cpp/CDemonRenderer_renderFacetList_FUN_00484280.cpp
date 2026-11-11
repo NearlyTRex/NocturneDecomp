@@ -39,23 +39,15 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_00484280(CDem
             local_1c = primitive_array->vertices[3].vertex_index;
           }
           if (this_ptr->skip_uv_extraction == 0) {
-            *(int *)(this_ptr->vertex_buffer_ptr + local_28.x * 0x30 + 0x18) =
-                 primitive_array->vertices[0].texture_u;
-            *(int *)(this_ptr->vertex_buffer_ptr + local_28.x * 0x30 + 0x1c) =
-                 primitive_array->vertices[0].texture_v;
-            *(int *)(this_ptr->vertex_buffer_ptr + local_28.y * 0x30 + 0x18) =
-                 primitive_array->vertices[1].texture_u;
-            *(int *)(this_ptr->vertex_buffer_ptr + local_28.y * 0x30 + 0x1c) =
-                 primitive_array->vertices[1].texture_v;
-            *(int *)(this_ptr->vertex_buffer_ptr + local_28.z * 0x30 + 0x18) =
-                 primitive_array->vertices[2].texture_u;
-            *(int *)(this_ptr->vertex_buffer_ptr + local_28.z * 0x30 + 0x1c) =
-                 primitive_array->vertices[2].texture_v;
+            this_ptr->vertex_buffer_ptr[local_28.x].u = primitive_array->vertices[0].texture_u;
+            this_ptr->vertex_buffer_ptr[local_28.x].v = primitive_array->vertices[0].texture_v;
+            this_ptr->vertex_buffer_ptr[local_28.y].u = primitive_array->vertices[1].texture_u;
+            this_ptr->vertex_buffer_ptr[local_28.y].v = primitive_array->vertices[1].texture_v;
+            this_ptr->vertex_buffer_ptr[local_28.z].u = primitive_array->vertices[2].texture_u;
+            this_ptr->vertex_buffer_ptr[local_28.z].v = primitive_array->vertices[2].texture_v;
             if ((primitive_array->base).base.count == 4) {
-              *(int *)(this_ptr->vertex_buffer_ptr + local_1c * 0x30 + 0x18) =
-                   primitive_array->vertices[3].texture_u;
-              *(int *)(this_ptr->vertex_buffer_ptr + local_1c * 0x30 + 0x1c) =
-                   primitive_array->vertices[3].texture_v;
+              this_ptr->vertex_buffer_ptr[local_1c].u = primitive_array->vertices[3].texture_u;
+              this_ptr->vertex_buffer_ptr[local_1c].v = primitive_array->vertices[3].texture_v;
             }
           }
           core_dpart_cpp_FUN_0047a480(&local_28.x,(primitive_array->base).base.count);
@@ -87,8 +79,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_00484280(CDem
             local_14 = local_14 + 1;
             primitive_array =
                  (SMRGLPrimitiveQuad *)
-                 ((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +
-                 primitive_stride);
+                 ((int)&(((SMRGLPrimitiveTriangle *)(primitive_array->vertices + -2))->base).base.
+                        type + primitive_stride);
           } while (local_14 < primitive_count);
         }
         if (0 < iVar3) {
@@ -127,8 +119,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_00484280(CDem
         iVar3 = iVar3 + 1;
         primitive_array =
              (SMRGLPrimitiveQuad *)
-             ((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +
-             primitive_stride);
+             ((int)&(((SMRGLPrimitivePoly *)(((SMRGLPrimitivePoly *)primitive_array)->vertices + -2)
+                     )->base).base.type + primitive_stride);
       } while (iVar3 < primitive_count);
     }
   }

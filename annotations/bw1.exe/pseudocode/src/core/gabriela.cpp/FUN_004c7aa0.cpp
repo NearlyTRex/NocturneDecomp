@@ -150,7 +150,7 @@ void core_gabriela_cpp_FUN_004c7aa0(CDemonActor *param_1)
         if (param_1[0x17c].scale.y != 0) {
           pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                              ((CMotionController *)(param_1 + 1));
-          if (*(int *)(pSVar5 + 0x24) == 0) {
+          if (pSVar5->state_index == 0) {
             param_1[0x90].lifecycle_state = ACTOR_CREATED;
             return;
           }
@@ -160,7 +160,7 @@ void core_gabriela_cpp_FUN_004c7aa0(CDemonActor *param_1)
         if (param_1[0x17c].scale.y == 0) {
           pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                              ((CMotionController *)(param_1 + 1));
-          if (*(int *)(pSVar5 + 0x24) == 0) {
+          if (pSVar5->state_index == 0) {
             param_1[0x90].lifecycle_state = ACTOR_CREATED;
           }
         }

@@ -11,10 +11,10 @@
 void __cdecl core_inv_cpp_CInventory_resetItemSwitchTimers_FUN_004fa710(CInventory *this_ptr)
 
 {
-  if (*(int *)(this_ptr + 4) != *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4)) {
+  if (this_ptr->owner != *(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4)) {
     return;
   }
-  *(uint *)(this_ptr + 0x340) = 0;
-  *(uint *)(this_ptr + 0x344) = 0x40a00000;
+  this_ptr->weapon_highlight_timer = 0.0;
+  this_ptr->item_highlight_timer = 5.0;
   return;
 }

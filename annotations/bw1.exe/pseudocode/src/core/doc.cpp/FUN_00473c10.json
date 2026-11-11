@@ -2,24 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 494,
-    "complexity_score": 522,
+    "complexity_score": 506,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 202,
-    "suspect_count": 28,
+    "pseudocode_lines": 201,
+    "suspect_count": 27,
     "suspect_types": [
       "bit_int_float_compare",
       "param_count_too_few",
       "pointer_cast",
       "self_copy_guard",
       "stack_alignment_array",
-      "unknown_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 696
+    "total_lines": 695
   },
   "cross_references": [
     {
@@ -757,16 +756,8 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 91,
-      "match": "._28_4_",
-      "severity": "mild",
-      "text": "(fStack_150 = 1.0 - ((local_f8 - (float)auStack_14c._28_4_) + (float)_DAT_005da3ec) *",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 102,
+      "line": 101,
       "match": "param_1",
       "severity": "mild",
       "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_00559250(g_CDemonSetPtr,&param_1->base);",
@@ -774,7 +765,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 108,
+      "line": 107,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_FUN_00408ac0(param_1,local_114 + 0x17);",
@@ -782,7 +773,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 118,
+      "line": 117,
       "match": "param_1",
       "severity": "mild",
       "text": "core_skeleton_cpp_FUN_00569040(&param_1->model,_DAT_01b68818);",
@@ -790,7 +781,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 124,
+      "line": 123,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_FUN_00408b40(param_1,pfVar6);",
@@ -798,7 +789,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 152,
+      "line": 151,
       "match": "param_1",
       "severity": "mild",
       "text": "core_skeleton_cpp_FUN_00569040(&param_1->model,_DAT_01b6881c);",
@@ -806,7 +797,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 158,
+      "line": 157,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_FUN_00408b40(param_1,puVar7);",
@@ -814,7 +805,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 191,
+      "line": 190,
       "match": "param_1",
       "severity": "mild",
       "text": "local_15c = local_158 - *(float *)(param_1[2].flames[0x1a].off_event + 0x20);",
@@ -822,7 +813,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 193,
+      "line": 192,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((0.0 < local_15c) && (param_2 / _DAT_005fecac < local_15c)) {",
@@ -830,7 +821,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 194,
+      "line": 193,
       "match": "param_2",
       "severity": "mild",
       "text": "local_15c = param_2 / _DAT_005fecac;",
@@ -838,7 +829,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 198,
+      "line": 197,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar2 = -param_2 * (1.0 / _DAT_005fecb0);",
@@ -846,7 +837,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 203,
+      "line": 202,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1[2].flames[0x1a].off_event + 0x20) =",
@@ -854,7 +845,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 204,
+      "line": 203,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1[2].flames[0x1a].off_event + 0x20) + local_15c;",
@@ -862,7 +853,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_124 != &local_118)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 129,
+      "line": 128,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_124 != &local_118) {",

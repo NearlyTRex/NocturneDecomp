@@ -15,17 +15,16 @@ CSfxSample * sound_sndmain_cpp_CSfxSample_ctor_FUN_0056fe10(CSfxSample *this_ptr
   CInStreamFile *pCVar2;
   
   pCVar1 = sound_sndmain_cpp_CSfxSample_init_FUN_00572340(this_ptr);
-  pCVar2 = unkclass_instream_cpp_CInStreamFile_ctor_FUN_005a08d0
-                     ((CInStreamFile *)&pCVar1->field_0x17c);
-  *(uint *)&pCVar2[-3].field_0x28 = 0;
-  *(uint *)&pCVar2[-1].field_0x4 = 0;
-  *(uint *)&pCVar2[-1].field_0x8 = 0;
-  *(uint *)(pCVar2 + -1) = 0;
-  *(uint *)&pCVar2[-1].field_0xc = 0;
-  *(uint *)&pCVar2[-1].field_0x10 = 0xffffffff;
-  *(uint *)&pCVar2[-1].field_0x24 = 0;
-  *(uint *)&pCVar2[1].field_0x4 = 0;
-  *(uint *)&pCVar2[-1].field_0x14 = 0;
-  *(uint *)&pCVar2[-1].field_0x18 = 0;
-  return (CSfxSample *)&pCVar2[-9].field_0x10;
+  pCVar2 = unkclass_instream_cpp_CInStreamFile_ctor_FUN_005a08d0(&pCVar1->file_stream);
+  pCVar2[-3].binary_mode = 0;
+  pCVar2[-1].file_handle = (HANDLE)0x0;
+  pCVar2[-1].file_size = 0;
+  pCVar2[-1].vtable = (void *)0x0;
+  pCVar2[-1].file_offset = 0;
+  pCVar2[-1].position = -1;
+  pCVar2[-1].buffer_length = 0;
+  pCVar2[1].file_handle = (HANDLE)0x0;
+  pCVar2[-1].buffer_alloc = (void *)0x0;
+  pCVar2[-1].buffer = (char *)0x0;
+  return (CSfxSample *)&pCVar2[-9].position;
 }

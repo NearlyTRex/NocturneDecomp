@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: SVert
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x34 (52 bytes)
 #pragma pack(push, 1)
 typedef struct SVert {
-    char field_0[52]; // 0x0
+    uchar num_bone_influences; // 0x0
+    uchar bone_indices[3]; // 0x1
+    float bone_weights[3]; // 0x4
+    CVector3f bone_offsets[3]; // 0x10
 } SVert;
 #pragma pack(pop)
 

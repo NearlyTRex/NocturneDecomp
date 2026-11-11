@@ -18,9 +18,20 @@ typedef struct CSfxSlot {
     int playback_state; // 0x64
     struct CSfxSample* sample; // 0x68
     float effective_frequency; // 0x6c
-    char field_112[160]; // 0x70
-    float fade_time_remaining; // 0x110
-    char field_276[8]; // 0x114
+    float distance_to_speakers[8]; // 0x70
+    float channel_volumes[8]; // 0x90
+    int channel_target_buffer_offsets[8]; // 0xb0
+    int channel_current_buffer_offsets[8]; // 0xd0
+    float reference_distance; // 0xf0
+    float min_distance; // 0xf4
+    float max_distance; // 0xf8
+    float fade_target_volume; // 0xfc
+    float fade_time_remaining; // 0x100
+    float stop_after_fade; // 0x104
+    int is_active; // 0x108
+    double prev_hardware_playback_pos; // 0x10c
+    int loop_marker_index; // 0x114
+    uint changed_flags; // 0x118, Added in this build
 } CSfxSlot;
 #pragma pack(pop)
 

@@ -14,10 +14,10 @@ CBaron * __cdecl core_baron_cpp_CBaron_ctor_FUN_0040f210(CBaron *this_ptr)
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = (CBaron *)core_hero_cpp_CHero_ctor_FUN_004ea830((CHero *)this_ptr);
-  *(CHero_full_vtable **)&pCVar2->field_0x154 = &g_CBaronVTable;
+  pCVar2 = (CBaron *)core_hero_cpp_CHero_ctor_FUN_004ea830(&this_ptr->base);
+  (pCVar2->base).base.base.vtable._ub = &g_CBaronVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
-            ((CDeformableModelInstance *)&pCVar2->field_0x158,(char *)0x5d337e);
+            (&(pCVar2->base).base.model,(char *)0x5d337e);
   pCVar2->head_blend_weight = 1.0;
   (pCVar2->head_rotation).z = 0.0;
   (pCVar2->head_rotation).y = (pCVar2->head_rotation).z;
@@ -25,7 +25,7 @@ CBaron * __cdecl core_baron_cpp_CBaron_ctor_FUN_0040f210(CBaron *this_ptr)
   pCVar2->target_actor = (CDemonActor *)0x0;
   pcVar3 = (char *)0x5d3388;
   pCVar2->new_attack = 0;
-  *(uint *)&pCVar2->field_0xfc = 1;
+  (pCVar2->base).base.base.is_transparent = 1;
   pcVar4 = pCVar2->summon_event;
   pCVar2->summoned = 0;
   do {

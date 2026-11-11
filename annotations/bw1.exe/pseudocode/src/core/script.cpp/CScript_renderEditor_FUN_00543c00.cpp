@@ -34,7 +34,7 @@ void __cdecl core_script_cpp_CScript_renderEditor_FUN_00543c00(CScript *this_ptr
   }
   else {
     local_1c = cockpit_drawsurf_cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00481040(&local_40);
-    local_20 = *(int *)(this_ptr->parsed_lines + this_ptr->next_cmd * 8) + -1;
+    local_20 = this_ptr->parsed_lines[this_ptr->next_cmd].line_number + -1;
     index = local_20 - (iVar1 / local_1c) / 2;
     if (index < 0) {
       index = 0;

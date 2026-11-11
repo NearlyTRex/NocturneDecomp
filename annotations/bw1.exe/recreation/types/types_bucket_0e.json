@@ -535,7 +535,7 @@
     "kind":"class",
     "name":"CInventory",
     "rtti_file":"core/inv.cpp",
-    "size":1
+    "size":1132
   },
   {
     "kind":"class",
@@ -554,7 +554,7 @@
     "kind":"class",
     "name":"CMorph",
     "rtti_file":"core/morph.cpp",
-    "size":1
+    "size":3116
   },
   {
     "kind":"class",
@@ -564,8 +564,67 @@
     "size":960
   },
   {
+    "kind":"funcdef",
+    "name":"CPod_dismount",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CPod",
+          "ptr":1
+        }
+      },
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CPod_mount",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CPod",
+          "ptr":1
+        }
+      },
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CShadowsc",
+    "parent":"CEnemy",
     "size":49820
   },
   {
@@ -667,6 +726,11 @@
     "size":360
   },
   {
+    "kind":"class",
+    "name":"CVector3d",
+    "size":24
+  },
+  {
     "kind":"funcdef",
     "name":"CWeapon_getDamage",
     "params":[
@@ -723,6 +787,25 @@
   },
   {
     "kind":"enum",
+    "name":"EGasMaskState",
+    "size":4,
+    "values":[
+      {
+        "name":"GAS_MASK_AWAY",
+        "value":0
+      },
+      {
+        "name":"GAS_MASK_IN_HAND",
+        "value":1
+      },
+      {
+        "name":"GAS_MASK_ON_FACE",
+        "value":2
+      }
+    ]
+  },
+  {
+    "kind":"enum",
     "name":"EWeatherType",
     "size":4,
     "values":[
@@ -748,7 +831,7 @@
   {
     "kind":"struct",
     "name":"SLaserInfo",
-    "size":1
+    "size":84
   },
   {
     "kind":"struct",
@@ -759,7 +842,7 @@
   {
     "kind":"struct",
     "name":"SMotionTransition",
-    "size":1
+    "size":24
   },
   {
     "kind":"struct",
@@ -769,7 +852,7 @@
   {
     "kind":"struct",
     "name":"SSimFrame",
-    "size":1
+    "size":108
   },
   {
     "kind":"struct",

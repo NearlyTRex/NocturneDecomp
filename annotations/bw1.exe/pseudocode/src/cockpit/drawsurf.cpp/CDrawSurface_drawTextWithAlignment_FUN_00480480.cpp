@@ -84,25 +84,25 @@ LAB_00480697:
     engine_font_cpp_CBitFont_drawTextCenter_FUN_004c2250(_DAT_01bc11ec,left_x,y_00,-3,-1,text);
     break;
   case TEXT_ALIGN_LEFT_VCENTER:
-    y_00 = y_00 - *(int *)(_DAT_01bc11ec + 0x41f0) / 2;
+    y_00 = y_00 - _DAT_01bc11ec->current_line_height / 2;
     goto LAB_0048054a;
   case TEXT_ALIGN_CENTER_BOTH:
     engine_font_cpp_CBitFont_drawTextCenter_FUN_004c2250
-              (_DAT_01bc11ec,left_x,y_00 - *(int *)(_DAT_01bc11ec + 0x41f0) / 2,-3,-1,text);
+              (_DAT_01bc11ec,left_x,y_00 - _DAT_01bc11ec->current_line_height / 2,-3,-1,text);
     break;
   case TEXT_ALIGN_CENTER_IN_BOUNDS:
     engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004c2350
               (_DAT_01bc11ec,left_x,right_x,y_00,-3,-1,text);
     break;
   case TEXT_ALIGN_LEFT_IN_AREA:
-    y_00 = ((y_00 + iVar6 + 1) - *(int *)(_DAT_01bc11ec + 0x41f0)) / 2;
+    y_00 = ((y_00 + iVar6 + 1) - _DAT_01bc11ec->current_line_height) / 2;
 LAB_0048054a:
     engine_font_cpp_CBitFont_drawTextWrapper_FUN_004c2060(_DAT_01bc11ec,left_x,y_00,-3,-1,text);
     break;
   case TEXT_ALIGN_CENTER_IN_AREA:
     engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004c2350
               (_DAT_01bc11ec,left_x,right_x,
-               ((y_00 + iVar6 + 1) - *(int *)(_DAT_01bc11ec + 0x41f0)) / 2,-3,-1,text);
+               ((y_00 + iVar6 + 1) - _DAT_01bc11ec->current_line_height) / 2,-3,-1,text);
   }
   engine_font_cpp_setDefaultTextColor_FUN_004c26b0(iVar5);
   _DAT_01c4f008 = uVar1;

@@ -27,7 +27,8 @@ CSentinel * core_sentinel_cpp_CSentinel_dtor_FUN_0054ce30(CSentinel *this_ptr,ui
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
                      ((CDeformableModelInstance *)(pCVar2[-0x19].filenames[0] + 0x10),0);
   pCVar4 = (CSentinel *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&pCVar3[-1].field_0x224c,1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408730
+                     ((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);
   if ((flags & 2) == 0) {
     return pCVar4;
   }

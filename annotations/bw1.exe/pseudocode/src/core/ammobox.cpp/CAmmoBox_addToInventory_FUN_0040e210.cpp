@@ -25,7 +25,7 @@ void __cdecl core_ammobox_cpp_CAmmoBox_addToInventory_FUN_0040e210(CAmmoBox *thi
   if (this_ptr->ammo_count == 0) {
     return;
   }
-  pCVar2 = (CAmmo *)debugAllocTracked1(0x31c);
+  pCVar2 = (CAmmo *)operator_new(0x31c);
   this_ptr_00 = (CAmmo *)0x0;
   if (pCVar2 != (CAmmo *)0x0) {
     this_ptr_00 = core_ammo_cpp_CAmmo_ctor_FUN_0040dbc0(pCVar2);

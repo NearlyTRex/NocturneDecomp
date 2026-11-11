@@ -2,22 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 352,
+    "complexity_score": 279,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 72,
-    "suspect_count": 25,
+    "pseudocode_lines": 74,
+    "suspect_count": 17,
     "suspect_types": [
       "extra_output",
+      "pointer_cast",
+      "pointer_truncation",
       "unaffected_reg",
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 221
+    "total_lines": 223
   },
   "cross_references": [
     {
@@ -212,7 +213,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
+      "line": 8,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "int extraout_EAX;",
@@ -220,7 +221,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 10,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "int unaff_EBP;",
@@ -228,7 +229,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 13,
+      "line": 14,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "sound_sndmain_cpp_FUN_00575560(unaff_EBP);",
@@ -236,111 +237,31 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 15,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "if (0 < extraout_EAX) {",
       "type": "extra_output"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x118 = *(uint *)&this_ptr->field_0x118 | _DAT_02c807f4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x118 = *(uint *)&this_ptr->field_0x118 | _DAT_02c807f4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "if (((this_ptr->options).field_0x4c & 1) != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x118 = *(uint *)&this_ptr->field_0x118 & 0xdffffff9;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x118 = *(uint *)&this_ptr->field_0x118 & 0xdffffff9;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x118 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*_DAT_02c80650 + 0x44))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 27,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "(_DAT_02c80650,this_ptr,*(uint *)&this_ptr->field_0x118);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x11b",
-      "severity": "mild",
-      "text": "else if ((this_ptr->field_0x11b & 0x40) != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 33,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*_DAT_02c80650 + 0x4c))(_DAT_02c80650,this_ptr);",
+      "text": "iVar2 = (**(code **)(*_DAT_02c80650 + 0x44))",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x11b",
-      "severity": "mild",
-      "text": "this_ptr->field_0x11b = this_ptr->field_0x11b & 0xbf;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x11b",
-      "severity": "mild",
-      "text": "this_ptr->field_0x11b = this_ptr->field_0x11b & 0xbf;",
-      "type": "unnamed_field"
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 34,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar2 = (**(code **)(*_DAT_02c80650 + 0x4c))(_DAT_02c80650,this_ptr);",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 42,
       "match": "DAT_02c78cec",
       "severity": "mild",
       "text": "if (this_ptr == (CSfxSlot *)&DAT_02c78cec) {",
@@ -348,7 +269,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 42,
+      "line": 44,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02c80650 + 0x1c))",
@@ -356,7 +277,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 45,
       "match": "DAT_02c7fbf8",
       "severity": "mild",
       "text": "(_DAT_02c80650,*(uint *)(&DAT_02c7fbf8 + _DAT_02c7fc88 * 8),",
@@ -364,7 +285,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 47,
       "match": "DAT_02c7fc08",
       "severity": "mild",
       "text": "*(uint *)(&DAT_02c7fc08 + _DAT_02c7fc88 * 8),",
@@ -372,7 +293,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 49,
       "match": "DAT_02c7fc18",
       "severity": "mild",
       "text": "*(uint *)(&DAT_02c7fc18 + _DAT_02c7fc88 * 8),",
@@ -380,7 +301,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 51,
+      "line": 53,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02c80650 + 0x20))",
@@ -388,7 +309,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 63,
+      "line": 65,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02c80650 + 0x24))",
@@ -396,11 +317,27 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 69,
+      "line": 71,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02c80650 + 0x18))(_DAT_02c80650);",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer value `&this_ptr->changed_flags` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(int)&this_ptr->changed_flags",
+      "severity": "moderate",
+      "text": "pbVar1 = (byte *)((int)&this_ptr->changed_flags + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 36,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pbVar1 = (byte *)((int)&this_ptr->changed_flags + 3);",
+      "type": "pointer_cast"
     }
   ]
 }

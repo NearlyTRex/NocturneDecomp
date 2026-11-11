@@ -7,9 +7,9 @@
 ; XREF[7]:
 ;   support_codec.cpp_CInStreamPipe_ctor_FUN_00443b90 at 00443b95
 ;   support_trstream.cpp_CInStreamMemory_copy_FUN_005a11b0 at 005a11b5
+;   support_trstream.cpp_CInStreamMemory_ctorOpen_FUN_005a1160 at 005a1167
 ;   support_trstream.cpp_CInStreamMemory_ctor_FUN_005a1130 at 005a1135
-;   support_trstream.cpp_FUN_005a1160 at 005a1167
-;   unkaddr_0059f520.cpp_FUN_005a0930 at 005a0937
+;   unkaddr_0059f520.cpp_CInStreamFile_ctorOpen_FUN_005a0930 at 005a0937
 ;   unkclass_instream.cpp_CInStreamFile_copy_FUN_005a0a20 at 005a0a25
 ;   unkclass_instream.cpp_CInStreamFile_ctor_FUN_005a08d0 at 005a08d5
 ;

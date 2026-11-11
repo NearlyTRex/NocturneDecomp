@@ -14,7 +14,7 @@ uint core_box_cpp_FUN_004207b0(CBoundingBox3D *param_1,int param_2)
   int iVar1;
   byte bVar2;
   float afStackY_103c [1000];
-  SProjectedVertex local_90 [48];
+  SProjectedVertex local_90 [2];
   float local_60;
   float local_5c;
   float local_58;

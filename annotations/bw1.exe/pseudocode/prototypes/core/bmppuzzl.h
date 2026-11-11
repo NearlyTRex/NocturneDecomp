@@ -5,6 +5,6 @@
 // Function prototypes for core/bmppuzzl.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_bmppuzzl.cpp_FUN_00416570
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_addButton_FUN_00416570
 // Address: 00416570
-void FUN_00416570(int param_1,int param_2,char *param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9);
+void __cdecl CAudioRecPuzzle::addButton(CAudioRecPuzzle *this_ptr,int param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8,int param_9);

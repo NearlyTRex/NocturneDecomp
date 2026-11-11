@@ -26,14 +26,14 @@ void __cdecl core_script_cpp_CScript_loadState_FUN_0054b3e0(CScript *this_ptr,_F
     core_main_c_FUN_005030e0("CScript::loadState - file version is newer than .EXE");
   }
   _fgets(local_118,0xff,file_handle);
-  _fscanf(file_handle,&DAT_005f00ae,&g_CGamePtr->field_0x244);
+  _fscanf(file_handle,&DAT_005f00ae,&g_CGamePtr->letterbox_mode);
   if (1 < local_18) {
     _fgets(local_118,0xff,file_handle);
-    _fscanf(file_handle,&DAT_005f00b2,&g_CGamePtr->field_0x248);
+    _fscanf(file_handle,&DAT_005f00b2,&g_CGamePtr->allow_damage_flag);
   }
   if (2 < local_18) {
     _fgets(local_118,0xff,file_handle);
-    _fscanf(file_handle,&DAT_005f00b6,&g_CGamePtr->field_0x24c);
+    _fscanf(file_handle,&DAT_005f00b6,&g_CGamePtr->allow_enemy_attack_flag);
   }
   _fgets(local_118,0xff,file_handle);
   _fscanf(file_handle,&DAT_005f00ba,&DAT_01e818b0);

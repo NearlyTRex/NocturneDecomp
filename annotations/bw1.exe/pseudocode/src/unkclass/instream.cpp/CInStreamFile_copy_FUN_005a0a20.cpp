@@ -14,6 +14,6 @@ CInStreamFile * unkclass_instream_cpp_CInStreamFile_copy_FUN_005a0a20(CInStreamF
   CInStreamFile *pCVar1;
   
   pCVar1 = (CInStreamFile *)unkaddr_0059f520_cpp_FUN_0059f540(this_ptr);
-  *(byte ***)pCVar1 = &g_CInStreamFileVTable;
+  pCVar1->vtable = &g_CInStreamFileVTable;
   return pCVar1;
 }

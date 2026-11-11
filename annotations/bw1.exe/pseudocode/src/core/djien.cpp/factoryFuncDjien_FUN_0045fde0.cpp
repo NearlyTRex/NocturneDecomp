@@ -11,7 +11,7 @@ void core_djien_cpp_factoryFuncDjien_FUN_0045fde0(void)
 {
   CDjien *this_ptr;
   
-  this_ptr = (CDjien *)debugAllocTracked1(0xc9cc);
+  this_ptr = (CDjien *)operator_new(0xc9cc);
   if (this_ptr == (CDjien *)0x0) {
     return;
   }

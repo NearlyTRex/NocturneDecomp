@@ -9,15 +9,13 @@
 void __cdecl core_thehand_cpp_CTheHand_archive_FUN_005998d0(CTheHand *this_ptr)
 
 {
-  byte *model_ptr;
+  CDeformableModelInstance *model_ptr;
   
-  core_enemy_cpp_CEnemy_archive_FUN_004a0520((CEnemy *)this_ptr);
-  model_ptr = &this_ptr->field_0x158;
-  core_actor_cpp_archiveDeformableModelInstance_FUN_0040b7f0
-            ((CDeformableModelInstance *)model_ptr,"0@modelName" + 2);
-  core_actor_cpp_archiveMotionState_FUN_0040b870
-            ((CMotionController *)model_ptr,"motion state");
-  core_actor_cpp_archivePartStatus_FUN_0040b960
-            ((CDeformableModelInstance *)model_ptr,"partStatus");
+  core_enemy_cpp_CEnemy_archive_FUN_004a0520(&this_ptr->base);
+  model_ptr = &(this_ptr->base).base.model;
+  core_actor_cpp_archiveDeformableModelInstance_FUN_0040b7f0(model_ptr,"0@modelName" + 2)
+  ;
+  core_actor_cpp_archiveMotionState_FUN_0040b870(&model_ptr->base,"motion state");
+  core_actor_cpp_archivePartStatus_FUN_0040b960(model_ptr,"partStatus");
   return;
 }

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 587,
-    "complexity_score": 434,
+    "complexity_score": 379,
     "cross_reference_count": 3,
     "function_call_count": 23,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 249,
-    "suspect_count": 16,
+    "suspect_count": 11,
     "suspect_types": [
       "undefined_data",
-      "unresolved_funcptr",
       "unrolled_strchr",
       "unrolled_strcpy",
       "warning_overlapping_globals"
@@ -72,14 +71,14 @@
       "name": "crt_memory.c___vec_new_FUN_005c2694"
     },
     {
+      "addr": "005c1268",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_array_FUN_005c1268"
+    },
+    {
       "addr": "005c0336",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005c0336"
-    },
-    {
-      "addr": "005c1268",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c1268"
     },
     {
       "addr": "004032b0",
@@ -610,46 +609,6 @@
       "severity": "mild",
       "text": "DAT_0061b4ac = 0x7f;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 176,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,0x1c);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 180,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (*(code *)**(uint **)0x01D1BCA0)(0x01D1BCA0,0x2a);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 182,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar5 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,0xf), iVar5 != 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 185,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (*(code *)**(uint **)0x01D1BCA0)(0x01D1BCA0,0x2a);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 187,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar5 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,0xf), iVar5 != 0)) {",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",

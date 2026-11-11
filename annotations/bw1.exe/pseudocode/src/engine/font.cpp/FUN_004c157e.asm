@@ -1,17 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_font_cpp_FUN_004c157e(CBitFont *param_1,CBitFont *param_2)
+; void engine_font_cpp_FUN_004c157e(CBitFont *param_1,char *param_2)
 ;
 ;
 ; Called Functions:
 ;   crt_string.c_strupr_FUN_005c2c20
 ;   engine_font.cpp_CBitFont_loadNewBitmap_FUN_004c1540
 ;   engine_font.cpp_CBitFont_openFontFile_FUN_004c0ca0
-;   support_trstream.cpp_FUN_005a0fd0
+;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0
+;   unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0
 ;   unkaddr_0059f520.cpp_FUN_0059f5a0
 ;   unkaddr_0059f520.cpp_FUN_005a07a0
-;   unkaddr_0059f520.cpp_FUN_005a0dc0
 ;   unkclass_instream.cpp_CInStreamFile_ctor_FUN_005a08d0
 ;   unkclass_instream.cpp_CInStreamFile_dtor_FUN_005a0a50
 ;
@@ -61,8 +61,8 @@ section .text
     PUSH 0x5e0994                       ; 004c15d8
     LEA EAX,[ESP + 0x20c]               ; 004c15dd
     PUSH EAX                            ; 004c15e4
-    CALL support_trstream.cpp_FUN_005a0fd0 ; 004c15e5
-        ;   XREF to: 005a0fd0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a0fd0()
+    CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0 ; 004c15e5
+        ;   XREF to: 005a0fd0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0(CInStreamFile * this_ptr, undefined4 param_2, undefined4 param_3, int param_4)
     ADD ESP,0x10                        ; 004c15ea
     TEST EAX,EAX                        ; 004c15ed
     JNZ 0x004c160e                      ; 004c15ef
@@ -185,8 +185,8 @@ section .text
     ADD ESP,0x10                        ; 004c177a
     LEA EAX,[ESP + 0x200]               ; 004c177d
     PUSH EAX                            ; 004c1784
-    CALL unkaddr_0059f520.cpp_FUN_005a0dc0 ; 004c1785
-        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059f520.cpp_FUN_005a0dc0()
+    CALL unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0 ; 004c1785
+        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined4 unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 004c178a
     CMP dword ptr [ESP + 0x234],0x20    ; 004c178d
     JZ 0x004c17f9                       ; 004c1795

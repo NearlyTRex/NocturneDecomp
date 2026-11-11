@@ -8,7 +8,7 @@
 ;
 ; XREF[17]:
 ;   core_event.cpp_FUN_004a1d00 at 004a1f1c
-;   core_fldnotes.cpp_FUN_004bcba0 at 004bcef3
+;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0 at 004bcef3
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d28e3
 ;   core_game.cpp_checkCheatAndGiveWeapon_FUN_004d2690 at 004d26cb
 ;   core_game.cpp_checkCheatCode_FUN_004d24c0 at 004d24f8

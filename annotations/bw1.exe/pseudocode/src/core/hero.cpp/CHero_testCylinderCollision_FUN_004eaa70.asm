@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 g_CGameInstance.field444_0x1ec
+;   undefined4 g_CGameInstance.god_mode_enabled
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_testCylinderCollision_FUN_00408cd0
@@ -22,7 +22,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 004eaa70
         ;   Label: core_hero.cpp_CHero_testCylinderCollision_FUN_004eaa70
     MOV EAX,[0x0061d95c]                ; 004eaa74 | g_CGamePtr
-    CMP dword ptr [EAX + 0x1ec],0x0     ; 004eaa79 | g_CGameInstance.field444_0x1ec
+    CMP dword ptr [EAX + 0x1ec],0x0     ; 004eaa79 | g_CGameInstance.god_mode_enabled
     JNZ 0x004eaa8e                      ; 004eaa80
         ;   XREF to: 004eaa8e (CONDITIONAL_JUMP)  ; LAB_004eaa8e
     TEST dword ptr [EDX + 0xc1d0],0x7fffffff ; 004eaa82

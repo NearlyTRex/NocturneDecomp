@@ -63,7 +63,7 @@ void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_0052ebd0(CNetGame *thi
   memset(dest,0,0x100);
   _strncpy(dest,message,0xff);
   core_netgame_cpp_CNetGame_addChatHistory_FUN_0052f100
-            (this_ptr,(SNetworkAddr *)&this_ptr->players[this_ptr->local_player_index].field_0x1c,
+            (this_ptr,&this_ptr->players[this_ptr->local_player_index].addr,
              *(int *)(&DAT_01d6dfc0 + iVar1),this_ptr->player_name,dest);
   return;
 }

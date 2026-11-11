@@ -38,7 +38,7 @@ void core_game_cpp_FUN_004d77d0(CGame *param_1)
     return;
   }
   pcVar9 = param_1->bitmap_filename;
-  *(uint *)&param_1->field_0xe0 = 0;
+  param_1->cinematic_skip_in_progress = 0;
   iVar2 = engine_dosio_cpp_getFileSize_FUN_00478fb0("art",pcVar9);
   if (iVar2 < 0) {
     shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,"Can't open %s",pcVar9);
@@ -116,7 +116,7 @@ void core_game_cpp_FUN_004d77d0(CGame *param_1)
     engine_special_cpp_unlockFrame_FUN_00581fa0(0);
     wincore_wddvmem_cpp_closeScreenDevice_FUN_005acc00();
     wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
-    local_18 = FUN_005c08d0(param_1->bitmap_width * param_1->bitmap_height);
+    local_18 = malloc(param_1->bitmap_width * param_1->bitmap_height);
     if (local_18 != (void *)0x0) {
       p_Var4 = engine_dosio_cpp_FUN_00479180(&DAT_005e3303,param_1->bitmap_filename,&DAT_005e3300);
       if (p_Var4 == (_FILE *)0x0) {
@@ -157,22 +157,20 @@ void core_game_cpp_FUN_004d77d0(CGame *param_1)
       core_game_cpp_FUN_004d19d0(param_1);
       while( true ) {
         wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
-        if (*(int *)&param_1->field_0xd0 == 2) {
+        if (param_1->game_control == CONTROL_MODE_GAMEPAD) {
           core_game_cpp_CGame_resetKeyState_FUN_004d0960(param_1);
         }
         iVar2 = wincore_winrun_cpp_wasKeyPressed_FUN_005b2580();
         if ((((iVar2 != 0) ||
-             (iVar2 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,*(uint *)&param_1->field_0x48),
-             iVar2 != 0)) || (_DAT_01c43544 != 0)) ||
-           ((_DAT_01cd0b3c != 1 && (*(float *)&param_1->field_0x3b8 < 0.0)))) break;
+             (iVar2 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,param_1->key_fire), iVar2 != 0)) ||
+            (_DAT_01c43544 != 0)) || ((_DAT_01cd0b3c != 1 && (param_1->bitmap_display_time < 0.0))))
+        break;
         core_game_cpp_FUN_004cbf20(g_CGamePtr);
-        *(float *)&param_1->field_0x3b8 =
-             *(float *)&param_1->field_0x3b8 - g_CGamePtr->delta_time_float;
+        param_1->bitmap_display_time = param_1->bitmap_display_time - g_CGamePtr->delta_time_float;
       }
       while ((_DAT_01c43544 != 0 ||
-             (iVar2 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,*(uint *)&param_1->field_0x48),
-             iVar2 != 0))) {
-        if (*(int *)&param_1->field_0xd0 == 2) {
+             (iVar2 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,param_1->key_fire), iVar2 != 0))) {
+        if (param_1->game_control == CONTROL_MODE_GAMEPAD) {
           core_game_cpp_CGame_resetKeyState_FUN_004d0960(param_1);
           wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
         }

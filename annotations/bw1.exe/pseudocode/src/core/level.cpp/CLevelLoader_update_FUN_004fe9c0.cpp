@@ -34,20 +34,20 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader *this_
   int local_10;
   CBitFont *local_c;
   
-  if (*(int *)(this_ptr + 0xc) != 0) {
+  if (this_ptr->enabled != 0) {
     if (clear_screen != 0) {
       engine_2d_c_fillRectColor_FUN_004031c0(0,0,DAT_0061b498 + -1,DAT_0061b49c + -1,0);
     }
     if (DAT_0061b49c == 0x1e0) {
-      if (*(int *)(this_ptr + 0x110) != 0) {
+      if (this_ptr->use_custom_viewport != 0) {
         engine_matrix_c_FUN_00483c10
-                  (DAT_00612560,*(uint *)(this_ptr + 0x114),*(uint *)(this_ptr + 0x118),
-                   *(uint *)(this_ptr + 0x11c),*(uint *)(this_ptr + 0x120));
+                  (DAT_00612560,this_ptr->viewport_x,this_ptr->viewport_y,this_ptr->viewport_width,
+                   this_ptr->viewport_height);
       }
       engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
                 (DAT_00612560,(CVector3f *)&DAT_02c8af28);
       local_14 = 0x42600000;
-      if (*(int *)(this_ptr + 0x110) != 0) {
+      if (this_ptr->use_custom_viewport != 0) {
         local_14 = 0x42a80000;
       }
       engine_matrix_c_FUN_004839b0(DAT_00612560,local_14);
@@ -59,7 +59,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader *this_
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
                 (DAT_00612560,&local_20);
       g_CDemonSetPtr->rendering_mode = 1;
-      iVar6 = 0x8000 - (*(int *)this_ptr << 0xf) / *(int *)(this_ptr + 4);
+      iVar6 = 0x8000 - (this_ptr->current_frame << 0xf) / this_ptr->total_frames;
       iVar3 = engine_matrix_c_FUN_00507350(iVar6);
       pCVar2 = g_CDemonSetPtr;
       (g_CDemonSetPtr->light_direction).y = -37000;
@@ -73,59 +73,57 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader *this_
            (uint)((longlong)iVar3 * 37000) >> 0x10 |
            (int)((ulonglong)((longlong)iVar3 * 37000) >> 0x20) << 0x10;
       core_set_cpp_CDemonSet_setFlatColor_FUN_00555770
-                (pCVar2,*(int *)(this_ptr + 0x124) << 8,*(int *)(this_ptr + 0x128) << 8,
-                 *(int *)(this_ptr + 300) << 8);
+                (pCVar2,(this_ptr->color).r << 8,(this_ptr->color).g << 8,(this_ptr->color).b << 8);
       local_2c = 7.25;
       local_28 = 7.25;
       local_24 = 0.0;
       local_5c.x = (int)ROUND(_DAT_00602eac * 7.25);
       local_5c.y = (int)ROUND(_DAT_00602eac * 7.25);
       local_5c.z = (int)ROUND(_DAT_00602eac * 0.0);
-      engine_special_cpp_FUN_00580173((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&local_5c)
-      ;
+      engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_5c);
       local_2c = -local_2c;
       local_50.x = (int)ROUND(local_2c * _DAT_00602eac);
       local_50.y = (int)ROUND(local_28 * _DAT_00602eac);
       local_50.z = (int)ROUND(local_24 * _DAT_00602eac);
       engine_special_cpp_FUN_00580173
-                ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&local_50);
+                (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_50);
       local_28 = -local_28;
       local_38.x = (int)ROUND(local_2c * _DAT_00602eac);
       local_38.y = (int)ROUND(local_28 * _DAT_00602eac);
       local_38.z = (int)ROUND(local_24 * _DAT_00602eac);
       engine_special_cpp_FUN_00580173
-                ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&local_38);
+                (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_38);
       local_2c = -local_2c;
       local_44.x = (int)ROUND(local_2c * _DAT_00602eac);
       local_44.y = (int)ROUND(local_28 * _DAT_00602eac);
       local_44.z = (int)ROUND(local_24 * _DAT_00602eac);
       engine_special_cpp_FUN_00580173
-                ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),&local_44);
+                (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_44);
       pCVar1 = DAT_00612560;
-      *(uint *)(DAT_00612560->vertex_buffer_ptr + 0x18) = 0x1000000;
-      *(uint *)(pCVar1->vertex_buffer_ptr + 0x1c) = 0;
-      *(uint *)(pCVar1->vertex_buffer_ptr + 0x48) = 0;
-      *(uint *)(pCVar1->vertex_buffer_ptr + 0x4c) = 0;
-      *(uint *)(pCVar1->vertex_buffer_ptr + 0x78) = 0;
-      *(uint *)(pCVar1->vertex_buffer_ptr + 0x7c) = 0x1000000;
-      *(uint *)(pCVar1->vertex_buffer_ptr + 0xa8) = 0x1000000;
-      *(uint *)(pCVar1->vertex_buffer_ptr + 0xac) = 0x1000000;
+      DAT_00612560->vertex_buffer_ptr->u = 0x1000000;
+      pCVar1->vertex_buffer_ptr->v = 0;
+      pCVar1->vertex_buffer_ptr[1].u = 0;
+      pCVar1->vertex_buffer_ptr[1].v = 0;
+      pCVar1->vertex_buffer_ptr[2].u = 0;
+      pCVar1->vertex_buffer_ptr[2].v = 0x1000000;
+      pCVar1->vertex_buffer_ptr[3].u = 0x1000000;
+      pCVar1->vertex_buffer_ptr[3].v = 0x1000000;
       pCVar1 = DAT_00612560;
-      iVar3 = (*(int *)this_ptr * 0xffff) / *(int *)(this_ptr + 4);
+      iVar3 = (this_ptr->current_frame * 0xffff) / this_ptr->total_frames;
       if (0xffff < iVar3) {
         iVar3 = 0xffff;
       }
-      *(uint *)(DAT_00612560->vertex_buffer_ptr + 0x2c) = 0;
-      *(int *)(pCVar1->vertex_buffer_ptr + 0x5c) = iVar3;
-      *(uint *)(pCVar1->vertex_buffer_ptr + 0x8c) = 0;
-      *(uint *)(pCVar1->vertex_buffer_ptr + 0xbc) = 0;
+      DAT_00612560->vertex_buffer_ptr->a = 0;
+      pCVar1->vertex_buffer_ptr[1].a = iVar3;
+      pCVar1->vertex_buffer_ptr[2].a = 0;
+      pCVar1->vertex_buffer_ptr[3].a = 0;
       iVar3 = 0;
       do {
         pCVar1 = DAT_00612560;
-        *(int *)(DAT_00612560->vertex_buffer_ptr + iVar3 + 0x20) = *(int *)(this_ptr + 0x124) << 8;
-        *(int *)(pCVar1->vertex_buffer_ptr + iVar3 + 0x24) = *(int *)(this_ptr + 0x128) << 8;
+        *(int *)((int)&DAT_00612560->vertex_buffer_ptr->r + iVar3) = (this_ptr->color).r << 8;
+        *(int *)((int)&pCVar1->vertex_buffer_ptr->g + iVar3) = (this_ptr->color).g << 8;
         iVar6 = iVar3 + 0x30;
-        *(int *)(pCVar1->vertex_buffer_ptr + iVar3 + 0x28) = *(int *)(this_ptr + 300) << 8;
+        *(int *)((int)&pCVar1->vertex_buffer_ptr->b + iVar3) = (this_ptr->color).b << 8;
         iVar3 = iVar6;
       } while (iVar6 != 0xc0);
       local_84.surface_normal.D.i = 0;
@@ -145,28 +143,28 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader *this_
       engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00467270
                 (&g_LoadingMoonModel,0,(CKeyFramedModelInstance *)0x0,0x205);
-      if (*(int *)(this_ptr + 0x110) != 0) {
+      if (this_ptr->use_custom_viewport != 0) {
         engine_matrix_c_popViewport_FUN_00483c40();
       }
       g_CDemonSetPtr->rendering_mode = 0;
       local_c = _DAT_0152d244;
-      iVar6 = (DAT_0061b498 * 0x240) / 0x280;
-      iVar4 = (DAT_0061b49c * 0x18) / 0x1e0;
-      iVar5 = (DAT_0061b498 << 5) / 0x280;
+      iVar3 = (DAT_0061b498 * 0x240) / 0x280;
+      iVar6 = (DAT_0061b49c * 0x18) / 0x1e0;
+      iVar4 = (DAT_0061b498 << 5) / 0x280;
       local_10 = (DAT_0061b49c * 0x1c0) / 0x1e0;
-      iVar3 = *(int *)this_ptr;
-      *(int *)this_ptr = iVar3 + 1;
-      if (*(int *)(this_ptr + 4) < iVar3 + 1) {
-        *(int *)this_ptr = *(int *)(this_ptr + 4);
+      iVar5 = this_ptr->current_frame + 1;
+      this_ptr->current_frame = iVar5;
+      if (this_ptr->total_frames < iVar5) {
+        this_ptr->current_frame = this_ptr->total_frames;
       }
-      if (*(int *)(this_ptr + 0x110) == 0) {
+      if (this_ptr->use_custom_viewport == 0) {
         engine_2d_c_fillRectColor_FUN_004031c0
-                  (iVar5 + -1,local_10 + -1,iVar6 + 1 + iVar5,local_10 + iVar4 + 1,0);
+                  (iVar4 + -1,local_10 + -1,iVar3 + 1 + iVar4,local_10 + iVar6 + 1,0);
         if (text != (char *)0x0) {
-          iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(local_c,text);
+          iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(local_c,text);
           engine_font_cpp_FUN_004c1dd0
-                    (local_c,text,(iVar5 + iVar6 / 2) - iVar3 / 2,
-                     (local_10 + iVar4 / 2) - *(int *)(local_c + 0x41ec) / 2,0xf8,0xffffffff);
+                    (local_c,text,(iVar4 + iVar3 / 2) - iVar5 / 2,
+                     (local_10 + iVar6 / 2) - local_c->max_char_height / 2,0xf8,0xffffffff);
         }
       }
       wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();

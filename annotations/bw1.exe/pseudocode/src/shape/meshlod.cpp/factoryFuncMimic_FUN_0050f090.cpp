@@ -11,7 +11,7 @@ void shape_meshlod_cpp_factoryFuncMimic_FUN_0050f090(void)
 {
   CMimic *this_ptr;
   
-  this_ptr = (CMimic *)debugAllocTracked1(0x47ac4);
+  this_ptr = (CMimic *)operator_new(0x47ac4);
   if (this_ptr == (CMimic *)0x0) {
     return;
   }

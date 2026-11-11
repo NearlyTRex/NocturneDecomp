@@ -30,14 +30,16 @@ CPassenger * core_passngr_cpp_CPassenger_dtor_FUN_00532850(CPassenger *this_ptr,
   if (this_ptr_00 != (CWerewolf *)0x0) {
     (*((this_ptr_00->base).base.base.vtable._ub)->dtor)((CDemonActor *)this_ptr_00,2);
   }
-  pCVar1 = core_morph_cpp_CMorph_dtor_FUN_00522fc0((CMorph *)&this_ptr->field_0x1fbc4,0);
-  pCVar2 = core_path_cpp_CPathMap_dtor_FUN_00533060((CPathMap *)(pCVar1 + -0x139f4),0);
+  pCVar1 = core_morph_cpp_CMorph_dtor_FUN_00522fc0(&this_ptr->morph,0);
+  pCVar2 = core_path_cpp_CPathMap_dtor_FUN_00533060
+                     ((CPathMap *)(pCVar1[-0x1a].models[0].textures[7].texture_name + 0x1c),0);
   iVar3 = core_armour_cpp_FUN_0040ee30(pCVar2[-1].height_cache_tags[10] + 0x36,0);
   pCVar4 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)(iVar3 + -0x93c),0);
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
                      ((CDeformableModelInstance *)(pCVar4[-0x19].filenames[0] + 0x10),0);
   pCVar6 = (CPassenger *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&pCVar5[-1].field_0x224c,1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408730
+                     ((CDemonActor *)(pCVar5[-1].part_data.texture_set_indices + 7),1);
   if ((flags & 2) != 0) {
     FUN_005c0344(pCVar6);
     return pCVar6;

@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_platfrm.cpp_CPlatform_ctor_FUN_00539400
-;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
+;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x72c                          ; 00510dc0
         ;   Label: core_mimic.cpp_factoryFuncMineCar_FUN_00510dc0
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 00510dc5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 00510dc5
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 00510dca
     TEST EAX,EAX                        ; 00510dcd
     JNZ 0x00510dd2                      ; 00510dcf

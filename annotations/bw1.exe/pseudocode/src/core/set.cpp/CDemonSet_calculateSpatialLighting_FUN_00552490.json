@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 249,
-    "complexity_score": 451,
+    "complexity_score": 435,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 136,
-    "suspect_count": 27,
+    "pseudocode_lines": 135,
+    "suspect_count": 26,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -16,11 +16,10 @@
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 385
+    "total_lines": 384
   },
   "cross_references": [
     {
@@ -436,16 +435,8 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 87,
-      "match": "field_0x14d160",
-      "severity": "mild",
-      "text": "if ((((*(uint *)&this_ptr->field_0x14d160 & 0x7fffffff) != 0) &&",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 103,
+      "line": 102,
       "match": "&stack0xffffffc8",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar8 * 0xfffffffe * 4) =",
@@ -453,7 +444,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 104,
+      "line": 103,
       "match": "&stack0xffffffbc",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffbc + (uint)bVar8 * -8);",
@@ -461,7 +452,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 105,
+      "line": 104,
       "match": "&stack0xffffffcc",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffcc + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
@@ -469,7 +460,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 106,
+      "line": 105,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffc0 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
@@ -477,7 +468,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 111,
+      "line": 110,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar8 * 0xfffffffe * 4) =",
@@ -485,7 +476,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 112,
+      "line": 111,
       "match": "&stack0xffffffe0",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar8 * -8);",
@@ -493,7 +484,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 113,
+      "line": 112,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
@@ -501,7 +492,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 114,
+      "line": 113,
       "match": "&stack0xffffffe4",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffe4 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
@@ -509,7 +500,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 125,
+      "line": 124,
       "match": "&stack0xffffffd0",
       "severity": "moderate",
       "text": "puVar10 = &stack0xffffffd0;",
@@ -517,7 +508,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 129,
+      "line": 128,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
       "text": "(&g_CDemonCameraInstance,&stack0xffffffc4,uVar9,puVar10);",
@@ -525,7 +516,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffc8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 103,
+      "line": 102,
       "match": "(int)&stack0xffffffc8",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar8 * 0xfffffffe * 4) =",
@@ -533,7 +524,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffd4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 111,
+      "line": 110,
       "match": "(int)&stack0xffffffd4",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar8 * 0xfffffffe * 4) =",
@@ -541,7 +532,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 103,
+      "line": 102,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar8 * 0xfffffffe * 4) =",
@@ -549,7 +540,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 111,
+      "line": 110,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar8 * 0xfffffffe * 4) =",
@@ -557,7 +548,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_14` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_14->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 135,
+      "line": 134,
       "match": "local_14 = (T *)local_14->ARRAY",
       "severity": "moderate",
       "text": "local_14 = (CDemonSet *)local_14->cameras;",

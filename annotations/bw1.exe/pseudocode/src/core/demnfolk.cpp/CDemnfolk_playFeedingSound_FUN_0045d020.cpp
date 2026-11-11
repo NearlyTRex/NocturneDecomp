@@ -11,16 +11,16 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_playFeedingSound_FUN_0045d020(CDemnfolk
 {
   int iVar1;
   uint uVar2;
-  char *pcVar3;
+  char *sound_name;
   
   iVar1 = core_actor_cpp_randomChance_FUN_0040cd00(0.5);
   if (iVar1 == 0) {
-    pcVar3 = "ghoul-dig-?.wav";
+    sound_name = "ghoul-dig-?.wav";
   }
   else {
-    pcVar3 = "ghoul-eat-?.wav";
+    sound_name = "ghoul-eat-?.wav";
   }
-  uVar2 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))(this_ptr,pcVar3);
-  *(uint *)&this_ptr->field_0xc354 = uVar2;
+  uVar2 = (*((this_ptr->base).base.base.vtable._ub)->playSound)((CDemonActor *)this_ptr,sound_name);
+  this_ptr->sfx_handles[2] = uVar2;
   return;
 }

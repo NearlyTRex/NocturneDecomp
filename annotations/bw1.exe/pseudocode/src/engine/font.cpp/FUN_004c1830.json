@@ -150,7 +150,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (pCVar2 != param_1 + 0x10);",
+      "text": "} while (pacVar2 != (char (*) [80])(param_1->bitmap_files[0] + 0xc));",
       "type": "unnamed_param"
     },
     {
@@ -158,7 +158,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x1dcc) != 0) {",
+      "text": "if (param_1->accel_vertex_alloc != (void *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -166,7 +166,7 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005c09f0(*(int *)(param_1 + 0x1dcc));",
+      "text": "FUN_005c09f0(param_1->accel_vertex_alloc);",
       "type": "unnamed_param"
     },
     {
@@ -174,7 +174,7 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1dcc) = 0;",
+      "text": "param_1->accel_vertex_alloc = (void *)0x0;",
       "type": "unnamed_param"
     },
     {
@@ -182,7 +182,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x1dd4) == 0) {",
+      "text": "if (param_1->accel_indices == (void *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -198,7 +198,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005c09f0(*(int *)(param_1 + 0x1dd4));",
+      "text": "FUN_005c09f0(param_1->accel_indices);",
       "type": "unnamed_param"
     },
     {

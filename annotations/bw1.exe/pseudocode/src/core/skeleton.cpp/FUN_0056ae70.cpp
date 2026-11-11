@@ -23,8 +23,8 @@ uint * core_skeleton_cpp_FUN_0056ae70(CDeformableModelInstance *param_1)
   uint auStack_48 [5];
   float local_34;
   CDeformableModel *local_20;
-  byte *local_1c;
-  byte *local_18;
+  CMatrix3x4f *local_1c;
+  CBoundingBox3D *local_18;
   int local_14;
   
   bVar6 = 0;
@@ -34,10 +34,10 @@ uint * core_skeleton_cpp_FUN_0056ae70(CDeformableModelInstance *param_1)
   core_box_cpp_CBoundingBox3D_reset_FUN_00421570(&local_70);
   local_14 = 0;
   if (0 < iVar2) {
-    local_18 = &local_20->field_0x274c;
-    local_1c = &param_1->field_0xe80;
+    local_18 = local_20->bone_bounds;
+    local_1c = (param_1->bone_transform).bone_model_matrices;
     do {
-      if (*(int *)&local_20->field_0x30ac == 2) {
+      if (local_20->bone_flags[0] == 2) {
         iVar3 = 0;
         do {
           core_box_cpp_FUN_00420570(local_18,iVar3,local_1c);
@@ -55,8 +55,8 @@ uint * core_skeleton_cpp_FUN_0056ae70(CDeformableModelInstance *param_1)
         } while (iVar3 < 8);
       }
       local_20 = (CDeformableModel *)local_20->lod_info;
-      local_18 = local_18 + 0x18;
-      local_1c = local_1c + 0x30;
+      local_18 = local_18 + 1;
+      local_1c = local_1c + 1;
       local_14 = local_14 + 1;
     } while (local_14 < iVar2);
   }

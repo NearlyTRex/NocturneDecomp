@@ -11,60 +11,62 @@
 CDoc * core_doc_cpp_CDoc_ctor_FUN_00468c80(CDoc *this_ptr)
 
 {
-  uint uVar1;
+  float fVar1;
+  float fVar2;
   CDoc *this_ptr_00;
   uint uStack000001a8;
   
-  this_ptr_00 = (CDoc *)core_hero_cpp_CHero_ctor_FUN_004ea830((CHero *)this_ptr);
-  ((UActorVTable *)&this_ptr_00->field_0x154)->_ub = &g_CDocVTable._ub;
-  *(uint *)&this_ptr_00->field_0x1ffac = 0;
-  *(uint *)&this_ptr_00->field_0x1ffb0 = 0;
-  *(uint *)&this_ptr_00->field_0x1ffb4 = 0;
-  *(uint *)&this_ptr_00->field_0x1ffb8 = 0xbf060a92;
-  *(uint *)&this_ptr_00->field_0x1ffd8 = 0;
-  *(uint *)&this_ptr_00->field_0x1ffd0 = 0;
-  *(uint *)&this_ptr_00->field_0x1ffc8 = 0;
-  *(uint *)&this_ptr_00->field_0x1ffcc = *(uint *)&this_ptr_00->field_0x1ffc8;
-  *(uint *)&this_ptr_00->field_0x1ffc0 = 0;
-  *(uint *)&this_ptr_00->field_0x1ffd4 = 0;
-  *(uint *)&this_ptr_00->field_0x1ffdc = 0;
-  *(uint *)&this_ptr_00->field_0x1fff8 = 0;
-  *(uint *)&this_ptr_00->field_0x1fff0 = 0;
-  *(uint *)&this_ptr_00->field_0x1ffe8 = 0;
-  *(uint *)&this_ptr_00->field_0x1ffc4 = *(uint *)&this_ptr_00->field_0x1ffc0;
-  *(uint *)&this_ptr_00->field_0x1ffe0 = 0;
-  *(uint *)&this_ptr_00->field_0x1ffec = *(uint *)&this_ptr_00->field_0x1ffe8;
-  *(uint *)&this_ptr_00->field_0x1fff4 = 0;
-  *(uint *)&this_ptr_00->field_0x1fffc = 0;
-  *(uint *)&this_ptr_00->field_0x20060 = 0;
-  *(uint *)&this_ptr_00->field_0x20000 = 0;
-  *(uint *)&this_ptr_00->field_0x20008 = 0;
-  *(uint *)&this_ptr_00->field_0x20010 = 0;
-  *(uint *)&this_ptr_00->field_0x20014 = 0;
-  uVar1 = 0x41200000;
-  *(uint *)&this_ptr_00->field_0x20084 = 0xf149f2ca;
-  *(uint *)&this_ptr_00->field_0x1ffe4 = *(uint *)&this_ptr_00->field_0x1ffe0;
-  *(uint *)&this_ptr_00->field_0x1ffbc = uVar1;
-  *(uint *)&this_ptr_00->field_0x2006c = 0xf149f2ca;
+  this_ptr_00 = (CDoc *)core_hero_cpp_CHero_ctor_FUN_004ea830(&this_ptr->base);
+  (this_ptr_00->base).base.base.vtable._ub = &g_CDocVTable._ub;
+  this_ptr_00->guns_drawn = 0;
+  this_ptr_00->guns_drawn_blend = 0.0;
+  this_ptr_00->frame_cleared = 0.0;
+  this_ptr_00->aim_pitch = -0.5235988;
+  (this_ptr_00->right_arm_aim).aim_target = (CDemonActor *)0x0;
+  (this_ptr_00->right_arm_aim).recoil_timer = 0.0;
+  (this_ptr_00->right_arm_aim).target_pitch = 0.0;
+  (this_ptr_00->right_arm_aim).target_yaw = (this_ptr_00->right_arm_aim).target_pitch;
+  (this_ptr_00->right_arm_aim).aim_pitch = 0.0;
+  fVar1 = (this_ptr_00->right_arm_aim).aim_pitch;
+  (this_ptr_00->right_arm_aim).kickback_factor = 0.0;
+  (this_ptr_00->right_arm_aim).aim_lock_state = 0;
+  (this_ptr_00->left_arm_aim).aim_target = (CDemonActor *)0x0;
+  (this_ptr_00->left_arm_aim).recoil_timer = 0.0;
+  (this_ptr_00->left_arm_aim).target_pitch = 0.0;
+  (this_ptr_00->right_arm_aim).aim_yaw = fVar1;
+  (this_ptr_00->left_arm_aim).aim_pitch = 0.0;
+  (this_ptr_00->left_arm_aim).target_yaw = (this_ptr_00->left_arm_aim).target_pitch;
+  fVar1 = (this_ptr_00->left_arm_aim).aim_pitch;
+  (this_ptr_00->left_arm_aim).kickback_factor = 0.0;
+  (this_ptr_00->left_arm_aim).aim_lock_state = 0;
+  this_ptr_00->arm_recoil_blend = 0.0;
+  this_ptr_00->ladder_to_descend = (CLadder *)0x0;
+  this_ptr_00->dual_wield_side = 0;
+  this_ptr_00->melee_attack_index = 0;
+  this_ptr_00->interact_blend = 0.0;
+  fVar2 = 0x41200000;
+  (this_ptr_00->carry_object_bbox).max.x = -1e+30;
+  (this_ptr_00->left_arm_aim).aim_yaw = fVar1;
+  this_ptr_00->aim_speed_factor = fVar2;
+  (this_ptr_00->carry_object_world_center).x = -1e+30;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
-            ((CDeformableModelInstance *)&this_ptr_00->field_0x158,(char *)0x5d98a4);
-  *(int *)&this_ptr_00->field_0x2c98 = 0;
-  *(uint *)&this_ptr_00->field_0x20004 = 0;
-  *(uint *)&this_ptr_00->field_0x20024 = 0;
-  *(uint *)&this_ptr_00->field_0x20028 = 0;
-  *(uint *)&this_ptr_00->field_0x20054 = 0;
-  *(uint *)&this_ptr_00->field_0x20050 = *(uint *)&this_ptr_00->field_0x20054;
-  *(uint *)&this_ptr_00->field_0x2004c = *(uint *)&this_ptr_00->field_0x20050;
-  *(uint *)&this_ptr_00->field_0x20058 = 0xffffffff;
-  *(uint *)&this_ptr_00->field_0x2000c = 0;
-  *(uint *)&this_ptr_00->field_0x2002c = 0;
-  *(uint *)&this_ptr_00->field_0x20030 = 0;
-  *(uint *)&this_ptr_00->field_0x1ff5c = 0;
-  *(uint *)&this_ptr_00->field_0x2005c = 0;
-  *(uint *)&this_ptr_00->field_0x20064 = 0;
+            (&(this_ptr_00->base).base.model,(char *)0x5d98a4);
+  (this_ptr_00->base).base.layer_action_index = 0;
+  this_ptr_00->weapon = (CWeapon *)0x0;
+  this_ptr_00->turn_angle = 0.0;
+  this_ptr_00->turn_blend_weight = 0.0;
+  (this_ptr_00->pending_velocity).z = 0.0;
+  (this_ptr_00->pending_velocity).y = (this_ptr_00->pending_velocity).z;
+  (this_ptr_00->pending_velocity).x = (this_ptr_00->pending_velocity).y;
+  this_ptr_00->turn_motion_index = -1;
+  this_ptr_00->can_grab_weapon = 0;
+  this_ptr_00->turn_blend_timer = 0.0;
+  this_ptr_00->turn_elapsed = 0.0;
+  (this_ptr_00->base).action_pending = 0;
+  this_ptr_00->pickup_facing_reversed = 0;
+  this_ptr_00->airborne_timer = 0.0;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-            ((CKeyFramedModelInstance *)(*(int *)&this_ptr_00->field_0x1fe20 + 0x158),
-             "liteluger.kfm");
+            (&((this_ptr_00->base).inventory.selected_weapon)->model,"liteluger.kfm");
   core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
             ((CCharacter *)this_ptr_00,0,1,"draw_stand2holsters",0);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
@@ -111,7 +113,7 @@ CDoc * core_doc_cpp_CDoc_ctor_FUN_00468c80(CDoc *this_ptr)
             ((CCharacter *)this_ptr_00,0xb,0,"draw_goggles2Stand",0);
   uStack000001a8 = 0x469041;
   core_cloth_cpp_CClothList_add_FUN_00441de0
-            ((CClothList *)&this_ptr_00->field_0x2ca0,"doc-coat_bw.cth");
-  *(uint *)&this_ptr_00->field_0x200e0 = 0;
+            (&(this_ptr_00->base).base.cloth_list,"doc-coat_bw.cth");
+  this_ptr_00->fall_velocity_snapshot = 0.0;
   return this_ptr_00;
 }

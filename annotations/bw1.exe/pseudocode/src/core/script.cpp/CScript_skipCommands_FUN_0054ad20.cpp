@@ -18,7 +18,7 @@ int __cdecl core_script_cpp_CScript_skipCommands_FUN_0054ad20(CScript *this_ptr,
   bVar1 = true;
   if (direction < this_ptr->parsed_line_count) {
     do {
-      str1 = *(char **)(this_ptr->parsed_lines + direction * 8 + 4);
+      str1 = this_ptr->parsed_lines[direction].text;
       if (*str1 == '{') {
         direction = direction + 1;
         iVar3 = iVar3 + 1;

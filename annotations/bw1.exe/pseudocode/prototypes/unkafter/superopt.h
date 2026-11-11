@@ -13,49 +13,49 @@ CChemPuzzle * CChemPuzzle::ctor(CChemPuzzle *this_ptr);
 // Address: 00417630
 CChemPuzzle * CChemPuzzle::dtor(CChemPuzzle *this_ptr,uint flags);
 
-// Original: unkafter_superopt.cpp_FUN_004176b0
+// Original: unkafter_superopt.cpp_CChemPuzzle_reset_FUN_004176b0
 // Address: 004176b0
-int FUN_004176b0(int param_1);
+int __cdecl CChemPuzzle::reset(CChemPuzzle *this_ptr);
 
 // Original: unkafter_superopt.cpp_FUN_004177a0
 // Address: 004177a0
 void FUN_004177a0(void);
 
-// Original: unkafter_superopt.cpp_FUN_004177b0
+// Original: unkafter_superopt.cpp_CChemPuzzle_load_FUN_004177b0
 // Address: 004177b0
-void FUN_004177b0(int *param_1,int param_2);
+void __cdecl CChemPuzzle::load(CChemPuzzle *this_ptr,int param_2);
 
-// Original: unkafter_superopt.cpp_FUN_004180c0
+// Original: unkafter_superopt.cpp_CChemPuzzle_addButton_FUN_004180c0
 // Address: 004180c0
-void FUN_004180c0(int param_1,int param_2,char *param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9);
+void __cdecl CChemPuzzle::addButton(CChemPuzzle *this_ptr,int param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8,int param_9);
 
-// Original: unkafter_superopt.cpp_FUN_00418140
+// Original: unkafter_superopt.cpp_CChemPuzzle_render_FUN_00418140
 // Address: 00418140
-void FUN_00418140(int param_1);
+void __cdecl CChemPuzzle::render(CChemPuzzle *this_ptr);
 
-// Original: unkafter_superopt.cpp_FUN_00418220
+// Original: unkafter_superopt.cpp_CChemPuzzle_process_FUN_00418220
 // Address: 00418220
-void FUN_00418220(int *param_1);
+void __cdecl CChemPuzzle::process(CChemPuzzle *this_ptr);
 
-// Original: unkafter_superopt.cpp_FUN_00418720
+// Original: unkafter_superopt.cpp_CChemPuzzle_isButtonHovered_FUN_00418720
 // Address: 00418720
-undefined4 FUN_00418720(int param_1,int param_2);
+undefined4 __cdecl CChemPuzzle::isButtonHovered(CChemPuzzle *this_ptr,int param_2);
 
-// Original: unkafter_superopt.cpp_FUN_00418790
+// Original: unkafter_superopt.cpp_CChemPuzzle_hitTestButtons_FUN_00418790
 // Address: 00418790
-undefined4 FUN_00418790(int param_1,int param_2,int param_3);
+undefined4 __cdecl CChemPuzzle::hitTestButtons(CChemPuzzle *this_ptr,int param_2,int param_3);
 
-// Original: unkafter_superopt.cpp_FUN_00418810
+// Original: unkafter_superopt.cpp_CChemPuzzle_onMouse_FUN_00418810
 // Address: 00418810
-void FUN_00418810(int param_1);
+void __cdecl CChemPuzzle::onMouse(CChemPuzzle *this_ptr);
 
-// Original: unkafter_superopt.cpp_FUN_00418830
+// Original: unkafter_superopt.cpp_CAudioRecPuzzle_getName_FUN_00418830
 // Address: 00418830
-char * FUN_00418830(void);
+char * __cdecl CAudioRecPuzzle::getName(CAudioRecPuzzle *this_ptr);
 
-// Original: unkafter_superopt.cpp_FUN_00418840
+// Original: unkafter_superopt.cpp_CChemPuzzle_getName_FUN_00418840
 // Address: 00418840
-undefined * FUN_00418840(void);
+undefined * __cdecl CChemPuzzle::getName(CChemPuzzle *this_ptr);
 
 // Original: unkafter_superopt.cpp_FUN_00418850
 // Address: 00418850
@@ -65,13 +65,13 @@ void FUN_00418850(CAlphaBitmap *param_1);
 // Address: 00418860
 void FUN_00418860(CAlphaBitmap *param_1);
 
-// Original: unkafter_superopt.cpp_buttonStruct_ctor_FUN_00418870
+// Original: unkafter_superopt.cpp_SButtonStruct_ctor_FUN_00418870
 // Address: 00418870
-SButtonStruct * buttonStruct::ctor(SButtonStruct *this_ptr);
+SButtonStruct * SButtonStruct::ctor(SButtonStruct *this_ptr);
 
-// Original: unkafter_superopt.cpp_buttonStruct_dtor_FUN_00418880
+// Original: unkafter_superopt.cpp_SButtonStruct_dtor_FUN_00418880
 // Address: 00418880
-SButtonStruct * buttonStruct::dtor(SButtonStruct *this_ptr,uint flags);
+SButtonStruct * SButtonStruct::dtor(SButtonStruct *this_ptr,uint flags);
 
 // Original: unkafter_superopt.cpp_FUN_00418890
 // Address: 00418890

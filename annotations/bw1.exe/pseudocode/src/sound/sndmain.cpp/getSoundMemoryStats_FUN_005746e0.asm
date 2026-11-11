@@ -19,7 +19,7 @@
 ;   undefined4 DAT_00623310
 ;   undefined4 g_SfxSamples[1].taken
 ;   undefined4 g_SfxSamples[1].ref_count
-;   undefined4 g_SfxSamples[1].field8_0x15c
+;   undefined4 g_SfxSamples[1].is_user_sample
 ;
 ; *****************************************************************************
 
@@ -108,7 +108,7 @@ section .text
         ;   Label: LAB_00574777
     JNZ 0x0057476c                      ; 0057477e
         ;   XREF to: 0057476c (CONDITIONAL_JUMP)  ; LAB_0057476c
-    CMP dword ptr [EAX + 0x2c79150],0x0 ; 00574780 | g_SfxSamples[1].field8_0x15c
+    CMP dword ptr [EAX + 0x2c79150],0x0 ; 00574780 | g_SfxSamples[1].is_user_sample
     JNZ 0x0057476c                      ; 00574787
         ;   XREF to: 0057476c (CONDITIONAL_JUMP)  ; LAB_0057476c
     MOV EBP,dword ptr [EAX + 0x2c7915c] ; 00574789

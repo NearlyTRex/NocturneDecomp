@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005c50fc at 005c51f6
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c08d0
+;   crt_memory.c_malloc_FUN_005c08d0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     POP ES                              ; 005cb028
     LEA EBX,[ECX + 0x1]                 ; 005cb029
     PUSH EBX                            ; 005cb02c
-    CALL crt_unknown.c_FUN_005c08d0     ; 005cb02d
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 005cb02d
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 005cb032
     MOV EDX,EAX                         ; 005cb035
     TEST EAX,EAX                        ; 005cb037

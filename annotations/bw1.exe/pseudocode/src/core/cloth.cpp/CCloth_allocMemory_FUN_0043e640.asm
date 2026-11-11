@@ -18,7 +18,7 @@
 ; Called Functions:
 ;   core_cloth.cpp_FUN_0043e6a0
 ;   core_main.c_FUN_005030e0
-;   crt_unknown.c_FUN_005c1268
+;   crt_memory.c_operator_new_array_FUN_005c1268
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     ADD ESP,0x4                         ; 0043e651
     SHL EAX,0x2                         ; 0043e654
     PUSH EAX                            ; 0043e657
-    CALL crt_unknown.c_FUN_005c1268     ; 0043e658
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c1268()
+    CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 0043e658
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
     ADD ESP,0x4                         ; 0043e65d
     MOV dword ptr [EBX + 0x3aafc],EAX   ; 0043e660
     TEST EAX,EAX                        ; 0043e666

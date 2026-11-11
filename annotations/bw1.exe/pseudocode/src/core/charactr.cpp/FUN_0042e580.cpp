@@ -81,14 +81,14 @@ void core_charactr_cpp_FUN_0042e580(CDemonActor *param_1)
   do {
     fVar7 = pCVar4[0x90].location.position.x;
     if (fVar7 != -NAN) {
-      pcVar1 = param_1[0x19].footstep_sound_code + (int)fVar7 * 4 + -0x1c;
+      pcVar1 = param_1[0x19].footstep_sound_code + (int)fVar7 * 4 + -0x20;
       pcVar1[0] = '\0';
       pcVar1[1] = '\0';
       pcVar1[2] = '\0';
       pcVar1[3] = '\0';
     }
     if (*(int *)&pCVar4[0x90].orient != -1) {
-      pcVar1 = param_1[0x19].footstep_sound_code + *(int *)&pCVar4[0x90].orient * 4 + -0x1c;
+      pcVar1 = param_1[0x19].footstep_sound_code + *(int *)&pCVar4[0x90].orient * 4 + -0x20;
       pcVar1[0] = '\0';
       pcVar1[1] = '\0';
       pcVar1[2] = '\0';
@@ -96,7 +96,7 @@ void core_charactr_cpp_FUN_0042e580(CDemonActor *param_1)
     }
     pCVar2 = pCVar4 + 0x90;
     pCVar4 = (CDemonActor *)(pCVar4->actor_name + 4);
-    pcVar1 = param_1[0x19].footstep_sound_code + (int)(pCVar2->orient_matrix).m[0].y * 4 + -0x1c;
+    pcVar1 = param_1[0x19].footstep_sound_code + (int)(pCVar2->orient_matrix).m[0].y * 4 + -0x20;
     pcVar1[0] = '\0';
     pcVar1[1] = '\0';
     pcVar1[2] = '\0';

@@ -35,7 +35,7 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_00532af0(CPassenger *this_p
   }
   this_ptr_00 = &(this_ptr->base).base.model;
   pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
-  iVar4 = *(int *)(pSVar7 + 0x24);
+  iVar4 = pSVar7->state_index;
   if ((iVar4 == 1) || (iVar4 == 2)) {
     if ((iVar4 == 2) &&
        ((fVar2 = delta_time / _DAT_00604608 + this_ptr->morph_time, this_ptr->morph_time = fVar2,

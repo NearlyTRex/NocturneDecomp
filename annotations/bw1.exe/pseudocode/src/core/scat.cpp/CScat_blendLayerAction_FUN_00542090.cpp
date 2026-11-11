@@ -11,7 +11,7 @@
 void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_00542090(CScat *this_ptr)
 
 {
-  byte *puVar1;
+  CDeformableModelInstance *pCVar1;
   float fVar2;
   float fVar3;
   float fVar4;
@@ -24,18 +24,20 @@ void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_00542090(CScat *this_ptr)
   float local_28;
   
   local_28 = 1.0;
-  if (*(int *)(&this_ptr->field_0x27c8 + *(int *)&this_ptr->field_0x2c98 * 0x38) == 0) {
-    local_28 = *(float *)&this_ptr->field_0x2c9c;
+  if ((this_ptr->base).base.layer_actions[(this_ptr->base).base.layer_action_index].from_bone_index
+      == 0) {
+    local_28 = (this_ptr->base).base.layer_action_t;
   }
-  if (*(int *)(&this_ptr->field_0x27cc + *(int *)&this_ptr->field_0x2c98 * 0x38) == 0) {
-    local_28 = (1.0 - *(float *)&this_ptr->field_0x2c9c) * local_28;
+  if ((this_ptr->base).base.layer_actions[(this_ptr->base).base.layer_action_index].to_bone_index ==
+      0) {
+    local_28 = (1.0 - (this_ptr->base).base.layer_action_t) * local_28;
   }
-  puVar1 = &this_ptr->field_0x158;
-  fVar2 = (float)core_motion_cpp_FUN_00524a40(puVar1,4);
-  fVar3 = (float)core_motion_cpp_FUN_00524a40(puVar1,5);
-  fVar4 = (float)core_motion_cpp_FUN_00524a40(puVar1,0xc);
-  fVar5 = (float)core_motion_cpp_FUN_00524a40(puVar1,0xd);
-  fVar6 = (float)core_motion_cpp_FUN_00524a40(puVar1,0xe);
+  pCVar1 = &(this_ptr->base).base.model;
+  fVar2 = (float)core_motion_cpp_FUN_00524a40(pCVar1,4);
+  fVar3 = (float)core_motion_cpp_FUN_00524a40(pCVar1,5);
+  fVar4 = (float)core_motion_cpp_FUN_00524a40(pCVar1,0xc);
+  fVar5 = (float)core_motion_cpp_FUN_00524a40(pCVar1,0xd);
+  fVar6 = (float)core_motion_cpp_FUN_00524a40(pCVar1,0xe);
   local_28 = (1.0 - (fVar6 + fVar5 + fVar4 + fVar3 + fVar2)) * local_28;
   if (local_28 < 0.0) {
     local_28 = 0.0;
@@ -45,16 +47,16 @@ void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_00542090(CScat *this_ptr)
       local_28 = 1.0;
     }
     iVar8 = 1;
-    motion_name = &this_ptr->field_0x27d0 + *(int *)&this_ptr->field_0x2c98 * 0x38;
-    puVar1 = &this_ptr->field_0x158;
-    this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
-                            ((CDeformableModelInstance *)puVar1);
+    motion_name = (this_ptr->base).base.layer_actions[(this_ptr->base).base.layer_action_index].
+                  motion_name;
+    pCVar1 = &(this_ptr->base).base.model;
+    this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(pCVar1);
     iVar8 = core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0
-                      ((CMotionList *)this_ptr_00,motion_name,iVar8);
-    uVar7 = core_motion_cpp_FUN_00525110(puVar1,iVar8,*(uint *)&this_ptr->field_0x2c9c);
+                      (&this_ptr_00->motion_list,motion_name,iVar8);
+    uVar7 = core_motion_cpp_FUN_00525110(pCVar1,iVar8,(this_ptr->base).base.layer_action_t);
     core_skeleton_cpp_FUN_00568100
-              (puVar1,iVar8,uVar7,local_28,_DAT_01e7e054,core_skeleton_cpp_FUN_00567360);
-    if (*(int *)&this_ptr->field_0x2c98 == 1) {
+              (pCVar1,iVar8,uVar7,local_28,_DAT_01e7e054,core_skeleton_cpp_FUN_00567360);
+    if ((this_ptr->base).base.layer_action_index == 1) {
       core_scat_cpp_CScat_blendAimBones_FUN_00542270(this_ptr,1);
       return;
     }

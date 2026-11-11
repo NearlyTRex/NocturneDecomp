@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 674,
-    "complexity_score": 593,
+    "complexity_score": 578,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 21,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 263,
-    "suspect_count": 28,
+    "suspect_count": 27,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -18,7 +18,6 @@
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 937
@@ -183,7 +182,7 @@
     },
     {
       "addr": "01ccf39c",
-      "name": "g_CGameInstance.field3_0xc",
+      "name": "g_CGameInstance.halo_mode",
       "type": "undefined4",
       "value": null
     }
@@ -545,14 +544,6 @@
       "severity": "moderate",
       "text": "int aiStackY_107c [1014];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "if ((*(int *)&g_CGamePtr->field_0xc != 0) || ((force_render == 0 && (globe->corona_mode != 0)))) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

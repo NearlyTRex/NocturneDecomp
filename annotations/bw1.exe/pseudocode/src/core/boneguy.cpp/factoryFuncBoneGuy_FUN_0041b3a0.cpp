@@ -11,7 +11,7 @@ void core_boneguy_cpp_factoryFuncBoneGuy_FUN_0041b3a0(void)
 {
   CBoneGuy *this_ptr;
   
-  this_ptr = (CBoneGuy *)debugAllocTracked1(0xc890);
+  this_ptr = (CBoneGuy *)operator_new(0xc890);
   if (this_ptr == (CBoneGuy *)0x0) {
     return;
   }

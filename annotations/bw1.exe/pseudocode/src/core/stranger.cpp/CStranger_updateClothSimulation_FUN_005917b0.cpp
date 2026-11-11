@@ -11,56 +11,57 @@
 void __cdecl core_stranger_cpp_CStranger_updateClothSimulation_FUN_005917b0(CStranger *this_ptr)
 
 {
+  float fVar1;
   CCloth *this_ptr_00;
-  bool bVar1;
   bool bVar2;
-  int iVar3;
-  SMotion *pSVar4;
-  CCloth *pCVar5;
-  CCloth aCStack_28 [12];
-  CCloth aCStack_1c [12];
+  bool bVar3;
+  EDeathState EVar4;
+  SMotion *pSVar5;
+  CVector3f *pCVar6;
+  uint auStack_28 [3];
+  uint auStack_1c [3];
   
-  if (0 < *(int *)&this_ptr->field_0x2ca0) {
-    bVar1 = false;
-    iVar3 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x10c))(this_ptr);
+  if (0 < (this_ptr->base).base.cloth_list.count) {
     bVar2 = false;
-    if (iVar3 < 2) {
-      if ((*(int *)&this_ptr->field_0x2c98 == 0) &&
-         ((float)_DAT_005f71a9 < *(float *)&this_ptr->field_0x2c9c)) {
+    EVar4 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
+    bVar3 = false;
+    if ((int)EVar4 < 2) {
+      if (((this_ptr->base).base.layer_action_index == 0) &&
+         ((float)_DAT_005f71a9 < (this_ptr->base).base.layer_action_t)) {
+        bVar3 = true;
+      }
+      if (((this_ptr->base).base.layer_action_index == 1) &&
+         ((this_ptr->base).base.layer_action_t < (float)_DAT_005f71b1)) {
+        bVar3 = true;
+      }
+      if (((this_ptr->base).base.layer_action_index == 2) &&
+         ((float)_DAT_005f71b9 < (this_ptr->base).base.layer_action_t)) {
         bVar2 = true;
       }
-      if ((*(int *)&this_ptr->field_0x2c98 == 1) &&
-         (*(float *)&this_ptr->field_0x2c9c < (float)_DAT_005f71b1)) {
+      if (((this_ptr->base).base.layer_action_index == 3) &&
+         ((this_ptr->base).base.layer_action_t < (float)_DAT_005f71b9)) {
         bVar2 = true;
       }
-      if ((*(int *)&this_ptr->field_0x2c98 == 2) &&
-         ((float)_DAT_005f71b9 < *(float *)&this_ptr->field_0x2c9c)) {
-        bVar1 = true;
+      if (((this_ptr->base).base.layer_action_index == 4) &&
+         ((this_ptr->base).base.layer_action_t < (float)_DAT_005f71c1)) {
+        bVar2 = true;
       }
-      if ((*(int *)&this_ptr->field_0x2c98 == 3) &&
-         (*(float *)&this_ptr->field_0x2c9c < (float)_DAT_005f71b9)) {
-        bVar1 = true;
+      if (((this_ptr->base).base.layer_action_index == 5) &&
+         ((float)_DAT_005f71c9 < (this_ptr->base).base.layer_action_t)) {
+        bVar2 = true;
       }
-      if ((*(int *)&this_ptr->field_0x2c98 == 4) &&
-         (*(float *)&this_ptr->field_0x2c9c < (float)_DAT_005f71c1)) {
-        bVar1 = true;
+      if (((this_ptr->base).base.layer_action_index == 9) &&
+         ((this_ptr->base).base.layer_action_t < (float)_DAT_005f71c1)) {
+        bVar2 = true;
       }
-      if ((*(int *)&this_ptr->field_0x2c98 == 5) &&
-         ((float)_DAT_005f71c9 < *(float *)&this_ptr->field_0x2c9c)) {
-        bVar1 = true;
-      }
-      if ((*(int *)&this_ptr->field_0x2c98 == 9) &&
-         (*(float *)&this_ptr->field_0x2c9c < (float)_DAT_005f71c1)) {
-        bVar1 = true;
-      }
-      if (((*(int *)&this_ptr->field_0x2c98 == 0xf) &&
-          ((float)_DAT_005f71b1 < *(float *)&this_ptr->field_0x2c9c)) &&
-         ((double)*(float *)&this_ptr->field_0x2c9c < _DAT_005f71d1)) {
-        bVar1 = true;
+      if ((((this_ptr->base).base.layer_action_index == 0xf) &&
+          (fVar1 = (this_ptr->base).base.layer_action_t, (float)_DAT_005f71b1 < fVar1)) &&
+         ((double)fVar1 < _DAT_005f71d1)) {
+        bVar2 = true;
       }
     }
-    this_ptr_00 = *(CCloth **)&this_ptr->field_0x2e34;
-    if (bVar2) {
+    this_ptr_00 = (this_ptr->base).base.cloth_list.cloths[0];
+    if (bVar3) {
       core_cloth_cpp_CCloth_grabCloth_FUN_00442100(this_ptr_00,"?Bip01 L Forearm" + 1,0x32);
       core_cloth_cpp_CCloth_grabCloth_FUN_00442100(this_ptr_00,"Bip01 L Forearm",0x33);
       core_cloth_cpp_CCloth_grabCloth_FUN_00442100(this_ptr_00,"Bip01 L Forearm",0x34);
@@ -88,7 +89,7 @@ void __cdecl core_stranger_cpp_CStranger_updateClothSimulation_FUN_005917b0(CStr
       core_cloth_cpp_CCloth_resetState_FUN_004421a0(this_ptr_00,0x24);
       core_cloth_cpp_CCloth_resetState_FUN_004421a0(this_ptr_00,0x25);
     }
-    if (bVar1) {
+    if (bVar2) {
       core_cloth_cpp_CCloth_grabCloth_FUN_00442100(this_ptr_00,"Bip01 L Forearm",0x2f);
       core_cloth_cpp_CCloth_grabCloth_FUN_00442100(this_ptr_00,"Bip01 L Forearm",0x32);
     }
@@ -96,22 +97,22 @@ void __cdecl core_stranger_cpp_CStranger_updateClothSimulation_FUN_005917b0(CStr
       core_cloth_cpp_CCloth_resetState_FUN_004421a0(this_ptr_00,0x2f);
       core_cloth_cpp_CCloth_resetState_FUN_004421a0(this_ptr_00,0x32);
     }
-    pCVar5 = this_ptr_00 + 0x3ab24;
-    pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
-                       ((CMotionController *)&this_ptr->field_0x158);
-    if (*(int *)(pSVar4 + 0x24) == 0x37) {
-      if (pCVar5 != aCStack_28) {
-        *(uint *)(this_ptr_00 + 0x3ab28) = 0;
-        *(uint *)pCVar5 = 0;
-        *(uint *)(this_ptr_00 + 0x3ab2c) = 0xc1a00000;
+    pCVar6 = &this_ptr_00->wind_velocity;
+    pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
+                       (&(this_ptr->base).base.model.base);
+    if (pSVar5->state_index == 0x37) {
+      if (pCVar6 != (CVector3f *)auStack_28) {
+        (this_ptr_00->wind_velocity).y = 0.0;
+        pCVar6->x = 0.0;
+        (this_ptr_00->wind_velocity).z = -20.0;
         return;
       }
     }
-    else if (*(int *)(pSVar4 + 0x24) == 0x38) {
-      if (pCVar5 != aCStack_1c) {
-        *(uint *)(this_ptr_00 + 0x3ab28) = 0;
-        *(uint *)pCVar5 = 0;
-        *(uint *)(this_ptr_00 + 0x3ab2c) = 0x41a00000;
+    else if (pSVar5->state_index == 0x38) {
+      if (pCVar6 != (CVector3f *)auStack_1c) {
+        (this_ptr_00->wind_velocity).y = 0.0;
+        pCVar6->x = 0.0;
+        (this_ptr_00->wind_velocity).z = 20.0;
         return;
       }
     }

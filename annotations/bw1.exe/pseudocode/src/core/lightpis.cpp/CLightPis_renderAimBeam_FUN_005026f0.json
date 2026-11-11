@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 407,
-    "complexity_score": 733,
+    "complexity_score": 633,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 193,
-    "suspect_count": 49,
+    "suspect_count": 40,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -16,8 +16,6 @@
       "stack_ref",
       "suspect_float",
       "undefined_data",
-      "unnamed_field",
-      "unresolved_funcptr",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
@@ -245,30 +243,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x588",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x588 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 62,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0xe0))(this_ptr);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 62,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0xe0))(this_ptr);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 64,
       "match": "&stack0xfffffee8",
@@ -309,14 +283,6 @@
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 74,
-      "match": "field_0x2e8",
-      "severity": "mild",
-      "text": "afStack_94[4] = *(float *)&this_ptr->field_0x2e8;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 82,
       "match": "&stack0xfffffedc",
@@ -333,52 +299,12 @@
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 118,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0xe0))(this_ptr);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 118,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0xe0))(this_ptr);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 127,
-      "match": "field_0x588",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x588 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 128,
-      "match": "field_0x588",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x588 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
       "line": 129,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "fVar2 = 1.4013e-45;",
       "type": "suspect_float"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 164,
-      "match": "field_0x594",
-      "severity": "mild",
-      "text": "fStack_1c = *(float *)&this_ptr->field_0x594 * (float)_DAT_005e7032;",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",

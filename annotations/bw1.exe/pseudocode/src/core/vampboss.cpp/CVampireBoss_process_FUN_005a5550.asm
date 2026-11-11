@@ -538,7 +538,7 @@ section .text
     JZ 0x005a5bc8                       ; 005a5bb4
         ;   XREF to: 005a5bc8 (CONDITIONAL_JUMP)  ; LAB_005a5bc8
     MOV EAX,[0x0061d95c]                ; 005a5bb6 | g_CGamePtr | g_CGameInstance
-    CMP dword ptr [EAX + 0x244],0x0     ; 005a5bbb | g_CGameInstance.field532_0x244
+    CMP dword ptr [EAX + 0x244],0x0     ; 005a5bbb | g_CGameInstance.letterbox_mode
     JZ 0x005a689d                       ; 005a5bc2
         ;   XREF to: 005a689d (CONDITIONAL_JUMP)  ; LAB_005a689d
     MOV ESP,EBP                         ; 005a5bc8
@@ -1064,7 +1064,7 @@ section .text
     FMUL float ptr [EBP + 0x18]         ; 005a6204
     MOV EAX,[0x0061d95c]                ; 005a6207 | g_CGamePtr
     FSTP float ptr [EBX + 0x2528]       ; 005a620c
-    CMP dword ptr [EAX + 0x244],0x0     ; 005a6212 | g_CGameInstance.field532_0x244
+    CMP dword ptr [EAX + 0x244],0x0     ; 005a6212 | g_CGameInstance.letterbox_mode
     JZ 0x005a6822                       ; 005a6219
         ;   XREF to: 005a6822 (CONDITIONAL_JUMP)  ; LAB_005a6822
     PUSH 0x5f8d8f                       ; 005a621f | = "morphToBat"
@@ -1085,7 +1085,7 @@ section .text
         ;   Label: LAB_005a624b
     MOV EAX,[0x0061d95c]                ; 005a624e | g_CGamePtr
         ;   Label: caseD_1
-    CMP dword ptr [EAX + 0x244],0x0     ; 005a6253 | g_CGameInstance.field532_0x244
+    CMP dword ptr [EAX + 0x244],0x0     ; 005a6253 | g_CGameInstance.letterbox_mode
     JNZ 0x005a62e0                      ; 005a625a
         ;   XREF to: 005a62e0 (CONDITIONAL_JUMP)  ; LAB_005a62e0
     CMP dword ptr [ESP + 0x2c4],0x2     ; 005a6260

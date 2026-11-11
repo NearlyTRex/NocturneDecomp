@@ -49,14 +49,13 @@ int __cdecl core_hostage_cpp_CHostage_processGrabberFlee_FUN_004eee80(CHostage *
          *(uint *)(&stack0xfffffff4 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
     local_8 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
                                (local_34 - (this_ptr->base).base.base.orient.vec.y);
-    fVar1 = *(float *)&(this_ptr->base).base.field_0x2528;
+    fVar1 = (this_ptr->base).base.turn_speed;
     (this_ptr->base).base.turn_angle_accumulator = local_8;
     if ((this_ptr->base).base.turn_angle_accumulator < -fVar1) {
-      (this_ptr->base).base.turn_angle_accumulator = *(float *)&(this_ptr->base).base.field_0x2528;
+      (this_ptr->base).base.turn_angle_accumulator = (this_ptr->base).base.turn_speed;
     }
-    if (*(float *)&(this_ptr->base).base.field_0x2528 < (this_ptr->base).base.turn_angle_accumulator
-       ) {
-      (this_ptr->base).base.turn_angle_accumulator = *(float *)&(this_ptr->base).base.field_0x2528;
+    if ((this_ptr->base).base.turn_speed < (this_ptr->base).base.turn_angle_accumulator) {
+      (this_ptr->base).base.turn_angle_accumulator = (this_ptr->base).base.turn_speed;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
               (&(this_ptr->base).base.model.base,2,1);

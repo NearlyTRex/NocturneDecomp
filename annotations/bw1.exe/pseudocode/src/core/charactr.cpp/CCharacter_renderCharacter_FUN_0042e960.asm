@@ -23,7 +23,7 @@
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 DAT_01bc120c
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field520_0x238
+;   undefined4 g_CGameInstance.collision_render_enabled
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042f3c0
@@ -78,7 +78,7 @@ section .text
     CALL core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042f3c0 ; 0042e9ab
         ;   XREF to: 0042f3c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042f3c0(CCharacter * this_ptr)
     MOV EAX,[0x0061d95c]                ; 0042e9b0 | g_CGamePtr | g_CGameInstance
-    MOV EDI,dword ptr [EAX + 0x238]     ; 0042e9b5 | g_CGameInstance.field520_0x238
+    MOV EDI,dword ptr [EAX + 0x238]     ; 0042e9b5 | g_CGameInstance.collision_render_enabled
     ADD ESP,0x4                         ; 0042e9bb
     TEST EDI,EDI                        ; 0042e9be
     JNZ 0x0042e9fc                      ; 0042e9c0

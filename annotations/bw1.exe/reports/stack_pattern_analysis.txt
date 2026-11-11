@@ -89,7 +89,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00408bca: MOV EDI,ESP
 
   core_actor.cpp_CDemonActor_testLineIntersection_FUN_00408d60
-    File: core/actor.cpp, Suspects: 7
+    File: core/actor.cpp, Suspects: 6
     - [stack_alignment] at 00408d6c: AND ESP,0xfffffff8
 
   core_actor.cpp_FUN_00408ec0
@@ -109,7 +109,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00409d79: AND ESP,0xfffffff8
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20
-    File: core/actor.cpp, Suspects: 39
+    File: core/actor.cpp, Suspects: 44
     - [stack_alignment] at 00409f2c: AND ESP,0xfffffff8
 
   core_actor.cpp_archiveLocalizedString_FUN_0040b560
@@ -139,7 +139,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0040c783: MOV EDI,ESP
 
   core_actor.cpp_getRandomInt_FUN_0040cc60
-    File: core/actor.cpp, Suspects: 2
+    File: core/actor.cpp, Suspects: 1
     - [stack_alignment] at 0040cc68: AND ESP,0xfffffff8
 
   core_ammo.cpp_CAmmo_getBoundingBox_FUN_0040dd00
@@ -155,7 +155,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0040e91f: MOV ESI,ESP
 
   core_armour.cpp_CArmour_process_FUN_0040eaa0
-    File: core/armour.cpp, Suspects: 4
+    File: core/armour.cpp, Suspects: 2
     - [stack_alignment] at 0040eaa9: AND ESP,0xfffffff8
 
   core_backgnd.cpp_CBackgroundActor_getBoundingBox_FUN_0040f010
@@ -163,11 +163,11 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0040f03f: MOV ESI,ESP
 
   core_baron.cpp_CBaron_advanceMotion_FUN_00410110
-    File: core/baron.cpp, Suspects: 1
+    File: core/baron.cpp, Suspects: 0
     - [stack_alignment] at 00410115: AND ESP,0xfffffff8
 
   core_baron.cpp_CBaron_renderTransparent_FUN_004101f0
-    File: core/baron.cpp, Suspects: 20
+    File: core/baron.cpp, Suspects: 11
     - [stack_alignment] at 004101f9: AND ESP,0xfffffff8
 
   core_barrier.cpp_CBarrier_getBoundingBox_FUN_004108c0
@@ -192,7 +192,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00413979: AND ESP,0xfffffff8
 
   core_batman.cpp_CBatman_getTargetPoints_FUN_004141c0
-    File: core/batman.cpp, Suspects: 23
+    File: core/batman.cpp, Suspects: 22
     - [alt_frame_pointer] at 00414243: MOV ESI,ESP
 
   core_battery.cpp_CBattery_getBoundingBox_FUN_00414600
@@ -204,23 +204,23 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00414778: AND ESP,0xfffffff8
 
   core_biggs.cpp_CBiggs_process_FUN_00414b30
-    File: core/biggs.cpp, Suspects: 35
+    File: core/biggs.cpp, Suspects: 34
     - [stack_alignment] at 00414b39: AND ESP,0xfffffff8
 
   core_bird.cpp_CBird_process_FUN_00415340
-    File: core/bird.cpp, Suspects: 73
+    File: core/bird.cpp, Suspects: 28
     - [stack_alignment] at 0041534c: AND ESP,0xfffffff8
 
   unkafter_bird.cpp_FUN_00415830
     File: unkafter/bird.cpp, Suspects: 10
     - [alt_frame_pointer] at 004158c8: MOV EDI,ESP
 
-  unkafter_bmppuzzl.cpp_FUN_00416fa0
-    File: unkafter/bmppuzzl.cpp, Suspects: 43
+  unkafter_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00416fa0
+    File: unkafter/bmppuzzl.cpp, Suspects: 40
     - [alt_frame_pointer] at 0041707a: MOV EDI,ESP
 
-  unkafter_bmppuzzl.cpp_FUN_00417230
-    File: unkafter/bmppuzzl.cpp, Suspects: 57
+  unkafter_bmppuzzl.cpp_CAudioRecPuzzle_playClip_FUN_00417230
+    File: unkafter/bmppuzzl.cpp, Suspects: 38
     - [stack_alignment] at 0041723c: AND ESP,0xfffffff8
 
   core_bodypart.cpp_CBodyPart_process_FUN_00419740
@@ -228,7 +228,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00419749: AND ESP,0xfffffff8
 
   core_bodypart.cpp_CBodyPart_processFires_FUN_00419940
-    File: core/bodypart.cpp, Suspects: 21
+    File: core/bodypart.cpp, Suspects: 11
     - [stack_alignment] at 00419949: AND ESP,0xfffffff8
 
   core_bodypart.cpp_CBodyPart_getBoundingBox_FUN_00419ab0
@@ -237,7 +237,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00419ace: MOV ESI,ESP
 
   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90
-    File: core/bodypart.cpp, Suspects: 30
+    File: core/bodypart.cpp, Suspects: 29
     - [stack_alignment] at 00419b9c: AND ESP,0xfffffff8
 
   core_bodypart.cpp_FUN_0041afa0
@@ -273,5 +273,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 32.7 suspects/function
-  Without stack patterns: avg 9.2 suspects/function
+  With stack patterns:    avg 29.7 suspects/function
+  Without stack patterns: avg 8.0 suspects/function

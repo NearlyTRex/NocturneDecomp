@@ -2,19 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 47,
+    "complexity_score": 49,
     "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 24,
     "suspect_count": 2,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 78
+    "total_lines": 80
   },
   "cross_references": [
+    {
+      "addr": "004adaf0",
+      "from_addr": "004adb59",
+      "name": "core_fire.cpp_CFirefly_render_FUN_004adaf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "004b4370",
       "from_addr": "004b43c6",
@@ -43,12 +49,6 @@
       "addr": "004ad140",
       "from_addr": "004ad1a2",
       "name": "core_fire.cpp_FUN_004ad140",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004adaf0",
-      "from_addr": "004adb59",
-      "name": "core_fire.cpp_FUN_004adaf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -152,7 +152,7 @@
       {
         "call_addr": "004adb59",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004adaf0",
+        "caller": "core_fire.cpp_CFirefly_render_FUN_004adaf0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -236,18 +236,18 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 18,
       "match": "DAT_01c4480c",
       "severity": "mild",
-      "text": "if (*(int *)(vertex_ptr + 8) < *(int *)(*(int *)(&DAT_01c4480c + iVar2) + iVar1)) {",
+      "text": "*(int *)(*(int *)(&DAT_01c4480c + iVar2) + iVar1)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 23,
       "match": "DAT_01c4354c",
       "severity": "mild",
-      "text": "else if (*(int *)(vertex_ptr + 8) < *(int *)(*(int *)(&DAT_01c4354c + iVar2) + iVar1)) {",
+      "text": "*(int *)(*(int *)(&DAT_01c4354c + iVar2) + iVar1)) {",
       "type": "undefined_data"
     }
   ]

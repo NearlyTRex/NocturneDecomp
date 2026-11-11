@@ -18,10 +18,10 @@ int __cdecl core_goggles_cpp_CGoggles_renderOpaque_FUN_004e3bd0(CGoggles *this_p
   
   bVar4 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-            (DAT_00612560,(CVector3f *)&this_ptr->field_0x20);
+            (DAT_00612560,&(this_ptr->base).location.position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-            (DAT_00612560,(CVector3f *)&this_ptr->field_0x30,(CVector3f *)0x0);
-  (**(code **)(*(int *)&this_ptr->field_0x154 + 0x1c))(this_ptr,0);
+            (DAT_00612560,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
+  (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
   puVar2 = auStack_24;
   puVar3 = auStack_3c;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -32,7 +32,7 @@ int __cdecl core_goggles_cpp_CGoggles_renderOpaque_FUN_004e3bd0(CGoggles *this_p
   iVar1 = core_box_cpp_FUN_004207b0(auStack_3c);
   if (iVar1 != 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
-              ((CKeyFramedModelInstance *)&this_ptr->field_0x158,0.0,-1);
+              (&this_ptr->model,0.0,-1);
   }
   engine_matrix_c_pop_FUN_004839a0();
   return iVar1;

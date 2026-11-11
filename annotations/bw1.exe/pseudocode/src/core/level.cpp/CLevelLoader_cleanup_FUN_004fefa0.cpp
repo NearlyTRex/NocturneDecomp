@@ -12,9 +12,9 @@ void __cdecl core_level_cpp_CLevelLoader_cleanup_FUN_004fefa0(CLevelLoader *this
   CConsole *pCVar1;
   
   pCVar1 = g_CConsolePtr;
-  *(uint *)(this_ptr + 0xc) = 0;
+  this_ptr->enabled = 0;
   engine_console_cpp_FUN_00445430
-            (pCVar1,"gLevelIndicator: Used %d calls\n",*(uint *)this_ptr);
+            (pCVar1,"gLevelIndicator: Used %d calls\n",this_ptr->current_frame);
   core_dmodel_cpp_FUN_00467160(&g_LoadingMoonModel);
   return;
 }

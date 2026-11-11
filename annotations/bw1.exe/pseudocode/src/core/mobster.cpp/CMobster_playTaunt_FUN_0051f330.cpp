@@ -29,7 +29,7 @@ void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_0051f330(CMobster *this_ptr
       pCVar1 = g_CGamePtr;
       iVar3 = *(int *)(iVar4 + 0x1d33bec) + 1;
       *(int *)(iVar4 + 0x1d33bec) = iVar3;
-      if (((*(int *)&pCVar1->field_0x1c != 0) || (taunt_category != 1)) || (iVar3 != 6)) {
+      if (((pCVar1->foul_language_flag != 0) || (taunt_category != 1)) || (iVar3 != 6)) {
         _sprintf(local_80,"mobster-cheese-%c-%c-%d.wav");
         local_14 = core_sound_cpp_CSound_getSoundDuration_FUN_0057d9e0(0x02C82A60,local_80);
         this_ptr->taunt_timer = local_14;

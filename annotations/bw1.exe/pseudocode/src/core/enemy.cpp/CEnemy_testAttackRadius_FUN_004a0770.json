@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 128,
+    "complexity_score": 127,
     "cross_reference_count": 21,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 38,
+    "pseudocode_lines": 37,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "stack_alignment_array",
       "warning_overlapping_globals"
     ],
-    "total_lines": 107
+    "total_lines": 106
   },
   "cross_references": [
     {
@@ -423,7 +423,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 29,
       "match": "(uint *)((int)point",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)point + (uint)bVar2 * -8 + 4);",
@@ -431,7 +431,7 @@
     },
     {
       "description": "Pointer value `&CStack_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 33,
+      "line": 32,
       "match": "(int)&CStack_20",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_20 + (uint)bVar2 * -8 + 4) = *puVar1;",
@@ -439,7 +439,7 @@
     },
     {
       "description": "Pointer value `&CStack_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 34,
+      "line": 33,
       "match": "(int)&CStack_20",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_20 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
@@ -447,7 +447,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 33,
+      "line": 32,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_20 + (uint)bVar2 * -8 + 4) = *puVar1;",
@@ -455,7 +455,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 34,
+      "line": 33,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_20 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",

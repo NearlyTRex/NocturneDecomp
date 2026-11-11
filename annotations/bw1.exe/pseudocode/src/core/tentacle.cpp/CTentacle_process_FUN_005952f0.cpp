@@ -171,8 +171,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005952f0(CTentacle *this_pt
                 iVar4 = iVar4 + 1;
                 fStack_14 = CStack_ac.y;
                 core_gore_cpp_CGore_spawnBloodParticles_FUN_004e5f40
-                          (g_CGorePtr,&CStack_4c,&CStack_ac,
-                           *(EBloodType *)&((this_ptr->base).victim)->field_0x27a0);
+                          (g_CGorePtr,&CStack_4c,&CStack_ac,((this_ptr->base).victim)->blood_type);
               } while (iVar4 < 0x46);
             }
           }
@@ -186,7 +185,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005952f0(CTentacle *this_pt
       }
     }
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&pCStack_18->base);
-    uVar7 = *(uint *)(pSVar5 + 0x24);
+    uVar7 = pSVar5->state_index;
     if (uVar7 < 2) {
       if (uVar7 == 0) {
         this_ptr->chase_timer = 0.0;

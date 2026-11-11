@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mission_cpp_FUN_0051ba5c(CDemonMission *param_1,CDemonMission *param_2)
+; void core_mission_cpp_FUN_0051ba5c(CDemonMission *param_1,char *param_2)
 ;
 ;
 ; Referenced Globals:

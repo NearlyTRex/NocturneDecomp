@@ -17,7 +17,7 @@ void __cdecl core_drone_cpp_CDrone_processDamage_FUN_004864e0(CDrone *this_ptr,S
   
   sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[2]);
   sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[1]);
-  fVar1 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   (this_ptr->base).base.hit_points = fVar1;
   if (0.0 < fVar1) {
     sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[1]);
@@ -47,7 +47,7 @@ void __cdecl core_drone_cpp_CDrone_processDamage_FUN_004864e0(CDrone *this_ptr,S
     this_ptr_00 = &(this_ptr->base).base.model;
     (this_ptr->base).base.hit_points = 0.0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
-    if ((*(int *)(pSVar2 + 0x24) != 8) && (*(int *)(pSVar2 + 0x24) != 7)) {
+    if ((pSVar2->state_index != 8) && (pSVar2->state_index != 7)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&this_ptr_00->base,7,1);
     }
     sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[0]);

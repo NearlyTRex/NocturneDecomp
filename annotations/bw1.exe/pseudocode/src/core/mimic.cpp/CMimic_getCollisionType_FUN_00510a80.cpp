@@ -12,23 +12,25 @@
 ECollisionType __cdecl core_mimic_cpp_CMimic_getCollisionType_FUN_00510a80(CMimic *this_ptr,SCollisionInfo *collision_info)
 
 {
-  float fVar1;
-  SMotion *pSVar2;
+  int iVar1;
+  float fVar2;
+  SMotion *pSVar3;
   
-  *(float *)&collision_info->field_0x18 = (this_ptr->base).base.model.bounding_box.max.y;
-  *(uint *)&collision_info->field_0x1c = 0x3f800000;
-  if (*(int *)collision_info == 1) {
-    *(uint *)&collision_info->field_0x14 = 0xbdcccccd;
-    fVar1 = (float)_DAT_005e8a80;
-    *(float *)&collision_info->field_0x18 = *(float *)&collision_info->field_0x18 + _DAT_005e8a88;
-    *(float *)&collision_info->field_0x1c = *(float *)&collision_info->field_0x1c * fVar1;
+  iVar1 = (collision_info->ray_query).ray_type;
+  collision_info->cylinder_top_y = (this_ptr->base).base.model.bounding_box.max.y;
+  collision_info->cylinder_radius = 1.0;
+  if (iVar1 == 1) {
+    collision_info->cylinder_bottom_y = -0.1;
+    fVar2 = (float)_DAT_005e8a80;
+    collision_info->cylinder_top_y = collision_info->cylinder_top_y + _DAT_005e8a88;
+    collision_info->cylinder_radius = collision_info->cylinder_radius * fVar2;
   }
   else {
-    *(uint *)&collision_info->field_0x14 = 0x40000000;
+    collision_info->cylinder_bottom_y = 2.0;
   }
-  pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
+  pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                      (&(this_ptr->base).base.model.base);
-  if (*(int *)(pSVar2 + 0x24) == 0xc) {
+  if (pSVar3->state_index == 0xc) {
     return COLLISION_TYPE_NONE;
   }
   return COLLISION_TYPE_CYLINDER;

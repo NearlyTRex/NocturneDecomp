@@ -2,16 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 286,
+    "complexity_score": 216,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
-    "suspect_count": 25,
+    "suspect_count": 18,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_field",
+      "pointer_cast",
       "unnamed_param"
     ],
     "total_lines": 54
@@ -169,132 +169,76 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar2->options).field_0x1c = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)&(pCVar2->options).field_0x4 = param_2;",
+      "text": "*(uint *)&(pCVar2->options).position.x = param_2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar2->options).field_0x4 = param_2;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 14,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(uint *)&(pCVar2->options).field_0x8 = param_3;",
+      "text": "*(uint *)((int)&(pCVar2->options).position.x + 4) = param_3;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar2->options).field_0x8 = param_3;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 15,
       "match": "param_4",
       "severity": "mild",
-      "text": "*(uint *)&(pCVar2->options).field_0xc = param_4;",
+      "text": "*(uint *)&(pCVar2->options).position.y = param_4;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar2->options).field_0xc = param_4;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 16,
       "match": "param_5",
       "severity": "mild",
-      "text": "*(uint *)&(pCVar2->options).field_0x10 = param_5;",
+      "text": "*(uint *)((int)&(pCVar2->options).position.y + 4) = param_5;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar2->options).field_0x10 = param_5;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 17,
       "match": "param_6",
       "severity": "mild",
-      "text": "*(uint *)&(pCVar2->options).field_0x14 = param_6;",
+      "text": "*(uint *)&(pCVar2->options).position.z = param_6;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar2->options).field_0x14 = param_6;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 18,
       "match": "param_7",
       "severity": "mild",
-      "text": "*(uint *)&(pCVar2->options).field_0x18 = param_7;",
+      "text": "*(uint *)((int)&(pCVar2->options).position.z + 4) = param_7;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 14,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(pCVar2->options).position.x + 4) = param_3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 16,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(pCVar2->options).position.y + 4) = param_5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 18,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar2->options).field_0x18 = param_7;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "bVar1 = pCVar2->field_0x118;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar2->options).field_0x20 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "pCVar2->field_0x118 = bVar1 | 2;",
-      "type": "unnamed_field"
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(pCVar2->options).position.z + 4) = param_7;",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 1,

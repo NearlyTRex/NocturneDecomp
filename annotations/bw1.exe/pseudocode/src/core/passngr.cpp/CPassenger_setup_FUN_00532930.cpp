@@ -13,7 +13,7 @@ void __cdecl core_passngr_cpp_CPassenger_setup_FUN_00532930(CPassenger *this_ptr
 {
   UOrientationVector *pUVar1;
   CDeformableModelInstance *this_ptr_00;
-  byte *this_ptr_01;
+  CMorph *this_ptr_01;
   char cVar2;
   CWerewolf *pCVar3;
   UOrientationVector *pUVar4;
@@ -50,7 +50,7 @@ void __cdecl core_passngr_cpp_CPassenger_setup_FUN_00532930(CPassenger *this_ptr
     }
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
               (&(this_ptr->werewolf_actor->base).base.model,this_ptr->wolf_model_name);
-    *(float *)&(this_ptr->werewolf_actor->base).base.field_0x27b8 = this_ptr->wolf_size;
+    (this_ptr->werewolf_actor->base).base.size_scale = this_ptr->wolf_size;
     (*((this_ptr->werewolf_actor->base).base.base.vtable._ub)->setup)
               ((CDemonActor *)this_ptr->werewolf_actor);
     iVar6 = 1;
@@ -69,11 +69,11 @@ void __cdecl core_passngr_cpp_CPassenger_setup_FUN_00532930(CPassenger *this_ptr
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_00567500(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00569b20(this_ptr_00);
-  this_ptr_01 = &this_ptr->field_0x1fbc4;
-  core_morph_cpp_CMorph_setupModelFromDeformable_FUN_005230c0((CMorph *)this_ptr_01,0,this_ptr_00);
+  this_ptr_01 = &this_ptr->morph;
+  core_morph_cpp_CMorph_setupModelFromDeformable_FUN_005230c0(this_ptr_01,0,this_ptr_00);
   core_morph_cpp_CMorph_setupModelFromDeformable_FUN_005230c0
-            ((CMorph *)this_ptr_01,1,&(this_ptr->werewolf_actor->base).base.model);
-  core_morph_cpp_CMorph_getReady_FUN_00523310((CMorph *)this_ptr_01);
+            (this_ptr_01,1,&(this_ptr->werewolf_actor->base).base.model);
+  core_morph_cpp_CMorph_getReady_FUN_00523310(this_ptr_01);
   this_ptr->morph_time = 0.0;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_00567580(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_00567580

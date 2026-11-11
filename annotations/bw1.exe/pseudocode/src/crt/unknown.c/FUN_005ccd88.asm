@@ -19,8 +19,8 @@
 ;   undefined4 DAT_02c9ffa0
 ;
 ; Called Functions:
+;   crt_memory.c_calloc_FUN_005c1cb0
 ;   crt_memory.c_realloc_FUN_005c10d0
-;   crt_unknown.c_FUN_005c1cb0
 ;   crt_unknown.c_FUN_005c50d4
 ;   crt_unknown.c_FUN_005c9f70
 ;   GetCurrentThreadId
@@ -75,8 +75,8 @@ section .text
         ;   Label: LAB_005ccdde
     PUSH ESI                            ; 005ccde4
     PUSH 0x1                            ; 005ccde5
-    CALL crt_unknown.c_FUN_005c1cb0     ; 005ccde7
-        ;   XREF to: 005c1cb0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c1cb0()
+    CALL crt_memory.c_calloc_FUN_005c1cb0 ; 005ccde7
+        ;   XREF to: 005c1cb0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_calloc_FUN_005c1cb0()
     ADD ESP,0x8                         ; 005ccdec
     MOV EBP,EAX                         ; 005ccdef
     TEST EAX,EAX                        ; 005ccdf1

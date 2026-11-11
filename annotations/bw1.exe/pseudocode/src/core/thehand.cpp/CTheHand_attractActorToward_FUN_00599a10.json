@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 275,
+    "complexity_score": 139,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 75,
-    "suspect_count": 18,
+    "pseudocode_lines": 79,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_alignment_array",
-      "stack_ref",
-      "unnamed_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 187
+    "total_lines": 191
   },
   "cross_references": [],
   "function": {
@@ -137,146 +135,42 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 9,
-      "match": "auStackY_101c",
+      "line": 10,
+      "match": "afStackY_101c",
       "severity": "moderate",
-      "text": "uint auStackY_101c [905];",
+      "text": "float afStackY_101c [905];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0xc1e8",
-      "severity": "mild",
-      "text": "if (actor != *(CDemonActor **)&this_ptr->field_0xc1e8) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0xc274",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0xc274,&this_ptr->field_0xc2a4,*(uint *)&this_ptr->field_0xc270)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0xc2a4",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0xc274,&this_ptr->field_0xc2a4,*(uint *)&this_ptr->field_0xc270)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0xc270",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0xc274,&this_ptr->field_0xc2a4,*(uint *)&this_ptr->field_0xc270)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 30,
-      "match": "&stack0xfffffe7c",
-      "severity": "moderate",
-      "text": "puVar3 = (uint *)&stack0xfffffe7c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(&CStack_154,(CVector3f *)&this_ptr->field_0x20,(CVector3f *)&this_ptr->field_0x30);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "(&CStack_154,(CVector3f *)&this_ptr->field_0x20,(CVector3f *)&this_ptr->field_0x30);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 39,
-      "match": "&stack0xfffffe4c",
-      "severity": "moderate",
-      "text": "puVar2 = (uint *)&stack0xfffffe4c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 46,
-      "match": "&stack0xfffffe7c",
-      "severity": "moderate",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&stack0xfffffe7c,auStack_f4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 48,
-      "match": "&stack0xfffffe1c",
-      "severity": "moderate",
-      "text": "puVar3 = (uint *)&stack0xfffffe1c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 54,
-      "match": "&stack0xfffffe1c",
-      "severity": "moderate",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&stack0xfffffe1c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0xc1e8",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&this_ptr->field_0xc1e8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 76,
-      "match": "field_0xc1e8",
-      "severity": "mild",
-      "text": "core_charactr_cpp_FUN_00433d50(*(uint *)&this_ptr->field_0xc1e8,&uStack_34);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 31,
+      "line": 34,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 41,
+      "line": 45,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 49,
+      "line": 53,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 57,
+      "line": 61,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     }
   ],

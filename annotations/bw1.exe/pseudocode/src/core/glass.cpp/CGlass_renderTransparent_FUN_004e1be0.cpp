@@ -76,7 +76,7 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004e1be0(CGlass *this_pt
         pCVar5->broken_quads[0].base.surface_normal.C.i = 0;
         pCVar5->broken_quads[0].base.surface_normal.D.i = 0;
         engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_00483120(this_ptr_00,poly);
-        poly = poly + 0x48;
+        poly = (SMRGLPrimitivePoly *)(poly->vertices + 4);
         pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);
       } while (iVar2 < this_ptr->broken_polygon_count);
     }

@@ -11,7 +11,7 @@ void core_baron_cpp_factoryFuncBaronWeapon_FUN_00410430(void)
 {
   CBaronWeapon *this_ptr;
   
-  this_ptr = (CBaronWeapon *)debugAllocTracked1(0x57c);
+  this_ptr = (CBaronWeapon *)operator_new(0x57c);
   if (this_ptr == (CBaronWeapon *)0x0) {
     return;
   }

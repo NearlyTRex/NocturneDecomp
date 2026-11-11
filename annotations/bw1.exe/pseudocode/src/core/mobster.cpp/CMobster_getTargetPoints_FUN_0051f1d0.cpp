@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_mobster_cpp_CMobster_getTargetPoints_FUN_0051f1d0(CMobster *this_ptr,CVector3f *out_points_array)
@@ -34,7 +35,7 @@ int __cdecl core_mobster_cpp_CMobster_getTargetPoints_FUN_0051f1d0(CMobster *thi
     out_points_array->y = CStack_4c.y;
     out_points_array->z = CStack_4c.z;
   }
-  if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[8] * 4) != 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[8]] != 0) {
     core_skeleton_cpp_FUN_00569130(&(this_ptr->base).base.model,_DAT_01d33c24);
     CStack_1c.x = fStack_58;
     *(uint *)((int)&CStack_1c + (uint)bVar3 * -8 + 4) =
@@ -48,7 +49,7 @@ int __cdecl core_mobster_cpp_CMobster_getTargetPoints_FUN_0051f1d0(CMobster *thi
     }
     iVar2 = 2;
   }
-  if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[9] * 4) == 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[9]] == 0) {
     return iVar2;
   }
   core_skeleton_cpp_FUN_00569130(&(this_ptr->base).base.model,_DAT_01d33c2c);

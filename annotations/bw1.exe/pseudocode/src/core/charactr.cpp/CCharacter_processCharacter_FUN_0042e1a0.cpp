@@ -37,10 +37,10 @@ int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_0042e1a0(CCharacte
   if (fVar1 < 0.0) {
     this_ptr->stagger_amount = 0.0;
   }
-  if ((0.0 < *(float *)&this_ptr->field_0x27b4) &&
-     (fVar1 = *(float *)&this_ptr->field_0x27b4 - delta_time,
-     *(float *)&this_ptr->field_0x27b4 = fVar1, this_ptr_00 = g_CScriptPtr, fVar1 < 0.0)) {
-    *(uint *)&this_ptr->field_0x27b4 = 0;
+  if ((0.0 < this_ptr->speech_timer) &&
+     (fVar1 = this_ptr->speech_timer - delta_time, this_ptr->speech_timer = fVar1,
+     this_ptr_00 = g_CScriptPtr, fVar1 < 0.0)) {
+    this_ptr->speech_timer = 0.0;
     core_script_cpp_CScript_setSpeaker_FUN_0054aca0(this_ptr_00,&this_ptr->base);
   }
   if (this_ptr->health_bar_mode == HEALTH_BAR_ALWAYS) {
@@ -53,7 +53,8 @@ int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_0042e1a0(CCharacte
       iVar4 = 0;
       pCVar5 = this_ptr;
       do {
-        if ((*(int *)&pCVar5->field_0x25b0 != 0) && (*(int *)&pCVar5->field_0x25ec == 0)) {
+        if ((pCVar5->carry_hands[0].carry_actor != (CDemonActor *)0x0) &&
+           (pCVar5->carry_hands[0].has_carry_offset == 0)) {
           core_charactr_cpp_FUN_00432690(this_ptr,iVar4,0,0);
         }
         iVar4 = iVar4 + 1;
@@ -66,7 +67,7 @@ int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_0042e1a0(CCharacte
     (this_ptr->base).location.position.y = fVar1 + (this_ptr->base).location.position.y;
     if ((fVar2 == _DAT_005fd614) || ((this_ptr->base).standing_platform != (CPlatform *)0x0)) {
       fStack_14 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
-                            (&this_ptr->base,*(float *)&this_ptr->field_0x2fec,(CVector3f *)0x0);
+                            (&this_ptr->base,this_ptr->collision_cylinder_height,(CVector3f *)0x0);
       this_ptr->closest_distance_threshold = fStack_14;
     }
     this_ptr->is_on_ground =
@@ -79,8 +80,8 @@ int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_0042e1a0(CCharacte
     this_ptr->turn_angle_accumulator = 0.0;
     if (((pCVar3 == (CPlatform *)0x0) && (this_ptr->walk_to_target == (CDemonActor *)0x0)) &&
        (iVar4 = core_hero_cpp_isAnyHeroWithinCylinder_FUN_004ea770
-                          (&(this_ptr->base).location.position,*(float *)&this_ptr->field_0x2ff8,
-                           *(float *)&this_ptr->field_0x2ff4), iVar4 == 0)) {
+                          (&(this_ptr->base).location.position,this_ptr->ai_detection_range_max,
+                           this_ptr->ai_detection_range_min), iVar4 == 0)) {
       (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
       puVar6 = auStack_2c;
       puVar7 = auStack_44;

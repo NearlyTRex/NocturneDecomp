@@ -9,13 +9,13 @@
 void __cdecl core_hero_cpp_CHero_stopNearbyInteraction_FUN_004ebe80(CHero *this_ptr)
 
 {
-  int iVar1;
+  CDemonActor *this_ptr_00;
   
-  iVar1 = *(int *)(this_ptr + 0x1ff88);
-  if (iVar1 == 0) {
+  this_ptr_00 = this_ptr->nearby_interactive_actor;
+  if (this_ptr_00 == (CDemonActor *)0x0) {
     return;
   }
-  (**(code **)(*(int *)(iVar1 + 0x154) + 0xa4))(iVar1,this_ptr);
-  *(uint *)(this_ptr + 0x1ff88) = 0;
+  (*((this_ptr_00->vtable)._ub)->stopInteraction)(this_ptr_00,(CDemonActor *)this_ptr);
+  this_ptr->nearby_interactive_actor = (CDemonActor *)0x0;
   return;
 }

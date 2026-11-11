@@ -17,7 +17,11 @@ typedef struct CLZWCompress {
     int buffer_size; // 0x20
     int num_bits; // 0x24
     _BIT_INTEGER32 char_mask; // 0x28
-    char field_44[20]; // 0x2c
+    int prev_char_code; // 0x2c
+    int current_code; // 0x30
+    int pending_code; // 0x34, Added in this build
+    int prev_code; // 0x38
+    int pending_char_code; // 0x3c, Added in this build
 } CLZWCompress;
 #pragma pack(pop)
 

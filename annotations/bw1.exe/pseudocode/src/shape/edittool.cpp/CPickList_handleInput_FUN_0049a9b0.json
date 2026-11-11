@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 411,
-    "complexity_score": 374,
+    "complexity_score": 199,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 169,
-    "suspect_count": 19,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
-      "unresolved_funcptr",
       "unrolled_strlen"
     ],
     "total_lines": 580
@@ -139,142 +138,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 15,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,0x1c);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 27,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 31,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (*(code *)**(uint **)0x01D1BCA0)(0x01D1BCA0,0x1d);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 33,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,0x52);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 37,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,0x2e);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 43,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (*(code *)**(uint **)0x01D1BCA0)(0x01D1BCA0,0x2a);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 45,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar2 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,0xf), iVar2 != 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 48,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (*(code *)**(uint **)0x01D1BCA0)(0x01D1BCA0,0x2a);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 50,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar2 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,0xf), iVar2 != 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 90,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,0x48);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 95,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,0x50);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 100,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,0x47);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 105,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,0x4f);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 111,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,0x49);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 117,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,0x51);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 123,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,0x4b);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 128,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,0x4d);",
-      "type": "unresolved_funcptr"
-    },
     {
       "description": "Undefined global data reference",
       "line": 140,

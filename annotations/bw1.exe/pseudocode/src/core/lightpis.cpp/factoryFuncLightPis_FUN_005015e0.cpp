@@ -11,7 +11,7 @@ void core_lightpis_cpp_factoryFuncLightPis_FUN_005015e0(void)
 {
   CLightPis *this_ptr;
   
-  this_ptr = (CLightPis *)debugAllocTracked1(0x598);
+  this_ptr = (CLightPis *)operator_new(0x598);
   if (this_ptr == (CLightPis *)0x0) {
     return;
   }

@@ -7,7 +7,7 @@
 ; CStrList *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[7]:
-;   core_fldnotes.cpp_FUN_004bbcb0 at 004bbcba
+;   core_fldnotes.cpp_SNotesEntry_ctor_FUN_004bbcb0 at 004bbcba
 ;   core_script.cpp_CScript_ctor_FUN_005436d0 at 005436d8
 ;   core_sound.cpp_staticInit_FUN_0057b670 at 0057b682
 ;   shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_00494d20 at 00494d63

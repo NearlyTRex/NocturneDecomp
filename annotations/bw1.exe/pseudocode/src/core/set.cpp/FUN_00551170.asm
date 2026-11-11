@@ -80,7 +80,7 @@ section .text
     MOV EBX,dword ptr [0x00622ad0]      ; 0055117e | g_CScriptPtr
     XOR EDX,EDX                         ; 00551184
     MOV dword ptr [EBP + -0x4],ECX      ; 00551186
-    MOV EBX,dword ptr [EBX + 0x18]      ; 00551189 | g_CScriptInstance.field6_0x18
+    MOV EBX,dword ptr [EBX + 0x18]      ; 00551189 | g_CScriptInstance.monster_vision_actor
     MOV dword ptr [EBP + -0x8],EDX      ; 0055118c
     TEST EBX,EBX                        ; 0055118f
     JNZ 0x0055119a                      ; 00551191

@@ -12,39 +12,39 @@
 CShadow * core_shadow_cpp_CShadow_ctor_FUN_0055dad0(CShadow *this_ptr)
 
 {
-  uint uVar1;
-  uint uVar2;
-  uint uVar3;
+  float fVar1;
+  float fVar2;
+  float fVar3;
   CShadow *pCVar4;
   
-  pCVar4 = (CShadow *)core_enemy_cpp_CEnemy_ctor_FUN_004a0410((CEnemy *)this_ptr);
-  ((UActorVTable *)&pCVar4->field_0x154)->_ub = &g_CShadowVTable._ub;
+  pCVar4 = (CShadow *)core_enemy_cpp_CEnemy_ctor_FUN_004a0410(&this_ptr->base);
+  (pCVar4->base).base.base.vtable._ub = &g_CShadowVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
-            ((CDeformableModelInstance *)&pCVar4->field_0x158,"shadowbeast.dfm");
-  *(uint *)&pCVar4->field_0x2fec = 0x3f800000;
-  *(uint *)&pCVar4->field_0x2ff0 = 0x40000000;
-  *(uint *)&pCVar4->field_0xc30c = 1;
-  *(uint *)&pCVar4->field_0xc268 = 0;
-  *(uint *)&pCVar4->field_0xc290 = 1;
-  *(uint *)&pCVar4->field_0xc2b8 = 0;
-  *(uint *)&pCVar4->field_0xc2bc = 0x40a00000;
-  *(uint *)&pCVar4->field_0xc2c0 = 0;
-  *(uint *)&pCVar4->field_0xc2c4 = 0;
-  *(uint *)&pCVar4->field_0xc2cc = 0;
-  *(uint *)&pCVar4->field_0xc300 = 0x3f800000;
-  *(uint *)&pCVar4->field_0xc2c8 = 0;
-  *(uint *)&pCVar4->field_0xc2f0 = 0;
-  *(uint *)&pCVar4->field_0xc2e8 = 0;
-  *(uint *)&pCVar4->field_0xc2ec = 0;
-  uVar1 = _DAT_00605194;
-  *(uint *)&pCVar4->field_0xc2f8 = 0;
-  uVar2 = _DAT_00605198;
-  *(uint *)&pCVar4->field_0xc2f4 = 0x41200000;
-  uVar3 = _DAT_0060519c;
-  *(uint *)&pCVar4->field_0xc304 = 0;
-  *(uint *)&pCVar4->field_0xc308 = 0;
-  *(uint *)&pCVar4->field_0x2ff4 = uVar1;
-  *(uint *)&pCVar4->field_0x2ff8 = uVar2;
-  *(uint *)&pCVar4->field_0xc2d0 = uVar3;
+            (&(pCVar4->base).base.model,"shadowbeast.dfm");
+  (pCVar4->base).base.collision_cylinder_height = 1.0;
+  (pCVar4->base).base.collision_cylinder_radius = 2.0;
+  pCVar4->scared_by_light = 1;
+  pCVar4->type = 0;
+  pCVar4->light_up_eyes = 1;
+  pCVar4->chain_anchor = (CDemonActor *)0x0;
+  pCVar4->chain_length = 5.0;
+  pCVar4->alpha1 = (CDemonActor *)0x0;
+  pCVar4->alpha2 = (CDemonActor *)0x0;
+  pCVar4->phase = 0;
+  pCVar4->fade_scale = 1.0;
+  pCVar4->eye_glow_phase = 0.0;
+  pCVar4->walk_timeout = 0.0;
+  pCVar4->walk_target = 0;
+  pCVar4->walk_status = 0;
+  fVar1 = _DAT_00605194;
+  pCVar4->attack_loop_count = 0;
+  fVar2 = _DAT_00605198;
+  pCVar4->periodic_timer = 10.0;
+  fVar3 = _DAT_0060519c;
+  pCVar4->fade_alpha = 0;
+  pCVar4->corona_added = 0;
+  (pCVar4->base).base.ai_detection_range_min = fVar1;
+  (pCVar4->base).base.ai_detection_range_max = fVar2;
+  pCVar4->phase_timer = fVar3;
   return pCVar4;
 }

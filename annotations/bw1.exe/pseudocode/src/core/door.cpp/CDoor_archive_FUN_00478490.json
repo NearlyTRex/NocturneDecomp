@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 156,
+    "complexity_score": 122,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 35,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 91,
-    "suspect_count": 5,
+    "pseudocode_lines": 92,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unrolled_strcpy"
     ],
-    "total_lines": 369
+    "total_lines": 370
   },
   "cross_references": [],
   "function": {
@@ -337,30 +336,6 @@
       "severity": "mild",
       "text": "pcVar2 = &DAT_005da912;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 85,
-      "match": "field_0x9e4",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x9e4,\"shakeMeEvent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 86,
-      "match": "field_0x9e0",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x9e0,\"shakeMeStrength\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 92,
-      "match": "field_0xa48",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0xa48,\"handleVertexIndex\");",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

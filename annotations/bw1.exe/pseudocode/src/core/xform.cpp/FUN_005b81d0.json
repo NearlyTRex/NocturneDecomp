@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 375,
+    "complexity_score": 360,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 20,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 70,
-    "suspect_count": 29,
+    "suspect_count": 28,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 241
@@ -434,16 +433,8 @@
       "line": 69,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&(param_1->base).model.field_0x222c = 0;",
+      "text": "(param_1->base).model.part_data.visibility_flags[0x3b] = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 69,
-      "match": "field_0x222c",
-      "severity": "mild",
-      "text": "*(uint *)&(param_1->base).model.field_0x222c = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

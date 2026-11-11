@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 85,
+    "complexity_score": 70,
     "cross_reference_count": 32,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 55,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unresolved_funcptr",
       "unrolled_strchr"
     ],
     "total_lines": 157
@@ -25,19 +24,19 @@
     {
       "addr": "004ba850",
       "from_addr": "004ba8a5",
-      "name": "core_fldnotes.cpp_FUN_004ba850",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bbb30",
-      "from_addr": "004bbb40",
-      "name": "core_fldnotes.cpp_FUN_004bbb30",
+      "name": "core_fldnotes.cpp_SPageResourceText_ctor_FUN_004ba850",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bbb90",
       "from_addr": "004bbbd9",
-      "name": "core_fldnotes.cpp_FUN_004bbb90",
+      "name": "core_fldnotes.cpp_STextView_appendWord_FUN_004bbb90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bbb30",
+      "from_addr": "004bbb40",
+      "name": "core_fldnotes.cpp_STextView_wordFits_FUN_004bbb30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -276,14 +275,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 45,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)(*(int *)(this_ptr + 0x4214) + 0x6a44) + 8))",
-      "type": "unresolved_funcptr"
-    },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal 0xa with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, 0xa) in a .keep.",
       "line": 32,

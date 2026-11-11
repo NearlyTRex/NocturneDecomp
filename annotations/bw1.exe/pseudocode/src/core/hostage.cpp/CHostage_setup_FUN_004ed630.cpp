@@ -59,13 +59,11 @@ void __cdecl core_hostage_cpp_CHostage_setup_FUN_004ed630(CHostage *this_ptr)
   this_ptr->bone_indices[3] = iVar1;
   iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 R Hand",1);
   iVar1 = this_ptr->hostage_type;
-  *(int *)&(this_ptr->base).base.field_0x2620 = iVar2;
+  (this_ptr->base).base.carry_hands[1].bone_index = iVar2;
   if (iVar1 != 1) {
     iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 L Hand",1)
     ;
-    (this_ptr->base).base.carry_hands[0] = (SCarryHand)(char)iVar1;
-    (this_ptr->base).base.carry_hands[1] = (SCarryHand)(char)((uint)iVar1 >> 8);
-    *(short *)&(this_ptr->base).base.field_0x25aa = (short)((uint)iVar1 >> 0x10);
+    (this_ptr->base).base.carry_hands[0].bone_index = iVar1;
   }
   iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_01,"Bip01 Spine1",1);
   iVar1 = this_ptr->hostage_type;

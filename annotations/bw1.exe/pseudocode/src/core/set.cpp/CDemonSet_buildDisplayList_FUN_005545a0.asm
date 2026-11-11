@@ -39,8 +39,8 @@
 ;   CConsole g_CConsoleInstance
 ;   undefined4 DAT_01bc120c
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field504_0x228
-;   undefined4 g_CGameInstance.field556_0x25c
+;   undefined4 g_CGameInstance.profile_mode
+;   undefined4 g_CGameInstance.goggles_active
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   undefined4 DAT_01d06ab4
 ;   ... and 5 more
@@ -65,7 +65,7 @@ section .text
     PUSH EBP                            ; 005545a3
     SUB ESP,0xc4                        ; 005545a4
     MOV EAX,[0x0061d95c]                ; 005545aa | g_CGamePtr
-    CMP dword ptr [EAX + 0x228],0x0     ; 005545af | g_CGameInstance.field504_0x228
+    CMP dword ptr [EAX + 0x228],0x0     ; 005545af | g_CGameInstance.profile_mode
     JNZ 0x00554740                      ; 005545b6
         ;   XREF to: 00554740 (CONDITIONAL_JUMP)  ; LAB_00554740
     MOV EBX,dword ptr [0x00612560]      ; 005545bc | DAT_00612560
@@ -174,7 +174,7 @@ section .text
     MOV dword ptr [EDX + 0x15f6fc],EAX  ; 0055471d
         ;   Label: LAB_0055471d
     MOV EAX,[0x0061d95c]                ; 00554723 | g_CGamePtr | g_CGameInstance
-    CMP dword ptr [EAX + 0x228],0x0     ; 00554728 | g_CGameInstance.field504_0x228
+    CMP dword ptr [EAX + 0x228],0x0     ; 00554728 | g_CGameInstance.profile_mode
     JNZ 0x005549f1                      ; 0055472f
         ;   XREF to: 005549f1 (CONDITIONAL_JUMP)  ; LAB_005549f1
     ADD ESP,0xc4                        ; 00554735
@@ -191,14 +191,14 @@ section .text
         ;   XREF to: 005545bc (UNCONDITIONAL_JUMP)  ; LAB_005545bc
     MOV EAX,[0x0061d95c]                ; 00554751 | g_CGamePtr
         ;   Label: LAB_00554751
-    CMP dword ptr [EAX + 0x25c],0x0     ; 00554756 | g_CGameInstance.field556_0x25c
+    CMP dword ptr [EAX + 0x25c],0x0     ; 00554756 | g_CGameInstance.goggles_active
     JNZ 0x0055460f                      ; 0055475d
         ;   XREF to: 0055460f (CONDITIONAL_JUMP)  ; LAB_0055460f
     JMP 0x00554617                      ; 00554763
         ;   XREF to: 00554617 (UNCONDITIONAL_JUMP)  ; LAB_00554617
     MOV EAX,[0x0061d95c]                ; 00554768 | g_CGamePtr
         ;   Label: LAB_00554768
-    CMP dword ptr [EAX + 0x25c],0x0     ; 0055476d | g_CGameInstance.field556_0x25c
+    CMP dword ptr [EAX + 0x25c],0x0     ; 0055476d | g_CGameInstance.goggles_active
     JZ 0x005548b7                       ; 00554774
         ;   XREF to: 005548b7 (CONDITIONAL_JUMP)  ; LAB_005548b7
     LEA ECX,[EBX + 0x20]                ; 0055477a

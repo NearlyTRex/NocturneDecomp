@@ -11,7 +11,7 @@
 ;   core_cloth.cpp_CCloth_load_FUN_0043e6d0 at 0043e7a0
 ;   core_dmodel.cpp_loadModel_FUN_00468780 at 0046880a
 ;   core_level.cpp_FUN_004fe840 at 004fe8c5
-;   core_moon.cpp_FUN_00521c50 at 00521c82
+;   core_moon.cpp_CMoon_init_FUN_00521c50 at 00521c82
 ;   core_set.cpp_FUN_0054d3c0 at 0054df30
 ;
 ; Referenced Globals:

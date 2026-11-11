@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 151,
+    "complexity_score": 126,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
-    "suspect_count": 10,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "unrolled_memcpy"
     ],
     "total_lines": 64
@@ -106,22 +105,6 @@
       "severity": "moderate",
       "text": "float afStackY_100c [1016];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_00569130(&this_ptr->field_0x158,*(uint *)&this_ptr->field_0xc268);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0xc268",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_00569130(&this_ptr->field_0x158,*(uint *)&this_ptr->field_0xc268);",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",

@@ -85,7 +85,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "pvVar1 = FUN_005c08d0(*(int *)(param_1 + 0x304) * *(int *)(param_1 + 0x308));",
+      "text": "pvVar1 = malloc(param_1->width * param_1->height);",
       "type": "unnamed_param"
     },
     {
@@ -93,7 +93,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "pvVar1 = FUN_005c08d0(*(int *)(param_1 + 0x304) * *(int *)(param_1 + 0x308));",
+      "text": "pvVar1 = malloc(param_1->width * param_1->height);",
       "type": "unnamed_param"
     },
     {
@@ -101,7 +101,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(void **)(param_1 + 0x300) = pvVar1;",
+      "text": "param_1->data = pvVar1;",
       "type": "unnamed_param"
     }
   ]

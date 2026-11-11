@@ -15,38 +15,37 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004eab00(CHero *this_ptr)
   char local_70 [100];
   int local_c;
   
-  model_ptr = (CDeformableModelInstance *)(this_ptr + 0x158);
+  model_ptr = &(this_ptr->base).model;
   if (g_CHeroClassVersion < 4) {
     core_actor_cpp_CDemonActor_archive_FUN_0040c040((CDemonActor *)this_ptr);
     if (1 < g_CHeroClassVersion) {
-      core_actor_cpp_archiveMotionState_FUN_0040b870
-                ((CMotionController *)model_ptr,"motion state");
+      core_actor_cpp_archiveMotionState_FUN_0040b870(&model_ptr->base,"motion state");
     }
     if (2 < g_CHeroClassVersion) {
-      core_actor_cpp_archivePartStatus_FUN_0040b960
-                ((CDeformableModelInstance *)(this_ptr + 0x158),"partStatus");
-      core_actor_cpp_archiveActor_FUN_0040b6f0(this_ptr + 0x26fc,"grabbedBy");
-      core_actor_cpp_archiveFloat_FUN_0040b5f0(this_ptr + 0x2538,"hitPoints");
+      core_actor_cpp_archivePartStatus_FUN_0040b960(&(this_ptr->base).model,"partStatus");
+      core_actor_cpp_archiveActor_FUN_0040b6f0(&(this_ptr->base).grabbed_by,"grabbedBy");
+      core_actor_cpp_archiveFloat_FUN_0040b5f0(&(this_ptr->base).hit_points,"hitPoints");
     }
   }
   else {
-    core_charactr_cpp_CCharacter_archive_FUN_0042c7f0((CCharacter *)this_ptr);
-    core_actor_cpp_archiveMotionState_FUN_0040b870
-              ((CMotionController *)model_ptr,"motion state");
+    core_charactr_cpp_CCharacter_archive_FUN_0042c7f0(&this_ptr->base);
+    core_actor_cpp_archiveMotionState_FUN_0040b870(&model_ptr->base,"motion state");
     core_actor_cpp_archivePartStatus_FUN_0040b960(model_ptr,"partStatus");
     if (g_CHeroClassVersion < 8) {
-      core_actor_cpp_archiveActor_FUN_0040b6f0(this_ptr + 0x26fc,"grabbedBy");
-      *(uint *)(this_ptr + 0x2700) = 0;
+      core_actor_cpp_archiveActor_FUN_0040b6f0(&(this_ptr->base).grabbed_by,"grabbedBy");
+      (this_ptr->base).grabbed_type = 0;
     }
     if (4 < g_CHeroClassVersion) {
-      core_actor_cpp_archiveInteger_FUN_0040b670((int *)(this_ptr + 0xc1d4),"controlType");
+      core_actor_cpp_archiveInteger_FUN_0040b670
+                ((int *)&this_ptr->control_type,"controlType");
     }
     if (6 < g_CHeroClassVersion) {
-      core_actor_cpp_archiveActor_FUN_0040b6f0(this_ptr + 0x1ff78,"objectToPickUp");
-      core_actor_cpp_archiveActor_FUN_0040b6f0(this_ptr + 0x1ff74,"doorToOpen");
-      core_actor_cpp_archiveActor_FUN_0040b6f0(this_ptr + 0x1ff80,"leverToPull");
-      core_actor_cpp_archiveActor_FUN_0040b6f0(this_ptr + 0x1ff84,"ladderToClimb");
-      core_actor_cpp_archiveActor_FUN_0040b6f0(this_ptr + 0x1ff7c,"pushedObject");
+      core_actor_cpp_archiveActor_FUN_0040b6f0
+                (&this_ptr->object_to_pick_up,"objectToPickUp");
+      core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->door_to_open,"doorToOpen");
+      core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->lever_to_pull,"leverToPull");
+      core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->ladder_to_climb,"ladderToClimb");
+      core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->pushed_object,"pushedObject");
     }
     if (g_CHeroClassVersion == 10) {
       core_actor_cpp_archiveInteger_FUN_0040b670(&local_c,"keys");
@@ -60,22 +59,22 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004eab00(CHero *this_ptr)
       } while (iVar1 < 0x20);
     }
     if (8 < g_CHeroClassVersion) {
-      core_actor_cpp_archiveInteger_FUN_0040b670((int *)(this_ptr + 0x1ffa8),"AITask");
+      core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->ai_task,"AITask");
     }
     if (0xb < g_CHeroClassVersion) {
       core_actor_cpp_archiveInteger_FUN_0040b670
-                ((int *)(this_ptr + 0x1ff54),"isWearingGasMask");
+                ((int *)&this_ptr->is_wearing_gas_mask,"isWearingGasMask");
     }
     if (0xc < g_CHeroClassVersion) {
       core_actor_cpp_archiveInteger_FUN_0040b670
-                ((int *)(this_ptr + 0x1ff58),"isWearingGoggles");
+                (&this_ptr->is_wearing_goggles,"isWearingGoggles");
     }
     if (5 < g_CHeroClassVersion) {
       if (DAT_007c3038 != 1) {
-        core_inv_cpp_CInventory_save_FUN_004f95b0((CInventory *)(this_ptr + 0x1fae8),DAT_007c3034);
+        core_inv_cpp_CInventory_save_FUN_004f95b0(&this_ptr->inventory,DAT_007c3034);
         return;
       }
-      core_inv_cpp_CInventory_load_FUN_004f97a0((CInventory *)(this_ptr + 0x1fae8),DAT_007c3034);
+      core_inv_cpp_CInventory_load_FUN_004f97a0(&this_ptr->inventory,DAT_007c3034);
       return;
     }
   }

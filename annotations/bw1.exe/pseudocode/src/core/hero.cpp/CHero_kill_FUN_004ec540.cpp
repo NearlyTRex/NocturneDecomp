@@ -9,8 +9,8 @@
 void __cdecl core_hero_cpp_CHero_kill_FUN_004ec540(CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force)
 
 {
-  *(uint *)(this_ptr + 0xc1d0) = 0;
+  this_ptr->invincibility_timer = 0.0;
   core_charactr_cpp_CCharacter_kill_FUN_0042d5f0
-            ((CCharacter *)this_ptr,damage_type,damage_direction,impact_force);
+            (&this_ptr->base,damage_type,damage_direction,impact_force);
   return;
 }

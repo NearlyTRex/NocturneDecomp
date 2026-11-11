@@ -56,7 +56,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_004668a0(CKeyFramedModel *
   pCVar3 = this_ptr;
   if (0 < this_ptr->texture_count) {
     do {
-      *(uint *)&pCVar3->field_0x128 = 0;
+      pCVar3->texture_list[0].base.count = 0;
       iVar2 = iVar2 + 1;
       pCVar3 = (CKeyFramedModel *)(pCVar3->model_filename + 0x48);
     } while (iVar2 < this_ptr->texture_count);

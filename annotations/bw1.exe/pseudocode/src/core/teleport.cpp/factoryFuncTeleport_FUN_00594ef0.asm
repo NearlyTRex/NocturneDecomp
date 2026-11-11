@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_teleport.cpp_CTeleport_ctor_FUN_00594f20
-;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
+;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x168                          ; 00594ef0
         ;   Label: core_teleport.cpp_factoryFuncTeleport_FUN_00594ef0
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 00594ef5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 00594ef5
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 00594efa
     TEST EAX,EAX                        ; 00594efd
     JNZ 0x00594f02                      ; 00594eff

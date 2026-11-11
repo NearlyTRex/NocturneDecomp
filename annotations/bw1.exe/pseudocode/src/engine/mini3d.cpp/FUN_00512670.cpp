@@ -14,7 +14,7 @@ void engine_mini3d_cpp_FUN_00512670(void)
   if (_DAT_01d227dc != (void *)0x0) {
     return;
   }
-  _DAT_01d227dc = FUN_005c08d0(0x9c440);
+  _DAT_01d227dc = malloc(0x9c440);
   if (_DAT_01d227dc == (void *)0x0) {
     _DAT_01d1d400 = "..\\engine\\mini3d.cpp";
     _DAT_01d1d404 = 0x67d;

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 327,
-    "complexity_score": 140,
+    "complexity_score": 107,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 16,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 105,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unresolved_funcptr"
-    ],
-    "total_lines": 432
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 107,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 434
   },
   "cross_references": [
     {
@@ -244,32 +242,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 18,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*(int *)(iVar3 + 0x154) + 100))(iVar3);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 70,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar3 + 0x154) + 0x68))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 99,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*(int *)(iVar3 + 0x154) + 0x9c))(iVar3,this_ptr);",
-      "type": "unresolved_funcptr"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

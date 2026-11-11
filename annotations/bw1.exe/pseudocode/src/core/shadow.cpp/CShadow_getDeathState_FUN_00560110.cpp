@@ -11,10 +11,10 @@ EDeathState __cdecl core_shadow_cpp_CShadow_getDeathState_FUN_00560110(CShadow *
 {
   SMotion *pSVar1;
   
-  if (*(int *)&this_ptr->field_0x70 != 2) {
+  if ((this_ptr->base).base.base.lifecycle_state != ACTOR_DESTROYED) {
     pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
-                       ((CMotionController *)&this_ptr->field_0x158);
-    switch(*(uint *)(pSVar1 + 0x24)) {
+                       (&(this_ptr->base).base.model.base);
+    switch(pSVar1->state_index) {
     case 0xf:
     case 0x10:
       return DEATH_STATE_DYING;

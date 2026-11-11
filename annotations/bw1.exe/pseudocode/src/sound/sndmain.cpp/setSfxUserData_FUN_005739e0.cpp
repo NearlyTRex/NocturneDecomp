@@ -2,13 +2,13 @@
 // Address: 005739e0
 // Address Range: [[005739e0, 00573a41]]
 // Convention: unknown
-// Signature: undefined4 sound_sndmain_cpp_setSfxUserData_FUN_005739e0(uint param_1,int param_2,undefined4 param_3)
+// Signature: undefined4 sound_sndmain_cpp_setSfxUserData_FUN_005739e0(uint param_1,int param_2,void *param_3)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint sound_sndmain_cpp_setSfxUserData_FUN_005739e0(uint param_1,int param_2,uint param_3)
+uint sound_sndmain_cpp_setSfxUserData_FUN_005739e0(uint param_1,int param_2,void *param_3)
 
 {
   CSfxSlot *pCVar1;
@@ -22,7 +22,7 @@ uint sound_sndmain_cpp_setSfxUserData_FUN_005739e0(uint param_1,int param_2,uint
   if (pCVar1 == (CSfxSlot *)0x0) {
     return 0;
   }
-  *(uint *)(&(pCVar1->options).field_0x44 + param_2 * 4) = param_3;
+  (pCVar1->options).userdata[param_2] = param_3;
   sound_sndmain_cpp_FUN_00573e70();
   return 1;
 }

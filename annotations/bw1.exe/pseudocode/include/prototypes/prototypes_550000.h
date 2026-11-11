@@ -24,6 +24,7 @@
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLPrimitiveTriangle.h"
 #include "types/structs/SRaytraceState.h"
 #include "types/structs/SRoom.h"
 #include "types/structs/SVDBox.h"
@@ -65,7 +66,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchTri_FUN_00554a60(CDemonSet 
 void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00554a90(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha);
 void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00554ac0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha,int stride);
 void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha);
-void core_set_cpp_FUN_0055517e(CDemonSet *param_1,SMRGLHeaderPrimitive *param_2,int param_3,int param_4);
+void core_set_cpp_FUN_0055517e(CDemonSet *param_1,SMRGLPrimitiveTriangle *param_2,int param_3,int param_4);
 void __cdecl core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0(CDemonSet *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int render_flags);
 void __cdecl core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_005552f0(CDemonSet *this_ptr,SInputFace *faces,int count,int flags);
 void __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_00555360(CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count);

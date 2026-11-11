@@ -32,7 +32,7 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c550
 ;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
-;   core_fire.cpp_FUN_004b5f00
+;   core_fire.cpp_CFireEffect_createLeaf_FUN_004b5f00
 ;   core_gore.cpp_CGore_createFootstep_FUN_004e6510
 ;   core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004e6590
 ;   core_ground.cpp_getGroundTypeCode_FUN_004e7010
@@ -232,8 +232,8 @@ section .text
     MOV EDX,dword ptr [0x0061c010]      ; 0040ca98 | DAT_0061c010
     PUSH EDX                            ; 0040ca9e
     INC ESI                             ; 0040ca9f
-    CALL core_fire.cpp_FUN_004b5f00     ; 0040caa0
-        ;   XREF to: 004b5f00 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004b5f00()
+    CALL core_fire.cpp_CFireEffect_createLeaf_FUN_004b5f00 ; 0040caa0
+        ;   XREF to: 004b5f00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLeaf_FUN_004b5f00(CFireEffect * this_ptr, undefined4 param_2, undefined4 param_3, CKeyFramedModel * param_4, ...)
     MOV ECX,dword ptr [EBP + 0x11c]     ; 0040caa5
     ADD ESP,0x14                        ; 0040caab
     CMP ESI,ECX                         ; 0040caae

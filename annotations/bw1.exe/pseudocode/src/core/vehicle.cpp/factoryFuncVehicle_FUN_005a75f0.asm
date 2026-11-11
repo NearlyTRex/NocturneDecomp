@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_vehicle.cpp_CVehicle_ctor_FUN_005a7620
-;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
+;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x1078                         ; 005a75f0
         ;   Label: core_vehicle.cpp_factoryFuncVehicle_FUN_005a75f0
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 005a75f5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 005a75f5
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 005a75fa
     TEST EAX,EAX                        ; 005a75fd
     JNZ 0x005a7602                      ; 005a75ff

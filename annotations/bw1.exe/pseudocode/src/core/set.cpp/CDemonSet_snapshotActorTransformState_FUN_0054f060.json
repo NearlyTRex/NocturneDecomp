@@ -2,15 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 21,
+    "complexity_score": 45,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 21,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 58
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 20,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
+    "total_lines": 57
   },
   "cross_references": [
     {
@@ -179,5 +181,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 9,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(actor->previous_transform_state).position.x = (actor->location).position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 18,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar1->vec).x = (actor->orient).vec.x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

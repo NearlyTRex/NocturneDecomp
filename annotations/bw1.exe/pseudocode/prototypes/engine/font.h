@@ -43,7 +43,7 @@ void __cdecl CBitFont::loadNewBitmap(CBitFont *this_ptr,char *filename,int width
 
 // Original: engine_font.cpp_FUN_004c157e
 // Address: 004c157e
-void FUN_004c157e(CBitFont *param_1,CBitFont *param_2);
+void FUN_004c157e(CBitFont *param_1,char *param_2);
 
 // Original: engine_font.cpp_FUN_004c1830
 // Address: 004c1830
@@ -75,7 +75,7 @@ int __cdecl CBitFont::drawTextF(CBitFont *this_ptr,int x,int y,int color_mode,in
 
 // Original: engine_font.cpp_CBitFont_drawTextFV_FUN_004c20e0
 // Address: 004c20e0
-int __cdecl CBitFont::drawTextFV(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_7);
+int __cdecl CBitFont::drawTextFV(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 
 // Original: engine_font.cpp_CBitFont_drawTextRight_FUN_004c2150
 // Address: 004c2150
@@ -91,7 +91,7 @@ int __cdecl CBitFont::drawTextCenterF(CBitFont *this_ptr,int x,int y,int color_m
 
 // Original: engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004c22e0
 // Address: 004c22e0
-int __cdecl CBitFont::drawTextCenterFV(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_7);
+int __cdecl CBitFont::drawTextCenterFV(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 
 // Original: engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004c2350
 // Address: 004c2350
@@ -103,7 +103,7 @@ int __cdecl CBitFont::drawTextCenterInBoundsF(CBitFont *this_ptr,int left_x,int 
 
 // Original: engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004c23f0
 // Address: 004c23f0
-int __cdecl CBitFont::drawTextCenterInBoundsFV(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_8);
+int __cdecl CBitFont::drawTextCenterInBoundsFV(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 
 // Original: engine_font.cpp_CBitFont_drawTextCenterInClip_FUN_004c2460
 // Address: 004c2460
@@ -111,7 +111,7 @@ int __cdecl CBitFont::drawTextCenterInClip(CBitFont *this_ptr,int y,int color_mo
 
 // Original: engine_font.cpp_CBitFont_printCenterFV_FUN_004c2500
 // Address: 004c2500
-int __cdecl CBitFont::printCenterFV(CBitFont *this_ptr,int y,int color_mode,int color_value,undefined4 format_string,undefined4 param_6);
+int __cdecl CBitFont::printCenterFV(CBitFont *this_ptr,int y,int color_mode,int color_value,char *format_string,va_list_t args);
 
 // Original: engine_font.cpp_setShadowColor_FUN_004c2560
 // Address: 004c2560

@@ -45,11 +45,17 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_004193c0(CBodyPart *this_pt
         pSVar5 = this_ptr->faces;
         iVar9 = iVar9 + 1;
         _fscanf(DAT_007c3034,"\t\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
-                   (int)this_ptr->face_texture_indices + iStack_18,pSVar5 + iVar6 + 0x18,
-                   pSVar5 + iVar6 + 0x1c,pSVar5 + iVar6 + 0x20,pSVar5 + iVar6 + 0x24,
-                   pSVar5 + iVar6 + 0x28,pSVar5 + iVar6 + 0x2c,pSVar5 + iVar6 + 0x30,
-                   pSVar5 + iVar6 + 0x34,pSVar5 + iVar6 + 0x38);
-        *(uint *)(pSVar5 + iVar6 + 4) = 3;
+                   (int)this_ptr->face_texture_indices + iStack_18,
+                   (int)&pSVar5->vertices[0].vertex_index + iVar6,
+                   (int)&pSVar5->vertices[0].texture_u + iVar6,
+                   (int)&pSVar5->vertices[0].texture_v + iVar6,
+                   (int)&pSVar5->vertices[1].vertex_index + iVar6,
+                   (int)&pSVar5->vertices[1].texture_u + iVar6,
+                   (int)&pSVar5->vertices[1].texture_v + iVar6,
+                   (int)&pSVar5->vertices[2].vertex_index + iVar6,
+                   (int)&pSVar5->vertices[2].texture_u + iVar6,
+                   (int)&pSVar5->vertices[2].texture_v + iVar6);
+        *(uint *)((int)pSVar5->vertices + iVar6 + -0x14) = 3;
         iVar6 = iVar6 + 0x3c;
         iStack_18 = iStack_18 + 4;
       } while (iVar9 < this_ptr->tri_count);
@@ -88,15 +94,15 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_004193c0(CBodyPart *this_pt
         FUN_005c03c0
                   (DAT_007c3034,"\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
                    *(uint *)(iVar6 + (int)this_ptr->face_texture_indices),
-                   *(uint *)(pSVar5 + iStack_14 + 0x18),
-                   *(uint *)(pSVar5 + iStack_14 + 0x1c),
-                   *(uint *)(pSVar5 + iStack_14 + 0x20),
-                   *(uint *)(pSVar5 + iStack_14 + 0x24),
-                   *(uint *)(pSVar5 + iStack_14 + 0x28),
-                   *(uint *)(pSVar5 + iStack_14 + 0x2c),
-                   *(uint *)(pSVar5 + iStack_14 + 0x30),
-                   *(uint *)(pSVar5 + iStack_14 + 0x34),
-                   *(uint *)(pSVar5 + iStack_14 + 0x38));
+                   *(uint *)((int)&pSVar5->vertices[0].vertex_index + iStack_14),
+                   *(uint *)((int)&pSVar5->vertices[0].texture_u + iStack_14),
+                   *(uint *)((int)&pSVar5->vertices[0].texture_v + iStack_14),
+                   *(uint *)((int)&pSVar5->vertices[1].vertex_index + iStack_14),
+                   *(uint *)((int)&pSVar5->vertices[1].texture_u + iStack_14),
+                   *(uint *)((int)&pSVar5->vertices[1].texture_v + iStack_14),
+                   *(uint *)((int)&pSVar5->vertices[2].vertex_index + iStack_14),
+                   *(uint *)((int)&pSVar5->vertices[2].texture_u + iStack_14),
+                   *(uint *)((int)&pSVar5->vertices[2].texture_v + iStack_14));
         iVar6 = iVar6 + 4;
         iVar9 = iVar9 + 1;
         iStack_14 = iStack_14 + 0x3c;
@@ -132,7 +138,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_004193c0(CBodyPart *this_pt
   }
   if (5 < g_CBodyPartClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b670
-              ((int *)&this_ptr->field_0xcc8,"dontGoIntoBackground");
+              (&this_ptr->render_disabled,"dontGoIntoBackground");
     return;
   }
   return;

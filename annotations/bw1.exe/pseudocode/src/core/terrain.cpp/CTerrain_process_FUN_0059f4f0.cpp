@@ -13,13 +13,13 @@ void __cdecl core_terrain_cpp_CTerrain_process_FUN_0059f4f0(CTerrain *this_ptr)
 {
   int iVar1;
   
-  iVar1 = *(int *)this_ptr +
+  iVar1 = this_ptr->animation_counter +
           ((uint)((longlong)_DAT_01c43530 * 0x6270) >> 0x10 |
           (int)((ulonglong)((longlong)_DAT_01c43530 * 0x6270) >> 0x20) << 0x10);
-  *(int *)this_ptr = iVar1;
+  this_ptr->animation_counter = iVar1;
   if (iVar1 < 0x8000001) {
     return;
   }
-  *(int *)this_ptr = iVar1 + -0x8000000;
+  this_ptr->animation_counter = iVar1 + -0x8000000;
   return;
 }

@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 CMatrix3x4f * __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_0051e2f0(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
@@ -33,10 +35,10 @@ CMatrix3x4f * __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_
   CVector3f CStack_18;
   
   bVar5 = 0;
-  iVar2 = *(int *)((this_ptr->base).base.carry_hands + hand_index * 0x78);
+  iVar2 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   if (hand_index == 1) {
     iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600
-                      (*(uint *)((this_ptr->base).base.carry_hands + hand_index * 0x78 + 8),
+                      ((this_ptr->base).base.carry_hands[hand_index].carry_actor,
                        g_CElephantGunClassInfo.name_hash);
     if (iVar1 == 0) {
       CStack_24.y = -0.13793;
@@ -106,7 +108,7 @@ CMatrix3x4f * __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_
   }
   core_xform_cpp_FUN_005b5760(&CStack_c0,&CStack_6c,&CStack_54);
   core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
-            (&CStack_c0,&(this_ptr->base).base.model.field_0xe80 + iVar2 * 0x30);
+            (&CStack_c0,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar2);
   pfVar3 = (float *)&stack0xffffff10;
   pCVar4 = out_matrix;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {

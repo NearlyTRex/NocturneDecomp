@@ -9,7 +9,7 @@
 void __cdecl core_baron_cpp_CBaron_archive_FUN_00410180(CBaron *this_ptr)
 
 {
-  core_hero_cpp_CHero_archive_FUN_004eab00((CHero *)this_ptr);
+  core_hero_cpp_CHero_archive_FUN_004eab00(&this_ptr->base);
   if (g_CBaronClassVersion < 2) {
     return;
   }

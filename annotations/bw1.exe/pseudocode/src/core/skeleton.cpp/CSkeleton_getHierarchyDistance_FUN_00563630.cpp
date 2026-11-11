@@ -16,7 +16,7 @@ int __cdecl core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_00563630(CSkele
     if (start_bone_index == target_bone_index) {
       return iVar1;
     }
-    start_bone_index = *(int *)(this_ptr->bone_list + start_bone_index * 0x24 + 0x20);
+    start_bone_index = this_ptr->bone_list[start_bone_index].parent_index;
     iVar1 = iVar1 + 1;
   } while (-1 < start_bone_index);
   if (target_bone_index < 0) {

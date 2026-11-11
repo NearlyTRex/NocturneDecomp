@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 711,
-    "complexity_score": 1559,
+    "complexity_score": 1534,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 21,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 384,
-    "suspect_count": 111,
+    "suspect_count": 109,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -18,7 +18,6 @@
       "suspect_float",
       "unaffected_reg",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "unrolled_memcpy",
@@ -506,32 +505,16 @@
       "line": 87,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x25b0 != 0) {",
+      "text": "if (param_1->carry_hands[0].carry_actor != (CDemonActor *)0x0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 87,
-      "match": "field_0x25b0",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x25b0 != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 90,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x2628 != 0) {",
+      "text": "if (param_1->carry_hands[1].carry_actor != (CDemonActor *)0x0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 90,
-      "match": "field_0x2628",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x2628 != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

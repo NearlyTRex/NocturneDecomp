@@ -13,25 +13,25 @@ int __cdecl support_codec_cpp_FUN_004433f0(CLZWDictionary *this_ptr,SBitBuffer *
   int iVar2;
   int iVar3;
   
-  pCVar1 = this_ptr->node_table + (int)bit_buffer * 0x10;
-  if (-1 < (int)*(SBitBuffer **)(pCVar1 + 4)) {
+  pCVar1 = this_ptr->node_table + (int)bit_buffer;
+  if (-1 < pCVar1->parent_index) {
     if (bit_buffer != (SBitBuffer *)istream) {
       iVar3 = support_codec_cpp_FUN_004433f0
-                        (this_ptr,*(SBitBuffer **)(pCVar1 + 4),istream,bytes_remaining);
+                        (this_ptr,(SBitBuffer *)pCVar1->parent_index,istream,bytes_remaining);
       if (iVar3 < 0) {
         return iVar3;
       }
       goto LAB_00443430;
     }
     do {
-      pCVar1 = this_ptr->node_table + (int)istream * 0x10;
-      istream = *(_istream **)(pCVar1 + 4);
+      pCVar1 = this_ptr->node_table + (int)istream;
+      istream = (_istream *)pCVar1->parent_index;
     } while (-1 < (int)istream);
   }
-  iVar3 = *(int *)pCVar1;
+  iVar3 = pCVar1->code;
 LAB_00443430:
   iVar2 = (**(code **)(*bytes_remaining + 4))
-                    (bytes_remaining,this_ptr->node_table[(int)bit_buffer * 0x10]);
+                    (bytes_remaining,(char)this_ptr->node_table[(int)bit_buffer].code);
   if (-1 < iVar2) {
     return iVar3;
   }

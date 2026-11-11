@@ -11,7 +11,7 @@ void core_manpuz_cpp_factoryFuncMansionPuzzleCircle_FUN_00503b10(void)
 {
   CMansionPuzzleCircle *this_ptr;
   
-  this_ptr = (CMansionPuzzleCircle *)debugAllocTracked1(0x1514);
+  this_ptr = (CMansionPuzzleCircle *)operator_new(0x1514);
   if (this_ptr == (CMansionPuzzleCircle *)0x0) {
     return;
   }

@@ -42,9 +42,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004669f0(CKeyFr
            (iVar1 = _fread(this_ptr->poly_texture_index_list,this_ptr->poly_count << 2,1,file),
            iVar1 == 1)))))) {
         if (0 < this_ptr->texture_count) {
-          memset(&this_ptr->field_0x124,0,0x120);
+          memset(this_ptr->texture_list,0,0x120);
           for (iVar1 = 0; iVar1 < this_ptr->texture_count; iVar1 = iVar1 + 1) {
-            iVar2 = _fread(this_ptr->model_filename + iVar1 * 0x48 + 0x124,0x18,1,file);
+            iVar2 = _fread(this_ptr->texture_list + iVar1,0x18,1,file);
             if (iVar2 != 1) goto LAB_00466a69;
           }
         }

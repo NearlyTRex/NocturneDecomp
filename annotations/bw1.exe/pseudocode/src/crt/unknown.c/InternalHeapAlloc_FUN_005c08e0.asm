@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x24]:4  local_24
 ;
 ; XREF[3]:
-;   crt_unknown.c_FUN_005c08d0 at 005c08d5
+;   crt_memory.c_malloc_FUN_005c08d0 at 005c08d5
 ;   crt_unknown.c_FUN_005c10e8 at 005c10f9
 ;   crt_unknown.c_FUN_005c9fa0 at 005c9fcd
 ;

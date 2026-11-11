@@ -11,7 +11,7 @@ void core_gasmask_cpp_factoryFuncGasMask_FUN_004dda90(void)
 {
   CGasMask *this_ptr;
   
-  this_ptr = (CGasMask *)debugAllocTracked1(0x2d8);
+  this_ptr = (CGasMask *)operator_new(0x2d8);
   if (this_ptr == (CGasMask *)0x0) {
     return;
   }

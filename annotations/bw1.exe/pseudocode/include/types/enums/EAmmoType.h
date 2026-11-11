@@ -13,7 +13,8 @@ enum {
     AMMO_TYPE_FLAMING = 0x5,
     AMMO_TYPE_BLANKS = 0x6,
     AMMO_TYPE_LITHIUM = 0x7,
-    AMMO_TYPE_MERCURY = 0x8
+    AMMO_TYPE_MERCURY = 0x8,
+    AMMO_TYPE_STAGGER = 0x9
 };
 typedef int EAmmoType;
 

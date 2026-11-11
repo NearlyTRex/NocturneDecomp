@@ -2,19 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 455,
-    "complexity_score": 293,
+    "complexity_score": 391,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 35,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 198,
-    "suspect_count": 8,
+    "pseudocode_lines": 201,
+    "suspect_count": 16,
     "suspect_types": [
+      "concat_reconstruction",
+      "extra_output",
       "raw_address_constant",
       "undefined_data",
+      "undefined_type",
       "warning_overlapping_globals"
     ],
-    "total_lines": 653
+    "total_lines": 656
   },
   "cross_references": [
     {
@@ -113,24 +116,24 @@
       "name": "support_codec.cpp_FUN_00443630"
     },
     {
+      "addr": "005a17f0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_COutStreamFile_ctorOpen_FUN_005a17f0"
+    },
+    {
       "addr": "005a1860",
       "is_variadic": false,
       "name": "support_trstream.cpp_COutStreamFile_dtor_FUN_005a1860"
     },
     {
-      "addr": "005a17f0",
+      "addr": "005a1990",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a17f0"
+      "name": "support_trstream.cpp_COutStreamFile_isOpen_FUN_005a1990"
     },
     {
       "addr": "005a18f0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a18f0"
-    },
-    {
-      "addr": "005a1990",
-      "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a1990"
+      "name": "support_trstream.cpp_COutStreamFile_write_FUN_005a18f0"
     }
   ],
   "globals": [
@@ -606,60 +609,124 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Unresolved type",
+      "line": 9,
+      "match": "undefined3 extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 14,
+      "match": "undefined3 extraout_var_00",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var_00;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_var_00",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var_00;",
+      "type": "extra_output"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 58,
       "match": "DAT_005d7916",
       "severity": "mild",
-      "text": "p_Var1 = engine_dosio_cpp_FUN_00479180(\"backdrop\",local_20c,&DAT_005d7916);",
+      "text": "p_Var2 = engine_dosio_cpp_FUN_00479180(\"backdrop\",local_20c,&DAT_005d7916);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 64,
       "match": "DAT_005d792e",
       "severity": "mild",
-      "text": "support_trstream_cpp_FUN_005a17f0(&local_5c,local_10c,&DAT_005d792e);",
+      "text": "support_trstream_cpp_COutStreamFile_ctorOpen_FUN_005a17f0(&local_5c,local_10c,&DAT_005d792e);",
       "type": "undefined_data"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 66,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var,bVar1) == 0) {",
+      "type": "extra_output"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 101,
       "match": "DAT_00857cd8",
       "severity": "mild",
-      "text": "puVar10 = &DAT_00857cd8 + local_3c;",
+      "text": "puVar11 = &DAT_00857cd8 + local_3c;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 103,
       "match": "DAT_01342220",
       "severity": "mild",
-      "text": "puVar7 = &DAT_01342220 + local_40;",
+      "text": "puVar8 = &DAT_01342220 + local_40;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 156,
+      "line": 159,
       "match": "DAT_01342220",
       "severity": "mild",
-      "text": "(&DAT_01342220)[iVar9] = (char)iVar4;",
+      "text": "(&DAT_01342220)[iVar10] = (char)iVar5;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 174,
+      "line": 177,
       "match": "DAT_01342220",
       "severity": "mild",
-      "text": "iVar2 = support_codec_cpp_FUN_00442d10(&local_a8,&DAT_01342220,&local_50,&local_5c);",
+      "text": "iVar3 = support_codec_cpp_FUN_00442d10(&local_a8,&DAT_01342220,&local_50,&local_5c);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 189,
+      "match": "extraout_var_00",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var_00,bVar1) == 0) {",
+      "type": "extra_output"
     },
     {
       "description": "Raw hex address 0x444645 assigned to bare local `local_54`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_54` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 70,
+      "line": 73,
       "match": "0x444645",
       "severity": "moderate",
       "text": "local_54 = 0x00444645;",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 66,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var,bVar1) == 0) {",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 189,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var_00,bVar1) == 0) {",
+      "type": "concat_reconstruction"
     }
   ]
 }

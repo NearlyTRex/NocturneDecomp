@@ -10,51 +10,53 @@ void __cdecl core_event_cpp_CEventList_process_FUN_004a1a40(CEventList *this_ptr
 
 {
   float fVar1;
-  int iVar2;
-  float fVar3;
+  float fVar2;
+  SEventNameBlock *pSVar3;
   CGame *pCVar4;
-  CEventList *pCVar5;
+  int iVar5;
   int iVar6;
   CEventList *pCVar7;
-  CEventList *local_14;
+  char (*pacVar8) [32];
+  char (*local_14) [32];
   
-  *(uint *)(this_ptr + 0xc84) = *(uint *)this_ptr;
-  pCVar5 = this_ptr + 0xc88;
+  pSVar3 = &this_ptr->current_events;
+  (this_ptr->current_events).count = (this_ptr->events).count;
   pCVar7 = this_ptr;
-  for (iVar6 = 800; pCVar7 = pCVar7 + 4, iVar6 != 0; iVar6 = iVar6 + -1) {
-    *(uint *)pCVar5 = *(uint *)pCVar7;
-    pCVar5 = pCVar5 + 4;
+  for (iVar5 = 800; pacVar8 = pSVar3->names, pCVar7 = (CEventList *)(pCVar7->events).names,
+      iVar5 != 0; iVar5 = iVar5 + -1) {
+    pSVar3 = (SEventNameBlock *)*pacVar8;
+    *(uint *)*pacVar8 = *(uint *)*(char (*) [32])pCVar7;
   }
-  for (iVar6 = 0; pCVar4 = g_CGamePtr, iVar6 != 0; iVar6 = iVar6 + -1) {
-    *pCVar5 = *pCVar7;
-    pCVar7 = pCVar7 + 1;
-    pCVar5 = pCVar5 + 1;
+  for (iVar5 = 0; pCVar4 = g_CGamePtr, iVar5 != 0; iVar5 = iVar5 + -1) {
+    (*pacVar8)[0] = (*(char (*) [32])pCVar7)[0];
+    pCVar7 = (CEventList *)(*(char (*) [32])pCVar7 + 1);
+    pacVar8 = (char (*) [32])(*pacVar8 + 1);
   }
-  *(uint *)this_ptr = 0;
+  (this_ptr->events).count = 0;
   fVar1 = pCVar4->delta_time_float;
-  iVar6 = 0;
-  if (0 < *(int *)(this_ptr + 0x3210)) {
-    pCVar5 = this_ptr + 0x3214;
-    local_14 = this_ptr + 0x3234;
+  iVar5 = 0;
+  if (0 < (this_ptr->timers).count) {
+    pacVar8 = (this_ptr->timers).names;
+    local_14 = (this_ptr->timers).names + 1;
     pCVar7 = this_ptr;
     do {
-      fVar3 = *(float *)(pCVar7 + 0x3354) - fVar1;
-      *(float *)(pCVar7 + 0x3354) = fVar3;
-      if (0.0 < fVar3) {
-        pCVar5 = pCVar5 + 0x20;
-        iVar6 = iVar6 + 1;
-        local_14 = local_14 + 0x20;
-        pCVar7 = pCVar7 + 4;
+      fVar2 = (pCVar7->timers).durations[0] - fVar1;
+      (pCVar7->timers).durations[0] = fVar2;
+      if (0.0 < fVar2) {
+        pacVar8 = pacVar8 + 1;
+        iVar5 = iVar5 + 1;
+        local_14 = local_14 + 1;
+        pCVar7 = (CEventList *)(pCVar7->events).names;
       }
       else {
-        iVar2 = *(int *)(this_ptr + 0x3210);
-        *(int *)(this_ptr + 0x3210) = iVar2 + -1;
-        memmove(pCVar5,local_14,((iVar2 + -1) - iVar6) * 0x20);
+        iVar6 = (this_ptr->timers).count + -1;
+        (this_ptr->timers).count = iVar6;
+        memmove(pacVar8,local_14,(iVar6 - iVar5) * 0x20);
         memmove
-                  (this_ptr + iVar6 * 4 + 0x3354,this_ptr + iVar6 * 4 + 0x3358,
-                   (*(int *)(this_ptr + 0x3210) - iVar6) * 4);
+                  ((this_ptr->timers).durations + iVar5,(this_ptr->timers).durations + iVar5 + 1,
+                   ((this_ptr->timers).count - iVar5) * 4);
       }
-    } while (iVar6 < *(int *)(this_ptr + 0x3210));
+    } while (iVar5 < (this_ptr->timers).count);
   }
   core_event_cpp_CEventList_updateSfxEntries_FUN_004aa400(this_ptr);
   return;

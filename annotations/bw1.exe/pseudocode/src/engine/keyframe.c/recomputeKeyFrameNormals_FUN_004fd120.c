@@ -17,17 +17,17 @@ void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004fd120(SMRGLHeader
   SMRGLHeaderExtended *pSVar4;
   
   pSVar3 = (SMRGLHeaderExtended *)0x0;
-  iVar1 = *(int *)param_1;
+  iVar1 = (param_1->base).type;
   while (pSVar4 = (SMRGLHeaderExtended *)0x0, iVar1 != 0) {
-    if (*(int *)param_1 == 2) {
-      pSVar3 = param_1 + 0xc;
+    if ((param_1->base).type == 2) {
+      pSVar3 = param_1 + 1;
     }
-    iVar1 = *(int *)param_1;
+    iVar1 = (param_1->base).type;
     pSVar4 = param_1;
     if (((iVar1 == 0x18) || (iVar1 == 0x29)) || (iVar1 == 0x19)) break;
     uVar2 = engine_model_c_FUN_0051fee0(param_1);
-    param_1 = param_1 + (uVar2 & 0xfffffffc);
-    iVar1 = *(int *)param_1;
+    param_1 = (SMRGLHeaderExtended *)((int)&(param_1->base).type + (uVar2 & 0xfffffffc));
+    iVar1 = (param_1->base).type;
   }
   if (pSVar3 == (SMRGLHeaderExtended *)0x0) {
     _DAT_01d1d400 = "..\\engine\\keyframe.c";
@@ -40,7 +40,7 @@ void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004fd120(SMRGLHeader
     core_main_c_FUN_005030e0("recomputeKeyFrameNormals: Cannot find fptr");
   }
   do {
-    uVar2 = *(uint *)param_1;
+    uVar2 = (param_1->base).type;
     if (uVar2 < 0x19) {
       if (uVar2 == 0x18) {
 LAB_004fd17f:
@@ -52,8 +52,8 @@ LAB_004fd17f:
     }
     else if (uVar2 == 0x29) goto LAB_004fd17f;
     uVar2 = engine_model_c_FUN_0051fee0(param_1);
-    param_1 = param_1 + (uVar2 & 0xfffffffc);
-    if (*(int *)param_1 == 0) {
+    param_1 = (SMRGLHeaderExtended *)((int)&(param_1->base).type + (uVar2 & 0xfffffffc));
+    if ((param_1->base).type == 0) {
       return;
     }
   } while( true );

@@ -20,14 +20,14 @@
 ;   undefined4 DAT_01c58acc
 ;   undefined4 DAT_01c6eaa0
 ;   undefined4 DAT_01c726a8
-;   undefined4 g_SparkPool[0].field36_0x24
-;   undefined4 g_SparkPool[0].field60_0x3c
-;   undefined4 g_SparkPool[1].field36_0x24
-;   undefined4 g_SparkPool[1].field60_0x3c
-;   undefined4 CFirefly_ARRAY_01c9dab8[0].field36_0x24
-;   undefined4 CFirefly_ARRAY_01c9dab8[0].field60_0x3c
-;   undefined4 CFirefly_ARRAY_01c9dab8[1].field36_0x24
-;   undefined4 CFirefly_ARRAY_01c9dab8[1].field60_0x3c
+;   undefined4 g_SparkPool[0].base.lifetime_remaining
+;   undefined4 g_SparkPool[0].base.vtable
+;   undefined4 g_SparkPool[1].base.lifetime_remaining
+;   undefined4 g_SparkPool[1].base.vtable
+;   undefined4 CFirefly_ARRAY_01c9dab8[0].base.lifetime_remaining
+;   undefined4 CFirefly_ARRAY_01c9dab8[0].base.vtable
+;   undefined4 CFirefly_ARRAY_01c9dab8[1].base.lifetime_remaining
+;   undefined4 CFirefly_ARRAY_01c9dab8[1].base.vtable
 ;   ... and 35 more
 ;
 ; Called Functions:
@@ -36,6 +36,7 @@
 ;   core_fire.cpp_CBulletTrail_render_FUN_004afcf0
 ;   core_fire.cpp_CExplosion_render_FUN_004b1870
 ;   core_fire.cpp_CFireball_setupRenderState_FUN_004ae550
+;   core_fire.cpp_CFirefly_setupRenderState_FUN_004ad9c0
 ;   core_fire.cpp_CGunFlame_render_FUN_004b2ea0
 ;   core_fire.cpp_CLaserBeam_render_FUN_004b01a0
 ;   core_fire.cpp_CLightningBolt_render_FUN_004b3570
@@ -45,7 +46,6 @@
 ;   core_fire.cpp_CSpark_setupRenderState_FUN_004ad010
 ;   core_fire.cpp_CStake_render_FUN_004ace60
 ;   core_fire.cpp_CToss_render_FUN_004b1f10
-;   core_fire.cpp_CTrail_render_FUN_004b3d20
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -79,7 +79,7 @@ section .text
     MOV EBX,0x1cac764                   ; 004b5135
         ;   Label: LAB_004b5135
     LEA ESI,[EBX + 0x1400]              ; 004b513a
-    FLD float ptr [EBX + 0x24]          ; 004b5140 | g_RockPool[0].field36_0x24 | g_RockPool[1].field36_0x24
+    FLD float ptr [EBX + 0x24]          ; 004b5140 | g_RockPool[0].base.lifetime_remaining | g_RockPool[1].base.lifetime_remaining
         ;   Label: LAB_004b5140
     FLDZ                                ; 004b5143
     FCOMPP                              ; 004b5145
@@ -88,7 +88,7 @@ section .text
     JNC 0x004b5156                      ; 004b514a
         ;   XREF to: 004b5156 (CONDITIONAL_JUMP)  ; LAB_004b5156
     PUSH EBX                            ; 004b514c
-    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b514d | g_RockPool[0].field60_0x3c | g_RockPool[1].field60_0x3c
+    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b514d | g_RockPool[0].base.vtable | g_RockPool[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 004b5150
     ADD ESP,0x4                         ; 004b5153
     ADD EBX,0x50                        ; 004b5156
@@ -98,7 +98,7 @@ section .text
         ;   XREF to: 004b5140 (CONDITIONAL_JUMP)  ; LAB_004b5140
     MOV EBX,0x1cadb68                   ; 004b515d
     LEA ESI,[EBX + 0x1500]              ; 004b5162
-    FLD float ptr [EBX + 0x24]          ; 004b5168 | CLeaf_ARRAY_01cadb68[0].field36_0x24 | CLeaf_ARRAY_01cadb68[1].field36_0x24
+    FLD float ptr [EBX + 0x24]          ; 004b5168 | CLeaf_ARRAY_01cadb68[0].base.lifetime_remaining | CLeaf_ARRAY_01cadb68[1].base.lifetime_remaining
         ;   Label: LAB_004b5168
     FLDZ                                ; 004b516b
     FCOMPP                              ; 004b516d
@@ -107,7 +107,7 @@ section .text
     JNC 0x004b517e                      ; 004b5172
         ;   XREF to: 004b517e (CONDITIONAL_JUMP)  ; LAB_004b517e
     PUSH EBX                            ; 004b5174
-    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b5175 | CLeaf_ARRAY_01cadb68[0].field60_0x3c | CLeaf_ARRAY_01cadb68[1].field60_0x3c
+    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b5175 | CLeaf_ARRAY_01cadb68[0].base.vtable | CLeaf_ARRAY_01cadb68[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 004b5178
     ADD ESP,0x4                         ; 004b517b
     ADD EBX,0x54                        ; 004b517e
@@ -117,7 +117,7 @@ section .text
         ;   XREF to: 004b5168 (CONDITIONAL_JUMP)  ; LAB_004b5168
     MOV EBX,0x1c9dab8                   ; 004b5185
     LEA ESI,[EBX + 0x1700]              ; 004b518a
-    FLD float ptr [EBX + 0x24]          ; 004b5190 | CFirefly_ARRAY_01c9dab8[0].field36_0x24 | CFirefly_ARRAY_01c9dab8[1].field36_0x24
+    FLD float ptr [EBX + 0x24]          ; 004b5190 | CFirefly_ARRAY_01c9dab8[0].base.lifetime_remaining | CFirefly_ARRAY_01c9dab8[1].base.lifetime_remaining
         ;   Label: LAB_004b5190
     FLDZ                                ; 004b5193
     FCOMPP                              ; 004b5195
@@ -126,7 +126,7 @@ section .text
     JNC 0x004b51a6                      ; 004b519a
         ;   XREF to: 004b51a6 (CONDITIONAL_JUMP)  ; LAB_004b51a6
     PUSH EBX                            ; 004b519c
-    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b519d | CFirefly_ARRAY_01c9dab8[0].field60_0x3c | CFirefly_ARRAY_01c9dab8[1].field60_0x3c
+    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b519d | CFirefly_ARRAY_01c9dab8[0].base.vtable | CFirefly_ARRAY_01c9dab8[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 004b51a0
     ADD ESP,0x4                         ; 004b51a3
     ADD EBX,0x5c                        ; 004b51a6
@@ -140,7 +140,7 @@ section .text
         ;   XREF to: 004ae550 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireball_setupRenderState_FUN_004ae550(CFireball * this_ptr)
     ADD ESP,0x4                         ; 004b51bc
     LEA ESI,[EBX + 0x2900]              ; 004b51bf
-    FLD float ptr [EBX + 0x24]          ; 004b51c5 | g_FireballPool[0].field36_0x24 | g_FireballPool[1].field36_0x24
+    FLD float ptr [EBX + 0x24]          ; 004b51c5 | g_FireballPool[0].base.lifetime_remaining | g_FireballPool[1].base.lifetime_remaining
         ;   Label: LAB_004b51c5
     FLDZ                                ; 004b51c8
     FCOMPP                              ; 004b51ca
@@ -149,7 +149,7 @@ section .text
     JNC 0x004b51db                      ; 004b51cf
         ;   XREF to: 004b51db (CONDITIONAL_JUMP)  ; LAB_004b51db
     PUSH EBX                            ; 004b51d1
-    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b51d2 | g_FireballPool[0].field60_0x3c | g_FireballPool[1].field60_0x3c
+    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b51d2 | g_FireballPool[0].base.vtable | g_FireballPool[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 004b51d5
     ADD ESP,0x4                         ; 004b51d8
     ADD EBX,0xa4                        ; 004b51db
@@ -161,7 +161,7 @@ section .text
     LEA ESI,[EBX + 0x12c0]              ; 004b51ea
     PUSH EBX                            ; 004b51f0
         ;   Label: LAB_004b51f0
-    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b51f1 | g_ShellPool[0].field60_0x3c | g_ShellPool[1].field60_0x3c
+    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b51f1 | g_ShellPool[0].base.vtable | g_ShellPool[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 004b51f4
     ADD EBX,0x60                        ; 004b51f7
     ADD ESP,0x4                         ; 004b51fa
@@ -276,7 +276,7 @@ section .text
         ;   XREF to: 004ad010 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSpark_setupRenderState_FUN_004ad010(CSpark * this_ptr)
     ADD ESP,0x4                         ; 004b52ff
     LEA ESI,[EBX + 0x5400]              ; 004b5302
-    FLD float ptr [EBX + 0x24]          ; 004b5308 | g_SparkPool[0].field36_0x24 | g_SparkPool[1].field36_0x24
+    FLD float ptr [EBX + 0x24]          ; 004b5308 | g_SparkPool[0].base.lifetime_remaining | g_SparkPool[1].base.lifetime_remaining
         ;   Label: LAB_004b5308
     FLDZ                                ; 004b530b
     FCOMPP                              ; 004b530d
@@ -285,7 +285,7 @@ section .text
     JNC 0x004b531e                      ; 004b5312
         ;   XREF to: 004b531e (CONDITIONAL_JUMP)  ; LAB_004b531e
     PUSH EBX                            ; 004b5314
-    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b5315 | g_SparkPool[0].field60_0x3c | g_SparkPool[1].field60_0x3c
+    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b5315 | g_SparkPool[0].base.vtable | g_SparkPool[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 004b5318
     ADD ESP,0x4                         ; 004b531b
     ADD EBX,0x54                        ; 004b531e
@@ -295,11 +295,11 @@ section .text
         ;   XREF to: 004b5308 (CONDITIONAL_JUMP)  ; LAB_004b5308
     PUSH 0x1c9dab8                      ; 004b5325
     MOV EBX,0x1c9dab8                   ; 004b532a
-    CALL core_fire.cpp_FUN_004ad9c0     ; 004b532f
-        ;   XREF to: 004ad9c0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004ad9c0()
+    CALL core_fire.cpp_CFirefly_setupRenderState_FUN_004ad9c0 ; 004b532f
+        ;   XREF to: 004ad9c0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFirefly_setupRenderState_FUN_004ad9c0(CFirefly * this_ptr)
     ADD ESP,0x4                         ; 004b5334
     LEA ESI,[EBX + 0x1700]              ; 004b5337
-    FLD float ptr [EBX + 0x24]          ; 004b533d | CFirefly_ARRAY_01c9dab8[0].field36_0x24 | CFirefly_ARRAY_01c9dab8[1].field36_0x24
+    FLD float ptr [EBX + 0x24]          ; 004b533d | CFirefly_ARRAY_01c9dab8[0].base.lifetime_remaining | CFirefly_ARRAY_01c9dab8[1].base.lifetime_remaining
         ;   Label: LAB_004b533d
     FLDZ                                ; 004b5340
     FCOMPP                              ; 004b5342
@@ -308,7 +308,7 @@ section .text
     JNC 0x004b5353                      ; 004b5347
         ;   XREF to: 004b5353 (CONDITIONAL_JUMP)  ; LAB_004b5353
     PUSH EBX                            ; 004b5349
-    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b534a | CFirefly_ARRAY_01c9dab8[0].field60_0x3c | CFirefly_ARRAY_01c9dab8[1].field60_0x3c
+    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b534a | CFirefly_ARRAY_01c9dab8[0].base.vtable | CFirefly_ARRAY_01c9dab8[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 004b534d
     ADD ESP,0x4                         ; 004b5350
     ADD EBX,0x5c                        ; 004b5353
@@ -318,7 +318,7 @@ section .text
         ;   XREF to: 004b533d (CONDITIONAL_JUMP)  ; LAB_004b533d
     MOV EBX,0x1c9f8f0                   ; 004b535a
     LEA ESI,[EBX + 0xa400]              ; 004b535f
-    FLD float ptr [EBX + 0x24]          ; 004b5365 | g_GlassParticlePool[0].field36_0x24 | g_GlassParticlePool[1].field36_0x24
+    FLD float ptr [EBX + 0x24]          ; 004b5365 | g_GlassParticlePool[0].base.lifetime_remaining | g_GlassParticlePool[1].base.lifetime_remaining
         ;   Label: LAB_004b5365
     FLDZ                                ; 004b5368
     FCOMPP                              ; 004b536a
@@ -327,7 +327,7 @@ section .text
     JNC 0x004b537b                      ; 004b536f
         ;   XREF to: 004b537b (CONDITIONAL_JUMP)  ; LAB_004b537b
     PUSH EBX                            ; 004b5371
-    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b5372 | g_GlassParticlePool[0].field60_0x3c | g_GlassParticlePool[1].field60_0x3c
+    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b5372 | g_GlassParticlePool[0].base.vtable | g_GlassParticlePool[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 004b5375
     ADD ESP,0x4                         ; 004b5378
     ADD EBX,0xa4                        ; 004b537b
@@ -408,7 +408,7 @@ section .text
         ;   XREF to: 004b5421 (CONDITIONAL_JUMP)  ; LAB_004b5421
     MOV EBX,0x1cbc10c                   ; 004b5431
     LEA ESI,[EBX + 0x4000]              ; 004b5436
-    FLD float ptr [EBX + 0x24]          ; 004b543c | g_PopcornPool[0].field36_0x24 | g_PopcornPool[1].field36_0x24
+    FLD float ptr [EBX + 0x24]          ; 004b543c | g_PopcornPool[0].base.lifetime_remaining | g_PopcornPool[1].base.lifetime_remaining
         ;   Label: LAB_004b543c
     FLDZ                                ; 004b543f
     FCOMPP                              ; 004b5441
@@ -417,7 +417,7 @@ section .text
     JNC 0x004b5452                      ; 004b5446
         ;   XREF to: 004b5452 (CONDITIONAL_JUMP)  ; LAB_004b5452
     PUSH EBX                            ; 004b5448
-    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b5449 | g_PopcornPool[0].field60_0x3c | g_PopcornPool[1].field60_0x3c
+    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b5449 | g_PopcornPool[0].base.vtable | g_PopcornPool[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 004b544c
     ADD ESP,0x4                         ; 004b544f
     ADD EBX,0x40                        ; 004b5452
@@ -427,7 +427,7 @@ section .text
         ;   XREF to: 004b543c (CONDITIONAL_JUMP)  ; LAB_004b543c
     MOV EBX,0x1cc0110                   ; 004b5459
     LEA ESI,[EBX + 0x4000]              ; 004b545e
-    FLD float ptr [EBX + 0x24]          ; 004b5464 | g_RainDropPool[0].field36_0x24 | g_RainDropPool[1].field36_0x24
+    FLD float ptr [EBX + 0x24]          ; 004b5464 | g_RainDropPool[0].base.lifetime_remaining | g_RainDropPool[1].base.lifetime_remaining
         ;   Label: LAB_004b5464
     FLDZ                                ; 004b5467
     FCOMPP                              ; 004b5469
@@ -436,7 +436,7 @@ section .text
     JNC 0x004b547a                      ; 004b546e
         ;   XREF to: 004b547a (CONDITIONAL_JUMP)  ; LAB_004b547a
     PUSH EBX                            ; 004b5470
-    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b5471 | g_RainDropPool[0].field60_0x3c | g_RainDropPool[1].field60_0x3c
+    MOV EAX,dword ptr [EBX + 0x3c]      ; 004b5471 | g_RainDropPool[0].base.vtable | g_RainDropPool[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 004b5474
     ADD ESP,0x4                         ; 004b5477
     ADD EBX,0x40                        ; 004b547a

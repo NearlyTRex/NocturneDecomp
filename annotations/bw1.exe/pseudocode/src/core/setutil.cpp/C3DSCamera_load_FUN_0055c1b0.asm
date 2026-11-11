@@ -54,7 +54,7 @@ section .text
     CALL core_setutil.cpp_C3DSCamera_reset_FUN_0055c140 ; 0055c1c9
         ;   XREF to: 0055c140 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_C3DSCamera_reset_FUN_0055c140()
     MOV EAX,[0x00622c18]                ; 0055c1ce | g_CDemonSetPtr
-    MOV EDX,dword ptr [EAX + 0x15acc0]  ; 0055c1d3 | g_CDemonSetInstance.field130_0x15acc0
+    MOV EDX,dword ptr [EAX + 0x15acc0]  ; 0055c1d3 | g_CDemonSetInstance.set_file_version
     ADD ESP,0x4                         ; 0055c1d9
     CMP EDX,0xb                         ; 0055c1dc
     JGE 0x0055c45e                      ; 0055c1df
@@ -74,7 +74,7 @@ section .text
     CALL crt_stdio.c_sscanf_FUN_005c2cac ; 0055c203
         ;   XREF to: 005c2cac (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_005c2cac(char * str, char * format)
     MOV EAX,[0x00622c18]                ; 0055c208 | g_CDemonSetPtr
-    MOV ECX,dword ptr [EAX + 0x15acc0]  ; 0055c20d | g_CDemonSetInstance.field130_0x15acc0
+    MOV ECX,dword ptr [EAX + 0x15acc0]  ; 0055c20d | g_CDemonSetInstance.set_file_version
     ADD ESP,0xc                         ; 0055c213
     CMP ECX,0xb                         ; 0055c216
     JL 0x0055c22e                       ; 0055c219
@@ -98,7 +98,7 @@ section .text
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0055c249
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
     MOV EAX,[0x00622c18]                ; 0055c24e | g_CDemonSetPtr
-    MOV EDI,dword ptr [EAX + 0x15acc0]  ; 0055c253 | g_CDemonSetInstance.field130_0x15acc0
+    MOV EDI,dword ptr [EAX + 0x15acc0]  ; 0055c253 | g_CDemonSetInstance.set_file_version
     ADD ESP,0x14                        ; 0055c259
     CMP EDI,0xb                         ; 0055c25c
     JL 0x0055c274                       ; 0055c25f
@@ -122,7 +122,7 @@ section .text
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0055c28f
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
     MOV EAX,[0x00622c18]                ; 0055c294 | g_CDemonSetPtr
-    MOV EBP,dword ptr [EAX + 0x15acc0]  ; 0055c299 | g_CDemonSetInstance.field130_0x15acc0
+    MOV EBP,dword ptr [EAX + 0x15acc0]  ; 0055c299 | g_CDemonSetInstance.set_file_version
     ADD ESP,0x14                        ; 0055c29f
     CMP EBP,0xb                         ; 0055c2a2
     JL 0x0055c2ba                       ; 0055c2a5
@@ -183,7 +183,7 @@ section .text
         ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
     MOV EAX,[0x00622c18]                ; 0055c348 | g_CDemonSetPtr
     LEA EDI,[EBX + 0x154]               ; 0055c34d
-    MOV EDX,dword ptr [EAX + 0x15acc0]  ; 0055c353 | g_CDemonSetInstance.field130_0x15acc0
+    MOV EDX,dword ptr [EAX + 0x15acc0]  ; 0055c353 | g_CDemonSetInstance.set_file_version
     ADD ESP,0x14                        ; 0055c359
     CMP EDX,0x12                        ; 0055c35c
     JL 0x0055c476                       ; 0055c35f
@@ -200,7 +200,7 @@ section .text
     JNZ 0x0055c39a                      ; 0055c382
         ;   XREF to: 0055c39a (CONDITIONAL_JUMP)  ; LAB_0055c39a
     MOV EAX,[0x00622c18]                ; 0055c384 | g_CDemonSetPtr
-    MOV EBP,dword ptr [EAX + 0x15acc0]  ; 0055c389 | g_CDemonSetInstance.field130_0x15acc0
+    MOV EBP,dword ptr [EAX + 0x15acc0]  ; 0055c389 | g_CDemonSetInstance.set_file_version
     PUSH EBP                            ; 0055c38f
     PUSH ESI                            ; 0055c390
     PUSH EDI                            ; 0055c391
@@ -209,7 +209,7 @@ section .text
     ADD ESP,0xc                         ; 0055c397
     MOV EAX,[0x00622c18]                ; 0055c39a | g_CDemonSetPtr
         ;   Label: LAB_0055c39a
-    CMP dword ptr [EAX + 0x15acc0],0x17 ; 0055c39f | g_CDemonSetInstance.field130_0x15acc0
+    CMP dword ptr [EAX + 0x15acc0],0x17 ; 0055c39f | g_CDemonSetInstance.set_file_version
     JL 0x0055c401                       ; 0055c3a6
         ;   XREF to: 0055c401 (CONDITIONAL_JUMP)  ; LAB_0055c401
     PUSH ESI                            ; 0055c3a8
@@ -243,7 +243,7 @@ section .text
     ADD ESP,0x14                        ; 0055c3fe
     MOV EAX,[0x00622c18]                ; 0055c401 | g_CDemonSetPtr
         ;   Label: LAB_0055c401
-    CMP dword ptr [EAX + 0x15acc0],0x17 ; 0055c406 | g_CDemonSetInstance.field130_0x15acc0
+    CMP dword ptr [EAX + 0x15acc0],0x17 ; 0055c406 | g_CDemonSetInstance.set_file_version
     JL 0x0055c437                       ; 0055c40d
         ;   XREF to: 0055c437 (CONDITIONAL_JUMP)  ; LAB_0055c437
     PUSH ESI                            ; 0055c40f
@@ -262,7 +262,7 @@ section .text
     ADD ESP,0xc                         ; 0055c434
     MOV EAX,[0x00622c18]                ; 0055c437 | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_0055c437
-    CMP dword ptr [EAX + 0x15acc0],0x1b ; 0055c43c | g_CDemonSetInstance.field130_0x15acc0
+    CMP dword ptr [EAX + 0x15acc0],0x1b ; 0055c43c | g_CDemonSetInstance.set_file_version
     JZ 0x0055c4ce                       ; 0055c443
         ;   XREF to: 0055c4ce (CONDITIONAL_JUMP)  ; LAB_0055c4ce
     MOV dword ptr [EBX + 0x140],0x0     ; 0055c449
@@ -285,32 +285,32 @@ section .text
         ;   XREF to: 0055c1e5 (UNCONDITIONAL_JUMP)  ; LAB_0055c1e5
     MOV dword ptr [EBX + 0x150],0x1     ; 0055c476
         ;   Label: LAB_0055c476
-    MOV EBP,dword ptr [EAX + 0x15ac40]  ; 0055c480 | g_CDemonSetInstance.field44_0x15ac40
+    MOV EBP,dword ptr [EAX + 0x15ac40]  ; 0055c480 | g_CDemonSetInstance.scene_fog.color_index.r
     ADD EAX,0x15ac40                    ; 0055c486
     MOV dword ptr [EDI],EBP             ; 0055c48b
     MOV ECX,EDI                         ; 0055c48d
-    MOV EBP,dword ptr [EAX + 0x4]       ; 0055c48f | g_CDemonSetInstance.field48_0x15ac44
+    MOV EBP,dword ptr [EAX + 0x4]       ; 0055c48f | g_CDemonSetInstance.scene_fog.color_index.g
     MOV EDX,EAX                         ; 0055c492
     MOV dword ptr [EDI + 0x4],EBP       ; 0055c494
     ADD EDI,0xc                         ; 0055c497
-    MOV EBP,dword ptr [EAX + 0x8]       ; 0055c49a | g_CDemonSetInstance.field52_0x15ac48
+    MOV EBP,dword ptr [EAX + 0x8]       ; 0055c49a | g_CDemonSetInstance.scene_fog.color_index.b
     ADD EAX,0xc                         ; 0055c49d
     MOV dword ptr [EDI + -0x4],EBP      ; 0055c4a0
     CMP EDI,EAX                         ; 0055c4a3
     JZ 0x0055c4b7                       ; 0055c4a5
         ;   XREF to: 0055c4b7 (CONDITIONAL_JUMP)  ; LAB_0055c4b7
-    MOV EBP,dword ptr [EAX]             ; 0055c4a7 | g_CDemonSetInstance.field56_0x15ac4c
+    MOV EBP,dword ptr [EAX]             ; 0055c4a7 | g_CDemonSetInstance.scene_fog.scroll.x
     MOV dword ptr [EDI],EBP             ; 0055c4a9
-    MOV EBP,dword ptr [EAX + 0x4]       ; 0055c4ab | g_CDemonSetInstance.field60_0x15ac50
+    MOV EBP,dword ptr [EAX + 0x4]       ; 0055c4ab | g_CDemonSetInstance.scene_fog.scroll.y
     MOV dword ptr [EDI + 0x4],EBP       ; 0055c4ae
-    MOV EBP,dword ptr [EAX + 0x8]       ; 0055c4b1 | g_CDemonSetInstance.field64_0x15ac54
+    MOV EBP,dword ptr [EAX + 0x8]       ; 0055c4b1 | g_CDemonSetInstance.scene_fog.scroll.z
     MOV dword ptr [EDI + 0x8],EBP       ; 0055c4b4
-    MOV EAX,dword ptr [EDX + 0x18]      ; 0055c4b7 | g_CDemonSetInstance.field68_0x15ac58
+    MOV EAX,dword ptr [EDX + 0x18]      ; 0055c4b7 | g_CDemonSetInstance.scene_fog.height_threshold
         ;   Label: LAB_0055c4b7
     MOV dword ptr [ECX + 0x18],EAX      ; 0055c4ba
-    MOV EAX,dword ptr [EDX + 0x1c]      ; 0055c4bd | g_CDemonSetInstance.field72_0x15ac5c
+    MOV EAX,dword ptr [EDX + 0x1c]      ; 0055c4bd | g_CDemonSetInstance.scene_fog.density_multiplier
     MOV dword ptr [ECX + 0x1c],EAX      ; 0055c4c0
-    MOV EAX,dword ptr [EDX + 0x20]      ; 0055c4c3 | g_CDemonSetInstance.field76_0x15ac60
+    MOV EAX,dword ptr [EDX + 0x20]      ; 0055c4c3 | g_CDemonSetInstance.scene_fog.temperature
     MOV dword ptr [ECX + 0x20],EAX      ; 0055c4c6
     JMP 0x0055c39a                      ; 0055c4c9
         ;   XREF to: 0055c39a (UNCONDITIONAL_JUMP)  ; LAB_0055c39a

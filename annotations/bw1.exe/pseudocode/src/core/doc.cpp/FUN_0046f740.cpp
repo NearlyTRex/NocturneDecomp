@@ -28,8 +28,8 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,int param_2,int param_3)
   float afStackY_11fc [111];
   int aiStackY_1040 [6];
   float afStackY_1028 [102];
-  CVector3f *pCVar12;
-  byte *puVar13;
+  CMatrix3x4f *pCVar12;
+  CVector3f *pCVar13;
   CMatrix3x4f local_e50;
   CMatrix3x4f local_e20;
   CMatrix3x4f local_df0;
@@ -171,12 +171,12 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,int param_2,int param_3)
   float local_3c [8];
   
   bVar11 = 0;
-  iVar4 = *(int *)(param_1->carry_hands + param_3 * 0x78);
+  iVar4 = param_1->carry_hands[param_3].bone_index;
   local_22c.x = (float)core_actor_cpp_castToClassHash_FUN_0040c600
                                  (param_2,g_CWeaponClassInfo.name_hash);
   if (local_22c.x != 0.0) {
     iVar2 = *(int *)((int)local_22c.x + 0x2e0);
-    puVar13 = &(param_1->model).field_0xe80 + iVar4 * 0x30;
+    pCVar6 = (param_1->model).bone_transform.bone_model_matrices + iVar4;
     if (iVar2 == 1) {
       pCVar3 = &local_1a8;
       local_40 = 0x3e44330d;
@@ -195,17 +195,17 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,int param_2,int param_3)
       pCVar3 = &local_28c;
       local_150[2] = -0.414435;
       local_280.x = 0.40292;
-      pCVar12 = &local_280;
+      pCVar13 = &local_280;
       local_280.y = 0.095011;
-      pCVar6 = &local_8b0;
+      pCVar12 = &local_8b0;
       local_28c.x = -0.414435;
       *(float *)((int)&local_28c + (uint)bVar11 * -8 + 4) = local_150[(uint)bVar11 * -2 + 3];
       *(float *)((int)&local_28c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
            local_150[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
       local_280.z = 0.26139;
-      core_xform_cpp_FUN_005b5760(pCVar6,pCVar12,pCVar3);
+      core_xform_cpp_FUN_005b5760(pCVar12,pCVar13,pCVar3);
       fVar1 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590(param_1,3);
-      core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(&local_9d0,&local_8b0,1.0 - fVar1,puVar13);
+      core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(&local_9d0,&local_8b0,1.0 - fVar1,pCVar6);
       puVar7 = local_6d0;
       puVar9 = local_790;
       for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -240,7 +240,7 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,int param_2,int param_3)
       local_1f0.z = 0.227495;
       core_xform_cpp_FUN_005b5760(&local_ac0,&local_1f0,&local_70);
       fVar1 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590(param_1,3);
-      core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(&local_640,&local_ac0,1.0 - fVar1,puVar13);
+      core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(&local_640,&local_ac0,1.0 - fVar1,pCVar6);
       puVar7 = (uint *)&stack0xfffff180;
       puVar9 = local_580;
       for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -269,17 +269,17 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,int param_2,int param_3)
       pCVar3 = &local_25c;
       local_3c[2] = -0.288645;
       local_268.x = 0.483848;
-      pCVar12 = &local_268;
+      pCVar13 = &local_268;
       local_268.y = 0.0729828;
-      pCVar6 = &local_cd0;
+      pCVar12 = &local_cd0;
       local_25c.x = -0.288645;
       *(float *)((int)&local_25c + (uint)bVar11 * -8 + 4) = local_3c[(uint)bVar11 * -2 + 3];
       *(float *)((int)&local_25c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
            local_3c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
       local_268.z = 0.0731532;
-      core_xform_cpp_FUN_005b5760(pCVar6,pCVar12,pCVar3);
+      core_xform_cpp_FUN_005b5760(pCVar12,pCVar13,pCVar3);
       fVar1 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590(param_1,3);
-      core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(&local_df0,&local_cd0,1.0 - fVar1,puVar13);
+      core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(&local_df0,&local_cd0,1.0 - fVar1,pCVar6);
       puVar7 = local_550;
       puVar9 = local_400;
       for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -314,7 +314,7 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,int param_2,int param_3)
       local_190.z = -0.225393;
       core_xform_cpp_FUN_005b5760(&local_6a0,&local_190,&local_238);
       fVar1 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590(param_1,3);
-      core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(&local_7c0,&local_6a0,1.0 - fVar1,puVar13);
+      core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(&local_7c0,&local_6a0,1.0 - fVar1,pCVar6);
       puVar7 = local_d30;
       puVar9 = local_af0;
       for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -332,15 +332,15 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,int param_2,int param_3)
       local_7c = 0xbf3e6506;
       local_78[1] = -0.808348;
       pCVar3 = &local_dc;
-      pCVar12 = &local_e8;
-      pCVar6 = &local_d00;
+      pCVar13 = &local_e8;
+      pCVar12 = &local_d00;
       local_78[0] = 0.693486;
       local_dc.x = -0.743729;
       *(float *)((int)&local_dc + (uint)bVar11 * -8 + 4) = local_78[(uint)bVar11 * -2];
       *(float *)((int)&local_dc + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
            local_78[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-      core_xform_cpp_FUN_005b5760(pCVar6,pCVar12,pCVar3);
-      core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_d00,puVar13);
+      core_xform_cpp_FUN_005b5760(pCVar12,pCVar13,pCVar3);
+      core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_d00,pCVar6);
       pCVar6 = &local_5b0;
     }
     else if (iVar2 == 5) {
@@ -356,7 +356,7 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,int param_2,int param_3)
       local_160.z = 0.0786577;
       local_160.x = 0.17933;
       core_xform_cpp_FUN_005b5760(&local_850,&local_160,pCVar3);
-      core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_850,puVar13);
+      core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_850,pCVar6);
       pCVar6 = &local_730;
     }
     else if (iVar2 == 7) {
@@ -383,7 +383,7 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,int param_2,int param_3)
       local_220.z = -0.13807;
       core_xform_cpp_FUN_005b5760(&local_460,&local_220,&local_2e0);
       fVar1 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590(param_1,0);
-      core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(&local_430,&local_460,1.0 - fVar1,puVar13);
+      core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(&local_430,&local_460,1.0 - fVar1,pCVar6);
       puVar7 = local_ca0;
       puVar9 = local_d60;
       for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -396,7 +396,7 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,int param_2,int param_3)
     }
     else if (param_3 == 0) {
       core_xform_cpp_FUN_005b5760(&local_c10,(CVector3f *)&DAT_01b68804,(CVector3f *)&DAT_02c8af28);
-      core_xform_cpp_buildRotationX_FUN_005b6d90(0x3fc90fdb,&local_c10,puVar13);
+      core_xform_cpp_buildRotationX_FUN_005b6d90(0x3fc90fdb,&local_c10,pCVar6);
       puVar7 = local_520;
       puVar9 = local_bb0;
       for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -433,7 +433,7 @@ float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,int param_2,int param_3)
     }
     else {
       core_xform_cpp_FUN_005b5760(&local_a30,(CVector3f *)&DAT_01b687f8,(CVector3f *)&DAT_02c8af28);
-      core_xform_cpp_buildRotationX_FUN_005b6d90(0x3fc90fdb,&local_a30,puVar13);
+      core_xform_cpp_buildRotationX_FUN_005b6d90(0x3fc90fdb,&local_a30,pCVar6);
       puVar7 = local_940;
       puVar9 = local_340;
       for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -529,7 +529,7 @@ LAB_004705bf:
           core_xform_cpp_setIdentityMatrix3x4_FUN_005b53f0(local_700);
         }
         core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
-                  (local_700,&(param_1->model).field_0xe80 + iVar4 * 0x30);
+                  (local_700,(param_1->model).bone_transform.bone_model_matrices + iVar4);
         puVar7 = local_820;
         puVar9 = local_700;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -585,9 +585,9 @@ LAB_00470270:
     local_208.x = 0.385392;
     local_208.z = -0.49418;
     core_xform_cpp_FUN_005b5760(&local_e50,&local_208,pCVar3);
-    puVar13 = &(param_1->model).field_0xe80 + iVar4 * 0x30;
+    pCVar6 = (param_1->model).bone_transform.bone_model_matrices + iVar4;
     fVar1 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590(param_1,0);
-    core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(&local_370,&local_e50,1.0 - fVar1,puVar13);
+    core_xform_cpp_lerpMatrix3x4_FUN_005b72c0(&local_370,&local_e50,1.0 - fVar1,pCVar6);
     puVar7 = local_4c0;
     puVar9 = local_3d0;
     for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -641,7 +641,7 @@ LAB_0047045f:
     local_1cc.z = 0.0;
   }
   core_xform_cpp_transformVector3x4InPlace_FUN_005b5100
-            (&local_1cc,&(param_1->model).field_0xe80 + iVar4 * 0x30);
+            (&local_1cc,(param_1->model).bone_transform.bone_model_matrices + iVar4);
   core_xform_cpp_FUN_005b5760(&local_b20,&local_1cc,&local_22c);
   core_xform_cpp_FUN_005b5080(&local_1d8,&local_b20);
   local_2c4[2] = local_150[8];

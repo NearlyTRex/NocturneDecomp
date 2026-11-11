@@ -123,12 +123,12 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_0054af20(CScript *this_ptr,char 
       core_main_c_FUN_005030e0("SCScipt::dbLoad - out of memory");
     }
     pcVar6 = local_334;
-    pSVar4 = this_ptr->dialog_entries + (this_ptr->dialog_entry_count + -1) * 0x226;
+    pSVar4 = this_ptr->dialog_entries + this_ptr->dialog_entry_count + -1;
     for (iVar3 = 0x89; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(uint *)pSVar4 = *(uint *)pcVar6;
+      *(uint *)pSVar4->wav_name = *(uint *)pcVar6;
       pcVar6 = pcVar6 + ((uint)bVar7 * -2 + 1) * 4;
-      pSVar4 = pSVar4 + (uint)bVar7 * -8 + 4;
+      pSVar4 = (SDialogEntry *)((int)pSVar4 + (uint)bVar7 * -8 + 4);
     }
-    *(ushort *)pSVar4 = *(ushort *)pcVar6;
+    *(ushort *)pSVar4->wav_name = *(ushort *)pcVar6;
   } while( true );
 }

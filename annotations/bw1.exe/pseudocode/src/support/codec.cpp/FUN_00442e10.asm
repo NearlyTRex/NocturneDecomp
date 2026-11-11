@@ -8,11 +8,11 @@
 ;   undefined4 DAT_005d6a55
 ;
 ; Called Functions:
+;   support_trstream.cpp_COutStreamFile_ctorOpen_FUN_005a17f0
 ;   support_trstream.cpp_COutStreamFile_dtor_FUN_005a1860
-;   support_trstream.cpp_FUN_005a17f0
-;   support_trstream.cpp_FUN_005a1990
-;   unkaddr_0059f520.cpp_FUN_005a0930
-;   unkaddr_0059f520.cpp_FUN_005a0d70
+;   support_trstream.cpp_COutStreamFile_isOpen_FUN_005a1990
+;   unkaddr_0059f520.cpp_CInStreamFile_ctorOpen_FUN_005a0930
+;   unkaddr_0059f520.cpp_CInStreamFile_isOpen_FUN_005a0d70
 ;   unkclass_instream.cpp_CInStreamFile_dtor_FUN_005a0a50
 ;
 ; *****************************************************************************
@@ -28,13 +28,13 @@ section .text
     PUSH EDX                            ; 00442e1e
     LEA EAX,[ESP + 0x8]                 ; 00442e1f
     PUSH EAX                            ; 00442e23
-    CALL unkaddr_0059f520.cpp_FUN_005a0930 ; 00442e24
-        ;   XREF to: 005a0930 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059f520.cpp_FUN_005a0930()
+    CALL unkaddr_0059f520.cpp_CInStreamFile_ctorOpen_FUN_005a0930 ; 00442e24
+        ;   XREF to: 005a0930 (UNCONDITIONAL_CALL)  ; undefined4 * unkaddr_0059f520.cpp_CInStreamFile_ctorOpen_FUN_005a0930(CInStreamFile * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 00442e29
     MOV EAX,ESP                         ; 00442e2c
     PUSH EAX                            ; 00442e2e
-    CALL unkaddr_0059f520.cpp_FUN_005a0d70 ; 00442e2f
-        ;   XREF to: 005a0d70 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059f520.cpp_FUN_005a0d70()
+    CALL unkaddr_0059f520.cpp_CInStreamFile_isOpen_FUN_005a0d70 ; 00442e2f
+        ;   XREF to: 005a0d70 (UNCONDITIONAL_CALL)  ; bool unkaddr_0059f520.cpp_CInStreamFile_isOpen_FUN_005a0d70(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00442e34
     TEST EAX,EAX                        ; 00442e37
     JZ 0x00442ec4                       ; 00442e39
@@ -44,13 +44,13 @@ section .text
     PUSH ECX                            ; 00442e48
     LEA EAX,[ESP + 0x34]                ; 00442e49
     PUSH EAX                            ; 00442e4d
-    CALL support_trstream.cpp_FUN_005a17f0 ; 00442e4e
-        ;   XREF to: 005a17f0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a17f0()
+    CALL support_trstream.cpp_COutStreamFile_ctorOpen_FUN_005a17f0 ; 00442e4e
+        ;   XREF to: 005a17f0 (UNCONDITIONAL_CALL)  ; undefined4 * support_trstream.cpp_COutStreamFile_ctorOpen_FUN_005a17f0(COutStreamFile * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 00442e53
     LEA EAX,[ESP + 0x2c]                ; 00442e56
     PUSH EAX                            ; 00442e5a
-    CALL support_trstream.cpp_FUN_005a1990 ; 00442e5b
-        ;   XREF to: 005a1990 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a1990()
+    CALL support_trstream.cpp_COutStreamFile_isOpen_FUN_005a1990 ; 00442e5b
+        ;   XREF to: 005a1990 (UNCONDITIONAL_CALL)  ; bool support_trstream.cpp_COutStreamFile_isOpen_FUN_005a1990(COutStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00442e60
     TEST EAX,EAX                        ; 00442e63
     JZ 0x00442ece                       ; 00442e65

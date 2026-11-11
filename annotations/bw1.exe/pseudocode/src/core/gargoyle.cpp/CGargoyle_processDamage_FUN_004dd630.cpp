@@ -21,7 +21,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004dd630(CGargoyle *t
   uint auStack_18 [2];
   
   bVar5 = 0;
-  core_actor_cpp_FUN_00408b40(this_ptr,damage_info + 0x1c);
+  core_actor_cpp_FUN_00408b40(this_ptr,&damage_info->impact_direction);
   iVar4 = 0;
   CStack_28.x = fStack_1c;
   *(uint *)((int)&CStack_28 + (uint)bVar5 * -8 + 4) = auStack_18[(uint)bVar5 * -2];
@@ -34,9 +34,9 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004dd630(CGargoyle *t
   } while (iVar4 < 3);
   this_ptr_00 = &(this_ptr->base).base.model;
   pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
-  if (*(int *)(pSVar2 + 0x24) != 5) {
+  if (pSVar2->state_index != 5) {
     core_gargoyle_cpp_CGargoyle_processDismemberment_FUN_004dd390(this_ptr,damage_info);
-    fVar1 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
+    fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
     (this_ptr->base).base.hit_points = fVar1;
     if (0.0 < fVar1) {
       iVar4 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[0]);
@@ -50,7 +50,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004dd630(CGargoyle *t
       sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[0]);
       (this_ptr->base).base.hit_points = 0.0;
       pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
-      if (*(int *)(pSVar2 + 0x24) != 8) {
+      if (pSVar2->state_index != 8) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&this_ptr_00->base,8,1);
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,"@gargoyle-shatter.wav" + 1);
@@ -61,7 +61,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004dd630(CGargoyle *t
     core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(&this_ptr->base,damage_info);
     return;
   }
-  *(uint *)(damage_info + 4) = 0;
+  damage_info->damage_amount = 0.0;
   core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(&this_ptr->base,damage_info);
   return;
 }

@@ -78,7 +78,7 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005adb20(CWeapon *this_p
     unaff_EDI = *(float *)(iVar1 + 0x1fae8) * _DAT_005f9912;
   }
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00465da0(&g_CDemonLightInstance,unaff_EDI);
-  if (*(int *)&g_CGamePtr->field_0x264 == 0) {
+  if (g_CGamePtr->flashlight_active == 0) {
     return;
   }
   core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0045e970((CDemonGlobe *)0x2c99774,&CStack_64);

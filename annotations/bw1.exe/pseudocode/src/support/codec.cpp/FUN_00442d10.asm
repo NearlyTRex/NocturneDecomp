@@ -10,9 +10,9 @@
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00453610 at 00453aff
 ;
 ; Called Functions:
+;   support_trstream.cpp_CInStreamMemory_ctorOpen_FUN_005a1160
 ;   support_trstream.cpp_CInStreamMemory_dtor_FUN_005a11e0
-;   support_trstream.cpp_FUN_005a1160
-;   support_trstream.cpp_FUN_005a13b0
+;   support_trstream.cpp_CInStreamMemory_tell_FUN_005a13b0
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     PUSH ECX                            ; 00442d22
     LEA EAX,[ESP + 0x8]                 ; 00442d23
     PUSH EAX                            ; 00442d27
-    CALL support_trstream.cpp_FUN_005a1160 ; 00442d28
-        ;   XREF to: 005a1160 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a1160()
+    CALL support_trstream.cpp_CInStreamMemory_ctorOpen_FUN_005a1160 ; 00442d28
+        ;   XREF to: 005a1160 (UNCONDITIONAL_CALL)  ; undefined4 * support_trstream.cpp_CInStreamMemory_ctorOpen_FUN_005a1160(CInStreamMemory * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 00442d2d
     MOV EBX,dword ptr [ESP + 0x34]      ; 00442d30
     PUSH EBX                            ; 00442d34
@@ -47,8 +47,8 @@ section .text
     MOV EBX,EAX                         ; 00442d4b
     MOV EAX,ESP                         ; 00442d4d
     PUSH EAX                            ; 00442d4f
-    CALL support_trstream.cpp_FUN_005a13b0 ; 00442d50
-        ;   XREF to: 005a13b0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a13b0()
+    CALL support_trstream.cpp_CInStreamMemory_tell_FUN_005a13b0 ; 00442d50
+        ;   XREF to: 005a13b0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamMemory_tell_FUN_005a13b0(CInStreamMemory * this_ptr)
     MOV EBP,dword ptr [ESI]             ; 00442d55
     SUB EBP,EAX                         ; 00442d57
     ADD ESP,0x4                         ; 00442d59

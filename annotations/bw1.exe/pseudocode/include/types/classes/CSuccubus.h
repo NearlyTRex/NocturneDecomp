@@ -7,6 +7,7 @@
 #include "types/classes/CClothList.h"
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CEnemy.h"
+#include "types/classes/CMorph.h"
 
 // Structure: CSuccubus
 // Ghidra size: 0xf404 (62468 bytes)
@@ -14,13 +15,12 @@
 typedef struct CSuccubus {
     CEnemy base; // 0x0
     CDeformableModelInstance hotdemon_model; // 0xc268
-    char field_58652[240]; // 0xe51c
     CClothList hotdemon_cloth_list; // 0xe60c
     uint sfx_handle; // 0xe7c8
     float ambient_sfx_cooldown; // 0xe7cc
     int morph_started; // 0xe7d0
     float morph_timer; // 0xe7d4
-    char field_59352[3116]; // 0xe7d8
+    CMorph morph; // 0xe7d8
 } CSuccubus;
 #pragma pack(pop)
 

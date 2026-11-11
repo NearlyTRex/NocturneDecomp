@@ -24,9 +24,9 @@ void __cdecl sound_sndmain_cpp_getSoundDeviceInfo_FUN_00575350(int device_id,SSo
   }
   puVar2 = (uint *)(device_id * 0x118 + 0x2c7fd90);
   for (iVar1 = 0x46; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(uint *)device_info = *puVar2;
+    *(uint *)device_info->device_name = *puVar2;
     puVar2 = puVar2 + (uint)bVar3 * -2 + 1;
-    device_info = device_info + (uint)bVar3 * -8 + 4;
+    device_info = (SSoundDeviceInfo *)((int)device_info + (uint)bVar3 * -8 + 4);
   }
   return;
 }

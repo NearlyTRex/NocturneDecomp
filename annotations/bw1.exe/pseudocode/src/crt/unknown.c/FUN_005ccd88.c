@@ -27,7 +27,7 @@ uint * FUN_005ccd88(void)
       puVar1 = (uint *)*puVar1) {
   }
   if (puVar1[3] == 0) {
-    lpTlsValue = (uint *)FUN_005c1cb0(1,0x000000F4);
+    lpTlsValue = (uint *)calloc(1,0x000000F4);
     if (lpTlsValue == (uint *)0x0) {
       FUN_005c9f70("Unable to resize thread-specific data\r\n",1);
     }

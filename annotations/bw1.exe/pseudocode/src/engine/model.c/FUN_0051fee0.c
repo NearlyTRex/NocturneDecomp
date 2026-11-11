@@ -13,16 +13,16 @@ int __cdecl engine_model_c_FUN_0051fee0(SMRGLHeaderExtended *header)
 {
   char local_100 [256];
   
-  switch(*(uint *)header) {
+  switch((header->base).type) {
   case 0:
     return 4;
   case 1:
     return 0x10;
   case 2:
   case 3:
-    return *(int *)(header + 8) * 0xc + 0xc;
+    return header->child_count * 0xc + 0xc;
   case 4:
-    return *(int *)(header + 8) * 8 + 0xc;
+    return header->child_count * 8 + 0xc;
   case 5:
   case 6:
   case 7:
@@ -38,7 +38,7 @@ int __cdecl engine_model_c_FUN_0051fee0(SMRGLHeaderExtended *header)
   case 0x2e:
   case 0x2f:
   case 0x3b:
-    return *(int *)(header + 4) * 4 + 0x18;
+    return (header->base).count * 4 + 0x18;
   case 9:
     return 0x20;
   case 10:
@@ -63,7 +63,7 @@ int __cdecl engine_model_c_FUN_0051fee0(SMRGLHeaderExtended *header)
   case 0x3e:
   case 0x41:
   case 0x42:
-    return *(int *)(header + 4) * 0xc + 0x18;
+    return (header->base).count * 0xc + 0x18;
   case 0x10:
     return 0x14;
   default:
@@ -73,13 +73,13 @@ int __cdecl engine_model_c_FUN_0051fee0(SMRGLHeaderExtended *header)
     core_main_c_FUN_005030e0(local_100);
     return 4;
   case 0x16:
-    return *(int *)(header + 4) * 4 + 8;
+    return (header->base).count * 4 + 8;
   case 0x17:
     return 0xc;
   case 0x1d:
-    return *(int *)(header + 8) * 0x20 + 0x1c;
+    return header->child_count * 0x20 + 0x1c;
   case 0x1f:
-    return *(int *)(header + 8) * 4 + 0xc;
+    return header->child_count * 4 + 0xc;
   case 0x20:
     return 0x158;
   case 0x26:

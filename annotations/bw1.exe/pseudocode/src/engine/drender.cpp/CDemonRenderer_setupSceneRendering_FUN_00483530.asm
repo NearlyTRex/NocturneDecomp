@@ -17,7 +17,7 @@
 ;   core_setdir.cpp_FUN_00559f80 at 0055a99a
 ;   core_setdir.cpp_FUN_0055b330 at 0055b3ec
 ;   shape_spotview.cpp_FUN_005847e0 at 005848c9
-;   unkafter_bmppuzzl.cpp_FUN_00416fa0 at 004170f1
+;   unkafter_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00416fa0 at 004170f1
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0

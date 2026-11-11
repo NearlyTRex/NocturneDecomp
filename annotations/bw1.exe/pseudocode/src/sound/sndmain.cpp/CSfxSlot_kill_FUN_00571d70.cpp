@@ -19,7 +19,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00571d70(CSfxSlot *this_ptr)
     _DAT_01d1d404 = 0xca3;
     core_main_c_FUN_005030e0("SfxSlot::kill - must be locked!");
   }
-  if (*(int *)&this_ptr->field_0x108 != 0) {
+  if (this_ptr->is_active != 0) {
     pCVar2 = (CSfxSample *)"[NULLsamplePtr]";
     if (this_ptr->sample != (CSfxSample *)0x0) {
       pCVar2 = this_ptr->sample;
@@ -32,7 +32,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00571d70(CSfxSlot *this_ptr)
     }
     this_ptr->hardware_buffer_handle = 0;
   }
-  *(uint *)&this_ptr->field_0x108 = 0;
+  this_ptr->is_active = 0;
   this_ptr->playback_state = 0;
   if (this_ptr->sample != (CSfxSample *)0x0) {
     if (this_ptr->sample->ref_count < 1) {
@@ -44,13 +44,13 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00571d70(CSfxSlot *this_ptr)
     *piVar1 = *piVar1 + -1;
     pCVar2 = this_ptr->sample;
     this_ptr->sample = (CSfxSample *)0x0;
-    if (-1 < *(int *)&pCVar2->field_0x160) {
+    if (-1 < pCVar2->streaming_slot_index) {
       if (pCVar2->ref_count != 0) {
         _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
         _DAT_01d1d404 = 0xcd1;
         core_main_c_FUN_005030e0("refCount for streaming Sfx %s > 1",pCVar2);
       }
-      if ((int)&this_ptr[-0x28126].options.field_0x3c / 0x11c != *(int *)&pCVar2->field_0x160) {
+      if ((int)&this_ptr[-0x28126].options.base_frequency / 0x11c != pCVar2->streaming_slot_index) {
         _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
         _DAT_01d1d404 = 0xcd2;
         core_main_c_FUN_005030e0("streaming sample sfx index mismatch on %s",pCVar2);
@@ -58,8 +58,8 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00571d70(CSfxSlot *this_ptr)
       sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00570020(pCVar2);
     }
     sound_sndmain_cpp_FUN_0056dfd0(0);
-    *(uint *)&pCVar2->field_0x160 = 0xffffffff;
+    pCVar2->streaming_slot_index = -1;
   }
-  *(uint *)&this_ptr->field_0x118 = 0;
+  this_ptr->changed_flags = 0;
   return;
 }

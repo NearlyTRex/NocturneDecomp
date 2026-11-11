@@ -69,7 +69,7 @@ uint wincore_wddvmem_cpp_FUN_005ac300(int param_1,int param_2,int param_3)
     DAT_0071362c = 0;
   }
   iStack_f8 = 0x5ac40f;
-  DAT_00629010 = FUN_005c08d0
+  DAT_00629010 = malloc
                            (((int)((DAT_0061b4a0 + (DAT_0061b4a0 >> 0x1f) * -8) -
                                   (uint)((DAT_0061b4a0 >> 0x1f) << 2 < 0)) >> 3) *
                             DAT_0061b498 * DAT_0061b49c);
@@ -80,7 +80,7 @@ uint wincore_wddvmem_cpp_FUN_005ac300(int param_1,int param_2,int param_3)
     core_main_c_FUN_005030e0();
   }
   iStack_f8 = 0x5ac455;
-  _DAT_02c99310 = FUN_005c08d0(DAT_0061b498 * DAT_0061b49c * 4 + 0x40);
+  _DAT_02c99310 = malloc(DAT_0061b498 * DAT_0061b49c * 4 + 0x40);
   if (_DAT_02c99310 == (void *)0x0) {
     _DAT_01d1d400 = "..\\wincore\\wddvmem.cpp";
     _DAT_01d1d404 = 0xf2;

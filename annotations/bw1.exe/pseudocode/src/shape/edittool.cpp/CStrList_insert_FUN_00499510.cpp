@@ -41,7 +41,7 @@ void __cdecl shape_edittool_cpp_CStrList_insert_FUN_00499510(CStrList *this_ptr,
     cVar1 = *pcVar3;
     pcVar3 = pcVar3 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
-  pcVar3 = FUN_005c08d0(~uVar4);
+  pcVar3 = (char *)malloc(~uVar4);
   this_ptr->data_array[insert_index] = pcVar3;
   if (this_ptr->data_array[insert_index] == (char *)0x0) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";

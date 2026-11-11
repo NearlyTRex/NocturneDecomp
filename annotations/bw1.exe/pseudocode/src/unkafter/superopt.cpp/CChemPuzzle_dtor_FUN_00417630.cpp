@@ -21,8 +21,8 @@ CChemPuzzle * unkafter_superopt_cpp_CChemPuzzle_dtor_FUN_00417630(CChemPuzzle *t
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  *(byte ***)this_ptr = &g_CChemPuzzleVTable;
-  iVar1 = unkafter_superopt_cpp_FUN_00418890(&this_ptr->field_0x70,0);
+  this_ptr->vtable = &g_CChemPuzzleVTable;
+  iVar1 = unkafter_superopt_cpp_FUN_00418890(this_ptr->buttons,0);
   pCVar2 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0((CAlphaBitmap *)(iVar1 + -0x6c),0);
   pCVar3 = (CChemPuzzle *)unkafter_alphabit_cpp_FUN_00415bc0(&pCVar2[-1].height,1);
   if ((flags & 2) == 0) {

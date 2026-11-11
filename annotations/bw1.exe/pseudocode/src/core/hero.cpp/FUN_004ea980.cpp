@@ -24,11 +24,12 @@ void core_hero_cpp_FUN_004ea980(int param_1)
     iVar1 = iVar1 + 4;
   } while (iVar1 != 0x10);
   pCVar2 = core_inv_cpp_CInventory_dtor_FUN_004f6f80((CInventory *)(param_1 + 0x1fae8),0);
-  pCVar3 = core_path_cpp_CPathMap_dtor_FUN_00533060((CPathMap *)(pCVar2 + -0x138e0),0);
+  pCVar3 = core_path_cpp_CPathMap_dtor_FUN_00533060((CPathMap *)(pCVar2[-0x47].items + 0x40),0);
   iVar1 = core_armour_cpp_FUN_0040ee30(pCVar3[-1].height_cache_tags[10] + 0x28,0);
   pCVar4 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)(iVar1 + -0x93c),0);
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
                      ((CDeformableModelInstance *)(pCVar4[-0x19].filenames[0] + 0x10),0);
-  core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&pCVar5[-1].field_0x224c,1);
+  core_actor_cpp_CDemonActor_dtor_FUN_00408730
+            ((CDemonActor *)(pCVar5[-1].part_data.texture_set_indices + 7),1);
   return;
 }

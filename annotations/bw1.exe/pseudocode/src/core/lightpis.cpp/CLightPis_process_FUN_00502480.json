@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 162,
-    "complexity_score": 268,
+    "complexity_score": 94,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 53,
-    "suspect_count": 20,
+    "pseudocode_lines": 54,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 215
+    "total_lines": 216
   },
   "cross_references": [],
   "function": {
@@ -260,7 +259,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 13,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "float in_stack_00000018;",
@@ -268,147 +267,11 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 19,
       "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "fVar1 = (_DAT_00603170 / fVar1) * in_stack_00000018 + *(float *)&this_ptr->field_0x580;",
+      "text": "fVar2 = (_DAT_00603170 / fVar2) * in_stack_00000018 + this_ptr->charge_level;",
       "type": "stack_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x580",
-      "severity": "mild",
-      "text": "fVar1 = (_DAT_00603170 / fVar1) * in_stack_00000018 + *(float *)&this_ptr->field_0x580;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x580",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x580 = fVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x580",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x580 = _DAT_00603170;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x584",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x584 = *(float *)&this_ptr->field_0x580 / _DAT_00603170;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x580",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x584 = *(float *)&this_ptr->field_0x580 / _DAT_00603170;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x2d4",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x2d4 == 2) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x584",
-      "severity": "mild",
-      "text": "fVar1 = (_DAT_0060317c - 0x40000000) * *(float *)&this_ptr->field_0x584 + 0x40000000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x584",
-      "severity": "mild",
-      "text": "_DAT_00603180 + (_DAT_00603184 - _DAT_00603180) * *(float *)&this_ptr->field_0x584;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x57c",
-      "severity": "mild",
-      "text": "iVar2 = sound_sndmain_cpp_FUN_005735a0(*(uint *)&this_ptr->field_0x57c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_005727e0((CVector3f *)&this_ptr->field_0x20);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x57c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x57c = uVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x57c",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00573950(*(uint *)&this_ptr->field_0x57c,fVar1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x57c",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00573980(*(uint *)&this_ptr->field_0x57c,base_frequency);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x578",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x578 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x578",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x578 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x57c",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_killSfx_FUN_00573a80(*(uint *)&this_ptr->field_0x57c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x578",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x578 = 0;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

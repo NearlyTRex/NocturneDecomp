@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 64,
+    "complexity_score": 48,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 2,
+    "pseudocode_lines": 33,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 96
+    "total_lines": 95
   },
   "cross_references": [],
   "function": {
@@ -116,14 +115,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0xc330",
-      "severity": "mild",
-      "text": "((CCloth *)&this_ptr->field_0xc330,(CDeformableModelInstance *)0x0);",
-      "type": "unnamed_field"
-    },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 22,

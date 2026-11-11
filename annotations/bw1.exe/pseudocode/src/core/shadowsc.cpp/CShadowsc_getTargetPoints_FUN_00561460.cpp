@@ -15,7 +15,7 @@ int __cdecl core_shadowsc_cpp_CShadowsc_getTargetPoints_FUN_00561460(CShadowsc *
   CVector3f CStack_18;
   
   bVar1 = 0;
-  core_skeleton_cpp_FUN_00569130(&this_ptr->field_0x158,*(uint *)&this_ptr->field_0xc268);
+  core_skeleton_cpp_FUN_00569130(&(this_ptr->base).base.model,this_ptr->bone_indices[0]);
   CStack_18.x = fStack_24;
   *(uint *)((int)&CStack_18 + (uint)bVar1 * -8 + 4) =
        *(uint *)(&stack0xffffffe0 + (uint)bVar1 * -8);

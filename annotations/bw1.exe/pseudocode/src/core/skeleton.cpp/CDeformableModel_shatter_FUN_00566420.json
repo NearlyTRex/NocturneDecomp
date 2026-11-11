@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 408,
-    "complexity_score": 478,
+    "complexity_score": 514,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 198,
-    "suspect_count": 25,
+    "pseudocode_lines": 199,
+    "suspect_count": 29,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 606
+    "total_lines": 607
   },
   "cross_references": [
     {
@@ -600,147 +599,179 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 99,
-      "match": "field_0xc0",
-      "severity": "mild",
-      "text": "local_68 = &this_ptr->field_0xc0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 117,
       "match": "DAT_026af600",
       "severity": "mild",
-      "text": "if (pSVar2 != (STriangleVertices *)(&DAT_026af600 + iVar4)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 118,
-      "match": "DAT_026af600",
-      "severity": "mild",
-      "text": "*(uint *)pSVar2 = *(uint *)(&DAT_026af600 + iVar4);",
+      "text": "if (pCVar2 != (CVector3f *)(&DAT_026af600 + iVar4)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 119,
-      "match": "DAT_026af604",
+      "match": "DAT_026af600",
       "severity": "mild",
-      "text": "*(uint *)(pSVar2 + 4) = *(uint *)(&DAT_026af604 + iVar4);",
+      "text": "((STriangleVertices *)(&DAT_026af600 + iVar4))->vertices[0].x;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 120,
-      "match": "DAT_026af608",
+      "match": "DAT_026af604",
       "severity": "mild",
-      "text": "*(uint *)(pSVar2 + 8) = *(uint *)(&DAT_026af608 + iVar4);",
+      "text": "pCVar2->y = *(float *)(&DAT_026af604 + iVar4);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 149,
-      "match": "field_0xc0",
+      "description": "Undefined global data reference",
+      "line": 121,
+      "match": "DAT_026af608",
       "severity": "mild",
-      "text": "local_6c = &this_ptr->field_0xc0;",
-      "type": "unnamed_field"
+      "text": "pCVar2->z = *(float *)(&DAT_026af608 + iVar4);",
+      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 170,
       "match": "DAT_026af600",
       "severity": "mild",
-      "text": "if (pSVar2 != (STriangleVertices *)(&DAT_026af600 + iVar4)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 171,
-      "match": "DAT_026af600",
-      "severity": "mild",
-      "text": "*(uint *)pSVar2 = *(uint *)(&DAT_026af600 + iVar4);",
+      "text": "if (pCVar2 != (CVector3f *)(&DAT_026af600 + iVar4)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 172,
-      "match": "DAT_026af604",
+      "match": "DAT_026af600",
       "severity": "mild",
-      "text": "*(uint *)(pSVar2 + 4) = *(uint *)(&DAT_026af604 + iVar4);",
+      "text": "((STriangleVertices *)(&DAT_026af600 + iVar4))->vertices[0].x;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 173,
+      "match": "DAT_026af604",
+      "severity": "mild",
+      "text": "pCVar2->y = *(float *)(&DAT_026af604 + iVar4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 174,
       "match": "DAT_026af608",
       "severity": "mild",
-      "text": "*(uint *)(pSVar2 + 8) = *(uint *)(&DAT_026af608 + iVar4);",
+      "text": "pCVar2->z = *(float *)(&DAT_026af608 + iVar4);",
       "type": "undefined_data"
     },
     {
       "description": "Pointer value `&local_b4.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 123,
+      "line": 124,
       "match": "(int)&local_b4.x",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_b4.x + iVar8) = (uint)*(ushort *)(pSVar3 + 6);",
+      "text": "*(uint *)((int)&local_b4.x + iVar8) = (uint)puVar3[3];",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_84.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 127,
+      "line": 128,
       "match": "(int)&local_84.x",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_84.x + iVar8) = (uint)*(ushort *)pSVar1;",
+      "text": "*(uint *)((int)&local_84.x + iVar8) = (uint)*puVar1;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_b4.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 175,
+      "line": 176,
       "match": "(int)&local_b4.x",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_b4.x + iVar6) = (uint)*(ushort *)(pSVar3 + 6) << 8;",
+      "text": "*(uint *)((int)&local_b4.x + iVar6) = (uint)puVar3[3] << 8;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_84.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 180,
+      "line": 181,
       "match": "(int)&local_84.x",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_84.x + iVar6) = (uint)*(ushort *)pSVar1 << 8;",
+      "text": "*(uint *)((int)&local_84.x + iVar6) = (uint)*puVar1 << 8;",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 123,
+      "line": 124,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_b4.x + iVar8) = (uint)*(ushort *)(pSVar3 + 6);",
+      "text": "*(uint *)((int)&local_b4.x + iVar8) = (uint)puVar3[3];",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 127,
+      "line": 128,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_84.x + iVar8) = (uint)*(ushort *)pSVar1;",
+      "text": "*(uint *)((int)&local_84.x + iVar8) = (uint)*puVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 175,
+      "line": 176,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_b4.x + iVar6) = (uint)*(ushort *)(pSVar3 + 6) << 8;",
+      "text": "*(uint *)((int)&local_b4.x + iVar6) = (uint)puVar3[3] << 8;",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 180,
+      "line": 181,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_84.x + iVar6) = (uint)*(ushort *)pSVar1 << 8;",
+      "text": "*(uint *)((int)&local_84.x + iVar6) = (uint)*puVar1 << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 67,
+      "match": "(int *)(local_64 + 0x2c)",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)(local_64 + 0x2c)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 92,
+      "match": "(int *)(local_64 + 0x2c)",
+      "severity": "moderate",
+      "text": "} while (local_48 < *(int *)(local_64 + 0x2c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 105,
+      "match": "(int *)(local_54 + 0xc24)",
+      "severity": "moderate",
+      "text": "local_40 = *(int *)(local_54 + 0xc24) + local_24;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 112,
+      "match": "(int *)(local_38 + 0x7c)",
+      "severity": "moderate",
+      "text": "puVar3 = (ushort *)(*(int *)(local_38 + 0x7c) + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 154,
+      "match": "(int *)(local_5c + 0xc38)",
+      "severity": "moderate",
+      "text": "iVar6 = *(int *)(local_5c + 0xc38) + local_24;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 187,
+      "match": "(int *)(local_34 + 0x90)",
+      "severity": "moderate",
+      "text": "(local_28->textures + *(int *)(*(int *)(local_34 + 0x90) + local_14)),",
       "type": "pointer_cast"
     }
   ]

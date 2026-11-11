@@ -2,15 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 240,
-    "complexity_score": 128,
+    "complexity_score": 143,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 13,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 78,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "undefined_data",
+      "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
     "total_lines": 318
@@ -47,14 +48,14 @@
       "name": "core_main.c_FUN_005030e0"
     },
     {
+      "addr": "005c1268",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_array_FUN_005c1268"
+    },
+    {
       "addr": "005c2c20",
       "is_variadic": false,
       "name": "crt_string.c_strupr_FUN_005c2c20"
-    },
-    {
-      "addr": "005c1268",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c1268"
     },
     {
       "addr": "005bfb40",
@@ -89,17 +90,17 @@
     {
       "addr": "005a0fd0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a0fd0"
-    },
-    {
-      "addr": "005a0ab0",
-      "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_FUN_005a0ab0"
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0"
     },
     {
       "addr": "005a0dc0",
       "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_FUN_005a0dc0"
+      "name": "unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0"
+    },
+    {
+      "addr": "005a0ab0",
+      "is_variadic": false,
+      "name": "unkaddr_0059f520.cpp_CInStreamFile_getChar_FUN_005a0ab0"
     },
     {
       "addr": "005a08d0",
@@ -343,7 +344,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 55,
       "match": "DAT_005e0841",
       "severity": "mild",
       "text": "engine_dosio_cpp_makePath_FUN_004795b0(local_33c,(char *)0x0,local_23c,local_13c,&DAT_005e0841);",
@@ -354,8 +355,16 @@
       "line": 58,
       "match": "DAT_005e0845",
       "severity": "mild",
-      "text": "iVar2 = support_trstream_cpp_FUN_005a0fd0(&local_3c,&DAT_005e0845,local_33c,1);",
+      "text": "(&local_3c,&DAT_005e0845,local_33c,1);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 26,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

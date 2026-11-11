@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 57,
+    "complexity_score": 42,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 17,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field"
+      "undefined_data"
     ],
     "total_lines": 69
   },
@@ -78,7 +77,7 @@
     },
     {
       "addr": "01ccf5ec",
-      "name": "g_CGameInstance.field556_0x25c",
+      "name": "g_CGameInstance.goggles_active",
       "type": "undefined4",
       "value": null
     }
@@ -134,14 +133,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0xc2fc",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0xc2fc == 0) &&",
-      "type": "unnamed_field"
-    },
     {
       "description": "Undefined global data reference",
       "line": 8,

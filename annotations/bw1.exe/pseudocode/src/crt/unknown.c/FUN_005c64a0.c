@@ -27,7 +27,7 @@ void FUN_005c64a0(uint *param_1)
       param_1[5] = 0x86;
     }
   }
-  pvVar2 = FUN_005c08d0(param_1[5]);
+  pvVar2 = malloc(param_1[5]);
   *(void **)(param_1[2] + 8) = pvVar2;
   if (*(int *)(param_1[2] + 8) == 0) {
     bVar3 = *(byte *)((int)param_1 + 0xd) & 0xf8;

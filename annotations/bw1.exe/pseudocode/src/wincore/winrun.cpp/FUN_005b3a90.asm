@@ -11,8 +11,8 @@
 ;   support_trisock.cpp_FUN_0059daec at 0059dc80
 ;   support_trisock.cpp_FUN_0059eeb0 at 0059eebb
 ;   support_trisock.cpp_FUN_0059ef20 at 0059ef2e
-;   support_trstream.cpp_FUN_005a1e90 at 005a1ea3
-;   support_trstream.cpp_FUN_005a1ec0 at 005a1f20
+;   support_trstream.cpp_COutStreamDebug_putChar_FUN_005a1e90 at 005a1ea3
+;   support_trstream.cpp_COutStreamDebug_write_FUN_005a1ec0 at 005a1f20
 ;
 ; Referenced Globals:
 ;   void* PTR_OutputDebugStringA_005d0608 = 001d109a

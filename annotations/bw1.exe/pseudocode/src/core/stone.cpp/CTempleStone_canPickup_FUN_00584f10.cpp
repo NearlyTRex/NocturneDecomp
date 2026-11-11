@@ -12,7 +12,7 @@ int __cdecl core_stone_cpp_CTempleStone_canPickup_FUN_00584f10(CTempleStone *thi
   int iVar1;
   
   iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600
-                    (*(uint *)&this_ptr->field_0x678,g_CActorDestinationClassInfo.name_hash);
+                    (this_ptr->dest_actor,g_CActorDestinationClassInfo.name_hash);
   if ((iVar1 != 0) && (*(int *)(iVar1 + 0x184) != 0)) {
     return 0;
   }

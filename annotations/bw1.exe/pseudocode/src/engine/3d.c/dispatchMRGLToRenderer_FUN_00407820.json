@@ -2,19 +2,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 242,
-    "complexity_score": 179,
+    "complexity_score": 195,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 104,
-    "suspect_count": 6,
+    "pseudocode_lines": 105,
+    "suspect_count": 7,
     "suspect_types": [
+      "pointer_cast",
       "raw_address_pointer_store",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 346
+    "total_lines": 347
   },
   "cross_references": [],
   "function": {
@@ -188,7 +189,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 32,
       "match": "DAT_00629014",
       "severity": "mild",
       "text": "engine_special_cpp_drawPolyList_FUN_005823a0(&DAT_00629014,0x7c1074,_DAT_007c1070,0xcd);",
@@ -196,7 +197,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 36,
       "match": "DAT_0061b4c0",
       "severity": "mild",
       "text": "DAT_0061b4c0 = 1;",
@@ -204,7 +205,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 44,
       "match": "DAT_0061b4c0",
       "severity": "mild",
       "text": "if (DAT_0061b4c0 != 0) {",
@@ -212,7 +213,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 76,
       "match": "DAT_00629014",
       "severity": "mild",
       "text": "engine_special_cpp_drawPolyList_FUN_005823a0(&DAT_00629014,0x7c1074,_DAT_007c1070,0xcd);",
@@ -220,11 +221,19 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 95,
+      "line": 96,
       "match": "*(SMRGLHeaderExtended **)(_DAT_007c1070 * 4 + 0x7c1074",
       "severity": "moderate",
       "text": "*(SMRGLHeaderExtended **)(_DAT_007c1070 * 4 + 0x7c1074) = mrgl;",
       "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 106,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "mrgl = (SMRGLHeaderExtended *)((int)&(mrgl->base).type + iVar4);",
+      "type": "pointer_cast"
     }
   ]
 }

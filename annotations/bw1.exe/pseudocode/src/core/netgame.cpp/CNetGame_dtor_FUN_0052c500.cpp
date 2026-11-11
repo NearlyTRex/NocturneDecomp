@@ -11,6 +11,6 @@ CNetGame * __cdecl core_netgame_cpp_CNetGame_dtor_FUN_0052c500(CNetGame *this_pt
 {
   CSocket *pCVar1;
   
-  pCVar1 = support_trisock_cpp_CSocket_dtor_FUN_0059c8f0((CSocket *)&this_ptr->field_0x178,0);
-  return (CNetGame *)(pCVar1 + -0x178);
+  pCVar1 = support_trisock_cpp_CSocket_dtor_FUN_0059c8f0(&this_ptr->socket,0);
+  return (CNetGame *)(pCVar1 + -0x5e);
 }

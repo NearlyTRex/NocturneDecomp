@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 232,
-    "complexity_score": 366,
+    "complexity_score": 330,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 106,
-    "suspect_count": 22,
+    "pseudocode_lines": 105,
+    "suspect_count": 19,
     "suspect_types": [
       "displaced_global_access",
       "extra_output",
@@ -16,10 +16,9 @@
       "pointer_truncation",
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 338
+    "total_lines": 337
   },
   "cross_references": [
     {
@@ -316,14 +315,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 57,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "iVar9 = *(int *)&pCVar10->fires[0].field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 58,
       "match": "DAT_007c6384",
@@ -336,52 +327,36 @@
       "line": 59,
       "match": "DAT_007c6384",
       "severity": "mild",
-      "text": "(float)(&DAT_007c6384)[iVar9] + (*(float *)&pCVar10->fires[0].field_0x14 * fVar2) / fVar3",
+      "text": "(float)(&DAT_007c6384)[iVar9] + (pCVar10->fires[0].size * fVar2) / fVar3;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 59,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "(float)(&DAT_007c6384)[iVar9] + (*(float *)&pCVar10->fires[0].field_0x14 * fVar2) / fVar3",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 69,
       "match": "DAT_007c6384",
       "severity": "mild",
       "text": "if ((float)_DAT_005d5a27 <= (float)(&DAT_007c6384)[iVar6]) {",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 86,
-      "match": "field_0x0",
-      "severity": "mild",
-      "text": "pbVar12 = &pCVar5->vertex_data_ptr[iVar1]->field_0x0 + local_1c;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 91,
       "match": "DAT_007c6384",
       "severity": "mild",
-      "text": "fVar14 = (float10)*(float *)(pbVar8 + 4) * (float10)(float)(&DAT_007c6384)[pbVar11[1]];",
+      "text": "fVar14 = (float10)*(float *)(puVar8 + 4) * (float10)(float)(&DAT_007c6384)[puVar11[1]];",
       "type": "undefined_data"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 94,
+      "line": 93,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "pbVar8 = (byte *)(extraout_ECX + 4);",
+      "text": "puVar8 = (uchar *)(extraout_ECX + 4);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 97,
+      "line": 96,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "iVar9 = extraout_EDX + 1;",
@@ -389,7 +364,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 105,
+      "line": 104,
       "match": "extraout_ECX_00",
       "severity": "moderate",
       "text": "*(int *)(*piVar7 + extraout_ECX_00 + 0x2c) = (int)ROUND(fVar14);",
@@ -413,7 +388,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar10->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 62,
+      "line": 61,
       "match": "pCVar10 = (T *)((pCVar10->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar10 = (CCharacter *)((pCVar10->base).actor_name + 0x18);",
@@ -421,7 +396,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 77,
+      "line": 76,
       "match": "pCVar13 = (T *)pCVar13->ARRAY",
       "severity": "moderate",
       "text": "pCVar13 = (CDeformableModel *)pCVar13->lod_info;",

@@ -116,12 +116,12 @@ section .text
     JZ 0x004d2837                       ; 004d27e5
         ;   XREF to: 004d2837 (CONDITIONAL_JUMP)  ; LAB_004d2837
     MOV EAX,[0x0061d95c]                ; 004d27e7 | g_CGamePtr
-    CMP dword ptr [EAX + 0x230],0x29a   ; 004d27ec | g_CGameInstance.field512_0x230
+    CMP dword ptr [EAX + 0x230],0x29a   ; 004d27ec | g_CGameInstance.head_of_horror_cheat
     JZ 0x004d2837                       ; 004d27f6
         ;   XREF to: 004d2837 (CONDITIONAL_JUMP)  ; LAB_004d2837
     PUSH 0x40a00000                     ; 004d27f8
     PUSH 0x5e1b3c                       ; 004d27fd | = "The horror has been unleashed."
-    MOV dword ptr [EAX + 0x230],0x29a   ; 004d2802 | g_CGameInstance.field512_0x230
+    MOV dword ptr [EAX + 0x230],0x29a   ; 004d2802 | g_CGameInstance.head_of_horror_cheat
     CALL support_newmsg.cpp_getLocalizedString_FUN_00531090 ; 004d280c
         ;   XREF to: 00531090 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00531090(char * key)
     ADD ESP,0x4                         ; 004d2811
@@ -1916,8 +1916,8 @@ section .text
     XOR AL,BL                           ; 004d3c48
     MOV EDI,0x3                         ; 004d3c4a
     MOV [0x01cd0c68],AL                 ; 004d3c4f | DAT_01cd0c68
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 004d3c54
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d3c54
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 004d3c59
     TEST EAX,EAX                        ; 004d3c5c
     JZ 0x004d3c69                       ; 004d3c5e
@@ -1935,8 +1935,8 @@ section .text
         ;   Label: LAB_004d3c73
     MOV EDI,0x5e22f5                    ; 004d3c78 | DAT_005e22f5
     MOV ESI,0x7                         ; 004d3c7d
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 004d3c82
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d3c82
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 004d3c87
     TEST EAX,EAX                        ; 004d3c8a
     JZ 0x004d3c97                       ; 004d3c8c
@@ -1954,8 +1954,8 @@ section .text
         ;   Label: LAB_004d3ca1
     MOV ESI,0x5e22fa                    ; 004d3ca6 | DAT_005e22fa
     MOV EDI,0x8                         ; 004d3cab
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 004d3cb0
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d3cb0
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 004d3cb5
     TEST EAX,EAX                        ; 004d3cb8
     JZ 0x004d3cc5                       ; 004d3cba
@@ -1985,8 +1985,8 @@ section .text
     PUSH 0x31c                          ; 004d3cf6
     MOV ESI,0x5e2319                    ; 004d3cfb | = "CCrossbow"
     MOV EDI,0x1                         ; 004d3d00
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 004d3d05
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d3d05
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 004d3d0a
     TEST EAX,EAX                        ; 004d3d0d
     JZ 0x004d3d1a                       ; 004d3d0f
@@ -3803,8 +3803,8 @@ section .text
     XOR BL,BL                           ; 004d520b
     PUSH 0x2d8                          ; 004d520d
     MOV byte ptr [0x01cd0c68],BL        ; 004d5212 | DAT_01cd0c68
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 004d5218
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d5218
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 004d521d
     TEST EAX,EAX                        ; 004d5220
     JZ 0x004d522d                       ; 004d5222
@@ -3896,8 +3896,8 @@ section .text
     XOR BH,BH                           ; 004d5305
     PUSH 0x2d8                          ; 004d5307
     MOV byte ptr [0x01cd0c68],BH        ; 004d530c | DAT_01cd0c68
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 004d5312
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d5312
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 004d5317
     TEST EAX,EAX                        ; 004d531a
     JZ 0x004d5327                       ; 004d531c
@@ -4004,16 +4004,16 @@ section .text
     ADD ESP,0xc                         ; 004d5430
     MOV EAX,[0x0061d95c]                ; 004d5433 | g_CGamePtr
     PUSH 0x5e29c9                       ; 004d5438 | = "Game"
-    MOV dword ptr [EAX + 0xe4],0x0      ; 004d543d | g_CGameInstance.field180_0xe4
+    MOV dword ptr [EAX + 0xe4],0x0      ; 004d543d | g_CGameInstance.puzzle_difficulty_mode
     PUSH 0x5e29ce                       ; 004d5447 | = "system\\nocturne.ini"
-    MOV dword ptr [EAX + 0xe8],0x0      ; 004d544c | g_CGameInstance.field184_0xe8
+    MOV dword ptr [EAX + 0xe8],0x0      ; 004d544c | g_CGameInstance.combat_difficulty_mode
     LEA EAX,[ESP + 0x20c]               ; 004d5456
     PUSH EAX                            ; 004d545d
     CALL engine_ini.cpp_FUN_004f4b00    ; 004d545e
         ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4b00()
     MOV EAX,[0x0061d95c]                ; 004d5463 | g_CGamePtr
     ADD ESP,0xc                         ; 004d5468
-    MOV EDX,dword ptr [EAX + 0xe4]      ; 004d546b | g_CGameInstance.field180_0xe4
+    MOV EDX,dword ptr [EAX + 0xe4]      ; 004d546b | g_CGameInstance.puzzle_difficulty_mode
     PUSH EDX                            ; 004d5471
     PUSH 0x5e29e2                       ; 004d5472 | = "puzzleDifficultyMode"
     LEA EAX,[ESP + 0x20c]               ; 004d5477
@@ -4022,7 +4022,7 @@ section .text
         ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
     MOV EAX,[0x0061d95c]                ; 004d5484 | g_CGamePtr
     ADD ESP,0xc                         ; 004d5489
-    MOV ECX,dword ptr [EAX + 0xe8]      ; 004d548c | g_CGameInstance.field184_0xe8
+    MOV ECX,dword ptr [EAX + 0xe8]      ; 004d548c | g_CGameInstance.combat_difficulty_mode
     PUSH ECX                            ; 004d5492
     PUSH 0x5e29f7                       ; 004d5493 | = "combatDifficultyMode"
     LEA EAX,[ESP + 0x20c]               ; 004d5498
@@ -4113,16 +4113,16 @@ section .text
     ADD ESP,0xc                         ; 004d5588
     MOV EAX,[0x0061d95c]                ; 004d558b | g_CGamePtr
     PUSH 0x5e2aac                       ; 004d5590 | = "Game"
-    MOV dword ptr [EAX + 0xe4],0x1      ; 004d5595 | g_CGameInstance.field180_0xe4
+    MOV dword ptr [EAX + 0xe4],0x1      ; 004d5595 | g_CGameInstance.puzzle_difficulty_mode
     PUSH 0x5e2ab1                       ; 004d559f | = "system\\nocturne.ini"
-    MOV dword ptr [EAX + 0xe8],0x0      ; 004d55a4 | g_CGameInstance.field184_0xe8
+    MOV dword ptr [EAX + 0xe8],0x0      ; 004d55a4 | g_CGameInstance.combat_difficulty_mode
     LEA EAX,[ESP + 0x614]               ; 004d55ae
     PUSH EAX                            ; 004d55b5
     CALL engine_ini.cpp_FUN_004f4b00    ; 004d55b6
         ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4b00()
     MOV EAX,[0x0061d95c]                ; 004d55bb | g_CGamePtr
     ADD ESP,0xc                         ; 004d55c0
-    MOV EDI,dword ptr [EAX + 0xe4]      ; 004d55c3 | g_CGameInstance.field180_0xe4
+    MOV EDI,dword ptr [EAX + 0xe4]      ; 004d55c3 | g_CGameInstance.puzzle_difficulty_mode
     PUSH EDI                            ; 004d55c9
     PUSH 0x5e2ac5                       ; 004d55ca | = "puzzleDifficultyMode"
     LEA EAX,[ESP + 0x614]               ; 004d55cf
@@ -4131,7 +4131,7 @@ section .text
         ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
     MOV EAX,[0x0061d95c]                ; 004d55dc | g_CGamePtr
     ADD ESP,0xc                         ; 004d55e1
-    MOV EDX,dword ptr [EAX + 0xe8]      ; 004d55e4 | g_CGameInstance.field184_0xe8
+    MOV EDX,dword ptr [EAX + 0xe8]      ; 004d55e4 | g_CGameInstance.combat_difficulty_mode
     PUSH EDX                            ; 004d55ea
     PUSH 0x5e2ada                       ; 004d55eb | = "combatDifficultyMode"
     LEA EAX,[ESP + 0x614]               ; 004d55f0
@@ -4223,16 +4223,16 @@ section .text
     ADD ESP,0xc                         ; 004d56e1
     MOV EAX,[0x0061d95c]                ; 004d56e4 | g_CGamePtr
     PUSH 0x5e2b91                       ; 004d56e9 | = "Game"
-    MOV dword ptr [EAX + 0xe4],0x0      ; 004d56ee | g_CGameInstance.field180_0xe4
+    MOV dword ptr [EAX + 0xe4],0x0      ; 004d56ee | g_CGameInstance.puzzle_difficulty_mode
     PUSH 0x5e2b96                       ; 004d56f8 | = "system\\nocturne.ini"
-    MOV dword ptr [EAX + 0xe8],0x1      ; 004d56fd | g_CGameInstance.field184_0xe8
+    MOV dword ptr [EAX + 0xe8],0x1      ; 004d56fd | g_CGameInstance.combat_difficulty_mode
     LEA EAX,[ESP + 0x8]                 ; 004d5707
     PUSH EAX                            ; 004d570b
     CALL engine_ini.cpp_FUN_004f4b00    ; 004d570c
         ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4b00()
     MOV EAX,[0x0061d95c]                ; 004d5711 | g_CGamePtr
     ADD ESP,0xc                         ; 004d5716
-    MOV EDI,dword ptr [EAX + 0xe4]      ; 004d5719 | g_CGameInstance.field180_0xe4
+    MOV EDI,dword ptr [EAX + 0xe4]      ; 004d5719 | g_CGameInstance.puzzle_difficulty_mode
     PUSH EDI                            ; 004d571f
     PUSH 0x5e2baa                       ; 004d5720 | = "puzzleDifficultyMode"
     LEA EAX,[ESP + 0x8]                 ; 004d5725
@@ -4241,7 +4241,7 @@ section .text
         ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
     MOV EAX,[0x0061d95c]                ; 004d572f | g_CGamePtr
     ADD ESP,0xc                         ; 004d5734
-    MOV EDX,dword ptr [EAX + 0xe8]      ; 004d5737 | g_CGameInstance.field184_0xe8
+    MOV EDX,dword ptr [EAX + 0xe8]      ; 004d5737 | g_CGameInstance.combat_difficulty_mode
     PUSH EDX                            ; 004d573d
     PUSH 0x5e2bbf                       ; 004d573e | = "combatDifficultyMode"
     LEA EAX,[ESP + 0x8]                 ; 004d5743
@@ -4333,16 +4333,16 @@ section .text
     ADD ESP,0xc                         ; 004d582f
     MOV EAX,[0x0061d95c]                ; 004d5832 | g_CGamePtr
     PUSH 0x5e2c6c                       ; 004d5837 | = "Game"
-    MOV dword ptr [EAX + 0xe4],0x1      ; 004d583c | g_CGameInstance.field180_0xe4
+    MOV dword ptr [EAX + 0xe4],0x1      ; 004d583c | g_CGameInstance.puzzle_difficulty_mode
     PUSH 0x5e2c71                       ; 004d5846 | = "system\\nocturne.ini"
-    MOV dword ptr [EAX + 0xe8],0x1      ; 004d584b | g_CGameInstance.field184_0xe8
+    MOV dword ptr [EAX + 0xe8],0x1      ; 004d584b | g_CGameInstance.combat_difficulty_mode
     LEA EAX,[ESP + 0x410]               ; 004d5855
     PUSH EAX                            ; 004d585c
     CALL engine_ini.cpp_FUN_004f4b00    ; 004d585d
         ;   XREF to: 004f4b00 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4b00()
     MOV EAX,[0x0061d95c]                ; 004d5862 | g_CGamePtr
     ADD ESP,0xc                         ; 004d5867
-    MOV EDI,dword ptr [EAX + 0xe4]      ; 004d586a | g_CGameInstance.field180_0xe4
+    MOV EDI,dword ptr [EAX + 0xe4]      ; 004d586a | g_CGameInstance.puzzle_difficulty_mode
     PUSH EDI                            ; 004d5870
     PUSH 0x5e2c85                       ; 004d5871 | = "puzzleDifficultyMode"
     LEA EAX,[ESP + 0x410]               ; 004d5876
@@ -4351,7 +4351,7 @@ section .text
         ;   XREF to: 004f4d70 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004f4d70()
     MOV EAX,[0x0061d95c]                ; 004d5883 | g_CGamePtr
     ADD ESP,0xc                         ; 004d5888
-    MOV EDX,dword ptr [EAX + 0xe8]      ; 004d588b | g_CGameInstance.field184_0xe8
+    MOV EDX,dword ptr [EAX + 0xe8]      ; 004d588b | g_CGameInstance.combat_difficulty_mode
     PUSH EDX                            ; 004d5891
     PUSH 0x5e2c9a                       ; 004d5892 | = "combatDifficultyMode"
     LEA EAX,[ESP + 0x410]               ; 004d5897
@@ -4571,8 +4571,8 @@ section .text
     XOR BL,BL                           ; 004d5ae8
     MOV EDI,0x3                         ; 004d5aea
     MOV byte ptr [0x01cd0c68],BL        ; 004d5aef | DAT_01cd0c68
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 004d5af5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d5af5
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 004d5afa
     TEST EAX,EAX                        ; 004d5afd
     JZ 0x004d5b0a                       ; 004d5aff
@@ -4639,8 +4639,8 @@ section .text
     XOR BH,BH                           ; 004d5b98
     MOV EDI,0x7                         ; 004d5b9a
     MOV byte ptr [0x01cd0c68],BH        ; 004d5b9f | DAT_01cd0c68
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 004d5ba5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d5ba5
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 004d5baa
     TEST EAX,EAX                        ; 004d5bad
     JZ 0x004d5bba                       ; 004d5baf
@@ -4707,8 +4707,8 @@ section .text
     XOR CL,CL                           ; 004d5c48
     MOV ESI,0x8                         ; 004d5c4a
     MOV byte ptr [0x01cd0c68],CL        ; 004d5c4f | DAT_01cd0c68
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 004d5c55
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d5c55
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 004d5c5a
     TEST EAX,EAX                        ; 004d5c5d
     JZ 0x004d5c6a                       ; 004d5c5f

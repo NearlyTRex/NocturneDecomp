@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/iostream.h"
 
 // =============================================================================
 // STDIO - System Header
@@ -13,9 +14,14 @@
 struct scanf_state_t;
 
 // Structure: FileEmbeddedData
-// Stub: no RTTI in this build, size and fields not yet recovered
 #pragma pack(push, 1)
 typedef struct FileEmbeddedData {
+    uint flags;
+    struct _FILE* stream;
+    uint index;
+    uint pos;
+    uint state_field;
+    uint error_mask;
 } FileEmbeddedData;
 #pragma pack(pop)
 
@@ -33,9 +39,15 @@ typedef struct StringOutputContext {
 } StringOutputContext;
 
 // Structure: _FILE
-// Stub: no RTTI in this build, size and fields not yet recovered
 #pragma pack(push, 1)
 typedef struct _FILE {
+    char* _ptr;
+    int _cnt;
+    struct streambuf* _link;
+    uint _flag;
+    int _handle;
+    uint _bufsize;
+    ushort _ungotten;
 } _FILE;
 #pragma pack(pop)
 

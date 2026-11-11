@@ -32,7 +32,8 @@ CCharacter * core_charactr_cpp_CCharacter_ctor_FUN_0042c080(CCharacter *this_ptr
   pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004085c0(&this_ptr->base);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_00567370
                      ((CDeformableModelInstance *)(pCVar2 + 1));
-  pCVar4 = core_cloth_cpp_CClothList_ctor_FUN_00441c60((CClothList *)&pCVar3[1].field_0x7a4);
+  pCVar4 = core_cloth_cpp_CClothList_ctor_FUN_00441c60
+                     ((CClothList *)&pCVar3[1].bone_transform.pose_data.bone_rotations[0xf].x);
   iVar5 = __arrinit(pCVar4[1].filenames[0] + 8,0xf,&g_CVectorTypeInfo);
   iVar5 = __arrinit(iVar5 + 0xb4,0xf,&g_CVectorTypeInfo);
   iVar5 = __arrinit(iVar5 + 0x210,0x32,&g_SFireTypeInfo);
@@ -82,14 +83,12 @@ CCharacter * core_charactr_cpp_CCharacter_ctor_FUN_0042c080(CCharacter *this_ptr
   local_14 = (byte *)(iVar5 + -0x34ec);
   pCVar6 = (CCharacter *)(iVar5 + -0x35dc);
   do {
-    *(uint *)&pCVar6->field_0x25b0 = 0;
-    pCVar6->carry_hands[0] = (SCarryHand)0xff;
-    pCVar6->carry_hands[1] = (SCarryHand)0xff;
-    *(ushort *)&pCVar6->field_0x25aa = 0xffff;
-    *(uint *)&pCVar6->field_0x25ac = 0xffffffff;
+    pCVar6->carry_hands[0].carry_actor = (CDemonActor *)0x0;
+    pCVar6->carry_hands[0].bone_index = -1;
+    pCVar6->carry_hands[0].secondary_bone_index = -1;
     core_xform_cpp_setIdentityMatrix3x4_FUN_005b53f0(iVar9);
     pcVar7 = (pCVar6->base).create_event;
-    *(uint *)&pCVar6->field_0x25e8 = 0x3f800000;
+    pCVar6->carry_hands[0].blend_factor = 1.0;
     core_xform_cpp_setIdentityMatrix3x4_FUN_005b53f0(iVar8);
     iVar9 = iVar9 + 0x78;
     iVar8 = iVar8 + 0x78;

@@ -11,7 +11,7 @@ void core_thehand_cpp_factoryFuncTheHand_FUN_00599040(void)
 {
   CTheHand *this_ptr;
   
-  this_ptr = (CTheHand *)debugAllocTracked1(0xc2e0);
+  this_ptr = (CTheHand *)operator_new(0xc2e0);
   if (this_ptr == (CTheHand *)0x0) {
     return;
   }

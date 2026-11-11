@@ -160,7 +160,7 @@
       "type": "pointer_cast"
     },
     {
-      "description": "'pCVar1[1].base.base.actor_name + 4' walks 1 x sizeof(CEnemy) (0xc268) + offsetof(base.base.actor_name) (0x0) + 0x4 = 0xc26c, which is exactly offsetof(CBatCreature, part_indices). Ghidra had no CBatCreature type here and reached the field by index arithmetic; write it as ((CBatCreature *)pCVar1)->part_indices (\u00a7de-pun/\u00a712). Ambiguous: CBatman::fall_event, CBride::part_indices[1], CBugs::count also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar1[1].base.base.actor_name + 4' walks 1 x sizeof(CEnemy) (0xc268) + offsetof(base.base.actor_name) (0x0) + 0x4 = 0xc26c, which is exactly offsetof(CArmour, fall_apart_event[4]). Ghidra had no CArmour type here and reached the field by index arithmetic; write it as ((CArmour *)pCVar1)->fall_apart_event[4] (\u00a7de-pun/\u00a712). Ambiguous: CBatCreature::part_indices, CBatman::fall_event, CBoneGuy::search_timer also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 13,
       "severity": "moderate",
       "text": "((CKeyFramedModelInstance *)(pCVar1[1].base.base.actor_name + 4));",

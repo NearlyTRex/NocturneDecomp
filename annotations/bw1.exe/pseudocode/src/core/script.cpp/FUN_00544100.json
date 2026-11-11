@@ -177,7 +177,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar1 = *(int *)(param_1->parsed_lines + iVar2 * 8) + -1, *param_2 = iVar1,",
+      "text": "(iVar1 = param_1->parsed_lines[iVar2].line_number + -1, *param_2 = iVar1, param_3 <= iVar1)",
       "type": "unnamed_param"
     },
     {
@@ -185,15 +185,15 @@
       "line": 20,
       "match": "param_2",
       "severity": "mild",
-      "text": "(iVar1 = *(int *)(param_1->parsed_lines + iVar2 * 8) + -1, *param_2 = iVar1,",
+      "text": "(iVar1 = param_1->parsed_lines[iVar2].line_number + -1, *param_2 = iVar1, param_3 <= iVar1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 20,
       "match": "param_3",
       "severity": "mild",
-      "text": "param_3 <= iVar1)) {",
+      "text": "(iVar1 = param_1->parsed_lines[iVar2].line_number + -1, *param_2 = iVar1, param_3 <= iVar1)",
       "type": "unnamed_param"
     },
     {

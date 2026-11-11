@@ -15,17 +15,16 @@ void __cdecl core_dfilter_cpp_CFilterCache_free_FUN_0045d770(CFilterCache *this_
   
   iVar2 = 0;
   pCVar3 = this_ptr;
-  if (0 < *(int *)this_ptr) {
+  if (0 < this_ptr->filter_count) {
     do {
-      if (*(CDemonFilter **)&pCVar3->field_0xa04 != (CDemonFilter *)0x0) {
-        pCVar1 = core_dfilter_cpp_CDemonFilter_dtor_FUN_0045d9a0
-                           (*(CDemonFilter **)&pCVar3->field_0xa04,0);
+      if (pCVar3->filters[0] != (CDemonFilter *)0x0) {
+        pCVar1 = core_dfilter_cpp_CDemonFilter_dtor_FUN_0045d9a0(pCVar3->filters[0],0);
         FUN_005c0344(pCVar1);
       }
       iVar2 = iVar2 + 1;
-      pCVar3 = (CFilterCache *)&pCVar3->field_0x4;
-    } while (iVar2 < *(int *)this_ptr);
+      pCVar3 = (CFilterCache *)pCVar3->filter_names;
+    } while (iVar2 < this_ptr->filter_count);
   }
-  *(uint *)this_ptr = 0;
+  this_ptr->filter_count = 0;
   return;
 }

@@ -14,6 +14,6 @@ void __cdecl core_gore_cpp_CBloodParticle_setup_FUN_004e3e20(CBloodParticle *thi
   this_ptr->blood_type = blood_type;
   iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,0xf);
   this_ptr->texture_index = iVar1;
-  core_particle_cpp_CParticle_setup_FUN_00532160((CParticle *)this_ptr,position,velocity);
+  core_particle_cpp_CParticle_setup_FUN_00532160(&this_ptr->base,position,velocity);
   return;
 }

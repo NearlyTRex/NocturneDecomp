@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 265,
-    "complexity_score": 209,
+    "complexity_score": 194,
     "cross_reference_count": 3,
     "function_call_count": 10,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 89,
-    "suspect_count": 10,
+    "suspect_count": 9,
     "suspect_types": [
       "raw_address_pointer_store",
-      "unnamed_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
@@ -58,7 +57,7 @@
     {
       "addr": "00521e40",
       "is_variadic": false,
-      "name": "core_moon.cpp_FUN_00521e40"
+      "name": "core_moon.cpp_CMoon_render_FUN_00521e40"
     },
     {
       "addr": "00555770",
@@ -206,7 +205,7 @@
     },
     {
       "addr": "01ccf460",
-      "name": "g_CGameInstance.field160_0xd0",
+      "name": "g_CGameInstance.game_control",
       "type": "undefined4",
       "value": null
     },
@@ -368,14 +367,6 @@
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 91,
-      "match": "field_0xd0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0xd0 = 0;",
-      "type": "unnamed_field"
     }
   ]
 }

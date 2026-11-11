@@ -21,7 +21,7 @@ void * cockpit_ckptutil_c_rotateBitmap_FUN_0043a040(char *param_1,void *param_2,
   
   uStack_1c = param_3 * param_4;
   if (param_2 == (void *)0x0) {
-    param_2 = FUN_005c08d0(uStack_1c);
+    param_2 = malloc(uStack_1c);
     if (param_2 == (void *)0x0) {
       _sprintf(acStack_6c,"Unable to allocate %u bytes for rotated bitmap file (%s).");
       _DAT_01d1d404 = 0x7b7;

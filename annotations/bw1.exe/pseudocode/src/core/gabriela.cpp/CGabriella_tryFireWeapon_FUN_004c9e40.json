@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 63,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 13,
-    "suspect_count": 4,
+    "pseudocode_lines": 16,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
-      "unresolved_funcptr"
+      "unaffected_reg"
     ],
-    "total_lines": 47
+    "total_lines": 50
   },
   "cross_references": [
     {
@@ -125,36 +124,20 @@
   },
   "suspects": [
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 8,
-      "match": "code *",
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)(*(int *)&this_ptr->field_0x1fe20 + 0x154) + 0xe4))",
-      "type": "unresolved_funcptr"
+      "text": "CDemonActor *unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x1fe20",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)(*(int *)&this_ptr->field_0x1fe20 + 0x154) + 0xe4))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x1fe20",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x1fe20);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x1fe20",
-      "severity": "mild",
-      "text": "if ((iVar1 != 0) && (*(int *)(*(int *)&this_ptr->field_0x1fe20 + 0x2dc) == 1)) {",
-      "type": "unnamed_field"
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "iVar1 = (*(((this_ptr_00->base).vtable._uc)->_uc).isGrabbable)(this_ptr_00,unaff_ESI);",
+      "type": "unaffected_reg"
     }
   ]
 }

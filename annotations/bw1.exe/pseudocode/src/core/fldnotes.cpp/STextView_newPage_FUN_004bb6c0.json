@@ -1,0 +1,157 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 20,
+    "complexity_score": 9,
+    "cross_reference_count": 4,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
+  },
+  "cross_references": [
+    {
+      "addr": "004bb6f0",
+      "from_addr": "004bb77f",
+      "name": "core_fldnotes.cpp_STextView_handleTag_FUN_004bb6f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bb2f0",
+      "from_addr": "004bb42a",
+      "name": "core_fldnotes.cpp_STextView_layoutChunk_FUN_004bb2f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bb630",
+      "from_addr": "004bb6af",
+      "name": "core_fldnotes.cpp_STextView_newLine_FUN_004bb630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bb510",
+      "from_addr": "004bb563",
+      "name": "core_fldnotes.cpp_STextView_placeResource_FUN_004bb510",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004bb6c0",
+    "address_range": [
+      [
+        "004bb6c0",
+        "004bb6eb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_STextView_newPage_FUN_004bb6c0",
+    "signature": "void __cdecl core_fldnotes_cpp_STextView_newPage_FUN_004bb6c0(STextView *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004bbbf0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextView_ensurePage_FUN_004bbbf0"
+    },
+    {
+      "addr": "004bb570",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextView_flushWord_FUN_004bb570"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "004bb42a",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_STextView_layoutChunk_FUN_004bb2f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004bb6af",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_STextView_newLine_FUN_004bb630",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "004bb77f",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_STextView_handleTag_FUN_004bb6f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004bb563",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_STextView_placeResource_FUN_004bb510",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0588235294117645,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 12,
+      "INT_ADD": 12,
+      "INT_AND": 6,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 5,
+      "LOAD": 6,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 69
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "STextView *"
+      }
+    ]
+  },
+  "suspects": []
+}

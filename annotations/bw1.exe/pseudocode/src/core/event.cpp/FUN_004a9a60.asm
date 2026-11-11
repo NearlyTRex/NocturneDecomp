@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_event_cpp_FUN_004a9a60(CEventList *param_1,CEventList *param_2,int param_3)
+; void core_event_cpp_FUN_004a9a60(CEventList *param_1,char *param_2,int param_3)
 ;
 ;
 ; XREF[3]:

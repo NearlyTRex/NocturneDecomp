@@ -2,24 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 228,
-    "complexity_score": 241,
+    "complexity_score": 212,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 101,
-    "suspect_count": 10,
+    "pseudocode_lines": 102,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
-      "unnamed_field",
-      "unresolved_funcptr",
       "unrolled_memcpy",
       "unrolled_memset",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 329
+    "total_lines": 330
   },
   "cross_references": [],
   "function": {
@@ -198,24 +196,8 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 36,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x1c))(this_ptr,ray_origin,ray_direction,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x1c))(this_ptr,ray_origin,ray_direction,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 50,
       "match": "(uint *)((int)ray_direction",
       "severity": "moderate",
       "text": "puVar6 = (uint *)((int)ray_direction + (uint)bVar8 * -8 + 4);",
@@ -223,7 +205,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 52,
       "match": "(uint *)((int)afStack_58",
       "severity": "moderate",
       "text": "*(uint *)((int)afStack_58 + (uint)bVar8 * 0xfffffff8) = *puVar6;",
@@ -231,7 +213,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 96,
       "match": "(float *)((int)afStack_b4",
       "severity": "moderate",
       "text": "out_normal[1].x = *(float *)((int)afStack_b4 + iStack_28 * 4);",
@@ -239,7 +221,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 39,
+      "line": 40,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -247,7 +229,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 96,
+      "line": 97,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "out_normal->z = 0.0;",

@@ -23,7 +23,29 @@
   {
     "kind":"class",
     "name":"CCameraView_vtable",
-    "size":1
+    "size":20,
+    "vtable_slots":[
+      {
+        "name":"dtor",
+        "offset":0
+      },
+      {
+        "name":"setupPerspectiveAndFog",
+        "offset":4
+      },
+      {
+        "name":"getFogValueAtPosition",
+        "offset":8
+      },
+      {
+        "name":"testVisibility",
+        "offset":12
+      },
+      {
+        "name":"saveAlphaTransform",
+        "offset":16
+      }
+    ]
   },
   {
     "kind":"class",
@@ -330,8 +352,31 @@
   },
   {
     "kind":"class",
+    "name":"CParticle_vtable",
+    "size":16,
+    "vtable_slots":[
+      {
+        "name":"setup",
+        "offset":0
+      },
+      {
+        "name":"process",
+        "offset":4
+      },
+      {
+        "name":"render",
+        "offset":8
+      },
+      {
+        "name":"onCollision",
+        "offset":12
+      }
+    ]
+  },
+  {
+    "kind":"class",
     "name":"CPodSearchContext",
-    "size":1
+    "size":796
   },
   {
     "kind":"class",
@@ -545,6 +590,81 @@
   },
   {
     "kind":"enum",
+    "name":"ENetPacketType",
+    "size":1,
+    "values":[
+      {
+        "name":"PACKET_NONE",
+        "value":0
+      },
+      {
+        "name":"PACKET_PLAYER_ANNOUNCE",
+        "value":1
+      },
+      {
+        "name":"PACKET_SERVER_ACCEPT",
+        "value":2
+      },
+      {
+        "name":"PACKET_GAME_START",
+        "value":3
+      },
+      {
+        "name":"PACKET_PING",
+        "value":4
+      },
+      {
+        "name":"PACKET_PING_RESPONSE",
+        "value":5
+      },
+      {
+        "name":"PACKET_CHAT_MESSAGE",
+        "value":6
+      },
+      {
+        "name":"PACKET_CHAT_ACK",
+        "value":7
+      },
+      {
+        "name":"PACKET_SYNC_STAGE_REQ",
+        "value":8
+      },
+      {
+        "name":"PACKET_SYNC_STAGE_RESP",
+        "value":9
+      },
+      {
+        "name":"PACKET_PLAYER_STATE",
+        "value":10
+      },
+      {
+        "name":"PACKET_GAME_SETTINGS",
+        "value":11
+      },
+      {
+        "name":"PACKET_SETTINGS_ACK",
+        "value":12
+      },
+      {
+        "name":"PACKET_DISCONNECT",
+        "value":13
+      },
+      {
+        "name":"PACKET_UNUSED",
+        "value":14
+      },
+      {
+        "name":"PACKET_SIM_FRAME",
+        "value":15
+      },
+      {
+        "name":"PACKET_PLAYER_INPUT",
+        "value":16
+      }
+    ]
+  },
+  {
+    "kind":"enum",
     "name":"ETurretState",
     "size":4,
     "values":[
@@ -573,12 +693,17 @@
   {
     "kind":"struct",
     "name":"SArmAimData",
-    "size":1
+    "size":32
   },
   {
     "kind":"struct",
     "name":"SButtonStruct",
     "size":44
+  },
+  {
+    "kind":"struct",
+    "name":"SMRGLKeyframe",
+    "size":20
   },
   {
     "kind":"struct",
@@ -593,6 +718,6 @@
   {
     "kind":"struct",
     "name":"STriangleRef",
-    "size":1
+    "size":28
   }
 ]

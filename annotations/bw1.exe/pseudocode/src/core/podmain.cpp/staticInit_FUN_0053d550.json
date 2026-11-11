@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 22,
+    "complexity_score": 7,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 7,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unknown_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 19
   },
   "cross_references": [],
@@ -42,7 +40,7 @@
   "globals": [
     {
       "addr": "01e7d5b4",
-      "name": "g_CDemonPodInstance.field404_0x194",
+      "name": "g_CDemonPodInstance.base.vtable",
       "type": "undefined4",
       "value": null
     }
@@ -84,14 +82,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Unknown/mangled field access",
-      "line": 6,
-      "match": "._404_4_",
-      "severity": "mild",
-      "text": "g_CDemonPodInstance._404_4_ = &g_CDemonPodVTable;",
-      "type": "unknown_field"
-    }
-  ]
+  "suspects": []
 }

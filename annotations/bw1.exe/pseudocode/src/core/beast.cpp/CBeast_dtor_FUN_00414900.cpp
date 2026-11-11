@@ -26,7 +26,8 @@ CBeast * core_beast_cpp_CBeast_dtor_FUN_00414900(CBeast *this_ptr,uint flags)
   pCVar2 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)(iVar1 + -0x93c),0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
                      ((CDeformableModelInstance *)(pCVar2[-0x19].filenames[0] + 0x10),0);
-  pCVar4 = core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&pCVar3[-1].field_0x224c,1);
+  pCVar4 = core_actor_cpp_CDemonActor_dtor_FUN_00408730
+                     ((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);
   if ((flags & 2) == 0) {
     return (CBeast *)pCVar4;
   }

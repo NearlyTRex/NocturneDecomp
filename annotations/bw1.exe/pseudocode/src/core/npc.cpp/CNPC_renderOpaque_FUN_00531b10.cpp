@@ -11,8 +11,8 @@ int __cdecl core_npc_cpp_CNPC_renderOpaque_FUN_00531b10(CNPC *this_ptr)
 {
   int iVar1;
   
-  if (*(int *)&this_ptr->field_0x1fab0 == 0) {
-    if (*(int *)&(this_ptr->base).field_0x27a8 == 0) {
+  if (this_ptr->pool_me == 0) {
+    if ((this_ptr->base).is_spectral == 0) {
       iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042f240(&this_ptr->base);
       return iVar1;
     }
@@ -24,7 +24,7 @@ int __cdecl core_npc_cpp_CNPC_renderOpaque_FUN_00531b10(CNPC *this_ptr)
         return 0;
       }
     }
-    if ((*(int *)&(this_ptr->base).field_0x27a8 != 0) && (*(int *)&g_CGamePtr->field_0x25c != 0)) {
+    if (((this_ptr->base).is_spectral != 0) && (g_CGamePtr->goggles_active != 0)) {
       iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,2);
       if (iVar1 == 1) {
         iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042f240(&this_ptr->base);

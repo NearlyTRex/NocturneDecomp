@@ -53,15 +53,14 @@ void core_skeleton_cpp_computeBoneModelMatrices_FUN_0056b130(float *param_1,CDef
         param_1[iVar1 * 0xc + 0x200] = pfVar2[0x193] * param_1[iVar1 * 0xc + 0x200];
         param_1[iVar1 * 0xc + 0x201] = pfVar2[0x193] * param_1[iVar1 * 0xc + 0x201];
       }
-      if (*(int *)(pCStack_28->bone_list + 0x20) < 0) {
+      iVar1 = pCStack_28->bone_list[0].parent_index;
+      if (iVar1 < 0) {
         pfVar3[0x1fa] = *(float *)((int)&param_2->bone_origins[0].x + iStack_20) + *param_1;
         pfVar3[0x1fe] = *(float *)((int)&param_2->bone_origins[0].y + iStack_20) + param_1[1];
         pfVar3[0x202] = *(float *)((int)&param_2->bone_origins[0].z + iStack_20) + param_1[2];
       }
       else {
-        core_xform_cpp_FUN_005b5080
-                  ((int)&pCStack_2c->x + iStack_20,
-                   pCStack_18 + *(int *)(pCStack_28->bone_list + 0x20));
+        core_xform_cpp_FUN_005b5080((int)&pCStack_2c->x + iStack_20,pCStack_18 + iVar1);
         fStack_48 = fStack_3c;
         *(uint *)((int)&stack0xffffffbc + (uint)bVar4 * -8) =
              *(uint *)(&stack0xffffffc8 + (uint)bVar4 * -8);
@@ -76,7 +75,7 @@ void core_skeleton_cpp_computeBoneModelMatrices_FUN_0056b130(float *param_1,CDef
       pCStack_14 = pCStack_14 + 1;
       pCStack_24 = pCStack_24 + 1;
       iStack_20 = iStack_20 + 0xc;
-      pCStack_28 = (CSkeleton *)&pCStack_28->field_0x24;
+      pCStack_28 = (CSkeleton *)((pCStack_28->motion_list).state_names[1] + 2);
       iStack_1c = iStack_1c + 1;
     } while (iStack_1c < pCStack_30->bone_count);
   }

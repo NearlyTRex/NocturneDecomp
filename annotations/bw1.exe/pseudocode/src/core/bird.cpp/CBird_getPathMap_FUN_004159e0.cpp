@@ -9,5 +9,5 @@
 CPathMap * __cdecl core_bird_cpp_CBird_getPathMap_FUN_004159e0(CBird *this_ptr)
 
 {
-  return (CPathMap *)&this_ptr->field_0xc1d0;
+  return &this_ptr->path_map;
 }

@@ -11,7 +11,7 @@ void __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_00555360(CDemonSet *
 {
   int iVar1;
   
-  if (*(int *)&g_CGamePtr->field_0x20c == 0) {
+  if (g_CGamePtr->suppress_set_geometry == 0) {
     if (DAT_00612560->advanced_culling_enabled == 0) {
       iVar1 = 0;
       if (0 < primitive_count) {

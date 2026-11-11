@@ -31,11 +31,12 @@ void __cdecl core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00410640(CBaronWe
       this_ptr->baron = pCVar1;
       core_mission_cpp_CDemonMission_generateActorName_FUN_0051bd60
                 (this_ptr_00,(CDemonActor *)pCVar1);
-      (*(code *)**(uint **)&this_ptr->baron->field_0x154)(this_ptr->baron);
+      (*((this_ptr->baron->base).base.base.vtable._ub)->setup)((CDemonActor *)this_ptr->baron);
       core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160
                 (0x01D2C900,(CDemonActor *)this_ptr->baron);
-      (**(code **)(*(int *)&this_ptr->baron->field_0x154 + 0x68))
-                (this_ptr->baron,&(this_ptr->base).base.location,&(this_ptr->base).base.orient);
+      (*((this_ptr->baron->base).base.base.vtable._ub)->setPositionAndOrientation)
+                ((CDemonActor *)this_ptr->baron,&(this_ptr->base).base.location.position,
+                 (CVector3f *)&(this_ptr->base).base.orient);
       return;
     }
   }

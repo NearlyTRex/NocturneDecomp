@@ -34,7 +34,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_setup_FUN_005af380(CWerewolf *this_ptr)
   fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.0,1.0);
   this_ptr->eye_glow_phase = fVar2;
   if (this_ptr->type == WEREWOLF_TYPE_TRAIN) {
-    *(uint *)&(this_ptr->base).base.field_0x2ff0 = 0x3fc00000;
+    (this_ptr->base).base.collision_cylinder_radius = 1.5;
   }
   this_ptr->sfx_handle = 0;
   fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(10.0,30.0);

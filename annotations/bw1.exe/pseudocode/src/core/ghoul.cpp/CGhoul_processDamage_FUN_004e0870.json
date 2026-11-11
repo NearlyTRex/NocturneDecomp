@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 345,
-    "complexity_score": 293,
+    "complexity_score": 227,
     "cross_reference_count": 0,
     "function_call_count": 15,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 138,
-    "suspect_count": 12,
+    "pseudocode_lines": 137,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk",
-      "unnamed_field",
       "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 483
+    "total_lines": 482
   },
   "cross_references": [],
   "function": {
@@ -247,56 +246,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + iVar7 * 4) == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[10] * 4) == 0)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 73,
-      "match": "field_0x3004",
-      "severity": "mild",
-      "text": "if (*(int *)&(this_ptr->base).base.field_0x3004 < 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 82,
-      "match": "field_0x3004",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&(this_ptr->base).base.field_0x3004) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 84,
-      "match": "field_0x3008",
-      "severity": "mild",
-      "text": "if (*(int *)&(pCVar3->base).base.field_0x3008 == this_ptr->part_indices[9]) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 90,
-      "match": "field_0x3004",
-      "severity": "mild",
-      "text": "} while (iVar5 < *(int *)&(this_ptr->base).base.field_0x3004);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 106,
+      "line": 105,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(iVar7 + 0xa8))(this_ptr);",
@@ -312,7 +263,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 89,
+      "line": 88,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pCVar3 = (CGhoul *)((int)&(pCVar3->base).base.base.orient + 8);",
@@ -320,7 +271,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 89,
+      "line": 88,
       "match": "pCVar3 = (T *)((int)&(pCVar3->FIELD).SUBFIELD + CONST)",
       "severity": "moderate",
       "text": "pCVar3 = (CGhoul *)((int)&(pCVar3->base).base.base.orient + 8);",

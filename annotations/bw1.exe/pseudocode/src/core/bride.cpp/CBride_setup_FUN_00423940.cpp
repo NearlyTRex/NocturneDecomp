@@ -19,7 +19,7 @@ void __cdecl core_bride_cpp_CBride_setup_FUN_00423940(CBride *this_ptr)
   
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00569b20(this_ptr_00);
-  *(uint *)&this_ptr->field_0xc28c = 0;
+  this_ptr->dismember_death_timer = 0.0;
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(this_ptr_00);
   DAT_007c5388 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0
                            (this_ptr_01,"Bip01 Head",1);
@@ -73,8 +73,8 @@ void __cdecl core_bride_cpp_CBride_setup_FUN_00423940(CBride *this_ptr)
   this_ptr->part_indices[8] = iVar1;
   core_enemy_cpp_CEnemy_setup_FUN_004a0510(&this_ptr->base);
   fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(2.0,20.0);
-  *(uint *)&this_ptr->field_0xc294 = 0;
-  *(uint *)&this_ptr->field_0xc298 = 0;
-  *(float *)&this_ptr->field_0xc290 = fVar2;
+  this_ptr->sfx_handles[0] = 0;
+  this_ptr->sfx_handles[1] = 0;
+  this_ptr->action_timer = fVar2;
   return;
 }

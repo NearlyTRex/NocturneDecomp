@@ -11,7 +11,7 @@ ECollisionType __cdecl core_djien_cpp_CDjien_getCollisionType_FUN_00461090(CDjie
 {
   ECollisionType EVar1;
   
-  if (*(int *)collision_info == 1) {
+  if ((collision_info->ray_query).ray_type == 1) {
     return COLLISION_TYPE_CUSTOM;
   }
   EVar1 = core_charactr_cpp_CCharacter_getCollisionType_FUN_004310b0

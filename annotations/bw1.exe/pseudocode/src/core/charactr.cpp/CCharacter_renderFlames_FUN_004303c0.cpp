@@ -20,8 +20,8 @@ void __cdecl core_charactr_cpp_CCharacter_renderFlames_FUN_004303c0(CCharacter *
     this_ptr_00 = &this_ptr->flames[0].base;
     pCVar2 = this_ptr;
     do {
-      if ((*(int *)(&(this_ptr->model).field_0x2140 + *(int *)pCVar2->fires * 4) != 0) &&
-         (*(int *)(pCVar1->bone_list + *(int *)&pCVar2->fires[0].field_0x4 * 0x24 + 0x20) != -1)) {
+      if (((this_ptr->model).part_data.visibility_flags[pCVar2->fires[0].bone_part] != 0) &&
+         (pCVar1->bone_list[pCVar2->fires[0].bone_index].parent_index != -1)) {
         (*((UActorVTable *)(this_ptr_00->actor_name + 0x154))->_ub->renderTransparent)(this_ptr_00);
       }
       pCVar2 = (CCharacter *)((pCVar2->base).actor_name + 0x18);

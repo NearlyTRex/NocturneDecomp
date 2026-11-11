@@ -119,7 +119,7 @@ void core_doc_cpp_FUN_0046f200(int param_1,int param_2)
     local_18 = (CDeformableModelInstance *)(param_1 + 0x158);
     this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(local_18);
     iVar5 = core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0
-                      ((CMotionList *)this_ptr,motion_name,iVar5);
+                      (&this_ptr->motion_list,motion_name,iVar5);
     local_28 = core_motion_cpp_FUN_00525110(local_18,iVar5,*(uint *)(param_1 + 0x2c9c));
     local_14 = local_28;
     core_skeleton_cpp_FUN_00568100

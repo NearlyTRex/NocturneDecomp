@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 284,
-    "complexity_score": 857,
+    "complexity_score": 822,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 107,
-    "suspect_count": 73,
+    "suspect_count": 70,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -113,13 +112,13 @@
     },
     {
       "addr": "01ccf3a4",
-      "name": "g_CGameInstance.field11_0x14",
+      "name": "g_CGameInstance.blood_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf58c",
-      "name": "g_CGameInstance.field460_0x1fc",
+      "name": "g_CGameInstance.gratuitous_dismemberment",
       "type": "undefined4",
       "value": null
     }
@@ -401,22 +400,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x1fc",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x1fc != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 57,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x14 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 63,
       "match": "param_1",
@@ -645,7 +628,7 @@
       "line": 90,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(&(param_1->model).field_0x2140 + param_1[1].base.collision_disabled * 4) == 0) {",
+      "text": "if ((param_1->model).part_data.visibility_flags[param_1[1].base.collision_disabled] == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -653,16 +636,8 @@
       "line": 90,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(&(param_1->model).field_0x2140 + param_1[1].base.collision_disabled * 4) == 0) {",
+      "text": "if ((param_1->model).part_data.visibility_flags[param_1[1].base.collision_disabled] == 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 90,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "if (*(int *)(&(param_1->model).field_0x2140 + param_1[1].base.collision_disabled * 4) == 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

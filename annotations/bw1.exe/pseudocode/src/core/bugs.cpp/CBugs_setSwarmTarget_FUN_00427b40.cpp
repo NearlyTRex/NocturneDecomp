@@ -85,12 +85,12 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00427b40(CBugs *this_ptr,CDe
           return;
         }
         do {
-          *(uint *)&pCVar9->bugs[0].field_0x2c = 0xffffffff;
-          *(int *)&pCVar9->bugs[0].field_0x30 = (&DAT_007c55f4)[iVar8];
+          pCVar9->bugs[0].current_vertex = -1;
+          pCVar9->bugs[0].dest_vertex = (&DAT_007c55f4)[iVar8];
           iVar6 = core_actor_cpp_getRandomInt_FUN_0040cc60
                             (0,(int)(CONCAT44(this_ptr->swarm_vertex_count >> 0x1f,
                                               this_ptr->swarm_vertex_count) / 0xf));
-          *(int *)&pCVar9->bugs[0].field_0x3c = iVar6;
+          pCVar9->bugs[0].downward_bias = iVar6;
           iVar8 = iVar8 + 1;
           if ((this_ptr->swarm_vertex_count <= iVar8) ||
              (iVar4 + 0x2a < pCVar1[(&DAT_007c55f4)[iVar8]].y)) {

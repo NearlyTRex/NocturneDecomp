@@ -13,19 +13,19 @@ int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(CMotionList
 {
   int iVar1;
   int iVar2;
-  CMotionList *str1;
+  SMotion *str1;
   
   iVar2 = 0;
-  if (0 < *(int *)(this_ptr + 0x1c24)) {
-    str1 = this_ptr + 0x1c28;
+  if (0 < this_ptr->motion_count) {
+    str1 = this_ptr->motions;
     do {
-      iVar1 = _stricmp((char *)str1,motion_name);
+      iVar1 = _stricmp(str1->motion_name,motion_name);
       if (iVar1 == 0) {
         return iVar2;
       }
       iVar2 = iVar2 + 1;
-      str1 = str1 + 0x120;
-    } while (iVar2 < *(int *)(this_ptr + 0x1c24));
+      str1 = str1 + 1;
+    } while (iVar2 < this_ptr->motion_count);
   }
   if (error_on_not_found == 0) {
     return -1;

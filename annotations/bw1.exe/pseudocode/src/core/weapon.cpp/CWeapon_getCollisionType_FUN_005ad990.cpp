@@ -9,5 +9,5 @@
 ECollisionType __cdecl core_weapon_cpp_CWeapon_getCollisionType_FUN_005ad990(CWeapon *this_ptr,SCollisionInfo *collision_info)
 
 {
-  return (uint)(*(int *)collision_info == 4);
+  return (uint)((collision_info->ray_query).ray_type == 4);
 }

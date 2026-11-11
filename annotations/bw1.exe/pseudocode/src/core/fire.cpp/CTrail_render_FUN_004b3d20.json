@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 488,
+    "complexity_score": 485,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 98,
+    "pseudocode_lines": 95,
     "suspect_count": 36,
     "suspect_types": [
       "pointer_cast",
@@ -17,7 +17,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 319
+    "total_lines": 316
   },
   "cross_references": [
     {
@@ -560,36 +560,36 @@
       "line": 59,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_00580173((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&local_2c);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_2c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 64,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&local_20);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_20);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 71,
+      "line": 69,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&local_14);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_14);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 74,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),&local_5c);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_5c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 75,
       "match": "DAT_0062902c",
       "severity": "mild",
       "text": "DAT_0062902c = 0x80000;",
@@ -597,7 +597,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 80,
       "match": "DAT_00629090",
       "severity": "mild",
       "text": "DAT_00629090 = 0x80000;",
@@ -605,7 +605,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 83,
       "match": "DAT_00629034",
       "severity": "mild",
       "text": "DAT_00629034 = 0xffff;",
@@ -613,7 +613,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 84,
       "match": "DAT_00629038",
       "severity": "mild",
       "text": "DAT_00629038 = 0xffff;",
@@ -621,7 +621,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 85,
       "match": "DAT_0062903c",
       "severity": "mild",
       "text": "DAT_0062903c = 0xffff;",
@@ -629,7 +629,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 86,
       "match": "DAT_00629064",
       "severity": "mild",
       "text": "DAT_00629064 = 0xffff;",
@@ -637,7 +637,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 87,
       "match": "DAT_00629068",
       "severity": "mild",
       "text": "DAT_00629068 = 0xffff;",
@@ -645,7 +645,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 88,
       "match": "DAT_0062906c",
       "severity": "mild",
       "text": "DAT_0062906c = 0xffff;",
@@ -653,7 +653,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 89,
       "match": "DAT_00629094",
       "severity": "mild",
       "text": "DAT_00629094 = 0xffff;",
@@ -661,7 +661,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 93,
+      "line": 90,
       "match": "DAT_00629098",
       "severity": "mild",
       "text": "DAT_00629098 = 0xffff;",
@@ -669,7 +669,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
+      "line": 91,
       "match": "DAT_0062909c",
       "severity": "mild",
       "text": "DAT_0062909c = 0xffff;",
@@ -677,7 +677,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 92,
       "match": "DAT_006290c4",
       "severity": "mild",
       "text": "DAT_006290c4 = 0xffff;",
@@ -685,7 +685,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 96,
+      "line": 93,
       "match": "DAT_006290c8",
       "severity": "mild",
       "text": "DAT_006290c8 = 0xffff;",
@@ -693,7 +693,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 94,
       "match": "DAT_006290cc",
       "severity": "mild",
       "text": "DAT_006290cc = 0xffff;",
@@ -701,7 +701,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 95,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050(DAT_00612560,&local_84);",
@@ -709,7 +709,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 97,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);",
@@ -733,7 +733,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_00629030`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_00629030` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 79,
+      "line": 76,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_00629030 = 0xf80000;",
@@ -741,7 +741,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_0062905c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0062905c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 80,
+      "line": 77,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_0062905c = 0xf80000;",
@@ -749,7 +749,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_00629060`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_00629060` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 81,
+      "line": 78,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_00629060 = 0xf80000;",
@@ -757,7 +757,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_0062908c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0062908c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 82,
+      "line": 79,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_0062908c = 0xf80000;",

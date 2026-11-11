@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1216,
-    "complexity_score": 1521,
+    "complexity_score": 1266,
     "cross_reference_count": 1,
     "function_call_count": 57,
     "global_count": 73,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 371,
-    "suspect_count": 110,
+    "suspect_count": 85,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_pointer_store",
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "unrolled_strcpy",
@@ -628,7 +627,7 @@
     },
     {
       "addr": "01cc8044",
-      "name": "g_CFieldNotesInstance.field64_0x40",
+      "name": "g_CFieldNotesInstance.is_displayed",
       "type": "undefined4",
       "value": null
     },
@@ -754,7 +753,7 @@
     },
     {
       "addr": "01e822b8",
-      "name": "g_CDemonSetInstance.cameras[0].field332_0x14c",
+      "name": "g_CDemonSetInstance.cameras[0].camera_group",
       "type": "undefined4",
       "value": null
     },
@@ -910,32 +909,16 @@
       "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x228 != 0) {",
+      "text": "if (param_1->profile_mode != 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 60,
-      "match": "field_0x228",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x228 != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 65,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)&param_1->field_0xe0 == 0) && (g_CNetGamePtr->has_pending_sim_frame == 0)) {",
+      "text": "if ((param_1->cinematic_skip_in_progress == 0) && (g_CNetGamePtr->has_pending_sim_frame == 0)) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0xe0",
-      "severity": "mild",
-      "text": "if ((*(int *)&param_1->field_0xe0 == 0) && (g_CNetGamePtr->has_pending_sim_frame == 0)) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -958,24 +941,8 @@
       "line": 73,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((*(int *)&g_CFieldNotesPtr->field_0x40 == 0) && (*(int *)&param_1->field_0x25c == 0)) &&",
+      "text": "if (((g_CFieldNotesPtr->is_displayed == 0) && (param_1->goggles_active == 0)) &&",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 73,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "if (((*(int *)&g_CFieldNotesPtr->field_0x40 == 0) && (*(int *)&param_1->field_0x25c == 0)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 73,
-      "match": "field_0x25c",
-      "severity": "mild",
-      "text": "if (((*(int *)&g_CFieldNotesPtr->field_0x40 == 0) && (*(int *)&param_1->field_0x25c == 0)) &&",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -1022,16 +989,8 @@
       "line": 81,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x218 == 0) {",
+      "text": "if (param_1->is_paused == 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 81,
-      "match": "field_0x218",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x218 == 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -1094,24 +1053,8 @@
       "line": 124,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((*(int *)&g_CFieldNotesPtr->field_0x40 == 0) && (*(int *)&param_1->field_0x25c == 0)) &&",
+      "text": "if (((g_CFieldNotesPtr->is_displayed == 0) && (param_1->goggles_active == 0)) &&",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 124,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "if (((*(int *)&g_CFieldNotesPtr->field_0x40 == 0) && (*(int *)&param_1->field_0x25c == 0)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 124,
-      "match": "field_0x25c",
-      "severity": "mild",
-      "text": "if (((*(int *)&g_CFieldNotesPtr->field_0x40 == 0) && (*(int *)&param_1->field_0x25c == 0)) &&",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -1134,40 +1077,16 @@
       "line": 129,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x228 != 0) {",
+      "text": "if (param_1->profile_mode != 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 129,
-      "match": "field_0x228",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x228 != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 137,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x224 == 0) {",
+      "text": "if (param_1->skip_frame_render == 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 137,
-      "match": "field_0x224",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x224 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 139,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CFieldNotesPtr->field_0x40 == 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -1182,32 +1101,16 @@
       "line": 141,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x25c == 0) {",
+      "text": "if (param_1->goggles_active == 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 141,
-      "match": "field_0x25c",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x25c == 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 142,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x260 != 0) {",
+      "text": "if (param_1->special_view_active != 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 142,
-      "match": "field_0x260",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x260 != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
@@ -1238,16 +1141,8 @@
       "line": 157,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((*(int *)&param_1->field_0x22c != 0) ||",
+      "text": "if (((param_1->developer_mode_enabled != 0) ||",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 157,
-      "match": "field_0x22c",
-      "severity": "mild",
-      "text": "if (((*(int *)&param_1->field_0x22c != 0) ||",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
@@ -1374,16 +1269,8 @@
       "line": 248,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x200 == 0) {",
+      "text": "if (param_1->camera_debug_enabled == 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 248,
-      "match": "field_0x200",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x200 == 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -1478,7 +1365,7 @@
       "line": 281,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_2d_c_drawText_FUN_00401fe0(&param_1->field_0xec,0,DAT_0061b49c + -0x21);",
+      "text": "engine_2d_c_drawText_FUN_00401fe0(param_1->debug_info_string,0,DAT_0061b49c + -0x21);",
       "type": "unnamed_param"
     },
     {
@@ -1486,39 +1373,15 @@
       "line": 281,
       "match": "DAT_0061b49c",
       "severity": "mild",
-      "text": "engine_2d_c_drawText_FUN_00401fe0(&param_1->field_0xec,0,DAT_0061b49c + -0x21);",
+      "text": "engine_2d_c_drawText_FUN_00401fe0(param_1->debug_info_string,0,DAT_0061b49c + -0x21);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 281,
-      "match": "field_0xec",
-      "severity": "mild",
-      "text": "engine_2d_c_drawText_FUN_00401fe0(&param_1->field_0xec,0,DAT_0061b49c + -0x21);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 305,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x1f4 != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 305,
-      "match": "field_0x1f4",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x1f4 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 308,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)&param_1->field_0x1f8 != 0) && (param_1->screen_clear_enabled != 0)) {",
+      "text": "if (param_1->event_processing_enabled != 0) {",
       "type": "unnamed_param"
     },
     {
@@ -1526,16 +1389,16 @@
       "line": 308,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)&param_1->field_0x1f8 != 0) && (param_1->screen_clear_enabled != 0)) {",
+      "text": "if ((param_1->subtitle_system_enabled != 0) && (param_1->screen_clear_enabled != 0)) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 308,
-      "match": "field_0x1f8",
+      "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)&param_1->field_0x1f8 != 0) && (param_1->screen_clear_enabled != 0)) {",
-      "type": "unnamed_field"
+      "text": "if ((param_1->subtitle_system_enabled != 0) && (param_1->screen_clear_enabled != 0)) {",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -1558,16 +1421,8 @@
       "line": 312,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x214 != 0) {",
+      "text": "if (param_1->editor_tools_enabled != 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 312,
-      "match": "field_0x214",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x214 != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -1590,16 +1445,8 @@
       "line": 333,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0xafc != 0) {",
+      "text": "if (param_1->show_customizable_keys != 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 333,
-      "match": "field_0xafc",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0xafc != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -1622,32 +1469,16 @@
       "line": 342,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x218 != 0) {",
+      "text": "if (param_1->is_paused != 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 342,
-      "match": "field_0x218",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x218 != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 345,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)&param_1->field_0xd0 == 3) &&",
+      "text": "if ((param_1->game_control == CONTROL_MODE_POINT_AND_CLICK) &&",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 345,
-      "match": "field_0xd0",
-      "severity": "mild",
-      "text": "if ((*(int *)&param_1->field_0xd0 == 3) &&",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -1662,7 +1493,7 @@
       "line": 350,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar4 = *(uint *)&param_1->field_0x25c | *(uint *)&param_1->field_0x260;",
+      "text": "uVar4 = param_1->goggles_active | param_1->special_view_active;",
       "type": "unnamed_param"
     },
     {
@@ -1670,40 +1501,16 @@
       "line": 350,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar4 = *(uint *)&param_1->field_0x25c | *(uint *)&param_1->field_0x260;",
+      "text": "uVar4 = param_1->goggles_active | param_1->special_view_active;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 350,
-      "match": "field_0x25c",
-      "severity": "mild",
-      "text": "uVar4 = *(uint *)&param_1->field_0x25c | *(uint *)&param_1->field_0x260;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 350,
-      "match": "field_0x260",
-      "severity": "mild",
-      "text": "uVar4 = *(uint *)&param_1->field_0x25c | *(uint *)&param_1->field_0x260;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 363,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x218 = 0;",
+      "text": "param_1->is_paused = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 363,
-      "match": "field_0x218",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x218 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -1718,16 +1525,8 @@
       "line": 366,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0xe0 == 0) {",
+      "text": "if (param_1->cinematic_skip_in_progress == 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 366,
-      "match": "field_0xe0",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0xe0 == 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

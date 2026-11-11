@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 262,
+    "complexity_score": 282,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 77,
-    "suspect_count": 16,
+    "pseudocode_lines": 82,
+    "suspect_count": 18,
     "suspect_types": [
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 176
+    "total_lines": 181
   },
   "cross_references": [
     {
@@ -314,63 +313,55 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 12,
-      "match": "auStackY_100c",
+      "line": 14,
+      "match": "afStackY_100c",
       "severity": "moderate",
-      "text": "uint auStackY_100c [944];",
+      "text": "float afStackY_100c [944];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "(&model_ptr->field_0xe80 + *(int *)(this_ptr + iVar2 + 0x37b90) * 0x30);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 35,
+      "line": 38,
       "match": "&stack0xffffffac",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)&stack0xffffffac;",
+      "text": "puVar4 = (uint *)&stack0xffffffac;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 36,
+      "line": 39,
       "match": "&stack0xffffff7c",
       "severity": "moderate",
-      "text": "puVar4 = (uint *)&stack0xffffff7c;",
+      "text": "puVar6 = (uint *)&stack0xffffff7c;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 42,
+      "line": 46,
       "match": "&stack0xffffff7c",
       "severity": "moderate",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&stack0xffffff7c,this_ptr + iVar2 + 0x37b98);",
+      "text": "(&stack0xffffff7c,&this_ptr->collide_bones[bone_index].world_matrix);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 43,
+      "line": 47,
       "match": "&stack0xfffffeec",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)&stack0xfffffeec;",
+      "text": "pfVar3 = (float *)&stack0xfffffeec;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 44,
+      "line": 48,
       "match": "&stack0xfffffebc",
       "severity": "moderate",
-      "text": "puVar4 = &stack0xfffffebc;",
+      "text": "pfVar5 = &stack0xfffffebc;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 59,
+      "line": 63,
       "match": "&stack0xfffffebc",
       "severity": "moderate",
       "text": "core_xform_cpp_inverse_FUN_005b6380(&stack0xfffffebc);",
@@ -378,39 +369,63 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 60,
+      "line": 64,
       "match": "&stack0xffffff1c",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)&stack0xffffff1c;",
+      "text": "puVar4 = (uint *)&stack0xffffff1c;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 61,
+      "line": 65,
       "match": "&stack0xffffff4c",
       "severity": "moderate",
-      "text": "puVar4 = (uint *)&stack0xffffff4c;",
+      "text": "puVar6 = (uint *)&stack0xffffff4c;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 71,
+      "line": 76,
       "match": "&stack0xffffffe0",
       "severity": "moderate",
-      "text": "local_14[(uint)bVar5 * -2] = (&stack0xffffffe0)[(uint)bVar5 * 0xfffffffe];",
+      "text": "(&stack0xffffffe0)[(uint)bVar7 * -2 + 3] = (&stack0xffffffe0)[(uint)bVar7 * 0xfffffffe];",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 73,
+      "line": 76,
       "match": "&stack0xffffffe0",
       "severity": "moderate",
-      "text": "(&stack0xffffffe0)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];",
+      "text": "(&stack0xffffffe0)[(uint)bVar7 * -2 + 3] = (&stack0xffffffe0)[(uint)bVar7 * 0xfffffffe];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 77,
+      "match": "&stack0xffffffe0",
+      "severity": "moderate",
+      "text": "(&stack0xffffffe0)[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 78,
+      "match": "&stack0xffffffe0",
+      "severity": "moderate",
+      "text": "(&stack0xffffffe0)[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 79,
+      "match": "&stack0xffffffe8",
+      "severity": "moderate",
+      "text": "if (pCVar2 == (CVector3f *)&stack0xffffffe8) {",
       "type": "stack_ref"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 37,
+      "line": 40,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -418,7 +433,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 45,
+      "line": 49,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -426,7 +441,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 62,
+      "line": 66,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",

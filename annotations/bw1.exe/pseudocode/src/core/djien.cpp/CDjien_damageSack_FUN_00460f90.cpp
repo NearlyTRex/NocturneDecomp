@@ -16,30 +16,30 @@ void __cdecl core_djien_cpp_CDjien_damageSack_FUN_00460f90(CDjien *this_ptr,SDam
   int iVar2;
   CBodyPart *body_part;
   
-  iVar2 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x14c))(this_ptr,*(uint *)damage);
+  iVar2 = (*(((this_ptr->base).base.base.vtable._uh)->_uh).reset)((CHero *)this_ptr);
   if (iVar2 == -1) {
-    *(uint *)(damage + 4) = 0;
-    *(uint *)(damage + 8) = 0;
+    damage->damage_amount = 0.0;
+    damage->gore_multiplier = 0.0;
   }
   else {
     fVar1 = (float)_DAT_00612270;
-    *(float *)(&this_ptr->field_0xc2d8 + iVar2 * 4) =
-         *(float *)(damage + 4) + *(float *)(&this_ptr->field_0xc2d8 + iVar2 * 4);
-    if (fVar1 < *(float *)(&this_ptr->field_0xc2d8 + iVar2 * 4)) {
-      *(int *)&this_ptr->field_0xc2d0 = *(int *)&this_ptr->field_0xc2d0 + 1;
+    this_ptr->sack_damage[iVar2] = damage->damage_amount + this_ptr->sack_damage[iVar2];
+    if (fVar1 < this_ptr->sack_damage[iVar2]) {
+      this_ptr->num_sacks_blown = this_ptr->num_sacks_blown + 1;
       body_part = core_bodypart_cpp_createBodyPart_FUN_00418940
-                            ((CVector3f *)&this_ptr->field_0x20,
-                             (UOrientationVector *)&this_ptr->field_0x30,(CVector3f *)(damage + 0xc)
-                             ,(CDemonActor *)this_ptr,0,0,BLOOD_TYPE_RED);
+                            (&(this_ptr->base).base.base.location.position,
+                             &(this_ptr->base).base.base.orient,&damage->impact_point,
+                             (CDemonActor *)this_ptr,0,0,BLOOD_TYPE_RED);
       body_part->dont_pick_me_up = 1;
       core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00431210
-                ((CCharacter *)this_ptr,body_part,*(int *)damage,0);
+                ((CCharacter *)this_ptr,body_part,damage->hit_part_index,0);
       core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_004352e0
                 ((CCharacter *)this_ptr,"limb.wav");
-      (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))(this_ptr,"djien-heart?.wav @ 6");
+      (*((this_ptr->base).base.base.vtable._ub)->playSound)
+                ((CDemonActor *)this_ptr,"djien-heart?.wav @ 6");
       core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00419b90(body_part);
       this_ptr_00 = 0x01C51D80;
-      *(float *)(damage + 8) = *(float *)(damage + 8) * (float)_DAT_005d8e60;
+      damage->gore_multiplier = damage->gore_multiplier * (float)_DAT_005d8e60;
       core_event_cpp_CEventList_executeCommands_FUN_004a1b70(this_ptr_00,"DjienSackBlown");
       return;
     }

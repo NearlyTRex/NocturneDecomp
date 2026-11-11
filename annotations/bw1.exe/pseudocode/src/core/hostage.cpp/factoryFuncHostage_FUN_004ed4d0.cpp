@@ -11,7 +11,7 @@ void core_hostage_cpp_factoryFuncHostage_FUN_004ed4d0(void)
 {
   CHostage *this_ptr;
   
-  this_ptr = (CHostage *)debugAllocTracked1(0x1fea0);
+  this_ptr = (CHostage *)operator_new(0x1fea0);
   if (this_ptr == (CHostage *)0x0) {
     return;
   }

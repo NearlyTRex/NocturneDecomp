@@ -59,7 +59,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_0050aa90(void)
     core_set_cpp_CDemonSet_setFlatColor_FUN_00555770(this_ptr,50000,50000,0x10000);
     pcVar6 = "tridx7.dll";
     g_CDemonSetPtr->ambient_base_quick = 0xdac;
-    core_moon_cpp_FUN_00521e40(&g_CMoonInstance);
+    core_moon_cpp_CMoon_render_FUN_00521e40(&g_CMoonInstance);
     pcVar8 = &DAT_006257d0;
     g_CDemonSetPtr->rendering_mode = 0;
     do {
@@ -133,7 +133,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_0050aa90(void)
     }
     pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_00531090(pcVar6);
     _sprintf((char *)0x1d1eeb8,pcVar6);
-    *(uint *)&g_CGamePtr->field_0xc = 0;
+    g_CGamePtr->halo_mode = 0;
     if (_DAT_02c83370 == 0) {
       pcVar6 = "3D Hardware : Off";
     }
@@ -269,7 +269,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_0050aa90(void)
     } while (cVar1 != '\0');
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Monitor calibration");
     _sprintf((char *)0x1d1f3b8,pcVar7);
-    if (*(int *)&g_CGamePtr->field_0x10 == 0) {
+    if (g_CGamePtr->subtitle_mode == 0) {
       pcVar7 = "Subtitles : Off";
     }
     else {
@@ -287,7 +287,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_0050aa90(void)
       pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
     iVar4 = 7;
-    if (*(int *)&g_CGamePtr->field_0x20 != 0) {
+    if (g_CGamePtr->quimby_flag != 0) {
       iVar4 = 6;
     }
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Graphic Options");
@@ -420,7 +420,7 @@ LAB_0050b161:
       core_menu_cpp_showCalibrationTest_FUN_0050a9c0();
       break;
     case 6:
-      *(uint *)&g_CGamePtr->field_0x10 = (uint)(*(int *)&g_CGamePtr->field_0x10 == 0);
+      g_CGamePtr->subtitle_mode = (uint)(g_CGamePtr->subtitle_mode == 0);
     }
     iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);
     if (iVar4 != 0) {

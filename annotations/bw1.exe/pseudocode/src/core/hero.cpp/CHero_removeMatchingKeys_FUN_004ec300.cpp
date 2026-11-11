@@ -9,7 +9,6 @@
 void __cdecl core_hero_cpp_CHero_removeMatchingKeys_FUN_004ec300(CHero *this_ptr,uint key_mask)
 
 {
-  core_inv_cpp_CInventory_removeMatchingKeys_FUN_004fc310
-            ((CInventory *)(this_ptr + 0x1fae8),key_mask);
+  core_inv_cpp_CInventory_removeMatchingKeys_FUN_004fc310(&this_ptr->inventory,key_mask);
   return;
 }

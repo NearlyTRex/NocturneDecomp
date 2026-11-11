@@ -14,7 +14,7 @@
 ;   undefined4 DAT_005fecb4
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field556_0x25c
+;   undefined4 g_CGameInstance.goggles_active
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; Called Functions:
@@ -45,7 +45,7 @@ section .text
         ;   XREF to: 004694cd (CONDITIONAL_JUMP)  ; LAB_004694cd
     PUSH ESI                            ; 004693fe
     MOV EAX,[0x0061d95c]                ; 004693ff | g_CGamePtr
-    CMP dword ptr [EAX + 0x25c],0x0     ; 00469404 | g_CGameInstance.field556_0x25c
+    CMP dword ptr [EAX + 0x25c],0x0     ; 00469404 | g_CGameInstance.goggles_active
     SETNZ AL                            ; 0046940b
     MOV ESI,EAX                         ; 0046940e
     MOV ECX,dword ptr [EBX + 0x200d8]   ; 00469410

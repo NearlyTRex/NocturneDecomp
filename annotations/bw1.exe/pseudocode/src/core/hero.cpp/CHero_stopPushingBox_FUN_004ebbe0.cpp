@@ -11,15 +11,15 @@ void __cdecl core_hero_cpp_CHero_stopPushingBox_FUN_004ebbe0(CHero *this_ptr)
 {
   int iVar1;
   
-  if (*(int *)(this_ptr + 0x1ff7c) == 0) {
+  if (this_ptr->pushed_object == (CBoxActor *)0x0) {
     return;
   }
   iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600
-                    (*(int *)(this_ptr + 0x1ff7c),g_CBoxActorClassInfo.name_hash);
+                    (this_ptr->pushed_object,g_CBoxActorClassInfo.name_hash);
   if (this_ptr == *(CHero **)(iVar1 + 800)) {
     *(uint *)(iVar1 + 800) = 0;
     sound_sndmain_cpp_killSfx_FUN_00573a80(*(uint *)(iVar1 + 0x328));
   }
-  *(uint *)(this_ptr + 0x1ff7c) = 0;
+  this_ptr->pushed_object = (CBoxActor *)0x0;
   return;
 }

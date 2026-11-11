@@ -23,15 +23,15 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_005260e0(CMP3Decoder *th
   if (huffman_table == (SHuffmanTable *)0xffffffe0) {
     return 2;
   }
-  if (*(int *)(huffman_table + 0x824) == 0) {
+  if (huffman_table->table_size == 0) {
     *y_out = 0;
     *x_out = 0;
     return 0;
   }
   do {
-    if (huffman_table[uVar3 * 2 + 0x20] == (SHuffmanTable)0x0) {
-      *x_out = (int)(uint)(byte)huffman_table[uVar3 * 2 + 0x21] >> 4;
-      *y_out = (uint)((byte)huffman_table[uVar3 * 2 + 0x21] & 0xf);
+    if (huffman_table->huffman_data[uVar3 * 2] == '\0') {
+      *x_out = (int)(uint)(byte)huffman_table->huffman_data[uVar3 * 2 + 1] >> 4;
+      *y_out = (uint)(huffman_table->huffman_data[uVar3 * 2 + 1] & 0xf);
       local_14 = 0;
       goto LAB_00526149;
     }
@@ -39,14 +39,14 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_005260e0(CMP3Decoder *th
     if (uVar2 == 0) {
       do {
         iVar1 = uVar3 * 2;
-        uVar3 = uVar3 + (byte)huffman_table[iVar1 + 0x20];
-      } while (0xf9 < (byte)huffman_table[iVar1 + 0x20]);
+        uVar3 = uVar3 + (byte)huffman_table->huffman_data[iVar1];
+      } while (0xf9 < (byte)huffman_table->huffman_data[iVar1]);
     }
     else {
       do {
         iVar1 = uVar3 * 2;
-        uVar3 = uVar3 + (byte)huffman_table[iVar1 + 0x21];
-      } while (0xf9 < (byte)huffman_table[iVar1 + 0x21]);
+        uVar3 = uVar3 + (byte)huffman_table->huffman_data[iVar1 + 1];
+      } while (0xf9 < (byte)huffman_table->huffman_data[iVar1 + 1]);
     }
     uVar4 = uVar4 >> 1;
   } while ((uVar4 != 0) || (uVar3 < _DAT_01d40dec));
@@ -54,8 +54,8 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_005260e0(CMP3Decoder *th
   _DAT_01d1d404 = 0x36f;
   core_main_c_FUN_005030e0("Illegal Huffman code in data.  File: %s",&DAT_01d404c8);
 LAB_00526149:
-  if ((*huffman_table == (SHuffmanTable)0x33) &&
-     ((huffman_table[1] == (SHuffmanTable)0x32 || (huffman_table[1] == (SHuffmanTable)0x33)))) {
+  if ((huffman_table->table_id[0] == '3') &&
+     ((huffman_table->table_id[1] == '2' || (huffman_table->table_id[1] == '3')))) {
     *v_out = *y_out >> 3 & 1;
     *w_out = *y_out >> 2 & 1;
     *x_out = *y_out >> 1 & 1;
@@ -74,18 +74,16 @@ LAB_00526149:
     }
   }
   else {
-    if ((*(uint *)(huffman_table + 0xc) != 0) && (*(int *)(huffman_table + 4) + -1 == *x_out)) {
-      uVar3 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_00525f00
-                        (this_ptr,*(uint *)(huffman_table + 0xc));
+    if ((huffman_table->linbits != 0) && (huffman_table->xlen + -1 == *x_out)) {
+      uVar3 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_00525f00(this_ptr,huffman_table->linbits);
       *x_out = *x_out + uVar3;
     }
     if ((*x_out != 0) &&
        (uVar3 = sound_mp3_cpp_CMP3Decoder_readBit_FUN_00525fe0(this_ptr), uVar3 == 1)) {
       *x_out = -*x_out;
     }
-    if ((*(int *)(huffman_table + 0xc) != 0) && (*(int *)(huffman_table + 8) + -1 == *y_out)) {
-      uVar3 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_00525f00
-                        (this_ptr,*(uint *)(huffman_table + 0xc));
+    if ((huffman_table->linbits != 0) && (huffman_table->ylen + -1 == *y_out)) {
+      uVar3 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_00525f00(this_ptr,huffman_table->linbits);
       *y_out = *y_out + uVar3;
     }
   }

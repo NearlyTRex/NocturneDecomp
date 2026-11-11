@@ -25,7 +25,7 @@
 ;   undefined4 DAT_0061f2a4
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 DAT_006236b8
-;   undefined4 g_CGameInstance.field160_0xd0
+;   undefined4 g_CGameInstance.game_control
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -38,9 +38,9 @@
 ;   core_menu.cpp_FUN_0050ba70
 ;   core_menu.cpp_FUN_0050d640
 ;   core_menu.cpp_renderMenuAndGetChoice_FUN_00509e20
-;   core_moon.cpp_FUN_00521c50
-;   core_moon.cpp_FUN_00521d50
-;   core_moon.cpp_FUN_00521e40
+;   core_moon.cpp_CMoon_free_FUN_00521d50
+;   core_moon.cpp_CMoon_init_FUN_00521c50
+;   core_moon.cpp_CMoon_render_FUN_00521e40
 ;   core_set.cpp_CDemonSet_setFlatColor_FUN_00555770
 ;   core_sound.cpp_CSound_configure_FUN_0057d6a0
 ;   core_sound.cpp_CSound_reset_FUN_0057d800
@@ -97,8 +97,8 @@ section .text
     MOV EAX,[0x00622c18]                ; 0050ca0b | g_CDemonSetPtr
     PUSH 0x1d1e380                      ; 0050ca10
     MOV dword ptr [EAX + 0x15ae94],0xdac ; 0050ca15 | g_CDemonSetInstance.ambient_base_quick
-    CALL core_moon.cpp_FUN_00521e40     ; 0050ca1f
-        ;   XREF to: 00521e40 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_00521e40()
+    CALL core_moon.cpp_CMoon_render_FUN_00521e40 ; 0050ca1f
+        ;   XREF to: 00521e40 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_render_FUN_00521e40(CMoon * this_ptr)
     ADD ESP,0x4                         ; 0050ca24
     MOV EAX,[0x00622c18]                ; 0050ca27 | g_CDemonSetPtr
     PUSH 0x5e819a                       ; 0050ca2c | = "Graphic options"
@@ -129,7 +129,7 @@ section .text
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0050ca7b
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,[0x0061d95c]                ; 0050ca80 | g_CGamePtr
-    MOV EDX,dword ptr [EAX + 0xe4]      ; 0050ca85 | g_CGameInstance.field180_0xe4
+    MOV EDX,dword ptr [EAX + 0xe4]      ; 0050ca85 | g_CGameInstance.puzzle_difficulty_mode
     ADD ESP,0x8                         ; 0050ca8b
     CMP EDI,EDX                         ; 0050ca8e
     JNZ 0x0050cb93                      ; 0050ca90
@@ -145,7 +145,7 @@ section .text
     ADD ESP,0x8                         ; 0050caae
     MOV EAX,[0x0061d95c]                ; 0050cab1 | g_CGamePtr
         ;   Label: LAB_0050cab1
-    CMP EDI,dword ptr [EAX + 0xe8]      ; 0050cab6 | g_CGameInstance.field184_0xe8
+    CMP EDI,dword ptr [EAX + 0xe8]      ; 0050cab6 | g_CGameInstance.combat_difficulty_mode
     JNZ 0x0050cbbe                      ; 0050cabc
         ;   XREF to: 0050cbbe (CONDITIONAL_JUMP)  ; LAB_0050cbbe
     PUSH 0x5e81fa                       ; 0050cac2 | = "Combat difficulty: Hard"
@@ -169,7 +169,7 @@ section .text
     ADD ESP,0x8                         ; 0050caf5
     MOV EAX,[0x0061d95c]                ; 0050caf8 | g_CGamePtr
     PUSH 0x5e8234                       ; 0050cafd | = "Option Menu"
-    MOV dword ptr [EAX + 0xd4],0x9      ; 0050cb02 | g_CGameInstance.field164_0xd4
+    MOV dword ptr [EAX + 0xd4],0x9      ; 0050cb02 | g_CGameInstance.hero_number
     CALL support_newmsg.cpp_getLocalizedString_FUN_00531090 ; 0050cb0c
         ;   XREF to: 00531090 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00531090(char * key)
     ADD ESP,0x4                         ; 0050cb11
@@ -221,8 +221,8 @@ section .text
         ;   XREF to: 0057d6a0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_configure_FUN_0057d6a0(CSound * this_ptr)
     ADD ESP,0x4                         ; 0050cb7e
     PUSH 0x1d1e380                      ; 0050cb81
-    CALL core_moon.cpp_FUN_00521c50     ; 0050cb86
-        ;   XREF to: 00521c50 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_00521c50()
+    CALL core_moon.cpp_CMoon_init_FUN_00521c50 ; 0050cb86
+        ;   XREF to: 00521c50 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_init_FUN_00521c50(CMoon * this_ptr)
     ADD ESP,0x4                         ; 0050cb8b
     JMP 0x0050c9a8                      ; 0050cb8e
         ;   XREF to: 0050c9a8 (UNCONDITIONAL_JUMP)  ; LAB_0050c9a8
@@ -237,7 +237,7 @@ section .text
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,[0x0061d95c]                ; 0050cbab | g_CGamePtr
     ADD ESP,0x8                         ; 0050cbb0
-    MOV dword ptr [EAX + 0xe4],ESI      ; 0050cbb3 | g_CGameInstance.field180_0xe4
+    MOV dword ptr [EAX + 0xe4],ESI      ; 0050cbb3 | g_CGameInstance.puzzle_difficulty_mode
     JMP 0x0050cab1                      ; 0050cbb9
         ;   XREF to: 0050cab1 (UNCONDITIONAL_JUMP)  ; LAB_0050cab1
     PUSH 0x5e8212                       ; 0050cbbe | = "Combat difficulty: Normal"
@@ -251,7 +251,7 @@ section .text
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,[0x0061d95c]                ; 0050cbd6 | g_CGamePtr
     ADD ESP,0x8                         ; 0050cbdb
-    MOV dword ptr [EAX + 0xe8],ESI      ; 0050cbde | g_CGameInstance.field184_0xe8
+    MOV dword ptr [EAX + 0xe8],ESI      ; 0050cbde | g_CGameInstance.combat_difficulty_mode
     JMP 0x0050cadd                      ; 0050cbe4
         ;   XREF to: 0050cadd (UNCONDITIONAL_JUMP)  ; LAB_0050cadd
     CALL core_menu.cpp_FUN_0050ba70     ; 0050cbe9
@@ -261,13 +261,13 @@ section .text
         ;   XREF to: 0050cb43 (UNCONDITIONAL_JUMP)  ; caseD_4
     MOV EAX,[0x0061d95c]                ; 0050cbf3 | g_CGamePtr
         ;   Label: caseD_2
-    MOV EAX,dword ptr [EAX + 0xd0]      ; 0050cbf8 | g_CGameInstance.field160_0xd0
+    MOV EAX,dword ptr [EAX + 0xd0]      ; 0050cbf8 | g_CGameInstance.game_control
     MOV [0x01d1ee90],EAX                ; 0050cbfe | DAT_01d1ee90
     CALL core_menu.cpp_FUN_0050b470     ; 0050cc03
         ;   XREF to: 0050b470 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_FUN_0050b470()
     MOV EBX,dword ptr [0x0061d95c]      ; 0050cc08 | g_CGamePtr
     MOV EAX,[0x01d1ee90]                ; 0050cc0e | DAT_01d1ee90
-    CMP EAX,dword ptr [EBX + 0xd0]      ; 0050cc13 | g_CGameInstance.field160_0xd0
+    CMP EAX,dword ptr [EBX + 0xd0]      ; 0050cc13 | g_CGameInstance.game_control
     JZ 0x0050cb43                       ; 0050cc19
         ;   XREF to: 0050cb43 (CONDITIONAL_JUMP)  ; caseD_4
     CALL core_menu.cpp_FUN_0050d640     ; 0050cc1f
@@ -289,8 +289,8 @@ section .text
         ;   XREF to: 0050cb43 (UNCONDITIONAL_JUMP)  ; caseD_4
     PUSH 0x1d1e380                      ; 0050cc4c
         ;   Label: LAB_0050cc4c
-    CALL core_moon.cpp_FUN_00521d50     ; 0050cc51
-        ;   XREF to: 00521d50 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_00521d50()
+    CALL core_moon.cpp_CMoon_free_FUN_00521d50 ; 0050cc51
+        ;   XREF to: 00521d50 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_free_FUN_00521d50(CMoon * this_ptr)
     ADD ESP,0x4                         ; 0050cc56
     MOV EBX,dword ptr [0x006236b8]      ; 0050cc59 | DAT_006236b8
     PUSH EBX                            ; 0050cc5f

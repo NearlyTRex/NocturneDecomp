@@ -13,8 +13,8 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cc010c
-;   undefined4 g_RainDropPool[0].field36_0x24
-;   undefined4 g_RainDropPool[0].field60_0x3c
+;   undefined4 g_RainDropPool[0].base.lifetime_remaining
+;   undefined4 g_RainDropPool[0].base.vtable
 ;
 ; *****************************************************************************
 
@@ -32,7 +32,7 @@ section .text
     PUSH ESI                            ; 004b7336
     ADD EAX,0x1cc0110                   ; 004b7337
     PUSH EAX                            ; 004b733c
-    MOV EDX,dword ptr [EAX + 0x3c]      ; 004b733d | g_RainDropPool[0].field60_0x3c
+    MOV EDX,dword ptr [EAX + 0x3c]      ; 004b733d | g_RainDropPool[0].base.vtable
     CALL dword ptr [EDX]                ; 004b7340
     MOV EBX,dword ptr [0x01cc010c]      ; 004b7342 | DAT_01cc010c
     MOV EAX,EBX                         ; 004b7348
@@ -40,7 +40,7 @@ section .text
     ADD EAX,0x1cc0110                   ; 004b734d
     ADD ESP,0xc                         ; 004b7352
     INC EBX                             ; 004b7355
-    MOV dword ptr [EAX + 0x24],0x3e800000 ; 004b7356 | g_RainDropPool[0].field36_0x24
+    MOV dword ptr [EAX + 0x24],0x3e800000 ; 004b7356 | g_RainDropPool[0].base.lifetime_remaining
     CMP EBX,0x100                       ; 004b735d
     JL 0x004b7367                       ; 004b7363
         ;   XREF to: 004b7367 (CONDITIONAL_JUMP)  ; LAB_004b7367

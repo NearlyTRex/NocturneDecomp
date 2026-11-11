@@ -2,15 +2,26 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CBodyPart;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CQuaternion4f.h"
+#include "types/classes/CVector3f.h"
+#include "types/unions/UOrientationVector.h"
 
 // Structure: SDjienBox
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 72; empty ctor 00462440; CDjien ctor arrinits 24 of them at CDjien+0xc2fc (ends at +0xc9bc, the next field); the death explosion FUN_00460cb0 fills one per body part with stride 0x48
 // Ghidra size: 0x48 (72 bytes)
 #pragma pack(push, 1)
 typedef struct SDjienBox {
-    char field_0[72]; // 0x0
+    CVector3f position; // 0x0, FUN_00460cb0 copies the new body part's location.position (part+0x20) to box+0
+    UOrientationVector orientation; // 0xc, FUN_00460cb0 copies the part's orient (part+0x30) to box+0xc
+    char field_24[16]; // 0x18
+    CQuaternion4f rotation; // 0x28, FUN_00460cb0 stores the 16-byte result of core_xform FUN_005b7ed0 (orient -> quaternion) at CDjien+0xc324+i*0x48
+    char field_56[12]; // 0x38
+    struct CBodyPart* body_part; // 0x44, FUN_00460cb0 stores the createBodyPart result at CDjien+0xc340+i*0x48
 } SDjienBox;
 #pragma pack(pop)
 

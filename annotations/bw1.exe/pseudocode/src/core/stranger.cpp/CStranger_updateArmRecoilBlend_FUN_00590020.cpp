@@ -11,16 +11,17 @@
 void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_00590020(CStranger *this_ptr,float delta_time,int is_weapon_active)
 
 {
-  CStranger *pCVar1;
-  float fVar2;
-  int iVar3;
+  CStranger *this_ptr_00;
+  float fVar1;
+  EDeathState EVar2;
+  ECollisionType EVar3;
   byte bVar4;
   float afStackY_110c [994];
   float *pfVar5;
   float local_15c;
   float local_154;
   float fStack_150;
-  byte auStack_14c [40];
+  SCollisionInfo SStack_14c;
   float local_124;
   float afStack_120 [5];
   float local_10c [4];
@@ -72,20 +73,22 @@ void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_00590020(CStra
   if (is_weapon_active != 0) {
     local_1c = 0;
     for (local_20 = 0; local_20 < g_CDemonSetPtr->character_count; local_20 = local_20 + 1) {
-      pCVar1 = *(CStranger **)((int)g_CDemonSetPtr->characters + local_1c);
-      core_actor_cpp_FUN_00408bb0(this_ptr,&pCVar1->field_0x20);
+      this_ptr_00 = *(CStranger **)((int)g_CDemonSetPtr->characters + local_1c);
+      core_actor_cpp_FUN_00408bb0(this_ptr,&(this_ptr_00->base).base.base.location);
       local_7c = local_10c[3];
       local_a8[(uint)bVar4 * -2 + 0xc] = afStack_fc[(uint)bVar4 * -2];
       local_a8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0xd] =
            afStack_fc[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
       if (((ABS(local_7c) <= (float)_DAT_005f6fc1) && (ABS(local_78) <= (float)_DAT_005f6fc9)) &&
          ((0.0 <= local_74 &&
-          ((((int)local_74 < 0x40c00001 && (pCVar1 != this_ptr)) &&
-           (iVar3 = (**(code **)(*(int *)&pCVar1->field_0x154 + 0x10c))(pCVar1), iVar3 == 0)))))) {
-        core_setcolid_cpp_SCollisionInfo_ctor_FUN_005593c0((SCollisionInfo *)auStack_14c);
-        iVar3 = (**(code **)(*(int *)&pCVar1->field_0x154 + 0x3c))(pCVar1,auStack_14c);
-        if ((iVar3 == 2) &&
-           (fStack_150 = 1.0 - ((local_74 - (float)auStack_14c._28_4_) + (float)_DAT_005f6fd1) *
+          ((((int)local_74 < 0x40c00001 && (this_ptr_00 != this_ptr)) &&
+           (EVar2 = (*(((this_ptr_00->base).base.base.vtable._uc)->_uc).getDeathState)
+                              ((CCharacter *)this_ptr_00), EVar2 == DEATH_STATE_ALIVE)))))) {
+        core_setcolid_cpp_SCollisionInfo_ctor_FUN_005593c0(&SStack_14c);
+        EVar3 = (*((this_ptr_00->base).base.base.vtable._ub)->getCollisionType)
+                          ((CDemonActor *)this_ptr_00,&SStack_14c);
+        if ((EVar3 == COLLISION_TYPE_CYLINDER) &&
+           (fStack_150 = 1.0 - ((local_74 - SStack_14c.cylinder_radius) + (float)_DAT_005f6fd1) *
                                (float)_DAT_005f6fb9, local_154 <= fStack_150)) {
           if (fStack_150 < 0.0) {
             fStack_150 = 0.0;
@@ -112,7 +115,7 @@ void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_00590020(CStra
       local_b4 = local_3c;
       local_b0 = local_38;
     }
-    core_skeleton_cpp_FUN_00569040(&this_ptr->field_0x158,_DAT_02c83604);
+    core_skeleton_cpp_FUN_00569040(&(this_ptr->base).base.model,_DAT_02c83604);
     local_a8[2] = (float)local_c4;
     local_a8[(uint)bVar4 * -2 + 3] = afStack_fc[(uint)bVar4 * -2 + 0xf];
     local_a8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
@@ -141,11 +144,11 @@ void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_00590020(CStra
     }
     local_18 = (float)core_setcolid_cpp_FUN_00557300(g_CDemonSetPtr,local_a8 + 0xe,&local_64);
     if (((0.0 <= local_18) && (local_18 < 1.0)) &&
-       (fVar2 = 1.0 - (local_18 * local_24 - local_28) / (local_24 - local_28), local_154 < fVar2))
+       (fVar1 = 1.0 - (local_18 * local_24 - local_28) / (local_24 - local_28), local_154 < fVar1))
     {
-      local_154 = fVar2;
+      local_154 = fVar1;
     }
-    core_skeleton_cpp_FUN_00569040(&this_ptr->field_0x158,_DAT_02c83608);
+    core_skeleton_cpp_FUN_00569040(&(this_ptr->base).base.model,_DAT_02c83608);
     pfVar5 = afStack_fc + 8;
     local_dc[0] = (float)local_d0;
     afStack_fc[(uint)bVar4 * -2 + 9] = afStack_fc[(uint)bVar4 * -2 + 0xc];
@@ -175,9 +178,9 @@ void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_00590020(CStra
     }
     local_18 = (float)core_setcolid_cpp_FUN_00557300(g_CDemonSetPtr,local_a8 + 0xe,&local_64);
     if (((0.0 <= local_18) && (local_18 < 1.0)) &&
-       (fVar2 = 1.0 - (local_18 * local_24 - local_28) / (local_24 - local_28), local_154 < fVar2))
+       (fVar1 = 1.0 - (local_18 * local_24 - local_28) / (local_24 - local_28), local_154 < fVar1))
     {
-      local_154 = fVar2;
+      local_154 = fVar1;
     }
     core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
   }
@@ -191,9 +194,9 @@ void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_00590020(CStra
     }
   }
   else {
-    fVar2 = -delta_time * (1.0 / _DAT_00606080);
-    if (local_15c < fVar2) {
-      local_15c = fVar2;
+    fVar1 = -delta_time * (1.0 / _DAT_00606080);
+    if (local_15c < fVar1) {
+      local_15c = fVar1;
     }
   }
   this_ptr->arm_recoil_blend = this_ptr->arm_recoil_blend + local_15c;

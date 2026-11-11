@@ -26,8 +26,8 @@ CVector3f * __cdecl core_lightpis_cpp_CLightPis_getMuzzlePoint_FUN_005018c0(CLig
   uint uStack_c;
   
   bVar6 = 0;
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
-                     ((CKeyFramedModelInstance *)&this_ptr->field_0x158);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(&(this_ptr->base).model)
+  ;
   pCVar3 = &pCVar1->bounds;
   pfVar4 = (float *)&stack0xffffffd4;
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {

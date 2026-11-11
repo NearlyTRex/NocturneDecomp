@@ -11,16 +11,13 @@ void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e
 {
   char *weapon_class_name;
   
-  if (*(int *)(this_ptr + 0x338) == 0) {
+  if (this_ptr->selected_weapon == (CWeapon *)0x0) {
     return;
   }
-  *(uint *)(*(int *)(this_ptr + 0x464) + 0x314) =
-       *(uint *)(*(int *)(this_ptr + 0x338) + 0x568);
-  *(uint *)(*(int *)(this_ptr + 0x464) + 0x318) =
-       *(uint *)(*(int *)(this_ptr + 0x338) + 0x56c);
+  this_ptr->ammo_ptr->ammo_count = this_ptr->selected_weapon->ammo_count;
+  this_ptr->ammo_ptr->ammo_type = this_ptr->selected_weapon->ammo_type;
   weapon_class_name =
-       core_actor_cpp_CDemonActor_getActorClassName_FUN_00408830
-                 (*(CDemonActor **)(this_ptr + 0x338));
-  core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ddd0(*(CAmmo **)(this_ptr + 0x464),weapon_class_name);
+       core_actor_cpp_CDemonActor_getActorClassName_FUN_00408830(&this_ptr->selected_weapon->base);
+  core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ddd0(this_ptr->ammo_ptr,weapon_class_name);
   return;
 }

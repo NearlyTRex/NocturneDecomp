@@ -11,8 +11,8 @@
 void __cdecl core_fire_cpp_CFireEffect_createPopcorn_FUN_004b72d0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity)
 
 {
-  (*(code *)**(uint **)&g_PopcornPool[_DAT_01cbc108].field_0x3c)
-            (g_PopcornPool + _DAT_01cbc108,position,velocity);
+  (*(g_PopcornPool[_DAT_01cbc108].base.vtable)->setup)
+            (&g_PopcornPool[_DAT_01cbc108].base,position,velocity);
   _DAT_01cbc108 = _DAT_01cbc108 + 1;
   if (_DAT_01cbc108 < 0x100) {
     return;

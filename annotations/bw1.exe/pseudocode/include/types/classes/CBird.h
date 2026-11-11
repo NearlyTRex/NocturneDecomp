@@ -4,13 +4,20 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCharacter.h"
+#include "types/classes/CPathMap.h"
 
 // Structure: CBird
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 129728; CCharacter + CPathMap + CNPC-style shootMe/poolMe/speed (nocedit CNPC names)
 // Ghidra size: 0x1fac0 (129728 bytes)
 #pragma pack(push, 1)
 typedef struct CBird {
-    char field_0[129728]; // 0x0
+    CCharacter base; // 0x0, existing base
+    CPathMap path_map; // 0xc1d0, CBird_ctor@004151f0 calls CPathMap_ctor on this+0xc1d0; CBird_getPathMap returns this+0xc1d0; dtor CPathMap_dtor
+    int shoot_me; // 0x1faac, CBird_archive@00415780 archiveInteger "shootMe"; CBird_isInvulnerable@004159c0 returns shoot_me==0; ctor zeroes
+    int pool_me; // 0x1fab0, CBird_archive@00415780 archiveInteger "poolMe"; CBird_process@00415340 sets 1 after CGore_createBloodPool, render* skip when set
+    float speed; // 0x1fab4, CBird_archive@00415780 archiveFloat "speed"; CBird_ctor@004151f0 FSTP getRandomFloatFromRange(0.9,1.1)
+    char field_129720[8]; // 0x1fab8
 } CBird;
 #pragma pack(pop)
 

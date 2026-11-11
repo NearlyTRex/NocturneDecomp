@@ -20,13 +20,13 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_0052fee0(CNetGame 
   int iVar6;
   SSimFrame *sim_frame;
   SSimFrame *pSVar7;
-  uint *puVar8;
+  SPlayerInput *pSVar8;
+  uint *puVar9;
   byte *src;
-  SSimFrame *pSVar9;
-  uint *puVar10;
-  byte bVar11;
-  uint local_98;
-  byte local_94;
+  SPlayerInput *pSVar10;
+  uint *puVar11;
+  byte bVar12;
+  SNetPacketHeader local_98;
   uint local_93;
   uint local_8f;
   uint local_8b;
@@ -37,7 +37,7 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_0052fee0(CNetGame 
   int local_18;
   SNetPlayer *local_14;
   
-  bVar11 = 0;
+  bVar12 = 0;
   iVar2 = wincore_winrun_cpp_getTime_FUN_005b2420();
   iVar2 = iVar2 / 0x12;
   _DAT_01d51d9c = iVar2 - _DAT_01d51d9c;
@@ -80,12 +80,12 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_0052fee0(CNetGame 
     pCVar4 = this_ptr;
     if (0 < this_ptr->player_count) {
       do {
-        iVar6 = *(int *)&pCVar4->players[0].field_0x48;
+        iVar6 = pCVar4->players[0].sim_frame_index;
         if (iVar6 < local_18) {
           local_18 = iVar6;
         }
         iVar2 = iVar2 + 1;
-        pCVar4 = (CNetGame *)&pCVar4->players[0].field_0x5c;
+        pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action_state.use_item;
       } while (iVar2 < this_ptr->player_count);
     }
     iVar2 = 0;
@@ -106,7 +106,7 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_0052fee0(CNetGame 
       } while (iVar2 < _DAT_01d715a8);
     }
     iVar6 = 0;
-    iVar2 = *(int *)&this_ptr->players[this_ptr->local_player_index].field_0x48;
+    iVar2 = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
     if (0 < _DAT_01d715a8) {
       iVar3 = 0;
       do {
@@ -129,26 +129,26 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_0052fee0(CNetGame 
     sim_frame = (SSimFrame *)(_DAT_01d715a8 * 0x6c + 0x1d715ac);
     _DAT_01d715a8 = _DAT_01d715a8 + 1;
     memset(sim_frame,0,0x6c);
-    *(int *)sim_frame = iVar2;
+    sim_frame->sequence_number = iVar2;
 LAB_0053008d:
     iVar2 = rand();
-    *(int *)(sim_frame + 4) = iVar2;
-    *(float *)(sim_frame + 8) = g_CGamePtr->delta_time_float;
+    sim_frame->random_seed = iVar2;
+    sim_frame->delta_time = g_CGamePtr->delta_time_float;
     iVar2 = 0;
     pCVar4 = this_ptr;
     pSVar7 = sim_frame;
     if (0 < this_ptr->player_count) {
       do {
-        puVar5 = (uint *)&pCVar4->players[0].field_0x4c;
-        pSVar9 = pSVar7 + 0xc;
+        pSVar8 = &pCVar4->players[0].player_input;
+        pSVar10 = pSVar7->player_input;
         for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-          *(uint *)pSVar9 = *puVar5;
-          puVar5 = puVar5 + (uint)bVar11 * -2 + 1;
-          pSVar9 = pSVar9 + (uint)bVar11 * -8 + 4;
+          (pSVar10->action_state).walk = (pSVar8->action_state).walk;
+          pSVar8 = (SPlayerInput *)((int)pSVar8 + (uint)bVar12 * -8 + 4);
+          pSVar10 = (SPlayerInput *)((int)pSVar10 + (uint)bVar12 * -8 + 4);
         }
         iVar2 = iVar2 + 1;
-        pCVar4 = (CNetGame *)&pCVar4->players[0].field_0x5c;
-        pSVar7 = pSVar7 + 0x30;
+        pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action_state.use_item;
+        pSVar7 = (SSimFrame *)&pSVar7->player_input[0].strafe_speed;
       } while (iVar2 < this_ptr->player_count);
     }
     local_1c = sim_frame;
@@ -159,8 +159,8 @@ LAB_0053008d:
       do {
         pSVar1 = local_14;
         if (local_24 != this_ptr->local_player_index) {
-          iVar2 = *(int *)&this_ptr->players[this_ptr->local_player_index].field_0x48 -
-                  *(int *)&local_14->field_0x48;
+          iVar2 = this_ptr->players[this_ptr->local_player_index].sim_frame_index -
+                  local_14->sim_frame_index;
           if (iVar2 < 1) {
             _DAT_01d1d400 = "..\\core\\netgame.cpp";
             _DAT_01d1d404 = 0x93b;
@@ -169,7 +169,7 @@ LAB_0053008d:
           if (5 < iVar2) {
             iVar2 = 5;
           }
-          local_20 = *(int *)&pSVar1->field_0x48;
+          local_20 = pSVar1->sim_frame_index;
           for (; 0 < iVar2; iVar2 = iVar2 + -1) {
             iVar6 = 0;
             if (0 < _DAT_01d715a8) {
@@ -189,27 +189,26 @@ LAB_00530282:
             }
             iVar6 = iVar6 * 0x6c;
             puVar5 = (uint *)(iVar6 + 0x1d715ac);
-            local_98 = 0x71;
-            local_94 = 0xf;
+            local_98.size = 0x71;
+            local_98.type = PACKET_SIM_FRAME;
             local_93 = *puVar5;
             local_8f = *(uint *)(iVar6 + 0x1d715b0);
             local_8b = *(uint *)(iVar6 + 0x1d715b4);
             iVar6 = 0;
             if (0 < this_ptr->player_count) {
               do {
-                puVar8 = puVar5 + 3;
-                puVar10 = local_87 + iVar6 * 0xc;
+                puVar9 = puVar5 + 3;
+                puVar11 = local_87 + iVar6 * 0xc;
                 for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-                  *puVar10 = *puVar8;
-                  puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
-                  puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
+                  *puVar11 = *puVar9;
+                  puVar9 = puVar9 + (uint)bVar12 * -2 + 1;
+                  puVar11 = puVar11 + (uint)bVar12 * -2 + 1;
                 }
                 iVar6 = iVar6 + 1;
                 puVar5 = puVar5 + 0xc;
               } while (iVar6 < this_ptr->player_count);
             }
-            core_netgame_cpp_CNetGame_send_FUN_0052df50
-                      (this_ptr,local_24,(SNetPacketHeader *)&local_98);
+            core_netgame_cpp_CNetGame_send_FUN_0052df50(this_ptr,local_24,&local_98);
             local_20 = local_20 + 1;
           }
         }

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 111,
+    "complexity_score": 96,
     "cross_reference_count": 11,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 41,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "raw_address_pointer_store",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -337,14 +336,6 @@
       "severity": "moderate",
       "text": "if (((this_ptr->carried_by_actor == *(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4)) &&",
       "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x264",
-      "severity": "mild",
-      "text": "(*(int *)&g_CGamePtr->field_0x264 != 0)) && (this_ptr->can_attach_light != 0)) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",

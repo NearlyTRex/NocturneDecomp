@@ -13,24 +13,24 @@ void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_00442100(CCloth *this_ptr,char 
 {
   int iVar1;
   int iVar2;
-  CCloth *str2;
+  SClothBone *str2;
   
   iVar2 = 0;
-  if (0 < *(int *)(this_ptr + 0x37b4c)) {
-    str2 = this_ptr + 0x37b50;
+  if (0 < this_ptr->collide_bone_count) {
+    str2 = this_ptr->collide_bones;
     do {
-      iVar1 = _strcmp(bone_name,(char *)str2);
+      iVar1 = _strcmp(bone_name,str2->name);
       if (iVar1 == 0) break;
       iVar2 = iVar2 + 1;
-      str2 = str2 + 0xac;
-    } while (iVar2 < *(int *)(this_ptr + 0x37b4c));
+      str2 = str2 + 1;
+    } while (iVar2 < this_ptr->collide_bone_count);
   }
-  if (iVar2 == *(int *)(this_ptr + 0x37b4c)) {
+  if (iVar2 == this_ptr->collide_bone_count) {
     _DAT_01d1d400 = "..\\core\\cloth.cpp";
     _DAT_01d1d404 = 0xab4;
     core_main_c_FUN_005030e0("CCloth::grabCloth - Can't find bone %s",bone_name);
   }
-  *(uint *)(this_ptr + vertex_index * 0x11c + 0x40c) = 1;
-  *(int *)(this_ptr + vertex_index * 0x11c + 0x470) = iVar2;
+  this_ptr->vertices[vertex_index].locked = 1;
+  this_ptr->vertices[vertex_index].collide_bone_index = iVar2;
   return;
 }

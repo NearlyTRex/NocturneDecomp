@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 257,
-    "complexity_score": 202,
+    "complexity_score": 200,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 87,
+    "pseudocode_lines": 85,
     "suspect_count": 10,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 344
+    "total_lines": 342
   },
   "cross_references": [
     {
@@ -324,40 +324,40 @@
       "type": "undefined_data"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(code **)((int)ini_file",
+      "severity": "moderate",
+      "text": "(**(code **)((int)ini_file->vtable + 4))(ini_file,\"@DeviceName\" + 1,local_194,0x100);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 29,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)&ini_file->field_0x200 + 4))",
+      "text": "(**(code **)((int)ini_file->vtable + 4))(ini_file,\"@DeviceName\" + 1,local_194,0x100);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x200",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&ini_file->field_0x200 + 4))",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(code **)((int)ini_file",
+      "severity": "moderate",
+      "text": "(**(code **)((int)ini_file->vtable + 4))(ini_file,\"RecordingDeviceName\",local_194,0x100);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 42,
+      "line": 41,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)&ini_file->field_0x200 + 4))",
+      "text": "(**(code **)((int)ini_file->vtable + 4))(ini_file,\"RecordingDeviceName\",local_194,0x100);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x200",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&ini_file->field_0x200 + 4))",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 56,
       "match": "DAT_005f4501",
       "severity": "mild",
       "text": "engine_ini_cpp_FUN_004f4d10(ini_file,&DAT_005f4501,&iStack_28);",
@@ -365,7 +365,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 58,
       "match": "DAT_005f450f",
       "severity": "mild",
       "text": "engine_ini_cpp_FUN_004f4d10(ini_file,&DAT_005f450f,&iStack_20);",
@@ -373,7 +373,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 61,
       "match": "DAT_005f4512",
       "severity": "mild",
       "text": "engine_ini_cpp_FUN_004f4d10(ini_file,&DAT_005f4512,&iStack_30);",
@@ -381,7 +381,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 66,
+      "line": 64,
       "match": "DAT_006232e4",
       "severity": "mild",
       "text": "if (0 < DAT_006232e4) {",
@@ -389,7 +389,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 76,
       "match": "DAT_006232e4",
       "severity": "mild",
       "text": "} while (iVar2 < DAT_006232e4);",

@@ -5,22 +5,22 @@
 // Function prototypes for shape/superopt.cpp
 // Generated from Ghidra function signatures
 
-// Original: shape_superopt.cpp_FUN_004175a0
+// Original: shape_superopt.cpp_CAudioRecPuzzle_getKnob0Position_FUN_004175a0
 // Address: 004175a0
-undefined4 FUN_004175a0(int param_1);
+int __cdecl CAudioRecPuzzle::getKnob0Position(CAudioRecPuzzle *this_ptr);
 
-// Original: shape_superopt.cpp_FUN_004175b0
+// Original: shape_superopt.cpp_CAudioRecPuzzle_getKnob1Position_FUN_004175b0
 // Address: 004175b0
-undefined4 FUN_004175b0(int param_1);
+int __cdecl CAudioRecPuzzle::getKnob1Position(CAudioRecPuzzle *this_ptr);
 
-// Original: shape_superopt.cpp_FUN_004175c0
+// Original: shape_superopt.cpp_CAudioRecPuzzle_getKnob2Position_FUN_004175c0
 // Address: 004175c0
-undefined4 FUN_004175c0(int param_1);
+int __cdecl CAudioRecPuzzle::getKnob2Position(CAudioRecPuzzle *this_ptr);
 
-// Original: shape_superopt.cpp_FUN_004175d0
+// Original: shape_superopt.cpp_CAudioRecPuzzle_getSpeedSetting_FUN_004175d0
 // Address: 004175d0
-undefined4 FUN_004175d0(int param_1);
+int __cdecl CAudioRecPuzzle::getSpeedSetting(CAudioRecPuzzle *this_ptr);
 
-// Original: shape_superopt.cpp_COptimize_getMaxPolygonSides_FUN_004175e0
+// Original: shape_superopt.cpp_CAudioRecPuzzle_getTransportState_FUN_004175e0
 // Address: 004175e0
-int __cdecl COptimize::getMaxPolygonSides(COptimize *this_ptr);
+int __cdecl CAudioRecPuzzle::getTransportState(CAudioRecPuzzle *this_ptr);

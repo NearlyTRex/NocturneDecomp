@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 345,
-    "complexity_score": 267,
+    "complexity_score": 201,
     "cross_reference_count": 5,
     "function_call_count": 13,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 127,
-    "suspect_count": 12,
+    "pseudocode_lines": 126,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_alignment_array",
       "stack_ref",
-      "undefined_data",
-      "unnamed_field"
+      "undefined_data"
     ],
-    "total_lines": 472
+    "total_lines": 471
   },
   "cross_references": [
     {
@@ -448,7 +447,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 8,
+      "line": 9,
       "match": "auStackY_1050",
       "severity": "moderate",
       "text": "uint auStackY_1050 [1015];",
@@ -456,91 +455,43 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 27,
       "match": "DAT_007c3038",
       "severity": "mild",
       "text": "if (DAT_007c3038 == 1) {",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x25b0",
-      "severity": "mild",
-      "text": "if (*(int *)&pCVar1->field_0x25b0 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 69,
+      "line": 70,
       "match": "&stack0xffffff9c",
       "severity": "moderate",
-      "text": "auStack_34[(uint)bVar3 * -2 + 3] = *(uint *)(&stack0xffffff9c + (uint)bVar3 * -8);",
+      "text": "auStack_34[(uint)bVar4 * -2 + 3] = *(uint *)(&stack0xffffff9c + (uint)bVar4 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 71,
+      "line": 72,
       "match": "&stack0xffffffa0",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffa0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
+      "text": "*(uint *)(&stack0xffffffa0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 76,
+      "line": 77,
       "match": "&stack0xffffffa8",
       "severity": "moderate",
-      "text": "auStack_34[(uint)bVar3 * -2] = *(uint *)(&stack0xffffffa8 + (uint)bVar3 * -8);",
+      "text": "auStack_34[(uint)bVar4 * -2] = *(uint *)(&stack0xffffffa8 + (uint)bVar4 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 78,
+      "line": 79,
       "match": "&stack0xffffffac",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffac + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
+      "text": "*(uint *)(&stack0xffffffac + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 87,
-      "match": "field_0x2698",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x2698,\"talkToMeEvent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 95,
-      "match": "field_0x27b8",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x27b8,\"sizeScale\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 109,
-      "match": "field_0x27a8",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x27a8,\"spectralFlag\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 113,
-      "match": "field_0x27b0",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x27b0,\"invulnerableFlag\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 117,
-      "match": "field_0x27a4",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x27a4,\"etheralFlag\");",
-      "type": "unnamed_field"
     }
   ]
 }

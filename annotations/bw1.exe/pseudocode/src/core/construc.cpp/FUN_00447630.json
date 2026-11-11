@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 92,
+    "complexity_score": 77,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 33
@@ -99,7 +98,7 @@
       "line": 7,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (*(int *)param_2 == 4) {",
+      "text": "if ((param_2->ray_query).ray_type == 4) {",
       "type": "unnamed_param"
     },
     {
@@ -107,16 +106,8 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1[1].model.field_0x730 != 0) {",
+      "text": "if (param_1[1].model.bone_transform.pose_data.bone_rotations[8].w != 0.0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x730",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[1].model.field_0x730 != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

@@ -10,11 +10,10 @@ void __cdecl support_codec_cpp_CLZWDecompress_init_FUN_004436f0(CLZWDecompress *
 
 {
   support_codec_cpp_CLZWDictionary_init_FUN_00442ff0
-            ((CLZWDictionary *)&this_ptr->field_0x4,*(int *)&this_ptr->field_0x20,
-             *(int *)&this_ptr->field_0x24);
-  support_codec_cpp_resetBitBuffer_FUN_00442470((SBitBuffer *)&this_ptr->field_0x18);
-  *(uint *)&this_ptr->field_0x2c = 0xffffffff;
-  *(uint *)&this_ptr->field_0x30 = 0xffffffff;
-  *(uint *)&this_ptr->field_0x28 = 0xffffffff;
+            (&this_ptr->lzw_dict,this_ptr->buffer_size,this_ptr->num_bits);
+  support_codec_cpp_resetBitBuffer_FUN_00442470(&(this_ptr->lzw_dict).bit_state);
+  this_ptr->current_code = -1;
+  this_ptr->pending_sequence_index = -1;
+  this_ptr->previous_code = -1;
   return;
 }

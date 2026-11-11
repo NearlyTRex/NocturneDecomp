@@ -12,12 +12,12 @@ void __cdecl core_thehand_cpp_CTheHand_setup_FUN_005990d0(CTheHand *this_ptr)
 
 {
   CSkeleton *this_ptr_00;
+  CDeformableModelInstance *this_ptr_01;
   
-  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00569b20
-            ((CDeformableModelInstance *)&this_ptr->field_0x158);
-  core_enemy_cpp_CEnemy_setup_FUN_004a0510((CEnemy *)this_ptr);
-  this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
-                          ((CDeformableModelInstance *)&this_ptr->field_0x158);
+  this_ptr_01 = &(this_ptr->base).base.model;
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00569b20(this_ptr_01);
+  core_enemy_cpp_CEnemy_setup_FUN_004a0510(&this_ptr->base);
+  this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(this_ptr_01);
   _DAT_02c8ad48 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"bipHand",1);
   _DAT_02c8ad4c =

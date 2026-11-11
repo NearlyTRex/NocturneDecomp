@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_freeMemory_FUN_0045da10
 ;   core_main.c_FUN_005030e0
-;   crt_unknown.c_FUN_005c08d0
+;   crt_memory.c_malloc_FUN_005c08d0
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     IMUL EAX,dword ptr [EBX + 0x4]      ; 0045d9cd
     ADD ESP,0x4                         ; 0045d9d1
     PUSH EAX                            ; 0045d9d4
-    CALL crt_unknown.c_FUN_005c08d0     ; 0045d9d5
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 0045d9d5
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 0045d9da
     MOV dword ptr [EBX + 0x48],EAX      ; 0045d9dd
     TEST EAX,EAX                        ; 0045d9e0

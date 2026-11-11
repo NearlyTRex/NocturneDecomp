@@ -12,7 +12,7 @@
 ;   undefined4 DAT_0061b4d0
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 DAT_01bc120c
-;   undefined4 g_CGameInstance.field556_0x25c
+;   undefined4 g_CGameInstance.goggles_active
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
@@ -43,7 +43,7 @@ section .text
     JZ 0x004156c3                       ; 004156b3
         ;   XREF to: 004156c3 (CONDITIONAL_JUMP)  ; LAB_004156c3
     MOV EAX,[0x0061d95c]                ; 004156b5 | g_CGamePtr
-    CMP dword ptr [EAX + 0x25c],0x0     ; 004156ba | g_CGameInstance.field556_0x25c
+    CMP dword ptr [EAX + 0x25c],0x0     ; 004156ba | g_CGameInstance.goggles_active
     JNZ 0x00415705                      ; 004156c1
         ;   XREF to: 00415705 (CONDITIONAL_JUMP)  ; LAB_00415705
     XOR EAX,EAX                         ; 004156c3

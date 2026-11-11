@@ -17,8 +17,8 @@
 ;   undefined4 DAT_02c9ff68
 ;
 ; Called Functions:
+;   crt_memory.c_calloc_FUN_005c1cb0
 ;   crt_memory.c_realloc_FUN_005c10d0
-;   crt_unknown.c_FUN_005c1cb0
 ;   crt_unknown.c_FUN_005c9f70
 ;   InitializeCriticalSection
 ;
@@ -46,8 +46,8 @@ section .text
     PUSH 0x18                           ; 005ca950
         ;   Label: LAB_005ca950
     PUSH 0x1                            ; 005ca952
-    CALL crt_unknown.c_FUN_005c1cb0     ; 005ca954
-        ;   XREF to: 005c1cb0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c1cb0()
+    CALL crt_memory.c_calloc_FUN_005c1cb0 ; 005ca954
+        ;   XREF to: 005c1cb0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_calloc_FUN_005c1cb0()
     ADD ESP,0x8                         ; 005ca959
     MOV EBX,EAX                         ; 005ca95c
     TEST EAX,EAX                        ; 005ca95e

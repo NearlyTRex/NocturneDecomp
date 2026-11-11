@@ -1133,7 +1133,7 @@ section .text
         ;   XREF to: 0055adf8 (CONDITIONAL_JUMP)  ; LAB_0055adf8
     MOV EAX,[0x0061d95c]                ; 0055ae26 | g_CGamePtr
         ;   Label: LAB_0055ae26
-    CMP dword ptr [EAX + 0x204],0x0     ; 0055ae2b | g_CGameInstance.field468_0x204
+    CMP dword ptr [EAX + 0x204],0x0     ; 0055ae2b | g_CGameInstance.debug_toggle_flag
     JZ 0x0055aeb2                       ; 0055ae32
         ;   XREF to: 0055aeb2 (CONDITIONAL_JUMP)  ; LAB_0055aeb2
     IMUL EDX,dword ptr [ESP + 0x30c],0x3000 ; 0055ae38

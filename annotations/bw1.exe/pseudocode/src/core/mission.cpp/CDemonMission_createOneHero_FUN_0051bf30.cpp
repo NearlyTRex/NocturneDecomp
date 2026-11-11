@@ -11,7 +11,7 @@
 int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_0051bf30(CDemonMission *this_ptr,int index,int hero_type,CCharacter *existing_actor)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   int iVar2;
   CCharacter *local_14;
   
@@ -25,10 +25,10 @@ int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_0051bf30(CDemonMiss
     _DAT_01d1d404 = 0x650;
     core_main_c_FUN_005030e0("CDemonMission::createOneHero - hero already created!");
   }
-  iVar1 = *(int *)(this_ptr + 0x1118);
+  pCVar1 = this_ptr->first_actor;
   local_14 = (CCharacter *)0x0;
   do {
-    if (iVar1 == 0) {
+    if (pCVar1 == (CDemonActor *)0x0) {
 LAB_0051bfaa:
       if (local_14 == (CCharacter *)0x0) {
         shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,"Can't find hero placeholder for hero %d",index)
@@ -38,7 +38,7 @@ LAB_0051bfaa:
       *(CCharacter **)(index * 4 + 0x1d06aa4) = local_14;
       return 1;
     }
-    iVar2 = core_actor_cpp_castToClassHash_FUN_0040c600(iVar1,_DAT_01d06b4c);
+    iVar2 = core_actor_cpp_castToClassHash_FUN_0040c600(pCVar1,_DAT_01d06b4c);
     if ((iVar2 != 0) && (index == *(int *)(iVar2 + 0x158))) {
       if (existing_actor == (CCharacter *)0x0) {
         local_14 = (CCharacter *)
@@ -58,6 +58,6 @@ LAB_0051bfaa:
       core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160(0x01D2C900,&local_14->base);
       goto LAB_0051bfaa;
     }
-    iVar1 = *(int *)(iVar1 + 0x14c);
+    pCVar1 = pCVar1->next_actor;
   } while( true );
 }

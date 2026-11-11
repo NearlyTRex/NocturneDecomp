@@ -90,6 +90,6 @@ void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_00422760(CBoxActor *this_pt
   if (g_CBoxActorClassVersion < 0x10) {
     return;
   }
-  core_actor_cpp_archiveOrientation_FUN_0040b260(&this_ptr->field_0x66c,"camOrient");
+  core_actor_cpp_archiveOrientation_FUN_0040b260(&this_ptr->cam_orientation,"camOrient");
   return;
 }

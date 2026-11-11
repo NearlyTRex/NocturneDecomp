@@ -16,6 +16,6 @@ void __cdecl core_armour_cpp_CArmour_archive_FUN_0040ebe0(CArmour *this_ptr)
   model_ptr = &(this_ptr->base).base.model;
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040b7f0(model_ptr,"modelName");
   core_actor_cpp_archiveMotionState_FUN_0040b870(&model_ptr->base,"motion state");
-  core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0xc268,"fallApartEvent");
+  core_actor_cpp_archiveString_FUN_0040b440(this_ptr->fall_apart_event,"fallApartEvent");
   return;
 }

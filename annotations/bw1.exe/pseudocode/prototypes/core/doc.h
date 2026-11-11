@@ -43,11 +43,11 @@ void __cdecl CDoc::process(CDoc *this_ptr,float delta_time);
 
 // Original: core_doc.cpp_FUN_00469550
 // Address: 00469550
-void FUN_00469550(CCharacter *param_1,float param_2);
+void FUN_00469550(CHero *param_1,float param_2);
 
 // Original: core_doc.cpp_FUN_0046bde0
 // Address: 0046bde0
-void FUN_0046bde0(CCharacter *param_1,float param_2);
+void FUN_0046bde0(CHero *param_1,float param_2);
 
 // Original: core_doc.cpp_FUN_0046c980
 // Address: 0046c980
@@ -151,7 +151,7 @@ void FUN_004742a0(int param_1);
 
 // Original: core_doc.cpp_FUN_00474400
 // Address: 00474400
-void FUN_00474400(CCharacter *param_1,float param_2);
+void FUN_00474400(CHero *param_1,float param_2);
 
 // Original: core_doc.cpp_FUN_00474ef0
 // Address: 00474ef0

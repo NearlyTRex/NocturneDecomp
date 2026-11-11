@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 178,
+    "complexity_score": 96,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 53,
-    "suspect_count": 10,
+    "pseudocode_lines": 51,
+    "suspect_count": 3,
     "suspect_types": [
-      "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 176
+    "total_lines": 174
   },
   "cross_references": [
     {
@@ -278,76 +276,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "local_1f = *(uint *)&this_ptr->players[this_ptr->local_player_index].field_0x44;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "local_1b = *(uint *)&this_ptr->players[this_ptr->local_player_index].field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "local_17 = *(uint *)&this_ptr->players[this_ptr->local_player_index].field_0x18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x1",
-      "severity": "mild",
-      "text": "cVar1 = pSVar3->field_0x1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x2",
-      "severity": "mild",
-      "text": "pSVar3 = (SNetPlayer *)&pSVar3->field_0x2;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 52,
       "match": "DAT_00622584",
       "severity": "mild",
       "text": "DAT_00622584 = 1;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->players[this_ptr->local_player_index].field_0x40 = _DAT_01d51da0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 41,
+      "line": 40,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar3->owner`). Replace `pSVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 46,
-      "match": "pSVar3 = (T *)&pSVar3->FIELD",
-      "severity": "moderate",
-      "text": "pSVar3 = (SNetPlayer *)&pSVar3->field_0x2;",
-      "type": "shadow_pointer_walk"
     }
   ]
 }

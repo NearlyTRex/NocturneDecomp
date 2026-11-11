@@ -6,11 +6,11 @@
 #include "system/basetypes.h"
 
 // Structure: CIni
-// Stub: size from Watcom RTTI, fields not yet recovered
+// nocedit's layout. findLineNumberOfVariable (bw1 FUN_004f4550) sets *this = 1 on entry and 0 on failure; writeProfileString tests *this == 0. g_CIniInstance is passed as this.
 // Ghidra size: 0x4 (4 bytes)
 #pragma pack(push, 1)
 typedef struct CIni {
-    char field_0[4]; // 0x0
+    int initialized; // 0x0
 } CIni;
 #pragma pack(pop)
 

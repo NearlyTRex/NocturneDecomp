@@ -9,17 +9,21 @@
 void __cdecl core_stranger_cpp_CStranger_archive_FUN_0058e240(CStranger *this_ptr)
 
 {
-  core_hero_cpp_CHero_archive_FUN_004eab00((CHero *)this_ptr);
+  core_hero_cpp_CHero_archive_FUN_004eab00(&this_ptr->base);
   if ((1 < g_CStrangerClassVersion) && (g_CStrangerClassVersion < 5)) {
-    core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x1ff78,"@objectToPickUp" + 1)
+    core_actor_cpp_archiveActor_FUN_0040b6f0
+              (&(this_ptr->base).object_to_pick_up,"@objectToPickUp" + 1);
+    core_actor_cpp_archiveActor_FUN_0040b6f0(&(this_ptr->base).door_to_open,"doorToOpen");
+    core_actor_cpp_archiveActor_FUN_0040b6f0(&(this_ptr->base).lever_to_pull,"leverToPull")
     ;
-    core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x1ff74,"doorToOpen");
-    core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x1ff80,"leverToPull");
-    core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x1ff84,"ladderToClimb");
+    core_actor_cpp_archiveActor_FUN_0040b6f0
+              (&(this_ptr->base).ladder_to_climb,"ladderToClimb");
   }
   if (g_CStrangerClassVersion == 2) {
-    core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x25b0,"lhCarryObject");
-    core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x2628,"rhCarryObject");
+    core_actor_cpp_archiveActor_FUN_0040b6f0
+              (&(this_ptr->base).base.carry_hands[0].carry_actor,"lhCarryObject");
+    core_actor_cpp_archiveActor_FUN_0040b6f0
+              (&(this_ptr->base).base.carry_hands[1].carry_actor,"rhCarryObject");
   }
   if (3 < g_CStrangerClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040b6f0
@@ -33,13 +37,14 @@ void __cdecl core_stranger_cpp_CStranger_archive_FUN_0058e240(CStranger *this_pt
   }
   if (7 < g_CStrangerClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b670
-              ((int *)&this_ptr->field_0x1ff5c,"actionPending");
+              (&(this_ptr->base).action_pending,"actionPending");
   }
   if (g_CStrangerClassVersion < 9) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040b670
-            ((int *)&this_ptr->field_0x2c98,"layerActionIndex");
-  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x2c9c,"layerActionT");
+            (&(this_ptr->base).base.layer_action_index,"layerActionIndex");
+  core_actor_cpp_archiveFloat_FUN_0040b5f0
+            (&(this_ptr->base).base.layer_action_t,"layerActionT");
   return;
 }

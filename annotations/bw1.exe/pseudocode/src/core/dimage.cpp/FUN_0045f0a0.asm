@@ -16,7 +16,7 @@
 ; Called Functions:
 ;   core_dimage.cpp_FUN_0045f100
 ;   core_main.c_FUN_005030e0
-;   crt_unknown.c_FUN_005c08d0
+;   crt_memory.c_malloc_FUN_005c08d0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     IMUL EAX,dword ptr [EBX + 0x308]    ; 0045f0b1
     ADD ESP,0x4                         ; 0045f0b8
     PUSH EAX                            ; 0045f0bb
-    CALL crt_unknown.c_FUN_005c08d0     ; 0045f0bc
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 0045f0bc
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 0045f0c1
     MOV dword ptr [EBX + 0x300],EAX     ; 0045f0c4
     TEST EAX,EAX                        ; 0045f0ca

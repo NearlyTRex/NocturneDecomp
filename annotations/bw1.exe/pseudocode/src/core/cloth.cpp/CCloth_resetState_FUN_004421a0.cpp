@@ -9,7 +9,7 @@
 void __cdecl core_cloth_cpp_CCloth_resetState_FUN_004421a0(CCloth *this_ptr,int vertex_index)
 
 {
-  *(uint *)(this_ptr + vertex_index * 0x11c + 0x470) = 0xffffffff;
-  *(uint *)(this_ptr + vertex_index * 0x11c + 0x40c) = 0;
+  this_ptr->vertices[vertex_index].collide_bone_index = -1;
+  this_ptr->vertices[vertex_index].locked = 0;
   return;
 }

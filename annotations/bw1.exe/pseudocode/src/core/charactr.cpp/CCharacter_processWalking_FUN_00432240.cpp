@@ -59,7 +59,7 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00432240(CCharacter 
   }
   if (this_ptr->door_target == (CDoor *)0x0) {
     pCVar4 = this_ptr->walk_to_target;
-    if ((((0.0 <= this_ptr->walk_min_distance) && (*(int *)&this_ptr->field_0x27a8 == 0)) &&
+    if ((((0.0 <= this_ptr->walk_min_distance) && (this_ptr->is_spectral == 0)) &&
         (iVar3 = core_actor_cpp_castToClassHash_FUN_0040c600(pCVar4,g_CWayPointClassInfo.name_hash),
         iVar3 != 0)) &&
        (pCVar4 = (CDemonActor *)core_charactr_cpp_FUN_004354a0(this_ptr,iVar3),
@@ -118,7 +118,7 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00432240(CCharacter 
     this_ptr->walk_state = WALK_STATE_WALKING;
   }
   fStack_18 = this_ptr->turn_angle_accumulator;
-  fStack_1c = *(float *)&this_ptr->field_0x2528;
+  fStack_1c = this_ptr->turn_speed;
   fVar7 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_18);
   fVar6 = -fStack_1c;
   if ((fVar6 <= fVar7) && (fVar6 = fVar7, fStack_1c < fVar7)) {

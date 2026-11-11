@@ -11,24 +11,25 @@
 void unkaddr_004b9ab0_cpp_FUN_004ba6ae(void)
 
 {
-  int iVar1;
-  SNotesSection *pSVar2;
-  int iVar3;
+  bool bVar1;
+  undefined3 extraout_var;
+  SNotesSection *this_ptr;
+  int iVar2;
   
   if (DAT_0061d2e4 != 0) {
-    core_fldnotes_cpp_FUN_004bb270(&g_STextViewInstance,0x60,0x40,0x1eb,0x1b8);
-    iVar3 = 0;
-    core_fldnotes_cpp_FUN_004bb1c0(&g_STextViewInstance);
+    core_fldnotes_cpp_STextView_setRect_FUN_004bb270(&g_STextViewInstance,0x60,0x40,0x1eb,0x1b8);
+    iVar2 = 0;
+    core_fldnotes_cpp_STextView_reset_FUN_004bb1c0(&g_STextViewInstance);
     DAT_0061d2e4 = 0;
     DAT_01cc4270 = 0;
     if (0 < _DAT_01cc4470) {
-      pSVar2 = SNotesSection_ARRAY_01cc4474;
+      this_ptr = SNotesSection_ARRAY_01cc4474;
       while( true ) {
-        iVar1 = core_fldnotes_cpp_FUN_004bc130(pSVar2,&g_STextViewInstance);
-        if (iVar1 == 0) break;
-        iVar3 = iVar3 + 1;
-        pSVar2 = pSVar2 + 1;
-        if (_DAT_01cc4470 <= iVar3) {
+        bVar1 = core_fldnotes_cpp_SNotesSection_layout_FUN_004bc130(this_ptr,0x1cc7cd4);
+        if (CONCAT31(extraout_var,bVar1) == 0) break;
+        iVar2 = iVar2 + 1;
+        this_ptr = this_ptr + 1;
+        if (_DAT_01cc4470 <= iVar2) {
           return;
         }
       }

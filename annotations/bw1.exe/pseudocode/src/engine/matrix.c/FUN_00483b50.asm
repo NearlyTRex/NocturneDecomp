@@ -6,11 +6,11 @@
 ;
 ; XREF[8]:
 ;   core_fire.cpp_CFireball_setupRenderState_FUN_004ae550 at 004ae5b1
+;   core_fire.cpp_CFirefly_setupRenderState_FUN_004ad9c0 at 004ada5b
 ;   core_fire.cpp_CPopcorn_render_FUN_004b4370 at 004b43fc
 ;   core_fire.cpp_CRainDrop_render_FUN_004b46e0 at 004b476f
 ;   core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004abdb0 at 004abe11
 ;   core_fire.cpp_CSpark_setupRenderState_FUN_004ad010 at 004ad0ab
-;   core_fire.cpp_FUN_004ad9c0 at 004ada5b
 ;   core_flame.cpp_CFlame_renderTransparent_FUN_004b8100 at 004b8218
 ;   core_gore.cpp_CBloodParticle_setupRenderState_FUN_004e3e50 at 004e3eb1
 ;

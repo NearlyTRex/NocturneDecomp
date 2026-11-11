@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 356,
-    "complexity_score": 1047,
+    "complexity_score": 1022,
     "cross_reference_count": 5,
     "function_call_count": 5,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 132,
-    "suspect_count": 86,
+    "suspect_count": 84,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -16,7 +16,6 @@
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals",
@@ -636,16 +635,8 @@
       "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)&param_1->field_0x27a8 == 0) &&",
+      "text": "if ((param_1->is_spectral == 0) &&",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x27a8",
-      "severity": "mild",
-      "text": "if ((*(int *)&param_1->field_0x27a8 == 0) &&",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -1060,16 +1051,8 @@
       "line": 124,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_28 = *(float *)&param_1->field_0x2528;",
+      "text": "local_28 = param_1->turn_speed;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 124,
-      "match": "field_0x2528",
-      "severity": "mild",
-      "text": "local_28 = *(float *)&param_1->field_0x2528;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

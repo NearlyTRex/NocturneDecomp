@@ -13,7 +13,7 @@ void core_game_cpp_giveHeroWeaponAmmo_FUN_004d25fe(char *param_1,EAmmoType param
 {
   CAmmo *pCVar1;
   
-  pCVar1 = (CAmmo *)debugAllocTracked1(0x31c);
+  pCVar1 = (CAmmo *)operator_new(0x31c);
   if (pCVar1 == (CAmmo *)0x0) {
     return;
   }

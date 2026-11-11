@@ -52,14 +52,14 @@
       "name": "core_texlist.cpp_CTextureList_ctor_FUN_005960b0"
     },
     {
-      "addr": "005c0f32",
-      "is_variadic": false,
-      "name": "crt_unknown.c_debugAllocTracked1_FUN_005c0f32"
-    },
-    {
       "addr": "005c08d0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c08d0"
+      "name": "crt_memory.c_malloc_FUN_005c08d0"
+    },
+    {
+      "addr": "005c0f32",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_FUN_005c0f32"
     }
   ],
   "globals": [
@@ -177,11 +177,11 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Allocation size hardcodes 0x6d64 == sizeof(CTextureList). Replace the magic with sizeof(CTextureList) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 19,
-      "match": "(CTextureList*) alloc stride 0x6d64",
+      "description": "Allocation size hardcodes 0x4 == sizeof(SGroundCell). Replace the magic with sizeof(SGroundCell) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 12,
+      "match": "(SGroundCell*) alloc stride 0x4",
       "severity": "moderate",
-      "text": "(CTextureList *)debugAllocTracked1(0x6d64)",
+      "text": "(SGroundCell *)malloc(this_ptr->width * this_ptr->height * 4)",
       "type": "alloc_magic_size"
     }
   ]

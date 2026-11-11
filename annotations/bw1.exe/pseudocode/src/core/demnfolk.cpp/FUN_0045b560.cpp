@@ -89,10 +89,10 @@ uint core_demnfolk_cpp_FUN_0045b560(CCharacter *param_1,float param_2)
     local_18 = (float *)core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(5.0,10.0);
     *(float **)(param_1[1].base.create_event + 0x28) = local_18;
   }
-  if (*(int *)&param_1->field_0x25b0 != 0) {
+  if (param_1->carry_hands[0].carry_actor != (CDemonActor *)0x0) {
     return 0;
   }
-  if (*(int *)&param_1->field_0x2628 != 0) {
+  if (param_1->carry_hands[1].carry_actor != (CDemonActor *)0x0) {
     return 0;
   }
   if (0.0 < *(float *)(param_1[1].base.create_event + 0x2c)) {

@@ -11,8 +11,9 @@
 void __cdecl core_icepick_cpp_FUN_004f1670(CIcePick *this_ptr,float delta_time)
 
 {
+  CDeformableModelInstance *this_ptr_00;
   float fVar1;
-  CMotionList *this_ptr_00;
+  CMotionList *this_ptr_01;
   uint *puVar2;
   byte bVar3;
   float afStackY_1808 [1519];
@@ -40,15 +41,15 @@ void __cdecl core_icepick_cpp_FUN_004f1670(CIcePick *this_ptr,float delta_time)
     }
     iVar4 = 1;
     motion_name = "shoot";
-    this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00
-                            ((CMotionController *)&this_ptr->field_0x158);
-    iVar4 = core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(this_ptr_00,motion_name,iVar4);
+    this_ptr_00 = &(this_ptr->base).base.model;
+    this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(&this_ptr_00->base);
+    iVar4 = core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(this_ptr_01,motion_name,iVar4);
     core_skeleton_cpp_FUN_00568100
-              (&this_ptr->field_0x158,iVar4,0,this_ptr->shoot_blend_weight,_DAT_01d06cb4,
+              (this_ptr_00,iVar4,0,this_ptr->shoot_blend_weight,_DAT_01d06cb4,
                core_skeleton_cpp_FUN_00567360);
     this_ptr->aim_pitch =
-         *(float *)&this_ptr->field_0xc204 * _DAT_005e53bf * (float)_DAT_005e53b7 * delta_time +
-         this_ptr->aim_pitch;
+         (this_ptr->base).player_input.look_up_down_speed * _DAT_005e53bf * (float)_DAT_005e53b7 *
+         delta_time + this_ptr->aim_pitch;
     if ((int)this_ptr->aim_pitch < 0x3f490fdc) {
       if (this_ptr->aim_pitch < _DAT_005e53c3) {
         this_ptr->aim_pitch = -0.7853982;
@@ -70,8 +71,8 @@ void __cdecl core_icepick_cpp_FUN_004f1670(CIcePick *this_ptr,float delta_time)
           ((int)(&stack0xffffffdc + (uint)bVar3 * -8 + (uint)bVar3 * -8) +
           ((uint)bVar3 * -2 + 1) * 4);
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0
-              ((CDeformableModelInstance *)&this_ptr->field_0x158,&local_1c,
-               this_ptr->shoot_blend_weight,iVar4,blend_callback);
+              (&(this_ptr->base).base.model,&local_1c,this_ptr->shoot_blend_weight,iVar4,
+               blend_callback);
   }
   return;
 }

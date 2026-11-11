@@ -31,7 +31,7 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_0053a3d0(CPlatform *this
     if ((((this_ptr->render_in_background_when_not_moving_flag != 0) &&
          (this_ptr->state != PLATFORM_STATE_TYPE_MOVING_TO_END)) &&
         (this_ptr->state != PLATFORM_STATE_TYPE_MOVING_TO_START)) &&
-       ((*(int *)&this_ptr->field_0x724 != 0 &&
+       ((this_ptr->rendered_in_background != 0 &&
         (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),
         iVar1 == 0)))) {
       return 0;

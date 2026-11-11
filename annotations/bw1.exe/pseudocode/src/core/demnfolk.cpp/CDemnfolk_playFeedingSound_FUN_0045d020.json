@@ -2,17 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 56,
+    "complexity_score": 16,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 16,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unnamed_field",
-      "unresolved_funcptr"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 39
   },
   "cross_references": [],
@@ -97,32 +94,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 16,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))(this_ptr,pcVar3);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "uVar2 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))(this_ptr,pcVar3);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0xc354",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xc354 = uVar2;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

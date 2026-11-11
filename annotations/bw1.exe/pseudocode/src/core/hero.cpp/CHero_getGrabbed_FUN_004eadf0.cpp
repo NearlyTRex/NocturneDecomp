@@ -12,7 +12,7 @@ int __cdecl core_hero_cpp_CHero_getGrabbed_FUN_004eadf0(CHero *this_ptr,CDemonAc
   SMotion *pSVar1;
   CMotionList *pCVar2;
   int iVar3;
-  CMotionController *this_ptr_00;
+  CDeformableModelInstance *this_ptr_00;
   byte bVar4;
   float afStackY_1010 [1014];
   char *pcVar5;
@@ -26,20 +26,20 @@ int __cdecl core_hero_cpp_CHero_getGrabbed_FUN_004eadf0(CHero *this_ptr,CDemonAc
   }
   engine_console_cpp_FUN_00445430
             (g_CConsolePtr,"CHero::startGettingGrabbed by %s, type %d\n",grabber,grab_type);
-  this_ptr_00 = (CMotionController *)(this_ptr + 0x158);
-  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(this_ptr_00);
+  this_ptr_00 = &(this_ptr->base).model;
+  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
   engine_console_cpp_FUN_00445430(g_CConsolePtr,"  current motion is %s\n",pSVar1);
   if (grab_type == 0) {
     pcVar5 = "GETGRABBED";
     iVar3 = grab_type;
-    pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(this_ptr_00);
+    pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(&this_ptr_00->base);
     iVar3 = core_motion_cpp_CMotionList_findStateIndex_FUN_00524150(pCVar2,pcVar5,iVar3);
     if (iVar3 < 0) {
       return 0;
     }
     pcVar5 = "GETGRABBED_FRONT";
     iVar3 = grab_type;
-    pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(this_ptr_00);
+    pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(&this_ptr_00->base);
     iVar3 = core_motion_cpp_CMotionList_findStateIndex_FUN_00524150(pCVar2,pcVar5,iVar3);
     if (iVar3 < 0) {
       pcVar5 = "GETGRABBED";
@@ -58,10 +58,11 @@ int __cdecl core_hero_cpp_CHero_getGrabbed_FUN_004eadf0(CHero *this_ptr,CDemonAc
         pcVar5 = "GETGRABBED_FRONT";
       }
     }
-    core_motion_cpp_CMotionController_setDesiredStateByName_FUN_00524850(this_ptr_00,pcVar5,1);
+    core_motion_cpp_CMotionController_setDesiredStateByName_FUN_00524850
+              (&this_ptr_00->base,pcVar5,1);
   }
   engine_console_cpp_FUN_00445430(g_CConsolePtr,"  We are grabbed\n");
-  *(CDemonActor **)(this_ptr + 0x26fc) = grabber;
-  *(int *)(this_ptr + 0x2700) = grab_type;
+  (this_ptr->base).grabbed_by = grabber;
+  (this_ptr->base).grabbed_type = grab_type;
   return 1;
 }

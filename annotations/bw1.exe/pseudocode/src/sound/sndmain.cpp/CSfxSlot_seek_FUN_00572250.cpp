@@ -22,24 +22,26 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_00572250(CSfxSlot *this_ptr)
     core_main_c_FUN_005030e0("SfxSlot::seek - no sample?!");
   }
   dVar3 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00572430
-                    (&this_ptr->sample->sample_info,*(double *)&(this_ptr->options).field_0x50,
-                     *(uint *)&(this_ptr->options).field_0x58,0);
-  *(uint *)&(this_ptr->options).field_0x58 = 0;
-  *(double *)&(this_ptr->options).field_0x50 = dVar3;
+                    (&this_ptr->sample->sample_info,(this_ptr->options).playback_position,
+                     (this_ptr->options).playback_position_type,0);
+  (this_ptr->options).playback_position_type = 0;
+  (this_ptr->options).playback_position = dVar3;
   dVar3 = sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_005725a0
-                    (this_ptr->sample,*(double *)&(this_ptr->options).field_0x50,
-                     *(uint *)&(this_ptr->options).field_0x58);
+                    (this_ptr->sample,(this_ptr->options).playback_position,
+                     (this_ptr->options).playback_position_type);
   pCVar1 = this_ptr->sample;
-  *(double *)&(this_ptr->options).field_0x50 = dVar3;
-  if (*(int *)&pCVar1->field_0x160 < 0) {
-    *(uint *)&this_ptr->field_0x10c = *(uint *)&(this_ptr->options).field_0x50;
-    this_ptr->fade_time_remaining = *(float *)&(this_ptr->options).field_0x54;
+  (this_ptr->options).playback_position = dVar3;
+  if (pCVar1->streaming_slot_index < 0) {
+    *(uint *)&this_ptr->prev_hardware_playback_pos =
+         *(uint *)&(this_ptr->options).playback_position;
+    *(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4) =
+         *(uint *)((int)&(this_ptr->options).playback_position + 4);
     return;
   }
-  fVar2 = (float10)*(double *)&(this_ptr->options).field_0x50;
+  fVar2 = (float10)(this_ptr->options).playback_position;
   dest_buffer_offset = 0;
   pCVar1 = (CSfxSample *)round();
   sound_sndmain_cpp_CSfxSample_seek_FUN_005702c0(pCVar1,(int)ROUND(fVar2),dest_buffer_offset);
-  *(double *)&this_ptr->field_0x10c = (double)*(int *)&this_ptr->sample->field_0x170;
+  this_ptr->prev_hardware_playback_pos = (double)this_ptr->sample->stream_write_position;
   return;
 }

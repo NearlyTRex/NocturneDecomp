@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 209,
+    "complexity_score": 193,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 16,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 33,
+    "suspect_count": 15,
     "suspect_types": [
       "undefined_data",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 116
+    "total_lines": 115
   },
   "cross_references": [
     {
@@ -266,16 +265,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(CVector3f *)(**(code **)((this_ptr->base).vtable + 8))(this_ptr,&local_10,projected_vertex);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 25,
       "match": "DAT_00b8189c",
       "severity": "mild",
       "text": "uVar1 = *(uint *)(&DAT_00b8189c + DAT_00611238 * 4) & 0xff;",
@@ -283,7 +274,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 25,
       "match": "DAT_00611238",
       "severity": "mild",
       "text": "uVar1 = *(uint *)(&DAT_00b8189c + DAT_00611238 * 4) & 0xff;",
@@ -291,7 +282,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 26,
       "match": "DAT_0061b4a0",
       "severity": "mild",
       "text": "if (DAT_0061b4a0 == 0x20) {",
@@ -299,7 +290,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 27,
       "match": "DAT_00b8189c",
       "severity": "mild",
       "text": "uVar2 = (*(uint *)(&DAT_00b8189c + DAT_00611230 * 4) & 0xff) << (DAT_01c4e9d4 & 0x1f) |",
@@ -307,7 +298,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 27,
       "match": "DAT_00611230",
       "severity": "mild",
       "text": "uVar2 = (*(uint *)(&DAT_00b8189c + DAT_00611230 * 4) & 0xff) << (DAT_01c4e9d4 & 0x1f) |",
@@ -315,7 +306,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 27,
       "match": "DAT_01c4e9d4",
       "severity": "mild",
       "text": "uVar2 = (*(uint *)(&DAT_00b8189c + DAT_00611230 * 4) & 0xff) << (DAT_01c4e9d4 & 0x1f) |",
@@ -323,7 +314,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 28,
       "match": "DAT_00b8189c",
       "severity": "mild",
       "text": "(*(uint *)(&DAT_00b8189c + DAT_00611234 * 4) & 0xff) << (DAT_01c4e9e0 & 0x1f);",
@@ -331,7 +322,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 28,
       "match": "DAT_00611234",
       "severity": "mild",
       "text": "(*(uint *)(&DAT_00b8189c + DAT_00611234 * 4) & 0xff) << (DAT_01c4e9e0 & 0x1f);",
@@ -339,7 +330,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 28,
       "match": "DAT_01c4e9e0",
       "severity": "mild",
       "text": "(*(uint *)(&DAT_00b8189c + DAT_00611234 * 4) & 0xff) << (DAT_01c4e9e0 & 0x1f);",
@@ -347,7 +338,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 29,
       "match": "DAT_01c4e9ec",
       "severity": "mild",
       "text": "uVar1 = uVar1 << (DAT_01c4e9ec & 0x1f);",
@@ -355,7 +346,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 32,
       "match": "DAT_00b8189c",
       "severity": "mild",
       "text": "uVar2 = (*(uint *)(&DAT_00b8189c + DAT_00611230 * 4) & 0xff) << 0x10 |",
@@ -363,7 +354,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 32,
       "match": "DAT_00611230",
       "severity": "mild",
       "text": "uVar2 = (*(uint *)(&DAT_00b8189c + DAT_00611230 * 4) & 0xff) << 0x10 |",
@@ -371,7 +362,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 33,
       "match": "DAT_00b8189c",
       "severity": "mild",
       "text": "(*(uint *)(&DAT_00b8189c + DAT_00611234 * 4) & 0xff) << 8;",
@@ -379,7 +370,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 33,
       "match": "DAT_00611234",
       "severity": "mild",
       "text": "(*(uint *)(&DAT_00b8189c + DAT_00611234 * 4) & 0xff) << 8;",

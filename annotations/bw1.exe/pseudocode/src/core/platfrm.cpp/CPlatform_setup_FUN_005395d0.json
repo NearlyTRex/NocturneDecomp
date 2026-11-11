@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 80,
+    "complexity_score": 77,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 30,
+    "pseudocode_lines": 27,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk"
     ],
-    "total_lines": 94
+    "total_lines": 91
   },
   "cross_references": [
     {
@@ -145,7 +145,7 @@
   "suspects": [
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 25,
+      "line": 22,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",
@@ -153,7 +153,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 30,
+      "line": 27,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",
@@ -161,7 +161,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 25,
+      "line": 22,
       "match": "pCVar2 = (T *)((int)&(pCVar2->FIELD).SUBFIELD + CONST)",
       "severity": "moderate",
       "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",
@@ -169,7 +169,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 30,
+      "line": 27,
       "match": "pCVar2 = (T *)((int)&(pCVar2->FIELD).SUBFIELD + CONST)",
       "severity": "moderate",
       "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",

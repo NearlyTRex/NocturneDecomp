@@ -11,7 +11,7 @@ void core_tbplayer_cpp_factoryFuncBassPlayer_FUN_00594750(void)
 {
   CBassPlayer *this_ptr;
   
-  this_ptr = (CBassPlayer *)debugAllocTracked1(0x1fac0);
+  this_ptr = (CBassPlayer *)operator_new(0x1fac0);
   if (this_ptr == (CBassPlayer *)0x0) {
     return;
   }

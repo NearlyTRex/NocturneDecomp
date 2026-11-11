@@ -12,21 +12,23 @@ void __cdecl core_bird_cpp_CBird_setup_FUN_004152c0(CBird *this_ptr)
 
 {
   int iVar1;
+  int iVar2;
   CSkeleton *this_ptr_00;
   
-  core_charactr_cpp_CCharacter_setup_FUN_0042c510((CCharacter *)this_ptr);
+  core_charactr_cpp_CCharacter_setup_FUN_0042c510(&this_ptr->base);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
-                          ((CDeformableModelInstance *)&this_ptr->field_0x158);
+                          (&(this_ptr->base).model);
   DAT_007c3908 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0
                            (this_ptr_00,"Bip01 L Foot",0);
   _DAT_007c390c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 R Foot",0);
-  iVar1 = DAT_007c3908;
-  *(int *)&this_ptr->field_0x2620 = _DAT_007c390c;
-  *(int *)&this_ptr->field_0x25a8 = iVar1;
-  if (*(int *)&this_ptr->field_0x27a8 == 0) {
+  iVar2 = DAT_007c3908;
+  (this_ptr->base).carry_hands[1].bone_index = _DAT_007c390c;
+  iVar1 = (this_ptr->base).is_spectral;
+  (this_ptr->base).carry_hands[0].bone_index = iVar2;
+  if (iVar1 == 0) {
     return;
   }
-  *(uint *)&this_ptr->field_0xfc = 1;
+  (this_ptr->base).base.is_transparent = 1;
   return;
 }

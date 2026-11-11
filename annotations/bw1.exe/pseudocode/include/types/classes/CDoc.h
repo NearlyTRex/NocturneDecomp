@@ -2,15 +2,64 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CLadder;
+struct CWeapon;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CHero.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SArmAimData.h"
 
 // Structure: CDoc
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 131300; CHero + CStranger-style tail (CDoc_ctor@00468c80 repeats CStranger_ctor sequence) minus the hat model, plus door-align/quick-turn fields; process@004693e0, setup@00469060, processDamage@004737b0, FUN_00469550 (processFrame), FUN_0046caa0, FUN_0047081c (ladder), FUN_00475920 (fire button), FUN_004724a0
 // Ghidra size: 0x200e4 (131300 bytes)
 #pragma pack(push, 1)
 typedef struct CDoc {
-    char field_0[131300]; // 0x0
+    CHero base; // 0x0, existing base
+    int guns_drawn; // 0x1ffac, archive CDoc_archive@00471970 "gunsDrawn"/"gunDrawn"; ctor zeroes; canDoHeroAction tests
+    float guns_drawn_blend; // 0x1ffb0, ctor zeroes (same slot/sequence as CStranger ctor); processFrame-equivalent FADD/FSUBR
+    float frame_cleared; // 0x1ffb4, ctor zeroes, CStranger ctor sequence
+    float aim_pitch; // 0x1ffb8, ctor 0xbf060a92 (-pi/6), as CStranger ctor
+    float aim_speed_factor; // 0x1ffbc, ctor FSTP random float, as CStranger ctor
+    SArmAimData right_arm_aim; // 0x1ffc0, ctor zero/copy pattern +0x0/+0x4/+0x8/+0xc/+0x10/+0x14/+0x18/+0x1c identical to CStranger right_arm_aim
+    SArmAimData left_arm_aim; // 0x1ffe0, ctor pattern identical to CStranger left_arm_aim
+    struct CLadder* ladder_to_descend; // 0x20000, archiveActor "ladderToDescend"; processDamage clears
+    struct CWeapon* weapon; // 0x20004, archiveActor "weapon"; drop/dropCarriedObject/processDamage compare with carry objects
+    int dual_wield_side; // 0x20008, ctor zeroes; fire-button handler MOV/CMP/toggle as CStranger.dual_wield_side
+    int can_grab_weapon; // 0x2000c, ctor zeroes; fire-button handler sets 0/1, CMP in ladder fn (CStranger.can_grab_weapon)
+    int melee_attack_index; // 0x20010, ctor zeroes; fire-button handler MOV ESI,[..]/inc/reset as CStranger.melee_attack_index
+    float interact_blend; // 0x20014, processFrame-equivalent: FSUBR k*dt clamp 0 / FADD k*dt clamp 1.0
+    uint goggle_sfx_handles[2]; // 0x20018, setup zeroes both; processFrame-equivalent killSfx both, startSfx into both, setSfxFade
+    float action_timer; // 0x20020, setup zeroes; set 2.0 then -= dt clamped at 0 (CStranger.action_timer pattern)
+    float turn_angle; // 0x20024, ctor zeroes; turn fns FSUBR/FCOMP/FSTP (CStranger.turn_angle slot)
+    float turn_blend_weight; // 0x20028, ctor zeroes; turn fns
+    float turn_blend_timer; // 0x2002c, ctor zeroes; turn fns
+    float turn_elapsed; // 0x20030, ctor zeroes; turn fns
+    char field_131124[24]; // 0x20034
+    CVector3f pending_velocity; // 0x2004c, ctor LEA+zero x/y/z (CStranger.pending_velocity)
+    int turn_motion_index; // 0x20058, ctor -1; turn fns
+    int pickup_facing_reversed; // 0x2005c, ctor zeroes; doHeroAction sets (0 < dot)
+    float arm_recoil_blend; // 0x20060, ctor zeroes; FLD/FSUB in recoil fns
+    float airborne_timer; // 0x20064, ctor zeroes; processFrame-equivalent
+    char field_131176[4]; // 0x20068
+    CVector3f carry_object_world_center; // 0x2006c, ctor x=-1e30; doHeroAction writes x/y/z
+    CBoundingBox3D carry_object_bbox; // 0x20078, ctor +0xc = -1e30; doHeroAction writes 6 floats, adds to world center
+    CVector3f ref_r_hand_bone_pos; // 0x20090, setup copies bone position (CStranger.ref_r_hand_bone_pos)
+    CVector3f ref_r_upperarm_bone_pos; // 0x2009c, setup copies bone position
+    float grab_timer; // 0x200a8, setup and getGrabbed zero it
+    CVector3f ladder_offset; // 0x200ac, ladder-climb fn ("Climbing ladder %s") ADD this,+0x100; ladder blend LEA/FMUL
+    float ladder_facing_angle; // 0x200b8, ladder-climb fn stores it; processFrame FLD
+    float ladder_blend_time; // 0x200bc, ladder-climb fn sets 1.0; setup zeroes; processFrame FDIV/FSTP
+    CVector3f door_align_offset; // 0x200c0, FUN_0046caa0 (bw1): door_to_open handle pos - position stored x/y/z, y zeroed; processFrame LEA/FMUL by remaining fraction
+    float door_align_yaw; // 0x200cc, FUN_0046caa0: orientation.y + door heading; processFrame FSUB orientation, normalizeAngleToPi
+    float door_align_timer; // 0x200d0, FUN_0046caa0 sets 0.5 (0 when door already open state); processFrame FDIV/decrement; setup zeroes
+    uint sfx_handle; // 0x200d4, processDamage killSfx / vtable+0x2c pain sound stored, playing-check
+    int quick_turn_active; // 0x200d8, process: when 1 rotates orientation.y by const and setDesiredState 0x75, cleared when done; set 1 in processFrame; setup zeroes
+    float quick_turn_angle; // 0x200dc, process: decremented by step, ABS compare; processFrame zeroes
+    float fall_velocity_snapshot; // 0x200e0, ctor/setup zero; last field like CStranger.fall_velocity_snapshot
 } CDoc;
 #pragma pack(pop)
 

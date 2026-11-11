@@ -7,6 +7,7 @@ struct CWerewolf;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CMorph.h"
 #include "types/classes/CNPC.h"
 
 // Structure: CPassenger
@@ -19,7 +20,7 @@ typedef struct CPassenger {
     char name_of_wolf[32]; // 0x1fb3c
     char transform_wav[100]; // 0x1fb5c
     struct CWerewolf* werewolf_actor; // 0x1fbc0
-    char field_129988[3116]; // 0x1fbc4
+    CMorph morph; // 0x1fbc4
     float morph_time; // 0x207f0
     float wolf_size; // 0x207f4
 } CPassenger;

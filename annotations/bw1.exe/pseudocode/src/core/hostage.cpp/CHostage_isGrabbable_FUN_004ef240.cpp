@@ -15,7 +15,7 @@ int __cdecl core_hostage_cpp_CHostage_isGrabbable_FUN_004ef240(CHostage *this_pt
      (this_ptr->hostage_state != 4)) {
     pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                        (&(this_ptr->base).base.model.base);
-    if (*(int *)(pSVar1 + 0x24) != 10) {
+    if (pSVar1->state_index != 10) {
       return 1;
     }
   }

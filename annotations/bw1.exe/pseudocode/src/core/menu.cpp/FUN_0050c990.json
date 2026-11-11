@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 255,
-    "complexity_score": 278,
+    "complexity_score": 203,
     "cross_reference_count": 2,
     "function_call_count": 18,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 93,
-    "suspect_count": 15,
+    "suspect_count": 8,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_constant",
       "raw_address_pointer_store",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
@@ -93,19 +92,19 @@
       "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_00509e20"
     },
     {
-      "addr": "00521c50",
-      "is_variadic": false,
-      "name": "core_moon.cpp_FUN_00521c50"
-    },
-    {
       "addr": "00521d50",
       "is_variadic": false,
-      "name": "core_moon.cpp_FUN_00521d50"
+      "name": "core_moon.cpp_CMoon_free_FUN_00521d50"
+    },
+    {
+      "addr": "00521c50",
+      "is_variadic": false,
+      "name": "core_moon.cpp_CMoon_init_FUN_00521c50"
     },
     {
       "addr": "00521e40",
       "is_variadic": false,
-      "name": "core_moon.cpp_FUN_00521e40"
+      "name": "core_moon.cpp_CMoon_render_FUN_00521e40"
     },
     {
       "addr": "00555770",
@@ -225,25 +224,25 @@
     },
     {
       "addr": "01ccf460",
-      "name": "g_CGameInstance.field160_0xd0",
+      "name": "g_CGameInstance.game_control",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf464",
-      "name": "g_CGameInstance.field164_0xd4",
+      "name": "g_CGameInstance.hero_number",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf474",
-      "name": "g_CGameInstance.field180_0xe4",
+      "name": "g_CGameInstance.puzzle_difficulty_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf478",
-      "name": "g_CGameInstance.field184_0xe8",
+      "name": "g_CGameInstance.combat_difficulty_mode",
       "type": "undefined4",
       "value": null
     },
@@ -374,62 +373,6 @@
       "severity": "mild",
       "text": "if (param_1 != 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0xe4",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0xe4 == 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0xe4",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0xe4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0xe8",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0xe8 == 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 60,
-      "match": "field_0xe8",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0xe8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 64,
-      "match": "field_0xd4",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0xd4 = 9;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 77,
-      "match": "field_0xd0",
-      "severity": "mild",
-      "text": "_DAT_01d1ee90 = *(int *)&g_CGamePtr->field_0xd0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 79,
-      "match": "field_0xd0",
-      "severity": "mild",
-      "text": "if (_DAT_01d1ee90 != *(int *)&g_CGamePtr->field_0xd0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",

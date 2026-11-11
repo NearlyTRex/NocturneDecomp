@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 43,
+    "complexity_score": 39,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 24,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_memcpy"
     ],
-    "total_lines": 98
+    "total_lines": 94
   },
   "cross_references": [
     {
@@ -165,10 +165,10 @@
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 21,
+      "line": 17,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "CStack_38.x = damage_direction->x;",
+      "text": "SStack_44.impact_point.x = damage_direction->x;",
       "type": "unrolled_memcpy"
     }
   ],

@@ -9,6 +9,6 @@
 void __cdecl core_level_cpp_CLevelLoader_reset_FUN_004fe830(CLevelLoader *this_ptr)
 
 {
-  *(uint *)(this_ptr + 0xc) = 0;
+  this_ptr->enabled = 0;
   return;
 }

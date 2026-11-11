@@ -32,14 +32,14 @@ LAB_005303a5:
       if (0 < _DAT_01d715a8) {
         iVar1 = 0;
         do {
-          if (*(int *)&this_ptr->players[this_ptr->local_player_index].field_0x48 ==
+          if (this_ptr->players[this_ptr->local_player_index].sim_frame_index ==
               *(int *)(iVar1 + 0x1d715ac)) {
             if (-1 < iVar2) {
               core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_005305a0
                         (this_ptr,(SSimFrame *)(iVar1 + 0x1d715ac));
               core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00530710(this_ptr);
               iVar1 = 0;
-              iVar2 = *(int *)&this_ptr->players[this_ptr->local_player_index].field_0x48;
+              iVar2 = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
               if (0 < _DAT_01d715a8) {
                 iVar3 = 0;
                 local_18 = &DAT_01d71618;
@@ -62,7 +62,7 @@ LAB_005303a5:
                 return;
               }
               iVar1 = 0;
-              while (*(int *)&this_ptr->players[this_ptr->local_player_index].field_0x48 !=
+              while (this_ptr->players[this_ptr->local_player_index].sim_frame_index !=
                      *(int *)(iVar1 + 0x1d715ac)) {
                 iVar1 = iVar1 + 0x6c;
                 iVar2 = iVar2 + 1;

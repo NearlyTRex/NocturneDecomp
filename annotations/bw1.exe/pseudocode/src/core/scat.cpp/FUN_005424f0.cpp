@@ -75,7 +75,7 @@ void core_scat_cpp_FUN_005424f0(int param_1,float param_2,int param_3)
   *(uint *)(param_1 + 0x1ffd4) = 0;
   if ((param_3 == 0) &&
      (pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
-                         ((CMotionController *)(param_1 + 0x158)), *(int *)(pSVar2 + 0x24) == 2)) {
+                         ((CMotionController *)(param_1 + 0x158)), pSVar2->state_index == 2)) {
     param_3 = 1;
   }
   fVar4 = *(float *)(param_1 + 0x1ffc4);

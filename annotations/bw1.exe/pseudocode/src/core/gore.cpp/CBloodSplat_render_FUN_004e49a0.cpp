@@ -58,23 +58,21 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004e49a0(CBloodSplat *this_ptr
     local_68.x = (int)ROUND(_DAT_006016a8 * -0.5);
     local_68.y = (int)ROUND(_DAT_006016a8 * -0.5);
     local_68.z = (int)ROUND(_DAT_006016a8 * 0.0);
-    engine_special_cpp_FUN_00580173((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&local_68);
+    engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_68);
     local_74 = 0x3f000000;
     local_6c = 0;
     local_70 = 0xbf000000;
     local_50.x = (int)ROUND(_DAT_006016a8 * 0.5);
     local_50.y = (int)ROUND(_DAT_006016a8 * -0.5);
     local_50.z = (int)ROUND(_DAT_006016a8 * 0.0);
-    engine_special_cpp_FUN_00580173
-              ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&local_50);
+    engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_50);
     local_74 = 0x3f000000;
     local_6c = 0;
     local_70 = 0x3f000000;
     local_38.x = (int)ROUND(_DAT_006016a8 * 0.5);
     local_38.y = (int)ROUND(_DAT_006016a8 * 0.5);
     local_38.z = (int)ROUND(_DAT_006016a8 * 0.0);
-    engine_special_cpp_FUN_00580173
-              ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&local_38);
+    engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_38);
     local_74 = 0xbf000000;
     local_6c = 0;
     local_70 = 0x3f000000;
@@ -100,23 +98,21 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004e49a0(CBloodSplat *this_ptr
     local_20.x = (int)ROUND(_DAT_006016a8 * -0.5);
     local_20.y = (int)ROUND(_DAT_006016a8 * 0.0);
     local_20.z = (int)ROUND(_DAT_006016a8 * -0.5);
-    engine_special_cpp_FUN_00580173((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&local_20);
+    engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_20);
     local_44 = 0x3f000000;
     local_3c = 0xbf000000;
     local_40 = 0;
     local_8c.x = (int)ROUND(_DAT_006016a8 * 0.5);
     local_8c.y = (int)ROUND(_DAT_006016a8 * 0.0);
     local_8c.z = (int)ROUND(_DAT_006016a8 * -0.5);
-    engine_special_cpp_FUN_00580173
-              ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&local_8c);
+    engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_8c);
     local_44 = 0x3f000000;
     local_40 = 0;
     local_3c = 0x3f000000;
     local_5c.x = (int)ROUND(_DAT_006016a8 * 0.5);
     local_5c.y = (int)ROUND(_DAT_006016a8 * 0.0);
     local_5c.z = (int)ROUND(_DAT_006016a8 * 0.5);
-    engine_special_cpp_FUN_00580173
-              ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&local_5c);
+    engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_5c);
     local_44 = 0xbf000000;
     local_3c = 0x3f000000;
     local_40 = 0;
@@ -125,8 +121,7 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004e49a0(CBloodSplat *this_ptr
     local_2c.z = (int)ROUND(_DAT_006016a8 * 0.5);
     input = &local_2c;
   }
-  engine_special_cpp_FUN_00580173
-            ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),input);
+  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,input);
   EVar1 = this_ptr->blood_type;
   if (EVar1 == BLOOD_TYPE_RED) {
 LAB_004e4be7:

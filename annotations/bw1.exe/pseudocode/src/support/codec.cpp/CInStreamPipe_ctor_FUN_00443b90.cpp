@@ -14,14 +14,14 @@ CInStreamPipe * support_codec_cpp_CInStreamPipe_ctor_FUN_00443b90(CInStreamPipe 
   CInStreamPipe *pCVar1;
   
   pCVar1 = (CInStreamPipe *)unkaddr_0059f520_cpp_FUN_0059f540(this_ptr);
-  *(byte ***)pCVar1 = &g_CInStreamPipeVTable;
-  *(uint *)&pCVar1->field_0x4 = 0;
-  *(uint *)&pCVar1->field_0x8 = 0;
-  *(uint *)&pCVar1->field_0xc = 0;
-  *(uint *)&pCVar1->field_0x10 = 0;
-  *(uint *)&pCVar1->field_0x14 = 0;
-  *(uint *)&pCVar1->field_0x18 = 0;
-  *(uint *)&pCVar1->field_0x1c = 0;
-  *(uint *)&pCVar1->field_0x20 = 0;
+  pCVar1->vtable = &g_CInStreamPipeVTable;
+  pCVar1->codec = (CCodec *)0x0;
+  pCVar1->source = (void *)0x0;
+  pCVar1->owns_streams = 0;
+  pCVar1->buffer = (char *)0x0;
+  pCVar1->buffer_size = 0;
+  pCVar1->buffer_length = 0;
+  pCVar1->position = 0;
+  pCVar1->codec_finished = 0;
   return pCVar1;
 }

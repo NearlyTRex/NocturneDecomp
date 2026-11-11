@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 181,
+    "complexity_score": 162,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 131,
-    "suspect_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 132,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 497
+    "total_lines": 498
   },
   "cross_references": [
     {
@@ -129,13 +129,13 @@
     },
     {
       "addr": "01ccf3a4",
-      "name": "g_CGameInstance.field11_0x14",
+      "name": "g_CGameInstance.blood_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf58c",
-      "name": "g_CGameInstance.field460_0x1fc",
+      "name": "g_CGameInstance.gratuitous_dismemberment",
       "type": "undefined4",
       "value": null
     }
@@ -275,36 +275,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 64,
-      "match": "field_0x1fc",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x1fc != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x14 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 106,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[10] * 4) == 0) {",
-      "type": "unnamed_field"
     }
   ]
 }

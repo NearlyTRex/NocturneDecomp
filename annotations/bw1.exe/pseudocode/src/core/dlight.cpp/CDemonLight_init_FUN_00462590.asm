@@ -26,7 +26,7 @@
 ;   core_dlight.cpp_FUN_00462670
 ;   core_main.c_FUN_005030e0
 ;   crt_math.c_round_FUN_005c03a0
-;   crt_unknown.c_FUN_005c08d0
+;   crt_memory.c_malloc_FUN_005c08d0
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     ADD ESP,0x4                         ; 004625ae
     ADD EDX,0x210                       ; 004625b1
     PUSH EDX                            ; 004625b7
-    CALL crt_unknown.c_FUN_005c08d0     ; 004625b8
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 004625b8
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 004625bd
     MOV dword ptr [EBX + 0x2f98],EAX    ; 004625c0
     TEST EAX,EAX                        ; 004625c6
@@ -67,8 +67,8 @@ section .text
     SBB EAX,EDX                         ; 004625f2
     SAR EAX,0x3                         ; 004625f4
     PUSH EAX                            ; 004625f7
-    CALL crt_unknown.c_FUN_005c08d0     ; 004625f8
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 004625f8
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     FLD float ptr [EBX + 0x2fa8]        ; 004625fd
     FMUL double ptr [0x005d8f2c]        ; 00462603 | DAT_005d8f2c
     ADD ESP,0x4                         ; 00462609

@@ -11,7 +11,7 @@ int __cdecl core_shadow_cpp_CShadow_renderOpaque_FUN_0055fbf0(CShadow *this_ptr)
 {
   int iVar1;
   
-  if ((*(int *)&this_ptr->field_0xc2fc == 0) &&
+  if ((this_ptr->is_opaque == 0) &&
      (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560), iVar1 != 0)
      ) {
     return 0;

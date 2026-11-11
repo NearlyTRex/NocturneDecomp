@@ -13,7 +13,7 @@ void __cdecl core_game_cpp_endProfileTimer_FUN_004d7fe0(char *timer_name)
 {
   int iVar1;
   
-  if (*(int *)&g_CGamePtr->field_0x228 != 1) {
+  if (g_CGamePtr->profile_mode != 1) {
     return;
   }
   iVar1 = wincore_winrun_cpp_getTime_FUN_005b2420();

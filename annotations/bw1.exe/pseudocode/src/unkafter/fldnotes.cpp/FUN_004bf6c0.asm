@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_fldnotes.cpp_PageResource_TwanaEntry_dtor_FUN_004bad40 at 004bad6e
+;   core_fldnotes.cpp_SPageResourceTwanaEntry_dtor_FUN_004bad40 at 004bad6e
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CAlphaBitmapTypeInfo

@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   blend_mode
 ;
 ; XREF[4]:
-;   core_moon.cpp_FUN_00521e40 at 00522035
+;   core_moon.cpp_CMoon_render_FUN_00521e40 at 00522035
 ;   engine_3d.c_flushPremiumRenderBuffer_FUN_00406f10 at 0040708b
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0 at 00483dd5
 ;   engine_ncursfx.cpp_CMouse_render_FUN_00531460 at 00531553

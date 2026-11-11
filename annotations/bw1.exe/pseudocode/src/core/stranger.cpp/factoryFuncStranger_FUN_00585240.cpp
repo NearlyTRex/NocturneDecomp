@@ -11,7 +11,7 @@ void core_stranger_cpp_factoryFuncStranger_FUN_00585240(void)
 {
   CStranger *this_ptr;
   
-  this_ptr = (CStranger *)debugAllocTracked1(0x20244);
+  this_ptr = (CStranger *)operator_new(0x20244);
   if (this_ptr == (CStranger *)0x0) {
     return;
   }

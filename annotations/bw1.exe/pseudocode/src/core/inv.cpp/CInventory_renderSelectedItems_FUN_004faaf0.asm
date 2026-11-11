@@ -28,7 +28,7 @@
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 DAT_0061f1a0
 ;   undefined4 DAT_0061f1a4
-;   undefined4 g_CGameInstance.field532_0x244
+;   undefined4 g_CGameInstance.letterbox_mode
 ;   undefined4 DAT_01d06ab4
 ;   undefined4 DAT_01d1bc5c
 ;
@@ -51,7 +51,7 @@ section .text
     SUB ESP,0x2c                        ; 004faaf4
     MOV EBX,dword ptr [ESP + 0x40]      ; 004faaf7
     MOV EAX,[0x0061d95c]                ; 004faafb | g_CGamePtr
-    CMP dword ptr [EAX + 0x244],0x0     ; 004fab00 | g_CGameInstance.field532_0x244
+    CMP dword ptr [EAX + 0x244],0x0     ; 004fab00 | g_CGameInstance.letterbox_mode
     JNZ 0x004fad69                      ; 004fab07
         ;   XREF to: 004fad69 (CONDITIONAL_JUMP)  ; LAB_004fad69
     MOV EDX,dword ptr [0x01d06ab4]      ; 004fab0d | DAT_01d06ab4

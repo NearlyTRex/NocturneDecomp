@@ -22,7 +22,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_00544460(CScript *this_ptr,float *t
   CInventory *this_ptr_00;
   float fVar2;
   char cVar3;
-  SDialogEntry SVar4;
+  SDialogEntry *pSVar4;
   CGame *pCVar5;
   CDemonSet *pCVar6;
   int iVar7;
@@ -41,12 +41,10 @@ int __cdecl core_script_cpp_CScript_step_FUN_00544460(CScript *this_ptr,float *t
   uint uVar16;
   uint uVar17;
   char *pcVar18;
-  SDialogEntry *pSVar19;
+  char *pcVar19;
   char *pcVar20;
-  char *pcVar21;
-  SDialogEntry *pSVar22;
-  float *pfVar23;
-  byte bVar24;
+  float *pfVar21;
+  byte bVar22;
   float local_4938;
   float local_492c;
   float local_4928;
@@ -62,7 +60,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_00544460(CScript *this_ptr,float *t
   char local_3bac [256];
   char local_3aac [256];
   int local_39ac [60];
-  SDialogEntry local_38bc [200];
+  char local_38bc [200];
   char local_37f4 [200];
   char local_372c [200];
   char local_3664 [200];
@@ -73,7 +71,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_00544460(CScript *this_ptr,float *t
   char local_327c [200];
   char local_31b4 [200];
   char local_30ec [200];
-  SDialogEntry local_3024 [200];
+  char local_3024 [200];
   char local_2f5c [200];
   char local_2e94 [200];
   char local_2dcc [200];
@@ -115,7 +113,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_00544460(CScript *this_ptr,float *t
   float afStack_11cc [8];
   char local_11ac [4];
   float afStack_11a8 [49];
-  SDialogEntry local_10e4 [200];
+  char local_10e4 [200];
   char local_101c [200];
   char local_f54 [200];
   char local_e8c [200];
@@ -125,7 +123,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_00544460(CScript *this_ptr,float *t
   char local_c34 [100];
   char local_bd0 [100];
   char local_b6c [100];
-  SDialogEntry local_b08 [100];
+  char local_b08 [100];
   char local_aa4 [100];
   char local_a40 [100];
   char local_9dc [100];
@@ -140,11 +138,11 @@ int __cdecl core_script_cpp_CScript_step_FUN_00544460(CScript *this_ptr,float *t
   char local_658 [100];
   char local_5f4 [100];
   char local_590 [100];
-  SDialogEntry local_52c [100];
+  char local_52c [100];
   char local_4c8 [100];
   char local_464 [100];
   char local_400 [100];
-  SDialogEntry local_39c [100];
+  char local_39c [100];
   char local_338 [100];
   char local_2d4 [100];
   char local_270 [100];
@@ -163,16 +161,16 @@ int __cdecl core_script_cpp_CScript_step_FUN_00544460(CScript *this_ptr,float *t
   int local_174;
   int local_170;
   C3DSLight *local_16c;
-  uint local_168;
+  int local_168;
   uint local_164;
   int local_160;
   int local_15c;
-  SDialogEntry *local_158;
-  SDialogEntry *local_154;
+  char *local_158;
+  char *local_154;
   int local_150;
   uint local_14c;
-  SDialogEntry *local_148;
-  SDialogEntry *local_144;
+  char *local_148;
+  char *local_144;
   int local_140;
   float local_13c;
   int local_138;
@@ -183,8 +181,8 @@ int __cdecl core_script_cpp_CScript_step_FUN_00544460(CScript *this_ptr,float *t
   int local_124;
   int local_120;
   CDemonLight *local_11c;
-  SDialogEntry *local_118;
-  uint local_114;
+  char *local_118;
+  int local_114;
   int local_110;
   int local_10c;
   int local_108;
@@ -250,25 +248,25 @@ int __cdecl core_script_cpp_CScript_step_FUN_00544460(CScript *this_ptr,float *t
   uint local_18;
   float local_14;
   
-  bVar24 = 0;
+  bVar22 = 0;
   if ((this_ptr->next_cmd < 0) || (this_ptr->parsed_line_count <= this_ptr->next_cmd)) {
     _DAT_01d1d400 = "..\\core\\script.cpp";
     _DAT_01d1d404 = 0x47b;
     core_main_c_FUN_005030e0("CScript::step - Invalid instruction pointer!\n(This is an internal script processing error,\nand doesn't mean there's anything wrong with the\nscript file.)");
   }
   pcVar18 = "(no error message provided)";
-  pcVar21 = &DAT_01e810b0;
+  pcVar20 = &DAT_01e810b0;
   do {
     cVar3 = *pcVar18;
-    *pcVar21 = cVar3;
+    *pcVar20 = cVar3;
     if (cVar3 == '\0') break;
     cVar3 = pcVar18[1];
     pcVar18 = pcVar18 + 2;
-    pcVar21[1] = cVar3;
-    pcVar21 = pcVar21 + 2;
+    pcVar20[1] = cVar3;
+    pcVar20 = pcVar20 + 2;
   } while (cVar3 != '\0');
-  pcVar18 = *(char **)(this_ptr->parsed_lines + this_ptr->next_cmd * 8 + 4);
-  local_168 = *(uint *)(this_ptr->parsed_lines + this_ptr->next_cmd * 8);
+  pcVar18 = this_ptr->parsed_lines[this_ptr->next_cmd].text;
+  local_168 = this_ptr->parsed_lines[this_ptr->next_cmd].line_number;
   local_30 = (char *)this_ptr->next_cmd;
   local_164 = 1;
   this_ptr->next_cmd = (int)(local_30 + 1);
@@ -490,24 +488,24 @@ int __cdecl core_script_cpp_CScript_step_FUN_00544460(CScript *this_ptr,float *t
                 pcVar18 = core_script_cpp_parseConditionExpr_FUN_00543380(&local_34,local_b6c);
                 if (pcVar18 != (char *)0x0) {
 LAB_00545bc9:
-                  pcVar21 = &DAT_01e810b0;
+                  pcVar20 = &DAT_01e810b0;
                   do {
                     cVar3 = *pcVar18;
-                    *pcVar21 = cVar3;
+                    *pcVar20 = cVar3;
                     if (cVar3 == '\0') {
                       return -1;
                     }
                     cVar3 = pcVar18[1];
                     pcVar18 = pcVar18 + 2;
-                    pcVar21[1] = cVar3;
-                    pcVar21 = pcVar21 + 2;
+                    pcVar20[1] = cVar3;
+                    pcVar20 = pcVar20 + 2;
                   } while (cVar3 != '\0');
                   return -1;
                 }
                 if (_DAT_01e810a8 == 0) {
                   iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
                                     (0x01C51D80,local_b6c);
-                  *(int *)&g_CGamePtr->field_0x24c = iVar7;
+                  g_CGamePtr->allow_enemy_attack_flag = iVar7;
                 }
               }
               else {
@@ -521,7 +519,7 @@ LAB_00545bc9:
                     iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
                                       (0x01C51D80,local_338);
                     _DAT_01e818b4 = (uint)(iVar7 == 0);
-                    *(uint *)&g_CGamePtr->field_0x254 = _DAT_01e818b4;
+                    g_CGamePtr->hero_controls_blocked = _DAT_01e818b4;
                   }
                 }
                 else {
@@ -534,7 +532,7 @@ LAB_00545bc9:
                     if (_DAT_01e810a8 == 0) {
                       iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
                                         (0x01C51D80,local_cfc);
-                      *(int *)&g_CGamePtr->field_0x248 = iVar7;
+                      g_CGamePtr->allow_damage_flag = iVar7;
                     }
                   }
                   else {
@@ -621,17 +619,17 @@ LAB_00545bc9:
                                 pcVar18 = core_script_cpp_parseArgument_FUN_005432d0
                                                     (&local_34,local_101c,200);
                                 if (pcVar18 != (char *)0x0) {
-                                  pcVar21 = &DAT_01e810b0;
+                                  pcVar20 = &DAT_01e810b0;
                                   do {
                                     cVar3 = *pcVar18;
-                                    *pcVar21 = cVar3;
+                                    *pcVar20 = cVar3;
                                     if (cVar3 == '\0') {
                                       return -1;
                                     }
                                     cVar3 = pcVar18[1];
                                     pcVar18 = pcVar18 + 2;
-                                    pcVar21[1] = cVar3;
-                                    pcVar21 = pcVar21 + 2;
+                                    pcVar20[1] = cVar3;
+                                    pcVar20 = pcVar20 + 2;
                                   } while (cVar3 != '\0');
                                   return -1;
                                 }
@@ -675,17 +673,17 @@ LAB_00545bc9:
                                                       (&local_34,local_246c,200);
                                   if (pcVar18 != (char *)0x0) {
 LAB_0054630a:
-                                    pcVar21 = &DAT_01e810b0;
+                                    pcVar20 = &DAT_01e810b0;
                                     do {
                                       cVar3 = *pcVar18;
-                                      *pcVar21 = cVar3;
+                                      *pcVar20 = cVar3;
                                       if (cVar3 == '\0') {
                                         return -1;
                                       }
                                       cVar3 = pcVar18[1];
                                       pcVar18 = pcVar18 + 2;
-                                      pcVar21[1] = cVar3;
-                                      pcVar21 = pcVar21 + 2;
+                                      pcVar20[1] = cVar3;
+                                      pcVar20 = pcVar20 + 2;
                                     } while (cVar3 != '\0');
                                     return -1;
                                   }
@@ -713,8 +711,7 @@ LAB_0054630a:
                                     }
                                     local_34 = local_34 + local_f4;
                                     core_script_cpp_trimString_FUN_00543240(local_3bac);
-                                    if ((local_160 < 0) || (*(int *)(0x01D2C900 + 4) <= local_160)
-                                       ) {
+                                    if ((local_160 < 0) || (0x01D2C900->num_sets <= local_160)) {
                                       _sprintf(&DAT_01e810b0,"Invalid set index");
                                       return -1;
                                     }
@@ -722,26 +719,26 @@ LAB_0054630a:
                                               (local_3bac,(char *)0x0,(char *)0x0,(char *)0x0,
                                                local_3cac);
                                     if (local_3cac[0] == '\0') {
-                                      pcVar21 = &DAT_005ee9c0;
+                                      pcVar20 = &DAT_005ee9c0;
                                       iVar7 = -1;
                                       pcVar18 = local_3bac;
                                       do {
-                                        pcVar20 = pcVar18;
+                                        pcVar19 = pcVar18;
                                         if (iVar7 == 0) break;
                                         iVar7 = iVar7 + -1;
-                                        pcVar20 = pcVar18 + (uint)bVar24 * -2 + 1;
+                                        pcVar19 = pcVar18 + (uint)bVar22 * -2 + 1;
                                         cVar3 = *pcVar18;
-                                        pcVar18 = pcVar20;
+                                        pcVar18 = pcVar19;
                                       } while (cVar3 != '\0');
-                                      pcVar20 = pcVar20 + -1;
+                                      pcVar19 = pcVar19 + -1;
                                       do {
-                                        cVar3 = *pcVar21;
-                                        *pcVar20 = cVar3;
+                                        cVar3 = *pcVar20;
+                                        *pcVar19 = cVar3;
                                         if (cVar3 == '\0') break;
-                                        cVar3 = pcVar21[1];
-                                        pcVar21 = pcVar21 + 2;
-                                        pcVar20[1] = cVar3;
+                                        cVar3 = pcVar20[1];
                                         pcVar20 = pcVar20 + 2;
+                                        pcVar19[1] = cVar3;
+                                        pcVar19 = pcVar19 + 2;
                                       } while (cVar3 != '\0');
                                     }
                                     iVar7 = engine_dosio_cpp_getFileSize_FUN_00478fb0
@@ -769,39 +766,38 @@ LAB_0054630a:
                                                   );
                                         return -1;
                                       }
-                                      core_script_cpp_trimString_FUN_00543240((char *)local_39c);
+                                      core_script_cpp_trimString_FUN_00543240(local_39c);
                                       local_34 = local_34 + local_15c;
                                       iVar7 = core_script_cpp_CScript_findDialogEntry_FUN_0054b2a0
-                                                        (this_ptr,(char *)local_39c);
+                                                        (this_ptr,local_39c);
                                       if (iVar7 < 0) {
                                         local_154 = local_38bc;
-                                        local_158 = (SDialogEntry *)&DAT_005eea17;
-                                        _sprintf((char *)local_38bc,
-                                                   "[Can't find %s in database]");
+                                        local_158 = &DAT_005eea17;
+                                        _sprintf(local_38bc,"[Can't find %s in database]");
                                         shape_edittool_cpp_CStrList_add_FUN_004994d0
-                                                  (&g_ScriptPickList.base,(char *)local_38bc);
+                                                  (&g_ScriptPickList.base,local_38bc);
                                       }
                                       else {
-                                        pSVar19 = this_ptr->dialog_entries;
-                                        local_158 = pSVar19 + iVar7 * 0x226 + 0x78;
-                                        local_154 = pSVar19 + iVar7 * 0x226 + 0x96;
-                                        pSVar22 = local_39c;
-                                        pSVar19 = pSVar19 + iVar7 * 0x226 + 0x3c;
+                                        pSVar4 = this_ptr->dialog_entries;
+                                        local_158 = pSVar4[iVar7].speaker;
+                                        local_154 = pSVar4[iVar7].text;
+                                        pcVar20 = local_39c;
+                                        pcVar18 = pSVar4[iVar7].sound_filename;
                                         do {
-                                          SVar4 = *pSVar19;
-                                          *pSVar22 = SVar4;
-                                          if (SVar4 == (SDialogEntry)0x0) break;
-                                          SVar4 = pSVar19[1];
-                                          pSVar19 = pSVar19 + 2;
-                                          pSVar22[1] = SVar4;
-                                          pSVar22 = pSVar22 + 2;
-                                        } while (SVar4 != (SDialogEntry)0x0);
+                                          cVar3 = *pcVar18;
+                                          *pcVar20 = cVar3;
+                                          if (cVar3 == '\0') break;
+                                          cVar3 = pcVar18[1];
+                                          pcVar18 = pcVar18 + 2;
+                                          pcVar20[1] = cVar3;
+                                          pcVar20 = pcVar20 + 2;
+                                        } while (cVar3 != '\0');
                                       }
                                       if (this_ptr->dialog_wav_time < 0.0) {
                                         local_14 = 
                                                   core_script_cpp_CScript_startDialogLine_FUN_0054aa60
-                                                            (this_ptr,(char *)local_158,
-                                                             (char *)local_39c,(char *)local_154);
+                                                            (this_ptr,local_158,local_39c,local_154)
+                                        ;
                                         this_ptr->dialog_wav_time = local_14;
                                         if (this_ptr->dialog_wav_time < 0.0) {
                                           return -1;
@@ -830,38 +826,38 @@ LAB_0054630a:
                                                      "Error parsing dbSay arguments");
                                           return -1;
                                         }
-                                        core_script_cpp_trimString_FUN_00543240((char *)local_b08);
+                                        core_script_cpp_trimString_FUN_00543240(local_b08);
                                         local_34 = local_34 + local_150;
                                         iVar7 = core_script_cpp_CScript_findDialogEntry_FUN_0054b2a0
-                                                          (this_ptr,(char *)local_b08);
+                                                          (this_ptr,local_b08);
                                         if (iVar7 < 0) {
                                           local_144 = local_3024;
-                                          local_148 = (SDialogEntry *)&DAT_005eea68;
-                                          _sprintf((char *)local_3024,
-                                                     "[Can't find %s in database]");
+                                          local_148 = &DAT_005eea68;
+                                          _sprintf(local_3024,"[Can't find %s in database]")
+                                          ;
                                           shape_edittool_cpp_CStrList_add_FUN_004994d0
-                                                    (&g_ScriptPickList.base,(char *)local_3024);
+                                                    (&g_ScriptPickList.base,local_3024);
                                         }
                                         else {
-                                          pSVar19 = this_ptr->dialog_entries;
-                                          local_148 = pSVar19 + iVar7 * 0x226 + 0x78;
-                                          local_144 = pSVar19 + iVar7 * 0x226 + 0x96;
-                                          pSVar22 = local_b08;
-                                          pSVar19 = pSVar19 + iVar7 * 0x226 + 0x3c;
+                                          pSVar4 = this_ptr->dialog_entries;
+                                          local_148 = pSVar4[iVar7].speaker;
+                                          local_144 = pSVar4[iVar7].text;
+                                          pcVar20 = local_b08;
+                                          pcVar18 = pSVar4[iVar7].sound_filename;
                                           do {
-                                            SVar4 = *pSVar19;
-                                            *pSVar22 = SVar4;
-                                            if (SVar4 == (SDialogEntry)0x0) break;
-                                            SVar4 = pSVar19[1];
-                                            pSVar19 = pSVar19 + 2;
-                                            pSVar22[1] = SVar4;
-                                            pSVar22 = pSVar22 + 2;
-                                          } while (SVar4 != (SDialogEntry)0x0);
+                                            cVar3 = *pcVar18;
+                                            *pcVar20 = cVar3;
+                                            if (cVar3 == '\0') break;
+                                            cVar3 = pcVar18[1];
+                                            pcVar18 = pcVar18 + 2;
+                                            pcVar20[1] = cVar3;
+                                            pcVar20 = pcVar20 + 2;
+                                          } while (cVar3 != '\0');
                                         }
                                         local_14 = 
                                                   core_script_cpp_CScript_startDialogLine_FUN_0054aa60
-                                                            (this_ptr,(char *)local_148,
-                                                             (char *)local_b08,(char *)local_144);
+                                                            (this_ptr,local_148,local_b08,local_144)
+                                        ;
                                         this_ptr->dialog_wav_time = local_14;
                                         fVar2 = this_ptr->dialog_wav_time;
 joined_r0x0054a269:
@@ -884,44 +880,42 @@ joined_r0x0054a269:
                                                        "Error parsing dbTimedDisplay arguments");
                                             return -1;
                                           }
-                                          core_script_cpp_trimString_FUN_00543240((char *)local_52c)
-                                          ;
+                                          core_script_cpp_trimString_FUN_00543240(local_52c);
                                           local_34 = local_34 + local_140;
                                           iVar7 = core_script_cpp_CScript_findDialogEntry_FUN_0054b2a0
-                                                            (this_ptr,(char *)local_52c);
+                                                            (this_ptr,local_52c);
                                           if (iVar7 < 0) {
                                             local_118 = local_10e4;
-                                            _sprintf((char *)local_10e4,
+                                            _sprintf(local_10e4,
                                                        "[Can't find %s in database]");
                                           }
                                           else {
-                                            local_118 = this_ptr->dialog_entries +
-                                                        iVar7 * 0x226 + 0x96;
-                                            pSVar22 = local_52c;
-                                            pSVar19 = this_ptr->dialog_entries +
-                                                      iVar7 * 0x226 + 0x3c;
+                                            local_118 = this_ptr->dialog_entries[iVar7].text;
+                                            pcVar20 = local_52c;
+                                            pcVar18 = this_ptr->dialog_entries[iVar7].sound_filename
+                                            ;
                                             do {
-                                              SVar4 = *pSVar19;
-                                              *pSVar22 = SVar4;
-                                              if (SVar4 == (SDialogEntry)0x0) break;
-                                              SVar4 = pSVar19[1];
-                                              pSVar19 = pSVar19 + 2;
-                                              pSVar22[1] = SVar4;
-                                              pSVar22 = pSVar22 + 2;
-                                            } while (SVar4 != (SDialogEntry)0x0);
+                                              cVar3 = *pcVar18;
+                                              *pcVar20 = cVar3;
+                                              if (cVar3 == '\0') break;
+                                              cVar3 = pcVar18[1];
+                                              pcVar18 = pcVar18 + 2;
+                                              pcVar20[1] = cVar3;
+                                              pcVar20 = pcVar20 + 2;
+                                            } while (cVar3 != '\0');
                                           }
                                           if (_DAT_01e810a8 == 0) {
-                                            pSVar19 = (SDialogEntry *)this_ptr->current_message;
-                                            pSVar22 = local_118;
+                                            pcVar18 = this_ptr->current_message;
+                                            pcVar20 = local_118;
                                             do {
-                                              SVar4 = *pSVar22;
-                                              *pSVar19 = SVar4;
-                                              if (SVar4 == (SDialogEntry)0x0) break;
-                                              SVar4 = pSVar22[1];
-                                              pSVar22 = pSVar22 + 2;
-                                              pSVar19[1] = SVar4;
-                                              pSVar19 = pSVar19 + 2;
-                                            } while (SVar4 != (SDialogEntry)0x0);
+                                              cVar3 = *pcVar20;
+                                              *pcVar18 = cVar3;
+                                              if (cVar3 == '\0') break;
+                                              cVar3 = pcVar20[1];
+                                              pcVar20 = pcVar20 + 2;
+                                              pcVar18[1] = cVar3;
+                                              pcVar18 = pcVar18 + 2;
+                                            } while (cVar3 != '\0');
                                             local_164 = 
                                                   core_script_cpp_CScript_processTimer_FUN_0054ac20
                                                             (this_ptr,local_13c,time_remaining);
@@ -1004,24 +998,24 @@ joined_r0x0054a269:
                                                             (-fVar2,fVar2);
                                                   core_doc_cpp_FUN_00476620(local_14,uVar9,fVar8);
                                                   local_1a8.x = local_1c0;
-                                                  *(float *)((int)&local_1a8 + (uint)bVar24 * -8 + 4
-                                                            ) = afStack_1e0[(uint)bVar24 * -2 + 9];
+                                                  *(float *)((int)&local_1a8 + (uint)bVar22 * -8 + 4
+                                                            ) = afStack_1e0[(uint)bVar22 * -2 + 9];
                                                   *(float *)((int)&local_1a8 +
-                                                            (uint)bVar24 * -8 + (uint)bVar24 * -8 +
+                                                            (uint)bVar22 * -8 + (uint)bVar22 * -8 +
                                                             8) = afStack_1e0
-                                                                 [(uint)bVar24 * -2 +
-                                                                  (uint)bVar24 * -2 + 10];
+                                                                 [(uint)bVar22 * -2 +
+                                                                  (uint)bVar22 * -2 + 10];
                                                   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
                                                             (&local_20c,&local_1a8);
                                                   core_dirmat_cpp_FUN_0045f690
                                                             (&local_20c,&local_19c);
                                                   local_1b4[0] = afStack_1e0[2];
-                                                  afStack_1e0[(uint)bVar24 * -2 + 0xc] =
-                                                       afStack_1e0[(uint)bVar24 * -2 + 3];
+                                                  afStack_1e0[(uint)bVar22 * -2 + 0xc] =
+                                                       afStack_1e0[(uint)bVar22 * -2 + 3];
                                                   afStack_1e0
-                                                  [(uint)bVar24 * -2 + (uint)bVar24 * -2 + 0xd] =
+                                                  [(uint)bVar22 * -2 + (uint)bVar22 * -2 + 0xd] =
                                                        afStack_1e0
-                                                       [(uint)bVar24 * -2 + (uint)bVar24 * -2 + 4];
+                                                       [(uint)bVar22 * -2 + (uint)bVar22 * -2 + 4];
                                                   core_actor_cpp_FUN_0040cff0
                                                             (&local_19c,afStack_1e0 + 0xb);
                                                 }
@@ -1040,8 +1034,7 @@ joined_r0x0054a269:
                                                             (&(local_130->base).location.position,
                                                              &(local_130->base).orient,
                                                              initial_velocity,&local_130->base,0,0,
-                                                             *(EBloodType *)&local_130->field_0x27a0
-                                                            );
+                                                             local_130->blood_type);
                                                 iVar15 = 0;
                                                 do {
                                                   if (*(int *)((int)local_39ac + iVar15) != 0) {
@@ -1137,17 +1130,17 @@ joined_r0x0054a269:
                                                   core_event_cpp_CEventList_validateCondition_FUN_004a6c90
                                                             (0x01C51D80,local_2534);
                                                   if (pcVar18 != (char *)0x0) {
-                                                    pcVar21 = &DAT_01e810b0;
+                                                    pcVar20 = &DAT_01e810b0;
                                                     do {
                                                       cVar3 = *pcVar18;
-                                                      *pcVar21 = cVar3;
+                                                      *pcVar20 = cVar3;
                                                       if (cVar3 == '\0') {
                                                         return -1;
                                                       }
                                                       cVar3 = pcVar18[1];
                                                       pcVar18 = pcVar18 + 2;
-                                                      pcVar21[1] = cVar3;
-                                                      pcVar21 = pcVar21 + 2;
+                                                      pcVar20[1] = cVar3;
+                                                      pcVar20 = pcVar20 + 2;
                                                     } while (cVar3 != '\0');
                                                     return -1;
                                                   }
@@ -1187,17 +1180,17 @@ joined_r0x0054a269:
                                                             (0x01C51D80,local_3344);
                                                   if (pcVar18 != (char *)0x0) {
 LAB_00546ffc:
-                                                    pcVar21 = &DAT_01e810b0;
+                                                    pcVar20 = &DAT_01e810b0;
                                                     do {
                                                       cVar3 = *pcVar18;
-                                                      *pcVar21 = cVar3;
+                                                      *pcVar20 = cVar3;
                                                       if (cVar3 == '\0') {
                                                         return -1;
                                                       }
                                                       cVar3 = pcVar18[1];
                                                       pcVar18 = pcVar18 + 2;
-                                                      pcVar21[1] = cVar3;
-                                                      pcVar21 = pcVar21 + 2;
+                                                      pcVar20[1] = cVar3;
+                                                      pcVar20 = pcVar20 + 2;
                                                     } while (cVar3 != '\0');
                                                     return -1;
                                                   }
@@ -1288,7 +1281,7 @@ LAB_00546ffc:
                                                             (g_CGamePtr);
                                                   if (uVar16 != 0) {
                                                     local_164 = 1;
-                                                    *(uint *)&g_CGamePtr->field_0x248 = 1;
+                                                    g_CGamePtr->allow_damage_flag = 1;
                                                   }
                                                   }
                                                   else {
@@ -1310,7 +1303,7 @@ LAB_00546ffc:
                                                   uVar16 = _DAT_01e810a8;
                                                   pCVar5 = g_CGamePtr;
                                                   if (_DAT_01e810a8 == 0) {
-                                                    *(uint *)&g_CGamePtr->field_0x248 = 0;
+                                                    g_CGamePtr->allow_damage_flag = 0;
                                                     local_164 = uVar16;
                                                     if (0.0 <= this_ptr->cmd_timer) {
                                                       uVar16 = 
@@ -1380,7 +1373,7 @@ LAB_00546ffc:
                                                     uVar16 = 
                                                   core_charactr_cpp_CCharacter_initGesture_FUN_00432c70
                                                             (pCVar10,local_dc4);
-                                                  *(uint *)&pCVar10->field_0x275c = local_114;
+                                                  pCVar10->gesture_looping = local_114;
                                                   }
                                                   else {
                                                     iVar7 = 0;
@@ -1507,23 +1500,21 @@ LAB_005445cf:
                                                                  local_168,pcVar18);
                                                       iVar7 = this_ptr->call_stack_count + -1;
                                                       if (-1 < iVar7) {
-                                                        pfVar23 = (float *)(this_ptr->
+                                                        pfVar21 = (float *)(this_ptr->
                                                                             current_message +
                                                                            this_ptr->
                                                                            call_stack_count * 4 +
                                                                            -0x54);
                                                         do {
-                                                          piVar1 = (int *)(pfVar23 + 0x117);
-                                                          pfVar23 = pfVar23 + -1;
+                                                          piVar1 = (int *)(pfVar21 + 0x117);
+                                                          pfVar21 = pfVar21 + -1;
                                                           iVar7 = iVar7 + -1;
                                                           FUN_005c03c0
                                                                     (local_104,"line%6d: %s\n",
-                                                                     *(uint *)
-                                                                      (this_ptr->parsed_lines +
-                                                                      *piVar1 * 8),
-                                                                     *(uint *)
-                                                                      (this_ptr->parsed_lines +
-                                                                      *piVar1 * 8 + 4));
+                                                                     this_ptr->parsed_lines[*piVar1]
+                                                                     .line_number,
+                                                                     this_ptr->parsed_lines[*piVar1]
+                                                                     .text);
                                                         } while (-1 < iVar7);
                                                       }
                                                       _fclose(local_104);
@@ -1624,7 +1615,7 @@ LAB_005445cf:
                                                       if (uVar16 == 0) break;
                                                       uVar16 = uVar16 - 1;
                                                       cVar3 = *pcVar18;
-                                                      pcVar18 = pcVar18 + (uint)bVar24 * -2 + 1;
+                                                      pcVar18 = pcVar18 + (uint)bVar22 * -2 + 1;
                                                     } while (cVar3 != '\0');
                                                     local_100 = ~uVar16 - 2;
                                                     if ((int)local_100 < 1) {
@@ -1634,19 +1625,19 @@ LAB_005445cf:
                                                       return -1;
                                                     }
                                                     pcVar18 = local_34;
-                                                    pcVar21 = acStack_23a6 + 2;
+                                                    pcVar20 = acStack_23a6 + 2;
                                                     for (uVar17 = local_100 >> 2; uVar17 != 0;
                                                         uVar17 = uVar17 - 1) {
-                                                      *(uint *)pcVar21 =
+                                                      *(uint *)pcVar20 =
                                                            *(uint *)pcVar18;
-                                                      pcVar18 = pcVar18 + (uint)bVar24 * -8 + 4;
-                                                      pcVar21 = pcVar21 + (uint)bVar24 * -8 + 4;
+                                                      pcVar18 = pcVar18 + (uint)bVar22 * -8 + 4;
+                                                      pcVar20 = pcVar20 + (uint)bVar22 * -8 + 4;
                                                     }
                                                     for (uVar17 = local_100 & 3; uVar17 != 0;
                                                         uVar17 = uVar17 - 1) {
-                                                      *pcVar21 = *pcVar18;
-                                                      pcVar18 = pcVar18 + (uint)bVar24 * -2 + 1;
-                                                      pcVar21 = pcVar21 + (uint)bVar24 * -2 + 1;
+                                                      *pcVar20 = *pcVar18;
+                                                      pcVar18 = pcVar18 + (uint)bVar22 * -2 + 1;
+                                                      pcVar20 = pcVar20 + (uint)bVar22 * -2 + 1;
                                                     }
                                                     local_34 = local_34 + local_100;
                                                     acStack_23a6[~uVar16] = '\0';
@@ -1711,10 +1702,8 @@ LAB_005445cf:
                                                     return -1;
                                                   }
                                                   iVar15 = _strnicmp
-                                                                     (*(char **)(this_ptr->
-                                                                                 parsed_lines +
-                                                                                iVar7 * 8 + 4),
-                                                                      &DAT_005ef0d0,4);
+                                                                     (this_ptr->parsed_lines[iVar7].
+                                                                      text,&DAT_005ef0d0,4);
                                                   if (iVar15 == 0) {
                                                     iVar7 = iVar7 + 1;
                                                   }
@@ -1744,7 +1733,7 @@ LAB_005445cf:
                                                   if (_DAT_01e810a8 == 0) {
                                                     local_164 = _DAT_01e810a8;
                                                     this_ptr->mission_ended = 1;
-                                                    *(uint *)&pCVar5->field_0x27c = 1;
+                                                    pCVar5->act_completion_state = 1;
                                                   }
                                                   }
                                                   else {
@@ -1762,17 +1751,17 @@ LAB_005445cf:
                                                             (&local_34,local_658,100);
                                                   if (pcVar18 != (char *)0x0) {
 LAB_00547aee:
-                                                    pcVar21 = &DAT_01e810b0;
+                                                    pcVar20 = &DAT_01e810b0;
                                                     do {
                                                       cVar3 = *pcVar18;
-                                                      *pcVar21 = cVar3;
+                                                      *pcVar20 = cVar3;
                                                       if (cVar3 == '\0') {
                                                         return -1;
                                                       }
                                                       cVar3 = pcVar18[1];
                                                       pcVar18 = pcVar18 + 2;
-                                                      pcVar21[1] = cVar3;
-                                                      pcVar21 = pcVar21 + 2;
+                                                      pcVar20[1] = cVar3;
+                                                      pcVar20 = pcVar20 + 2;
                                                     } while (cVar3 != '\0');
                                                     return -1;
                                                   }
@@ -1799,29 +1788,25 @@ LAB_00547aee:
                                                     return -1;
                                                   }
                                                   if (_DAT_01e810a8 == 0) {
-                                                    *(int *)&g_CGamePtr->field_0x244 = iVar15;
-                                                    *(uint *)&pCVar5->field_0x248 =
-                                                         (uint)(iVar15 == 0);
-                                                    *(uint *)&pCVar5->field_0x24c =
-                                                         (uint)(*(int *)&pCVar5->field_0x244 == 0);
-                                                    *(int *)&pCVar5->field_0x254 =
-                                                         *(int *)&pCVar5->field_0x244;
-                                                    if (*(int *)&pCVar5->field_0x244 != 0) {
-                                                      *(uint *)&g_CFieldNotesPtr->field_0x40 =
-                                                           0;
+                                                    g_CGamePtr->letterbox_mode = iVar15;
+                                                    pCVar5->allow_damage_flag = (uint)(iVar15 == 0);
+                                                    pCVar5->allow_enemy_attack_flag =
+                                                         (uint)(pCVar5->letterbox_mode == 0);
+                                                    pCVar5->hero_controls_blocked =
+                                                         pCVar5->letterbox_mode;
+                                                    if (pCVar5->letterbox_mode != 0) {
+                                                      g_CFieldNotesPtr->is_displayed = 0;
                                                     }
                                                     pCVar5 = g_CGamePtr;
                                                     this_ptr->saved_cmd_index = -1;
                                                     _DAT_01e818b4 = 1;
-                                                    if ((*(int *)&pCVar5->field_0x25c != 0) &&
-                                                       (*(int *)&pCVar5->field_0x244 != 0)) {
+                                                    if ((pCVar5->goggles_active != 0) &&
+                                                       (pCVar5->letterbox_mode != 0)) {
                                                       iVar7 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4
                                                                       );
                                                       (**(code **)(*(int *)(iVar7 + 0x154) + 0x150))
                                                                 (iVar7);
-                                                      (*(code *)**(uint **)
-                                                                  &g_CGamePtr->field_0xb00)
-                                                                (g_CGamePtr,0);
+                                                      (**(code **)g_CGamePtr->vtable)(g_CGamePtr,0);
                                                       iVar7 = unkafter_mimic_cpp_FUN_004aafe0
                                                                         (g_CDemonSetPtr);
                                                       core_setdir_cpp_FUN_00559f80
@@ -1854,18 +1839,22 @@ LAB_00547aee:
                                                             (&local_34,local_3db0,0x104);
                                                   if (pcVar18 != (char *)0x0) goto LAB_00547aee;
                                                   if (_DAT_01e810a8 == 0) {
-                                                    core_fldnotes_cpp_FUN_004bcba0
-                                                              (g_CFieldNotesPtr,local_3db0,0);
+                                                                                                        
+                                                  core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004bcba0
+                                                            (g_CFieldNotesPtr,local_3db0,(char *)0x0
+                                                            );
                                                   }
-                                                  else if ((*(int *)(0x01D2C900 + 0x1008) != 0) ||
-                                                          (*(char *)g_CFieldNotesPtr == '\0')) {
-                                                    iVar7 = core_fldnotes_cpp_FUN_004bcba0
-                                                                      (g_CFieldNotesPtr,local_3db0,
-                                                                       &DAT_01e810b0);
+                                                  else if ((0x01D2C900->is_in_editor != 0) ||
+                                                          (g_CFieldNotesPtr->file_name[0] == '\0'))
+                                                  {
+                                                    iVar7 = 
+                                                  core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004bcba0
+                                                            (g_CFieldNotesPtr,local_3db0,
+                                                             &DAT_01e810b0);
 joined_r0x00549128:
-                                                    if (iVar7 == 0) {
-                                                      return -1;
-                                                    }
+                                                  if (iVar7 == 0) {
+                                                    return -1;
+                                                  }
                                                   }
                                                   }
                                                   else {
@@ -1979,17 +1968,20 @@ joined_r0x00546052:
                                                   local_34 = local_34 + local_e8;
                                                   core_script_cpp_trimString_FUN_00543240
                                                             (local_18b4);
-                                                  iVar7 = core_script_cpp_getActor_FUN_005433c0
-                                                                    (local_18b4,
-                                                                     g_CCharacterClassInfo.name_hash
-                                                                     ,&g_CCharacterClassInfo);
-                                                  if (iVar7 == 0) goto joined_r0x00546052;
+                                                  pCVar10 = (CCharacter *)
+                                                            core_script_cpp_getActor_FUN_005433c0
+                                                                      (local_18b4,
+                                                                       g_CCharacterClassInfo.
+                                                                       name_hash,
+                                                                       &g_CCharacterClassInfo);
+                                                  if (pCVar10 == (CCharacter *)0x0)
+                                                  goto joined_r0x00546052;
                                                   if (_DAT_01e810a8 == 0) {
-                                                    *(int *)&this_ptr->field_0x18 = iVar7;
-                                                    local_78 = (uint)(*(int *)&g_CGamePtr->
-                                                                               field_0x260 == 0);
-                                                    (**(code **)(*(int *)&g_CGamePtr->field_0xb00 +
-                                                                4))(g_CGamePtr,local_78);
+                                                    this_ptr->monster_vision_actor = pCVar10;
+                                                    local_78 = (uint)(g_CGamePtr->
+                                                                      special_view_active == 0);
+                                                    (**(code **)((int)g_CGamePtr->vtable + 4))
+                                                              (g_CGamePtr,local_78);
                                                   }
                                                   }
                                                   else {
@@ -2159,17 +2151,17 @@ joined_r0x00546052:
                                                   core_event_cpp_CEventList_validateCommands_FUN_004a6cd0
                                                             (0x01C51D80,local_400);
                                                   if (pcVar18 != (char *)0x0) {
-                                                    pcVar21 = &DAT_01e810b0;
+                                                    pcVar20 = &DAT_01e810b0;
                                                     do {
                                                       cVar3 = *pcVar18;
-                                                      *pcVar21 = cVar3;
+                                                      *pcVar20 = cVar3;
                                                       if (cVar3 == '\0') {
                                                         return -1;
                                                       }
                                                       cVar3 = pcVar18[1];
                                                       pcVar18 = pcVar18 + 2;
-                                                      pcVar21[1] = cVar3;
-                                                      pcVar21 = pcVar21 + 2;
+                                                      pcVar20[1] = cVar3;
+                                                      pcVar20 = pcVar20 + 2;
                                                     } while (cVar3 != '\0');
                                                     return -1;
                                                   }
@@ -2301,17 +2293,17 @@ joined_r0x00546052:
                                                   core_event_cpp_CEventList_validateCondition_FUN_004a6c90
                                                             (0x01C51D80,local_2d04);
                                                   if (pcVar18 != (char *)0x0) {
-                                                    pcVar21 = &DAT_01e810b0;
+                                                    pcVar20 = &DAT_01e810b0;
                                                     do {
                                                       cVar3 = *pcVar18;
-                                                      *pcVar21 = cVar3;
+                                                      *pcVar20 = cVar3;
                                                       if (cVar3 == '\0') {
                                                         return -1;
                                                       }
                                                       cVar3 = pcVar18[1];
                                                       pcVar18 = pcVar18 + 2;
-                                                      pcVar21[1] = cVar3;
-                                                      pcVar21 = pcVar21 + 2;
+                                                      pcVar20[1] = cVar3;
+                                                      pcVar20 = pcVar20 + 2;
                                                     } while (cVar3 != '\0');
                                                     return -1;
                                                   }
@@ -2418,7 +2410,7 @@ joined_r0x00546052:
                                                   if (_DAT_01e810a8 == 0) {
                                                     local_164 = _DAT_01e810a8;
                                                     this_ptr->mission_ended = 1;
-                                                    *(uint *)&pCVar5->field_0x27c = 2;
+                                                    pCVar5->act_completion_state = 2;
                                                   }
                                                   }
                                                   else {
@@ -2435,17 +2427,17 @@ joined_r0x00546052:
                                                             (&local_34,local_4328,500);
                                                   if (pcVar18 != (char *)0x0) {
 LAB_00548d6a:
-                                                    pcVar21 = &DAT_01e810b0;
+                                                    pcVar20 = &DAT_01e810b0;
                                                     do {
                                                       cVar3 = *pcVar18;
-                                                      *pcVar21 = cVar3;
+                                                      *pcVar20 = cVar3;
                                                       if (cVar3 == '\0') {
                                                         return -1;
                                                       }
                                                       cVar3 = pcVar18[1];
                                                       pcVar18 = pcVar18 + 2;
-                                                      pcVar21[1] = cVar3;
-                                                      pcVar21 = pcVar21 + 2;
+                                                      pcVar20[1] = cVar3;
+                                                      pcVar20 = pcVar20 + 2;
                                                     } while (cVar3 != '\0');
                                                     return -1;
                                                   }
@@ -2640,13 +2632,14 @@ LAB_00548d6a:
                                                     iVar13 = 
                                                   shape_edittool_cpp_wildcardStringMatch_FUN_0049dea0
                                                             (local_1c9c,
-                                                             &g_CDemonSetPtr->cameras[0].field_0x0 +
-                                                             iVar7,0);
+                                                             g_CDemonSetPtr->cameras[0].name + iVar7
+                                                             ,0);
                                                   if ((iVar13 != 0) &&
                                                      (local_a0 = 1, _DAT_01e810a8 == 0)) {
                                                     *(uint *)
-                                                     (&g_CDemonSetPtr->cameras[0].field_0x14c +
-                                                     iVar7) = local_a8;
+                                                     ((int)(&g_CDemonSetPtr->cameras[0].
+                                                             rotation_matrix + 1) + iVar7 + 0x10) =
+                                                         local_a8;
                                                   }
                                                   iVar7 = iVar7 + 0x1a4;
                                                   }
@@ -2735,17 +2728,17 @@ LAB_00548d6a:
                                                             (&local_34,local_2e94,200);
                                                   if (pcVar18 != (char *)0x0) {
 LAB_005494ec:
-                                                    pcVar21 = &DAT_01e810b0;
+                                                    pcVar20 = &DAT_01e810b0;
                                                     do {
                                                       cVar3 = *pcVar18;
-                                                      *pcVar21 = cVar3;
+                                                      *pcVar20 = cVar3;
                                                       if (cVar3 == '\0') {
                                                         return -1;
                                                       }
                                                       cVar3 = pcVar18[1];
                                                       pcVar18 = pcVar18 + 2;
-                                                      pcVar21[1] = cVar3;
-                                                      pcVar21 = pcVar21 + 2;
+                                                      pcVar20[1] = cVar3;
+                                                      pcVar20 = pcVar20 + 2;
                                                     } while (cVar3 != '\0');
                                                     return -1;
                                                   }
@@ -2789,17 +2782,17 @@ LAB_005494ec:
                                                   core_script_cpp_parseArgument_FUN_005432d0
                                                             (&local_34,local_5f4,100);
                                                   if (pcVar18 != (char *)0x0) {
-                                                    pcVar21 = &DAT_01e810b0;
+                                                    pcVar20 = &DAT_01e810b0;
                                                     do {
                                                       cVar3 = *pcVar18;
-                                                      *pcVar21 = cVar3;
+                                                      *pcVar20 = cVar3;
                                                       if (cVar3 == '\0') {
                                                         return -1;
                                                       }
                                                       cVar3 = pcVar18[1];
                                                       pcVar18 = pcVar18 + 2;
-                                                      pcVar21[1] = cVar3;
-                                                      pcVar21 = pcVar21 + 2;
+                                                      pcVar20[1] = cVar3;
+                                                      pcVar20 = pcVar20 + 2;
                                                     } while (cVar3 != '\0');
                                                     return -1;
                                                   }
@@ -3003,17 +2996,17 @@ LAB_005494ec:
                                                             (&local_34,local_c34,100);
                                                   if (pcVar18 != (char *)0x0) {
 LAB_00549af2:
-                                                    pcVar21 = &DAT_01e810b0;
+                                                    pcVar20 = &DAT_01e810b0;
                                                     do {
                                                       cVar3 = *pcVar18;
-                                                      *pcVar21 = cVar3;
+                                                      *pcVar20 = cVar3;
                                                       if (cVar3 == '\0') {
                                                         return -1;
                                                       }
                                                       cVar3 = pcVar18[1];
                                                       pcVar18 = pcVar18 + 2;
-                                                      pcVar21[1] = cVar3;
-                                                      pcVar21 = pcVar21 + 2;
+                                                      pcVar20[1] = cVar3;
+                                                      pcVar20 = pcVar20 + 2;
                                                     } while (cVar3 != '\0');
                                                     return -1;
                                                   }
@@ -3087,17 +3080,17 @@ LAB_00549af2:
                                                                "Invalid time factor %s");
                                                     return -1;
                                                   }
-                                                  pcVar21 = &DAT_01e810b0;
+                                                  pcVar20 = &DAT_01e810b0;
                                                   do {
                                                     cVar3 = *pcVar18;
-                                                    *pcVar21 = cVar3;
+                                                    *pcVar20 = cVar3;
                                                     if (cVar3 == '\0') {
                                                       return -1;
                                                     }
                                                     cVar3 = pcVar18[1];
                                                     pcVar18 = pcVar18 + 2;
-                                                    pcVar21[1] = cVar3;
-                                                    pcVar21 = pcVar21 + 2;
+                                                    pcVar20[1] = cVar3;
+                                                    pcVar20 = pcVar20 + 2;
                                                   } while (cVar3 != '\0');
                                                   return -1;
                                                   }
@@ -3238,23 +3231,23 @@ LAB_00549af2:
                                                     core_bodypart_cpp_FUN_0041afe0
                                                               (iVar7 + 0x20,&local_4c->location);
                                                     local_190 = local_1e4;
-                                                    afStack_18c[(uint)bVar24 * -2] =
-                                                         afStack_1e0[(uint)bVar24 * -2];
+                                                    afStack_18c[(uint)bVar22 * -2] =
+                                                         afStack_1e0[(uint)bVar22 * -2];
                                                     afStack_18c
-                                                    [(uint)bVar24 * -2 + (uint)bVar24 * -2 + 1] =
+                                                    [(uint)bVar22 * -2 + (uint)bVar22 * -2 + 1] =
                                                          afStack_1e0
-                                                         [(uint)bVar24 * -2 + (uint)bVar24 * -2 + 1]
+                                                         [(uint)bVar22 * -2 + (uint)bVar22 * -2 + 1]
                                                     ;
                                                                                                         
                                                   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
                                                             (&local_190);
                                                   local_1cc = afStack_18c[2];
-                                                  afStack_1e0[(uint)bVar24 * -2 + 6] =
-                                                       afStack_18c[(uint)bVar24 * -2 + 3];
+                                                  afStack_1e0[(uint)bVar22 * -2 + 6] =
+                                                       afStack_18c[(uint)bVar22 * -2 + 3];
                                                   afStack_1e0
-                                                  [(uint)bVar24 * -2 + (uint)bVar24 * -2 + 7] =
+                                                  [(uint)bVar22 * -2 + (uint)bVar22 * -2 + 7] =
                                                        afStack_18c
-                                                       [(uint)bVar24 * -2 + (uint)bVar24 * -2 + 4];
+                                                       [(uint)bVar22 * -2 + (uint)bVar22 * -2 + 4];
                                                   (local_4c->orient).vec.y = local_1c8;
                                                   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0
                                                             (local_4c);
@@ -3274,17 +3267,17 @@ LAB_00549af2:
                                                   core_script_cpp_parseArgument_FUN_005432d0
                                                             (&local_34,local_451c,500);
                                                   if (pcVar18 != (char *)0x0) {
-                                                    pcVar21 = &DAT_01e810b0;
+                                                    pcVar20 = &DAT_01e810b0;
                                                     do {
                                                       cVar3 = *pcVar18;
-                                                      *pcVar21 = cVar3;
+                                                      *pcVar20 = cVar3;
                                                       if (cVar3 == '\0') {
                                                         return -1;
                                                       }
                                                       cVar3 = pcVar18[1];
                                                       pcVar18 = pcVar18 + 2;
-                                                      pcVar21[1] = cVar3;
-                                                      pcVar21 = pcVar21 + 2;
+                                                      pcVar20[1] = cVar3;
+                                                      pcVar20 = pcVar20 + 2;
                                                     } while (cVar3 != '\0');
                                                     return -1;
                                                   }
@@ -3324,69 +3317,69 @@ LAB_00549af2:
                                                   core_script_cpp_parseArgument_FUN_005432d0
                                                             (&local_34,local_31b4,200);
                                                   if (pcVar18 != (char *)0x0) {
-                                                    pcVar21 = &DAT_01e810b0;
+                                                    pcVar20 = &DAT_01e810b0;
                                                     do {
                                                       cVar3 = *pcVar18;
-                                                      *pcVar21 = cVar3;
+                                                      *pcVar20 = cVar3;
                                                       if (cVar3 == '\0') {
                                                         return -1;
                                                       }
                                                       cVar3 = pcVar18[1];
                                                       pcVar18 = pcVar18 + 2;
-                                                      pcVar21[1] = cVar3;
-                                                      pcVar21 = pcVar21 + 2;
+                                                      pcVar20[1] = cVar3;
+                                                      pcVar20 = pcVar20 + 2;
                                                     } while (cVar3 != '\0');
                                                     return -1;
                                                   }
                                                   pcVar18 = local_31b4;
                                                   do {
-                                                    pcVar21 = pcVar18;
+                                                    pcVar20 = pcVar18;
                                                     if (*pcVar18 == ',') goto LAB_0054a2ef;
                                                     if (*pcVar18 == '\0') break;
-                                                    pcVar21 = pcVar18 + 1;
-                                                    if (*pcVar21 == ',') goto LAB_0054a2ef;
+                                                    pcVar20 = pcVar18 + 1;
+                                                    if (*pcVar20 == ',') goto LAB_0054a2ef;
                                                     pcVar18 = pcVar18 + 2;
-                                                  } while (*pcVar21 != '\0');
-                                                  pcVar21 = (char *)0x0;
+                                                  } while (*pcVar20 != '\0');
+                                                  pcVar20 = (char *)0x0;
 LAB_0054a2ef:
                                                   local_40 = -1;
-                                                  pcVar20 = &DAT_005efb91;
-                                                  local_18 = (uint)(pcVar21 != (char *)0x0);
+                                                  pcVar19 = &DAT_005efb91;
+                                                  local_18 = (uint)(pcVar20 != (char *)0x0);
                                                   iVar7 = -1;
                                                   pcVar18 = local_31b4;
                                                   do {
-                                                    pcVar21 = pcVar18;
+                                                    pcVar20 = pcVar18;
                                                     if (iVar7 == 0) break;
                                                     iVar7 = iVar7 + -1;
-                                                    pcVar21 = pcVar18 + (uint)bVar24 * -2 + 1;
+                                                    pcVar20 = pcVar18 + (uint)bVar22 * -2 + 1;
                                                     cVar3 = *pcVar18;
-                                                    pcVar18 = pcVar21;
+                                                    pcVar18 = pcVar20;
                                                   } while (cVar3 != '\0');
-                                                  pcVar21 = pcVar21 + -1;
+                                                  pcVar20 = pcVar20 + -1;
                                                   do {
-                                                    cVar3 = *pcVar20;
-                                                    *pcVar21 = cVar3;
+                                                    cVar3 = *pcVar19;
+                                                    *pcVar20 = cVar3;
                                                     if (cVar3 == '\0') break;
-                                                    cVar3 = pcVar20[1];
+                                                    cVar3 = pcVar19[1];
+                                                    pcVar19 = pcVar19 + 2;
+                                                    pcVar20[1] = cVar3;
                                                     pcVar20 = pcVar20 + 2;
-                                                    pcVar21[1] = cVar3;
-                                                    pcVar21 = pcVar21 + 2;
                                                   } while (cVar3 != '\0');
                                                   sscanf
                                                             (local_31b4,&DAT_005efb93);
                                                   if (local_40 < 1) {
                                                     pcVar18 = "Error parsing out camera name";
-                                                    pcVar21 = &DAT_01e810b0;
+                                                    pcVar20 = &DAT_01e810b0;
                                                     do {
                                                       cVar3 = *pcVar18;
-                                                      *pcVar21 = cVar3;
+                                                      *pcVar20 = cVar3;
                                                       if (cVar3 == '\0') {
                                                         return -1;
                                                       }
                                                       cVar3 = pcVar18[1];
                                                       pcVar18 = pcVar18 + 2;
-                                                      pcVar21[1] = cVar3;
-                                                      pcVar21 = pcVar21 + 2;
+                                                      pcVar20[1] = cVar3;
+                                                      pcVar20 = pcVar20 + 2;
                                                     } while (cVar3 != '\0');
                                                     return -1;
                                                   }
@@ -3424,17 +3417,17 @@ LAB_0054a2ef:
                                                             (&local_34,local_4008,300);
                                                   if (pcVar18 != (char *)0x0) {
 LAB_0054a484:
-                                                    pcVar21 = &DAT_01e810b0;
+                                                    pcVar20 = &DAT_01e810b0;
                                                     do {
                                                       cVar3 = *pcVar18;
-                                                      *pcVar21 = cVar3;
+                                                      *pcVar20 = cVar3;
                                                       if (cVar3 == '\0') {
                                                         return -1;
                                                       }
                                                       cVar3 = pcVar18[1];
                                                       pcVar18 = pcVar18 + 2;
-                                                      pcVar21[1] = cVar3;
-                                                      pcVar21 = pcVar21 + 2;
+                                                      pcVar20[1] = cVar3;
+                                                      pcVar20 = pcVar20 + 2;
                                                     } while (cVar3 != '\0');
                                                     return -1;
                                                   }
@@ -3448,15 +3441,15 @@ LAB_0054a484:
                                                   }
                                                   if (_DAT_01e810a8 == 0) {
                                                     pcVar18 = this_ptr->current_message;
-                                                    pcVar21 = 
+                                                    pcVar20 = 
                                                   core_script_cpp_skipWhitespace_FUN_005432b0
                                                             (local_4008 + local_3c);
                                                   do {
-                                                    cVar3 = *pcVar21;
+                                                    cVar3 = *pcVar20;
                                                     *pcVar18 = cVar3;
                                                     if (cVar3 == '\0') break;
-                                                    cVar3 = pcVar21[1];
-                                                    pcVar21 = pcVar21 + 2;
+                                                    cVar3 = pcVar20[1];
+                                                    pcVar20 = pcVar20 + 2;
                                                     pcVar18[1] = cVar3;
                                                     pcVar18 = pcVar18 + 2;
                                                   } while (cVar3 != '\0');

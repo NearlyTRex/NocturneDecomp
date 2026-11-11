@@ -28,7 +28,7 @@ char * __cdecl FUN_005c91d0(char *buffer,SIZE_T size)
       if (DVar1 + 1 < size) {
         uVar2 = size;
       }
-      buffer = FUN_005c08d0(uVar2);
+      buffer = malloc(uVar2);
       if (buffer == (char *)0x0) {
         setErrno(5);
         return (char *)0x0;

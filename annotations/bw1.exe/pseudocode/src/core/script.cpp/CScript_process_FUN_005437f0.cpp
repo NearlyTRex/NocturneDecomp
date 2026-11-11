@@ -21,7 +21,7 @@ void __cdecl core_script_cpp_CScript_process_FUN_005437f0(CScript *this_ptr)
   
   _DAT_01e810a8 = 0;
   if ((0 < this_ptr->parsed_line_count) && (this_ptr->parsed_lines != (SScriptLine *)0x0)) {
-    if (*(int *)&g_CGamePtr->field_0xe0 != 0) {
+    if (g_CGamePtr->cinematic_skip_in_progress != 0) {
       this_ptr->script_state = 0;
     }
     iVar4 = 0;
@@ -37,8 +37,8 @@ void __cdecl core_script_cpp_CScript_process_FUN_005437f0(CScript *this_ptr)
       if (iVar2 < 0) {
         shape_edittool_cpp_FUN_004943a0
                   (g_CEditorToolsPtr,"Error processing script.\nLine: %d\nText: %s\nWhat's wrong: %s\n",
-                   *(uint *)(this_ptr->parsed_lines + iVar1 * 8),
-                   *(uint *)(this_ptr->parsed_lines + iVar1 * 8 + 4),&DAT_01e810b0);
+                   this_ptr->parsed_lines[iVar1].line_number,this_ptr->parsed_lines[iVar1].text,
+                   &DAT_01e810b0);
 LAB_005438b5:
         this_ptr->script_state = 2;
       }
@@ -48,7 +48,7 @@ LAB_005438b5:
     if (_DAT_01e818b8 == 0) {
       shape_edittool_cpp_FUN_004943a0
                 (g_CEditorToolsPtr,"!WARNING!  Infinite loop detected in script at line %d",
-                 *(uint *)(this_ptr->parsed_lines + iVar1 * 8));
+                 this_ptr->parsed_lines[iVar1].line_number);
       _DAT_01e818b8 = 1;
     }
 LAB_00543863:

@@ -12,7 +12,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 DAT_01bc120c
 ;   undefined4 DAT_01c51cac
-;   undefined4 g_CGameInstance.field480_0x210
+;   undefined4 g_CGameInstance.render_mode
 ;   undefined4 g_CDemonSetInstance.skip_normal_normalization
 ;
 ; Called Functions:
@@ -79,8 +79,8 @@ section .text
     MOV dword ptr [ESI + EAX*0x4 + 0x2298],0x1 ; 005943e1
     MOV EAX,[0x0061d95c]                ; 005943ec | g_CGamePtr
     PUSH EBP                            ; 005943f1 | DAT_01bc120c
-    MOV EDI,dword ptr [EAX + 0x210]     ; 005943f2 | g_CGameInstance.field480_0x210
-    MOV dword ptr [EAX + 0x210],0x2     ; 005943f8 | g_CGameInstance.field480_0x210
+    MOV EDI,dword ptr [EAX + 0x210]     ; 005943f2 | g_CGameInstance.render_mode
+    MOV dword ptr [EAX + 0x210],0x2     ; 005943f8 | g_CGameInstance.render_mode
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0 ; 00594402
         ;   XREF to: 00483dd0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(CDemonRenderer * this_ptr, int blend_mode)
     ADD ESP,0x8                         ; 00594407
@@ -96,7 +96,7 @@ section .text
     MOV EAX,[0x0061d95c]                ; 00594421 | g_CGamePtr
         ;   Label: LAB_00594421
     MOV EDX,ESI                         ; 00594426
-    MOV dword ptr [EAX + 0x210],EDI     ; 00594428 | g_CGameInstance.field480_0x210
+    MOV dword ptr [EAX + 0x210],EDI     ; 00594428 | g_CGameInstance.render_mode
     XOR EAX,EAX                         ; 0059442e
     POP EDI                             ; 00594430
     ADD EDX,0x4                         ; 00594431

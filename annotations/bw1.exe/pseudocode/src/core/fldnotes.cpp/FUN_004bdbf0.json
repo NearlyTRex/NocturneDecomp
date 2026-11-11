@@ -35,18 +35,18 @@
     ],
     "convention": "unknown",
     "name": "core_fldnotes.cpp_FUN_004bdbf0",
-    "signature": "undefined4 core_fldnotes_cpp_FUN_004bdbf0(undefined4 param_1,undefined4 param_2,undefined4 param_3,char *param_4)"
+    "signature": "undefined4 core_fldnotes_cpp_FUN_004bdbf0(undefined4 param_1,char *param_2,char *param_3,char *param_4)"
   },
   "function_calls": [
     {
-      "addr": "004bbfd0",
-      "is_variadic": false,
-      "name": "core_fldnotes.cpp_FUN_004bbfd0"
-    },
-    {
       "addr": "004bc540",
       "is_variadic": false,
-      "name": "core_fldnotes.cpp_FUN_004bc540"
+      "name": "core_fldnotes.cpp_SNotesMap_showAnnotation_FUN_004bc540"
+    },
+    {
+      "addr": "004bbfd0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_SNotesSection_findEntry_FUN_004bbfd0"
     },
     {
       "addr": "005bfb40",
@@ -165,7 +165,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint core_fldnotes_cpp_FUN_004bdbf0(uint param_1,uint param_2,uint param_3,char *param_4)",
+      "text": "uint core_fldnotes_cpp_FUN_004bdbf0(uint param_1,char *param_2,char *param_3,char *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -173,7 +173,7 @@
       "line": 5,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint core_fldnotes_cpp_FUN_004bdbf0(uint param_1,uint param_2,uint param_3,char *param_4)",
+      "text": "uint core_fldnotes_cpp_FUN_004bdbf0(uint param_1,char *param_2,char *param_3,char *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -181,7 +181,7 @@
       "line": 5,
       "match": "param_3",
       "severity": "mild",
-      "text": "uint core_fldnotes_cpp_FUN_004bdbf0(uint param_1,uint param_2,uint param_3,char *param_4)",
+      "text": "uint core_fldnotes_cpp_FUN_004bdbf0(uint param_1,char *param_2,char *param_3,char *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -189,7 +189,7 @@
       "line": 5,
       "match": "param_4",
       "severity": "mild",
-      "text": "uint core_fldnotes_cpp_FUN_004bdbf0(uint param_1,uint param_2,uint param_3,char *param_4)",
+      "text": "uint core_fldnotes_cpp_FUN_004bdbf0(uint param_1,char *param_2,char *param_3,char *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -197,7 +197,7 @@
       "line": 16,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = core_fldnotes_cpp_FUN_004bbfd0(pSVar3,param_2);",
+      "text": "iVar1 = core_fldnotes_cpp_SNotesSection_findEntry_FUN_004bbfd0(this_ptr,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -218,10 +218,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 33,
       "match": "param_3",
       "severity": "mild",
-      "text": "iVar2 = core_fldnotes_cpp_FUN_004bc540(SNotesMap_ARRAY_01cc55d0 + *(int *)(iVar1 + 0x158),param_3)",
+      "text": "(SNotesMap_ARRAY_01cc55d0 + *(int *)(iVar1 + 0x158),param_3);",
       "type": "unnamed_param"
     },
     {

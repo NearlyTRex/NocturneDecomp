@@ -11,12 +11,12 @@
 void __cdecl core_inv_cpp_CInventory_toggleDetailView_FUN_004fc370(CInventory *this_ptr)
 
 {
-  if (*(int *)(this_ptr + 4) == *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4)) {
-    *(uint *)(this_ptr + 0x454) = (uint)(*(int *)(this_ptr + 0x454) == 0);
-    if (0.0 < *(float *)(this_ptr + 0x344)) {
+  if (this_ptr->owner == *(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4)) {
+    this_ptr->render_mode_flag = (uint)(this_ptr->render_mode_flag == 0);
+    if (0.0 < this_ptr->item_highlight_timer) {
       core_inv_cpp_CInventory_resetItemSwitchTimers_FUN_004fa710(this_ptr);
     }
-    if (0.0 < *(float *)(this_ptr + 0x340)) {
+    if (0.0 < this_ptr->weapon_highlight_timer) {
       core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004fa6c0(this_ptr,0);
       return;
     }

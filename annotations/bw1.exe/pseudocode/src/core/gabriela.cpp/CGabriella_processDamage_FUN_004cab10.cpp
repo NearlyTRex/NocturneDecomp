@@ -11,61 +11,59 @@
 void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004cab10(CGabriella *this_ptr,SDamageInfo *damage_info)
 
 {
-  byte *this_ptr_00;
-  SMotion *pSVar1;
-  float fVar2;
-  int iVar3;
+  CDeformableModelInstance *this_ptr_00;
+  CDemonActor_vtable *pCVar1;
+  SMotion *pSVar2;
+  float fVar3;
+  int force_immediate;
   
-  if ((*(uint *)&this_ptr->field_0xc1d0 & 0x7fffffff) != 0) {
-    *(uint *)(damage_info + 4) = 0;
+  if (ABS((this_ptr->base).invincibility_timer) != 0.0) {
+    damage_info->damage_amount = 0.0;
   }
-  if (*(int *)&g_CGamePtr->field_0x1ec != 0) {
-    *(uint *)(damage_info + 4) = 0;
+  if (g_CGamePtr->god_mode_enabled != 0) {
+    damage_info->damage_amount = 0.0;
   }
-  if (*(int *)&g_CGamePtr->field_0x248 == 0) {
-    *(uint *)(damage_info + 4) = 0;
+  if (g_CGamePtr->allow_damage_flag == 0) {
+    damage_info->damage_amount = 0.0;
   }
-  *(uint *)&this_ptr->field_0xc1d0 = 0x3F000000;
-  fVar2 = *(float *)&this_ptr->field_0x2538 - *(float *)(damage_info + 4);
-  this_ptr_00 = &this_ptr->field_0x158;
-  *(float *)&this_ptr->field_0x2538 = fVar2;
-  if (0.0 < fVar2) {
-    if (0.0 < *(float *)(damage_info + 4)) {
-      if (*(int *)&this_ptr->field_0x1ff84 == 0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                  ((CMotionController *)this_ptr_00,8,1);
+  (this_ptr->base).invincibility_timer = 0x3F000000;
+  fVar3 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
+  this_ptr_00 = &(this_ptr->base).base.model;
+  (this_ptr->base).base.hit_points = fVar3;
+  if (0.0 < fVar3) {
+    if (0.0 < damage_info->damage_amount) {
+      if ((this_ptr->base).ladder_to_climb == (CLadder *)0x0) {
+        core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&this_ptr_00->base,8,1);
       }
-      if (*(int *)&g_CGamePtr->field_0xd4 != 2) {
-        iVar3 = *(int *)&this_ptr->field_0x154;
-        fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.25,0.4);
-        (**(code **)(iVar3 + 0x34))(this_ptr,"gb-hit[1,6].wav",fVar2);
+      if (g_CGamePtr->hero_number != HERO_TYPE_STRANGER) {
+        pCVar1 = (this_ptr->base).base.base.vtable._ub;
+        fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.25,0.4);
+        (*pCVar1->playSoundWithDelay)((CDemonActor *)this_ptr,"gb-hit[1,6].wav",fVar3);
       }
     }
   }
   else {
-    *(uint *)&this_ptr->field_0x2538 = 0;
-    pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
-                       ((CMotionController *)this_ptr_00);
-    if (*(int *)(pSVar1 + 0x24) != 0xc) {
-      pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
-                         ((CMotionController *)this_ptr_00);
-      if (*(int *)(pSVar1 + 0x24) != 0xb) {
-        iVar3 = 1;
-        *(uint *)&this_ptr->field_0x26fc = 0;
-        fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.0,100.0);
+    (this_ptr->base).base.hit_points = 0.0;
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
+    if (pSVar2->state_index != 0xc) {
+      pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
+      if (pSVar2->state_index != 0xb) {
+        force_immediate = 1;
+        (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
+        fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.0,100.0);
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                  ((CMotionController *)&this_ptr->field_0x158,(fVar2 <= _DAT_005e122c) + 9,iVar3);
-        if (*(int *)&g_CGamePtr->field_0xd4 != 2) {
-          iVar3 = *(int *)&this_ptr->field_0x154;
-          fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.25,0.4);
-          (**(code **)(iVar3 + 0x34))(this_ptr,"gb-die[1,6].wav",fVar2);
+                  (&(this_ptr->base).base.model.base,(fVar3 <= _DAT_005e122c) + 9,force_immediate);
+        if (g_CGamePtr->hero_number != HERO_TYPE_STRANGER) {
+          pCVar1 = (this_ptr->base).base.base.vtable._ub;
+          fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.25,0.4);
+          (*pCVar1->playSoundWithDelay)((CDemonActor *)this_ptr,"gb-die[1,6].wav",fVar3);
         }
         core_gore_cpp_CGore_spawnFliesOnActor_FUN_004e64d0
                   (g_CGorePtr,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
       }
     }
   }
-  if (*(float *)(damage_info + 4) <= 0.0) {
+  if (damage_info->damage_amount <= 0.0) {
     core_charactr_cpp_CCharacter_processDamage_FUN_004319e0((CCharacter *)this_ptr,damage_info);
     return;
   }

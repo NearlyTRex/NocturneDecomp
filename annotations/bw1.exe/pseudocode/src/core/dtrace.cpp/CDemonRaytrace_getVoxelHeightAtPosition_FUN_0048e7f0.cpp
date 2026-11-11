@@ -56,13 +56,12 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_0048e7
     fStack_2c = -999.0;
   }
   else {
-    while( true ) {
-      pCVar2 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_0048afe0
-                         (this_ptr,(int)ROUND(fVar3),iStack_1c,(int)ROUND(fVar5));
-      if (pCVar2 == (CDemonCube *)0x0) break;
+    while (pCVar2 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_0048afe0
+                              (this_ptr,(int)ROUND(fVar3),iStack_1c,(int)ROUND(fVar5)),
+          pCVar2 != (CDemonCube *)0x0) {
       if ((pCVar2->voxel_buffer1 != (SVoxelGrid *)0x0) &&
-         (((byte)pCVar2->voxel_buffer1[iStack_18 + iVar1 * 8] & (&DAT_0061ab68)[(int)ROUND(fVar7)])
-          != 0)) {
+         ((pCVar2->voxel_buffer1->voxels[iVar1][iStack_18] & (&DAT_0061ab68)[(int)ROUND(fVar7)]) !=
+          0)) {
         return (float)iStack_18 * (this_ptr->cell_size).y * _DAT_005dbb1c +
                (float)iStack_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
       }

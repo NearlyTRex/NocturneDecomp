@@ -11,7 +11,7 @@ void core_turret_cpp_factoryFuncTurret_FUN_005a2010(void)
 {
   CTurret *this_ptr;
   
-  this_ptr = (CTurret *)debugAllocTracked1(0x8bc);
+  this_ptr = (CTurret *)operator_new(0x8bc);
   if (this_ptr == (CTurret *)0x0) {
     return;
   }

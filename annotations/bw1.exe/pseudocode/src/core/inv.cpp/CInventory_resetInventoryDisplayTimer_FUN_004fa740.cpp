@@ -11,9 +11,9 @@
 void __cdecl core_inv_cpp_CInventory_resetInventoryDisplayTimer_FUN_004fa740(CInventory *this_ptr)
 
 {
-  if (*(int *)(this_ptr + 4) != *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4)) {
+  if (this_ptr->owner != *(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4)) {
     return;
   }
-  *(uint *)(this_ptr + 0x348) = 0x40a00000;
+  this_ptr->inventory_display_timer = 5.0;
   return;
 }

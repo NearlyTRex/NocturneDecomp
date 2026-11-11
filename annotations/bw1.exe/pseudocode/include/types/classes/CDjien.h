@@ -2,15 +2,38 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CBodyPart;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CQuaternion4f.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SDjienBox.h"
+#include "types/unions/UOrientationVector.h"
 
 // Structure: CDjien
-// Stub: size from Watcom RTTI, fields not yet recovered
+// ctor 0045fe10 __arrinit(this+0xc2fc, 0x18, SDjienBox); archive 00460e80; setup 0045ff00; explode FUN_00460cb0
 // Ghidra size: 0xc9cc (51660 bytes)
 #pragma pack(push, 1)
 typedef struct CDjien {
-    char field_0[51660]; // 0x0
+    CEnemy base; // 0x0, derived; unchanged
+    int bone_indices[18]; // 0xc268, setup findBone Spine1, Head, .., Dummy22/23, Sack01-06, Dummy4, Dummy24-28
+    int sack_part_indices[6]; // 0xc2b0, setup findPartByName; getSackIndex 00461530 compares
+    uint sfx_handle; // 0xc2c8, process CSound isSoundPlaying/killSound; djien_awake/djien_die
+    float difficulty_speed_scale; // 0xc2cc, setup 0.75 / 1.0 by COMBATMODEHARD; process FMUL
+    int num_sacks_blown; // 0xc2d0, archive "numSacksBlown"; damageSack
+    int num_sacks_to_blow; // 0xc2d4, archive "numSacksToBlow"; ctor 6, setup 3/6
+    float sack_damage[6]; // 0xc2d8, archive "Sack0Damage".."Sack5Damage"; ctor/setup zero loop
+    int walk_target; // 0xc2f0, process: CCharacter walk helper FUN_00431cc0 target; set from FUN_00435380("DjienHome")
+    int walk_status; // 0xc2f4, process: out-param of FUN_00431cc0, 0 = reached
+    int box_count; // 0xc2f8, explode FUN_00460cb0 stores model part count
+    SDjienBox boxes[24]; // 0xc2fc, ctor __arrinit count 0x18 stride 0x48; explode fills position/rotation/body_part
+    int blown_up; // 0xc9bc, ctor zeroes; explode (this+0x158)+0xc864 = 1; process tests
+    int is_alert; // 0xc9c0, process sets 0 when idle, 1 in awake/attack states; processDamage tests
+    float state_timer; // 0xc9c4, setup zeroes; process 4.0 then counts down ("walk waited long enough")
+    float recombine_interpolation; // 0xc9c8, ctor zeroes; explode zeroes with blown_up (CConstruct "param" slot)
 } CDjien;
 #pragma pack(pop)
 

@@ -11,7 +11,7 @@
 ;   undefined4 DAT_005edcb3
 ;   undefined4 DAT_0061b4d0
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 g_CGameInstance.field160_0xd0
+;   undefined4 g_CGameInstance.game_control
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
@@ -50,7 +50,7 @@ section .text
     MOV EAX,[0x0061d95c]                ; 00540976 | g_CGamePtr
     FLD float ptr [ESP + 0x14]          ; 0054097b
     ADD ESP,0x8                         ; 0054097f
-    MOV EBX,dword ptr [EAX + 0xd0]      ; 00540982 | g_CGameInstance.field160_0xd0
+    MOV EBX,dword ptr [EAX + 0xd0]      ; 00540982 | g_CGameInstance.game_control
     FSTP float ptr [ESP + 0x8]          ; 00540988
     CMP EBX,0x3                         ; 0054098c
     JNZ 0x0054099f                      ; 0054098f

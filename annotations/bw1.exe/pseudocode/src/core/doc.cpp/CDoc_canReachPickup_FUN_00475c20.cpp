@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_00475c20(CDoc *this_ptr,CDemonActor *item,int pickup_type,float *best_distance)
@@ -14,11 +15,11 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_00475c20(CDoc *this_ptr,CDemonA
   float fVar1;
   int iVar2;
   uint *puVar3;
-  float **ppfVar4;
+  CLocation **ppCVar4;
   byte bVar5;
   float afStackY_10ec [1001];
   CBoundingBox3D *in_stack_fffffec0;
-  float *apfStack_13c [2];
+  CLocation *apCStack_13c [2];
   float fStack_134;
   float fStack_130;
   float fStack_12c;
@@ -40,23 +41,22 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_00475c20(CDoc *this_ptr,CDemonA
   uint uStack_8c;
   float afStack_88 [8];
   uint uStack_68;
-  float afStack_64 [5];
-  float fStack_50;
+  float afStack_64 [2];
+  CLocation CStack_5c;
   float fStack_4c;
   float fStack_48;
   float fStack_44;
-  float fStack_38;
-  float afStack_34 [5];
+  CLocation CStack_38;
   float fStack_20;
   float fStack_1c;
   
   bVar5 = 0;
   switch(pickup_type) {
   case 1:
-    if (*(int *)&this_ptr->field_0x25b0 != 0) {
+    if ((this_ptr->base).base.carry_hands[0].carry_actor != (CDemonActor *)0x0) {
       return 0;
     }
-    core_actor_cpp_FUN_00408bb0(item,&this_ptr->field_0x20);
+    core_actor_cpp_FUN_00408bb0(item,&(this_ptr->base).base.base.location);
     fStack_4c = afStack_e8[3];
     afStack_64[(uint)bVar5 * -2 + 7] = afStack_e8[(uint)bVar5 * -2 + 4];
     afStack_64[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 8] =
@@ -86,7 +86,7 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_00475c20(CDoc *this_ptr,CDemonA
     }
     break;
   case 2:
-    if (*(int *)&this_ptr->field_0x2628 != 0) {
+    if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
       return 0;
     }
     fStack_9c = 3.0;
@@ -100,19 +100,20 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_00475c20(CDoc *this_ptr,CDemonA
     break;
   case 3:
   case 4:
-    if (*(int *)&this_ptr->field_0x2628 != 0) {
+    if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
       return 0;
     }
     if ((item != (CDemonActor *)0x0) &&
        (iVar2 = (*((item->vtable)._ub)->canPickup)(item,(CDemonActor *)this_ptr), iVar2 == 4)) {
-      apfStack_13c[0] = (float *)&this_ptr->field_0x20;
+      apCStack_13c[0] = &(this_ptr->base).base.base.location;
       core_actor_cpp_FUN_00408bb0(item);
-      fStack_38 = afStack_34[2];
-      afStack_34[(uint)bVar5 * -2] = afStack_34[(uint)bVar5 * -2 + 3];
-      afStack_34[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-           afStack_34[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
+      CStack_38.position.x = (float)CStack_38.area_id;
+      *(uint *)((int)&CStack_38 + (uint)bVar5 * -8 + 4) =
+           *(uint *)((int)&CStack_38 + ((uint)bVar5 * -2 + 3) * 4 + 4);
+      *(uint *)((int)&CStack_38 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4 + 4) =
+           *(uint *)((int)&CStack_38 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 4) * 4 + 4);
       in_stack_fffffec0 = (CBoundingBox3D *)0x475f0f;
-      apfStack_13c[0] = afStack_64 + 0xb;
+      apCStack_13c[0] = (CLocation *)(afStack_64 + 0xb);
       core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520();
       uStack_8c = uStack_68;
       afStack_88[(uint)bVar5 * -2] = afStack_64[(uint)bVar5 * -2];
@@ -141,32 +142,32 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_00475c20(CDoc *this_ptr,CDemonA
        afStack_e8[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 8];
   (*((item->vtable)._ub)->getBoundingBox)(item,in_stack_fffffec0);
   puVar3 = auStack_11c;
-  ppfVar4 = apfStack_13c;
+  ppCVar4 = apCStack_13c;
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *ppfVar4 = (float *)*puVar3;
+    *ppCVar4 = (CLocation *)*puVar3;
     puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-    ppfVar4 = ppfVar4 + (uint)bVar5 * -2 + 1;
+    ppCVar4 = ppCVar4 + (uint)bVar5 * -2 + 1;
   }
-  fStack_50 = fStack_134 + fStack_128;
+  CStack_5c.area_id = (int)(fStack_134 + fStack_128);
   fStack_4c = fStack_130 + fStack_124;
   fStack_48 = fStack_12c + fStack_120;
   afStack_88[2] = fStack_134 + fStack_128;
   afStack_88[(uint)bVar5 * -2 + 3] = afStack_64[(uint)bVar5 * -2 + 6];
   afStack_88[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
        afStack_64[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];
-  apfStack_13c[0] = afStack_64 + 2;
+  apCStack_13c[0] = (CLocation *)(afStack_64 + 2);
   fStack_b0 = afStack_88[2] * _DAT_005da5d4;
   afStack_ac[0] = afStack_88[3] * _DAT_005da5d4;
   afStack_ac[1] = afStack_88[4] * _DAT_005da5d4;
-  afStack_64[2] = afStack_88[2] * _DAT_005da5d4;
+  CStack_5c.position.x = afStack_88[2] * _DAT_005da5d4;
   afStack_64[(uint)bVar5 * -2 + 3] = afStack_ac[(uint)bVar5 * -2];
   afStack_64[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
        afStack_ac[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
   core_actor_cpp_FUN_00408b40(item);
   afStack_e8[2] = fStack_20;
-  afStack_e8[(uint)bVar5 * -2 + 3] = afStack_34[(uint)bVar5 * -2 + 6];
+  afStack_e8[(uint)bVar5 * -2 + 3] = *(float *)((int)&CStack_38 + ((uint)bVar5 * -2 + 6) * 4 + 4);
   afStack_e8[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
-       afStack_34[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];
+       *(float *)((int)&CStack_38 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 7) * 4 + 4);
   fStack_104 = afStack_e8[2] - afStack_ac[2];
   afStack_100[0] = afStack_e8[3] - afStack_ac[3];
   afStack_100[1] = fStack_d8 - fStack_9c;
@@ -176,7 +177,7 @@ int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_00475c20(CDoc *this_ptr,CDemonA
        afStack_100[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
   if (ABS(afStack_e8[0]) <= (float)_DAT_005da5dc) {
     fVar1 = SQRT(fStack_ec * fStack_ec + afStack_e8[1] * afStack_e8[1]);
-    if (*(int *)&g_CGamePtr->field_0xd0 == 3) {
+    if (g_CGamePtr->game_control == CONTROL_MODE_POINT_AND_CLICK) {
       if ((float)_DAT_005da5ec < fVar1) {
         return 0;
       }

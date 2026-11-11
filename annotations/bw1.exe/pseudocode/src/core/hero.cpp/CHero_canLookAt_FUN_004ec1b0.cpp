@@ -11,22 +11,25 @@
 int __cdecl core_hero_cpp_CHero_canLookAt_FUN_004ec1b0(CHero *this_ptr)
 
 {
-  int iVar1;
+  EDeathState EVar1;
   
-  iVar1 = (**(code **)(*(int *)(this_ptr + 0x154) + 0x10c))(this_ptr);
-  if (iVar1 < 2) {
-    if (iVar1 == 1) {
+  EVar1 = (*(((this_ptr->base).base.vtable._uc)->_uc).getDeathState)(&this_ptr->base);
+  if ((int)EVar1 < 2) {
+    if (EVar1 == DEATH_STATE_DYING) {
       return 1;
     }
-    if (((((*(int *)(this_ptr + 0xc1d8) != 0) || (*(int *)(this_ptr + 0xc1dc) != 0)) ||
-         (*(int *)(this_ptr + 0xc1e4) != 0)) ||
-        ((((*(int *)(this_ptr + 0xc1e8) != 0 || (*(int *)(this_ptr + 0xc1ec) != 0)) ||
-          ((*(int *)(this_ptr + 0xc1f0) != 0 ||
-           ((*(int *)(this_ptr + 0xc1f4) != 0 || (*(int *)(this_ptr + 0xc1f8) != 0)))))) ||
-         ((float)_DAT_005e4935 < ABS(*(float *)(this_ptr + 0xc1fc)))))) ||
-       ((((float)_DAT_005e4935 < ABS(*(float *)(this_ptr + 0xc200)) ||
-         ((float)_DAT_005e4935 < ABS(*(float *)(this_ptr + 0xc204)))) ||
-        (*(int *)(this_ptr + 0x2500) == 0)))) {
+    if ((((((this_ptr->player_input).action_state.walk != 0) ||
+          ((this_ptr->player_input).action_state.backup != 0)) ||
+         ((this_ptr->player_input).action_state.fire != 0)) ||
+        (((((this_ptr->player_input).action_state.use_item != 0 ||
+           ((this_ptr->player_input).action_state.light != 0)) ||
+          (((this_ptr->player_input).action_state.draw != 0 ||
+           (((this_ptr->player_input).action_state.jump != 0 ||
+            ((this_ptr->player_input).action_state.quick_turn != 0)))))) ||
+         ((float)_DAT_005e4935 < ABS((this_ptr->player_input).strafe_speed))))) ||
+       ((((float)_DAT_005e4935 < ABS((this_ptr->player_input).turn_speed) ||
+         ((float)_DAT_005e4935 < ABS((this_ptr->player_input).look_up_down_speed))) ||
+        ((this_ptr->base).is_on_ground == 0)))) {
       return 1;
     }
   }

@@ -158,7 +158,7 @@
       "line": 21,
       "match": "DAT_01323d00",
       "severity": "mild",
-      "text": "uVar7 = (*(int *)(right + 8) >> 0x10) - _DAT_01c4f008 >> (DAT_01323d00 & 0x1f);",
+      "text": "uVar7 = ((right->base).x_current >> 0x10) - _DAT_01c4f008 >> (DAT_01323d00 & 0x1f);",
       "type": "undefined_data"
     },
     {
@@ -166,7 +166,7 @@
       "line": 22,
       "match": "DAT_01323d00",
       "severity": "mild",
-      "text": "uVar9 = (*(int *)(left + 8) >> 0x10) - _DAT_01c4f008 >> (DAT_01323d00 & 0x1f);",
+      "text": "uVar9 = ((left->base).x_current >> 0x10) - _DAT_01c4f008 >> (DAT_01323d00 & 0x1f);",
       "type": "undefined_data"
     }
   ]

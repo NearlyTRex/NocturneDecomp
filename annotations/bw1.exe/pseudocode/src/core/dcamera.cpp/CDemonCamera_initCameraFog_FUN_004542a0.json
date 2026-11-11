@@ -216,7 +216,7 @@
       "line": 13,
       "match": "DAT_00611230",
       "severity": "mild",
-      "text": "DAT_00611230 = *(uint *)fog_config;",
+      "text": "DAT_00611230 = (fog_config->color_index).r;",
       "type": "undefined_data"
     },
     {
@@ -224,7 +224,7 @@
       "line": 14,
       "match": "DAT_00611234",
       "severity": "mild",
-      "text": "DAT_00611234 = *(uint *)(fog_config + 4);",
+      "text": "DAT_00611234 = (fog_config->color_index).g;",
       "type": "undefined_data"
     },
     {
@@ -232,7 +232,7 @@
       "line": 15,
       "match": "DAT_00611238",
       "severity": "mild",
-      "text": "DAT_00611238 = *(int *)(fog_config + 8);",
+      "text": "DAT_00611238 = (fog_config->color_index).b;",
       "type": "undefined_data"
     },
     {
@@ -240,7 +240,7 @@
       "line": 17,
       "match": "DAT_00b8189c",
       "severity": "mild",
-      "text": "(*(uint *)(&DAT_00b8189c + *(int *)fog_config * 4) & 0xff,",
+      "text": "(*(uint *)(&DAT_00b8189c + (fog_config->color_index).r * 4) & 0xff,",
       "type": "undefined_data"
     },
     {
@@ -248,7 +248,7 @@
       "line": 18,
       "match": "DAT_00b8189c",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_00b8189c + *(int *)(fog_config + 4) * 4) & 0xff,",
+      "text": "*(uint *)(&DAT_00b8189c + (fog_config->color_index).g * 4) & 0xff,",
       "type": "undefined_data"
     },
     {

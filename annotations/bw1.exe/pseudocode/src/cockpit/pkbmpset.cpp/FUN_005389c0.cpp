@@ -19,7 +19,8 @@ void cockpit_pkbmpset_cpp_FUN_005389c0(int *param_1,int param_2)
   if (param_2 < 1) {
     return;
   }
-  uVar1 = FUN_005c1268(param_2 * 0x24 + 4,param_2,&g_CPackedBitmapTypeInfo);
+  uVar1 = operator_new_array
+                    (param_2 * 0x24 + 4,param_2,&g_CPackedBitmapTypeInfo);
   iVar2 = __vec_new(uVar1);
   param_1[1] = iVar2;
   if (iVar2 == 0) {

@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 93,
+    "complexity_score": 83,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "unnamed_field",
+      "pointer_cast",
       "warning_overlapping_globals"
     ],
     "total_lines": 116
@@ -245,36 +245,28 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "iVar3 = start_offset + *(int *)(&this_ptr->field_0xc + part_index * 0x10);",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 29,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&(pSVar1->position).x + iVar3) = (float)vertex_buffer->x * _DAT_00604268;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "if (*(int *)(&this_ptr->field_0xc + part_index * 0x10) +",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 30,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&(pSVar1->position).y + iVar3) = (float)vertex_buffer->y * _DAT_00604268;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x4 + part_index * 0x10) < iVar3 + vertex_count) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&this_ptr->field_0x58 + iVar3;",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 31,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&(pSVar1->position).z + iVar3) = (float)vertex_buffer->z * _DAT_00604268;",
+      "type": "pointer_cast"
     }
   ]
 }

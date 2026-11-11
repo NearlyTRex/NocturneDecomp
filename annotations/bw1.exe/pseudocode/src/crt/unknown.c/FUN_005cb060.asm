@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005c50fc at 005c5270
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c08d0
+;   crt_memory.c_malloc_FUN_005c08d0
 ;   crt_unknown.c_FUN_005ccfc0
 ;   crt_unknown.c_FUN_005ccff0
 ;
@@ -27,8 +27,8 @@ section .text
     ADD ESP,0x4                         ; 005cb06d
     LEA ESI,[EAX*0x2 + 0x0]             ; 005cb070
     PUSH ESI                            ; 005cb077
-    CALL crt_unknown.c_FUN_005c08d0     ; 005cb078
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 005cb078
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 005cb07d
     MOV EBX,EAX                         ; 005cb080
     TEST EAX,EAX                        ; 005cb082

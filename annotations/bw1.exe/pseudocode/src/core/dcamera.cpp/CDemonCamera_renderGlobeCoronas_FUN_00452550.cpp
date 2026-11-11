@@ -55,7 +55,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00452550(CDemo
   byte local_14;
   
   bVar1 = 0;
-  if ((*(int *)&g_CGamePtr->field_0xc != 0) || ((force_render == 0 && (globe->corona_mode != 0)))) {
+  if ((g_CGamePtr->halo_mode != 0) || ((force_render == 0 && (globe->corona_mode != 0)))) {
     _DAT_0152bc18 = globe;
     core_dcamera_cpp_FUN_0044e2a0(this_ptr,globe);
     _DAT_0152bc20 = local_94;

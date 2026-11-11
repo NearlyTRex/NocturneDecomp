@@ -1,7 +1,7 @@
-Scanning 514 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/bw1.exe/pseudocode/src...
+Scanning 522 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/bw1.exe/pseudocode/src...
 
 ======================================================================
-UNFINISHED CTORS/DTORS (172 files still need ADJ)
+UNFINISHED CTORS/DTORS (175 files still need ADJ)
 ======================================================================
 
   [core/ammo.cpp]
@@ -250,18 +250,25 @@ UNFINISHED CTORS/DTORS (172 files still need ADJ)
       CDemonActor_dtor @ this+0x340 (832) -> CFlameCan_ptr_832
 
   [core/fldnotes.cpp]
-    NotesMap_ctor_FUN_004bc1b0:
-      CAlphaBitmap_ctor @ this+0x70 (112) -> NotesMap_ptr_112
-      CAlphaBitmap_ctor @ this+0x88 (136) -> NotesMap_ptr_136
-    NotesMap_dtor_FUN_004bc210:
-      CAlphaBitmap_dtor @ this+0x88 (136) -> NotesMap_ptr_136
-      CAlphaBitmap_dtor @ this+0x70 (112) -> NotesMap_ptr_112
-    PageResource_Bitmap_ctor_FUN_004baa10:
-      CAlphaBitmap_ctor @ ??? (UNKNOWN)
-    PageResource_Bitmap_dtor_FUN_004baad0:
-      CAlphaBitmap_dtor @ this+0x18 (24) -> PageResource_Bitmap_ptr_24
-    PageResource_TwanaEntry_ctor_FUN_004bac90:
-      _arrinit @ ??? (UNKNOWN)
+    SNotesEntry_ctor_FUN_004bbcb0:
+      CStrList_ctor @ this+0x148 (328) -> SNotesEntry_ptr_328
+    SNotesEntry_dtor_FUN_004bbcf0:
+      CStrList_dtor @ this+0x148 (328) -> SNotesEntry_ptr_328
+    SNotesMap_ctor_FUN_004bc1b0:
+      CAlphaBitmap_ctor @ this+0x70 (112) -> SNotesMap_ptr_112
+      CAlphaBitmap_ctor @ this+0x88 (136) -> SNotesMap_ptr_136
+    SNotesMap_dtor_FUN_004bc210:
+      CAlphaBitmap_dtor @ this+0x88 (136) -> SNotesMap_ptr_136
+      CAlphaBitmap_dtor @ this+0x70 (112) -> SNotesMap_ptr_112
+    SPageResourceBitmap_ctor_FUN_004baa10:
+      CAlphaBitmap_ctor @ this+0x18 (24) -> SPageResourceBitmap_ptr_24
+    SPageResourceBitmap_dtor_FUN_004baad0:
+      CAlphaBitmap_dtor @ this+0x18 (24) -> SPageResourceBitmap_ptr_24
+      SPageResource_dtor @ this+0x18 (24) -> SPageResourceBitmap_ptr_24
+    SPageResourceTwanaEntry_ctor_FUN_004bac90:
+      _arrinit @ this+0xdc (220) -> SPageResourceTwanaEntry_ptr_220
+    SPageResourceTwanaEntry_dtor_FUN_004bad40:
+      SPageResource_dtor @ this+0xdc (220) -> SPageResourceTwanaEntry_ptr_220
 
   [core/flies.cpp]
     CFlies_ctor_FUN_004bfa60:
@@ -920,21 +927,23 @@ NEEDED ADJ POINTER TYPES
   CZombie_ptr_13788  (0x35dc)
   CZombieCow_ptr_13788  (0x35dc)
   CZombieDog_ptr_13788  (0x35dc)
-  NotesMap_ptr_112  (0x70)
-  NotesMap_ptr_136  (0x88)
-  PageResource_Bitmap_ptr_24  (0x18)
   SBodyPartFire_ptr_12  (0xc)
   SBodyPartModel_ptr_24  (0x18)
   SClothVertex_ptr_236  (0xec)
   SFly_ptr_4  (0x4)
   SFreaky_ptr_32  (0x20)
   SGem_ptr_60  (0x3c)
+  SNotesEntry_ptr_328  (0x148)
+  SNotesMap_ptr_112  (0x70)
+  SNotesMap_ptr_136  (0x88)
+  SPageResourceBitmap_ptr_24  (0x18)
+  SPageResourceTwanaEntry_ptr_220  (0xdc)
   SVert_ptr_16  (0x10)
 
-Total: 185 types across 127 classes
+Total: 187 types across 129 classes
 
 ======================================================================
-MANUAL REVIEW NEEDED (104 calls with unknown offset)
+MANUAL REVIEW NEEDED (102 calls with unknown offset)
 ======================================================================
   CArmour_dtor_FUN_0040ecc0.asm: CClothList_dtor
   CArmour_dtor_FUN_0040ecc0.asm: CDeformableModelInstance_dtor
@@ -968,8 +977,6 @@ MANUAL REVIEW NEEDED (104 calls with unknown offset)
   CDraculaBride_dtor_FUN_0047e180.asm: CDeformableModelInstance_dtor
   CDrone_dtor_FUN_004866c0.asm: CClothList_dtor
   CDrone_dtor_FUN_004866c0.asm: CDeformableModelInstance_dtor
-  PageResource_Bitmap_ctor_FUN_004baa10.asm: CAlphaBitmap_ctor
-  PageResource_TwanaEntry_ctor_FUN_004bac90.asm: _arrinit
   CGargoyle_dtor_FUN_004dd9d0.asm: CClothList_dtor
   CGargoyle_dtor_FUN_004dd9d0.asm: CDeformableModelInstance_dtor
   CGhoul_dtor_FUN_004e0f20.asm: CClothList_dtor

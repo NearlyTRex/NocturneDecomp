@@ -6,264 +6,255 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_00474fc0(CDoc *this_ptr)
 
 {
-  byte *this_ptr_00;
-  uint uVar1;
-  int iVar2;
-  int iVar3;
-  uint uVar4;
-  uint *puVar5;
-  uint *puVar6;
-  byte bVar7;
-  float afStackY_10a0 [1003];
-  char *pcVar8;
-  uint uStack_d0;
-  uint uStack_cc;
-  uint uStack_c8;
-  uint uStack_c4;
-  uint uStack_c0;
-  uint uStack_bc;
-  uint uStack_b8;
-  uint uStack_a0;
-  float fStack_98;
-  uint uStack_94;
+  CVector3f *pCVar1;
+  CDeformableModelInstance *pCVar2;
+  float fVar3;
+  CDemonActor *pCVar4;
+  uint uVar5;
+  CDoc *this_ptr_00;
+  CLever *pCVar6;
+  int iVar7;
+  CDoor *pCVar8;
+  int iVar9;
+  float unaff_EBX;
+  uint *puVar10;
+  uint *puVar11;
+  byte bVar12;
+  float afStackY_1090 [41];
+  CDoc *apCStackY_fec [958];
+  CBoundingBox3D *in_stack_ffffff20;
+  CConsole *pCVar13;
+  uint auStack_c8 [2];
+  float fStack_c0;
+  float fStack_bc;
+  float fStack_b8;
+  float fStack_b4;
+  float fStack_b0;
+  float fStack_ac;
+  uint uStack_a8;
+  float afStack_a4 [7];
   uint uStack_88;
-  uint uStack_84;
-  uint uStack_80;
-  uint uStack_7c;
-  uint uStack_70;
-  float fStack_6c;
-  uint uStack_68;
-  float fStack_64;
-  float fStack_60;
+  float afStack_84 [5];
+  float afStack_6c [4];
   float fStack_5c;
   float fStack_58;
   float fStack_54;
   float fStack_50;
   float fStack_4c;
-  uint uStack_34;
-  float fStack_28;
-  float fStack_24;
-  float fStack_20;
-  uint uStack_1c;
+  float fStack_48;
+  float fStack_44;
+  float fStack_40;
+  float afStack_3c [6];
+  uint uStack_24;
+  float afStack_20 [4];
   
-  uVar1 = g_CDoorClassInfo.name_hash;
-  bVar7 = 0;
-  switch(*(uint *)&this_ptr->field_0x1ff60) {
+  this_ptr_00 = this_ptr;
+  uVar5 = g_CDoorClassInfo.name_hash;
+  bVar12 = 0;
+  switch((this_ptr->base).hero_action) {
   case 1:
   case 2:
   case 9:
-    core_hero_cpp_CHero_doHeroAction_FUN_004ec640((CHero *)this_ptr);
-    core_hero_cpp_FUN_004eb5b0(this_ptr);
+    core_hero_cpp_CHero_doHeroAction_FUN_004ec640(&this_ptr->base);
+    core_hero_cpp_FUN_004eb5b0(this_ptr_00);
     return;
   case 3:
-    *(uint *)&this_ptr->field_0xc1e4 = 0;
-    iVar2 = core_actor_cpp_castToClassHash_FUN_0040c600
-                      (*(uint *)&this_ptr->field_0x1ff64,uVar1);
-    *(int *)&this_ptr->field_0x1ff74 = iVar2;
-    if (iVar2 == 0) {
+    pCVar4 = (this_ptr->base).hero_action_actor;
+    (this_ptr->base).player_input.action_state.fire = 0;
+    pCVar8 = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040c600(pCVar4,uVar5);
+    (this_ptr_00->base).door_to_open = pCVar8;
+    if (pCVar8 == (CDoor *)0x0) {
       shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,"CHero::doHeroAction - type=eHeroActionOpenDoor, but actor is NULL or isn't a door");
-      core_hero_cpp_FUN_004eb5b0(this_ptr);
+      core_hero_cpp_FUN_004eb5b0(this_ptr_00);
       return;
     }
-    iVar2 = core_event_cpp_CRuleList_evaluateAndRun_FUN_004aaf30((CRuleList *)(iVar2 + 0x478));
-    if (iVar2 == 0) {
-      switch(*(uint *)&this_ptr->field_0x1ff6c) {
+    iVar7 = core_event_cpp_CRuleList_evaluateAndRun_FUN_004aaf30(&pCVar8->open_rule);
+    if (iVar7 == 0) {
+      switch((this_ptr_00->base).hero_action_data) {
       case 0:
         break;
       default:
-        core_hero_cpp_CHero_tryOpenDoor_FUN_004eb5e0((CHero *)this_ptr);
-        core_hero_cpp_FUN_004eb5b0(this_ptr);
+        core_hero_cpp_CHero_tryOpenDoor_FUN_004eb5e0(&this_ptr_00->base);
+        core_hero_cpp_FUN_004eb5b0(this_ptr_00);
         return;
       case 2:
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                  ((CMotionController *)&this_ptr->field_0x158,0x22,1);
-        *(uint *)&this_ptr->field_0x1ff5c = 5;
-        core_hero_cpp_FUN_004eb5b0(this_ptr);
+                  (&(this_ptr_00->base).base.model.base,0x22,1);
+        (this_ptr_00->base).action_pending = 5;
+        core_hero_cpp_FUN_004eb5b0(this_ptr_00);
         return;
       case 3:
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                  ((CMotionController *)&this_ptr->field_0x158,0x23,1);
-        *(uint *)&this_ptr->field_0x1ff5c = 5;
-        core_hero_cpp_FUN_004eb5b0(this_ptr);
+                  (&(this_ptr_00->base).base.model.base,0x23,1);
+        (this_ptr_00->base).action_pending = 5;
+        core_hero_cpp_FUN_004eb5b0(this_ptr_00);
         return;
       case 4:
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                  ((CMotionController *)&this_ptr->field_0x158,0x20,1);
-        *(uint *)&this_ptr->field_0x1ff5c = 5;
-        core_hero_cpp_FUN_004eb5b0(this_ptr);
+                  (&(this_ptr_00->base).base.model.base,0x20,1);
+        (this_ptr_00->base).action_pending = 5;
+        core_hero_cpp_FUN_004eb5b0(this_ptr_00);
         return;
       case 5:
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                  ((CMotionController *)&this_ptr->field_0x158,0x21,1);
-        *(uint *)&this_ptr->field_0x1ff5c = 5;
-        core_hero_cpp_FUN_004eb5b0(this_ptr);
+                  (&(this_ptr_00->base).base.model.base,0x21,1);
+        (this_ptr_00->base).action_pending = 5;
+        core_hero_cpp_FUN_004eb5b0(this_ptr_00);
         return;
       }
     }
-    *(uint *)&this_ptr->field_0x1ff74 = 0;
-    core_hero_cpp_FUN_004eb5b0(this_ptr);
+    (this_ptr_00->base).door_to_open = (CDoor *)0x0;
+    core_hero_cpp_FUN_004eb5b0(this_ptr_00);
     return;
   case 4:
-    iVar2 = *(int *)&this_ptr->field_0x1ff64;
-    *(int *)&this_ptr->field_0x1ff78 = iVar2;
-    if (iVar2 != 0) {
-      uVar4 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x84))(iVar2,this_ptr);
-      (**(code **)(*(int *)(*(int *)&this_ptr->field_0x1ff78 + 0x154) + 0x1c))
-                (*(int *)&this_ptr->field_0x1ff78);
-      puVar5 = (uint *)&stack0xffffff18;
-      puVar6 = &stack0xffffff30;
-      for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar6 = *puVar5;
-        puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-        puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+    pCVar4 = (this_ptr->base).hero_action_actor;
+    (this_ptr->base).object_to_pick_up = pCVar4;
+    if (pCVar4 != (CDemonActor *)0x0) {
+      iVar7 = (*((pCVar4->vtable)._ub)->canPickup)(pCVar4,(CDemonActor *)this_ptr);
+      pCVar4 = (this_ptr_00->base).object_to_pick_up;
+      (*((pCVar4->vtable)._ub)->getBoundingBox)(pCVar4,in_stack_ffffff20);
+      puVar10 = (uint *)&stack0xffffff28;
+      puVar11 = auStack_c8;
+      for (iVar9 = 6; iVar9 != 0; iVar9 = iVar9 + -1) {
+        *puVar11 = *puVar10;
+        puVar10 = puVar10 + (uint)bVar12 * -2 + 1;
+        puVar11 = puVar11 + (uint)bVar12 * -2 + 1;
       }
-      if ((uint *)&this_ptr->field_0x20078 != &stack0xffffff30) {
-        *(uint *)&this_ptr->field_0x20078 = uStack_d0;
-        *(uint *)&this_ptr->field_0x2007c = uStack_cc;
-        *(uint *)&this_ptr->field_0x20080 = uStack_c8;
+      if (&this_ptr_00->carry_object_bbox != (CBoundingBox3D *)&fStack_c0) {
+        (this_ptr_00->carry_object_bbox).min.x = fStack_c0;
+        (this_ptr_00->carry_object_bbox).min.y = fStack_bc;
+        (this_ptr_00->carry_object_bbox).min.z = fStack_b8;
       }
-      if ((uint *)&this_ptr->field_0x20084 != &stack0xffffff3c) {
-        *(uint *)&this_ptr->field_0x20084 = uStack_c4;
-        *(uint *)&this_ptr->field_0x20088 = uStack_c0;
-        *(uint *)&this_ptr->field_0x2008c = uStack_bc;
+      pCVar1 = &(this_ptr_00->carry_object_bbox).max;
+      if (pCVar1 != (CVector3f *)&fStack_b4) {
+        pCVar1->x = fStack_b4;
+        (this_ptr_00->carry_object_bbox).max.y = fStack_b0;
+        (this_ptr_00->carry_object_bbox).max.z = fStack_ac;
       }
-      fStack_28 = *(float *)&this_ptr->field_0x20078 + *(float *)&this_ptr->field_0x20084;
-      fStack_24 = *(float *)&this_ptr->field_0x2007c + *(float *)&this_ptr->field_0x20088;
-      fStack_20 = *(float *)&this_ptr->field_0x20080 + *(float *)&this_ptr->field_0x2008c;
-      fStack_58 = fStack_28;
-      *(uint *)((int)&stack0xffffffac + (uint)bVar7 * -8) =
-           *(uint *)((int)&stack0xffffffdc + (uint)bVar7 * -8);
-      *(uint *)((int)&stack0xffffffb0 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
-           *(uint *)((int)&stack0xffffffe0 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
-      fStack_64 = fStack_58 * _DAT_005da59c;
-      fStack_60 = fStack_54 * _DAT_005da59c;
-      fStack_5c = fStack_50 * _DAT_005da59c;
-      fStack_4c = fStack_58 * _DAT_005da59c;
-      *(uint *)((int)&stack0xffffffb8 + (uint)bVar7 * 0xfffffffe * 4) =
-           *(uint *)((int)&stack0xffffffa0 + (uint)bVar7 * -8);
-      *(uint *)(&stack0xffffffbc + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
-           *(uint *)((int)&stack0xffffffa4 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
-      core_actor_cpp_FUN_00408b40(*(uint *)&this_ptr->field_0x1ff78,&stack0xffffffb4);
-      puVar5 = &stack0xffffffcc;
-      uStack_34 = uStack_b8;
-      *(uint *)((int)&stack0xffffffd0 + (uint)bVar7 * 0xfffffffe * 4) =
-           *(uint *)((int)&stack0xffffff4c + (uint)bVar7 * 0xfffffffe * 4);
-      *(uint *)(&stack0xffffffd4 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
-           *(uint *)(&stack0xffffff50 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
-      core_actor_cpp_FUN_00408bb0(this_ptr,puVar5);
-      uStack_70 = uStack_94;
-      (&stack0xffffff94)[(uint)bVar7 * 0xfffffffe] =
-           (float)*(uint *)(&stack0xffffff70 + (uint)bVar7 * -8);
-      *(uint *)((int)&stack0xffffff98 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
-           *(uint *)(&stack0xffffff74 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
-      if ((uint *)&this_ptr->field_0x2006c != &stack0xffffff90) {
-        *(uint *)&this_ptr->field_0x2006c = uStack_70;
-        *(float *)&this_ptr->field_0x20070 = fStack_6c;
-        *(uint *)&this_ptr->field_0x20074 = uStack_68;
+      afStack_20[2] =
+           (this_ptr_00->carry_object_bbox).min.x + (this_ptr_00->carry_object_bbox).max.x;
+      afStack_20[3] =
+           (this_ptr_00->carry_object_bbox).min.y + (this_ptr_00->carry_object_bbox).max.y;
+      fStack_48 = afStack_20[2];
+      afStack_6c[(uint)bVar12 * -2 + 10] = afStack_20[(uint)bVar12 * -2 + 3];
+      afStack_6c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 0xb] =
+           *(float *)(&stack0xfffffff0 + (uint)bVar12 * -8 + (uint)bVar12 * -8);
+      fStack_54 = fStack_48 * _DAT_005da59c;
+      fStack_50 = fStack_44 * _DAT_005da59c;
+      fStack_4c = fStack_40 * _DAT_005da59c;
+      afStack_3c[0] = fStack_48 * _DAT_005da59c;
+      afStack_6c[(uint)bVar12 * -2 + 0xd] = afStack_6c[(uint)bVar12 * -2 + 7];
+      afStack_6c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 0xe] =
+           afStack_6c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 8];
+      core_actor_cpp_FUN_00408b40((this_ptr_00->base).object_to_pick_up,afStack_6c + 0xc);
+      puVar10 = &uStack_24;
+      uStack_24 = uStack_a8;
+      afStack_20[(uint)bVar12 * -2] = afStack_a4[(uint)bVar12 * -2];
+      afStack_20[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
+           afStack_a4[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
+      core_actor_cpp_FUN_00408bb0(this_ptr_00,puVar10);
+      afStack_6c[3] = afStack_84[0];
+      afStack_6c[(uint)bVar12 * -2 + 4] = afStack_84[(uint)bVar12 * -2 + 1];
+      afStack_6c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 5] =
+           afStack_84[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 2];
+      if (&this_ptr_00->carry_object_world_center != (CVector3f *)(afStack_6c + 3)) {
+        (this_ptr_00->carry_object_world_center).x = afStack_6c[3];
+        (this_ptr_00->carry_object_world_center).y = fStack_5c;
+        (this_ptr_00->carry_object_world_center).z = fStack_58;
       }
-      switch(uVar4) {
+      switch(iVar7) {
       case 1:
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                  ((CMotionController *)&this_ptr->field_0x158,0x1e,1);
-        uVar4 = *(uint *)&this_ptr->field_0x1ff78;
-        pcVar8 = "Rummaging %s\n";
+                  (&(this_ptr_00->base).base.model.base,0x1e,1);
+        pCVar13 = (CConsole *)(this_ptr_00->base).object_to_pick_up;
         break;
       case 2:
       case 3:
       case 4:
-        iVar2 = *(int *)&this_ptr->field_0x1ff78;
-        if ((iVar2 == 0) ||
-           (iVar2 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x84))(iVar2,this_ptr), iVar2 != 4)) {
-          this_ptr_00 = &this_ptr->field_0x158;
-          if (*(float *)&this_ptr->field_0x20070 <= (float)_DAT_005da5ac) {
-            core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                      ((CMotionController *)this_ptr_00,0x16,1);
-            uVar4 = *(uint *)&this_ptr->field_0x1ff78;
-            pcVar8 = "Picking up %s off ground\n";
+        pCVar4 = (this_ptr_00->base).object_to_pick_up;
+        if ((pCVar4 == (CDemonActor *)0x0) ||
+           (iVar7 = (*((pCVar4->vtable)._ub)->canPickup)(pCVar4,(CDemonActor *)this_ptr_00),
+           iVar7 != 4)) {
+          pCVar2 = &(this_ptr_00->base).base.model;
+          if ((this_ptr_00->carry_object_world_center).y <= (float)_DAT_005da5ac) {
+            core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar2->base,0x16,1);
+            pCVar13 = g_CConsolePtr;
           }
           else {
-            core_skeleton_cpp_FUN_00569040(this_ptr_00,_DAT_01b6884c);
-            core_skeleton_cpp_FUN_00569040(this_ptr_00,_DAT_01b68824);
-            core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                      ((CMotionController *)this_ptr_00,0x18,1);
-            uVar4 = *(uint *)&this_ptr->field_0x1ff78;
-            pcVar8 = "Picking up %s waist level\n";
+            core_skeleton_cpp_FUN_00569040();
+            core_skeleton_cpp_FUN_00569040();
+            core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar2->base,0x18,1);
+            pCVar13 = g_CConsolePtr;
           }
         }
         else {
-          core_actor_cpp_FUN_00408bb0(*(uint *)&this_ptr->field_0x1ff78,&this_ptr->field_0x20)
-          ;
-          uStack_a0 = uStack_7c;
-          *(uint *)((int)&stack0xffffff64 + (uint)bVar7 * 0xfffffffe * 4) =
-               *(uint *)(&stack0xffffff88 + (uint)bVar7 * -8);
-          *(uint *)((int)&stack0xffffff68 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
-               *(uint *)(&stack0xffffff8c + (uint)bVar7 * -8 + (uint)bVar7 * -8);
-          *(uint *)&this_ptr->field_0x2005c = (uint)(0.0 < fStack_98);
-          if (*(float *)&this_ptr->field_0x20070 <= (float)_DAT_005da5a4) {
-            core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                      ((CMotionController *)&this_ptr->field_0x158,0x1a,1);
-            uVar4 = *(uint *)&this_ptr->field_0x1ff78;
-            pcVar8 = "Picking up heavy %s crate\n";
+          core_actor_cpp_FUN_00408bb0();
+          uStack_88 = afStack_6c[2];
+          afStack_84[(uint)bVar12 * -2] = afStack_6c[(uint)bVar12 * -2 + 3];
+          afStack_84[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
+               afStack_6c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 4];
+          fVar3 = (this_ptr_00->carry_object_world_center).y;
+          pCVar2 = &(this_ptr_00->base).base.model;
+          this_ptr_00->pickup_facing_reversed = (uint)(0.0 < afStack_84[1]);
+          if (fVar3 <= (float)_DAT_005da5a4) {
+            core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar2->base,0x1a,1);
+            pCVar13 = g_CConsolePtr;
           }
           else {
-            core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                      ((CMotionController *)&this_ptr->field_0x158,0x1b,1);
-            core_actor_cpp_FUN_00408bb0(this_ptr,*(int *)&this_ptr->field_0x1ff78 + 0x20);
-            uStack_88 = uStack_1c;
-            (&stack0xffffff7c)[(uint)bVar7 * 0xfffffffe] =
-                 *(uint *)(&stack0xffffffe8 + (uint)bVar7 * -8);
-            *(uint *)((int)&stack0xffffff80 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
-                 *(uint *)(&stack0xffffffec + (uint)bVar7 * -8 + (uint)bVar7 * -8);
-            if ((uint *)&this_ptr->field_0x2006c != &stack0xffffff78) {
-              *(uint *)&this_ptr->field_0x2006c = uStack_88;
-              *(uint *)&this_ptr->field_0x20070 = uStack_84;
-              *(uint *)&this_ptr->field_0x20074 = uStack_80;
+            core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar2->base,0x1b,1);
+            core_actor_cpp_FUN_00408bb0();
+            afStack_6c[(uint)bVar12 * -2] = *(float *)(&stack0x00000000 + (uint)bVar12 * -8);
+            afStack_6c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
+                 (float)(&this_ptr)[(uint)bVar12 * -2 + (uint)bVar12 * -2];
+            pCVar13 = g_CConsolePtr;
+            if (&this_ptr_00->carry_object_world_center != (CVector3f *)&stack0xffffff90) {
+              (this_ptr_00->carry_object_world_center).x = unaff_EBX;
+              (this_ptr_00->carry_object_world_center).y = afStack_6c[0];
+              (this_ptr_00->carry_object_world_center).z = afStack_6c[1];
+              pCVar13 = g_CConsolePtr;
             }
-            uVar4 = *(uint *)&this_ptr->field_0x1ff78;
-            pcVar8 = "Picking up heavy %s shelf\n";
           }
         }
         break;
       default:
-        *(uint *)&this_ptr->field_0x1ff78 = 0;
-        core_hero_cpp_FUN_004eb5b0(this_ptr);
+        (this_ptr_00->base).object_to_pick_up = (CDemonActor *)0x0;
+        core_hero_cpp_FUN_004eb5b0(this_ptr_00);
         return;
       }
-      engine_console_cpp_FUN_00445430(g_CConsolePtr,pcVar8,uVar4);
-      if (*(int *)&this_ptr->field_0x1ff78 != 0) {
-        *(uint *)&this_ptr->field_0x1ff5c = 4;
-        core_hero_cpp_FUN_004eb5b0(this_ptr);
+      engine_console_cpp_FUN_00445430(pCVar13);
+      if ((this_ptr_00->base).object_to_pick_up != (CDemonActor *)0x0) {
+        (this_ptr_00->base).action_pending = 4;
+        core_hero_cpp_FUN_004eb5b0();
         return;
       }
     }
     break;
   case 7:
     engine_console_cpp_FUN_00445430(g_CConsolePtr,"?CDoc::doHeroAction - pull lever\n" + 1);
-    uVar1 = g_CLeverClassInfo.name_hash;
-    *(uint *)&this_ptr->field_0xc1e4 = 0;
-    iVar2 = core_actor_cpp_castToClassHash_FUN_0040c600
-                      (*(uint *)&this_ptr->field_0x1ff64,uVar1);
-    if (iVar2 == 0) {
+    uVar5 = g_CLeverClassInfo.name_hash;
+    pCVar4 = (this_ptr_00->base).hero_action_actor;
+    (this_ptr_00->base).player_input.action_state.fire = 0;
+    pCVar6 = (CLever *)core_actor_cpp_castToClassHash_FUN_0040c600(pCVar4,uVar5);
+    if (pCVar6 == (CLever *)0x0) {
       shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,"CDoc::doHeroAction - type=eHeroActionPullLever, but actor is NULL or isn't a lever");
-      core_hero_cpp_FUN_004eb5b0(this_ptr);
+      core_hero_cpp_FUN_004eb5b0(this_ptr_00);
       return;
     }
-    engine_console_cpp_FUN_00445430(g_CConsolePtr,"  lever = %s\n",iVar2);
-    iVar3 = core_event_cpp_CRuleList_evaluateAndRun_FUN_004aaf30((CRuleList *)(iVar2 + 0x420));
-    if (iVar3 == 0) {
-      *(int *)&this_ptr->field_0x1ff80 = iVar2;
+    engine_console_cpp_FUN_00445430(g_CConsolePtr,"  lever = %s\n",pCVar6);
+    iVar7 = core_event_cpp_CRuleList_evaluateAndRun_FUN_004aaf30(&pCVar6->rule);
+    if (iVar7 == 0) {
+      (this_ptr_00->base).lever_to_pull = pCVar6;
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                ((CMotionController *)&this_ptr->field_0x158,0x24,1);
-      core_hero_cpp_FUN_004eb5b0(this_ptr);
+                (&(this_ptr_00->base).base.model.base,0x24,1);
+      core_hero_cpp_FUN_004eb5b0(this_ptr_00);
       return;
     }
   }
-  core_hero_cpp_FUN_004eb5b0(this_ptr);
+  core_hero_cpp_FUN_004eb5b0();
   return;
 }

@@ -20,7 +20,7 @@ void core_menu_cpp_FUN_0050c990(int param_1)
   local_14 = 0;
   if (param_1 != 0) {
     core_sound_cpp_CSound_configure_FUN_0057d6a0(0x02C82A60);
-    core_moon_cpp_FUN_00521c50(&g_CMoonInstance);
+    core_moon_cpp_CMoon_init_FUN_00521c50(&g_CMoonInstance);
   }
   iVar3 = 0x1d20a30;
   core_game_cpp_CGame_saveClockTime_FUN_004cbf10(g_CGamePtr);
@@ -36,7 +36,7 @@ void core_menu_cpp_FUN_0050c990(int param_1)
     g_CDemonSetPtr->rendering_mode = 1;
     core_set_cpp_CDemonSet_setFlatColor_FUN_00555770(this_ptr,50000,50000,0x10000);
     g_CDemonSetPtr->ambient_base_quick = 0xdac;
-    core_moon_cpp_FUN_00521e40(&g_CMoonInstance);
+    core_moon_cpp_CMoon_render_FUN_00521e40(&g_CMoonInstance);
     g_CDemonSetPtr->rendering_mode = 0;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Graphic options");
     _sprintf((char *)0x1d20a30,pcVar2);
@@ -44,7 +44,7 @@ void core_menu_cpp_FUN_0050c990(int param_1)
     _sprintf((char *)0x1d20b30,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Control options");
     _sprintf((char *)0x1d20c30,pcVar2);
-    if (*(int *)&g_CGamePtr->field_0xe4 == 1) {
+    if (g_CGamePtr->puzzle_difficulty_mode == 1) {
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Puzzle difficulty: Hard")
       ;
       _sprintf((char *)0x1d20d30,pcVar2);
@@ -53,9 +53,9 @@ void core_menu_cpp_FUN_0050c990(int param_1)
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090
                          ("Puzzle difficulty: Normal");
       _sprintf((char *)0x1d20d30,pcVar2);
-      *(uint *)&g_CGamePtr->field_0xe4 = 0;
+      g_CGamePtr->puzzle_difficulty_mode = 0;
     }
-    if (*(int *)&g_CGamePtr->field_0xe8 == 1) {
+    if (g_CGamePtr->combat_difficulty_mode == 1) {
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Combat difficulty: Hard")
       ;
       _sprintf((char *)0x1d20e30,pcVar2);
@@ -64,11 +64,11 @@ void core_menu_cpp_FUN_0050c990(int param_1)
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090
                          ("Combat difficulty: Normal");
       _sprintf((char *)0x1d20e30,pcVar2);
-      *(uint *)&g_CGamePtr->field_0xe8 = 0;
+      g_CGamePtr->combat_difficulty_mode = 0;
     }
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Credits");
     _sprintf((char *)0x1d20f30,pcVar2);
-    *(uint *)&g_CGamePtr->field_0xd4 = 9;
+    g_CGamePtr->hero_number = HERO_TYPE_MOLOCH|HERO_TYPE_SVETLANA;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Option Menu");
     iVar1 = core_menu_cpp_renderMenuAndGetChoice_FUN_00509e20
                       ((char **)0x1d21030,6,&local_14,0x32,pcVar2);
@@ -81,9 +81,9 @@ void core_menu_cpp_FUN_0050c990(int param_1)
       core_menu_cpp_FUN_0050ba70();
       break;
     case 2:
-      _DAT_01d1ee90 = *(int *)&g_CGamePtr->field_0xd0;
+      _DAT_01d1ee90 = g_CGamePtr->game_control;
       core_menu_cpp_FUN_0050b470();
-      if (_DAT_01d1ee90 != *(int *)&g_CGamePtr->field_0xd0) {
+      if (_DAT_01d1ee90 != g_CGamePtr->game_control) {
         core_menu_cpp_FUN_0050d640();
       }
       break;
@@ -97,7 +97,7 @@ void core_menu_cpp_FUN_0050c990(int param_1)
     core_inivar_cpp_writeIniData_FUN_004f5760();
     return;
   }
-  core_moon_cpp_FUN_00521d50(&g_CMoonInstance);
+  core_moon_cpp_CMoon_free_FUN_00521d50(&g_CMoonInstance);
   core_sound_cpp_CSound_reset_FUN_0057d800(0x02C82A60);
   core_inivar_cpp_writeIniData_FUN_004f5760();
   return;

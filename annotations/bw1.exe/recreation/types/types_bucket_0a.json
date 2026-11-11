@@ -3,7 +3,7 @@
     "kind":"class",
     "name":"CBitFont",
     "rtti_file":"engine/font.cpp",
-    "size":1
+    "size":16928
   },
   {
     "kind":"class",
@@ -144,6 +144,7 @@
   {
     "kind":"class",
     "name":"CGlassParticle",
+    "parent":"CParticle",
     "rtti_file":"core/emitter.cpp",
     "size":164
   },
@@ -155,7 +156,7 @@
   {
     "kind":"class",
     "name":"CKeys",
-    "size":1
+    "size":4
   },
   {
     "kind":"class",
@@ -282,7 +283,7 @@
     "kind":"class",
     "name":"CTextureCache",
     "rtti_file":"engine/texture.cpp",
-    "size":1
+    "size":98316
   },
   {
     "kind":"class",
@@ -290,6 +291,25 @@
     "parent":"CWeapon",
     "rtti_file":"core/turret.cpp",
     "size":2236
+  },
+  {
+    "kind":"enum",
+    "name":"EAimMode",
+    "size":4,
+    "values":[
+      {
+        "name":"AIM_MODE_AUTO",
+        "value":0
+      },
+      {
+        "name":"AIM_MODE_SEMI_AUTO",
+        "value":1
+      },
+      {
+        "name":"AIM_MODE_MANUAL",
+        "value":2
+      }
+    ]
   },
   {
     "kind":"enum",
@@ -366,18 +386,33 @@
   },
   {
     "kind":"struct",
+    "name":"SEventNameBlock",
+    "size":3204
+  },
+  {
+    "kind":"struct",
+    "name":"SFogGridPlane",
+    "size":256
+  },
+  {
+    "kind":"struct",
     "name":"SMRGLHeaderBasic",
     "size":8
   },
   {
     "kind":"struct",
-    "name":"SNotesSection",
-    "size":740
+    "name":"SMpegLayer3SideInfoChannel",
+    "size":160
   },
   {
     "kind":"struct",
-    "name":"SScriptXRef",
-    "size":1
+    "name":"SNotesMapSet",
+    "size":136
+  },
+  {
+    "kind":"struct",
+    "name":"SNotesSection",
+    "size":740
   },
   {
     "kind":"struct",
@@ -387,11 +422,12 @@
   {
     "kind":"struct",
     "name":"SSoftwareEdge",
-    "size":1
+    "parent":"SHardwareEdge",
+    "size":80
   },
   {
     "kind":"struct",
     "name":"SVoxelGrid",
-    "size":1
+    "size":64
   }
 ]

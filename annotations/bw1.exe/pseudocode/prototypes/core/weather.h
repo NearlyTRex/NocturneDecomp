@@ -19,7 +19,7 @@ void __cdecl FUN_005ae190(CWeather *this_ptr);
 
 // Original: core_weather.cpp_FUN_005ae560
 // Address: 005ae560
-undefined4 FUN_005ae560(void);
+float FUN_005ae560(void);
 
 // Original: core_weather.cpp_CWeather_createLightningStrike_FUN_005ae580
 // Address: 005ae580

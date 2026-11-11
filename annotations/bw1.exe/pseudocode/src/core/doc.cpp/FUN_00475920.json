@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 275,
-    "complexity_score": 668,
+    "complexity_score": 638,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 163,
-    "suspect_count": 47,
+    "suspect_count": 45,
     "suspect_types": [
       "param_count_too_few",
       "suspect_float",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
-      "warning_overlapping_globals",
-      "warning_type_propagation"
+      "warning_overlapping_globals"
     ],
     "total_lines": 438
   },
@@ -155,16 +153,8 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Overlapping global symbols",
-      "line": 3,
+      "line": 2,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -172,7 +162,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 5,
+      "line": 4,
       "match": "param_1",
       "severity": "mild",
       "text": "void core_doc_cpp_FUN_00475920(CCharacter *param_1)",
@@ -207,7 +197,7 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1[2].flames[0x1a].base.previous_transform_state.orientation.vec.y != 0.0) {",
+      "text": "if (param_1[2].flames[0x1a].base.previous_transform_state.orientation.vec.x != 0.0) {",
       "type": "unnamed_param"
     },
     {
@@ -223,7 +213,7 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar7 = *(int *)(param_1[2].flames[0x1a].on_event + 0x28);",
+      "text": "this_ptr = *(CDemonActor **)(param_1[2].flames[0x1a].on_event + 0x28);",
       "type": "unnamed_param"
     },
     {
@@ -231,24 +221,8 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar7 = *(int *)&param_1->field_0x2628;",
+      "text": "this_ptr = param_1->carry_hands[1].carry_actor;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x2628",
-      "severity": "mild",
-      "text": "iVar7 = *(int *)&param_1->field_0x2628;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 41,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "if ((iVar7 != 0) && (uVar5 = (**(code **)(*(int *)(iVar7 + 0x154) + 0x74))(iVar7), uVar5 != 0))",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
@@ -319,7 +293,7 @@
       "line": 77,
       "match": "9.80909e-45",
       "severity": "mild",
-      "text": "param_1[2].flames[0x1a].base.previous_transform_state.orientation.vec.y = 9.80909e-45;",
+      "text": "param_1[2].flames[0x1a].base.previous_transform_state.orientation.vec.x = 9.80909e-45;",
       "type": "suspect_float"
     },
     {
@@ -327,7 +301,7 @@
       "line": 77,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[2].flames[0x1a].base.previous_transform_state.orientation.vec.y = 9.80909e-45;",
+      "text": "param_1[2].flames[0x1a].base.previous_transform_state.orientation.vec.x = 9.80909e-45;",
       "type": "unnamed_param"
     },
     {
@@ -337,6 +311,14 @@
       "severity": "mild",
       "text": "param_1->layer_action_index = iVar7 + 0xc;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 88,
+      "match": "9.80909e-45",
+      "severity": "mild",
+      "text": "else if (this_ptr[2].orient.vec.x == 9.80909e-45) goto LAB_0047597e;",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",

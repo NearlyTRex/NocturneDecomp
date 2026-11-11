@@ -13,7 +13,7 @@ float __cdecl core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_0056a8
   float fVar2;
   int lod_index;
   CVector3i *pCVar3;
-  byte *puVar4;
+  SPartInstanceData *pSVar4;
   
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(this_ptr);
   lod_index = pCVar1->num_lods + -2;
@@ -23,10 +23,10 @@ float __cdecl core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_0056a8
   if (lod_index != this_ptr->cached_skinned_lod_index) {
     core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_00569890(this_ptr,lod_index);
   }
-  puVar4 = &this_ptr->field_0x2140;
+  pSVar4 = &this_ptr->part_data;
   pCVar3 = this_ptr->skinned_vertices_buffer;
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(this_ptr);
   fVar2 = (float)core_skeleton_cpp_FUN_005660c0
-                           (pCVar1,lod_index,ray_origin,ray_direction,pCVar3,puVar4);
+                           (pCVar1,lod_index,ray_origin,ray_direction,pCVar3,pSVar4);
   return fVar2;
 }

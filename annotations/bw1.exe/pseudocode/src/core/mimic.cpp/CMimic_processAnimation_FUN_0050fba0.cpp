@@ -34,10 +34,7 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0050fba0(CMimic *this_pt
   float fVar15;
   EBloodType blood_type;
   SDamageInfo *damage_info;
-  SDamageInfo local_2bc [4];
-  float local_2b8;
-  CMimic *local_288;
-  CMimic *local_284;
+  SDamageInfo local_2bc;
   uint local_280 [12];
   uint local_250 [12];
   float local_220 [6];
@@ -132,12 +129,12 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0050fba0(CMimic *this_pt
   local_20 = &(this_ptr->base).base.model.base;
   local_24 = -1.0;
   pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(local_20);
-  uVar5 = *(uint *)(pSVar3 + 0x24);
+  uVar5 = pSVar3->state_index;
   if (uVar5 < 2) {
     if (uVar5 == 0) {
       iVar6 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
       iVar6 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x10c))(iVar6);
-      if (((iVar6 == 0) && (*(int *)&g_CGamePtr->field_0x1f0 == 0)) &&
+      if (((iVar6 == 0) && (g_CGamePtr->freeze_enemies_enabled == 0)) &&
          (ABS((this_ptr->base).base.base.location.position.y -
               *(float *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x24)) <= (float)_DAT_005e89e0))
       {
@@ -190,7 +187,7 @@ LAB_0050fc98:
     iVar6 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
     out_box = (CBoundingBox3D *)0x50fcb1;
     iVar4 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x10c))();
-    if ((iVar4 != 0) || (*(int *)&g_CGamePtr->field_0x1f0 != 0)) {
+    if ((iVar4 != 0) || (g_CGamePtr->freeze_enemies_enabled != 0)) {
       iVar4 = 0;
       goto LAB_0050fcc0;
     }
@@ -218,14 +215,14 @@ LAB_0050fc98:
     if (-local_140 <= SQRT(local_14c * local_14c + local_154 * local_154)) {
       pCVar13 = &(this_ptr->base).base.model.base;
       local_14 = (float)core_motion_cpp_FUN_00524a40(pCVar13,1);
-      *(float *)&(this_ptr->base).base.field_0x2524 = local_14 * _DAT_005e89d0;
+      (this_ptr->base).base.walk_step_speed = local_14 * _DAT_005e89d0;
       local_14 = (float)core_motion_cpp_FUN_00524a40(pCVar13,2);
       fVar15 = (this_ptr->base).speed;
       fVar1 = (this_ptr->base).speed;
-      *(float *)&(this_ptr->base).base.field_0x2524 =
-           local_14 * _DAT_005e89d4 + *(float *)&(this_ptr->base).base.field_0x2524;
-      *(float *)&(this_ptr->base).base.field_0x2524 =
-           fVar15 * delta_time * *(float *)&(this_ptr->base).base.field_0x2524;
+      (this_ptr->base).base.walk_step_speed =
+           local_14 * _DAT_005e89d4 + (this_ptr->base).base.walk_step_speed;
+      (this_ptr->base).base.walk_step_speed =
+           fVar15 * delta_time * (this_ptr->base).base.walk_step_speed;
       core_charactr_cpp_FUN_00435320(this_ptr,delta_time * fVar1);
       local_58.z = 0x40200000;
       iVar6 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
@@ -278,12 +275,12 @@ LAB_0050fc98:
               afStack_60[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
                    afStack_84[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 4];
               local_64 = local_64 ^ 0x80000000;
-              core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(local_2bc);
-              local_2b8 = local_34;
-              damage_info = local_2bc;
+              core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&local_2bc);
+              local_2bc.damage_amount = local_34;
+              damage_info = &local_2bc;
               fVar15 = 0.2;
-              local_288 = this_ptr;
-              local_284 = this_ptr;
+              local_2bc.attacker = (CDemonActor *)this_ptr;
+              local_2bc.wielder = (CDemonActor *)this_ptr;
               core_actor_cpp_FUN_00408b40(this_ptr,&local_64);
               pCVar14 = &local_94;
               local_94.x = local_13c;
@@ -337,7 +334,7 @@ LAB_0050fcc7:
 LAB_0050fccf:
   if (0.0 <= local_24) {
     fVar15 = (this_ptr->base).speed;
-    *(float *)&(this_ptr->base).base.field_0x2524 = (this_ptr->base).speed * delta_time;
+    (this_ptr->base).base.walk_step_speed = (this_ptr->base).speed * delta_time;
     core_charactr_cpp_FUN_00435320(this_ptr,delta_time * fVar15);
     local_4c.z = local_24;
     iVar6 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
@@ -382,7 +379,7 @@ LAB_0050fccf:
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_0042e160((CCharacter *)this_ptr);
   pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(local_18);
-  local_1c = *(uint *)(pSVar3 + 0x24);
+  local_1c = pSVar3->state_index;
   if (((local_1c == 0xc) || (local_1c == 0)) &&
      ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) goto LAB_005104af;
   core_charactr_cpp_FUN_0042d700(this_ptr,delta_time);
@@ -431,7 +428,7 @@ LAB_005104af:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180(this_ptr_00);
   core_cloth_cpp_CCloth_process_FUN_00440610
-            ((CCloth *)&this_ptr->field_0xc330,&(this_ptr->base).base.base.location.position,
+            (&this_ptr->cloth,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec,delta_time,
              (this_ptr->base).base.closest_distance_threshold,this_ptr_00);
   return;

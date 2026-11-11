@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 115,
+    "complexity_score": 90,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy"
     ],
     "total_lines": 138
@@ -103,13 +102,13 @@
     },
     {
       "addr": "01ccf59c",
-      "name": "g_CGameInstance.field476_0x20c",
+      "name": "g_CGameInstance.suppress_set_geometry",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf5a0",
-      "name": "g_CGameInstance.field480_0x210",
+      "name": "g_CGameInstance.render_mode",
       "type": "undefined4",
       "value": null
     }
@@ -347,22 +346,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x20c",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x20c == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x210",
-      "severity": "mild",
-      "text": "if ((*(int *)&g_CGamePtr->field_0x210 != 0) &&",
-      "type": "unnamed_field"
-    },
     {
       "description": "Undefined global data reference",
       "line": 15,

@@ -5,9 +5,9 @@
 // Function prototypes for unkafter/fldnotes.cpp
 // Generated from Ghidra function signatures
 
-// Original: unkafter_fldnotes.cpp_PageResource_Map_dtor_FUN_004bf670
+// Original: unkafter_fldnotes.cpp_SPageResourceMap_dtor_FUN_004bf670
 // Address: 004bf670
-SPageResourceMap * PageResource::Map_dtor(SPageResourceMap *this_ptr,uint flags);
+SPageResourceMap * SPageResourceMap::dtor(SPageResourceMap *this_ptr,uint flags);
 
 // Original: unkafter_fldnotes.cpp_FUN_004bf6c0
 // Address: 004bf6c0

@@ -12,20 +12,20 @@
 CYow * core_xform_cpp_CYow_ctor_FUN_005b8160(CYow *this_ptr)
 
 {
-  uint uVar1;
-  uint uVar2;
+  float fVar1;
+  float fVar2;
   CYow *pCVar3;
   
-  pCVar3 = (CYow *)core_enemy_cpp_CEnemy_ctor_FUN_004a0410((CEnemy *)this_ptr);
-  ((UActorVTable *)&pCVar3->field_0x154)->_ub = &g_CYowVTable._ub;
+  pCVar3 = (CYow *)core_enemy_cpp_CEnemy_ctor_FUN_004a0410(&this_ptr->base);
+  (pCVar3->base).base.base.vtable._ub = &g_CYowVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
-            ((CDeformableModelInstance *)&pCVar3->field_0x158,"blackdog.dfm");
-  uVar1 = _DAT_00608210;
-  *(uint *)&pCVar3->field_0x2fec = 0x3f400000;
-  uVar2 = _DAT_00608214;
-  *(uint *)&pCVar3->field_0x2ff0 = 0x3fc00000;
-  *(uint *)&pCVar3->field_0xc2b0 = 0;
-  *(uint *)&pCVar3->field_0x2ff4 = uVar1;
-  *(uint *)&pCVar3->field_0x2ff8 = uVar2;
+            (&(pCVar3->base).base.model,"blackdog.dfm");
+  fVar1 = _DAT_00608210;
+  (pCVar3->base).base.collision_cylinder_height = 0.75;
+  fVar2 = _DAT_00608214;
+  (pCVar3->base).base.collision_cylinder_radius = 1.5;
+  pCVar3->sfx_handle = 0;
+  (pCVar3->base).base.ai_detection_range_min = fVar1;
+  (pCVar3->base).base.ai_detection_range_max = fVar2;
   return pCVar3;
 }

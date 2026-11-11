@@ -55,12 +55,12 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_0059afb0(CTrigger *this_pt
   pCVar2->laser_type = 1;
   pCVar2->hit_points = 100.0;
   (pCVar2->base).health = 0x96;
-  *(uint *)&pCVar2->field_0x36c = 0;
-  *(uint *)&pCVar2->field_0x300 = 0;
+  pCVar2->cached_actor = (CDemonActor *)0x0;
+  pCVar2->triggering_actor = (CDemonActor *)0x0;
   pCVar2->test_radius = 99999.9;
-  *(uint *)&pCVar2->field_0x304 = 1;
-  pCVar2->field_0x308 = 0;
-  *(uint *)&pCVar2->field_0x370 = 0;
-  *(CTrigger **)&pCVar2->field_0x2fc = pCVar2;
+  pCVar2->auto_aim_at_me = 1;
+  pCVar2->damage_actor_wildcard_name[0] = '\0';
+  pCVar2->damage_cooldown = 0.0;
+  pCVar2->hilite_actor = (CDemonActor *)pCVar2;
   return pCVar2;
 }

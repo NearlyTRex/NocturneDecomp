@@ -4,13 +4,17 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CWeapon.h"
 
 // Structure: CRifle
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 1412; ctor 0053ff20, process 00540060
 // Ghidra size: 0x584 (1412 bytes)
 #pragma pack(push, 1)
 typedef struct CRifle {
-    char field_0[1412]; // 0x0
+    CWeapon base; // 0x0, derived
+    float spread_angle; // 0x578, ctor 3.0 (same ctor slot as nocedit CShotgun/CElephantGun spread_angle)
+    int processed; // 0x57c, ctor 0; process sets 1 before CWeapon_process
+    char field_1408[4]; // 0x580
 } CRifle;
 #pragma pack(pop)
 

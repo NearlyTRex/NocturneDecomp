@@ -11,7 +11,7 @@ void core_trap_cpp_factoryFuncTrap_FUN_00599ce0(void)
 {
   CTrap *this_ptr;
   
-  this_ptr = (CTrap *)debugAllocTracked1(0x2dc);
+  this_ptr = (CTrap *)operator_new(0x2dc);
   if (this_ptr == (CTrap *)0x0) {
     return;
   }

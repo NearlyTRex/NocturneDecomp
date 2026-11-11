@@ -9,32 +9,32 @@
 void __cdecl core_moocow_cpp_CMooCow_processDamage_FUN_00521990(CMooCow *this_ptr,SDamageInfo *damage_info)
 
 {
+  CDeformableModelInstance *this_ptr_00;
   float fVar1;
   SMotion *pSVar2;
   int iVar3;
   uint uVar4;
   
   core_moocow_cpp_FUN_00521810(this_ptr,damage_info);
-  fVar1 = *(float *)&this_ptr->field_0x2538 - *(float *)(damage_info + 4);
-  *(float *)&this_ptr->field_0x2538 = fVar1;
+  fVar1 = (this_ptr->base).hit_points - damage_info->damage_amount;
+  (this_ptr->base).hit_points = fVar1;
   if (fVar1 <= 0.0) {
-    *(uint *)&this_ptr->field_0x2538 = 0;
-    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
-                       ((CMotionController *)&this_ptr->field_0x158);
-    if ((*(int *)(pSVar2 + 0x24) != 7) && (*(int *)(pSVar2 + 0x24) != 6)) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                ((CMotionController *)&this_ptr->field_0x158,6,1);
-      (**(code **)(*(int *)&this_ptr->field_0x154 + 0xa8))(this_ptr,0x32,0x41c80000);
+    this_ptr_00 = &(this_ptr->base).model;
+    (this_ptr->base).hit_points = 0.0;
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
+    if ((pSVar2->state_index != 7) && (pSVar2->state_index != 6)) {
+      core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&this_ptr_00->base,6,1);
+      (*((this_ptr->base).base.vtable._ub)->spawnFlies)((CDemonActor *)this_ptr,0x32,25.0);
     }
   }
-  iVar3 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0
-                    (0x02C82A60,*(uint *)&this_ptr->field_0xc1d8);
+  iVar3 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0(0x02C82A60,this_ptr->sfx_handle);
   if (iVar3 != 0) {
-    core_charactr_cpp_CCharacter_processDamage_FUN_004319e0((CCharacter *)this_ptr,damage_info);
+    core_charactr_cpp_CCharacter_processDamage_FUN_004319e0(&this_ptr->base,damage_info);
     return;
   }
-  uVar4 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))(this_ptr,"cow?.wav");
-  *(uint *)&this_ptr->field_0xc1d8 = uVar4;
-  core_charactr_cpp_CCharacter_processDamage_FUN_004319e0((CCharacter *)this_ptr,damage_info);
+  uVar4 = (*((this_ptr->base).base.vtable._ub)->playSound)
+                    ((CDemonActor *)this_ptr,"cow?.wav");
+  this_ptr->sfx_handle = uVar4;
+  core_charactr_cpp_CCharacter_processDamage_FUN_004319e0(&this_ptr->base,damage_info);
   return;
 }

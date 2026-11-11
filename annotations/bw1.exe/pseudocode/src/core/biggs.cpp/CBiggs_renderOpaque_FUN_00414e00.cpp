@@ -11,7 +11,7 @@
 int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_00414e00(CBiggs *this_ptr)
 
 {
-  byte *this_ptr_00;
+  CMorph *this_ptr_00;
   CKeyFramedModel *model_ptr;
   int iVar1;
   uint *puVar2;
@@ -44,17 +44,16 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_00414e00(CBiggs *this_ptr)
       core_charactr_cpp_CCharacter_renderCharacter_FUN_0042e960((CCharacter *)this_ptr);
     }
     else {
-      this_ptr_00 = &this_ptr->field_0xc3ec;
+      this_ptr_00 = &this_ptr->morph;
       core_morph_cpp_CMorph_updateModelFromDeformable_FUN_00523290
-                ((CMorph *)this_ptr_00,0,&(this_ptr->base).base.model,0);
+                (this_ptr_00,0,&(this_ptr->base).base.model,0);
       part_index = 0;
       iVar5 = 0;
       model_ptr = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(&this_ptr->model)
       ;
       core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_005232d0
-                ((CMorph *)this_ptr_00,1,model_ptr,iVar5,part_index);
-      core_morph_cpp_CMorph_render_FUN_005237e0
-                ((CMorph *)this_ptr_00,this_ptr->morph_timer / 0x40800000);
+                (this_ptr_00,1,model_ptr,iVar5,part_index);
+      core_morph_cpp_CMorph_render_FUN_005237e0(this_ptr_00,this_ptr->morph_timer / 0x40800000);
     }
     if (_DAT_01d39d34 != 0) {
       iVar5 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);

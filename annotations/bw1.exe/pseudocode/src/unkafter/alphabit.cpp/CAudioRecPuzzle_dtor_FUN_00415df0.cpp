@@ -21,8 +21,8 @@ CAudioRecPuzzle * unkafter_alphabit_cpp_CAudioRecPuzzle_dtor_FUN_00415df0(CAudio
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  *(byte ***)this_ptr = &g_CAudioRecPuzzleVTable;
-  iVar1 = unkafter_superopt_cpp_FUN_004188b0(&this_ptr->field_0x60,0);
+  this_ptr->vtable = &g_CAudioRecPuzzleVTable;
+  iVar1 = unkafter_superopt_cpp_FUN_004188b0(this_ptr->buttons,0);
   pCVar2 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0((CAlphaBitmap *)(iVar1 + -0x5c),0);
   pCVar3 = (CAudioRecPuzzle *)unkafter_alphabit_cpp_FUN_00415bc0(&pCVar2[-1].height,1);
   if ((flags & 2) == 0) {

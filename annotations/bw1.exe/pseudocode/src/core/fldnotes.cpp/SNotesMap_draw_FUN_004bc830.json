@@ -1,0 +1,289 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 143,
+    "complexity_score": 200,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 50,
+    "suspect_count": 13,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "stack_param",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 193
+  },
+  "cross_references": [
+    {
+      "addr": "004bcb40",
+      "from_addr": "004bcb50",
+      "name": "core_fldnotes.cpp_SPageResourceMap_draw_FUN_004bcb40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004bc830",
+    "address_range": [
+      [
+        "004bc830",
+        "004bc9a3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_SNotesMap_draw_FUN_004bc830",
+    "signature": "void __cdecl core_fldnotes_cpp_SNotesMap_draw_FUN_004bc830(SNotesMap *this_ptr,int param_2,int param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a6c30",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30"
+    },
+    {
+      "addr": "004bc9b0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_SNotesMap_applyReveal_FUN_004bc9b0"
+    },
+    {
+      "addr": "004bc6f0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_SNotesMap_worldToMap_FUN_004bc6f0"
+    },
+    {
+      "addr": "0040d4b0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d4b0"
+    },
+    {
+      "addr": "004c1dd0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004c1dd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b4d0",
+      "name": "DAT_0061b4d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061d308",
+      "name": "DAT_0061d308",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061d30c",
+      "name": "DAT_0061d30c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0152d250",
+      "name": "DAT_0152d250",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d06ab4",
+      "name": "DAT_01d06ab4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004bcb50",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_SPageResourceMap_draw_FUN_004bcb40",
+        "estimated_params": 3,
+        "instructions_analyzed": 8,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.076923076923077,
+    "instruction_count": 117,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 6,
+      "CBRANCH": 7,
+      "COPY": 86,
+      "INT_ADD": 47,
+      "INT_AND": 98,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 72,
+      "INT_LESS": 8,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 12,
+      "INT_OR": 8,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 18,
+      "INT_SEXT": 3,
+      "INT_SLESS": 35,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 45,
+      "INT_XOR": 1,
+      "LOAD": 24,
+      "POPCOUNT": 35,
+      "RETURN": 1,
+      "STORE": 36,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 594
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SNotesMap *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl core_fldnotes_cpp_SNotesMap_draw_FUN_004bc830(SNotesMap *this_ptr,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void __cdecl core_fldnotes_cpp_SNotesMap_draw_FUN_004bc830(SNotesMap *this_ptr,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "(&this_ptr->image,param_2,in_stack_00000010,0xffff);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(&this_ptr->image,param_2,in_stack_00000010,0xffff);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "iVar1 = (in_stack_00000010 + iStack_14) - _DAT_0061d30c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "x = (iStack_18 + param_2) - _DAT_0061d308;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "iVar1 = this_ptr->height / 2 + in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "x = this_ptr->width / 2 + param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "pSVar2->annotations[0].x + param_2,in_stack_00000010 + pSVar2->annotations[0].y,1",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pSVar2->annotations[0].x + param_2,in_stack_00000010 + pSVar2->annotations[0].y,1",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via pointer arithmetic on an array-indexed field reached by an (unparenthesized) arrow deref; the inner sibling array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 50,
+      "match": "pSVar2 = (T *)(pSVar2->FIELD[N].SUBFIELD + CONST)",
+      "severity": "moderate",
+      "text": "pSVar2 = (SNotesMap *)(pSVar2->sets[0].level_name + 0x34);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

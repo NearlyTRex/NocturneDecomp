@@ -33,7 +33,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00496920(CEdi
     _DAT_01d1d404 = 0xa4;
     core_main_c_FUN_005030e0("gEdFont must be set by the application.");
   }
-  _DAT_01c3f538 = *(uint *)(_DAT_01c3eb50 + 0x41e8);
+  _DAT_01c3f538 = _DAT_01c3eb50->max_char_width;
   _DAT_01c3f53c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(_DAT_01c3eb50,0x6a);
   if (4 < _DAT_01c3eb5c) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";
@@ -105,7 +105,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00496920(CEdi
       uVar6 = (int)((iVar4 + iVar9 * -8) - (uint)(iVar9 << 2 < 0)) >> 3;
       *(uint *)(iVar1 + 0x1c3ed3c) = 0;
       *(uint *)(iVar1 + 0x1c3ed40) = 0;
-      local_18 = FUN_005c08d0(*(int *)(iVar1 + 0x1c3ed48) * uVar6);
+      local_18 = (uint *)malloc(*(int *)(iVar1 + 0x1c3ed48) * uVar6);
       *(uint **)(iVar1 + 0x1c3ed38) = local_18;
       if ((local_18 != (uint *)0x0) && (iVar4 = 0, 0 < *(int *)(iVar1 + 0x1c3ed48))) {
         do {

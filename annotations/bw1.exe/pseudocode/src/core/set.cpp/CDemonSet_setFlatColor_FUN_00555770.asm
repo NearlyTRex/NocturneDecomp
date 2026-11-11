@@ -18,7 +18,7 @@
 ;   core_menu.cpp_calibrateGamepad_FUN_0050a2b0 at 0050a3d2
 ;   core_menu.cpp_configureGraphicsOptions_FUN_0050aa90 at 0050ab6a
 ;   core_menu.cpp_showMainGameMenu_FUN_0050cc90 at 0050cd9d
-;   core_moon.cpp_FUN_00521e40 at 00521f6f
+;   core_moon.cpp_CMoon_render_FUN_00521e40 at 00521f6f
 ;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0 at 0054efb1
 ;   ... and 3 more
 ;

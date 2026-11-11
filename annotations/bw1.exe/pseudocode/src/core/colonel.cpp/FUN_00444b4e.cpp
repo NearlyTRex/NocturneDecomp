@@ -130,7 +130,7 @@ void core_colonel_cpp_FUN_00444b4e(int param_1,float param_2)
         else {
           pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                              ((CMotionController *)(param_1 + 0x158));
-          if ((*(int *)(pSVar3 + 0x24) != 2) && (*(int *)(pSVar3 + 0x24) != 1)) {
+          if ((pSVar3->state_index != 2) && (pSVar3->state_index != 1)) {
             *(uint *)(param_1 + 0xc1e4) = 1;
           }
         }

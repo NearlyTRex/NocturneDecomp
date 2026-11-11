@@ -2,23 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 872,
-    "complexity_score": 567,
+    "complexity_score": 600,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 412,
-    "suspect_count": 12,
+    "pseudocode_lines": 410,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
       "raw_address_pointer_store",
       "stack_alignment_array",
       "unaffected_reg",
+      "unknown_field",
       "unrolled_memcpy",
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1284
+    "total_lines": 1282
   },
   "cross_references": [],
   "function": {
@@ -375,7 +376,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 102,
+      "line": 99,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar15),",
@@ -383,7 +384,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 105,
+      "line": 102,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "this_ptr->boss_actor = *(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar15);",
@@ -391,7 +392,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 128,
+      "line": 125,
       "match": "(float *)((int)this_ptr",
       "severity": "moderate",
       "text": "pfVar16 = (float *)((int)this_ptr + (uint)bVar18 * -8 + 0x24);",
@@ -399,7 +400,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 213,
+      "line": 210,
       "match": "(float *)((int)this_ptr",
       "severity": "moderate",
       "text": "pfVar16 = (float *)((int)this_ptr + (uint)bVar18 * -8 + 0x24);",
@@ -407,7 +408,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 218,
+      "line": 215,
       "match": "*(CCharacter **)(_DAT_01d06ab4 * 4 + 0x1d06aa4",
       "severity": "moderate",
       "text": "pCVar9 = *(CCharacter **)(_DAT_01d06ab4 * 4 + 0x1d06aa4);",
@@ -415,15 +416,39 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 281,
+      "line": 278,
       "match": "*(CCharacter **)(_DAT_01d06ab4 * 4 + 0x1d06aa4",
       "severity": "moderate",
       "text": "(this_ptr->base).victim = *(CCharacter **)(_DAT_01d06ab4 * 4 + 0x1d06aa4);",
       "type": "raw_address_pointer_store"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 322,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_1dc._4_4_ = 1.0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 323,
+      "match": "._52_4_",
+      "severity": "mild",
+      "text": "auStack_1dc._52_4_ = this_ptr;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 327,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "if (0.0 < (float)auStack_1dc._12_4_) {",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 350,
+      "line": 348,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "fVar11 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(unaff_EDI - fVar14);",
@@ -431,7 +456,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 114,
+      "line": 111,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->home_pos).x = (pCVar8->location).position.x;",
@@ -439,7 +464,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 189,
+      "line": 186,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "pCStack_24->z = 0.0;",

@@ -16,9 +16,9 @@ void __cdecl core_hostage_cpp_CHostage_processDamage_FUN_004ef300(CHostage *this
   uint uVar4;
   
   if (this_ptr->hostage_type == 0) {
-    *(uint *)(damage_info + 4) = 0;
+    damage_info->damage_amount = 0.0;
   }
-  fVar1 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
@@ -28,7 +28,7 @@ void __cdecl core_hostage_cpp_CHostage_processDamage_FUN_004ef300(CHostage *this
     (*((this_ptr->base).base.base.vtable._ub)->playSound)
               ((CDemonActor *)this_ptr,this_ptr->die_sound);
   }
-  else if (0.0 < *(float *)(damage_info + 4)) {
+  else if (0.0 < damage_info->damage_amount) {
     if ((this_ptr->base).base.grabbed_by == (CDemonActor *)0x0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&this_ptr_00->base,4,1);
       pCVar2 = DAT_007c2ff4;

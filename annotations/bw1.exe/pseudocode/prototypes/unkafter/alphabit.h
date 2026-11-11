@@ -45,14 +45,14 @@ CAudioRecPuzzle * CAudioRecPuzzle::ctor(CAudioRecPuzzle *this_ptr);
 // Address: 00415df0
 CAudioRecPuzzle * CAudioRecPuzzle::dtor(CAudioRecPuzzle *this_ptr,uint flags);
 
-// Original: unkafter_alphabit.cpp_FUN_00415e70
+// Original: unkafter_alphabit.cpp_CAudioRecPuzzle_reset_FUN_00415e70
 // Address: 00415e70
-void FUN_00415e70(int param_1);
+void __cdecl CAudioRecPuzzle::reset(CAudioRecPuzzle *this_ptr);
 
 // Original: unkafter_alphabit.cpp_FUN_00415fb0
 // Address: 00415fb0
 void FUN_00415fb0(void);
 
-// Original: unkafter_alphabit.cpp_FUN_00415fc0
+// Original: unkafter_alphabit.cpp_CAudioRecPuzzle_load_FUN_00415fc0
 // Address: 00415fc0
-void FUN_00415fc0(int *param_1,int param_2);
+void __cdecl CAudioRecPuzzle::load(CAudioRecPuzzle *this_ptr,int param_2);

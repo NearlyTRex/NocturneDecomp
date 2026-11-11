@@ -11,34 +11,34 @@
 void __cdecl core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_00522540(CMorphModel *this_ptr,int part_index,CVector3i *vertex_buffer,int start_offset,int vertex_count)
 
 {
-  int iVar1;
+  SMorphPoint *pSVar1;
   int iVar2;
   int iVar3;
   
-  if ((part_index < 0) || (*(int *)this_ptr <= part_index)) {
+  if ((part_index < 0) || (this_ptr->part_count <= part_index)) {
     _DAT_01d1d400 = "..\\core\\morph.cpp";
     _DAT_01d1d404 = 0x112;
     core_main_c_FUN_005030e0("CMorphModel::animate - invalid part index");
   }
-  iVar3 = start_offset + *(int *)(&this_ptr->field_0xc + part_index * 0x10);
-  if (*(int *)(&this_ptr->field_0xc + part_index * 0x10) +
-      *(int *)(&this_ptr->field_0x4 + part_index * 0x10) < iVar3 + vertex_count) {
+  iVar2 = this_ptr->parts[part_index].start_vertex;
+  iVar3 = start_offset + iVar2;
+  if (iVar2 + this_ptr->parts[part_index].vertex_count < iVar3 + vertex_count) {
     _DAT_01d1d400 = "..\\core\\morph.cpp";
     _DAT_01d1d404 = 0x119;
     core_main_c_FUN_005030e0("CMorphModel::animate - invalid vertex range");
   }
-  iVar1 = 0;
+  iVar2 = 0;
   if (0 < vertex_count) {
     iVar3 = iVar3 * 0x10;
     do {
-      iVar2 = *(int *)&this_ptr->field_0x58 + iVar3;
-      iVar1 = iVar1 + 1;
-      *(float *)(iVar2 + 4) = (float)vertex_buffer->x * _DAT_00604268;
-      *(float *)(iVar2 + 8) = (float)vertex_buffer->y * _DAT_00604268;
-      *(float *)(iVar2 + 0xc) = (float)vertex_buffer->z * _DAT_00604268;
+      pSVar1 = this_ptr->points;
+      iVar2 = iVar2 + 1;
+      *(float *)((int)&(pSVar1->position).x + iVar3) = (float)vertex_buffer->x * _DAT_00604268;
+      *(float *)((int)&(pSVar1->position).y + iVar3) = (float)vertex_buffer->y * _DAT_00604268;
+      *(float *)((int)&(pSVar1->position).z + iVar3) = (float)vertex_buffer->z * _DAT_00604268;
       iVar3 = iVar3 + 0x10;
       vertex_buffer = vertex_buffer + 1;
-    } while (iVar1 < vertex_count);
+    } while (iVar2 < vertex_count);
   }
   return;
 }

@@ -11,7 +11,7 @@ void core_batman_cpp_factoryFuncBatman_FUN_00412750(void)
 {
   CBatman *this_ptr;
   
-  this_ptr = (CBatman *)debugAllocTracked1(0xc328);
+  this_ptr = (CBatman *)operator_new(0xc328);
   if (this_ptr == (CBatman *)0x0) {
     return;
   }

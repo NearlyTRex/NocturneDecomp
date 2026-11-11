@@ -12,7 +12,7 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_00592aa0(CSuccubus *thi
 
 {
   CDeformableModelInstance *model_ptr;
-  byte *this_ptr_00;
+  CMorph *this_ptr_00;
   int iVar1;
   int iVar2;
   uint *puVar3;
@@ -47,19 +47,16 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_00592aa0(CSuccubus *thi
           core_charactr_cpp_CCharacter_renderCharacter_FUN_0042e960((CCharacter *)this_ptr);
         }
         else {
-          this_ptr_00 = &this_ptr->field_0xe7d8;
+          this_ptr_00 = &this_ptr->morph;
           core_morph_cpp_CMorph_updateModelFromDeformable_FUN_00523290
-                    ((CMorph *)this_ptr_00,0,&(this_ptr->base).base.model,0);
-          core_morph_cpp_CMorph_updateModelFromDeformable_FUN_00523290
-                    ((CMorph *)this_ptr_00,1,model_ptr,0);
+                    (this_ptr_00,0,&(this_ptr->base).base.model,0);
+          core_morph_cpp_CMorph_updateModelFromDeformable_FUN_00523290(this_ptr_00,1,model_ptr,0);
           core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_005232d0
-                    ((CMorph *)this_ptr_00,1,
-                     (CKeyFramedModel *)(this_ptr->hotdemon_cloth_list).cloths[0],0,1);
+                    (this_ptr_00,1,&(this_ptr->hotdemon_cloth_list).cloths[0]->model,0,1);
           core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_005232d0
-                    ((CMorph *)this_ptr_00,1,
-                     (CKeyFramedModel *)(this_ptr->hotdemon_cloth_list).cloths[0],0,2);
+                    (this_ptr_00,1,&(this_ptr->hotdemon_cloth_list).cloths[0]->model,0,2);
           core_morph_cpp_CMorph_render_FUN_005237e0
-                    ((CMorph *)this_ptr_00,this_ptr->morph_timer / _DAT_00606278);
+                    (this_ptr_00,this_ptr->morph_timer / _DAT_00606278);
         }
       }
       else {

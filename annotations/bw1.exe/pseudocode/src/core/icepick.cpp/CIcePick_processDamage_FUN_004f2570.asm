@@ -13,8 +13,8 @@
 ;   undefined4 DAT_00602628
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CGore* g_CGorePtr = 01cd0e3c
-;   undefined4 g_CGameInstance.field444_0x1ec
-;   undefined4 g_CGameInstance.field536_0x248
+;   undefined4 g_CGameInstance.god_mode_enabled
+;   undefined4 g_CGameInstance.allow_damage_flag
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_004319e0
@@ -46,13 +46,13 @@ section .text
         ;   XREF to: 004f263a (CONDITIONAL_JUMP)  ; LAB_004f263a
     MOV EAX,[0x0061d95c]                ; 004f259d | g_CGamePtr
         ;   Label: LAB_004f259d
-    CMP dword ptr [EAX + 0x1ec],0x0     ; 004f25a2 | g_CGameInstance.field444_0x1ec
+    CMP dword ptr [EAX + 0x1ec],0x0     ; 004f25a2 | g_CGameInstance.god_mode_enabled
     JZ 0x004f25b2                       ; 004f25a9
         ;   XREF to: 004f25b2 (CONDITIONAL_JUMP)  ; LAB_004f25b2
     MOV dword ptr [EDI + 0x4],0x0       ; 004f25ab
     MOV EAX,[0x0061d95c]                ; 004f25b2 | g_CGamePtr
         ;   Label: LAB_004f25b2
-    MOV EBP,dword ptr [EAX + 0x248]     ; 004f25b7 | g_CGameInstance.field536_0x248
+    MOV EBP,dword ptr [EAX + 0x248]     ; 004f25b7 | g_CGameInstance.allow_damage_flag
     TEST EBP,EBP                        ; 004f25bd
     JZ 0x004f2646                       ; 004f25bf
         ;   XREF to: 004f2646 (CONDITIONAL_JUMP)  ; LAB_004f2646

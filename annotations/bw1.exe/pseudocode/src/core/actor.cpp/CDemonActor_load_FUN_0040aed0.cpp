@@ -60,7 +60,7 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040aed0(CDemonActor *this_ptr,
     _DAT_01d1d404 = 0x82b;
     core_main_c_FUN_005030e0("End of actor file tag mismatch for class %s name \"%s\"",str1,this_ptr);
   }
-  if (((byte)file_handle[0xc] & 0x20) != 0) {
+  if ((file_handle->_flag & 0x20) != 0) {
     _DAT_01d1d400 = "..\\core\\actor.cpp";
     _DAT_01d1d404 = 0x830;
     core_main_c_FUN_005030e0("IO Error after reading %s \"%s\"",str1,this_ptr);

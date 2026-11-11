@@ -48,23 +48,26 @@ LAB_00402994:
     core_main_c_FUN_005030e0("hose!");
   }
   _sprintf(pcVar4,&DAT_005d20a9);
-  iVar2 = support_trstream_cpp_FUN_005a0fd0(&local_3c,&DAT_005d20ae,local_8c,1);
+  iVar2 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_005a0fd0
+                    (&local_3c,&DAT_005d20ae,local_8c,1);
   if (iVar2 == 0) {
     engine_2d_c_buildColorLookupTable_FUN_00402880();
     support_trstream_cpp_COutStreamFile_ctor_FUN_005a17d0(&local_10);
-    iVar2 = support_trstream_cpp_FUN_005a1a20(&local_10,&DAT_005d20b5,local_8c,&DAT_005d20b2);
+    iVar2 = support_trstream_cpp_COutStreamFile_openInDirectory_FUN_005a1a20
+                      (&local_10,&DAT_005d20b5,local_8c,&DAT_005d20b2);
     if (iVar2 == 0) {
       _DAT_01d1d400 = "..\\engine\\2d.c";
       _DAT_01d1d404 = 0x770;
       core_main_c_FUN_005030e0("Unable to write quick map!");
     }
-    support_trstream_cpp_FUN_005a18f0(&local_10,&DAT_01c45ad0,0x8000);
-    support_trstream_cpp_FUN_005a19b0(&local_10);
+    support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(&local_10,&DAT_01c45ad0,0x8000);
+    support_trstream_cpp_COutStreamFile_close_FUN_005a19b0(&local_10);
     support_trstream_cpp_COutStreamFile_dtor_FUN_005a1860(&local_10,0);
   }
   else {
-    unkaddr_0059f520_cpp_FUN_005a0c10(&local_3c,&DAT_01c45ad0,0x8000);
-    unkaddr_0059f520_cpp_FUN_005a0dc0(&local_3c);
+    unkaddr_0059f520_cpp_CInStreamFile_read_FUN_005a0c10
+              (&local_3c,(uint *)&DAT_01c45ad0,0x8000);
+    unkaddr_0059f520_cpp_CInStreamFile_close_FUN_005a0dc0(&local_3c);
   }
   unkclass_instream_cpp_CInStreamFile_dtor_FUN_005a0a50(&local_3c,0);
   return;

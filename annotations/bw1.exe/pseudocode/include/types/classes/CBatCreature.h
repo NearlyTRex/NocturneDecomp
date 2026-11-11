@@ -11,7 +11,7 @@
 #pragma pack(push, 1)
 typedef struct CBatCreature {
     CEnemy base; // 0x0
-    char field_49768[4]; // 0xc268
+    float dismember_death_timer; // 0xc268, Added in this build
     int part_indices[14]; // 0xc26c
     uint sfx_handles[3]; // 0xc2a4
     int alert_played; // 0xc2b0

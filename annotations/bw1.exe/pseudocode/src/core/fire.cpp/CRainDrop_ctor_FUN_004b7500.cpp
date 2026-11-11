@@ -9,9 +9,9 @@
 CRainDrop * __cdecl core_fire_cpp_CRainDrop_ctor_FUN_004b7500(CRainDrop *this_ptr)
 
 {
-  CRainDrop *pCVar1;
+  CParticle *pCVar1;
   
-  pCVar1 = (CRainDrop *)core_particle_cpp_CParticle_ctor_FUN_00532130((CParticle *)this_ptr);
-  *(byte ***)&pCVar1->field_0x3c = &g_CRainDropVTable;
-  return pCVar1;
+  pCVar1 = core_particle_cpp_CParticle_ctor_FUN_00532130(&this_ptr->base);
+  pCVar1->vtable = (CParticle_vtable *)&g_CRainDropVTable;
+  return (CRainDrop *)pCVar1;
 }

@@ -2,12 +2,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 87,
+    "complexity_score": 88,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 17,
+    "pseudocode_lines": 18,
     "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
@@ -15,7 +15,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 70
+    "total_lines": 71
   },
   "cross_references": [
     {
@@ -46,17 +46,17 @@
     {
       "addr": "005a0fd0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a0fd0"
-    },
-    {
-      "addr": "005a0c10",
-      "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_FUN_005a0c10"
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0"
     },
     {
       "addr": "005a0dc0",
       "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_FUN_005a0dc0"
+      "name": "unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0"
+    },
+    {
+      "addr": "005a0c10",
+      "is_variadic": false,
+      "name": "unkaddr_0059f520.cpp_CInStreamFile_read_FUN_005a0c10"
     },
     {
       "addr": "005a08d0",
@@ -187,18 +187,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = support_trstream_cpp_FUN_005a0fd0(&local_2c,\"art\",param_1,1);",
+      "text": "(&local_2c,\"art\",param_1,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 18,
       "match": "DAT_01c4e9f8",
       "severity": "mild",
-      "text": "unkaddr_0059f520_cpp_FUN_005a0c10(&local_2c,&DAT_01c4e9f8,0x300);",
+      "text": "unkaddr_0059f520_cpp_CInStreamFile_read_FUN_005a0c10(&local_2c,(uint *)&DAT_01c4e9f8,0x300);",
       "type": "undefined_data"
     },
     {

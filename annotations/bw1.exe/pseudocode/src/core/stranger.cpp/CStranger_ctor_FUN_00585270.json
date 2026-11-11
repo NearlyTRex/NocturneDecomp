@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 270,
-    "complexity_score": 393,
+    "complexity_score": 408,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 223,
-    "suspect_count": 16,
+    "suspect_count": 17,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
       "raw_address_constant"
     ],
@@ -262,6 +263,13 @@
       "severity": "moderate",
       "text": "uStack000001a8 = 0x585650;",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "'(CKeyFramedModelInstance *)&pCVar4[1].base.base.collision_disabled' walks 1 x sizeof(CHero) (0x1ffac) + offsetof(base.base.collision_disabled) (0x100) + 0x0 = 0x200ac, which is exactly offsetof(CDoc, ladder_offset). Ghidra had no CDoc type here and reached the field by index arithmetic; write it as ((CDoc *)pCVar4)->ladder_offset (\u00a7de-pun/\u00a712). Ambiguous: CStranger::model also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 17,
+      "severity": "moderate",
+      "text": "((CKeyFramedModelInstance *)&pCVar4[1].base.base.collision_disabled);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

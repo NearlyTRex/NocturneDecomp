@@ -73,7 +73,7 @@ void core_xform_cpp_FUN_005b81d0(CEnemy *param_1)
   param_1[1].base.base.orient_matrix.m[0].y = fVar2;
   fVar2 = (float)core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00565780
                            (this_ptr_01,"lthigh",1);
-  *(uint *)&(param_1->base).model.field_0x222c = 0;
+  (param_1->base).model.part_data.visibility_flags[0x3b] = 0;
   param_1[1].base.base.orient_matrix.m[0].z = fVar2;
   core_enemy_cpp_CEnemy_setup_FUN_004a0510(param_1);
   return;

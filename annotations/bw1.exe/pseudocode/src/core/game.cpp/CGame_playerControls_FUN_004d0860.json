@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 235,
+    "complexity_score": 189,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 15,
+    "pseudocode_lines": 54,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 157
+    "total_lines": 156
   },
   "cross_references": [
     {
@@ -139,7 +138,7 @@
     },
     {
       "addr": "01cc8044",
-      "name": "g_CFieldNotesInstance.field64_0x40",
+      "name": "g_CFieldNotesInstance.is_displayed",
       "type": "undefined4",
       "value": null
     },
@@ -281,44 +280,12 @@
       "line": 14,
       "match": "DAT_007c3978",
       "severity": "mild",
-      "text": "if (((_DAT_01cd01f8 == 0) && (*(int *)&g_CFieldNotesPtr->field_0x40 == 0)) && (DAT_007c3978 == 0))",
+      "text": "if (((_DAT_01cd01f8 == 0) && (g_CFieldNotesPtr->is_displayed == 0)) && (DAT_007c3978 == 0)) {",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "if (((_DAT_01cd01f8 == 0) && (*(int *)&g_CFieldNotesPtr->field_0x40 == 0)) && (DAT_007c3978 == 0))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x218",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x218 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x254",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x254 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0xd0",
-      "severity": "mild",
-      "text": "switch(*(uint *)&this_ptr->field_0xd0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 36,
       "match": "DAT_01c50950",
       "severity": "mild",
       "text": "puVar2 = (uint *)&DAT_01c50950;",
@@ -326,7 +293,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 37,
       "match": "DAT_01ccff98",
       "severity": "mild",
       "text": "puVar3 = (uint *)&DAT_01ccff98;",
@@ -334,7 +301,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 45,
       "match": "(uint *)((int)puVar2",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)puVar2 + (uint)bVar4 * -2 + 1);",
@@ -342,7 +309,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 46,
       "match": "(uint *)((int)puVar3",
       "severity": "moderate",
       "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar4 * -2 + 1);",
@@ -350,7 +317,7 @@
     },
     {
       "description": "Pointer value `puVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
+      "line": 45,
       "match": "(int)puVar2",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)puVar2 + (uint)bVar4 * -2 + 1);",
@@ -358,7 +325,7 @@
     },
     {
       "description": "Pointer value `puVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 47,
+      "line": 46,
       "match": "(int)puVar3",
       "severity": "moderate",
       "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar4 * -2 + 1);",
@@ -366,7 +333,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 39,
+      "line": 38,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0x96; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -374,7 +341,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 44,
+      "line": 43,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {",

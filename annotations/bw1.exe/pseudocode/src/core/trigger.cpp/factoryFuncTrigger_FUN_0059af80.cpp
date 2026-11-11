@@ -11,7 +11,7 @@ void core_trigger_cpp_factoryFuncTrigger_FUN_0059af80(void)
 {
   CTrigger *this_ptr;
   
-  this_ptr = (CTrigger *)debugAllocTracked1(0x374);
+  this_ptr = (CTrigger *)operator_new(0x374);
   if (this_ptr == (CTrigger *)0x0) {
     return;
   }

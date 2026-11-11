@@ -20,8 +20,8 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00468420
 ;   core_main.c_FUN_005030e0
+;   crt_memory.c_operator_new_array_FUN_005c1268
 ;   crt_unknown.c_FUN_005c0336
-;   crt_unknown.c_FUN_005c1268
 ;
 ; *****************************************************************************
 
@@ -73,8 +73,8 @@ section .text
     SHL EAX,0x3                         ; 004683d2
     SUB EAX,EDX                         ; 004683d5
     PUSH EAX                            ; 004683d7
-    CALL crt_unknown.c_FUN_005c1268     ; 004683d8
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c1268()
+    CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 004683d8
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
     ADD ESP,0x4                         ; 004683dd
     MOV dword ptr [EBX + 0x358],EAX     ; 004683e0
     TEST EAX,EAX                        ; 004683e6

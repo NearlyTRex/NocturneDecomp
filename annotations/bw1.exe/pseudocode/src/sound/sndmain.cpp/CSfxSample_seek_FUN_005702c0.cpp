@@ -11,46 +11,50 @@
 void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005702c0(CSfxSample *this_ptr,int playback_position,int dest_buffer_offset)
 
 {
-  int iVar1;
-  float10 fVar2;
-  double dVar3;
+  bool bVar1;
+  int iVar2;
+  undefined3 extraout_var;
+  float10 fVar3;
+  double dVar4;
+  uint uVar5;
   
-  if (*(int *)&this_ptr->field_0x160 < 0) {
+  if (this_ptr->streaming_slot_index < 0) {
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0x8de;
     core_main_c_FUN_005030e0();
   }
-  dVar3 = sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_005725a0
+  dVar4 = sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_005725a0
                     (this_ptr,(double)playback_position,0);
-  fVar2 = (float10)dVar3;
+  fVar3 = (float10)dVar4;
   round();
-  *(int *)&this_ptr->field_0x16c = (int)ROUND(fVar2);
-  if (*(int *)&this_ptr->field_0x16c < 0) {
-    *(uint *)&this_ptr->field_0x16c = 0;
+  this_ptr->stream_read_position = (int)ROUND(fVar3);
+  if (this_ptr->stream_read_position < 0) {
+    this_ptr->stream_read_position = 0;
   }
-  if ((dest_buffer_offset < 0) || (*(int *)&this_ptr->field_0x164 <= dest_buffer_offset)) {
+  if ((dest_buffer_offset < 0) || (this_ptr->streaming_buffer_size <= dest_buffer_offset)) {
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0x8e9;
     core_main_c_FUN_005030e0("SfxSample::seek - invalid destPtr");
   }
-  *(int *)&this_ptr->field_0x170 = dest_buffer_offset;
-  if (*(CMP3Decoder **)&this_ptr->field_0x174 != (CMP3Decoder *)0x0) {
-    iVar1 = sound_mp3_cpp_CMP3Decoder_seek_FUN_0052b2b0
-                      (*(CMP3Decoder **)&this_ptr->field_0x174,*(int *)&this_ptr->field_0x16c);
-    if (iVar1 != 0) {
+  this_ptr->stream_write_position = dest_buffer_offset;
+  if (this_ptr->mp3_data != (CMP3Decoder *)0x0) {
+    iVar2 = sound_mp3_cpp_CMP3Decoder_seek_FUN_0052b2b0
+                      (this_ptr->mp3_data,this_ptr->stream_read_position);
+    if (iVar2 != 0) {
       return;
     }
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0x8f2;
     core_main_c_FUN_005030e0
-              ("Error seeking %s to %d",this_ptr,*(uint *)&this_ptr->field_0x16c);
+              ("Error seeking %s to %d",this_ptr,this_ptr->stream_read_position);
     return;
   }
-  iVar1 = unkaddr_0059f520_cpp_FUN_005a0d70(&this_ptr->field_0x17c);
-  if (iVar1 != 0) {
-    iVar1 = sound_sndmain_cpp_FUN_00572400(this_ptr,*(uint *)&this_ptr->field_0x16c,0);
-    unkaddr_0059f520_cpp_FUN_005a0d00(&this_ptr->field_0x17c,iVar1 + *(int *)&this_ptr->field_0x178)
-    ;
+  bVar1 = unkaddr_0059f520_cpp_CInStreamFile_isOpen_FUN_005a0d70(&this_ptr->file_stream);
+  if (CONCAT31(extraout_var,bVar1) != 0) {
+    uVar5 = 0;
+    iVar2 = sound_sndmain_cpp_FUN_00572400(this_ptr);
+    unkaddr_0059f520_cpp_CInStreamFile_seek_FUN_005a0d00
+              (&this_ptr->file_stream,iVar2 + this_ptr->file_offset,uVar5);
     return;
   }
   _DAT_01d1d400 = "..\\sound\\sndmain.cpp";

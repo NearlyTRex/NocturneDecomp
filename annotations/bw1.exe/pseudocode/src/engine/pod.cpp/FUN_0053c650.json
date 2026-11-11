@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 346,
+    "complexity_score": 331,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 61,
-    "suspect_count": 26,
+    "suspect_count": 25,
     "suspect_types": [
-      "alloc_magic_size",
       "pointer_truncation",
       "unnamed_param",
       "unresolved_funcptr",
@@ -35,7 +34,7 @@
     {
       "addr": "005c0f32",
       "is_variadic": false,
-      "name": "crt_unknown.c_debugAllocTracked1_FUN_005c0f32"
+      "name": "crt_memory.c_operator_new_FUN_005c0f32"
     },
     {
       "addr": "005c0344",
@@ -323,14 +322,6 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Allocation size hardcodes 0x42c == sizeof(CPodFile). Replace the magic with sizeof(CPodFile) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 11,
-      "match": "(CPodFile*) alloc stride 0x42c",
-      "severity": "moderate",
-      "text": "(CPodFile *)debugAllocTracked1(0x42c)",
-      "type": "alloc_magic_size"
     }
   ],
   "vtable_info": {

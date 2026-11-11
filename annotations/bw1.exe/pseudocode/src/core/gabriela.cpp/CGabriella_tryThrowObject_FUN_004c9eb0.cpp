@@ -9,11 +9,14 @@
 int __cdecl core_gabriela_cpp_CGabriella_tryThrowObject_FUN_004c9eb0(CGabriella *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x1ff78 = 0;
-  if (*(int *)&this_ptr->field_0x25b0 == 0) {
+  CDemonActor *pCVar1;
+  
+  pCVar1 = (this_ptr->base).base.carry_hands[0].carry_actor;
+  (this_ptr->base).object_to_pick_up = (CDemonActor *)0x0;
+  if (pCVar1 == (CDemonActor *)0x0) {
     return 0;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-            ((CMotionController *)&this_ptr->field_0x158,5,1);
+            (&(this_ptr->base).base.model.base,5,1);
   return 1;
 }

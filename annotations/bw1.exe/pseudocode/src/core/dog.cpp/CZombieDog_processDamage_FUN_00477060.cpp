@@ -15,13 +15,13 @@ void __cdecl core_dog_cpp_CZombieDog_processDamage_FUN_00477060(CZombieDog *this
   uint uVar3;
   int iVar4;
   
-  fVar1 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
-    if ((*(int *)(pSVar2 + 0x24) == 7) || (*(int *)(pSVar2 + 0x24) == 6)) goto LAB_00477095;
+    if ((pSVar2->state_index == 7) || (pSVar2->state_index == 6)) goto LAB_00477095;
     iVar4 = 6;
   }
   else {

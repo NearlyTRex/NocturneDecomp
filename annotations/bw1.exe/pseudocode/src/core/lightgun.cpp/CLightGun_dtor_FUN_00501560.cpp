@@ -17,7 +17,7 @@ CLightGun * __cdecl core_lightgun_cpp_CLightGun_dtor_FUN_00501560(CLightGun *thi
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = (CLightGun *)core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0((CWeapon *)this_ptr,1);
+  pCVar1 = (CLightGun *)core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

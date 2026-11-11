@@ -11,6 +11,6 @@
 CGame * core_game_cpp_CGame_dtor_FUN_004cbf00(CGame *this_ptr,uint flags)
 
 {
-  *(uint *)&this_ptr->field_0xb00 = 0x600f94;
+  this_ptr->vtable = (void *)0x600f94;
   return this_ptr;
 }

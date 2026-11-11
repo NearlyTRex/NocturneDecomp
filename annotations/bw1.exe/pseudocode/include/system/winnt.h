@@ -127,6 +127,21 @@ typedef _CONTEXT CONTEXT;
 // pointer to CONTEXT
 typedef CONTEXT* PCONTEXT;
 
+// Function Definition: EXCEPTION_ROUTINE
+typedef EXCEPTION_DISPOSITION EXCEPTION_ROUTINE(EXCEPTION_RECORD* ExceptionRecord, PVOID EstablisherFrame, PCONTEXT ContextRecord, PVOID DispatcherContext);
+
+// Typedef: PEXCEPTION_ROUTINE
+// pointer to EXCEPTION_ROUTINE
+typedef EXCEPTION_ROUTINE* PEXCEPTION_ROUTINE;
+
+// Structure: EXCEPTION_REGISTRATION_RECORD
+#pragma pack(push, 1)
+typedef struct EXCEPTION_REGISTRATION_RECORD {
+    struct EXCEPTION_REGISTRATION_RECORD* Next;
+    PEXCEPTION_ROUTINE Handler;
+} EXCEPTION_REGISTRATION_RECORD;
+#pragma pack(pop)
+
 // Structure: _EXCEPTION_POINTERS
 typedef struct _EXCEPTION_POINTERS {
     PEXCEPTION_RECORD ExceptionRecord;

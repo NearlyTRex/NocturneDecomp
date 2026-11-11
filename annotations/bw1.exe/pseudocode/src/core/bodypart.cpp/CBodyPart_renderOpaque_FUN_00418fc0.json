@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 147,
+    "complexity_score": 112,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 57,
-    "suspect_count": 7,
+    "suspect_count": 4,
     "suspect_types": [
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy"
     ],
     "total_lines": 185
@@ -161,36 +160,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "euler_angles = (CVector3f *)&this_ptr->attached_models[0].field_0xc;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 42,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "(DAT_00612560,euler_angles,(CVector3f *)(pSStack_8 + iVar2));",
+      "text": "(DAT_00612560,euler_angles,&pSStack_8[iVar2].position_offset);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&pSVar1->field_0x18,0.0,-1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "pSVar1 = (SBodyPartModel *)(&pSVar1->field_0x18 + 0x17c);",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

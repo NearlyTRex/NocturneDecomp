@@ -11,49 +11,48 @@
 void __cdecl core_event_cpp_CEventList_setCounter_FUN_004a9d70(CEventList *this_ptr,char *name,int value)
 
 {
-  int iVar1;
-  CEventList CVar2;
+  char cVar1;
+  int iVar2;
   int iVar3;
-  int iVar4;
-  CEventList *pCVar5;
+  char (*pacVar4) [32];
   
-  iVar4 = core_event_cpp_CEventList_findCounter_FUN_004a9fa0(this_ptr,name);
-  if (iVar4 < 0) {
+  iVar2 = core_event_cpp_CEventList_findCounter_FUN_004a9fa0(this_ptr,name);
+  if (iVar2 < 0) {
     if (value != 0) {
-      if (9 < *(int *)(this_ptr + 0x337c)) {
+      if (9 < (this_ptr->counters).count) {
         _DAT_01d1d400 = "..\\core\\event.cpp";
         _DAT_01d1d404 = 0xe09;
         core_main_c_FUN_005030e0("CEventList::setCounter - too many counters!");
       }
-      pCVar5 = this_ptr + *(int *)(this_ptr + 0x337c) * 0x20 + 0x3380;
+      pacVar4 = (this_ptr->counters).names + (this_ptr->counters).count;
       do {
-        CVar2 = (CEventList)*name;
-        *pCVar5 = CVar2;
-        if (CVar2 == (CEventList)0x0) break;
-        CVar2 = *(CEventList *)(name + 1);
+        cVar1 = *name;
+        (*pacVar4)[0] = cVar1;
+        if (cVar1 == '\0') break;
+        cVar1 = name[1];
         name = name + 2;
-        pCVar5[1] = CVar2;
-        pCVar5 = pCVar5 + 2;
-      } while (CVar2 != (CEventList)0x0);
-      *(int *)(this_ptr + *(int *)(this_ptr + 0x337c) * 4 + 0x34c0) = value;
-      *(int *)(this_ptr + 0x337c) = *(int *)(this_ptr + 0x337c) + 1;
+        (*pacVar4)[1] = cVar1;
+        pacVar4 = (char (*) [32])(*pacVar4 + 2);
+      } while (cVar1 != '\0');
+      (this_ptr->counters).values[(this_ptr->counters).count] = value;
+      (this_ptr->counters).count = (this_ptr->counters).count + 1;
       return;
     }
   }
   else {
-    iVar1 = iVar4 * 4;
     if (value == 0) {
-      iVar3 = *(int *)(this_ptr + 0x337c);
-      *(int *)(this_ptr + 0x337c) = iVar3 + -1;
+      iVar3 = (this_ptr->counters).count + -1;
+      (this_ptr->counters).count = iVar3;
       memmove
-                (this_ptr + iVar4 * 0x20 + 0x3380,this_ptr + iVar4 * 0x20 + 0x33a0,
-                 ((iVar3 + -1) - iVar4) * 0x20);
+                ((this_ptr->counters).names + iVar2,
+                 ((SCounterBlock *)(&this_ptr->timers + 1))->names + iVar2 + 1,
+                 (iVar3 - iVar2) * 0x20);
       memmove
-                (this_ptr + iVar1 + 0x34c0,this_ptr + iVar1 + 0x34c4,
-                 (*(int *)(this_ptr + 0x337c) - iVar4) * 4);
+                ((this_ptr->counters).values + iVar2,(this_ptr->counters).values + iVar2 + 1,
+                 ((this_ptr->counters).count - iVar2) * 4);
       return;
     }
-    *(int *)(this_ptr + iVar1 + 0x34c0) = value;
+    (this_ptr->counters).values[iVar2] = value;
   }
   return;
 }

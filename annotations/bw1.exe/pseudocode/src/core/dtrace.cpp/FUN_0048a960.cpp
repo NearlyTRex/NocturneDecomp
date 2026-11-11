@@ -13,7 +13,7 @@ void core_dtrace_cpp_FUN_0048a960(int param_1)
 {
   int iVar1;
   
-  iVar1 = FUN_005c1cb0
+  iVar1 = calloc
                     (0x58,*(int *)(param_1 + 0x40) * *(int *)(param_1 + 0x44) *
                           *(int *)(param_1 + 0x48));
   *(int *)(param_1 + 0x4c) = iVar1;

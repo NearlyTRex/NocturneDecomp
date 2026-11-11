@@ -17,7 +17,7 @@
 ;   TerminatedCString s_Infinite_loop_detected_t_005efe7e
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 g_CGameInstance.field532_0x244
+;   undefined4 g_CGameInstance.letterbox_mode
 ;   undefined4 DAT_01d1d400
 ;   undefined4 DAT_01d1d404
 ;
@@ -56,7 +56,7 @@ section .text
     MOV dword ptr [EBX + 0x44],EAX      ; 0054ae6d
     MOV EAX,[0x0061d95c]                ; 0054ae70 | g_CGamePtr
         ;   Label: LAB_0054ae70
-    CMP dword ptr [EAX + 0x244],0x0     ; 0054ae75 | g_CGameInstance.field532_0x244
+    CMP dword ptr [EAX + 0x244],0x0     ; 0054ae75 | g_CGameInstance.letterbox_mode
     JZ 0x0054af07                       ; 0054ae7c
         ;   XREF to: 0054af07 (CONDITIONAL_JUMP)  ; LAB_0054af07
     CMP dword ptr [EBX],0x0             ; 0054ae82

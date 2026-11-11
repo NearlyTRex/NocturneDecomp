@@ -11,15 +11,18 @@ int __cdecl core_stranger_cpp_CStranger_getGrabbed_FUN_00591c30(CStranger *this_
 {
   int iVar1;
   
-  if (((*(int *)&this_ptr->field_0x1ff78 == 0) && (*(int *)&this_ptr->field_0x1ff74 == 0)) &&
-     ((*(int *)&this_ptr->field_0x1ff5c == 0 || (*(int *)&this_ptr->field_0x1ff5c == 3)))) {
-    iVar1 = core_hero_cpp_CHero_getGrabbed_FUN_004eadf0((CHero *)this_ptr,grabber,grab_type);
+  if ((((this_ptr->base).object_to_pick_up == (CDemonActor *)0x0) &&
+      ((this_ptr->base).door_to_open == (CDoor *)0x0)) &&
+     ((iVar1 = (this_ptr->base).action_pending, iVar1 == 0 || (iVar1 == 3)))) {
+    iVar1 = core_hero_cpp_CHero_getGrabbed_FUN_004eadf0(&this_ptr->base,grabber,grab_type);
     if (iVar1 != 0) {
-      if (this_ptr->weapon != *(CWeapon **)&this_ptr->field_0x25b0) {
-        (**(code **)(*(int *)&this_ptr->field_0x154 + 0x128))(this_ptr,0,0);
+      if (this_ptr->weapon != (CWeapon *)(this_ptr->base).base.carry_hands[0].carry_actor) {
+        (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
+                  ((CCharacter *)this_ptr,0,(CVector3f *)0x0);
       }
-      if (this_ptr->weapon != *(CWeapon **)&this_ptr->field_0x2628) {
-        (**(code **)(*(int *)&this_ptr->field_0x154 + 0x128))(this_ptr,1,0);
+      if (this_ptr->weapon != (CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor) {
+        (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
+                  ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
       }
       this_ptr->grab_timer = 0.0;
     }

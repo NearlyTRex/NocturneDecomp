@@ -11,7 +11,7 @@ void core_teleport_cpp_factoryFuncTeleport_FUN_00594ef0(void)
 {
   CTeleport *this_ptr;
   
-  this_ptr = (CTeleport *)debugAllocTracked1(0x168);
+  this_ptr = (CTeleport *)operator_new(0x168);
   if (this_ptr == (CTeleport *)0x0) {
     return;
   }

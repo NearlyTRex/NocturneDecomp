@@ -160,17 +160,19 @@
     "kind":"class",
     "name":"CDemonImage",
     "rtti_file":"core/dimage.cpp",
-    "size":1
+    "size":1548
   },
   {
     "kind":"class",
     "name":"CDirectSoundDevice",
+    "parent":"CSoundDevice",
     "rtti_file":"sound/snddx.cpp",
-    "size":1
+    "size":4
   },
   {
     "kind":"class",
     "name":"CDoc",
+    "parent":"CHero",
     "size":131300
   },
   {
@@ -181,6 +183,7 @@
   {
     "kind":"class",
     "name":"CFirefly",
+    "parent":"CParticle",
     "size":92
   },
   {
@@ -205,12 +208,6 @@
   },
   {
     "kind":"class",
-    "name":"CLeakChecker",
-    "rtti_file":"shape/memdbg.cpp",
-    "size":1
-  },
-  {
-    "kind":"class",
     "name":"CMarquee",
     "parent":"CDemonActor",
     "rtti_file":"core/marquee.cpp",
@@ -226,7 +223,21 @@
   {
     "kind":"class",
     "name":"CMotionController_vtable",
-    "size":1
+    "size":12,
+    "vtable_slots":[
+      {
+        "name":"dtor",
+        "offset":0
+      },
+      {
+        "name":"findPatchToFrame",
+        "offset":4
+      },
+      {
+        "name":"accumulateScaledRootMotion",
+        "offset":8
+      }
+    ]
   },
   {
     "kind":"class",
@@ -237,7 +248,7 @@
   {
     "kind":"class",
     "name":"CPodDirectoryEntry",
-    "size":1
+    "size":20
   },
   {
     "kind":"class",
@@ -471,33 +482,39 @@
   },
   {
     "kind":"struct",
+    "name":"SActorVarBlock",
+    "size":1504
+  },
+  {
+    "kind":"struct",
     "name":"SClothBone",
     "size":172
   },
   {
     "kind":"struct",
     "name":"SMRGLAnimatedTexture",
-    "size":1
+    "parent":"SMRGLHeaderBasic",
+    "size":28
   },
   {
     "kind":"struct",
     "name":"SMRGLModelBounds",
-    "size":1
+    "size":52
   },
   {
     "kind":"struct",
     "name":"SMotion",
-    "size":1
+    "size":288
   },
   {
     "kind":"struct",
     "name":"SMpegFrame",
-    "size":1
+    "size":28
   },
   {
     "kind":"struct",
     "name":"SMpegLayer3SideInfo",
-    "size":1
+    "size":328
   },
   {
     "kind":"union",

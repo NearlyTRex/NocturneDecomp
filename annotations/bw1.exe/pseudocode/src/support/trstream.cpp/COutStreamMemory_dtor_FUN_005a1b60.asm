@@ -8,9 +8,9 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[3]:
+;   support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00444020 at 004440b5
 ;   support_codec.cpp_FUN_00442c80 at 00442cda
 ;   support_codec.cpp_FUN_00442f00 at 00442f58
-;   support_codec.cpp_FUN_00444020 at 004440b5
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_COutStreamMemoryTypeInfo
@@ -20,8 +20,8 @@
 ;   crt_memory.c___vec_delete_FUN_005c030f
 ;   crt_unknown.c_FUN_005c0336
 ;   crt_unknown.c_FUN_005c0344
+;   support_trstream.cpp_COutStreamMemory_close_FUN_005a1d20
 ;   support_trstream.cpp_FUN_005a14b0
-;   support_trstream.cpp_FUN_005a1d20
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
         ;   XREF to: 005a1b95 (CONDITIONAL_JUMP)  ; LAB_005a1b95
     PUSH EBX                            ; 005a1b6c
     MOV dword ptr [EBX],0x607454        ; 005a1b6d | g_COutStreamMemoryVTable
-    CALL support_trstream.cpp_FUN_005a1d20 ; 005a1b73
-        ;   XREF to: 005a1d20 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a1d20()
+    CALL support_trstream.cpp_COutStreamMemory_close_FUN_005a1d20 ; 005a1b73
+        ;   XREF to: 005a1d20 (UNCONDITIONAL_CALL)  ; void support_trstream.cpp_COutStreamMemory_close_FUN_005a1d20(COutStreamMemory * this_ptr)
     ADD ESP,0x4                         ; 005a1b78
     PUSH 0x1                            ; 005a1b7b
     PUSH EBX                            ; 005a1b7d

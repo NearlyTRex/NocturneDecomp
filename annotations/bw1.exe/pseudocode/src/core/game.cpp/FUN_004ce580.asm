@@ -142,7 +142,7 @@ section .text
         ;   Label: LAB_004ce669
     MOV EAX,[0x0061d418]                ; 004ce66e | g_CFieldNotesPtr
         ;   Label: LAB_004ce66e
-    CMP dword ptr [EAX + 0x40],0x0      ; 004ce673 | g_CFieldNotesInstance.field64_0x40
+    CMP dword ptr [EAX + 0x40],0x0      ; 004ce673 | g_CFieldNotesInstance.is_displayed
     JZ 0x004cf05a                       ; 004ce677
         ;   XREF to: 004cf05a (CONDITIONAL_JUMP)  ; LAB_004cf05a
     MOV ECX,dword ptr [0x007c3978]      ; 004ce67d | DAT_007c3978
@@ -277,7 +277,7 @@ section .text
     CALL core_netgame.cpp_CNetGame_processServerFrame_FUN_0052fee0 ; 004ce84c
         ;   XREF to: 0052fee0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_processServerFrame_FUN_0052fee0(CNetGame * this_ptr)
     MOV EAX,[0x0061d418]                ; 004ce851 | g_CFieldNotesPtr
-    MOV EDI,dword ptr [EAX + 0x40]      ; 004ce856 | g_CFieldNotesInstance.field64_0x40
+    MOV EDI,dword ptr [EAX + 0x40]      ; 004ce856 | g_CFieldNotesInstance.is_displayed
     ADD ESP,0x4                         ; 004ce859
     TEST EDI,EDI                        ; 004ce85c
     JZ 0x004cf0a9                       ; 004ce85e
@@ -322,7 +322,7 @@ section .text
     CALL engine_special.cpp_FUN_00581f50 ; 004ce8eb
         ;   XREF to: 00581f50 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00581f50()
     MOV EAX,[0x0061d418]                ; 004ce8f0 | g_CFieldNotesPtr
-    CMP dword ptr [EAX + 0x40],0x0      ; 004ce8f5 | g_CFieldNotesInstance.field64_0x40
+    CMP dword ptr [EAX + 0x40],0x0      ; 004ce8f5 | g_CFieldNotesInstance.is_displayed
     JZ 0x004cf0d7                       ; 004ce8f9
         ;   XREF to: 004cf0d7 (CONDITIONAL_JUMP)  ; LAB_004cf0d7
     PUSH EAX                            ; 004ce8ff | g_CFieldNotesInstance
@@ -454,7 +454,7 @@ section .text
     ADD ESP,0x14                        ; 004cea5a
     MOV EDX,dword ptr [EAX + 0x15aeb8]  ; 004cea5d | g_CDemonSetInstance.selected_camera_index
     IMUL EDX,EDX,0x1a4                  ; 004cea63
-    MOV ECX,dword ptr [EDX + EAX*0x1 + 0x150] ; 004cea69 | g_CDemonSetInstance.cameras[0].field332_0x14c
+    MOV ECX,dword ptr [EDX + EAX*0x1 + 0x150] ; 004cea69 | g_CDemonSetInstance.cameras[0].camera_group
     PUSH ECX                            ; 004cea70
     PUSH 0x1fe382c                      ; 004cea71
     LEA EAX,[ESP + 0x164]               ; 004cea76

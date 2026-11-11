@@ -21,7 +21,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00430b60(CCharact
   float afStack_c [2];
   
   bVar2 = 0;
-  if (*(int *)(&(this_ptr->model).field_0x2140 + part_index * 4) == 0) {
+  if ((this_ptr->model).part_data.visibility_flags[part_index] == 0) {
     iVar1 = core_actor_cpp_randomChance_FUN_0040cd00(chance);
     if (iVar1 != 0) {
       core_skeleton_cpp_FUN_00569130(&this_ptr->model,bone_index);
@@ -39,7 +39,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00430b60(CCharact
       local_1c.y = 7.0;
       local_1c.z = 0.0;
       core_gore_cpp_CGore_spawnBloodParticles_FUN_004e5f40
-                (g_CGorePtr,&local_40,&local_1c,*(EBloodType *)&this_ptr->field_0x27a0);
+                (g_CGorePtr,&local_40,&local_1c,this_ptr->blood_type);
       return;
     }
   }

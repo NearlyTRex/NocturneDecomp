@@ -32,7 +32,12 @@ typedef struct CTrigger {
     int event_flag; // 0x2f0
     int laser_type; // 0x2f4
     float hit_points; // 0x2f8
-    char field_764[120]; // 0x2fc
+    struct CDemonActor* hilite_actor; // 0x2fc, Added in this build
+    struct CDemonActor* triggering_actor; // 0x300
+    int auto_aim_at_me; // 0x304
+    char damage_actor_wildcard_name[100]; // 0x308
+    struct CDemonActor* cached_actor; // 0x36c
+    float damage_cooldown; // 0x370
 } CTrigger;
 #pragma pack(pop)
 

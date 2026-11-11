@@ -45,7 +45,7 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_0050f630(CMimic *this_ptr,float d
          (core_mimic_cpp_CMimic_updatePose_FUN_0050f7e0(this_ptr), this_ptr->attack_mode == 1)) {
         pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                            ((CMotionController *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x158));
-        uVar2 = *(uint *)(pSVar4 + 0x24);
+        uVar2 = pSVar4->state_index;
         if ((uVar2 < 3) || (uVar2 < 4)) {
 LAB_0050f78a:
           core_mimic_cpp_CMimic_setupCloth_FUN_00510530(this_ptr);

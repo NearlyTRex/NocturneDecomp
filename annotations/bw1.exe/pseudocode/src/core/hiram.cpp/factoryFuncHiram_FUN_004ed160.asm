@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_hiram.cpp_CHiram_ctor_FUN_004ed190
-;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
+;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x1fb1c                        ; 004ed160
         ;   Label: core_hiram.cpp_factoryFuncHiram_FUN_004ed160
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 004ed165
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004ed165
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 004ed16a
     TEST EAX,EAX                        ; 004ed16d
     JNZ 0x004ed172                      ; 004ed16f

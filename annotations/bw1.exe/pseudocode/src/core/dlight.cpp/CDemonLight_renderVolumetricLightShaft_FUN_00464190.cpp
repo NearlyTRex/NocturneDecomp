@@ -83,7 +83,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190
   float local_14;
   
   bVar5 = 0;
-  if ((this_ptr->volumetric_enabled != 0) && (*(int *)&g_CGamePtr->field_0xc == 2)) {
+  if ((this_ptr->volumetric_enabled != 0) && (g_CGamePtr->halo_mode == 2)) {
     engine_matrix_c_FUN_00483ae0(DAT_00612560);
     local_f4[2] = local_4c[2];
     local_f4[(uint)bVar5 * -2 + 3] = local_4c[(uint)bVar5 * -2 + 3];
@@ -192,25 +192,25 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190
             local_e0.y = (int)ROUND(local_20 * _DAT_005febd0);
             local_e0.z = (int)ROUND(_DAT_005febd0 * 0.0);
             engine_special_cpp_FUN_00580173
-                      ((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&local_e0);
+                      (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_e0);
             local_8c = -local_8c;
             local_d4.x = (int)ROUND(local_8c * _DAT_005febd0);
             local_d4.y = (int)ROUND(local_88 * _DAT_005febd0);
             local_d4.z = (int)ROUND(local_84 * _DAT_005febd0);
             engine_special_cpp_FUN_00580173
-                      ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&local_d4);
+                      (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_d4);
             local_88 = -local_88;
             local_b0.x = (int)ROUND(local_8c * _DAT_005febd0);
             local_b0.y = (int)ROUND(local_88 * _DAT_005febd0);
             local_b0.z = (int)ROUND(local_84 * _DAT_005febd0);
             engine_special_cpp_FUN_00580173
-                      ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&local_b0);
+                      (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_b0);
             local_8c = -local_8c;
             local_5c.x = (int)ROUND(local_8c * _DAT_005febd0);
             local_5c.y = (int)ROUND(local_88 * _DAT_005febd0);
             local_5c.z = (int)ROUND(local_84 * _DAT_005febd0);
             engine_special_cpp_FUN_00580173
-                      ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),&local_5c);
+                      (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_5c);
             engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
                       (DAT_00612560,(SMRGLTextureBasic *)&DAT_006122c0);
             local_18c.base.count = 4;
@@ -225,33 +225,33 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190
             pSVar2 = DAT_00612560->vertex_buffer_ptr;
             round();
             local_38 = (int)ROUND(fVar6);
-            *(int *)(pSVar2 + 0x2c) = local_38;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x20) = 0xffff;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x24) = 0xffff;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x28) = 0xffff;
+            pSVar2->a = local_38;
+            this_ptr_00->vertex_buffer_ptr->r = 0xffff;
+            this_ptr_00->vertex_buffer_ptr->g = 0xffff;
+            this_ptr_00->vertex_buffer_ptr->b = 0xffff;
             local_170 = 1;
-            *(int *)(this_ptr_00->vertex_buffer_ptr + 0x5c) = local_38;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x50) = 0xffff;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x54) = 0xffff;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x58) = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[1].a = local_38;
+            this_ptr_00->vertex_buffer_ptr[1].r = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[1].g = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[1].b = 0xffff;
             local_16c = 2;
-            *(int *)(this_ptr_00->vertex_buffer_ptr + 0x8c) = local_38;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x80) = 0xffff;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x84) = 0xffff;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x88) = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[2].a = local_38;
+            this_ptr_00->vertex_buffer_ptr[2].r = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[2].g = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[2].b = 0xffff;
             local_168 = 3;
-            *(int *)(this_ptr_00->vertex_buffer_ptr + 0xbc) = local_38;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xb0) = 0xffff;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xb4) = 0xffff;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xb8) = 0xffff;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x18) = 0xf80000;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x1c) = 0xf80000;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x48) = 0x80000;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x4c) = 0xf80000;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x78) = 0x80000;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x7c) = 0x80000;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xa8) = 0xf80000;
-            *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xac) = 0x80000;
+            this_ptr_00->vertex_buffer_ptr[3].a = local_38;
+            this_ptr_00->vertex_buffer_ptr[3].r = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[3].g = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[3].b = 0xffff;
+            this_ptr_00->vertex_buffer_ptr->u = 0xf80000;
+            this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
+            this_ptr_00->vertex_buffer_ptr[1].u = 0x80000;
+            this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;
+            this_ptr_00->vertex_buffer_ptr[2].u = 0x80000;
+            this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
+            this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;
+            this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
             engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30
                       (this_ptr_00,&local_18c);
             engine_matrix_c_pop_FUN_004839a0();

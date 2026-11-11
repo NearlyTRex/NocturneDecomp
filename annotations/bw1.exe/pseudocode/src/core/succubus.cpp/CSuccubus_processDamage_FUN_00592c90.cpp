@@ -9,7 +9,7 @@
 void __cdecl core_succubus_cpp_CSuccubus_processDamage_FUN_00592c90(CSuccubus *this_ptr,SDamageInfo *damage_info)
 
 {
-  *(uint *)(damage_info + 4) = 0;
+  damage_info->damage_amount = 0.0;
   core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(&this_ptr->base,damage_info);
   return;
 }

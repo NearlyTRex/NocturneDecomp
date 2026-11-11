@@ -2,15 +2,29 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonTriangle;
+struct CVector3i;
+struct SMRGLPrimitiveQuad;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CKeyFramedModel.h"
+#include "types/classes/CKeyFramedModelPart.h"
+#include "types/classes/CMatrix3x3f.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SMRGLHeaderBasic.h"
+#include "types/structs/SMRGLTextureModel.h"
 
 // Structure: CMoon
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 2768. The title screen's models: nocedit's CMoon holds one CKeyFramedModel (22,232 bytes there); BW's holds three of 920 from +0x8, 8 + 3 x 920. The ctor constructs them at +0x8, +0x3a0, +0x738 and zeroes +0; the dtor destroys the three in reverse. +0x4 (nocedit's rotation_phase) is never read: the rotation is in globals.
 // Ghidra size: 0xad0 (2768 bytes)
 #pragma pack(push, 1)
 typedef struct CMoon {
-    char field_0[2768]; // 0x0
+    int is_loaded; // 0x0, init (00521c50) loads only while 0 and sets 1; free (00521d50) unloads only while set and clears it
+    char field_4[4]; // 0x4
+    CKeyFramedModel models[3]; // 0x8, init loads titletwana/b/c.kfm into +0x8, +0x3a0, +0x738 (or taylor_head.kfm into +0x8 alone); render (00521e40) draws the three; free releases them
 } CMoon;
 #pragma pack(pop)
 

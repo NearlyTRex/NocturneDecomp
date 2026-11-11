@@ -11,7 +11,7 @@ void core_hiram_cpp_factoryFuncHiram_FUN_004ed160(void)
 {
   CHiram *this_ptr;
   
-  this_ptr = (CHiram *)debugAllocTracked1(0x1fb1c);
+  this_ptr = (CHiram *)operator_new(0x1fb1c);
   if (this_ptr == (CHiram *)0x0) {
     return;
   }

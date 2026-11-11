@@ -12,6 +12,7 @@
 #include "types/classes/CDjien.h"
 #include "types/classes/CDoc.h"
 #include "types/classes/CEnemy.h"
+#include "types/classes/CHero.h"
 #include "types/classes/CKeyFramedModel.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CRect.h"
@@ -115,8 +116,8 @@ CDemonActorType * core_doc_cpp_CDoc_getActorType_FUN_00468c70(CDoc *this_ptr);
 CDoc * core_doc_cpp_CDoc_ctor_FUN_00468c80(CDoc *this_ptr);
 void __cdecl core_doc_cpp_CDoc_setup_FUN_00469060(CDoc *this_ptr);
 void __cdecl core_doc_cpp_CDoc_process_FUN_004693e0(CDoc *this_ptr,float delta_time);
-void core_doc_cpp_FUN_00469550(CCharacter *param_1,float param_2);
-void core_doc_cpp_FUN_0046bde0(CCharacter *param_1,float param_2);
+void core_doc_cpp_FUN_00469550(CHero *param_1,float param_2);
+void core_doc_cpp_FUN_0046bde0(CHero *param_1,float param_2);
 undefined4 core_doc_cpp_FUN_0046c980(int param_1);
 void core_doc_cpp_FUN_0046c9e0(int param_1);
 void core_doc_cpp_FUN_0046caa0(int param_1);

@@ -168,7 +168,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0058f660(CStranger *t
     fStack_5c = fStack_e0;
     uStack_58 = uStack_dc;
   }
-  core_skeleton_cpp_FUN_00569040(&this_ptr->field_0x158,uStack_2c);
+  core_skeleton_cpp_FUN_00569040(&(this_ptr->base).base.model,uStack_2c);
   pfVar6 = &stack0xffffffa0;
   fStack_114 = fStack_d8;
   *(uint *)((int)&stack0xfffffef0 + (uint)bVar4 * -8) =
@@ -248,10 +248,10 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0058f660(CStranger *t
   if (fStack_30 < fStack_1c) {
     fStack_1c = fStack_30;
   }
-  *(float *)(pSStack_20 + 0x14) = 1.0;
-  *(float *)(pSStack_20 + 0xc) = fStack_1c;
-  *(float *)(pSStack_20 + 8) = fStack_24;
-  *(float *)(pSStack_20 + 4) = fStack_1c;
-  *(float *)pSStack_20 = fStack_24;
+  pSStack_20->kickback_factor = 1.0;
+  pSStack_20->target_yaw = fStack_1c;
+  pSStack_20->target_pitch = fStack_24;
+  pSStack_20->aim_yaw = fStack_1c;
+  pSStack_20->aim_pitch = fStack_24;
   return;
 }

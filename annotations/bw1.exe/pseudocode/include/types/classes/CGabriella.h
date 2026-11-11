@@ -7,12 +7,14 @@ struct CDemonActor;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCloth.h"
+#include "types/classes/CHero.h"
 
 // Structure: CGabriella
 // Ghidra size: 0x5ab20 (371488 bytes)
 #pragma pack(push, 1)
 typedef struct CGabriella {
-    char field_0[130988]; // 0x0
+    CHero base; // 0x0
     int weapon_state_flags; // 0x1ffac
     float holster_blend; // 0x1ffb0
     float draw_blend; // 0x1ffb4
@@ -29,7 +31,8 @@ typedef struct CGabriella {
     float aim_yaw; // 0x1ffe0
     float fire_cooldown_timer; // 0x1ffe4
     float aim_weight; // 0x1ffe8
-    char field_131052[240436]; // 0x1ffec
+    CCloth coat_cloth; // 0x1ffec
+    float dynamite_charge_power; // 0x5ab1c
 } CGabriella;
 #pragma pack(pop)
 

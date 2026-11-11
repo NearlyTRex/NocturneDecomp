@@ -188,7 +188,7 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1 + 0x14);",
+      "text": "iVar2 = param_1->y_position;",
       "type": "unnamed_param"
     },
     {
@@ -196,7 +196,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = *(int *)(param_1 + 0x1c);",
+      "text": "iVar6 = param_1->right_boundary;",
       "type": "unnamed_param"
     },
     {
@@ -204,7 +204,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = *(int *)(param_1 + 0x10);",
+      "text": "iVar5 = param_1->x_position;",
       "type": "unnamed_param"
     },
     {
@@ -220,7 +220,7 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_0049dbe0(param_1);",
+      "text": "iVar2 = shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_0049dbe0(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -228,7 +228,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_0049dc20(param_1);",
+      "text": "iVar3 = shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_0049dc20(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -236,7 +236,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "text_string = param_1 + 0x24;",
+      "text": "text_string = param_1->checkbox_text;",
       "type": "unnamed_param"
     },
     {
@@ -244,7 +244,7 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar6 = *(uint *)(param_1 + 0xc);",
+      "text": "iVar6 = param_1->text_color_mode;",
       "type": "unnamed_param"
     },
     {
@@ -260,7 +260,7 @@
       "line": 32,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "shape_edittool_cpp_FUN_0049c500(iVar5,iVar2,iVar3,unaff_EBX,*(uint *)(param_1 + 0x20));",
+      "text": "shape_edittool_cpp_FUN_0049c500(iVar5,iVar1,iVar2,unaff_EBX,param_1->border_style_flag);",
       "type": "unaffected_reg"
     },
     {
@@ -268,7 +268,7 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_0049c500(iVar5,iVar2,iVar3,unaff_EBX,*(uint *)(param_1 + 0x20));",
+      "text": "shape_edittool_cpp_FUN_0049c500(iVar5,iVar1,iVar2,unaff_EBX,param_1->border_style_flag);",
       "type": "unnamed_param"
     },
     {
@@ -276,7 +276,7 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x20) == 0) {",
+      "text": "if (param_1->border_style_flag == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -300,7 +300,7 @@
       "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 4) == 1) {",
+      "text": "if (param_1->checked_state == 1) {",
       "type": "unnamed_param"
     },
     {
@@ -332,7 +332,7 @@
       "line": 49,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(iVar5 + 1,iVar2 + 1,iVar3 + -2,unaff_EBX + -2);",
+      "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(iVar5 + 1,iVar1 + 1,iVar2 + -2,unaff_EBX + -2);",
       "type": "unaffected_reg"
     },
     {
@@ -340,7 +340,7 @@
       "line": 50,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(iVar3 + -2,iVar2 + 1,iVar5 + 1,unaff_EBX + -2);",
+      "text": "engine_2d_c_clipLineGlobal_FUN_00402ca0(iVar2 + -2,iVar1 + 1,iVar5 + 1,unaff_EBX + -2);",
       "type": "unaffected_reg"
     }
   ]

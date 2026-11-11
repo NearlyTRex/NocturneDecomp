@@ -24,8 +24,8 @@ byte * core_script_cpp_FUN_00544100(CScript *param_1,int *param_2,int param_3)
       fStack_14 = 0.25;
       iVar1 = core_script_cpp_CScript_step_FUN_00544460(param_1,&fStack_14);
       if ((iVar1 < 0) &&
-         (iVar1 = *(int *)(param_1->parsed_lines + iVar2 * 8) + -1, *param_2 = iVar1,
-         param_3 <= iVar1)) {
+         (iVar1 = param_1->parsed_lines[iVar2].line_number + -1, *param_2 = iVar1, param_3 <= iVar1)
+         ) {
         return &DAT_01e810b0;
       }
       iVar2 = iVar2 + 1;

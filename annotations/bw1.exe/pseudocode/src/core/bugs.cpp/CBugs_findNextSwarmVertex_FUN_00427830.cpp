@@ -16,8 +16,8 @@ void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_00427830(CBugs *this_pt
   CVector3i *pCVar3;
   int iVar4;
   int iVar5;
-  SSwarmVertex *pSVar6;
-  int iVar7;
+  int iVar6;
+  SSwarmVertex *pSVar7;
   int iVar8;
   uint *puVar9;
   byte bVar10;
@@ -37,64 +37,63 @@ void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_00427830(CBugs *this_pt
   uint local_18;
   
   bVar10 = 0;
-  local_2c = *(int *)&bug_data->field_0x2c;
-  *(uint *)&bug_data->field_0x34 = 0;
-  *(uint *)&bug_data->field_0x2c = *(uint *)&bug_data->field_0x30;
+  local_2c = bug_data->current_vertex;
+  bug_data->interp_t = 0.0;
+  bug_data->current_vertex = bug_data->dest_vertex;
   local_30 = this_ptr->swarm_vertices;
   local_20 = 0;
   do {
-    pSVar6 = local_30 + *(int *)&bug_data->field_0x2c * 0x28;
-    local_28 = this_ptr->deformable_model_ptr->skinned_vertices_buffer
-               [*(int *)&bug_data->field_0x2c].y;
+    pSVar7 = local_30 + bug_data->current_vertex;
+    local_28 = this_ptr->deformable_model_ptr->skinned_vertices_buffer[bug_data->current_vertex].y;
     iVar8 = 0;
-    iVar7 = 0;
-    local_24 = pSVar6;
-    if (0 < *(int *)pSVar6) {
+    iVar6 = 0;
+    local_24 = pSVar7;
+    if (0 < pSVar7->edge_count) {
       iVar4 = 0;
       do {
-        iVar2 = *(int *)(pSVar6 + 8);
+        iVar2 = pSVar7->neighbors[0];
         local_1c = this_ptr->deformable_model_ptr->skinned_vertices_buffer[iVar2].y;
         local_18 = 1;
         if ((local_20 != 0) ||
            ((iVar5 = iVar4, iVar2 != local_2c &&
-            ((*(int *)&bug_data->field_0x3c < 1 || (local_28 <= local_1c)))))) {
+            ((bug_data->downward_bias < 1 || (local_28 <= local_1c)))))) {
           iVar5 = iVar4 + 4;
           iVar8 = iVar8 + 1;
           *(int *)(&stack0xffffff98 + iVar4) = iVar2;
         }
-        iVar7 = iVar7 + 1;
-        pSVar6 = pSVar6 + 4;
+        iVar6 = iVar6 + 1;
+        pSVar7 = (SSwarmVertex *)&pSVar7->first_edge_data;
         iVar4 = iVar5;
-      } while (iVar7 < *(int *)local_24);
+      } while (iVar6 < local_24->edge_count);
     }
   } while ((iVar8 < 1) && (local_20 = local_20 + 1, local_20 < 2));
-  if (0 < *(int *)&bug_data->field_0x3c) {
-    *(int *)&bug_data->field_0x3c = *(int *)&bug_data->field_0x3c + -1;
+  if (0 < bug_data->downward_bias) {
+    bug_data->downward_bias = bug_data->downward_bias + -1;
   }
   if (iVar8 < 1) {
-    *(int *)&bug_data->field_0x30 = local_2c;
+    bug_data->dest_vertex = local_2c;
     if (local_2c < 0) {
-      *(uint *)&bug_data->field_0x30 = *(uint *)&bug_data->field_0x2c;
+      bug_data->dest_vertex = bug_data->current_vertex;
     }
   }
   else {
-    iVar7 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,iVar8 + -1);
-    *(uint *)&bug_data->field_0x30 = *(uint *)(&stack0xffffff98 + iVar7 * 4);
+    iVar6 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,iVar8 + -1);
+    bug_data->dest_vertex = *(int *)(&stack0xffffff98 + iVar6 * 4);
   }
   pCVar3 = this_ptr->deformable_model_ptr->skinned_vertices_buffer;
-  pCVar1 = pCVar3 + *(int *)&bug_data->field_0x2c;
+  pCVar1 = pCVar3 + bug_data->current_vertex;
   puVar9 = (uint *)((int)pCVar1 + (uint)bVar10 * -8 + 4);
   local_3c = pCVar1->x;
   *(uint *)((int)&stack0xffffffc8 + (uint)bVar10 * -8) = *puVar9;
   *(uint *)((int)&stack0xffffffcc + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
        puVar9[(uint)bVar10 * -2 + 1];
-  pCVar3 = pCVar3 + *(int *)&bug_data->field_0x30;
+  pCVar3 = pCVar3 + bug_data->dest_vertex;
   puVar9 = (uint *)((int)pCVar3 + (uint)bVar10 * -8 + 4);
   local_48 = pCVar3->x;
   *(uint *)((int)&stack0xffffffbc + (uint)bVar10 * -8) = *puVar9;
   *(uint *)((int)&stack0xffffffc0 + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
        puVar9[(uint)bVar10 * -2 + 1];
-  *(float *)&bug_data->field_0x38 =
+  bug_data->crawl_duration =
        SQRT((float)((local_34 - local_40) * (local_34 - local_40) +
                    (local_3c - local_48) * (local_3c - local_48) +
                    (local_38 - local_44) * (local_38 - local_44))) * (float)_DAT_005d5168;

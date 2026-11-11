@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 84,
+    "complexity_score": 29,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 14,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 34
@@ -126,46 +125,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x2d4",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x2d4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x2d8",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)&this_ptr->field_0x2d8 + user->hit_points;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2d4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x2d4 = *(int *)&this_ptr->field_0x2d4 + -1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2d4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x2d4 = *(int *)&this_ptr->field_0x2d4 + -1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x2d4",
-      "severity": "mild",
-      "text": "return *(int *)&this_ptr->field_0x2d4;",
-      "type": "unnamed_field"
     }
   ]
 }

@@ -47,7 +47,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
-;   crt_unknown.c_FUN_005c08d0
+;   crt_memory.c_malloc_FUN_005c08d0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_2d.c_setupViewportAndClipping_FUN_00401810
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
@@ -283,8 +283,8 @@ section .text
     MOV dword ptr [EBX + 0x1dc],0x0     ; 00496bbc
     PUSH EAX                            ; 00496bc6
     MOV dword ptr [EBX + 0x1e0],0x0     ; 00496bc7
-    CALL crt_unknown.c_FUN_005c08d0     ; 00496bd1
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 00496bd1
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 00496bd6
     MOV dword ptr [EBX + 0x1d8],EAX     ; 00496bd9
     TEST EAX,EAX                        ; 00496bdf

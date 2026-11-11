@@ -33,7 +33,7 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_resetKeyState_FUN_004d0960
-;   core_moon.cpp_FUN_00521e40
+;   core_moon.cpp_CMoon_render_FUN_00521e40
 ;   core_set.cpp_CDemonSet_setFlatColor_FUN_00555770
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_2d.c_drawText_FUN_00401fe0
@@ -59,8 +59,8 @@ section .text
     MOV dword ptr [ESP + 0x210],EBP     ; 0050a2c3
     PUSH 0x1d1e380                      ; 0050a2ca
         ;   Label: LAB_0050a2ca
-    CALL core_moon.cpp_FUN_00521e40     ; 0050a2cf
-        ;   XREF to: 00521e40 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_00521e40()
+    CALL core_moon.cpp_CMoon_render_FUN_00521e40 ; 0050a2cf
+        ;   XREF to: 00521e40 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_render_FUN_00521e40(CMoon * this_ptr)
     ADD ESP,0x4                         ; 0050a2d4
     PUSH 0x5e7ab7                       ; 0050a2d7 | = "Center gamepad, press ENTER"
     CALL support_newmsg.cpp_getLocalizedString_FUN_00531090 ; 0050a2dc
@@ -151,8 +151,8 @@ section .text
     MOV EAX,[0x00622c18]                ; 0050a3da | g_CDemonSetPtr
     PUSH 0x1d1e380                      ; 0050a3df
     MOV dword ptr [EAX + 0x15ae94],0xdac ; 0050a3e4 | g_CDemonSetInstance.ambient_base_quick
-    CALL core_moon.cpp_FUN_00521e40     ; 0050a3ee
-        ;   XREF to: 00521e40 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_00521e40()
+    CALL core_moon.cpp_CMoon_render_FUN_00521e40 ; 0050a3ee
+        ;   XREF to: 00521e40 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_render_FUN_00521e40(CMoon * this_ptr)
     ADD ESP,0x4                         ; 0050a3f3
     MOV EAX,[0x00622c18]                ; 0050a3f6 | g_CDemonSetPtr
     PUSH 0x5e7ad3                       ; 0050a3fb | = "Move gamepad in all directions, press..."
@@ -286,7 +286,7 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050a567 | g_CGamePtr
         ;   Label: LAB_0050a567
     MOV dword ptr [EAX + 0xb8],0x0      ; 0050a56c | g_CGameInstance.x_center
-    MOV dword ptr [EAX + 0xd0],0x0      ; 0050a576 | g_CGameInstance.field160_0xd0
+    MOV dword ptr [EAX + 0xd0],0x0      ; 0050a576 | g_CGameInstance.game_control
     XOR EAX,EAX                         ; 0050a580
     ADD ESP,0x214                       ; 0050a582
     POP EBP                             ; 0050a588

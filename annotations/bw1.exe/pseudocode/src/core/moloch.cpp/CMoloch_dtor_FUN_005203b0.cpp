@@ -19,11 +19,12 @@ CMoloch * __cdecl core_moloch_cpp_CMoloch_dtor_FUN_005203b0(CMoloch *this_ptr,ui
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  *(CHero_full_vtable **)&this_ptr->field_0x154 = &g_CMolochVTable;
-  pCVar1 = core_morph_cpp_CMorph_dtor_FUN_00522fc0((CMorph *)&this_ptr->field_0x22424,0);
+  (this_ptr->base).base.base.vtable._ub = &g_CMolochVTable._ub;
+  pCVar1 = core_morph_cpp_CMorph_dtor_FUN_00522fc0(&this_ptr->morph,0);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
-                     ((CDeformableModelInstance *)(pCVar1 + -0x2478),0);
-  pCVar3 = (CMoloch *)core_hero_cpp_FUN_004ea980(&pCVar2[-0xf].field_0x16f0,1);
+                     ((CDeformableModelInstance *)&pCVar1[-3].models[0].parts[0].start_vertex,0);
+  pCVar3 = (CMoloch *)
+           core_hero_cpp_FUN_004ea980(pCVar2[-0xf].bone_transform.bone_model_matrices + 0x2d,1);
   if ((flags & 2) == 0) {
     return pCVar3;
   }

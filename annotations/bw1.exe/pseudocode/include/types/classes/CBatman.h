@@ -12,7 +12,7 @@
 #pragma pack(push, 1)
 typedef struct CBatman {
     CEnemy base; // 0x0
-    char field_49768[4]; // 0xc268
+    float dismember_death_timer; // 0xc268, Added in this build
     char fall_event[100]; // 0xc26c
     int part_indices[14]; // 0xc2d0
     int mist_state; // 0xc308

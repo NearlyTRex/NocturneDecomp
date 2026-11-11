@@ -9,12 +9,16 @@
 void __cdecl core_stranger_cpp_CStranger_dropRightHandObject_FUN_0058ce20(CStranger *this_ptr)
 
 {
+  CWeapon *pCVar1;
+  
+  pCVar1 = (CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor;
   this_ptr->action_timer = 4.0;
-  if (*(CWeapon **)&this_ptr->field_0x2628 == this_ptr->weapon) {
+  if (pCVar1 == this_ptr->weapon) {
     this_ptr->weapon = (CWeapon *)0x0;
   }
-  (**(code **)(*(int *)&this_ptr->field_0x154 + 0x128))(this_ptr,1,0);
+  (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
+            ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
   core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-            ((CMotionController *)&this_ptr->field_0x158,0,1);
+            (&(this_ptr->base).base.model.base,0,1);
   return;
 }

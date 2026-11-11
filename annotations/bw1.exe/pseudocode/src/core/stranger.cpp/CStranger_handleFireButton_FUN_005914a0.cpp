@@ -24,14 +24,15 @@ void __cdecl core_stranger_cpp_CStranger_handleFireButton_FUN_005914a0(CStranger
   int iVar8;
   int unaff_EDI;
   
-  *(uint *)&this_ptr->field_0x2000c = 0;
-  if (*(int *)&this_ptr->field_0xc1e4 == 0) {
+  iVar5 = (this_ptr->base).player_input.action_state.fire;
+  this_ptr->can_grab_weapon = 0;
+  if (iVar5 == 0) {
     return;
   }
-  if (*(int *)&this_ptr->field_0x26fc != 0) {
+  if ((this_ptr->base).base.grabbed_by != (CDemonActor *)0x0) {
     return;
   }
-  if (*(int *)&this_ptr->field_0x1ff5c != 0) {
+  if ((this_ptr->base).action_pending != 0) {
     return;
   }
   if (this_ptr->guns_drawn == 0) {
@@ -39,19 +40,19 @@ void __cdecl core_stranger_cpp_CStranger_handleFireButton_FUN_005914a0(CStranger
   }
   this_ptr_00 = this_ptr->weapon;
   if (this_ptr_00 == (CWeapon *)0x0) {
-    this_ptr_00 = *(CWeapon **)&this_ptr->field_0x2628;
+    this_ptr_00 = (CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor;
 LAB_005914fe:
     if ((this_ptr_00 != (CWeapon *)0x0) &&
        (uVar3 = (*((this_ptr_00->base).vtable._ub)->getAllowedMeleeAttackTypes)(&this_ptr_00->base),
        uVar3 != 0)) {
       iVar5 = 0;
       while( true ) {
-        iVar8 = *(int *)&this_ptr->field_0x20010 + 1;
-        *(int *)&this_ptr->field_0x20010 = iVar8;
+        iVar8 = this_ptr->melee_attack_index + 1;
+        this_ptr->melee_attack_index = iVar8;
         if ((iVar8 < 0) || (1 < iVar8)) {
-          *(uint *)&this_ptr->field_0x20010 = 0;
+          this_ptr->melee_attack_index = 0;
         }
-        uVar7 = *(int *)&this_ptr->field_0x20010 + 0xc;
+        uVar7 = this_ptr->melee_attack_index + 0xc;
         uVar4 = 0;
         if (0xb < uVar7) {
           if (uVar7 < 0xd) {
@@ -67,9 +68,10 @@ LAB_005914fe:
           return;
         }
       }
-      *(uint *)&this_ptr->field_0x2c9c = 0;
-      *(uint *)&this_ptr->field_0x1ff5c = 7;
-      *(int *)&this_ptr->field_0x2c98 = *(int *)&this_ptr->field_0x20010 + 0xc;
+      (this_ptr->base).base.layer_action_t = 0.0;
+      iVar5 = this_ptr->melee_attack_index;
+      (this_ptr->base).action_pending = 7;
+      (this_ptr->base).base.layer_action_index = iVar5 + 0xc;
       return;
     }
   }
@@ -81,15 +83,15 @@ LAB_005914fe:
   if (EVar1 == WEAPON_TYPE_DYNAMITE) {
     return;
   }
-  if ((*(int *)&this_ptr->field_0x1fae4 == 0) && (EVar1 == WEAPON_TYPE_GUN)) {
+  if (((this_ptr->base).aim_mode == AIM_MODE_AUTO) && (EVar1 == WEAPON_TYPE_GUN)) {
     pSVar6 = &this_ptr->right_arm_aim;
     pSVar2 = &this_ptr->left_arm_aim;
-    if (*(int *)&this_ptr->field_0x20008 != 0) {
+    if (this_ptr->dual_wield_side != 0) {
       pSVar2 = pSVar6;
       pSVar6 = &this_ptr->left_arm_aim;
     }
-    if ((*(int *)(pSVar2 + 0x1c) == 2) && (*(int *)(pSVar6 + 0x1c) != 2)) {
-      *(uint *)&this_ptr->field_0x20008 = (uint)(*(int *)&this_ptr->field_0x20008 == 0);
+    if ((pSVar2->aim_lock_state == 2) && (pSVar6->aim_lock_state != 2)) {
+      this_ptr->dual_wield_side = (uint)(this_ptr->dual_wield_side == 0);
     }
   }
   if (this_ptr->weapon == (CWeapon *)0x0) {
@@ -126,28 +128,27 @@ switchD_0059158d_caseD_3:
                       ((CCharacter *)this_ptr,iVar5);
   if ((float)_DAT_005f70c1 <= (float)grabber) {
     pSVar6 = &this_ptr->right_arm_aim;
-    if ((*(int *)&this_ptr->field_0x20008 != 0) &&
-       (this_ptr->weapon->weapon_type == WEAPON_TYPE_GUN)) {
+    if ((this_ptr->dual_wield_side != 0) && (this_ptr->weapon->weapon_type == WEAPON_TYPE_GUN)) {
       pSVar6 = &this_ptr->left_arm_aim;
     }
-    if (((1.0 <= *(float *)(pSVar6 + 0x14)) && (*(float *)(pSVar6 + 0x10) <= 0.0)) &&
+    if (((1.0 <= pSVar6->kickback_factor) && (pSVar6->recoil_timer <= 0.0)) &&
        (iVar5 = (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).canBeGrabbed)
                           ((CCharacter *)this_ptr->weapon,grabber,unaff_EDI), iVar5 != 0)) {
       if (this_ptr->weapon->weapon_type == WEAPON_TYPE_GUN) {
         core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0058aeb0
-                  (this_ptr,*(int *)&this_ptr->field_0x20008);
-        *(uint *)&this_ptr->field_0x20008 = (uint)(*(int *)&this_ptr->field_0x20008 == 0);
+                  (this_ptr,this_ptr->dual_wield_side);
+        this_ptr->dual_wield_side = (uint)(this_ptr->dual_wield_side == 0);
       }
-      *(uint *)&this_ptr->field_0x2000c = 0;
+      this_ptr->can_grab_weapon = 0;
       iVar5 = (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).isGrabbable)
                         ((CCharacter *)this_ptr->weapon,unaff_EBX);
       if (iVar5 != 0) {
-        *(uint *)&this_ptr->field_0x2000c = 1;
+        this_ptr->can_grab_weapon = 1;
       }
       core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0058aeb0(this_ptr,0);
       if (this_ptr->weapon->fire_mode == FIRE_MODE_PUMP) {
-        *(uint *)&this_ptr->field_0x2c9c = 0;
-        *(uint *)&this_ptr->field_0x2c98 = 8;
+        (this_ptr->base).base.layer_action_t = 0.0;
+        (this_ptr->base).base.layer_action_index = 8;
         return;
       }
     }

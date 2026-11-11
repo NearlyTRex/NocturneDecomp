@@ -17,21 +17,21 @@ CMoon * CMoon::ctor(CMoon *this_ptr);
 // Address: 00521c00
 CMoon * CMoon::dtor(CMoon *this_ptr,uint flags);
 
-// Original: core_moon.cpp_FUN_00521c50
+// Original: core_moon.cpp_CMoon_init_FUN_00521c50
 // Address: 00521c50
-void FUN_00521c50(int *param_1);
+void __cdecl CMoon::init(CMoon *this_ptr);
 
-// Original: core_moon.cpp_FUN_00521d50
+// Original: core_moon.cpp_CMoon_free_FUN_00521d50
 // Address: 00521d50
-void FUN_00521d50(int *param_1);
+void __cdecl CMoon::free(CMoon *this_ptr);
 
-// Original: core_moon.cpp_FUN_00521dd0
+// Original: core_moon.cpp_CMoon_update_FUN_00521dd0
 // Address: 00521dd0
-void FUN_00521dd0(undefined4 param_1,float param_2);
+void __cdecl CMoon::update(CMoon *this_ptr,float param_2);
 
-// Original: core_moon.cpp_FUN_00521e40
+// Original: core_moon.cpp_CMoon_render_FUN_00521e40
 // Address: 00521e40
-void FUN_00521e40(int param_1);
+void __cdecl CMoon::render(CMoon *this_ptr);
 
 // Original: core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_005220b0
 // Address: 005220b0

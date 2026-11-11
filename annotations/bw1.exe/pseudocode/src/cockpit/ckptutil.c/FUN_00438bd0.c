@@ -57,7 +57,7 @@ void cockpit_ckptutil_c_FUN_00438bd0(char *param_1,int *param_2,int param_3)
       }
       if (0 < param_2[1]) {
         size = param_2[1] * 8;
-        pvVar3 = FUN_005c08d0(size);
+        pvVar3 = malloc(size);
         *param_2 = (int)pvVar3;
         if (pvVar3 == (void *)0x0) {
           printf("\nUnable to allocate memory for edge list.\n");

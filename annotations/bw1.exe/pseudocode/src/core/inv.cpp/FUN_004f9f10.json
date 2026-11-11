@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 481,
-    "complexity_score": 613,
+    "complexity_score": 593,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 25,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 178,
-    "suspect_count": 40,
+    "suspect_count": 38,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
+      "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
@@ -178,19 +178,19 @@
     },
     {
       "addr": "01cc8044",
-      "name": "g_CFieldNotesInstance.field64_0x40",
+      "name": "g_CFieldNotesInstance.is_displayed",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf5d4",
-      "name": "g_CGameInstance.field532_0x244",
+      "name": "g_CGameInstance.letterbox_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf5ec",
-      "name": "g_CGameInstance.field556_0x25c",
+      "name": "g_CGameInstance.goggles_active",
       "type": "undefined4",
       "value": null
     },
@@ -478,7 +478,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x338) != 0) {",
+      "text": "if (param_1->selected_weapon != (CWeapon *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -486,7 +486,7 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(*(int *)(param_1 + 0x338) + 0x568) != *(int *)(param_1 + 0x468)) {",
+      "text": "if (param_1->selected_weapon->ammo_count != param_1->cached_ammo_count) {",
       "type": "unnamed_param"
     },
     {
@@ -494,7 +494,7 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(*(int *)(param_1 + 0x338) + 0x568) != *(int *)(param_1 + 0x468)) {",
+      "text": "if (param_1->selected_weapon->ammo_count != param_1->cached_ammo_count) {",
       "type": "unnamed_param"
     },
     {
@@ -510,7 +510,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x468) = *(uint *)(*(int *)(param_1 + 0x338) + 0x568);",
+      "text": "param_1->cached_ammo_count = param_1->selected_weapon->ammo_count;",
       "type": "unnamed_param"
     },
     {
@@ -518,7 +518,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x468) = *(uint *)(*(int *)(param_1 + 0x338) + 0x568);",
+      "text": "param_1->cached_ammo_count = param_1->selected_weapon->ammo_count;",
       "type": "unnamed_param"
     },
     {
@@ -534,7 +534,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x10)) {",
+      "text": "if (0 < param_1->item_count) {",
       "type": "unnamed_param"
     },
     {
@@ -558,47 +558,23 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (local_1c < *(int *)(param_1 + 0x10));",
+      "text": "} while (local_1c < param_1->item_count);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x25c",
-      "severity": "mild",
-      "text": "if ((((*(int *)&g_CGamePtr->field_0x25c != 0) || (*(int *)&g_CFieldNotesPtr->field_0x40 != 0)) ||",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "if ((((*(int *)&g_CGamePtr->field_0x25c != 0) || (*(int *)&g_CFieldNotesPtr->field_0x40 != 0)) ||",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 49,
       "match": "DAT_007c3978",
       "severity": "mild",
-      "text": "(DAT_007c3978 != 0)) || (*(int *)&g_CGamePtr->field_0x244 != 0)) {",
+      "text": "(DAT_007c3978 != 0)) || (g_CGamePtr->letterbox_mode != 0)) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x244",
-      "severity": "mild",
-      "text": "(DAT_007c3978 != 0)) || (*(int *)&g_CGamePtr->field_0x244 != 0)) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x344) = 0;",
+      "text": "param_1->item_highlight_timer = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -606,7 +582,7 @@
       "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x34c) = 0;",
+      "text": "param_1->message_display_timer = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -614,7 +590,7 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x350) = 0;",
+      "text": "param_1->ammo_detail_timer = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -622,7 +598,7 @@
       "line": 53,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x340) = 0;",
+      "text": "param_1->weapon_highlight_timer = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -630,7 +606,7 @@
       "line": 55,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar2 = *(float *)(param_1 + 0x340) - g_CGamePtr->delta_time_float;",
+      "text": "fVar2 = param_1->weapon_highlight_timer - g_CGamePtr->delta_time_float;",
       "type": "unnamed_param"
     },
     {
@@ -638,7 +614,7 @@
       "line": 56,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x340) = fVar2;",
+      "text": "param_1->weapon_highlight_timer = fVar2;",
       "type": "unnamed_param"
     },
     {
@@ -646,7 +622,7 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x340) = 0;",
+      "text": "param_1->weapon_highlight_timer = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -654,7 +630,7 @@
       "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar2 = *(float *)(param_1 + 0x344) - g_CGamePtr->delta_time_float;",
+      "text": "fVar2 = param_1->item_highlight_timer - g_CGamePtr->delta_time_float;",
       "type": "unnamed_param"
     },
     {
@@ -662,7 +638,7 @@
       "line": 61,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x344) = fVar2;",
+      "text": "param_1->item_highlight_timer = fVar2;",
       "type": "unnamed_param"
     },
     {
@@ -670,7 +646,7 @@
       "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x344) = 0;",
+      "text": "param_1->item_highlight_timer = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -678,7 +654,7 @@
       "line": 65,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar2 = *(float *)(param_1 + 0x348) - g_CGamePtr->delta_time_float;",
+      "text": "fVar2 = param_1->inventory_display_timer - g_CGamePtr->delta_time_float;",
       "type": "unnamed_param"
     },
     {
@@ -686,7 +662,7 @@
       "line": 66,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x348) = fVar2;",
+      "text": "param_1->inventory_display_timer = fVar2;",
       "type": "unnamed_param"
     },
     {
@@ -694,7 +670,7 @@
       "line": 68,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x348) = 0;",
+      "text": "param_1->inventory_display_timer = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -702,7 +678,7 @@
       "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar2 = *(float *)(param_1 + 0x34c) - g_CGamePtr->delta_time_float;",
+      "text": "fVar2 = param_1->message_display_timer - g_CGamePtr->delta_time_float;",
       "type": "unnamed_param"
     },
     {
@@ -710,7 +686,7 @@
       "line": 71,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x34c) = fVar2;",
+      "text": "param_1->message_display_timer = fVar2;",
       "type": "unnamed_param"
     },
     {
@@ -718,7 +694,7 @@
       "line": 73,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x354] = (CInventory)0x0;",
+      "text": "param_1->message_text[0] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -726,7 +702,7 @@
       "line": 74,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x34c) = 0;",
+      "text": "param_1->message_display_timer = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -734,7 +710,7 @@
       "line": 76,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar2 = *(float *)(param_1 + 0x350) - g_CGamePtr->delta_time_float;",
+      "text": "fVar2 = param_1->ammo_detail_timer - g_CGamePtr->delta_time_float;",
       "type": "unnamed_param"
     },
     {
@@ -742,7 +718,7 @@
       "line": 77,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x350) = fVar2;",
+      "text": "param_1->ammo_detail_timer = fVar2;",
       "type": "unnamed_param"
     },
     {
@@ -750,7 +726,7 @@
       "line": 79,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x350) = 0;",
+      "text": "param_1->ammo_detail_timer = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -758,7 +734,7 @@
       "line": 81,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0xc) != 0) &&",
+      "text": "if ((param_1->show_sps != 0) &&",
       "type": "unnamed_param"
     },
     {
@@ -768,6 +744,14 @@
       "severity": "moderate",
       "text": "actor_ptr = *(CDemonActor **)((int)g_CDemonSetPtr->characters + iVar5);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar10->owner`). Replace `pCVar10->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 45,
+      "match": "pCVar10 = (T *)&pCVar10->FIELD",
+      "severity": "moderate",
+      "text": "pCVar10 = (CInventory *)&pCVar10->owner;",
+      "type": "shadow_pointer_walk"
     },
     {
       "call_site_count": 4,

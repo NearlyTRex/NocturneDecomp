@@ -28,8 +28,8 @@
 ;   crt_memory.c___vec_delete_FUN_005c030f
 ;   crt_unknown.c_FUN_005c0336
 ;   crt_unknown.c_FUN_005c0344
+;   unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0
 ;   unkaddr_0059f520.cpp_FUN_0059f550
-;   unkaddr_0059f520.cpp_FUN_005a0dc0
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
         ;   XREF to: 005a0a85 (CONDITIONAL_JUMP)  ; LAB_005a0a85
     PUSH EBX                            ; 005a0a5c
     MOV dword ptr [EBX],0x607384        ; 005a0a5d | g_CInStreamFileVTable
-    CALL unkaddr_0059f520.cpp_FUN_005a0dc0 ; 005a0a63
-        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059f520.cpp_FUN_005a0dc0()
+    CALL unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0 ; 005a0a63
+        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined4 unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 005a0a68
     PUSH 0x1                            ; 005a0a6b
     PUSH EBX                            ; 005a0a6d

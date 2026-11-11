@@ -17,16 +17,16 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
   float fVar3;
   float fVar4;
   float fVar5;
-  CCharacter *pCVar6;
+  CHero *pCVar6;
   CGame *this_ptr_00;
-  uint uVar7;
+  int iVar7;
   int iVar8;
   int iVar9;
-  int iVar10;
-  CCharacter *pCVar11;
-  CDemonActor *pCVar12;
-  EDeathState EVar13;
-  CCharacter *pCVar14;
+  CHero *pCVar10;
+  CDemonActor *pCVar11;
+  EDeathState EVar12;
+  CHero *pCVar13;
+  uint uVar14;
   SIZE_T SVar15;
   char *pcVar16;
   char *pcVar17;
@@ -112,7 +112,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
   char *local_60;
   int local_5c;
   int local_58;
-  CCharacter *local_54;
+  CHero *local_54;
   CLocation *local_50;
   int local_40;
   int local_3c;
@@ -141,21 +141,21 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
       cVar1 = *pcVar16;
       *pcVar17 = cVar1;
       if (cVar1 == '\0') {
-        return 0xffffffff;
+        return -1;
       }
       cVar1 = pcVar16[1];
       pcVar16 = pcVar16 + 2;
       pcVar17[1] = cVar1;
       pcVar17 = pcVar17 + 2;
     } while (cVar1 != '\0');
-    return 0xffffffff;
+    return -1;
   }
   if (bVar2 == 0x28) {
     *parse_position = *parse_position + 1;
-    uVar7 = core_event_cpp_CEventList_evaluateLogicalExpr_FUN_004a97b0
+    iVar7 = core_event_cpp_CEventList_evaluateLogicalExpr_FUN_004a97b0
                       (this_ptr,expression,parse_position);
-    if ((int)uVar7 < 0) {
-      return uVar7;
+    if (iVar7 < 0) {
+      return iVar7;
     }
     if (expression[*parse_position] != ')') {
       pcVar16 = "Matching ')' is missing";
@@ -177,18 +177,18 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
     while (((&DAT_00626114)[(byte)(expression[*parse_position] + 1)] & 2) != 0) {
       *parse_position = *parse_position + 1;
     }
-    return uVar7;
+    return iVar7;
   }
   if (bVar2 == 0x21) {
     *parse_position = *parse_position + 1;
-    uVar7 = core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(this_ptr,expression,parse_position);
-    if (-1 < (int)uVar7) {
-      return (uint)(uVar7 == 0);
+    iVar7 = core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(this_ptr,expression,parse_position);
+    if (-1 < iVar7) {
+      return (uint)(iVar7 == 0);
     }
-    return uVar7;
+    return iVar7;
   }
-  iVar8 = core_event_cpp_isValidIdentifierChar_FUN_004aa5e0((uint)bVar2);
-  if (iVar8 == 0) {
+  iVar7 = core_event_cpp_isValidIdentifierChar_FUN_004aa5e0((uint)bVar2);
+  if (iVar7 == 0) {
     pcVar16 = "Syntax error";
     pcVar17 = &DAT_01c56ed0;
     do {
@@ -207,24 +207,24 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
   pcVar16 = local_18c;
   do {
     *pcVar16 = expression[*parse_position];
-    iVar8 = *parse_position;
-    *parse_position = iVar8 + 1;
+    iVar7 = *parse_position;
+    *parse_position = iVar7 + 1;
     pcVar16 = pcVar16 + 1;
-    iVar8 = core_event_cpp_isValidIdentifierChar_FUN_004aa5e0((uint)(byte)expression[iVar8 + 1]);
-  } while (iVar8 != 0);
+    iVar7 = core_event_cpp_isValidIdentifierChar_FUN_004aa5e0((uint)(byte)expression[iVar7 + 1]);
+  } while (iVar7 != 0);
   *pcVar16 = '\0';
   if (expression[*parse_position] != '(') {
     while (((&DAT_00626114)[(byte)(expression[*parse_position] + 1)] & 2) != 0) {
       *parse_position = *parse_position + 1;
     }
-    iVar8 = core_event_cpp_CEventList_resolveVariable_FUN_004a6ba0(this_ptr,local_18c);
-    return iVar8;
+    iVar7 = core_event_cpp_CEventList_resolveVariable_FUN_004a6ba0(this_ptr,local_18c);
+    return iVar7;
   }
   local_104 = 0xffffffff;
-  iVar8 = _stricmp(local_18c,&DAT_005de221);
-  if (iVar8 != 0) {
-    iVar8 = _stricmp(local_18c,"exists");
-    if (iVar8 == 0) {
+  iVar7 = _stricmp(local_18c,&DAT_005de221);
+  if (iVar7 != 0) {
+    iVar7 = _stricmp(local_18c,"exists");
+    if (iVar7 == 0) {
       local_e4 = -1;
       sscanf(expression + *parse_position," ( %[^ )] )%n");
       if (local_e4 < 3) {
@@ -244,15 +244,15 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
         return -1;
       }
       pcVar16 = acStack_255 + 1;
-      uVar7 = 0xffffffff;
+      uVar14 = 0xffffffff;
       pcVar17 = pcVar16;
       do {
-        if (uVar7 == 0) break;
-        uVar7 = uVar7 - 1;
+        if (uVar14 == 0) break;
+        uVar14 = uVar14 - 1;
         cVar1 = *pcVar17;
         pcVar17 = pcVar17 + (uint)bVar18 * -2 + 1;
       } while (cVar1 != '\0');
-      SVar15 = ~uVar7 - 1;
+      SVar15 = ~uVar14 - 1;
       if (0 < (int)SVar15) {
         pcVar17 = pcVar16 + SVar15;
         do {
@@ -267,11 +267,10 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
         memmove(pcVar16,local_e0,SVar15);
         SVar15 = SVar15 - 1;
       }
-      pCVar11 = (CCharacter *)
-                core_event_cpp_resolveActorByName_FUN_004a1370
-                          (acStack_255 + 1,g_CDemonActorClassInfo.name_hash,&g_CDemonActorClassInfo)
-      ;
-      if ((pCVar11 == (CCharacter *)0x0) || (pCVar11 == 0x0FFFFFFF)) {
+      pCVar10 = (CHero *)core_event_cpp_resolveActorByName_FUN_004a1370
+                                   (acStack_255 + 1,g_CDemonActorClassInfo.name_hash,
+                                    &g_CDemonActorClassInfo);
+      if ((pCVar10 == (CHero *)0x0) || (pCVar10 == 0x0FFFFFFF)) {
         local_104 = 0;
       }
       else {
@@ -280,8 +279,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
       *parse_position = *parse_position + local_e4;
     }
     else {
-      iVar8 = _stricmp(local_18c,"fieldNotesDisplayed");
-      if (iVar8 == 0) {
+      iVar7 = _stricmp(local_18c,"fieldNotesDisplayed");
+      if (iVar7 == 0) {
         local_dc = -1;
         sscanf(expression + *parse_position," ( )%n");
         if (local_dc < 2) {
@@ -300,12 +299,12 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
           } while (cVar1 != '\0');
           return -1;
         }
-        local_104 = *(uint *)&g_CFieldNotesPtr->field_0x40;
+        local_104 = g_CFieldNotesPtr->is_displayed;
         *parse_position = *parse_position + local_dc;
       }
       else {
-        iVar8 = _stricmp(local_18c,"hasItem");
-        if (iVar8 == 0) {
+        iVar7 = _stricmp(local_18c,"hasItem");
+        if (iVar7 == 0) {
           if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
             pcVar16 = "Can't use hasItem condition in multi-player";
             pcVar17 = &DAT_01c56ed0;
@@ -341,15 +340,15 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
             return -1;
           }
           pcVar16 = acStack_6a1 + 1;
-          uVar7 = 0xffffffff;
+          uVar14 = 0xffffffff;
           pcVar17 = pcVar16;
           do {
-            if (uVar7 == 0) break;
-            uVar7 = uVar7 - 1;
+            if (uVar14 == 0) break;
+            uVar14 = uVar14 - 1;
             cVar1 = *pcVar17;
             pcVar17 = pcVar17 + (uint)bVar18 * -2 + 1;
           } while (cVar1 != '\0');
-          SVar15 = ~uVar7 - 1;
+          SVar15 = ~uVar14 - 1;
           if (0 < (int)SVar15) {
             pcVar17 = pcVar16 + SVar15;
             do {
@@ -364,18 +363,18 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
             memmove(pcVar16,local_7c,SVar15);
             SVar15 = SVar15 - 1;
           }
-          iVar8 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
+          iVar7 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
           local_104 = 0;
-          if ((iVar8 != 0) &&
-             (pCVar12 = core_inv_cpp_FUN_004f8c40((CInventory *)(iVar8 + 0x1fae8),acStack_6a1 + 1),
-             pCVar12 != (CDemonActor *)0x0)) {
+          if ((iVar7 != 0) &&
+             (pCVar11 = core_inv_cpp_FUN_004f8c40((CInventory *)(iVar7 + 0x1fae8),acStack_6a1 + 1),
+             pCVar11 != (CDemonActor *)0x0)) {
             local_104 = 1;
           }
           *parse_position = *parse_position + local_d8;
         }
         else {
-          iVar8 = _stricmp(local_18c,"hasItemType");
-          if (iVar8 == 0) {
+          iVar7 = _stricmp(local_18c,"hasItemType");
+          if (iVar7 == 0) {
             local_78 = -1;
             sscanf(expression + *parse_position," (%[^,], %[^)] )%n");
             if (local_78 < 5) {
@@ -395,15 +394,15 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
             }
             else {
               pcVar16 = acStack_63d + 1;
-              uVar7 = 0xffffffff;
+              uVar14 = 0xffffffff;
               pcVar17 = pcVar16;
               do {
-                if (uVar7 == 0) break;
-                uVar7 = uVar7 - 1;
+                if (uVar14 == 0) break;
+                uVar14 = uVar14 - 1;
                 cVar1 = *pcVar17;
                 pcVar17 = pcVar17 + (uint)bVar18 * -2 + 1;
               } while (cVar1 != '\0');
-              SVar15 = ~uVar7 - 1;
+              SVar15 = ~uVar14 - 1;
               if (0 < (int)SVar15) {
                 pcVar17 = pcVar16 + SVar15;
                 do {
@@ -418,17 +417,17 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                 memmove(pcVar16,local_d4,SVar15);
                 SVar15 = SVar15 - 1;
               }
-              uVar7 = 0xffffffff;
+              uVar14 = 0xffffffff;
               pcVar16 = local_a25 + 1;
               do {
-                if (uVar7 == 0) break;
-                uVar7 = uVar7 - 1;
+                if (uVar14 == 0) break;
+                uVar14 = uVar14 - 1;
                 cVar1 = *pcVar16;
                 pcVar16 = pcVar16 + (uint)bVar18 * -2 + 1;
               } while (cVar1 != '\0');
-              SVar15 = ~uVar7 - 1;
+              SVar15 = ~uVar14 - 1;
               if (0 < (int)SVar15) {
-                pcVar16 = local_a25 + ~uVar7;
+                pcVar16 = local_a25 + ~uVar14;
                 do {
                   if (((&DAT_00626114)[(byte)(pcVar16[-1] + 1)] & 2) == 0) break;
                   SVar15 = SVar15 - 1;
@@ -441,17 +440,16 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                 memmove(local_a25 + 1,local_d0,SVar15);
                 SVar15 = SVar15 - 1;
               }
-              pCVar11 = (CCharacter *)
-                        core_event_cpp_resolveActorByName_FUN_004a1370
-                                  (acStack_63d + 1,g_CHeroClassInfo.name_hash,&g_CHeroClassInfo);
-              if (pCVar11 != (CCharacter *)0x0) {
-                if (pCVar11 == 0x0FFFFFFF) {
+              pCVar10 = (CHero *)core_event_cpp_resolveActorByName_FUN_004a1370
+                                           (acStack_63d + 1,g_CHeroClassInfo.name_hash,
+                                            &g_CHeroClassInfo);
+              if (pCVar10 != (CHero *)0x0) {
+                if (pCVar10 == 0x0FFFFFFF) {
                   local_104 = 0;
                   *parse_position = *parse_position + local_78;
                 }
                 else {
-                  local_104 = core_inv_cpp_FUN_004f8ce0
-                                        (pCVar11[2].flames[0x18].on_event + 0x54,local_a25 + 1);
+                  local_104 = core_inv_cpp_FUN_004f8ce0(&pCVar10->inventory,local_a25 + 1);
                   *parse_position = *parse_position + local_78;
                 }
                 goto LAB_004a757f;
@@ -459,8 +457,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
             }
             return -1;
           }
-          iVar8 = _stricmp(local_18c,"hasKeyMask");
-          if (iVar8 == 0) {
+          iVar7 = _stricmp(local_18c,"hasKeyMask");
+          if (iVar7 == 0) {
             if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
               pcVar16 = "Can't use hasKeyMask condition in multi-player";
               pcVar17 = &DAT_01c56ed0;
@@ -527,18 +525,18 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
               } while (cVar1 != '\0');
               return -1;
             }
-            iVar8 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
+            iVar7 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
             local_104 = 0;
-            if ((iVar8 != 0) &&
-               (iVar8 = core_inv_cpp_CInventory_checkHasMatchingKey_FUN_004fc240
-                                  ((CInventory *)(iVar8 + 0x1fae8),local_c8,0), iVar8 != 0)) {
+            if ((iVar7 != 0) &&
+               (iVar7 = core_inv_cpp_CInventory_checkHasMatchingKey_FUN_004fc240
+                                  ((CInventory *)(iVar7 + 0x1fae8),local_c8,0), iVar7 != 0)) {
               local_104 = 1;
             }
             *parse_position = *parse_position + local_cc;
           }
           else {
-            iVar8 = _stricmp(local_18c,"isBroken");
-            if (iVar8 == 0) {
+            iVar7 = _stricmp(local_18c,"isBroken");
+            if (iVar7 == 0) {
               local_c4 = -1;
               sscanf(expression + *parse_position," (%[^)])%n");
               if (local_c4 < 3) {
@@ -558,15 +556,15 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
               }
               else {
                 pcVar16 = acStack_9c1 + 1;
-                uVar7 = 0xffffffff;
+                uVar14 = 0xffffffff;
                 pcVar17 = pcVar16;
                 do {
-                  if (uVar7 == 0) break;
-                  uVar7 = uVar7 - 1;
+                  if (uVar14 == 0) break;
+                  uVar14 = uVar14 - 1;
                   cVar1 = *pcVar17;
                   pcVar17 = pcVar17 + (uint)bVar18 * -2 + 1;
                 } while (cVar1 != '\0');
-                SVar15 = ~uVar7 - 1;
+                SVar15 = ~uVar14 - 1;
                 if (0 < (int)SVar15) {
                   pcVar17 = pcVar16 + SVar15;
                   do {
@@ -581,17 +579,16 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                   memmove(pcVar16,local_c0,SVar15);
                   SVar15 = SVar15 - 1;
                 }
-                pCVar11 = (CCharacter *)
-                          core_event_cpp_resolveActorByName_FUN_004a1370
-                                    (acStack_9c1 + 1,g_CGlassClassInfo.name_hash,&g_CGlassClassInfo)
-                ;
-                if (pCVar11 != (CCharacter *)0x0) {
-                  if (pCVar11 == 0x0FFFFFFF) {
+                pCVar10 = (CHero *)core_event_cpp_resolveActorByName_FUN_004a1370
+                                             (acStack_9c1 + 1,g_CGlassClassInfo.name_hash,
+                                              &g_CGlassClassInfo);
+                if (pCVar10 != (CHero *)0x0) {
+                  if (pCVar10 == 0x0FFFFFFF) {
                     local_104 = 0;
                     *parse_position = *parse_position + local_c4;
                   }
                   else {
-                    local_104 = (uint)((pCVar11->model).base.state_index != 0);
+                    local_104 = (uint)((pCVar10->base).model.base.state_index != 0);
                     *parse_position = *parse_position + local_c4;
                   }
                   goto LAB_004a757f;
@@ -599,8 +596,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
               }
               return -1;
             }
-            iVar8 = _stricmp(local_18c,"isCurrentCamera");
-            if (iVar8 == 0) {
+            iVar7 = _stricmp(local_18c,"isCurrentCamera");
+            if (iVar7 == 0) {
               local_bc = -1;
               sscanf(expression + *parse_position," ( %[^ )] )%n");
               if (local_bc < 3) {
@@ -621,17 +618,16 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
               }
               local_104 = 0;
               if ((-1 < g_CDemonSetPtr->selected_camera_index) &&
-                 (iVar8 = _stricmp
-                                    ((char *)(g_CDemonSetPtr->cameras +
-                                             g_CDemonSetPtr->selected_camera_index),local_510),
-                 iVar8 == 0)) {
+                 (iVar7 = _stricmp
+                                    (g_CDemonSetPtr->cameras[g_CDemonSetPtr->selected_camera_index].
+                                     name,local_510), iVar7 == 0)) {
                 local_104 = 1;
               }
               *parse_position = *parse_position + local_bc;
             }
             else {
-              iVar8 = _stricmp(local_18c,"isCurrentSet");
-              if (iVar8 == 0) {
+              iVar7 = _stricmp(local_18c,"isCurrentSet");
+              if (iVar7 == 0) {
                 local_b8 = -1;
                 sscanf(expression + *parse_position," ( %[^ )] )%n");
                 if (local_b8 < 3) {
@@ -657,16 +653,16 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                   engine_dosio_cpp_splitPath_FUN_00479580
                             ((char *)(0x01D2C900 + *0x01D2C900 * 0x40 + 2),(char *)0x0,
                              (char *)0x0,local_fb4,(char *)0x0);
-                  iVar8 = _stricmp(local_cb4,local_fb4);
-                  if (iVar8 == 0) {
+                  iVar7 = _stricmp(local_cb4,local_fb4);
+                  if (iVar7 == 0) {
                     local_104 = 1;
                   }
                 }
                 *parse_position = *parse_position + local_b8;
               }
               else {
-                iVar8 = _stricmp(local_18c,"isDead");
-                if (iVar8 == 0) {
+                iVar7 = _stricmp(local_18c,"isDead");
+                if (iVar7 == 0) {
                   local_b4 = -1;
                   sscanf(expression + *parse_position," ( %[^ )] )%n");
                   if (local_b4 < 3) {
@@ -685,26 +681,26 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                     } while (cVar1 != '\0');
                     return -1;
                   }
-                  pCVar11 = (CCharacter *)
-                            core_event_cpp_resolveActorByName_FUN_004a1370
-                                      (local_830,g_CCharacterClassInfo.name_hash,
-                                       &g_CCharacterClassInfo);
-                  if (pCVar11 == (CCharacter *)0x0) {
-                    return 0xffffffff;
+                  pCVar10 = (CHero *)core_event_cpp_resolveActorByName_FUN_004a1370
+                                               (local_830,g_CCharacterClassInfo.name_hash,
+                                                &g_CCharacterClassInfo);
+                  if (pCVar10 == (CHero *)0x0) {
+                    return -1;
                   }
-                  if (pCVar11 == 0x0FFFFFFF) {
+                  if (pCVar10 == 0x0FFFFFFF) {
                     local_104 = 0;
                     *parse_position = *parse_position + local_b4;
                   }
                   else {
-                    EVar13 = (*(((pCVar11->base).vtable._uc)->_uc).getDeathState)(pCVar11);
-                    local_104 = (uint)(1 < (int)EVar13);
+                    EVar12 = (*(((pCVar10->base).base.vtable._uc)->_uc).getDeathState)
+                                       ((CCharacter *)pCVar10);
+                    local_104 = (uint)(1 < (int)EVar12);
                     *parse_position = *parse_position + local_b4;
                   }
                 }
                 else {
-                  iVar8 = _stricmp(local_18c,"isFadeFinished");
-                  if (iVar8 == 0) {
+                  iVar7 = _stricmp(local_18c,"isFadeFinished");
+                  if (iVar7 == 0) {
                     local_b0 = -1;
                     sscanf(expression + *parse_position," ( )%n");
                     this_ptr_00 = g_CGamePtr;
@@ -728,8 +724,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                     local_104 = core_game_cpp_CGame_fadeIn_FUN_004d62e0(this_ptr_00);
                   }
                   else {
-                    iVar8 = _stricmp(local_18c,"isInRange");
-                    if (iVar8 == 0) {
+                    iVar7 = _stricmp(local_18c,"isInRange");
+                    if (iVar7 == 0) {
                       local_ac = -1;
                       sscanf(expression + *parse_position," ( %n");
                       if (local_ac < 1) {
@@ -749,9 +745,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                         return -1;
                       }
                       *parse_position = *parse_position + local_ac;
-                      iVar8 = core_event_cpp_parseVectorLocation_FUN_004a14a0
+                      iVar7 = core_event_cpp_parseVectorLocation_FUN_004a14a0
                                         (expression,parse_position,local_148 + 2);
-                      if (iVar8 < 0) {
+                      if (iVar7 < 0) {
                         return -1;
                       }
                       local_ac = -1;
@@ -773,9 +769,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                       }
                       else {
                         *parse_position = *parse_position + local_ac;
-                        iVar9 = core_event_cpp_parseVectorLocation_FUN_004a14a0
+                        iVar8 = core_event_cpp_parseVectorLocation_FUN_004a14a0
                                           (expression,parse_position,local_130 + 2);
-                        if (-1 < iVar9) {
+                        if (-1 < iVar8) {
                           local_ac = -1;
                           sscanf
                                     (expression + *parse_position," , %f )%n");
@@ -796,7 +792,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                             return -1;
                           }
                           *parse_position = *parse_position + local_ac;
-                          if ((iVar8 == 0) || (iVar9 == 0)) {
+                          if ((iVar7 == 0) || (iVar8 == 0)) {
                             local_104 = 0;
                           }
                           else {
@@ -812,8 +808,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                       }
                       return -1;
                     }
-                    iVar8 = _stricmp(local_18c,"isOfType");
-                    if (iVar8 == 0) {
+                    iVar7 = _stricmp(local_18c,"isOfType");
+                    if (iVar7 == 0) {
                       local_98 = -1;
                       sscanf(expression + *parse_position," ( %[^ ,] , %[^ )] )%n");
                       if (local_98 < 3) {
@@ -833,15 +829,15 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                       }
                       else {
                         pcVar16 = acStack_381 + 1;
-                        uVar7 = 0xffffffff;
+                        uVar14 = 0xffffffff;
                         pcVar17 = pcVar16;
                         do {
-                          if (uVar7 == 0) break;
-                          uVar7 = uVar7 - 1;
+                          if (uVar14 == 0) break;
+                          uVar14 = uVar14 - 1;
                           cVar1 = *pcVar17;
                           pcVar17 = pcVar17 + (uint)bVar18 * -2 + 1;
                         } while (cVar1 != '\0');
-                        SVar15 = ~uVar7 - 1;
+                        SVar15 = ~uVar14 - 1;
                         if (0 < (int)SVar15) {
                           pcVar17 = pcVar16 + SVar15;
                           do {
@@ -856,17 +852,17 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                           memmove(pcVar16,local_90,SVar15);
                           SVar15 = SVar15 - 1;
                         }
-                        uVar7 = 0xffffffff;
+                        uVar14 = 0xffffffff;
                         pcVar16 = local_895 + 1;
                         do {
-                          if (uVar7 == 0) break;
-                          uVar7 = uVar7 - 1;
+                          if (uVar14 == 0) break;
+                          uVar14 = uVar14 - 1;
                           cVar1 = *pcVar16;
                           pcVar16 = pcVar16 + (uint)bVar18 * -2 + 1;
                         } while (cVar1 != '\0');
-                        SVar15 = ~uVar7 - 1;
+                        SVar15 = ~uVar14 - 1;
                         if (0 < (int)SVar15) {
-                          pcVar16 = local_895 + ~uVar7;
+                          pcVar16 = local_895 + ~uVar14;
                           do {
                             if (((&DAT_00626114)[(byte)(pcVar16[-1] + 1)] & 2) == 0) break;
                             SVar15 = SVar15 - 1;
@@ -879,18 +875,18 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                           memmove(local_895 + 1,local_8c,SVar15);
                           SVar15 = SVar15 - 1;
                         }
-                        pCVar11 = (CCharacter *)
-                                  core_event_cpp_resolveActorByName_FUN_004a1370
-                                            (acStack_381 + 1,g_CDemonActorClassInfo.name_hash,
-                                             &g_CDemonActorClassInfo);
-                        if (pCVar11 != (CCharacter *)0x0) {
-                          if (pCVar11 == 0x0FFFFFFF) {
+                        pCVar10 = (CHero *)core_event_cpp_resolveActorByName_FUN_004a1370
+                                                     (acStack_381 + 1,
+                                                      g_CDemonActorClassInfo.name_hash,
+                                                      &g_CDemonActorClassInfo);
+                        if (pCVar10 != (CHero *)0x0) {
+                          if (pCVar10 == 0x0FFFFFFF) {
                             local_104 = 0;
                             *parse_position = *parse_position + local_98;
                           }
                           else {
                             local_104 = core_actor_cpp_isOfClass_FUN_0040c550
-                                                  ((CDemonActor *)pCVar11,local_895 + 1);
+                                                  ((CDemonActor *)pCVar10,local_895 + 1);
                             *parse_position = *parse_position + local_98;
                           }
                           goto LAB_004a757f;
@@ -898,8 +894,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                       }
                       return -1;
                     }
-                    iVar8 = _stricmp(local_18c,"isFacing");
-                    if (iVar8 == 0) {
+                    iVar7 = _stricmp(local_18c,"isFacing");
+                    if (iVar7 == 0) {
                       local_88 = -1;
                       sscanf(expression + *parse_position," (%[^,], %[^,)]%n");
                       if (local_88 < 5) {
@@ -919,15 +915,15 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                         return -1;
                       }
                       pcVar16 = acStack_2b9 + 1;
-                      uVar7 = 0xffffffff;
+                      uVar14 = 0xffffffff;
                       pcVar17 = pcVar16;
                       do {
-                        if (uVar7 == 0) break;
-                        uVar7 = uVar7 - 1;
+                        if (uVar14 == 0) break;
+                        uVar14 = uVar14 - 1;
                         cVar1 = *pcVar17;
                         pcVar17 = pcVar17 + (uint)bVar18 * -2 + 1;
                       } while (cVar1 != '\0');
-                      SVar15 = ~uVar7 - 1;
+                      SVar15 = ~uVar14 - 1;
                       if (0 < (int)SVar15) {
                         pcVar17 = pcVar16 + SVar15;
                         do {
@@ -943,17 +939,17 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                         SVar15 = SVar15 - 1;
                       }
                       local_80 = local_31d + 1;
-                      uVar7 = 0xffffffff;
+                      uVar14 = 0xffffffff;
                       pcVar16 = local_31d + 1;
                       do {
-                        if (uVar7 == 0) break;
-                        uVar7 = uVar7 - 1;
+                        if (uVar14 == 0) break;
+                        uVar14 = uVar14 - 1;
                         cVar1 = *pcVar16;
                         pcVar16 = pcVar16 + (uint)bVar18 * -2 + 1;
                       } while (cVar1 != '\0');
-                      SVar15 = ~uVar7 - 1;
+                      SVar15 = ~uVar14 - 1;
                       if (0 < (int)SVar15) {
-                        pcVar16 = local_31d + ~uVar7;
+                        pcVar16 = local_31d + ~uVar14;
                         do {
                           if (((&DAT_00626114)[(byte)(pcVar16[-1] + 1)] & 2) == 0) break;
                           SVar15 = SVar15 - 1;
@@ -965,16 +961,15 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                         memmove(local_80,local_31d + 2,SVar15);
                         SVar15 = SVar15 - 1;
                       }
-                      pCVar11 = (CCharacter *)
-                                core_event_cpp_resolveActorByName_FUN_004a1370
-                                          (acStack_2b9 + 1,g_CDemonActorClassInfo.name_hash,
-                                           &g_CDemonActorClassInfo);
-                      if ((pCVar11 == (CCharacter *)0x0) ||
-                         (pCVar14 = (CCharacter *)
-                                    core_event_cpp_resolveActorByName_FUN_004a1370
-                                              (local_31d + 1,g_CDemonActorClassInfo.name_hash,
-                                               &g_CDemonActorClassInfo),
-                         pCVar14 == (CCharacter *)0x0)) {
+                      pCVar10 = (CHero *)core_event_cpp_resolveActorByName_FUN_004a1370
+                                                   (acStack_2b9 + 1,g_CDemonActorClassInfo.name_hash
+                                                    ,&g_CDemonActorClassInfo);
+                      if ((pCVar10 == (CHero *)0x0) ||
+                         (pCVar13 = (CHero *)core_event_cpp_resolveActorByName_FUN_004a1370
+                                                       (local_31d + 1,
+                                                        g_CDemonActorClassInfo.name_hash,
+                                                        &g_CDemonActorClassInfo),
+                         pCVar13 == (CHero *)0x0)) {
                         return -1;
                       }
                       *parse_position = *parse_position + local_88;
@@ -1035,11 +1030,11 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                         return -1;
                       }
                       *parse_position = *parse_position + 1;
-                      if ((pCVar11 == pCVar6) || (pCVar14 == pCVar6)) {
+                      if ((pCVar10 == pCVar6) || (pCVar13 == pCVar6)) {
                         local_104 = 0;
                       }
                       else {
-                        core_actor_cpp_FUN_00408bb0(pCVar11,&(pCVar14->base).location);
+                        core_actor_cpp_FUN_00408bb0(pCVar10,&(pCVar13->base).base.location);
                         local_134 = local_11c;
                         local_130[(uint)bVar18 * -2] = afStack_118[(uint)bVar18 * -2];
                         local_130[(uint)bVar18 * -2 + (uint)bVar18 * -2 + 1] =
@@ -1060,8 +1055,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                       }
                     }
                     else {
-                      iVar8 = _stricmp(local_18c,"isLightOn");
-                      if (iVar8 == 0) {
+                      iVar7 = _stricmp(local_18c,"isLightOn");
+                      if (iVar7 == 0) {
                         local_74 = -1;
                         sscanf(expression + *parse_position," ( %[^ )] )%n");
                         if (local_74 < 3) {
@@ -1103,9 +1098,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                         *parse_position = *parse_position + local_74;
                       }
                       else {
-                        iVar8 = _stricmp
+                        iVar7 = _stricmp
                                           (local_18c,"isNudityEnabled");
-                        if (iVar8 == 0) {
+                        if (iVar7 == 0) {
                           local_68 = -1;
                           sscanf(expression + *parse_position," ( )%n")
                           ;
@@ -1125,13 +1120,13 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                             } while (cVar1 != '\0');
                             return -1;
                           }
-                          local_104 = (uint)(*(int *)&g_CGamePtr->field_0x18 != 0);
+                          local_104 = (uint)(g_CGamePtr->nudity_flag != 0);
                           *parse_position = *parse_position + local_68;
                         }
                         else {
-                          iVar8 = _stricmp
+                          iVar7 = _stricmp
                                             (local_18c,"isSfxActive");
-                          if (iVar8 == 0) {
+                          if (iVar7 == 0) {
                             local_64 = -1;
                             sscanf
                                       (expression + *parse_position," ( %[^ )] )%n");
@@ -1152,15 +1147,15 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                               return -1;
                             }
                             pcVar16 = acStack_705 + 1;
-                            uVar7 = 0xffffffff;
+                            uVar14 = 0xffffffff;
                             pcVar17 = pcVar16;
                             do {
-                              if (uVar7 == 0) break;
-                              uVar7 = uVar7 - 1;
+                              if (uVar14 == 0) break;
+                              uVar14 = uVar14 - 1;
                               cVar1 = *pcVar17;
                               pcVar17 = pcVar17 + (uint)bVar18 * -2 + 1;
                             } while (cVar1 != '\0');
-                            SVar15 = ~uVar7 - 1;
+                            SVar15 = ~uVar14 - 1;
                             if (0 < (int)SVar15) {
                               pcVar17 = pcVar16 + SVar15;
                               do {
@@ -1176,17 +1171,17 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                               SVar15 = SVar15 - 1;
                             }
                             local_104 = 0;
-                            uVar7 = core_event_cpp_CEventList_getSfxHandle_FUN_004aa290
-                                              (this_ptr,acStack_705 + 1);
-                            if (uVar7 != 0) {
+                            uVar14 = core_event_cpp_CEventList_getSfxHandle_FUN_004aa290
+                                               (this_ptr,acStack_705 + 1);
+                            if (uVar14 != 0) {
                               local_104 = 1;
                             }
                             *parse_position = *parse_position + local_64;
                           }
                           else {
-                            iVar8 = _stricmp
+                            iVar7 = _stricmp
                                               (local_18c,"isTalking");
-                            if (iVar8 == 0) {
+                            if (iVar7 == 0) {
                               local_5c = -1;
                               sscanf
                                         (expression + *parse_position," ( %[^ )] )%n");
@@ -1206,17 +1201,17 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                                 } while (cVar1 != '\0');
                                 return -1;
                               }
-                              pCVar11 = (CCharacter *)
-                                        core_event_cpp_resolveActorByName_FUN_004a1370
-                                                  (local_574,g_CCharacterClassInfo.name_hash,
-                                                   &g_CCharacterClassInfo);
-                              if (pCVar11 == (CCharacter *)0x0) {
+                              pCVar10 = (CHero *)core_event_cpp_resolveActorByName_FUN_004a1370
+                                                           (local_574,
+                                                            g_CCharacterClassInfo.name_hash,
+                                                            &g_CCharacterClassInfo);
+                              if (pCVar10 == (CHero *)0x0) {
                                 return -1;
                               }
-                              if (pCVar11 == 0x0FFFFFFF) {
-                                local_104 = (uint)pCVar11 ^ (uint)0x0FFFFFFF;
+                              if (pCVar10 == 0x0FFFFFFF) {
+                                local_104 = (uint)pCVar10 ^ (uint)0x0FFFFFFF;
                               }
-                              else if (*(float *)&pCVar11->field_0x27b4 <= 0.0) {
+                              else if ((pCVar10->base).speech_timer <= 0.0) {
                                 local_104 = 0;
                               }
                               else {
@@ -1225,9 +1220,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                               *parse_position = *parse_position + local_5c;
                             }
                             else {
-                              iVar8 = _stricmp
+                              iVar7 = _stricmp
                                                 (local_18c,"isVictim");
-                              if (iVar8 == 0) {
+                              if (iVar7 == 0) {
                                 local_58 = -1;
                                 sscanf
                                           (expression + *parse_position," ( %[^ )] )%n");
@@ -1247,27 +1242,27 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                                   } while (cVar1 != '\0');
                                 }
                                 else {
-                                  local_54 = (CCharacter *)
-                                             core_event_cpp_resolveActorByName_FUN_004a1370
-                                                       (local_95c,g_CCharacterClassInfo.name_hash,
-                                                        &g_CCharacterClassInfo);
-                                  if (local_54 != (CCharacter *)0x0) {
+                                  local_54 = (CHero *)core_event_cpp_resolveActorByName_FUN_004a1370
+                                                                (local_95c,
+                                                                 g_CCharacterClassInfo.name_hash,
+                                                                 &g_CCharacterClassInfo);
+                                  if (local_54 != (CHero *)0x0) {
                                     local_104 = 0;
                                     if (local_54 != 0x0FFFFFFF) {
-                                      local_50 = &(local_54->base).location;
+                                      local_50 = &(local_54->base).base.location;
                                       local_18 = 0;
-                                      for (iVar8 = 0; iVar8 < g_CDemonSetPtr->enemy_count;
-                                          iVar8 = iVar8 + 1) {
-                                        iVar9 = *(int *)((int)g_CDemonSetPtr->enemies + local_18);
-                                        if ((((local_54 == *(CCharacter **)(iVar9 + 0xc1e8)) &&
-                                             (iVar10 = (**(code **)(*(int *)(iVar9 + 0x154) + 0x10c)
-                                                       )(iVar9), iVar10 < 1)) &&
-                                            (iVar10 = (**(code **)(*(int *)(iVar9 + 0x154) + 0x70))
-                                                                (iVar9), iVar10 == 0)) &&
-                                           (fVar3 = *(float *)(iVar9 + 0x20) -
+                                      for (iVar7 = 0; iVar7 < g_CDemonSetPtr->enemy_count;
+                                          iVar7 = iVar7 + 1) {
+                                        iVar8 = *(int *)((int)g_CDemonSetPtr->enemies + local_18);
+                                        if ((((local_54 == *(CHero **)(iVar8 + 0xc1e8)) &&
+                                             (iVar9 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x10c))
+                                                                (iVar8), iVar9 < 1)) &&
+                                            (iVar9 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x70))
+                                                               (iVar8), iVar9 == 0)) &&
+                                           (fVar3 = *(float *)(iVar8 + 0x20) -
                                                     (local_50->position).x,
-                                           fVar5 = *(float *)(iVar9 + 0x24) - (local_50->position).y
-                                           , fVar4 = *(float *)(iVar9 + 0x28) -
+                                           fVar5 = *(float *)(iVar8 + 0x24) - (local_50->position).y
+                                           , fVar4 = *(float *)(iVar8 + 0x28) -
                                                      (local_50->position).z,
                                            SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3) <=
                                            (float)_DAT_005deaac)) {
@@ -1283,9 +1278,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                                 }
                                 return -1;
                               }
-                              iVar8 = _stricmp
+                              iVar7 = _stricmp
                                                 (local_18c,"isWeaponDrawn");
-                              if (iVar8 == 0) {
+                              if (iVar7 == 0) {
                                 local_40 = -1;
                                 sscanf
                                           (expression + *parse_position," ( %[^ )] )%n");
@@ -1305,17 +1300,16 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                                   } while (cVar1 != '\0');
                                 }
                                 else {
-                                  pCVar11 = (CCharacter *)
-                                            core_event_cpp_resolveActorByName_FUN_004a1370
-                                                      (local_768,g_CHeroClassInfo.name_hash,
-                                                       &g_CHeroClassInfo);
-                                  if (pCVar11 != (CCharacter *)0x0) {
-                                    if (pCVar11 == 0x0FFFFFFF) {
-                                      local_104 = (uint)pCVar11 ^ (uint)0x0FFFFFFF;
+                                  pCVar10 = (CHero *)core_event_cpp_resolveActorByName_FUN_004a1370
+                                                               (local_768,g_CHeroClassInfo.name_hash
+                                                                ,&g_CHeroClassInfo);
+                                  if (pCVar10 != (CHero *)0x0) {
+                                    if (pCVar10 == 0x0FFFFFFF) {
+                                      local_104 = (uint)pCVar10 ^ (uint)0x0FFFFFFF;
                                     }
                                     else {
-                                      local_104 = (*(((pCVar11->base).vtable._uh)->_uh).
-                                                    isWeaponDrawn)((CHero *)pCVar11);
+                                      local_104 = (*(((pCVar10->base).base.vtable._uh)->_uh).
+                                                    isWeaponDrawn)(pCVar10);
                                     }
                                     *parse_position = *parse_position + local_40;
                                     goto LAB_004a757f;
@@ -1323,9 +1317,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                                 }
                                 return -1;
                               }
-                              iVar8 = _stricmp
+                              iVar7 = _stricmp
                                                 (local_18c,"isWearingGasMask");
-                              if (iVar8 == 0) {
+                              if (iVar7 == 0) {
                                 local_3c = -1;
                                 sscanf
                                           (expression + *parse_position," ( %[^ )] )%n");
@@ -1345,19 +1339,17 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                                   } while (cVar1 != '\0');
                                 }
                                 else {
-                                  pCVar11 = (CCharacter *)
-                                            core_event_cpp_resolveActorByName_FUN_004a1370
-                                                      (local_3e4,g_CHeroClassInfo.name_hash,
-                                                       &g_CHeroClassInfo);
-                                  if (pCVar11 != (CCharacter *)0x0) {
-                                    if (pCVar11 == 0x0FFFFFFF) {
+                                  pCVar10 = (CHero *)core_event_cpp_resolveActorByName_FUN_004a1370
+                                                               (local_3e4,g_CHeroClassInfo.name_hash
+                                                                ,&g_CHeroClassInfo);
+                                  if (pCVar10 != (CHero *)0x0) {
+                                    if (pCVar10 == 0x0FFFFFFF) {
                                       local_104 = 0;
                                       *parse_position = *parse_position + local_3c;
                                     }
                                     else {
-                                      local_104 = (uint)(pCVar11[2].flames[0x1a].base.
-                                                         previous_transform_state.position.z ==
-                                                        2.8026e-45);
+                                      local_104 = (uint)(pCVar10->is_wearing_gas_mask ==
+                                                        GAS_MASK_ON_FACE);
                                       *parse_position = *parse_position + local_3c;
                                     }
                                     goto LAB_004a757f;
@@ -1365,50 +1357,50 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                                 }
                                 return -1;
                               }
-                              iVar8 = _stricmp
+                              iVar7 = _stricmp
                                                 (local_18c,"isPuzzleActive");
-                              if (iVar8 == 0) {
+                              if (iVar7 == 0) {
                                 local_38 = -1;
                                 sscanf
                                           (expression + *parse_position,"(%[^)])%n");
                                 if (local_38 < 3) {
-                                  iVar8 = core_event_cpp_formatEventError_FUN_004a1210
+                                  iVar7 = core_event_cpp_formatEventError_FUN_004a1210
                                                     ("Error parsing activatePuzzle command");
-                                  return iVar8;
+                                  return iVar7;
                                 }
-                                iVar8 = 0;
+                                iVar7 = 0;
                                 local_34 = 0;
                                 if (0 < DAT_007c394c) {
-                                  iVar9 = 0;
+                                  iVar8 = 0;
                                   do {
                                     pcVar16 = (char *)(**(code **)(**(int **)((int)&DAT_007c3950 +
-                                                                             iVar9) + 4))
+                                                                             iVar8) + 4))
                                                                 (*(int **)((int)&DAT_007c3950 +
-                                                                          iVar9));
-                                    iVar10 = _stricmp(local_10b4,pcVar16);
-                                    if (iVar10 == 0) {
-                                      local_34 = *(int *)((int)&DAT_007c3950 + iVar9);
+                                                                          iVar8));
+                                    iVar9 = _stricmp(local_10b4,pcVar16);
+                                    if (iVar9 == 0) {
+                                      local_34 = *(int *)((int)&DAT_007c3950 + iVar8);
                                       break;
                                     }
-                                    iVar8 = iVar8 + 1;
-                                    iVar9 = iVar9 + 4;
-                                  } while (iVar8 < DAT_007c394c);
+                                    iVar7 = iVar7 + 1;
+                                    iVar8 = iVar8 + 4;
+                                  } while (iVar7 < DAT_007c394c);
                                 }
                                 if (local_34 == 0) {
-                                  iVar8 = core_event_cpp_formatEventError_FUN_004a1210
+                                  iVar7 = core_event_cpp_formatEventError_FUN_004a1210
                                                     ("No such puzzle '%s'");
-                                  return iVar8;
+                                  return iVar7;
                                 }
                                 local_104 = (uint)(DAT_007c3978 != 0);
                                 *parse_position = *parse_position + local_38;
                               }
                               else {
-                                iVar8 = _stricmp
+                                iVar7 = _stricmp
                                                   (local_18c,"randBool");
-                                if (iVar8 != 0) {
-                                  iVar8 = _stricmp
+                                if (iVar7 != 0) {
+                                  iVar7 = _stricmp
                                                     (local_18c,"reachedDest");
-                                  if (iVar8 == 0) {
+                                  if (iVar7 == 0) {
                                     local_28 = -1;
                                     sscanf
                                               (expression + *parse_position," ( %[^ )] )%n");
@@ -1428,19 +1420,20 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                                       } while (cVar1 != '\0');
                                     }
                                     else {
-                                      pCVar11 = (CCharacter *)
-                                                core_event_cpp_resolveActorByName_FUN_004a1370
-                                                          (local_448,g_CCharacterClassInfo.name_hash
-                                                           ,&g_CCharacterClassInfo);
-                                      if (pCVar11 != (CCharacter *)0x0) {
-                                        if (pCVar11 == 0x0FFFFFFF) {
+                                      pCVar10 = (CHero *)
+                                                  core_event_cpp_resolveActorByName_FUN_004a1370
+                                                            (local_448,
+                                                             g_CCharacterClassInfo.name_hash,
+                                                             &g_CCharacterClassInfo);
+                                      if (pCVar10 != (CHero *)0x0) {
+                                        if (pCVar10 == 0x0FFFFFFF) {
                                           local_104 = 0;
                                           *parse_position = *parse_position + local_28;
                                         }
                                         else {
-                                          iVar8 = (*(((pCVar11->base).vtable._uc)->_uc).
-                                                    isWalkComplete)(pCVar11);
-                                          local_104 = (uint)(iVar8 != 0);
+                                          iVar7 = (*(((pCVar10->base).base.vtable._uc)->_uc).
+                                                    isWalkComplete)((CCharacter *)pCVar10);
+                                          local_104 = (uint)(iVar7 != 0);
                                           *parse_position = *parse_position + local_28;
                                         }
                                         goto LAB_004a757f;
@@ -1448,9 +1441,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                                     }
                                     return -1;
                                   }
-                                  iVar8 = _stricmp
+                                  iVar7 = _stricmp
                                                     (local_18c,"testActorBool");
-                                  if (iVar8 != 0) {
+                                  if (iVar7 != 0) {
                                     pcVar16 = "Invalid meta-function";
                                     pcVar17 = &DAT_01c56ed0;
                                     do {
@@ -1485,17 +1478,17 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                                     } while (cVar1 != '\0');
                                     return -1;
                                   }
-                                  uVar7 = 0xffffffff;
+                                  uVar14 = 0xffffffff;
                                   pcVar16 = acStack_aed + 1;
                                   do {
-                                    if (uVar7 == 0) break;
-                                    uVar7 = uVar7 - 1;
+                                    if (uVar14 == 0) break;
+                                    uVar14 = uVar14 - 1;
                                     cVar1 = *pcVar16;
                                     pcVar16 = pcVar16 + (uint)bVar18 * -2 + 1;
                                   } while (cVar1 != '\0');
-                                  SVar15 = ~uVar7 - 1;
+                                  SVar15 = ~uVar14 - 1;
                                   if (0 < (int)SVar15) {
-                                    pcVar16 = acStack_aed + ~uVar7;
+                                    pcVar16 = acStack_aed + ~uVar14;
                                     do {
                                       if (((&DAT_00626114)[(byte)(pcVar16[-1] + 1)] & 2) == 0)
                                       break;
@@ -1511,17 +1504,17 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                                     SVar15 = SVar15 - 1;
                                   }
                                   local_1c = local_bb5 + 1;
-                                  uVar7 = 0xffffffff;
+                                  uVar14 = 0xffffffff;
                                   pcVar16 = local_bb5 + 1;
                                   do {
-                                    if (uVar7 == 0) break;
-                                    uVar7 = uVar7 - 1;
+                                    if (uVar14 == 0) break;
+                                    uVar14 = uVar14 - 1;
                                     cVar1 = *pcVar16;
                                     pcVar16 = pcVar16 + (uint)bVar18 * -2 + 1;
                                   } while (cVar1 != '\0');
-                                  SVar15 = ~uVar7 - 1;
+                                  SVar15 = ~uVar14 - 1;
                                   if (0 < (int)SVar15) {
-                                    pcVar16 = local_bb5 + ~uVar7;
+                                    pcVar16 = local_bb5 + ~uVar14;
                                     do {
                                       if (((&DAT_00626114)[(byte)(pcVar16[-1] + 1)] & 2) == 0)
                                       break;
@@ -1535,26 +1528,26 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                                     ;
                                     SVar15 = SVar15 - 1;
                                   }
-                                  iVar8 = 0;
+                                  iVar7 = 0;
                                   local_fc = 0;
                                   if (0 < 0x00000002) {
-                                    iVar9 = 0;
+                                    iVar8 = 0;
                                     do {
-                                      if (*(int *)((int)&DAT_0061b4d4 + iVar9) == 0) {
-                                        local_a0 = (int)&DAT_0061b4d4 + iVar9;
-                                        iVar10 = _stricmp
-                                                           ("spectralFlag" + iVar9,
-                                                            local_bb5 + 1);
-                                        if (iVar10 == 0) {
+                                      if (*(int *)((int)&DAT_0061b4d4 + iVar8) == 0) {
+                                        local_a0 = (int)&DAT_0061b4d4 + iVar8;
+                                        iVar9 = _stricmp
+                                                          ("spectralFlag" + iVar8,
+                                                           local_bb5 + 1);
+                                        if (iVar9 == 0) {
                                           local_fc = local_a0;
                                           break;
                                         }
                                       }
-                                      iVar8 = iVar8 + 1;
-                                      iVar9 = iVar9 + 0x48;
-                                    } while (iVar8 < 0x00000002);
+                                      iVar7 = iVar7 + 1;
+                                      iVar8 = iVar8 + 0x48;
+                                    } while (iVar7 < 0x00000002);
                                   }
-                                  iVar8 = local_fc;
+                                  iVar7 = local_fc;
                                   if (local_fc == 0) {
                                     _sprintf(local_db4,"%s is not a valid boolean actor variable name");
                                     pcVar16 = local_db4;
@@ -1572,18 +1565,18 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
                                     } while (cVar1 != '\0');
                                   }
                                   else {
-                                    pCVar11 = (CCharacter *)
-                                              core_event_cpp_resolveActorByName_FUN_004a1370
-                                                        (acStack_aed + 1,
-                                                         *(uint *)(local_fc + 0x44),
-                                                         local_fc + 0x22);
-                                    if (pCVar11 != (CCharacter *)0x0) {
-                                      if (pCVar11 == 0x0FFFFFFF) {
+                                    pCVar10 = (CHero *)
+                                                  core_event_cpp_resolveActorByName_FUN_004a1370
+                                                            (acStack_aed + 1,
+                                                             *(uint *)(local_fc + 0x44),
+                                                             local_fc + 0x22);
+                                    if (pCVar10 != (CHero *)0x0) {
+                                      if (pCVar10 == 0x0FFFFFFF) {
                                         local_104 = 0;
                                       }
                                       else {
-                                        local_104 = *(uint *)((pCVar11->base).actor_name +
-                                                             *(int *)(iVar8 + 0x40));
+                                        local_104 = *(uint *)((pCVar10->base).base.actor_name +
+                                                             *(int *)(iVar7 + 0x40));
                                       }
                                       goto LAB_004a757f;
                                     }
@@ -1646,15 +1639,15 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
     return -1;
   }
   pcVar16 = acStack_1f1 + 1;
-  uVar7 = 0xffffffff;
+  uVar14 = 0xffffffff;
   pcVar17 = pcVar16;
   do {
-    if (uVar7 == 0) break;
-    uVar7 = uVar7 - 1;
+    if (uVar14 == 0) break;
+    uVar14 = uVar14 - 1;
     cVar1 = *pcVar17;
     pcVar17 = pcVar17 + (uint)bVar18 * -2 + 1;
   } while (cVar1 != '\0');
-  SVar15 = ~uVar7 - 1;
+  SVar15 = ~uVar14 - 1;
   if (0 < (int)SVar15) {
     pcVar17 = pcVar16 + SVar15;
     do {
@@ -1669,17 +1662,17 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
     memmove(pcVar16,local_f8,SVar15);
     SVar15 = SVar15 - 1;
   }
-  uVar7 = 0xffffffff;
+  uVar14 = 0xffffffff;
   pcVar16 = local_5d9 + 1;
   do {
-    if (uVar7 == 0) break;
-    uVar7 = uVar7 - 1;
+    if (uVar14 == 0) break;
+    uVar14 = uVar14 - 1;
     cVar1 = *pcVar16;
     pcVar16 = pcVar16 + (uint)bVar18 * -2 + 1;
   } while (cVar1 != '\0');
-  SVar15 = ~uVar7 - 1;
+  SVar15 = ~uVar14 - 1;
   if (0 < (int)SVar15) {
-    pcVar16 = local_5d9 + ~uVar7;
+    pcVar16 = local_5d9 + ~uVar14;
     do {
       if (((&DAT_00626114)[(byte)(pcVar16[-1] + 1)] & 2) == 0) break;
       SVar15 = SVar15 - 1;
@@ -1692,17 +1685,17 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
     memmove(local_5d9 + 1,local_f4,SVar15);
     SVar15 = SVar15 - 1;
   }
-  uVar7 = 0xffffffff;
+  uVar14 = 0xffffffff;
   pcVar16 = local_8f9 + 1;
   do {
-    if (uVar7 == 0) break;
-    uVar7 = uVar7 - 1;
+    if (uVar14 == 0) break;
+    uVar14 = uVar14 - 1;
     cVar1 = *pcVar16;
     pcVar16 = pcVar16 + (uint)bVar18 * -2 + 1;
   } while (cVar1 != '\0');
-  SVar15 = ~uVar7 - 1;
+  SVar15 = ~uVar14 - 1;
   if (0 < (int)SVar15) {
-    pcVar16 = local_8f9 + ~uVar7;
+    pcVar16 = local_8f9 + ~uVar14;
     do {
       if (((&DAT_00626114)[(byte)(pcVar16[-1] + 1)] & 2) == 0) break;
       SVar15 = SVar15 - 1;
@@ -1715,42 +1708,42 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
     memmove(local_8f9 + 1,local_ec,SVar15);
     SVar15 = SVar15 - 1;
   }
-  iVar9 = _strcmp(local_8f9 + 1,&DAT_005dcbc4);
-  iVar8 = 0;
-  if (iVar9 != 0) {
-    iVar8 = _strcmp(local_8f9 + 1,&DAT_005dcbc6);
-    if (iVar8 == 0) {
-      iVar8 = 1;
+  iVar8 = _strcmp(local_8f9 + 1,&DAT_005dcbc4);
+  iVar7 = 0;
+  if (iVar8 != 0) {
+    iVar7 = _strcmp(local_8f9 + 1,&DAT_005dcbc6);
+    if (iVar7 == 0) {
+      iVar7 = 1;
     }
     else {
-      iVar8 = _strcmp(local_8f9 + 1,&DAT_005dcbc9);
-      if (iVar8 == 0) {
-        iVar8 = 2;
+      iVar7 = _strcmp(local_8f9 + 1,&DAT_005dcbc9);
+      if (iVar7 == 0) {
+        iVar7 = 2;
       }
       else {
-        iVar8 = _strcmp(local_8f9 + 1,&DAT_005dcbcc);
-        if (iVar8 == 0) {
-          iVar8 = 3;
+        iVar7 = _strcmp(local_8f9 + 1,&DAT_005dcbcc);
+        if (iVar7 == 0) {
+          iVar7 = 3;
         }
         else {
-          iVar8 = _strcmp(local_8f9 + 1,&DAT_005dcbcf);
-          if (iVar8 == 0) {
-            iVar8 = 5;
+          iVar7 = _strcmp(local_8f9 + 1,&DAT_005dcbcf);
+          if (iVar7 == 0) {
+            iVar7 = 5;
           }
           else {
-            iVar8 = _strcmp(local_8f9 + 1,&DAT_005dcbd1);
-            if (iVar8 == 0) {
-              iVar8 = 4;
+            iVar7 = _strcmp(local_8f9 + 1,&DAT_005dcbd1);
+            if (iVar7 == 0) {
+              iVar7 = 4;
             }
             else {
-              iVar8 = 6;
+              iVar7 = 6;
             }
           }
         }
       }
     }
   }
-  if (iVar8 == 6) {
+  if (iVar7 == 6) {
     pcVar16 = "Invalid relational operator in cmp statement";
     pcVar17 = &DAT_01c56ed0;
     do {
@@ -1767,37 +1760,37 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this
     return -1;
   }
   *parse_position = *parse_position + local_100;
-  iVar10 = sscanf(acStack_1f1 + 1,&DAT_005dcbd4);
-  iVar9 = local_e8;
-  if (iVar10 != 1) {
-    iVar9 = core_event_cpp_CEventList_getCounterValue_FUN_004a9e80(0x01C51D80,acStack_1f1 + 1);
+  iVar9 = sscanf(acStack_1f1 + 1,&DAT_005dcbd4);
+  iVar8 = local_e8;
+  if (iVar9 != 1) {
+    iVar8 = core_event_cpp_CEventList_getCounterValue_FUN_004a9e80(0x01C51D80,acStack_1f1 + 1);
   }
-  iVar10 = sscanf(local_5d9 + 1,&DAT_005dcbd4);
-  if (iVar10 == 1) {
-    switch(iVar8) {
+  iVar9 = sscanf(local_5d9 + 1,&DAT_005dcbd4);
+  if (iVar9 == 1) {
+    switch(iVar7) {
     case 0:
 switchD_004a7564_caseD_0:
-      local_104 = (uint)(iVar9 < local_94);
+      local_104 = (uint)(iVar8 < local_94);
       break;
     case 1:
 switchD_004a7564_caseD_1:
-      local_104 = (uint)(iVar9 <= local_94);
+      local_104 = (uint)(iVar8 <= local_94);
       break;
     case 2:
 switchD_004a7564_caseD_2:
-      local_104 = (uint)(iVar9 == local_94);
+      local_104 = (uint)(iVar8 == local_94);
       break;
     case 3:
 switchD_004a7564_caseD_3:
-      local_104 = (uint)(iVar9 != local_94);
+      local_104 = (uint)(iVar8 != local_94);
       break;
     case 4:
 switchD_004a7564_caseD_4:
-      local_104 = (uint)(local_94 <= iVar9);
+      local_104 = (uint)(local_94 <= iVar8);
       break;
     case 5:
 switchD_004a7564_caseD_5:
-      local_104 = (uint)(local_94 < iVar9);
+      local_104 = (uint)(local_94 < iVar8);
       break;
     default:
 switchD_004a7564_default:
@@ -1812,7 +1805,7 @@ LAB_004a757f:
     return local_104;
   }
   local_94 = core_event_cpp_CEventList_getCounterValue_FUN_004a9e80(0x01C51D80,local_5d9 + 1);
-  switch(iVar8) {
+  switch(iVar7) {
   case 0:
     goto switchD_004a7564_caseD_0;
   case 1:

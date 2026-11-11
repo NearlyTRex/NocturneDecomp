@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 643,
+    "complexity_score": 568,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 248,
-    "suspect_count": 34,
+    "suspect_count": 27,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -17,7 +17,6 @@
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
@@ -182,7 +181,7 @@
     },
     {
       "addr": "01ccf5b8",
-      "name": "g_CGameInstance.field504_0x228",
+      "name": "g_CGameInstance.profile_mode",
       "type": "undefined4",
       "value": null
     },
@@ -427,14 +426,6 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x228",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x228 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 88,
       "match": "(float *)((int)pCVar3",
@@ -451,14 +442,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 94,
-      "match": "field_0x228",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x228 == 2) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 97,
       "match": "DAT_007c2ff4",
@@ -473,14 +456,6 @@
       "severity": "mild",
       "text": "(*((DAT_007c2ff4->vtable)._ub)->process)(DAT_007c2ff4,(float)delta_time);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 98,
-      "match": "field_0x228",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x228 == 2) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
@@ -497,14 +472,6 @@
       "severity": "mild",
       "text": "*(CDemonActor **)(iVar5 + 0x20282b0) = DAT_007c2ff4;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 103,
-      "match": "field_0x228",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x228 != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -601,30 +568,6 @@
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(local_3c + 0x154) + 0x108))(local_3c);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 170,
-      "match": "field_0x308",
-      "severity": "mild",
-      "text": "(this_ptr_02->field_0x308 == '\\0')) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 190,
-      "match": "field_0x228",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x228 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 191,
-      "match": "field_0x228",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x228 == 2) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

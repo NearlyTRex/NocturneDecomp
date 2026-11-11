@@ -15,7 +15,7 @@ float __cdecl core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(float min_valu
   uint uVar2;
   int iVar3;
   
-  if (*(int *)&g_CGamePtr->field_0x258 == 0) {
+  if (g_CGamePtr->is_processing == 0) {
     iVar3 = rand();
     fVar1 = (float)iVar3 * _DAT_005d2e95;
   }

@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 125,
+    "complexity_score": 100,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 10,
-    "suspect_count": 10,
+    "suspect_count": 8,
     "suspect_types": [
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr"
     ],
@@ -51,7 +50,7 @@
     },
     {
       "addr": "01ccf5f4",
-      "name": "g_CGameInstance.field564_0x264",
+      "name": "g_CGameInstance.flashlight_active",
       "type": "undefined4",
       "value": null
     }
@@ -135,24 +134,8 @@
       "line": 6,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((param_2 == 0) && (*(int *)&g_CGamePtr->field_0x264 != 0)) {",
+      "text": "if ((param_2 == 0) && (g_CGamePtr->flashlight_active != 0)) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x264",
-      "severity": "mild",
-      "text": "if ((param_2 == 0) && (*(int *)&g_CGamePtr->field_0x264 != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x264",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0x264 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",

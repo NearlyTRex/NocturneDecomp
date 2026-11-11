@@ -24,10 +24,10 @@ void __cdecl core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00425a50(CBugs *this_ptr,
     _DAT_01d1d404 = 0x1bd;
     core_main_c_FUN_005030e0("CBugs::addSwarmGraphEdge - Too many verts in swarm graph.");
   }
-  pSVar3 = this_ptr->swarm_vertices + vertex_index * 0x28;
-  iVar1 = *(int *)pSVar3;
+  pSVar3 = this_ptr->swarm_vertices + vertex_index;
+  iVar1 = pSVar3->edge_count;
   if (iVar1 == 0) {
-    *(int *)(pSVar3 + 4) = first_edge_data;
+    pSVar3->first_edge_data = first_edge_data;
   }
   else {
     if (7 < iVar1) {
@@ -37,18 +37,18 @@ void __cdecl core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00425a50(CBugs *this_ptr,
     pSVar4 = pSVar3;
     if (0 < iVar1) {
       do {
-        if (neighbor_index == *(int *)(pSVar4 + 8)) {
+        if (neighbor_index == pSVar4->neighbors[0]) {
           return;
         }
         iVar2 = iVar2 + 1;
-        pSVar4 = pSVar4 + 4;
-      } while (iVar2 < *(int *)pSVar3);
-      *(int *)(pSVar3 + *(int *)pSVar3 * 4 + 8) = neighbor_index;
-      *(int *)pSVar3 = *(int *)pSVar3 + 1;
+        pSVar4 = (SSwarmVertex *)&pSVar4->first_edge_data;
+      } while (iVar2 < pSVar3->edge_count);
+      pSVar3->neighbors[pSVar3->edge_count] = neighbor_index;
+      pSVar3->edge_count = pSVar3->edge_count + 1;
       return;
     }
   }
-  *(int *)(pSVar3 + *(int *)pSVar3 * 4 + 8) = neighbor_index;
-  *(int *)pSVar3 = *(int *)pSVar3 + 1;
+  pSVar3->neighbors[pSVar3->edge_count] = neighbor_index;
+  pSVar3->edge_count = pSVar3->edge_count + 1;
   return;
 }

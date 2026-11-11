@@ -12,11 +12,11 @@ int __cdecl core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_0059bdf0(CTrigger *t
   int iVar1;
   
   if ((actor != (CDemonActor *)0x0) && (this_ptr->trigger_cause == TRIGGER_CAUSE_DAMAGE)) {
-    if (this_ptr->field_0x308 == '\0') {
+    if (this_ptr->damage_actor_wildcard_name[0] == '\0') {
       return 1;
     }
     iVar1 = shape_edittool_cpp_wildcardStringMatch_FUN_0049dea0
-                      (&this_ptr->field_0x308,actor->actor_name,0);
+                      (this_ptr->damage_actor_wildcard_name,actor->actor_name,0);
     return iVar1;
   }
   return 0;

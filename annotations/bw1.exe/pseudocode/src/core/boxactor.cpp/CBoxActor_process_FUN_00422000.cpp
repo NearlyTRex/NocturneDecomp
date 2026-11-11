@@ -24,17 +24,14 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_00422000(CBoxActor *this_pt
   uint uVar11;
   float *pfVar12;
   uint *puVar13;
-  CBoxActor **ppCVar14;
+  CDemonActor **ppCVar14;
   byte bVar15;
   float10 fVar16;
   float afStackY_10c8 [987];
   CBox *this_ptr_00;
   CBoundingBox3D *in_stack_fffffeb8;
   float fStack_140;
-  SDamageInfo aSStack_13c [4];
-  float fStack_138;
-  CBoxActor *pCStack_108;
-  CBoxActor *pCStack_104;
+  SDamageInfo SStack_13c;
   float fStack_100;
   float fStack_fc;
   float fStack_f8;
@@ -152,9 +149,9 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_00422000(CBoxActor *this_pt
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0(&this_ptr->base);
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_fffffeb8);
     puVar13 = auStack_e8;
-    ppCVar14 = &pCStack_108;
+    ppCVar14 = &SStack_13c.attacker;
     for (iVar10 = 6; iVar10 != 0; iVar10 = iVar10 + -1) {
-      *ppCVar14 = (CBoxActor *)*puVar13;
+      *ppCVar14 = (CDemonActor *)*puVar13;
       puVar13 = puVar13 + (uint)bVar15 * -2 + 1;
       ppCVar14 = ppCVar14 + (uint)bVar15 * -2 + 1;
     }
@@ -201,11 +198,11 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_00422000(CBoxActor *this_pt
     fVar6 = (this_ptr->physics_box).linear_velocity.z;
     fStack_140 = SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4);
     if ((float)_DAT_005d4c10 < fStack_140) {
-      core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(aSStack_13c);
-      fStack_138 = fStack_140 * this_ptr->weight_in_pounds * _DAT_005d4c18;
-      pCStack_108 = this_ptr;
-      pCStack_104 = this_ptr;
-      core_setcolid_cpp_FUN_00559350(g_CDemonSetPtr,afStack_c4 + 6,pCVar2,aSStack_13c);
+      core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&SStack_13c);
+      SStack_13c.damage_amount = fStack_140 * this_ptr->weight_in_pounds * _DAT_005d4c18;
+      SStack_13c.attacker = &this_ptr->base;
+      SStack_13c.wielder = &this_ptr->base;
+      core_setcolid_cpp_FUN_00559350(g_CDemonSetPtr,afStack_c4 + 6,pCVar2,&SStack_13c);
       return;
     }
   }

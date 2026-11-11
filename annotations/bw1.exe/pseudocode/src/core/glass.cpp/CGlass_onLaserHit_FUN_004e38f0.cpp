@@ -23,16 +23,16 @@ void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004e38f0(CGlass *this_ptr,SLas
   
   core_actor_cpp_CDemonActor_onLaserHit_FUN_00409680(&this_ptr->base,laser_info);
   if (this_ptr->mirror_flag == 0) {
-    *(float *)(laser_info + 0x48) = 1.0 - (float)this_ptr->opacity * (float)_DAT_005e3fdc;
+    laser_info->reflectivity = 1.0 - (float)this_ptr->opacity * (float)_DAT_005e3fdc;
     return;
   }
   if (this_ptr->shattered == 0) {
-    *(uint *)(laser_info + 0x50) = 0x3f800000;
+    laser_info->transparency = 1.0;
   }
   else {
-    fVar1 = *(float *)(laser_info + 0x30);
+    fVar1 = (laser_info->local_hit_position).y;
     fVar2 = (this_ptr->glass_size).y;
-    fVar3 = *(float *)(laser_info + 0x2c);
+    fVar3 = (laser_info->local_hit_position).x;
     fVar4 = (this_ptr->glass_size).x;
     fVar5 = (float)_DAT_005e3fe4;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
@@ -56,7 +56,7 @@ void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004e38f0(CGlass *this_ptr,SLas
       iStack_14 = DAT_0061b4a8 + -1;
     }
     if (*(char *)(iStack_18 + iStack_14 * DAT_0061b4a8 + _DAT_01c50930) == '\0') {
-      *(uint *)(laser_info + 0x50) = 0x3f800000;
+      laser_info->transparency = 1.0;
       return;
     }
   }

@@ -12,8 +12,8 @@
 void __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_00566a20(CDeformableModel *this_ptr)
 
 {
-  byte *puVar1;
-  byte *puVar2;
+  float *pfVar1;
+  uchar *puVar2;
   CDeformableModel *pCVar3;
   CSkeleton *pCVar5;
   CDeformableModelInstance *pCVar6;
@@ -21,10 +21,10 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_005
   CVector3i *pCVar8;
   int iVar9;
   SVert *pSVar10;
-  SInputFace *pSVar11;
-  SVert *pSVar12;
-  int iVar13;
-  SVert *pSVar14;
+  SVert *pSVar11;
+  int iVar12;
+  SVert *pSVar13;
+  ushort *puVar14;
   int iVar15;
   byte bVar16;
   float afStackY_10b0 [916];
@@ -71,25 +71,25 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_005
   int local_28;
   CDeformableModelInstance *local_24;
   int local_20;
-  SInputFace *local_1c;
+  ushort *local_1c;
   float local_18;
   SLod *pSVar4;
   
   bVar16 = 0;
   if (this_ptr->num_parts < 2) {
-    *(uint *)&this_ptr->field_0xc60 = 0;
+    this_ptr->parts[0].dominant_bone = 0;
     pCVar3 = this_ptr;
     do {
       pSVar4 = pCVar3->lod_info;
       pCVar3->bone_to_part_map[0] = 0;
       pCVar3 = (CDeformableModel *)pSVar4;
-    } while (pSVar4 != (SLod *)&this_ptr->field_0x190);
+    } while (pSVar4 != (SLod *)(this_ptr->texture_sets[0].textures[2].texture_name + 0x38));
   }
   else {
     core_skeleton_cpp_CDeformableModel_captureTextures_FUN_00563bb0(this_ptr);
     pCVar5 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40(this_ptr);
     local_28 = pCVar5->bone_count;
-    pCVar6 = (CDeformableModelInstance *)debugAllocTracked1(0x23a4);
+    pCVar6 = (CDeformableModelInstance *)operator_new(0x23a4);
     local_24 = (CDeformableModelInstance *)0x0;
     if (pCVar6 != (CDeformableModelInstance *)0x0) {
       local_24 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_00567370(pCVar6);
@@ -109,30 +109,31 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_005
       local_30 = this_ptr;
       iVar9 = 0;
       do {
-        local_34 = *(int *)&local_30->field_0xc24 + iVar9;
+        local_34 = local_30->parts[0].tri_counts[0] + iVar9;
         if (0 < local_28) {
           iVar15 = local_28 * 4;
-          iVar13 = 0;
+          iVar12 = 0;
           do {
-            iVar7 = iVar13 + 4;
-            *(uint *)(&stack0xfffffda8 + iVar13) = 0;
-            iVar13 = iVar7;
+            iVar7 = iVar12 + 4;
+            *(uint *)(&stack0xfffffda8 + iVar12) = 0;
+            iVar12 = iVar7;
           } while (iVar7 < iVar15);
         }
         if (iVar9 < local_34) {
           local_20 = iVar9 * 0x12;
           local_2c = local_34 * 0x12;
           do {
-            pSVar11 = this_ptr->tri_data_ptr[0] + local_20;
-            pCVar8 = local_24->skinned_vertices_buffer + *(ushort *)pSVar11;
+            puVar14 = (ushort *)
+                      ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_20);
+            pCVar8 = local_24->skinned_vertices_buffer + *puVar14;
             local_8c = (float)pCVar8->x * _DAT_00605890;
             local_88 = (float)pCVar8->y * _DAT_00605890;
             local_84 = (float)pCVar8->z * _DAT_00605890;
-            pCVar8 = local_24->skinned_vertices_buffer + *(ushort *)(pSVar11 + 2);
+            pCVar8 = local_24->skinned_vertices_buffer + puVar14[1];
             local_98 = (float)pCVar8->x * _DAT_00605890;
             local_94 = (float)pCVar8->y * _DAT_00605890;
             local_90 = (float)pCVar8->z * _DAT_00605890;
-            pCVar8 = local_24->skinned_vertices_buffer + *(ushort *)(pSVar11 + 4);
+            pCVar8 = local_24->skinned_vertices_buffer + puVar14[2];
             local_68 = (float)pCVar8->x * _DAT_00605890;
             local_64 = (float)pCVar8->y * _DAT_00605890;
             local_60 = (float)pCVar8->z * _DAT_00605890;
@@ -175,46 +176,45 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_005
               local_ac = local_b8;
               local_a8 = local_b4;
             }
-            local_1c = pSVar11 + 6;
+            local_1c = puVar14 + 3;
             local_18 = SQRT(local_a8 * local_a8 + local_b0 * local_b0 + local_ac * local_ac);
             do {
-              pSVar14 = this_ptr->vertex_data_ptr[0] + *(ushort *)pSVar11;
-              pSVar10 = pSVar14;
-              pSVar12 = pSVar14;
-              for (iVar9 = 0; iVar9 < (int)(uint)*(byte *)pSVar14; iVar9 = iVar9 + 1) {
-                puVar1 = &pSVar12->field_0x4;
-                puVar2 = &pSVar10->field_0x1;
-                pSVar12 = (SVert *)&pSVar12->field_0x4;
-                pSVar10 = (SVert *)&pSVar10->field_0x1;
-                *(float *)(&stack0xfffffda8 + (uint)(byte)*puVar2 * 4) =
-                     *(float *)puVar1 * local_18 +
-                     *(float *)(&stack0xfffffda8 + (uint)(byte)*puVar2 * 4);
+              pSVar13 = this_ptr->vertex_data_ptr[0] + *puVar14;
+              pSVar10 = pSVar13;
+              pSVar11 = pSVar13;
+              for (iVar9 = 0; iVar9 < (int)(uint)pSVar13->num_bone_influences; iVar9 = iVar9 + 1) {
+                pfVar1 = pSVar11->bone_weights;
+                puVar2 = pSVar10->bone_indices;
+                pSVar11 = (SVert *)pSVar11->bone_weights;
+                pSVar10 = (SVert *)pSVar10->bone_indices;
+                *(float *)(&stack0xfffffda8 + (uint)*puVar2 * 4) =
+                     *pfVar1 * local_18 + *(float *)(&stack0xfffffda8 + (uint)*puVar2 * 4);
               }
-              pSVar11 = pSVar11 + 2;
-            } while (pSVar11 != local_1c);
+              puVar14 = puVar14 + 1;
+            } while (puVar14 != local_1c);
             local_20 = local_20 + 0x12;
           } while (local_20 < local_2c);
         }
         iVar15 = 1;
         iVar9 = 0;
         if (1 < local_28) {
-          iVar13 = 4;
+          iVar12 = 4;
           do {
-            if (*(float *)(&stack0xfffffda8 + iVar9 * 4) < *(float *)(&stack0xfffffda8 + iVar13)) {
+            if (*(float *)(&stack0xfffffda8 + iVar9 * 4) < *(float *)(&stack0xfffffda8 + iVar12)) {
               iVar9 = iVar15;
             }
             iVar15 = iVar15 + 1;
-            iVar13 = iVar13 + 4;
+            iVar12 = iVar12 + 4;
           } while (iVar15 < local_28);
         }
         local_38 = local_38 + 1;
-        *(int *)&local_30->field_0xc60 = iVar9;
+        local_30->parts[0].dominant_bone = iVar9;
         local_30 = (CDeformableModel *)(local_30->tri_count + 3);
         iVar9 = local_34;
       } while (local_38 < this_ptr->num_parts);
     }
     if (local_24 != (CDeformableModelInstance *)0x0) {
-      (**(code **)(local_24->base).vtable)(local_24,2);
+      (*((local_24->base).vtable)->dtor)(&local_24->base,2);
     }
     iVar9 = 0;
     pCVar3 = this_ptr;

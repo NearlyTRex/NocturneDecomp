@@ -52,7 +52,7 @@ CPackedBitmap * cockpit_pkbitmap_cpp_parsePBGFile_FUN_005385d0(uint *param_1,_FI
       }
       if ((iVar1 != 0) || (uStack_1c == 0)) goto LAB_00538613;
       uVar2 = uStack_1c / param_3;
-      FUN_005c1268();
+      operator_new_array();
       pCStack_18 = (CPackedBitmap *)__vec_new();
       if (pCStack_18 != (CPackedBitmap *)0x0) {
         iVar1 = 0;

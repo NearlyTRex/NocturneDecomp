@@ -19,7 +19,7 @@
 ;   undefined4 DAT_01c4354c
 ;   undefined4 DAT_01c43550
 ;   CFieldNotes g_CFieldNotesInstance
-;   undefined4 g_CFieldNotesInstance.field64_0x40
+;   undefined4 g_CFieldNotesInstance.is_displayed
 ;   undefined4 DAT_01cd0c7c
 ;   undefined4 DAT_01cd0c80
 ;   undefined4 DAT_01cd0c84
@@ -46,7 +46,7 @@ section .text
     JZ 0x004d62a3                       ; 004d61f5
         ;   XREF to: 004d62a3 (CONDITIONAL_JUMP)  ; LAB_004d62a3
     MOV EAX,[0x0061d418]                ; 004d61fb | g_CFieldNotesPtr | g_CFieldNotesInstance
-    CMP dword ptr [EAX + 0x40],0x0      ; 004d6200 | g_CFieldNotesInstance.field64_0x40
+    CMP dword ptr [EAX + 0x40],0x0      ; 004d6200 | g_CFieldNotesInstance.is_displayed
     JNZ 0x004d62a3                      ; 004d6204
         ;   XREF to: 004d62a3 (CONDITIONAL_JUMP)  ; LAB_004d62a3
     CMP EDX,0x4                         ; 004d620a

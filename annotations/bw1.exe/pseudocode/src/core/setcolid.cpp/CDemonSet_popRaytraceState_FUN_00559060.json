@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 143,
-    "complexity_score": 159,
+    "complexity_score": 114,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 69,
-    "suspect_count": 7,
+    "suspect_count": 3,
     "suspect_types": [
       "raw_address_pointer_store",
       "shadow_pointer_walk",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 212
@@ -248,38 +247,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x15f69c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x15f69c = *(uint *)(iVar2 + 0x20af5d0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x15f6a0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x15f6a0 = *(uint *)(iVar2 + 0x20af5d4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x15f6a4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x15f6a4 = *(uint *)(iVar2 + 0x20af5d8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x15f6a8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x15f6a8 = *(uint *)(iVar2 + 0x20af5dc);",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",

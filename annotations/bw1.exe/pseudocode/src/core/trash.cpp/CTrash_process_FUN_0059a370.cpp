@@ -13,12 +13,12 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_0059a370(CTrash *this_ptr,float d
 
 {
   CLocation *pCVar1;
-  CVector3f *pCVar2;
+  float fVar2;
   float fVar3;
-  float fVar4;
-  bool bVar5;
-  CDemonSet *pCVar6;
-  int iVar7;
+  bool bVar4;
+  CDemonSet *pCVar5;
+  int iVar6;
+  CVector3f *pCVar7;
   float *pfVar8;
   uint *puVar9;
   uint *puVar10;
@@ -105,10 +105,10 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_0059a370(CTrash *this_ptr,float d
   
   bVar11 = 0;
   pCVar1 = &(this_ptr->base).location;
-  iVar7 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0(pCVar1,0x42c80000);
-  if (iVar7 == 0) {
-    iVar7 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0(&this_ptr->home_pos,0x42c80000);
-    if (iVar7 != 0) {
+  iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0(pCVar1,0x42c80000);
+  if (iVar6 == 0) {
+    iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0(&this_ptr->home_pos,0x42c80000);
+    if (iVar6 != 0) {
       return;
     }
     (pCVar1->position).x = (this_ptr->home_pos).x;
@@ -124,23 +124,25 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_0059a370(CTrash *this_ptr,float d
   fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(-0.05,0.05);
   pfVar8 = &(this_ptr->drift).z;
   *pfVar8 = fStack_14 + *pfVar8;
-  pCVar6 = g_CDemonSetPtr;
+  pCVar5 = g_CDemonSetPtr;
   afStack_178[2] = 4.0;
   afStack_178[3] = 0.0;
+  pCVar7 = &(g_CDemonSetPtr->active_fog).scroll;
   afStack_178[4] = 0.0;
-  if ((float *)&g_CDemonSetPtr->field_0x15ac70 != afStack_178 + 2) {
-    *(uint *)&g_CDemonSetPtr->field_0x15ac70 = 0x40800000;
-    *(uint *)&pCVar6->field_0x15ac74 = 0;
-    *(uint *)&pCVar6->field_0x15ac78 = 0;
+  if (pCVar7 != (CVector3f *)(afStack_178 + 2)) {
+    pCVar7->x = 4.0;
+    (pCVar5->active_fog).scroll.y = 0.0;
+    (pCVar5->active_fog).scroll.z = 0.0;
   }
-  fVar3 = this_ptr->animation_timer - delta_time;
-  this_ptr->animation_timer = fVar3;
-  pCVar6 = g_CDemonSetPtr;
-  if (fVar3 <= 0.0) {
-    if (&this_ptr->drift_target != (CVector3f *)&g_CDemonSetPtr->field_0x15ac70) {
-      (this_ptr->drift_target).x = *(float *)&g_CDemonSetPtr->field_0x15ac70;
-      (this_ptr->drift_target).y = *(float *)&pCVar6->field_0x15ac74;
-      (this_ptr->drift_target).z = *(float *)&pCVar6->field_0x15ac78;
+  fVar2 = this_ptr->animation_timer - delta_time;
+  this_ptr->animation_timer = fVar2;
+  pCVar5 = g_CDemonSetPtr;
+  if (fVar2 <= 0.0) {
+    pCVar7 = &(g_CDemonSetPtr->active_fog).scroll;
+    if (&this_ptr->drift_target != pCVar7) {
+      (this_ptr->drift_target).x = pCVar7->x;
+      (this_ptr->drift_target).y = (pCVar5->active_fog).scroll.y;
+      (this_ptr->drift_target).z = (pCVar5->active_fog).scroll.z;
     }
     fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(-10.0,10.0);
     (this_ptr->drift_target).x = fStack_14 + (this_ptr->drift_target).x;
@@ -151,10 +153,10 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_0059a370(CTrash *this_ptr,float d
     fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(6.0,20.0);
     this_ptr->animation_timer = fStack_14;
   }
-  pCVar2 = &this_ptr->drift_target;
-  fStack_d4 = *(float *)&g_CDemonSetPtr->field_0x15ac70 - pCVar2->x;
-  afStack_d0[0] = *(float *)&g_CDemonSetPtr->field_0x15ac74 - (this_ptr->drift_target).y;
-  afStack_d0[1] = *(float *)&g_CDemonSetPtr->field_0x15ac78 - (this_ptr->drift_target).z;
+  pCVar7 = &this_ptr->drift_target;
+  fStack_d4 = (g_CDemonSetPtr->active_fog).scroll.x - pCVar7->x;
+  afStack_d0[0] = (g_CDemonSetPtr->active_fog).scroll.y - (this_ptr->drift_target).y;
+  afStack_d0[1] = (g_CDemonSetPtr->active_fog).scroll.z - (this_ptr->drift_target).z;
   fStack_140 = fStack_d4;
   afStack_160[(uint)bVar11 * -2 + 9] = afStack_d0[(uint)bVar11 * -2];
   afStack_160[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 10] =
@@ -167,10 +169,10 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_0059a370(CTrash *this_ptr,float d
   afStack_160[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4] =
        afStack_d0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x19];
   pCVar12 = &this_ptr->drift;
-  pCVar2->x = pCVar2->x + afStack_160[2];
+  pCVar7->x = pCVar7->x + afStack_160[2];
   (this_ptr->drift_target).y = (this_ptr->drift_target).y + afStack_160[3];
   (this_ptr->drift_target).z = (this_ptr->drift_target).z + fStack_150;
-  fStack_f8 = pCVar2->x - pCVar12->x;
+  fStack_f8 = pCVar7->x - pCVar12->x;
   fStack_f4 = (this_ptr->drift_target).y - (this_ptr->drift).y;
   fStack_f0 = (this_ptr->drift_target).z - (this_ptr->drift).z;
   fStack_5c = fStack_f8;
@@ -201,7 +203,7 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_0059a370(CTrash *this_ptr,float d
   fStack_e4 = (this_ptr->drift).z - (this_ptr->velocity).z;
   fStack_50 = fStack_ec;
   afStack_d0[(uint)bVar11 * -2 + 0x21] = afStack_10c[(uint)bVar11 * -2 + 9];
-  fVar3 = fStack_18;
+  fVar2 = fStack_18;
   afStack_d0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x22] =
        afStack_10c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 10];
   pfVar8 = &this_ptr->damping_factor;
@@ -212,7 +214,7 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_0059a370(CTrash *this_ptr,float d
   afStack_10c[(uint)bVar11 * -2 + 3] = afStack_d0[(uint)bVar11 * -2 + 0x15];
   afStack_10c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4] =
        afStack_d0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x16];
-  fStack_dc = fVar3 + afStack_10c[3];
+  fStack_dc = fVar2 + afStack_10c[3];
   fStack_e0 = afStack_10c[2];
   fStack_d8 = fStack_fc;
   core_actor_cpp_FUN_00408b00(this_ptr,pCVar12);
@@ -220,7 +222,7 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_0059a370(CTrash *this_ptr,float d
   afStack_160[(uint)bVar11 * -2] = afStack_d0[(uint)bVar11 * -2 + 0x27];
   afStack_160[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
        afStack_d0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x28];
-  pCVar2 = &this_ptr->acceleration;
+  pCVar7 = &this_ptr->acceleration;
   fStack_98 = afStack_178[5] * _DAT_005f8050;
   fStack_94 = afStack_160[0] * _DAT_005f8050;
   fStack_90 = afStack_160[1] * _DAT_005f8050;
@@ -229,15 +231,15 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_0059a370(CTrash *this_ptr,float d
   pCVar12 = pCStack_20;
   afStack_d0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x25] =
        afStack_d0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x10];
-  fVar3 = (this_ptr->acceleration).y * _DAT_005f8054;
-  fVar4 = (this_ptr->acceleration).z * _DAT_005f8054;
+  fVar2 = (this_ptr->acceleration).y * _DAT_005f8054;
+  fVar3 = (this_ptr->acceleration).z * _DAT_005f8054;
   fStack_110 = afStack_10c[2] * delta_time;
   afStack_10c[0] = fStack_dc * delta_time;
   afStack_10c[1] = fStack_fc * delta_time;
-  pCVar2->x = pCVar2->x * _DAT_005f8054;
-  (this_ptr->acceleration).y = fVar3;
-  (this_ptr->acceleration).z = fVar4;
-  pCVar2->x = pCVar2->x + fStack_44;
+  pCVar7->x = pCVar7->x * _DAT_005f8054;
+  (this_ptr->acceleration).y = fVar2;
+  (this_ptr->acceleration).z = fVar3;
+  pCVar7->x = pCVar7->x + fStack_44;
   (this_ptr->acceleration).y = (this_ptr->acceleration).y + fStack_40;
   (this_ptr->acceleration).z = (this_ptr->acceleration).z + fStack_3c;
   fStack_128 = afStack_10c[2] * delta_time;
@@ -247,14 +249,14 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_0059a370(CTrash *this_ptr,float d
   pCVar12->x = pCVar12->x + fStack_128;
   pCVar12->y = pCVar12->y + fStack_124;
   pCVar12->z = pCVar12->z + fStack_120;
-  fVar3 = (this_ptr->acceleration).y;
-  fVar4 = (this_ptr->acceleration).z;
-  fVar3 = SQRT(fVar4 * fVar4 + pCVar2->x * pCVar2->x + fVar3 * fVar3) * _DAT_005f8058;
-  if (1.0 < fVar3) {
-    fVar3 = 1.0 / fVar3;
-    pCVar2->x = pCVar2->x * fVar3;
-    (this_ptr->acceleration).y = (this_ptr->acceleration).y * fVar3;
-    (this_ptr->acceleration).z = (this_ptr->acceleration).z * fVar3;
+  fVar2 = (this_ptr->acceleration).y;
+  fVar3 = (this_ptr->acceleration).z;
+  fVar2 = SQRT(fVar3 * fVar3 + pCVar7->x * pCVar7->x + fVar2 * fVar2) * _DAT_005f8058;
+  if (1.0 < fVar2) {
+    fVar2 = 1.0 / fVar2;
+    pCVar7->x = pCVar7->x * fVar2;
+    (this_ptr->acceleration).y = (this_ptr->acceleration).y * fVar2;
+    (this_ptr->acceleration).z = (this_ptr->acceleration).z * fVar2;
   }
   fStack_1a0 = (this_ptr->velocity).x * delta_time;
   afStack_19c[0] = (this_ptr->velocity).y * delta_time;
@@ -275,41 +277,41 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_0059a370(CTrash *this_ptr,float d
                                 (this_ptr->base).location.position.z,fStack_134,fStack_12c,
                                 this_ptr->collision_radius,this_ptr->collision_bottom_y,
                                 this_ptr->collision_top_y);
-  bVar5 = false;
+  bVar4 = false;
   if ((0.0 <= fStack_14) && (fStack_14 < 1.0)) {
     fStack_134 = fStack_134 * fStack_14;
     fStack_130 = fStack_130 * fStack_14;
     fStack_12c = fStack_12c * fStack_14;
-    bVar5 = true;
+    bVar4 = true;
   }
   pCVar1 = &(this_ptr->base).location;
-  fVar3 = (this_ptr->base).location.position.y;
-  fVar4 = (this_ptr->base).location.position.z;
+  fVar2 = (this_ptr->base).location.position.y;
+  fVar3 = (this_ptr->base).location.position.z;
   (pCVar1->position).x = (pCVar1->position).x + fStack_134;
-  (this_ptr->base).location.position.y = fVar3 + fStack_130;
-  (this_ptr->base).location.position.z = fVar4 + fStack_12c;
+  (this_ptr->base).location.position.y = fVar2 + fStack_130;
+  (this_ptr->base).location.position.z = fVar3 + fStack_12c;
   fStack_14 = (float)core_setcolid_cpp_FUN_005562c0
                                (g_CDemonSetPtr,pCVar1,
                                 this_ptr->collision_radius * (float)_DAT_005f8060);
   fStack_2c = fStack_14;
   if (fStack_14 <= (this_ptr->base).location.position.y) {
-    if (!bVar5) goto LAB_0059ab67;
+    if (!bVar4) goto LAB_0059ab67;
   }
   else {
-    fVar3 = this_ptr->collision_radius;
-    fVar4 = (float)_DAT_005f8068;
+    fVar2 = this_ptr->collision_radius;
+    fVar3 = (float)_DAT_005f8068;
     (this_ptr->base).location.position.y = fStack_14;
-    if (fVar3 * fVar4 + fStack_148 < (this_ptr->base).location.position.y) {
+    if (fVar2 * fVar3 + fStack_148 < (this_ptr->base).location.position.y) {
       (pCVar1->position).x = fStack_14c;
       (this_ptr->base).location.position.y = fStack_148;
       (this_ptr->base).location.position.z = fStack_144;
     }
   }
-  fVar3 = (this_ptr->acceleration).y * (float)"?333?CTrigger"._1_4_;
-  fVar4 = (this_ptr->acceleration).z * (float)"?333?CTrigger"._1_4_;
+  fVar2 = (this_ptr->acceleration).y * (float)"?333?CTrigger"._1_4_;
+  fVar3 = (this_ptr->acceleration).z * (float)"?333?CTrigger"._1_4_;
   (this_ptr->acceleration).x = (this_ptr->acceleration).x * (float)"?333?CTrigger"._1_4_;
-  (this_ptr->acceleration).y = fVar3;
-  (this_ptr->acceleration).z = fVar4;
+  (this_ptr->acceleration).y = fVar2;
+  (this_ptr->acceleration).z = fVar3;
 LAB_0059ab67:
   fStack_b0 = (this_ptr->base).location.position.x - fStack_14c;
   fStack_ac = (this_ptr->base).location.position.y - fStack_148;
@@ -318,11 +320,11 @@ LAB_0059ab67:
   afStack_19c[(uint)bVar11 * -2 + 3] = afStack_d0[(uint)bVar11 * -2 + 9];
   afStack_19c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4] =
        afStack_d0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 10];
-  fVar3 = 1.0 / delta_time;
-  fStack_17c = afStack_19c[2] * fVar3;
-  afStack_178[0] = afStack_19c[3] * fVar3;
-  afStack_178[1] = fStack_18c * fVar3;
-  afStack_d0[2] = afStack_19c[2] * fVar3;
+  fVar2 = 1.0 / delta_time;
+  fStack_17c = afStack_19c[2] * fVar2;
+  afStack_178[0] = afStack_19c[3] * fVar2;
+  afStack_178[1] = fStack_18c * fVar2;
+  afStack_d0[2] = afStack_19c[2] * fVar2;
   afStack_d0[(uint)bVar11 * -2 + 3] = afStack_178[(uint)bVar11 * -2];
   afStack_d0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4] =
        afStack_178[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
@@ -337,21 +339,21 @@ LAB_0059ab67:
   core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&CStack_200,&CStack_260);
   puVar9 = auStack_1d0;
   puVar10 = auStack_230;
-  for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
+  for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
     *puVar10 = *puVar9;
     puVar9 = puVar9 + (uint)bVar11 * -2 + 1;
     puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
   }
   core_xform_cpp_matrixToEulerAngles_FUN_005b5930(auStack_230);
-  pCVar2 = pCStack_28;
+  pCVar7 = pCStack_28;
   CStack_11c.x = fStack_68;
   *(float *)((int)&CStack_11c + (uint)bVar11 * -8 + 4) = afStack_d0[(uint)bVar11 * -2 + 0x1b];
   *(float *)((int)&CStack_11c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
        afStack_d0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x1c];
-  if (&CStack_11c != pCVar2) {
-    pCVar2->x = CStack_11c.x;
-    pCVar2->y = CStack_11c.y;
-    pCVar2->z = CStack_11c.z;
+  if (&CStack_11c != pCVar7) {
+    pCVar7->x = CStack_11c.x;
+    pCVar7->y = CStack_11c.y;
+    pCVar7->z = CStack_11c.z;
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0(&this_ptr->base);
   return;

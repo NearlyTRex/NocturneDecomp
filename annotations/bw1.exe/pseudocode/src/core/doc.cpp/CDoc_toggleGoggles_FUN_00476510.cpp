@@ -14,10 +14,10 @@ void __cdecl core_doc_cpp_CDoc_toggleGoggles_FUN_00476510(CDoc *this_ptr)
   uint uVar3;
   
   uVar3 = g_CGogglesClassInfo.name_hash;
-  iVar1 = core_inv_cpp_FUN_004f8c90((CInventory *)&this_ptr->field_0x1fae8,"CGoggles");
+  iVar1 = core_inv_cpp_FUN_004f8c90(&(this_ptr->base).inventory,"CGoggles");
   iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(iVar1,uVar3);
   if (iVar1 != 0) {
-    if ((*(int *)&g_CGamePtr->field_0x244 == 0) && (*(int *)(iVar1 + 0x2d4) == 0)) {
+    if ((g_CGamePtr->letterbox_mode == 0) && (*(int *)(iVar1 + 0x2d4) == 0)) {
       uVar2 = 1;
     }
     else {
@@ -25,17 +25,17 @@ void __cdecl core_doc_cpp_CDoc_toggleGoggles_FUN_00476510(CDoc *this_ptr)
     }
     *(uint *)(iVar1 + 0x2d4) = uVar2;
   }
-  if ((*(int *)&g_CGamePtr->field_0x25c == 0) && (*(int *)&g_CGamePtr->field_0x244 == 0)) {
-    if (*(int *)&g_CGamePtr->field_0x244 == 0) {
+  if ((g_CGamePtr->goggles_active == 0) && (g_CGamePtr->letterbox_mode == 0)) {
+    if (g_CGamePtr->letterbox_mode == 0) {
       return;
     }
   }
   else {
-    (*(code *)**(uint **)&g_CGamePtr->field_0xb00)(g_CGamePtr,0);
-    if (*(int *)&g_CGamePtr->field_0x244 == 0) {
+    (**(code **)g_CGamePtr->vtable)(g_CGamePtr,0);
+    if (g_CGamePtr->letterbox_mode == 0) {
       return;
     }
   }
-  *(uint *)&this_ptr->field_0x1ff58 = 0;
+  (this_ptr->base).is_wearing_goggles = 0;
   return;
 }

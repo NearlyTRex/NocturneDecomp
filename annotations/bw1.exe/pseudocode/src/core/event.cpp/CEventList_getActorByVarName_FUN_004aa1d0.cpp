@@ -20,7 +20,7 @@ CDemonActor * __cdecl core_event_cpp_CEventList_getActorByVarName_FUN_004aa1d0(C
     for (iVar4 = 0; iVar4 < g_CDemonSetPtr->actor_count; iVar4 = iVar4 + 1) {
       iVar2 = _stricmp
                         (*(char **)((int)g_CDemonSetPtr->actors + iVar3),
-                         (char *)(this_ptr + iVar1 * 0x1e + 0x37da));
+                         (this_ptr->actor_vars).actor_names[iVar1]);
       if (iVar2 == 0) {
         return *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3);
       }

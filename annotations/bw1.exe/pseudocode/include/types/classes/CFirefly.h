@@ -4,13 +4,21 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CParticle.h"
 
 // Structure: CFirefly
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 92; ctor 004b7780 calls CParticle_ctor then stores the firefly vtable at +0x3c; static pool of 64
 // Ghidra size: 0x5c (92 bytes)
 #pragma pack(push, 1)
 typedef struct CFirefly {
-    char field_0[92]; // 0x0
+    CParticle base; // 0x0, CParticle ctor runs first; derived vtable stored at +0x3c (CParticle's vptr slot)
+    int intensity; // 0x40, createFirefly 004b5fa0 stores arg5 * random(0xc000..0xffff) >> 16; process 004ad860 subtracts fade and kills the particle below 0; render 004adaf0 uses it as the 16.16 vertex alpha
+    int fade_rate; // 0x44, createFirefly stores arg 4; process multiplies it by the scaled dt
+    float jitter; // 0x48, createFirefly stores arg 8; process adds random(0, jitter*k) - jitter to each velocity axis
+    int first_update_flag; // 0x4c, createFirefly zeroes it; process skips the fade on the first frame and sets it to 1
+    float size; // 0x50, createFirefly stores arg 9; render builds the quad corners at +-size
+    int texture_index; // 0x54, createFirefly stores arg 6; render switches 0..3 to pick the texture
+    int time_scale; // 0x58, createFirefly stores arg 7; process multiplies the 16.16 frame dt by it and slams CGame dt to the result while moving
 } CFirefly;
 #pragma pack(pop)
 

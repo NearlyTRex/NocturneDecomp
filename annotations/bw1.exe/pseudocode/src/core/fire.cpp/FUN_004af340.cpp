@@ -11,42 +11,42 @@
 void __cdecl core_fire_cpp_FUN_004af340(CMuzzleFlash *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix)
 
 {
-  byte *this_ptr_00;
+  CDemonGlobe *this_ptr_00;
   CDemonSet *this_ptr_01;
   byte bVar1;
-  uint auStackY_1010 [1016];
-  uint local_28;
-  uint local_1c;
-  uint local_18;
-  uint local_14;
+  float afStackY_1010 [1016];
+  float local_28;
+  float local_1c;
+  float local_18;
+  float local_14;
   
   bVar1 = 0;
-  this_ptr_00 = &this_ptr->field_0x1c;
-  core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0045e970((CDemonGlobe *)this_ptr_00,position);
-  *(uint *)&this_ptr->field_0x58 = 0x8000;
-  this_ptr->field_0x38 = 0x20;
-  core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0045e9c0((CDemonGlobe *)this_ptr_00,8.0);
+  this_ptr_00 = &this_ptr->light;
+  core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0045e970(this_ptr_00,position);
+  (this_ptr->light).intensity_multiplier = 0x8000;
+  (this_ptr->light).intensity.bytes[0] = ' ';
+  core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0045e9c0(this_ptr_00,8.0);
   this_ptr_01 = g_CDemonSetPtr;
-  *(uint *)&this_ptr->field_0x3c = 0;
-  core_set_cpp_CDemonSet_addCoronaGlobe_FUN_00551960(this_ptr_01,(CDemonGlobe *)this_ptr_00);
-  if ((CVector3f *)&this_ptr->field_0x4 != position) {
-    *(float *)&this_ptr->field_0x4 = position->x;
-    *(float *)&this_ptr->field_0x8 = position->y;
-    *(float *)&this_ptr->field_0xc = position->z;
+  (this_ptr->light).corona_mode = 0;
+  core_set_cpp_CDemonSet_addCoronaGlobe_FUN_00551960(this_ptr_01,this_ptr_00);
+  if (&this_ptr->position != position) {
+    (this_ptr->position).x = position->x;
+    (this_ptr->position).y = position->y;
+    (this_ptr->position).z = position->z;
   }
   core_dirmat_cpp_FUN_0045f840(rotation_matrix);
   local_1c = local_28;
   (&stack0xffffffe8)[(uint)bVar1 * 0xfffffffe] =
-       *(uint *)(&stack0xffffffdc + (uint)bVar1 * -8);
+       (float)*(uint *)(&stack0xffffffdc + (uint)bVar1 * -8);
   *(uint *)((int)&stack0xffffffec + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
        *(uint *)(&stack0xffffffe0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-  if ((uint *)&this_ptr->field_0x10 == &stack0xffffffe4) {
-    *(uint *)this_ptr = 2;
+  if (&this_ptr->rotation == (CVector3f *)&stack0xffffffe4) {
+    this_ptr->frames_remaining = 2;
     return;
   }
-  *(uint *)&this_ptr->field_0x10 = local_1c;
-  *(uint *)&this_ptr->field_0x14 = local_18;
-  *(uint *)&this_ptr->field_0x18 = local_14;
-  *(uint *)this_ptr = 2;
+  (this_ptr->rotation).x = local_1c;
+  (this_ptr->rotation).y = local_18;
+  (this_ptr->rotation).z = local_14;
+  this_ptr->frames_remaining = 2;
   return;
 }

@@ -19,7 +19,7 @@ CAsciiArmor * support_codec_cpp_CAsciiArmor_dtor_FUN_004441c0(CAsciiArmor *this_
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = (CAsciiArmor *)support_codec_cpp_CCodec_dtor_FUN_00442bb0((CCodec *)this_ptr,1);
+  pCVar1 = (CAsciiArmor *)support_codec_cpp_CCodec_dtor_FUN_00442bb0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

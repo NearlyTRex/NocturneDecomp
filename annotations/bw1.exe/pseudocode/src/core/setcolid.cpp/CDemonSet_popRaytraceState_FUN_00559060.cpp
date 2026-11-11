@@ -15,7 +15,7 @@ void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00559060(CDemonSet
   int iVar2;
   int iVar3;
   CDemonSet *pCVar4;
-  uint *puVar5;
+  int *piVar5;
   
   if (_DAT_020af5c8 < 1) {
     _DAT_01d1d400 = "..\\core\\setcolid.cpp";
@@ -24,21 +24,21 @@ void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00559060(CDemonSet
   }
   _DAT_020af5c8 = _DAT_020af5c8 + -1;
   iVar2 = _DAT_020af5c8 * 0xa0;
-  puVar5 = (uint *)(iVar2 + 0x20af5cc);
-  *(uint *)&this_ptr->ray_query = *puVar5;
-  *(uint *)&this_ptr->field_0x15f69c = *(uint *)(iVar2 + 0x20af5d0);
-  *(uint *)&this_ptr->field_0x15f6a0 = *(uint *)(iVar2 + 0x20af5d4);
-  *(uint *)&this_ptr->field_0x15f6a4 = *(uint *)(iVar2 + 0x20af5d8);
-  *(uint *)&this_ptr->field_0x15f6a8 = *(uint *)(iVar2 + 0x20af5dc);
+  piVar5 = (int *)(iVar2 + 0x20af5cc);
+  (this_ptr->ray_query).ray_type = *piVar5;
+  (this_ptr->ray_query).laser_type = *(int *)(iVar2 + 0x20af5d0);
+  (this_ptr->ray_query).laser_color.r = *(int *)(iVar2 + 0x20af5d4);
+  (this_ptr->ray_query).laser_color.g = *(int *)(iVar2 + 0x20af5d8);
+  (this_ptr->ray_query).laser_color.b = *(int *)(iVar2 + 0x20af5dc);
   iVar1 = *(int *)(iVar2 + 0x20af5e0);
   iVar3 = 0;
   this_ptr->ignore_list_count = iVar1;
   pCVar4 = this_ptr;
   if (0 < iVar1) {
     do {
-      pCVar4->ignore_list[0] = (CDemonActor *)puVar5[7];
+      pCVar4->ignore_list[0] = (CDemonActor *)piVar5[7];
       iVar3 = iVar3 + 1;
-      puVar5 = puVar5 + 1;
+      piVar5 = piVar5 + 1;
       pCVar4 = (CDemonSet *)pCVar4->cameras;
     } while (iVar3 < this_ptr->ignore_list_count);
   }

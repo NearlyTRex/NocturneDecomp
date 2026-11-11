@@ -29,7 +29,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e0870(CGhoul *this_ptr,S
   sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[0]);
   if ((this_ptr->dark_waypoint != (CDemonActor *)0x0) &&
      (pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
-                         (&(this_ptr->base).base.model.base), *(int *)(pSVar4 + 0x24) == 0)) {
+                         (&(this_ptr->base).base.model.base), pSVar4->state_index == 0)) {
     this_ptr->heal_timer = 30.0;
     this_ptr->dark_waypoint = (CDemonActor *)0x0;
     this_ptr->is_berserk = 1;
@@ -42,7 +42,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e0870(CGhoul *this_ptr,S
     }
     engine_console_cpp_FUN_00445430(g_CConsolePtr,"@go berzerk\n" + 1);
   }
-  if (*(int *)(damage_info + 0x30) == 0x6c) {
+  if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
     this_ptr->stun_timer = 4.0;
   }
   core_ghoul_cpp_CGhoul_processDismemberment_FUN_004e05b0(this_ptr,damage_info);
@@ -54,8 +54,8 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e0870(CGhoul *this_ptr,S
     (*(((pCVar2->base).vtable._uc)->_uc).releaseFromGrab)(pCVar2);
   }
   iVar7 = this_ptr->part_indices[10];
-  (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
-  if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + iVar7 * 4) == 0) {
+  (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
+  if ((this_ptr->base).base.model.part_data.visibility_flags[iVar7] == 0) {
     (this_ptr->base).base.hit_points = 0.0;
   }
   this_ptr_00 = &(this_ptr->base).base.model;
@@ -68,16 +68,15 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e0870(CGhoul *this_ptr,S
       return;
     }
     pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
-    if ((*(int *)(pSVar4 + 0x24) != 10) && (*(int *)(pSVar4 + 0x24) != 9)) {
-      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[10] * 4) == 0)
-      {
+    if ((pSVar4->state_index != 10) && (pSVar4->state_index != 9)) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] == 0) {
         this_ptr->lives_left = 0;
       }
       else {
         this_ptr->lives_left = this_ptr->lives_left + -1;
       }
       iVar7 = 6;
-      if (*(int *)&(this_ptr->base).base.field_0x3004 < 1) {
+      if ((this_ptr->base).base.damage_decal_count < 1) {
         iVar5 = core_actor_cpp_randomChance_FUN_0040cd00(0.5);
         if (iVar5 != 0) {
           iVar7 = 7;
@@ -86,15 +85,15 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e0870(CGhoul *this_ptr,S
       else {
         iVar5 = 0;
         pCVar3 = this_ptr;
-        if (0 < *(int *)&(this_ptr->base).base.field_0x3004) {
+        if (0 < (this_ptr->base).base.damage_decal_count) {
           do {
-            if (*(int *)&(pCVar3->base).base.field_0x3008 == this_ptr->part_indices[9]) {
+            if ((pCVar3->base).base.damage_decals[0].part_index == this_ptr->part_indices[9]) {
               iVar7 = 8;
               break;
             }
             iVar5 = iVar5 + 1;
             pCVar3 = (CGhoul *)((int)&(pCVar3->base).base.base.orient + 8);
-          } while (iVar5 < *(int *)&(this_ptr->base).base.field_0x3004);
+          } while (iVar5 < (this_ptr->base).base.damage_decal_count);
         }
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
@@ -115,7 +114,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e0870(CGhoul *this_ptr,S
   }
   else {
     pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
-    iVar7 = *(int *)(pSVar4 + 0x24);
+    iVar7 = pSVar4->state_index;
     if (((iVar7 == 0) || (iVar7 == 0xb || (iVar7 == 0xc || iVar7 == 2))) ||
        (iVar7 = core_actor_cpp_randomChance_FUN_0040cd00(0.25), iVar7 != 0)) {
       iVar5 = 1;

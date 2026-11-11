@@ -1,0 +1,177 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 38,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 23,
+    "suspect_count": 1,
+    "suspect_types": [
+      "negative_offset"
+    ],
+    "total_lines": 75
+  },
+  "cross_references": [
+    {
+      "addr": "004babf0",
+      "from_addr": "004bac06",
+      "name": "core_fldnotes.cpp_SPageResourceTwanaCharacter_dtor_FUN_004babf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004baad0",
+    "address_range": [
+      [
+        "004baad0",
+        "004bab3e"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_fldnotes.cpp_SPageResourceBitmap_dtor_FUN_004baad0",
+    "signature": "SPageResourceBitmap * core_fldnotes_cpp_SPageResourceBitmap_dtor_FUN_004baad0(SPageResourceBitmap *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c030f",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_delete_FUN_005c030f"
+    },
+    {
+      "addr": "005c0336",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0336"
+    },
+    {
+      "addr": "005c0344",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0344"
+    },
+    {
+      "addr": "0040d0c0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d0c0"
+    },
+    {
+      "addr": "0040d1c0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_FUN_0040d1c0"
+    },
+    {
+      "addr": "004ba760",
+      "is_variadic": false,
+      "name": "unkaddr_004b9ab0.cpp_SPageResource_dtor_FUN_004ba760"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00600944",
+      "name": "g_SPageResourceBitmapVTable",
+      "type": "void*",
+      "value": "004baad0"
+    },
+    {
+      "addr": "00600a00",
+      "name": "g_PageResource_BitmapTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004bac06",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_SPageResourceTwanaCharacter_dtor_FUN_004babf0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.170731707317073,
+    "instruction_count": 41,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 6,
+      "CBRANCH": 2,
+      "COPY": 28,
+      "INT_ADD": 18,
+      "INT_AND": 20,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 18,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 9,
+      "INT_SUB": 16,
+      "LOAD": 9,
+      "POPCOUNT": 9,
+      "RETURN": 3,
+      "STORE": 17
+    },
+    "pcode_op_count": 171
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SPageResourceBitmap *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "pCVar1[-2].",
+      "severity": "mild",
+      "text": "unkaddr_004b9ab0_cpp_SPageResource_dtor_FUN_004ba760((SPageResource *)&pCVar1[-2].height)",
+      "type": "negative_offset"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "00600a04"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 0,
+        "vtable_addr": "00600944"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

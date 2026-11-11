@@ -37,7 +37,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_00537db0(CPackedBitmap 
   if (row_stride == 0) {
     row_stride = this_ptr->width;
   }
-  piVar1 = (int *)FUN_005c1268((this_ptr->height + 1) * 4);
+  piVar1 = (int *)operator_new_array((this_ptr->height + 1) * 4);
   this_ptr->row_offsets = piVar1;
   if (piVar1 == (int *)0x0) {
     _DAT_01d1d400 = "..\\cockpit\\pkbitmap.cpp";

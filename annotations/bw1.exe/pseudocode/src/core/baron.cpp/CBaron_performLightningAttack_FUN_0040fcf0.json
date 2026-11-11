@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 444,
+    "complexity_score": 406,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 149,
-    "suspect_count": 24,
+    "pseudocode_lines": 146,
+    "suspect_count": 21,
     "suspect_types": [
       "bit_int_float_compare",
       "pointer_cast",
@@ -17,12 +17,11 @@
       "self_copy_guard",
       "stack_alignment_array",
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 443
+    "total_lines": 440
   },
   "cross_references": [
     {
@@ -362,86 +361,62 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 12,
-      "match": "apuStackY_1044",
+      "match": "apCStackY_1044",
       "severity": "moderate",
-      "text": "byte *apuStackY_1044 [929];",
+      "text": "CMatrix3x4f *apCStackY_1044 [929];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 83,
+      "line": 79,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x54))(iVar1,local_1a0);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 107,
-      "match": "field_0xfd8",
-      "severity": "mild",
-      "text": "local_c = &this_ptr->field_0xfd8;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 108,
+      "line": 104,
       "match": "DAT_02c8af28",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_005b5080(&DAT_02c8af28,local_c + DAT_007c34cc * 0x30);",
+      "text": "core_xform_cpp_FUN_005b5080(&DAT_02c8af28,local_c + DAT_007c34cc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 108,
+      "line": 104,
       "match": "DAT_007c34cc",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_005b5080(&DAT_02c8af28,local_c + DAT_007c34cc * 0x30);",
+      "text": "core_xform_cpp_FUN_005b5080(&DAT_02c8af28,local_c + DAT_007c34cc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 119,
+      "line": 115,
       "match": "DAT_02c8af28",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_005b5080(&DAT_02c8af28,local_c + DAT_007c34d0 * 0x30);",
+      "text": "core_xform_cpp_FUN_005b5080(&DAT_02c8af28,local_c + DAT_007c34d0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 119,
+      "line": 115,
       "match": "DAT_007c34d0",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_005b5080(&DAT_02c8af28,local_c + DAT_007c34d0 * 0x30);",
+      "text": "core_xform_cpp_FUN_005b5080(&DAT_02c8af28,local_c + DAT_007c34d0);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 140,
+      "line": 147,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))(this_ptr,\"baron-attack.wav\");",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 140,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))(this_ptr,\"baron-attack.wav\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 150,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0x108))(iVar1,local_128);",
+      "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0x108))(iVar1,&local_128);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Pointer value `&CStack_b0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 116,
+      "line": 112,
       "match": "(int)&CStack_b0",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_b0 + (uint)bVar4 * -8 + 4) = afStack_88[(uint)bVar4 * -2 + 6];",
@@ -449,7 +424,7 @@
     },
     {
       "description": "Pointer value `&CStack_b0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 117,
+      "line": 113,
       "match": "(int)&CStack_b0",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_b0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
@@ -457,7 +432,7 @@
     },
     {
       "description": "Pointer value `&CStack_98` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 132,
+      "line": 128,
       "match": "(int)&CStack_98",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_98 + (uint)bVar4 * -8 + 4) = afStack_e8[(uint)bVar4 * -2 + 3];",
@@ -465,7 +440,7 @@
     },
     {
       "description": "Pointer value `&CStack_98` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 134,
+      "line": 130,
       "match": "(int)&CStack_98",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_98 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
@@ -473,7 +448,7 @@
     },
     {
       "description": "Raw hex address 0x1c57074 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 133,
+      "line": 129,
       "match": "0x1c57074",
       "severity": "moderate",
       "text": "this_ptr_00 = 0x01C57074;",
@@ -481,7 +456,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 92,
+      "line": 88,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_50.x = CStack_bc.x;",
@@ -489,7 +464,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_44 != &local_5c)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 68,
+      "line": 64,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_44 != &local_5c) {",
@@ -497,7 +472,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 116,
+      "line": 112,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_b0 + (uint)bVar4 * -8 + 4) = afStack_88[(uint)bVar4 * -2 + 6];",
@@ -505,7 +480,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 117,
+      "line": 113,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_b0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
@@ -513,7 +488,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 132,
+      "line": 128,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_98 + (uint)bVar4 * -8 + 4) = afStack_e8[(uint)bVar4 * -2 + 3];",
@@ -521,7 +496,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 134,
+      "line": 130,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_98 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
@@ -529,7 +504,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f490fdb is the IEEE 754 bit pattern of 0.785398f. Rewrite in a .keep as a plain float compare against 0.785398f.",
-      "line": 75,
+      "line": 71,
       "match": "0x3f490fdb < (int)local_40[0]))",
       "severity": "moderate",
       "text": "if (((float)local_40[0] < _DAT_005d34de) || (0x3f490fdb < (int)local_40[0])) {",

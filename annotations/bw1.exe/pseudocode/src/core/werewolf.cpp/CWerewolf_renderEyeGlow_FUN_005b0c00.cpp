@@ -68,9 +68,9 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(CWerewolf *t
   local_1c = 0x3E4CCCCD;
   local_48 = eye_position->z;
   local_4c = eye_position->y + 0x3E4CCCCD;
-  local_dc[2] = local_50 * *(float *)&(this_ptr->base).base.field_0x27b8;
-  local_dc[3] = local_4c * *(float *)&(this_ptr->base).base.field_0x27b8;
-  local_cc = local_48 * *(float *)&(this_ptr->base).base.field_0x27b8;
+  local_dc[2] = local_50 * (this_ptr->base).base.size_scale;
+  local_dc[3] = local_4c * (this_ptr->base).base.size_scale;
+  local_cc = local_48 * (this_ptr->base).base.size_scale;
   if (local_100 + 2 != &local_c8) {
     local_100[2] = local_dc[2];
     local_100[3] = local_dc[3];
@@ -85,7 +85,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(CWerewolf *t
   local_40[2] = local_50;
   local_40[3] = local_4c;
   local_30 = local_48;
-  engine_special_cpp_FUN_00580173((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&local_110);
+  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_110);
   local_18 = 0x3E4CCCCD;
   local_11c = -0x3E4CCCCD + eye_position->x;
   local_118[1] = eye_position->z;
@@ -94,9 +94,9 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(CWerewolf *t
   local_100[(uint)bVar1 * -2] = local_118[(uint)bVar1 * -2];
   local_100[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
        local_118[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1];
-  local_8c = local_104 * *(float *)&(this_ptr->base).base.field_0x27b8;
-  local_88[0] = local_100[0] * *(float *)&(this_ptr->base).base.field_0x27b8;
-  local_88[1] = local_100[1] * *(float *)&(this_ptr->base).base.field_0x27b8;
+  local_8c = local_104 * (this_ptr->base).base.size_scale;
+  local_88[0] = local_100[0] * (this_ptr->base).base.size_scale;
+  local_88[1] = local_100[1] * (this_ptr->base).base.size_scale;
   local_a4 = local_8c;
   local_b8[(uint)bVar1 * -2 + 6] = local_88[(uint)bVar1 * -2];
   local_b8[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 7] =
@@ -109,8 +109,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(CWerewolf *t
   local_2c.x = (int)ROUND(local_100[2] * _DAT_00607fb0);
   local_2c.y = (int)ROUND(local_100[3] * _DAT_00607fb0);
   local_2c.z = (int)ROUND(local_f0 * _DAT_00607fb0);
-  engine_special_cpp_FUN_00580173
-            ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&local_2c);
+  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_2c);
   local_a8 = eye_position->z;
   local_b8[2] = -0x3E4CCCCD + eye_position->x;
   local_b8[3] = eye_position->y + -0x3E4CCCCD;
@@ -118,9 +117,9 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(CWerewolf *t
   local_88[(uint)bVar1 * -2 + 3] = local_b8[(uint)bVar1 * -2 + 3];
   local_88[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 4] =
        local_b8[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 4];
-  local_68 = local_88[2] * *(float *)&(this_ptr->base).base.field_0x27b8;
-  local_64 = local_88[3] * *(float *)&(this_ptr->base).base.field_0x27b8;
-  local_60 = local_78 * *(float *)&(this_ptr->base).base.field_0x27b8;
+  local_68 = local_88[2] * (this_ptr->base).base.size_scale;
+  local_64 = local_88[3] * (this_ptr->base).base.size_scale;
+  local_60 = local_78 * (this_ptr->base).base.size_scale;
   local_5c = local_68;
   local_88[(uint)bVar1 * -2 + 0xc] = local_88[(uint)bVar1 * -2 + 9];
   local_88[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 0xd] =
@@ -133,8 +132,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(CWerewolf *t
   local_ec.x = (int)ROUND(local_100[2] * _DAT_00607fb0);
   local_ec.y = (int)ROUND(local_100[3] * _DAT_00607fb0);
   local_ec.z = (int)ROUND(local_f0 * _DAT_00607fb0);
-  engine_special_cpp_FUN_00580173
-            ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&local_ec);
+  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_ec);
   local_dc[1] = eye_position->z;
   local_e0 = 0x3E4CCCCD + eye_position->x;
   local_dc[0] = eye_position->y + -0x3E4CCCCD;
@@ -142,9 +140,9 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(CWerewolf *t
   local_b8[(uint)bVar1 * -2] = local_dc[(uint)bVar1 * -2];
   local_b8[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
        local_dc[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1];
-  local_74 = local_bc * *(float *)&(this_ptr->base).base.field_0x27b8;
-  local_70 = local_b8[0] * *(float *)&(this_ptr->base).base.field_0x27b8;
-  local_6c = local_b8[1] * *(float *)&(this_ptr->base).base.field_0x27b8;
+  local_74 = local_bc * (this_ptr->base).base.size_scale;
+  local_70 = local_b8[0] * (this_ptr->base).base.size_scale;
+  local_6c = local_b8[1] * (this_ptr->base).base.size_scale;
   local_44 = local_74;
   local_40[(uint)bVar1 * -2] = local_88[(uint)bVar1 * -2 + 6];
   local_40[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
@@ -157,33 +155,32 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005b0c00(CWerewolf *t
   local_98.x = (int)ROUND(local_100[2] * _DAT_00607fb0);
   local_98.y = (int)ROUND(local_100[3] * _DAT_00607fb0);
   local_98.z = (int)ROUND(local_f0 * _DAT_00607fb0);
-  engine_special_cpp_FUN_00580173
-            ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),&local_98);
+  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_98);
   this_ptr_00 = DAT_00612560;
-  *(uint *)(DAT_00612560->vertex_buffer_ptr + 0x20) = 0xffff;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x24) = 0;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x28) = 0;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x50) = 0xffff;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x54) = 0;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x58) = 0;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x80) = 0xffff;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x84) = 0;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x88) = 0;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xb0) = 0xffff;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xb4) = 0;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xb8) = 0;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x2c) = 0x4000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x5c) = 0x4000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x8c) = 0x4000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xbc) = 0x4000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x18) = 0x80000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x1c) = 0xf80000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x48) = 0xf80000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x4c) = 0xf80000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x78) = 0xf80000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x7c) = 0x80000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xa8) = 0x80000;
-  *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xac) = 0x80000;
+  DAT_00612560->vertex_buffer_ptr->r = 0xffff;
+  this_ptr_00->vertex_buffer_ptr->g = 0;
+  this_ptr_00->vertex_buffer_ptr->b = 0;
+  this_ptr_00->vertex_buffer_ptr[1].r = 0xffff;
+  this_ptr_00->vertex_buffer_ptr[1].g = 0;
+  this_ptr_00->vertex_buffer_ptr[1].b = 0;
+  this_ptr_00->vertex_buffer_ptr[2].r = 0xffff;
+  this_ptr_00->vertex_buffer_ptr[2].g = 0;
+  this_ptr_00->vertex_buffer_ptr[2].b = 0;
+  this_ptr_00->vertex_buffer_ptr[3].r = 0xffff;
+  this_ptr_00->vertex_buffer_ptr[3].g = 0;
+  this_ptr_00->vertex_buffer_ptr[3].b = 0;
+  this_ptr_00->vertex_buffer_ptr->a = 0x4000;
+  this_ptr_00->vertex_buffer_ptr[1].a = 0x4000;
+  this_ptr_00->vertex_buffer_ptr[2].a = 0x4000;
+  this_ptr_00->vertex_buffer_ptr[3].a = 0x4000;
+  this_ptr_00->vertex_buffer_ptr->u = 0x80000;
+  this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
+  this_ptr_00->vertex_buffer_ptr[1].u = 0xf80000;
+  this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;
+  this_ptr_00->vertex_buffer_ptr[2].u = 0xf80000;
+  this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
+  this_ptr_00->vertex_buffer_ptr[3].u = 0x80000;
+  this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
   SStack_144.base.count = 4;
   SStack_144.surface_normal.D.i = 0;
   SStack_144.surface_normal.C.i = 0;

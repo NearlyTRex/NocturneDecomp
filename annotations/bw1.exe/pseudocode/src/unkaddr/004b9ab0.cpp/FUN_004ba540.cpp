@@ -16,7 +16,7 @@ uint unkaddr_004b9ab0_cpp_FUN_004ba540(int param_1,int param_2)
       (param_2 < 0x000001AE + CAlphaBitmap_01cc7c84.height)))) {
     return 0xffffffff;
   }
-  if (((_DAT_01cc7b90 < g_STextViewInstance._56_4_ + -2) && (0x000001F4 <= param_1)) &&
+  if (((_DAT_01cc7b90 < g_STextViewInstance.page_count + -2) && (0x000001F4 <= param_1)) &&
      ((0x000001AE <= param_2 &&
       ((param_1 < 0x000001F4 + CAlphaBitmap_01cc7c98.width &&
        (param_2 < CAlphaBitmap_01cc7c98.height + 0x000001AE)))))) {

@@ -40,7 +40,8 @@ float __cdecl core_djien_cpp_CDjien_customRayIntersect_FUN_004610b0(CDjien *this
   float fStack_18;
   
   bVar8 = 0;
-  (**(code **)(*(int *)&this_ptr->field_0x154 + 0x1c))(this_ptr,ray_origin,ray_direction,0);
+  (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
+            ((CDemonActor *)this_ptr,(CBoundingBox3D *)ray_origin);
   puVar6 = auStack_8c;
   puVar7 = auStack_74;
   for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {

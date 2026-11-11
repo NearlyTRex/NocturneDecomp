@@ -24,18 +24,18 @@ void core_set_cpp_FUN_005516c0(CDemonSet *param_1)
   CVector3f CStack_3c;
   uint local_30 [6];
   int local_18;
-  int local_14;
+  char *local_14;
   
   bVar6 = 0;
   _DAT_02026358 = 0;
-  if (((*(int *)&g_CGamePtr->field_0x244 == 0) &&
+  if (((g_CGamePtr->letterbox_mode == 0) &&
       (iVar1 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4), iVar1 != 0)) &&
      (*(int *)(iVar1 + 0x1ff60) != 0)) {
     _DAT_02026358 = *(int *)(iVar1 + 0x1ff68);
   }
   local_18 = param_1->sorted_render_actor_count + -1;
   if (-1 < local_18) {
-    local_14 = (int)param_1->cameras + param_1->sorted_render_actor_count * 4 + -8;
+    local_14 = param_1->cameras[0].name + param_1->sorted_render_actor_count * 4 + -8;
     do {
       iVar1 = *(int *)(local_14 + 0x15f700);
       if (*(int *)(iVar1 + 0xfc) == 0) {

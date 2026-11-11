@@ -11,17 +11,19 @@
 CMatrix3x4f * __stack2_esi core_demnfolk_cpp_CDemnfolk_getCarryObjToBodyXForm_FUN_0045b120(CDemnfolk *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
+  CDemonActor *this_ptr_00;
   uint uVar1;
   int iVar2;
-  int iVar3;
-  uint *puVar4;
-  float *pfVar5;
+  uint *puVar3;
+  float *pfVar4;
+  CMatrix3x4f *pCVar5;
   float *pfVar6;
   uint *puVar7;
   CMatrix3x4f *pCVar8;
   byte bVar9;
   float afStackY_1100 [955];
-  CVector3f *this_ptr_00;
+  CBoundingBox3D *in_stack_fffffdf8;
+  CVector3f *this_ptr_01;
   float fStack_1cc;
   float fStack_1bc;
   float fStack_1ac;
@@ -46,7 +48,10 @@ CMatrix3x4f * __stack2_esi core_demnfolk_cpp_CDemnfolk_getCarryObjToBodyXForm_FU
   float fStack_100;
   float afStack_fc [4];
   float fStack_ec;
-  float afStack_e8 [4];
+  uint uStack_e8;
+  uint uStack_e4;
+  uint uStack_e0;
+  float fStack_dc;
   float fStack_d8;
   uint uStack_d4;
   float fStack_d0;
@@ -77,16 +82,16 @@ CMatrix3x4f * __stack2_esi core_demnfolk_cpp_CDemnfolk_getCarryObjToBodyXForm_FU
   int iStack_10;
   
   bVar9 = 0;
-  iVar3 = *(int *)(&this_ptr->field_0x25b0 + hand_index * 0x78);
-  iStack_10 = *(int *)(&this_ptr->field_0x25a8 + hand_index * 0x78);
-  uVar1 = *(uint *)&this_ptr->field_0xc27c;
+  this_ptr_00 = (this_ptr->base).base.carry_hands[hand_index].carry_actor;
+  iStack_10 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
+  uVar1 = this_ptr->object_shape_class;
   if ((uVar1 == 0) || ((1 < uVar1 && (uVar1 != 3)))) {
-    (**(code **)(*(int *)(iVar3 + 0x154) + 0x1c))(iVar3);
-    pfVar5 = afStack_130;
+    (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,in_stack_fffffdf8);
+    pfVar4 = afStack_130;
     pfVar6 = &fStack_178;
-    for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *pfVar6 = *pfVar5;
-      pfVar5 = pfVar5 + (uint)bVar9 * -2 + 1;
+    for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+      *pfVar6 = *pfVar4;
+      pfVar4 = pfVar4 + (uint)bVar9 * -2 + 1;
       pfVar6 = pfVar6 + (uint)bVar9 * -2 + 1;
     }
     afStack_cc[5] = fStack_178 + fStack_16c;
@@ -104,20 +109,21 @@ CMatrix3x4f * __stack2_esi core_demnfolk_cpp_CDemnfolk_getCarryObjToBodyXForm_FU
     afStack_3c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
          afStack_84[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
     if (afStack_fc + 8 != &fStack_40) {
-      afStack_e8[3] = fStack_40;
+      fStack_dc = fStack_40;
       fStack_d8 = afStack_3c[0];
       uStack_d4 = afStack_3c[1];
     }
-    pfVar5 = (float *)(&this_ptr->field_0x25b4 + hand_index * 0x78);
+    pCVar5 = &(this_ptr->base).base.carry_hands[hand_index].initial_carry_transform;
     pCVar8 = &CStack_1a8;
-    for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      pCVar8->m[0].w = *pfVar5;
-      pfVar5 = pfVar5 + (uint)bVar9 * -2 + 1;
+    for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+      pCVar8->m[0].w = pCVar5->m[0].w;
+      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);
       pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar9 * -2 + 1) * 4);
     }
   }
   else {
-    iVar2 = _strnicmp(&this_ptr->field_0x24a8,&DAT_005d80b3,3);
+    iVar2 = _strnicmp
+                      ((this_ptr->base).base.model.model_name,&DAT_005d80b3,3);
     if (iVar2 == 0) {
       CStack_ac.z = -0.986001;
       CStack_ac.y = 0.950253;
@@ -129,47 +135,47 @@ CMatrix3x4f * __stack2_esi core_demnfolk_cpp_CDemnfolk_getCarryObjToBodyXForm_FU
       CStack_ac.x = 0.155;
     }
     core_xform_cpp_FUN_005b5760(&CStack_1a8,(CVector3f *)&DAT_02c8af28,&CStack_ac);
-    (**(code **)(*(int *)(iVar3 + 0x154) + 0x1c))(iVar3);
-    pfVar5 = afStack_148;
+    (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,in_stack_fffffdf8);
+    pfVar4 = afStack_148;
     pfVar6 = &fStack_160;
-    for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *pfVar6 = *pfVar5;
-      pfVar5 = pfVar5 + (uint)bVar9 * -2 + 1;
+    for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+      *pfVar6 = *pfVar4;
+      pfVar4 = pfVar4 + (uint)bVar9 * -2 + 1;
       pfVar6 = pfVar6 + (uint)bVar9 * -2 + 1;
     }
     core_actor_cpp_CVector3f_ctor_FUN_0040cfe0(&CStack_4c);
-    this_ptr_00 = &CStack_94;
+    this_ptr_01 = &CStack_94;
     CStack_4c.x = fStack_160 + fStack_154;
     CStack_4c.y = fStack_15c + fStack_150;
     CStack_4c.z = fStack_158 + fStack_14c;
     fStack_118 = fStack_160 + fStack_154;
     afStack_114[(uint)bVar9 * -2] = *(float *)((int)&CStack_4c + (uint)bVar9 * -8 + 4);
     afStack_114[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-         *(float *)((int)&CStack_4c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-    core_actor_cpp_CVector3f_ctor_FUN_0040cfe0(this_ptr_00);
+         *(float *)((int)&CStack_4c + ((uint)bVar9 * -2 + (uint)bVar9 * -2) * 4 + 8);
+    core_actor_cpp_CVector3f_ctor_FUN_0040cfe0(this_ptr_01);
     CStack_94.x = fStack_118 * _DAT_005d80b7;
     CStack_94.y = afStack_114[0] * _DAT_005d80b7;
     CStack_94.z = afStack_114[1] * _DAT_005d80b7;
     afStack_fc[2] = fStack_118 * _DAT_005d80b7;
     afStack_fc[(uint)bVar9 * -2 + 3] = *(float *)((int)&CStack_94 + (uint)bVar9 * -8 + 4);
     afStack_fc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
-         *(float *)((int)&CStack_94 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
+         *(float *)((int)&CStack_94 + ((uint)bVar9 * -2 + (uint)bVar9 * -2) * 4 + 8);
     fStack_ec = fStack_158 + (float)_DAT_005d80bb;
     afStack_3c[2] = afStack_fc[2];
     afStack_3c[(uint)bVar9 * -2 + 3] = afStack_fc[(uint)bVar9 * -2 + 3];
     afStack_3c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
          afStack_fc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
     if (afStack_fc + 8 != afStack_3c + 2) {
-      afStack_e8[3] = afStack_3c[2];
+      fStack_dc = afStack_3c[2];
       fStack_d8 = afStack_3c[3];
       uStack_d4 = uStack_2c;
     }
   }
-  if (iStack_10 == *(int *)&this_ptr->field_0xc300) {
-    afStack_e8[0] = -0.4;
-    afStack_e8[1] = 0.0;
-    afStack_e8[2] = 0.0;
-    core_xform_cpp_FUN_005b5080(afStack_fc + 5,&this_ptr->field_0xfd8 + iStack_10 * 0x30);
+  if (iStack_10 == this_ptr->bone_indices[1]) {
+    uStack_e8 = 0xbecccccd;
+    uStack_e4 = 0;
+    uStack_e0 = 0;
+    core_xform_cpp_FUN_005b5080();
     fStack_70 = fStack_28;
     afStack_84[(uint)bVar9 * -2 + 6] = afStack_3c[(uint)bVar9 * -2 + 6];
     afStack_84[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
@@ -184,7 +190,7 @@ CMatrix3x4f * __stack2_esi core_demnfolk_cpp_CDemnfolk_getCarryObjToBodyXForm_FU
     afStack_cc[2] = 0.4;
     afStack_cc[3] = 0.0;
     afStack_cc[4] = 0.0;
-    core_xform_cpp_FUN_005b5080(afStack_cc + 2,&this_ptr->field_0xfd8 + iStack_10 * 0x30);
+    core_xform_cpp_FUN_005b5080();
     fStack_a0 = fStack_d0;
     afStack_9c[(uint)bVar9 * -2] = afStack_cc[(uint)bVar9 * -2];
     afStack_9c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
@@ -195,16 +201,15 @@ CMatrix3x4f * __stack2_esi core_demnfolk_cpp_CDemnfolk_getCarryObjToBodyXForm_FU
       fStack_104 = afStack_9c[1];
     }
   }
-  core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
-            (&CStack_1a8,&this_ptr->field_0xfd8 + iStack_10 * 0x30);
-  puVar4 = (uint *)&stack0xfffffdf8;
+  core_xform_cpp_multiplyMatrix3x4_FUN_005b5200();
+  puVar3 = (uint *)&stack0xfffffdf8;
   puVar7 = (uint *)&stack0xfffffe28;
-  for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar7 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar9 * -2 + 1;
+  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar7 = *puVar3;
+    puVar3 = puVar3 + (uint)bVar9 * -2 + 1;
     puVar7 = puVar7 + (uint)bVar9 * -2 + 1;
   }
-  core_xform_cpp_FUN_005b5080(afStack_fc + 8,&stack0xfffffe28);
+  core_xform_cpp_FUN_005b5080();
   fStack_58 = fStack_1c;
   afStack_84[(uint)bVar9 * -2 + 0xc] = afStack_3c[(uint)bVar9 * -2 + 9];
   afStack_84[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0xd] =
@@ -219,12 +224,12 @@ CMatrix3x4f * __stack2_esi core_demnfolk_cpp_CDemnfolk_getCarryObjToBodyXForm_FU
   fStack_1cc = fStack_1cc + fStack_64;
   fStack_1bc = fStack_1bc + fStack_60;
   fStack_1ac = fStack_1ac + fStack_5c;
-  pfVar5 = (float *)&stack0xfffffe28;
-  pCVar8 = out_matrix;
-  for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pCVar8->m[0].w = *pfVar5;
-    pfVar5 = pfVar5 + (uint)bVar9 * -2 + 1;
-    pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar9 * -2 + 1) * 4);
+  pfVar4 = (float *)&stack0xfffffe28;
+  pCVar5 = out_matrix;
+  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+    pCVar5->m[0].w = *pfVar4;
+    pfVar4 = pfVar4 + (uint)bVar9 * -2 + 1;
+    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);
   }
   return out_matrix;
 }

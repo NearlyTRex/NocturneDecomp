@@ -9,6 +9,6 @@
 void __cdecl core_charactr_cpp_CCharacter_setLookAtTarget_FUN_00433c50(CCharacter *this_ptr,CDemonActor *target)
 
 {
-  *(CDemonActor **)&this_ptr->field_0x2764 = target;
+  this_ptr->look_at_target = (CCharacter *)target;
   return;
 }

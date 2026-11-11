@@ -21,7 +21,7 @@
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 DAT_0061f2e0
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 g_CGameInstance.field576_0x27c
+;   undefined4 g_CGameInstance.act_completion_state
 ;   undefined4 DAT_01d06aa0
 ;   undefined4 DAT_01d06ab4
 ;   undefined4 DAT_01d1d400
@@ -29,7 +29,7 @@
 ;   undefined4 DAT_01d33b20
 ;
 ; Called Functions:
-;   core_fldnotes.cpp_FUN_004bdaa0
+;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004bdaa0
 ;   core_game.cpp_CGame_displayActStats_FUN_004d8700
 ;   core_game.cpp_CGame_finishAct_FUN_004d8a90
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0
@@ -123,13 +123,13 @@ section .text
     ADD ESP,0xc                         ; 0051bb97
     MOV EAX,[0x0061d95c]                ; 0051bb9a | g_CGamePtr
         ;   Label: LAB_0051bb9a
-    CMP dword ptr [EAX + 0x27c],0x0     ; 0051bb9f | g_CGameInstance.field576_0x27c
+    CMP dword ptr [EAX + 0x27c],0x0     ; 0051bb9f | g_CGameInstance.act_completion_state
     JNZ 0x0051bc6d                      ; 0051bba6
         ;   XREF to: 0051bc6d (CONDITIONAL_JUMP)  ; LAB_0051bc6d
     MOV ECX,dword ptr [0x0061d418]      ; 0051bbac | g_CFieldNotesPtr
     PUSH ECX                            ; 0051bbb2
-    CALL core_fldnotes.cpp_FUN_004bdaa0 ; 0051bbb3
-        ;   XREF to: 004bdaa0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004bdaa0()
+    CALL core_fldnotes.cpp_CFieldNotes_clear_FUN_004bdaa0 ; 0051bbb3
+        ;   XREF to: 004bdaa0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_clear_FUN_004bdaa0(CFieldNotes * this_ptr)
     ADD ESP,0x4                         ; 0051bbb8
     POP EBP                             ; 0051bbbb
     POP EDI                             ; 0051bbbc
@@ -210,8 +210,8 @@ section .text
     ADD ESP,0x4                         ; 0051bc73
     MOV ECX,dword ptr [0x0061d418]      ; 0051bc76 | g_CFieldNotesPtr
     PUSH ECX                            ; 0051bc7c
-    CALL core_fldnotes.cpp_FUN_004bdaa0 ; 0051bc7d
-        ;   XREF to: 004bdaa0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004bdaa0()
+    CALL core_fldnotes.cpp_CFieldNotes_clear_FUN_004bdaa0 ; 0051bc7d
+        ;   XREF to: 004bdaa0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_clear_FUN_004bdaa0(CFieldNotes * this_ptr)
     ADD ESP,0x4                         ; 0051bc82
     POP EBP                             ; 0051bc85
     POP EDI                             ; 0051bc86

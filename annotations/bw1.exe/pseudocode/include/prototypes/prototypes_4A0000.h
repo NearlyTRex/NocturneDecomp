@@ -16,8 +16,10 @@
 #include "types/classes/CFilmProjector.h"
 #include "types/classes/CFilmReel.h"
 #include "types/classes/CFireball.h"
+#include "types/classes/CFirefly.h"
 #include "types/classes/CGlassParticle.h"
 #include "types/classes/CKeyFramedModel.h"
+#include "types/classes/CLeaf.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CMuzzleFlash.h"
 #include "types/classes/CParticle.h"
@@ -73,7 +75,7 @@ void __cdecl core_event_cpp_CEventList_reset_FUN_004a19f0(CEventList *this_ptr);
 void __cdecl core_event_cpp_CEventList_process_FUN_004a1a40(CEventList *this_ptr);
 int __cdecl core_event_cpp_CEventList_executeCommands_FUN_004a1b70(CEventList *this_ptr,char *commands);
 int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_004a1b90(CEventList *this_ptr,char *command_string);
-int core_event_cpp_FUN_004a1d00(CEventList *param_1,CEventList *param_2);
+int core_event_cpp_FUN_004a1d00(CEventList *param_1,char *param_2);
 int __cdecl core_event_cpp_CEventList_resolveVariable_FUN_004a6ba0(CEventList *this_ptr,char *identifier);
 int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList *this_ptr,char *condition_expression);
 char * __cdecl core_event_cpp_CEventList_validateCondition_FUN_004a6c90(CEventList *this_ptr,char *expression);
@@ -82,9 +84,9 @@ int __cdecl core_event_cpp_CEventList_evaluateExpression_FUN_004a6d10(CEventList
 void __cdecl core_event_cpp_CEventList_render_FUN_004a6d80(CEventList *this_ptr);
 int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this_ptr,char *expression,int *parse_position);
 int __cdecl core_event_cpp_CEventList_evaluateLogicalExpr_FUN_004a97b0(CEventList *this_ptr,char *expression,int *parse_position);
-void core_event_cpp_FUN_004a9870(CEventList *param_1,CEventList *param_2,int param_3);
+void core_event_cpp_FUN_004a9870(CEventList *param_1,char *param_2,int param_3);
 void core_event_cpp_FUN_004a9a00(int param_1);
-void core_event_cpp_FUN_004a9a60(CEventList *param_1,CEventList *param_2,int param_3);
+void core_event_cpp_FUN_004a9a60(CEventList *param_1,char *param_2,int param_3);
 void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004a9bf0(CEventList *this_ptr,char *name,float duration);
 void __cdecl core_event_cpp_CEventList_setCounter_FUN_004a9d70(CEventList *this_ptr,char *name,int value);
 int __cdecl core_event_cpp_CEventList_getCounterValue_FUN_004a9e80(CEventList *this_ptr,char *str);
@@ -168,9 +170,9 @@ void __cdecl core_fire_cpp_CSpark_process_FUN_004acf50(CSpark *this_ptr);
 void __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004ad010(CSpark *this_ptr);
 void core_fire_cpp_FUN_004ad140(CVector3f *param_1);
 undefined4 core_fire_cpp_FUN_004ad850(void);
-void core_fire_cpp_FUN_004ad860(int param_1);
-void core_fire_cpp_FUN_004ad9c0(void);
-void core_fire_cpp_FUN_004adaf0(CVector3f *param_1);
+void __cdecl core_fire_cpp_CFirefly_process_FUN_004ad860(CFirefly *this_ptr);
+void __cdecl core_fire_cpp_CFirefly_setupRenderState_FUN_004ad9c0(CFirefly *this_ptr);
+void __cdecl core_fire_cpp_CFirefly_render_FUN_004adaf0(CFirefly *this_ptr);
 void __cdecl core_fire_cpp_loadFireBallAssets_FUN_004ae2a0(void);
 void __cdecl core_fire_cpp_CFireball_process_FUN_004ae300(CFireball *this_ptr);
 void __cdecl core_fire_cpp_CFireball_setupRenderState_FUN_004ae550(CFireball *this_ptr);
@@ -180,16 +182,16 @@ void __cdecl core_fire_cpp_CRock_setup_FUN_004aef90(CRock *this_ptr,CVector3f *p
 void __cdecl core_fire_cpp_loadRockAssets_FUN_004aefb0(void);
 void core_fire_cpp_FUN_004aefc0(int param_1);
 void core_fire_cpp_FUN_004af040(CVector3f *param_1);
-void core_fire_cpp_FUN_004af0f0(CParticle *param_1,CVector3f *param_2,CVector3f *param_3,undefined4 param_4,undefined4 param_5);
-void core_fire_cpp_FUN_004af120(void);
-void core_fire_cpp_FUN_004af170(int param_1);
-void core_fire_cpp_FUN_004af270(CVector3f *param_1);
-undefined4 core_fire_cpp_FUN_004af330(void);
+void __cdecl core_fire_cpp_CLeaf_init_FUN_004af0f0(CLeaf *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4,float param_5);
+void core_fire_cpp_loadLeafAssets_FUN_004af120(void);
+void __cdecl core_fire_cpp_CLeaf_process_FUN_004af170(CLeaf *this_ptr);
+void __cdecl core_fire_cpp_CLeaf_render_FUN_004af270(CLeaf *this_ptr);
+undefined4 __cdecl core_fire_cpp_CLeaf_onCollision_FUN_004af330(CLeaf *this_ptr);
 void __cdecl core_fire_cpp_FUN_004af340(CMuzzleFlash *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix);
 void __cdecl core_fire_cpp_CMuzzleFlash_process_FUN_004af400(CMuzzleFlash *this_ptr);
 void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_004af430(CMuzzleFlash *this_ptr);
 void __cdecl core_fire_cpp_loadGunFlashAssets_FUN_004af5e0(void);
-void core_fire_cpp_FUN_004af600(CParticle *param_1,float *param_2,undefined4 *param_3,undefined4 *param_4,undefined4 *param_5,undefined4 param_6);
+void core_fire_cpp_FUN_004af600(CParticle *param_1,float *param_2,int *param_3,float *param_4,float *param_5,float param_6);
 void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004af9f0(CGlassParticle *this_ptr);
 void __cdecl core_fire_cpp_CGlassParticle_process_FUN_004afbf0(CGlassParticle *this_ptr);
 undefined4 core_fire_cpp_FUN_004afc60(void);

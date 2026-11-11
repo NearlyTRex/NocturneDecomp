@@ -69,7 +69,8 @@ LAB_00437513:
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  iVar2 = support_trstream_cpp_FUN_005a0fd0(&CStack_38,0x5d60c3,acStack_d8,1);
+  iVar2 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_005a0fd0
+                    (&CStack_38,0x5d60c3,acStack_d8,1);
   if (iVar2 == 0) {
     puVar5 = (uchar *)0x1c4ecf8;
     for (iVar2 = 0xc0; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -84,14 +85,15 @@ LAB_00437513:
     }
   }
   else {
-    iVar2 = unkaddr_0059f520_cpp_FUN_005a0c10(&CStack_38,output_buffer,0x300);
+    iVar2 = unkaddr_0059f520_cpp_CInStreamFile_read_FUN_005a0c10
+                      (&CStack_38,(uint *)output_buffer,0x300);
     if (iVar2 != 0x300) {
       _sprintf(acStack_88,"Error reading %s.");
       _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
       _DAT_01d1d404 = 0x119;
       core_main_c_FUN_005030e0(acStack_88);
     }
-    unkaddr_0059f520_cpp_FUN_005a0dc0(&CStack_38);
+    unkaddr_0059f520_cpp_CInStreamFile_close_FUN_005a0dc0(&CStack_38);
   }
   unkclass_instream_cpp_CInStreamFile_dtor_FUN_005a0a50(&CStack_38,0);
   return;

@@ -2,20 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 264,
+    "complexity_score": 248,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
-    "suspect_count": 20,
+    "pseudocode_lines": 43,
+    "suspect_count": 18,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "unnamed_param",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 154
+    "total_lines": 153
   },
   "cross_references": [
     {
@@ -36,7 +37,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_hero.cpp_FUN_004ec090",
-    "signature": "bool core_hero_cpp_FUN_004ec090(CDemonActor *param_1,char *param_2)"
+    "signature": "bool core_hero_cpp_FUN_004ec090(CHero *param_1,char *param_2)"
   },
   "function_calls": [
     {
@@ -190,8 +191,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -199,50 +208,42 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "bool core_hero_cpp_FUN_004ec090(CDemonActor *param_1,char *param_2)",
+      "text": "bool core_hero_cpp_FUN_004ec090(CHero *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 5,
       "match": "param_2",
       "severity": "mild",
-      "text": "bool core_hero_cpp_FUN_004ec090(CDemonActor *param_1,char *param_2)",
+      "text": "bool core_hero_cpp_FUN_004ec090(CHero *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "line": 19,
+      "match": "(CHero **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "this_ptr = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_1c);",
+      "text": "this_ptr = *(CHero **)((int)g_CDemonSetPtr->actors + local_1c);",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((((ABS((this_ptr->location).position.x - (param_1->location).position.x) <=",
+      "text": "if ((((ABS((this_ptr->base).base.location.position.x - (param_1->base).base.location.position.x)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "(ABS((this_ptr->location).position.y - (param_1->location).position.y) <=",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(ABS((this_ptr->location).position.z - (param_1->location).position.z) <=",
+      "text": "(ABS((this_ptr->base).base.location.position.y - (param_1->base).base.location.position.y)",
       "type": "unnamed_param"
     },
     {
@@ -250,39 +251,39 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "(float)_DAT_005e492d)) && (this_ptr != param_1)) {",
+      "text": "(ABS((this_ptr->base).base.location.position.z - (param_1->base).base.location.position.z)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = (*((this_ptr->vtable)._ub)->canPickup)(this_ptr,param_1);",
+      "text": "<= (float)_DAT_005e492d)) && (this_ptr != param_1)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 29,
-      "match": "param_2",
+      "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = core_actor_cpp_isOfClass_FUN_0040c550(this_ptr,param_2);",
+      "text": "((CDemonActor *)this_ptr,(CDemonActor *)param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 31,
-      "match": "param_1",
+      "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = (*(((param_1->vtable)._uh)->_uh).canReachPickup)",
+      "text": "iVar3 = core_actor_cpp_isOfClass_FUN_0040c550((CDemonActor *)this_ptr,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CHero *)param_1,this_ptr,iVar2,&local_20);",
+      "text": "iVar2 = (*(((param_1->base).base.vtable._uh)->_uh).canReachPickup)",
       "type": "unnamed_param"
     },
     {
@@ -290,15 +291,7 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x17c].create_event[0x48] = '\\x04';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x17c].create_event[0x49] = '\\0';",
+      "text": "(param_1,(CDemonActor *)this_ptr,iVar2,&local_20);",
       "type": "unnamed_param"
     },
     {
@@ -306,7 +299,7 @@
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x17c].create_event[0x4a] = '\\0';",
+      "text": "param_1->hero_action = 4;",
       "type": "unnamed_param"
     },
     {
@@ -314,7 +307,7 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x17c].create_event[0x4b] = '\\0';",
+      "text": "param_1->hero_action_actor = (CDemonActor *)this_ptr;",
       "type": "unnamed_param"
     },
     {
@@ -322,23 +315,15 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(CDemonActor **)(param_1[0x17c].create_event + 0x4c) = this_ptr;",
+      "text": "param_1->hero_action_target = (CDemonActor *)this_ptr;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(CDemonActor **)(param_1[0x17c].create_event + 0x50) = this_ptr;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return *(int *)(param_1[0x17c].create_event + 0x48) == 4;",
+      "text": "return param_1->hero_action == 4;",
       "type": "unnamed_param"
     },
     {

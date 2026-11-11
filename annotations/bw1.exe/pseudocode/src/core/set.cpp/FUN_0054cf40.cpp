@@ -16,7 +16,7 @@ CGame * core_set_cpp_FUN_0054cf40(void)
   
   _DAT_02026358 = 0;
   pCVar2 = g_CGamePtr;
-  if (*(int *)&g_CGamePtr->field_0x244 == 0) {
+  if (g_CGamePtr->letterbox_mode == 0) {
     pCVar1 = *(CGame **)(((CGame *)(_DAT_01d06ab4 * 4))[0x2a28].chapter_reload_filename + 8);
     pCVar2 = (CGame *)(_DAT_01d06ab4 * 4);
     if ((pCVar1 != (CGame *)0x0) &&

@@ -16,14 +16,14 @@ void __cdecl core_ground_cpp_CGround_init_FUN_004e7240(CGround *this_ptr)
   CTextureList *pCVar2;
   
   core_ground_cpp_CGround_free_FUN_004e72e0(this_ptr);
-  pSVar1 = FUN_005c08d0(this_ptr->width * this_ptr->height * 4);
+  pSVar1 = (SGroundCell *)malloc(this_ptr->width * this_ptr->height * 4);
   this_ptr->terrain_data = pSVar1;
   if (pSVar1 == (SGroundCell *)0x0) {
     _DAT_01d1d400 = "..\\core\\ground.cpp";
     _DAT_01d1d404 = 0xd5;
     core_main_c_FUN_005030e0("CGround::init - Out of memory");
   }
-  this_ptr_00 = (CTextureList *)debugAllocTracked1(0x6d64);
+  this_ptr_00 = (CTextureList *)operator_new(0x6d64);
   pCVar2 = (CTextureList *)0x0;
   if (this_ptr_00 != (CTextureList *)0x0) {
     pCVar2 = core_texlist_cpp_CTextureList_ctor_FUN_005960b0(this_ptr_00);

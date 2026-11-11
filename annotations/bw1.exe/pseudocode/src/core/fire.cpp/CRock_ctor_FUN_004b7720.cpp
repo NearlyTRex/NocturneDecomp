@@ -11,7 +11,7 @@ CRock * __cdecl core_fire_cpp_CRock_ctor_FUN_004b7720(CRock *this_ptr)
 {
   CRock *pCVar1;
   
-  pCVar1 = (CRock *)core_particle_cpp_CParticle_ctor_FUN_00532130((CParticle *)this_ptr);
-  *(byte ***)&pCVar1->field_0x3c = &g_CRockVTable;
+  pCVar1 = (CRock *)core_particle_cpp_CParticle_ctor_FUN_00532130(&this_ptr->base);
+  (pCVar1->base).vtable = (CParticle_vtable *)&g_CRockVTable;
   return pCVar1;
 }

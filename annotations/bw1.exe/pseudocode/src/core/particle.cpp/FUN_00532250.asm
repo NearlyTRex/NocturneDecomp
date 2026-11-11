@@ -52,11 +52,11 @@
 ;
 ; XREF[7]:
 ;   core_fire.cpp_CFireball_process_FUN_004ae300 at 004ae321
+;   core_fire.cpp_CFirefly_process_FUN_004ad860 at 004ad8bd
 ;   core_fire.cpp_CGlassParticle_process_FUN_004afbf0 at 004afc21
+;   core_fire.cpp_CLeaf_process_FUN_004af170 at 004af17f
 ;   core_fire.cpp_CSpark_process_FUN_004acf50 at 004acfa8
-;   core_fire.cpp_FUN_004ad860 at 004ad8bd
 ;   core_fire.cpp_FUN_004aefc0 at 004aefce
-;   core_fire.cpp_FUN_004af170 at 004af17f
 ;   core_fire.cpp_FUN_004b4190 at 004b41ac
 ;
 ; Referenced Globals:

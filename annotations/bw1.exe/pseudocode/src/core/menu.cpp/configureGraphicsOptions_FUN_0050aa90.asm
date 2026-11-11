@@ -39,7 +39,7 @@
 ;   core_game.cpp_FUN_004cbf20
 ;   core_menu.cpp_renderMenuAndGetChoice_FUN_00509e20
 ;   core_menu.cpp_showCalibrationTest_FUN_0050a9c0
-;   core_moon.cpp_FUN_00521e40
+;   core_moon.cpp_CMoon_render_FUN_00521e40
 ;   core_set.cpp_CDemonSet_setFlatColor_FUN_00555770
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
@@ -125,8 +125,8 @@ section .text
     PUSH 0x1d1e380                      ; 0050ab77
     MOV ESI,0x5e7c5a                    ; 0050ab7c | = "tridx7.dll"
     MOV dword ptr [EAX + 0x15ae94],0xdac ; 0050ab81 | g_CDemonSetInstance.ambient_base_quick
-    CALL core_moon.cpp_FUN_00521e40     ; 0050ab8b
-        ;   XREF to: 00521e40 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_00521e40()
+    CALL core_moon.cpp_CMoon_render_FUN_00521e40 ; 0050ab8b
+        ;   XREF to: 00521e40 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_render_FUN_00521e40(CMoon * this_ptr)
     MOV EAX,[0x00622c18]                ; 0050ab90 | g_CDemonSetPtr
     ADD ESP,0x4                         ; 0050ab95
     MOV EDI,0x6257d0                    ; 0050ab98 | DAT_006257d0
@@ -231,7 +231,7 @@ section .text
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x8                         ; 0050ad06
     MOV EAX,[0x0061d95c]                ; 0050ad09 | g_CGamePtr
-    MOV dword ptr [EAX + 0xc],0x0       ; 0050ad0e | g_CGameInstance.field3_0xc
+    MOV dword ptr [EAX + 0xc],0x0       ; 0050ad0e | g_CGameInstance.halo_mode
     TEST EBP,EBP                        ; 0050ad15
     JZ 0x0050af95                       ; 0050ad17
         ;   XREF to: 0050af95 (CONDITIONAL_JUMP)  ; LAB_0050af95
@@ -339,7 +339,7 @@ section .text
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0050ae1e
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,[0x0061d95c]                ; 0050ae23 | g_CGamePtr
-    MOV ECX,dword ptr [EAX + 0x10]      ; 0050ae28 | g_CGameInstance.field7_0x10
+    MOV ECX,dword ptr [EAX + 0x10]      ; 0050ae28 | g_CGameInstance.subtitle_mode
     ADD ESP,0x8                         ; 0050ae2b
     TEST ECX,ECX                        ; 0050ae2e
     JZ 0x0050b0e2                       ; 0050ae30
@@ -368,7 +368,7 @@ section .text
     POP EDI                             ; 0050ae63
         ;   Label: LAB_0050ae63
     MOV EAX,[0x0061d95c]                ; 0050ae64 | g_CGamePtr
-    MOV ESI,dword ptr [EAX + 0x20]      ; 0050ae69 | g_CGameInstance.field23_0x20
+    MOV ESI,dword ptr [EAX + 0x20]      ; 0050ae69 | g_CGameInstance.quimby_flag
     MOV EBX,0x7                         ; 0050ae6c
     TEST ESI,ESI                        ; 0050ae71
     JZ 0x0050ae7a                       ; 0050ae73
@@ -859,10 +859,10 @@ section .text
         ;   XREF to: 0050aef2 (UNCONDITIONAL_JUMP)  ; caseD_7
     MOV EAX,[0x0061d95c]                ; 0050b3f3 | g_CGamePtr
         ;   Label: caseD_6
-    CMP dword ptr [EAX + 0x10],0x0      ; 0050b3f8 | g_CGameInstance.field7_0x10
+    CMP dword ptr [EAX + 0x10],0x0      ; 0050b3f8 | g_CGameInstance.subtitle_mode
     SETZ DL                             ; 0050b3fc
     AND EDX,0xff                        ; 0050b3ff
-    MOV dword ptr [EAX + 0x10],EDX      ; 0050b405 | g_CGameInstance.field7_0x10
+    MOV dword ptr [EAX + 0x10],EDX      ; 0050b405 | g_CGameInstance.subtitle_mode
     JMP 0x0050aef2                      ; 0050b408
         ;   XREF to: 0050aef2 (UNCONDITIONAL_JUMP)  ; caseD_7
 

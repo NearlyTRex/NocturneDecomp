@@ -37,8 +37,8 @@
 ;   undefined4 DAT_0152d2a4
 ;   undefined4 DAT_01bc120c
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.quimby_flag
-;   undefined4 g_CGameInstance.field504_0x228
+;   undefined4 g_CGameInstance.shadow_flag
+;   undefined4 g_CGameInstance.profile_mode
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -68,10 +68,10 @@ section .text
     SUB ESP,0x30                        ; 00550264
     MOV ESI,dword ptr [ESP + 0x44]      ; 00550267
     MOV EAX,[0x0061d95c]                ; 0055026b | g_CGamePtr | g_CGameInstance
-    CMP dword ptr [EAX + 0x24],0x0      ; 00550270 | g_CGameInstance.quimby_flag
+    CMP dword ptr [EAX + 0x24],0x0      ; 00550270 | g_CGameInstance.shadow_flag
     JZ 0x0055033b                       ; 00550274
         ;   XREF to: 0055033b (CONDITIONAL_JUMP)  ; LAB_0055033b
-    CMP dword ptr [EAX + 0x228],0x0     ; 0055027a | g_CGameInstance.field504_0x228
+    CMP dword ptr [EAX + 0x228],0x0     ; 0055027a | g_CGameInstance.profile_mode
     JNZ 0x00550343                      ; 00550281
         ;   XREF to: 00550343 (CONDITIONAL_JUMP)  ; LAB_00550343
     XOR EBX,EBX                         ; 00550287
@@ -131,7 +131,7 @@ section .text
         ;   XREF to: 005502ef (CONDITIONAL_JUMP)  ; LAB_005502ef
     MOV EAX,[0x0061d95c]                ; 00550329 | g_CGamePtr | g_CGameInstance
         ;   Label: LAB_00550329
-    CMP dword ptr [EAX + 0x228],0x0     ; 0055032e | g_CGameInstance.field504_0x228
+    CMP dword ptr [EAX + 0x228],0x0     ; 0055032e | g_CGameInstance.profile_mode
     JNZ 0x00550527                      ; 00550335
         ;   XREF to: 00550527 (CONDITIONAL_JUMP)  ; LAB_00550527
     ADD ESP,0x30                        ; 0055033b

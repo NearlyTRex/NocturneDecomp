@@ -29,12 +29,13 @@ void __cdecl core_stranger_cpp_CStranger_processWeaponTick_FUN_00591b20(CStrange
         (this_ptr_01->model).bone_origins[0x51].x = (this_ptr_01->model).bone_origins[0x51].y;
         (*(((this_ptr_01->base).vtable._uc)->_uc).isGrabbable)(this_ptr_01,unaff_EBX);
         this_ptr->weapon = (CWeapon *)0x0;
-        *(uint *)&this_ptr->field_0x2c98 = 0;
+        (this_ptr->base).base.layer_action_index = 0;
         fVar1 = 0x41200000;
-        *(uint *)&this_ptr->field_0x2c9c = 0;
+        (this_ptr->base).base.layer_action_t = 0.0;
+        iVar2 = (this_ptr->base).action_pending;
         this_ptr->aim_speed_factor = fVar1;
-        if (*(int *)&this_ptr->field_0x1ff5c == 3) {
-          *(uint *)&this_ptr->field_0x1ff5c = 0;
+        if (iVar2 == 3) {
+          (this_ptr->base).action_pending = 0;
           return;
         }
       }

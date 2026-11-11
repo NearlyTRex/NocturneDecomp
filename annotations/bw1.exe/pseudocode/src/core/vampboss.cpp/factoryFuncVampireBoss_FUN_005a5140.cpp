@@ -11,7 +11,7 @@ void core_vampboss_cpp_factoryFuncVampireBoss_FUN_005a5140(void)
 {
   CVampireBoss *this_ptr;
   
-  this_ptr = (CVampireBoss *)debugAllocTracked1(0xbf3fc);
+  this_ptr = (CVampireBoss *)operator_new(0xbf3fc);
   if (this_ptr == (CVampireBoss *)0x0) {
     return;
   }

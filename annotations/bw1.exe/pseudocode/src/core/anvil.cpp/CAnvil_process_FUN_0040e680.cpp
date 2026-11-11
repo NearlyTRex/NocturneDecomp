@@ -14,11 +14,7 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_0040e680(CAnvil *this_ptr,float d
   int iVar1;
   float fVar2;
   int iVar3;
-  SDamageInfo aSStack_48 [4];
-  uint uStack_44;
-  uint uStack_18;
-  CAnvil *pCStack_14;
-  CAnvil *pCStack_10;
+  SDamageInfo SStack_48;
   
   iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
                     (0x01C51D80,this_ptr->drop_condition);
@@ -45,13 +41,13 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_0040e680(CAnvil *this_ptr,float d
     }
     if ((this_ptr->base).location.position.y <
         *(float *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x24) + (float)_DAT_005d3287) {
-      core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(aSStack_48);
-      uStack_44 = 0x461c3f9a;
-      uStack_18 = 8;
-      pCStack_14 = this_ptr;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&SStack_48);
+      SStack_48.damage_amount = 9999.9;
+      SStack_48.damage_type = DAMAGE_TYPE_CRUSHED;
+      SStack_48.attacker = &this_ptr->base;
       iVar1 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
-      pCStack_10 = this_ptr;
-      (**(code **)(*(int *)(iVar1 + 0x154) + 0x108))(iVar1,aSStack_48);
+      SStack_48.wielder = &this_ptr->base;
+      (**(code **)(*(int *)(iVar1 + 0x154) + 0x108))(iVar1,&SStack_48);
       return;
     }
   }

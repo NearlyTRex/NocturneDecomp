@@ -11,7 +11,7 @@ void core_mobster_cpp_factoryFuncMobster_FUN_0051c7a0(void)
 {
   CMobster *this_ptr;
   
-  this_ptr = (CMobster *)debugAllocTracked1(0xc340);
+  this_ptr = (CMobster *)operator_new(0xc340);
   if (this_ptr == (CMobster *)0x0) {
     return;
   }

@@ -9,6 +9,6 @@
 void __cdecl core_haystack_cpp_CHaystack_archive_FUN_004ea120(CHaystack *this_ptr)
 
 {
-  core_hero_cpp_CHero_archive_FUN_004eab00((CHero *)this_ptr);
+  core_hero_cpp_CHero_archive_FUN_004eab00(&this_ptr->base);
   return;
 }

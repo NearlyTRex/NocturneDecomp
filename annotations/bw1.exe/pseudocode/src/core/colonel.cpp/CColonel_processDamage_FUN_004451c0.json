@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 140,
+    "complexity_score": 41,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 45,
-    "suspect_count": 9,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 167
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 163
   },
   "cross_references": [],
   "function": {
@@ -70,13 +68,13 @@
     },
     {
       "addr": "01ccf57c",
-      "name": "g_CGameInstance.field444_0x1ec",
+      "name": "g_CGameInstance.god_mode_enabled",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf5d8",
-      "name": "g_CGameInstance.field536_0x248",
+      "name": "g_CGameInstance.allow_damage_flag",
       "type": "undefined4",
       "value": null
     }
@@ -149,80 +147,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0xc1d0",
-      "severity": "mild",
-      "text": "if ((*(uint *)&this_ptr->field_0xc1d0 & 0x7fffffff) != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x1ec",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x1ec != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x248",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x248 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0xc1d0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xc1d0 = 0x3F000000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x2538",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)&this_ptr->field_0x2538 - *(float *)(damage_info + 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "this_ptr_00 = &this_ptr->field_0x158;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x2538",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x2538 = fVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x2538",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2538 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x26fc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x26fc = 0;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

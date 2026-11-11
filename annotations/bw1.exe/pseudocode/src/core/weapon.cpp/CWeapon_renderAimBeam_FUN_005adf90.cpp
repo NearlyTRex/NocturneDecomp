@@ -10,18 +10,12 @@ void __cdecl core_weapon_cpp_CWeapon_renderAimBeam_FUN_005adf90(CWeapon *this_pt
 
 {
   int iVar1;
-  uint *puVar2;
-  uint *puVar3;
+  SLaserInfo *pSVar2;
+  float *pfVar3;
   byte bVar4;
-  uint auStackY_1040 [970];
+  float afStackY_1040 [970];
   uint uStack_c0;
-  uint auStack_ac [2];
-  uint uStack_a4;
-  int iStack_a0;
-  int iStack_9c;
-  int iStack_98;
-  uint uStack_94;
-  uint uStack_90;
+  SLaserInfo SStack_ac;
   uint uStack_58;
   uint auStack_54 [5];
   uint auStack_40 [3];
@@ -65,22 +59,22 @@ void __cdecl core_weapon_cpp_CWeapon_renderAimBeam_FUN_005adf90(CWeapon *this_pt
     uStack_c0 = 0x5ae084;
     core_setcolid_cpp_CDemonSet_ignore_FUN_00559250(g_CDemonSetPtr,this_ptr->carried_by_actor);
   }
-  core_fire_cpp_SLaserInfo_ctor_FUN_004b63e0((SLaserInfo *)auStack_ac);
-  uStack_a4 = 1;
-  iStack_a0 = (this_ptr->muzzle_flash_color).r;
-  iStack_9c = (this_ptr->muzzle_flash_color).g;
-  iStack_98 = (this_ptr->muzzle_flash_color).b;
-  auStack_ac[0] = 0x3f800000;
+  core_fire_cpp_SLaserInfo_ctor_FUN_004b63e0(&SStack_ac);
+  SStack_ac.laser_type = 1;
+  SStack_ac.color.r = (this_ptr->muzzle_flash_color).r;
+  SStack_ac.color.g = (this_ptr->muzzle_flash_color).g;
+  SStack_ac.color.b = (this_ptr->muzzle_flash_color).b;
+  SStack_ac.intensity = 1.0;
   uStack_c0 = 0x5ae0d7;
   iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600();
-  uStack_90 = 1;
-  uStack_94 = (uint)(iVar1 != 0);
-  puVar2 = auStack_ac;
-  puVar3 = (uint *)&stack0xfffffef4;
+  SStack_ac.is_damaging = 1;
+  SStack_ac.is_hero_weapon = (uint)(iVar1 != 0);
+  pSVar2 = &SStack_ac;
+  pfVar3 = (float *)&stack0xfffffef4;
   for (iVar1 = 0x15; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    *pfVar3 = pSVar2->intensity;
+    pSVar2 = (SLaserInfo *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);
+    pfVar3 = pfVar3 + (uint)bVar4 * -2 + 1;
   }
   core_fire_cpp_FUN_004b6420(0x01C57074,&uStack_58,auStack_54 + 5);
   core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);

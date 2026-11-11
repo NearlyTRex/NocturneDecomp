@@ -38,7 +38,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 DAT_006236b8
 ;   undefined4 DAT_007c3978
-;   undefined4 g_CFieldNotesInstance.field64_0x40
+;   undefined4 g_CFieldNotesInstance.is_displayed
 ;   ... and 10 more
 ;
 ; Called Functions:
@@ -127,7 +127,7 @@ section .text
         ;   XREF to: 004f9f6f (CONDITIONAL_JUMP)  ; LAB_004f9f6f
     MOV EAX,[0x0061d95c]                ; 004f9fc1 | g_CGamePtr
         ;   Label: LAB_004f9fc1
-    CMP dword ptr [EAX + 0x25c],0x0     ; 004f9fc6 | g_CGameInstance.field556_0x25c
+    CMP dword ptr [EAX + 0x25c],0x0     ; 004f9fc6 | g_CGameInstance.goggles_active
     JZ 0x004fa198                       ; 004f9fcd
         ;   XREF to: 004fa198 (CONDITIONAL_JUMP)  ; LAB_004fa198
     MOV EAX,dword ptr [EBP + 0x14]      ; 004f9fd3
@@ -263,13 +263,13 @@ section .text
         ;   XREF to: 004f9fab (UNCONDITIONAL_JUMP)  ; LAB_004f9fab
     MOV EDX,dword ptr [0x0061d418]      ; 004fa198 | g_CFieldNotesPtr
         ;   Label: LAB_004fa198
-    CMP dword ptr [EDX + 0x40],0x0      ; 004fa19e | g_CFieldNotesInstance.field64_0x40
+    CMP dword ptr [EDX + 0x40],0x0      ; 004fa19e | g_CFieldNotesInstance.is_displayed
     JNZ 0x004f9fd3                      ; 004fa1a2
         ;   XREF to: 004f9fd3 (CONDITIONAL_JUMP)  ; LAB_004f9fd3
     CMP dword ptr [0x007c3978],0x0      ; 004fa1a8 | DAT_007c3978
     JNZ 0x004f9fd3                      ; 004fa1af
         ;   XREF to: 004f9fd3 (CONDITIONAL_JUMP)  ; LAB_004f9fd3
-    CMP dword ptr [EAX + 0x244],0x0     ; 004fa1b5 | g_CGameInstance.field532_0x244
+    CMP dword ptr [EAX + 0x244],0x0     ; 004fa1b5 | g_CGameInstance.letterbox_mode
     JNZ 0x004f9fd3                      ; 004fa1bc
         ;   XREF to: 004f9fd3 (CONDITIONAL_JUMP)  ; LAB_004f9fd3
     JMP 0x004f9ffe                      ; 004fa1c2

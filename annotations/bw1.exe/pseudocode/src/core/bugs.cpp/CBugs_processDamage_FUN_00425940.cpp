@@ -9,10 +9,10 @@
 void __cdecl core_bugs_cpp_CBugs_processDamage_FUN_00425940(CBugs *this_ptr,SDamageInfo *damage_info)
 
 {
-  if (*(int *)&(this_ptr->base).base.field_0x27b0 != 0) {
+  if ((this_ptr->base).base.is_invulnerable != 0) {
     return;
   }
-  *(uint *)(damage_info + 4) = 0;
+  damage_info->damage_amount = 0.0;
   core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(&this_ptr->base,damage_info);
   return;
 }

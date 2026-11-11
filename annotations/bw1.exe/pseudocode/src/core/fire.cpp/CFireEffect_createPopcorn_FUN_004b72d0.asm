@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cbc108
-;   undefined4 g_PopcornPool[0].field60_0x3c
+;   undefined4 g_PopcornPool[0].base.vtable
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     PUSH EBX                            ; 004b72e4
     ADD EAX,0x1cbc10c                   ; 004b72e5
     PUSH EAX                            ; 004b72ea
-    MOV EDX,dword ptr [EAX + 0x3c]      ; 004b72eb | g_PopcornPool[0].field60_0x3c
+    MOV EDX,dword ptr [EAX + 0x3c]      ; 004b72eb | g_PopcornPool[0].base.vtable
     CALL dword ptr [EDX]                ; 004b72ee
     MOV ESI,dword ptr [0x01cbc108]      ; 004b72f0 | DAT_01cbc108
     INC ESI                             ; 004b72f6

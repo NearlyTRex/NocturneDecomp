@@ -46,13 +46,13 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042f4d0(CCharacte
   float local_6c;
   float local_68;
   float local_64;
-  uint local_60;
+  float local_60;
   uint local_5c;
   CVector3f *local_4c;
   CDeformableModelInstance *local_48;
   CFlame *local_44;
   SFire *local_40;
-  byte *local_3c;
+  CMatrix3x4f *local_3c;
   int local_38;
   int local_34;
   float local_30;
@@ -74,13 +74,13 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042f4d0(CCharacte
     pCVar6 = local_4c;
     if (0 < skeleton->bone_count) {
       do {
-        if ((*(int *)(pCVar4->bone_list + 0x20) == target_bone_index) &&
+        if ((pCVar4->bone_list[0].parent_index == target_bone_index) &&
            (local_28 = SQRT(pCVar6->z * pCVar6->z + pCVar6->x * pCVar6->x + pCVar6->y * pCVar6->y),
            local_2c < local_28)) {
           iVar3 = iVar7;
           local_2c = local_28;
         }
-        pCVar4 = (CSkeleton *)&pCVar4->field_0x24;
+        pCVar4 = (CSkeleton *)((pCVar4->motion_list).state_names[1] + 2);
         iVar7 = iVar7 + 1;
         pCVar6 = pCVar6 + 1;
       } while (iVar7 < skeleton->bone_count);
@@ -102,7 +102,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042f4d0(CCharacte
       local_34 = local_18 + 1;
       local_20 = 0;
       if (0 < local_34) {
-        local_3c = &(this_ptr->model).field_0xe80;
+        local_3c = (this_ptr->model).bone_transform.bone_model_matrices;
         local_44 = this_ptr->flames;
         local_40 = this_ptr->fires;
         local_48 = &this_ptr->model;
@@ -117,8 +117,8 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042f4d0(CCharacte
           iVar3 = core_skeleton_cpp_CDeformableModel_getBonePart_FUN_00565810
                             (this_ptr_00,target_bone_index);
           pSVar2 = local_1c;
-          *(int *)local_1c = iVar3;
-          *(int *)&local_1c->field_0x4 = target_bone_index;
+          local_1c->bone_part = iVar3;
+          local_1c->bone_index = target_bone_index;
           local_18 = local_38;
           local_14 = local_20 + 1;
           local_24 = (float)(local_20 + 1);
@@ -127,51 +127,50 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042f4d0(CCharacte
           local_b8 = local_7c * local_24;
           local_b4 = local_78 * local_24;
           local_8c = local_80 * local_24;
-          (&stack0xffffff6c)[(uint)bVar8 * -2 + 3] =
-               *(float *)((int)&stack0xffffff3c + ((uint)bVar8 * -2 + 3) * 4);
-          (&stack0xffffff9c)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + -8] =
-               *(float *)((int)&stack0xffffff3c + ((uint)bVar8 * -2 + (uint)bVar8 * -2 + 4) * 4);
+          *(uint *)((int)&stack0xffffff78 + (uint)bVar8 * -8) =
+               *(uint *)((int)&stack0xffffff48 + (uint)bVar8 * -8);
+          *(uint *)((int)&stack0xffffff7c + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+               *(uint *)((int)&stack0xffffff4c + (uint)bVar8 * -8 + (uint)bVar8 * -8);
           local_30 = fVar1;
           fVar1 = 1.0 / fVar1;
           local_98 = local_8c * fVar1;
           local_94 = local_88 * fVar1;
           local_90 = local_84 * fVar1;
           local_68 = local_8c * fVar1;
-          (&stack0xffffff9c)[(uint)bVar8 * -2] = (&stack0xffffff6c)[(uint)bVar8 * -2];
-          (&stack0xffffff9c)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-               (&stack0xffffff6c)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
-          if ((float *)&pSVar2->field_0x8 != &stack0xffffff98) {
-            *(float *)&pSVar2->field_0x8 = local_68;
-            *(float *)&pSVar2->field_0xc = local_64;
-            *(uint *)&pSVar2->field_0x10 = local_60;
+          (&stack0xffffff9c)[(uint)bVar8 * 0xfffffffe] =
+               (float)*(uint *)((int)&stack0xffffff6c + (uint)bVar8 * -8);
+          *(uint *)((int)&stack0xffffffa0 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+               *(uint *)((int)&stack0xffffff70 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
+          if (&pSVar2->offset != (CVector3f *)&stack0xffffff98) {
+            (pSVar2->offset).x = local_68;
+            (pSVar2->offset).y = local_64;
+            (pSVar2->offset).z = local_60;
           }
-          core_xform_cpp_FUN_005b5080
-                    (&local_1c->field_0x8,local_3c + *(int *)&local_1c->field_0x4 * 0x30);
+          core_xform_cpp_FUN_005b5080(&local_1c->offset,local_3c + local_1c->bone_index);
           puVar10 = &stack0xffffff5c;
           local_a4 = local_5c;
-          *(float *)((int)&stack0xffffff60 + (uint)bVar8 * -2 * 4) =
-               (&stack0xffffff9c)[(uint)bVar8 * -2 + 3];
-          *(float *)((int)&stack0xffffff60 + ((uint)bVar8 * -2 + (uint)bVar8 * -2 + 1) * 4) =
-               (&stack0xffffff9c)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
+          *(uint *)((int)&stack0xffffff60 + (uint)bVar8 * 0xfffffffe * 4) =
+               *(uint *)(&stack0xffffffa8 + (uint)bVar8 * -8);
+          *(uint *)(&stack0xffffff64 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+               *(uint *)(&stack0xffffffac + (uint)bVar8 * -8 + (uint)bVar8 * -8);
           core_actor_cpp_FUN_00408b40(this_ptr,puVar10);
           local_74 = local_c8;
-          (&stack0xffffff90)[(uint)bVar8 * -2] =
-               *(float *)((int)&stack0xffffff3c + (uint)bVar8 * -2 * 4);
-          (&stack0xffffff90)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-               *(float *)((int)&stack0xffffff3c + ((uint)bVar8 * -2 + (uint)bVar8 * -2 + 1) * 4);
+          (&stack0xffffff90)[(uint)bVar8 * 0xfffffffe] =
+               (float)*(uint *)(&stack0xffffff3c + (uint)bVar8 * -8);
+          *(uint *)((int)&stack0xffffff94 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+               *(uint *)(&stack0xffffff40 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
           iVar3 = this_ptr->fire_count + -1;
           local_44[iVar3].base.location.position.x = local_74;
           local_44[iVar3].base.location.position.y = local_70;
           local_44[iVar3].base.location.position.z = local_6c;
           *(uint *)((int)this_ptr->fires + this_ptr->fire_count * 0x2a4 + 0x3b8) = 0;
-          *(uint *)&local_1c->field_0x14 = 0x3f000000;
+          local_1c->size = 0.5;
           fVar1 = (float)_DAT_005d59b7;
           *(float *)((int)this_ptr->fires + this_ptr->fire_count * 0x2a4 + 0x364) =
-               *(float *)&local_1c->field_0x14 * fVar1;
-          *(uint *)((int)this_ptr->fires + this_ptr->fire_count * 0x2a4 + 0x368) =
-               *(uint *)&local_1c->field_0x14;
+               local_1c->size * fVar1;
+          *(float *)((int)this_ptr->fires + this_ptr->fire_count * 0x2a4 + 0x368) = local_1c->size;
           *(float *)((int)this_ptr->fires + this_ptr->fire_count * 0x2a4 + 0x36c) =
-               fVar1 * *(float *)&local_1c->field_0x14;
+               fVar1 * local_1c->size;
           *(EFlameType *)((int)this_ptr->fires + this_ptr->fire_count * 0x2a4 + 0x3b4) =
                this_ptr->pending_flame_type;
           local_20 = local_20 + 1;

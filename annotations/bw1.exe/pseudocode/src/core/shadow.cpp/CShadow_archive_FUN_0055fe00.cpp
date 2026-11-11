@@ -9,18 +9,19 @@
 void __cdecl core_shadow_cpp_CShadow_archive_FUN_0055fe00(CShadow *this_ptr)
 
 {
-  core_enemy_cpp_CEnemy_archive_FUN_004a0520((CEnemy *)this_ptr);
-  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0xc1d0,"speed");
-  core_actor_cpp_archiveDeformableModelInstance_FUN_0040b7f0
-            ((CDeformableModelInstance *)&this_ptr->field_0x158,"modelName");
-  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0xc1e0,"guardDistance");
-  core_actor_cpp_archiveMotionState_FUN_0040b870
-            ((CMotionController *)&this_ptr->field_0x158,"motion state");
+  CDeformableModelInstance *model_ptr;
+  
+  core_enemy_cpp_CEnemy_archive_FUN_004a0520(&this_ptr->base);
+  core_actor_cpp_archiveFloat_FUN_0040b5f0(&(this_ptr->base).speed,"speed");
+  model_ptr = &(this_ptr->base).base.model;
+  core_actor_cpp_archiveDeformableModelInstance_FUN_0040b7f0(model_ptr,"modelName");
+  core_actor_cpp_archiveFloat_FUN_0040b5f0
+            (&(this_ptr->base).guard_distance,"guardDistance");
+  core_actor_cpp_archiveMotionState_FUN_0040b870(&model_ptr->base,"motion state");
   if (g_CShadowClassVersion < 2) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0xc290,"lightUpEyes");
-  core_actor_cpp_archiveInteger_FUN_0040b670
-            ((int *)&this_ptr->field_0xc30c,"scaredByLight");
+  core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->light_up_eyes,"lightUpEyes");
+  core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->scared_by_light,"scaredByLight");
   return;
 }

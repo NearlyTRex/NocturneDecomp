@@ -9,18 +9,18 @@
 int __cdecl core_charactr_cpp_CCharacter_isCarryingAnything_FUN_00432c40(CCharacter *this_ptr)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   int iVar2;
   
-  iVar1 = *(int *)&this_ptr->field_0x25b0;
+  pCVar1 = this_ptr->carry_hands[0].carry_actor;
   iVar2 = 0;
   while( true ) {
-    if (iVar1 != 0) {
+    if (pCVar1 != (CDemonActor *)0x0) {
       return 1;
     }
     iVar2 = iVar2 + 1;
     if (1 < iVar2) break;
-    iVar1 = *(int *)&this_ptr->field_0x2628;
+    pCVar1 = this_ptr->carry_hands[1].carry_actor;
     this_ptr = (CCharacter *)(this_ptr->base).create_event;
   }
   return 0;

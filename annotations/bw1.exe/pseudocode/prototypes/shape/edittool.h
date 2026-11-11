@@ -563,7 +563,7 @@ int __cdecl FUN_0049d9e0(char *button_text);
 
 // Original: shape_edittool.cpp_FUN_0049dace
 // Address: 0049dace
-void FUN_0049dace(CEdCheck *param_1,undefined4 param_2,undefined4 param_3,CEdCheck *param_4);
+void FUN_0049dace(CEdCheck *param_1,int param_2,int param_3,char *param_4);
 
 // Original: shape_edittool.cpp_FUN_0049dbbe
 // Address: 0049dbbe

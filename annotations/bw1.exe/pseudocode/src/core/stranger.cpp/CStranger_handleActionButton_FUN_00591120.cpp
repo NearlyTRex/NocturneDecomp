@@ -11,119 +11,118 @@
 void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_00591120(CStranger *this_ptr)
 
 {
-  byte *this_ptr_00;
-  int iVar1;
-  float fVar2;
-  float fVar3;
-  uint uVar4;
+  CDeformableModelInstance *pCVar1;
+  CDoor *pCVar2;
+  int iVar3;
+  float fVar4;
+  float fVar5;
+  uint uVar6;
   
-  if ((((*(int *)&this_ptr->field_0xc1e4 != 0) && (*(int *)&this_ptr->field_0x1ff5c == 0)) &&
-      (iVar1 = core_stranger_cpp_CStranger_tryThrowDynamite_FUN_00591410(this_ptr), iVar1 == 0)) &&
+  if (((((this_ptr->base).player_input.action_state.fire != 0) &&
+       ((this_ptr->base).action_pending == 0)) &&
+      (iVar3 = core_stranger_cpp_CStranger_tryThrowDynamite_FUN_00591410(this_ptr), iVar3 == 0)) &&
      (this_ptr->guns_drawn == 0)) {
-    this_ptr_00 = &this_ptr->field_0x158;
-    fVar2 = (float)core_motion_cpp_FUN_00524a40(this_ptr_00,0);
-    fVar3 = (float)core_motion_cpp_FUN_00524a40(this_ptr_00,1);
-    if ((float)_DAT_005f70b1 < fVar3 + fVar2) {
-      uVar4 = core_hero_cpp_FUN_004eb3e0(this_ptr,0);
-      switch(uVar4) {
+    pCVar1 = &(this_ptr->base).base.model;
+    fVar4 = (float)core_motion_cpp_FUN_00524a40(pCVar1,0);
+    fVar5 = (float)core_motion_cpp_FUN_00524a40(pCVar1,1);
+    if ((float)_DAT_005f70b1 < fVar5 + fVar4) {
+      uVar6 = core_hero_cpp_FUN_004eb3e0(this_ptr,0);
+      switch(uVar6) {
       case 0:
-        if (*(int *)&this_ptr->field_0x1ff74 != 0) {
+        pCVar2 = (this_ptr->base).door_to_open;
+        if (pCVar2 != (CDoor *)0x0) {
           shape_edittool_cpp_FUN_004943a0
-                    (g_CEditorToolsPtr,"eDoorMoveNone returned by checkDoorOpen, but doorToOpen = %s",
-                     *(int *)&this_ptr->field_0x1ff74);
+                    (g_CEditorToolsPtr,"eDoorMoveNone returned by checkDoorOpen, but doorToOpen = %s",pCVar2);
         }
         break;
       case 1:
-        if (*(int *)&this_ptr->field_0x1ff74 != 0) {
+        pCVar2 = (this_ptr->base).door_to_open;
+        if (pCVar2 != (CDoor *)0x0) {
           shape_edittool_cpp_FUN_004943a0
-                    (g_CEditorToolsPtr,"?eDoorMoveNone returned by checkDoorOpen, but doorToOpen = %s" + 1,
-                     *(int *)&this_ptr->field_0x1ff74);
-          *(uint *)&this_ptr->field_0xc1e4 = 0;
+                    (g_CEditorToolsPtr,"?eDoorMoveNone returned by checkDoorOpen, but doorToOpen = %s" + 1,pCVar2);
+          (this_ptr->base).player_input.action_state.fire = 0;
           return;
         }
-        *(uint *)&this_ptr->field_0xc1e4 = 0;
+        (this_ptr->base).player_input.action_state.fire = 0;
         return;
       case 2:
       case 3:
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                  ((CMotionController *)&this_ptr->field_0x158,0x27,1);
-        *(uint *)&this_ptr->field_0x1ff5c = 5;
-        *(uint *)&this_ptr->field_0xc1e4 = 0;
+                  (&(this_ptr->base).base.model.base,0x27,1);
+        (this_ptr->base).action_pending = 5;
+        (this_ptr->base).player_input.action_state.fire = 0;
         return;
       case 4:
-        core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                  ((CMotionController *)this_ptr_00,0x28,1);
-        *(uint *)&this_ptr->field_0x1ff5c = 5;
-        *(uint *)&this_ptr->field_0xc1e4 = 0;
+        core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar1->base,0x28,1);
+        (this_ptr->base).action_pending = 5;
+        (this_ptr->base).player_input.action_state.fire = 0;
         return;
       case 5:
-        core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                  ((CMotionController *)this_ptr_00,0x29,1);
-        *(uint *)&this_ptr->field_0x1ff5c = 5;
-        *(uint *)&this_ptr->field_0xc1e4 = 0;
+        core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar1->base,0x29,1);
+        (this_ptr->base).action_pending = 5;
+        (this_ptr->base).player_input.action_state.fire = 0;
         return;
       default:
-        core_hero_cpp_CHero_tryOpenDoor_FUN_004eb5e0((CHero *)this_ptr);
-        *(uint *)&this_ptr->field_0xc1e4 = 0;
+        core_hero_cpp_CHero_tryOpenDoor_FUN_004eb5e0(&this_ptr->base);
+        (this_ptr->base).player_input.action_state.fire = 0;
         return;
       }
     }
-    iVar1 = core_stranger_cpp_CStranger_tryPlaceObject_FUN_0058d910(this_ptr);
-    if (iVar1 != 0) {
-      *(uint *)&this_ptr->field_0xc1e4 = 0;
+    iVar3 = core_stranger_cpp_CStranger_tryPlaceObject_FUN_0058d910(this_ptr);
+    if (iVar3 != 0) {
+      (this_ptr->base).player_input.action_state.fire = 0;
       return;
     }
-    iVar1 = core_stranger_cpp_CStranger_tryPickupObject_FUN_0058c260(this_ptr,"!CBodyPart");
-    if (iVar1 != 0) {
-      *(uint *)&this_ptr->field_0xc1e4 = 0;
+    iVar3 = core_stranger_cpp_CStranger_tryPickupObject_FUN_0058c260(this_ptr,"!CBodyPart");
+    if (iVar3 != 0) {
+      (this_ptr->base).player_input.action_state.fire = 0;
       return;
     }
-    iVar1 = core_hero_cpp_CHero_tryInteract_FUN_004eb090((CHero *)this_ptr);
-    if (iVar1 == 0) {
-      iVar1 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240((CHero *)this_ptr);
-      if (iVar1 != 0) {
-        *(uint *)&this_ptr->field_0xc1e4 = 0;
+    iVar3 = core_hero_cpp_CHero_tryInteract_FUN_004eb090(&this_ptr->base);
+    if (iVar3 == 0) {
+      iVar3 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240(&this_ptr->base);
+      if (iVar3 != 0) {
+        (this_ptr->base).player_input.action_state.fire = 0;
         return;
       }
-      iVar1 = core_hero_cpp_FUN_004eb890(this_ptr);
-      if (iVar1 != 0) {
-        core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                  ((CMotionController *)&this_ptr->field_0x158,0x11,1);
+      iVar3 = core_hero_cpp_FUN_004eb890(this_ptr);
+      pCVar1 = &(this_ptr->base).base.model;
+      if (iVar3 != 0) {
+        core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar1->base,0x11,1);
         return;
       }
-      if ((*(int *)&this_ptr->field_0x2628 == 0) &&
-         (fVar2 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590
-                            ((CCharacter *)this_ptr,0), (float)_DAT_005f70b9 < fVar2)) {
-        iVar1 = core_hero_cpp_FUN_004eb660((CHero *)this_ptr);
-        if (iVar1 != 0) {
-          *(uint *)&this_ptr->field_0xc1e4 = 0;
-          core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                    ((CMotionController *)&this_ptr->field_0x158,0x2c,1);
+      if (((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) &&
+         (fVar4 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590
+                            ((CCharacter *)this_ptr,0), (float)_DAT_005f70b9 < fVar4)) {
+        iVar3 = core_hero_cpp_FUN_004eb660(&this_ptr->base);
+        if (iVar3 != 0) {
+          (this_ptr->base).player_input.action_state.fire = 0;
+          core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar1->base,0x2c,1);
           return;
         }
-        iVar1 = core_stranger_cpp_CStranger_tryClimbLadder_FUN_0058ce80(this_ptr);
-        if (iVar1 != 0) {
-          *(uint *)&this_ptr->field_0xc1e4 = 0;
+        iVar3 = core_stranger_cpp_CStranger_tryClimbLadder_FUN_0058ce80(this_ptr);
+        if (iVar3 != 0) {
+          (this_ptr->base).player_input.action_state.fire = 0;
           return;
         }
-        iVar1 = core_stranger_cpp_CStranger_tryDescendLadder_FUN_0058d3c0(this_ptr);
-        if (iVar1 != 0) {
-          *(uint *)&this_ptr->field_0xc1e4 = 0;
+        iVar3 = core_stranger_cpp_CStranger_tryDescendLadder_FUN_0058d3c0(this_ptr);
+        if (iVar3 != 0) {
+          (this_ptr->base).player_input.action_state.fire = 0;
           return;
         }
-        iVar1 = core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004ebc40((CHero *)this_ptr);
-        if (iVar1 != 0) {
-          *(uint *)&this_ptr->field_0xc1e4 = 0;
+        iVar3 = core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004ebc40(&this_ptr->base);
+        if (iVar3 != 0) {
+          (this_ptr->base).player_input.action_state.fire = 0;
           return;
         }
-        iVar1 = core_stranger_cpp_CStranger_tryPickupObject_FUN_0058c260
+        iVar3 = core_stranger_cpp_CStranger_tryPickupObject_FUN_0058c260
                           (this_ptr,"CBodyPart");
-        if (iVar1 != 0) {
-          *(uint *)&this_ptr->field_0xc1e4 = 0;
+        if (iVar3 != 0) {
+          (this_ptr->base).player_input.action_state.fire = 0;
           return;
         }
       }
-      *(uint *)&this_ptr->field_0xc1e4 = 0;
+      (this_ptr->base).player_input.action_state.fire = 0;
       return;
     }
   }

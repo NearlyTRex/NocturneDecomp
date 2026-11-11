@@ -33,9 +33,8 @@ void core_doc_cpp_FUN_0046caa0(int param_1)
   float local_2240;
   float local_2238;
   float local_2234;
-  uint local_221c [2];
-  uint local_2214;
-  float afStack_1f04 [1505];
+  SPoseData local_221c;
+  float afStack_1710 [996];
   CMatrix3x3f local_780;
   float local_758 [6];
   float fStack_740;
@@ -283,17 +282,17 @@ void core_doc_cpp_FUN_0046caa0(int param_1)
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0
             ((CDeformableModelInstance *)(param_1 + 0x158));
   if ((0.0 < (float)local_2258) && (-1 < *(int *)(param_1 + 0x20058))) {
-    core_doc_cpp_FUN_0046e630(param_1,local_221c);
-    local_221c[0] = 0;
-    local_2214 = 0;
+    core_doc_cpp_FUN_0046e630(param_1,&local_221c);
+    local_221c.root_position.x = 0.0;
+    local_221c.root_position.z = 0.0;
     core_skeleton_cpp_CDeformableModelInstance_blendWithPoseData_FUN_00568830
-              ((CDeformableModelInstance *)(param_1 + 0x158),(SPoseData *)local_221c,
-               (float)local_2258,-1,core_skeleton_cpp_FUN_00567360);
+              ((CDeformableModelInstance *)(param_1 + 0x158),&local_221c,(float)local_2258,-1,
+               core_skeleton_cpp_FUN_00567360);
   }
   core_doc_cpp_FUN_0046ea80(param_1);
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                      ((CMotionController *)(param_1 + 0x158));
-  local_20 = *(int *)(pSVar1 + 0x24);
+  local_20 = pSVar1->state_index;
   if (((local_20 == 0x23) || (local_20 == 0x22)) || (local_20 == 0x1f)) {
     local_2c = (float *)(param_1 + 0x2006c);
     if (*(int *)(param_1 + 0x1ff74) == 0) {
@@ -1045,7 +1044,7 @@ void core_doc_cpp_FUN_0046caa0(int param_1)
   core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0
             (pCVar6,rotation_quat,local_2238,iVar8,core_skeleton_cpp_FUN_00567360);
 LAB_0046d3c6:
-  if (*(int *)&g_CGamePtr->field_0x25c != 0) {
+  if (g_CGamePtr->goggles_active != 0) {
     local_a0[1] = 0.0;
     local_a0[2] = 0.0;
     local_a0[0] = 0.0;
@@ -1071,7 +1070,7 @@ LAB_0046d3c6:
     pCVar6 = (CDeformableModelInstance *)(param_1 + 0x158);
     this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(pCVar6);
     iVar8 = core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0
-                      ((CMotionList *)this_ptr,motion_name,iVar8);
+                      (&this_ptr->motion_list,motion_name,iVar8);
     local_34 = core_motion_cpp_FUN_00525110(pCVar6,iVar8,0x3f800000);
     local_18 = (CDeformableModelInstance *)local_34;
     core_skeleton_cpp_FUN_00568100

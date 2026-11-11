@@ -72,7 +72,7 @@ int __cdecl core_setcolid_cpp_FUN_005580d0(CDemonSet *this_ptr,SIntersectXZCylin
     iVar2 = iVar2 + 1;
     pCVar1 = pCVar1 + 1;
   } while (iVar2 < 8);
-  local_14 = *(float *)cylinder;
+  local_14 = cylinder->closest_t;
   core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0048fed0
             (&local_cc,&local_20c,&local_1dc,&local_1c4);
   core_dtri_cpp_cylinderTriangleTest_FUN_004904d0(&local_cc,cylinder);
@@ -109,5 +109,5 @@ int __cdecl core_setcolid_cpp_FUN_005580d0(CDemonSet *this_ptr,SIntersectXZCylin
   core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0048fed0
             (&local_94,&local_1dc,&local_1b8,&local_1c4);
   core_dtri_cpp_cylinderTriangleTest_FUN_004904d0(&local_94,cylinder);
-  return (uint)(*(float *)cylinder < local_14);
+  return (uint)(cylinder->closest_t < local_14);
 }

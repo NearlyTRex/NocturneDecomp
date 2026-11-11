@@ -54,7 +54,7 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0053a520(CPlatform 
       this_ptr->one_shot = ONE_SHOT_DONE_IN_BACKGROUND;
     }
     else {
-      *(uint *)&this_ptr->field_0x724 = 1;
+      this_ptr->rendered_in_background = 1;
     }
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0(&this_ptr->base);

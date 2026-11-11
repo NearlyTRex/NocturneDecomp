@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 151,
+    "complexity_score": 53,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
-    "suspect_count": 11,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 28,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field",
-      "unresolved_funcptr"
+      "undefined_data"
     ],
-    "total_lines": 90
+    "total_lines": 92
   },
   "cross_references": [],
   "function": {
@@ -137,92 +135,20 @@
   },
   "suspects": [
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 9,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "pCVar2 = (CDemonActorType *)(**(code **)(*(int *)&this_ptr->field_0x154 + 0xcc))(this_ptr);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "pCVar2 = (CDemonActorType *)(**(code **)(*(int *)&this_ptr->field_0x154 + 0xcc))(this_ptr);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x2538",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)&this_ptr->field_0x2538 - *(float *)(damage_info + 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x2538",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x2538 = fVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x2538",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2538 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 15,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0xa8))(this_ptr,0x32,0x41c80000);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0xa8))(this_ptr,0x32,0x41c80000);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 19,
       "match": "DAT_005d3d6a",
       "severity": "mild",
-      "text": "puVar3 = &DAT_005d3d6a;",
+      "text": "puVar4 = &DAT_005d3d6a;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x26fc",
-      "severity": "mild",
-      "text": "if ((*(float *)(damage_info + 4) <= 0.0) || (*(int *)&this_ptr->field_0x26fc != 0))",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 24,
       "match": "DAT_005d3d6e",
       "severity": "mild",
-      "text": "puVar3 = &DAT_005d3d6e;",
+      "text": "puVar4 = &DAT_005d3d6e;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "unkafter_bird_cpp_FUN_00415830(&this_ptr->field_0x158,puVar3);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

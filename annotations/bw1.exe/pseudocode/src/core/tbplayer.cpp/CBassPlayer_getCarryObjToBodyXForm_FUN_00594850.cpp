@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 CMatrix3x4f * __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00594850(CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
@@ -24,7 +26,7 @@ CMatrix3x4f * __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_
   uint uStack_10;
   
   bVar4 = 0;
-  iVar1 = *(int *)((this_ptr->base).base.carry_hands + hand_index * 0x78);
+  iVar1 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   if (hand_index == 0) {
     CStack_30.y = -1.866;
     CStack_30.z = -4.108;
@@ -48,7 +50,7 @@ CMatrix3x4f * __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_
   }
   core_xform_cpp_FUN_005b5760(&CStack_78,&CStack_24,&CStack_3c);
   core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
-            (&CStack_78,&(this_ptr->base).base.model.field_0xe80 + iVar1 * 0x30);
+            (&CStack_78,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1);
   pfVar2 = afStack_a8;
   pCVar3 = out_matrix;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

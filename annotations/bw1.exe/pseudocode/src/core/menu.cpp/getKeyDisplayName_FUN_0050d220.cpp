@@ -16,7 +16,7 @@ char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_0050d220(EInputCodeType key_c
   char *pcVar3;
   char *pcVar4;
   
-  _DAT_01d1ee90 = *(uint *)&g_CGamePtr->field_0xd0;
+  _DAT_01d1ee90 = g_CGamePtr->game_control;
   pcVar3 = (char *)0x0;
   if (key_code == INPUT_NONE) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00531090("(none)");

@@ -27,7 +27,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_playHurtSound_FUN_0045cec0(CDemnfolk *t
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  pcVar4 = &this_ptr->field_0xc36c;
+  pcVar4 = this_ptr->voice_prefix;
   iVar3 = -1;
   pcVar5 = &DAT_0152c320;
   do {
@@ -69,11 +69,12 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_playHurtSound_FUN_0045cec0(CDemnfolk *t
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  iVar3 = sound_sndmain_cpp_FUN_005735a0(*(uint *)&this_ptr->field_0xc34c);
+  iVar3 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[0]);
   if (iVar3 != 0) {
     return;
   }
-  uVar2 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))(this_ptr,&DAT_0152c320);
-  *(uint *)&this_ptr->field_0xc34c = uVar2;
+  uVar2 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+                    ((CDemonActor *)this_ptr,&DAT_0152c320);
+  this_ptr->sfx_handles[0] = uVar2;
   return;
 }

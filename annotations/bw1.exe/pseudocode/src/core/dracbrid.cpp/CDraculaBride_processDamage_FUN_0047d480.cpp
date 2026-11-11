@@ -37,9 +37,9 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0047d480(CDracula
   
   bVar2 = 0;
   iStack_14 = 0;
-  if (*(int *)(damage_info + 0x28) == 7) {
-    *(float *)(damage_info + 4) = *(float *)(damage_info + 4) * (float)_DAT_005dafcd;
-    core_actor_cpp_FUN_00408b40(this_ptr,damage_info + 0x1c);
+  if (damage_info->ammo_type == AMMO_TYPE_LITHIUM) {
+    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005dafcd;
+    core_actor_cpp_FUN_00408b40(this_ptr,&damage_info->impact_direction);
     iVar3 = 0;
     CStack_4c.x = fStack_40;
     *(float *)((int)&CStack_4c + (uint)bVar2 * -8 + 4) = afStack_3c[(uint)bVar2 * -2];
@@ -52,10 +52,10 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0047d480(CDracula
     } while (iVar3 < 5);
     iStack_14 = 1;
   }
-  if (*(int *)(damage_info + 0x30) == 0x68) {
+  if (damage_info->damage_type == DAMAGE_TYPE_ATTACK_STAKE) {
     iStack_14 = 1;
   }
-  if (*(int *)(damage_info + 0x30) == 0x6c) {
+  if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
     core_skeleton_cpp_FUN_00569130(&(this_ptr->base).base.model,0);
     puVar5 = &uStack_28;
     uStack_28 = uStack_64;
@@ -77,13 +77,13 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0047d480(CDracula
               ((CCharacter *)this_ptr_01,position,iVar3,flame_type,fVar4,include_hero);
   }
   core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_0047d430(this_ptr,damage_info);
-  fVar4 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
+  fVar4 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar4;
   if (fVar4 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
     pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
-    iVar3 = *(int *)(pSVar1 + 0x24);
+    iVar3 = pSVar1->state_index;
     if ((((iVar3 != 0x11) && (iVar3 != 0x10)) && (iVar3 != 10)) && (iVar3 != 7)) {
       if (iStack_14 == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&this_ptr_00->base,10,1);
@@ -101,7 +101,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0047d480(CDracula
     goto LAB_0047d5ac;
   }
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
-  iVar3 = *(int *)(pSVar1 + 0x24);
+  iVar3 = pSVar1->state_index;
   if (((iVar3 == 8) || (iVar3 == 9)) || (iVar3 == 2)) {
     iVar3 = 1;
 LAB_0047d666:

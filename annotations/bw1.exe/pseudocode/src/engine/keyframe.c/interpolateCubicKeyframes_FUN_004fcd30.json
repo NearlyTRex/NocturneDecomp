@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 361,
-    "complexity_score": 416,
+    "complexity_score": 431,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 151,
-    "suspect_count": 25,
+    "suspect_count": 26,
     "suspect_types": [
       "extra_output",
+      "pointer_cast",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -440,6 +441,14 @@
       "severity": "mild",
       "text": "return param_1 + 0x158;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 151,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "header = (SMRGLHeaderExtended *)((int)&(header->base).type + (uVar8 & 0xfffffffc));",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

@@ -19,9 +19,9 @@ CStranger * core_stranger_cpp_CStranger_ctor_FUN_00585270(CStranger *this_ptr)
   CKeyFramedModelInstance *pCVar5;
   uint uStack000001a8;
   
-  pCVar4 = core_hero_cpp_CHero_ctor_FUN_004ea830((CHero *)this_ptr);
+  pCVar4 = core_hero_cpp_CHero_ctor_FUN_004ea830(&this_ptr->base);
   pCVar5 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00468860
-                     ((CKeyFramedModelInstance *)(pCVar4 + 0x200ac));
+                     ((CKeyFramedModelInstance *)&pCVar4[1].base.base.collision_disabled);
   this_ptr_00 = (CStranger *)(pCVar5[-0x15a].model_name + 0x74);
   *(CHero_full_vtable **)(pCVar5[-0x159].model_name + 0x4c) = &g_CStrangerVTable;
   pCVar5[-0xffffffff00000001].model_name[4] = '\0';

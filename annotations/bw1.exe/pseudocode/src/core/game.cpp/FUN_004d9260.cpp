@@ -803,7 +803,7 @@ LAB_004dbaf8:
     if (((_DAT_01c43544 & 2) != 0) && (_DAT_01ccc3dc == 0)) {
       this_ptr = *(CCharacter **)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
       _DAT_01ccc3b0 = 1;
-      if (this_ptr[2].flames[0x1a].base.previous_transform_state.orientation.vec.y == 0.0) {
+      if (this_ptr[2].flames[0x1a].base.previous_transform_state.orientation.vec.x == 0.0) {
         core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_004328c0(this_ptr);
         local_6a4 = 2.0;
       }
@@ -872,7 +872,7 @@ LAB_004dbaf8:
                     _DAT_01ccc3bc = fStack_3a8;
                     _DAT_01ccc3c0 = fStack_3a4;
                   }
-                  if (&stack0x00000000 != &g_BloodParticles[6].field_0x20) {
+                  if ((float *)&stack0x00000000 != &g_BloodParticles[6].base.acceleration.z) {
                     _DAT_01cd0c28 = fStack_454;
                     _DAT_01cd0c2c = fStack_450;
                     _DAT_01cd0c30 = fStack_44c;

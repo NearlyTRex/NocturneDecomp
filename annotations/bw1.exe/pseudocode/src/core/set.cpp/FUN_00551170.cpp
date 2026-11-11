@@ -13,7 +13,7 @@ void core_set_cpp_FUN_00551170(CDemonSet *param_1)
 
 {
   UVector3 *pUVar1;
-  CDemonActor *actor_ptr;
+  CCharacter *actor_ptr;
   int iVar2;
   int iVar3;
   CSkeleton *this_ptr;
@@ -38,24 +38,24 @@ void core_set_cpp_FUN_00551170(CDemonSet *param_1)
   float local_34;
   float afStack_30 [2];
   CVector3f local_28;
-  char *local_1c;
+  CMatrix3x4f *local_1c;
   uint local_18;
   CDemonLight *local_14;
   
   bVar5 = 0;
   local_14 = &g_CDemonLightInstance;
-  actor_ptr = *(CDemonActor **)&g_CScriptPtr->field_0x18;
+  actor_ptr = g_CScriptPtr->monster_vision_actor;
   local_18 = 0;
-  if (actor_ptr != (CDemonActor *)0x0) {
-    iVar3 = core_actor_cpp_isOfClass_FUN_0040c550(actor_ptr,&DAT_005f0936);
+  if (actor_ptr != (CCharacter *)0x0) {
+    iVar3 = core_actor_cpp_isOfClass_FUN_0040c550(&actor_ptr->base,&DAT_005f0936);
     if (iVar3 != 0) {
       local_18 = 1;
     }
     this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
-                         ((CDeformableModelInstance *)(actor_ptr + 1));
+                         (&actor_ptr->model);
     iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr,"Bip01 Head",0);
     local_68 = 0x3f400000;
-    local_1c = actor_ptr[0xb].footstep_sound_code + iVar3 * 0x30 + -0xc;
+    local_1c = (actor_ptr->model).bone_transform.bone_model_matrices + iVar3;
     local_70 = 0;
     local_6c = 0x3ead0e56;
     core_xform_cpp_FUN_005b5080(&stack0xffffff90,local_1c);
@@ -78,7 +78,7 @@ void core_set_cpp_FUN_00551170(CDemonSet *param_1)
          afStack_30[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
     local_28.x = local_64 + (float)_DAT_005f0946;
     local_28.z = 0.0;
-    local_28.y = local_60 + (actor_ptr->orient).vec.y;
+    local_28.y = local_60 + (actor_ptr->base).orient.vec.y;
     pUVar1 = &(local_14->base).base.position;
     local_14->volumetric_enabled = 0;
     if (pUVar1 != (UVector3 *)&stack0xffffffb4) {

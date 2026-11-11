@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 164,
-    "complexity_score": 87,
+    "complexity_score": 72,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 33,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 57,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 221
@@ -183,7 +182,7 @@
     },
     {
       "addr": "01ccf3a8",
-      "name": "g_CGameInstance.field15_0x18",
+      "name": "g_CGameInstance.nudity_flag",
       "type": "undefined4",
       "value": null
     },
@@ -315,14 +314,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x18 == 0) {",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

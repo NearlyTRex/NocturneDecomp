@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 43,
+    "complexity_score": 27,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 13,
-    "suspect_count": 2,
+    "pseudocode_lines": 12,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
-    "total_lines": 33
+    "total_lines": 32
   },
   "cross_references": [
     {
@@ -104,16 +103,8 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "((CKeyFramedModel *)&this_ptr->field_0x8);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 14,
+      "line": 13,
       "match": "pCVar1[-3].",
       "severity": "mild",
       "text": "pfVar2 = &pCVar1[-3].rotation_matrix_workspace.m[2].z;",

@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 216,
-    "complexity_score": 175,
+    "complexity_score": 191,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 60,
-    "suspect_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 61,
+    "suspect_count": 12,
     "suspect_types": [
-      "unnamed_param"
+      "unnamed_param",
+      "unrolled_strcpy"
     ],
-    "total_lines": 276
+    "total_lines": 277
   },
   "cross_references": [],
   "function": {
@@ -25,7 +26,7 @@
     ],
     "convention": "unknown",
     "name": "engine_font.cpp_FUN_004c157e",
-    "signature": "void engine_font_cpp_FUN_004c157e(CBitFont *param_1,CBitFont *param_2)"
+    "signature": "void engine_font_cpp_FUN_004c157e(CBitFont *param_1,char *param_2)"
   },
   "function_calls": [
     {
@@ -46,7 +47,12 @@
     {
       "addr": "005a0fd0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a0fd0"
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0"
+    },
+    {
+      "addr": "005a0dc0",
+      "is_variadic": false,
+      "name": "unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0"
     },
     {
       "addr": "0059f5a0",
@@ -57,11 +63,6 @@
       "addr": "005a07a0",
       "is_variadic": false,
       "name": "unkaddr_0059f520.cpp_FUN_005a07a0"
-    },
-    {
-      "addr": "005a0dc0",
-      "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_FUN_005a0dc0"
     },
     {
       "addr": "005a08d0",
@@ -123,7 +124,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void engine_font_cpp_FUN_004c157e(CBitFont *param_1,CBitFont *param_2)",
+      "text": "void engine_font_cpp_FUN_004c157e(CBitFont *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -131,7 +132,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void engine_font_cpp_FUN_004c157e(CBitFont *param_1,CBitFont *param_2)",
+      "text": "void engine_font_cpp_FUN_004c157e(CBitFont *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -139,7 +140,7 @@
       "line": 22,
       "match": "param_2",
       "severity": "mild",
-      "text": "pCVar3 = param_2;",
+      "text": "pcVar3 = param_2;",
       "type": "unnamed_param"
     },
     {
@@ -147,7 +148,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar4 = param_1 + 0x144;",
+      "text": "pcVar4 = param_1->font_filename;",
       "type": "unnamed_param"
     },
     {
@@ -155,20 +156,20 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "strupr((char *)(param_1 + 0x144));",
+      "text": "strupr(param_1->font_filename);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 35,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = support_trstream_cpp_FUN_005a0fd0(&CStack_5c,0x5e0994,param_2,1);",
+      "text": "(&CStack_5c,0x5e0994,param_2,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,acStack_25c,iStack_30,iStack_2c,iStack_20);",
@@ -176,7 +177,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,acStack_25c,iStack_30,iStack_2c,iStack_28,iStack_24,iStack_20);",
@@ -184,18 +185,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3668) = uStack_1c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x41fc) = uStack_18;",
+      "text": "param_1->char_widths[0x20] = iStack_1c;",
       "type": "unnamed_param"
     },
     {
@@ -203,8 +196,24 @@
       "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x4200) = uStack_14;",
+      "text": "param_1->shadow_offset_x = iStack_18;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->shadow_offset_y = iStack_14;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 24,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

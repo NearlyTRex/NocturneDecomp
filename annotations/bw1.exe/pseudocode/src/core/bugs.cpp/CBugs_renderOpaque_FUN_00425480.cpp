@@ -48,8 +48,8 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_00425480(CBugs *this_ptr)
           pCStack_18 = this_ptr->models;
           pSStack_14 = this_ptr->bugs;
           pCStack_8 = &(this_ptr->base).base.base.location;
-          pCStack_c = (CVector3f *)&this_ptr->bugs[0].field_0x14;
-          translation = (CVector3f *)&this_ptr->bugs[0].field_0x8;
+          pCStack_c = &this_ptr->bugs[0].orientation;
+          translation = &this_ptr->bugs[0].position;
           do {
             pSStack_10 = pSStack_14 + iVar1;
             engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
@@ -69,7 +69,7 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_00425480(CBugs *this_ptr)
             core_set_cpp_CDemonSet_cacheMirrorLighting_FUN_005557a0(g_CDemonSetPtr,&CStack_28);
             engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xffff);
             core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
-                      (pCStack_18 + *(int *)&pSStack_10->field_0x4,0.0,0x2e7);
+                      (pCStack_18 + pSStack_10->model_index,0.0,0x2e7);
             engine_matrix_c_pop_FUN_004839a0();
             pCStack_c = (CVector3f *)&pCStack_c[5].y;
             iVar1 = iVar1 + 1;

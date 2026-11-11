@@ -11,7 +11,7 @@
 void core_game_cpp_beginProfileTimer_FUN_004d7fbc(void)
 
 {
-  if (*(int *)&g_CGamePtr->field_0x228 != 1) {
+  if (g_CGamePtr->profile_mode != 1) {
     return;
   }
   _DAT_01cd0c90 = wincore_winrun_cpp_getTime_FUN_005b2420();

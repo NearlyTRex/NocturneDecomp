@@ -138,22 +138,22 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_00534ca0(CPathMap *this_pt
                   ((SProjectedVertex *)(*(int *)uVar8 + 0x90),
                    (CVector3i *)((ulonglong)uVar8 >> 0x20));
         this_ptr_00 = DAT_00612560;
-        *(int *)(DAT_00612560->vertex_buffer_ptr + 0x20) = iStack_28;
-        *(int *)(this_ptr_00->vertex_buffer_ptr + 0x24) = iStack_24;
-        *(int *)(this_ptr_00->vertex_buffer_ptr + 0x28) = iStack_20;
-        *(int *)(this_ptr_00->vertex_buffer_ptr + 0x2c) = iStack_2c;
-        *(int *)(this_ptr_00->vertex_buffer_ptr + 0x50) = iStack_28;
-        *(int *)(this_ptr_00->vertex_buffer_ptr + 0x54) = iStack_24;
-        *(int *)(this_ptr_00->vertex_buffer_ptr + 0x58) = iStack_20;
-        *(int *)(this_ptr_00->vertex_buffer_ptr + 0x5c) = iStack_2c;
-        *(int *)(this_ptr_00->vertex_buffer_ptr + 0x80) = iStack_28;
-        *(int *)(this_ptr_00->vertex_buffer_ptr + 0x84) = iStack_24;
-        *(int *)(this_ptr_00->vertex_buffer_ptr + 0x88) = iStack_20;
-        *(int *)(this_ptr_00->vertex_buffer_ptr + 0x8c) = iStack_2c;
-        *(int *)(this_ptr_00->vertex_buffer_ptr + 0xb0) = iStack_28;
-        *(int *)(this_ptr_00->vertex_buffer_ptr + 0xb4) = iStack_24;
-        *(int *)(this_ptr_00->vertex_buffer_ptr + 0xb8) = iStack_20;
-        *(int *)(this_ptr_00->vertex_buffer_ptr + 0xbc) = iStack_2c;
+        DAT_00612560->vertex_buffer_ptr->r = iStack_28;
+        this_ptr_00->vertex_buffer_ptr->g = iStack_24;
+        this_ptr_00->vertex_buffer_ptr->b = iStack_20;
+        this_ptr_00->vertex_buffer_ptr->a = iStack_2c;
+        this_ptr_00->vertex_buffer_ptr[1].r = iStack_28;
+        this_ptr_00->vertex_buffer_ptr[1].g = iStack_24;
+        this_ptr_00->vertex_buffer_ptr[1].b = iStack_20;
+        this_ptr_00->vertex_buffer_ptr[1].a = iStack_2c;
+        this_ptr_00->vertex_buffer_ptr[2].r = iStack_28;
+        this_ptr_00->vertex_buffer_ptr[2].g = iStack_24;
+        this_ptr_00->vertex_buffer_ptr[2].b = iStack_20;
+        this_ptr_00->vertex_buffer_ptr[2].a = iStack_2c;
+        this_ptr_00->vertex_buffer_ptr[3].r = iStack_28;
+        this_ptr_00->vertex_buffer_ptr[3].g = iStack_24;
+        this_ptr_00->vertex_buffer_ptr[3].b = iStack_20;
+        this_ptr_00->vertex_buffer_ptr[3].a = iStack_2c;
         engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_00482f00
                   (this_ptr_00,(SMRGLPrimitivePoly *)0x1e7d360);
       }

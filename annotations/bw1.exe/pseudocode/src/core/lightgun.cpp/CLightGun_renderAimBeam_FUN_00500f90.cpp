@@ -53,7 +53,7 @@ void __cdecl core_lightgun_cpp_CLightGun_renderAimBeam_FUN_00500f90(CLightGun *t
   float fStack_40;
   float fStack_3c;
   double dStack_38;
-  uint uStack_28;
+  float fStack_28;
   float fStack_24;
   float fStack_20;
   float fStack_1c;
@@ -62,11 +62,11 @@ void __cdecl core_lightgun_cpp_CLightGun_renderAimBeam_FUN_00500f90(CLightGun *t
   bVar4 = 0;
   iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
   if (iVar1 == 0) {
-    if (*(int *)&this_ptr->field_0x588 == 0) {
-      core_weapon_cpp_CWeapon_renderAimBeam_FUN_005adf90((CWeapon *)this_ptr);
+    if (this_ptr->hit_enemy == 0) {
+      core_weapon_cpp_CWeapon_renderAimBeam_FUN_005adf90(&this_ptr->base);
       return;
     }
-    (**(code **)(*(int *)&this_ptr->field_0x154 + 0xe0))(this_ptr);
+    (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
     uStack_11c = uStack_c8;
     *(float *)((int)&stack0xfffffee8 + (uint)bVar4 * 0xfffffffe * 4) =
          afStack_dc[(uint)bVar4 * -2 + 6];
@@ -78,10 +78,10 @@ void __cdecl core_lightgun_cpp_CLightGun_renderAimBeam_FUN_00500f90(CLightGun *t
          *(uint *)(&stack0xfffffed0 + (uint)bVar4 * -8);
     *(uint *)((int)&CStack_74 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
          *(uint *)(&stack0xfffffed4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-    afStack_94[4] = *(float *)&this_ptr->field_0x2e8;
+    afStack_94[4] = (this_ptr->base).bolt_velocity;
     afStack_94[2] = 0.0;
     afStack_94[3] = 0.0;
-    uStack_28 = afStack_94[4];
+    fStack_28 = afStack_94[4];
     core_actor_cpp_FUN_00408ac0(this_ptr,afStack_94 + 2);
     fVar3 = CStack_74.y;
     fVar2 = CStack_74.x;
@@ -122,7 +122,7 @@ void __cdecl core_lightgun_cpp_CLightGun_renderAimBeam_FUN_00500f90(CLightGun *t
     }
     fVar5 = (float10)fpatan((float10)_DAT_005e6efa / (float10)_DAT_00603014,(float10)1);
     fStack_138 = (float)fVar5;
-    (**(code **)(*(int *)&this_ptr->field_0x154 + 0xe0))(this_ptr);
+    (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
     puVar6 = &uStack_68;
     uStack_68 = uStack_50;
     afStack_64[(uint)bVar4 * -2] = afStack_64[(uint)bVar4 * -2 + 6];
@@ -131,8 +131,8 @@ void __cdecl core_lightgun_cpp_CLightGun_renderAimBeam_FUN_00500f90(CLightGun *t
     core_actor_cpp_FUN_00408b40(this_ptr,puVar6);
     core_fire_cpp_CFireEffect_createLaserCone_FUN_004b60e0
               (0x01C57074,&CStack_74,&CStack_ec,1.0,0xff,0,0,fStack_138);
-    if (*(int *)&this_ptr->field_0x588 != 0) {
-      *(uint *)&this_ptr->field_0x588 = 0;
+    if (this_ptr->hit_enemy != 0) {
+      this_ptr->hit_enemy = 0;
       fVar2 = 1.4013e-45;
       do {
         fVar3 = (float)((int)fVar2 + 1);
@@ -168,7 +168,7 @@ void __cdecl core_lightgun_cpp_CLightGun_renderAimBeam_FUN_00500f90(CLightGun *t
         fStack_98 = 0.0;
         afStack_94[1] = 0.0;
       }
-      fStack_1c = *(float *)&this_ptr->field_0x594 * (float)_DAT_005e6f0a;
+      fStack_1c = this_ptr->beam_length * (float)_DAT_005e6f0a;
       fStack_110 = fStack_98 * fStack_1c;
       fStack_10c = afStack_94[0] * fStack_1c;
       fStack_108 = afStack_94[1] * fStack_1c;

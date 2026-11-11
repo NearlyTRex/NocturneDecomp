@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 347,
+    "complexity_score": 272,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 117,
-    "suspect_count": 20,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
@@ -144,68 +143,12 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x27bc",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x27bc != 0) && (*(int *)&this_ptr->field_0xc2ec != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0xc2ec",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x27bc != 0) && (*(int *)&this_ptr->field_0xc2ec != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_00568e30(&this_ptr->field_0x158,*(uint *)&this_ptr->field_0xc2fc);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0xc2fc",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_00568e30(&this_ptr->field_0x158,*(uint *)&this_ptr->field_0xc2fc);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(float *)((int)afStack_f0",
       "severity": "moderate",
       "text": "*(float *)((int)afStack_f0 + (uint)bVar4 * 0xfffffff8) = afStack_b4[(uint)bVar4 * -2];",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 116,
-      "match": "field_0x27bc",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x27bc == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 117,
-      "match": "field_0x27bc",
-      "severity": "mild",
-      "text": "return *(int *)&this_ptr->field_0x27bc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 120,
-      "match": "field_0x27bc",
-      "severity": "mild",
-      "text": "return *(int *)&this_ptr->field_0x27bc;",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer value `&CStack_e8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

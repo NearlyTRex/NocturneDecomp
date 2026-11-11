@@ -127,7 +127,7 @@ int __cdecl CHero::tryUseSelectedItem(CHero *this_ptr);
 
 // Original: core_hero.cpp_FUN_004ec090
 // Address: 004ec090
-bool FUN_004ec090(CDemonActor *param_1,char *param_2);
+bool FUN_004ec090(CHero *param_1,char *param_2);
 
 // Original: core_hero.cpp_CHero_canLookAt_FUN_004ec1b0
 // Address: 004ec1b0

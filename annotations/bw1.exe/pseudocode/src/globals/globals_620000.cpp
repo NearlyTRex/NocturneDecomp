@@ -968,25 +968,120 @@ RuntimeHandlerEntry g_InitHandlers[187] = {
 TerminatedCString s_d3d_dll_006257d3 = "d3d.dll";
 
 // WatcomStaticDestructorNode
-WatcomStaticDestructorNode g_CNetGameInstanceDestructorNode = {};
-WatcomStaticDestructorNode g_CMouseDestructorNode = {};
-WatcomStaticDestructorNode g_PathMapCacheDestructorNode = {};
-WatcomStaticDestructorNode g_CDemonPodMainDestructorNode = {};
-WatcomStaticDestructorNode DAT_00622AB0 = {};
-WatcomStaticDestructorNode DAT_00622AC0 = {};
-WatcomStaticDestructorNode g_CDemonSetDestructorNode = {};
-WatcomStaticDestructorNode g_CDemonCameraDestructorNode = {};
-WatcomStaticDestructorNode g_CDemonRaytraceDestructorNode = {};
-WatcomStaticDestructorNode g_CKeyFramedModelDestructorNode = {};
-WatcomStaticDestructorNode g_DeformableModelPoolDestructorNode = {};
-WatcomStaticDestructorNode g_SkeletonPoolDestructorNode = {};
-WatcomStaticDestructorNode g_SfxSamplesDestructorNode = {};
-WatcomStaticDestructorNode g_CMP3DecoderDestructorNode1 = {};
-WatcomStaticDestructorNode g_CMP3DecoderDestructorNode2 = {};
-WatcomStaticDestructorNode DAT_006236A0 = {};
-WatcomStaticDestructorNode g_CTextureListDestructorNode = {};
-WatcomStaticDestructorNode DAT_00625BDC = {};
-WatcomStaticDestructorNode g_CWaterDestructorNode = {};
+WatcomStaticDestructorNode g_CNetGameInstanceDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x00604330,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CNetGameInstance
+};
+WatcomStaticDestructorNode g_CMouseDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x006043E0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CMouseInstance
+};
+WatcomStaticDestructorNode g_PathMapCacheDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x00604780,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_PathMapCache
+};
+WatcomStaticDestructorNode g_CDemonPodMainDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)&g_CDemonPodDestructorNode,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CDemonPodInstance
+};
+WatcomStaticDestructorNode DAT_00622AB0 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x00604DD0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_ScriptPickList
+};
+WatcomStaticDestructorNode DAT_00622AC0 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x00604DDC,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CScriptInstance
+};
+WatcomStaticDestructorNode g_CDemonSetDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x00604FD0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CDemonSetInstance
+};
+WatcomStaticDestructorNode g_CDemonCameraDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x00604FDC,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CDemonCameraInstance
+};
+WatcomStaticDestructorNode g_CDemonRaytraceDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x00604FE8,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CDemonRaytraceInstance
+};
+WatcomStaticDestructorNode g_CKeyFramedModelDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x00604FF4,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CKeyFramedModelInstance
+};
+WatcomStaticDestructorNode g_DeformableModelPoolDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x00605870,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_DeformableModelPool
+};
+WatcomStaticDestructorNode g_SkeletonPoolDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x0060587C,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_SkeletonPool
+};
+WatcomStaticDestructorNode g_SfxSamplesDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x00605AD0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_SfxSamples
+};
+WatcomStaticDestructorNode g_CMP3DecoderDestructorNode1 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x00605ADC,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CMP3DecoderInstance
+};
+WatcomStaticDestructorNode g_CMP3DecoderDestructorNode2 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x00605AE8,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CMP3DecoderInstanceOther
+};
+WatcomStaticDestructorNode DAT_006236A0 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x00605C70,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CStrListInstance
+};
+WatcomStaticDestructorNode g_CTextureListDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x00606C50,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CTextureListInstance
+};
+WatcomStaticDestructorNode DAT_00625BDC = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x00607340,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_COutStreamDebugInstance
+};
+WatcomStaticDestructorNode g_CWaterDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x00607BA0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CWaterInstance
+};
 
 // int
 int g_CNPCClassVersion = 0x6;

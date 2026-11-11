@@ -9,15 +9,16 @@
 int __cdecl core_hero_cpp_CHero_tryUseSelectedItem_FUN_004ec020(CHero *this_ptr)
 
 {
+  CDemonActor *actor_ptr;
   int iVar1;
   
-  if (*(CDemonActor **)(this_ptr + 0x1fe24) == (CDemonActor *)0x0) {
+  actor_ptr = (this_ptr->inventory).selected_item;
+  if (actor_ptr == (CDemonActor *)0x0) {
     return 0;
   }
-  iVar1 = core_actor_cpp_isOfClass_FUN_0040c550
-                    (*(CDemonActor **)(this_ptr + 0x1fe24),"CHealthItem");
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040c550(actor_ptr,"CHealthItem");
   if (iVar1 == 0) {
-    iVar1 = (**(code **)(*(int *)(this_ptr + 0x154) + 0x148))(this_ptr);
+    iVar1 = (*(((this_ptr->base).base.vtable._uh)->_uh).isWeaponDrawn)(this_ptr);
     if (iVar1 != 0) {
       return 0;
     }
@@ -27,6 +28,6 @@ int __cdecl core_hero_cpp_CHero_tryUseSelectedItem_FUN_004ec020(CHero *this_ptr)
     }
   }
   iVar1 = core_inv_cpp_CInventory_select_FUN_004f9bd0
-                    ((CInventory *)(this_ptr + 0x1fae8),*(CDemonActor **)(this_ptr + 0x1fe24));
+                    (&this_ptr->inventory,(this_ptr->inventory).selected_item);
   return iVar1;
 }

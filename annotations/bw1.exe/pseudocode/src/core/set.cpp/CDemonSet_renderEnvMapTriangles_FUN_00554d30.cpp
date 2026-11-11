@@ -18,18 +18,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30(CDemonSet
   int iVar5;
   byte bVar6;
   int aiStackY_1020 [960];
-  SMRGLPrimitivePoly aSStack_118 [4];
-  int local_114;
-  uint local_110;
-  uint local_10c;
-  uint local_108;
-  uint local_104;
-  uint local_100 [6];
-  uint local_e8;
-  int local_e4;
-  int local_e0;
-  uint local_d0;
-  uint uStack_cc;
+  SMRGLPrimitivePoly SStack_118;
   uint local_90;
   uint uStack_8c;
   int local_50;
@@ -46,7 +35,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30(CDemonSet
   bVar6 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
             (DAT_00612560,(SMRGLTextureBasic *)&DAT_00622f34);
-  if (*(int *)&g_CGamePtr->field_0x210 == 2) {
+  if (g_CGamePtr->render_mode == 2) {
     alpha = DAT_0061b4b8 << 8;
   }
   else {
@@ -59,29 +48,29 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30(CDemonSet
   local_20 = 0;
   if (0 < count) {
     do {
-      local_104 = 0;
-      local_108 = 0;
-      local_10c = 0;
-      local_110 = 0;
-      local_114 = 3;
-      local_100[0] = (uint)*(ushort *)face_data;
-      local_100[3] = (uint)*(ushort *)(face_data + 2);
-      local_e8 = (uint)*(ushort *)(face_data + 4);
-      local_100[1] = (uint)*(ushort *)(face_data + 6) << 8;
-      local_100[4] = (uint)*(ushort *)(face_data + 8) << 8;
-      local_e4 = (uint)*(ushort *)(face_data + 10) << 8;
-      local_100[2] = (uint)*(ushort *)(face_data + 0xc) << 8;
-      local_100[5] = (uint)*(ushort *)(face_data + 0xe) << 8;
-      local_e0 = (uint)*(ushort *)(face_data + 0x10) << 8;
+      SStack_118.base.surface_normal.D.i = 0;
+      SStack_118.base.surface_normal.C.i = 0;
+      SStack_118.base.surface_normal.B.i = 0;
+      SStack_118.base.surface_normal.A.i = 0;
+      SStack_118.base.base.count = 3;
+      SStack_118.vertices[0].vertex_index = (uint)(face_data->vertex_indices).vertex_index_0;
+      SStack_118.vertices[1].vertex_index = (uint)(face_data->vertex_indices).vertex_index_1;
+      SStack_118.vertices[2].vertex_index = (uint)(face_data->vertex_indices).vertex_index_2;
+      SStack_118.vertices[0].texture_u = (uint)face_data->u_coord_0 << 8;
+      SStack_118.vertices[1].texture_u = (uint)face_data->u_coord_1 << 8;
+      SStack_118.vertices[2].texture_u = (uint)face_data->u_coord_2 << 8;
+      SStack_118.vertices[0].texture_v = (uint)face_data->v_coord_0 << 8;
+      SStack_118.vertices[1].texture_v = (uint)face_data->v_coord_1 << 8;
+      SStack_118.vertices[2].texture_v = (uint)face_data->v_coord_2 << 8;
       if (this_ptr->skip_normal_normalization != 0) {
-        engine_keyframe_c_calculateSurfaceNormal_FUN_004fc9c0(0x2036428,aSStack_118);
+        engine_keyframe_c_calculateSurfaceNormal_FUN_004fc9c0(0x2036428,&SStack_118);
       }
       local_18 = 0;
-      if (0 < local_114) {
+      if (0 < SStack_118.base.base.count) {
         local_1c = 0;
         local_14 = 0;
         do {
-          iVar4 = *(int *)((int)local_100 + local_1c) * 0xc;
+          iVar4 = *(int *)((int)&SStack_118.vertices[0].vertex_index + local_1c) * 0xc;
           if ((((this_ptr->skip_normal_normalization == 0) ||
                (1.0 <= ABS(*(float *)(&DAT_02070da8 + iVar4)))) ||
               (1.0 <= ABS(*(float *)(&DAT_02070dac + iVar4)))) ||
@@ -102,22 +91,25 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30(CDemonSet
           }
           iVar5 = local_18 + 1;
           iVar4 = 0x8000 - aiStack_34[3];
-          *(int *)((int)&local_d0 + local_14) = aiStack_34[2] + 0x8000;
+          *(int *)((int)&SStack_118.vertices[4].vertex_index + local_14) = aiStack_34[2] + 0x8000;
           *(int *)((int)&local_90 + local_14) = iVar4;
           local_18 = iVar5;
           local_14 = local_14 + 4;
           local_1c = local_1c + 0xc;
-        } while (iVar5 < local_114);
+        } while (iVar5 < SStack_118.base.base.count);
       }
-      if (1 < local_114) {
+      if (1 < SStack_118.base.base.count) {
         iVar4 = 4;
         do {
-          if ((0x8000 < local_d0) && (*(int *)((int)&local_d0 + iVar4) < -0x8000)) {
-            psVar1 = (short *)((int)&local_d0 + iVar4 + 2);
+          if ((0x8000 < SStack_118.vertices[4].vertex_index) &&
+             (*(int *)((int)&SStack_118.vertices[4].vertex_index + iVar4) < -0x8000)) {
+            psVar1 = (short *)((int)&SStack_118.vertices[4].vertex_index + iVar4 + 2);
             *psVar1 = *psVar1 + 1;
           }
-          if ((local_d0 < -0x8000) && (0x8000 < *(int *)((int)&local_d0 + iVar4))) {
-            *(int *)((int)&local_d0 + iVar4) = *(int *)((int)&local_d0 + iVar4) + -0x10000;
+          if ((SStack_118.vertices[4].vertex_index < -0x8000) &&
+             (iVar5 = *(int *)((int)&SStack_118.vertices[4].vertex_index + iVar4), 0x8000 < iVar5))
+          {
+            *(int *)((int)&SStack_118.vertices[4].vertex_index + iVar4) = iVar5 + -0x10000;
           }
           if ((0x8000 < local_90) && (*(int *)((int)&local_90 + iVar4) < -0x8000)) {
             psVar1 = (short *)((int)&local_90 + iVar4 + 2);
@@ -127,35 +119,37 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30(CDemonSet
             *(int *)((int)&local_90 + iVar4) = *(int *)((int)&local_90 + iVar4) + -0x10000;
           }
           iVar4 = iVar4 + 4;
-        } while (iVar4 < local_114 * 4);
+        } while (iVar4 < SStack_118.base.base.count * 4);
       }
       iVar4 = 0;
-      if (0 < local_114) {
+      if (0 < SStack_118.base.base.count) {
         iVar3 = 0;
         iVar5 = 0;
         do {
-          *(int *)((int)local_100 + iVar5 + 4) = *(int *)((int)&local_d0 + iVar3) << 8;
-          *(int *)((int)local_100 + iVar5 + 8) = *(int *)((int)&local_90 + iVar3) << 8;
+          *(int *)((int)&SStack_118.vertices[0].texture_u + iVar5) =
+               *(int *)((int)&SStack_118.vertices[4].vertex_index + iVar3) << 8;
+          *(int *)((int)&SStack_118.vertices[0].texture_v + iVar5) =
+               *(int *)((int)&local_90 + iVar3) << 8;
           iVar4 = iVar4 + 1;
           iVar3 = iVar3 + 4;
           iVar5 = iVar5 + 0xc;
-        } while (iVar4 < local_114);
+        } while (iVar4 < SStack_118.base.base.count);
       }
       if (this_ptr->skip_normal_normalization != 0) {
-        local_108 = 0;
-        local_10c = 0;
-        local_110 = 0;
-        local_104 = 0;
+        SStack_118.base.surface_normal.C.i = 0;
+        SStack_118.base.surface_normal.B.i = 0;
+        SStack_118.base.surface_normal.A.i = 0;
+        SStack_118.base.surface_normal.D.i = 0;
       }
       if (alpha < 0xfde9) {
         engine_drender_cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_00482cd0
-                  (DAT_00612560,aSStack_118);
+                  (DAT_00612560,&SStack_118);
       }
       else {
         engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_00482540
-                  (DAT_00612560,aSStack_118);
+                  (DAT_00612560,&SStack_118);
       }
-      face_data = face_data + 0x12;
+      face_data = face_data + 1;
       local_20 = local_20 + 1;
     } while (local_20 < count);
   }

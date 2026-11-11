@@ -126,7 +126,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_00430d90(CCharacter *thi
        *(uint *)((int)&local_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 4);
   if (this_ptr->is_fully_burned == 0) {
     core_gore_cpp_CGore_spawnBloodBurst_FUN_004e6060
-              (g_CGorePtr,&CStack_68,impact_point,100,*(EBloodType *)&this_ptr->field_0x27a0);
+              (g_CGorePtr,&CStack_68,impact_point,100,this_ptr->blood_type);
     (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
     return;
   }

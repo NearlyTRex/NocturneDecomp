@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 int __cdecl core_bride_cpp_CBride_getTargetPoints_FUN_00424d60(CBride *this_ptr,CVector3f *out_points_array)
 
 {
@@ -19,7 +21,7 @@ int __cdecl core_bride_cpp_CBride_getTargetPoints_FUN_00424d60(CBride *this_ptr,
   
   bVar2 = 0;
   pCVar1 = &(this_ptr->base).base.model;
-  if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[8] * 4) == 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[8]] == 0) {
     core_skeleton_cpp_FUN_00569130(pCVar1,DAT_007c53ac);
     CStack_30.x = fStack_24;
     *(float *)((int)&CStack_30 + (uint)bVar2 * -8 + 4) = afStack_20[(uint)bVar2 * -2];

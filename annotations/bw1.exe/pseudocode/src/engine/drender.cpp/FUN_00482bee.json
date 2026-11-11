@@ -177,7 +177,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar2 = uVar2 & *(uint *)(param_1->vertex_buffer_ptr + *(int *)(iVar1 + 0x18) * 0x30 + 0x10)",
+      "text": "uVar2 = uVar2 & param_1->vertex_buffer_ptr[*(int *)(iVar1 + 0x18)].projected_vertex.screen_x",
       "type": "unnamed_param"
     },
     {

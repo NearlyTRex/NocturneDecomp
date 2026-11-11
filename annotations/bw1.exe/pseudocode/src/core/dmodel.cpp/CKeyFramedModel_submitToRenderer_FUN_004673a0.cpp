@@ -46,13 +46,13 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_004673a0(CKeyF
       local_24 = instance;
       iVar9 = 0;
       do {
-        iVar5 = *(int *)(local_28->part_list + 4) + iVar9;
+        iVar5 = local_28->part_list[0].poly_count + iVar9;
         if ((instance == (CKeyFramedModelInstance *)0x0) ||
            (local_24->part_visibility_flags[0] != 0)) {
           if ((this_ptr->texture_count < 2) || (iVar4 != 0)) {
             if (iVar4 == 0) {
               engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-                        (DAT_00612560,(SMRGLTextureBasic *)&this_ptr->field_0x124);
+                        (DAT_00612560,(SMRGLTextureBasic *)this_ptr->texture_list);
             }
             core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0
                       (g_CDemonSetPtr,this_ptr->poly_vert_list + iVar9,iVar5 - iVar9,render_flags);
@@ -63,8 +63,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_004673a0(CKeyF
                 engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
                           (DAT_00612560,
                            (SMRGLTextureBasic *)
-                           (&this_ptr->field_0x124 + this_ptr->poly_texture_index_list[iVar9] * 0x48
-                           ));
+                           (this_ptr->texture_list + this_ptr->poly_texture_index_list[iVar9]));
                 iVar8 = this_ptr->poly_texture_index_list[iVar9];
               }
               iVar6 = iVar9 * 4;

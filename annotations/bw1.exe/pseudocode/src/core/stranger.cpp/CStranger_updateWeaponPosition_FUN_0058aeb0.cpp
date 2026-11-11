@@ -17,6 +17,8 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0058aeb0(CStra
   byte bVar6;
   float afStackY_1020 [953];
   CVector3f *new_orientation;
+  uint local_f8 [12];
+  uint local_c8 [12];
   CMatrix3x4f local_98;
   uint local_68 [12];
   float local_38;
@@ -28,21 +30,23 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0058aeb0(CStra
   
   bVar6 = 0;
   pCVar1 = this_ptr->weapon;
-  if (((pCVar1 != (CWeapon *)0x0) && (pCVar1 != *(CWeapon **)&this_ptr->field_0x25b0)) &&
-     (pCVar1 != *(CWeapon **)&this_ptr->field_0x2628)) {
+  if (((pCVar1 != (CWeapon *)0x0) &&
+      (pCVar1 != (CWeapon *)(this_ptr->base).base.carry_hands[0].carry_actor)) &&
+     (pCVar1 != (CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor)) {
     core_stranger_cpp_FUN_0058afe0(this_ptr,this_ptr->weapon,hand_index == 0);
     puVar4 = (uint *)&stack0xfffffed8;
-    puVar5 = (uint *)&stack0xffffff38;
+    puVar5 = local_c8;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
       *puVar5 = *puVar4;
       puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
       puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
     }
     core_xform_cpp_FUN_005b5760
-              (&local_98,(CVector3f *)&this_ptr->field_0x20,(CVector3f *)&this_ptr->field_0x30);
-    core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&stack0xffffff38,&local_98);
+              (&local_98,&(this_ptr->base).base.base.location.position,
+               &(this_ptr->base).base.base.orient.vec);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(local_c8,&local_98);
     puVar4 = local_68;
-    puVar5 = (uint *)&stack0xffffff08;
+    puVar5 = local_f8;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
       *puVar5 = *puVar4;
       puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
@@ -50,13 +54,13 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0058aeb0(CStra
     }
     pCVar1 = this_ptr->weapon;
     pCVar2 = (pCVar1->base).vtable._ub;
-    core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&stack0xffffff08);
+    core_xform_cpp_matrixToEulerAngles_FUN_005b5930(local_f8);
     local_2c.x = local_38;
     *(float *)((int)&local_2c + (uint)bVar6 * -8 + 4) = afStack_34[(uint)bVar6 * -2];
     *(float *)((int)&local_2c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
          afStack_34[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
     new_orientation = &local_2c;
-    core_xform_cpp_FUN_005b6270(&stack0xffffff08);
+    core_xform_cpp_FUN_005b6270(local_f8);
     local_20.x = local_14;
     *(uint *)((int)&local_20 + (uint)bVar6 * -8 + 4) = auStack_10[(uint)bVar6 * -2];
     *(uint *)((int)&local_20 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =

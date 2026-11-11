@@ -17,9 +17,9 @@ CDjien * unkafter_djien_cpp_CDjien_ctor_FUN_0045fe10(CDjien *this_ptr)
   CEnemy *pCVar3;
   int iVar4;
   CDjien *pCVar5;
-  byte *puVar6;
+  CDjien *pCVar6;
   
-  pCVar3 = core_enemy_cpp_CEnemy_ctor_FUN_004a0410((CEnemy *)this_ptr);
+  pCVar3 = core_enemy_cpp_CEnemy_ctor_FUN_004a0410(&this_ptr->base);
   iVar4 = __arrinit
                     (pCVar3[1].base.base.create_event + 0x1c,0x18,&g_SDjienBoxTypeInfo);
   *(CDjien_full_vtable **)(iVar4 + -0xc1a8) = &g_CDjienVTable;
@@ -42,9 +42,9 @@ CDjien * unkafter_djien_cpp_CDjien_ctor_FUN_0045fe10(CDjien *this_ptr)
   *(uint *)(iVar4 + -0x9304) = uVar2;
   pCVar5 = (CDjien *)(iVar4 + -0xc2fc);
   do {
-    puVar6 = &pCVar5->field_0x4;
-    *(uint *)&pCVar5->field_0xc2d8 = 0;
-    pCVar5 = (CDjien *)puVar6;
-  } while (puVar6 != (byte *)(iVar4 + -0xc2e4));
+    pCVar6 = (CDjien *)((pCVar5->base).base.base.actor_name + 4);
+    pCVar5->sack_damage[0] = 0.0;
+    pCVar5 = pCVar6;
+  } while (pCVar6 != (CDjien *)(iVar4 + -0xc2e4));
   return (CDjien *)(iVar4 + -0xc2fc);
 }

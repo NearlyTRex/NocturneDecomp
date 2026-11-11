@@ -13,7 +13,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_setWalkTarget_FUN_005b0b70(CWerewolf *t
   
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                      (&(this_ptr->base).base.model.base);
-  if (*(int *)(pSVar1 + 0x24) == 0x13) {
+  if (pSVar1->state_index == 0x13) {
     return;
   }
   core_charactr_cpp_CCharacter_setWalkTarget_FUN_00432050

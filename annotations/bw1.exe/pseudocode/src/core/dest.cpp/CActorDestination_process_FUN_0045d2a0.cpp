@@ -41,7 +41,7 @@ void __cdecl core_dest_cpp_CActorDestination_process_FUN_0045d2a0(CActorDestinat
     for (pCStack_18 = pCVar1; (int)pCStack_18 < g_CDemonSetPtr->actor_count;
         pCStack_18 = (CDemonActor *)(pCStack_18->actor_name + 1)) {
       pCVar1 = *(CDemonActor **)
-                (pCStack_1c[0xf7e].actor_name + (int)&g_CDemonSetPtr->cameras[0].field_0x14);
+                (pCStack_1c[0xf7e].actor_name + (int)(g_CDemonSetPtr->cameras[0].name + 0x14));
       fStack_34 = (this_ptr->base).location.position.x - (pCVar1->location).position.x;
       fStack_30 = (this_ptr->base).location.position.y - (pCVar1->location).position.y;
       fStack_2c = (this_ptr->base).location.position.z - (pCVar1->location).position.z;

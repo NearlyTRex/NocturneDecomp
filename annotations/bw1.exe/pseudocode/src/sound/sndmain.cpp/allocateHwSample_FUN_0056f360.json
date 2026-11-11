@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 92,
+    "complexity_score": 77,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_ref",
-      "unnamed_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
@@ -128,14 +127,6 @@
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*_DAT_02c80650 + 0x30))(_DAT_02c80650,&stack0x00000004);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "((*(int *)&g_SfxSamples[iVar1].field_0x15c == 0 &&",
-      "type": "unnamed_field"
     }
   ]
 }

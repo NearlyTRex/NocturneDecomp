@@ -2,20 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 299,
-    "complexity_score": 255,
+    "complexity_score": 393,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 165,
-    "suspect_count": 7,
+    "pseudocode_lines": 153,
+    "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
+      "pointer_truncation",
       "stack_alignment_array",
+      "unknown_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 464
+    "total_lines": 452
   },
   "cross_references": [
     {
@@ -431,50 +433,162 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 18,
+      "line": 17,
       "match": "afStackY_1868",
       "severity": "moderate",
       "text": "float afStackY_1868 [1513];",
       "type": "stack_alignment_array"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 63,
+      "match": "._24_8_",
+      "severity": "mild",
+      "text": "local_40._24_8_ = floor((double)(time / fVar1));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 64,
+      "match": "._24_8_",
+      "severity": "mild",
+      "text": "local_a8 = time - (float)(double)local_40._24_8_ * fVar1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 67,
+      "match": "._24_8_",
+      "severity": "mild",
+      "text": "local_40._24_8_ = floor((double)(-time / fVar1));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 68,
+      "match": "._24_8_",
+      "severity": "mild",
+      "text": "local_a8 = (float)(double)local_40._24_8_ * fVar1 + time;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 109,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "local_40._12_4_ = local_60[2];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 113,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "local_7c.orient.z = (float)local_40._12_4_ + local_7c.orient.w;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 114,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "local_60[0] = (float)local_40._16_4_ + local_7c.orient.x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 115,
+      "match": "._20_4_",
+      "severity": "mild",
+      "text": "local_60[1] = (float)local_40._20_4_ + local_7c.orient.y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 116,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_40._0_4_ = (float)local_40._12_4_ + local_7c.orient.w;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 116,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "local_40._0_4_ = (float)local_40._12_4_ + local_7c.orient.w;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 121,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_7c.pos.x = (float)local_40._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 122,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_7c.pos.y = (float)local_40._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 123,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_7c.pos.z = (float)local_40._8_4_;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 152,
-      "match": "(float *)((int)out_orient",
+      "line": 129,
+      "match": "(float *)((int)pCVar5",
       "severity": "moderate",
-      "text": "pfVar8 = (float *)((int)out_orient + (uint)bVar10 * -8 + 4);",
+      "text": "pfVar7 = (float *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 161,
+      "line": 140,
       "match": "(float *)((int)out_orient",
       "severity": "moderate",
-      "text": "pfVar8 = (float *)((int)out_orient + (uint)bVar10 * -8 + 4);",
+      "text": "pfVar7 = (float *)((int)out_orient + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 99,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_7c.x = pCVar5->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 132,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_7c.x = local_40.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "description": "Complex pointer cast",
       "line": 149,
+      "match": "(float *)((int)out_orient",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)out_orient + (uint)bVar8 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 129,
+      "match": "(int)pCVar5",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 89,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "out_pos->x = local_7c.x;",
+      "text": "local_7c.pos.x = (pCVar4->pos).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 137,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "out_pos->x = local_7c.pos.x;",
       "type": "unrolled_memcpy"
     }
   ]

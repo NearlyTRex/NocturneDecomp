@@ -35,15 +35,14 @@ void core_charactr_cpp_FUN_00432cb0(int param_1)
     *(int *)(param_1 + 0x2750) = iVar3;
     pCVar4 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00
                        ((CMotionController *)(param_1 + 0x158));
-    iVar5 = iVar5 * 0x120;
     local_c = 0.85;
     if (*(int *)(param_1 + 0x275c) == 1) {
       local_c = 1.0;
     }
     else {
-      fVar1 = 1.0 / (*(float *)(pCVar4 + iVar5 + 0x1c48) * _DAT_005d5cf7);
+      fVar1 = 1.0 / (pCVar4->motions[iVar5].fps * _DAT_005d5cf7);
       fVar2 = *(float *)(param_1 + 0x2758) * fVar1;
-      fVar1 = ((float)*(int *)(pCVar4 + iVar5 + 0x1c8c) - *(float *)(param_1 + 0x2758)) * fVar1;
+      fVar1 = ((float)pCVar4->motions[iVar5].frame_count - *(float *)(param_1 + 0x2758)) * fVar1;
       if (fVar2 < _DAT_005d5cfb) {
         local_c = fVar2;
       }

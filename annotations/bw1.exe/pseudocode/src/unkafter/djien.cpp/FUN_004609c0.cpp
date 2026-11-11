@@ -20,10 +20,7 @@ void unkafter_djien_cpp_FUN_004609c0(CEnemy *param_1)
   uint *puVar6;
   float *pfVar7;
   SDamageInfo *this_ptr;
-  SDamageInfo aSStack_158 [4];
-  float fStack_154;
-  CEnemy *pCStack_124;
-  CEnemy *pCStack_120;
+  SDamageInfo SStack_158;
   uint uStack_11c;
   float afStack_118 [5];
   float afStack_104 [3];
@@ -95,7 +92,7 @@ void unkafter_djien_cpp_FUN_004609c0(CEnemy *param_1)
        afStack_d0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
   core_actor_cpp_FUN_00408b40(param_1,pfVar7);
   fVar2 = afStack_64[2];
-  this_ptr = aSStack_158;
+  this_ptr = &SStack_158;
   fStack_50 = fStack_44;
   afStack_64[(uint)bVar5 * -2 + 6] = afStack_64[(uint)bVar5 * -2 + 9];
   afStack_64[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7] =
@@ -129,12 +126,12 @@ void unkafter_djien_cpp_FUN_004609c0(CEnemy *param_1)
   *(float *)((int)&CStack_e0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        afStack_64[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xd];
   core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(this_ptr);
-  fStack_154 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(8.0,12.0);
-  pCStack_124 = param_1;
-  pCStack_120 = param_1;
-  fStack_14 = fStack_154;
-  core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a0770(param_1,&CStack_e0,3.0,aSStack_158);
-  core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a0770(param_1,&CStack_ec,3.0,aSStack_158);
+  SStack_158.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(8.0,12.0);
+  SStack_158.attacker = (CDemonActor *)param_1;
+  SStack_158.wielder = (CDemonActor *)param_1;
+  fStack_14 = SStack_158.damage_amount;
+  core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a0770(param_1,&CStack_e0,3.0,&SStack_158);
+  core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a0770(param_1,&CStack_ec,3.0,&SStack_158);
   iVar3 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0
                     (0x02C82A60,param_1[1].base.base.runtime_state);
   if (iVar3 != 0) {

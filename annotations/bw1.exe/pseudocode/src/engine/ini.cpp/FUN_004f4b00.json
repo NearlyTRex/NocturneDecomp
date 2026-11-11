@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 132,
+    "complexity_score": 117,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 7,
-    "suspect_count": 11,
+    "suspect_count": 10,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 26
@@ -268,16 +267,8 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(byte ***)&param_1->field_0x200 = &PTR_engine_ini_cpp_CIniFile_dtor_FUN_004f4b30_00602964;",
+      "text": "param_1->vtable = &PTR_engine_ini_cpp_CIniFile_dtor_FUN_004f4b30_00602964;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x200",
-      "severity": "mild",
-      "text": "*(byte ***)&param_1->field_0x200 = &PTR_engine_ini_cpp_CIniFile_dtor_FUN_004f4b30_00602964;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

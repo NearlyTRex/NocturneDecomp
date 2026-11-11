@@ -556,18 +556,18 @@ section .text
     JZ 0x004d1fc8                       ; 004d1faf
         ;   XREF to: 004d1fc8 (CONDITIONAL_JUMP)  ; LAB_004d1fc8
     MOV EAX,[0x0061d418]                ; 004d1fb1 | g_CFieldNotesPtr
-    MOV ECX,dword ptr [EAX + 0x40]      ; 004d1fb6 | g_CFieldNotesInstance.field64_0x40
+    MOV ECX,dword ptr [EAX + 0x40]      ; 004d1fb6 | g_CFieldNotesInstance.is_displayed
     TEST ECX,ECX                        ; 004d1fb9
     JZ 0x004d20d4                       ; 004d1fbb
         ;   XREF to: 004d20d4 (CONDITIONAL_JUMP)  ; LAB_004d20d4
-    MOV dword ptr [EAX + 0x40],0x0      ; 004d1fc1 | g_CFieldNotesInstance.field64_0x40
+    MOV dword ptr [EAX + 0x40],0x0      ; 004d1fc1 | g_CFieldNotesInstance.is_displayed
         ;   Label: LAB_004d1fc1
     MOV EAX,[0x0061d418]                ; 004d1fc8 | g_CFieldNotesPtr
         ;   Label: LAB_004d1fc8
     CMP byte ptr [EAX],0x0              ; 004d1fcd | g_CFieldNotesInstance
     JNZ 0x004d1fd9                      ; 004d1fd0
         ;   XREF to: 004d1fd9 (CONDITIONAL_JUMP)  ; LAB_004d1fd9
-    MOV dword ptr [EAX + 0x40],0x0      ; 004d1fd2 | g_CFieldNotesInstance.field64_0x40
+    MOV dword ptr [EAX + 0x40],0x0      ; 004d1fd2 | g_CFieldNotesInstance.is_displayed
     CMP dword ptr [EBX + 0x22c],0x0     ; 004d1fd9
         ;   Label: LAB_004d1fd9
     JZ 0x004d2044                       ; 004d1fe0
@@ -656,12 +656,12 @@ section .text
     ADD ESP,0x8                         ; 004d20cc
     JMP 0x004d1f9b                      ; 004d20cf
         ;   XREF to: 004d1f9b (UNCONDITIONAL_JUMP)  ; LAB_004d1f9b
-    MOV dword ptr [EAX + 0x40],0x1      ; 004d20d4 | g_CFieldNotesInstance.field64_0x40
+    MOV dword ptr [EAX + 0x40],0x1      ; 004d20d4 | g_CFieldNotesInstance.is_displayed
         ;   Label: LAB_004d20d4
     CMP dword ptr [EBX + 0x244],0x0     ; 004d20db
     JZ 0x004d20e7                       ; 004d20e2
         ;   XREF to: 004d20e7 (CONDITIONAL_JUMP)  ; LAB_004d20e7
-    MOV dword ptr [EAX + 0x40],ECX      ; 004d20e4 | g_CFieldNotesInstance.field64_0x40
+    MOV dword ptr [EAX + 0x40],ECX      ; 004d20e4 | g_CFieldNotesInstance.is_displayed
     CMP dword ptr [0x007c3978],0x0      ; 004d20e7 | DAT_007c3978
         ;   Label: LAB_004d20e7
     JZ 0x004d1fc8                       ; 004d20ee

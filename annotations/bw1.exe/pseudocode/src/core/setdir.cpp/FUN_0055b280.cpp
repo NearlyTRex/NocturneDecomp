@@ -20,7 +20,7 @@ void core_setdir_cpp_FUN_0055b280(uint *param_1,char *param_2)
     core_main_c_FUN_005030e0("Can't create %s",param_2);
   }
   _fwrite(&DAT_020b28f4,0x3000,*param_1,p_Var1);
-  if (((byte)p_Var1[0xc] & 0x20) == 0) {
+  if ((p_Var1->_flag & 0x20) == 0) {
     _fclose(p_Var1);
     return;
   }

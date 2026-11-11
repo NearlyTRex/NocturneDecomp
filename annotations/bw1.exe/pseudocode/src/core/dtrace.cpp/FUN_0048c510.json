@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 375,
-    "complexity_score": 338,
+    "complexity_score": 325,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 148,
+    "pseudocode_lines": 135,
     "suspect_count": 18,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 523
+    "total_lines": 510
   },
   "cross_references": [
     {
@@ -179,10 +179,26 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 39,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_00580173((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&CStack_94);",
+      "text": "(&DAT_00612560->vertex_buffer_ptr->projected_vertex,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_70);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&CStack_40);",
       "type": "undefined_data"
     },
     {
@@ -190,60 +206,44 @@
       "line": 63,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&CStack_70);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_64);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 71,
+      "line": 70,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&CStack_40);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[4].projected_vertex,&CStack_34);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 79,
+      "line": 82,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),&CStack_64);",
+      "text": "(&DAT_00612560->vertex_buffer_ptr[5].projected_vertex,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 91,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0xc0),&CStack_34);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[6].projected_vertex,&CStack_1c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 98,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0xf0),&CStack_88);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[7].projected_vertex,&CStack_28);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x120),&CStack_1c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 111,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x150),&CStack_28);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 113,
+      "line": 100,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00483ce0(DAT_00612560,uVar1 & 0xff);",
@@ -251,7 +251,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 119,
+      "line": 106,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,1);",
@@ -259,55 +259,55 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 124,
+      "line": 111,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_00481c00(DAT_00612560,aSStack_e8);",
+      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_00481c00(DAT_00612560,&SStack_e8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 116,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_00481c00(DAT_00612560,aSStack_e8);",
+      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_00481c00(DAT_00612560,&SStack_e8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 134,
+      "line": 121,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_00481c00(DAT_00612560,aSStack_e8);",
+      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_00481c00(DAT_00612560,&SStack_e8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 139,
+      "line": 126,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_00481c00(DAT_00612560,aSStack_e8);",
+      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_00481c00(DAT_00612560,&SStack_e8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 144,
+      "line": 131,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_00481c00(DAT_00612560,aSStack_e8);",
+      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_00481c00(DAT_00612560,&SStack_e8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 149,
+      "line": 136,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_00481c00(DAT_00612560,aSStack_e8);",
+      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_00481c00(DAT_00612560,&SStack_e8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 150,
+      "line": 137,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);",

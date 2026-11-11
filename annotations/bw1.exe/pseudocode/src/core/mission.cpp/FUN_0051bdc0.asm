@@ -22,7 +22,7 @@
 ;   undefined4 DAT_0061f2e0
 ;   CScript* g_CScriptPtr = 01e81c80
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 g_CGameInstance.field532_0x244
+;   undefined4 g_CGameInstance.letterbox_mode
 ;   undefined4 DAT_01d06aa0
 ;   undefined4 DAT_01d06ab4
 ;   CDemonSet g_CDemonSetInstance
@@ -91,7 +91,7 @@ section .text
     CALL core_event.cpp_CEventList_reset_FUN_004a19f0 ; 0051be3a
         ;   XREF to: 004a19f0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_reset_FUN_004a19f0(CEventList * this_ptr)
     MOV EAX,[0x0061d95c]                ; 0051be3f | g_CGamePtr
-    MOV dword ptr [EAX + 0x244],0x0     ; 0051be44 | g_CGameInstance.field532_0x244
+    MOV dword ptr [EAX + 0x244],0x0     ; 0051be44 | g_CGameInstance.letterbox_mode
     MOV EAX,[0x01d06ab4]                ; 0051be4e | DAT_01d06ab4
     MOV EAX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 0051be53
     ADD ESP,0x4                         ; 0051be5a

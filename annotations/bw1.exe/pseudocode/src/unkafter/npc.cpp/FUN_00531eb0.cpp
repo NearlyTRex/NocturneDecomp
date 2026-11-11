@@ -9,7 +9,7 @@
 CFont * __cdecl unkafter_npc_cpp_FUN_00531eb0(CFont *this_ptr)
 
 {
-  *(uint *)this_ptr = 0;
-  *(byte ***)(this_ptr + 0x6a44) = &PTR_engine_palette_cpp_FUN_00531ed0_006045b0;
+  this_ptr->queued_text_count = 0;
+  this_ptr->vtable = (CFont_vtable *)&PTR_engine_palette_cpp_FUN_00531ed0_006045b0;
   return this_ptr;
 }

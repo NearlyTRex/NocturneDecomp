@@ -17,7 +17,7 @@
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044ceb0 at 0044d0bb
 ;   core_dlight.cpp_CDemonLight_beginScene_FUN_00462820 at 004628dd
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_005188a0 at 005188d5
-;   core_moon.cpp_FUN_00521e40 at 00521f08
+;   core_moon.cpp_CMoon_render_FUN_00521e40 at 00521f08
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00483530 at 0048354d
 ;
 ; Referenced Globals:

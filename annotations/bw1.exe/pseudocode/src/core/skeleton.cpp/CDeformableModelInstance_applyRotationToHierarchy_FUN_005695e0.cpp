@@ -22,7 +22,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
   float fStack_e8;
   uint local_e4 [12];
   uint local_b4 [12];
-  uint uStack_84;
+  float fStack_84;
   uint auStack_80 [7];
   uint uStack_64;
   uint auStack_60 [3];
@@ -32,7 +32,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
   float local_28;
   CSkeleton *local_24;
   CDeformableModelInstance *local_20;
-  byte *local_1c;
+  CQuaternion4f *local_1c;
   float fStack_18;
   
   bVar5 = 0;
@@ -41,7 +41,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
   local_24 = pCVar1;
   core_xform_cpp_quaternionToAxisAngle_FUN_005b78a0(rotation_quat,&local_28,local_34);
   if (0 < pCVar1->bone_count) {
-    local_1c = &this_ptr->field_0x6b0;
+    local_1c = (this_ptr->bone_transform).pose_data.bone_rotations;
     local_20 = this_ptr;
     do {
       hierarchy_distance =
@@ -62,7 +62,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
                [(uint)bVar5 * -2 + 1];
           core_xform_cpp_multiplyQuaternion_FUN_005b77b0(local_1c,&uStack_64);
           puVar3 = (uint *)((int)local_20 + (uint)bVar5 * -8 + 0x6b4);
-          *(uint *)&local_20->field_0x6b0 = uStack_84;
+          (local_20->bone_transform).pose_data.bone_rotations[0].w = fStack_84;
           puVar4 = puVar3 + (uint)bVar5 * -2 + 1;
           *puVar3 = *(uint *)((int)auStack_80 + (uint)bVar5 * 0xfffffff8);
           *puVar4 = *(uint *)
@@ -74,7 +74,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
       }
       local_20 = (CDeformableModelInstance *)&(local_20->base).tween_speed;
       iVar2 = iVar2 + 1;
-      local_1c = local_1c + 0x10;
+      local_1c = local_1c + 1;
     } while (iVar2 < local_24->bone_count);
   }
   if (-1 < bone_index) {
@@ -98,6 +98,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
     puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
     puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
   }
-  core_xform_cpp_transformVector3x4InPlace_FUN_005b5100(&this_ptr->field_0x6a4,local_e4);
+  core_xform_cpp_transformVector3x4InPlace_FUN_005b5100(&this_ptr->bone_transform,local_e4);
   return;
 }

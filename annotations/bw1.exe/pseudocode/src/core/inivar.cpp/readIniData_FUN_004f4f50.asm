@@ -129,7 +129,7 @@ section .text
     MOV EAX,[0x0061d95c]                ; 004f504d | g_CGamePtr
     ADD ESP,0xc                         ; 004f5052
     ADD EAX,0xd4                        ; 004f5055
-    PUSH EAX                            ; 004f505a | g_CGameInstance.field164_0xd4
+    PUSH EAX                            ; 004f505a | g_CGameInstance.hero_number
     PUSH 0x5e5988                       ; 004f505b | = "heroNumber"
     LEA EAX,[ESP + 0xc]                 ; 004f5060
     PUSH EAX                            ; 004f5064
@@ -139,7 +139,7 @@ section .text
     POP EBX                             ; 004f506d
     MOV EAX,[0x0061d95c]                ; 004f506e | g_CGamePtr
     ADD EAX,0xc                         ; 004f5073
-    PUSH EAX                            ; 004f5076 | g_CGameInstance.field3_0xc
+    PUSH EAX                            ; 004f5076 | g_CGameInstance.halo_mode
     PUSH 0x5e5993                       ; 004f5077 | = "haloMode"
     LEA EAX,[ESP + 0x8]                 ; 004f507c
     PUSH EAX                            ; 004f5080
@@ -155,7 +155,7 @@ section .text
     MOV EAX,[0x0061d95c]                ; 004f509d | g_CGamePtr
     ADD ESP,0xc                         ; 004f50a2
     ADD EAX,0x10                        ; 004f50a5
-    PUSH EAX                            ; 004f50a8 | g_CGameInstance.field7_0x10
+    PUSH EAX                            ; 004f50a8 | g_CGameInstance.subtitle_mode
     PUSH 0x5e59aa                       ; 004f50a9 | = "subtitleMode"
     LEA EAX,[ESP + 0x8]                 ; 004f50ae
     PUSH EAX                            ; 004f50b2
@@ -164,7 +164,7 @@ section .text
     MOV EAX,[0x0061d95c]                ; 004f50b8 | g_CGamePtr
     ADD ESP,0xc                         ; 004f50bd
     ADD EAX,0x14                        ; 004f50c0
-    PUSH EAX                            ; 004f50c3 | g_CGameInstance.field11_0x14
+    PUSH EAX                            ; 004f50c3 | g_CGameInstance.blood_flag
     PUSH 0x5e59b7                       ; 004f50c4 | = "bloodFlag"
     LEA EAX,[ESP + 0x8]                 ; 004f50c9
     PUSH EAX                            ; 004f50cd
@@ -200,7 +200,7 @@ section .text
     MOV EAX,[0x0061d95c]                ; 004f5124 | g_CGamePtr
     ADD ESP,0xc                         ; 004f5129
     ADD EAX,0x20                        ; 004f512c
-    PUSH EAX                            ; 004f512f | g_CGameInstance.field23_0x20
+    PUSH EAX                            ; 004f512f | g_CGameInstance.quimby_flag
     PUSH 0x5e59e8                       ; 004f5130 | = "quimbyFlag"
     LEA EAX,[ESP + 0x8]                 ; 004f5135
     PUSH EAX                            ; 004f5139
@@ -218,7 +218,7 @@ section .text
     ADD ESP,0xc                         ; 004f515e
     MOV EAX,[0x0061d95c]                ; 004f5161 | g_CGamePtr
     ADD EAX,0xe4                        ; 004f5166
-    PUSH EAX                            ; 004f516b | g_CGameInstance.field180_0xe4
+    PUSH EAX                            ; 004f516b | g_CGameInstance.puzzle_difficulty_mode
     PUSH 0x5e5a00                       ; 004f516c | = "puzzleDifficultyMode"
     LEA EAX,[ESP + 0x8]                 ; 004f5171
     PUSH EAX                            ; 004f5175
@@ -227,7 +227,7 @@ section .text
     MOV EAX,[0x0061d95c]                ; 004f517b | g_CGamePtr
     ADD ESP,0xc                         ; 004f5180
     ADD EAX,0xe8                        ; 004f5183
-    PUSH EAX                            ; 004f5188 | g_CGameInstance.field184_0xe8
+    PUSH EAX                            ; 004f5188 | g_CGameInstance.combat_difficulty_mode
     PUSH 0x5e5a15                       ; 004f5189 | = "combatDifficultyMode"
     LEA EAX,[ESP + 0x8]                 ; 004f518e
     PUSH EAX                            ; 004f5192
@@ -253,7 +253,7 @@ section .text
     MOV EAX,[0x0061d95c]                ; 004f51c7 | g_CGamePtr
     ADD ESP,0x8                         ; 004f51cc
     ADD EAX,0xd0                        ; 004f51cf
-    PUSH EAX                            ; 004f51d4 | g_CGameInstance.field160_0xd0
+    PUSH EAX                            ; 004f51d4 | g_CGameInstance.game_control
     PUSH 0x5e5a2a                       ; 004f51d5 | = "gameControl"
     LEA EAX,[ESP + 0x8]                 ; 004f51da
     PUSH EAX                            ; 004f51de
@@ -677,7 +677,7 @@ section .text
     MOV EAX,[0x0061d95c]                ; 004f56ee | g_CGamePtr
     ADD ESP,0xc                         ; 004f56f3
     ADD EAX,0x230                       ; 004f56f6
-    PUSH EAX                            ; 004f56fb | g_CGameInstance.field512_0x230
+    PUSH EAX                            ; 004f56fb | g_CGameInstance.head_of_horror_cheat
     PUSH 0x5e5c2a                       ; 004f56fc | = "headOfHorrorCheat"
     LEA EAX,[ESP + 0x8]                 ; 004f5701
     PUSH EAX                            ; 004f5705

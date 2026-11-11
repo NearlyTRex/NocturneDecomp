@@ -27,7 +27,7 @@ void sound_mp3_cpp_FUN_00525ab0(int *param_1,int param_2,ulong param_3,int param
   param_1[8] = iVar1;
   param_1[9] = param_4;
   param_1[2] = param_3;
-  pvVar2 = FUN_005c08d0(param_3);
+  pvVar2 = malloc(param_3);
   param_1[1] = (int)pvVar2;
   if (pvVar2 == (void *)0x0) {
     _DAT_01d1d400 = "..\\sound\\mp3.cpp";

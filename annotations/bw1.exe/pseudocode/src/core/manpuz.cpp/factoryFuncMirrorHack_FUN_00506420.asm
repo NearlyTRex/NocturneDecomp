@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_manpuz.cpp_CMirrorHack_ctor_FUN_00506450
-;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
+;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x2d8                          ; 00506420
         ;   Label: core_manpuz.cpp_factoryFuncMirrorHack_FUN_00506420
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 00506425
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 00506425
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 0050642a
     TEST EAX,EAX                        ; 0050642d
     JNZ 0x00506432                      ; 0050642f

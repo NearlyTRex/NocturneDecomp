@@ -13,13 +13,13 @@ CTheHand * core_thehand_cpp_CTheHand_ctor_FUN_00599070(CTheHand *this_ptr)
 {
   CTheHand *pCVar1;
   
-  pCVar1 = (CTheHand *)core_enemy_cpp_CEnemy_ctor_FUN_004a0410((CEnemy *)this_ptr);
-  ((UActorVTable *)&pCVar1->field_0x154)->_ub = &g_CTheHandVTable._ub;
+  pCVar1 = (CTheHand *)core_enemy_cpp_CEnemy_ctor_FUN_004a0410(&this_ptr->base);
+  (pCVar1->base).base.base.vtable._ub = &g_CTheHandVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
-            ((CDeformableModelInstance *)&pCVar1->field_0x158,"thehand.dfm");
-  *(uint *)&pCVar1->field_0x2ff4 = 0x42480000;
-  *(uint *)&pCVar1->field_0x2ff8 = 0x42c80000;
-  *(uint *)&pCVar1->field_0xc268 = 0;
-  *(uint *)&pCVar1->field_0xc26c = 0;
+            (&(pCVar1->base).base.model,"thehand.dfm");
+  (pCVar1->base).base.ai_detection_range_min = 50.0;
+  (pCVar1->base).base.ai_detection_range_max = 100.0;
+  pCVar1->wait_timer = 0.0;
+  pCVar1->chase_timer = 0.0;
   return pCVar1;
 }

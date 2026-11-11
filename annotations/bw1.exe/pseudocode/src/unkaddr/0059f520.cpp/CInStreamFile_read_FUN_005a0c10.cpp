@@ -1,0 +1,61 @@
+// Name: unkaddr_0059f520.cpp_CInStreamFile_read_FUN_005a0c10
+// Address: 005a0c10
+// Address Range: [[005a0c10, 005a0cf2]]
+// Convention: __cdecl
+// Signature: int __cdecl unkaddr_0059f520_cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile *this_ptr,undefined4 *param_2,uint param_3)
+
+#include "nocturne.h"
+
+int __cdecl unkaddr_0059f520_cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile *this_ptr,uint *param_2,uint param_3)
+
+{
+  uint uVar1;
+  int iVar2;
+  uint uVar3;
+  char *pcVar4;
+  char *pcVar5;
+  byte bVar6;
+  int local_18;
+  
+  bVar6 = 0;
+  if (this_ptr->file_handle != (HANDLE)0x0) {
+    if (this_ptr->file_size <= this_ptr->position) {
+      return -1;
+    }
+    uVar1 = this_ptr->file_size - this_ptr->position;
+    if ((int)uVar1 < (int)param_3) {
+      param_3 = uVar1;
+    }
+    local_18 = 0;
+    while( true ) {
+      if ((int)param_3 < 1) {
+        return local_18;
+      }
+      if (((this_ptr->position < this_ptr->buffer_start) ||
+          (this_ptr->buffer_start + this_ptr->buffer_length <= this_ptr->position)) &&
+         (iVar2 = support_trstream_cpp_CInStreamFile_fillBuffer_FUN_005a0ec0
+                            (this_ptr,this_ptr->position), iVar2 == 0)) break;
+      uVar1 = (this_ptr->buffer_start + this_ptr->buffer_length) - this_ptr->position;
+      if ((int)param_3 < (int)uVar1) {
+        uVar1 = param_3;
+      }
+      param_3 = param_3 - uVar1;
+      pcVar4 = this_ptr->buffer + (this_ptr->position - this_ptr->buffer_start);
+      pcVar5 = (char *)param_2;
+      for (uVar3 = uVar1 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
+        *(uint *)pcVar5 = *(uint *)pcVar4;
+        pcVar4 = pcVar4 + ((uint)bVar6 * -2 + 1) * 4;
+        pcVar5 = pcVar5 + ((uint)bVar6 * -2 + 1) * 4;
+      }
+      for (uVar3 = uVar1 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
+        *pcVar5 = *pcVar4;
+        pcVar4 = pcVar4 + (uint)bVar6 * -2 + 1;
+        pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
+      }
+      param_2 = (uint *)((int)param_2 + uVar1);
+      local_18 = local_18 + uVar1;
+      this_ptr->position = this_ptr->position + uVar1;
+    }
+  }
+  return -2;
+}

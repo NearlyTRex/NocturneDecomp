@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void core_doc_cpp_FUN_00475920(CCharacter *param_1)
@@ -14,6 +13,7 @@ void core_doc_cpp_FUN_00475920(CCharacter *param_1)
 {
   float *pfVar1;
   CFlame *pCVar2;
+  CDemonActor *this_ptr;
   float *pfVar3;
   float fVar4;
   uint uVar5;
@@ -35,18 +35,18 @@ void core_doc_cpp_FUN_00475920(CCharacter *param_1)
   if (param_1->grabbed_by != (CDemonActor *)0x0) {
     return;
   }
-  if (param_1[2].flames[0x1a].base.previous_transform_state.orientation.vec.y != 0.0) {
+  if (param_1[2].flames[0x1a].base.previous_transform_state.orientation.vec.x != 0.0) {
     return;
   }
   if (param_1[2].flames[0x1a].globe.corona_mode == 0) {
     return;
   }
-  iVar7 = *(int *)(param_1[2].flames[0x1a].on_event + 0x28);
-  if (iVar7 == 0) {
-    iVar7 = *(int *)&param_1->field_0x2628;
+  this_ptr = *(CDemonActor **)(param_1[2].flames[0x1a].on_event + 0x28);
+  if (this_ptr == (CDemonActor *)0x0) {
+    this_ptr = param_1->carry_hands[1].carry_actor;
 LAB_0047597e:
-    if ((iVar7 != 0) && (uVar5 = (**(code **)(*(int *)(iVar7 + 0x154) + 0x74))(iVar7), uVar5 != 0))
-    {
+    if ((this_ptr != (CDemonActor *)0x0) &&
+       (uVar5 = (*((this_ptr->vtable)._ub)->getAllowedMeleeAttackTypes)(this_ptr), uVar5 != 0)) {
       iVar7 = 0;
       do {
         iVar9 = *(int *)(param_1[2].flames[0x1a].on_event + 0x34) + 1;
@@ -81,7 +81,7 @@ LAB_00475b04:
         if ((uVar10 & uVar5) != 0) {
           param_1->layer_action_t = 0.0;
           iVar7 = *(int *)(param_1[2].flames[0x1a].on_event + 0x34);
-          param_1[2].flames[0x1a].base.previous_transform_state.orientation.vec.y = 9.80909e-45;
+          param_1[2].flames[0x1a].base.previous_transform_state.orientation.vec.x = 9.80909e-45;
           param_1->layer_action_index = iVar7 + 0xc;
           return;
         }
@@ -92,7 +92,7 @@ LAB_00475b04:
       } while( true );
     }
   }
-  else if (*(int *)(iVar7 + 0x2e0) == 7) goto LAB_0047597e;
+  else if (this_ptr[2].orient.vec.x == 9.80909e-45) goto LAB_0047597e;
   iVar7 = *(int *)(param_1[2].flames[0x1a].on_event + 0x28);
   if (iVar7 == 0) {
     return;

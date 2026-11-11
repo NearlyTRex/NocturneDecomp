@@ -9,11 +9,15 @@
 int __cdecl core_thehand_cpp_CTheHand_attractActorToward_FUN_00599a10(CTheHand *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
 
 {
-  int iVar1;
-  uint *puVar2;
+  CCharacter *pCVar1;
+  int iVar2;
   uint *puVar3;
-  byte bVar4;
-  uint auStackY_101c [905];
+  uint *puVar4;
+  byte bVar5;
+  float afStackY_101c [905];
+  uint auStack_1e4 [12];
+  uint auStack_1b4 [12];
+  uint auStack_184 [12];
   CMatrix3x4f CStack_154;
   uint auStack_124 [12];
   uint auStack_f4 [12];
@@ -21,65 +25,65 @@ int __cdecl core_thehand_cpp_CTheHand_attractActorToward_FUN_00599a10(CTheHand *
   uint auStack_94 [12];
   uint auStack_64 [12];
   uint uStack_34;
-  uint auStack_30 [4];
-  uint uStack_20;
+  float afStack_30 [4];
+  float fStack_20;
   uint uStack_1c;
-  uint uStack_10;
+  float fStack_10;
   
-  bVar4 = 0;
-  if (actor != *(CDemonActor **)&this_ptr->field_0xc1e8) {
+  bVar5 = 0;
+  if ((CCharacter *)actor != (this_ptr->base).victim) {
     return 0;
   }
   core_xform_cpp_lerpMatrix3x4_FUN_005b72c0
-            (&this_ptr->field_0xc274,&this_ptr->field_0xc2a4,*(uint *)&this_ptr->field_0xc270)
-  ;
-  puVar2 = auStack_c4;
-  puVar3 = (uint *)&stack0xfffffe7c;
-  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+            (&this_ptr->target_matrix,&this_ptr->prev_target_matrix,this_ptr->target_blend);
+  puVar3 = auStack_c4;
+  puVar4 = auStack_184;
+  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar4 = *puVar3;
+    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
+    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
   }
   core_xform_cpp_FUN_005b5760
-            (&CStack_154,(CVector3f *)&this_ptr->field_0x20,(CVector3f *)&this_ptr->field_0x30);
+            (&CStack_154,&(this_ptr->base).base.base.location.position,
+             &(this_ptr->base).base.base.orient.vec);
   core_thehand_cpp_FUN_00599be0(this_ptr,&CStack_154);
-  puVar2 = (uint *)&stack0xfffffe4c;
-  puVar3 = auStack_f4;
-  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+  puVar3 = auStack_1b4;
+  puVar4 = auStack_f4;
+  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar4 = *puVar3;
+    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
+    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
   }
-  core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&stack0xfffffe7c,auStack_f4);
-  puVar2 = auStack_64;
-  puVar3 = (uint *)&stack0xfffffe1c;
-  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+  core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(auStack_184,auStack_f4);
+  puVar3 = auStack_64;
+  puVar4 = auStack_1e4;
+  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar4 = *puVar3;
+    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
+    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
   }
-  core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&stack0xfffffe1c);
-  puVar2 = auStack_94;
-  puVar3 = auStack_124;
-  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+  core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(auStack_1e4);
+  puVar3 = auStack_94;
+  puVar4 = auStack_124;
+  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar4 = *puVar3;
+    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
+    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
   }
   core_xform_cpp_FUN_005b6270(auStack_124);
-  auStack_30[2] = uStack_10;
-  auStack_30[(uint)bVar4 * -2 + 3] = auStack_30[(uint)bVar4 * -2 + 9];
-  auStack_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
-       auStack_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10];
-  iVar1 = *(int *)&this_ptr->field_0xc1e8;
-  *(uint *)(iVar1 + 0x20) = auStack_30[2];
-  *(uint *)(iVar1 + 0x24) = auStack_30[3];
-  *(uint *)(iVar1 + 0x28) = uStack_20;
+  afStack_30[2] = fStack_10;
+  afStack_30[(uint)bVar5 * -2 + 3] = afStack_30[(uint)bVar5 * -2 + 9];
+  afStack_30[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
+       afStack_30[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10];
+  pCVar1 = (this_ptr->base).victim;
+  (pCVar1->base).location.position.x = afStack_30[2];
+  (pCVar1->base).location.position.y = afStack_30[3];
+  (pCVar1->base).location.position.z = fStack_20;
   core_xform_cpp_matrixToEulerAngles_FUN_005b5930(auStack_124);
   uStack_34 = uStack_1c;
-  auStack_30[(uint)bVar4 * -2] = auStack_30[(uint)bVar4 * -2 + 6];
-  auStack_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-       auStack_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
-  core_charactr_cpp_FUN_00433d50(*(uint *)&this_ptr->field_0xc1e8,&uStack_34);
+  afStack_30[(uint)bVar5 * -2] = afStack_30[(uint)bVar5 * -2 + 6];
+  afStack_30[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+       afStack_30[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];
+  core_charactr_cpp_FUN_00433d50((this_ptr->base).victim,&uStack_34);
   return 1;
 }

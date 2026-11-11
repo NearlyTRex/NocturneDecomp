@@ -11,7 +11,7 @@ void core_dynamite_cpp_factoryFuncDynamite_FUN_004924b0(void)
 {
   CDynamite *this_ptr;
   
-  this_ptr = (CDynamite *)debugAllocTracked1(0x58c);
+  this_ptr = (CDynamite *)operator_new(0x58c);
   if (this_ptr == (CDynamite *)0x0) {
     return;
   }

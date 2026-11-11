@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 281,
+    "complexity_score": 136,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 51,
-    "suspect_count": 21,
+    "suspect_count": 7,
     "suspect_types": [
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 172
@@ -225,108 +224,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "fVar1 = fVar1 * *(float *)&(this_ptr->options).field_0x38;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "if (((this_ptr->options).field_0x4c & 1) == 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 23,
       "match": "DAT_006232ec",
       "severity": "mild",
       "text": "if (0 < DAT_006232ec) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x70",
-      "severity": "mild",
-      "text": "local_14 = *(float *)&pCVar3->field_0x70;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x70",
-      "severity": "mild",
-      "text": "if (*(float *)&pCVar3->field_0x70 < *(float *)&this_ptr->field_0xf4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0xf4",
-      "severity": "mild",
-      "text": "if (*(float *)&pCVar3->field_0x70 < *(float *)&this_ptr->field_0xf4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0xf4",
-      "severity": "mild",
-      "text": "local_14 = *(float *)&this_ptr->field_0xf4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0xf8",
-      "severity": "mild",
-      "text": "if (*(float *)&this_ptr->field_0xf8 < local_14) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0xf8",
-      "severity": "mild",
-      "text": "local_14 = *(float *)&this_ptr->field_0xf8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0xf0",
-      "severity": "mild",
-      "text": "if (*(float *)&this_ptr->field_0xf0 * _DAT_005f379c < local_14) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0xf0",
-      "severity": "mild",
-      "text": "local_20 = *(float *)&this_ptr->field_0xf0 / local_14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x90",
-      "severity": "mild",
-      "text": "*(float *)&pCVar3->field_0x90 = fVar1 * local_20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "pCVar3 = (CSfxSlot *)&(pCVar3->options).field_0x4;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -345,22 +248,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x90",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x90 = fVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "this_ptr = (CSfxSlot *)&(this_ptr->options).field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 51,
       "match": "DAT_006232ec",
@@ -373,7 +260,7 @@
       "line": 40,
       "match": "pCVar3 = (T *)&(pCVar3->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar3 = (CSfxSlot *)&(pCVar3->options).field_0x4;",
+      "text": "pCVar3 = (CSfxSlot *)&(pCVar3->options).position;",
       "type": "shadow_pointer_walk"
     },
     {
@@ -381,7 +268,7 @@
       "line": 50,
       "match": "this_ptr = (T *)&(this_ptr->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "this_ptr = (CSfxSlot *)&(this_ptr->options).field_0x4;",
+      "text": "this_ptr = (CSfxSlot *)&(this_ptr->options).position;",
       "type": "shadow_pointer_walk"
     }
   ]

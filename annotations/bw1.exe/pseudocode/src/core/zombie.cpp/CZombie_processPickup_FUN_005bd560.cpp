@@ -89,10 +89,10 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005bd560(CZombie *this_ptr
     local_18 = (float *)core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(5.0,10.0);
     this_ptr->pickup_scan_timer = (float)local_18;
   }
-  if (*(int *)&(this_ptr->base).base.field_0x25b0 != 0) {
+  if ((this_ptr->base).base.carry_hands[0].carry_actor != (CDemonActor *)0x0) {
     return 0;
   }
-  if (*(int *)&(this_ptr->base).base.field_0x2628 != 0) {
+  if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
     return 0;
   }
   if (0.0 < this_ptr->pickup_approach_progress) {

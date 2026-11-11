@@ -12,10 +12,10 @@ void __cdecl core_biggs_cpp_CBiggs_processDamage_FUN_00414fc0(CBiggs *this_ptr,S
   float fVar1;
   int iVar2;
   
-  if (*(int *)&(this_ptr->base).base.field_0x27b0 != 0) {
+  if ((this_ptr->base).base.is_invulnerable != 0) {
     return;
   }
-  fVar1 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     iVar2 = 7;

@@ -6,10 +6,16 @@
 #include "system/basetypes.h"
 
 // Structure: SPart
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// loadStream 00564ed0: parts at +0xc04 stride 0x60; "%[^"]",%d,%d,%d -> +0 name, +0x20 tri_counts, +0x34 cap_tri_counts, +0x48 adj_part_count; adj list %d at +0x4c + i*4 for i < [+0x48]; v<6 format "%[^"]", %d -> +0,+0x48; v>=6 "%[^"]", %d, %d -> +0,+0x48,+0x5c; "%d,%d" per lod into +0x20+l*4 / +0x34+l*4
+// Ghidra size: 0x60 (96 bytes)
 #pragma pack(push, 1)
 typedef struct SPart {
+    char part_name[32]; // 0x0
+    int tri_counts[5]; // 0x20
+    int cap_tri_counts[5]; // 0x34
+    int adj_part_count; // 0x48
+    int adj_part_list[4]; // 0x4c
+    int dominant_bone; // 0x5c
 } SPart;
 #pragma pack(pop)
 

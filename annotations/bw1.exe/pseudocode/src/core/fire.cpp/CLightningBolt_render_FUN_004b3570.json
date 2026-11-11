@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 500,
-    "complexity_score": 823,
+    "complexity_score": 816,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 26,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 208,
+    "pseudocode_lines": 201,
     "suspect_count": 58,
     "suspect_types": [
       "extra_output",
@@ -18,7 +18,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 708
+    "total_lines": 701
   },
   "cross_references": [
     {
@@ -724,7 +724,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
+      "line": 13,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "int *extraout_EDX;",
@@ -732,7 +732,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 18,
+      "line": 19,
       "match": "aiStackY_103c",
       "severity": "moderate",
       "text": "int aiStackY_103c [975];",
@@ -740,23 +740,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 52,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)(&DAT_0061caac + (iVar2 % 6) * 0x18));",
+      "text": "(DAT_00612560,(SMRGLTextureBasic *)(&DAT_0061caac + (iVar3 % 6) * 0x18));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 52,
       "match": "DAT_0061caac",
       "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)(&DAT_0061caac + (iVar2 % 6) * 0x18));",
+      "text": "(DAT_00612560,(SMRGLTextureBasic *)(&DAT_0061caac + (iVar3 % 6) * 0x18));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 66,
+      "line": 67,
       "match": "DAT_0062902c",
       "severity": "mild",
       "text": "DAT_0062902c = 0xf80000;",
@@ -764,7 +764,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 73,
       "match": "DAT_0062902c",
       "severity": "mild",
       "text": "DAT_0062902c = 0x80000;",
@@ -772,7 +772,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 76,
       "match": "DAT_00629090",
       "severity": "mild",
       "text": "DAT_00629090 = 0xf80000;",
@@ -780,7 +780,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 79,
       "match": "DAT_00629034",
       "severity": "mild",
       "text": "DAT_00629034 = 0xffff;",
@@ -788,7 +788,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 79,
+      "line": 80,
       "match": "DAT_00629038",
       "severity": "mild",
       "text": "DAT_00629038 = 0xffff;",
@@ -796,7 +796,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 81,
       "match": "DAT_0062903c",
       "severity": "mild",
       "text": "DAT_0062903c = 0xffff;",
@@ -804,7 +804,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 82,
       "match": "DAT_00629064",
       "severity": "mild",
       "text": "DAT_00629064 = 0xffff;",
@@ -812,7 +812,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 83,
       "match": "DAT_00629068",
       "severity": "mild",
       "text": "DAT_00629068 = 0xffff;",
@@ -820,7 +820,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 84,
       "match": "DAT_0062906c",
       "severity": "mild",
       "text": "DAT_0062906c = 0xffff;",
@@ -828,7 +828,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 85,
       "match": "DAT_00629094",
       "severity": "mild",
       "text": "DAT_00629094 = 0xffff;",
@@ -836,7 +836,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 86,
       "match": "DAT_00629098",
       "severity": "mild",
       "text": "DAT_00629098 = 0xffff;",
@@ -844,7 +844,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 87,
       "match": "DAT_0062909c",
       "severity": "mild",
       "text": "DAT_0062909c = 0xffff;",
@@ -852,7 +852,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 88,
       "match": "DAT_006290c4",
       "severity": "mild",
       "text": "DAT_006290c4 = 0xffff;",
@@ -860,7 +860,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 89,
       "match": "DAT_006290c8",
       "severity": "mild",
       "text": "DAT_006290c8 = 0xffff;",
@@ -868,7 +868,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 90,
       "match": "DAT_006290cc",
       "severity": "mild",
       "text": "DAT_006290cc = 0xffff;",
@@ -876,7 +876,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 91,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xffff);",
@@ -884,7 +884,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 92,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,1);",
@@ -892,7 +892,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 96,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,world_position);",
@@ -900,7 +900,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 96,
+      "line": 97,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_matrix_c_FUN_00483b70(DAT_00612560);",
@@ -908,7 +908,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 104,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,&local_24,(CVector3f *)0x0);",
@@ -916,10 +916,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 115,
+      "line": 116,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_00580173((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&local_60);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_60);",
       "type": "undefined_data"
     },
     {
@@ -927,28 +927,28 @@
       "line": 121,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&local_b4);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_b4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 127,
+      "line": 126,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&local_48);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_48);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 133,
+      "line": 131,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),&local_18);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_18);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 134,
+      "line": 132,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050(DAT_00612560,&local_e8);",
@@ -956,18 +956,26 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 141,
+      "line": 139,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0058043c((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&local_9c);",
+      "text": "engine_special_cpp_FUN_0058043c(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_9c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 146,
+      "line": 143,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&local_6c);",
+      "text": "engine_special_cpp_FUN_0058043c(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_6c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 148,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_special_cpp_FUN_0058043c(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_3c);",
       "type": "undefined_data"
     },
     {
@@ -975,28 +983,20 @@
       "line": 152,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&local_3c);",
+      "text": "engine_special_cpp_FUN_0058043c(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_90);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 157,
+      "line": 156,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),&local_90);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 161,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "*(uint *)(DAT_00612560->vertex_buffer_ptr + 0x10) = 0x80000000;",
+      "text": "(DAT_00612560->vertex_buffer_ptr->projected_vertex).screen_x = -0x80000000;",
       "type": "undefined_data"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 164,
+      "line": 159,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "*(int *)(*extraout_EDX + 4) = *(int *)(*extraout_EDX + 4) - local_8;",
@@ -1004,7 +1004,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 164,
+      "line": 159,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "*(int *)(*extraout_EDX + 4) = *(int *)(*extraout_EDX + 4) - local_8;",
@@ -1012,7 +1012,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 165,
+      "line": 160,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "*(uint *)(*extraout_EDX + 0x40) = 0x80000000;",
@@ -1020,7 +1020,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 166,
+      "line": 161,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "*(int *)(*extraout_EDX + 0x34) = *(int *)(*extraout_EDX + 0x34) + local_8;",
@@ -1028,7 +1028,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 166,
+      "line": 161,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "*(int *)(*extraout_EDX + 0x34) = *(int *)(*extraout_EDX + 0x34) + local_8;",
@@ -1036,7 +1036,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 168,
+      "line": 163,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "*(uint *)(*extraout_EDX + 0x70) = 0x80000000;",
@@ -1044,39 +1044,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 180,
+      "line": 175,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0058043c((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&local_a8);",
+      "text": "engine_special_cpp_FUN_0058043c(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_a8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 185,
+      "line": 179,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&local_78);",
+      "text": "engine_special_cpp_FUN_0058043c(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_78);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 190,
+      "line": 183,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&local_c0);",
+      "text": "engine_special_cpp_FUN_0058043c(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_c0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 195,
+      "line": 187,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),&local_84);",
+      "text": "engine_special_cpp_FUN_0058043c(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_84);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 196,
+      "line": 188,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "this_ptr_00 = DAT_00612560;",
@@ -1084,15 +1084,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 197,
+      "line": 189,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "*(uint *)(DAT_00612560->vertex_buffer_ptr + 0x10) = 0x80000000;",
+      "text": "(DAT_00612560->vertex_buffer_ptr->projected_vertex).screen_x = -0x80000000;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 210,
+      "line": 203,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);",
@@ -1100,23 +1100,23 @@
     },
     {
       "description": "Pointer value `&local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 98,
+      "line": 99,
       "match": "(int)&local_24",
       "severity": "moderate",
-      "text": "*(int *)((int)&local_24 + (uint)bVar4 * -8 + 4) = aiStack_50[(uint)bVar4 * -2];",
+      "text": "*(int *)((int)&local_24 + (uint)bVar5 * -8 + 4) = aiStack_50[(uint)bVar5 * -2];",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 99,
+      "line": 100,
       "match": "(int)&local_24",
       "severity": "moderate",
-      "text": "*(int *)((int)&local_24 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
+      "text": "*(int *)((int)&local_24 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_006290bc`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_006290bc` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 65,
+      "line": 66,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_006290bc = 0xf80000;",
@@ -1124,7 +1124,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `DAT_0062902c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `DAT_0062902c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 66,
+      "line": 67,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "DAT_0062902c = 0xf80000;",
@@ -1132,7 +1132,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_0062905c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0062905c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 69,
+      "line": 70,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_0062905c = 0xf80000;",
@@ -1140,7 +1140,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_0062908c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0062908c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 70,
+      "line": 71,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_0062908c = 0xf80000;",
@@ -1148,7 +1148,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_006290c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_006290c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 74,
+      "line": 75,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_006290c0 = 0xf80000;",
@@ -1156,7 +1156,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `DAT_00629090`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `DAT_00629090` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 75,
+      "line": 76,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "DAT_00629090 = 0xf80000;",
@@ -1164,18 +1164,18 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 98,
+      "line": 99,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(int *)((int)&local_24 + (uint)bVar4 * -8 + 4) = aiStack_50[(uint)bVar4 * -2];",
+      "text": "*(int *)((int)&local_24 + (uint)bVar5 * -8 + 4) = aiStack_50[(uint)bVar5 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 99,
+      "line": 100,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(int *)((int)&local_24 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
+      "text": "*(int *)((int)&local_24 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
       "type": "pointer_cast"
     }
   ]

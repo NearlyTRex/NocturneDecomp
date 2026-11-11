@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 235,
+    "complexity_score": 220,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 30,
-    "suspect_count": 18,
+    "suspect_count": 17,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr"
     ],
@@ -109,7 +108,7 @@
     },
     {
       "addr": "01ccf618",
-      "name": "g_CGameInstance.field588_0x288",
+      "name": "g_CGameInstance.new_set_event_pending",
       "type": "undefined4",
       "value": null
     },
@@ -255,7 +254,7 @@
       "line": 9,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (param_2 == *(int *)param_1) {",
+      "text": "if (param_2 == param_1->current_set_index) {",
       "type": "unnamed_param"
     },
     {
@@ -263,7 +262,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_2 == *(int *)param_1) {",
+      "text": "if (param_2 == param_1->current_set_index) {",
       "type": "unnamed_param"
     },
     {
@@ -271,7 +270,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)param_1 = param_2;",
+      "text": "param_1->current_set_index = param_2;",
       "type": "unnamed_param"
     },
     {
@@ -279,7 +278,7 @@
       "line": 12,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(int *)param_1 = param_2;",
+      "text": "param_1->current_set_index = param_2;",
       "type": "unnamed_param"
     },
     {
@@ -287,7 +286,7 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_set_cpp_FUN_0054d3c0(g_CDemonSetPtr,param_1 + param_2 * 0x100 + 8);",
+      "text": "core_set_cpp_FUN_0054d3c0(g_CDemonSetPtr,param_1->set_names + param_2);",
       "type": "unnamed_param"
     },
     {
@@ -295,7 +294,7 @@
       "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_set_cpp_FUN_0054d3c0(g_CDemonSetPtr,param_1 + param_2 * 0x100 + 8);",
+      "text": "core_set_cpp_FUN_0054d3c0(g_CDemonSetPtr,param_1->set_names + param_2);",
       "type": "unnamed_param"
     },
     {
@@ -303,7 +302,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x1008) == 0) {",
+      "text": "if (param_1->is_in_editor == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -327,7 +326,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)param_1 != *(int *)(param_1 + 0x1454)) {",
+      "text": "if (param_1->current_set_index != param_1->prepared_set_index) {",
       "type": "unnamed_param"
     },
     {
@@ -335,7 +334,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)param_1 != *(int *)(param_1 + 0x1454)) {",
+      "text": "if (param_1->current_set_index != param_1->prepared_set_index) {",
       "type": "unnamed_param"
     },
     {
@@ -361,14 +360,6 @@
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0x50))(iVar1);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x288",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0x288 = 1;",
-      "type": "unnamed_field"
     },
     {
       "call_site_count": 4,

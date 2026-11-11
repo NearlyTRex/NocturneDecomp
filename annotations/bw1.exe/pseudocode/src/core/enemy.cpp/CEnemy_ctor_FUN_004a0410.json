@@ -2,18 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 118,
+    "complexity_score": 68,
     "cross_reference_count": 35,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 38,
-    "suspect_count": 6,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
       "undefined_data",
-      "unnamed_field"
+      "unrolled_strcpy"
     ],
     "total_lines": 96
   },
@@ -463,44 +461,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(char *)((int)piVar5",
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 30,
+      "match": "do {",
       "severity": "moderate",
-      "text": "*(char *)((int)piVar5 + 1) = cVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(int *)((int)piVar5",
-      "severity": "moderate",
-      "text": "piVar5 = (int *)((int)piVar5 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x252c",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar2->base).field_0x252c = 0x3fc90fdb;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 36,
-      "match": "(int)piVar5",
-      "severity": "moderate",
-      "text": "*(char *)((int)piVar5 + 1) = cVar1;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 37,
-      "match": "(int)piVar5",
-      "severity": "moderate",
-      "text": "piVar5 = (int *)((int)piVar5 + 2);",
-      "type": "pointer_truncation"
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ],
   "vtable_info": {

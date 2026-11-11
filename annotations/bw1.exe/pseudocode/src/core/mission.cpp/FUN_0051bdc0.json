@@ -11,7 +11,7 @@
     "suspect_count": 3,
     "suspect_types": [
       "raw_address_constant",
-      "unnamed_field",
+      "unrolled_memset",
       "warning_overlapping_globals"
     ],
     "total_lines": 129
@@ -163,7 +163,7 @@
     },
     {
       "addr": "01ccf5d4",
-      "name": "g_CGameInstance.field532_0x244",
+      "name": "g_CGameInstance.letterbox_mode",
       "type": "undefined4",
       "value": null
     },
@@ -305,20 +305,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x244",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0x244 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Raw hex address 0x1c51d80 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
       "line": 18,
       "match": "0x1c51d80",
       "severity": "moderate",
       "text": "this_ptr_00 = 0x01C51D80;",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 19,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->pending_teleport).position.z = 0.0;",
+      "type": "unrolled_memset"
     }
   ]
 }

@@ -17,7 +17,7 @@ CVector3f * __cdecl core_flashlit_cpp_CFlashlight_getMuzzlePoint_FUN_004b99c0(CF
   CBoundingBox3D *pCVar3;
   float *pfVar4;
   byte bVar5;
-  byte auStack_23d0 [9124];
+  CDeformableModelInstance CStack_23d0;
   float afStack_2c [3];
   float fStack_20;
   float fStack_1c;
@@ -26,8 +26,7 @@ CVector3f * __cdecl core_flashlit_cpp_CFlashlight_getMuzzlePoint_FUN_004b99c0(CF
   float afStack_10 [2];
   
   bVar5 = 0;
-  core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_00567370
-            ((CDeformableModelInstance *)auStack_23d0);
+  core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_00567370(&CStack_23d0);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(&(this_ptr->base).model)
   ;
   pCVar3 = &pCVar1->bounds;
@@ -40,8 +39,7 @@ CVector3f * __cdecl core_flashlit_cpp_CFlashlight_getMuzzlePoint_FUN_004b99c0(CF
   fStack_14 = fStack_20 * _DAT_005df816;
   afStack_10[1] = (float)uStack_18;
   afStack_10[0] = fStack_1c + (float)_DAT_005df81a;
-  core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
-            ((CDeformableModelInstance *)auStack_23d0,0);
+  core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0(&CStack_23d0,0);
   pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);
   unaff_ESI->x = fStack_14;
   *pfVar4 = afStack_10[(uint)bVar5 * -2];

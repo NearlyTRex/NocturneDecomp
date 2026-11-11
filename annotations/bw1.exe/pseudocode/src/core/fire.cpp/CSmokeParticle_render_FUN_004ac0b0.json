@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 253,
-    "complexity_score": 359,
+    "complexity_score": 355,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 99,
+    "pseudocode_lines": 95,
     "suspect_count": 24,
     "suspect_types": [
       "raw_address_constant",
@@ -15,7 +15,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 352
+    "total_lines": 348
   },
   "cross_references": [
     {
@@ -490,20 +490,20 @@
       "line": 25,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "output = (SProjectedVertex *)DAT_00612560->vertex_buffer_ptr;",
+      "text": "vertex_ptr = DAT_00612560->vertex_buffer_ptr;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 30,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "(DAT_00612560,(SRenderVertex *)output);",
+      "text": "iVar2 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_00484fd0(DAT_00612560,vertex_ptr);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 41,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,(SMRGLTextureBasic *)(&DAT_0061c014 + local_18 * 0x18));",
@@ -511,7 +511,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 41,
       "match": "DAT_0061c014",
       "severity": "mild",
       "text": "(DAT_00612560,(SMRGLTextureBasic *)(&DAT_0061c014 + local_18 * 0x18));",
@@ -519,7 +519,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 44,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,world_position);",
@@ -527,7 +527,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 46,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,(CVector3i *)&DAT_01c57078,(CVector3i *)0x0);",
@@ -535,7 +535,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 46,
       "match": "DAT_01c57078",
       "severity": "mild",
       "text": "(DAT_00612560,(CVector3i *)&DAT_01c57078,(CVector3i *)0x0);",
@@ -543,39 +543,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 55,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_00580173((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&local_28);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_28);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 62,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&local_70);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_70);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 69,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&local_34);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_34);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 76,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),&local_4c);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_4c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 77,
       "match": "DAT_0062902c",
       "severity": "mild",
       "text": "DAT_0062902c = 0x80000;",
@@ -583,7 +583,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 82,
       "match": "DAT_00629090",
       "severity": "mild",
       "text": "DAT_00629090 = 0x80000;",
@@ -591,7 +591,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 93,
+      "line": 89,
       "match": "DAT_01c57084",
       "severity": "mild",
       "text": "(g_CDemonSetPtr,&local_40,(CVector3i *)&DAT_01c57084,0,4);",
@@ -599,7 +599,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 94,
+      "line": 90,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 4))(DAT_007c6120,world_position,0);",
@@ -607,7 +607,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
+      "line": 90,
       "match": "DAT_007c6120",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 4))(DAT_007c6120,world_position,0);",
@@ -615,7 +615,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
+      "line": 90,
       "match": "DAT_007c6120",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 4))(DAT_007c6120,world_position,0);",
@@ -623,7 +623,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 93,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
@@ -631,7 +631,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 99,
+      "line": 95,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,(SMRGLHeaderPrimitive *)0x1c57090);",
@@ -639,7 +639,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_00629030`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_00629030` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 82,
+      "line": 78,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_00629030 = 0xf80000;",
@@ -647,7 +647,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_0062905c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0062905c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 83,
+      "line": 79,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_0062905c = 0xf80000;",
@@ -655,7 +655,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_00629060`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_00629060` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 84,
+      "line": 80,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_00629060 = 0xf80000;",
@@ -663,7 +663,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_0062908c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0062908c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 85,
+      "line": 81,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_0062908c = 0xf80000;",

@@ -24,20 +24,20 @@ void core_inv_cpp_FUN_004f9f10(CInventory *param_1)
   CInventory *pCVar10;
   int local_1c;
   
-  if (*(int *)(param_1 + 0x338) != 0) {
-    if (*(int *)(*(int *)(param_1 + 0x338) + 0x568) != *(int *)(param_1 + 0x468)) {
+  if (param_1->selected_weapon != (CWeapon *)0x0) {
+    if (param_1->selected_weapon->ammo_count != param_1->cached_ammo_count) {
       core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004fa6c0(param_1,0);
     }
-    *(uint *)(param_1 + 0x468) = *(uint *)(*(int *)(param_1 + 0x338) + 0x568);
+    param_1->cached_ammo_count = param_1->selected_weapon->ammo_count;
   }
   local_1c = 0;
   pCVar10 = param_1;
-  if (0 < *(int *)(param_1 + 0x10)) {
+  if (0 < param_1->item_count) {
     do {
       iVar5 = core_actor_cpp_castToClassHash_FUN_0040c600
-                        (*(uint *)(pCVar10 + 0x14),g_CLightGunClassInfo.name_hash);
+                        (pCVar10->items[0],g_CLightGunClassInfo.name_hash);
       iVar6 = core_actor_cpp_castToClassHash_FUN_0040c600
-                        (*(uint *)(pCVar10 + 0x14),g_CLightPisClassInfo.name_hash);
+                        (pCVar10->items[0],g_CLightPisClassInfo.name_hash);
       if ((iVar5 != 0) || (iVar6 != 0)) {
         if (iVar5 == 0) {
           if (*(int *)(iVar6 + 0x2d4) != 2) {
@@ -49,43 +49,43 @@ void core_inv_cpp_FUN_004f9f10(CInventory *param_1)
         }
       }
       local_1c = local_1c + 1;
-      pCVar10 = pCVar10 + 4;
-    } while (local_1c < *(int *)(param_1 + 0x10));
+      pCVar10 = (CInventory *)&pCVar10->owner;
+    } while (local_1c < param_1->item_count);
   }
-  if ((((*(int *)&g_CGamePtr->field_0x25c != 0) || (*(int *)&g_CFieldNotesPtr->field_0x40 != 0)) ||
-      (DAT_007c3978 != 0)) || (*(int *)&g_CGamePtr->field_0x244 != 0)) {
-    *(uint *)(param_1 + 0x344) = 0;
-    *(uint *)(param_1 + 0x34c) = 0;
-    *(uint *)(param_1 + 0x350) = 0;
-    *(uint *)(param_1 + 0x340) = 0;
+  if ((((g_CGamePtr->goggles_active != 0) || (g_CFieldNotesPtr->is_displayed != 0)) ||
+      (DAT_007c3978 != 0)) || (g_CGamePtr->letterbox_mode != 0)) {
+    param_1->item_highlight_timer = 0.0;
+    param_1->message_display_timer = 0.0;
+    param_1->ammo_detail_timer = 0.0;
+    param_1->weapon_highlight_timer = 0.0;
   }
-  fVar2 = *(float *)(param_1 + 0x340) - g_CGamePtr->delta_time_float;
-  *(float *)(param_1 + 0x340) = fVar2;
+  fVar2 = param_1->weapon_highlight_timer - g_CGamePtr->delta_time_float;
+  param_1->weapon_highlight_timer = fVar2;
   if (fVar2 <= 0.0) {
-    *(uint *)(param_1 + 0x340) = 0;
+    param_1->weapon_highlight_timer = 0.0;
   }
-  fVar2 = *(float *)(param_1 + 0x344) - g_CGamePtr->delta_time_float;
-  *(float *)(param_1 + 0x344) = fVar2;
+  fVar2 = param_1->item_highlight_timer - g_CGamePtr->delta_time_float;
+  param_1->item_highlight_timer = fVar2;
   if (fVar2 <= 0.0) {
-    *(uint *)(param_1 + 0x344) = 0;
+    param_1->item_highlight_timer = 0.0;
   }
-  fVar2 = *(float *)(param_1 + 0x348) - g_CGamePtr->delta_time_float;
-  *(float *)(param_1 + 0x348) = fVar2;
+  fVar2 = param_1->inventory_display_timer - g_CGamePtr->delta_time_float;
+  param_1->inventory_display_timer = fVar2;
   if (fVar2 <= 0.0) {
-    *(uint *)(param_1 + 0x348) = 0;
+    param_1->inventory_display_timer = 0.0;
   }
-  fVar2 = *(float *)(param_1 + 0x34c) - g_CGamePtr->delta_time_float;
-  *(float *)(param_1 + 0x34c) = fVar2;
+  fVar2 = param_1->message_display_timer - g_CGamePtr->delta_time_float;
+  param_1->message_display_timer = fVar2;
   if (fVar2 <= 0.0) {
-    param_1[0x354] = (CInventory)0x0;
-    *(uint *)(param_1 + 0x34c) = 0;
+    param_1->message_text[0] = '\0';
+    param_1->message_display_timer = 0.0;
   }
-  fVar2 = *(float *)(param_1 + 0x350) - g_CGamePtr->delta_time_float;
-  *(float *)(param_1 + 0x350) = fVar2;
+  fVar2 = param_1->ammo_detail_timer - g_CGamePtr->delta_time_float;
+  param_1->ammo_detail_timer = fVar2;
   if (fVar2 < 0.0) {
-    *(uint *)(param_1 + 0x350) = 0;
+    param_1->ammo_detail_timer = 0.0;
   }
-  if ((*(int *)(param_1 + 0xc) != 0) &&
+  if ((param_1->show_sps != 0) &&
      (_DAT_01d06f70 = _DAT_01d06f70 - g_CGamePtr->delta_time_float, _DAT_01d06f70 <= 0.0)) {
     _DAT_01d06f70 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.1,0.4);
     iVar6 = 0;

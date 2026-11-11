@@ -27,9 +27,8 @@ int __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a0770(CEnemy *this_ptr
   if (this_ptr_00 != (CCharacter *)0x0) {
     (*(((this_ptr_00->base).vtable._uc)->_uc).checkCylinderCollisionWorld)
               (this_ptr_00,point,radius,damage_info);
-    if (0.0 < *(float *)(damage_info + 4)) {
-      fVar3 = (float10)*(float *)(damage_info + 4) * (float10)_DAT_005dcb42 * (float10)_DAT_005dcb4a
-      ;
+    if (0.0 < damage_info->damage_amount) {
+      fVar3 = (float10)damage_info->damage_amount * (float10)_DAT_005dcb42 * (float10)_DAT_005dcb4a;
       blood_type = BLOOD_TYPE_RED;
       round();
       count = (int)ROUND(fVar3);

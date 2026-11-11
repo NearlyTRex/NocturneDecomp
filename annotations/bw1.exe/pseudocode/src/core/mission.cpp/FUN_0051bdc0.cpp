@@ -21,13 +21,13 @@ int __cdecl core_mission_cpp_FUN_0051bdc0(CDemonMission *this_ptr)
   else {
     if (*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) != 0) {
       core_mission_cpp_CDemonMission_prepareAllActors_FUN_0051b2b0(this_ptr);
-      *(uint *)(this_ptr + 0x112c) = 0xffffffff;
+      (this_ptr->pending_teleport).area_id = -1;
       this_ptr_00 = 0x01C51D80;
-      *(uint *)(this_ptr + 0x1128) = 0;
-      *(uint *)(this_ptr + 0x1124) = *(uint *)(this_ptr + 0x1128);
-      *(uint *)(this_ptr + 0x1120) = *(uint *)(this_ptr + 0x1124);
+      (this_ptr->pending_teleport).position.z = 0.0;
+      (this_ptr->pending_teleport).position.y = (this_ptr->pending_teleport).position.z;
+      (this_ptr->pending_teleport).position.x = (this_ptr->pending_teleport).position.y;
       core_event_cpp_CEventList_reset_FUN_004a19f0(this_ptr_00);
-      *(uint *)&g_CGamePtr->field_0x244 = 0;
+      g_CGamePtr->letterbox_mode = 0;
       core_mission_cpp_FUN_0051b610
                 (this_ptr,*(uint *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x2c));
       clear_screen = 0;

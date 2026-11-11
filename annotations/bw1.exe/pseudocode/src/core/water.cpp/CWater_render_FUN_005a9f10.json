@@ -833,7 +833,7 @@
       "line": 112,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&local_64);",
+      "text": "(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_64);",
       "type": "undefined_data"
     },
     {
@@ -841,7 +841,7 @@
       "line": 126,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&local_70);",
+      "text": "(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_70);",
       "type": "undefined_data"
     },
     {
@@ -849,7 +849,7 @@
       "line": 140,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&local_58);",
+      "text": "(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_58);",
       "type": "undefined_data"
     },
     {
@@ -857,7 +857,7 @@
       "line": 154,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),&local_88);",
+      "text": "(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_88);",
       "type": "undefined_data"
     },
     {

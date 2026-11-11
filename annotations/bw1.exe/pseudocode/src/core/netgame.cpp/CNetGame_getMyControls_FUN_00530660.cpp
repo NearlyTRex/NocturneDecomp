@@ -17,7 +17,7 @@ SPlayerInput * __cdecl core_netgame_cpp_CNetGame_getMyControls_FUN_00530660(CNet
       _DAT_01d1d404 = 0xa0f;
       core_main_c_FUN_005030e0("CNetGame::getMyControls - I'm not in the player list!");
     }
-    return (SPlayerInput *)&this_ptr->players[this_ptr->local_player_index].field_0x4c;
+    return &this_ptr->players[this_ptr->local_player_index].player_input;
   }
   return (SPlayerInput *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0xc1d8);
 }

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 717,
-    "complexity_score": 918,
+    "complexity_score": 893,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 21,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 353,
-    "suspect_count": 51,
+    "suspect_count": 49,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -18,7 +18,6 @@
       "stack_ref",
       "unaffected_reg",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -445,22 +444,6 @@
       "severity": "moderate",
       "text": "CZombie *in_stack_fffffdd4;",
       "type": "stack_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 85,
-      "match": "field_0x25b0",
-      "severity": "mild",
-      "text": "if (*(int *)&(this_ptr->base).base.field_0x25b0 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 88,
-      "match": "field_0x2628",
-      "severity": "mild",
-      "text": "if (*(int *)&(this_ptr->base).base.field_0x2628 != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Complex pointer cast",

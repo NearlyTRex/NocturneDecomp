@@ -17,11 +17,11 @@ void __cdecl core_script_cpp_CScript_saveState_FUN_0054b710(CScript *this_ptr,_F
   FUN_005c03c0(file_handle,"// CScript version\n");
   FUN_005c03c0(file_handle,&DAT_005f0185,6);
   FUN_005c03c0(file_handle,"// gGame->letterboxMode\n");
-  FUN_005c03c0(file_handle,&DAT_005f01a2,*(uint *)&g_CGamePtr->field_0x244);
+  FUN_005c03c0(file_handle,&DAT_005f01a2,g_CGamePtr->letterbox_mode);
   FUN_005c03c0(file_handle,"// gGame->allowDamageFlag\n");
-  FUN_005c03c0(file_handle,&DAT_005f01c1,*(uint *)&g_CGamePtr->field_0x248);
+  FUN_005c03c0(file_handle,&DAT_005f01c1,g_CGamePtr->allow_damage_flag);
   FUN_005c03c0(file_handle,"// gGame->allowEnemyAttackFlag\n");
-  FUN_005c03c0(file_handle,&DAT_005f01e5,*(uint *)&g_CGamePtr->field_0x24c);
+  FUN_005c03c0(file_handle,&DAT_005f01e5,g_CGamePtr->allow_enemy_attack_flag);
   FUN_005c03c0(file_handle,"// letterBoxBlackT\n");
   FUN_005c03c0(file_handle,&DAT_005f01fd,(double)_DAT_01e818b0);
   FUN_005c03c0(file_handle,"// nextCmd\n");

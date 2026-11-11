@@ -11,7 +11,7 @@
 int __cdecl core_doc_cpp_CDoc_canDoHeroAction_FUN_00475650(CDoc *this_ptr,int action_type)
 
 {
-  byte *puVar1;
+  CDeformableModelInstance *pCVar1;
   float fVar2;
   float fVar3;
   float fVar4;
@@ -31,23 +31,23 @@ int __cdecl core_doc_cpp_CDoc_canDoHeroAction_FUN_00475650(CDoc *this_ptr,int ac
   float fVar18;
   float fVar19;
   
-  if ((*(int *)&this_ptr->field_0x1ff5c == 0) && (*(int *)&this_ptr->field_0x1ffac == 0)) {
-    puVar1 = &this_ptr->field_0x158;
-    fVar2 = (float)core_motion_cpp_FUN_00524a40(puVar1,0);
-    fVar3 = (float)core_motion_cpp_FUN_00524a40(puVar1,1);
-    fVar4 = (float)core_motion_cpp_FUN_00524a40(puVar1,4);
-    fVar5 = (float)core_motion_cpp_FUN_00524a40(puVar1,7);
-    fVar6 = (float)core_motion_cpp_FUN_00524a40(puVar1,8);
-    fVar7 = (float)core_motion_cpp_FUN_00524a40(puVar1,9);
-    fVar8 = (float)core_motion_cpp_FUN_00524a40(puVar1,10);
-    fVar9 = (float)core_motion_cpp_FUN_00524a40(puVar1,0xb);
-    fVar10 = (float)core_motion_cpp_FUN_00524a40(puVar1,0xc);
-    fVar11 = (float)core_motion_cpp_FUN_00524a40(puVar1,0xd);
-    fVar12 = (float)core_motion_cpp_FUN_00524a40(puVar1,0xe);
-    fVar13 = (float)core_motion_cpp_FUN_00524a40(puVar1,0xf);
-    fVar14 = (float)core_motion_cpp_FUN_00524a40(puVar1,0x10);
-    fVar15 = (float)core_motion_cpp_FUN_00524a40(puVar1,5);
-    fVar16 = (float)core_motion_cpp_FUN_00524a40(puVar1,6);
+  if (((this_ptr->base).action_pending == 0) && (this_ptr->guns_drawn == 0)) {
+    pCVar1 = &(this_ptr->base).base.model;
+    fVar2 = (float)core_motion_cpp_FUN_00524a40(pCVar1,0);
+    fVar3 = (float)core_motion_cpp_FUN_00524a40(pCVar1,1);
+    fVar4 = (float)core_motion_cpp_FUN_00524a40(pCVar1,4);
+    fVar5 = (float)core_motion_cpp_FUN_00524a40(pCVar1,7);
+    fVar6 = (float)core_motion_cpp_FUN_00524a40(pCVar1,8);
+    fVar7 = (float)core_motion_cpp_FUN_00524a40(pCVar1,9);
+    fVar8 = (float)core_motion_cpp_FUN_00524a40(pCVar1,10);
+    fVar9 = (float)core_motion_cpp_FUN_00524a40(pCVar1,0xb);
+    fVar10 = (float)core_motion_cpp_FUN_00524a40(pCVar1,0xc);
+    fVar11 = (float)core_motion_cpp_FUN_00524a40(pCVar1,0xd);
+    fVar12 = (float)core_motion_cpp_FUN_00524a40(pCVar1,0xe);
+    fVar13 = (float)core_motion_cpp_FUN_00524a40(pCVar1,0xf);
+    fVar14 = (float)core_motion_cpp_FUN_00524a40(pCVar1,0x10);
+    fVar15 = (float)core_motion_cpp_FUN_00524a40(pCVar1,5);
+    fVar16 = (float)core_motion_cpp_FUN_00524a40(pCVar1,6);
     fVar18 = (float)_DAT_005da5b4;
     switch(action_type) {
     case 4:
@@ -74,7 +74,7 @@ int __cdecl core_doc_cpp_CDoc_canDoHeroAction_FUN_00475650(CDoc *this_ptr,int ac
         return 0;
       }
     }
-    iVar17 = core_hero_cpp_CHero_canDoHeroAction_FUN_004ec950((CHero *)this_ptr,action_type);
+    iVar17 = core_hero_cpp_CHero_canDoHeroAction_FUN_004ec950(&this_ptr->base,action_type);
     return iVar17;
   }
   return 0;

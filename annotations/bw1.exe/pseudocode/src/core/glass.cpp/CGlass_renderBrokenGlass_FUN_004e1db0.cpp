@@ -59,11 +59,13 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e1db0(CGlass *this_p
       CStack_18.y = (int)ROUND(pCVar7->y * _DAT_00601450);
       CStack_18.z = (int)ROUND(pCVar7->z * _DAT_00601450);
       engine_special_cpp_FUN_00580173
-                ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + iVar4),&CStack_18);
+                ((SProjectedVertex *)
+                 ((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + iVar4),
+                 &CStack_18);
       pCVar1 = DAT_00612560;
-      *(uint *)(DAT_00612560->vertex_buffer_ptr + iVar4 + 0x20) = 0xffff;
-      *(uint *)(pCVar1->vertex_buffer_ptr + iVar4 + 0x24) = 0xffff;
-      *(uint *)(pCVar1->vertex_buffer_ptr + iVar4 + 0x28) = 0xffff;
+      *(uint *)((int)&DAT_00612560->vertex_buffer_ptr->r + iVar4) = 0xffff;
+      *(uint *)((int)&pCVar1->vertex_buffer_ptr->g + iVar4) = 0xffff;
+      *(uint *)((int)&pCVar1->vertex_buffer_ptr->b + iVar4) = 0xffff;
       iVar2 = iVar2 + 1;
       pCVar7 = pCVar7 + 1;
       iVar4 = iVar4 + 0x30;
@@ -83,7 +85,7 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e1db0(CGlass *this_p
       engine_drender_cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_004828b0(pCVar1,poly);
       pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);
       iVar2 = iVar2 + 1;
-      poly = poly + 0x48;
+      poly = (SMRGLPrimitivePoly *)(poly->vertices + 4);
     } while (iVar2 < this_ptr->broken_polygon_count);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0(&this_ptr->base);

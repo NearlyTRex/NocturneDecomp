@@ -30,13 +30,14 @@ void core_dmodel_cpp_FUN_00467650(int param_1,uint param_2,uint param_3,uint par
     _DAT_01d1d404 = 0x2c1;
     core_main_c_FUN_005030e0("Too many parts!");
   }
-  uVar1 = FUN_005c1268(*(int *)(param_1 + 0x100) * *(int *)(param_1 + 0x104) * 0xc);
+  uVar1 = operator_new_array
+                    (*(int *)(param_1 + 0x100) * *(int *)(param_1 + 0x104) * 0xc);
   *(uint *)(param_1 + 0x10c) = uVar1;
-  uVar1 = FUN_005c1268(*(int *)(param_1 + 0x110) * 0x48);
+  uVar1 = operator_new_array(*(int *)(param_1 + 0x110) * 0x48);
   *(uint *)(param_1 + 0x114) = uVar1;
-  uVar1 = FUN_005c1268(*(int *)(param_1 + 0x110) << 2);
+  uVar1 = operator_new_array(*(int *)(param_1 + 0x110) << 2);
   *(uint *)(param_1 + 0x118) = uVar1;
-  uVar1 = FUN_005c1268(*(int *)(param_1 + 0x100) * 0x18);
+  uVar1 = operator_new_array(*(int *)(param_1 + 0x100) * 0x18);
   *(uint *)(param_1 + 0x350) = uVar1;
   if ((((*(int *)(param_1 + 0x10c) == 0) ||
        ((0 < *(int *)(param_1 + 0x110) && (*(int *)(param_1 + 0x114) == 0)))) ||
@@ -55,7 +56,7 @@ void core_dmodel_cpp_FUN_00467650(int param_1,uint param_2,uint param_3,uint par
   else if (*(int *)(param_1 + 0x100) != 1) {
     return;
   }
-  iVar2 = FUN_005c1268(*(int *)(param_1 + 0x104) * 0xc);
+  iVar2 = operator_new_array(*(int *)(param_1 + 0x104) * 0xc);
   *(int *)(param_1 + 0x108) = iVar2;
   if (iVar2 != 0) {
     return;

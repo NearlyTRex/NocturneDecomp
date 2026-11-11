@@ -11,8 +11,8 @@
 CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_ctor_FUN_0047b0b0(CDraculaBride *this_ptr)
 
 {
-  uint uVar1;
-  uint uVar2;
+  float fVar1;
+  float fVar2;
   CDraculaBride *pCVar3;
   CDraculaBride *pCVar4;
   CDraculaBride *pCVar5;
@@ -21,16 +21,16 @@ CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_ctor_FUN_0047b0b0(CDracu
   (pCVar3->base).base.base.vtable._ub = &g_CDraculaBrideVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
             (&(pCVar3->base).base.model,(char *)0x5dac1b);
-  *(uint *)&(pCVar3->base).base.field_0x2fec = 0x3f000000;
-  *(uint *)&(pCVar3->base).base.field_0x2ff0 = 0x3f800000;
+  (pCVar3->base).base.collision_cylinder_height = 0.5;
+  (pCVar3->base).base.collision_cylinder_radius = 1.0;
   pCVar3->rise_event[0] = '\0';
   (pCVar3->base).base.hit_points = 135.0;
-  uVar1 = _DAT_005ff184;
+  fVar1 = _DAT_005ff184;
   pCVar3->mist_state = 0;
-  uVar2 = _DAT_005ff188;
+  fVar2 = _DAT_005ff188;
   pCVar3->vanish_timer = 0.0;
-  *(uint *)&(pCVar3->base).base.field_0x2ff4 = uVar1;
-  *(uint *)&(pCVar3->base).base.field_0x2ff8 = uVar2;
+  (pCVar3->base).base.ai_detection_range_min = fVar1;
+  (pCVar3->base).base.ai_detection_range_max = fVar2;
   (pCVar3->new_pos).z = 0.0;
   (pCVar3->new_pos).y = (pCVar3->new_pos).z;
   (pCVar3->new_pos).x = (pCVar3->new_pos).y;

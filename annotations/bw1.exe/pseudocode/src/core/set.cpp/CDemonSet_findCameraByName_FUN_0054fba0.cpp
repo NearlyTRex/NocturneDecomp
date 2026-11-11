@@ -17,7 +17,7 @@ int __cdecl core_set_cpp_CDemonSet_findCameraByName_FUN_0054fba0(CDemonSet *this
   if (0 < this_ptr->camera_count) {
     str1 = this_ptr->cameras;
     do {
-      iVar1 = _stricmp((char *)str1,name);
+      iVar1 = _stricmp(str1->name,name);
       if (iVar1 == 0) {
         return iVar2;
       }

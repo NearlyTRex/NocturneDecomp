@@ -9,37 +9,39 @@
 void __cdecl core_charactr_cpp_CCharacter_computeBoundingBox_FUN_00432e80(CCharacter *this_ptr)
 
 {
-  int iVar1;
-  uint *puVar2;
-  uint *puVar3;
-  byte bVar4;
-  uint local_3c [6];
-  uint local_24;
-  uint local_20;
-  uint local_1c;
-  uint local_18;
-  uint local_14;
-  uint local_10;
+  CVector3f *pCVar1;
+  int iVar2;
+  float *pfVar3;
+  float *pfVar4;
+  byte bVar5;
+  float local_3c [6];
+  float local_24;
+  float local_20;
+  float local_1c;
+  float local_18;
+  float local_14;
+  float local_10;
   
-  bVar4 = 0;
+  bVar5 = 0;
   if ((this_ptr->model).model_name[0] != '\0') {
     core_skeleton_cpp_FUN_0056ae70(&this_ptr->model);
-    puVar2 = local_3c;
-    puVar3 = &local_24;
-    for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar3 = *puVar2;
-      puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-      puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    pfVar3 = local_3c;
+    pfVar4 = &local_24;
+    for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+      *pfVar4 = *pfVar3;
+      pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
+      pfVar4 = pfVar4 + (uint)bVar5 * -2 + 1;
     }
-    if ((uint *)&this_ptr->field_0x2788 != &local_24) {
-      *(uint *)&this_ptr->field_0x2788 = local_24;
-      *(uint *)&this_ptr->field_0x278c = local_20;
-      *(uint *)&this_ptr->field_0x2790 = local_1c;
+    if (&this_ptr->cached_bounding_box != (CBoundingBox3D *)&local_24) {
+      (this_ptr->cached_bounding_box).min.x = local_24;
+      (this_ptr->cached_bounding_box).min.y = local_20;
+      (this_ptr->cached_bounding_box).min.z = local_1c;
     }
-    if ((uint *)&this_ptr->field_0x2794 != &local_18) {
-      *(uint *)&this_ptr->field_0x2794 = local_18;
-      *(uint *)&this_ptr->field_0x2798 = local_14;
-      *(uint *)&this_ptr->field_0x279c = local_10;
+    pCVar1 = &(this_ptr->cached_bounding_box).max;
+    if (pCVar1 != (CVector3f *)&local_18) {
+      pCVar1->x = local_18;
+      (this_ptr->cached_bounding_box).max.y = local_14;
+      (this_ptr->cached_bounding_box).max.z = local_10;
       return;
     }
   }

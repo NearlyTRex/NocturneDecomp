@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 166,
+    "complexity_score": 151,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 10,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 16,
-    "suspect_count": 13,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
-      "unknown_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -101,7 +100,7 @@
     },
     {
       "addr": "01cc7d0c",
-      "name": "g_STextViewInstance.field56_0x38",
+      "name": "g_STextViewInstance.page_count",
       "type": "undefined4",
       "value": null
     }
@@ -236,19 +235,11 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 12,
-      "match": "._56_4_",
-      "severity": "mild",
-      "text": "if (((_DAT_01cc7b90 < g_STextViewInstance._56_4_ + -2) && (0x000001F4 <= param_1)) &&",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((_DAT_01cc7b90 < g_STextViewInstance._56_4_ + -2) && (0x000001F4 <= param_1)) &&",
+      "text": "if (((_DAT_01cc7b90 < g_STextViewInstance.page_count + -2) && (0x000001F4 <= param_1)) &&",
       "type": "unnamed_param"
     },
     {

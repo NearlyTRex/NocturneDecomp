@@ -19,7 +19,7 @@ void core_inv_cpp_FUN_004f8b70(CInventory *param_1,CDemonActor *param_2)
   if (*(int *)(param_2[4].actor_name + 0xc) == -1) {
     return;
   }
-  pCVar2 = (CAmmo *)debugAllocTracked1(0x31c);
+  pCVar2 = (CAmmo *)operator_new(0x31c);
   this_ptr = (CAmmo *)0x0;
   if (pCVar2 != (CAmmo *)0x0) {
     this_ptr = core_ammo_cpp_CAmmo_ctor_FUN_0040dbc0(pCVar2);

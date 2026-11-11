@@ -12,7 +12,7 @@
 ;   undefined4 DAT_0061b4d0
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 DAT_01bc120c
-;   undefined4 g_CGameInstance.field556_0x25c
+;   undefined4 g_CGameInstance.goggles_active
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042f240
@@ -59,7 +59,7 @@ section .text
         ;   XREF to: 0055fc53 (CONDITIONAL_JUMP)  ; LAB_0055fc53
     MOV EAX,[0x0061d95c]                ; 0055fc3e | g_CGamePtr
         ;   Label: LAB_0055fc3e
-    CMP dword ptr [EAX + 0x25c],0x0     ; 0055fc43 | g_CGameInstance.field556_0x25c
+    CMP dword ptr [EAX + 0x25c],0x0     ; 0055fc43 | g_CGameInstance.goggles_active
     PUSH EBX                            ; 0055fc4a
     CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_0042f240 ; 0055fc4b
         ;   XREF to: 0042f240 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderOpaque_FUN_0042f240(CCharacter * this_ptr)

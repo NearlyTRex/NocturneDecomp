@@ -18,7 +18,7 @@ float __cdecl core_gun_cpp_CGun_getDamage_FUN_004e8ef0(CGun *this_ptr)
   }
   core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30(0x01C51D80,"COMBATMODEHARD");
   fStack_c = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(15.0,25.0);
-  if (*(int *)&g_CGamePtr->field_0xd0 == 3) {
+  if (g_CGamePtr->game_control == CONTROL_MODE_POINT_AND_CLICK) {
     fStack_c = fStack_c * _DAT_005e43fb;
   }
   return fStack_c;

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 538,
-    "complexity_score": 344,
+    "complexity_score": 345,
     "cross_reference_count": 3,
     "function_call_count": 12,
     "global_count": 39,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 209,
+    "pseudocode_lines": 210,
     "suspect_count": 11,
     "suspect_types": [
       "bit_int_float_compare",
@@ -16,7 +16,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 747
+    "total_lines": 748
   },
   "cross_references": [
     {
@@ -95,7 +95,7 @@
     {
       "addr": "005a0fd0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a0fd0"
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0"
     },
     {
       "addr": "005a07a0",
@@ -627,7 +627,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 64,
       "match": "DAT_005f2c52",
       "severity": "mild",
       "text": "pcVar7 = strstr(local_484,&DAT_005f2c52);",
@@ -635,7 +635,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 79,
       "match": "DAT_00626114",
       "severity": "mild",
       "text": "while ((local_484 < pcVar7 && (((&DAT_00626114)[(byte)(pcVar7[-1] + 1)] & 2) != 0))) {",
@@ -643,7 +643,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 83,
       "match": "DAT_00626114",
       "severity": "mild",
       "text": "while (((&DAT_00626114)[(byte)(local_484[0] + 1)] & 2) != 0) {",
@@ -651,7 +651,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 179,
+      "line": 180,
       "match": "DAT_005f2f6e",
       "severity": "mild",
       "text": "iVar5 = _stricmp(local_484,&DAT_005f2f6e);",
@@ -659,7 +659,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 207,
+      "line": 208,
       "match": "pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar6 = (CSfxSample *)((pCVar6->sample_info).name + 4);",
@@ -667,7 +667,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 85,
+      "line": 86,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -675,7 +675,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3dcccccd is the IEEE 754 bit pattern of 0.1f. Rewrite in a .keep as a plain float compare against 0.1f.",
-      "line": 103,
+      "line": 104,
       "match": "(int)(this_ptr->sample_info).reference_distance < 0x3dcccccd",
       "severity": "moderate",
       "text": "if ((int)(this_ptr->sample_info).reference_distance < 0x3dcccccd) {",
@@ -683,7 +683,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3dcccccd is the IEEE 754 bit pattern of 0.1f. Rewrite in a .keep as a plain float compare against 0.1f.",
-      "line": 125,
+      "line": 126,
       "match": "(int)(this_ptr->sample_info).reference_volume_distance < 0x3dcccccd",
       "severity": "moderate",
       "text": "if ((int)(this_ptr->sample_info).reference_volume_distance < 0x3dcccccd) {",

@@ -48,7 +48,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_00567500
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_00569890
 ;   core_skeleton.cpp_FUN_00569040
-;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
+;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -79,8 +79,8 @@ section .text
     RET                                 ; 0056586b
     PUSH 0x23a4                         ; 0056586c
         ;   Label: LAB_0056586c
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 00565871
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 00565871
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 00565876
     TEST EAX,EAX                        ; 00565879
     JZ 0x00565886                       ; 0056587b

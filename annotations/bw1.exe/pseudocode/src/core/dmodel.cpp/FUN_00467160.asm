@@ -10,7 +10,7 @@
 ;   core_dmodel.cpp_FUN_00467650 at 00467659
 ;   core_dmodel.cpp_freeAllModels_FUN_00468830 at 0046883e
 ;   core_level.cpp_CLevelLoader_cleanup_FUN_004fefa0 at 004fefc7
-;   core_moon.cpp_FUN_00521d50 at 00521d5f
+;   core_moon.cpp_CMoon_free_FUN_00521d50 at 00521d5f
 ;   core_set.cpp_CDemonSet_clear_FUN_0054d370 at 0054d377
 ;
 ; Called Functions:

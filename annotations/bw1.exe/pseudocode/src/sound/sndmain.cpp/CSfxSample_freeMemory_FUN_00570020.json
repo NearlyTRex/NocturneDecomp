@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 126,
+    "complexity_score": 41,
     "cross_reference_count": 12,
     "function_call_count": 7,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 26,
-    "suspect_count": 9,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 86
@@ -135,7 +134,7 @@
     {
       "addr": "005a0dc0",
       "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_FUN_005a0dc0"
+      "name": "unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0"
     }
   ],
   "globals": [
@@ -333,70 +332,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "if (*(CMP3Decoder **)&this_ptr->field_0x174 != (CMP3Decoder *)0x0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "pCVar1 = sound_mp3_cpp_CMP3Decoder_dtor_FUN_0052ae80(*(CMP3Decoder **)&this_ptr->field_0x174,0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x174 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x17c",
-      "severity": "mild",
-      "text": "unkaddr_0059f520_cpp_FUN_005a0dc0(&this_ptr->field_0x17c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x15c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x164",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x164 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x168",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x168 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x160 = 0xffffffff;",
-      "type": "unnamed_field"
     }
   ]
 }

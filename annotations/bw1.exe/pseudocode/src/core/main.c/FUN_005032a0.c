@@ -48,7 +48,7 @@ void __cdecl core_main_c_FUN_005032a0(int argc,char **argv)
   unkafter_flattn_cpp_FUN_004bf770();
   core_inivar_cpp_readIniData_FUN_004f4f50();
   _DAT_02c8337c = 2;
-  engine_pod_cpp_CPod_init_FUN_0053c8a0((CPod *)g_CDemonPodPtr);
+  engine_pod_cpp_CPod_init_FUN_0053c8a0(&g_CDemonPodPtr->base);
   engine_dosio_cpp_addGetFileInfoHook_FUN_00478e40();
   engine_dosio_cpp_addGetFileInfoHook_FUN_00478e40();
   support_newmsg_cpp_readMessageFile_FUN_00530bf0("msglist.txt");

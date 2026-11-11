@@ -16,7 +16,7 @@ void __cdecl core_imp_cpp_CImp_processDismemberment_FUN_004f3cb0(CImp *this_ptr,
   CBodyPart *body_part;
   float local_14;
   
-  if ((0.0 < *(float *)(damage_info + 0x2c)) && (*(int *)damage_info == -1)) {
+  if ((0.0 < damage_info->dismember_prob) && (damage_info->hit_part_index == -1)) {
     iVar1 = rand();
     switch(iVar1 % 6) {
     case 0:
@@ -40,46 +40,45 @@ void __cdecl core_imp_cpp_CImp_processDismemberment_FUN_004f3cb0(CImp *this_ptr,
     default:
       goto switchD_004f3ce6_default;
     }
-    *(int *)damage_info = iVar1;
+    damage_info->hit_part_index = iVar1;
   }
 switchD_004f3ce6_default:
-  iVar1 = *(int *)damage_info;
+  iVar1 = damage_info->hit_part_index;
   if (((((iVar1 == this_ptr->part_indices[0]) || (iVar1 == this_ptr->part_indices[1])) ||
        (iVar1 == this_ptr->part_indices[2])) ||
       ((iVar1 == this_ptr->part_indices[3] || (iVar1 == this_ptr->part_indices[9])))) ||
      (iVar1 == this_ptr->part_indices[10])) {
-    local_14 = *(float *)(damage_info + 0x2c);
-    if (this_ptr->part_indices[10] == *(int *)damage_info) {
+    local_14 = damage_info->dismember_prob;
+    if (this_ptr->part_indices[10] == damage_info->hit_part_index) {
       local_14 = 0.05;
     }
-    if (this_ptr->part_indices[9] == *(int *)damage_info) {
+    if (this_ptr->part_indices[9] == damage_info->hit_part_index) {
       local_14 = 0.02;
     }
-    if (*(int *)&g_CGamePtr->field_0x1fc != 0) {
+    if (g_CGamePtr->gratuitous_dismemberment != 0) {
       local_14 = 1.0;
     }
-    if (*(int *)&g_CGamePtr->field_0x14 == 0) {
+    if (g_CGamePtr->blood_flag == 0) {
       local_14 = 0.0;
     }
     iVar1 = core_actor_cpp_randomChance_FUN_0040cd00(local_14);
     if (iVar1 != 0) {
       body_part = core_bodypart_cpp_createBodyPart_FUN_00418940
                             (&(this_ptr->base).base.base.location.position,
-                             &(this_ptr->base).base.base.orient,(CVector3f *)(damage_info + 0xc),
-                             (CDemonActor *)this_ptr,0,0,
-                             *(EBloodType *)&(this_ptr->base).base.field_0x27a0);
+                             &(this_ptr->base).base.base.orient,&damage_info->impact_point,
+                             (CDemonActor *)this_ptr,0,0,(this_ptr->base).base.blood_type);
       core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00431210
-                ((CCharacter *)this_ptr,body_part,*(int *)damage_info,1);
-      if (*(int *)damage_info == this_ptr->part_indices[0]) {
+                ((CCharacter *)this_ptr,body_part,damage_info->hit_part_index,1);
+      if (damage_info->hit_part_index == this_ptr->part_indices[0]) {
         core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00431210
                   ((CCharacter *)this_ptr,body_part,this_ptr->part_indices[1],0);
       }
-      if (this_ptr->part_indices[2] == *(int *)damage_info) {
+      if (this_ptr->part_indices[2] == damage_info->hit_part_index) {
         core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00431210
                   ((CCharacter *)this_ptr,body_part,this_ptr->part_indices[3],0);
       }
-      if (this_ptr->part_indices[9] == *(int *)damage_info) {
-        initial_velocity = (CVector3f *)(damage_info + 0xc);
+      if (this_ptr->part_indices[9] == damage_info->hit_part_index) {
+        initial_velocity = &damage_info->impact_point;
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_004311a0
                   ((CCharacter *)this_ptr,this_ptr->part_indices[2],initial_velocity,1);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_004311a0
@@ -94,18 +93,18 @@ switchD_004f3ce6_default:
       core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_004352e0
                 ((CCharacter *)this_ptr,"limb?.wav");
       core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00419b90(body_part);
-      *(float *)(damage_info + 8) = *(float *)(damage_info + 8) * (float)_DAT_005e56a2;
+      damage_info->gore_multiplier = damage_info->gore_multiplier * (float)_DAT_005e56a2;
     }
   }
-  iVar1 = *(int *)damage_info;
+  iVar1 = damage_info->hit_part_index;
   if (iVar1 == this_ptr->part_indices[10]) {
-    *(float *)(damage_info + 4) = *(float *)(damage_info + 4) * (float)_DAT_005e56b2;
+    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005e56b2;
     return;
   }
   if ((iVar1 != this_ptr->part_indices[8]) && (iVar1 != this_ptr->part_indices[9])) {
-    *(float *)(damage_info + 4) = *(float *)(damage_info + 4) * (float)_DAT_005e56aa;
+    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005e56aa;
     return;
   }
-  *(uint *)(damage_info + 4) = *(uint *)(damage_info + 4);
+  damage_info->damage_amount = damage_info->damage_amount;
   return;
 }

@@ -33,7 +33,7 @@ void __cdecl core_trigger_cpp_CTrigger_setup_FUN_0059b100(CTrigger *this_ptr)
     (this_ptr->base).collision_disabled = 0;
   }
   this_ptr->event_flag = 0;
-  *(uint *)&this_ptr->field_0x36c = 0;
+  this_ptr->cached_actor = (CDemonActor *)0x0;
   iVar3 = _stricmp(this_ptr->on_event,(char *)0x5f8090);
   if (iVar3 == 0) {
     this_ptr->on_event[0] = '\0';

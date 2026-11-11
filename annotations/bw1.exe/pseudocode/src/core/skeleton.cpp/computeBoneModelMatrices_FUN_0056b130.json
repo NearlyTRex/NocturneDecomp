@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 634,
+    "complexity_score": 618,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 74,
-    "suspect_count": 52,
+    "pseudocode_lines": 73,
+    "suspect_count": 51,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -16,10 +16,9 @@
       "shadow_pointer_walk",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "unnamed_param"
     ],
-    "total_lines": 224
+    "total_lines": 223
   },
   "cross_references": [
     {
@@ -359,7 +358,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 51,
       "match": "param_2",
       "severity": "mild",
       "text": "pfVar3[0x1fa] = *(float *)((int)&param_2->bone_origins[0].x + iStack_20) + *param_1;",
@@ -367,7 +366,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "pfVar3[0x1fa] = *(float *)((int)&param_2->bone_origins[0].x + iStack_20) + *param_1;",
@@ -375,16 +374,8 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 52,
       "match": "param_2",
-      "severity": "mild",
-      "text": "pfVar3[0x1fe] = *(float *)((int)&param_2->bone_origins[0].y + iStack_20) + param_1[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
       "severity": "mild",
       "text": "pfVar3[0x1fe] = *(float *)((int)&param_2->bone_origins[0].y + iStack_20) + param_1[1];",
       "type": "unnamed_param"
@@ -392,6 +383,14 @@
     {
       "description": "Unnamed function parameter",
       "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pfVar3[0x1fe] = *(float *)((int)&param_2->bone_origins[0].y + iStack_20) + param_1[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
       "match": "param_2",
       "severity": "mild",
       "text": "pfVar3[0x202] = *(float *)((int)&param_2->bone_origins[0].z + iStack_20) + param_1[2];",
@@ -399,7 +398,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
       "text": "pfVar3[0x202] = *(float *)((int)&param_2->bone_origins[0].z + iStack_20) + param_1[2];",
@@ -407,7 +406,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 59,
+      "line": 58,
       "match": "&stack0xffffffbc",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffbc + (uint)bVar4 * -8) =",
@@ -415,7 +414,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 60,
+      "line": 59,
       "match": "&stack0xffffffc8",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffc8 + (uint)bVar4 * -8);",
@@ -423,7 +422,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 61,
+      "line": 60,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffc0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =",
@@ -431,23 +430,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 62,
+      "line": 61,
       "match": "&stack0xffffffcc",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffcc + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 72,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "pCStack_28 = (CSkeleton *)&pCStack_28->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Pointer value `&param_2->bone_origins[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 50,
+      "line": 51,
       "match": "(int)&param_2->bone_origins[0].x",
       "severity": "moderate",
       "text": "pfVar3[0x1fa] = *(float *)((int)&param_2->bone_origins[0].x + iStack_20) + *param_1;",
@@ -455,7 +446,7 @@
     },
     {
       "description": "Pointer value `&param_2->bone_origins[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 51,
+      "line": 52,
       "match": "(int)&param_2->bone_origins[0].y",
       "severity": "moderate",
       "text": "pfVar3[0x1fe] = *(float *)((int)&param_2->bone_origins[0].y + iStack_20) + param_1[1];",
@@ -463,7 +454,7 @@
     },
     {
       "description": "Pointer value `&param_2->bone_origins[0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 52,
+      "line": 53,
       "match": "(int)&param_2->bone_origins[0].z",
       "severity": "moderate",
       "text": "pfVar3[0x202] = *(float *)((int)&param_2->bone_origins[0].z + iStack_20) + param_1[2];",
@@ -474,12 +465,12 @@
       "line": 56,
       "match": "(int)&pCStack_2c->x",
       "severity": "moderate",
-      "text": "((int)&pCStack_2c->x + iStack_20,",
+      "text": "core_xform_cpp_FUN_005b5080((int)&pCStack_2c->x + iStack_20,pCStack_18 + iVar1);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&stack0xffffffbc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 59,
+      "line": 58,
       "match": "(int)&stack0xffffffbc",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffbc + (uint)bVar4 * -8) =",
@@ -487,7 +478,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffc0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 61,
+      "line": 60,
       "match": "(int)&stack0xffffffc0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffc0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =",
@@ -495,7 +486,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 50,
+      "line": 51,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pfVar3[0x1fa] = *(float *)((int)&param_2->bone_origins[0].x + iStack_20) + *param_1;",
@@ -503,7 +494,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 51,
+      "line": 52,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pfVar3[0x1fe] = *(float *)((int)&param_2->bone_origins[0].y + iStack_20) + param_1[1];",
@@ -511,7 +502,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 52,
+      "line": 53,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pfVar3[0x202] = *(float *)((int)&param_2->bone_origins[0].z + iStack_20) + param_1[2];",
@@ -522,12 +513,12 @@
       "line": 56,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((int)&pCStack_2c->x + iStack_20,",
+      "text": "core_xform_cpp_FUN_005b5080((int)&pCStack_2c->x + iStack_20,pCStack_18 + iVar1);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 59,
+      "line": 58,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffbc + (uint)bVar4 * -8) =",
@@ -535,18 +526,18 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 61,
+      "line": 60,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffc0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCStack_28` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCStack_28->owner`). Replace `pCStack_28->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 72,
-      "match": "pCStack_28 = (T *)&pCStack_28->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCStack_28` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCStack_28->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 71,
+      "match": "pCStack_28 = (T *)((pCStack_28->FIELD).ARRAY[N] + CONST)",
       "severity": "moderate",
-      "text": "pCStack_28 = (CSkeleton *)&pCStack_28->field_0x24;",
+      "text": "pCStack_28 = (CSkeleton *)((pCStack_28->motion_list).state_names[1] + 2);",
       "type": "shadow_pointer_walk"
     },
     {

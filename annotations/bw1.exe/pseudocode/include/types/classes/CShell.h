@@ -7,13 +7,14 @@ struct CKeyFramedModel;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CParticle.h"
 #include "types/classes/CVector3f.h"
 
 // Structure: CShell
 // Ghidra size: 0x60 (96 bytes)
 #pragma pack(push, 1)
 typedef struct CShell {
-    char field_0[64]; // 0x0
+    CParticle base; // 0x0
     CVector3f euler_angles; // 0x40
     CVector3f angular_velocity; // 0x4c
     int bounce_count; // 0x58

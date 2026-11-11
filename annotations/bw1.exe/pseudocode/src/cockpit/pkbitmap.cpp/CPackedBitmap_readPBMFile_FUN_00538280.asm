@@ -19,10 +19,10 @@
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_FUN_00537550
 ;   core_main.c_FUN_005030e0
+;   crt_memory.c_malloc_FUN_005c08d0
+;   crt_memory.c_operator_new_array_FUN_005c1268
 ;   crt_stdio.c_fread_FUN_005c0b10
 ;   crt_stdio.c_fseek_FUN_005c170c
-;   crt_unknown.c_FUN_005c08d0
-;   crt_unknown.c_FUN_005c1268
 ;
 ; *****************************************************************************
 
@@ -128,8 +128,8 @@ section .text
     INC EAX                             ; 00538385
     SHL EAX,0x2                         ; 00538386
     PUSH EAX                            ; 00538389
-    CALL crt_unknown.c_FUN_005c1268     ; 0053838a
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c1268()
+    CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 0053838a
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
     ADD ESP,0x4                         ; 0053838f
     MOV dword ptr [EBX + 0x20],EAX      ; 00538392
     TEST EAX,EAX                        ; 00538395
@@ -186,8 +186,8 @@ section .text
     JNZ 0x00538468                      ; 005383fb
         ;   XREF to: 00538468 (CONDITIONAL_JUMP)  ; LAB_00538468
     PUSH ESI                            ; 005383fd
-    CALL crt_unknown.c_FUN_005c08d0     ; 005383fe
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 005383fe
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 00538403
     MOV dword ptr [EBX + 0x14],EAX      ; 00538406
     TEST EAX,EAX                        ; 00538409

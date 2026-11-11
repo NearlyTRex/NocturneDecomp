@@ -11,7 +11,7 @@ void core_shadowsc_cpp_factoryFuncShadowsc_FUN_00560470(void)
 {
   CShadowsc *this_ptr;
   
-  this_ptr = (CShadowsc *)debugAllocTracked1(0xc29c);
+  this_ptr = (CShadowsc *)operator_new(0xc29c);
   if (this_ptr == (CShadowsc *)0x0) {
     return;
   }

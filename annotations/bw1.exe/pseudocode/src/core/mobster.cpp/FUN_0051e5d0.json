@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 396,
-    "complexity_score": 479,
+    "complexity_score": 444,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 184,
-    "suspect_count": 24,
+    "suspect_count": 21,
     "suspect_types": [
       "bit_int_float_compare",
       "pointer_cast",
@@ -18,7 +18,6 @@
       "stack_alignment_array",
       "stack_param",
       "stack_ref",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -309,30 +308,6 @@
       "severity": "moderate",
       "text": "CBoundingBox3D *in_stack_fffffefc;",
       "type": "stack_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "if ((*(int *)(&(this_ptr->base).base.model.field_0x2140 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x2624",
-      "severity": "mild",
-      "text": "*(int *)&(this_ptr->base).base.field_0x2624 * 4) != 0) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x2628",
-      "severity": "mild",
-      "text": "(*(int *)&(this_ptr->base).base.field_0x2628 == 0)) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Complex pointer cast",

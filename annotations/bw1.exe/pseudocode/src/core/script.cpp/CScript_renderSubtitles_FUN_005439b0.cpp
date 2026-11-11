@@ -22,12 +22,12 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_005439b0(CScript *this_
   CBitFont *this_ptr_00;
   int iVar8;
   
-  if (*(int *)&g_CGamePtr->field_0x244 == 0) {
+  if (g_CGamePtr->letterbox_mode == 0) {
     fVar3 = (float)core_charactr_cpp_FUN_004355d0(g_CGamePtr);
     _DAT_01e818b0 = _DAT_01e818b0 - fVar3 / _DAT_005ee1b7;
   }
   else {
-    _DAT_01e7e0a0 = *(int *)&g_CGamePtr->field_0x244;
+    _DAT_01e7e0a0 = g_CGamePtr->letterbox_mode;
     fVar3 = (float)core_charactr_cpp_FUN_004355d0(g_CGamePtr);
     _DAT_01e818b0 = fVar3 / _DAT_005ee1b7 + _DAT_01e818b0;
   }
@@ -47,7 +47,7 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_005439b0(CScript *this_
     engine_2d_c_fillRectColor_FUN_004031c0(0,iVar8 - iVar4,iVar1 + -1,iVar8 + -1,0);
   }
   uVar2 = _DAT_01c4f00c;
-  if ((this_ptr->current_message[0] != '\0') && (*(int *)&g_CGamePtr->field_0x10 != 0)) {
+  if ((this_ptr->current_message[0] != '\0') && (g_CGamePtr->subtitle_mode != 0)) {
     this_ptr_00 = _DAT_0152d23c;
     if (DAT_0061b49c < 0x1e0) {
       this_ptr_00 = _DAT_0152d240;

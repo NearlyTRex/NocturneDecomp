@@ -42,15 +42,17 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_0045ec60(CDemo
     CStack_1c.y = (int)ROUND(fStack_24 * _DAT_005fe9d0);
     CStack_1c.z = (int)ROUND(fStack_20 * _DAT_005fe9d0);
     engine_special_cpp_FUN_00580173
-              ((SProjectedVertex *)(0x01BC120C->vertex_buffer_ptr + iVar2),&CStack_1c);
+              ((SProjectedVertex *)
+               ((int)&(0x01BC120C->vertex_buffer_ptr->projected_vertex).transformed_x + iVar2),
+               &CStack_1c);
     pCVar1 = 0x01BC120C;
-    *(uint *)(0x01BC120C->vertex_buffer_ptr + iVar2 + 0x18) = 0x800000;
-    *(uint *)(pCVar1->vertex_buffer_ptr + iVar2 + 0x1c) = 0x800000;
-    *(uint *)(pCVar1->vertex_buffer_ptr + iVar2 + 0x2c) = 0x8000;
-    *(uint *)(pCVar1->vertex_buffer_ptr + iVar2 + 0x20) = 0xffff;
-    *(uint *)(pCVar1->vertex_buffer_ptr + iVar2 + 0x24) = 0xffff;
+    *(uint *)((int)&DAT_0061255c->vertex_buffer_ptr->u + iVar2) = 0x800000;
+    *(uint *)((int)&pCVar1->vertex_buffer_ptr->v + iVar2) = 0x800000;
+    *(uint *)((int)&pCVar1->vertex_buffer_ptr->a + iVar2) = 0x8000;
+    *(uint *)((int)&pCVar1->vertex_buffer_ptr->r + iVar2) = 0xffff;
+    *(uint *)((int)&pCVar1->vertex_buffer_ptr->g + iVar2) = 0xffff;
     iVar3 = iVar3 + 0xc;
-    *(uint *)(pCVar1->vertex_buffer_ptr + iVar2 + 0x28) = 0xffff;
+    *(uint *)((int)&pCVar1->vertex_buffer_ptr->b + iVar2) = 0xffff;
     iVar2 = iVar2 + 0x30;
   } while (iVar3 != 0x2e8);
   engine_texture_cpp_FUN_00597a20(0x611388);

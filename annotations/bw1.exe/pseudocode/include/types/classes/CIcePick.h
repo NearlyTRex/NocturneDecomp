@@ -7,13 +7,14 @@ struct CDemonActor;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CHero.h"
 #include "types/classes/CVector3f.h"
 
 // Structure: CIcePick
 // Ghidra size: 0x1ffdc (131036 bytes)
 #pragma pack(push, 1)
 typedef struct CIcePick {
-    char field_0[130988]; // 0x0
+    CHero base; // 0x0
     int guns_drawn; // 0x1ffac
     int attack_count; // 0x1ffb0
     uint sfx_handles[2]; // 0x1ffb4

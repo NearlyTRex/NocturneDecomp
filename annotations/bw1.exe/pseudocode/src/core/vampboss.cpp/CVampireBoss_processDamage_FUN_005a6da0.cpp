@@ -23,10 +23,10 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005a6da0(CVampireB
   uint auStack_20 [4];
   
   bVar5 = 0;
-  if (*(int *)&(this_ptr->base).base.field_0x27b0 == 0) {
-    if (*(int *)(damage_info + 0x28) == 7) {
-      *(float *)(damage_info + 4) = *(float *)(damage_info + 4) * (float)_DAT_005f8ec8;
-      core_actor_cpp_FUN_00408b40(this_ptr,damage_info + 0x1c);
+  if ((this_ptr->base).base.is_invulnerable == 0) {
+    if (damage_info->ammo_type == AMMO_TYPE_LITHIUM) {
+      damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005f8ec8;
+      core_actor_cpp_FUN_00408b40(this_ptr,&damage_info->impact_direction);
       iVar2 = 0;
       CStack_30.x = fStack_24;
       *(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + 4) = auStack_20[(uint)bVar5 * -2];
@@ -39,10 +39,10 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005a6da0(CVampireB
       } while (iVar2 < 5);
     }
     if (this_ptr->form == 0) {
-      if ((*(int *)(damage_info + 0x28) == 1) &&
+      if ((damage_info->ammo_type == AMMO_TYPE_HOLY) &&
          (this_ptr_00 = (CDemonActor *)
                         core_actor_cpp_castToClassHash_FUN_0040c600
-                                  (*(uint *)(damage_info + 0x34),g_CMeleeClassInfo.name_hash),
+                                  (damage_info->attacker,g_CMeleeClassInfo.name_hash),
          this_ptr_00 != (CDemonActor *)0x0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
                   (&(this_ptr->base).base.model.base,10,1);
@@ -70,10 +70,10 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005a6da0(CVampireB
     }
     else {
       if (this_ptr->form != 2) {
-        *(uint *)(damage_info + 4) = 0;
+        damage_info->damage_amount = 0.0;
         return;
       }
-      fVar1 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
+      fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
       (this_ptr->base).base.hit_points = fVar1;
       if (fVar1 < (float)_DAT_005f8ed0) {
         (this_ptr->base).base.hit_points = 24.999;

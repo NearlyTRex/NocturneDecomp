@@ -20,7 +20,7 @@
 ;   CNetGame* g_CNetGamePtr = 01d51c20
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 DAT_007c3978
-;   undefined4 g_CFieldNotesInstance.field64_0x40
+;   undefined4 g_CFieldNotesInstance.is_displayed
 ;   undefined4 DAT_01ccff98
 ;   undefined4 DAT_01cd01f0
 ;   undefined4 DAT_01cd01f4
@@ -57,14 +57,14 @@ section .text
     MOV EAX,dword ptr [EAX + 0x15aeb8]  ; 004d1a02 | g_CDemonSetInstance.selected_camera_index
     MOV [0x01cd01f4],EAX                ; 004d1a08 | DAT_01cd01f4
     MOV EAX,[0x0061d418]                ; 004d1a0d | g_CFieldNotesPtr
-    MOV ECX,dword ptr [EAX + 0x40]      ; 004d1a12 | g_CFieldNotesInstance.field64_0x40
+    MOV ECX,dword ptr [EAX + 0x40]      ; 004d1a12 | g_CFieldNotesInstance.is_displayed
     ADD ESP,0xc                         ; 004d1a15
     TEST ECX,ECX                        ; 004d1a18
     JZ 0x004d1a3b                       ; 004d1a1a
         ;   XREF to: 004d1a3b (CONDITIONAL_JUMP)  ; LAB_004d1a3b
     MOV EAX,[0x0061d418]                ; 004d1a1c | g_CFieldNotesPtr
         ;   Label: LAB_004d1a1c
-    CMP dword ptr [EAX + 0x40],0x0      ; 004d1a21 | g_CFieldNotesInstance.field64_0x40
+    CMP dword ptr [EAX + 0x40],0x0      ; 004d1a21 | g_CFieldNotesInstance.is_displayed
     JZ 0x004d1a31                       ; 004d1a25
         ;   XREF to: 004d1a31 (CONDITIONAL_JUMP)  ; LAB_004d1a31
     MOV dword ptr [0x01cd0b40],0xffffffff ; 004d1a27 | DAT_01cd0b40

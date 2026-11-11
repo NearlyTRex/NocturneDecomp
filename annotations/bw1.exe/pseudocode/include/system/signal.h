@@ -13,3 +13,9 @@
 // Signed Integer (compiler-specific size)
 typedef int SIGNAL_HANDLER_TYPE;
 
+// Structure: SignalHandlerEntry
+typedef struct SignalHandlerEntry {
+    int flags;
+    SIGNAL_HANDLER_TYPE type;
+} SignalHandlerEntry;
+

@@ -65,11 +65,11 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004ca450(CGabrie
   bVar6 = 0;
   if ((is_holstering == 0) &&
      (pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
-                         ((CMotionController *)&this_ptr->field_0x158), *(int *)(pSVar2 + 0x24) == 2
-     )) {
+                         (&(this_ptr->base).base.model.base), pSVar2->state_index == 2)) {
     is_holstering = 1;
   }
-  if ((*(int *)&this_ptr->field_0x1fae4 == 0) || (*(int *)&this_ptr->field_0xc1d4 == 2)) {
+  if (((this_ptr->base).aim_mode == AIM_MODE_AUTO) ||
+     ((this_ptr->base).control_type == HERO_CONTROL_AI)) {
     if ((this_ptr->weapon_state_flags == 0) || (is_holstering != 0)) {
       this_ptr->aim_target = (CDemonActor *)0x0;
     }
@@ -179,8 +179,8 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004ca450(CGabrie
     }
   }
   else {
-    fVar1 = *(float *)&this_ptr->field_0xc204 * _DAT_005e11e4 * (float)_DAT_005e11ec * delta_time +
-            this_ptr->target_aim_pitch;
+    fVar1 = (this_ptr->base).player_input.look_up_down_speed * _DAT_005e11e4 * (float)_DAT_005e11ec
+            * delta_time + this_ptr->target_aim_pitch;
     local_18 = 0x3fc90fdb;
     this_ptr->target_aim_pitch = fVar1;
     if (fVar1 < _DAT_005e11f4) {

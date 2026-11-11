@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 47,
+    "complexity_score": 8,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 7,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unnamed_field",
-      "unresolved_funcptr"
-    ],
-    "total_lines": 21
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 22
   },
   "cross_references": [],
   "function": {
@@ -82,32 +79,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 5,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(*(int *)&this_ptr->field_0x1fe20 + 0x154) + 0x14))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x1fe20",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(*(int *)&this_ptr->field_0x1fe20 + 0x154) + 0x14))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x1fe20",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x1fe20);",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

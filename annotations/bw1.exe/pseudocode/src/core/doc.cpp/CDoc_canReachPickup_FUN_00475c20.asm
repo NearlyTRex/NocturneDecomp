@@ -17,7 +17,7 @@
 ;   undefined4 DAT_005da5e4
 ;   undefined4 DAT_005da5ec
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 g_CGameInstance.field160_0xd0
+;   undefined4 g_CGameInstance.game_control
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b40
@@ -181,7 +181,7 @@ section .text
     FADDP                               ; 00475e02
     FSQRT                               ; 00475e04
     MOV EAX,[0x0061d95c]                ; 00475e06 | g_CGamePtr
-    MOV ECX,dword ptr [EAX + 0xd0]      ; 00475e0b | g_CGameInstance.field160_0xd0
+    MOV ECX,dword ptr [EAX + 0xd0]      ; 00475e0b | g_CGameInstance.game_control
     FSTP float ptr [ESP]                ; 00475e11
     CMP ECX,0x3                         ; 00475e14
     JNZ 0x00476047                      ; 00475e17

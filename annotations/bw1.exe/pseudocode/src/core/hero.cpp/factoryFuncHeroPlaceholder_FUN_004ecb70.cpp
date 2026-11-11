@@ -11,7 +11,7 @@ void core_hero_cpp_factoryFuncHeroPlaceholder_FUN_004ecb70(void)
 {
   CHeroPlaceholder *this_ptr;
   
-  this_ptr = (CHeroPlaceholder *)debugAllocTracked1(0x17c);
+  this_ptr = (CHeroPlaceholder *)operator_new(0x17c);
   if (this_ptr == (CHeroPlaceholder *)0x0) {
     return;
   }

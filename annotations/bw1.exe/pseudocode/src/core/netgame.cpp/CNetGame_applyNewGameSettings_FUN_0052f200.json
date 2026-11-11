@@ -2,26 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 480,
-    "complexity_score": 1035,
+    "complexity_score": 728,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 275,
-    "suspect_count": 71,
+    "pseudocode_lines": 273,
+    "suspect_count": 41,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "primitive_walker_cast",
       "shadow_pointer_walk",
       "stack_alignment_array",
+      "stack_ref",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 755
+    "total_lines": 753
   },
   "cross_references": [
     {
@@ -554,71 +553,31 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 23,
-      "match": "auStackY_2090",
+      "line": 24,
+      "match": "aEStackY_2090",
       "severity": "moderate",
-      "text": "uint auStackY_2090 [1986];",
+      "text": "EHeroType aEStackY_2090 [1986];",
       "type": "stack_alignment_array"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 76,
+      "match": "&stack0xfffffe8c",
+      "severity": "moderate",
+      "text": "piVar12 = (int *)&stack0xfffffe8c;",
+      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 79,
       "match": "(UNetPacket *)((int)packet",
       "severity": "moderate",
-      "text": "packet = (UNetPacket *)((int)packet + (uint)bVar16 * -8 + 4);",
+      "text": "packet = (UNetPacket *)((int)packet + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 91,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(short *)&this_ptr->players[this_ptr->local_player_index].field_0x20) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 92,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->players[this_ptr->local_player_index].field_0x1c == *(int *)pSVar3)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 96,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(short *)&this_ptr->players[this_ptr->server_player_index].field_0x20) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 97,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->players[this_ptr->server_player_index].field_0x1c == *(int *)pSVar3)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 121,
-      "match": "(int *)&this_ptr->players[",
-      "severity": "moderate",
-      "text": "local_28 = (int *)&this_ptr->players[0].field_0x1c;",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 121,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "local_28 = (int *)&this_ptr->players[0].field_0x1c;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 144,
+      "line": 142,
       "match": "(int *)((int)local_44",
       "severity": "moderate",
       "text": "*(int *)((int)local_44 + local_2c) = iVar5;",
@@ -626,7 +585,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 148,
+      "line": 146,
       "match": "DAT_00622584",
       "severity": "mild",
       "text": "DAT_00622584 = local_20 ^ this_ptr->local_player_index;",
@@ -634,23 +593,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 151,
+      "line": 149,
       "match": "DAT_00622584",
       "severity": "mild",
       "text": "DAT_00622584 = 1;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 153,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "if (*(int *)&local_30->players[0].field_0x44 == aiStack_f7[iVar5 * 10 + 2]) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 154,
+      "line": 152,
       "match": "DAT_00622584",
       "severity": "mild",
       "text": "if (DAT_00622584 == 0) goto LAB_0052f785;",
@@ -658,103 +609,47 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 157,
+      "line": 155,
       "match": "DAT_00622584",
       "severity": "mild",
       "text": "DAT_00622584 = 1;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 168,
-      "match": "field_0x1",
-      "severity": "mild",
-      "text": "pSVar10->field_0x1 = cVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 169,
-      "match": "field_0x2",
-      "severity": "mild",
-      "text": "pSVar10 = (SNetPlayer *)&pSVar10->field_0x2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 171,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->players[local_20].field_0x44 = aiStack_f7[iVar5 * 10 + 2];",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 172,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->players[local_20].field_0x14 = aiStack_f7[iVar5 * 10];",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 173,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->players[local_20].field_0x18 = aiStack_f7[iVar5 * 10 + 1];",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 177,
-      "match": "field_0x5c",
-      "severity": "mild",
-      "text": "local_30 = (CNetGame *)&local_30->players[0].field_0x5c;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 178,
+      "match": "(SNetworkAddr *)((int)(local_28 + 0xf) +",
+      "severity": "moderate",
+      "text": "local_28 = (SNetworkAddr *)((int)(local_28 + 0xf) + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 192,
-      "match": "(int *)((int)aiStack_f7",
+      "line": 190,
+      "match": "(int *)((int)aEStack_f7",
       "severity": "moderate",
-      "text": "*(int *)((int)aiStack_f7 + iVar12),*(int *)((int)aiStack_f7 + iVar12 + 4));",
+      "text": "local_113 + iVar13,*(int *)((int)aEStack_f7 + iVar13),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 191,
+      "match": "(int *)((int)aEStack_f7",
+      "severity": "moderate",
+      "text": "*(int *)((int)aEStack_f7 + iVar13 + 4));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 192,
-      "match": "(int *)((int)aiStack_f7",
+      "match": "(int *)((int)aEStack_f7",
       "severity": "moderate",
-      "text": "*(int *)((int)aiStack_f7 + iVar12),*(int *)((int)aiStack_f7 + iVar12 + 4));",
+      "text": "this_ptr->players[iVar4].ready_flag = *(int *)((int)aEStack_f7 + iVar13 + 8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 193,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->players[iVar4].field_0x44 =",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 194,
-      "match": "(uint *)((int)aiStack_f7",
-      "severity": "moderate",
-      "text": "*(uint *)((int)aiStack_f7 + iVar12 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 209,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "local_14 = (SIpAddr *)&local_1c->field_0x1c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 214,
+      "line": 212,
       "match": "(int *)((int)local_44",
       "severity": "moderate",
       "text": "if (*(int *)((int)local_44 + local_44[3] + 4) < *(int *)((int)local_44 + local_44[3])) {",
@@ -762,7 +657,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 214,
+      "line": 212,
       "match": "(int *)((int)local_44",
       "severity": "moderate",
       "text": "if (*(int *)((int)local_44 + local_44[3] + 4) < *(int *)((int)local_44 + local_44[3])) {",
@@ -770,15 +665,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 215,
+      "line": 213,
       "match": "(uint *)((int)local_44",
       "severity": "moderate",
-      "text": "puVar8 = (uint *)((int)local_44 + local_44[3] + 4);",
+      "text": "puVar11 = (uint *)((int)local_44 + local_44[3] + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 216,
+      "line": 214,
       "match": "(uint *)((int)local_44",
       "severity": "moderate",
       "text": "uVar2 = *(uint *)((int)local_44 + local_44[3]);",
@@ -786,271 +681,119 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 217,
+      "line": 215,
       "match": "(uint *)((int)local_44",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_44 + local_44[3]) = *puVar8;",
+      "text": "*(uint *)((int)local_44 + local_44[3]) = *puVar11;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 220,
-      "match": "(uint *)((int)pSVar15",
+      "line": 218,
+      "match": "(EHeroType *)((int)pSVar16",
       "severity": "moderate",
-      "text": "puVar8 = (uint *)((int)pSVar15 + (uint)bVar16 * -8 + 4);",
+      "text": "pEVar8 = (EHeroType *)((int)pSVar16 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 229,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "local_ac = *(uint *)&pSVar15->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 230,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "local_a8 = *(uint *)&pSVar15->field_0x18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 233,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "local_9c = *(uint *)&pSVar15->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 234,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "local_98 = *(uint *)&pSVar15->field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 235,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "local_94 = *(uint *)&pSVar15->field_0x2c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 236,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "local_90 = *(uint *)&pSVar15->field_0x30;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 237,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "local_8c = *(uint *)&pSVar15->field_0x34;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 238,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "local_88 = *(uint *)&pSVar15->field_0x38;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 239,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "local_84 = *(uint *)&pSVar15->field_0x3c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 240,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "local_80 = *(uint *)&pSVar15->field_0x40;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 241,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "local_7c = *(uint *)&pSVar15->field_0x44;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 242,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "local_78 = *(uint *)&pSVar15->field_0x48;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 243,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "local_74 = *(uint *)&pSVar10->field_0x4c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 244,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "local_70 = *(uint *)&pSVar10->field_0x50;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 245,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "local_6c = *(uint *)&pSVar10->field_0x54;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 246,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "local_68 = *(uint *)&pSVar10->field_0x58;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 247,
-      "match": "field_0x5c",
-      "severity": "mild",
-      "text": "local_64 = *(uint *)&pSVar10->field_0x5c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 248,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "local_60 = *(uint *)&pSVar10->field_0x60;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 249,
-      "match": "field_0x64",
-      "severity": "mild",
-      "text": "local_5c = *(uint *)&pSVar10->field_0x64;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 250,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "local_58 = *(uint *)&pSVar10->field_0x68;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 251,
-      "match": "field_0x6c",
-      "severity": "mild",
-      "text": "local_54 = *(uint *)&pSVar10->field_0x6c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 252,
-      "match": "field_0x70",
-      "severity": "mild",
-      "text": "local_50 = *(uint *)&pSVar10->field_0x70;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 253,
-      "match": "field_0x74",
-      "severity": "mild",
-      "text": "local_4c = *(uint *)&pSVar10->field_0x74;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 254,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "local_48 = *(uint *)&pSVar10->field_0x78;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 258,
+      "line": 256,
       "match": "(SNetPlayer *)((int)pSVar10",
       "severity": "moderate",
-      "text": "pSVar10 = (SNetPlayer *)((int)pSVar10 + (uint)bVar16 * -8 + 4);",
+      "text": "pSVar10 = (SNetPlayer *)((int)pSVar10 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 259,
-      "match": "(SNetPlayer *)((int)pSVar15",
+      "line": 257,
+      "match": "(SNetPlayer *)((int)pSVar16",
       "severity": "moderate",
-      "text": "pSVar15 = (SNetPlayer *)((int)pSVar15 + (uint)bVar16 * -8 + 4);",
+      "text": "pSVar16 = (SNetPlayer *)((int)pSVar16 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 266,
+      "line": 264,
       "match": "(SNetPlayer *)((int)pSVar10",
       "severity": "moderate",
-      "text": "pSVar10 = (SNetPlayer *)((int)pSVar10 + (uint)bVar16 * -8 + 4);",
+      "text": "pSVar10 = (SNetPlayer *)((int)pSVar10 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `pSVar15` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 220,
-      "match": "(int)pSVar15",
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 269,
+      "match": "(SNetworkAddr *)((int)(local_14 + 0xf) +",
       "severity": "moderate",
-      "text": "puVar8 = (uint *)((int)pSVar15 + (uint)bVar16 * -8 + 4);",
+      "text": "local_14 = (SNetworkAddr *)((int)(local_14 + 0xf) + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `(local_28 + 0xf)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 178,
+      "match": "(int)(local_28 + 0xf)",
+      "severity": "moderate",
+      "text": "local_28 = (SNetworkAddr *)((int)(local_28 + 0xf) + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_ff.ip_address` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 189,
+      "match": "(int)&local_ff.ip_address",
+      "severity": "moderate",
+      "text": "(this_ptr,(SNetworkAddr *)((int)&local_ff.ip_address + iVar13),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar16` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 218,
+      "match": "(int)pSVar16",
+      "severity": "moderate",
+      "text": "pEVar8 = (EHeroType *)((int)pSVar16 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `pSVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 258,
+      "line": 256,
       "match": "(int)pSVar10",
       "severity": "moderate",
-      "text": "pSVar10 = (SNetPlayer *)((int)pSVar10 + (uint)bVar16 * -8 + 4);",
+      "text": "pSVar10 = (SNetPlayer *)((int)pSVar10 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pSVar15` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 259,
-      "match": "(int)pSVar15",
+      "description": "Pointer value `pSVar16` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 257,
+      "match": "(int)pSVar16",
       "severity": "moderate",
-      "text": "pSVar15 = (SNetPlayer *)((int)pSVar15 + (uint)bVar16 * -8 + 4);",
+      "text": "pSVar16 = (SNetPlayer *)((int)pSVar16 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `pSVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 266,
+      "line": 264,
       "match": "(int)pSVar10",
       "severity": "moderate",
-      "text": "pSVar10 = (SNetPlayer *)((int)pSVar10 + (uint)bVar16 * -8 + 4);",
+      "text": "pSVar10 = (SNetPlayer *)((int)pSVar10 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(local_14 + 0xf)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 269,
+      "match": "(int)(local_14 + 0xf)",
+      "severity": "moderate",
+      "text": "local_14 = (SNetworkAddr *)((int)(local_14 + 0xf) + 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 109,
+      "line": 107,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 160,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1066,7 +809,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 256,
+      "line": 254,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0x1f; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -1074,26 +817,42 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 263,
+      "line": 261,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0x1f; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar10` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar10->owner`). Replace `pSVar10->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 169,
-      "match": "pSVar10 = (T *)&pSVar10->FIELD",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 189,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "pSVar10 = (SNetPlayer *)&pSVar10->field_0x2;",
-      "type": "shadow_pointer_walk"
+      "text": "(this_ptr,(SNetworkAddr *)((int)&local_ff.ip_address + iVar13),",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_30` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&local_30->vertices[0].a`). Replace `local_30->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 177,
+      "line": 175,
       "match": "local_30 = (T *)&local_30->FIELD[N].SUBFIELD",
       "severity": "moderate",
-      "text": "local_30 = (CNetGame *)&local_30->players[0].field_0x5c;",
+      "text": "local_30 = (CNetGame *)&local_30->players[0].player_input.action_state.use_item;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_28` self-updates via element-arithmetic `(int)(local_28 + N) + M`, where `N*sizeof(*local_28) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `local_28->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 178,
+      "match": "local_28 = (T *)((int)(local_28 + N) + M)",
+      "severity": "moderate",
+      "text": "local_28 = (SNetworkAddr *)((int)(local_28 + 0xf) + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_14` self-updates via element-arithmetic `(int)(local_14 + N) + M`, where `N*sizeof(*local_14) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `local_14->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 269,
+      "match": "local_14 = (T *)((int)(local_14 + N) + M)",
+      "severity": "moderate",
+      "text": "local_14 = (SNetworkAddr *)((int)(local_14 + 0xf) + 4);",
       "type": "shadow_pointer_walk"
     },
     {

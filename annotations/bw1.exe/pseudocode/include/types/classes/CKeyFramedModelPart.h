@@ -6,10 +6,11 @@
 #include "system/basetypes.h"
 
 // Structure: CKeyFramedModelPart
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x8 (8 bytes)
 #pragma pack(push, 1)
 typedef struct CKeyFramedModelPart {
+    int vertex_count; // 0x0
+    int poly_count; // 0x4
 } CKeyFramedModelPart;
 #pragma pack(pop)
 

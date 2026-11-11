@@ -20,10 +20,10 @@
 ;   core_dfilter.cpp_CFilterCache_findFilter_FUN_0045d900
 ;   core_dfilter.cpp_CFilterFX_free_FUN_0045dd90
 ;   core_main.c_FUN_005030e0
+;   crt_memory.c_malloc_FUN_005c08d0
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fread_FUN_005c0b10
 ;   crt_stdio.c_fscanf_FUN_005c04b0
-;   crt_unknown.c_FUN_005c08d0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_dosio.cpp_FUN_00479180
 ;
@@ -87,8 +87,8 @@ section .text
     ADD ESP,0x4                         ; 0045de40
     SHL EAX,0xd                         ; 0045de43
     PUSH EAX                            ; 0045de46
-    CALL crt_unknown.c_FUN_005c08d0     ; 0045de47
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 0045de47
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 0045de4c
     PUSH EBX                            ; 0045de4f
     PUSH 0x5d8603                       ; 0045de50

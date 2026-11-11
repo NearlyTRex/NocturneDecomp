@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 194,
+    "complexity_score": 158,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 14,
+    "pseudocode_lines": 33,
+    "suspect_count": 11,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 143
+    "total_lines": 142
   },
   "cross_references": [],
   "function": {
@@ -189,48 +188,24 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "if (0.0 < *(float *)&this_ptr->field_0x24) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 12,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "output = (SProjectedVertex *)DAT_00612560->vertex_buffer_ptr;",
+      "text": "vertex_ptr = DAT_00612560->vertex_buffer_ptr;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "CStack_1c.y = (int)ROUND(*(float *)&this_ptr->field_0x4 * _DAT_005fff94);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "CStack_1c.z = (int)ROUND(*(float *)&this_ptr->field_0x8 * _DAT_005fff94);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 18,
+      "line": 17,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "(DAT_00612560,(SRenderVertex *)output);",
+      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_00484fd0(DAT_00612560,vertex_ptr);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 19,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);",
@@ -238,7 +213,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 22,
+      "line": 21,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 4))(DAT_007c6120,this_ptr,0);",
@@ -246,7 +221,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 21,
       "match": "DAT_007c6120",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 4))(DAT_007c6120,this_ptr,0);",
@@ -254,7 +229,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 21,
       "match": "DAT_007c6120",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 4))(DAT_007c6120,this_ptr,0);",
@@ -262,7 +237,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 25,
       "match": "DAT_02c8af28",
       "severity": "mild",
       "text": "(CVector3f *)&DAT_02c8af28,(CVector3f *)&DAT_02c8af28,(CMatrix3x3f *)0x0);",
@@ -270,7 +245,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 25,
       "match": "DAT_02c8af28",
       "severity": "mild",
       "text": "(CVector3f *)&DAT_02c8af28,(CVector3f *)&DAT_02c8af28,(CMatrix3x3f *)0x0);",
@@ -278,7 +253,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 27,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,(CVector3f *)this_ptr);",
@@ -286,7 +261,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 29,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,&this_ptr->euler_angles,(CVector3f *)0x0);",

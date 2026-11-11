@@ -124,7 +124,7 @@
       "line": 17,
       "match": "pCVar1[-5].",
       "severity": "mild",
-      "text": "((CWeapon *)((int)&pCVar1[-5].previous_transform_state.orientation + 8),1);",
+      "text": "((CWeapon *)((int)&pCVar1[-5].previous_transform_state.orientation + 4),1);",
       "type": "negative_offset"
     },
     {
@@ -132,7 +132,7 @@
       "line": 17,
       "match": "(int)&pCVar1[-5].previous_transform_state.orientation",
       "severity": "moderate",
-      "text": "((CWeapon *)((int)&pCVar1[-5].previous_transform_state.orientation + 8),1);",
+      "text": "((CWeapon *)((int)&pCVar1[-5].previous_transform_state.orientation + 4),1);",
       "type": "pointer_truncation"
     },
     {
@@ -140,7 +140,7 @@
       "line": 17,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((CWeapon *)((int)&pCVar1[-5].previous_transform_state.orientation + 8),1);",
+      "text": "((CWeapon *)((int)&pCVar1[-5].previous_transform_state.orientation + 4),1);",
       "type": "pointer_cast"
     }
   ],

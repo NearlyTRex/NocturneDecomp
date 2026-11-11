@@ -17,8 +17,8 @@ int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_00522a80(CMorphModel
   char *pcVar4;
   
   iVar3 = 0;
-  if (0 < *(int *)&this_ptr->field_0x64) {
-    pcVar4 = &this_ptr->field_0x70;
+  if (0 < this_ptr->num_textures) {
+    pcVar4 = this_ptr->textures[0].texture_name;
     do {
       iVar2 = _stricmp(pcVar4,filename);
       if (iVar2 == 0) {
@@ -26,16 +26,15 @@ int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_00522a80(CMorphModel
       }
       iVar3 = iVar3 + 1;
       pcVar4 = pcVar4 + 0x48;
-    } while (iVar3 < *(int *)&this_ptr->field_0x64);
+    } while (iVar3 < this_ptr->num_textures);
   }
-  if (0x13 < *(int *)&this_ptr->field_0x64) {
+  if (0x13 < this_ptr->num_textures) {
     _DAT_01d1d400 = "..\\core\\morph.cpp";
     _DAT_01d1d404 = 0x1d0;
     core_main_c_FUN_005030e0("CMorphModel::findOrAddTexture - too many textures!");
   }
-  memset
-            (&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x64 * 0x48,0,0x48);
-  pcVar4 = &this_ptr->field_0x70 + *(int *)&this_ptr->field_0x64 * 0x48;
+  memset(this_ptr->textures + this_ptr->num_textures,0,0x48);
+  pcVar4 = this_ptr->textures[this_ptr->num_textures].texture_name;
   do {
     cVar1 = *filename;
     *pcVar4 = cVar1;
@@ -45,7 +44,7 @@ int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_00522a80(CMorphModel
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  iVar3 = *(int *)&this_ptr->field_0x64;
-  *(int *)&this_ptr->field_0x64 = iVar3 + 1;
+  iVar3 = this_ptr->num_textures;
+  this_ptr->num_textures = iVar3 + 1;
   return iVar3;
 }

@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004e0c50(CGhoul *this_ptr,CVector3f *out_points_array)
@@ -49,8 +50,7 @@ int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004e0c50(CGhoul *this_ptr,
   do {
     switch((iStack_1c + (this_ptr->base).base.base.direction_hint) % 4) {
     case 0:
-      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[0] * 4) != 0)
-      {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
         core_skeleton_cpp_FUN_00569130(pCStack_18,_DAT_01cd0dac);
         CStack_40.x = fStack_64;
         *(float *)((int)&CStack_40 + (uint)bVar4 * -8 + 4) = afStack_60[(uint)bVar4 * -2];
@@ -76,8 +76,7 @@ LAB_004e0d9d:
       }
       break;
     case 1:
-      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[2] * 4) != 0)
-      {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
         core_skeleton_cpp_FUN_00569130(pCStack_18,_DAT_01cd0db0);
         CStack_94.x = fStack_34;
         *(float *)((int)&CStack_94 + (uint)bVar4 * -8 + 4) = afStack_30[(uint)bVar4 * -2];
@@ -92,8 +91,7 @@ LAB_004e0d9d:
       }
       break;
     case 2:
-      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[10] * 4) != 0)
-      {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] != 0) {
         core_skeleton_cpp_FUN_00569130(pCStack_18,_DAT_01cd0d98);
         pCVar2 = out_points_array + iVar3;
         CStack_28.x = fStack_a0;
@@ -111,8 +109,7 @@ LAB_004e0d9a:
       }
       break;
     case 3:
-      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[9] * 4) != 0)
-      {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[9]] != 0) {
         core_skeleton_cpp_FUN_00569130(pCStack_18,_DAT_01cd0dc0);
         pCVar2 = out_points_array + iVar3;
         CStack_4c.x = afStack_60[2];

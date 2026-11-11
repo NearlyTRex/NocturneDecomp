@@ -24,7 +24,7 @@ void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_004308a0(CCharacter *th
     pCVar3 = this_ptr;
     if (0 < this_ptr->fire_count) {
       do {
-        if (iVar1 == *(int *)&pCVar3->fires[0].field_0x4) {
+        if (iVar1 == pCVar3->fires[0].bone_index) {
           return;
         }
         iVar2 = iVar2 + 1;

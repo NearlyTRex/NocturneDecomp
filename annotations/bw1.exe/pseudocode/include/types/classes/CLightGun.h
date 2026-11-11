@@ -4,13 +4,20 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CWeapon.h"
 
 // Structure: CLightGun
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x598 (1432 bytes)
 #pragma pack(push, 1)
 typedef struct CLightGun {
-    char field_0[1432]; // 0x0
+    CWeapon base; // 0x0
+    int fire_flash_pending; // 0x578
+    uint sfx_handle; // 0x57c
+    float charge_level; // 0x580
+    float charge_ratio; // 0x584
+    int hit_enemy; // 0x588
+    char field_1420[8]; // 0x58c
+    float beam_length; // 0x594
 } CLightGun;
 #pragma pack(pop)
 

@@ -523,7 +523,7 @@
       "line": 58,
       "match": "DAT_005e9214",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e9214,this_ptr + 0x1018);",
+      "text": "_fscanf(file_handle,&DAT_005e9214,this_ptr->mission_name);",
       "type": "undefined_data"
     },
     {
@@ -531,7 +531,7 @@
       "line": 64,
       "match": "DAT_005e9218",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e9218,this_ptr + 4);",
+      "text": "_fscanf(file_handle,&DAT_005e9218,&this_ptr->num_sets);",
       "type": "undefined_data"
     },
     {
@@ -539,7 +539,7 @@
       "line": 69,
       "match": "DAT_005e921c",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e921c,pCVar4);",
+      "text": "_fscanf(file_handle,&DAT_005e921c,pacVar4);",
       "type": "undefined_data"
     },
     {

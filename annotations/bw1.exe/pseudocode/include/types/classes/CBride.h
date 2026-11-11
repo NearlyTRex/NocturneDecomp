@@ -12,7 +12,9 @@
 typedef struct CBride {
     CEnemy base; // 0x0
     int part_indices[9]; // 0xc268
-    char field_49804[16]; // 0xc28c
+    float dismember_death_timer; // 0xc28c, Added in this build
+    float action_timer; // 0xc290
+    uint sfx_handles[2]; // 0xc294
 } CBride;
 #pragma pack(pop)
 

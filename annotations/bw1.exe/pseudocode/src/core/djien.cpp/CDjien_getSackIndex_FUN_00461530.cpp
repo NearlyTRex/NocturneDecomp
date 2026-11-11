@@ -12,22 +12,22 @@ int __cdecl core_djien_cpp_CDjien_getSackIndex_FUN_00461530(CDjien *this_ptr,int
   int iVar1;
   
   iVar1 = -1;
-  if (part_id == *(int *)&this_ptr->field_0xc2b0) {
+  if (part_id == this_ptr->sack_part_indices[0]) {
     iVar1 = 0;
   }
-  if (part_id == *(int *)&this_ptr->field_0xc2b4) {
+  if (part_id == this_ptr->sack_part_indices[1]) {
     iVar1 = 1;
   }
-  if (part_id == *(int *)&this_ptr->field_0xc2b8) {
+  if (part_id == this_ptr->sack_part_indices[2]) {
     iVar1 = 2;
   }
-  if (part_id == *(int *)&this_ptr->field_0xc2bc) {
+  if (part_id == this_ptr->sack_part_indices[3]) {
     iVar1 = 3;
   }
-  if (part_id == *(int *)&this_ptr->field_0xc2c0) {
+  if (part_id == this_ptr->sack_part_indices[4]) {
     iVar1 = 4;
   }
-  if (part_id == *(int *)&this_ptr->field_0xc2c4) {
+  if (part_id == this_ptr->sack_part_indices[5]) {
     iVar1 = 5;
   }
   return iVar1;

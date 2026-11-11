@@ -190,11 +190,10 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004fda40(CLarva *this_ptr,float d
       }
     }
   }
-  *(float *)&(this_ptr->base).base.field_0x2524 =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
+  (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   core_charactr_cpp_FUN_00435320(this_ptr);
   pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(pCStack_30);
-  uVar7 = *(uint *)(pSVar5 + 0x24);
+  uVar7 = pSVar5->state_index;
   uStack_3c = uVar7;
   iVar4 = core_charactr_cpp_CCharacter_processWalking_FUN_00432240
                     ((CCharacter *)this_ptr,delta_time);
@@ -360,8 +359,8 @@ LAB_004fdb45:
     if (iVar4 == 0) {
       fVar14 = (float10)1;
       fVar12 = (float10)1.4426950408889634 *
-               (float10)0.6931471805599453 * (float10)*(float *)&(this_ptr->base).base.field_0x27b8
-               * (float10)_DAT_005e6c3b;
+               (float10)0.6931471805599453 * (float10)(this_ptr->base).base.size_scale *
+               (float10)_DAT_005e6c3b;
       fVar13 = (float10)f2xm1(fVar12 - (fVar12 / fVar14) * fVar14);
       fVar14 = (float10)fscale(fVar13 + fVar14,fVar12);
       dStack_6c = (double)fVar14;

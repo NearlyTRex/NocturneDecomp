@@ -34,9 +34,9 @@ int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_004316b0(CCharacter 
   float afStack_b0 [2];
   CVector3f CStack_a8;
   float fStack_9c;
-  uint auStack_98 [2];
-  float fStack_90;
-  float afStack_8c [5];
+  float afStack_98 [4];
+  float fStack_88;
+  float fStack_84;
   float fStack_78;
   CVector3f CStack_6c;
   float fStack_60;
@@ -51,21 +51,21 @@ int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_004316b0(CCharacter 
   float fStack_18;
   
   bVar3 = 0;
-  if (*(int *)&this_ptr->field_0x27b0 != 0) {
+  if (this_ptr->is_invulnerable != 0) {
     return 0;
   }
   core_actor_cpp_FUN_00408bb0(this_ptr,start);
   CStack_c0.x = fStack_78;
-  *(float *)((int)&CStack_c0 + (uint)bVar3 * -8 + 4) = afStack_8c[(uint)bVar3 * -2 + 6];
+  *(float *)((int)&CStack_c0 + (uint)bVar3 * -8 + 4) = afStack_98[(uint)bVar3 * -2 + 9];
   *(float *)((int)&CStack_c0 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-       afStack_8c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7];
+       afStack_98[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 10];
   core_actor_cpp_FUN_00408bb0(this_ptr,end);
   out_intersection_point = &CStack_6c;
   pCVar5 = &CStack_a8;
-  CStack_a8.x = afStack_8c[2];
-  *(float *)((int)&CStack_a8 + (uint)bVar3 * -8 + 4) = afStack_8c[(uint)bVar3 * -2 + 3];
+  CStack_a8.x = fStack_84;
+  *(float *)((int)&CStack_a8 + (uint)bVar3 * -8 + 4) = afStack_98[(uint)bVar3 * -2 + 6];
   *(float *)((int)&CStack_a8 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-       afStack_8c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
+       afStack_98[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7];
   iVar2 = (*((this_ptr->base).vtable._ub)->testLineIntersection)
                     (&this_ptr->base,&CStack_c0,pCVar5,out_intersection_point);
   if (iVar2 != 0) {
@@ -81,8 +81,8 @@ int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_004316b0(CCharacter 
         out_hit->z = CStack_54.z;
       }
     }
-    if (0.0 < *(float *)(damage_info + 4)) {
-      fVar4 = (float10)*(float *)(damage_info + 4) * (float10)_DAT_005d5a6f;
+    if (0.0 < damage_info->damage_amount) {
+      fVar4 = (float10)damage_info->damage_amount * (float10)_DAT_005d5a6f;
       round();
       iStack_24 = (int)ROUND(fVar4);
       iStack_1c = (int)ROUND(fVar4) + 1;
@@ -115,11 +115,11 @@ int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_004316b0(CCharacter 
            *(uint *)((int)&stack0xffffff18 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
       core_actor_cpp_FUN_00408b40(this_ptr,pCVar5);
       CStack_3c.x = fStack_9c;
-      *(uint *)((int)&CStack_3c + (uint)bVar3 * -8 + 4) = auStack_98[(uint)bVar3 * -2];
-      *(uint *)((int)&CStack_3c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-           auStack_98[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+      *(float *)((int)&CStack_3c + (uint)bVar3 * -8 + 4) = afStack_98[(uint)bVar3 * -2];
+      *(float *)((int)&CStack_3c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+           afStack_98[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004e6060
-                (g_CGorePtr,&CStack_3c,&CStack_30,iStack_1c,*(EBloodType *)&this_ptr->field_0x27a0);
+                (g_CGorePtr,&CStack_3c,&CStack_30,iStack_1c,this_ptr->blood_type);
     }
     fStack_cc = CStack_c0.x + CStack_a8.x;
     fStack_c8 = CStack_c0.y + CStack_a8.y;
@@ -131,18 +131,18 @@ int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_004316b0(CCharacter 
     fStack_e4 = fStack_48 * _DAT_005d5a7b;
     fStack_e0 = afStack_44[0] * _DAT_005d5a7b;
     fStack_dc = afStack_44[1] * _DAT_005d5a7b;
-    fStack_90 = fStack_48 * _DAT_005d5a7b;
-    afStack_8c[(uint)bVar3 * -2] = *(float *)((int)&stack0xffffff20 + (uint)bVar3 * -8);
-    afStack_8c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+    afStack_98[2] = fStack_48 * _DAT_005d5a7b;
+    afStack_98[(uint)bVar3 * -2 + 3] = *(float *)((int)&stack0xffffff20 + (uint)bVar3 * -8);
+    afStack_98[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
          *(float *)((int)&stack0xffffff24 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-    if (damage_info + 0x1c != (SDamageInfo *)&fStack_90) {
-      *(float *)(damage_info + 0x1c) = fStack_90;
-      *(float *)(damage_info + 0x20) = afStack_8c[0];
-      *(float *)(damage_info + 0x24) = afStack_8c[1];
+    if (&damage_info->impact_direction != (CVector3f *)(afStack_98 + 2)) {
+      (damage_info->impact_direction).x = afStack_98[2];
+      (damage_info->impact_direction).y = afStack_98[3];
+      (damage_info->impact_direction).z = fStack_88;
     }
     (*(((this_ptr->base).vtable._uc)->_uc).processDamage)(this_ptr,damage_info);
     return 1;
   }
-  *(uint *)(damage_info + 4) = 0;
+  damage_info->damage_amount = 0.0;
   return 0;
 }

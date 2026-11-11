@@ -189,7 +189,7 @@ void shape_edittool_cpp_FUN_0049d580(int param_1,int param_2);
 int __cdecl shape_edittool_cpp_CEdButton_wasClicked_FUN_0049d8a0(CEdButton *this_ptr);
 int __cdecl shape_edittool_cpp_calculateButtonWidth_FUN_0049d950(char *button_text);
 int __cdecl shape_edittool_cpp_FUN_0049d9e0(char *button_text);
-void shape_edittool_cpp_FUN_0049dace(CEdCheck *param_1,undefined4 param_2,undefined4 param_3,CEdCheck *param_4);
+void shape_edittool_cpp_FUN_0049dace(CEdCheck *param_1,int param_2,int param_3,char *param_4);
 void shape_edittool_cpp_FUN_0049dbbe(int param_1);
 int __cdecl shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_0049dbe0(CEdCheck *this_ptr);
 int __cdecl shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_0049dc20(CEdCheck *this_ptr);

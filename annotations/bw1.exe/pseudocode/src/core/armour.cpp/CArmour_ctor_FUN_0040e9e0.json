@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 140,
+    "complexity_score": 65,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 9,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
@@ -132,62 +131,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x2fec",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar4->base).base.field_0x2fec = 0x3f19999a;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x2ff0",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar4->base).base.field_0x2ff0 = 0x40000000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0xc268",
-      "severity": "mild",
-      "text": "pcVar6 = &pCVar4->field_0xc268;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x2ff4",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar4->base).base.field_0x2ff4 = uVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x2ff8",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar4->base).base.field_0x2ff8 = uVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x27a0",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar4->base).base.field_0x27a0 = 2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x252c",
-      "severity": "mild",
-      "text": "*(uint *)&(pCVar4->base).base.field_0x252c = 0x40490fdb;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

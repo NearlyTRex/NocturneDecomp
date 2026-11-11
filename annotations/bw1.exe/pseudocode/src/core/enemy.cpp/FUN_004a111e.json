@@ -136,7 +136,7 @@
       "type": "pointer_cast"
     },
     {
-      "description": "'this_ptr[1].base.actor_name + 0x18' walks 1 x sizeof(CCharacter) (0xc1d0) + offsetof(base.actor_name) (0x0) + 0x18 = 0xc1e8, which is exactly offsetof(CEnemy, victim). Ghidra had no CEnemy type here and reached the field by index arithmetic; write it as ((CEnemy *)this_ptr)->victim (\u00a7de-pun/\u00a712).",
+      "description": "'this_ptr[1].base.actor_name + 0x18' walks 1 x sizeof(CCharacter) (0xc1d0) + offsetof(base.actor_name) (0x0) + 0x18 = 0xc1e8, which is exactly offsetof(CEnemy, victim). Ghidra had no CEnemy type here and reached the field by index arithmetic; write it as ((CEnemy *)this_ptr)->victim (\u00a7de-pun/\u00a712). Ambiguous: CMooCow::part_indices[3] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 26,
       "severity": "moderate",
       "text": "(*(int *)(this_ptr[1].base.actor_name + 0x18) == *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4)))",

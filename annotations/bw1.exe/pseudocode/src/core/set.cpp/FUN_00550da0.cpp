@@ -90,7 +90,7 @@ void __cdecl core_set_cpp_FUN_00550da0(CDemonSet *this_ptr)
     g_CDemonCameraInstance.base.position.f.y = local_24.y;
     g_CDemonCameraInstance.base.position.f.z = local_24.z;
   }
-  if (*(int *)&g_CGamePtr->field_0x234 != 0) {
+  if (g_CGamePtr->geometry_debug_enabled != 0) {
     _DAT_01c50948 = 0;
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
               (DAT_00612560,&local_24);

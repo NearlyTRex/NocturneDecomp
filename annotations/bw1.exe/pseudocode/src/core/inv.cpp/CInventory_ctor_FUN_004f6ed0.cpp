@@ -9,24 +9,24 @@
 CInventory * __cdecl core_inv_cpp_CInventory_ctor_FUN_004f6ed0(CInventory *this_ptr)
 
 {
-  *(uint *)(this_ptr + 0x334) = 0;
-  *(uint *)(this_ptr + 0x338) = 0;
-  *(uint *)(this_ptr + 0x33c) = 0;
-  *(uint *)this_ptr = 0x42c80000;
-  *(uint *)(this_ptr + 4) = 0;
-  *(uint *)(this_ptr + 0x340) = 0;
-  *(uint *)(this_ptr + 0x344) = 0;
-  *(uint *)(this_ptr + 0x348) = 0;
-  *(uint *)(this_ptr + 0x454) = 1;
-  *(uint *)(this_ptr + 0x458) = 0;
-  *(uint *)(this_ptr + 0x45c) = 0;
-  *(uint *)(this_ptr + 0x460) = 0;
-  *(uint *)(this_ptr + 0x34c) = 0;
-  this_ptr[0x354] = (CInventory)0x0;
-  *(uint *)(this_ptr + 0x464) = 0;
-  *(uint *)(this_ptr + 0x468) = 0;
-  *(uint *)(this_ptr + 8) = 0;
-  *(uint *)(this_ptr + 0xc) = 0;
-  *(uint *)(this_ptr + 0x10) = 0;
+  this_ptr->save_version = 0;
+  this_ptr->selected_weapon = (CWeapon *)0x0;
+  this_ptr->selected_item = (CDemonActor *)0x0;
+  this_ptr->battery_charge = 100.0;
+  this_ptr->owner = (CDemonActor *)0x0;
+  this_ptr->weapon_highlight_timer = 0.0;
+  this_ptr->item_highlight_timer = 0.0;
+  this_ptr->inventory_display_timer = 0.0;
+  this_ptr->render_mode_flag = 1;
+  this_ptr->preserve_items = 0;
+  this_ptr->light_gun_ptr = (CLightGun *)0x0;
+  this_ptr->goggles_ptr = (CGoggles *)0x0;
+  this_ptr->message_display_timer = 0.0;
+  this_ptr->message_text[0] = '\0';
+  this_ptr->ammo_ptr = (CAmmo *)0x0;
+  this_ptr->cached_ammo_count = 0;
+  this_ptr->show_compass = 0;
+  this_ptr->show_sps = 0;
+  this_ptr->item_count = 0;
   return this_ptr;
 }

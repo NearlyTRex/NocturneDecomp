@@ -13,9 +13,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[25]:
-;   core_fldnotes.cpp_FUN_004ba930 at 004ba94e
-;   core_fldnotes.cpp_FUN_004bc830 at 004bc997
 ;   core_fldnotes.cpp_FUN_004be0f0 at 004be44e
+;   core_fldnotes.cpp_SNotesMap_draw_FUN_004bc830 at 004bc997
+;   core_fldnotes.cpp_SPageResourceText_draw_FUN_004ba930 at 004ba94e
 ;   core_game.cpp_CGame_renderOverlay_FUN_004cc2b0 at 004cc3be
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004ccc40 at 004ccccd
 ;   core_game.cpp_drawCreditsLine_FUN_004ccafe at 004ccb21

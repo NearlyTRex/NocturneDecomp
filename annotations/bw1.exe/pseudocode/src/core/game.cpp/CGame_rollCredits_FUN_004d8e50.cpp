@@ -53,8 +53,8 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004d8e50(CGame *this_ptr)
     engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0(&local_34,0);
     return;
   }
-  for (iVar8 = local_1c << 2; (((byte)p_Var4[0xc] & 0x10) == 0 && (iVar8 < 0x1000));
-      iVar8 = iVar8 + 4) {
+  for (iVar8 = local_1c << 2; ((p_Var4->_flag & 0x10) == 0 && (iVar8 < 0x1000)); iVar8 = iVar8 + 4)
+  {
     _fgets(local_134,0xff,p_Var4);
     iVar3 = _strcmp(local_134,&DAT_005e359e);
     if (iVar3 == 0) break;
@@ -66,7 +66,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004d8e50(CGame *this_ptr)
       cVar2 = *pcVar5;
       pcVar5 = pcVar5 + (uint)bVar11 * -2 + 1;
     } while (cVar2 != '\0');
-    pvVar6 = FUN_005c08d0(~uVar7 + 9);
+    pvVar6 = malloc(~uVar7 + 9);
     *(void **)((int)local_1134 + iVar8) = pvVar6;
     if (pvVar6 == (void *)0x0) {
       _DAT_01d1d400 = "..\\core\\game.cpp";
@@ -100,7 +100,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004d8e50(CGame *this_ptr)
   }
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   this_ptr_00 = _DAT_0152d244;
-  *(uint *)(_DAT_0152d244 + 0x4210) = 0;
+  _DAT_0152d244->win_font_enabled = 0;
   iVar8 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(this_ptr_00,0x58);
   local_20 = -1;
   core_game_cpp_CGame_saveClockTime_FUN_004cbf10(this_ptr);
@@ -137,7 +137,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004d8e50(CGame *this_ptr)
       if ((local_18 != 0) && (iVar3 = sound_sndmain_cpp_FUN_005735a0(local_18), iVar3 == 0)) {
 LAB_004d91eb:
         if (_DAT_01d7f1b8 != 0) {
-          *(uint *)(this_ptr_00 + 0x4210) = 1;
+          this_ptr_00->win_font_enabled = 1;
         }
         sound_sndmain_cpp_resetSoundDevice_FUN_005750e0();
         iVar8 = local_1c;

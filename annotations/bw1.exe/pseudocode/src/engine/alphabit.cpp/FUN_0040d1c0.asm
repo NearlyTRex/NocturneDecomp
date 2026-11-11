@@ -7,11 +7,11 @@
 ; CAlphaBitmap *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[17]:
-;   core_fldnotes.cpp_FUN_004bc250 at 004bc269
-;   core_fldnotes.cpp_FUN_004bdaa0 at 004bdb2c
+;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004bdaa0 at 004bdb2c
 ;   core_fldnotes.cpp_FUN_004be0f0 at 004be4a9
 ;   core_fldnotes.cpp_FUN_004be970 at 004be9ca
-;   core_fldnotes.cpp_PageResource_Bitmap_dtor_FUN_004baad0 at 004baae7
+;   core_fldnotes.cpp_SNotesMap_reset_FUN_004bc250 at 004bc269
+;   core_fldnotes.cpp_SPageResourceBitmap_dtor_FUN_004baad0 at 004baae7
 ;   core_game.cpp_FUN_004dc040 at 004dc04f
 ;   core_game.cpp_FUN_004dc180 at 004dc18e
 ;   core_inv.cpp_freeInventory_FUN_004f75a0 at 004f75a5

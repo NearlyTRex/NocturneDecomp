@@ -76,13 +76,13 @@ int __cdecl core_icepick_cpp_FUN_004f17e0(CIcePick *this_ptr)
   if (this_ptr->pending_pickup_target == (CDemonActor *)0x0) {
     return 0;
   }
-  *(float *)&this_ptr->field_0x20 =
+  (this_ptr->base).base.base.location.position.x =
        ((this_ptr->pending_pickup_target->location).position.x - local_30) +
-       *(float *)&this_ptr->field_0x20;
-  *(float *)&this_ptr->field_0x28 =
+       (this_ptr->base).base.base.location.position.x;
+  (this_ptr->base).base.base.location.position.z =
        ((this_ptr->pending_pickup_target->location).position.z - local_28) +
-       *(float *)&this_ptr->field_0x28;
+       (this_ptr->base).base.base.location.position.z;
   core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-            ((CMotionController *)&this_ptr->field_0x158,0x13,1);
+            (&(this_ptr->base).base.model.base,0x13,1);
   return 1;
 }

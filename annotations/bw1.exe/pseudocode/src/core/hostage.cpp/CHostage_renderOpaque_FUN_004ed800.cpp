@@ -17,7 +17,7 @@ int __cdecl core_hostage_cpp_CHostage_renderOpaque_FUN_004ed800(CHostage *this_p
     if ((iVar1 != 0) && (this_ptr->hostage_state == 4)) {
       pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                          (&(this_ptr->base).base.model.base);
-      if (*(int *)(pSVar2 + 0x24) == 10) {
+      if (pSVar2->state_index == 10) {
         return 0;
       }
     }

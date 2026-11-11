@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 153,
+    "complexity_score": 82,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
-    "suspect_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 67,
+    "suspect_count": 1,
     "suspect_types": [
-      "suspicious_cast",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 210
+    "total_lines": 209
   },
   "cross_references": [
     {
@@ -108,13 +106,13 @@
     },
     {
       "addr": "01ccf464",
-      "name": "g_CGameInstance.field164_0xd4",
+      "name": "g_CGameInstance.hero_number",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf468",
-      "name": "g_CGameInstance.field168_0xd8",
+      "name": "g_CGameInstance.aim_mode",
       "type": "undefined4",
       "value": null
     },
@@ -156,7 +154,7 @@
     },
     {
       "addr": "01d51c58",
-      "name": "g_CNetGameInstance.players+0x18",
+      "name": "g_CNetGameInstance.players[0].aim_mode",
       "type": "undefined4",
       "value": null
     },
@@ -281,54 +279,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0xd4",
-      "severity": "mild",
-      "text": "(this_ptr,0,*(int *)&g_CGamePtr->field_0xd4,existing_hero);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0xd8",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0xd8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "(this_ptr,iVar4,*(int *)(&g_CNetGamePtr->players[0].field_0x14 + iVar3),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(uint *)(&g_CNetGamePtr->players[0].field_0x18 + iVar3);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Cast-and-add on &g_CNetGamePtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00622584 (at 0x00622584, +4 bytes).",
-      "line": 43,
-      "match": "g_CNetGamePtr",
-      "severity": "moderate",
-      "text": "(this_ptr,iVar4,*(int *)(&g_CNetGamePtr->players[0].field_0x14 + iVar3),",
-      "type": "suspicious_cast"
-    },
-    {
-      "description": "Cast-and-add on &g_CNetGamePtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00622584 (at 0x00622584, +4 bytes).",
-      "line": 51,
-      "match": "g_CNetGamePtr",
-      "severity": "moderate",
-      "text": "*(uint *)(&g_CNetGamePtr->players[0].field_0x18 + iVar3);",
-      "type": "suspicious_cast"
     }
   ]
 }

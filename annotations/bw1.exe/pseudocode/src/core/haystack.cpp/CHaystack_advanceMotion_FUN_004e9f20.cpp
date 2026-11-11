@@ -15,7 +15,7 @@ void __cdecl core_haystack_cpp_CHaystack_advanceMotion_FUN_004e9f20(CHaystack *t
   
   do {
     iVar1 = core_motion_cpp_CMotionController_advance_FUN_00524270
-                      ((CMotionController *)&this_ptr->field_0x158,&delta_time);
+                      (&(this_ptr->base).base.model.base,&delta_time);
     switch(iVar1) {
     case 0x65:
       core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004ea060(this_ptr,_DAT_01d06a0c);
@@ -31,22 +31,24 @@ LAB_004e9f6c:
     case 0x69:
     case 0x6b:
       iVar1 = sound_sndmain_cpp_FUN_00574010
-                        ((double)*(float *)&this_ptr->field_0x20,
-                         (double)*(float *)&this_ptr->field_0x24,
-                         (double)*(float *)&this_ptr->field_0x28,0x42200000);
+                        ((double)(this_ptr->base).base.base.location.position.x,
+                         (double)(this_ptr->base).base.base.location.position.y,
+                         (double)(this_ptr->base).base.base.location.position.z,0x42200000);
       if (iVar1 != 0) {
-        (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))();
+        (*((this_ptr->base).base.base.vtable._ub)->playSound)
+                  ((CDemonActor *)this_ptr,"box-swing?.wav");
       }
       break;
     case 0x68:
     case 0x6a:
     case 0x6c:
       iVar1 = sound_sndmain_cpp_FUN_00574010
-                        ((double)*(float *)&this_ptr->field_0x20,
-                         (double)*(float *)&this_ptr->field_0x24,
-                         (double)*(float *)&this_ptr->field_0x28,0x42200000);
+                        ((double)(this_ptr->base).base.base.location.position.x,
+                         (double)(this_ptr->base).base.base.location.position.y,
+                         (double)(this_ptr->base).base.base.location.position.z,0x42200000);
       if ((iVar1 != 0) && (iVar1 = core_actor_cpp_randomChance_FUN_0040cd00(0.4), iVar1 != 0)) {
-        (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))();
+        (*((this_ptr->base).base.base.vtable._ub)->playSound)
+                  ((CDemonActor *)this_ptr,"box-punch?.wav");
       }
       break;
     default:

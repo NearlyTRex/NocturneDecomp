@@ -58,7 +58,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_00538280(CPacked
       if (((iStack_20 != 0) || (iStack_1c != 0)) ||
          ((this_ptr->width + -1 != iStack_18 || (this_ptr->height + -1 != iStack_14))))
       goto LAB_005382ca;
-      piVar2 = (int *)FUN_005c1268((this_ptr->height + 1) * 4);
+      piVar2 = (int *)operator_new_array((this_ptr->height + 1) * 4);
       this_ptr->row_offsets = piVar2;
       if (piVar2 != (int *)0x0) {
         iVar1 = _fread(this_ptr->row_offsets,(this_ptr->height + 1) * 4,1,file_handle);
@@ -79,7 +79,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_00538280(CPacked
             _fseek(file_handle,size,1);
             return;
           }
-          puVar3 = FUN_005c08d0(size);
+          puVar3 = (ushort *)malloc(size);
           this_ptr->packed_data = puVar3;
           if (puVar3 == (ushort *)0x0) goto LAB_005382ed;
           iVar1 = _fread(puVar3,size,1,file_handle);

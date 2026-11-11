@@ -46,7 +46,7 @@ void core_charactr_cpp_FUN_00434790(CDemonActor *param_1,float param_2)
      ((*(int *)(param_1[0x1d].create_event + 0x38) != 0 ||
       (*(int *)(param_1[0x1d].create_event + 0x4c) != 0)))) {
     if (*(int *)(param_1[0x1d].create_event + 0x38) == 0) {
-      if ((*(float *)&g_CDemonSetPtr->field_0x15ac84 < (float)_DAT_005d5f1f) ||
+      if (((g_CDemonSetPtr->active_fog).temperature < (float)_DAT_005d5f1f) ||
          ((iVar3 = core_actor_cpp_isOfClass_FUN_0040c550(param_1,"?CZombieDog" + 1),
           iVar3 != 0 && (*(int *)(param_1[0x1d].create_event + 0x38) == 0)))) {
         iVar3 = *(int *)(param_1[0x22].create_event + 0x3c);
@@ -73,7 +73,7 @@ void core_charactr_cpp_FUN_00434790(CDemonActor *param_1,float param_2)
             local_a8 = 0x3f000000;
             local_ac = 0x3e4ccccd;
             core_xform_cpp_FUN_005b5080
-                      (&stack0xffffff50,param_1[0xb].footstep_sound_code + iVar3 * 0x30 + -0xc);
+                      (&stack0xffffff50,param_1[0xb].footstep_sound_code + iVar3 * 0x30 + -0x10);
             puVar6 = &stack0xffffff68;
             local_98 = local_74;
             *(uint *)((int)&stack0xffffff6c + (uint)bVar4 * 0xfffffffe * 4) =
@@ -105,7 +105,7 @@ void core_charactr_cpp_FUN_00434790(CDemonActor *param_1,float param_2)
             local_40 = 0x3e4ccccd;
             local_3c = 0x3f000000;
             core_xform_cpp_FUN_005b5080
-                      (&local_44,param_1[0xb].footstep_sound_code + iVar3 * 0x30 + -0xc);
+                      (&local_44,param_1[0xb].footstep_sound_code + iVar3 * 0x30 + -0x10);
             puVar6 = &local_20;
             local_20 = local_a4;
             auStack_1c[(uint)bVar4 * -2] =

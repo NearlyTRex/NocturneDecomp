@@ -108,31 +108,31 @@ void core_fire_cpp_FUN_004ae640(CVector3f *param_1)
     CStack_c4.z = (int)ROUND(_DAT_005fff94 * 0.0);
     afStack_b4[3] = afStack_b4[2];
     fStack_2c = afStack_b4[2];
-    engine_special_cpp_FUN_00580173((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&CStack_c4);
+    engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&CStack_c4);
     afStack_b4[2] = fStack_24;
     uStack_a4 = 0;
     afStack_b4[3] = fStack_2c;
     CStack_a0.x = (int)ROUND(fStack_24 * _DAT_005fff94);
     CStack_a0.y = (int)ROUND(fStack_2c * _DAT_005fff94);
     CStack_a0.z = (int)ROUND(_DAT_005fff94 * 0.0);
-    engine_special_cpp_FUN_00580173
-              ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&CStack_a0);
+    engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_a0)
+    ;
     afStack_b4[2] = fStack_24;
     afStack_b4[3] = fStack_24;
     uStack_a4 = 0;
     CStack_7c.x = (int)ROUND(fStack_24 * _DAT_005fff94);
     CStack_7c.y = (int)ROUND(fStack_24 * _DAT_005fff94);
     CStack_7c.z = (int)ROUND(_DAT_005fff94 * 0.0);
-    engine_special_cpp_FUN_00580173
-              ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&CStack_7c);
+    engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&CStack_7c)
+    ;
     uStack_a4 = 0;
     afStack_b4[2] = fStack_2c;
     afStack_b4[3] = fStack_24;
     CStack_88.x = (int)ROUND(fStack_2c * _DAT_005fff94);
     CStack_88.y = (int)ROUND(fStack_24 * _DAT_005fff94);
     CStack_88.z = (int)ROUND(_DAT_005fff94 * 0.0);
-    engine_special_cpp_FUN_00580173
-              ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),&CStack_88);
+    engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_88)
+    ;
     if (param_1[6].y == 1.4013e-45) {
       texture = (SMRGLTextureBasic *)&DAT_0061c4ac;
     }
@@ -215,7 +215,7 @@ void core_fire_cpp_FUN_004ae640(CVector3f *param_1)
         afStack_b4[3] = afStack_b4[2];
         fStack_20 = afStack_b4[2];
         engine_special_cpp_FUN_00580173
-                  ((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&CStack_dc);
+                  (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&CStack_dc);
         afStack_b4[2] = fStack_24 * fStack_104;
         afStack_b4[3] = fStack_20;
         uStack_a4 = 0;
@@ -224,7 +224,7 @@ void core_fire_cpp_FUN_004ae640(CVector3f *param_1)
         CStack_40.z = (int)ROUND(_DAT_005fff94 * 0.0);
         fStack_2c = afStack_b4[2];
         engine_special_cpp_FUN_00580173
-                  ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&CStack_40);
+                  (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_40);
         afStack_b4[2] = fStack_2c;
         afStack_b4[3] = fStack_2c;
         uStack_a4 = 0;
@@ -232,7 +232,7 @@ void core_fire_cpp_FUN_004ae640(CVector3f *param_1)
         CStack_94.y = (int)ROUND(fStack_2c * _DAT_005fff94);
         CStack_94.z = (int)ROUND(_DAT_005fff94 * 0.0);
         engine_special_cpp_FUN_00580173
-                  ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&CStack_94);
+                  (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&CStack_94);
         afStack_b4[2] = fStack_20;
         uStack_a4 = 0;
         afStack_b4[3] = fStack_2c;
@@ -240,7 +240,7 @@ void core_fire_cpp_FUN_004ae640(CVector3f *param_1)
         CStack_70.y = (int)ROUND(fStack_2c * _DAT_005fff94);
         CStack_70.z = (int)ROUND(_DAT_005fff94 * 0.0);
         engine_special_cpp_FUN_00580173
-                  ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),&CStack_70);
+                  (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_70);
         (**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 4))(DAT_007c6120,param_1,0);
         lVar1 = (longlong)(int)param_1[5].y * (longlong)(0xffff - _DAT_01c51cac);
         DAT_00629040 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;

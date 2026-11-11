@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_ghoul.cpp_CGhoul_ctor_FUN_004ddd60
-;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
+;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xc2e4                         ; 004ddd30
         ;   Label: core_ghoul.cpp_factoryFuncGhoul_FUN_004ddd30
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 004ddd35
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004ddd35
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 004ddd3a
     TEST EAX,EAX                        ; 004ddd3d
     JNZ 0x004ddd42                      ; 004ddd3f

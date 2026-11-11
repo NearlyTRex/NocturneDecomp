@@ -26,7 +26,7 @@ void __cdecl core_rifle_cpp_CRifle_onFired_FUN_005407e0(CRifle *this_ptr)
   float fStack_c;
   
   bVar1 = 0;
-  if (*(int *)&this_ptr->field_0x568 < 1) {
+  if ((this_ptr->base).ammo_count < 1) {
     return;
   }
   CStack_48.x = 5.0;
@@ -57,8 +57,8 @@ void __cdecl core_rifle_cpp_CRifle_onFired_FUN_005407e0(CRifle *this_ptr)
   model_ptr = (CKeyFramedModel *)
               core_dmodel_cpp_loadModel_FUN_00468780("$@rifbullet.kfm" + 2);
   core_fire_cpp_CFireEffect_createShell_FUN_004b7270
-            (0x01C57074,(CVector3f *)&this_ptr->field_0x20,(CVector3f *)&this_ptr->field_0x30,
-             &CStack_48,model_ptr);
+            (0x01C57074,&(this_ptr->base).base.location.position,&(this_ptr->base).base.orient.vec
+             ,&CStack_48,model_ptr);
   core_sound_cpp_CSound_playActorSound_FUN_0057d8a0
             (0x02C82A60,(CDemonActor *)this_ptr,"shotgun-cock.wav @ .3",
              (CVector3f *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x20));

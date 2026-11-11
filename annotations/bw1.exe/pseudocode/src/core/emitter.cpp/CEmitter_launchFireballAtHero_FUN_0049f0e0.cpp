@@ -13,6 +13,7 @@ void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_0049f0e0(CEmitte
 {
   float fVar1;
   CHero *pCVar2;
+  CLocation *location;
   byte bVar3;
   unkbyte10 Var4;
   float10 fVar5;
@@ -39,10 +40,11 @@ void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_0049f0e0(CEmitte
   float local_18;
   
   bVar3 = 0;
-  pCVar2 = core_hero_cpp_closestHeroToPoint_FUN_004ea640((CLocation *)&this_ptr->field_0x20);
-  local_80 = *(float *)(pCVar2 + 0x20) - *(float *)&this_ptr->field_0x20;
-  local_7c[0] = *(float *)(pCVar2 + 0x24) - *(float *)&this_ptr->field_0x24;
-  local_7c[1] = *(float *)(pCVar2 + 0x28) - *(float *)&this_ptr->field_0x28;
+  location = &(this_ptr->base).location;
+  pCVar2 = core_hero_cpp_closestHeroToPoint_FUN_004ea640(location);
+  local_80 = (pCVar2->base).base.location.position.x - (location->position).x;
+  local_7c[0] = (pCVar2->base).base.location.position.y - (this_ptr->base).location.position.y;
+  local_7c[1] = (pCVar2->base).base.location.position.z - (this_ptr->base).location.position.z;
   local_68 = local_80;
   local_7c[(uint)bVar3 * -2 + 6] = local_7c[(uint)bVar3 * -2];
   local_7c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7] =
@@ -88,7 +90,7 @@ void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_0049f0e0(CEmitte
       local_50.z = local_8c.z;
     }
     core_fire_cpp_CFireEffect_createFireball_FUN_004b5e00
-              (0x01C57074,(CVector3f *)&this_ptr->field_0x20,&local_50,0,0);
+              (0x01C57074,&(this_ptr->base).location.position,&local_50,0,0);
   }
   return;
 }

@@ -12,8 +12,8 @@ CGlassParticle * __cdecl core_fire_cpp_CGlassParticle_ctor_FUN_004b7690(CGlassPa
   CParticle *pCVar1;
   int iVar2;
   
-  pCVar1 = core_particle_cpp_CParticle_ctor_FUN_00532130((CParticle *)this_ptr);
-  iVar2 = __arrinit(pCVar1 + 0x80,3);
+  pCVar1 = core_particle_cpp_CParticle_ctor_FUN_00532130(&this_ptr->base);
+  iVar2 = __arrinit(pCVar1 + 2,3);
   *(byte ***)(iVar2 + -0x44) = &g_CGlassParticleVTable;
   return (CGlassParticle *)(iVar2 + -0x80);
 }

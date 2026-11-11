@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 759,
-    "complexity_score": 599,
+    "complexity_score": 575,
     "cross_reference_count": 2,
     "function_call_count": 49,
     "global_count": 55,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 304,
-    "suspect_count": 27,
+    "pseudocode_lines": 305,
+    "suspect_count": 25,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1063
+    "total_lines": 1064
   },
   "cross_references": [
     {
@@ -73,12 +72,12 @@
     {
       "addr": "004bdaa0",
       "is_variadic": false,
-      "name": "core_fldnotes.cpp_FUN_004bdaa0"
+      "name": "core_fldnotes.cpp_CFieldNotes_clear_FUN_004bdaa0"
     },
     {
       "addr": "004bebc0",
       "is_variadic": false,
-      "name": "core_fldnotes.cpp_FUN_004bebc0"
+      "name": "core_fldnotes.cpp_CFieldNotes_loadState_FUN_004bebc0"
     },
     {
       "addr": "004e6680",
@@ -246,6 +245,16 @@
       "name": "support_newmsg.cpp_getLocalizedString_FUN_00531090"
     },
     {
+      "addr": "005a0f60",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_open_FUN_005a0f60"
+    },
+    {
+      "addr": "005a19b0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_COutStreamFile_close_FUN_005a19b0"
+    },
+    {
       "addr": "005a17d0",
       "is_variadic": false,
       "name": "support_trstream.cpp_COutStreamFile_ctor_FUN_005a17d0"
@@ -256,29 +265,19 @@
       "name": "support_trstream.cpp_COutStreamFile_dtor_FUN_005a1860"
     },
     {
-      "addr": "005a0f60",
-      "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a0f60"
-    },
-    {
-      "addr": "005a19b0",
-      "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a19b0"
-    },
-    {
       "addr": "005a19e0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a19e0"
-    },
-    {
-      "addr": "005a0d00",
-      "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_FUN_005a0d00"
+      "name": "support_trstream.cpp_COutStreamFile_open_FUN_005a19e0"
     },
     {
       "addr": "005a0dc0",
       "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_FUN_005a0dc0"
+      "name": "unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0"
+    },
+    {
+      "addr": "005a0d00",
+      "is_variadic": false,
+      "name": "unkaddr_0059f520.cpp_CInStreamFile_seek_FUN_005a0d00"
     },
     {
       "addr": "005a08d0",
@@ -897,14 +896,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x250",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x250 = 1;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 46,
       "match": "DAT_01cd05c0",
@@ -943,14 +934,6 @@
       "severity": "mild",
       "text": "search_directory = &DAT_005e2fbe;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 90,
-      "match": "field_0x250",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x250 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -994,15 +977,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 164,
+      "line": 165,
       "match": "DAT_005e300a",
       "severity": "mild",
-      "text": "iVar2 = support_trstream_cpp_FUN_005a19e0(&local_40,\"save\\\\$$SAVE$$.TMP\",&DAT_005e300a);",
+      "text": "(&local_40,\"save\\\\$$SAVE$$.TMP\",&DAT_005e300a);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 179,
+      "line": 180,
       "match": "DAT_005e303d",
       "severity": "mild",
       "text": "file_handle = (_FILE *)_fopen(\"save\\\\$$SAVE$$.TMP\",&DAT_005e303d);",
@@ -1010,7 +993,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 196,
+      "line": 197,
       "match": "DAT_005e2fdf",
       "severity": "mild",
       "text": "pbVar10 = &DAT_005e2fdf;",
@@ -1018,7 +1001,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 218,
+      "line": 219,
       "match": "DAT_005e3096",
       "severity": "mild",
       "text": "_fscanf(file_handle,&DAT_005e3096,&local_34);",
@@ -1026,7 +1009,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 227,
+      "line": 228,
       "match": "DAT_01d06aa0",
       "severity": "mild",
       "text": "_fscanf(file_handle,\"%d, %d\\n\",&DAT_01d06aa0,&DAT_01d06ab4);",
@@ -1034,7 +1017,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 227,
+      "line": 228,
       "match": "DAT_01d06ab4",
       "severity": "mild",
       "text": "_fscanf(file_handle,\"%d, %d\\n\",&DAT_01d06aa0,&DAT_01d06ab4);",
@@ -1042,7 +1025,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 276,
+      "line": 277,
       "match": "DAT_005e30ef",
       "severity": "mild",
       "text": "_fscanf(file_handle,&DAT_005e30ef,&DAT_01cd06c4);",
@@ -1050,7 +1033,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 276,
+      "line": 277,
       "match": "DAT_01cd06c4",
       "severity": "mild",
       "text": "_fscanf(file_handle,&DAT_005e30ef,&DAT_01cd06c4);",
@@ -1058,7 +1041,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 278,
+      "line": 279,
       "match": "DAT_01cd06c8",
       "severity": "mild",
       "text": "puVar8 = &DAT_01cd06c8;",
@@ -1066,7 +1049,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 281,
+      "line": 282,
       "match": "DAT_005e30f3",
       "severity": "mild",
       "text": "_fscanf(file_handle,&DAT_005e30f3,puVar8);",
@@ -1098,7 +1081,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 234,
+      "line": 235,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0x32; iVar5 != 0; iVar5 = iVar5 + -1) {",

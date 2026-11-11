@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 372,
+    "complexity_score": 406,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 82,
-    "suspect_count": 25,
+    "pseudocode_lines": 81,
+    "suspect_count": 28,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -17,9 +17,10 @@
       "stack_alignment_array",
       "stack_ref",
       "suspect_float",
-      "unnamed_param"
+      "unnamed_param",
+      "unrolled_memcpy"
     ],
-    "total_lines": 235
+    "total_lines": 234
   },
   "cross_references": [
     {
@@ -250,7 +251,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 16,
+      "line": 15,
       "match": "aUStackY_1824",
       "severity": "moderate",
       "text": "UActorVTable aUStackY_1824 [1520];",
@@ -258,7 +259,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 28,
+      "line": 27,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "param_1[1].model.rest_bone_scales[0x60] = 1.4013e-45;",
@@ -266,7 +267,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].model.rest_bone_scales[0x60] = 1.4013e-45;",
@@ -274,7 +275,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].model.rest_bone_scales[99] = 0.0;",
@@ -282,7 +283,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "local_28 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(&param_1->model);",
@@ -290,10 +291,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.previous_transform_state.position.x = fVar2;",
+      "text": "param_1[1].base.dead2 = iVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_20 = &param_1[1].base.previous_transform_state;",
       "type": "unnamed_param"
     },
     {
@@ -301,7 +310,7 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_20 = &param_1[1].base.previous_transform_state.position.y;",
+      "text": "local_2c = &(param_1->base).orient;",
       "type": "unnamed_param"
     },
     {
@@ -309,7 +318,7 @@
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_2c = &(param_1->base).orient;",
+      "text": "local_24 = &(param_1->base).location.position;",
       "type": "unnamed_param"
     },
     {
@@ -317,7 +326,7 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_24 = &(param_1->base).location.position;",
+      "text": "pUVar6 = &param_1[1].base.previous_transform_state.orientation;",
       "type": "unnamed_param"
     },
     {
@@ -325,20 +334,12 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar7 = &param_1[1].base.previous_transform_state.orientation.vec.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
       "text": "local_1c = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "(local_24,local_2c,&local_38,&param_1->base,1,1,BLOOD_TYPE_NONE);",
@@ -346,7 +347,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00431210(param_1,body_part,local_18,0);",
@@ -354,39 +355,47 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 52,
+      "match": "(float *)(iVar2 * 0x48 + (int)local_20",
+      "severity": "moderate",
+      "text": "pfVar3 = (float *)(iVar2 * 0x48 + (int)local_20);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 68,
       "match": "(uint *)((int)local_1c",
       "severity": "moderate",
-      "text": "puVar8 = (uint *)((int)local_1c + (uint)bVar10 * -8 + 0xc328);",
+      "text": "puVar7 = (uint *)((int)local_1c + (uint)bVar9 * -8 + 0xc328);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 72,
+      "line": 71,
       "match": "&stack0xffffffbc",
       "severity": "moderate",
-      "text": "*puVar8 = *(uint *)(&stack0xffffffbc + (uint)bVar10 * -8);",
+      "text": "*puVar7 = *(uint *)(&stack0xffffffbc + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 73,
+      "line": 72,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
-      "text": "*puVar9 = *(uint *)(&stack0xffffffc0 + (uint)bVar10 * -8 + (uint)bVar10 * -8);",
+      "text": "*puVar8 = *(uint *)(&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 76,
+      "line": 75,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
-      "text": "((int)(&stack0xffffffc0 + (uint)bVar10 * -8 + (uint)bVar10 * -8) +",
+      "text": "((int)(&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) +",
       "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 83,
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
       "text": "(*((param_1->base).vtable._ub)->playSound)(&param_1->base,\"?djien-die.wav @ 5\" + 1);",
@@ -394,15 +403,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 83,
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
       "text": "(*((param_1->base).vtable._ub)->playSound)(&param_1->base,\"?djien-die.wav @ 5\" + 1);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `local_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)local_20",
+      "severity": "moderate",
+      "text": "pfVar3 = (float *)(iVar2 * 0x48 + (int)local_20);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `body_part` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 54,
+      "line": 53,
       "match": "(int)body_part",
       "severity": "moderate",
       "text": "local_1c[1].model.base.tween_target_motion = (int)body_part;",
@@ -410,26 +427,34 @@
     },
     {
       "description": "Pointer value `local_1c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 69,
+      "line": 68,
       "match": "(int)local_1c",
       "severity": "moderate",
-      "text": "puVar8 = (uint *)((int)local_1c + (uint)bVar10 * -8 + 0xc328);",
+      "text": "puVar7 = (uint *)((int)local_1c + (uint)bVar9 * -8 + 0xc328);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `(&stack0xffffffc0 + (uint)bVar10 * -8 + (uint)bVar10 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 76,
-      "match": "(int)(&stack0xffffffc0 + (uint)bVar10 * -8 + (uint)bVar10 * -8)",
+      "description": "Pointer value `(&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 75,
+      "match": "(int)(&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8)",
       "severity": "moderate",
-      "text": "((int)(&stack0xffffffc0 + (uint)bVar10 * -8 + (uint)bVar10 * -8) +",
+      "text": "((int)(&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) +",
       "type": "pointer_truncation"
     },
     {
-      "description": "Watcom shadow-pointer walk (two-step form) \u2014 `local_1c` is advanced into scratch `pCVar6`, then rebound via a later `local_1c = pCVar6;`. Functionally identical to the single-line self-update; replace `local_1c->some_field[0]` reads with direct indexing on the original pointer and drop both the advance line and the rebind.",
-      "line": 68,
-      "match": "pCVar6 = (T *)((local_1c->FIELD).SUBFIELD...ARRAY + CONST); ...; local_1c = pCVar6",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 62,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar6 = (CCharacter *)((local_1c->base).orient_matrix.m + 1);",
+      "text": "(pUVar6->vec).x = (pUVar1->vec).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk (two-step form) \u2014 `local_1c` is advanced into scratch `pCVar5`, then rebound via a later `local_1c = pCVar5;`. Functionally identical to the single-line self-update; replace `local_1c->some_field[0]` reads with direct indexing on the original pointer and drop both the advance line and the rebind.",
+      "line": 67,
+      "match": "pCVar5 = (T *)((local_1c->FIELD).SUBFIELD...ARRAY + CONST); ...; local_1c = pCVar5",
+      "severity": "moderate",
+      "text": "pCVar5 = (CCharacter *)((local_1c->base).orient_matrix.m + 1);",
       "type": "shadow_pointer_walk"
     },
     {

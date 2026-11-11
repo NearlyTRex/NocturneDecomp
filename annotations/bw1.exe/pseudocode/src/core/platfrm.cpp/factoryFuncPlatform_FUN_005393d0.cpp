@@ -11,7 +11,7 @@ void core_platfrm_cpp_factoryFuncPlatform_FUN_005393d0(void)
 {
   CPlatform *this_ptr;
   
-  this_ptr = (CPlatform *)debugAllocTracked1(0x728);
+  this_ptr = (CPlatform *)operator_new(0x728);
   if (this_ptr == (CPlatform *)0x0) {
     return;
   }

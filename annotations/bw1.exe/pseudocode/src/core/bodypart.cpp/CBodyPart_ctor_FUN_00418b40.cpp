@@ -15,8 +15,7 @@ CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00418b40(CBodyPart *thi
   
   pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004085c0(&this_ptr->base);
   iVar2 = __arrinit
-                    ((byte *)((int)&pCVar1[1].previous_transform_state.orientation + 4),3,
-                     &g_SBodyPartModelTypeInfo);
+                    (&pCVar1[1].previous_transform_state.orientation,3,&g_SBodyPartModelTypeInfo);
   iVar2 = __arrinit(iVar2 + 0x4c0,2,&g_SBodyPartFireTypeInfo);
   pCVar3 = core_box_cpp_CBox_ctor_FUN_0041da00((CBox *)(iVar2 + 0x580));
   pCVar3[-5].dead = (int)&g_CBodyPartVTable;

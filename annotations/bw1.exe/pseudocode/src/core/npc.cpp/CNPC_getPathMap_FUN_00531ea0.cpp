@@ -9,5 +9,5 @@
 CPathMap * __cdecl core_npc_cpp_CNPC_getPathMap_FUN_00531ea0(CNPC *this_ptr)
 
 {
-  return (CPathMap *)&this_ptr->field_0xc1d0;
+  return &this_ptr->path_map;
 }

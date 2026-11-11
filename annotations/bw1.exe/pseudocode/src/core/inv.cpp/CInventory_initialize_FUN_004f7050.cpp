@@ -12,24 +12,24 @@ void __cdecl core_inv_cpp_CInventory_initialize_FUN_004f7050(CInventory *this_pt
 
 {
   int iVar1;
+  CAmmo *this_ptr_00;
   CInventory *pCVar2;
-  CInventory *pCVar3;
+  CDemonActor **ppCVar3;
   
   core_inv_cpp_CInventory_clear_FUN_004f6fa0(this_ptr);
   pCVar2 = this_ptr;
   do {
     iVar1 = rand();
-    pCVar3 = pCVar2 + 4;
-    *(float *)(pCVar2 + 0x1a4) = (float)iVar1 * _DAT_005e6064 * _DAT_005e6068 * (float)_DAT_005e6070
-    ;
-    pCVar2 = pCVar3;
-  } while (pCVar3 != this_ptr + 400);
-  if (*(int *)(this_ptr + 0x464) != 0) {
+    ppCVar3 = &pCVar2->owner;
+    pCVar2->item_angles[0] = (float)iVar1 * _DAT_005e6064 * _DAT_005e6068 * (float)_DAT_005e6070;
+    pCVar2 = (CInventory *)ppCVar3;
+  } while (ppCVar3 != this_ptr->items + 0x5f);
+  if (this_ptr->ammo_ptr != (CAmmo *)0x0) {
     return;
   }
-  iVar1 = core_actor_cpp_createActorByName_FUN_0040c2b0("CAmmo");
-  *(int *)(this_ptr + 0x464) = iVar1;
-  (*(code *)**(uint **)(iVar1 + 0x154))(iVar1);
-  *(uint *)(this_ptr + 0x468) = 0;
+  this_ptr_00 = (CAmmo *)core_actor_cpp_createActorByName_FUN_0040c2b0("CAmmo");
+  this_ptr->ammo_ptr = this_ptr_00;
+  (*((this_ptr_00->base).vtable._ub)->setup)((CDemonActor *)this_ptr_00);
+  this_ptr->cached_ammo_count = 0;
   return;
 }

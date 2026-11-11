@@ -55,18 +55,26 @@ void core_dpart_cpp_FUN_00479c70(CDemonPart *param_1,uint param_2,uint param_3,f
       iVar6 = 0;
       iVar5 = 0;
       do {
-        *(uint *)(param_1->face_data + iVar5) = *(uint *)(iVar6 + 0x1b6894c);
-        *(uint *)(param_1->face_data + iVar5 + 4) = *(uint *)(iVar6 + 0x1b68950);
-        *(uint *)(param_1->face_data + iVar5 + 8) = *(uint *)(iVar6 + 0x1b68954);
-        *(uint *)(param_1->face_data + iVar5 + 0xc) = *(uint *)(iVar6 + 0x1b68958);
-        *(uint *)(param_1->face_data + iVar5 + 0x10) = *(uint *)(iVar6 + 0x1b6895c);
-        *(uint *)(param_1->face_data + iVar5 + 0x14) = *(uint *)(iVar6 + 0x1b68968);
-        *(uint *)(param_1->face_data + iVar5 + 0x18) = *(uint *)(iVar6 + 0x1b68974);
+        *(uint *)((int)&(param_1->face_data->plane).A + iVar5) =
+             *(uint *)(iVar6 + 0x1b6894c);
+        *(uint *)((int)&(param_1->face_data->plane).B + iVar5) =
+             *(uint *)(iVar6 + 0x1b68950);
+        *(uint *)((int)&(param_1->face_data->plane).C + iVar5) =
+             *(uint *)(iVar6 + 0x1b68954);
+        *(uint *)((int)&(param_1->face_data->plane).D + iVar5) =
+             *(uint *)(iVar6 + 0x1b68958);
+        *(uint *)((int)&param_1->face_data->vertex_index_1 + iVar5) =
+             *(uint *)(iVar6 + 0x1b6895c);
+        *(uint *)((int)&param_1->face_data->vertex_index_2 + iVar5) =
+             *(uint *)(iVar6 + 0x1b68968);
+        *(uint *)((int)&param_1->face_data->vertex_index_3 + iVar5) =
+             *(uint *)(iVar6 + 0x1b68974);
         if (*(int *)(iVar6 + 0x1b68948) == 3) {
-          *(uint *)(param_1->face_data + iVar5 + 0x1c) = 0xffffffff;
+          *(uint *)((int)&param_1->face_data->vertex_index_4 + iVar5) = 0xffffffff;
         }
         else {
-          *(uint *)(param_1->face_data + iVar5 + 0x1c) = *(uint *)(iVar6 + 0x1b68980);
+          *(uint *)((int)&param_1->face_data->vertex_index_4 + iVar5) =
+               *(uint *)(iVar6 + 0x1b68980);
         }
         iVar5 = iVar5 + 0x20;
         iVar7 = iVar7 + 1;

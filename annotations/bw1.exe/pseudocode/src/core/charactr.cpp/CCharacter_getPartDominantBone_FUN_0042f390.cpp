@@ -15,5 +15,5 @@ int __cdecl core_charactr_cpp_CCharacter_getPartDominantBone_FUN_0042f390(CChara
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
                           (&this_ptr->model);
   pSVar1 = core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_00565760(this_ptr_00,part_index);
-  return *(int *)(pSVar1 + 0x5c);
+  return pSVar1->dominant_bone;
 }

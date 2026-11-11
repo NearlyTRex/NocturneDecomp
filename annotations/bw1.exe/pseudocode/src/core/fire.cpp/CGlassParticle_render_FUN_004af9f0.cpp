@@ -24,20 +24,18 @@ void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004af9f0(CGlassParticle *th
             (DAT_00612560,(CVector3f *)this_ptr);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
             (DAT_00612560,&this_ptr->euler_angles,(CVector3f *)0x0);
-  CStack_28.x = (int)ROUND(*(float *)&this_ptr->field_0x80 * _DAT_005fff94);
-  CStack_28.y = (int)ROUND(*(float *)&this_ptr->field_0x84 * _DAT_005fff94);
-  CStack_28.z = (int)ROUND(*(float *)&this_ptr->field_0x88 * _DAT_005fff94);
-  engine_special_cpp_FUN_00580173((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&CStack_28);
-  CStack_1c.x = (int)ROUND(*(float *)&this_ptr->field_0x8c * _DAT_005fff94);
-  CStack_1c.y = (int)ROUND(*(float *)&this_ptr->field_0x90 * _DAT_005fff94);
-  CStack_1c.z = (int)ROUND(*(float *)&this_ptr->field_0x94 * _DAT_005fff94);
-  engine_special_cpp_FUN_00580173
-            ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&CStack_1c);
-  CStack_34.x = (int)ROUND(*(float *)&this_ptr->field_0x98 * _DAT_005fff94);
-  CStack_34.y = (int)ROUND(*(float *)&this_ptr->field_0x9c * _DAT_005fff94);
-  CStack_34.z = (int)ROUND(*(float *)&this_ptr->field_0xa0 * _DAT_005fff94);
-  engine_special_cpp_FUN_00580173
-            ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&CStack_34);
+  CStack_28.x = (int)ROUND((this_ptr->triangle_delta).vertices[0].x * _DAT_005fff94);
+  CStack_28.y = (int)ROUND((this_ptr->triangle_delta).vertices[0].y * _DAT_005fff94);
+  CStack_28.z = (int)ROUND((this_ptr->triangle_delta).vertices[0].z * _DAT_005fff94);
+  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&CStack_28);
+  CStack_1c.x = (int)ROUND((this_ptr->triangle_delta).vertices[1].x * _DAT_005fff94);
+  CStack_1c.y = (int)ROUND((this_ptr->triangle_delta).vertices[1].y * _DAT_005fff94);
+  CStack_1c.z = (int)ROUND((this_ptr->triangle_delta).vertices[1].z * _DAT_005fff94);
+  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_1c);
+  CStack_34.x = (int)ROUND((this_ptr->triangle_delta).vertices[2].x * _DAT_005fff94);
+  CStack_34.y = (int)ROUND((this_ptr->triangle_delta).vertices[2].y * _DAT_005fff94);
+  CStack_34.z = (int)ROUND((this_ptr->triangle_delta).vertices[2].z * _DAT_005fff94);
+  engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&CStack_34);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00(DAT_00612560,&this_ptr->texture);
   SStack_68.base.count = 3;
   SStack_68.surface_normal.D.i = 0;
@@ -48,9 +46,9 @@ void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004af9f0(CGlassParticle *th
   uStack_4c = 1;
   uStack_48 = 2;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,this_ptr->lifetime);
-  CStack_40.x = (int)ROUND(*(float *)this_ptr * _DAT_005fff94);
-  CStack_40.y = (int)ROUND(*(float *)&this_ptr->field_0x4 * _DAT_005fff94);
-  CStack_40.z = (int)ROUND(*(float *)&this_ptr->field_0x8 * _DAT_005fff94);
+  CStack_40.x = (int)ROUND((this_ptr->base).position.x * _DAT_005fff94);
+  CStack_40.y = (int)ROUND((this_ptr->base).position.y * _DAT_005fff94);
+  CStack_40.z = (int)ROUND((this_ptr->base).position.z * _DAT_005fff94);
   core_set_cpp_CDemonSet_computeLighting_FUN_00552a70
             (g_CDemonSetPtr,&CStack_40,(CVector3i *)0x0,0,3);
   DAT_0062902c = (this_ptr->uv_u_per_vertex).x;

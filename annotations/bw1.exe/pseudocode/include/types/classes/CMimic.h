@@ -7,7 +7,9 @@ struct CDemonActor;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCloth.h"
 #include "types/classes/CEnemy.h"
+#include "types/classes/CMorph.h"
 
 // Structure: CMimic
 // Ghidra size: 0x47ac4 (293572 bytes)
@@ -16,11 +18,11 @@ typedef struct CMimic {
     CEnemy base; // 0x0
     char mirror_condition[100]; // 0xc268
     char attack_condition[100]; // 0xc2cc
-    char field_49968[240432]; // 0xc330
+    CCloth cloth; // 0xc330
     int attack_mode; // 0x46e60
     struct CDemonActor* mirror_plane_actor; // 0x46e64
     char morph_actor_type[40]; // 0x46e68
-    char field_290448[3116]; // 0x46e90
+    CMorph morph; // 0x46e90
     float morph_blend; // 0x47abc
     struct CDemonActor* morph_target_actor; // 0x47ac0
 } CMimic;

@@ -17,6 +17,6 @@ CChemPuzzle * unkafter_superopt_cpp_CChemPuzzle_ctor_FUN_004175f0(CChemPuzzle *t
   iVar1 = unkafter_alphabit_cpp_FUN_00415ba0(this_ptr);
   pCVar2 = engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d0a0((CAlphaBitmap *)(iVar1 + 4));
   iVar1 = __arrinit(&pCVar2[5].act,0x32,&DAT_005fca90);
-  *(byte ***)(iVar1 + -0x70) = &g_CChemPuzzleVTable;
+  ((CChemPuzzle *)(iVar1 + -0x70))->vtable = &g_CChemPuzzleVTable;
   return (CChemPuzzle *)(iVar1 + -0x70);
 }

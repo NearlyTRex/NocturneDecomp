@@ -9,10 +9,10 @@
 void __cdecl core_hero_cpp_FUN_004ec280(CHero *this_ptr,int hand_index)
 
 {
-  if (*(int *)(this_ptr + 0x1ff78) == 0) {
+  if (this_ptr->object_to_pick_up == (CDemonActor *)0x0) {
     return;
   }
-  core_charactr_cpp_FUN_004325b0(this_ptr,hand_index,*(int *)(this_ptr + 0x1ff78),0x3dcccccd,0);
-  *(uint *)(this_ptr + 0x1ff78) = 0;
+  core_charactr_cpp_FUN_004325b0(this_ptr,hand_index,this_ptr->object_to_pick_up,0x3dcccccd,0);
+  this_ptr->object_to_pick_up = (CDemonActor *)0x0;
   return;
 }

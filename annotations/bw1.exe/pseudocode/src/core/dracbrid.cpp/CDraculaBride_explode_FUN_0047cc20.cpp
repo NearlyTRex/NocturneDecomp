@@ -124,8 +124,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_0047cc20(CDraculaBride 
        *(uint *)(&stack0xffffff64 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
   if ((this_ptr->base).base.is_fully_burned == 0) {
     core_gore_cpp_CGore_spawnBloodBurst_FUN_004e6060
-              (g_CGorePtr,&CStack_98,direction,100,
-               *(EBloodType *)&(this_ptr->base).base.field_0x27a0);
+              (g_CGorePtr,&CStack_98,direction,100,(this_ptr->base).base.blood_type);
     return;
   }
   (this_ptr->base).base.fire_count = 0;

@@ -5765,7 +5765,7 @@ WatcomDestructorCall DAT_006008E0 = {
 };
 WatcomDestructorCall DAT_006008EC = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_fldnotes_cpp_TextView_dtor_FUN_004bb1a0,
+    .destructor_func = (void *)core_fldnotes_cpp_STextView_dtor_FUN_004bb1a0,
     .object_instance = (void *)&g_STextViewInstance
 };
 WatcomDestructorCall DAT_006008F8 = {
@@ -6272,58 +6272,58 @@ WatcomTypeInfo g_CFlashlightTypeInfo = {
 };
 WatcomTypeInfo g_NotesSectionTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_fldnotes_cpp_NotesSection_ctor_FUN_004bbf10,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_fldnotes_cpp_SNotesSection_ctor_FUN_004bbf10,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_fldnotes_cpp_NotesSection_dtor_FUN_004bbf40,
-    .instance_size = 0x000002E4 /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_fldnotes_cpp_SNotesSection_dtor_FUN_004bbf40,
+    .instance_size = (int)sizeof(SNotesSection),
     .class_name = (char *)s_NotesSection_0061d814
 };
 WatcomTypeInfo g_NotesMapTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_fldnotes_cpp_NotesMap_ctor_FUN_004bc1b0,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_fldnotes_cpp_SNotesMap_ctor_FUN_004bc1b0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_fldnotes_cpp_NotesMap_dtor_FUN_004bc210,
-    .instance_size = 0x00000970 /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_fldnotes_cpp_SNotesMap_dtor_FUN_004bc210,
+    .instance_size = (int)sizeof(SNotesMap),
     .class_name = (char *)s_NotesMap_0061d804
 };
 WatcomTypeInfo g_TextViewTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_fldnotes_cpp_TextView_ctor_FUN_004bb190,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_fldnotes_cpp_STextView_ctor_FUN_004bb190,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_fldnotes_cpp_TextView_dtor_FUN_004bb1a0,
-    .instance_size = 0x00000248 /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_fldnotes_cpp_STextView_dtor_FUN_004bb1a0,
+    .instance_size = (int)sizeof(STextView),
     .class_name = (char *)s_TextView_0061d7f4
 };
 WatcomTypeInfo g_PageResource_TextTypeInfo = {
     .type_flags = 0x00020100,
     .ctor = nullptr,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_fldnotes_cpp_PageResource_Text_dtor_FUN_004ba8d0,
-    .instance_size = 0x00000120 /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_fldnotes_cpp_SPageResourceText_dtor_FUN_004ba8d0,
+    .instance_size = (int)sizeof(SPageResourceText),
     .class_name = (char *)s_PageResource_Text_0061d7d4
 };
 WatcomTypeInfo g_PageResource_BitmapTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_fldnotes_cpp_PageResource_Bitmap_ctor_FUN_004baa10,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_fldnotes_cpp_SPageResourceBitmap_ctor_FUN_004baa10,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_fldnotes_cpp_PageResource_Bitmap_dtor_FUN_004baad0,
-    .instance_size = 0x0000002C /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_fldnotes_cpp_SPageResourceBitmap_dtor_FUN_004baad0,
+    .instance_size = (int)sizeof(SPageResourceBitmap),
     .class_name = (char *)s_PageResource_Bitmap_0061d7b4
 };
 WatcomTypeInfo g_PageResource_TwanaCharacterTypeInfo = {
     .type_flags = 0x00020100,
     .ctor = nullptr,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_fldnotes_cpp_PageResource_TwanaCharacter_dtor_FUN_004babf0,
-    .instance_size = 0x0000004C /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_fldnotes_cpp_SPageResourceTwanaCharacter_dtor_FUN_004babf0,
+    .instance_size = (int)sizeof(SPageResourceTwanaCharacter),
     .class_name = (char *)s_PageResource_TwanaCharac_0061d784
 };
 WatcomTypeInfo g_PageResource_TwanaEntryTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_fldnotes_cpp_PageResource_TwanaEntry_ctor_FUN_004bac90,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_fldnotes_cpp_SPageResourceTwanaEntry_ctor_FUN_004bac90,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_fldnotes_cpp_PageResource_TwanaEntry_dtor_FUN_004bad40,
-    .instance_size = 0x00000118 /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_fldnotes_cpp_SPageResourceTwanaEntry_dtor_FUN_004bad40,
+    .instance_size = (int)sizeof(SPageResourceTwanaEntry),
     .class_name = (char *)s_PageResource_TwanaEntry_0061d764
 };
 WatcomTypeInfo g_CFieldNotesTypeInfo = {
@@ -6338,8 +6338,8 @@ WatcomTypeInfo g_PageResource_MapTypeInfo = {
     .type_flags = 0x00020100,
     .ctor = nullptr,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_fldnotes_cpp_PageResource_Map_dtor_FUN_004bf670,
-    .instance_size = 0x0000001C /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_fldnotes_cpp_SPageResourceMap_dtor_FUN_004bf670,
+    .instance_size = (int)sizeof(SPageResourceMap),
     .class_name = (char *)s_PageResource_Map_0061d724
 };
 WatcomTypeInfo g_SFlyTypeInfo = {
@@ -7227,7 +7227,7 @@ WatcomTypeInfo g_SocketTypeInfo = {
     .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)support_trisock_cpp_CSocket_ctor_FUN_0059c8e0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)support_trisock_cpp_Socket_copy_FUN_0059c8b0,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)support_trisock_cpp_CSocket_dtor_FUN_0059c8f0,
-    .instance_size = 0x00000004 /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
+    .instance_size = (int)sizeof(CSocket),
     .class_name = (char *)s_Socket_00625bb4
 };
 WatcomTypeInfo g_IpAddrTypeInfo = {
@@ -7387,7 +7387,11 @@ undefined1* g_COutStreamDebugVTable = (undefined1*)support_trstream_cpp_COutStre
 undefined4 DAT_00608560 = 0x00000000;
 
 // void*
-void* g_PageResource_BitmapVTable = (void*)core_fldnotes_cpp_PageResource_Bitmap_dtor_FUN_004baad0;
-void* g_PageResource_TwanaEntryVTable = (void*)core_fldnotes_cpp_PageResource_TwanaEntry_dtor_FUN_004bad40;
+void* g_SPageResourceVTable = (void*)unkaddr_004b9ab0_cpp_SPageResource_dtor_FUN_004ba760;
+void* g_SPageResourceTextVTable = (void*)core_fldnotes_cpp_SPageResourceText_dtor_FUN_004ba8d0;
+void* g_SPageResourceBitmapVTable = (void*)core_fldnotes_cpp_SPageResourceBitmap_dtor_FUN_004baad0;
+void* g_SPageResourceTwanaCharacterVTable = (void*)core_fldnotes_cpp_SPageResourceTwanaCharacter_dtor_FUN_004babf0;
+void* g_SPageResourceTwanaEntryVTable = (void*)core_fldnotes_cpp_SPageResourceTwanaEntry_dtor_FUN_004bad40;
+void* g_SPageResourceMapVTable = (void*)unkafter_fldnotes_cpp_SPageResourceMap_dtor_FUN_004bf670;
 void* g_CDeformableModelInstanceVTable = (void*)core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0;
 

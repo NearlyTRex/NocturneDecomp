@@ -11,7 +11,7 @@ void core_health_cpp_factoryFuncHealthItem_FUN_004ea300(void)
 {
   CHealthItem *this_ptr;
   
-  this_ptr = (CHealthItem *)debugAllocTracked1(0x2dc);
+  this_ptr = (CHealthItem *)operator_new(0x2dc);
   if (this_ptr == (CHealthItem *)0x0) {
     return;
   }

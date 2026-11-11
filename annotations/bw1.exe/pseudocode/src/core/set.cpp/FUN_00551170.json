@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 299,
-    "complexity_score": 559,
+    "complexity_score": 544,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 129,
-    "suspect_count": 38,
+    "suspect_count": 37,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -16,7 +16,6 @@
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals",
       "warning_type_propagation"
@@ -259,7 +258,7 @@
     },
     {
       "addr": "01e81c98",
-      "name": "g_CScriptInstance.field6_0x18",
+      "name": "g_CScriptInstance.monster_vision_actor",
       "type": "undefined4",
       "value": null
     },
@@ -511,19 +510,11 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "actor_ptr = *(CDemonActor **)&g_CScriptPtr->field_0x18;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 43,
       "match": "DAT_005f0936",
       "severity": "mild",
-      "text": "iVar3 = core_actor_cpp_isOfClass_FUN_0040c550(actor_ptr,&DAT_005f0936);",
+      "text": "iVar3 = core_actor_cpp_isOfClass_FUN_0040c550(&actor_ptr->base,&DAT_005f0936);",
       "type": "undefined_data"
     },
     {

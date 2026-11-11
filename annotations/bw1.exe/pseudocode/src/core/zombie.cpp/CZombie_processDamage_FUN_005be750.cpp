@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_005be750(CZombie *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -21,8 +23,8 @@ void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_005be750(CZombie *this_pt
   core_zombie_cpp_CZombie_processDismemberment_FUN_005be480(this_ptr,damage_info);
   (*(((this_ptr->base).base.base.vtable._uc)->_uc).releaseVictim)((CCharacter *)this_ptr);
   iVar4 = this_ptr->part_indices[6];
-  (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
-  if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + iVar4 * 4) == 0) {
+  (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
+  if ((this_ptr->base).base.model.part_data.visibility_flags[iVar4] == 0) {
     (this_ptr->base).base.hit_points = 0.0;
   }
   fVar1 = (this_ptr->base).base.hit_points;
@@ -52,13 +54,13 @@ void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_005be750(CZombie *this_pt
   else {
     (this_ptr->base).base.hit_points = 0.0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
-    if ((*(int *)(pSVar2 + 0x24) != 8) && (*(int *)(pSVar2 + 0x24) != 7)) {
+    if ((pSVar2->state_index != 8) && (pSVar2->state_index != 7)) {
       core_zombie_cpp_CZombie_dropAndClearTarget_FUN_005bdfa0(this_ptr);
       iVar4 = 6;
-      if ((*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[6] * 4) == 0)
-         && ((*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[2] * 4) !=
-              0 || (*(int *)(&(this_ptr->base).base.model.field_0x2140 +
-                            this_ptr->part_indices[0] * 4) != 0)))) {
+      if (((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[6]] == 0)
+         && (((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0
+             || ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]]
+                 != 0)))) {
         iVar6 = 0;
         pcVar5 = "@lookForHead" + 1;
         this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00

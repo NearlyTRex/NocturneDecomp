@@ -4,12 +4,32 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CLocation.h"
 
 // Structure: CDemonMission
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// No RTTI. The static instance at 0x1d2c900 runs to the next global at 0x1d33b20 (0x7220), and the last field, the actor lookup table at +0x1460, holds 6000 (writeFile asserts at 5999), ending there. nocedit's editor fields at +0x10..+0x43 (camera, viewport, selection, editor render flags) are gone; the set names grew from 4 to 16 and moved ahead of the flags.
+// Ghidra size: 0x7220 (29216 bytes)
 #pragma pack(push, 1)
 typedef struct CDemonMission {
+    int current_set_index; // 0x0, loadSet (0051b610) returns when the index is already current, else stores it; buildActiveSetActorList compares actors' area_id with it
+    int num_sets; // 0x4, readMissionFile scans it, then that many set names; clearMissionData zeroes it
+    char set_names[16][256]; // 0x8, readMissionFile reads each name at +0x8 + i * 0x100; loadSet passes +0x8 + index * 0x100 to CDemonSet load; +0x1008 is the next field
+    int is_in_editor; // 0x1008, ctor zeroes it; loadSet builds the full set actor list when set, the active list (buildActiveSetActorList) when not
+    int mission_version_num; // 0x100c, readMissionFile scans it first and rejects versions above 7; the ctor sets -1
+    int has_inventory_actors; // 0x1010, ctor and clearMissionData zero it, at nocedit's offset + 0x1004 as the other flags
+    int teleport_requested; // 0x1014, setTeleportTarget sets 1; process clears it once the hero is moved; the ctor zeroes it. New in BW.
+    char mission_name[256]; // 0x1018, ctor and clearMissionData clear the first byte; first_actor follows at +0x1118
+    struct CDemonActor* first_actor; // 0x1118, buildActiveSetActorList walks next_actor from it; the ctor zeroes it
+    struct CDemonActor* last_actor; // 0x111c, ctor zeroes it beside first_actor; nocedit's +0x54c + 3024
+    CLocation pending_teleport; // 0x1120, process copies +0x1120..+0x112c into the current hero's location when area_id (+0x112c) >= 0, loads that set if it differs, then sets area_id -1 and the position 0
+    int delete_queue_count; // 0x1130, markActorToDelete appends at it and asserts below 100; process removes each queued actor and zeroes it
+    struct CDemonActor* delete_queue_actors[100]; // 0x1134, markActorToDelete stores the actor at +0x1134 + count * 4; process passes it to removeActor
+    uint delete_queue_flags[100]; // 0x12c4, markActorToDelete stores its second argument at +0x12c4 + count * 4; process passes it to removeActor
+    int prepared_set_index; // 0x1454, nocedit's actors_prepared flag, now a set index: prepareAllActors stores current_set_index, loadSet prepares again when they differ, the ctor sets -1
+    struct CDemonActor* next_inventory_actor; // 0x1458, ctor and clearMissionData zero it; nocedit's +0x888 + 3024
+    int actor_lookup_count; // 0x145c, writeFile zeroes it, appends to the table at it and asserts below 6000
+    struct CDemonActor* actor_lookup_table[6000]; // 0x1460, writeFile stores each actor at +0x1460 + count * 4
 } CDemonMission;
 #pragma pack(pop)
 

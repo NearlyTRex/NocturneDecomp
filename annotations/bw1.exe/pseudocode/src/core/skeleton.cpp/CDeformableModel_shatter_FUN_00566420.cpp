@@ -11,9 +11,9 @@
 void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_00566420(CDeformableModel *this_ptr,CVector3f *center_position,CVector3f *orientation_vector,int lod_index,CVector3i *skinned_vertices,int *part_visibility_flags,int *texture_set_indices)
 
 {
-  SInputFace *pSVar1;
-  STriangleVertices *pSVar2;
-  SInputFace *pSVar3;
+  ushort *puVar1;
+  CVector3f *pCVar2;
+  ushort *puVar3;
   int iVar4;
   float *pfVar5;
   int iVar6;
@@ -22,7 +22,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_00566420(CDeformable
   byte bVar9;
   float afStackY_1090 [990];
   CMatrix3x3f local_100;
-  STriangleVertices local_d8 [36];
+  STriangleVertices local_d8;
   CVector3i local_b4;
   float local_a8;
   float local_a4 [4];
@@ -31,28 +31,28 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_00566420(CDeformable
   CVector3i local_84;
   float local_78;
   float local_74 [2];
-  byte *local_6c;
-  byte *local_68;
-  SLod *local_64;
+  STextureSet *local_6c;
+  STextureSet *local_68;
+  int local_64;
   byte *local_60;
-  SLod *local_5c;
+  int local_5c;
   byte *local_58;
-  SLod *local_54;
+  int local_54;
   int *local_50;
   CVector3i *local_4c;
   int local_48;
   int local_44;
   int local_40;
   int local_3c;
-  SLod *local_38;
-  SLod *local_34;
-  SLod *local_30;
-  byte *local_2c;
-  byte *local_28;
+  int local_38;
+  int local_34;
+  int local_30;
+  STextureSet *local_2c;
+  STextureSet *local_28;
   int local_24;
   int local_20;
   int local_1c;
-  SLod *local_18;
+  int local_18;
   int local_14;
   
   bVar9 = 0;
@@ -69,7 +69,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_00566420(CDeformable
   }
   local_48 = 0;
   pfVar5 = (float *)&DAT_026af600;
-  local_64 = this_ptr->lod_info + lod_index * 4 + -4;
+  local_64 = (int)this_ptr->lod_info + lod_index * 4 + -4;
   local_4c = skinned_vertices;
   if (0 < *(int *)(local_64 + 0x2c)) {
     do {
@@ -98,47 +98,47 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_00566420(CDeformable
       local_48 = local_48 + 1;
     } while (local_48 < *(int *)(local_64 + 0x2c));
   }
-  __arrinit(local_d8,3,&g_CVectorTypeInfo);
+  __arrinit(&local_d8,3,&g_CVectorTypeInfo);
   local_24 = 0;
   local_44 = 0;
   if (0 < this_ptr->num_parts) {
-    local_38 = this_ptr->lod_info + lod_index * 4 + -4;
-    local_68 = &this_ptr->field_0xc0;
-    local_54 = this_ptr->lod_info + lod_index * 4 + -4;
+    local_38 = (int)this_ptr->lod_info + lod_index * 4 + -4;
+    local_68 = this_ptr->texture_sets;
+    local_54 = (int)this_ptr->lod_info + lod_index * 4 + -4;
     local_60 = (byte *)part_visibility_flags;
     local_50 = texture_set_indices;
     local_30 = local_38;
     do {
       local_40 = *(int *)(local_54 + 0xc24) + local_24;
-      local_2c = local_68 + *local_50 * 0x240;
+      local_2c = local_68 + *local_50;
       if (((*local_60 & 1) != 0) && (local_24 < local_40)) {
         iVar7 = local_24 * 0x12;
         iVar6 = local_24 * 4;
         local_20 = local_40 * 4;
         do {
-          pSVar3 = *(SInputFace **)(local_38 + 0x7c) + iVar7;
-          pSVar2 = local_d8;
+          puVar3 = (ushort *)(*(int *)(local_38 + 0x7c) + iVar7);
+          pCVar2 = local_d8.vertices;
           iVar8 = 0;
           do {
-            iVar4 = (uint)*(ushort *)pSVar3 * 0xc;
-            if (pSVar2 != (STriangleVertices *)(&DAT_026af600 + iVar4)) {
-              *(uint *)pSVar2 = *(uint *)(&DAT_026af600 + iVar4);
-              *(uint *)(pSVar2 + 4) = *(uint *)(&DAT_026af604 + iVar4);
-              *(uint *)(pSVar2 + 8) = *(uint *)(&DAT_026af608 + iVar4);
+            iVar4 = (uint)*puVar3 * 0xc;
+            if (pCVar2 != (CVector3f *)(&DAT_026af600 + iVar4)) {
+              ((CVector3f *)&pCVar2->x)->x =
+                   ((STriangleVertices *)(&DAT_026af600 + iVar4))->vertices[0].x;
+              pCVar2->y = *(float *)(&DAT_026af604 + iVar4);
+              pCVar2->z = *(float *)(&DAT_026af608 + iVar4);
             }
-            pSVar2 = pSVar2 + 0xc;
-            *(uint *)((int)&local_b4.x + iVar8) = (uint)*(ushort *)(pSVar3 + 6);
+            pCVar2 = pCVar2 + 1;
+            *(uint *)((int)&local_b4.x + iVar8) = (uint)puVar3[3];
             iVar4 = iVar8 + 4;
-            pSVar1 = pSVar3 + 0xc;
-            pSVar3 = pSVar3 + 2;
-            *(uint *)((int)&local_84.x + iVar8) = (uint)*(ushort *)pSVar1;
+            puVar1 = puVar3 + 6;
+            puVar3 = puVar3 + 1;
+            *(uint *)((int)&local_84.x + iVar8) = (uint)*puVar1;
             iVar8 = iVar4;
           } while (iVar4 != 0xc);
           core_fire_cpp_CFireEffect_createGlassParticle_FUN_004b5d50
-                    (0x01C57074,local_d8,&local_b4,&local_84,
+                    (0x01C57074,&local_d8,&local_b4,&local_84,
                      (SMRGLTextureBasic *)
-                     (local_2c + *(int *)(iVar6 + (int)*(int **)(local_30 + 0x90)) * 0x48),local_1c)
-          ;
+                     (local_2c->textures + *(int *)(iVar6 + *(int *)(local_30 + 0x90))),local_1c);
           iVar6 = iVar6 + 4;
           iVar7 = iVar7 + 0x12;
         } while (iVar6 < local_20);
@@ -152,45 +152,46 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_00566420(CDeformable
   }
   local_3c = 0;
   if (0 < this_ptr->num_parts) {
-    local_34 = this_ptr->lod_info + lod_index * 4 + -4;
-    local_6c = &this_ptr->field_0xc0;
-    local_5c = this_ptr->lod_info + lod_index * 4 + -4;
+    local_34 = (int)this_ptr->lod_info + lod_index * 4 + -4;
+    local_6c = this_ptr->texture_sets;
+    local_5c = (int)this_ptr->lod_info + lod_index * 4 + -4;
     local_58 = (byte *)part_visibility_flags;
     local_18 = local_34;
     do {
       iVar6 = *(int *)(local_5c + 0xc38) + local_24;
       if (((*local_58 & 1) != 0) &&
-         (local_28 = local_6c + texture_set_indices[local_3c] * 0x240, local_24 < iVar6)) {
+         (local_28 = local_6c + texture_set_indices[local_3c], local_24 < iVar6)) {
         iVar8 = local_24 * 0x12;
         local_14 = local_24 << 2;
         iVar7 = local_24;
         local_24 = iVar6;
         do {
-          pSVar3 = *(SInputFace **)(local_18 + 0x7c) + iVar8;
+          puVar3 = (ushort *)(*(int *)(local_18 + 0x7c) + iVar8);
           if ((*(byte *)(part_visibility_flags +
-                        (*(int **)(local_18 + 0xa4))[iVar7 - *(int *)(local_18 + 0x54)]) & 1) == 0)
-          {
-            pSVar2 = local_d8;
+                        *(int *)(*(int *)(local_18 + 0xa4) + (iVar7 - *(int *)(local_18 + 0x54)) * 4
+                                )) & 1) == 0) {
+            pCVar2 = local_d8.vertices;
             iVar6 = 0;
             do {
-              iVar4 = (uint)*(ushort *)pSVar3 * 0xc;
-              if (pSVar2 != (STriangleVertices *)(&DAT_026af600 + iVar4)) {
-                *(uint *)pSVar2 = *(uint *)(&DAT_026af600 + iVar4);
-                *(uint *)(pSVar2 + 4) = *(uint *)(&DAT_026af604 + iVar4);
-                *(uint *)(pSVar2 + 8) = *(uint *)(&DAT_026af608 + iVar4);
+              iVar4 = (uint)*puVar3 * 0xc;
+              if (pCVar2 != (CVector3f *)(&DAT_026af600 + iVar4)) {
+                ((CVector3f *)&pCVar2->x)->x =
+                     ((STriangleVertices *)(&DAT_026af600 + iVar4))->vertices[0].x;
+                pCVar2->y = *(float *)(&DAT_026af604 + iVar4);
+                pCVar2->z = *(float *)(&DAT_026af608 + iVar4);
               }
-              *(uint *)((int)&local_b4.x + iVar6) = (uint)*(ushort *)(pSVar3 + 6) << 8;
-              pSVar2 = pSVar2 + 0xc;
-              pSVar1 = pSVar3 + 0xc;
+              *(uint *)((int)&local_b4.x + iVar6) = (uint)puVar3[3] << 8;
+              pCVar2 = pCVar2 + 1;
+              puVar1 = puVar3 + 6;
               iVar4 = iVar6 + 4;
-              pSVar3 = pSVar3 + 2;
-              *(uint *)((int)&local_84.x + iVar6) = (uint)*(ushort *)pSVar1 << 8;
+              puVar3 = puVar3 + 1;
+              *(uint *)((int)&local_84.x + iVar6) = (uint)*puVar1 << 8;
               iVar6 = iVar4;
             } while (iVar4 != 0xc);
             core_fire_cpp_CFireEffect_createGlassParticle_FUN_004b5d50
-                      (0x01C57074,local_d8,&local_b4,&local_84,
+                      (0x01C57074,&local_d8,&local_b4,&local_84,
                        (SMRGLTextureBasic *)
-                       (local_28 + *(int *)((int)*(int **)(local_34 + 0x90) + local_14) * 0x48),
+                       (local_28->textures + *(int *)(*(int *)(local_34 + 0x90) + local_14)),
                        local_1c);
           }
           iVar8 = iVar8 + 0x12;

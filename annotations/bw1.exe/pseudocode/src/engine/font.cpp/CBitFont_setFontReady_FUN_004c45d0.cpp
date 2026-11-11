@@ -9,6 +9,6 @@
 void __cdecl engine_font_cpp_CBitFont_setFontReady_FUN_004c45d0(CBitFont *this_ptr,int value)
 
 {
-  *(int *)(this_ptr + 0x4204) = value;
+  this_ptr->rendering_ready = value;
   return;
 }

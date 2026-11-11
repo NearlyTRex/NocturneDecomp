@@ -14,9 +14,9 @@ void __cdecl core_baron_cpp_CBaron_setup_FUN_0040f300(CBaron *this_ptr)
   CSkeleton *this_ptr_00;
   int iVar1;
   
-  core_hero_cpp_CHero_setup_FUN_004eaa10((CHero *)this_ptr);
+  core_hero_cpp_CHero_setup_FUN_004eaa10(&this_ptr->base);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
-                          ((CDeformableModelInstance *)&this_ptr->field_0x158);
+                          (&(this_ptr->base).base.model);
   DAT_007c3498 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0
                            (this_ptr_00,"Bip01 head",1);
   _DAT_007c349c =
@@ -53,7 +53,7 @@ void __cdecl core_baron_cpp_CBaron_setup_FUN_0040f300(CBaron *this_ptr)
        core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 Spine",1);
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"Bip01 Spine1",1);
   this_ptr->target_actor = (CDemonActor *)0x0;
-  *(int *)&this_ptr->field_0x2750 = iVar1;
+  (this_ptr->base).base.gesture_branch_root = iVar1;
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
             ((CKeyFramedModelInstance *)&DAT_007c351c);
   return;

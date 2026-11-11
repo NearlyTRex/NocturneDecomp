@@ -12,11 +12,11 @@
 ; XREF[8]:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0 at 004688c9
 ;   core_fire.cpp_CBulletTrail_render_FUN_004afcf0 at 004affdb
+;   core_fire.cpp_CLeaf_render_FUN_004af270 at 004af31f
 ;   core_fire.cpp_CShell_render_FUN_004b4090 at 004b416d
 ;   core_fire.cpp_FUN_004af040 at 004af0d9
-;   core_fire.cpp_FUN_004af270 at 004af31f
 ;   core_level.cpp_CLevelLoader_update_FUN_004fe9c0 at 004fedef
-;   core_moon.cpp_FUN_00521e40 at 00521f97
+;   core_moon.cpp_CMoon_render_FUN_00521e40 at 00521f97
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0 at 0054e4cf
 ;
 ; Called Functions:

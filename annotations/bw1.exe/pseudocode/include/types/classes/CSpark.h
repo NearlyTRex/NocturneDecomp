@@ -4,12 +4,13 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CParticle.h"
 
 // Structure: CSpark
 // Ghidra size: 0x54 (84 bytes)
 #pragma pack(push, 1)
 typedef struct CSpark {
-    char field_0[64]; // 0x0
+    CParticle base; // 0x0
     int intensity_current; // 0x40
     int intensity_target; // 0x44
     int first_update_flag; // 0x48

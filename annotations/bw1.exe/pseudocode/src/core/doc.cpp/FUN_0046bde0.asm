@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_doc_cpp_FUN_0046bde0(CCharacter *param_1,float param_2)
+; void core_doc_cpp_FUN_0046bde0(CHero *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x170]:1  local_170

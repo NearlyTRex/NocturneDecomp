@@ -2,24 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 550,
-    "complexity_score": 1318,
+    "complexity_score": 1079,
     "cross_reference_count": 2,
     "function_call_count": 16,
     "global_count": 29,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 238,
-    "suspect_count": 104,
+    "pseudocode_lines": 239,
+    "suspect_count": 79,
     "suspect_types": [
+      "concat_reconstruction",
+      "extra_output",
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
-      "unnamed_field",
+      "undefined_type",
       "unnamed_param",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 788
+    "total_lines": 789
   },
   "cross_references": [
     {
@@ -119,14 +121,14 @@
       "name": "sound_sndmain.cpp_FUN_005773f0"
     },
     {
-      "addr": "005a0c10",
-      "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_FUN_005a0c10"
-    },
-    {
       "addr": "005a0d70",
       "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_FUN_005a0d70"
+      "name": "unkaddr_0059f520.cpp_CInStreamFile_isOpen_FUN_005a0d70"
+    },
+    {
+      "addr": "005a0c10",
+      "is_variadic": false,
+      "name": "unkaddr_0059f520.cpp_CInStreamFile_read_FUN_005a0c10"
     }
   ],
   "globals": [
@@ -501,36 +503,36 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Unresolved type",
+      "line": 16,
+      "match": "undefined3 extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 16,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (-1 < *(int *)&param_1->field_0x160) {",
+      "text": "if (-1 < param_1->streaming_slot_index) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "if (-1 < *(int *)&param_1->field_0x160) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = *(int *)&param_1->field_0x160 * 0x11c;",
+      "text": "iVar1 = param_1->streaming_slot_index * 0x11c;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&param_1->field_0x160 * 0x11c;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -617,7 +619,7 @@
       "line": 69,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar13 = (float10)(param_1->sample_info).sample_rate * (float10)param_2;",
+      "text": "fVar12 = (float10)(param_1->sample_info).sample_rate * (float10)param_2;",
       "type": "unnamed_param"
     },
     {
@@ -625,7 +627,7 @@
       "line": 69,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar13 = (float10)(param_1->sample_info).sample_rate * (float10)param_2;",
+      "text": "fVar12 = (float10)(param_1->sample_info).sample_rate * (float10)param_2;",
       "type": "unnamed_param"
     },
     {
@@ -633,48 +635,24 @@
       "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = *(int *)&param_1->field_0x164;",
+      "text": "iVar5 = param_1->streaming_buffer_size;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 70,
-      "match": "field_0x164",
-      "severity": "mild",
-      "text": "iVar5 = *(int *)&param_1->field_0x164;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 76,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar13 = (float10)*(int *)&param_1->field_0x170 - (float10)*(double *)(iVar1 + 0x2c746f8);",
+      "text": "fVar12 = (float10)param_1->stream_write_position - (float10)*(double *)(iVar1 + 0x2c746f8);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 76,
-      "match": "field_0x170",
-      "severity": "mild",
-      "text": "fVar13 = (float10)*(int *)&param_1->field_0x170 - (float10)*(double *)(iVar1 + 0x2c746f8);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 80,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_30 = local_30 + *(int *)&param_1->field_0x164;",
+      "text": "local_30 = local_30 + param_1->streaming_buffer_size;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 80,
-      "match": "field_0x164",
-      "severity": "mild",
-      "text": "local_30 = local_30 + *(int *)&param_1->field_0x164;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -697,7 +675,7 @@
       "line": 87,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar13 = (float10)(param_1->sample_info).sample_rate * (float10)param_3;",
+      "text": "fVar12 = (float10)(param_1->sample_info).sample_rate * (float10)param_3;",
       "type": "unnamed_param"
     },
     {
@@ -705,7 +683,7 @@
       "line": 87,
       "match": "param_3",
       "severity": "mild",
-      "text": "fVar13 = (float10)(param_1->sample_info).sample_rate * (float10)param_3;",
+      "text": "fVar12 = (float10)(param_1->sample_info).sample_rate * (float10)param_3;",
       "type": "unnamed_param"
     },
     {
@@ -713,23 +691,7 @@
       "line": 96,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)&param_1->field_0x170 < 0) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 96,
-      "match": "field_0x170",
-      "severity": "mild",
-      "text": "if ((*(int *)&param_1->field_0x170 < 0) ||",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)&param_1->field_0x164 <= *(int *)&param_1->field_0x170)) {",
+      "text": "if ((param_1->stream_write_position < 0) ||",
       "type": "unnamed_param"
     },
     {
@@ -737,63 +699,31 @@
       "line": 97,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(int *)&param_1->field_0x164 <= *(int *)&param_1->field_0x170)) {",
+      "text": "(param_1->streaming_buffer_size <= param_1->stream_write_position)) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 97,
-      "match": "field_0x164",
+      "match": "param_1",
       "severity": "mild",
-      "text": "(*(int *)&param_1->field_0x164 <= *(int *)&param_1->field_0x170)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 97,
-      "match": "field_0x170",
-      "severity": "mild",
-      "text": "(*(int *)&param_1->field_0x164 <= *(int *)&param_1->field_0x170)) {",
-      "type": "unnamed_field"
+      "text": "(param_1->streaming_buffer_size <= param_1->stream_write_position)) {",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 101,
       "match": "param_1",
       "severity": "mild",
-      "text": "(\"nextLoadSampleDest = %d, allocLength = %d\",*(uint *)&param_1->field_0x170,",
+      "text": "(\"nextLoadSampleDest = %d, allocLength = %d\",param_1->stream_write_position,",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 101,
-      "match": "field_0x170",
-      "severity": "mild",
-      "text": "(\"nextLoadSampleDest = %d, allocLength = %d\",*(uint *)&param_1->field_0x170,",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 102,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x164);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 102,
-      "match": "field_0x164",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x164);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 104,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = *(int *)&param_1->field_0x164 - *(int *)&param_1->field_0x170;",
+      "text": "param_1->streaming_buffer_size);",
       "type": "unnamed_param"
     },
     {
@@ -801,24 +731,16 @@
       "line": 104,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = *(int *)&param_1->field_0x164 - *(int *)&param_1->field_0x170;",
+      "text": "iVar5 = param_1->streaming_buffer_size - param_1->stream_write_position;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 104,
-      "match": "field_0x164",
+      "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = *(int *)&param_1->field_0x164 - *(int *)&param_1->field_0x170;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 104,
-      "match": "field_0x170",
-      "severity": "mild",
-      "text": "iVar5 = *(int *)&param_1->field_0x164 - *(int *)&param_1->field_0x170;",
-      "type": "unnamed_field"
+      "text": "iVar5 = param_1->streaming_buffer_size - param_1->stream_write_position;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
@@ -833,32 +755,16 @@
       "line": 114,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x16c < iVar6) {",
+      "text": "if (param_1->stream_read_position < iVar6) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 114,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x16c < iVar6) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 115,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = iVar6 - *(int *)&param_1->field_0x16c;",
+      "text": "iVar6 = iVar6 - param_1->stream_read_position;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 115,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "iVar6 = iVar6 - *(int *)&param_1->field_0x16c;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -877,14 +783,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 125,
-      "match": "field_0x164",
-      "severity": "mild",
-      "text": "(this_ptr->sample_info).sample_count == *(int *)&this_ptr->field_0x164)) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 126,
       "match": "param_1",
@@ -897,16 +795,8 @@
       "line": 133,
       "match": "param_1",
       "severity": "mild",
-      "text": "(this_ptr,0,*(int *)&param_1->field_0x170);",
+      "text": "(this_ptr,0,param_1->stream_write_position);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 133,
-      "match": "field_0x170",
-      "severity": "mild",
-      "text": "(this_ptr,0,*(int *)&param_1->field_0x170);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -929,7 +819,7 @@
       "line": 143,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,*(uint *)&param_1->field_0x170,iVar5);",
+      "text": "(param_1,param_1->stream_write_position,iVar5);",
       "type": "unnamed_param"
     },
     {
@@ -937,23 +827,15 @@
       "line": 143,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,*(uint *)&param_1->field_0x170,iVar5);",
+      "text": "(param_1,param_1->stream_write_position,iVar5);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 143,
-      "match": "field_0x170",
-      "severity": "mild",
-      "text": "(param_1,*(uint *)&param_1->field_0x170,iVar5);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 151,
       "match": "param_1",
       "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_005773f0(pcVar14,param_1);",
+      "text": "sound_sndmain_cpp_FUN_005773f0(pcVar13,param_1);",
       "type": "unnamed_param"
     },
     {
@@ -977,60 +859,44 @@
       "line": 173,
       "match": "param_1",
       "severity": "mild",
-      "text": "else if (*(CMP3Decoder **)&param_1->field_0x174 == (CMP3Decoder *)0x0) {",
+      "text": "else if (param_1->mp3_data == (CMP3Decoder *)0x0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 173,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "else if (*(CMP3Decoder **)&param_1->field_0x174 == (CMP3Decoder *)0x0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 174,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = unkaddr_0059f520_cpp_FUN_005a0d70(&param_1->field_0x17c);",
+      "text": "bVar4 = unkaddr_0059f520_cpp_CInStreamFile_isOpen_FUN_005a0d70(&param_1->file_stream);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 174,
-      "match": "field_0x17c",
-      "severity": "mild",
-      "text": "iVar6 = unkaddr_0059f520_cpp_FUN_005a0d70(&param_1->field_0x17c);",
-      "type": "unnamed_field"
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 175,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var,bVar4) == 0) {",
+      "type": "extra_output"
     },
     {
       "description": "Unnamed function parameter",
       "line": 180,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = sound_sndmain_cpp_FUN_00572400(param_1,iVar5);",
+      "text": "uVar8 = sound_sndmain_cpp_FUN_00572400(param_1,iVar5);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 181,
+      "line": 182,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar9 = unkaddr_0059f520_cpp_FUN_005a0c10(&param_1->field_0x17c,output_buffer,iVar6);",
+      "text": "(&param_1->file_stream,(uint *)output_buffer,uVar8);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 181,
-      "match": "field_0x17c",
-      "severity": "mild",
-      "text": "iVar9 = unkaddr_0059f520_cpp_FUN_005a0c10(&param_1->field_0x17c,output_buffer,iVar6);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 183,
+      "line": 184,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00570260(param_1);",
@@ -1038,7 +904,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 187,
+      "line": 188,
       "match": "DAT_02c74654",
       "severity": "mild",
       "text": "if (*(int *)(*(int *)(&DAT_02c74654 + iVar1) + 0x104) == 0x10) {",
@@ -1046,7 +912,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 188,
+      "line": 189,
       "match": "DAT_02c74654",
       "severity": "mild",
       "text": "for (iVar6 = 0; iVar6 < *(int *)(*(int *)(&DAT_02c74654 + iVar1) + 0x108) * iVar5;",
@@ -1054,26 +920,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 195,
+      "line": 196,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(CMP3Decoder **)&param_1->field_0x174,output_buffer,iVar5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 195,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "(*(CMP3Decoder **)&param_1->field_0x174,output_buffer,iVar5);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 200,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,*(uint *)&param_1->field_0x170,local_18);",
+      "text": "(param_1->mp3_data,output_buffer,iVar5);",
       "type": "unnamed_param"
     },
     {
@@ -1081,20 +931,20 @@
       "line": 200,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,*(uint *)&param_1->field_0x170,local_18);",
+      "text": "sound_sndmain_cpp_FUN_00570160(param_1,param_1->stream_write_position,local_18)",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 200,
-      "match": "field_0x170",
+      "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,*(uint *)&param_1->field_0x170,local_18);",
-      "type": "unnamed_field"
+      "text": "sound_sndmain_cpp_FUN_00570160(param_1,param_1->stream_write_position,local_18)",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 205,
+      "line": 206,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar8 = sound_sndmain_cpp_FUN_00572400(param_1,local_18);",
@@ -1102,31 +952,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 206,
+      "line": 207,
       "match": "DAT_02c68388",
       "severity": "mild",
-      "text": "puVar11 = (uint *)&DAT_02c68388;",
+      "text": "puVar10 = (uint *)&DAT_02c68388;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 214,
-      "match": "(uint *)((int)puVar11",
+      "line": 215,
+      "match": "(uint *)((int)puVar10",
       "severity": "moderate",
-      "text": "puVar11 = (uint *)((int)puVar11 + (uint)bVar12 * -2 + 1);",
+      "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 215,
+      "line": 216,
       "match": "(uint *)((int)puVar7",
       "severity": "moderate",
-      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar12 * -2 + 1);",
+      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 218,
+      "line": 219,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00570260(param_1);",
@@ -1134,50 +984,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 227,
+      "line": 228,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->sample_info).sample_count = *(int *)&param_1->field_0x16c + local_18;",
+      "text": "(param_1->sample_info).sample_count = param_1->stream_read_position + local_18;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 227,
+      "line": 228,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->sample_info).sample_count = *(int *)&param_1->field_0x16c + local_18;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 227,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "(param_1->sample_info).sample_count = *(int *)&param_1->field_0x16c + local_18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 230,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = *(int *)&param_1->field_0x170 + local_18;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 230,
-      "match": "field_0x170",
-      "severity": "mild",
-      "text": "iVar5 = *(int *)&param_1->field_0x170 + local_18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 231,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)&param_1->field_0x16c = *(int *)&param_1->field_0x16c + local_18;",
+      "text": "(param_1->sample_info).sample_count = param_1->stream_read_position + local_18;",
       "type": "unnamed_param"
     },
     {
@@ -1185,104 +1003,88 @@
       "line": 231,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)&param_1->field_0x16c = *(int *)&param_1->field_0x16c + local_18;",
+      "text": "iVar5 = param_1->stream_write_position + local_18;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 231,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "*(int *)&param_1->field_0x16c = *(int *)&param_1->field_0x16c + local_18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 231,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "*(int *)&param_1->field_0x16c = *(int *)&param_1->field_0x16c + local_18;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 232,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)&param_1->field_0x170 = iVar5;",
+      "text": "param_1->stream_read_position = param_1->stream_read_position + local_18;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 232,
-      "match": "field_0x170",
+      "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)&param_1->field_0x170 = iVar5;",
-      "type": "unnamed_field"
+      "text": "param_1->stream_read_position = param_1->stream_read_position + local_18;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 233,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x164 <= iVar5) {",
+      "text": "param_1->stream_write_position = iVar5;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 233,
-      "match": "field_0x164",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x164 <= iVar5) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 234,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x170 = 0;",
+      "text": "if (param_1->streaming_buffer_size <= iVar5) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 234,
-      "match": "field_0x170",
+      "description": "Unnamed function parameter",
+      "line": 235,
+      "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x170 = 0;",
-      "type": "unnamed_field"
+      "text": "param_1->stream_write_position = 0;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Pointer value `puVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 214,
-      "match": "(int)puVar11",
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 215,
+      "match": "(int)puVar10",
       "severity": "moderate",
-      "text": "puVar11 = (uint *)((int)puVar11 + (uint)bVar12 * -2 + 1);",
+      "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `puVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 215,
+      "line": 216,
       "match": "(int)puVar7",
       "severity": "moderate",
-      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar12 * -2 + 1);",
+      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 207,
+      "line": 208,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar10 = uVar8 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {",
+      "text": "for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 212,
+      "line": 213,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 175,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var,bVar4) == 0) {",
+      "type": "concat_reconstruction"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 00570883, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

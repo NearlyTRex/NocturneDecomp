@@ -11,7 +11,7 @@ void core_baron_cpp_factoryFuncBaron_FUN_0040f1e0(void)
 {
   CBaron *this_ptr;
   
-  this_ptr = (CBaron *)debugAllocTracked1(0x200ac);
+  this_ptr = (CBaron *)operator_new(0x200ac);
   if (this_ptr == (CBaron *)0x0) {
     return;
   }

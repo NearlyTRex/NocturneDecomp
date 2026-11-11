@@ -105,7 +105,7 @@ LAB_00523a83:
       } while (iVar1 != 10);
       _fscanf(param_2,&DAT_005eaa36,piVar5 + 0x1c);
       if (0 < piVar5[0x1c]) {
-        pvVar2 = FUN_005c08d0(piVar5[0x1c] * 0x18);
+        pvVar2 = malloc(piVar5[0x1c] * 0x18);
         piVar5[0x1d] = (int)pvVar2;
         if (pvVar2 == (void *)0x0) {
           _DAT_01d1d400 = "..\\core\\motion.cpp";

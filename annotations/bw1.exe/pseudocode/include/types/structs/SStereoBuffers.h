@@ -6,10 +6,11 @@
 #include "system/basetypes.h"
 
 // Structure: SStereoBuffers
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x8 (8 bytes)
 #pragma pack(push, 1)
 typedef struct SStereoBuffers {
+    float* left_channel; // 0x0
+    float* right_channel; // 0x4
 } SStereoBuffers;
 #pragma pack(pop)
 

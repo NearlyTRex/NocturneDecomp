@@ -10,9 +10,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_00484
 
 {
   int iVar1;
-  ushort local_18;
-  ushort local_16;
-  ushort local_14;
+  STrianglePackedIndices local_18;
   ushort local_12;
   ushort local_10;
   ushort local_e;
@@ -26,16 +24,15 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_00484
       return;
     }
   }
-  local_18 = (ushort)primitive[1].base.type;
-  local_16 = *(ushort *)&primitive[1].surface_normal.B;
-  local_14 = (ushort)primitive[2].base.type;
+  local_18.vertex_index_0 = (ushort)primitive[1].base.type;
+  local_18.vertex_index_1 = *(ushort *)&primitive[1].surface_normal.B;
+  local_18.vertex_index_2 = (ushort)primitive[2].base.type;
   local_12 = (ushort)((uint)primitive[1].base.count >> 8);
   local_10 = (ushort)((uint)primitive[1].surface_normal.C.i >> 8);
   local_e = (ushort)((uint)primitive[2].base.count >> 8);
   local_c = (ushort)((uint)primitive[1].surface_normal.A.i >> 8);
   local_a = (ushort)((uint)primitive[1].surface_normal.D.i >> 8);
   local_8 = (ushort)((uint)primitive[2].surface_normal.A.i >> 8);
-  engine_drender_cpp_CDemonRenderer_captureFace_FUN_00484c20
-            (this_ptr,(STrianglePackedIndices *)&local_18,render_flags);
+  engine_drender_cpp_CDemonRenderer_captureFace_FUN_00484c20(this_ptr,&local_18,render_flags);
   return;
 }

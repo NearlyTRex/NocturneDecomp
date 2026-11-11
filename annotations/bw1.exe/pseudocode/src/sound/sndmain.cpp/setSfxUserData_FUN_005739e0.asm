@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_sndmain_cpp_setSfxUserData_FUN_005739e0(uint param_1,int param_2,undefined4 param_3)
+; undefined4 sound_sndmain_cpp_setSfxUserData_FUN_005739e0(uint param_1,int param_2,void *param_3)
 ;
 ;
 ; Referenced Globals:

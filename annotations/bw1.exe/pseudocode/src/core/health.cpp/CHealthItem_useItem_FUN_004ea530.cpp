@@ -13,13 +13,13 @@ int __cdecl core_health_cpp_CHealthItem_useItem_FUN_004ea530(CHealthItem *this_p
 {
   float fVar1;
   
-  if (0 < *(int *)&this_ptr->field_0x2d4) {
-    fVar1 = *(float *)&this_ptr->field_0x2d8 + user->hit_points;
+  if (0 < this_ptr->use_count) {
+    fVar1 = this_ptr->hp_restored + user->hit_points;
     user->hit_points = fVar1;
     if ((float)_DAT_005e45f5 < fVar1) {
       user->hit_points = 100.0;
     }
-    *(int *)&this_ptr->field_0x2d4 = *(int *)&this_ptr->field_0x2d4 + -1;
+    this_ptr->use_count = this_ptr->use_count + -1;
   }
-  return *(int *)&this_ptr->field_0x2d4;
+  return this_ptr->use_count;
 }

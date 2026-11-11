@@ -23,7 +23,7 @@ void engine_drender_cpp_FUN_00482bee(CDemonRenderer *param_1,int param_2)
       iVar1 = param_2;
       do {
         iVar3 = iVar3 + 1;
-        uVar2 = uVar2 & *(uint *)(param_1->vertex_buffer_ptr + *(int *)(iVar1 + 0x18) * 0x30 + 0x10)
+        uVar2 = uVar2 & param_1->vertex_buffer_ptr[*(int *)(iVar1 + 0x18)].projected_vertex.screen_x
         ;
         iVar1 = iVar1 + 4;
       } while (iVar3 < *(int *)(param_2 + 4));

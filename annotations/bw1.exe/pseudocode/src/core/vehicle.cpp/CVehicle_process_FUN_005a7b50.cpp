@@ -30,17 +30,14 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005a7b50(CVehicle *this_ptr,f
   int iVar12;
   CVehicle *pCVar13;
   uint *puVar14;
-  uint *puVar15;
+  CDeformableModelInstance **ppCVar15;
   int iVar16;
   byte bVar17;
   float afStackY_10c8 [976];
   CBoundingBox3D *in_stack_fffffe88;
   char *model_name;
-  uint uStack_168;
-  uint uStack_13c;
-  byte auStack_130 [28];
-  float fStack_114;
-  uint auStack_110 [2];
+  float fStack_168;
+  SCollisionInfo SStack_130;
   float fStack_108;
   float fStack_104;
   float fStack_100;
@@ -169,38 +166,38 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005a7b50(CVehicle *this_ptr,f
   iStack_18 = 0;
   iStack_1c = 0;
   puVar14 = auStack_f0;
-  puVar15 = auStack_110;
+  ppCVar15 = &SStack_130.deformable_model;
   for (iVar12 = 6; iVar12 != 0; iVar12 = iVar12 + -1) {
-    *puVar15 = *puVar14;
+    *ppCVar15 = (CDeformableModelInstance *)*puVar14;
     puVar14 = puVar14 + (uint)bVar17 * -2 + 1;
-    puVar15 = puVar15 + (uint)bVar17 * -2 + 1;
+    ppCVar15 = ppCVar15 + (uint)bVar17 * -2 + 1;
   }
   for (; iStack_18 < g_CDemonSetPtr->character_count; iStack_18 = iStack_18 + 1) {
     iStack_14 = *(int *)((int)g_CDemonSetPtr->characters + iStack_1c);
     iVar12 = (CMobster *)core_actor_cpp_castToClassHash_FUN_0040c600(iStack_14,g_CMobsterClassInfo.name_hash);
     if ((iVar12 == 0) || (this_ptr != *(CVehicle **)(iVar12 + 0xc28c))) {
-      core_setcolid_cpp_SCollisionInfo_ctor_FUN_005593c0((SCollisionInfo *)auStack_130);
-      iVar12 = (**(code **)(*(int *)(iStack_14 + 0x154) + 0x3c))(iStack_14,auStack_130);
+      core_setcolid_cpp_SCollisionInfo_ctor_FUN_005593c0(&SStack_130);
+      iVar12 = (**(code **)(*(int *)(iStack_14 + 0x154) + 0x3c))(iStack_14,&SStack_130);
       if ((iVar12 == 2) &&
          ((*(float *)(iStack_14 + 0x24) <= (this_ptr->base).location.position.y + fStack_f8 &&
           ((this_ptr->base).location.position.y + fStack_104 <=
-           *(float *)(iStack_14 + 0x24) + (float)auStack_130._24_4_)))) {
+           *(float *)(iStack_14 + 0x24) + SStack_130.cylinder_top_y)))) {
         core_actor_cpp_FUN_00408bb0(this_ptr,iStack_14 + 0x20);
         fStack_54 = afStack_90[3];
         afStack_50[(uint)bVar17 * -2] = *(float *)((int)&CStack_80 + (uint)bVar17 * -8);
         afStack_50[(uint)bVar17 * -2 + (uint)bVar17 * -2 + 1] =
              *(float *)((int)&CStack_80 + ((uint)bVar17 * -2 + (uint)bVar17 * -2) * 4 + 4);
-        if ((fStack_108 <= fStack_54 + fStack_114) &&
-           ((fStack_54 - fStack_114 <= fStack_fc && (fStack_100 <= afStack_50[1] + fStack_114)))) {
-          if (afStack_50[1] - fStack_114 <= fStack_f4) {
+        if ((fStack_108 <= fStack_54 + SStack_130.cylinder_radius) &&
+           ((fStack_54 - SStack_130.cylinder_radius <= fStack_fc &&
+            (fStack_100 <= afStack_50[1] + SStack_130.cylinder_radius)))) {
+          if (afStack_50[1] - SStack_130.cylinder_radius <= fStack_f4) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010((SDamageInfo *)&stack0xfffffe94);
-            uStack_13c = 4;
-            uStack_168 = 0x4479c000;
+            fStack_168 = 999.0;
             (**(code **)(*(int *)(iStack_14 + 0x154) + 0x108))(iStack_14,&stack0xfffffe94);
           }
-          else if ((afStack_50[1] - fStack_114 < fStack_f4 + (float)_DAT_005f908b) &&
-                  (iVar12 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[0]), iVar12 == 0))
-          {
+          else if ((afStack_50[1] - SStack_130.cylinder_radius < fStack_f4 + (float)_DAT_005f908b)
+                  && (iVar12 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[0]), iVar12 == 0
+                     )) {
             uVar9 = core_vehicle_cpp_CVehicle_playTrackedSound_FUN_005a89c0
                               (this_ptr,"?model-t-horn?.wav" + 1);
             this_ptr->sfx_handles[0] = uVar9;
@@ -256,12 +253,12 @@ joined_r0x005a8421:
     EVar11 = (*(((pCVar8->base).vtable._uc)->_uc).getDeathState)(pCVar8);
     goto joined_r0x005a8421;
   }
-  this_ptr_00 = (CMobster *)debugAllocTracked1(0xc340);
+  this_ptr_00 = (CMobster *)operator_new(0xc340);
   actor = (CMobster *)0x0;
   if (this_ptr_00 != (CMobster *)0x0) {
     actor = core_mobster_cpp_CMobster_ctor_FUN_0051c7d0(this_ptr_00);
   }
-  this_ptr_01 = (CTommyGun *)debugAllocTracked1(0x584);
+  this_ptr_01 = (CTommyGun *)operator_new(0x584);
   actor_00 = (CTommyGun *)0x0;
   if (this_ptr_01 != (CTommyGun *)0x0) {
     actor_00 = core_tommygun_cpp_CTommyGun_ctor_FUN_00598380(this_ptr_01);

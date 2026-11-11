@@ -10,7 +10,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
-;   crt_unknown.c_FUN_005c08d0
+;   crt_memory.c_malloc_FUN_005c08d0
 ;   crt_unknown.c_FUN_005c09f0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;
@@ -32,8 +32,8 @@ section .text
     IMUL EBX,EBP                        ; 0043a227
     PUSH EBX                            ; 0043a22a
     MOV dword ptr [ESP + 0x64],EAX      ; 0043a22b
-    CALL crt_unknown.c_FUN_005c08d0     ; 0043a22f
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 0043a22f
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 0043a234
     MOV dword ptr [ESP + 0x54],EAX      ; 0043a237
     TEST EAX,EAX                        ; 0043a23b

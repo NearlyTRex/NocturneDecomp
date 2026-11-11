@@ -16,7 +16,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004b8100(CFlame *this_pt
   float fVar3;
   CDemonRenderer *this_ptr_00;
   int iVar4;
-  SRenderVertex *pSVar5;
+  int *piVar5;
   uint *puVar6;
   int iVar7;
   uint *puVar8;
@@ -123,25 +123,25 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004b8100(CFlame *this_pt
           CStack_e4.y = (int)ROUND(_DAT_00600380 * 0.0);
           CStack_e4.z = (int)ROUND(_DAT_00600380 * 0.0);
           engine_special_cpp_FUN_00580173
-                    ((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&CStack_e4);
+                    (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&CStack_e4);
           fStack_44 = (this_ptr->flame_size).y;
           CStack_c0.x = (int)ROUND(fStack_48 * _DAT_00600380);
           CStack_c0.y = (int)ROUND(fStack_44 * _DAT_00600380);
           CStack_c0.z = (int)ROUND(fStack_40 * _DAT_00600380);
           engine_special_cpp_FUN_00580173
-                    ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&CStack_c0);
+                    (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_c0);
           fStack_48 = -fStack_48;
           CStack_a8.x = (int)ROUND(fStack_48 * _DAT_00600380);
           CStack_a8.y = (int)ROUND(fStack_44 * _DAT_00600380);
           CStack_a8.z = (int)ROUND(fStack_40 * _DAT_00600380);
           engine_special_cpp_FUN_00580173
-                    ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&CStack_a8);
+                    (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&CStack_a8);
           fStack_44 = 0.0;
           CStack_78.x = (int)ROUND(fStack_48 * _DAT_00600380);
           CStack_78.y = (int)ROUND(_DAT_00600380 * 0.0);
           CStack_78.z = (int)ROUND(fStack_40 * _DAT_00600380);
           engine_special_cpp_FUN_00580173
-                    ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),&CStack_78);
+                    (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_78);
           (**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 4))
                     (DAT_007c6120,&(this_ptr->base).location,0);
           DAT_00629040 = 0xffff - _DAT_01c51cac;
@@ -233,53 +233,53 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004b8100(CFlame *this_pt
       CStack_54.y = (int)ROUND(fStack_f0 * _DAT_00600380);
       CStack_54.z = (int)ROUND(_DAT_00600380 * 0.0);
       fStack_ec = fStack_f0;
-      engine_special_cpp_FUN_00580173
-                ((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&CStack_54);
+      engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&CStack_54)
+      ;
       fStack_f0 = -fStack_f0;
       CStack_3c.x = (int)ROUND(fStack_f0 * _DAT_00600380);
       CStack_3c.y = (int)ROUND(fStack_ec * _DAT_00600380);
       CStack_3c.z = (int)ROUND(fStack_e8 * _DAT_00600380);
       engine_special_cpp_FUN_00580173
-                ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&CStack_3c);
+                (&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_3c);
       fStack_ec = -fStack_ec;
       CStack_b4.x = (int)ROUND(fStack_f0 * _DAT_00600380);
       CStack_b4.y = (int)ROUND(fStack_ec * _DAT_00600380);
       CStack_b4.z = (int)ROUND(fStack_e8 * _DAT_00600380);
       engine_special_cpp_FUN_00580173
-                ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&CStack_b4);
+                (&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&CStack_b4);
       fStack_f0 = -fStack_f0;
       CStack_84.x = (int)ROUND(fStack_f0 * _DAT_00600380);
       CStack_84.y = (int)ROUND(fStack_ec * _DAT_00600380);
       CStack_84.z = (int)ROUND(fStack_e8 * _DAT_00600380);
       engine_special_cpp_FUN_00580173
-                ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),&CStack_84);
+                (&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_84);
       iStack_1c = 0;
       do {
-        pSVar5 = DAT_00612560->vertex_buffer_ptr + iStack_1c;
-        iVar4 = *(int *)(pSVar5 + 8);
+        piVar5 = (int *)((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x +
+                        iStack_1c);
+        iVar4 = piVar5[2];
         if (0x200 < iVar4) {
           iVar7 = iVar4 + -0x100;
-          *(int *)pSVar5 = (int)(((longlong)*(int *)pSVar5 * (longlong)iVar7) / (longlong)iVar4);
-          *(int *)(pSVar5 + 4) =
-               (int)(((longlong)*(int *)(pSVar5 + 4) * (longlong)iVar7) / (longlong)iVar4);
-          *(int *)(pSVar5 + 8) = iVar7;
-          engine_matrix_c_projectTransformedPoint_FUN_00507b50(pSVar5);
+          *piVar5 = (int)(((longlong)*piVar5 * (longlong)iVar7) / (longlong)iVar4);
+          piVar5[1] = (int)(((longlong)piVar5[1] * (longlong)iVar7) / (longlong)iVar4);
+          piVar5[2] = iVar7;
+          engine_matrix_c_projectTransformedPoint_FUN_00507b50(piVar5);
         }
         this_ptr_00 = DAT_00612560;
         iStack_1c = iStack_1c + 0x30;
       } while (iStack_1c != 0xc0);
-      *(uint *)(DAT_00612560->vertex_buffer_ptr + 0x2c) = 0x4000;
-      *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x5c) = 0x4000;
-      *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x8c) = 0x4000;
-      *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xbc) = 0x4000;
-      *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x18) = 0x80000;
-      *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x1c) = 0xf80000;
-      *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x48) = 0xf80000;
-      *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x4c) = 0xf80000;
-      *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x78) = 0xf80000;
-      *(uint *)(this_ptr_00->vertex_buffer_ptr + 0x7c) = 0x80000;
-      *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xa8) = 0x80000;
-      *(uint *)(this_ptr_00->vertex_buffer_ptr + 0xac) = 0x80000;
+      DAT_00612560->vertex_buffer_ptr->a = 0x4000;
+      this_ptr_00->vertex_buffer_ptr[1].a = 0x4000;
+      this_ptr_00->vertex_buffer_ptr[2].a = 0x4000;
+      this_ptr_00->vertex_buffer_ptr[3].a = 0x4000;
+      this_ptr_00->vertex_buffer_ptr->u = 0x80000;
+      this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
+      this_ptr_00->vertex_buffer_ptr[1].u = 0xf80000;
+      this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;
+      this_ptr_00->vertex_buffer_ptr[2].u = 0xf80000;
+      this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
+      this_ptr_00->vertex_buffer_ptr[3].u = 0x80000;
+      this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
       SStack_170.surface_normal.D.i = 0;
       SStack_170.surface_normal.C.i = 0;
       SStack_170.surface_normal.B.i = 0;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_doc_cpp_FUN_00474400(CCharacter *param_1,float param_2)
+; void core_doc_cpp_FUN_00474400(CHero *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x80]:4  local_80
@@ -371,7 +371,7 @@ section .text
     MOV dword ptr [EBX + 0x1ff58],0x2   ; 0047475d
     PUSH EAX                            ; 00474767 | g_CGameInstance
         ;   Label: LAB_00474767
-    MOV EDX,dword ptr [EAX + 0xb00]     ; 00474768 | g_CGameInstance.field623_0xb00
+    MOV EDX,dword ptr [EAX + 0xb00]     ; 00474768 | g_CGameInstance.vtable
     CALL dword ptr [EDX]                ; 0047476e
     ADD ESP,0x8                         ; 00474770
     CMP dword ptr [EBX + 0x1ff5c],0x7   ; 00474773
@@ -1063,13 +1063,13 @@ section .text
     JZ 0x004744b2                       ; 00474eba
         ;   XREF to: 004744b2 (CONDITIONAL_JUMP)  ; LAB_004744b2
     MOV EAX,[0x0061d95c]                ; 00474ec0 | g_CGamePtr | g_CGameInstance
-    MOV EDI,dword ptr [EAX + 0x264]     ; 00474ec5 | g_CGameInstance.field564_0x264
+    MOV EDI,dword ptr [EAX + 0x264]     ; 00474ec5 | g_CGameInstance.flashlight_active
     TEST EDI,EDI                        ; 00474ecb
     JNZ 0x004744b2                      ; 00474ecd
         ;   XREF to: 004744b2 (CONDITIONAL_JUMP)  ; LAB_004744b2
     SETZ DL                             ; 00474ed3
     AND EDX,0xff                        ; 00474ed6
-    MOV dword ptr [EAX + 0x264],EDX     ; 00474edc | g_CGameInstance.field564_0x264
+    MOV dword ptr [EAX + 0x264],EDX     ; 00474edc | g_CGameInstance.flashlight_active
     MOV ESP,EBP                         ; 00474ee2
     POP EBP                             ; 00474ee4
     POP EDI                             ; 00474ee5

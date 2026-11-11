@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 266,
+    "complexity_score": 251,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 36,
-    "suspect_count": 19,
+    "suspect_count": 18,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
       "unaffected_reg",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -134,14 +133,6 @@
       "severity": "moderate",
       "text": "float afStackY_ffc [1011];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&this_ptr->field_0x158);",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",

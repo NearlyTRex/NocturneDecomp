@@ -19,21 +19,21 @@
   },
   "cross_references": [
     {
-      "addr": "004ba930",
-      "from_addr": "004ba94e",
-      "name": "core_fldnotes.cpp_FUN_004ba930",
+      "addr": "004be0f0",
+      "from_addr": "004be44e",
+      "name": "core_fldnotes.cpp_FUN_004be0f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bc830",
       "from_addr": "004bc997",
-      "name": "core_fldnotes.cpp_FUN_004bc830",
+      "name": "core_fldnotes.cpp_SNotesMap_draw_FUN_004bc830",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004be0f0",
-      "from_addr": "004be44e",
-      "name": "core_fldnotes.cpp_FUN_004be0f0",
+      "addr": "004ba930",
+      "from_addr": "004ba94e",
+      "name": "core_fldnotes.cpp_SPageResourceText_draw_FUN_004ba930",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -605,7 +605,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x420c) != 0) && (_DAT_01c50948 != 0)) {",
+      "text": "if ((param_1->use_3d_rendering != 0) && (_DAT_01c50948 != 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -613,7 +613,7 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x4210) == 0) {",
+      "text": "if (param_1->win_font_enabled == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -661,7 +661,7 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x4214),param_2,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,param_2,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -669,7 +669,7 @@
       "line": 21,
       "match": "param_2",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x4214),param_2,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,param_2,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -677,7 +677,7 @@
       "line": 21,
       "match": "param_3",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x4214),param_2,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,param_2,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -685,7 +685,7 @@
       "line": 21,
       "match": "param_4",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x4214),param_2,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,param_2,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -693,7 +693,7 @@
       "line": 21,
       "match": "param_5",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x4214),param_2,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,param_2,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -701,7 +701,7 @@
       "line": 21,
       "match": "param_6",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x4214),param_2,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,param_2,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -717,7 +717,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x4210) == 0) {",
+      "text": "if (param_1->win_font_enabled == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -733,7 +733,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x420c) != 0) {",
+      "text": "if (param_1->use_3d_rendering != 0) {",
       "type": "unnamed_param"
     },
     {
@@ -741,7 +741,7 @@
       "line": 31,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "*(uint *)(param_1 + 0x1de0) = extraout_ECX | (int)ROUND(fVar5) << 0x18;",
+      "text": "param_1->accel_color = extraout_ECX | (int)ROUND(fVar5) << 0x18;",
       "type": "extra_output"
     },
     {
@@ -749,7 +749,7 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1de0) = extraout_ECX | (int)ROUND(fVar5) << 0x18;",
+      "text": "param_1->accel_color = extraout_ECX | (int)ROUND(fVar5) << 0x18;",
       "type": "unnamed_param"
     },
     {
@@ -781,7 +781,7 @@
       "line": 38,
       "match": "param_4",
       "severity": "mild",
-      "text": "param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);",
+      "text": "param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;",
       "type": "unnamed_param"
     },
     {
@@ -789,7 +789,7 @@
       "line": 38,
       "match": "param_4",
       "severity": "mild",
-      "text": "param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);",
+      "text": "param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;",
       "type": "unnamed_param"
     },
     {
@@ -797,7 +797,7 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);",
+      "text": "param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;",
       "type": "unnamed_param"
     },
     {
@@ -805,7 +805,7 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);",
+      "text": "param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;",
       "type": "unnamed_param"
     },
     {
@@ -941,7 +941,7 @@
       "line": 65,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x4214),pbVar3,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,pbVar3,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -949,7 +949,7 @@
       "line": 65,
       "match": "param_3",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x4214),pbVar3,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,pbVar3,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -957,7 +957,7 @@
       "line": 65,
       "match": "param_4",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x4214),pbVar3,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,pbVar3,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -965,7 +965,7 @@
       "line": 65,
       "match": "param_5",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x4214),pbVar3,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,pbVar3,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -973,7 +973,7 @@
       "line": 65,
       "match": "param_6",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x4214),pbVar3,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,pbVar3,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -981,7 +981,7 @@
       "line": 66,
       "match": "param_1",
       "severity": "mild",
-      "text": "unkafter_palette_cpp_FUN_005320b0(*(uint *)(param_1 + 0x4214));",
+      "text": "unkafter_palette_cpp_FUN_005320b0(param_1->win_font_helper);",
       "type": "unnamed_param"
     },
     {
@@ -997,7 +997,7 @@
       "line": 72,
       "match": "param_4",
       "severity": "mild",
-      "text": "param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);",
+      "text": "param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;",
       "type": "unnamed_param"
     },
     {
@@ -1005,7 +1005,7 @@
       "line": 72,
       "match": "param_4",
       "severity": "mild",
-      "text": "param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);",
+      "text": "param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;",
       "type": "unnamed_param"
     },
     {
@@ -1013,7 +1013,7 @@
       "line": 72,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);",
+      "text": "param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;",
       "type": "unnamed_param"
     },
     {
@@ -1021,7 +1021,7 @@
       "line": 72,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);",
+      "text": "param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;",
       "type": "unnamed_param"
     },
     {

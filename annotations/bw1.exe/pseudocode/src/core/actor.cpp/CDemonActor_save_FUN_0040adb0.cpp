@@ -34,7 +34,7 @@ void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040adb0(CDemonActor *this_ptr,
   (*((this_ptr->vtable)._ub)->archive)(this_ptr);
   core_actor_cpp_adjustIndentationLevel_FUN_0040ad60(-1);
   FUN_005c03c0(file_handle,"%s} %s \"%s\"\n",&DAT_006106c0,pcVar4,this_ptr);
-  if (((byte)file_handle[0xc] & 0x20) != 0) {
+  if ((file_handle->_flag & 0x20) != 0) {
     _DAT_01d1d400 = "..\\core\\actor.cpp";
     _DAT_01d1d404 = 0x7f1;
     core_main_c_FUN_005030e0("IO Error after writing actor of type %s",pcVar4);

@@ -2,15 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 104,
+    "complexity_score": 119,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 39,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_truncation",
+      "shadow_pointer_walk",
       "undefined_data",
       "warning_overlapping_globals"
     ],
@@ -192,7 +193,7 @@
       "line": 33,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "*(uint *)(pCVar2 + 0x3a64c) = *(uint *)(iVar4 + 0x20 + *DAT_00612560);",
+      "text": "pCVar2->locked_vertex_indices[600] = *(int *)(iVar4 + 0x20 + *DAT_00612560);",
       "type": "undefined_data"
     },
     {
@@ -210,6 +211,14 @@
       "severity": "moderate",
       "text": "return (int)pCVar3;",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom shadow-pointer walk (two-step form) \u2014 `pCVar2` is advanced into scratch `pCVar3`, then rebound via a later `pCVar2 = pCVar3;`. Functionally identical to the single-line self-update; replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer and drop both the advance line and the rebind.",
+      "line": 35,
+      "match": "pCVar3 = (T *)((pCVar2->FIELD).SUBFIELD...ARRAY + CONST); ...; pCVar2 = pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CCloth *)((pCVar2->model).model_filename + 4);",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

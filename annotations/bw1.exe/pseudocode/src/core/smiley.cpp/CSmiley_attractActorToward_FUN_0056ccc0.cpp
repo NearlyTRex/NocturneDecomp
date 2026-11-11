@@ -33,7 +33,8 @@ int __cdecl core_smiley_cpp_CSmiley_attractActorToward_FUN_0056ccc0(CSmiley *thi
     return 1;
   }
   core_xform_cpp_FUN_005b5080
-            (&DAT_02c8af28,&(this_ptr->base).base.model.field_0xe80 + _DAT_02c5fce0 * 0x30);
+            (&DAT_02c8af28,
+             (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_02c5fce0);
   puVar3 = &stack0xffffffd4;
   uStack_2c = uStack_14;
   *(uint *)((int)&stack0xffffffd8 + (uint)bVar2 * 0xfffffffe * 4) =

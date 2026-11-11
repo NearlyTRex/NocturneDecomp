@@ -25,10 +25,7 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_004263d0(CBugs *this_ptr,
   float afStackY_10a8 [952];
   CVector3f *velocity;
   float local_1b8;
-  SDamageInfo local_1b4 [4];
-  float local_1b0;
-  CBugs *local_180;
-  CBugs *local_17c;
+  SDamageInfo local_1b4;
   CMatrix3x4f CStack_178;
   CMatrix3x4f local_148;
   float afStack_118 [12];
@@ -71,7 +68,7 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_004263d0(CBugs *this_ptr,
   pCVar4 = this_ptr;
   if (0 < this_ptr->count) {
     do {
-      if (-1 < *(int *)&pCVar4->bugs[0].field_0x2c) {
+      if (-1 < pCVar4->bugs[0].current_vertex) {
         local_1b8 = (float)((int)local_1b8 + 1);
       }
       iVar5 = iVar5 + 1;
@@ -135,12 +132,12 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_004263d0(CBugs *this_ptr,
     this_ptr->damage_timer = 0.2;
     iVar5 = core_actor_cpp_castToClassHash_FUN_0040c600(this_ptr->swarm_target,uVar3);
     if (iVar5 != 0) {
-      core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(local_1b4);
+      core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&local_1b4);
       local_14 = local_1b8;
-      local_1b0 = (float)(int)local_1b8 * (float)_DAT_005d5128;
-      local_180 = this_ptr;
-      local_17c = this_ptr;
-      (**(code **)(*(int *)(iVar5 + 0x154) + 0x108))(iVar5,local_1b4);
+      local_1b4.damage_amount = (float)(int)local_1b8 * (float)_DAT_005d5128;
+      local_1b4.attacker = (CDemonActor *)this_ptr;
+      local_1b4.wielder = (CDemonActor *)this_ptr;
+      (**(code **)(*(int *)(iVar5 + 0x154) + 0x108))(iVar5,&local_1b4);
     }
   }
   core_xform_cpp_FUN_005b5760

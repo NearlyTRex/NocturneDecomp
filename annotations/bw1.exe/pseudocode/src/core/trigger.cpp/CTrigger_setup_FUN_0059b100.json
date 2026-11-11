@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 72,
+    "complexity_score": 57,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 42,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_constant",
-      "unnamed_field"
+      "raw_address_constant"
     ],
     "total_lines": 117
   },
@@ -118,14 +117,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x36c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x36c = 0;",
-      "type": "unnamed_field"
-    },
     {
       "description": "Raw hex address 0x1d2c900 assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
       "line": 10,

@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdarg.h"
 #include "types/classes/CBitFont.h"
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDeformableModelInstance.h"
@@ -43,7 +44,7 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004c0cd0(CBitFont *this_ptr
 void engine_font_cpp_FUN_004c0fa0(int param_1,int param_2);
 void engine_font_cpp_FUN_004c1520(int param_1,float param_2);
 void __cdecl engine_font_cpp_CBitFont_loadNewBitmap_FUN_004c1540(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags);
-void engine_font_cpp_FUN_004c157e(CBitFont *param_1,CBitFont *param_2);
+void engine_font_cpp_FUN_004c157e(CBitFont *param_1,char *param_2);
 void engine_font_cpp_FUN_004c1830(CBitFont *param_1);
 void __cdecl engine_font_cpp_CBitFont_setInitializedFlag_FUN_004c18b0(CBitFont *this_ptr);
 void engine_font_cpp_FUN_004c18c0(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5);
@@ -51,16 +52,16 @@ int __cdecl engine_font_cpp_CBitFont_calculateCharacterHeight_FUN_004c1d70(CBitF
 int engine_font_cpp_FUN_004c1dd0(CBitFont *param_1,byte *param_2,int param_3,int param_4,int param_5,int param_6);
 int __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_004c2060(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextF_FUN_004c2090(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
-int __cdecl engine_font_cpp_CBitFont_drawTextFV_FUN_004c20e0(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_7);
+int __cdecl engine_font_cpp_CBitFont_drawTextFV_FUN_004c20e0(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextRight_FUN_004c2150(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenter_FUN_004c2250(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterF_FUN_004c2290(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
-int __cdecl engine_font_cpp_CBitFont_drawTextCenterFV_FUN_004c22e0(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_7);
+int __cdecl engine_font_cpp_CBitFont_drawTextCenterFV_FUN_004c22e0(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004c2350(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004c23a0(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *format_string);
-int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004c23f0(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_8);
+int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004c23f0(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterInClip_FUN_004c2460(CBitFont *this_ptr,int y,int color_mode,int color_value,char *text);
-int __cdecl engine_font_cpp_CBitFont_printCenterFV_FUN_004c2500(CBitFont *this_ptr,int y,int color_mode,int color_value,undefined4 format_string,undefined4 param_6);
+int __cdecl engine_font_cpp_CBitFont_printCenterFV_FUN_004c2500(CBitFont *this_ptr,int y,int color_mode,int color_value,char *format_string,va_list_t args);
 void __cdecl engine_font_cpp_setShadowColor_FUN_004c2560(uint red,uint green,uint blue);
 int __cdecl engine_font_cpp_getDefaultTextColor_FUN_004c2690(void);
 void __cdecl engine_font_cpp_setDefaultTextColor_FUN_004c26b0(int text_color);

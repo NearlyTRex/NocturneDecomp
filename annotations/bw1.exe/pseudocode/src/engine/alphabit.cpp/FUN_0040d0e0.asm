@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   core_fldnotes.cpp_FUN_004bc2d0 at 004bc377
+;   core_fldnotes.cpp_SNotesMap_load_FUN_004bc2d0 at 004bc377
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220 at 0040d242
 ;
 ; Referenced Globals:
@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
-;   crt_unknown.c_FUN_005c08d0
+;   crt_memory.c_malloc_FUN_005c08d0
 ;   engine_alphabit.cpp_FUN_0040d1c0
 ;
 ; *****************************************************************************
@@ -44,8 +44,8 @@ section .text
     MOV dword ptr [EBX + 0xc],EDI       ; 0040d0fe
     PUSH EAX                            ; 0040d101
     MOV dword ptr [EBX + 0x10],ESI      ; 0040d102
-    CALL crt_unknown.c_FUN_005c08d0     ; 0040d105
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 0040d105
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 0040d10a
     MOV dword ptr [EBX],EAX             ; 0040d10d
     TEST EAX,EAX                        ; 0040d10f
@@ -55,8 +55,8 @@ section .text
         ;   Label: LAB_0040d113
     IMUL EAX,ESI                        ; 0040d115
     PUSH EAX                            ; 0040d118
-    CALL crt_unknown.c_FUN_005c08d0     ; 0040d119
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 0040d119
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 0040d11e
     MOV dword ptr [EBX + 0x4],EAX       ; 0040d121
     TEST EAX,EAX                        ; 0040d124
@@ -72,8 +72,8 @@ section .text
     ADD ESP,0x4                         ; 0040d148
     PUSH 0x400                          ; 0040d14b
         ;   Label: LAB_0040d14b
-    CALL crt_unknown.c_FUN_005c08d0     ; 0040d150
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 0040d150
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 0040d155
     MOV dword ptr [EBX + 0x8],EAX       ; 0040d158
     TEST EAX,EAX                        ; 0040d15b

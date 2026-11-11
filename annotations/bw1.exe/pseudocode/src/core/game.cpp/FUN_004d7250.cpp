@@ -34,7 +34,7 @@ void core_game_cpp_FUN_004d7250(CGame *param_1,int param_2)
   param_1->total_kill_count = 0;
   param_1->total_game_time = 0.0;
   param_1->total_play_time = 0.0;
-  *(uint *)&param_1->field_0x250 = 0;
+  param_1->is_loading = 0;
   local_18 = _DAT_01c3eb50;
   _DAT_01c3eb50 = _DAT_0152d244;
   iVar3 = _fopen("pod.ini",&DAT_005e3116);
@@ -110,20 +110,20 @@ void core_game_cpp_FUN_004d7250(CGame *param_1,int param_2)
       pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
     if (iVar4 == 0) {
-      *(uint *)&param_1->field_0xe8 = 0;
-      *(uint *)&param_1->field_0xe4 = 0;
+      param_1->combat_difficulty_mode = 0;
+      param_1->puzzle_difficulty_mode = 0;
     }
     if (iVar4 == 1) {
-      *(uint *)&param_1->field_0xe4 = 0;
-      *(uint *)&param_1->field_0xe8 = 1;
+      param_1->puzzle_difficulty_mode = 0;
+      param_1->combat_difficulty_mode = 1;
     }
     if (iVar4 == 2) {
-      *(uint *)&param_1->field_0xe8 = 0;
-      *(uint *)&param_1->field_0xe4 = 1;
+      param_1->combat_difficulty_mode = 0;
+      param_1->puzzle_difficulty_mode = 1;
     }
     if (iVar4 == 3) {
-      *(uint *)&param_1->field_0xe8 = 1;
-      *(uint *)&param_1->field_0xe4 = 1;
+      param_1->combat_difficulty_mode = 1;
+      param_1->puzzle_difficulty_mode = 1;
     }
     p_Var2 = engine_dosio_cpp_FUN_00479180("world",local_134,"rt");
     if (p_Var2 == (_FILE *)0x0) goto LAB_004d757b;
@@ -142,7 +142,7 @@ void core_game_cpp_FUN_004d7250(CGame *param_1,int param_2)
     } while (cVar1 != '\0');
     _DAT_01cd0aec = 0x41000000;
   }
-  core_fldnotes_cpp_FUN_004bdaa0(g_CFieldNotesPtr);
+  core_fldnotes_cpp_CFieldNotes_clear_FUN_004bdaa0(g_CFieldNotesPtr);
   core_event_cpp_FUN_004a9a00(0x01C51D80);
   iVar4 = 1;
   iVar3 = _stricmp(&DAT_01cd05c0,local_134);

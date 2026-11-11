@@ -1,0 +1,232 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 107,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 12,
+    "suspect_count": 8,
+    "suspect_types": [
+      "pointer_cast",
+      "unnamed_param",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 41
+  },
+  "cross_references": [
+    {
+      "addr": "004d6420",
+      "from_addr": "004d6748",
+      "name": "core_game.cpp_FUN_004d6420",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d6990",
+      "from_addr": "004d6c72",
+      "name": "core_game.cpp_FUN_004d6990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a17f0",
+      "from_addr": "005a1819",
+      "name": "support_trstream.cpp_COutStreamFile_ctorOpen_FUN_005a17f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a19e0",
+    "address_range": [
+      [
+        "005a19e0",
+        "005a1a1a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trstream.cpp_COutStreamFile_open_FUN_005a19e0",
+    "signature": "undefined4 __cdecl support_trstream_cpp_COutStreamFile_open_FUN_005a19e0(COutStreamFile *this_ptr,undefined4 param_2,undefined4 param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c157c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fopen_FUN_005c157c"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004d6c72",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004d6990",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004d6748",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004d6420",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005a1819",
+        "call_type": "direct",
+        "caller": "support_trstream.cpp_COutStreamFile_ctorOpen_FUN_005a17f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.28,
+    "instruction_count": 25,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CALLIND": 2,
+      "CBRANCH": 1,
+      "COPY": 22,
+      "INT_ADD": 13,
+      "INT_AND": 11,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 8,
+      "INT_XOR": 1,
+      "LOAD": 11,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 9
+    },
+    "pcode_op_count": 107
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "COutStreamFile *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint __cdecl support_trstream_cpp_COutStreamFile_open_FUN_005a19e0(COutStreamFile *this_ptr,uint param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uint __cdecl support_trstream_cpp_COutStreamFile_open_FUN_005a19e0(COutStreamFile *this_ptr,uint param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 7,
+      "match": "(code **)((int)this_ptr",
+      "severity": "moderate",
+      "text": "(**(code **)((int)this_ptr->vtable + 0x18))(this_ptr);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 7,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)((int)this_ptr->vtable + 0x18))(this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "p_Var1 = (_FILE *)_fopen(param_2,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "p_Var1 = (_FILE *)_fopen(param_2,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(code **)((int)this_ptr",
+      "severity": "moderate",
+      "text": "(**(code **)((int)this_ptr->vtable + 0x18))(this_ptr);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 13,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)((int)this_ptr->vtable + 0x18))(this_ptr);",
+      "type": "unresolved_funcptr"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "COutStreamFile",
+        "offset": 28,
+        "vtable_addr": "00607424"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

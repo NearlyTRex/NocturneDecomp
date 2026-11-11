@@ -34,7 +34,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_0044cc30(CDemonCamera *this_
     iVar1 = this_ptr->display_width;
     this_ptr->display_height = this_ptr->display_height / 2;
   }
-  pvVar2 = FUN_005c08d0
+  pvVar2 = malloc
                      (this_ptr->framebuffer_width * this_ptr->framebuffer_height * 4 + 0x1010);
   this_ptr->framebuffer_raw = pvVar2;
   if (pvVar2 == (void *)0x0) {
@@ -42,7 +42,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_0044cc30(CDemonCamera *this_
     _DAT_01d1d404 = 0x24a;
     core_main_c_FUN_005030e0("CDemonCamera::init - Unable to alloc frame buffer");
   }
-  pvVar2 = FUN_005c08d0
+  pvVar2 = malloc
                      (this_ptr->framebuffer_width * this_ptr->framebuffer_height * 4 + 0x1010);
   this_ptr->zbuffer_raw = pvVar2;
   if (pvVar2 == (void *)0x0) {

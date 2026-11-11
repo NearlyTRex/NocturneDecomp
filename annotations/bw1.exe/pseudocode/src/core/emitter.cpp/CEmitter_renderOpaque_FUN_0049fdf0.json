@@ -2,22 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 219,
+    "complexity_score": 179,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 13,
+    "pseudocode_lines": 54,
+    "suspect_count": 9,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "raw_address_constant",
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 163
+    "total_lines": 158
   },
   "cross_references": [],
   "function": {
@@ -171,86 +172,46 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 9,
-      "match": "auStackY_101c",
+      "match": "afStackY_101c",
       "severity": "moderate",
-      "text": "uint auStackY_101c [972];",
+      "text": "float afStackY_101c [972];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 20,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "if (((iVar1 == 0) && (*(int *)&this_ptr->field_0x158 == 3)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x168",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x168 != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x238",
-      "severity": "mild",
-      "text": "uStack_80 = *(uint *)&this_ptr->field_0x238;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x23c",
-      "severity": "mild",
-      "text": "uStack_7c = *(uint *)&this_ptr->field_0x23c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x240",
-      "severity": "mild",
-      "text": "uStack_78 = *(uint *)&this_ptr->field_0x240;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x244",
-      "severity": "mild",
-      "text": "uStack_74 = *(uint *)&this_ptr->field_0x244;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 40,
+      "line": 35,
       "match": "&stack0xffffff20",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)&stack0xffffff20;",
+      "text": "pfVar3 = (float *)&stack0xffffff20;",
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "puVar6 = &this_ptr->field_0x20;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(SLaserInfo *)((int)pSVar2",
+      "severity": "moderate",
+      "text": "pSVar2 = (SLaserInfo *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pSVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(int)pSVar2",
+      "severity": "moderate",
+      "text": "pSVar2 = (SLaserInfo *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Raw hex address 0x49fe45 assigned to bare local `uStack_94`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_94` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 29,
+      "line": 24,
       "match": "0x49fe45",
       "severity": "moderate",
       "text": "uStack_94 = 0x49fe45;",
@@ -258,7 +219,7 @@
     },
     {
       "description": "Raw hex address 0x1c57074 assigned to bare local `uVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 54,
+      "line": 49,
       "match": "0x1c57074",
       "severity": "moderate",
       "text": "uVar5 = 0x01C57074;",
@@ -266,10 +227,18 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 41,
+      "line": 36,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0x15; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 27,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "SStack_88.laser_type = this_ptr->laser_type;",
       "type": "unrolled_memcpy"
     }
   ],

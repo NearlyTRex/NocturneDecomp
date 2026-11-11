@@ -11,8 +11,8 @@
 CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_ctor_FUN_005af2d0(CWerewolf *this_ptr)
 
 {
-  uint uVar1;
-  uint uVar2;
+  float fVar1;
+  float fVar2;
   float fVar3;
   CWerewolf *pCVar4;
   
@@ -20,20 +20,20 @@ CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_ctor_FUN_005af2d0(CWerewolf *thi
   (pCVar4->base).base.base.vtable._ub = &g_CWerewolfVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
             (&(pCVar4->base).base.model,(char *)0x5f99d4);
-  *(uint *)&(pCVar4->base).base.field_0x2fec = 0x3f800000;
-  *(uint *)&(pCVar4->base).base.field_0x2ff0 = 0x40000000;
+  (pCVar4->base).base.collision_cylinder_height = 1.0;
+  (pCVar4->base).base.collision_cylinder_radius = 2.0;
   pCVar4->type = WEREWOLF_TYPE_TRAIN;
   pCVar4->light_up_eyes = 1;
   pCVar4->chain_anchor = (CDemonActor *)0x0;
-  uVar1 = _DAT_00607fd0;
+  fVar1 = _DAT_00607fd0;
   pCVar4->chain_length = 5.0;
-  uVar2 = _DAT_00607fd4;
+  fVar2 = _DAT_00607fd4;
   pCVar4->alpha1 = (CDemonActor *)0x0;
   fVar3 = 0x41200000;
   pCVar4->alpha2 = (CDemonActor *)0x0;
   pCVar4->phase = 0;
-  *(uint *)&(pCVar4->base).base.field_0x2ff4 = uVar1;
-  *(uint *)&(pCVar4->base).base.field_0x2ff8 = uVar2;
+  (pCVar4->base).base.ai_detection_range_min = fVar1;
+  (pCVar4->base).base.ai_detection_range_max = fVar2;
   pCVar4->phase_timer = fVar3;
   return pCVar4;
 }

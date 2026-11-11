@@ -30,7 +30,7 @@
 ;   undefined4 DAT_00622f34
 ;   undefined4 DAT_01bc120c
 ;   undefined4 DAT_01c51cac
-;   undefined4 g_CGameInstance.field480_0x210
+;   undefined4 g_CGameInstance.render_mode
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
@@ -57,7 +57,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 00554add
         ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     MOV EAX,[0x0061d95c]                ; 00554ae2 | g_CGamePtr
-    MOV ECX,dword ptr [EAX + 0x210]     ; 00554ae7 | g_CGameInstance.field480_0x210
+    MOV ECX,dword ptr [EAX + 0x210]     ; 00554ae7 | g_CGameInstance.render_mode
     ADD ESP,0x8                         ; 00554aed
     CMP ECX,0x2                         ; 00554af0
     JNZ 0x00554cd9                      ; 00554af3

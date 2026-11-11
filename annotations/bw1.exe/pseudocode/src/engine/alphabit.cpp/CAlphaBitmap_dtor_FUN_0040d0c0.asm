@@ -8,8 +8,8 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[13]:
-;   core_fldnotes.cpp_NotesMap_dtor_FUN_004bc210 at 004bc227
-;   core_fldnotes.cpp_PageResource_Bitmap_dtor_FUN_004baad0 at 004baaf2
+;   core_fldnotes.cpp_SNotesMap_dtor_FUN_004bc210 at 004bc227
+;   core_fldnotes.cpp_SPageResourceBitmap_dtor_FUN_004baad0 at 004baaf2
 ;   core_game.cpp_CGame_displayActStats_FUN_004d8700 at 004d8a7b
 ;   core_game.cpp_CGame_finishAct_FUN_004d8a90 at 004d8e2e
 ;   core_game.cpp_CGame_rollCredits_FUN_004d8e50 at 004d911e

@@ -23,7 +23,7 @@ void core_doc_cpp_FUN_00473c10(CCharacter *param_1,float param_2,int param_3)
   float local_15c;
   float local_158;
   float fStack_150;
-  byte auStack_14c [40];
+  SCollisionInfo SStack_14c;
   float local_124;
   float local_120;
   float local_11c;
@@ -91,11 +91,10 @@ void core_doc_cpp_FUN_00473c10(CCharacter *param_1,float param_2,int param_3)
           ((((int)local_f8 < 0x40c00001 && (this_ptr != param_1)) &&
            (EVar3 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr),
            EVar3 == DEATH_STATE_ALIVE)))))) {
-        core_setcolid_cpp_SCollisionInfo_ctor_FUN_005593c0((SCollisionInfo *)auStack_14c);
-        EVar4 = (*((this_ptr->base).vtable._ub)->getCollisionType)
-                          (&this_ptr->base,(SCollisionInfo *)auStack_14c);
+        core_setcolid_cpp_SCollisionInfo_ctor_FUN_005593c0(&SStack_14c);
+        EVar4 = (*((this_ptr->base).vtable._ub)->getCollisionType)(&this_ptr->base,&SStack_14c);
         if ((EVar4 == COLLISION_TYPE_CYLINDER) &&
-           (fStack_150 = 1.0 - ((local_f8 - (float)auStack_14c._28_4_) + (float)_DAT_005da3ec) *
+           (fStack_150 = 1.0 - ((local_f8 - SStack_14c.cylinder_radius) + (float)_DAT_005da3ec) *
                                (float)_DAT_005da3d4, local_158 <= fStack_150)) {
           if (fStack_150 < 0.0) {
             fStack_150 = 0.0;

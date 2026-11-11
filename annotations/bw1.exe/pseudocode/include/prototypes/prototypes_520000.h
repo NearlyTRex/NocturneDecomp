@@ -79,10 +79,10 @@ CMooCow * core_moocow_cpp_CMooCow_dtor_FUN_00521ad0(CMooCow *this_ptr,uint flags
 void core_moon_cpp_staticInit_FUN_00521b60(void);
 CMoon * core_moon_cpp_CMoon_ctor_FUN_00521bc0(CMoon *this_ptr);
 CMoon * core_moon_cpp_CMoon_dtor_FUN_00521c00(CMoon *this_ptr,uint flags);
-void core_moon_cpp_FUN_00521c50(int *param_1);
-void core_moon_cpp_FUN_00521d50(int *param_1);
-void core_moon_cpp_FUN_00521dd0(undefined4 param_1,float param_2);
-void core_moon_cpp_FUN_00521e40(int param_1);
+void __cdecl core_moon_cpp_CMoon_init_FUN_00521c50(CMoon *this_ptr);
+void __cdecl core_moon_cpp_CMoon_free_FUN_00521d50(CMoon *this_ptr);
+void __cdecl core_moon_cpp_CMoon_update_FUN_00521dd0(CMoon *this_ptr,float param_2);
+void __cdecl core_moon_cpp_CMoon_render_FUN_00521e40(CMoon *this_ptr);
 int __cdecl core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_005220b0(CMoon *this_ptr);
 CAlphaBitmap * unkafter_moon_cpp_CAlphaBitmap_arrdtor30_FUN_005220d0(CAlphaBitmap *this_ptr,uint flags);
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_ctor_FUN_00522120(CMorphModel *this_ptr);

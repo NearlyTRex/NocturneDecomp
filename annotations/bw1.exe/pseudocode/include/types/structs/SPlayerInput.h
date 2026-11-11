@@ -4,12 +4,17 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SPlayerActionState.h"
 
 // Structure: SPlayerInput
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// applySimFrameHistory 005305a0 copies 12 dwords per player into hero+player_input; sendSimFrameAck 00530710 copies 12 dwords into the PLAYER_INPUT packet from SNetPlayer+0x4c; getMyControls 00530660: SNetPlayer stride 124 with player_input at +0x4c (124 = 0x4c + 48).
+// Ghidra size: 0x30 (48 bytes)
 #pragma pack(push, 1)
 typedef struct SPlayerInput {
+    SPlayerActionState action_state; // 0x0, FUN_004d0ee0 writes the action slots
+    float strafe_speed; // 0x24, FUN_004d0ee0 zeroes and ramps +0x24 (nocedit +0x20)
+    float turn_speed; // 0x28, FUN_004d0ee0 +0x28; processMouseControls clamps it
+    float look_up_down_speed; // 0x2c, FUN_004d0ee0 +0x2c
 } SPlayerInput;
 #pragma pack(pop)
 

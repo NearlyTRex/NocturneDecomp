@@ -17,17 +17,17 @@ int __cdecl engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(CBitFont *this_pt
   
   iVar5 = 0;
   pcVar3 = text;
-  if (*(int *)(this_ptr + 0x4210) == 0) {
+  if (this_ptr->win_font_enabled == 0) {
     while (*text != 0) {
       iVar2 = 0;
       do {
         bVar1 = *text;
         text = text + 1;
         if (bVar1 == 10) break;
-        iVar2 = iVar2 + *(int *)(this_ptr + (uint)bVar1 * 4 + 0x35e8) + *(int *)(this_ptr + 0x41f4);
+        iVar2 = iVar2 + this_ptr->char_widths[bVar1] + this_ptr->char_spacing;
       } while (*text != 0);
       if (0 < iVar2) {
-        iVar2 = iVar2 - *(int *)(this_ptr + 0x41f4);
+        iVar2 = iVar2 - this_ptr->char_spacing;
       }
       if (iVar5 < iVar2) {
         iVar5 = iVar2;
@@ -49,8 +49,8 @@ LAB_004c3ed6:
     if (pcVar4 != (char *)0x0) {
       *pcVar4 = '\0';
     }
-    iVar2 = (**(code **)(*(int *)(*(int *)(this_ptr + 0x4214) + 0x6a44) + 8))
-                      (*(int *)(this_ptr + 0x4214),pcVar3);
+    iVar2 = (*((this_ptr->win_font_helper->base).vtable)->getStringWidth)
+                      (this_ptr->win_font_helper,pcVar3);
     if (iVar5 < iVar2) {
       iVar5 = iVar2;
     }

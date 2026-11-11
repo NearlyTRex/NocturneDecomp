@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_0051def0(CMobster *this_ptr,float delta_time)
@@ -44,7 +45,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_0051def0(CMobster *this_p
   CDeformableModelInstance *local_18;
   
   bVar3 = 0;
-  if (*(int *)&(this_ptr->base).base.field_0x2628 == 0) {
+  if ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) {
     this_ptr->firing_blend = 0.0;
   }
   else {
@@ -56,7 +57,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_0051def0(CMobster *this_p
         return;
       }
       iVar2 = core_actor_cpp_castToClassHash_FUN_0040c600
-                        (*(uint *)&(this_ptr->base).base.field_0x2628,
+                        ((this_ptr->base).base.carry_hands[1].carry_actor,
                          g_CWeaponClassInfo.name_hash);
       if (iVar2 == 0) {
         _DAT_01d1d400 = "..\\core\\mobster.cpp";
@@ -68,7 +69,8 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_0051def0(CMobster *this_p
         local_b4 = 1.5707964;
       }
       core_xform_cpp_FUN_005b5080
-                (&DAT_02c8af28,&(this_ptr->base).base.model.field_0xe80 + _DAT_01d33c08 * 0x30);
+                (&DAT_02c8af28,
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01d33c08);
       pfVar6 = afStack_9c + 0xd;
       local_68[0] = (float)local_44;
       afStack_9c[(uint)bVar3 * -2 + 0xe] = afStack_9c[(uint)bVar3 * -2 + 0x17];
@@ -132,7 +134,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_0051def0(CMobster *this_p
       if (local_b4 < local_70) {
         local_70 = local_b4;
       }
-      if (*(int *)&(this_ptr->base).base.field_0x25b0 == 0) {
+      if ((this_ptr->base).base.carry_hands[0].carry_actor == (CDemonActor *)0x0) {
         fVar5 = this_ptr->firing_blend;
         uVar4 = 2;
       }

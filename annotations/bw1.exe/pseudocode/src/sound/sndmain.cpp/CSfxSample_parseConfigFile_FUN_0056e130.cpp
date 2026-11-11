@@ -57,7 +57,8 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_0056e130(CSfxSampl
   }
   engine_dosio_cpp_makePath_FUN_004795b0(local_358,(char *)0x0,(char *)0x0,local_158,&DAT_005f2c5f);
   unkclass_instream_cpp_CInStreamFile_ctor_FUN_005a08d0(&local_58);
-  iVar5 = support_trstream_cpp_FUN_005a0fd0(&local_58,"sound",local_358,1);
+  iVar5 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_005a0fd0
+                    (&local_58,"sound",local_358,1);
   if (iVar5 != 0) {
     local_20 = &(this_ptr->sample_info).max_distance;
     local_28 = &(this_ptr->sample_info).reference_volume_distance;

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 174,
+    "complexity_score": 99,
     "cross_reference_count": 11,
     "function_call_count": 4,
     "global_count": 16,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 54,
-    "suspect_count": 10,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_truncation",
-      "unnamed_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
@@ -399,14 +398,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x108 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 24,
       "match": "code *",
@@ -415,59 +406,11 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x108 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "if (-1 < *(int *)&pCVar2->field_0x160) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Pointer value `&this_ptr[-0x28126].options.base_frequency` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 46,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "if ((int)&this_ptr[-0x28126].options.field_0x3c / 0x11c != *(int *)&pCVar2->field_0x160) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "if ((int)&this_ptr[-0x28126].options.field_0x3c / 0x11c != *(int *)&pCVar2->field_0x160) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x160 = 0xffffffff;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x118 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Pointer value `&this_ptr[-0x28126].options.field_0x3c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
-      "match": "(int)&this_ptr[-0x28126].options.field_0x3c",
+      "match": "(int)&this_ptr[-0x28126].options.base_frequency",
       "severity": "moderate",
-      "text": "if ((int)&this_ptr[-0x28126].options.field_0x3c / 0x11c != *(int *)&pCVar2->field_0x160) {",
+      "text": "if ((int)&this_ptr[-0x28126].options.base_frequency / 0x11c != pCVar2->streaming_slot_index) {",
       "type": "pointer_truncation"
     }
   ]

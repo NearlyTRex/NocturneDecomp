@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 235,
+    "complexity_score": 233,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
+    "pseudocode_lines": 38,
     "suspect_count": 18,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
       "unrolled_strcpy"
     ],
-    "total_lines": 109
+    "total_lines": 107
   },
   "cross_references": [
     {
@@ -190,7 +190,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1 != (char *)0x0) && (*param_1 != '\\0')) {",
@@ -198,7 +198,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1 != (char *)0x0) && (*param_1 != '\\0')) {",
@@ -206,7 +206,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = engine_dosio_cpp_getFullPath_FUN_00479720(local_14c,param_1);",
@@ -214,15 +214,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x204) = local_36;",
+      "text": "*(long *)(param_1 + 0x204) = local_4c._st_size;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0x200] = '\\0';",
@@ -230,7 +230,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0x201] = '\\0';",
@@ -238,7 +238,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0x202] = '\\0';",
@@ -246,7 +246,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0x203] = '\\0';",
@@ -254,15 +254,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20c) = local_2e;",
+      "text": "*(time_t *)(param_1 + 0x20c) = local_4c._st_mtime;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar4 = param_1 + 0x100;",
@@ -270,15 +270,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x210) = local_2e;",
+      "text": "*(time_t *)(param_1 + 0x210) = local_4c._st_mtime;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0x208] = '\\0';",
@@ -286,7 +286,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0x209] = '\\0';",
@@ -294,7 +294,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0x20a] = '\\0';",
@@ -302,7 +302,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0x20b] = '\\0';",
@@ -310,7 +310,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 26,
+      "line": 24,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

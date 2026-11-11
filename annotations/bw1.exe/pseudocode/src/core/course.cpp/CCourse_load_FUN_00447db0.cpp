@@ -13,7 +13,7 @@ void __cdecl core_course_cpp_CCourse_load_FUN_00447db0(CCourse *this_ptr,char *f
 {
   _FILE *p_Var1;
   int iVar2;
-  CCourseFrame *pCVar3;
+  int iVar3;
   int iVar4;
   byte auStack_18 [4];
   uint local_14;
@@ -44,11 +44,11 @@ void __cdecl core_course_cpp_CCourse_load_FUN_00447db0(CCourse *this_ptr,char *f
   if (0 < this_ptr->len) {
     iVar4 = 0;
     do {
-      pCVar3 = this_ptr->frames + iVar4;
+      iVar3 = (int)&(this_ptr->frames->pos).x + iVar4;
       iVar2 = iVar2 + 1;
       iVar4 = iVar4 + 0x1c;
-      _fscanf(p_Var1,"%f,%f,%f, %f,%f,%f,%f\n",pCVar3,pCVar3 + 4,pCVar3 + 8,pCVar3 + 0xc,
-                 pCVar3 + 0x10,pCVar3 + 0x14,pCVar3 + 0x18);
+      _fscanf(p_Var1,"%f,%f,%f, %f,%f,%f,%f\n",iVar3,iVar3 + 4,iVar3 + 8,iVar3 + 0xc,iVar3 + 0x10,
+                 iVar3 + 0x14,iVar3 + 0x18);
     } while (iVar2 < this_ptr->len);
   }
   _fclose(p_Var1);

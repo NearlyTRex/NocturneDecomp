@@ -14,7 +14,7 @@ void engine_mini3d_cpp_FUN_00514c90(int param_1)
   void *pvVar1;
   uint uVar2;
   
-  pvVar1 = FUN_005c08d0(param_1 * 0x20 + 0x20);
+  pvVar1 = malloc(param_1 * 0x20 + 0x20);
   if (pvVar1 != (void *)0x0) {
     uVar2 = (int)pvVar1 + 0x20U & 0xffffffe0;
     *(char *)(uVar2 - 1) = (char)uVar2 - (char)pvVar1;

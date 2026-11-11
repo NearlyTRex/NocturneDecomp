@@ -56,7 +56,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005317c0(CNPC *this_ptr,float delta_t
        (this_ptr->base).model.accumulated_root_motion.z;
   (this_ptr->base).model.accumulated_root_motion.x =
        (this_ptr->base).model.accumulated_root_motion.y;
-  local_90 = delta_time * *(float *)&this_ptr->field_0x1fab4;
+  local_90 = delta_time * this_ptr->speed;
   local_14 = 0;
   pCVar1 = &(this_ptr->base).model;
   while (0.0 < local_90) {
@@ -65,8 +65,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005317c0(CNPC *this_ptr,float delta_t
   }
   EVar6 = (*(((this_ptr->base).base.vtable._uc)->_uc).getDeathState)(&this_ptr->base);
   if ((((1 < (int)EVar6) && ((this_ptr->base).base.lifecycle_state == ACTOR_CREATED)) &&
-      (*(int *)&this_ptr->field_0x1fab0 == 0)) &&
-     ((this_ptr->base).base.standing_platform == (CPlatform *)0x0)) {
+      (this_ptr->pool_me == 0)) && ((this_ptr->base).base.standing_platform == (CPlatform *)0x0)) {
     core_skeleton_cpp_FUN_00569040(pCVar1,0);
     pfVar10 = afStack_4c + 0xb;
     afStack_20[0] = afStack_4c[2];
@@ -82,11 +81,11 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005317c0(CNPC *this_ptr,float delta_t
     *(float *)((int)&CStack_5c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
          afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
     core_gore_cpp_CGore_createBloodPool_FUN_004e62e0(this_ptr_01,pCVar8,blood_type);
-    *(uint *)&this_ptr->field_0x1fab0 = 1;
+    this_ptr->pool_me = 1;
     local_14 = 1;
   }
-  fVar3 = *(float *)&this_ptr->field_0x1fab4;
-  *(float *)&(this_ptr->base).field_0x2524 = (this_ptr->base).model.accumulated_root_motion.z;
+  fVar3 = this_ptr->speed;
+  (this_ptr->base).walk_step_speed = (this_ptr->base).model.accumulated_root_motion.z;
   core_charactr_cpp_FUN_00435320(this_ptr,delta_time * fVar3);
   iVar5 = core_charactr_cpp_CCharacter_processWalking_FUN_00432240(&this_ptr->base,delta_time);
   if (iVar5 == 0) goto LAB_00531950;

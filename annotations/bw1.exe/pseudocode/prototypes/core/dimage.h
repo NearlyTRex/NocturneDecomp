@@ -23,4 +23,4 @@ ushort __cdecl CDemonImage::packColor(CDemonImage *this_ptr,uint red,uint green,
 
 // Original: core_dimage.cpp_FUN_0045f18e
 // Address: 0045f18e
-void FUN_0045f18e(CDemonImage *param_1,CDemonImage *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+void FUN_0045f18e(CDemonImage *param_1,CDemonImage *param_2,int param_3,int param_4,undefined4 param_5);

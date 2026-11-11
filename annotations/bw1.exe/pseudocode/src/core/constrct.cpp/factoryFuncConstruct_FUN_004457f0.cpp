@@ -11,7 +11,7 @@ void core_constrct_cpp_factoryFuncConstruct_FUN_004457f0(void)
 {
   CConstruct *this_ptr;
   
-  this_ptr = (CConstruct *)debugAllocTracked1(0xca6c);
+  this_ptr = (CConstruct *)operator_new(0xca6c);
   if (this_ptr == (CConstruct *)0x0) {
     return;
   }

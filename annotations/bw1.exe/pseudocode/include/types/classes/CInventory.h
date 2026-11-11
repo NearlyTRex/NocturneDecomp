@@ -2,14 +2,42 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CAmmo;
+struct CGoggles;
+struct CLightGun;
+struct CWeapon;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
 
 // Structure: CInventory
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x46c (1132 bytes)
 #pragma pack(push, 1)
 typedef struct CInventory {
+    float battery_charge; // 0x0
+    struct CDemonActor* owner; // 0x4
+    int show_compass; // 0x8, Added in this build
+    int show_sps; // 0xc, Added in this build
+    int item_count; // 0x10
+    struct CDemonActor* items[100]; // 0x14
+    float item_angles[100]; // 0x1a4
+    int save_version; // 0x334
+    struct CWeapon* selected_weapon; // 0x338
+    struct CDemonActor* selected_item; // 0x33c
+    float weapon_highlight_timer; // 0x340
+    float item_highlight_timer; // 0x344
+    float inventory_display_timer; // 0x348
+    float message_display_timer; // 0x34c
+    float ammo_detail_timer; // 0x350
+    char message_text[256]; // 0x354
+    int render_mode_flag; // 0x454
+    int preserve_items; // 0x458
+    struct CLightGun* light_gun_ptr; // 0x45c
+    struct CGoggles* goggles_ptr; // 0x460, Added in this build
+    struct CAmmo* ammo_ptr; // 0x464
+    int cached_ammo_count; // 0x468
 } CInventory;
 #pragma pack(pop)
 

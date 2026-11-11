@@ -11,25 +11,25 @@
 void __cdecl core_constrct_cpp_CConstruct_archive_FUN_00446e30(CConstruct *this_ptr)
 
 {
+  CDeformableModelInstance *model_ptr;
   int iVar1;
-  byte *puVar2;
-  byte *puVar3;
-  byte *puVar4;
+  CQuaternion4f *pCVar2;
+  CBodyPart **ppCVar3;
+  CQuaternion4f *pCVar4;
   uint uStack_28;
   uint uStack_24;
   uint uStack_20;
   int aiStack_1c [2];
-  byte *puStack_14;
-  byte *puStack_10;
-  byte *puStack_c;
+  SBoneGuyBox *pSStack_14;
+  CVector3f *pCStack_10;
+  CVector3f *pCStack_c;
   
-  core_enemy_cpp_CEnemy_archive_FUN_004a0520((CEnemy *)this_ptr);
-  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0xc1d0,"@speed" + 1);
-  core_actor_cpp_archiveDeformableModelInstance_FUN_0040b7f0
-            ((CDeformableModelInstance *)&this_ptr->field_0x158,"modelName");
-  core_actor_cpp_archiveMotionState_FUN_0040b870
-            ((CMotionController *)&this_ptr->field_0x158,"motion state");
-  core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0xc268,"fallEvent");
+  core_enemy_cpp_CEnemy_archive_FUN_004a0520(&this_ptr->base);
+  core_actor_cpp_archiveFloat_FUN_0040b5f0(&(this_ptr->base).speed,"@speed" + 1);
+  model_ptr = &(this_ptr->base).base.model;
+  core_actor_cpp_archiveDeformableModelInstance_FUN_0040b7f0(model_ptr,"modelName");
+  core_actor_cpp_archiveMotionState_FUN_0040b870(&model_ptr->base,"motion state");
+  core_actor_cpp_archiveString_FUN_0040b440(this_ptr->fall_event,"fallEvent");
   if (g_CConstructClassVersion < 3) {
     aiStack_1c[0] = 0;
     aiStack_1c[1] = 0;
@@ -46,36 +46,35 @@ void __cdecl core_constrct_cpp_CConstruct_archive_FUN_00446e30(CConstruct *this_
   else if (g_CConstructClassVersion < 2) {
     return;
   }
-  core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0xc328,"deathEvent");
-  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0xc38c,"recombineTime");
-  core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0xca58,"blownUp");
-  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0xca5c,"param");
-  core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0xc394,"boxCount");
-  core_actor_cpp_archivePartStatus_FUN_0040b960
-            ((CDeformableModelInstance *)&this_ptr->field_0x158,"partStatus");
+  core_actor_cpp_archiveString_FUN_0040b440(this_ptr->death_event,"deathEvent");
+  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->recombine_time,"recombineTime");
+  core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->blown_up,"blownUp");
+  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->recombine_interpolation,"param");
+  core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->box_count,"boxCount");
+  core_actor_cpp_archivePartStatus_FUN_0040b960(&(this_ptr->base).base.model,"partStatus");
   iVar1 = 0;
-  if (*(int *)&this_ptr->field_0xc394 < 1) {
+  if (this_ptr->box_count < 1) {
     return;
   }
-  puStack_14 = &this_ptr->field_0xc398;
-  puStack_10 = &this_ptr->field_0xc3d0;
-  puVar3 = &this_ptr->field_0xc3dc;
-  puVar2 = &this_ptr->field_0xc3c0;
-  puStack_c = &this_ptr->field_0xc3a4;
-  puVar4 = &this_ptr->field_0xc3b0;
+  pSStack_14 = this_ptr->boxes;
+  pCStack_10 = &this_ptr->boxes[0].source_pos;
+  ppCVar3 = &this_ptr->boxes[0].body_part;
+  pCVar2 = &this_ptr->boxes[0].start_orient;
+  pCStack_c = &this_ptr->boxes[0].orient;
+  pCVar4 = &this_ptr->boxes[0].dest_orient;
   do {
-    core_actor_cpp_archiveVector_FUN_0040b1c0(puStack_14 + iVar1 * 0x48,"boxListPos");
-    core_actor_cpp_archiveVector_FUN_0040b1c0(puStack_c,"boxListOrient");
-    core_actor_cpp_archiveQuaternion_FUN_0040b3a0(puVar4,"boxListDestOrient");
-    core_actor_cpp_archiveQuaternion_FUN_0040b3a0(puVar2,"boxListStartOrient");
-    core_actor_cpp_archiveVector_FUN_0040b1c0(puStack_10,"sourcePos");
+    core_actor_cpp_archiveVector_FUN_0040b1c0(pSStack_14 + iVar1,"boxListPos");
+    core_actor_cpp_archiveVector_FUN_0040b1c0(pCStack_c,"boxListOrient");
+    core_actor_cpp_archiveQuaternion_FUN_0040b3a0(pCVar4,"boxListDestOrient");
+    core_actor_cpp_archiveQuaternion_FUN_0040b3a0(pCVar2,"boxListStartOrient");
+    core_actor_cpp_archiveVector_FUN_0040b1c0(pCStack_10,"sourcePos");
     iVar1 = iVar1 + 1;
-    puVar4 = puVar4 + 0x48;
-    puVar2 = puVar2 + 0x48;
-    core_actor_cpp_archiveActor_FUN_0040b6f0(puVar3,"boxListPart");
-    puVar3 = puVar3 + 0x48;
-    puStack_10 = puStack_10 + 0x48;
-    puStack_c = puStack_c + 0x48;
-  } while (iVar1 < *(int *)&this_ptr->field_0xc394);
+    pCVar4 = (CQuaternion4f *)((int)(pCVar4 + 4) + 8);
+    pCVar2 = (CQuaternion4f *)((int)(pCVar2 + 4) + 8);
+    core_actor_cpp_archiveActor_FUN_0040b6f0(ppCVar3,"boxListPart");
+    ppCVar3 = ppCVar3 + 0x12;
+    pCStack_10 = pCStack_10 + 6;
+    pCStack_c = pCStack_c + 6;
+  } while (iVar1 < this_ptr->box_count);
   return;
 }

@@ -14,15 +14,15 @@ CInStreamFile * unkclass_instream_cpp_CInStreamFile_ctor_FUN_005a08d0(CInStreamF
   CInStreamFile *pCVar1;
   
   pCVar1 = (CInStreamFile *)unkaddr_0059f520_cpp_FUN_0059f540(this_ptr);
-  *(byte ***)pCVar1 = &g_CInStreamFileVTable;
-  *(uint *)&pCVar1->field_0x4 = 0;
-  *(uint *)&pCVar1->field_0x8 = 0;
-  *(uint *)&pCVar1->field_0xc = 0;
-  *(uint *)&pCVar1->field_0x10 = 0;
-  *(uint *)&pCVar1->field_0x14 = 0;
-  *(uint *)&pCVar1->field_0x18 = 0;
-  *(uint *)&pCVar1->field_0x1c = 0;
-  *(uint *)&pCVar1->field_0x20 = 0;
-  *(uint *)&pCVar1->field_0x24 = 0;
+  pCVar1->vtable = &g_CInStreamFileVTable;
+  pCVar1->file_handle = (HANDLE)0x0;
+  pCVar1->file_size = 0;
+  pCVar1->file_offset = 0;
+  pCVar1->position = 0;
+  pCVar1->buffer_alloc = (void *)0x0;
+  pCVar1->buffer = (char *)0x0;
+  pCVar1->buffer_start = 0;
+  pCVar1->buffer_capacity = 0;
+  pCVar1->buffer_length = 0;
   return pCVar1;
 }

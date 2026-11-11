@@ -12,5 +12,5 @@ char * __cdecl core_motion_cpp_CMotionController_getCurrentStateName_FUN_00524a1
   SMotion *pSVar1;
   
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(this_ptr);
-  return (char *)(this_ptr->motion_list_ptr + *(int *)(pSVar1 + 0x24) * 0x1e + 4);
+  return this_ptr->motion_list_ptr->state_names[pSVar1->state_index];
 }

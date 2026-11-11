@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 113,
+    "complexity_score": 64,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
-    "suspect_count": 6,
+    "pseudocode_lines": 34,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "raw_address_constant",
-      "unnamed_field",
-      "unresolved_funcptr"
+      "raw_address_constant"
     ],
-    "total_lines": 113
+    "total_lines": 114
   },
   "cross_references": [
     {
@@ -234,38 +232,6 @@
       "severity": "moderate",
       "text": "(*(uint *)((int)g_CDemonSetPtr->actors + iVar3),",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 27,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(*(code *)**(uint **)&this_ptr->baron->field_0x154)(this_ptr->baron);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(*(code *)**(uint **)&this_ptr->baron->field_0x154)(this_ptr->baron);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 30,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->baron->field_0x154 + 0x68))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->baron->field_0x154 + 0x68))",
-      "type": "unnamed_field"
     },
     {
       "description": "Raw hex address 0x1d2c900 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",

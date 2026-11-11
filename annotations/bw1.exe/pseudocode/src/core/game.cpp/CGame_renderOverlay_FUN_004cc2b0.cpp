@@ -99,7 +99,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004cc2b0(CGame *this_ptr)
     _sprintf(local_164,"?%d - %s" + 1);
     engine_font_cpp_FUN_004c1dd0(this_ptr_00,local_164,iVar4 * 2,(iVar5 - iVar3) - iVar4,0xf8,0);
   }
-  if ((*(int *)&this_ptr->field_0x244 == 0) && (0 < this_ptr->status_display_count)) {
+  if ((this_ptr->letterbox_mode == 0) && (0 < this_ptr->status_display_count)) {
     iVar4 = local_60 >> 0x1f;
     iVar3 = local_60 + iVar4 * -4;
     local_44 = local_5c / 0x28;

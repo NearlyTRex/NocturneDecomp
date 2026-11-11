@@ -15,9 +15,9 @@
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field164_0xd4
-;   undefined4 g_CGameInstance.field444_0x1ec
-;   undefined4 g_CGameInstance.field536_0x248
+;   undefined4 g_CGameInstance.hero_number
+;   undefined4 g_CGameInstance.god_mode_enabled
+;   undefined4 g_CGameInstance.allow_damage_flag
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
@@ -45,13 +45,13 @@ section .text
         ;   XREF to: 004cac77 (CONDITIONAL_JUMP)  ; LAB_004cac77
     MOV EAX,[0x0061d95c]                ; 004cab2f | g_CGamePtr
         ;   Label: LAB_004cab2f
-    CMP dword ptr [EAX + 0x1ec],0x0     ; 004cab34 | g_CGameInstance.field444_0x1ec
+    CMP dword ptr [EAX + 0x1ec],0x0     ; 004cab34 | g_CGameInstance.god_mode_enabled
     JZ 0x004cab44                       ; 004cab3b
         ;   XREF to: 004cab44 (CONDITIONAL_JUMP)  ; LAB_004cab44
     MOV dword ptr [ESI + 0x4],0x0       ; 004cab3d
     MOV EAX,[0x0061d95c]                ; 004cab44 | g_CGamePtr
         ;   Label: LAB_004cab44
-    MOV EDI,dword ptr [EAX + 0x248]     ; 004cab49 | g_CGameInstance.field536_0x248
+    MOV EDI,dword ptr [EAX + 0x248]     ; 004cab49 | g_CGameInstance.allow_damage_flag
     TEST EDI,EDI                        ; 004cab4f
     JZ 0x004cac83                       ; 004cab51
         ;   XREF to: 004cac83 (CONDITIONAL_JUMP)  ; LAB_004cac83
@@ -106,7 +106,7 @@ section .text
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0 ; 004cabf5
         ;   XREF to: 005247c0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     MOV EAX,[0x0061d95c]                ; 004cabfa | g_CGamePtr
-    MOV ECX,dword ptr [EAX + 0xd4]      ; 004cabff | g_CGameInstance.field164_0xd4
+    MOV ECX,dword ptr [EAX + 0xd4]      ; 004cabff | g_CGameInstance.hero_number
     ADD ESP,0xc                         ; 004cac05
     CMP ECX,0x2                         ; 004cac08
     JZ 0x004cac3d                       ; 004cac0b
@@ -175,7 +175,7 @@ section .text
         ;   XREF to: 004cace3 (CONDITIONAL_JUMP)  ; LAB_004cace3
     MOV EAX,[0x0061d95c]                ; 004caca0 | g_CGamePtr
         ;   Label: LAB_004caca0
-    CMP dword ptr [EAX + 0xd4],0x2      ; 004caca5 | g_CGameInstance.field164_0xd4
+    CMP dword ptr [EAX + 0xd4],0x2      ; 004caca5 | g_CGameInstance.hero_number
     JZ 0x004cac56                       ; 004cacac
         ;   XREF to: 004cac56 (CONDITIONAL_JUMP)  ; LAB_004cac56
     PUSH 0x3ecccccd                     ; 004cacae

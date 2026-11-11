@@ -9,7 +9,7 @@
 int __cdecl core_passngr_cpp_CPassenger_renderOpaque_FUN_00532cd0(CPassenger *this_ptr)
 
 {
-  byte *this_ptr_00;
+  CMorph *this_ptr_00;
   int iVar1;
   uint *puVar2;
   uint *puVar3;
@@ -32,12 +32,12 @@ int __cdecl core_passngr_cpp_CPassenger_renderOpaque_FUN_00532cd0(CPassenger *th
     iVar1 = core_box_cpp_FUN_004207b0(auStack_1c);
     if (iVar1 != 0) {
       if (ABS(this_ptr->morph_time) != 0.0) {
-        this_ptr_00 = &this_ptr->field_0x1fbc4;
+        this_ptr_00 = &this_ptr->morph;
         core_morph_cpp_CMorph_updateModelFromDeformable_FUN_00523290
-                  ((CMorph *)this_ptr_00,0,&(this_ptr->base).base.model,0);
+                  (this_ptr_00,0,&(this_ptr->base).base.model,0);
         core_morph_cpp_CMorph_updateModelFromDeformable_FUN_00523290
-                  ((CMorph *)this_ptr_00,1,&(this_ptr->werewolf_actor->base).base.model,0);
-        core_morph_cpp_CMorph_render_FUN_005237e0((CMorph *)this_ptr_00,this_ptr->morph_time);
+                  (this_ptr_00,1,&(this_ptr->werewolf_actor->base).base.model,0);
+        core_morph_cpp_CMorph_render_FUN_005237e0(this_ptr_00,this_ptr->morph_time);
         core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0((CDemonActor *)this_ptr);
         return iVar1;
       }

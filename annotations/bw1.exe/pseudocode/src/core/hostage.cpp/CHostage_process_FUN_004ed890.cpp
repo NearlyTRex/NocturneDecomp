@@ -41,10 +41,7 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004ed890(CHostage *this_ptr,f
   CHostage *pCVar23;
   EBloodType blood_type;
   float fStack_274;
-  SDamageInfo aSStack_270 [4];
-  float fStack_26c;
-  CHostage *pCStack_23c;
-  CHostage *pCStack_238;
+  SDamageInfo SStack_270;
   uint uStack_234;
   float afStack_230 [5];
   float fStack_21c;
@@ -130,22 +127,22 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004ed890(CHostage *this_ptr,f
   switch(this_ptr->hostage_state) {
   case 0:
   case 4:
-    *(uint *)&(this_ptr->base).base.field_0x2ff8 = 0x42480000;
-    *(uint *)&(this_ptr->base).base.field_0x2ff4 = 0x41a00000;
+    (this_ptr->base).base.ai_detection_range_max = 50.0;
+    (this_ptr->base).base.ai_detection_range_min = 20.0;
     break;
   case 1:
   case 2:
-    *(uint *)&(this_ptr->base).base.field_0x2ff8 = 0x42960000;
-    *(uint *)&(this_ptr->base).base.field_0x2ff4 = 0x42200000;
+    (this_ptr->base).base.ai_detection_range_max = 75.0;
+    (this_ptr->base).base.ai_detection_range_min = 40.0;
     break;
   case 3:
   case 5:
-    *(uint *)&(this_ptr->base).base.field_0x2ff8 = 0x47c34f80;
-    *(uint *)&(this_ptr->base).base.field_0x2ff4 = 0x47c34f80;
+    (this_ptr->base).base.ai_detection_range_max = 99999.0;
+    (this_ptr->base).base.ai_detection_range_min = 99999.0;
   }
   if ((this_ptr->base).base.hit_points <= 0.0) {
-    *(uint *)&(this_ptr->base).base.field_0x2ff8 = 0x47c34f80;
-    *(uint *)&(this_ptr->base).base.field_0x2ff4 = 0x47c34f80;
+    (this_ptr->base).base.ai_detection_range_max = 99999.0;
+    (this_ptr->base).base.ai_detection_range_min = 99999.0;
   }
   iVar13 = core_charactr_cpp_CCharacter_processCharacter_FUN_0042e1a0
                      ((CCharacter *)this_ptr,delta_time);
@@ -167,13 +164,13 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004ed890(CHostage *this_ptr,f
         if (pCVar16 != (CDemonActor *)0x0) {
           engine_console_cpp_FUN_00445430
                     (g_CConsolePtr,"%s escaping from %s\n",this_ptr,pCVar16);
-          core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(aSStack_270);
-          fStack_26c = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(10.0,15.0);
-          pCStack_23c = this_ptr;
-          pCStack_238 = this_ptr;
+          core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&SStack_270);
+          SStack_270.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(10.0,15.0);
+          SStack_270.attacker = (CDemonActor *)this_ptr;
+          SStack_270.wielder = (CDemonActor *)this_ptr;
           pCVar21 = (CCharacter *)(this_ptr->base).base.grabbed_by;
-          pCStack_18 = (CCharacter_full_vtable *)fStack_26c;
-          (*(((pCVar21->base).vtable._uc)->_uc).processDamage)(pCVar21,aSStack_270);
+          pCStack_18 = (CCharacter_full_vtable *)SStack_270.damage_amount;
+          (*(((pCVar21->base).vtable._uc)->_uc).processDamage)(pCVar21,&SStack_270);
         }
       }
       else {
@@ -220,7 +217,7 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004ed890(CHostage *this_ptr,f
       }
     }
     else if (uVar14 == 0xc) {
-      pCVar16 = *(CDemonActor **)&(this_ptr->base).base.field_0x2628;
+      pCVar16 = (this_ptr->base).base.carry_hands[1].carry_actor;
       if (pCVar16 != (CDemonActor *)0x0) {
         (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
                   ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
@@ -232,8 +229,7 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004ed890(CHostage *this_ptr,f
       core_charactr_cpp_CCharacter_processMotion_FUN_00434a80((CCharacter *)this_ptr,uVar14);
     }
   }
-  *(float *)&(this_ptr->base).base.field_0x2524 =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
+  (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   core_charactr_cpp_FUN_00435320(this_ptr,delta_time);
   iStack_3c = 0;
   uStack_38 = 0;
@@ -439,8 +435,8 @@ LAB_004edcf2:
         case 4:
           iStack_3c = 1;
           if (this_ptr->sit_down_way_point != (CDemonActor *)0x0) {
-            if (*(float *)&(this_ptr->base).base.field_0x2524 < delta_time * (float)_DAT_005e4e9f) {
-              *(float *)&(this_ptr->base).base.field_0x2524 = delta_time * (float)_DAT_005e4e9f;
+            if ((this_ptr->base).base.walk_step_speed < delta_time * (float)_DAT_005e4e9f) {
+              (this_ptr->base).base.walk_step_speed = delta_time * (float)_DAT_005e4e9f;
             }
             core_actor_cpp_FUN_00408bb0(this_ptr,&this_ptr->sit_down_way_point->location);
             pCVar22 = &(this_ptr->base).base.position_delta;
@@ -459,8 +455,8 @@ LAB_004edcf2:
             afStack_230[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 7] = pfVar18[(uint)bVar19 * -2 + 1];
             fVar3 = SQRT(fStack_214 * fStack_214 + fStack_21c * fStack_21c);
             uStack_218 = 0;
-            if (*(float *)&(this_ptr->base).base.field_0x2524 < fVar3) {
-              fStack_48 = *(float *)&(this_ptr->base).base.field_0x2524 / fVar3;
+            if ((this_ptr->base).base.walk_step_speed < fVar3) {
+              fStack_48 = (this_ptr->base).base.walk_step_speed / fVar3;
               pCVar22 = &(this_ptr->base).base.position_delta;
               fVar4 = (this_ptr->base).base.position_delta.y;
               fVar5 = (this_ptr->base).base.position_delta.z;
@@ -643,7 +639,7 @@ LAB_004ee196:
   if (iStack_3c == 0) {
     pSVar17 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                         (&(this_ptr->base).base.model.base);
-    iVar13 = *(int *)(pSVar17 + 0x24);
+    iVar13 = pSVar17->state_index;
     if ((((iVar13 == 8) || (iVar13 == 0)) || ((iVar13 == 0xd || (iVar13 == 10)))) &&
        ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
       (this_ptr->base).base.walk_stuck_timer = 0.0;
@@ -717,7 +713,7 @@ LAB_004ede83:
     fStack_5c = 0.5;
     fStack_68 = 0.75;
     iVar13 = core_actor_cpp_castToClassHash_FUN_0040c600
-                       (*(uint *)&(this_ptr->base).base.field_0x2628,
+                       ((this_ptr->base).base.carry_hands[1].carry_actor,
                         g_CWeaponClassInfo.name_hash);
     if ((iVar13 == 0) ||
        (pCStack_18 = (CCharacter_full_vtable *)core_motion_cpp_FUN_00524a40(pCVar2,0x10),
@@ -760,7 +756,7 @@ LAB_004ede83:
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433e80((CCharacter *)this_ptr,delta_time);
   if ((1.0 <= this_ptr->gun_raise_progress) &&
      (iVar13 = core_actor_cpp_castToClassHash_FUN_0040c600
-                         (*(uint *)&(this_ptr->base).base.field_0x2628,
+                         ((this_ptr->base).base.carry_hands[1].carry_actor,
                           g_CWeaponClassInfo.name_hash), iVar13 != 0)) {
     uVar6 = *(uint *)(iVar13 + 0x56c);
     *(uint *)(iVar13 + 0x56c) = 6;
@@ -773,7 +769,7 @@ LAB_004ede83:
   }
   if (((this_ptr->hostage_type == 1) &&
       (iVar13 = core_actor_cpp_castToClassHash_FUN_0040c600
-                          (*(uint *)&(this_ptr->base).base.field_0x2628,
+                          ((this_ptr->base).base.carry_hands[1].carry_actor,
                            g_CWeaponClassInfo.name_hash), iVar13 != 0)) &&
      (iVar13 = core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30
                          (0x01C51D80,"deputeFireShotgun"), iVar13 != 0)) {

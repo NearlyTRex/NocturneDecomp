@@ -19,7 +19,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCharacter_FUN_0042e960(CCharacte
   }
   iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
   if (iVar1 == 0) {
-    if (*(int *)&this_ptr->field_0x27a4 == 0) {
+    if (this_ptr->is_ethereal == 0) {
       core_charactr_cpp_CCharacter_renderBurn_FUN_0042fe00(this_ptr);
     }
     if (0.0 < this_ptr->stagger_amount) {
@@ -27,7 +27,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCharacter_FUN_0042e960(CCharacte
     }
   }
   core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042f3c0(this_ptr);
-  if (*(int *)&g_CGamePtr->field_0x238 == 0) {
+  if (g_CGamePtr->collision_render_enabled == 0) {
     return;
   }
   core_charactr_cpp_CCharacter_renderCollision_FUN_0042ea10(this_ptr);

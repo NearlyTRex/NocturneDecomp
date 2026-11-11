@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 205,
-    "complexity_score": 418,
+    "complexity_score": 454,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 93,
-    "suspect_count": 29,
+    "pseudocode_lines": 94,
+    "suspect_count": 32,
     "suspect_types": [
+      "shadow_pointer_walk",
       "stack_ref",
       "unaffected_reg",
       "undefined_data",
@@ -18,7 +19,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 298
+    "total_lines": 299
   },
   "cross_references": [],
   "function": {
@@ -31,7 +32,7 @@
     ],
     "convention": "unknown",
     "name": "core_dimage.cpp_FUN_0045f18e",
-    "signature": "void core_dimage_cpp_FUN_0045f18e(CDemonImage *param_1,CDemonImage *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)"
+    "signature": "void core_dimage_cpp_FUN_0045f18e(CDemonImage *param_1,CDemonImage *param_2,int param_3,int param_4,undefined4 param_5 )"
   },
   "function_calls": [
     {
@@ -166,7 +167,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_dimage_cpp_FUN_0045f18e(CDemonImage *param_1,CDemonImage *param_2,uint param_3,uint param_4,uint param_5)",
+      "text": "void core_dimage_cpp_FUN_0045f18e(CDemonImage *param_1,CDemonImage *param_2,int param_3,int param_4,uint param_5 )",
       "type": "unnamed_param"
     },
     {
@@ -174,7 +175,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_dimage_cpp_FUN_0045f18e(CDemonImage *param_1,CDemonImage *param_2,uint param_3,uint param_4,uint param_5)",
+      "text": "void core_dimage_cpp_FUN_0045f18e(CDemonImage *param_1,CDemonImage *param_2,int param_3,int param_4,uint param_5 )",
       "type": "unnamed_param"
     },
     {
@@ -182,7 +183,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_dimage_cpp_FUN_0045f18e(CDemonImage *param_1,CDemonImage *param_2,uint param_3,uint param_4,uint param_5)",
+      "text": "void core_dimage_cpp_FUN_0045f18e(CDemonImage *param_1,CDemonImage *param_2,int param_3,int param_4,uint param_5 )",
       "type": "unnamed_param"
     },
     {
@@ -190,7 +191,7 @@
       "line": 4,
       "match": "param_4",
       "severity": "mild",
-      "text": "void core_dimage_cpp_FUN_0045f18e(CDemonImage *param_1,CDemonImage *param_2,uint param_3,uint param_4,uint param_5)",
+      "text": "void core_dimage_cpp_FUN_0045f18e(CDemonImage *param_1,CDemonImage *param_2,int param_3,int param_4,uint param_5 )",
       "type": "unnamed_param"
     },
     {
@@ -198,12 +199,12 @@
       "line": 4,
       "match": "param_5",
       "severity": "mild",
-      "text": "void core_dimage_cpp_FUN_0045f18e(CDemonImage *param_1,CDemonImage *param_2,uint param_3,uint param_4,uint param_5)",
+      "text": "void core_dimage_cpp_FUN_0045f18e(CDemonImage *param_1,CDemonImage *param_2,int param_3,int param_4,uint param_5 )",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 12,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "uint unaff_EBX;",
@@ -211,7 +212,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 12,
+      "line": 14,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "uint unaff_ESI;",
@@ -219,63 +220,63 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 23,
+      "line": 25,
       "match": "&stack0xfffffee4",
       "severity": "moderate",
-      "text": "pCVar8 = (CDemonImage *)&stack0xfffffee4;",
+      "text": "puVar10 = &stack0xfffffee4;",
       "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 26,
       "match": "param_2",
       "severity": "mild",
-      "text": "pCVar5 = param_2;",
+      "text": "pCVar6 = param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 34,
+      "line": 36,
       "match": "&stack0xfffffee4",
       "severity": "moderate",
-      "text": "p_Var4 = engine_dosio_cpp_FUN_00479180((char *)0x5d895b,&stack0xfffffee4,(char *)0x5d8958);",
+      "text": "p_Var5 = engine_dosio_cpp_FUN_00479180((char *)0x5d895b,&stack0xfffffee4,(char *)0x5d8958);",
       "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x304) = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x304) = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x308) = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x308) = param_4;",
+      "text": "param_1->width = param_3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 42,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_1->width = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->height = param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "param_1->height = param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "core_dimage_cpp_FUN_0045f0a0(param_1);",
@@ -283,34 +284,26 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fread(*(uint *)(param_1 + 0x300),param_3,param_5);",
+      "text": "_fread(param_1->data,param_3,param_5);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 45,
       "match": "param_3",
       "severity": "mild",
-      "text": "_fread(*(uint *)(param_1 + 0x300),param_3,param_5);",
+      "text": "_fread(param_1->data,param_3,param_5);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 45,
       "match": "param_5",
       "severity": "mild",
-      "text": "_fread(*(uint *)(param_1 + 0x300),param_3,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fread(param_2 + 0x30c,0x100,3);",
+      "text": "_fread(param_1->data,param_3,param_5);",
       "type": "unnamed_param"
     },
     {
@@ -318,15 +311,7 @@
       "line": 79,
       "match": "param_2",
       "severity": "mild",
-      "text": "pCVar5 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 80,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pCVar8 = param_2;",
+      "text": "_fread(&param_2->palette,0x100,3);",
       "type": "unnamed_param"
     },
     {
@@ -334,52 +319,92 @@
       "line": 81,
       "match": "param_2",
       "severity": "mild",
+      "text": "pCVar6 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 82,
+      "match": "param_2",
+      "severity": "mild",
       "text": "pCVar9 = param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 83,
       "match": "param_2",
       "severity": "mild",
-      "text": "(param_2,uStack_18,(uint)(byte)CVar1,uStack_14);",
+      "text": "pCVar11 = param_2;",
       "type": "unnamed_param"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 89,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2,uStack_18,(uint)bVar3,uStack_14);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 94,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "(&DAT_01c45ad0)[(uint)(bVar3 >> 3) * 0x20 + (unaff_ESI >> 3) * 0x400 + (unaff_EBX >> 3)];",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 94,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(&DAT_01c45ad0)[(uint)(bVar3 >> 3) * 0x20 + (unaff_ESI >> 3) * 0x400 + (unaff_EBX >> 3)];",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 94,
       "match": "DAT_01c45ad0",
       "severity": "mild",
-      "text": "(&DAT_01c45ad0 +",
+      "text": "(&DAT_01c45ad0)[(uint)(bVar3 >> 3) * 0x20 + (unaff_ESI >> 3) * 0x400 + (unaff_EBX >> 3)];",
       "type": "undefined_data"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 93,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "(uint)((byte)CVar1 >> 3) * 0x20 + (unaff_ESI >> 3) * 0x400 + (unaff_EBX >> 3));",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 93,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "(uint)((byte)CVar1 >> 3) * 0x20 + (unaff_ESI >> 3) * 0x400 + (unaff_EBX >> 3));",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 62,
+      "line": 27,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
     {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 64,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via pointer arithmetic on its own `color_cube_lookup` field (which decays to a pointer), `+ CONST`; `offsetof(color_cube_lookup) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar9`. Replace those `pCVar9->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 91,
+      "match": "pCVar9 = (T *)(pCVar9->color_cube_lookup + CONST)",
+      "severity": "moderate",
+      "text": "pCVar9 = (CDemonImage *)(pCVar9->color_cube_lookup + 2);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via pointer arithmetic on its own `color_cube_lookup` field (which decays to a pointer), `+ CONST`; `offsetof(color_cube_lookup) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar6`. Replace those `pCVar6->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 92,
+      "match": "pCVar6 = (T *)(pCVar6->color_cube_lookup + CONST)",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDemonImage *)(pCVar6->color_cube_lookup + 3);",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 46,
+      "line": 48,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

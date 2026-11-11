@@ -18,9 +18,8 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_00599df0(CTrap *this_ptr,float delt
   byte bVar7;
   uint auStackY_1004 [975];
   CBoundingBox3D *in_stack_ffffff40;
-  SDamageInfo aSStack_b0 [4];
-  uint uStack_ac;
-  byte auStack_7c [36];
+  byte auStack_b0 [84];
+  float fStack_5c;
   float fStack_58;
   uint auStack_54 [4];
   uint auStack_44 [4];
@@ -62,13 +61,13 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_00599df0(CTrap *this_ptr,float delt
                          (*(uint *)((int)g_CDemonSetPtr->enemies + iVar8),
                           g_CWerewolfClassInfo.name_hash);
       if ((pCVar3 != (CWerewolf *)0x0) && (pCVar3->chain_anchor == (CDemonActor *)0x0)) {
-        core_setcolid_cpp_SCollisionInfo_ctor_FUN_005593c0((SCollisionInfo *)auStack_7c);
+        core_setcolid_cpp_SCollisionInfo_ctor_FUN_005593c0((SCollisionInfo *)(auStack_b0 + 0x34));
         (*((pCVar3->base).base.base.vtable._ub)->getCollisionType)
-                  ((CDemonActor *)pCVar3,(SCollisionInfo *)auStack_7c);
+                  ((CDemonActor *)pCVar3,(SCollisionInfo *)(auStack_b0 + 0x34));
         if (((pCVar3->base).base.base.location.position.y <=
              (this_ptr->base).location.position.y + fStack_24) &&
            ((this_ptr->base).location.position.y + fStack_30 <=
-            (pCVar3->base).base.base.location.position.y + (float)auStack_7c._32_4_)) {
+            (pCVar3->base).base.base.location.position.y + fStack_5c)) {
           core_actor_cpp_FUN_00408bb0(this_ptr,&(pCVar3->base).base.base.location);
           fVar1 = fStack_1c;
           *(uint *)(&stack0xfffffff4 + (uint)bVar7 * -8) = auStack_18[(uint)bVar7 * -2];
@@ -79,10 +78,10 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_00599df0(CTrap *this_ptr,float delt
             this_ptr->wolf_in_trap = pCVar3;
             pCVar3->chain_length = 2.0;
             pCVar3->chain_anchor = &this_ptr->base;
-            core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(aSStack_b0);
-            uStack_ac = 0x41200000;
+            core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010((SDamageInfo *)auStack_b0);
+            auStack_b0._4_4_ = 10.0;
             (*(((pCVar3->base).base.base.vtable._uc)->_uc).processDamage)
-                      ((CCharacter *)pCVar3,aSStack_b0);
+                      ((CCharacter *)pCVar3,(SDamageInfo *)auStack_b0);
             return;
           }
         }

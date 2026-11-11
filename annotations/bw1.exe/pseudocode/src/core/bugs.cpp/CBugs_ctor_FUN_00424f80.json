@@ -176,7 +176,7 @@
       "type": "unrolled_strcpy"
     },
     {
-      "description": "'pCVar2[1].base.base.actor_name + 8' walks 1 x sizeof(CEnemy) (0xc268) + offsetof(base.base.actor_name) (0x0) + 0x8 = 0xc270, which is exactly offsetof(CBatCreature, part_indices[1]). Ghidra had no CBatCreature type here and reached the field by index arithmetic; write it as ((CBatCreature *)pCVar2)->part_indices[1] (\u00a7de-pun/\u00a712). Ambiguous: CBatman::fall_event[4], CBride::part_indices[2], CBugs::bugs also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar2[1].base.base.actor_name + 8' walks 1 x sizeof(CEnemy) (0xc268) + offsetof(base.base.actor_name) (0x0) + 0x8 = 0xc270, which is exactly offsetof(CArmour, fall_apart_event[8]). Ghidra had no CArmour type here and reached the field by index arithmetic; write it as ((CArmour *)pCVar2)->fall_apart_event[8] (\u00a7de-pun/\u00a712). Ambiguous: CBatCreature::part_indices[1], CBatman::fall_event[4], CBoneGuy::pickup_cooldown also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 14,
       "severity": "moderate",
       "text": "(pCVar2[1].base.base.actor_name + 8,400,&g_SBugTypeInfo);",

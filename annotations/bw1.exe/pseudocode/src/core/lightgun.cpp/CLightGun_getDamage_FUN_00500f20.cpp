@@ -13,11 +13,11 @@ float __cdecl core_lightgun_cpp_CLightGun_getDamage_FUN_00500f20(CLightGun *this
 {
   float fStack_8;
   
-  if (*(int *)&this_ptr->field_0x56c == 6) {
+  if ((this_ptr->base).ammo_type == AMMO_TYPE_BLANKS) {
     return 0.0;
   }
   fStack_8 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(20.0,50.0);
-  if (*(int *)&g_CGamePtr->field_0xd0 == 3) {
+  if (g_CGamePtr->game_control == CONTROL_MODE_POINT_AND_CLICK) {
     fStack_8 = fStack_8 * _DAT_005e6ef6;
   }
   return fStack_8;

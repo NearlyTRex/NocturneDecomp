@@ -9,6 +9,6 @@
 void __cdecl core_rifle_cpp_CRifle_renderAimBeam_FUN_005409b0(CRifle *this_ptr)
 
 {
-  core_weapon_cpp_CWeapon_renderAimBeam_FUN_005adf90((CWeapon *)this_ptr);
+  core_weapon_cpp_CWeapon_renderAimBeam_FUN_005adf90(&this_ptr->base);
   return;
 }

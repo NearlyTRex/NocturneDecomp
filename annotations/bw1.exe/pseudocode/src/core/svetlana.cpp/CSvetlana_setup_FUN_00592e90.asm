@@ -46,7 +46,7 @@ section .text
     SUB ESP,0x4                         ; 00592e94
     MOV ESI,dword ptr [ESP + 0x18]      ; 00592e97
     MOV EBX,dword ptr [0x0061d95c]      ; 00592e9b | g_CGamePtr
-    MOV EDX,dword ptr [EBX + 0x18]      ; 00592ea1 | g_CGameInstance.field15_0x18
+    MOV EDX,dword ptr [EBX + 0x18]      ; 00592ea1 | g_CGameInstance.nudity_flag
     LEA EAX,[ESI + 0x158]               ; 00592ea4
     TEST EDX,EDX                        ; 00592eaa
     JZ 0x00593112                       ; 00592eac

@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 507,
-    "complexity_score": 324,
+    "complexity_score": 346,
     "cross_reference_count": 2,
     "function_call_count": 33,
     "global_count": 45,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 159,
-    "suspect_count": 15,
+    "pseudocode_lines": 161,
+    "suspect_count": 17,
     "suspect_types": [
       "undefined_data",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 666
+    "total_lines": 668
   },
   "cross_references": [
     {
@@ -164,6 +164,16 @@
       "name": "support_newmsg.cpp_getLocalizedString_FUN_00531090"
     },
     {
+      "addr": "005a0f60",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_open_FUN_005a0f60"
+    },
+    {
+      "addr": "005a19b0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_COutStreamFile_close_FUN_005a19b0"
+    },
+    {
       "addr": "005a17d0",
       "is_variadic": false,
       "name": "support_trstream.cpp_COutStreamFile_ctor_FUN_005a17d0"
@@ -174,29 +184,19 @@
       "name": "support_trstream.cpp_COutStreamFile_dtor_FUN_005a1860"
     },
     {
-      "addr": "005a0f60",
+      "addr": "005a19e0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a0f60"
+      "name": "support_trstream.cpp_COutStreamFile_open_FUN_005a19e0"
     },
     {
       "addr": "005a18f0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a18f0"
-    },
-    {
-      "addr": "005a19b0",
-      "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a19b0"
-    },
-    {
-      "addr": "005a19e0",
-      "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a19e0"
+      "name": "support_trstream.cpp_COutStreamFile_write_FUN_005a18f0"
     },
     {
       "addr": "005a0dc0",
       "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_FUN_005a0dc0"
+      "name": "unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0"
     },
     {
       "addr": "005a08d0",
@@ -804,7 +804,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 150,
+      "line": 131,
+      "match": "DAT_005e2fac",
+      "severity": "mild",
+      "text": "iVar2 = support_trstream_cpp_COutStreamFile_open_FUN_005a19e0(&local_1c,local_390,&DAT_005e2fac)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 139,
+      "match": "DAT_0061d98c",
+      "severity": "mild",
+      "text": "support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(&local_1c,&DAT_0061d98c,4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 152,
       "match": "DAT_01cd05c0",
       "severity": "mild",
       "text": "pcVar3 = &DAT_01cd05c0;",
@@ -828,7 +844,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 151,
+      "line": 153,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

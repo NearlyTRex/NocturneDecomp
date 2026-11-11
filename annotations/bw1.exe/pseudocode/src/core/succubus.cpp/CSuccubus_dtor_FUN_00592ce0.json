@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 80,
+    "complexity_score": 67,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 30,
-    "suspect_count": 4,
+    "pseudocode_lines": 32,
+    "suspect_count": 3,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
-    "total_lines": 107
+    "total_lines": 109
   },
   "cross_references": [],
   "function": {
@@ -136,16 +135,16 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0xe7d8",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 21,
+      "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "pCVar1 = core_morph_cpp_CMorph_dtor_FUN_00522fc0((CMorph *)&this_ptr->field_0xe7d8,0);",
-      "type": "unnamed_field"
+      "text": "((CClothList *)(pCVar1[-1].models[1].textures + 0xe),0);",
+      "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 23,
+      "line": 24,
       "match": "pCVar3[-4].",
       "severity": "mild",
       "text": "iVar4 = core_armour_cpp_FUN_0040ee30(&pCVar3[-4].bone_origins[0x23].z,0);",
@@ -153,19 +152,11 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 28,
+      "line": 30,
       "match": "pCVar3[-1].",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&pCVar3[-1].field_0x224c,1);",
+      "text": "((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x224c",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&pCVar3[-1].field_0x224c,1);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

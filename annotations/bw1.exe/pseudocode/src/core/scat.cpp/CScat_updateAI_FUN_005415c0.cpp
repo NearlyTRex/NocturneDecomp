@@ -12,11 +12,13 @@
 void __cdecl core_scat_cpp_CScat_updateAI_FUN_005415c0(CScat *this_ptr,float delta_time)
 
 {
-  float fVar1;
-  int iVar2;
-  SMotion *pSVar3;
+  EHeroTask EVar1;
+  CWeapon *pCVar2;
+  float fVar3;
+  int iVar4;
+  SMotion *pSVar5;
   CPathMap *this_ptr_00;
-  byte bVar4;
+  byte bVar6;
   float afStackY_109c [1013];
   float local_b8;
   float local_b4;
@@ -53,110 +55,111 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_005415c0(CScat *this_ptr,float del
   int local_1c;
   float local_14;
   
-  bVar4 = 0;
+  bVar6 = 0;
   local_24 = 0.25;
   local_1c = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
   local_28 = 0.7853982;
-  if (*(int *)&this_ptr->field_0x1ffa8 == 0) {
+  if ((this_ptr->base).ai_task == HERO_TASK_STAND) {
     return;
   }
-  memset(&this_ptr->field_0xc1d8,0,0x30);
-  iVar2 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
-  local_60 = *(float *)&this_ptr->field_0x20 - *(float *)(iVar2 + 0x20);
-  local_5c = *(float *)&this_ptr->field_0x24 - *(float *)(iVar2 + 0x24);
-  local_58 = *(float *)&this_ptr->field_0x28 - *(float *)(iVar2 + 0x28);
+  memset(&(this_ptr->base).player_input,0,0x30);
+  iVar4 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
+  local_60 = (this_ptr->base).base.base.location.position.x - *(float *)(iVar4 + 0x20);
+  local_5c = (this_ptr->base).base.base.location.position.y - *(float *)(iVar4 + 0x24);
+  local_58 = (this_ptr->base).base.base.location.position.z - *(float *)(iVar4 + 0x28);
   local_9c = local_60;
-  (&stack0xffffff68)[(uint)bVar4 * -2] = afStack_44[(uint)bVar4 * -2 + -6];
-  (&stack0xffffff68)[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-       afStack_44[(uint)bVar4 * -2 + (uint)bVar4 * -2 + -5];
+  (&stack0xffffff68)[(uint)bVar6 * -2] = afStack_44[(uint)bVar6 * -2 + -6];
+  (&stack0xffffff68)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+       afStack_44[(uint)bVar6 * -2 + (uint)bVar6 * -2 + -5];
+  EVar1 = (this_ptr->base).ai_task;
   local_2c = 0;
-  if ((((*(int *)&this_ptr->field_0x1ffa8 == 2) || (*(int *)&this_ptr->field_0x1ffa8 == 3)) &&
-      (*(int *)&this_ptr->field_0x1fe20 != 0)) &&
-     (0 < *(int *)(*(int *)&this_ptr->field_0x1fe20 + 0x568))) {
+  if ((((EVar1 == HERO_TASK_KILL) || (EVar1 == HERO_TASK_GUARD)) &&
+      (pCVar2 = (this_ptr->base).inventory.selected_weapon, pCVar2 != (CWeapon *)0x0)) &&
+     (0 < pCVar2->ammo_count)) {
     local_3c[0] = 9999.9;
-    iVar2 = core_hero_cpp_FUN_004ec350(this_ptr,afStack_44 + 2);
-    if ((iVar2 != 0) && ((int)local_3c[0] < 0x41f00000)) {
-      local_1c = iVar2;
+    iVar4 = core_hero_cpp_FUN_004ec350(this_ptr,afStack_44 + 2);
+    if ((iVar4 != 0) && ((int)local_3c[0] < 0x41f00000)) {
+      local_1c = iVar4;
       local_2c = 1;
     }
   }
   if (local_2c != this_ptr->guns_drawn) {
-    *(uint *)&this_ptr->field_0xc1f0 = 1;
+    (this_ptr->base).player_input.action_state.draw = 1;
   }
-  local_6c = *(float *)(local_1c + 0x20) - *(float *)&this_ptr->field_0x20;
-  local_68 = *(float *)(local_1c + 0x24) - *(float *)&this_ptr->field_0x24;
-  local_64 = *(float *)(local_1c + 0x28) - *(float *)&this_ptr->field_0x28;
+  local_6c = *(float *)(local_1c + 0x20) - (this_ptr->base).base.base.location.position.x;
+  local_68 = *(float *)(local_1c + 0x24) - (this_ptr->base).base.base.location.position.y;
+  local_64 = *(float *)(local_1c + 0x28) - (this_ptr->base).base.base.location.position.z;
   local_b4 = local_6c;
-  (&stack0xffffff50)[(uint)bVar4 * -2] = (&stack0xffffff68)[(uint)bVar4 * 0xfffffffe + 0xc];
-  (&stack0xffffff50)[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-       afStack_44[(uint)bVar4 * -2 + (uint)bVar4 * -2 + -8];
+  (&stack0xffffff50)[(uint)bVar6 * -2] = (&stack0xffffff68)[(uint)bVar6 * 0xfffffffe + 0xc];
+  (&stack0xffffff50)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+       afStack_44[(uint)bVar6 * -2 + (uint)bVar6 * -2 + -8];
   if (&stack0xffffff64 != &stack0xffffff4c) {
     local_9c = local_b4;
     local_98 = local_b0;
     local_94 = local_ac;
   }
   local_b8 = SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98);
-  if (*(int *)&this_ptr->field_0x1ffa8 == 3) {
+  if ((this_ptr->base).ai_task == HERO_TASK_GUARD) {
     local_b8 = 0.0;
   }
   if (this_ptr->weapon_actor != (CWeapon *)0x0) {
     if (this_ptr->weapon_actor->weapon_type == WEAPON_TYPE_BARON) {
       if (local_b8 < (float)_DAT_005ede6f) {
-        pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
-                           ((CMotionController *)&this_ptr->field_0x158);
-        if ((*(int *)(pSVar3 + 0x24) == 7) && (this_ptr->guns_drawn != 0)) {
-          *(uint *)&this_ptr->field_0xc1e4 = 1;
+        pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
+                           (&(this_ptr->base).base.model.base);
+        if ((pSVar5->state_index == 7) && (this_ptr->guns_drawn != 0)) {
+          (this_ptr->base).player_input.action_state.fire = 1;
         }
         goto LAB_005418bc;
       }
     }
     else if (local_b8 < (float)_DAT_005ede5f) {
       if ((this_ptr->guns_drawn != 0) && (local_2c != 0)) {
-        if (((float)_DAT_005ede67 < *(float *)&this_ptr->field_0x2c9c) &&
+        if (((float)_DAT_005ede67 < (this_ptr->base).base.layer_action_t) &&
            (this_ptr->aim_converged != 0)) {
-          *(uint *)&this_ptr->field_0xc1e4 = 1;
+          (this_ptr->base).player_input.action_state.fire = 1;
         }
         core_charactr_cpp_CCharacter_turnTowardPoint_FUN_0042d540
                   ((CCharacter *)this_ptr,(CVector3f *)(local_1c + 0x20));
       }
-      *(uint *)&this_ptr->field_0xc1e0 = 0;
-      *(uint *)&this_ptr->field_0xc1d8 = 0;
+      (this_ptr->base).player_input.action_state.run = 0;
+      (this_ptr->base).player_input.action_state.walk = 0;
       goto LAB_005418bc;
     }
     this_ptr_00 = (CPathMap *)(**(code **)(*(int *)(local_1c + 0x154) + 0xc4))(local_1c);
     if (this_ptr_00 == (CPathMap *)0x0) {
       this_ptr_00 = core_path_cpp_getPathMap_FUN_005351f0((CLocation *)(local_1c + 0x20));
     }
-    iVar2 = core_path_cpp_CPathMap_findPathWithRetry_FUN_005349a0
-                      (this_ptr_00,(CVector3f *)&this_ptr->field_0x20,&CStack_54,
-                       *(int *)&this_ptr->field_0x6c);
-    if (iVar2 != 0) {
+    iVar4 = core_path_cpp_CPathMap_findPathWithRetry_FUN_005349a0
+                      (this_ptr_00,&(this_ptr->base).base.base.location.position,&CStack_54,
+                       (this_ptr->base).base.base.direction_hint);
+    if (iVar4 != 0) {
       local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                                  (CStack_54.y - *(float *)&this_ptr->field_0x34);
-      fVar1 = local_14 * _DAT_005ede77 * (float)_DAT_005ede7f;
+                                  (CStack_54.y - (this_ptr->base).base.base.orient.vec.y);
+      fVar3 = local_14 * _DAT_005ede77 * (float)_DAT_005ede7f;
       fStack_34 = -local_24;
-      *(float *)&this_ptr->field_0xc200 = fVar1;
-      if (fVar1 < fStack_34) {
-        *(float *)&this_ptr->field_0xc200 = fStack_34;
+      (this_ptr->base).player_input.turn_speed = fVar3;
+      if (fVar3 < fStack_34) {
+        (this_ptr->base).player_input.turn_speed = fStack_34;
       }
-      if (local_24 < *(float *)&this_ptr->field_0xc200) {
-        *(float *)&this_ptr->field_0xc200 = local_24;
+      if (local_24 < (this_ptr->base).player_input.turn_speed) {
+        (this_ptr->base).player_input.turn_speed = local_24;
       }
       if ((float)_DAT_005ede87 <= local_b8) {
-        *(uint *)&this_ptr->field_0xc1e0 = 1;
+        (this_ptr->base).player_input.action_state.run = 1;
       }
-      *(uint *)&this_ptr->field_0xc1d8 = 1;
+      (this_ptr->base).player_input.action_state.walk = 1;
     }
   }
 LAB_005418bc:
-  local_84 = *(float *)(local_1c + 0x20) - *(float *)&this_ptr->field_0x20;
-  local_80 = *(float *)(local_1c + 0x24) - *(float *)&this_ptr->field_0x24;
-  local_7c = *(float *)(local_1c + 0x28) - *(float *)&this_ptr->field_0x28;
+  local_84 = *(float *)(local_1c + 0x20) - (this_ptr->base).base.base.location.position.x;
+  local_80 = *(float *)(local_1c + 0x24) - (this_ptr->base).base.base.location.position.y;
+  local_7c = *(float *)(local_1c + 0x28) - (this_ptr->base).base.base.location.position.z;
   local_90 = local_84;
-  (&stack0xffffff68)[(uint)bVar4 * 0xfffffffe + 3] =
-       (&stack0xffffff68)[(uint)bVar4 * 0xfffffffe + 6];
-  (&stack0xffffff68)[(uint)bVar4 * 0xfffffffe + (uint)bVar4 * 0xfffffffe + 4] =
-       (&stack0xffffff68)[(uint)bVar4 * 0xfffffffe + (uint)bVar4 * 0xfffffffe + 7];
+  (&stack0xffffff68)[(uint)bVar6 * 0xfffffffe + 3] =
+       (&stack0xffffff68)[(uint)bVar6 * 0xfffffffe + 6];
+  (&stack0xffffff68)[(uint)bVar6 * 0xfffffffe + (uint)bVar6 * 0xfffffffe + 4] =
+       (&stack0xffffff68)[(uint)bVar6 * 0xfffffffe + (uint)bVar6 * 0xfffffffe + 7];
   if (&stack0xffffff64 != &stack0xffffff70) {
     local_9c = local_90;
     local_98 = local_8c;
@@ -164,16 +167,16 @@ LAB_005418bc:
   }
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffff64);
   local_78 = local_48;
-  (&stack0xffffff68)[(uint)bVar4 * 0xfffffffe + 9] = afStack_44[(uint)bVar4 * -2];
-  (&stack0xffffff68)[(uint)bVar4 * 0xfffffffe + (uint)bVar4 * 0xfffffffe + 10] =
-       afStack_44[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+  (&stack0xffffff68)[(uint)bVar6 * 0xfffffffe + 9] = afStack_44[(uint)bVar6 * -2];
+  (&stack0xffffff68)[(uint)bVar6 * 0xfffffffe + (uint)bVar6 * 0xfffffffe + 10] =
+       afStack_44[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
   if (&stack0xffffff64 != &stack0xffffff88) {
     local_9c = local_78;
     local_98 = local_74;
     local_94 = local_70;
   }
   local_a4 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                              (local_98 - *(float *)&this_ptr->field_0x34);
+                              (local_98 - (this_ptr->base).base.base.orient.vec.y);
   if (local_28 < local_a4) {
     local_a4 = local_28;
   }

@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004dd790(CGargoyle *this_ptr,CVector3f *out_points_array)
@@ -40,7 +41,7 @@ int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004dd790(CGargoyle *
     out_points_array->y = CStack_70.y;
     out_points_array->z = CStack_70.z;
   }
-  if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[0] * 4) != 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
     core_skeleton_cpp_FUN_00569130(&(this_ptr->base).base.model,_DAT_01cd0cb0);
     CStack_7c.x = fStack_64;
     *(float *)((int)&CStack_7c + (uint)bVar3 * -8 + 4) = afStack_60[(uint)bVar3 * -2];
@@ -53,7 +54,7 @@ int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004dd790(CGargoyle *
     }
     iVar2 = 2;
   }
-  if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[2] * 4) != 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
     core_skeleton_cpp_FUN_00569130(&(this_ptr->base).base.model,_DAT_01cd0cb4);
     pCVar1 = out_points_array + iVar2;
     CStack_28.x = fStack_88;
@@ -68,7 +69,7 @@ int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004dd790(CGargoyle *
     }
     iVar2 = iVar2 + 1;
   }
-  if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[8] * 4) != 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[8]] != 0) {
     core_skeleton_cpp_FUN_00569130(&(this_ptr->base).base.model,_DAT_01cd0cc0);
     pCVar1 = out_points_array + iVar2;
     CStack_4c.x = fStack_1c;
@@ -82,7 +83,7 @@ int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004dd790(CGargoyle *
     }
     iVar2 = iVar2 + 1;
   }
-  if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[9] * 4) == 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[9]] == 0) {
     return iVar2;
   }
   core_skeleton_cpp_FUN_00569130(&(this_ptr->base).base.model,_DAT_01cd0cc8);

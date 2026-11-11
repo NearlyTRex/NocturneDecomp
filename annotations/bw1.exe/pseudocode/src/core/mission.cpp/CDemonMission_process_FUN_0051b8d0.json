@@ -2,16 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 97,
+    "complexity_score": 112,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 52,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "shadow_pointer_walk",
       "undefined_data",
-      "unrolled_memcpy",
+      "unrolled_memset",
       "warning_overlapping_globals"
     ],
     "total_lines": 191
@@ -237,12 +238,20 @@
       "type": "undefined_data"
     },
     {
-      "description": "Watcom raw-offset struct copy (4 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 27,
-      "match": "raw-offset struct copy",
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 51,
+      "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "*(uint *)(iVar2 + 0x20) = *(uint *)(this_ptr + 0x1120);",
-      "type": "unrolled_memcpy"
+      "text": "(this_ptr->pending_teleport).position.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 19,
+      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "severity": "moderate",
+      "text": "pCVar1 = (CDemonMission *)&pCVar1->num_sets;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

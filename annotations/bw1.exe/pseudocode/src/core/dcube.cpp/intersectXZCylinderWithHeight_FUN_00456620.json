@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 355,
+    "complexity_score": 362,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
+    "pseudocode_lines": 32,
     "suspect_count": 32,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param"
     ],
-    "total_lines": 96
+    "total_lines": 103
   },
   "cross_references": [
     {
@@ -33,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcube.cpp_intersectXZCylinderWithHeight_FUN_00456620",
-    "signature": "undefined4 __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00456620(SIntersectXZCylinder *param_1,undefined4 *param_2,undefined4 *param_3)"
+    "signature": "undefined4 __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00456620(SIntersectXZCylinder *param_1,float *param_2,float *param_3)"
   },
   "function_calls": [
     {
@@ -133,7 +133,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00456620(SIntersectXZCylinder *param_1,uint *param_2,uint *param_3)",
+      "text": "uint __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00456620(SIntersectXZCylinder *param_1,float *param_2,float *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -141,7 +141,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00456620(SIntersectXZCylinder *param_1,uint *param_2,uint *param_3)",
+      "text": "uint __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00456620(SIntersectXZCylinder *param_1,float *param_2,float *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -149,95 +149,23 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "uint __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00456620(SIntersectXZCylinder *param_1,uint *param_2,uint *param_3)",
+      "text": "uint __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00456620(SIntersectXZCylinder *param_1,float *param_2,float *param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 8,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3c) = *param_2;",
+      "text": "param_1->edge_x1 = *param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 8,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3c) = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x40) = param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x40) = param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x44) = *param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x44) = *param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x48) = param_3[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x48) = param_3[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = core_dcube_cpp_intersectXZCylinder_FUN_00456340(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(fVar1 = ((float)param_3[1] - (float)param_2[1]) * *(float *)(param_1 + 0x50) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(fVar1 = ((float)param_3[1] - (float)param_2[1]) * *(float *)(param_1 + 0x50) +",
+      "text": "param_1->edge_x1 = *param_2;",
       "type": "unnamed_param"
     },
     {
@@ -245,15 +173,15 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "(fVar1 = ((float)param_3[1] - (float)param_2[1]) * *(float *)(param_1 + 0x50) +",
+      "text": "param_1->edge_z1 = param_2[2];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "(float)param_2[1], *(float *)(param_1 + 0x28) < fVar1)) &&",
+      "text": "param_1->edge_z1 = param_2[2];",
       "type": "unnamed_param"
     },
     {
@@ -261,7 +189,15 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "(float)param_2[1], *(float *)(param_1 + 0x28) < fVar1)) &&",
+      "text": "param_1->edge_x2 = *param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_1->edge_x2 = *param_3;",
       "type": "unnamed_param"
     },
     {
@@ -269,7 +205,15 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "(fVar1 < *(float *)(param_1 + 0x24))) {",
+      "text": "param_1->edge_z2 = param_3[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_1->edge_z2 = param_3[2];",
       "type": "unnamed_param"
     },
     {
@@ -277,23 +221,23 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 8) = 0;",
+      "text": "iVar7 = core_dcube_cpp_intersectXZCylinder_FUN_00456340(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
+      "line": 19,
+      "match": "param_3",
       "severity": "mild",
-      "text": "*(uint *)param_1 = *(uint *)(param_1 + 0x4c);",
+      "text": "(fVar1 = (param_3[1] - param_2[1]) * param_1->param_clamped + param_2[1],",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
+      "line": 19,
+      "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)param_1 = *(uint *)(param_1 + 0x4c);",
+      "text": "(fVar1 = (param_3[1] - param_2[1]) * param_1->param_clamped + param_2[1],",
       "type": "unnamed_param"
     },
     {
@@ -301,7 +245,15 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0xc) =",
+      "text": "(fVar1 = (param_3[1] - param_2[1]) * param_1->param_clamped + param_2[1],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(fVar1 = (param_3[1] - param_2[1]) * param_1->param_clamped + param_2[1],",
       "type": "unnamed_param"
     },
     {
@@ -309,7 +261,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(float *)(param_1 + 0x1c) * *(float *)(param_1 + 0x4c) + *(float *)(param_1 + 0x14)) -",
+      "text": "param_1->bottom_y < fVar1)) && (fVar1 < param_1->top_y)) {",
       "type": "unnamed_param"
     },
     {
@@ -317,15 +269,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(float *)(param_1 + 0x1c) * *(float *)(param_1 + 0x4c) + *(float *)(param_1 + 0x14)) -",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(float *)(param_1 + 0x1c) * *(float *)(param_1 + 0x4c) + *(float *)(param_1 + 0x14)) -",
+      "text": "param_1->bottom_y < fVar1)) && (fVar1 < param_1->top_y)) {",
       "type": "unnamed_param"
     },
     {
@@ -333,7 +277,7 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x58);",
+      "text": "fVar1 = param_1->dir_x;",
       "type": "unnamed_param"
     },
     {
@@ -341,7 +285,7 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 4) =",
+      "text": "fVar2 = param_1->param_t;",
       "type": "unnamed_param"
     },
     {
@@ -349,23 +293,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(float *)(param_1 + 0x18) * *(float *)(param_1 + 0x4c) + *(float *)(param_1 + 0x10)) -",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(float *)(param_1 + 0x18) * *(float *)(param_1 + 0x4c) + *(float *)(param_1 + 0x10)) -",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(float *)(param_1 + 0x18) * *(float *)(param_1 + 0x4c) + *(float *)(param_1 + 0x10)) -",
+      "text": "fVar3 = param_1->dir_z;",
       "type": "unnamed_param"
     },
     {
@@ -373,7 +301,79 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x54);",
+      "text": "fVar4 = param_1->param_t;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar5 = param_1->param_t;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->push_normal).y = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->closest_t = fVar5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar5 = param_1->center_x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar6 = param_1->intersect_x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->push_normal).z = (fVar3 * fVar4 + param_1->center_z) - param_1->intersect_z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->push_normal).z = (fVar3 * fVar4 + param_1->center_z) - param_1->intersect_z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->push_normal).z = (fVar3 * fVar4 + param_1->center_z) - param_1->intersect_z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->push_normal).x = (fVar1 * fVar2 + fVar5) - fVar6;",
       "type": "unnamed_param"
     },
     {

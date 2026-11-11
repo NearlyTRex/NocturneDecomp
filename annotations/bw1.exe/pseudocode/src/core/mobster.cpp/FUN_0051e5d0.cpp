@@ -57,9 +57,9 @@ int __cdecl core_mobster_cpp_FUN_0051e5d0(CMobster *this_ptr,float delta_time)
       local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(5.0,10.0);
       this_ptr->idle_timer = local_18;
     }
-    if ((*(int *)(&(this_ptr->base).base.model.field_0x2140 +
-                 *(int *)&(this_ptr->base).base.field_0x2624 * 4) != 0) &&
-       (*(int *)&(this_ptr->base).base.field_0x2628 == 0)) {
+    if (((this_ptr->base).base.model.part_data.visibility_flags
+         [(this_ptr->base).base.carry_hands[1].secondary_bone_index] != 0) &&
+       ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
       if (0.0 < this_ptr->weapon_approach_timer) {
         fVar9 = this_ptr->weapon_approach_timer - delta_time;
         this_ptr->weapon_approach_timer = fVar9;

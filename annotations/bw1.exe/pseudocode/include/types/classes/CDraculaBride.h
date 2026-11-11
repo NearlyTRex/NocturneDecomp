@@ -23,8 +23,7 @@ typedef struct CDraculaBride {
     CVector3f new_pos; // 0xc304
     int attack_landed; // 0xc310
     int part_count; // 0xc314
-    struct CBodyPart* part_list[30]; // 0xc318
-    char field_50064[120]; // 0xc390
+    struct CBodyPart* part_list[60]; // 0xc318, Added in this build
     int exploded; // 0xc408
     float fade_timer; // 0xc40c
 } CDraculaBride;

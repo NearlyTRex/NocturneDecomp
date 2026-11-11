@@ -43,13 +43,10 @@ void __cdecl core_skeleton_cpp_CDeformableModel_allocMemory_FUN_005638c0(CDeform
   pCVar1 = this_ptr;
   if (0 < num_lods) {
     do {
-      pCVar1->lod_info[0] = (SLod)0x1;
-      pCVar1->lod_info[1] = (SLod)0x0;
-      pCVar1->lod_info[2] = (SLod)0x0;
-      pCVar1->lod_info[3] = (SLod)0x0;
-      *(uint *)(pCVar1->lod_info + 4) = 0;
+      pCVar1->lod_info[0].pixel_height = 1;
+      pCVar1->lod_info[0].shadow_only_flag = 0;
       iVar2 = iVar2 + 1;
-      pCVar1 = (CDeformableModel *)(pCVar1->lod_info + 4);
+      pCVar1 = (CDeformableModel *)&pCVar1->lod_info[0].shadow_only_flag;
     } while (iVar2 < this_ptr->num_lods);
   }
   return;

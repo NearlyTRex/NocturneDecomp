@@ -18,12 +18,12 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d540(CBoneGuy *this_ptr)
   SBoneGuyBox *pSVar3;
   CBoneGuy *pCVar4;
   CLocation *pCVar5;
-  float *pfVar6;
+  CVector3f *pCVar6;
   uint *puVar7;
   uint *puVar8;
   byte bVar9;
   float afStackY_1824 [1520];
-  uint local_48;
+  float local_48;
   CVector3f local_38;
   UOrientationVector *local_2c;
   CVector3f *local_28;
@@ -51,7 +51,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d540(CBoneGuy *this_ptr)
     local_20 = this_ptr->boxes;
     local_2c = &(this_ptr->base).base.base.orient;
     local_28 = &(this_ptr->base).base.base.location.position;
-    pfVar6 = (float *)&this_ptr->boxes[0].field_0xc;
+    pCVar6 = &this_ptr->boxes[0].orient;
     local_1c = this_ptr;
     do {
       local_38.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(-5.0,5.0);
@@ -67,26 +67,26 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d540(CBoneGuy *this_ptr)
                 ((CCharacter *)this_ptr,body_part,local_18,0);
       body_part->dont_pick_me_up = 1;
       core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00419b90(body_part);
-      *(CBodyPart **)&local_1c->boxes[0].field_0x44 = body_part;
+      local_1c->boxes[0].body_part = body_part;
       pCVar5 = &(body_part->base).location;
       pSVar3 = local_20 + local_18;
       if (pSVar3 != (SBoneGuyBox *)pCVar5) {
-        *(float *)pSVar3 = (pCVar5->position).x;
-        *(float *)&pSVar3->field_0x4 = (body_part->base).location.position.y;
-        *(float *)&pSVar3->field_0x8 = (body_part->base).location.position.z;
+        (pSVar3->pos).x = (pCVar5->position).x;
+        (pSVar3->pos).y = (body_part->base).location.position.y;
+        (pSVar3->pos).z = (body_part->base).location.position.z;
       }
       pUVar1 = &(body_part->base).orient;
-      if ((UOrientationVector *)pfVar6 != pUVar1) {
-        *pfVar6 = (pUVar1->vec).x;
-        pfVar6[1] = (body_part->base).orient.vec.y;
-        pfVar6[2] = (body_part->base).orient.vec.z;
+      if (pCVar6 != (CVector3f *)pUVar1) {
+        pCVar6->x = (pUVar1->vec).x;
+        pCVar6->y = (body_part->base).orient.vec.y;
+        pCVar6->z = (body_part->base).orient.vec.z;
       }
-      pfVar6 = pfVar6 + 0x12;
+      pCVar6 = pCVar6 + 6;
       core_xform_cpp_FUN_005b7ed0(&(body_part->base).orient);
       pCVar4 = (CBoneGuy *)((local_1c->base).base.base.orient_matrix.m + 1);
       local_18 = local_18 + 1;
       puVar7 = (uint *)((int)local_1c + (uint)bVar9 * -8 + 0xc314);
-      *(uint *)&local_1c->boxes[0].field_0x28 = local_48;
+      local_1c->boxes[0].start_orient.w = local_48;
       puVar8 = puVar7 + (uint)bVar9 * -2 + 1;
       *puVar7 = *(uint *)(&stack0xffffffbc + (uint)bVar9 * -8);
       *puVar8 = *(uint *)(&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);

@@ -38,21 +38,7 @@ void core_inv_cpp_FUN_004fae10(int param_1)
   char local_4e0 [256];
   char local_3e0 [256];
   char local_2e0 [256];
-  SMRGLPrimitivePoly local_1e0 [4];
-  uint local_1dc;
-  uint local_1c8;
-  uint local_1c4;
-  uint local_1c0;
-  uint local_1bc;
-  uint local_1b8;
-  uint local_1b4;
-  uint local_1b0;
-  uint local_1ac;
-  uint local_1a8;
-  uint local_1a4;
-  uint local_1a0;
-  uint local_19c;
-  CMatrix3x3f local_198;
+  byte local_1e0 [112];
   int local_170;
   float afStack_16c [4];
   uint local_15c;
@@ -119,13 +105,13 @@ void core_inv_cpp_FUN_004fae10(int param_1)
   float local_14;
   
   bVar11 = 0;
-  if (*(int *)&g_CGamePtr->field_0x244 != 0) {
+  if (g_CGamePtr->letterbox_mode != 0) {
     return;
   }
   if (*(int *)(param_1 + 4) != *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4)) {
     return;
   }
-  if (*(int *)&g_CFieldNotesPtr->field_0x40 != 0) {
+  if (g_CFieldNotesPtr->is_displayed != 0) {
     *(uint *)(param_1 + 0x344) = 0;
     *(uint *)(param_1 + 0x34c) = 0;
     *(uint *)(param_1 + 0x350) = 0;
@@ -438,12 +424,12 @@ LAB_004fb230:
     local_f4 = 0;
     local_50 = (float)iVar8 * fVar1;
     local_14 = *(float *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x34) -
-               *(float *)&g_CDemonSetPtr->field_0x15acbc;
+               g_CDemonSetPtr->altitude_reference_y;
     local_5c = (float)(iVar8 + 4) * fVar1;
     local_f0 = local_14;
     euler_angles = &local_140;
     local_58 = (float)(iVar4 - iVar9) * fVar1;
-    this_ptr_00 = &local_198;
+    this_ptr_00 = (CMatrix3x3f *)(local_1e0 + 0x48);
     local_4c = (float)(iVar9 + iVar4) * fVar1;
     local_140.x = 0.0;
     *(float *)((int)&local_140 + (uint)bVar11 * -8 + 4) = afStack_118[(uint)bVar11 * -2 + 9];
@@ -455,7 +441,7 @@ LAB_004fb230:
     local_b4 = 0;
     afStack_c4[2] = -local_50;
     local_14 = afStack_c4[3];
-    core_dirmat_cpp_FUN_0045f690(&local_198);
+    core_dirmat_cpp_FUN_0045f690(local_1e0 + 0x48);
     local_104 = afStack_118[2];
     afStack_118[(uint)bVar11 * -2 + 6] = afStack_118[(uint)bVar11 * -2 + 3];
     afStack_118[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7] =
@@ -470,12 +456,12 @@ LAB_004fb230:
     *(float *)((int)&local_d4 + (uint)bVar11 * -8 + 4) = afStack_130[(uint)bVar11 * -2];
     *(float *)((int)&local_d4 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
          afStack_130[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-    engine_special_cpp_FUN_00580173((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&local_d4);
+    engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_d4);
     local_94 = -local_58;
     local_98 = local_50;
     local_90 = 0;
     local_14 = local_94;
-    core_dirmat_cpp_FUN_0045f690(&local_198);
+    core_dirmat_cpp_FUN_0045f690(local_1e0 + 0x48);
     afStack_16c[2] = local_c8;
     afStack_16c[(uint)bVar11 * -2 + 3] = afStack_c4[(uint)bVar11 * -2];
     afStack_16c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4] =
@@ -490,12 +476,11 @@ LAB_004fb230:
     *(float *)((int)&local_d4 + (uint)bVar11 * -8 + 4) = afStack_118[(uint)bVar11 * -2];
     *(float *)((int)&local_d4 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
          afStack_118[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-    engine_special_cpp_FUN_00580173
-              ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&local_d4);
+    engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_d4);
     local_14c = local_50;
     local_148 = local_58;
     local_144 = 0;
-    core_dirmat_cpp_FUN_0045f690(&local_198);
+    core_dirmat_cpp_FUN_0045f690(local_1e0 + 0x48);
     local_b0 = local_ec;
     local_ac[(uint)bVar11 * -2] = afStack_118[(uint)bVar11 * -2 + 0xc];
     local_ac[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
@@ -510,12 +495,11 @@ LAB_004fb230:
     *(float *)((int)&local_d4 + (uint)bVar11 * -8 + 4) = afStack_16c[(uint)bVar11 * -2];
     *(float *)((int)&local_d4 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
          afStack_16c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-    engine_special_cpp_FUN_00580173
-              ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&local_d4);
+    engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_d4);
     local_88 = local_58;
     local_8c = -local_50;
     local_84 = 0;
-    core_dirmat_cpp_FUN_0045f690(&local_198);
+    core_dirmat_cpp_FUN_0045f690(local_1e0 + 0x48);
     local_e0 = local_158;
     afStack_118[(uint)bVar11 * -2 + 0xf] = afStack_16c[(uint)bVar11 * -2 + 6];
     afStack_118[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x10] =
@@ -530,27 +514,27 @@ LAB_004fb230:
     *(float *)((int)&local_d4 + (uint)bVar11 * -8 + 4) = local_ac[(uint)bVar11 * -2 + 3];
     *(float *)((int)&local_d4 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
          local_ac[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
-    engine_special_cpp_FUN_00580173
-              ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),&local_d4);
-    local_1dc = 4;
-    local_1c8 = 0;
-    local_1c4 = 0;
-    local_1c0 = 0;
-    local_1bc = 1;
-    local_1b8 = 0x1000000;
-    local_1b4 = 0;
-    local_1ac = 0x1000000;
-    local_1a8 = 0x1000000;
-    local_1b0 = 2;
-    local_19c = 0x1000000;
-    local_1a4 = 3;
-    local_1a0 = 0;
+    engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_d4);
+    local_1e0._4_4_ = 4;
+    local_1e0._24_4_ = 0;
+    local_1e0._28_4_ = 0;
+    local_1e0._32_4_ = 0;
+    local_1e0._36_4_ = 1;
+    local_1e0._40_4_ = 0x1000000;
+    local_1e0._44_4_ = 0;
+    local_1e0._52_4_ = 0x1000000;
+    local_1e0._56_4_ = 0x1000000;
+    local_1e0._48_4_ = 2;
+    local_1e0._68_4_ = 0x1000000;
+    local_1e0._60_4_ = 3;
+    local_1e0._64_4_ = 0;
     engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);
     engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,0);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xffff);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
               (DAT_00612560,(SMRGLTextureBasic *)0x1d1baac);
-    engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00482210(DAT_00612560,local_1e0,0x23);
+    engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00482210
+              (DAT_00612560,(SMRGLPrimitivePoly *)local_1e0,0x23);
     engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,1);
   }
   _DAT_01c50948 = local_78;

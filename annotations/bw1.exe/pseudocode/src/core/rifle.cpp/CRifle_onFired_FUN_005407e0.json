@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 185,
+    "complexity_score": 150,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 55,
-    "suspect_count": 10,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -171,30 +170,6 @@
       "severity": "moderate",
       "text": "float afStackY_103c [1001];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x568",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x568 < 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(0x01C57074,(CVector3f *)&this_ptr->field_0x20,(CVector3f *)&this_ptr->field_0x30,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "(0x01C57074,(CVector3f *)&this_ptr->field_0x20,(CVector3f *)&this_ptr->field_0x30,",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer value `&CStack_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

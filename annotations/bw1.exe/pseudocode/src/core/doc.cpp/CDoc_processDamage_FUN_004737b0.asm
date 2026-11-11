@@ -60,12 +60,12 @@ section .text
     JNZ 0x00473a90                      ; 004737c4
         ;   XREF to: 00473a90 (CONDITIONAL_JUMP)  ; LAB_00473a90
     MOV EAX,[0x0061d95c]                ; 004737ca | g_CGamePtr
-    CMP dword ptr [EAX + 0x1ec],0x0     ; 004737cf | g_CGameInstance.field444_0x1ec
+    CMP dword ptr [EAX + 0x1ec],0x0     ; 004737cf | g_CGameInstance.god_mode_enabled
     JNZ 0x00473a97                      ; 004737d6
         ;   XREF to: 00473a97 (CONDITIONAL_JUMP)  ; LAB_00473a97
     MOV EAX,[0x0061d95c]                ; 004737dc | g_CGamePtr
         ;   Label: LAB_004737dc
-    MOV ESI,dword ptr [EAX + 0x248]     ; 004737e1 | g_CGameInstance.field536_0x248
+    MOV ESI,dword ptr [EAX + 0x248]     ; 004737e1 | g_CGameInstance.allow_damage_flag
     TEST ESI,ESI                        ; 004737e7
     JNZ 0x004737f1                      ; 004737e9
         ;   XREF to: 004737f1 (CONDITIONAL_JUMP)  ; LAB_004737f1
@@ -103,7 +103,7 @@ section .text
     MOV dword ptr [EBX + 0xc1d0],0x3e19999a ; 0047383a
     MOV EAX,[0x0061d95c]                ; 00473844 | g_CGamePtr
         ;   Label: LAB_00473844
-    CMP dword ptr [EAX + 0xd0],0x3      ; 00473849 | g_CGameInstance.field160_0xd0
+    CMP dword ptr [EAX + 0xd0],0x3      ; 00473849 | g_CGameInstance.game_control
     JNZ 0x00473865                      ; 00473850
         ;   XREF to: 00473865 (CONDITIONAL_JUMP)  ; LAB_00473865
     MOV EAX,dword ptr [EBP + 0x18]      ; 00473852
@@ -143,7 +143,7 @@ section .text
     ADD ESP,0x8                         ; 004738b4
     MOV EAX,[0x0061d95c]                ; 004738b7 | g_CGamePtr
         ;   Label: LAB_004738b7
-    CMP dword ptr [EAX + 0xdc],0x0      ; 004738bc | g_CGameInstance.field172_0xdc
+    CMP dword ptr [EAX + 0xdc],0x0      ; 004738bc | g_CGameInstance.auto_use_health
     JZ 0x0047392a                       ; 004738c3
         ;   XREF to: 0047392a (CONDITIONAL_JUMP)  ; LAB_0047392a
     MOV EAX,dword ptr [EBP + 0x18]      ; 004738c5

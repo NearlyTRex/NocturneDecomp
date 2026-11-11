@@ -2,18 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 407,
+    "complexity_score": 437,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 72,
-    "suspect_count": 31,
+    "suspect_count": 33,
     "suspect_types": [
       "param_count_too_few",
       "pointer_stride_bytecount",
       "undefined_data",
       "unnamed_param",
+      "unrolled_strcpy",
+      "unrolled_strlen",
       "warning_overlapping_globals"
     ],
     "total_lines": 238
@@ -48,7 +50,7 @@
     ],
     "convention": "unknown",
     "name": "core_event.cpp_FUN_004a9870",
-    "signature": "void core_event_cpp_FUN_004a9870(CEventList *param_1,CEventList *param_2,int param_3)"
+    "signature": "void core_event_cpp_FUN_004a9870(CEventList *param_1,char *param_2,int param_3)"
   },
   "function_calls": [
     {
@@ -276,7 +278,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_event_cpp_FUN_004a9870(CEventList *param_1,CEventList *param_2,int param_3)",
+      "text": "void core_event_cpp_FUN_004a9870(CEventList *param_1,char *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -284,7 +286,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_event_cpp_FUN_004a9870(CEventList *param_1,CEventList *param_2,int param_3)",
+      "text": "void core_event_cpp_FUN_004a9870(CEventList *param_1,char *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -292,31 +294,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_event_cpp_FUN_004a9870(CEventList *param_1,CEventList *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 != (CEventList *)0x0) && (*param_2 != (CEventList)0x0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 != (CEventList *)0x0) && (*param_2 != (CEventList)0x0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = core_event_cpp_CEventList_findPersistentEvent_FUN_004a9eb0(param_1,(char *)param_2);",
+      "text": "void core_event_cpp_FUN_004a9870(CEventList *param_1,char *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -324,7 +302,15 @@
       "line": 16,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = core_event_cpp_CEventList_findPersistentEvent_FUN_004a9eb0(param_1,(char *)param_2);",
+      "text": "if ((param_2 != (char *)0x0) && (*param_2 != '\\0')) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((param_2 != (char *)0x0) && (*param_2 != '\\0')) {",
       "type": "unnamed_param"
     },
     {
@@ -332,12 +318,28 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar5 = param_1 + 0x2590;",
+      "text": "iVar2 = core_event_cpp_CEventList_findPersistentEvent_FUN_004a9eb0(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = core_event_cpp_CEventList_findPersistentEvent_FUN_004a9eb0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pacVar5 = (param_1->persistent_events).names;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == 0) {",
@@ -345,18 +347,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = *(int *)(param_1 + 0x258c);",
+      "text": "iVar4 = (param_1->persistent_events).count + -1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x258c) = iVar4 + -1;",
+      "text": "(param_1->persistent_events).count = iVar4;",
       "type": "unnamed_param"
     },
     {
@@ -364,7 +366,7 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (99 < *(int *)(param_1 + 0x258c)) {",
+      "text": "if (99 < (param_1->persistent_events).count) {",
       "type": "unnamed_param"
     },
     {
@@ -380,7 +382,7 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x258c)) {",
+      "text": "if (0 < (param_1->persistent_events).count) {",
       "type": "unnamed_param"
     },
     {
@@ -388,7 +390,7 @@
       "line": 36,
       "match": "DAT_005deac2",
       "severity": "mild",
-      "text": "FUN_005c03c0(iVar2,&DAT_005deac2,pCVar5);",
+      "text": "FUN_005c03c0(iVar2,&DAT_005deac2,pacVar5);",
       "type": "undefined_data"
     },
     {
@@ -396,7 +398,7 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar4 < *(int *)(param_1 + 0x258c));",
+      "text": "} while (iVar4 < (param_1->persistent_events).count);",
       "type": "unnamed_param"
     },
     {
@@ -404,7 +406,7 @@
       "line": 47,
       "match": "param_2",
       "severity": "mild",
-      "text": "pCVar5 = param_2;",
+      "text": "pcVar6 = param_2;",
       "type": "unnamed_param"
     },
     {
@@ -420,7 +422,7 @@
       "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar5 = param_1 + *(int *)(param_1 + 0x258c) * 0x20 + 0x2590;",
+      "text": "pacVar5 = (param_1->persistent_events).names + (param_1->persistent_events).count;",
       "type": "unnamed_param"
     },
     {
@@ -428,7 +430,7 @@
       "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar5 = param_1 + *(int *)(param_1 + 0x258c) * 0x20 + 0x2590;",
+      "text": "pacVar5 = (param_1->persistent_events).names + (param_1->persistent_events).count;",
       "type": "unnamed_param"
     },
     {
@@ -436,7 +438,7 @@
       "line": 61,
       "match": "param_2",
       "severity": "mild",
-      "text": "CVar1 = *param_2;",
+      "text": "cVar1 = *param_2;",
       "type": "unnamed_param"
     },
     {
@@ -444,7 +446,7 @@
       "line": 64,
       "match": "param_2",
       "severity": "mild",
-      "text": "CVar1 = param_2[1];",
+      "text": "cVar1 = param_2[1];",
       "type": "unnamed_param"
     },
     {
@@ -468,7 +470,7 @@
       "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "((char *)(param_1 + *(int *)(param_1 + 0x258c) * 0x20 + 0x2590));",
+      "text": "((param_1->persistent_events).names[(param_1->persistent_events).count]);",
       "type": "unnamed_param"
     },
     {
@@ -476,7 +478,7 @@
       "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "((char *)(param_1 + *(int *)(param_1 + 0x258c) * 0x20 + 0x2590));",
+      "text": "((param_1->persistent_events).names[(param_1->persistent_events).count]);",
       "type": "unnamed_param"
     },
     {
@@ -484,7 +486,7 @@
       "line": 71,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x258c) = *(int *)(param_1 + 0x258c) + 1;",
+      "text": "(param_1->persistent_events).count = (param_1->persistent_events).count + 1;",
       "type": "unnamed_param"
     },
     {
@@ -492,12 +494,28 @@
       "line": 71,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x258c) = *(int *)(param_1 + 0x258c) + 1;",
+      "text": "(param_1->persistent_events).count = (param_1->persistent_events).count + 1;",
       "type": "unnamed_param"
     },
     {
-      "description": "mem* byte count hardcodes an element stride (((iVar4 + -1) - iVar2) * 0x20) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 22,
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 60,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 48,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((iVar4 - iVar2) * 0x20) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 23,
       "match": "memmove",
       "severity": "moderate",
       "text": "memmove",

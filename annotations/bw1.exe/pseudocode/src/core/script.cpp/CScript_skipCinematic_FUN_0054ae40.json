@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 79,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 34,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 119
@@ -91,7 +90,7 @@
     },
     {
       "addr": "01ccf5d4",
-      "name": "g_CGameInstance.field532_0x244",
+      "name": "g_CGameInstance.letterbox_mode",
       "type": "undefined4",
       "value": null
     },
@@ -191,19 +190,11 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x244",
-      "severity": "mild",
-      "text": "while ((*(int *)&g_CGamePtr->field_0x244 != 0 && (this_ptr->mission_ended == 0))) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 26,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "*(uint *)(this_ptr->parsed_lines + iVar1 * 8 + 4),&DAT_01e810b0);",
+      "text": "&DAT_01e810b0);",
       "type": "undefined_data"
     }
   ]

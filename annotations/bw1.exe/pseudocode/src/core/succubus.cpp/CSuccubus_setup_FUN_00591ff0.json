@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 277,
-    "complexity_score": 167,
+    "complexity_score": 126,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 37,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 97,
-    "suspect_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 96,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 374
+    "total_lines": 373
   },
   "cross_references": [],
   "function": {
@@ -241,7 +241,7 @@
     },
     {
       "addr": "01ccf3a8",
-      "name": "g_CGameInstance.field15_0x18",
+      "name": "g_CGameInstance.nudity_flag",
       "type": "undefined4",
       "value": null
     },
@@ -378,52 +378,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x18 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 76,
-      "match": "field_0x6ac",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr->base).base.model.field_0x6ac =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 77,
-      "match": "field_0x6ac",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr->base).base.model.field_0x6ac + _DAT_005f7352;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 80,
-      "match": "field_0xe7d8",
-      "severity": "mild",
-      "text": "this_ptr_01 = &this_ptr->field_0xe7d8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 92,
-      "match": "field_0xf400",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xf400 = 0;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

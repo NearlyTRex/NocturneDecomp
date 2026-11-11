@@ -121,7 +121,7 @@ void __cdecl core_sound_cpp_CSound_process_FUN_0057ce10(CSound *this_ptr)
   }
   if (g_CDemonSetPtr->player_on_train != 0) {
     local_24 = g_CGamePtr->delta_time_float;
-    if (*(int *)&g_CGamePtr->field_0x25c == 0) {
+    if (g_CGamePtr->goggles_active == 0) {
       if (_DAT_02c83364 != g_CDemonSetPtr->selected_camera_index) {
         core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
         core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005592b0(g_CDemonSetPtr);

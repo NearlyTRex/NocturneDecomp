@@ -1563,7 +1563,7 @@ section .text
     JZ 0x00429b35                       ; 00429cf3
         ;   XREF to: 00429b35 (CONDITIONAL_JUMP)  ; caseD_15
     MOV EAX,[0x0061d95c]                ; 00429cf9 | g_CGamePtr
-    MOV dword ptr [EAX + 0x23c],0x1     ; 00429cfe | g_CGameInstance.field524_0x23c
+    MOV dword ptr [EAX + 0x23c],0x1     ; 00429cfe | g_CGameInstance.player_hit_flag
     MOV EAX,[0x01d06ab4]                ; 00429d08 | DAT_01d06ab4
     MOV EAX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 00429d0d
     MOV dword ptr [EBX + 0xc1e8],EAX    ; 00429d14
@@ -1609,7 +1609,7 @@ section .text
     JZ 0x00429dbe                       ; 00429d9b
         ;   XREF to: 00429dbe (CONDITIONAL_JUMP)  ; LAB_00429dbe
     MOV EAX,[0x0061d95c]                ; 00429d9d | g_CGamePtr
-    MOV dword ptr [EAX + 0x23c],0x1     ; 00429da2 | g_CGameInstance.field524_0x23c
+    MOV dword ptr [EAX + 0x23c],0x1     ; 00429da2 | g_CGameInstance.player_hit_flag
     MOV EAX,[0x01d06ab4]                ; 00429dac | DAT_01d06ab4
     MOV EAX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 00429db1
     MOV dword ptr [EBX + 0xc1e8],EAX    ; 00429db8

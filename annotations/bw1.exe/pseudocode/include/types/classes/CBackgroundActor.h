@@ -13,7 +13,7 @@
 #pragma pack(push, 1)
 typedef struct CBackgroundActor {
     CDemonActor base; // 0x0
-    char field_344[4]; // 0x158
+    int cast_shadows_flag; // 0x158, Added in this build
     CKeyFramedModelInstance model; // 0x15c
     int collide_with_me; // 0x2d8
     EGroundType ground_type; // 0x2dc

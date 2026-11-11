@@ -11,7 +11,7 @@ void core_tentacle_cpp_factoryFuncTentacle_FUN_005951d0(void)
 {
   CTentacle *this_ptr;
   
-  this_ptr = (CTentacle *)debugAllocTracked1(0xc2d8);
+  this_ptr = (CTentacle *)operator_new(0xc2d8);
   if (this_ptr == (CTentacle *)0x0) {
     return;
   }

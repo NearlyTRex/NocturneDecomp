@@ -16,8 +16,8 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_00526530(CFile
   int iVar5;
   int local_14;
   
-  iVar1 = *(int *)(frame + 0x10);
-  iVar5 = *(int *)(frame + 0x14);
+  iVar1 = frame->channel_count;
+  iVar5 = frame->js_bound;
   if (0 < iVar5) {
     local_14 = 0;
     do {

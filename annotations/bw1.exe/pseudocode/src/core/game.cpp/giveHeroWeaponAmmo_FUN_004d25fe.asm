@@ -13,7 +13,7 @@
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ddd0
 ;   core_inv.cpp_FUN_004f7690
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60
-;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
+;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
         ;   Label: core_game.cpp_giveHeroWeaponAmmo_FUN_004d25fe
     PUSH EBX                            ; 004d2600
     PUSH 0x31c                          ; 004d2601
-    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 004d2606
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004d2606
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     MOV EBX,EAX                         ; 004d260b
     ADD ESP,0x4                         ; 004d260d
     TEST EAX,EAX                        ; 004d2610

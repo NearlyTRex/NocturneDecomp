@@ -16,7 +16,7 @@ void __cdecl core_sentinel_cpp_CSentinel_processDamage_FUN_0054cb80(CSentinel *t
   int iVar4;
   char *sound_name;
   
-  fVar1 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;
   if (0.0 < fVar1) {
@@ -39,7 +39,7 @@ void __cdecl core_sentinel_cpp_CSentinel_processDamage_FUN_0054cb80(CSentinel *t
   else {
     (this_ptr->base).base.hit_points = 0.0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
-    if ((*(int *)(pSVar2 + 0x24) == 8) || (*(int *)(pSVar2 + 0x24) == 9)) goto LAB_0054cbfd;
+    if ((pSVar2->state_index == 8) || (pSVar2->state_index == 9)) goto LAB_0054cbfd;
     core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&this_ptr_00->base,8,1);
     sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handle);
     sound_name = "sentinel-die.wav";

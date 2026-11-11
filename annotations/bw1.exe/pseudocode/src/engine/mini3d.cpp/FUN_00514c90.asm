@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
-;   crt_unknown.c_FUN_005c08d0
+;   crt_memory.c_malloc_FUN_005c08d0
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     SHL EAX,0x5                         ; 00514c95
     ADD EAX,0x20                        ; 00514c98
     PUSH EAX                            ; 00514c9b
-    CALL crt_unknown.c_FUN_005c08d0     ; 00514c9c
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 00514c9c
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 00514ca1
     MOV EBX,EAX                         ; 00514ca4
     TEST EAX,EAX                        ; 00514ca6

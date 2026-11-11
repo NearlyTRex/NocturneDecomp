@@ -34,12 +34,8 @@ void __cdecl core_sentinel_cpp_CSentinel_process_FUN_0054bc90(CSentinel *this_pt
   SDamageInfo *pSVar16;
   float max_distance;
   float fVar17;
-  SDamageInfo aSStack_290 [4];
-  float fStack_28c;
-  CSentinel *pCStack_25c;
-  CSentinel *pCStack_258;
-  SDamageInfo aSStack_254 [4];
-  float fStack_250;
+  SDamageInfo SStack_290;
+  SDamageInfo SStack_254;
   uint uStack_218;
   float afStack_214 [5];
   float fStack_200;
@@ -99,7 +95,7 @@ void __cdecl core_sentinel_cpp_CSentinel_process_FUN_0054bc90(CSentinel *this_pt
   float fStack_5c;
   float afStack_58 [2];
   CVector3f CStack_50;
-  byte *puStack_44;
+  CMatrix3x4f *pCStack_44;
   float afStack_40 [3];
   float fStack_34;
   float fStack_30;
@@ -168,11 +164,11 @@ LAB_0054bcec:
       break;
     case 0x66:
       if ((this_ptr->base).victim != (CCharacter *)0x0) {
-        core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(aSStack_254);
-        fStack_250 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(1.0,5.0);
+        core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&SStack_254);
+        SStack_254.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(1.0,5.0);
         pCVar3 = (this_ptr->base).victim;
-        fStack_14 = fStack_250;
-        (*(((pCVar3->base).vtable._uc)->_uc).processDamage)(pCVar3,aSStack_254);
+        fStack_14 = SStack_254.damage_amount;
+        (*(((pCVar3->base).vtable._uc)->_uc).processDamage)(pCVar3,&SStack_254);
       }
       break;
     case 0x67:
@@ -189,16 +185,15 @@ LAB_0054bcec:
     goto LAB_0054bcec;
   }
   fVar15 = (this_ptr->base).speed;
-  *(float *)&(this_ptr->base).base.field_0x2524 =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
+  (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   core_charactr_cpp_FUN_00435320(this_ptr,delta_time * fVar15);
   pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(pCStack_24);
-  iVar4 = *(int *)(pSVar5 + 0x24);
+  iVar4 = pSVar5->state_index;
   iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00432240
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     if ((iVar4 == 10) || (iVar4 == 0xb)) {
-      *(uint *)&(this_ptr->base).base.field_0x2ff0 = 0x3f000000;
+      (this_ptr->base).base.collision_cylinder_radius = 0.5;
       switch(iVar4) {
       case 0:
         goto switchD_0054c14a_caseD_0;
@@ -221,7 +216,7 @@ LAB_0054bcec:
         goto switchD_0054c14a_caseD_e;
       }
     }
-    *(uint *)&(this_ptr->base).base.field_0x2ff0 = 0x40000000;
+    (this_ptr->base).base.collision_cylinder_radius = 2.0;
     switch(iVar4) {
     case 0:
 switchD_0054c14a_caseD_0:
@@ -441,15 +436,15 @@ switchD_0054c14a_caseD_3:
       break;
     case 4:
 switchD_0054c14a_caseD_4:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(aSStack_290);
-      fStack_28c = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(7.0,15.0);
-      pSVar16 = aSStack_290;
-      pCStack_25c = this_ptr;
-      pCStack_258 = this_ptr;
-      puStack_44 = &(this_ptr->base).base.model.field_0xe80;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&SStack_290);
+      SStack_290.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(7.0,15.0);
+      pSVar16 = &SStack_290;
+      SStack_290.attacker = (CDemonActor *)this_ptr;
+      SStack_290.wielder = (CDemonActor *)this_ptr;
+      pCStack_44 = (this_ptr->base).base.model.bone_transform.bone_model_matrices;
       fVar15 = 1.0;
-      fStack_14 = fStack_28c;
-      core_xform_cpp_FUN_005b5080(&DAT_02c8af28,puStack_44 + _DAT_01e82104 * 0x30);
+      fStack_14 = SStack_290.damage_amount;
+      core_xform_cpp_FUN_005b5080(&DAT_02c8af28,pCStack_44 + _DAT_01e82104);
       pfVar12 = afStack_16c + 0x17;
       afStack_110[0] = (float)uStack_bc;
       afStack_16c[(uint)bVar10 * -2 + 0x18] = afStack_f4[(uint)bVar10 * -2 + 0xf];
@@ -463,13 +458,13 @@ switchD_0054c14a_caseD_4:
       *(float *)((int)&CStack_68 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
            afStack_f4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x16];
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a0770(&pCVar11->base,pCVar14,fVar15,pSVar16);
-      fStack_28c = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(15.0,30.0);
-      pSVar16 = aSStack_290;
-      pCStack_25c = this_ptr;
+      SStack_290.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(15.0,30.0);
+      pSVar16 = &SStack_290;
+      SStack_290.attacker = (CDemonActor *)this_ptr;
       fVar15 = 1.0;
-      pCStack_258 = this_ptr;
-      fStack_14 = fStack_28c;
-      core_xform_cpp_FUN_005b5080(&DAT_02c8af28,puStack_44 + _DAT_01e820fc * 0x30);
+      SStack_290.wielder = (CDemonActor *)this_ptr;
+      fStack_14 = SStack_290.damage_amount;
+      core_xform_cpp_FUN_005b5080(&DAT_02c8af28,pCStack_44 + _DAT_01e820fc);
       puVar13 = &uStack_f8;
       uStack_f8 = uStack_1a0;
       afStack_f4[(uint)bVar10 * -2] = afStack_1d8[(uint)bVar10 * -2 + 0xf];

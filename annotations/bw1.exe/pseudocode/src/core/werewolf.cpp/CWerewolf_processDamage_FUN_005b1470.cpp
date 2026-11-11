@@ -22,16 +22,16 @@ void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_005b1470(CWerewolf *t
   
   bVar5 = 0;
   sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handle);
-  if (*(int *)(damage_info + 0x30) == 0x6c) {
+  if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
     core_werewolf_cpp_CWerewolf_playHowl_FUN_005b0bb0(this_ptr);
     core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
               (&(this_ptr->base).base.model.base,0x16,1);
     core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(&this_ptr->base,damage_info);
     return;
   }
-  if (*(int *)(damage_info + 0x28) == 3) {
-    *(float *)(damage_info + 4) = *(float *)(damage_info + 4) * (float)_DAT_005f9bd2;
-    core_actor_cpp_FUN_00408b40(this_ptr,damage_info + 0x1c);
+  if (damage_info->ammo_type == AMMO_TYPE_SILVER) {
+    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005f9bd2;
+    core_actor_cpp_FUN_00408b40(this_ptr,&damage_info->impact_direction);
     iVar4 = 0;
     *(uint *)((int)&CStack_24 + (uint)bVar5 * -8 + 4) =
          *(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8);
@@ -43,13 +43,13 @@ void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_005b1470(CWerewolf *t
                 (0x01C57074,&CStack_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar4 < 5);
   }
-  fVar1 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
-    if ((*(int *)(pSVar2 + 0x24) != 0xd) && (*(int *)(pSVar2 + 0x24) != 0xc)) {
+    if ((pSVar2->state_index != 0xd) && (pSVar2->state_index != 0xc)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&this_ptr_00->base,0xc,1);
       if ((this_ptr->type == WEREWOLF_TYPE_TRAIN) && (g_CDemonSetPtr->last_switch_area_invalid != 0)
          ) {
@@ -73,7 +73,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_005b1470(CWerewolf *t
   }
   if (this_ptr->type != WEREWOLF_TYPE_FOREST) {
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
-    iVar4 = *(int *)(pSVar2 + 0x24);
+    iVar4 = pSVar2->state_index;
     if ((iVar4 == 0xe) || (iVar4 == 0xf)) {
       iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,2);
       if (iVar4 == 0) {

@@ -2,20 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 179,
-    "complexity_score": 282,
+    "complexity_score": 262,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 92,
-    "suspect_count": 15,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
+      "unrolled_memcpy",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
@@ -324,52 +324,12 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "pfVar6 = (float *)&this_ptr->boxes[0].field_0xc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "*(CBodyPart **)&local_1c->boxes[0].field_0x44 = body_part;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 68,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(float *)&pSVar3->field_0x4 = (body_part->base).location.position.y;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 69,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(float *)&pSVar3->field_0x8 = (body_part->base).location.position.z;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 81,
       "match": "(uint *)((int)local_1c",
       "severity": "moderate",
       "text": "puVar7 = (uint *)((int)local_1c + (uint)bVar9 * -8 + 0xc314);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 82,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(uint *)&local_1c->boxes[0].field_0x28 = local_48;",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",
@@ -410,6 +370,30 @@
       "severity": "moderate",
       "text": "((int)(&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) +",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 67,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pSVar3->pos).x = (pCVar5->position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 73,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar6->x = (pUVar1->vec).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` was initialized to the address of an array element's subfield (`pCVar6 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pCVar6)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pCVar6->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 77,
+      "match": "pCVar6 = pCVar6 + N",
+      "severity": "moderate",
+      "text": "pCVar6 = pCVar6 + 6;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom shadow-pointer walk (two-step form) \u2014 `local_1c` is advanced into scratch `pCVar4`, then rebound via a later `local_1c = pCVar4;`. Functionally identical to the single-line self-update; replace `local_1c->some_field[0]` reads with direct indexing on the original pointer and drop both the advance line and the rebind.",

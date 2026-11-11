@@ -12,7 +12,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_processDamage_FUN_0041d330(CBoneGuy *this
   float fVar1;
   
   sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handle);
-  fVar1 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   (this_ptr->base).base.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 1.0;

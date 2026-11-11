@@ -1,12 +1,8 @@
 [
   {
     "kind":"class",
-    "name":"CActorProperty",
-    "size":1
-  },
-  {
-    "kind":"class",
     "name":"CAsciiArmor",
+    "parent":"CCodec",
     "size":12
   },
   {
@@ -24,6 +20,7 @@
   {
     "kind":"class",
     "name":"CConstruct",
+    "parent":"CEnemy",
     "size":51820
   },
   {
@@ -198,6 +195,7 @@
   {
     "kind":"class",
     "name":"CLightPis",
+    "parent":"CWeapon",
     "size":1432
   },
   {
@@ -254,6 +252,7 @@
   {
     "kind":"class",
     "name":"CShell",
+    "parent":"CParticle",
     "rtti_file":"core/emitter.cpp",
     "size":96
   },
@@ -342,6 +341,7 @@
   {
     "kind":"class",
     "name":"CSpark",
+    "parent":"CParticle",
     "rtti_file":"core/emitter.cpp",
     "size":84
   },
@@ -465,22 +465,22 @@
   {
     "kind":"struct",
     "name":"SCollisionReturnInfo",
-    "size":1
+    "size":28
   },
   {
     "kind":"struct",
     "name":"SDamageInfo",
-    "size":1
+    "size":60
   },
   {
     "kind":"struct",
     "name":"SHuffmanTable",
-    "size":1
+    "size":2088
   },
   {
     "kind":"struct",
     "name":"SInteractionInfo",
-    "size":1
+    "size":32
   },
   {
     "kind":"struct",
@@ -491,11 +491,12 @@
   {
     "kind":"struct",
     "name":"SPageResourceMap",
+    "parent":"SPageResource",
     "size":28
   },
   {
     "kind":"struct",
     "name":"SRGBColorPalette",
-    "size":1
+    "size":768
   }
 ]

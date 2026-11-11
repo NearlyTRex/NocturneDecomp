@@ -23,13 +23,14 @@ CBassPlayer * core_tbplayer_cpp_CBassPlayer_dtor_FUN_00594d50(CBassPlayer *this_
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = core_path_cpp_CPathMap_dtor_FUN_00533060((CPathMap *)&(this_ptr->base).field_0xc1d0,0);
+  pCVar1 = core_path_cpp_CPathMap_dtor_FUN_00533060(&(this_ptr->base).path_map,0);
   iVar2 = core_armour_cpp_FUN_0040ee30(pCVar1[-1].height_cache_tags[10] + 0x36,0);
   pCVar3 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)(iVar2 + -0x93c),0);
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
                      ((CDeformableModelInstance *)(pCVar3[-0x19].filenames[0] + 0x10),0);
   pCVar5 = (CBassPlayer *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&pCVar4[-1].field_0x224c,1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408730
+                     ((CDemonActor *)(pCVar4[-1].part_data.texture_set_indices + 7),1);
   if ((flags & 2) == 0) {
     return pCVar5;
   }

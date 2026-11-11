@@ -13,10 +13,10 @@ void __cdecl core_fire_cpp_CFireEffect_createRainDrop_FUN_004b7320(CFireEffect *
 {
   int iVar1;
   
-  (*(code *)**(uint **)&g_RainDropPool[_DAT_01cc010c].field_0x3c)
-            (g_RainDropPool + _DAT_01cc010c,position,velocity);
+  (*(g_RainDropPool[_DAT_01cc010c].base.vtable)->setup)
+            (&g_RainDropPool[_DAT_01cc010c].base,position,velocity);
   iVar1 = _DAT_01cc010c + 1;
-  *(uint *)&g_RainDropPool[_DAT_01cc010c].field_0x24 = 0x3e800000;
+  g_RainDropPool[_DAT_01cc010c].base.lifetime_remaining = 0.25;
   if (0xff < iVar1) {
     iVar1 = 0;
   }

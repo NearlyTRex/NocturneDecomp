@@ -28,7 +28,7 @@ void cockpit_ckptutil_c_FUN_004387f0(int param_1,int param_2,int param_3,int par
       _DAT_01d1d404 = 0x3d7;
       core_main_c_FUN_005030e0("Invalid height array size.");
     }
-    piVar1 = (int *)FUN_005c1268(param_4 * 4);
+    piVar1 = (int *)operator_new_array(param_4 * 4);
     if (piVar1 == (int *)0x0) {
       _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
       _DAT_01d1d404 = 0x3dd;

@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 23,
+    "complexity_score": 8,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 8,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 23
   },
   "cross_references": [],
@@ -29,14 +27,14 @@
   },
   "function_calls": [
     {
-      "addr": "004bb1c0",
-      "is_variadic": false,
-      "name": "core_fldnotes.cpp_FUN_004bb1c0"
-    },
-    {
       "addr": "004bdaa0",
       "is_variadic": false,
-      "name": "core_fldnotes.cpp_FUN_004bdaa0"
+      "name": "core_fldnotes.cpp_CFieldNotes_clear_FUN_004bdaa0"
+    },
+    {
+      "addr": "004bb1c0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextView_reset_FUN_004bb1c0"
     }
   ],
   "globals": [],
@@ -92,16 +90,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x40 = 0;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

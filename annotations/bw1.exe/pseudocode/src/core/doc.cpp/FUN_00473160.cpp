@@ -83,7 +83,7 @@ void core_doc_cpp_FUN_00473160(CDemonActor *param_1)
   uint uStack_2c;
   float fStack_28;
   float fStack_24;
-  int *piStack_20;
+  float *pfStack_20;
   float fStack_1c;
   float fStack_18;
   
@@ -95,7 +95,7 @@ void core_doc_cpp_FUN_00473160(CDemonActor *param_1)
   }
   (**(code **)(*(int *)(*(int *)(param_1[0x17d].actor_name + 0xc) + 0x154) + 0xe0))
             (*(int *)(param_1[0x17d].actor_name + 0xc));
-  piStack_20 = &param_1[0x17c].previous_transform_state.dirty_flags;
+  pfStack_20 = (float *)((int)&param_1[0x17c].previous_transform_state.orientation + 8);
   uStack_2c = _DAT_01b68820;
   fStack_120 = local_6c;
   (&stack0xfffffee4)[(uint)bVar4 * 0xfffffffe] =
@@ -249,10 +249,10 @@ void core_doc_cpp_FUN_00473160(CDemonActor *param_1)
   if (fStack_30 < fStack_1c) {
     fStack_1c = fStack_30;
   }
-  piStack_20[5] = 0x3f800000;
-  piStack_20[3] = (int)fStack_1c;
-  piStack_20[2] = (int)fStack_24;
-  piStack_20[1] = (int)fStack_1c;
-  *piStack_20 = (int)fStack_24;
+  pfStack_20[5] = 1.0;
+  pfStack_20[3] = fStack_1c;
+  pfStack_20[2] = fStack_24;
+  pfStack_20[1] = fStack_1c;
+  *pfStack_20 = fStack_24;
   return;
 }

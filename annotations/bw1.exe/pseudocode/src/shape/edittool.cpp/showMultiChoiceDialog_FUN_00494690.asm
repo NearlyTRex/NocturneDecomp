@@ -57,8 +57,8 @@
 ;   crt_ctype.c_toupper_FUN_005c12b0
 ;   crt_memory.c___vec_delete_FUN_005c030f
 ;   crt_memory.c___vec_new_FUN_005c2694
+;   crt_memory.c_operator_new_array_FUN_005c1268
 ;   crt_unknown.c_FUN_005c0336
-;   crt_unknown.c_FUN_005c1268
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0
@@ -119,8 +119,8 @@ section .text
     SHL EAX,0x2                         ; 00494717
     ADD EAX,0x4                         ; 0049471a
     PUSH EAX                            ; 0049471d
-    CALL crt_unknown.c_FUN_005c1268     ; 0049471e
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c1268()
+    CALL crt_memory.c_operator_new_array_FUN_005c1268 ; 0049471e
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005c1268()
     ADD ESP,0x4                         ; 00494723
     PUSH EAX                            ; 00494726
     XOR EDI,EDI                         ; 00494727

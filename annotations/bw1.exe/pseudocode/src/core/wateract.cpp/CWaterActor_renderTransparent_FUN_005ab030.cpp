@@ -16,7 +16,7 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005ab030(CWaterA
   int iVar3;
   int *piVar4;
   SWaterVertex *pSVar5;
-  SMRGLPrimitivePoly *primitive_array;
+  SMRGLPrimitivePoly *poly;
   uint *puVar6;
   CVector3f *vertex_position;
   uint *puVar7;
@@ -67,36 +67,38 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005ab030(CWaterA
           core_set_cpp_FUN_00552d40(g_CDemonSetPtr,vertex_position,(CVector3f *)&DAT_02c8af28,iVar3)
           ;
           pSVar1 = DAT_00612560->vertex_buffer_ptr;
-          lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)(pSVar1 + iVar8 + 0x20);
-          *(uint *)(pSVar1 + iVar8 + 0x20) =
+          lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)((int)&pSVar1->r + iVar8)
+          ;
+          *(uint *)((int)&pSVar1->r + iVar8) =
                (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-          lVar2 = (longlong)((this_ptr->color).g << 8) * (longlong)*(int *)(pSVar1 + iVar8 + 0x24);
-          *(uint *)(pSVar1 + iVar8 + 0x24) =
+          lVar2 = (longlong)((this_ptr->color).g << 8) * (longlong)*(int *)((int)&pSVar1->g + iVar8)
+          ;
+          *(uint *)((int)&pSVar1->g + iVar8) =
                (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-          lVar2 = (longlong)((this_ptr->color).b << 8) * (longlong)*(int *)(pSVar1 + iVar8 + 0x28);
-          *(uint *)(pSVar1 + iVar8 + 0x28) =
+          lVar2 = (longlong)((this_ptr->color).b << 8) * (longlong)*(int *)((int)&pSVar1->b + iVar8)
+          ;
+          *(uint *)((int)&pSVar1->b + iVar8) =
                (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
           iVar3 = iVar3 + 1;
           vertex_position = (CVector3f *)&vertex_position[2].z;
           iVar8 = iVar8 + 0x30;
         } while (iVar3 < this_ptr->vertex_count);
       }
-      primitive_array = (SMRGLPrimitivePoly *)this_ptr->primitives;
+      poly = (SMRGLPrimitivePoly *)this_ptr->primitives;
       if (this_ptr->opacity < 0xfde9) {
         iVar3 = 0;
         if (0 < this_ptr->primitive_count) {
           do {
             iVar3 = iVar3 + 1;
             engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00482210
-                      (DAT_00612560,primitive_array,0x267);
-            primitive_array = primitive_array + 0x48;
+                      (DAT_00612560,poly,0x267);
+            poly = (SMRGLPrimitivePoly *)(poly->vertices + 4);
           } while (iVar3 < this_ptr->primitive_count);
         }
       }
       else {
         core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0
-                  (g_CDemonSetPtr,(SMRGLPrimitiveQuad *)primitive_array,this_ptr->primitive_count,-1
-                  );
+                  (g_CDemonSetPtr,(SMRGLPrimitiveQuad *)poly,this_ptr->primitive_count,-1);
       }
       engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);
     }

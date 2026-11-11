@@ -9,10 +9,10 @@
 void __cdecl core_dimage_cpp_FUN_0045f100(CDemonImage *this_ptr)
 
 {
-  if (*(int *)(this_ptr + 0x300) == 0) {
+  if (this_ptr->data == (void *)0x0) {
     return;
   }
-  FUN_005c09f0(*(int *)(this_ptr + 0x300));
-  *(uint *)(this_ptr + 0x300) = 0;
+  FUN_005c09f0(this_ptr->data);
+  this_ptr->data = (void *)0x0;
   return;
 }

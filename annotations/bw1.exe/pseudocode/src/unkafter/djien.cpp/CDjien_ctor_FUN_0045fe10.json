@@ -2,16 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 94,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 39,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "derived_field_index_pun",
-      "unnamed_field",
+      "shadow_pointer_walk",
       "warning_overlapping_globals"
     ],
     "total_lines": 88
@@ -139,23 +139,15 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom shadow-pointer walk (two-step form) \u2014 `pCVar5` is advanced into scratch `pCVar6`, then rebound via a later `pCVar5 = pCVar6;`. Functionally identical to the single-line self-update; replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer and drop both the advance line and the rebind.",
       "line": 38,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "puVar6 = &pCVar5->field_0x4;",
-      "type": "unnamed_field"
+      "match": "pCVar6 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST); ...; pCVar5 = pCVar6",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDjien *)((pCVar5->base).base.base.actor_name + 4);",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0xc2d8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0xc2d8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "'pCVar3[1].base.base.create_event + 0x1c' walks 1 x sizeof(CEnemy) (0xc268) + offsetof(base.base.create_event) (0x78) + 0x1c = 0xc2fc, which is exactly offsetof(CBatman, part_indices[11]). Ghidra had no CBatman type here and reached the field by index arithmetic; write it as ((CBatman *)pCVar3)->part_indices[11] (\u00a7de-pun/\u00a712). Ambiguous: CDraculaBride::freaky_timer, CMimic::attack_condition[48], CMobster::sfx_handles also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar3[1].base.base.create_event + 0x1c' walks 1 x sizeof(CEnemy) (0xc268) + offsetof(base.base.create_event) (0x78) + 0x1c = 0xc2fc, which is exactly offsetof(CBatman, part_indices[11]). Ghidra had no CBatman type here and reached the field by index arithmetic; write it as ((CBatman *)pCVar3)->part_indices[11] (\u00a7de-pun/\u00a712). Ambiguous: CDemnfolk::bone_indices, CDjien::boxes, CDraculaBride::freaky_timer also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 17,
       "severity": "moderate",
       "text": "(pCVar3[1].base.base.create_event + 0x1c,0x18,&g_SDjienBoxTypeInfo);",

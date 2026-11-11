@@ -2,21 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 236,
-    "complexity_score": 220,
+    "complexity_score": 260,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 115,
-    "suspect_count": 8,
+    "pseudocode_lines": 110,
+    "suspect_count": 11,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "raw_address_constant",
       "stack_alignment_array",
+      "stack_ref",
       "unaffected_reg",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 351
+    "total_lines": 346
   },
   "cross_references": [
     {
@@ -246,7 +249,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 70,
+      "line": 65,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "afStack_90[2] = *(float *)(unaff_EDI + 0xc) + fStack_64;",
@@ -254,7 +257,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 71,
+      "line": 66,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "afStack_90[3] = *(float *)(unaff_EDI + 0x10) + fStack_60;",
@@ -262,15 +265,39 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 72,
+      "line": 67,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "fStack_80 = *(float *)(unaff_EDI + 0x14) + fStack_5c;",
       "type": "unaffected_reg"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 102,
+      "match": "&stack0xfffffeb8",
+      "severity": "moderate",
+      "text": "pfVar5 = (float *)&stack0xfffffeb8;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 105,
+      "match": "(SLaserInfo *)((int)pSVar4",
+      "severity": "moderate",
+      "text": "pSVar4 = (SLaserInfo *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 105,
+      "match": "(int)pSVar4",
+      "severity": "moderate",
+      "text": "pSVar4 = (SLaserInfo *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Raw hex address 0x505e5f assigned to bare local `uStack_104`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_104` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 44,
+      "line": 39,
       "match": "0x505e5f",
       "severity": "moderate",
       "text": "uStack_104 = 0x505e5f;",
@@ -278,7 +305,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 108,
+      "line": 103,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {",

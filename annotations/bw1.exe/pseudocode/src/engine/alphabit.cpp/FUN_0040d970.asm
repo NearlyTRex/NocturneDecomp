@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[4]:
-;   core_fldnotes.cpp_FUN_004bc2d0 at 004bc382
+;   core_fldnotes.cpp_CFieldNotes_loadState_FUN_004bebc0 at 004bf16c
 ;   core_fldnotes.cpp_FUN_004be0f0 at 004be680
-;   core_fldnotes.cpp_FUN_004bebc0 at 004bf16c
+;   core_fldnotes.cpp_SNotesMap_load_FUN_004bc2d0 at 004bc382
 ;   unkaddr_004b9ab0.cpp_FUN_004ba130 at 004ba257
 ;
 ; Called Functions:

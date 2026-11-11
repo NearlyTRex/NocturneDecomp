@@ -2,14 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 189,
+    "complexity_score": 244,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 11,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 54,
-    "suspect_count": 12,
+    "suspect_count": 16,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
       "undefined_data",
       "warning_overlapping_globals",
       "warning_unreachable"
@@ -315,7 +318,7 @@
       "line": 37,
       "match": "DAT_01c4e9ec",
       "severity": "mild",
-      "text": "((byte)pCVar1[0x1b6] / _DAT_01c4e9f0 << (DAT_01c4e9ec & 0x1f) |",
+      "text": "((byte)pCVar1->palette_data[2] / _DAT_01c4e9f0 << (DAT_01c4e9ec & 0x1f) |",
       "type": "undefined_data"
     },
     {
@@ -323,7 +326,7 @@
       "line": 38,
       "match": "DAT_01c4e9e0",
       "severity": "mild",
-      "text": "(byte)pCVar1[0x1b5] / _DAT_01c4e9e4 << (DAT_01c4e9e0 & 0x1f) |",
+      "text": "(byte)pCVar1->palette_data[1] / _DAT_01c4e9e4 << (DAT_01c4e9e0 & 0x1f) |",
       "type": "undefined_data"
     },
     {
@@ -331,7 +334,7 @@
       "line": 39,
       "match": "DAT_01c4e9d4",
       "severity": "mild",
-      "text": "(byte)pCVar1[0x1b4] / _DAT_01c4e9d8 << (DAT_01c4e9d4 & 0x1f)) & 0xffff;",
+      "text": "(byte)pCVar1->palette_data[0] / _DAT_01c4e9d8 << (DAT_01c4e9d4 & 0x1f)) & 0xffff;",
       "type": "undefined_data"
     },
     {
@@ -347,7 +350,7 @@
       "line": 44,
       "match": "DAT_01c4e9ec",
       "severity": "mild",
-      "text": "(uint)(byte)pCVar1[0x1b6] << (DAT_01c4e9ec & 0x1f) |",
+      "text": "(uint)(byte)pCVar1->palette_data[2] << (DAT_01c4e9ec & 0x1f) |",
       "type": "undefined_data"
     },
     {
@@ -355,7 +358,7 @@
       "line": 45,
       "match": "DAT_01c4e9d4",
       "severity": "mild",
-      "text": "(uint)(byte)pCVar1[0x1b4] << (DAT_01c4e9d4 & 0x1f) |",
+      "text": "(uint)(byte)pCVar1->palette_data[0] << (DAT_01c4e9d4 & 0x1f) |",
       "type": "undefined_data"
     },
     {
@@ -363,8 +366,40 @@
       "line": 46,
       "match": "DAT_01c4e9e0",
       "severity": "mild",
-      "text": "(uint)(byte)pCVar1[0x1b5] << (DAT_01c4e9e0 & 0x1f);",
+      "text": "(uint)(byte)pCVar1->palette_data[1] << (DAT_01c4e9e0 & 0x1f);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&pCVar1->bitmap_count` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)&pCVar1->bitmap_count",
+      "severity": "moderate",
+      "text": "pCVar1 = (CBitFont *)((int)&pCVar1->bitmap_count + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 48,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pCVar1 = (CBitFont *)((int)&pCVar1->bitmap_count + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 49,
+      "match": "local_18 = (T *)local_18->ARRAY",
+      "severity": "moderate",
+      "text": "local_18 = (CBitFont *)local_18->bitmap_files;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_14` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_14->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 50,
+      "match": "local_14 = (T *)local_14->ARRAY",
+      "severity": "moderate",
+      "text": "local_14 = (CBitFont *)local_14->bitmap_files;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

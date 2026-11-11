@@ -22,7 +22,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_0041a200(CBodyPart *t
   UOrientationVector *euler_angles_00;
   SBodyPartFire *pSVar8;
   SBodyPartModel *pSVar9;
-  byte *euler_angles_01;
+  CVector3f *euler_angles_01;
   int iVar10;
   uint *puVar11;
   int iVar12;
@@ -44,16 +44,16 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_0041a200(CBodyPart *t
   float local_b8;
   float afStack_b4 [2];
   CVector3f local_ac;
-  uint local_a0;
+  float local_a0;
   float local_9c [5];
   float local_88;
-  uint local_84;
-  uint local_80;
-  uint local_7c;
-  uint local_78;
-  uint local_74;
+  float local_84;
+  float local_80;
+  float local_7c;
+  float local_78;
+  float local_74;
   CVector3f local_70;
-  uint local_64;
+  float local_64;
   float afStack_60 [5];
   float local_4c;
   int local_40;
@@ -161,18 +161,18 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_0041a200(CBodyPart *t
       local_9c[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1] =
            afStack_60[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 4];
       if (pSVar8 != (SBodyPartFire *)&local_a0) {
-        *(uint *)pSVar8 = local_a0;
-        *(float *)&pSVar8->field_0x4 = local_9c[0];
-        *(float *)&pSVar8->field_0x8 = local_9c[1];
+        (pSVar8->local_position).x = local_a0;
+        (pSVar8->local_position).y = local_9c[0];
+        (pSVar8->local_position).z = local_9c[1];
       }
       core_actor_cpp_FUN_00408b40(this_ptr,local_18);
       local_7c = local_64;
       local_9c[(uint)bVar14 * -2 + 9] = afStack_60[(uint)bVar14 * -2];
       local_9c[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 10] =
            afStack_60[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1];
-      *(uint *)&local_18->field_0x2c = local_7c;
-      *(uint *)&local_18->field_0x30 = local_78;
-      *(uint *)&local_18->field_0x34 = local_74;
+      (local_18->flame).base.location.position.x = local_7c;
+      (local_18->flame).base.location.position.y = local_78;
+      (local_18->flame).base.location.position.z = local_74;
       iVar12 = iVar12 + 1;
       pSVar8 = pSVar8 + 1;
     } while (iVar12 < this_ptr->fire_count);
@@ -187,23 +187,22 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_0041a200(CBodyPart *t
       local_9c[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 7] =
            afStack_60[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 7];
       if (pSVar9 != (SBodyPartModel *)(local_9c + 5)) {
-        *(float *)pSVar9 = local_88;
-        *(uint *)&pSVar9->field_0x4 = local_84;
-        *(uint *)&pSVar9->field_0x8 = local_80;
+        (pSVar9->position_offset).x = local_88;
+        (pSVar9->position_offset).y = local_84;
+        (pSVar9->position_offset).z = local_80;
       }
-      euler_angles_01 = &pSVar9->field_0xc;
-      core_xform_cpp_FUN_005b5760
-                (&local_1a0,(CVector3f *)&DAT_02c8af28,(CVector3f *)euler_angles_01);
+      euler_angles_01 = &pSVar9->euler_angles;
+      core_xform_cpp_FUN_005b5760(&local_1a0,(CVector3f *)&DAT_02c8af28,euler_angles_01);
       core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_1a0,&local_170);
       core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&local_170);
       local_ac.x = local_b8;
       *(float *)((int)&local_ac + (uint)bVar14 * -8 + 4) = afStack_b4[(uint)bVar14 * -2];
       *(float *)((int)&local_ac + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =
            afStack_b4[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1];
-      if ((CVector3f *)euler_angles_01 != &local_ac) {
-        *(float *)euler_angles_01 = local_ac.x;
-        *(float *)&pSVar9->field_0x10 = local_ac.y;
-        *(float *)&pSVar9->field_0x14 = local_ac.z;
+      if (euler_angles_01 != &local_ac) {
+        euler_angles_01->x = local_ac.x;
+        (pSVar9->euler_angles).y = local_ac.y;
+        (pSVar9->euler_angles).z = local_ac.z;
       }
       pSVar9 = pSVar9 + 1;
       local_14 = local_14 + 1;

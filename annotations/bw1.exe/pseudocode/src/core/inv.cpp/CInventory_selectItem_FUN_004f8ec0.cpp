@@ -14,18 +14,18 @@ void __cdecl core_inv_cpp_CInventory_selectItem_FUN_004f8ec0(CInventory *this_pt
   CInventory *pCVar3;
   int iVar4;
   
-  if (*(int *)&g_CGamePtr->field_0x25c == 0) {
-    if (*(int *)(this_ptr + 0x33c) != 0) {
+  if (g_CGamePtr->goggles_active == 0) {
+    if (this_ptr->selected_item != (CDemonActor *)0x0) {
       iVar4 = 0;
       pCVar3 = this_ptr;
-      if (0 < *(int *)(this_ptr + 0x10)) {
+      if (0 < this_ptr->item_count) {
         do {
-          if (*(int *)(this_ptr + 0x33c) == *(int *)(pCVar3 + 0x14)) break;
+          if (this_ptr->selected_item == pCVar3->items[0]) break;
           iVar4 = iVar4 + 1;
-          pCVar3 = pCVar3 + 4;
-        } while (iVar4 < *(int *)(this_ptr + 0x10));
+          pCVar3 = (CInventory *)&pCVar3->owner;
+        } while (iVar4 < this_ptr->item_count);
       }
-      if ((*(uint *)(this_ptr + 0x344) & 0x7fffffff) == 0) {
+      if (ABS(this_ptr->item_highlight_timer) == 0.0) {
         core_inv_cpp_CInventory_resetItemSwitchTimers_FUN_004fa710(this_ptr);
         return;
       }
@@ -33,42 +33,39 @@ void __cdecl core_inv_cpp_CInventory_selectItem_FUN_004f8ec0(CInventory *this_pt
       iVar1 = iVar4;
       while( true ) {
         iVar1 = iVar1 + direction;
-        if (iVar1 < *(int *)(this_ptr + 0x10)) {
+        if (iVar1 < this_ptr->item_count) {
           if (iVar1 < 0) {
-            iVar1 = *(int *)(this_ptr + 0x10) + -1;
+            iVar1 = this_ptr->item_count + -1;
           }
         }
         else {
           iVar1 = 0;
         }
-        iVar2 = core_actor_cpp_isOfClass_FUN_0040c550
-                          (*(CDemonActor **)(this_ptr + iVar1 * 4 + 0x14),"CWeapon");
+        iVar2 = core_actor_cpp_isOfClass_FUN_0040c550(this_ptr->items[iVar1],"CWeapon");
         if ((iVar2 == 0) &&
-           (iVar2 = core_actor_cpp_isOfClass_FUN_0040c550
-                              (*(CDemonActor **)(this_ptr + iVar1 * 4 + 0x14),"CAmmo"),
+           (iVar2 = core_actor_cpp_isOfClass_FUN_0040c550(this_ptr->items[iVar1],"CAmmo"),
            iVar2 == 0)) break;
         if (iVar1 == iVar4) {
           return;
         }
       }
-      *(uint *)(this_ptr + 0x33c) = *(uint *)(this_ptr + iVar1 * 4 + 0x14);
+      this_ptr->selected_item = this_ptr->items[iVar1];
       return;
     }
     iVar4 = 0;
     pCVar3 = this_ptr;
-    if (0 < *(int *)(this_ptr + 0x10)) {
+    if (0 < this_ptr->item_count) {
       do {
-        iVar1 = core_actor_cpp_isOfClass_FUN_0040c550
-                          (*(CDemonActor **)(pCVar3 + 0x14),"CWeapon");
+        iVar1 = core_actor_cpp_isOfClass_FUN_0040c550(pCVar3->items[0],"CWeapon");
         if ((iVar1 == 0) &&
-           (iVar1 = core_actor_cpp_isOfClass_FUN_0040c550
-                              (*(CDemonActor **)(pCVar3 + 0x14),"CAmmo"), iVar1 == 0)) {
-          *(uint *)(this_ptr + 0x33c) = *(uint *)(pCVar3 + 0x14);
+           (iVar1 = core_actor_cpp_isOfClass_FUN_0040c550(pCVar3->items[0],"CAmmo"),
+           iVar1 == 0)) {
+          this_ptr->selected_item = pCVar3->items[0];
           return;
         }
         iVar4 = iVar4 + 1;
-        pCVar3 = pCVar3 + 4;
-      } while (iVar4 < *(int *)(this_ptr + 0x10));
+        pCVar3 = (CInventory *)&pCVar3->owner;
+      } while (iVar4 < this_ptr->item_count);
     }
   }
   return;

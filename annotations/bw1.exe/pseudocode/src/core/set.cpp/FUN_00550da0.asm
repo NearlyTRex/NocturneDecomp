@@ -192,7 +192,7 @@ section .text
     MOV [0x01fe37f8],EAX                ; 00550ee8 | g_CDemonCameraInstance.base.position+8
     MOV EAX,[0x0061d95c]                ; 00550eed | g_CGamePtr
         ;   Label: LAB_00550eed
-    MOV EDX,dword ptr [EAX + 0x234]     ; 00550ef2 | g_CGameInstance.field516_0x234
+    MOV EDX,dword ptr [EAX + 0x234]     ; 00550ef2 | g_CGameInstance.geometry_debug_enabled
     TEST EDX,EDX                        ; 00550ef8
     JNZ 0x005510b6                      ; 00550efa
         ;   XREF to: 005510b6 (CONDITIONAL_JUMP)  ; LAB_005510b6

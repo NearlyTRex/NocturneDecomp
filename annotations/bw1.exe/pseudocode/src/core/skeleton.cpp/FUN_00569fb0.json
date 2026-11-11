@@ -2,18 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 301,
+    "complexity_score": 355,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 91,
-    "suspect_count": 20,
+    "pseudocode_lines": 95,
+    "suspect_count": 24,
     "suspect_types": [
-      "raw_address_constant",
-      "unnamed_param"
+      "suspect_float",
+      "unknown_field",
+      "unnamed_param",
+      "warning_type_propagation"
     ],
-    "total_lines": 252
+    "total_lines": 256
   },
   "cross_references": [],
   "function": {
@@ -26,7 +28,7 @@
     ],
     "convention": "unknown",
     "name": "core_skeleton.cpp_FUN_00569fb0",
-    "signature": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,undefined4 param_6,undefined4 param_7,int param_8,undefined4 param_9)"
+    "signature": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,undefined4 param_6,undefined4 param_7,int param_8,float param_9)"
   },
   "function_calls": [
     {
@@ -110,80 +112,88 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,uint param_9)",
+      "text": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,float param_9)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 2,
+      "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,uint param_9)",
+      "text": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,float param_9)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 2,
+      "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,uint param_9)",
+      "text": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,float param_9)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 2,
+      "line": 4,
       "match": "param_4",
       "severity": "mild",
-      "text": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,uint param_9)",
+      "text": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,float param_9)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 2,
+      "line": 4,
       "match": "param_5",
       "severity": "mild",
-      "text": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,uint param_9)",
+      "text": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,float param_9)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 2,
+      "line": 4,
       "match": "param_6",
       "severity": "mild",
-      "text": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,uint param_9)",
+      "text": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,float param_9)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 2,
+      "line": 4,
       "match": "param_7",
       "severity": "mild",
-      "text": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,uint param_9)",
+      "text": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,float param_9)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 2,
+      "line": 4,
       "match": "param_8",
       "severity": "mild",
-      "text": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,uint param_9)",
+      "text": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,float param_9)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 2,
+      "line": 4,
       "match": "param_9",
       "severity": "mild",
-      "text": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,uint param_9)",
+      "text": "int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,float param_9)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(&param_1->base);",
@@ -191,15 +201,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 42,
       "match": "param_4",
       "severity": "mild",
-      "text": "uStack_2c = *(uint *)(pCVar2 + param_4 * 0x120 + 0x1c8c);",
+      "text": "iStack_2c = pCVar2->motions[param_4].frame_count;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(param_1);",
@@ -207,31 +217,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0056a220(param_1,param_2,param_3,aSStack_1b14);",
+      "text": "core_skeleton_cpp_FUN_0056a220(param_1,param_2,param_3,(SPose *)(auStack_35a0 + 0x1a8c));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 45,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0056a220(param_1,param_2,param_3,aSStack_1b14);",
+      "text": "core_skeleton_cpp_FUN_0056a220(param_1,param_2,param_3,(SPose *)(auStack_35a0 + 0x1a8c));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 45,
       "match": "param_3",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0056a220(param_1,param_2,param_3,aSStack_1b14);",
+      "text": "core_skeleton_cpp_FUN_0056a220(param_1,param_2,param_3,(SPose *)(auStack_35a0 + 0x1a8c));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "core_skeleton_cpp_computeBoneModelMatrices_FUN_0056b130(auStack_1b04,param_1);",
@@ -239,35 +249,59 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 52,
       "match": "param_5",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0056a220(param_5,param_8,(float)iVar7,aSStack_35a0);",
+      "text": "core_skeleton_cpp_FUN_0056a220(param_5,param_8,(float)iVar7,(SPose *)auStack_35a0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 52,
       "match": "param_8",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0056a220(param_5,param_8,(float)iVar7,aSStack_35a0);",
+      "text": "core_skeleton_cpp_FUN_0056a220(param_5,param_8,(float)iVar7,(SPose *)auStack_35a0);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 53,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "auStack_35a0._8_4_ = auStack_35a0 + 0x10;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 54,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "auStack_35a0._12_4_ = param_9;",
+      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 54,
       "match": "param_9",
       "severity": "mild",
-      "text": "uStack_3594 = param_9;",
+      "text": "auStack_35a0._12_4_ = param_9;",
       "type": "unnamed_param"
     },
     {
-      "description": "Raw hex address 0x56a0a7 assigned to bare local `uStack_359c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_359c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 47,
-      "match": "0x56a0a7",
-      "severity": "moderate",
-      "text": "uStack_359c = 0x56a0a7;",
-      "type": "raw_address_constant"
+      "description": "Likely misinterpreted integer as float",
+      "line": 55,
+      "match": "7.955484e-39",
+      "severity": "mild",
+      "text": "auStack_35a0._4_4_ = 7.955484e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 55,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_35a0._4_4_ = 7.955484e-39;",
+      "type": "unknown_field"
     }
   ],
   "vtable_info": {

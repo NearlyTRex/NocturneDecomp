@@ -39,14 +39,8 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412ba0(CBatman *this_ptr,floa
   EBloodType blood_type;
   SDamageInfo *damage_info;
   float max_distance;
-  SDamageInfo aSStack_2b8 [4];
-  uint uStack_2b4;
-  CBatman *pCStack_284;
-  CBatman *pCStack_280;
-  SDamageInfo aSStack_27c [4];
-  float fStack_278;
-  CBatman *pCStack_248;
-  CBatman *pCStack_244;
+  SDamageInfo SStack_2b8;
+  SDamageInfo SStack_27c;
   uint uStack_240;
   float afStack_23c [2];
   CVector3f CStack_234;
@@ -148,27 +142,25 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412ba0(CBatman *this_ptr,floa
     core_charactr_cpp_CCharacter_processMotion_FUN_00434a80((CCharacter *)this_ptr,iVar6);
   }
   fVar18 = (this_ptr->base).speed;
-  *(float *)&(this_ptr->base).base.field_0x2524 =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
+  (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   core_charactr_cpp_FUN_00435320(this_ptr,delta_time * fVar18);
-  if ((((*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[5] * 4) == 0)
-       && (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[3] * 4) == 0)
-       ) || (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[0] * 4) ==
-             0)) &&
-     ((0.0 <= *(float *)&this_ptr->field_0xc268 &&
-      (fVar18 = *(float *)&this_ptr->field_0xc268 + delta_time,
-      *(float *)&this_ptr->field_0xc268 = fVar18, (float)_DAT_005d3ac1 <= fVar18)))) {
-    core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(aSStack_2b8);
-    uStack_2b4 = 0x461c3f9a;
-    pCStack_284 = this_ptr;
-    pCStack_280 = this_ptr;
+  if (((((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[5]] == 0) &&
+       ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[3]] == 0)) ||
+      ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] == 0)) &&
+     ((0.0 <= this_ptr->dismember_death_timer &&
+      (fVar18 = this_ptr->dismember_death_timer + delta_time,
+      this_ptr->dismember_death_timer = fVar18, (float)_DAT_005d3ac1 <= fVar18)))) {
+    core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&SStack_2b8);
+    SStack_2b8.damage_amount = 9999.9;
+    SStack_2b8.attacker = (CDemonActor *)this_ptr;
+    SStack_2b8.wielder = (CDemonActor *)this_ptr;
     (*(((this_ptr->base).base.base.vtable._uc)->_uc).processDamage)
-              ((CCharacter *)this_ptr,aSStack_2b8);
-    *(uint *)&this_ptr->field_0xc268 = 0xbf800000;
+              ((CCharacter *)this_ptr,&SStack_2b8);
+    this_ptr->dismember_death_timer = -1.0;
   }
   pCVar5 = &(this_ptr->base).base.model;
   pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&pCVar5->base);
-  iVar6 = *(int *)(pSVar7 + 0x24);
+  iVar6 = pSVar7->state_index;
   iStack_18 = iVar6;
   iVar8 = core_charactr_cpp_CCharacter_processWalking_FUN_00432240
                     ((CCharacter *)this_ptr,delta_time);
@@ -329,15 +321,16 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412ba0(CBatman *this_ptr,floa
       }
       break;
     case 3:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(aSStack_27c);
-      fStack_278 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(7.0,15.0);
-      damage_info = aSStack_27c;
-      pCStack_248 = this_ptr;
-      pCStack_244 = this_ptr;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&SStack_27c);
+      SStack_27c.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(7.0,15.0);
+      damage_info = &SStack_27c;
+      SStack_27c.attacker = (CDemonActor *)this_ptr;
+      SStack_27c.wielder = (CDemonActor *)this_ptr;
       fVar18 = 0.4;
-      fStack_14 = fStack_278;
+      fStack_14 = SStack_27c.damage_amount;
       core_xform_cpp_FUN_005b5080
-                (&DAT_02c8af28,&(this_ptr->base).base.model.field_0xe80 + DAT_007c37c0 * 0x30);
+                (&DAT_02c8af28,
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices + DAT_007c37c0);
       puVar16 = &uStack_240;
       uStack_240 = uStack_204;
       afStack_23c[(uint)bVar13 * -2] = afStack_200[(uint)bVar13 * -2];

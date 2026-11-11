@@ -11,7 +11,7 @@ void core_tommygun_cpp_factoryFuncTommyGun_FUN_00598350(void)
 {
   CTommyGun *this_ptr;
   
-  this_ptr = (CTommyGun *)debugAllocTracked1(0x584);
+  this_ptr = (CTommyGun *)operator_new(0x584);
   if (this_ptr == (CTommyGun *)0x0) {
     return;
   }

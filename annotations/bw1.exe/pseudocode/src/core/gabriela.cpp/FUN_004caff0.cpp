@@ -14,12 +14,13 @@ void core_gabriela_cpp_FUN_004caff0(int param_1,float param_2,float *param_3,uin
   CDeformableModelInstance *pCVar1;
   int iVar2;
   int iVar3;
-  float *pfVar4;
-  float *pfVar5;
+  uint *puVar4;
+  uint *puVar5;
   byte bVar6;
   float local_1b78;
-  SPose local_1b74 [2836];
-  float afStack_1060 [1018];
+  SPose local_1b74;
+  uint local_d8 [12];
+  uint local_a8 [12];
   CVector3f local_78;
   uint local_6c;
   float afStack_68 [5];
@@ -33,7 +34,7 @@ void core_gabriela_cpp_FUN_004caff0(int param_1,float param_2,float *param_3,uin
   
   bVar6 = 0;
   core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_0056acc0
-            ((CDeformableModelInstance *)(param_1 + 0x158),local_1b74);
+            ((CDeformableModelInstance *)(param_1 + 0x158),&local_1b74);
   core_skeleton_cpp_FUN_00569040((CDeformableModelInstance *)(param_1 + 0x158),param_5);
   local_24 = local_3c;
   local_20[(uint)bVar6 * -2] = afStack_68[(uint)bVar6 * -2 + 0xc];
@@ -54,17 +55,17 @@ void core_gabriela_cpp_FUN_004caff0(int param_1,float param_2,float *param_3,uin
   iVar3 = 0;
   do {
     pCVar1 = local_14;
-    core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_0056ad90(local_14,local_1b74);
+    core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_0056ad90(local_14,&local_1b74);
     core_skeleton_cpp_FUN_00568100(pCVar1,0,0,*param_3,param_5,core_skeleton_cpp_FUN_00567360);
     core_skeleton_cpp_FUN_00568e30(pCVar1,param_4);
-    pfVar4 = afStack_1060 + 0x3ee;
-    pfVar5 = afStack_1060 + 0x3e2;
+    puVar4 = local_a8;
+    puVar5 = local_d8;
     for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *pfVar5 = *pfVar4;
-      pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
-      pfVar5 = pfVar5 + (uint)bVar6 * -2 + 1;
+      *puVar5 = *puVar4;
+      puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
+      puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
     }
-    core_xform_cpp_FUN_005b5080(param_6,afStack_1060 + 0x3e2);
+    core_xform_cpp_FUN_005b5080(param_6,local_d8);
     local_6c = afStack_68[2];
     afStack_68[(uint)bVar6 * -2] = afStack_68[(uint)bVar6 * -2 + 3];
     afStack_68[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =

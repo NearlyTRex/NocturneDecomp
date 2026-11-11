@@ -9,10 +9,10 @@
 int __cdecl support_trisock_cpp_CSocket_createUDPSocket_FUN_0059c940(CSocket *this_ptr)
 
 {
-  int iVar1;
+  _SOCKET _Var1;
   
   support_trisock_cpp_CSocket_closeSocket_FUN_0059cc40(this_ptr);
-  iVar1 = socket(2,2,0);
-  *(int *)this_ptr = iVar1;
-  return (uint)(iVar1 != -1);
+  _Var1 = socket(2,2,0);
+  this_ptr->handle = _Var1;
+  return (uint)(_Var1 != 0xffffffff);
 }

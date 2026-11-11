@@ -7,6 +7,7 @@
 #include "types/classes/CCourse.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CVector3f.h"
 #include "types/enums/EGroundType.h"
@@ -49,7 +50,7 @@ typedef struct CPlatform {
     int recompute_fog; // 0x514
     int plot_in_shadow_flag; // 0x518
     SPlatformAttachment attach_actors[10]; // 0x51c
-    char field_1318[514]; // 0x526
+    int rendered_in_background; // 0x724
 } CPlatform;
 #pragma pack(pop)
 

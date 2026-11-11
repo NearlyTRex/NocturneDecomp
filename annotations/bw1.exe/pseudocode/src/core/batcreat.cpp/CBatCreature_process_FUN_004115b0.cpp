@@ -31,14 +31,8 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_004115b0(CBatCreature *t
   EBloodType blood_type;
   SDamageInfo *damage_info;
   float max_distance;
-  SDamageInfo aSStack_23c [4];
-  float fStack_238;
-  CBatCreature *pCStack_208;
-  CBatCreature *pCStack_204;
-  SDamageInfo aSStack_200 [4];
-  uint uStack_1fc;
-  CBatCreature *pCStack_1cc;
-  CBatCreature *pCStack_1c8;
+  SDamageInfo SStack_23c;
+  SDamageInfo SStack_200;
   float fStack_1c4;
   float afStack_1c0 [5];
   float fStack_1ac;
@@ -120,27 +114,25 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_004115b0(CBatCreature *t
     core_charactr_cpp_CCharacter_processMotion_FUN_00434a80((CCharacter *)this_ptr,iVar5);
   }
   fVar11 = (this_ptr->base).speed;
-  *(float *)&(this_ptr->base).base.field_0x2524 =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
+  (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   core_charactr_cpp_FUN_00435320(this_ptr,delta_time * fVar11);
-  if ((((*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[0xb] * 4) == 0)
-       && (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[9] * 4) == 0)
-       ) || (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[0] * 4) ==
-             0)) &&
-     ((0.0 <= *(float *)&this_ptr->field_0xc268 &&
-      (fVar11 = *(float *)&this_ptr->field_0xc268 + delta_time,
-      *(float *)&this_ptr->field_0xc268 = fVar11, (float)_DAT_005d3861 <= fVar11)))) {
-    core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(aSStack_200);
-    uStack_1fc = 0x461c3f9a;
-    pCStack_1cc = this_ptr;
-    pCStack_1c8 = this_ptr;
+  if (((((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0xb]] == 0)
+       && ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[9]] == 0))
+      || ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] == 0))
+     && ((0.0 <= this_ptr->dismember_death_timer &&
+         (fVar11 = this_ptr->dismember_death_timer + delta_time,
+         this_ptr->dismember_death_timer = fVar11, (float)_DAT_005d3861 <= fVar11)))) {
+    core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&SStack_200);
+    SStack_200.damage_amount = 9999.9;
+    SStack_200.attacker = (CDemonActor *)this_ptr;
+    SStack_200.wielder = (CDemonActor *)this_ptr;
     (*(((this_ptr->base).base.base.vtable._uc)->_uc).processDamage)
-              ((CCharacter *)this_ptr,aSStack_200);
-    *(uint *)&this_ptr->field_0xc268 = 0xbf800000;
+              ((CCharacter *)this_ptr,&SStack_200);
+    this_ptr->dismember_death_timer = -1.0;
   }
   pCStack_1c = &(this_ptr->base).base.model.base;
   pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(pCStack_1c);
-  iStack_28 = *(int *)(pSVar6 + 0x24);
+  iStack_28 = pSVar6->state_index;
   iVar5 = core_charactr_cpp_CCharacter_processWalking_FUN_00432240
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) {
@@ -368,15 +360,16 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_004115b0(CBatCreature *t
       }
       break;
     case 3:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(aSStack_23c);
-      fStack_238 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(7.0,15.0);
-      damage_info = aSStack_23c;
-      pCStack_208 = this_ptr;
-      pCStack_204 = this_ptr;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010(&SStack_23c);
+      SStack_23c.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(7.0,15.0);
+      damage_info = &SStack_23c;
+      SStack_23c.attacker = (CDemonActor *)this_ptr;
+      SStack_23c.wielder = (CDemonActor *)this_ptr;
       fVar11 = 0.4;
-      fStack_14 = fStack_238;
+      fStack_14 = SStack_23c.damage_amount;
       core_xform_cpp_FUN_005b5080
-                (&DAT_02c8af28,&(this_ptr->base).base.model.field_0xe80 + DAT_007c3754 * 0x30);
+                (&DAT_02c8af28,
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices + DAT_007c3754);
       pfVar9 = afStack_100 + 0x14;
       afStack_b0[0] = (float)uStack_188;
       afStack_100[(uint)bVar8 * -2 + 0x15] = afStack_1c0[(uint)bVar8 * -2 + 0xf];

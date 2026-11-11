@@ -12,22 +12,22 @@
 CBride * core_bride_cpp_CBride_ctor_FUN_004238c0(CBride *this_ptr)
 
 {
-  uint uVar1;
-  uint uVar2;
+  float fVar1;
+  float fVar2;
   CBride *pCVar3;
   
   pCVar3 = (CBride *)core_enemy_cpp_CEnemy_ctor_FUN_004a0410(&this_ptr->base);
   (pCVar3->base).base.base.vtable._ub = &g_CBrideVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
             (&(pCVar3->base).base.model,"bride.dfm");
-  *(uint *)&(pCVar3->base).base.field_0x2fec = 0x3f400000;
-  *(uint *)&(pCVar3->base).base.field_0x2ff0 = 0x3fc00000;
-  uVar1 = _DAT_005fd090;
-  *(uint *)&pCVar3->field_0xc290 = 0;
-  uVar2 = _DAT_005fd094;
-  *(uint *)&(pCVar3->base).base.field_0x252c = 0x3fc90fdb;
-  *(uint *)&pCVar3->field_0xc28c = 0;
-  *(uint *)&(pCVar3->base).base.field_0x2ff4 = uVar1;
-  *(uint *)&(pCVar3->base).base.field_0x2ff8 = uVar2;
+  (pCVar3->base).base.collision_cylinder_height = 0.75;
+  (pCVar3->base).base.collision_cylinder_radius = 1.5;
+  fVar1 = _DAT_005fd090;
+  pCVar3->action_timer = 0.0;
+  fVar2 = _DAT_005fd094;
+  (pCVar3->base).base.turn_rate = 1.5707964;
+  pCVar3->dismember_death_timer = 0.0;
+  (pCVar3->base).base.ai_detection_range_min = fVar1;
+  (pCVar3->base).base.ai_detection_range_max = fVar2;
   return pCVar3;
 }

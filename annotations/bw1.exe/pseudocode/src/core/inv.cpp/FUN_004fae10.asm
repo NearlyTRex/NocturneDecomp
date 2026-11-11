@@ -152,7 +152,7 @@ section .text
     SUB ESP,0x8e0                       ; 004fae16
     AND ESP,0xfffffff8                  ; 004fae1c
     MOV EAX,[0x0061d95c]                ; 004fae1f | g_CGamePtr | g_CGameInstance
-    CMP dword ptr [EAX + 0x244],0x0     ; 004fae24 | g_CGameInstance.field532_0x244
+    CMP dword ptr [EAX + 0x244],0x0     ; 004fae24 | g_CGameInstance.letterbox_mode
     JNZ 0x004fbdf0                      ; 004fae2b
         ;   XREF to: 004fbdf0 (CONDITIONAL_JUMP)  ; LAB_004fbdf0
     MOV EAX,dword ptr [EBP + 0x14]      ; 004fae31
@@ -162,7 +162,7 @@ section .text
     JNZ 0x004fbdf0                      ; 004fae44
         ;   XREF to: 004fbdf0 (CONDITIONAL_JUMP)  ; LAB_004fbdf0
     MOV EAX,[0x0061d418]                ; 004fae4a | g_CFieldNotesPtr
-    CMP dword ptr [EAX + 0x40],0x0      ; 004fae4f | g_CFieldNotesInstance.field64_0x40
+    CMP dword ptr [EAX + 0x40],0x0      ; 004fae4f | g_CFieldNotesInstance.is_displayed
     JNZ 0x004fbdf7                      ; 004fae53
         ;   XREF to: 004fbdf7 (CONDITIONAL_JUMP)  ; LAB_004fbdf7
     MOV ESI,dword ptr [0x0061b49c]      ; 004fae59 | DAT_0061b49c
@@ -957,7 +957,7 @@ section .text
     FSTP float ptr [ESP + 0x8a0]        ; 004fb893
     MOV EAX,[0x00622c18]                ; 004fb89a | g_CDemonSetPtr
     FLD float ptr [EDX + 0x34]          ; 004fb89f
-    FSUB float ptr [EAX + 0x15acbc]     ; 004fb8a2 | g_CDemonSetInstance.field126_0x15acbc
+    FSUB float ptr [EAX + 0x15acbc]     ; 004fb8a2 | g_CDemonSetInstance.altitude_reference_y
     FXCH                                ; 004fb8a8
     FSTP float ptr [ESP + 0x894]        ; 004fb8aa
     FSTP float ptr [ESP + 0x8dc]        ; 004fb8b1

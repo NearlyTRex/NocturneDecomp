@@ -27,14 +27,13 @@ void core_setdir_cpp_FUN_0055b330(CDemonSet *param_1)
   engine_matrix_c_FUN_00483c10(DAT_00612560,0,0,0x40,0x30);
   iVar4 = 0;
   if (0 < param_1->camera_count) {
-    local_1c = (CVector3f *)&param_1->cameras[0].field_0x10c;
-    local_14 = (CVector3f *)&param_1->cameras[0].field_0x100;
+    local_1c = &param_1->cameras[0].orientation;
+    local_14 = &param_1->cameras[0].position;
     local_18 = (uint *)&DAT_020b28f4;
     do {
       engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
                 (0x01BC120C,local_14);
-      engine_matrix_c_FUN_004839b0(0x01BC120C,*(uint *)&param_1->cameras[iVar4].field_0x144)
-      ;
+      engine_matrix_c_FUN_004839b0(0x01BC120C,param_1->cameras[iVar4].projection_scale);
       engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00483530(0x01BC120C,local_1c);
       engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_00483780
                 (0x01BC120C,(CVector3i *)0x268e8f4);

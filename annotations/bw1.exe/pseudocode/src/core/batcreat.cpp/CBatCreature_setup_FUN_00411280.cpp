@@ -16,7 +16,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_setup_FUN_00411280(CBatCreature *thi
   CDeformableModel *this_ptr_02;
   int iVar1;
   
-  *(uint *)&this_ptr->field_0xc268 = 0;
+  this_ptr->dismember_death_timer = 0.0;
   core_enemy_cpp_CEnemy_setup_FUN_004a0510(&this_ptr->base);
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00569b20(this_ptr_00);

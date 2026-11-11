@@ -4,13 +4,18 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CMuzzleFlash
-// Stub: size from Watcom RTTI, fields not yet recovered
+// init 004af340 (pair of nocedit 004c1940) and process 004af400 match nocedit's code offset for offset; RTTI 92.
 // Ghidra size: 0x5c (92 bytes)
 #pragma pack(push, 1)
 typedef struct CMuzzleFlash {
-    char field_0[92]; // 0x0
+    int frames_remaining; // 0x0, init MOV [EBP],2; process decrements [EAX] and clears it
+    CVector3f position; // 0x4, init copies position to LEA [EBP+0x4]
+    CVector3f rotation; // 0x10, init stores the euler angles to LEA [EBP+0x10]
+    CDemonGlobe light; // 0x1c, init passes LEA [EBP+0x1c] to CDemonGlobe_setPosition/precomputeAttenuation/addCoronaGlobe; [+0x3c] intensity_multiplier=0x8000, [+0x1c] intensity=0x20, [+0x20] corona_mode=0
 } CMuzzleFlash;
 #pragma pack(pop)
 

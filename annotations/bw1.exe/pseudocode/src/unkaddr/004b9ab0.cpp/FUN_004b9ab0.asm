@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_CFieldNotes_ctor_FUN_004bcb60
-;   core_fldnotes.cpp_TextView_ctor_FUN_004bb190
+;   core_fldnotes.cpp_STextView_ctor_FUN_004bb190
 ;   crt_memory.c___arrinit_FUN_005c0357
 ;   crt_stdlib.c__atexit_FUN_005c1093
 ;   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040d0a0
@@ -127,8 +127,8 @@ section .text
         ;   XREF to: 005c1093 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005c1093()
     ADD ESP,0x4                         ; 004b9c14
     PUSH 0x1cc7cd4                      ; 004b9c17
-    CALL core_fldnotes.cpp_TextView_ctor_FUN_004bb190 ; 004b9c1c
-        ;   XREF to: 004bb190 (UNCONDITIONAL_CALL)  ; STextView * core_fldnotes.cpp_TextView_ctor_FUN_004bb190(STextView * this_ptr)
+    CALL core_fldnotes.cpp_STextView_ctor_FUN_004bb190 ; 004b9c1c
+        ;   XREF to: 004bb190 (UNCONDITIONAL_CALL)  ; STextView * core_fldnotes.cpp_STextView_ctor_FUN_004bb190(STextView * this_ptr)
     ADD ESP,0x4                         ; 004b9c21
     PUSH 0x61d2c0                       ; 004b9c24
     CALL crt_stdlib.c__atexit_FUN_005c1093 ; 004b9c29

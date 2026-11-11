@@ -194,7 +194,7 @@ section .text
     JLE 0x004bf36f                      ; 004bf34b
         ;   XREF to: 004bf36f (CONDITIONAL_JUMP)  ; LAB_004bf36f
     IMUL ESI,EDX,0x970                  ; 004bf34d
-    MOV EBX,dword ptr [EAX + 0x1cc55d0] ; 004bf353 | SNotesMap_ARRAY_01cc55d0[1].field0_0x0
+    MOV EBX,dword ptr [EAX + 0x1cc55d0] ; 004bf353 | SNotesMap_ARRAY_01cc55d0[1].entry
         ;   Label: LAB_004bf353
     CMP dword ptr [EBX + 0x140],0x6     ; 004bf359
     JNZ 0x004bf366                      ; 004bf360
@@ -227,7 +227,7 @@ section .text
     MOV dword ptr [ESP + 0x8],0x1cc55d0 ; 004bf3a0
     MOV EDI,dword ptr [ESP + 0x8]       ; 004bf3a8
         ;   Label: LAB_004bf3a8
-    MOV EBX,dword ptr [EDI]             ; 004bf3ac | SNotesMap_ARRAY_01cc55d0 | SNotesMap_ARRAY_01cc55d0[1].field0_0x0
+    MOV EBX,dword ptr [EDI]             ; 004bf3ac | SNotesMap_ARRAY_01cc55d0 | SNotesMap_ARRAY_01cc55d0[1].entry
     CMP dword ptr [EBX + 0x140],0x6     ; 004bf3ae
     JZ 0x004bf473                       ; 004bf3b5
         ;   XREF to: 004bf473 (CONDITIONAL_JUMP)  ; LAB_004bf473
@@ -310,9 +310,9 @@ section .text
         ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
     MOV dword ptr [ESP + 0x1c],ESI      ; 004bf48e
     ADD ESP,0x8                         ; 004bf492
-    MOV EAX,dword ptr [EDI + 0x98]      ; 004bf495 | SNotesMap_ARRAY_01cc55d0[1].field152_0x98
+    MOV EAX,dword ptr [EDI + 0x98]      ; 004bf495 | SNotesMap_ARRAY_01cc55d0[1].reveal_mask.height
     PUSH EAX                            ; 004bf49b
-    MOV EDX,dword ptr [EDI + 0x94]      ; 004bf49c | SNotesMap_ARRAY_01cc55d0[1].field148_0x94
+    MOV EDX,dword ptr [EDI + 0x94]      ; 004bf49c | SNotesMap_ARRAY_01cc55d0[1].reveal_mask.width
     PUSH EDX                            ; 004bf4a2
     PUSH EBX                            ; 004bf4a3
     PUSH 0x5e064a                       ; 004bf4a4 | = "%s, %d, %d\n"
@@ -326,7 +326,7 @@ section .text
         ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
     ADD ESP,0x8                         ; 004bf4bd
     XOR ECX,ECX                         ; 004bf4c0
-    MOV EBX,dword ptr [EDI + 0x98]      ; 004bf4c2 | SNotesMap_ARRAY_01cc55d0[1].field152_0x98
+    MOV EBX,dword ptr [EDI + 0x98]      ; 004bf4c2 | SNotesMap_ARRAY_01cc55d0[1].reveal_mask.height
     MOV dword ptr [ESP + 0x28],ECX      ; 004bf4c8
     TEST EBX,EBX                        ; 004bf4cc
     JLE 0x004bf53f                      ; 004bf4ce
@@ -337,12 +337,12 @@ section .text
     CALL crt_unknown.c_FUN_005c03c0     ; 004bf4d6
         ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
     ADD ESP,0x8                         ; 004bf4db
-    MOV EBX,dword ptr [EDI + 0x94]      ; 004bf4de | SNotesMap_ARRAY_01cc55d0[1].field148_0x94
+    MOV EBX,dword ptr [EDI + 0x94]      ; 004bf4de | SNotesMap_ARRAY_01cc55d0[1].reveal_mask.width
     MOV ESI,dword ptr [ESP + 0x28]      ; 004bf4e4
     IMUL ESI,EBX                        ; 004bf4e8
-    MOV EAX,dword ptr [EDI + 0x8c]      ; 004bf4eb | SNotesMap_ARRAY_01cc55d0[1].field140_0x8c
+    MOV EAX,dword ptr [EDI + 0x8c]      ; 004bf4eb | SNotesMap_ARRAY_01cc55d0[1].reveal_mask.opa
     ADD ESI,EAX                         ; 004bf4f1
-    MOV EAX,dword ptr [EDI + 0x94]      ; 004bf4f3 | SNotesMap_ARRAY_01cc55d0[1].field148_0x94
+    MOV EAX,dword ptr [EDI + 0x94]      ; 004bf4f3 | SNotesMap_ARRAY_01cc55d0[1].reveal_mask.width
     XOR EBX,EBX                         ; 004bf4f9
     TEST EAX,EAX                        ; 004bf4fb
     JLE 0x004bf51e                      ; 004bf4fd
@@ -357,7 +357,7 @@ section .text
     INC EBX                             ; 004bf50b
     CALL crt_unknown.c_FUN_005c03c0     ; 004bf50c
         ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
-    MOV ECX,dword ptr [EDI + 0x94]      ; 004bf511 | SNotesMap_ARRAY_01cc55d0[1].field148_0x94
+    MOV ECX,dword ptr [EDI + 0x94]      ; 004bf511 | SNotesMap_ARRAY_01cc55d0[1].reveal_mask.width
     ADD ESP,0xc                         ; 004bf517
     CMP EBX,ECX                         ; 004bf51a
     JL 0x004bf4ff                       ; 004bf51c
@@ -370,12 +370,12 @@ section .text
     ADD ESP,0x8                         ; 004bf529
     MOV ESI,dword ptr [ESP + 0x28]      ; 004bf52c
     INC ESI                             ; 004bf530
-    MOV EDX,dword ptr [EDI + 0x98]      ; 004bf531 | SNotesMap_ARRAY_01cc55d0[1].field152_0x98
+    MOV EDX,dword ptr [EDI + 0x98]      ; 004bf531 | SNotesMap_ARRAY_01cc55d0[1].reveal_mask.height
     MOV dword ptr [ESP + 0x28],ESI      ; 004bf537
     CMP ESI,EDX                         ; 004bf53b
     JL 0x004bf4d0                       ; 004bf53d
         ;   XREF to: 004bf4d0 (CONDITIONAL_JUMP)  ; LAB_004bf4d0
-    MOV ECX,dword ptr [EDI + 0x2c0]     ; 004bf53f | SNotesMap_ARRAY_01cc55d0[1].field704_0x2c0
+    MOV ECX,dword ptr [EDI + 0x2c0]     ; 004bf53f | SNotesMap_ARRAY_01cc55d0[1].annotation_count
         ;   Label: LAB_004bf53f
     XOR ESI,ESI                         ; 004bf545
     XOR EBX,EBX                         ; 004bf547
@@ -383,14 +383,14 @@ section .text
     JLE 0x004bf569                      ; 004bf54b
         ;   XREF to: 004bf569 (CONDITIONAL_JUMP)  ; LAB_004bf569
     MOV EAX,EDI                         ; 004bf54d
-    CMP dword ptr [EAX + 0x394],0x0     ; 004bf54f | SNotesMap_ARRAY_01cc55d0[1].field916_0x394 | SNotesMap_ARRAY_01cc55d0[1].field1128_0x468
+    CMP dword ptr [EAX + 0x394],0x0     ; 004bf54f | SNotesMap_ARRAY_01cc55d0[1].annotations[0].visible | SNotesMap_ARRAY_01cc55d0[1].annotations[1].visible
         ;   Label: LAB_004bf54f
     JZ 0x004bf559                       ; 004bf556
         ;   XREF to: 004bf559 (CONDITIONAL_JUMP)  ; LAB_004bf559
     INC EBX                             ; 004bf558
     INC ESI                             ; 004bf559
         ;   Label: LAB_004bf559
-    MOV EDX,dword ptr [EDI + 0x2c0]     ; 004bf55a | SNotesMap_ARRAY_01cc55d0[1].field704_0x2c0
+    MOV EDX,dword ptr [EDI + 0x2c0]     ; 004bf55a | SNotesMap_ARRAY_01cc55d0[1].annotation_count
     ADD EAX,0xd4                        ; 004bf560
     CMP ESI,EDX                         ; 004bf565
     JL 0x004bf54f                       ; 004bf567
@@ -407,18 +407,18 @@ section .text
     XOR ESI,ESI                         ; 004bf57e
     CALL crt_unknown.c_FUN_005c03c0     ; 004bf580
         ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
-    MOV ECX,dword ptr [EDI + 0x2c0]     ; 004bf585 | SNotesMap_ARRAY_01cc55d0[1].field704_0x2c0
+    MOV ECX,dword ptr [EDI + 0x2c0]     ; 004bf585 | SNotesMap_ARRAY_01cc55d0[1].annotation_count
     ADD ESP,0xc                         ; 004bf58b
     TEST ECX,ECX                        ; 004bf58e
     JLE 0x004bf5e0                      ; 004bf590
         ;   XREF to: 004bf5e0 (CONDITIONAL_JUMP)  ; LAB_004bf5e0
     LEA EAX,[EDI + 0x2c4]               ; 004bf592
-    MOV dword ptr [ESP + 0x24],EDI      ; 004bf598 | SNotesMap_ARRAY_01cc55d0[1].field0_0x0
+    MOV dword ptr [ESP + 0x24],EDI      ; 004bf598 | SNotesMap_ARRAY_01cc55d0[1].entry
     MOV dword ptr [ESP + 0x1c],EAX      ; 004bf59c
     IMUL EAX,ESI,0xd4                   ; 004bf5a0
         ;   Label: LAB_004bf5a0
     MOV EDX,dword ptr [ESP + 0x24]      ; 004bf5a6
-    CMP dword ptr [EDX + 0x394],0x0     ; 004bf5aa | SNotesMap_ARRAY_01cc55d0[1].field916_0x394 | SNotesMap_ARRAY_01cc55d0[1].field1128_0x468
+    CMP dword ptr [EDX + 0x394],0x0     ; 004bf5aa | SNotesMap_ARRAY_01cc55d0[1].annotations[0].visible | SNotesMap_ARRAY_01cc55d0[1].annotations[1].visible
     JZ 0x004bf5c7                       ; 004bf5b1
         ;   XREF to: 004bf5c7 (CONDITIONAL_JUMP)  ; LAB_004bf5c7
     ADD EAX,dword ptr [ESP + 0x1c]      ; 004bf5b3
@@ -433,7 +433,7 @@ section .text
         ;   Label: LAB_004bf5c7
     INC ESI                             ; 004bf5cb
     ADD ECX,0xd4                        ; 004bf5cc
-    MOV EAX,dword ptr [EDI + 0x2c0]     ; 004bf5d2 | SNotesMap_ARRAY_01cc55d0[1].field704_0x2c0
+    MOV EAX,dword ptr [EDI + 0x2c0]     ; 004bf5d2 | SNotesMap_ARRAY_01cc55d0[1].annotation_count
     MOV dword ptr [ESP + 0x24],ECX      ; 004bf5d8
     CMP ESI,EAX                         ; 004bf5dc
     JL 0x004bf5a0                       ; 004bf5de

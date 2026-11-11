@@ -40,7 +40,7 @@ uint FUN_005cee44(short *param_1)
     if (bVar4) {
       return 0;
     }
-    ptr = FUN_005c08d0(9);
+    ptr = (uint *)malloc(9);
     if (ptr == (uint *)0x0) {
       return 0xffffffff;
     }
@@ -59,7 +59,7 @@ uint FUN_005cee44(short *param_1)
       n = -iVar3;
       new_size = n + 1 + iVar3 * -4 + 8;
       if (_DAT_02c9f6d0 == (uint *)0x0) {
-        ptr = FUN_005c08d0(new_size);
+        ptr = (uint *)malloc(new_size);
         if (ptr == (uint *)0x0) {
           return 0xffffffff;
         }

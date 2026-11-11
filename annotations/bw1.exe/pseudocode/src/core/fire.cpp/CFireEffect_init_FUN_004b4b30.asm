@@ -20,15 +20,15 @@
 ;   undefined4 DAT_01c726a8
 ;   undefined4 DAT_01c726ac
 ;   undefined4 DAT_01c986b0
-;   undefined4 g_SparkPool[0].field36_0x24
-;   undefined4 g_SparkPool[1].field36_0x24
+;   undefined4 g_SparkPool[0].base.lifetime_remaining
+;   undefined4 g_SparkPool[1].base.lifetime_remaining
 ;   undefined4 DAT_01c9dab4
-;   undefined4 CFirefly_ARRAY_01c9dab8[0].field36_0x24
-;   undefined4 CFirefly_ARRAY_01c9dab8[1].field36_0x24
+;   undefined4 CFirefly_ARRAY_01c9dab8[0].base.lifetime_remaining
+;   undefined4 CFirefly_ARRAY_01c9dab8[1].base.lifetime_remaining
 ;   undefined4 DAT_01c9f1bc
 ;   undefined4 DAT_01c9f218
 ;   undefined4 DAT_01c9f8ec
-;   undefined4 g_GlassParticlePool[0].field36_0x24
+;   undefined4 g_GlassParticlePool[0].base.lifetime_remaining
 ;   ... and 27 more
 ;
 ; Called Functions:
@@ -70,7 +70,7 @@ section .text
     LEA EBX,[EAX + 0x5400]              ; 004b4b71
     ADD EAX,0x54                        ; 004b4b77
         ;   Label: LAB_004b4b77
-    MOV dword ptr [EAX + -0x30],0x0     ; 004b4b7a | g_SparkPool[0].field36_0x24 | g_SparkPool[1].field36_0x24
+    MOV dword ptr [EAX + -0x30],0x0     ; 004b4b7a | g_SparkPool[0].base.lifetime_remaining | g_SparkPool[1].base.lifetime_remaining
     CMP EAX,EBX                         ; 004b4b81
     JNZ 0x004b4b77                      ; 004b4b83
         ;   XREF to: 004b4b77 (CONDITIONAL_JUMP)  ; LAB_004b4b77
@@ -78,7 +78,7 @@ section .text
     LEA EBX,[EAX + 0x1700]              ; 004b4b8a
     ADD EAX,0x5c                        ; 004b4b90
         ;   Label: LAB_004b4b90
-    MOV dword ptr [EAX + -0x38],0x0     ; 004b4b93 | CFirefly_ARRAY_01c9dab8[0].field36_0x24 | CFirefly_ARRAY_01c9dab8[1].field36_0x24
+    MOV dword ptr [EAX + -0x38],0x0     ; 004b4b93 | CFirefly_ARRAY_01c9dab8[0].base.lifetime_remaining | CFirefly_ARRAY_01c9dab8[1].base.lifetime_remaining
     CMP EAX,EBX                         ; 004b4b9a
     JNZ 0x004b4b90                      ; 004b4b9c
         ;   XREF to: 004b4b90 (CONDITIONAL_JUMP)  ; LAB_004b4b90
@@ -100,7 +100,7 @@ section .text
     LEA EBX,[EAX + 0xa400]              ; 004b4bd1
     ADD EAX,0xa4                        ; 004b4bd7
         ;   Label: LAB_004b4bd7
-    MOV dword ptr [EAX + -0x80],0x0     ; 004b4bdc | g_GlassParticlePool[0].field36_0x24 | g_GlassParticlePool[1].field36_0x24
+    MOV dword ptr [EAX + -0x80],0x0     ; 004b4bdc | g_GlassParticlePool[0].base.lifetime_remaining | g_GlassParticlePool[1].base.lifetime_remaining
     CMP EAX,EBX                         ; 004b4be3
     JNZ 0x004b4bd7                      ; 004b4be5
         ;   XREF to: 004b4bd7 (CONDITIONAL_JUMP)  ; LAB_004b4bd7
@@ -118,7 +118,7 @@ section .text
     LEA EBX,[EAX + 0x2900]              ; 004b4c0d
     ADD EAX,0xa4                        ; 004b4c13
         ;   Label: LAB_004b4c13
-    MOV dword ptr [EAX + -0x80],0x0     ; 004b4c18 | g_FireballPool[0].field36_0x24 | g_FireballPool[1].field36_0x24
+    MOV dword ptr [EAX + -0x80],0x0     ; 004b4c18 | g_FireballPool[0].base.lifetime_remaining | g_FireballPool[1].base.lifetime_remaining
     CMP EAX,EBX                         ; 004b4c1f
     JNZ 0x004b4c13                      ; 004b4c21
         ;   XREF to: 004b4c13 (CONDITIONAL_JUMP)  ; LAB_004b4c13
@@ -128,7 +128,7 @@ section .text
     LEA EBX,[EAX + 0x1400]              ; 004b4c30
     ADD EAX,0x50                        ; 004b4c36
         ;   Label: LAB_004b4c36
-    MOV dword ptr [EAX + -0x2c],0x0     ; 004b4c39 | g_RockPool[0].field36_0x24 | g_RockPool[1].field36_0x24
+    MOV dword ptr [EAX + -0x2c],0x0     ; 004b4c39 | g_RockPool[0].base.lifetime_remaining | g_RockPool[1].base.lifetime_remaining
     CMP EAX,EBX                         ; 004b4c40
     JNZ 0x004b4c36                      ; 004b4c42
         ;   XREF to: 004b4c36 (CONDITIONAL_JUMP)  ; LAB_004b4c36
@@ -138,7 +138,7 @@ section .text
     LEA EBX,[EAX + 0x1500]              ; 004b4c51
     ADD EAX,0x54                        ; 004b4c57
         ;   Label: LAB_004b4c57
-    MOV dword ptr [EAX + -0x30],0x0     ; 004b4c5a | CLeaf_ARRAY_01cadb68[0].field36_0x24 | CLeaf_ARRAY_01cadb68[1].field36_0x24
+    MOV dword ptr [EAX + -0x30],0x0     ; 004b4c5a | CLeaf_ARRAY_01cadb68[0].base.lifetime_remaining | CLeaf_ARRAY_01cadb68[1].base.lifetime_remaining
     CMP EAX,EBX                         ; 004b4c61
     JNZ 0x004b4c57                      ; 004b4c63
         ;   XREF to: 004b4c57 (CONDITIONAL_JUMP)  ; LAB_004b4c57
@@ -148,7 +148,7 @@ section .text
     LEA EBX,[EAX + 0x1700]              ; 004b4c72
     ADD EAX,0x5c                        ; 004b4c78
         ;   Label: LAB_004b4c78
-    MOV dword ptr [EAX + -0x38],0x0     ; 004b4c7b | CFirefly_ARRAY_01c9dab8[0].field36_0x24 | CFirefly_ARRAY_01c9dab8[1].field36_0x24
+    MOV dword ptr [EAX + -0x38],0x0     ; 004b4c7b | CFirefly_ARRAY_01c9dab8[0].base.lifetime_remaining | CFirefly_ARRAY_01c9dab8[1].base.lifetime_remaining
     CMP EAX,EBX                         ; 004b4c82
     JNZ 0x004b4c78                      ; 004b4c84
         ;   XREF to: 004b4c78 (CONDITIONAL_JUMP)  ; LAB_004b4c78
@@ -236,7 +236,7 @@ section .text
     LEA EBX,[EAX + 0x12c0]              ; 004b4d67
     ADD EAX,0x60                        ; 004b4d6d
         ;   Label: LAB_004b4d6d
-    MOV dword ptr [EAX + -0x3c],0x0     ; 004b4d70 | g_ShellPool[0].field36_0x24 | g_ShellPool[1].field36_0x24
+    MOV dword ptr [EAX + -0x3c],0x0     ; 004b4d70 | g_ShellPool[0].base.lifetime_remaining | g_ShellPool[1].base.lifetime_remaining
     CMP EAX,EBX                         ; 004b4d77
     JNZ 0x004b4d6d                      ; 004b4d79
         ;   XREF to: 004b4d6d (CONDITIONAL_JUMP)  ; LAB_004b4d6d
@@ -247,7 +247,7 @@ section .text
     POP EDI                             ; 004b4d8e
     ADD EAX,0x40                        ; 004b4d8f
         ;   Label: LAB_004b4d8f
-    MOV dword ptr [EAX + -0x1c],0x0     ; 004b4d92 | g_PopcornPool[0].field36_0x24 | g_PopcornPool[1].field36_0x24
+    MOV dword ptr [EAX + -0x1c],0x0     ; 004b4d92 | g_PopcornPool[0].base.lifetime_remaining | g_PopcornPool[1].base.lifetime_remaining
     CMP EAX,EBX                         ; 004b4d99
     JNZ 0x004b4d8f                      ; 004b4d9b
         ;   XREF to: 004b4d8f (CONDITIONAL_JUMP)  ; LAB_004b4d8f
@@ -257,7 +257,7 @@ section .text
     LEA EBX,[EAX + 0x4000]              ; 004b4daa
     ADD EAX,0x40                        ; 004b4db0
         ;   Label: LAB_004b4db0
-    MOV dword ptr [EAX + -0x1c],0x0     ; 004b4db3 | g_RainDropPool[0].field36_0x24 | g_RainDropPool[1].field36_0x24
+    MOV dword ptr [EAX + -0x1c],0x0     ; 004b4db3 | g_RainDropPool[0].base.lifetime_remaining | g_RainDropPool[1].base.lifetime_remaining
     CMP EAX,EBX                         ; 004b4dba
     JNZ 0x004b4db0                      ; 004b4dbc
         ;   XREF to: 004b4db0 (CONDITIONAL_JUMP)  ; LAB_004b4db0

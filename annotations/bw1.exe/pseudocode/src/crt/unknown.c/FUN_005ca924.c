@@ -18,7 +18,7 @@ LPCRITICAL_SECTION FUN_005ca924(void)
     _DAT_02c9ff60 = _DAT_02c9ff60 + 1;
   }
   else {
-    lpCriticalSection = (LPCRITICAL_SECTION)FUN_005c1cb0(1,0x18);
+    lpCriticalSection = (LPCRITICAL_SECTION)calloc(1,0x18);
     if (lpCriticalSection == (LPCRITICAL_SECTION)0x0) {
       FUN_005c9f70("Unable to allocate semaphore data\r\n",1);
     }

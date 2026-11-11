@@ -18,11 +18,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[20]:
-;   core_fldnotes.cpp_FUN_004ba930 at 004ba9a3
-;   core_fldnotes.cpp_FUN_004bab40 at 004bab54
-;   core_fldnotes.cpp_FUN_004badc0 at 004bade5
-;   core_fldnotes.cpp_FUN_004bc830 at 004bc85b
 ;   core_fldnotes.cpp_FUN_004be0f0 at 004be1ae
+;   core_fldnotes.cpp_SNotesMap_draw_FUN_004bc830 at 004bc85b
+;   core_fldnotes.cpp_SPageResourceBitmap_draw_FUN_004bab40 at 004bab54
+;   core_fldnotes.cpp_SPageResourceText_draw_FUN_004ba930 at 004ba9a3
+;   core_fldnotes.cpp_SPageResourceTwanaEntry_draw_FUN_004badc0 at 004bade5
 ;   core_game.cpp_CGame_displayActStats_FUN_004d8700 at 004d874f
 ;   core_game.cpp_CGame_finishAct_FUN_004d8a90 at 004d8b19
 ;   core_game.cpp_CGame_rollCredits_FUN_004d8e50 at 004d8ff0

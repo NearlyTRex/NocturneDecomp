@@ -16,7 +16,7 @@ void core_xform_cpp_FUN_005b9170(CEnemy *param_1,SDamageInfo *param_2)
   int iVar4;
   
   core_xform_cpp_FUN_005b8eb0(param_1,param_2);
-  fVar3 = (param_1->base).hit_points - *(float *)(param_2 + 4);
+  fVar3 = (param_1->base).hit_points - param_2->damage_amount;
   this_ptr = &(param_1->base).model;
   (param_1->base).hit_points = fVar3;
   if (0.0 < fVar3) {
@@ -28,7 +28,7 @@ void core_xform_cpp_FUN_005b9170(CEnemy *param_1,SDamageInfo *param_2)
   else {
     (param_1->base).hit_points = 0.0;
     pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr->base);
-    iVar2 = *(int *)(pSVar1 + 0x24);
+    iVar2 = pSVar1->state_index;
     if ((((iVar2 != 0x13) && (iVar2 != 0x10)) && (iVar2 != 0x14)) &&
        (((iVar2 != 0x11 && (iVar2 != 0x15)) && (iVar2 != 0x12)))) {
       iVar4 = 1;

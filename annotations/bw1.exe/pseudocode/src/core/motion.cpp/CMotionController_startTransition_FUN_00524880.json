@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 67,
+    "complexity_score": 52,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 37,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
     "total_lines": 121
@@ -168,14 +167,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 15,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(this_ptr->vtable + 4))",
-      "type": "unresolved_funcptr"
     }
   ]
 }

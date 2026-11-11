@@ -19,8 +19,8 @@ CInStreamFile * unkclass_instream_cpp_CInStreamFile_dtor_FUN_005a0a50(CInStreamF
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  *(byte ***)this_ptr = &g_CInStreamFileVTable;
-  unkaddr_0059f520_cpp_FUN_005a0dc0(this_ptr);
+  this_ptr->vtable = &g_CInStreamFileVTable;
+  unkaddr_0059f520_cpp_CInStreamFile_close_FUN_005a0dc0(this_ptr);
   pCVar1 = (CInStreamFile *)unkaddr_0059f520_cpp_FUN_0059f550(this_ptr,1);
   if ((flags & 2) == 0) {
     return pCVar1;

@@ -2,21 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 360,
-    "complexity_score": 348,
+    "complexity_score": 364,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 163,
-    "suspect_count": 16,
+    "pseudocode_lines": 164,
+    "suspect_count": 17,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
       "stack_alignment_array",
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 523
+    "total_lines": 524
   },
   "cross_references": [
     {
@@ -381,12 +382,12 @@
       "line": 47,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "if (((byte)DAT_00612560->vertex_buffer_ptr[iVar2 + 0x13] & 0x80) == 0) {",
+      "text": "if ((*(byte *)((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).screen_x + iVar2 + 3) &",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 62,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,local_1c);",
@@ -394,7 +395,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 64,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,0);",
@@ -402,7 +403,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
       "text": "local_34 = (int)ROUND(*param_1 * _DAT_005fce08);",
@@ -410,7 +411,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
       "text": "local_30 = (int)ROUND(param_1[1] * _DAT_005fce08);",
@@ -418,7 +419,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 68,
       "match": "param_1",
       "severity": "mild",
       "text": "local_2c = (int)ROUND(param_1[2] * _DAT_005fce08);",
@@ -426,7 +427,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
       "text": "local_58 = (int)ROUND(param_1[3] * _DAT_005fce08);",
@@ -434,7 +435,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
       "text": "local_54.i = (int)ROUND(param_1[4] * _DAT_005fce08);",
@@ -442,7 +443,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 72,
       "match": "param_1",
       "severity": "mild",
       "text": "local_50.i = (int)ROUND(param_1[5] * _DAT_005fce08);",
@@ -450,7 +451,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 164,
+      "line": 165,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,1);",
@@ -458,11 +459,19 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 165,
+      "line": 166,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,1);",
       "type": "undefined_data"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 47,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if ((*(byte *)((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).screen_x + iVar2 + 3) &",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 1,

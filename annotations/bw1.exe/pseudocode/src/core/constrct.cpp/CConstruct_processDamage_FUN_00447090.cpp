@@ -9,46 +9,45 @@
 void __cdecl core_constrct_cpp_CConstruct_processDamage_FUN_00447090(CConstruct *this_ptr,SDamageInfo *damage_info)
 
 {
-  byte *this_ptr_00;
-  float fVar1;
-  SMotion *pSVar2;
-  int iVar3;
-  uint uVar4;
+  CDeformableModelInstance *this_ptr_00;
+  CDemonActor_vtable *pCVar1;
+  float fVar2;
+  SMotion *pSVar3;
+  int iVar4;
+  uint uVar5;
   int force_immediate;
   
-  sound_sndmain_cpp_killSfx_FUN_00573a80(*(uint *)&this_ptr->field_0xc31c);
-  sound_sndmain_cpp_killSfx_FUN_00573a80(*(uint *)&this_ptr->field_0xc314);
-  sound_sndmain_cpp_killSfx_FUN_00573a80(*(uint *)&this_ptr->field_0xc304);
-  this_ptr_00 = &this_ptr->field_0x158;
-  pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
-                     ((CMotionController *)this_ptr_00);
-  if (*(int *)(pSVar2 + 0x24) != 0xc) {
-    fVar1 = *(float *)&this_ptr->field_0x2538 - *(float *)(damage_info + 4);
-    *(float *)&this_ptr->field_0x2538 = fVar1;
-    if (fVar1 <= 0.0) {
-      *(uint *)&this_ptr->field_0x2538 = 0x3f800000;
-      uVar4 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))
-                        (this_ptr,"stick-leaps.wav");
-      *(uint *)&this_ptr->field_0xc320 = uVar4;
+  sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[6]);
+  sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[4]);
+  sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[0]);
+  this_ptr_00 = &(this_ptr->base).base.model;
+  pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
+  if (pSVar3->state_index != 0xc) {
+    fVar2 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
+    (this_ptr->base).base.hit_points = fVar2;
+    if (fVar2 <= 0.0) {
+      pCVar1 = (this_ptr->base).base.base.vtable._ub;
+      (this_ptr->base).base.hit_points = 1.0;
+      uVar5 = (*pCVar1->playSound)((CDemonActor *)this_ptr,"stick-leaps.wav");
+      this_ptr->sfx_handles[7] = uVar5;
       core_construc_cpp_FUN_004472a0(this_ptr);
     }
     else {
       force_immediate = 1;
-      iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,2);
+      iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,2);
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                ((CMotionController *)this_ptr_00,iVar3 + 7,force_immediate);
-      iVar3 = sound_sndmain_cpp_FUN_005735a0(*(uint *)&this_ptr->field_0xc318);
-      if (iVar3 == 0) {
-        uVar4 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))
-                          (this_ptr,"stick-hurt_growl.wav");
-        *(uint *)&this_ptr->field_0xc318 = uVar4;
+                (&this_ptr_00->base,iVar4 + 7,force_immediate);
+      iVar4 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handles[5]);
+      if (iVar4 == 0) {
+        uVar5 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+                          ((CDemonActor *)this_ptr,"stick-hurt_growl.wav");
+        this_ptr->sfx_handles[5] = uVar5;
       }
     }
-    *(uint *)(damage_info + 8) = 0;
-    core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00((CEnemy *)this_ptr,damage_info);
+    damage_info->gore_multiplier = 0.0;
+    core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(&this_ptr->base,damage_info);
     return;
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-            ((CMotionController *)this_ptr_00,0xe,1);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&this_ptr_00->base,0xe,1);
   return;
 }

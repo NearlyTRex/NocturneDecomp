@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 158,
-    "complexity_score": 166,
+    "complexity_score": 141,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 71,
-    "suspect_count": 7,
+    "suspect_count": 5,
     "suspect_types": [
       "shadow_pointer_walk",
-      "unnamed_field",
       "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_type_propagation"
@@ -167,22 +166,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x27b8",
-      "severity": "mild",
-      "text": "*(float *)&(this_ptr->werewolf_actor->base).base.field_0x27b8 = this_ptr->wolf_size;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0x1fbc4",
-      "severity": "mild",
-      "text": "this_ptr_01 = &this_ptr->field_0x1fbc4;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

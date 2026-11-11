@@ -23,9 +23,9 @@ void __cdecl core_stranger_cpp_CStranger_process_FUN_00585a10(CStranger *this_pt
   }
   delta_time_00 = g_CGamePtr->delta_time_float;
   pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
-                     ((CMotionController *)&this_ptr->field_0x158);
+                     (&(this_ptr->base).base.model.base);
   bVar1 = false;
-  switch(*(uint *)(pSVar3 + 0x24)) {
+  switch(pSVar3->state_index) {
   case 0x12:
   case 0x13:
   case 0x14:
@@ -47,7 +47,7 @@ void __cdecl core_stranger_cpp_CStranger_process_FUN_00585a10(CStranger *this_pt
   case 0x26:
     bVar1 = true;
   }
-  if ((*(int *)&this_ptr->field_0x1ff5c == 7) || (bVar1)) {
+  if (((this_ptr->base).action_pending == 7) || (bVar1)) {
     delta_time = delta_time * (float)_DAT_005f6711;
     core_stranger_cpp_CStranger_processFrame_FUN_00585b00(this_ptr,delta_time);
     core_stranger_cpp_CStranger_processFrame_FUN_00585b00(this_ptr,delta_time);

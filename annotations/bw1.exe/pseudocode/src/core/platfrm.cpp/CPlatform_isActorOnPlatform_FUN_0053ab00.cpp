@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_0053ab00(CPlatform *this_ptr,CDemonActor *actor)
@@ -18,16 +17,16 @@ int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_0053ab00(CPlatform 
   float fVar4;
   int iVar5;
   float unaff_ESI;
-  uint *puVar6;
-  uint *puVar7;
+  float *pfVar6;
+  float *pfVar7;
   byte bVar8;
   float afStackY_1028 [988];
   uint uVar9;
-  float *pfVar10;
   CBoundingBox3D *out_box;
-  float fStack_84;
+  CKeyFramedModelInstance *pCStack_84;
   float fStack_80;
   float fStack_7c;
+  float afStack_70 [6];
   float fStack_58;
   float fStack_54;
   float fStack_50;
@@ -35,11 +34,12 @@ int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_0053ab00(CPlatform 
   float fStack_48;
   float fStack_44;
   float fStack_40;
+  uint auStack_3c [5];
   uint uStack_28;
   uint uStack_24;
   uint uStack_20;
   float fStack_1c;
-  float fStack_18;
+  float afStack_18 [2];
   
   bVar8 = 0;
   if (actor != (CDemonActor *)0x0) {
@@ -56,39 +56,37 @@ int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_0053ab00(CPlatform 
       if ((ABS(fVar4) <= (float)_DAT_005ed61b) &&
          (ABS((this_ptr->base).orient.vec.z) <= (float)_DAT_005ed61b)) {
         (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,out_box);
-        puVar6 = (uint *)&stack0xffffff90;
-        puVar7 = &stack0xffffffa8;
+        pfVar6 = afStack_70;
+        pfVar7 = &fStack_58;
         for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-          *puVar7 = *puVar6;
-          puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
-          puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
+          *pfVar7 = *pfVar6;
+          pfVar6 = pfVar6 + (uint)bVar8 * -2 + 1;
+          pfVar7 = pfVar7 + (uint)bVar8 * -2 + 1;
         }
         core_actor_cpp_FUN_00408bb0();
-        *(uint *)(&stack0xfffffff4 + (uint)bVar8 * -8) =
-             *(uint *)(&stack0xffffffc4 + (uint)bVar8 * -8);
+        *(uint *)(&stack0xfffffff4 + (uint)bVar8 * -8) = auStack_3c[(uint)bVar8 * -2];
         *(uint *)(&stack0xfffffff8 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
-             *(uint *)(&stack0xffffffc8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
+             auStack_3c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
         if ((((fStack_58 <= fStack_40 + fStack_7c) && (fStack_40 - fStack_7c <= fStack_4c)) &&
             (fStack_50 <= unaff_ESI + fStack_7c)) &&
            (((unaff_ESI - fStack_7c <= fStack_44 && (fStack_54 <= fVar2 + fStack_80)) &&
-            (fVar2 + fStack_84 <= fStack_48)))) {
+            (fVar2 + (float)pCStack_84 <= fStack_48)))) {
           pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
                              (&this_ptr->model);
           if (pCVar3->collision_triangle_list != (CDemonTriangle *)0x0) {
             uStack_28 = 0;
             uStack_20 = 0;
-            pfVar10 = &stack0xffffffe4;
+            pfVar6 = &fStack_1c;
             fStack_1c = fStack_40;
-            (&stack0xffffffe8)[(uint)bVar8 * 0xfffffffe] =
-                 (float)*(uint *)(&stack0xfffffff4 + (uint)bVar8 * -8);
-            *(uint *)(&stack0xffffffec + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
-                 *(uint *)(&stack0xfffffff8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
+            afStack_18[(uint)bVar8 * -2] = *(float *)(&stack0xfffffff4 + (uint)bVar8 * -8);
+            afStack_18[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
+                 *(float *)(&stack0xfffffff8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
             uVar9 = 0;
-            fStack_18 = fStack_80 + _DAT_005ed623 + fStack_18;
+            afStack_18[0] = fStack_80 + _DAT_005ed623 + afStack_18[0];
             uStack_24 = 0x3f800000;
             pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
                                (&this_ptr->model);
-            fVar4 = (float)core_dmodel_cpp_FUN_00467c00(pCVar3,uVar9,pfVar10);
+            fVar4 = (float)core_dmodel_cpp_FUN_00467c00(pCVar3,uVar9,pfVar6);
             if (fVar4 < 0.0) {
               return 0;
             }

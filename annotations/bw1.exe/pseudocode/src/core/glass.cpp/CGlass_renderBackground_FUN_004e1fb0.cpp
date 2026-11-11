@@ -78,7 +78,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e1fb0(CGlass *this_pt
         pCVar4->broken_quads[0].base.surface_normal.D.i = 0;
         pCVar4 = (CGlass *)((pCVar4->base).orient_matrix.m + 1);
         engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00482210(this_ptr_00,poly,0xc1);
-        poly = poly + 0x48;
+        poly = (SMRGLPrimitivePoly *)(poly->vertices + 4);
       } while (iVar1 < this_ptr->broken_polygon_count);
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0(&this_ptr->base);

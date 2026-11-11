@@ -11,7 +11,7 @@ void core_carved_cpp_factoryFuncCarved_FUN_004286a0(void)
 {
   CCarved *this_ptr;
   
-  this_ptr = (CCarved *)debugAllocTracked1(0xc2f4);
+  this_ptr = (CCarved *)operator_new(0xc2f4);
   if (this_ptr == (CCarved *)0x0) {
     return;
   }

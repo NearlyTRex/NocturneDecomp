@@ -43,16 +43,16 @@
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
 ;   crt_math.c_round_FUN_005c03a0
+;   crt_memory.c_malloc_FUN_005c08d0
 ;   crt_memory.c_memset_FUN_005bfb70
-;   crt_unknown.c_FUN_005c08d0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_dosio.cpp_changeFileExtension_FUN_004796b0
 ;   engine_dosio.cpp_findFile_FUN_00478e90
 ;   engine_dosio.cpp_FUN_00478e20
 ;   engine_texture.cpp_FUN_00596680
-;   support_trstream.cpp_FUN_005a0fd0
-;   unkaddr_0059f520.cpp_FUN_005a0c10
-;   unkaddr_0059f520.cpp_FUN_005a0dc0
+;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0
+;   unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0
+;   unkaddr_0059f520.cpp_CInStreamFile_read_FUN_005a0c10
 ;   unkclass_instream.cpp_CInStreamFile_ctor_FUN_005a08d0
 ;   unkclass_instream.cpp_CInStreamFile_dtor_FUN_005a0a50
 ;
@@ -231,8 +231,8 @@ section .text
     JZ 0x00596dda                       ; 0059697d
         ;   XREF to: 00596dda (CONDITIONAL_JUMP)  ; LAB_00596dda
     PUSH 0x300                          ; 00596983
-    CALL crt_unknown.c_FUN_005c08d0     ; 00596988
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 00596988
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 0059698d
     MOV dword ptr [EBX + 0x4c],EAX      ; 00596990
     TEST EAX,EAX                        ; 00596993
@@ -276,8 +276,8 @@ section .text
         ;   Label: LAB_00596a14
     PUSH EBP                            ; 00596a1b
     MOV dword ptr [EBX],EAX             ; 00596a1c
-    CALL crt_unknown.c_FUN_005c08d0     ; 00596a1e
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 00596a1e
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 00596a23
     MOV dword ptr [EBX + 0x44],EAX      ; 00596a26
     TEST EAX,EAX                        ; 00596a29
@@ -296,8 +296,8 @@ section .text
     JZ 0x00596a86                       ; 00596a51
         ;   XREF to: 00596a86 (CONDITIONAL_JUMP)  ; LAB_00596a86
     PUSH EBP                            ; 00596a53
-    CALL crt_unknown.c_FUN_005c08d0     ; 00596a54
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 00596a54
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 00596a59
     MOV dword ptr [EBX + 0x48],EAX      ; 00596a5c
     TEST EAX,EAX                        ; 00596a5f
@@ -318,21 +318,21 @@ section .text
     PUSH 0x5f7ab6                       ; 00596a8d | DAT_005f7ab6
     LEA EAX,[ESP + 0x18c]               ; 00596a92
     PUSH EAX                            ; 00596a99
-    CALL support_trstream.cpp_FUN_005a0fd0 ; 00596a9a
-        ;   XREF to: 005a0fd0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a0fd0()
+    CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0 ; 00596a9a
+        ;   XREF to: 005a0fd0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0(CInStreamFile * this_ptr, undefined4 param_2, undefined4 param_3, int param_4)
     ADD ESP,0x10                        ; 00596a9f
     PUSH 0x300                          ; 00596aa2
     MOV EBP,dword ptr [EBX + 0x4c]      ; 00596aa7
     PUSH EBP                            ; 00596aaa
     LEA EAX,[ESP + 0x188]               ; 00596aab
     PUSH EAX                            ; 00596ab2
-    CALL unkaddr_0059f520.cpp_FUN_005a0c10 ; 00596ab3
-        ;   XREF to: 005a0c10 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059f520.cpp_FUN_005a0c10()
+    CALL unkaddr_0059f520.cpp_CInStreamFile_read_FUN_005a0c10 ; 00596ab3
+        ;   XREF to: 005a0c10 (UNCONDITIONAL_CALL)  ; int unkaddr_0059f520.cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile * this_ptr, undefined4 * param_2, uint param_3)
     ADD ESP,0xc                         ; 00596ab8
     LEA EAX,[ESP + 0x180]               ; 00596abb
     PUSH EAX                            ; 00596ac2
-    CALL unkaddr_0059f520.cpp_FUN_005a0dc0 ; 00596ac3
-        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059f520.cpp_FUN_005a0dc0()
+    CALL unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0 ; 00596ac3
+        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined4 unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00596ac8
     TEST ESI,ESI                        ; 00596acb
     JZ 0x00596b1d                       ; 00596acd
@@ -343,8 +343,8 @@ section .text
     PUSH 0x5f7aba                       ; 00596ad9 | DAT_005f7aba
     LEA EAX,[ESP + 0x18c]               ; 00596ade
     PUSH EAX                            ; 00596ae5
-    CALL support_trstream.cpp_FUN_005a0fd0 ; 00596ae6
-        ;   XREF to: 005a0fd0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a0fd0()
+    CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0 ; 00596ae6
+        ;   XREF to: 005a0fd0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0(CInStreamFile * this_ptr, undefined4 param_2, undefined4 param_3, int param_4)
     ADD ESP,0x10                        ; 00596aeb
     MOV EAX,dword ptr [ESP + 0x1c4]     ; 00596aee
     IMUL EAX,EAX                        ; 00596af5
@@ -353,13 +353,13 @@ section .text
     PUSH ECX                            ; 00596afc
     LEA EAX,[ESP + 0x188]               ; 00596afd
     PUSH EAX                            ; 00596b04
-    CALL unkaddr_0059f520.cpp_FUN_005a0c10 ; 00596b05
-        ;   XREF to: 005a0c10 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059f520.cpp_FUN_005a0c10()
+    CALL unkaddr_0059f520.cpp_CInStreamFile_read_FUN_005a0c10 ; 00596b05
+        ;   XREF to: 005a0c10 (UNCONDITIONAL_CALL)  ; int unkaddr_0059f520.cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile * this_ptr, undefined4 * param_2, uint param_3)
     ADD ESP,0xc                         ; 00596b0a
     LEA EAX,[ESP + 0x180]               ; 00596b0d
     PUSH EAX                            ; 00596b14
-    CALL unkaddr_0059f520.cpp_FUN_005a0dc0 ; 00596b15
-        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059f520.cpp_FUN_005a0dc0()
+    CALL unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0 ; 00596b15
+        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined4 unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00596b1a
     PUSH 0x1                            ; 00596b1d
         ;   Label: LAB_00596b1d
@@ -368,8 +368,8 @@ section .text
     PUSH 0x5f7abe                       ; 00596b27 | DAT_005f7abe
     LEA EAX,[ESP + 0x18c]               ; 00596b2c
     PUSH EAX                            ; 00596b33
-    CALL support_trstream.cpp_FUN_005a0fd0 ; 00596b34
-        ;   XREF to: 005a0fd0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a0fd0()
+    CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0 ; 00596b34
+        ;   XREF to: 005a0fd0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0(CInStreamFile * this_ptr, undefined4 param_2, undefined4 param_3, int param_4)
     ADD ESP,0x10                        ; 00596b39
     MOV EAX,dword ptr [ESP + 0x1c4]     ; 00596b3c
     IMUL EAX,EAX                        ; 00596b43
@@ -378,13 +378,13 @@ section .text
     PUSH EBP                            ; 00596b4a
     LEA EAX,[ESP + 0x188]               ; 00596b4b
     PUSH EAX                            ; 00596b52
-    CALL unkaddr_0059f520.cpp_FUN_005a0c10 ; 00596b53
-        ;   XREF to: 005a0c10 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059f520.cpp_FUN_005a0c10()
+    CALL unkaddr_0059f520.cpp_CInStreamFile_read_FUN_005a0c10 ; 00596b53
+        ;   XREF to: 005a0c10 (UNCONDITIONAL_CALL)  ; int unkaddr_0059f520.cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile * this_ptr, undefined4 * param_2, uint param_3)
     ADD ESP,0xc                         ; 00596b58
     LEA EAX,[ESP + 0x180]               ; 00596b5b
     PUSH EAX                            ; 00596b62
-    CALL unkaddr_0059f520.cpp_FUN_005a0dc0 ; 00596b63
-        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059f520.cpp_FUN_005a0dc0()
+    CALL unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0 ; 00596b63
+        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined4 unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0(CInStreamFile * this_ptr)
     MOV EAX,[0x02c8a678]                ; 00596b68 | DAT_02c8a678
     ADD ESP,0x4                         ; 00596b6d
     TEST EAX,EAX                        ; 00596b70
@@ -513,8 +513,8 @@ section .text
         ;   Label: LAB_00596d05
     PUSH EBP                            ; 00596d0c
     MOV dword ptr [EBX],EAX             ; 00596d0d
-    CALL crt_unknown.c_FUN_005c08d0     ; 00596d0f
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 00596d0f
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 00596d14
     MOV dword ptr [EBX + 0x50],EAX      ; 00596d17
     TEST EAX,EAX                        ; 00596d1a
@@ -535,21 +535,21 @@ section .text
     PUSH 0x5f7b43                       ; 00596d4b | DAT_005f7b43
     LEA EAX,[ESP + 0x18c]               ; 00596d50
     PUSH EAX                            ; 00596d57
-    CALL support_trstream.cpp_FUN_005a0fd0 ; 00596d58
-        ;   XREF to: 005a0fd0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a0fd0()
+    CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0 ; 00596d58
+        ;   XREF to: 005a0fd0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0(CInStreamFile * this_ptr, undefined4 param_2, undefined4 param_3, int param_4)
     ADD ESP,0x10                        ; 00596d5d
     PUSH EBP                            ; 00596d60
     MOV EDX,dword ptr [EBX + 0x50]      ; 00596d61
     PUSH EDX                            ; 00596d64
     LEA EAX,[ESP + 0x188]               ; 00596d65
     PUSH EAX                            ; 00596d6c
-    CALL unkaddr_0059f520.cpp_FUN_005a0c10 ; 00596d6d
-        ;   XREF to: 005a0c10 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059f520.cpp_FUN_005a0c10()
+    CALL unkaddr_0059f520.cpp_CInStreamFile_read_FUN_005a0c10 ; 00596d6d
+        ;   XREF to: 005a0c10 (UNCONDITIONAL_CALL)  ; int unkaddr_0059f520.cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile * this_ptr, undefined4 * param_2, uint param_3)
     ADD ESP,0xc                         ; 00596d72
     LEA EAX,[ESP + 0x180]               ; 00596d75
     PUSH EAX                            ; 00596d7c
-    CALL unkaddr_0059f520.cpp_FUN_005a0dc0 ; 00596d7d
-        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059f520.cpp_FUN_005a0dc0()
+    CALL unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0 ; 00596d7d
+        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined4 unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00596d82
     JMP 0x00596c09                      ; 00596d85
         ;   XREF to: 00596c09 (UNCONDITIONAL_JUMP)  ; LAB_00596c09

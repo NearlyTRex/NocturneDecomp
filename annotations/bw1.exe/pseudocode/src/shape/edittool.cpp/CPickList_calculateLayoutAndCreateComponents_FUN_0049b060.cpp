@@ -40,12 +40,12 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
     _DAT_01d1d404 = 0xa4;
     core_main_c_FUN_005030e0("gEdFont must be set by the application.");
   }
-  _DAT_01c3f538 = *(uint *)(_DAT_01c3eb50 + 0x41e8);
+  _DAT_01c3f538 = _DAT_01c3eb50->max_char_width;
   _DAT_01c3f53c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(_DAT_01c3eb50,0x6a);
   this_ptr->row_height = _DAT_01c3f53c + 1;
   this_ptr->column_padding = 8;
-  *(uint *)&this_ptr->field_0x50 = 1;
-  memset(&this_ptr->field_0x10,0,0x40);
+  this_ptr->tab_column_count = 1;
+  memset(this_ptr->tab_column_widths,0,0x40);
   local_14 = 0;
   if (0 < (this_ptr->base).item_count) {
     do {
@@ -64,8 +64,8 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
         }
         *pcVar7 = '\0';
         iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(_DAT_01c3eb50,local_160);
-        if (*(int *)&pCVar8->field_0x10 < iVar4) {
-          *(int *)&pCVar8->field_0x10 = iVar4;
+        if (pCVar8->tab_column_widths[0] < iVar4) {
+          pCVar8->tab_column_widths[0] = iVar4;
         }
         iVar10 = iVar10 + 1;
         pCVar8 = (CPickList *)&(pCVar8->base).capacity;
@@ -76,26 +76,26 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
           core_main_c_FUN_005030e0("Too many picklist columns!");
         }
       }
-      if (*(int *)&this_ptr->field_0x50 < iVar10) {
-        *(int *)&this_ptr->field_0x50 = iVar10;
+      if (this_ptr->tab_column_count < iVar10) {
+        this_ptr->tab_column_count = iVar10;
       }
       local_14 = local_14 + 1;
     } while (local_14 < (this_ptr->base).item_count);
   }
   pCVar8 = this_ptr;
-  for (iVar10 = 0; iVar10 < *(int *)&this_ptr->field_0x50 + -1; iVar10 = iVar10 + 1) {
-    *(int *)&pCVar8->field_0x10 = *(int *)&pCVar8->field_0x10 + DAT_0061b498 / 0x28;
+  for (iVar10 = 0; iVar10 < this_ptr->tab_column_count + -1; iVar10 = iVar10 + 1) {
+    pCVar8->tab_column_widths[0] = pCVar8->tab_column_widths[0] + DAT_0061b498 / 0x28;
     pCVar8 = (CPickList *)&(pCVar8->base).capacity;
   }
   this_ptr->column_width = 0;
   iVar10 = 0;
   pCVar8 = this_ptr;
-  if (0 < *(int *)&this_ptr->field_0x50) {
+  if (0 < this_ptr->tab_column_count) {
     do {
       iVar10 = iVar10 + 1;
-      this_ptr->column_width = this_ptr->column_width + *(int *)&pCVar8->field_0x10;
+      this_ptr->column_width = this_ptr->column_width + pCVar8->tab_column_widths[0];
       pCVar8 = (CPickList *)&(pCVar8->base).capacity;
-    } while (iVar10 < *(int *)&this_ptr->field_0x50);
+    } while (iVar10 < this_ptr->tab_column_count);
   }
   this_ptr->column_width = this_ptr->column_width + this_ptr->column_padding * 2;
   iVar10 = (DAT_0061b49c + _DAT_01c3f53c * -4) / this_ptr->row_height;

@@ -18,15 +18,15 @@
 ;   TerminatedCString s_CHeroPlaceholder_005e9a99
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CNetGame* g_CNetGamePtr = 01d51c20
-;   undefined4 g_CGameInstance.field164_0xd4
-;   undefined4 g_CGameInstance.field168_0xd8
+;   undefined4 g_CGameInstance.hero_number
+;   undefined4 g_CGameInstance.aim_mode
 ;   undefined4 DAT_01d06aa0
 ;   undefined4 DAT_01d06ab4
 ;   undefined4 DAT_01d1d400
 ;   undefined4 DAT_01d1d404
 ;   CNetGame g_CNetGameInstance
 ;   undefined4 g_CNetGameInstance.player_count
-;   undefined4 g_CNetGameInstance.players+0x18
+;   undefined4 g_CNetGameInstance.players[0].aim_mode
 ;   undefined4 g_CNetGameInstance.local_player_index
 ;
 ; Called Functions:
@@ -91,7 +91,7 @@ section .text
     ADD EBX,0x4                         ; 0051c11c
     LEA EDX,[EAX + ESI*0x1]             ; 0051c11f
     MOV EAX,dword ptr [EBX + 0x1d06aa0] ; 0051c122
-    MOV EDX,dword ptr [EDX + 0x38]      ; 0051c128 | g_CNetGameInstance.players+0x18
+    MOV EDX,dword ptr [EDX + 0x38]      ; 0051c128 | g_CNetGameInstance.players[0].aim_mode
     INC EDI                             ; 0051c12b
     MOV dword ptr [EAX + 0x1fae4],EDX   ; 0051c12c
     MOV EAX,[0x01d06aa0]                ; 0051c132 | DAT_01d06aa0
@@ -147,7 +147,7 @@ section .text
         ;   Label: LAB_0051c1ad
     MOV EAX,[0x0061d95c]                ; 0051c1b1 | g_CGamePtr
     PUSH EBX                            ; 0051c1b6
-    MOV ESI,dword ptr [EAX + 0xd4]      ; 0051c1b7 | g_CGameInstance.field164_0xd4
+    MOV ESI,dword ptr [EAX + 0xd4]      ; 0051c1b7 | g_CGameInstance.hero_number
     PUSH ESI                            ; 0051c1bd
     PUSH ECX                            ; 0051c1be
     MOV EDX,0x1                         ; 0051c1bf
@@ -163,7 +163,7 @@ section .text
     MOV EAX,[0x01d06ab4]                ; 0051c1dd | DAT_01d06ab4
     MOV EDX,dword ptr [0x0061d95c]      ; 0051c1e2 | g_CGamePtr
     MOV EBX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 0051c1e8
-    MOV EAX,dword ptr [EDX + 0xd8]      ; 0051c1ef | g_CGameInstance.field168_0xd8
+    MOV EAX,dword ptr [EDX + 0xd8]      ; 0051c1ef | g_CGameInstance.aim_mode
     MOV dword ptr [EBX + 0x1fae4],EAX   ; 0051c1f5
     JMP 0x0051c14e                      ; 0051c1fb
         ;   XREF to: 0051c14e (UNCONDITIONAL_JUMP)  ; LAB_0051c14e

@@ -6,10 +6,13 @@
 #include "system/basetypes.h"
 
 // Structure: SEdge
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x8 (8 bytes)
 #pragma pack(push, 1)
 typedef struct SEdge {
+    short x0; // 0x0
+    short y0; // 0x2
+    short x1; // 0x4
+    short y1; // 0x6
 } SEdge;
 #pragma pack(pop)
 

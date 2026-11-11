@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 162,
-    "complexity_score": 140,
+    "complexity_score": 122,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 70,
-    "suspect_count": 5,
+    "pseudocode_lines": 67,
+    "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 232
+    "total_lines": 229
   },
   "cross_references": [],
   "function": {
@@ -192,16 +191,8 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0xe7d8",
-      "severity": "mild",
-      "text": "this_ptr_00 = &this_ptr->field_0xe7d8;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 61,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),",

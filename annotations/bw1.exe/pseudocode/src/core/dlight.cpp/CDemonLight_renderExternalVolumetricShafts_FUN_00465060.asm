@@ -135,14 +135,14 @@ section .text
     JZ 0x0046509f                       ; 0046507c
         ;   XREF to: 0046509f (CONDITIONAL_JUMP)  ; LAB_0046509f
     MOV EAX,[0x00622c18]                ; 0046507e | g_CDemonSetPtr
-    FLD float ptr [EAX + 0x15ac80]      ; 00465083 | g_CDemonSetInstance.field108_0x15ac80
+    FLD float ptr [EAX + 0x15ac80]      ; 00465083 | g_CDemonSetInstance.active_fog.density_multiplier
     FCOMP double ptr [0x005d922c]       ; 00465089 | DAT_005d922c
     FNSTSW AX                           ; 0046508f
     SAHF                                ; 00465091
     JC 0x0046509f                       ; 00465092
         ;   XREF to: 0046509f (CONDITIONAL_JUMP)  ; LAB_0046509f
     MOV EAX,[0x0061d95c]                ; 00465094 | g_CGamePtr | g_CGameInstance
-    CMP dword ptr [EAX + 0xc],0x0       ; 00465099 | g_CGameInstance.field3_0xc
+    CMP dword ptr [EAX + 0xc],0x0       ; 00465099 | g_CGameInstance.halo_mode
     JNZ 0x004650a7                      ; 0046509d
         ;   XREF to: 004650a7 (CONDITIONAL_JUMP)  ; LAB_004650a7
     LEA ESP,[EBP + 0x7e]                ; 0046509f

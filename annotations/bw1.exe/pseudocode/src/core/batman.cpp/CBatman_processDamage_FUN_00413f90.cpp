@@ -34,9 +34,9 @@ void __cdecl core_batman_cpp_CBatman_processDamage_FUN_00413f90(CBatman *this_pt
   bVar3 = 0;
   sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[2]);
   sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[0]);
-  if (*(int *)(damage_info + 0x28) == 7) {
-    *(float *)(damage_info + 4) = *(float *)(damage_info + 4) * (float)_DAT_005d3b89;
-    core_actor_cpp_FUN_00408b40(this_ptr,damage_info + 0x1c);
+  if (damage_info->ammo_type == AMMO_TYPE_LITHIUM) {
+    damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005d3b89;
+    core_actor_cpp_FUN_00408b40(this_ptr,&damage_info->impact_direction);
     iVar4 = 0;
     CStack_60.x = fStack_3c;
     *(float *)((int)&CStack_60 + (uint)bVar3 * -8 + 4) = afStack_50[(uint)bVar3 * -2 + 6];
@@ -48,7 +48,7 @@ void __cdecl core_batman_cpp_CBatman_processDamage_FUN_00413f90(CBatman *this_pt
                 (0x01C57074,&CStack_60,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar4 < 5);
   }
-  if (*(int *)(damage_info + 0x30) == 0x6c) {
+  if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
     core_skeleton_cpp_FUN_00569130(&(this_ptr->base).base.model,0);
     puVar6 = &uStack_24;
     uStack_24 = uStack_54;
@@ -70,13 +70,13 @@ void __cdecl core_batman_cpp_CBatman_processDamage_FUN_00413f90(CBatman *this_pt
               ((CCharacter *)this_ptr_01,position,iVar4,flame_type,fVar5,include_hero);
   }
   core_batman_cpp_CBatman_processDismemberment_FUN_00413c40(this_ptr,damage_info);
-  fVar5 = (this_ptr->base).base.hit_points - *(float *)(damage_info + 4);
+  fVar5 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar5;
   if (fVar5 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
     pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
-    if ((*(int *)(pSVar1 + 0x24) != 7) && (*(int *)(pSVar1 + 0x24) != 8)) {
+    if ((pSVar1->state_index != 7) && (pSVar1->state_index != 8)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&this_ptr_00->base,7,1);
       sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[1]);
       uVar2 = (*((this_ptr->base).base.base.vtable._ub)->playSound)

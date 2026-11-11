@@ -48,12 +48,12 @@ int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_00494690(CStrList *str_
     _DAT_01d1d404 = 0xa4;
     core_main_c_FUN_005030e0("gEdFont must be set by the application.");
   }
-  _DAT_01c3f538 = *(uint *)(_DAT_01c3eb50 + 0x41e8);
+  _DAT_01c3f538 = _DAT_01c3eb50->max_char_width;
   _DAT_01c3f53c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(_DAT_01c3eb50,0x6a);
   if ((dialog_title == (char *)0x0) || (iVar2 = *(int *)dialog_title, iVar2 < 1)) {
     return -1;
   }
-  uVar3 = FUN_005c1268(iVar2 * 0xe4 + 4,iVar2,&g_CEdButtonTypeInfo);
+  uVar3 = operator_new_array(iVar2 * 0xe4 + 4,iVar2,&g_CEdButtonTypeInfo);
   local_44 = (CEdButton *)__vec_new(uVar3);
   iVar9 = 0;
   local_18 = 0;
@@ -180,18 +180,18 @@ LAB_0049479f:
   local_3c = iVar2 + -1;
   iVar9 = -2;
   do {
-    iVar5 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,0x1c);
+    iVar5 = (*0x01D1BCA0->vtable->getAndClearKeyState)(0x01D1BCA0,DIK_RETURN);
     if (iVar5 != 0) {
       iVar9 = local_14;
     }
-    iVar5 = (*(code *)**(uint **)0x01D1BCA0)(0x01D1BCA0,0x2a);
+    iVar5 = (*0x01D1BCA0->vtable->getKeyState)(0x01D1BCA0,DIK_LSHIFT);
     if ((iVar5 == 0) &&
-       (iVar5 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,0xf), iVar5 != 0)) {
+       (iVar5 = (*0x01D1BCA0->vtable->getAndClearKeyState)(0x01D1BCA0,DIK_TAB), iVar5 != 0)) {
       local_14 = local_14 + 1;
     }
-    iVar5 = (*(code *)**(uint **)0x01D1BCA0)(0x01D1BCA0,0x2a);
+    iVar5 = (*0x01D1BCA0->vtable->getKeyState)(0x01D1BCA0,DIK_LSHIFT);
     if ((iVar5 != 0) &&
-       (iVar5 = (**(code **)(*(int *)0x01D1BCA0 + 4))(0x01D1BCA0,0xf), iVar5 != 0)) {
+       (iVar5 = (*0x01D1BCA0->vtable->getAndClearKeyState)(0x01D1BCA0,DIK_TAB), iVar5 != 0)) {
       local_14 = local_14 + -1;
     }
     if (local_14 < iVar2) {

@@ -13,12 +13,12 @@ float __cdecl core_rifle_cpp_CRifle_getDamage_FUN_00540930(CRifle *this_ptr)
 {
   float fStack_c;
   
-  if (*(int *)&this_ptr->field_0x56c == 6) {
+  if ((this_ptr->base).ammo_type == AMMO_TYPE_BLANKS) {
     return 0.0;
   }
   core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30(0x01C51D80,"COMBATMODEHARD");
   fStack_c = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(25.0,55.0);
-  if (*(int *)&g_CGamePtr->field_0xd0 == 3) {
+  if (g_CGamePtr->game_control == CONTROL_MODE_POINT_AND_CLICK) {
     fStack_c = fStack_c * _DAT_005edcb3;
   }
   return fStack_c;

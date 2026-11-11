@@ -9,10 +9,10 @@
 ;
 ; XREF[28]:
 ;   core_doc.cpp_CDoc_doHeroAction_FUN_00474fc0 at 00475092
-;   core_fldnotes.cpp_FUN_004bcba0 at 004bcde6
-;   core_fldnotes.cpp_FUN_004bdd00 at 004bddb1
-;   core_fldnotes.cpp_FUN_004bde80 at 004bdf76
-;   core_fldnotes.cpp_FUN_004bdfa0 at 004be051
+;   core_fldnotes.cpp_CFieldNotes_completeTask_FUN_004bdfa0 at 004be051
+;   core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004bdd00 at 004bddb1
+;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0 at 004bcde6
+;   core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004bde80 at 004bdf76
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d3f86
 ;   core_game.cpp_FUN_004d6420 at 004d68f7
 ;   core_game.cpp_FUN_004d6990 at 004d6e8b

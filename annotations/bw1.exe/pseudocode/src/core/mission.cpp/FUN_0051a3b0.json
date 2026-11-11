@@ -150,7 +150,7 @@
       "line": 6,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 4) = 0;",
+      "text": "param_1->num_sets = 0;",
       "type": "unnamed_param"
     },
     {
@@ -158,7 +158,7 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x1018] = (CDemonMission)0x0;",
+      "text": "param_1->mission_name[0] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -166,7 +166,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1010) = 0;",
+      "text": "param_1->has_inventory_actors = 0;",
       "type": "unnamed_param"
     },
     {
@@ -174,7 +174,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1458) = 0;",
+      "text": "param_1->next_inventory_actor = (CDemonActor *)0x0;",
       "type": "unnamed_param"
     },
     {
@@ -182,7 +182,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x145c) = 0;",
+      "text": "param_1->actor_lookup_count = 0;",
       "type": "unnamed_param"
     },
     {

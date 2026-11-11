@@ -36,7 +36,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004d8a90(CGame *this_ptr)
   int local_8;
   
   bVar8 = 0;
-  if (*(int *)&this_ptr->field_0x27c == 2) {
+  if (this_ptr->act_completion_state == 2) {
     engine_2d_c_clearInputAndWait_FUN_004032b0();
     core_game_cpp_CGame_rollCredits_FUN_004d8e50(this_ptr);
     return;

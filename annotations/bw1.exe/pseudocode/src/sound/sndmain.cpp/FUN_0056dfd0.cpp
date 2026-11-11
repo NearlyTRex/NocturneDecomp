@@ -36,10 +36,10 @@ LAB_0056dff0:
         iVar1 = 0;
       }
       if ((((g_SfxSamples[iVar1].sample_data != (short *)0x0) &&
-           (0 < *(int *)&g_SfxSamples[iVar1].field_0x164)) && (g_SfxSamples[iVar1].ref_count == 0))
-         && (((g_SfxSamples[iVar1].taken == 0 && (*(int *)&g_SfxSamples[iVar1].field_0x15c == 0)) &&
+           (0 < g_SfxSamples[iVar1].streaming_buffer_size)) && (g_SfxSamples[iVar1].ref_count == 0))
+         && (((g_SfxSamples[iVar1].taken == 0 && (g_SfxSamples[iVar1].is_user_sample == 0)) &&
              (g_SfxSamples[_DAT_02c78ff0].locked_length == 0)))) {
-        iVar3 = iVar3 - *(int *)&g_SfxSamples[iVar1].field_0x168;
+        iVar3 = iVar3 - g_SfxSamples[iVar1].data_size_bytes;
         sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00570020(g_SfxSamples + iVar1);
         if (0x3f < iVar2) {
           return 0;

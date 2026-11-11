@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 418,
-    "complexity_score": 628,
+    "complexity_score": 533,
     "cross_reference_count": 2,
     "function_call_count": 22,
     "global_count": 46,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 168,
-    "suspect_count": 43,
+    "suspect_count": 34,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unrolled_strcpy",
       "warning_overlapping_globals"
@@ -54,7 +53,7 @@
     {
       "addr": "004bdaa0",
       "is_variadic": false,
-      "name": "core_fldnotes.cpp_FUN_004bdaa0"
+      "name": "core_fldnotes.cpp_CFieldNotes_clear_FUN_004bdaa0"
     },
     {
       "addr": "004d6990",
@@ -640,16 +639,8 @@
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x250 = 0;",
+      "text": "param_1->is_loading = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x250",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x250 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -688,128 +679,64 @@
       "line": 106,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe8 = 0;",
+      "text": "param_1->combat_difficulty_mode = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 106,
-      "match": "field_0xe8",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe8 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 107,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe4 = 0;",
+      "text": "param_1->puzzle_difficulty_mode = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 107,
-      "match": "field_0xe4",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe4 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 110,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe4 = 0;",
+      "text": "param_1->puzzle_difficulty_mode = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 110,
-      "match": "field_0xe4",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe4 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 111,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe8 = 1;",
+      "text": "param_1->combat_difficulty_mode = 1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 111,
-      "match": "field_0xe8",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe8 = 1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 114,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe8 = 0;",
+      "text": "param_1->combat_difficulty_mode = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 114,
-      "match": "field_0xe8",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe8 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 115,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe4 = 1;",
+      "text": "param_1->puzzle_difficulty_mode = 1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 115,
-      "match": "field_0xe4",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe4 = 1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 118,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe8 = 1;",
+      "text": "param_1->combat_difficulty_mode = 1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 118,
-      "match": "field_0xe8",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe8 = 1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 119,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe4 = 1;",
+      "text": "param_1->puzzle_difficulty_mode = 1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 119,
-      "match": "field_0xe4",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe4 = 1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

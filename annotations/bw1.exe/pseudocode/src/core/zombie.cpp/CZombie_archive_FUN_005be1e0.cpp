@@ -26,7 +26,7 @@ void __cdecl core_zombie_cpp_CZombie_archive_FUN_005be1e0(CZombie *this_ptr)
               (&(this_ptr->base).base.model,"partStatus");
     if (g_CZombieClassVersion < 7) {
       core_actor_cpp_archiveActor_FUN_0040b6f0
-                (&(this_ptr->base).base.field_0x2628,"carriedActor");
+                (&(this_ptr->base).base.carry_hands[1].carry_actor,"carriedActor");
     }
   }
   if (3 < g_CZombieClassVersion) {

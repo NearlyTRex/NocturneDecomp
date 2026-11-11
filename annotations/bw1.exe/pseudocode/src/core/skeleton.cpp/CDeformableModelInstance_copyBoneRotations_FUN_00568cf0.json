@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 50,
-    "complexity_score": 103,
+    "complexity_score": 88,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "param_count_too_many",
       "pointer_cast",
-      "shadow_pointer_walk",
-      "unnamed_field"
+      "shadow_pointer_walk"
     ],
     "total_lines": 83
   },
@@ -152,14 +151,6 @@
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)source_quaternions + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x6b0",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x6b0 = source_quaternions->w;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `this_ptr->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",

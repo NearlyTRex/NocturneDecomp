@@ -13,7 +13,7 @@ CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_004a0410(CEnemy *this_ptr)
   CEnemy *pCVar2;
   float fVar3;
   char *pcVar4;
-  int *piVar5;
+  char *pcVar5;
   
   pCVar2 = (CEnemy *)core_charactr_cpp_CCharacter_ctor_FUN_0042c080(&this_ptr->base);
   (pCVar2->base).base.vtable._ub = &g_CEnemyVTable._ub;
@@ -30,19 +30,19 @@ CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_004a0410(CEnemy *this_ptr)
   pCVar2->guard_distance = 100.0;
   pcVar4 = &DAT_005dcac1;
   pCVar2->attack_cooldown = 0.0;
-  piVar5 = &(pCVar2->base).base.dead1;
+  pcVar5 = (pCVar2->base).base.footstep_sound_code;
   pCVar2->victim_height = 6.0;
   pCVar2->allow_pathfind_to_new_targets = 1;
   pCVar2->speed = fVar3;
   do {
     cVar1 = *pcVar4;
-    *(char *)piVar5 = cVar1;
+    *pcVar5 = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar4[1];
     pcVar4 = pcVar4 + 2;
-    *(char *)((int)piVar5 + 1) = cVar1;
-    piVar5 = (int *)((int)piVar5 + 2);
+    pcVar5[1] = cVar1;
+    pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  *(uint *)&(pCVar2->base).field_0x252c = 0x3fc90fdb;
+  (pCVar2->base).turn_rate = 1.5707964;
   return pCVar2;
 }

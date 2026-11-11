@@ -18,7 +18,7 @@
 ;   undefined4 DAT_00612560
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 DAT_01bc120c
-;   undefined4 g_CGameInstance.field532_0x244
+;   undefined4 g_CGameInstance.letterbox_mode
 ;
 ; Called Functions:
 ;   core_box.cpp_FUN_00420dc0
@@ -45,7 +45,7 @@ section .text
     JLE 0x005663b0                      ; 0056639e
         ;   XREF to: 005663b0 (CONDITIONAL_JUMP)  ; LAB_005663b0
     MOV EAX,[0x0061d95c]                ; 005663a0 | g_CGamePtr
-    CMP dword ptr [EAX + 0x244],0x0     ; 005663a5 | g_CGameInstance.field532_0x244
+    CMP dword ptr [EAX + 0x244],0x0     ; 005663a5 | g_CGameInstance.letterbox_mode
     JZ 0x005663bd                       ; 005663ac
         ;   XREF to: 005663bd (CONDITIONAL_JUMP)  ; LAB_005663bd
     XOR EAX,EAX                         ; 005663ae

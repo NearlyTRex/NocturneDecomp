@@ -21,7 +21,7 @@ void core_doc_cpp_FUN_00476080(int param_1)
     pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                        ((CMotionController *)(param_1 + 0x158));
     puVar1 = (uint *)(iVar2 + 0x3ab24);
-    if (*(int *)(pSVar3 + 0x24) == 0x2f) {
+    if (pSVar3->state_index == 0x2f) {
       if (puVar1 != auStack_18) {
         *(uint *)(iVar2 + 0x3ab28) = 0;
         *puVar1 = 0;
@@ -29,7 +29,7 @@ void core_doc_cpp_FUN_00476080(int param_1)
         return;
       }
     }
-    else if ((*(int *)(pSVar3 + 0x24) == 0x30) && (puVar1 != auStack_24)) {
+    else if ((pSVar3->state_index == 0x30) && (puVar1 != auStack_24)) {
       *(uint *)(iVar2 + 0x3ab28) = 0;
       *puVar1 = 0;
       *(uint *)(iVar2 + 0x3ab2c) = 0x41a00000;

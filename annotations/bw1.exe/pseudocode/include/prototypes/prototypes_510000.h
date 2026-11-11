@@ -227,7 +227,7 @@ void __cdecl core_mission_cpp_CDemonMission_setTeleportTarget_FUN_0051b700(CDemo
 void core_mission_cpp_FUN_0051b740(int param_1,undefined4 param_2,undefined4 param_3);
 void core_mission_cpp_FUN_0051b7b0(int *param_1);
 void __cdecl core_mission_cpp_CDemonMission_process_FUN_0051b8d0(CDemonMission *this_ptr);
-void core_mission_cpp_FUN_0051ba5c(CDemonMission *param_1,CDemonMission *param_2);
+void core_mission_cpp_FUN_0051ba5c(CDemonMission *param_1,char *param_2);
 void __cdecl core_mission_cpp_CDemonMission_run_FUN_0051bad0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_setMissionName_FUN_0051bc90(CDemonMission *this_ptr,char *name);
 void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_0051bcc0(CDemonMission *this_ptr,char *out_buf,char *base_name);

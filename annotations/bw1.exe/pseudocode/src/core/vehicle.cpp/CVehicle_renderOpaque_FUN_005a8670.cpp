@@ -53,13 +53,13 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005a8670(CVehicle *this_p
   in_stack_0000000c[0xc].orient_matrix.m[1].y = fVar1;
   if (fVar1 != 0.0) {
     iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
-    if ((iVar2 == 0) || (*(int *)&g_CGamePtr->field_0x25c != 0)) {
+    if ((iVar2 == 0) || (g_CGamePtr->goggles_active != 0)) {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
                 ((CKeyFramedModelInstance *)(in_stack_0000000c + 1),0.0,-1);
       iVar2 = 0;
-      if (0 < (int)in_stack_0000000c[6].previous_transform_state.position.x) {
+      if (0 < in_stack_0000000c[6].dead2) {
         this_ptr_00 = (CKeyFramedModelInstance *)
-                      &in_stack_0000000c[6].previous_transform_state.dirty_flags;
+                      ((int)&in_stack_0000000c[6].previous_transform_state.orientation + 8);
         pCVar3 = (CVector3f *)(in_stack_0000000c[8].actor_name + 0xc);
         pCVar9 = &in_stack_0000000c[8].location.position;
         translation = (CVector3f *)(in_stack_0000000c[8].actor_name + 0x18);
@@ -77,7 +77,7 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005a8670(CVehicle *this_p
           pCVar3 = (CVector3f *)&pCVar3[0x24].y;
           this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr_00[1].part_visibility_flags + 0xe);
           pCVar9 = (CVector3f *)(&pCVar9->y + 0x6c);
-        } while (iVar2 < (int)in_stack_0000000c[6].previous_transform_state.position.x);
+        } while (iVar2 < in_stack_0000000c[6].dead2);
       }
     }
     else {

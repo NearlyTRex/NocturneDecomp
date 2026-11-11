@@ -2,17 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 39,
+    "complexity_score": 9,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 9,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field",
-      "unresolved_funcptr"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 25
   },
   "cross_references": [
@@ -45,7 +42,7 @@
     },
     {
       "addr": "01e7d5b4",
-      "name": "g_CDemonPodInstance.field404_0x194",
+      "name": "g_CDemonPodInstance.base.vtable",
       "type": "undefined4",
       "value": null
     }
@@ -98,22 +95,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 10,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)&g_CDemonPodPtr->field_0x194 + 8))(g_CDemonPodPtr,info);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x194",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)&g_CDemonPodPtr->field_0x194 + 8))(g_CDemonPodPtr,info);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

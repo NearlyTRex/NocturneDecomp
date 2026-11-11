@@ -2,26 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 827,
-    "complexity_score": 938,
+    "complexity_score": 688,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 408,
-    "suspect_count": 48,
+    "pseudocode_lines": 403,
+    "suspect_count": 25,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
       "stack_param",
       "stack_ref",
       "unaffected_reg",
-      "unnamed_field",
-      "unresolved_funcptr",
       "unrolled_memcpy",
-      "warning_overlapping_globals",
-      "warning_type_propagation"
+      "warning_overlapping_globals"
     ],
-    "total_lines": 1235
+    "total_lines": 1230
   },
   "cross_references": [
     {
@@ -416,16 +413,8 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Overlapping global symbols",
-      "line": 3,
+      "line": 2,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -433,7 +422,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 18,
+      "line": 14,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "float *unaff_EDI;",
@@ -441,103 +430,79 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 22,
-      "match": "afStackY_1210",
+      "line": 17,
+      "match": "afStackY_1200",
       "severity": "moderate",
-      "text": "float afStackY_1210 [122];",
+      "text": "float afStackY_1200 [118];",
       "type": "stack_alignment_array"
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 23,
-      "match": "apuStackY_1028",
+      "line": 18,
+      "match": "apCStackY_1028",
       "severity": "moderate",
-      "text": "byte *apuStackY_1028 [869];",
+      "text": "CLocation *apCStackY_1028 [870];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 19,
+      "match": "in_stack_fffffd78",
+      "severity": "moderate",
+      "text": "CStranger *in_stack_fffffd78;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
       "match": "in_stack_fffffd84",
       "severity": "moderate",
       "text": "CDemonActor *in_stack_fffffd84;",
       "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 98,
-      "match": "field_0x1ff78",
-      "severity": "mild",
-      "text": "if (((((0.0 < this_ptr->action_timer) || (*(int *)&this_ptr->field_0x1ff78 != 0)) ||",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 101,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((local_18 = (float)core_motion_cpp_FUN_00524a40(&this_ptr->field_0x158,0), local_18 < 1.0 ||",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 102,
-      "match": "field_0x25b0",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x25b0 != 0)))) || (*(int *)&this_ptr->field_0x2628 != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 102,
-      "match": "field_0x2628",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x25b0 != 0)))) || (*(int *)&this_ptr->field_0x2628 != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 106,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "apuStack_3c[3] = &this_ptr->field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 110,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "this_ptr_01 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_24);",
+      "text": "pCVar4 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_24);",
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 116,
-      "match": "field_0x25b0",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x25b0 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 150,
-      "match": "field_0x2628",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x2628 == 0) {",
-      "type": "unnamed_field"
+      "description": "Unresolved stack parameter",
+      "line": 113,
+      "match": "in_stack_fffffd78",
+      "severity": "moderate",
+      "text": "in_stack_fffffd78 = this_ptr;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 166,
+      "line": 118,
+      "match": "in_stack_fffffd78",
+      "severity": "moderate",
+      "text": "in_stack_fffffd78 = (CStranger *)0x58c6eb;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 162,
+      "match": "in_stack_fffffd78",
+      "severity": "moderate",
+      "text": "in_stack_fffffd78 = (CStranger *)0x58c3fd;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 168,
       "match": "in_stack_fffffd84",
       "severity": "moderate",
-      "text": "(this_ptr_01,(CBoundingBox3D *)in_stack_fffffd84);",
+      "text": "(*((pCVar4->vtable)._ub)->getBoundingBox)(pCVar4,(CBoundingBox3D *)in_stack_fffffd84);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 167,
+      "line": 169,
       "match": "&stack0xfffffd8c",
       "severity": "moderate",
       "text": "puVar7 = (uint *)&stack0xfffffd8c;",
@@ -545,7 +510,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 174,
+      "line": 176,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "fStack_dc = fStack_22c + *unaff_EDI;",
@@ -553,7 +518,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 175,
+      "line": 177,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "afStack_d8[0] = fStack_228 + unaff_EDI[1];",
@@ -561,7 +526,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 176,
+      "line": 178,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "afStack_d8[1] = fStack_224 + unaff_EDI[2];",
@@ -569,7 +534,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 177,
+      "line": 179,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "fStack_88 = fStack_22c + *unaff_EDI;",
@@ -577,215 +542,63 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 189,
+      "line": 191,
       "match": "in_stack_fffffd84",
       "severity": "moderate",
-      "text": "in_stack_fffffd84 = this_ptr_01;",
+      "text": "in_stack_fffffd84 = pCVar4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 206,
-      "match": "in_stack_fffffd84",
-      "severity": "moderate",
-      "text": "(in_stack_fffffd84 = this_ptr_01,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 208,
-      "match": "field_0x1ff78",
-      "severity": "mild",
-      "text": "*(CDemonActor **)&this_ptr->field_0x1ff78 = this_ptr_01;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 216,
-      "match": "field_0x2628",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x2628 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 230,
       "match": "in_stack_fffffd84",
       "severity": "moderate",
-      "text": "in_stack_fffffd84 = this_ptr_01;",
+      "text": "(in_stack_fffffd84 = pCVar4,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 237,
+      "line": 219,
+      "match": "in_stack_fffffd78",
+      "severity": "moderate",
+      "text": "in_stack_fffffd78 = (CStranger *)0x58c5e4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 233,
+      "match": "in_stack_fffffd84",
+      "severity": "moderate",
+      "text": "in_stack_fffffd84 = pCVar4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 240,
       "match": "in_stack_fffffd84",
       "severity": "moderate",
       "text": "in_stack_fffffd84 = (CDemonActor *)0x58c645;",
       "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 250,
-      "match": "field_0x1ff78",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)&this_ptr->field_0x1ff78;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 254,
-      "match": "code *",
+      "description": "Unresolved stack parameter",
+      "line": 257,
+      "match": "in_stack_fffffd78",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar6 + 0x154) + 0x1c))(iVar6);",
-      "type": "unresolved_funcptr"
+      "text": "(*((pCVar4->vtable)._ub)->getBoundingBox)(pCVar4,(CBoundingBox3D *)in_stack_fffffd78);",
+      "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 287,
-      "match": "field_0x1ff78",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408b40(*(uint *)&this_ptr->field_0x1ff78,&fStack_1d4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 306,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CMotionController *)&this_ptr->field_0x158,0x26,1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 307,
-      "match": "field_0x1ff78",
-      "severity": "mild",
-      "text": "uVar13 = *(uint *)&this_ptr->field_0x1ff78;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 313,
-      "match": "field_0x1ff78",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)&this_ptr->field_0x1ff78;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 315,
-      "match": "code *",
+      "description": "Direct stack address reference",
+      "line": 259,
+      "match": "&stack0xfffffd90",
       "severity": "moderate",
-      "text": "(iVar6 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x84))(iVar6,this_ptr), iVar6 != 4)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 316,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "this_ptr_00 = &this_ptr->field_0x158;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 320,
-      "match": "field_0x1ff78",
-      "severity": "mild",
-      "text": "uVar13 = *(uint *)&this_ptr->field_0x1ff78;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 359,
-      "match": "field_0x1ff78",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1ff78);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 360,
-      "match": "field_0x1ff78",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1ff78 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 365,
-      "match": "field_0x1ff78",
-      "severity": "mild",
-      "text": "uVar13 = *(uint *)&this_ptr->field_0x1ff78;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 370,
-      "match": "field_0x1ff78",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408bb0(*(uint *)&this_ptr->field_0x1ff78,&this_ptr->field_0x20);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 370,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408bb0(*(uint *)&this_ptr->field_0x1ff78,&this_ptr->field_0x20);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 379,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CMotionController *)&this_ptr->field_0x158,0x22,1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 380,
-      "match": "field_0x1ff78",
-      "severity": "mild",
-      "text": "uVar13 = *(uint *)&this_ptr->field_0x1ff78;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 385,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CMotionController *)&this_ptr->field_0x158,0x23,1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 386,
-      "match": "field_0x1ff78",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408bb0(this_ptr,*(int *)&this_ptr->field_0x1ff78 + 0x20);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 396,
-      "match": "field_0x1ff78",
-      "severity": "mild",
-      "text": "uVar13 = *(uint *)&this_ptr->field_0x1ff78;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 410,
-      "match": "field_0x1ff5c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1ff5c = 4;",
-      "type": "unnamed_field"
+      "text": "puVar8 = (uint *)&stack0xfffffd90;",
+      "type": "stack_ref"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 169,
+      "line": 171,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -793,7 +606,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 257,
+      "line": 260,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {",

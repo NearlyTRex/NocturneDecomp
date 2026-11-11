@@ -79,7 +79,7 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0054b43f | g_CGamePtr
     ADD ESP,0xc                         ; 0054b444
     ADD EAX,0x244                       ; 0054b447
-    PUSH EAX                            ; 0054b44c | g_CGameInstance.field532_0x244
+    PUSH EAX                            ; 0054b44c | g_CGameInstance.letterbox_mode
     PUSH 0x5f00ae                       ; 0054b44d | DAT_005f00ae
     PUSH EDI                            ; 0054b452
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054b453
@@ -97,7 +97,7 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0054b475 | g_CGamePtr
     ADD ESP,0xc                         ; 0054b47a
     ADD EAX,0x248                       ; 0054b47d
-    PUSH EAX                            ; 0054b482 | g_CGameInstance.field536_0x248
+    PUSH EAX                            ; 0054b482 | g_CGameInstance.allow_damage_flag
     PUSH 0x5f00b2                       ; 0054b483 | DAT_005f00b2
     PUSH EDI                            ; 0054b488
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054b489
@@ -116,7 +116,7 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0054b4ab | g_CGamePtr
     ADD ESP,0xc                         ; 0054b4b0
     ADD EAX,0x24c                       ; 0054b4b3
-    PUSH EAX                            ; 0054b4b8 | g_CGameInstance.field540_0x24c
+    PUSH EAX                            ; 0054b4b8 | g_CGameInstance.allow_enemy_attack_flag
     PUSH 0x5f00b6                       ; 0054b4b9 | DAT_005f00b6
     PUSH EDI                            ; 0054b4be
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054b4bf

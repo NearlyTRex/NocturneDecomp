@@ -65,7 +65,7 @@
 ;   core_game.cpp_FUN_004cbf20
 ;   core_menu.cpp_renderAudioSpectrumBar_FUN_00509c90
 ;   core_menu.cpp_renderMenuAndGetChoice_FUN_00509e20
-;   core_moon.cpp_FUN_00521e40
+;   core_moon.cpp_CMoon_render_FUN_00521e40
 ;   core_set.cpp_CDemonSet_setFlatColor_FUN_00555770
 ;   core_sound.cpp_CSound_configure_FUN_0057d6a0
 ;   crt_math.c_pow_FUN_005c18f4
@@ -124,8 +124,8 @@ section .text
     MOV EAX,[0x00622c18]                ; 0050bae8 | g_CDemonSetPtr
     PUSH 0x1d1e380                      ; 0050baed
     MOV dword ptr [EAX + 0x15ae94],0xdac ; 0050baf2 | g_CDemonSetInstance.ambient_base_quick
-    CALL core_moon.cpp_FUN_00521e40     ; 0050bafc
-        ;   XREF to: 00521e40 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_00521e40()
+    CALL core_moon.cpp_CMoon_render_FUN_00521e40 ; 0050bafc
+        ;   XREF to: 00521e40 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_render_FUN_00521e40(CMoon * this_ptr)
     ADD ESP,0x4                         ; 0050bb01
     XOR ESI,ESI                         ; 0050bb04
     MOV EAX,[0x00622c18]                ; 0050bb06 | g_CDemonSetPtr

@@ -27,7 +27,7 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004f4720(CIni *this_ptr,c
   bVar8 = 0;
   local_14 = 0;
   iVar2 = engine_ini_cpp_FUN_004f4550(this_ptr,section,key,filename,value);
-  if (*this_ptr == (CIni)0x0) {
+  if (this_ptr->initialized == 0) {
     return 1;
   }
   iVar3 = _fopen(filename,"rt");

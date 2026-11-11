@@ -27,10 +27,10 @@ int __cdecl engine_special_cpp_drawPolyList3_FUN_00582620(SRenderVertex *vertex_
   iVar1 = 0;
   if (0 < polygon_count) {
     do {
-      pSStack_1c = vertex_buffer + (uint)*(ushort *)polygons * 0x30;
-      pSStack_18 = vertex_buffer + (uint)*(ushort *)(polygons + 2) * 0x30;
-      pSStack_14 = vertex_buffer + (uint)*(ushort *)(polygons + 4) * 0x30;
-      polygons = polygons + 6;
+      pSStack_1c = vertex_buffer + polygons->vertex_index_0;
+      pSStack_18 = vertex_buffer + polygons->vertex_index_1;
+      pSStack_14 = vertex_buffer + polygons->vertex_index_2;
+      polygons = polygons + 1;
       iVar1 = iVar1 + 1;
       (*_DAT_02c833c8)(&pSStack_1c,3,render_flags);
     } while (iVar1 < polygon_count);

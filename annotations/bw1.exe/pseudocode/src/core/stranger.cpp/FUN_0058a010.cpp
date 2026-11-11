@@ -20,7 +20,7 @@ void __cdecl core_stranger_cpp_FUN_0058a010(CStranger *this_ptr,float delta_time
   (this_ptr->pending_velocity).z = 0.0;
   (this_ptr->pending_velocity).y = (this_ptr->pending_velocity).z;
   (this_ptr->pending_velocity).x = (this_ptr->pending_velocity).y;
-  fVar4 = (float)core_motion_cpp_FUN_00524a40(&this_ptr->field_0x158,0);
+  fVar4 = (float)core_motion_cpp_FUN_00524a40(&(this_ptr->base).base.model,0);
   if ((fVar4 <= 0.0) || (1.0 <= this_ptr->turn_blend_weight)) {
     this_ptr->turn_angle = 0.0;
     this_ptr->turn_motion_index = -1;

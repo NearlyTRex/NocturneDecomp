@@ -18,7 +18,7 @@ void support_trisock_cpp_buildSockaddrIn_FUN_0059c7d0(SNetworkAddr *param_1)
   uint auStack_10 [2];
   
   bVar3 = 0;
-  uVar1 = htons(*(ushort *)(param_1 + 4));
+  uVar1 = htons(param_1->port);
   local_18 = CONCAT22(uVar1,2);
   support_trisock_cpp_getIPAddress_FUN_0059c700(param_1);
   memset(auStack_10,0,8);

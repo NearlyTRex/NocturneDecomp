@@ -13,18 +13,18 @@ void core_mission_cpp_FUN_0051b610(CDemonMission *param_1,int param_2)
   int iVar2;
   int iVar3;
   
-  if (param_2 == *(int *)param_1) {
+  if (param_2 == param_1->current_set_index) {
     return;
   }
-  *(int *)param_1 = param_2;
-  core_set_cpp_FUN_0054d3c0(g_CDemonSetPtr,param_1 + param_2 * 0x100 + 8);
-  if (*(int *)(param_1 + 0x1008) == 0) {
+  param_1->current_set_index = param_2;
+  core_set_cpp_FUN_0054d3c0(g_CDemonSetPtr,param_1->set_names + param_2);
+  if (param_1->is_in_editor == 0) {
     core_mission_cpp_FUN_0051b7b0(param_1);
   }
   else {
     core_mission_cpp_CDemonMission_buildSetActorList_FUN_0051b420(param_1);
   }
-  if (*(int *)param_1 != *(int *)(param_1 + 0x1454)) {
+  if (param_1->current_set_index != param_1->prepared_set_index) {
     core_mission_cpp_CDemonMission_prepareAllActors_FUN_0051b2b0(param_1);
   }
   iVar2 = 0;
@@ -35,6 +35,6 @@ void core_mission_cpp_FUN_0051b610(CDemonMission *param_1,int param_2)
   }
   sound_sndmain_cpp_killAllSfx_FUN_00573b00();
   core_game_cpp_FUN_004dc000(g_CGamePtr);
-  *(uint *)&g_CGamePtr->field_0x288 = 1;
+  g_CGamePtr->new_set_event_pending = 1;
   return;
 }

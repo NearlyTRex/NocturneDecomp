@@ -10,6 +10,6 @@ void __cdecl core_stone_cpp_CTempleStone_archive_FUN_00584ee0(CTempleStone *this
 
 {
   core_boxactor_cpp_CBoxActor_archive_FUN_00422760(&this_ptr->base);
-  core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x678,"destActor");
+  core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->dest_actor,"destActor");
   return;
 }

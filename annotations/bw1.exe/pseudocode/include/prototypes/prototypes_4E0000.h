@@ -236,7 +236,7 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004ebc40(CHero *this_
 void __cdecl core_hero_cpp_CHero_stopNearbyInteraction_FUN_004ebe80(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004ebeb0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_tryUseSelectedItem_FUN_004ec020(CHero *this_ptr);
-bool core_hero_cpp_FUN_004ec090(CDemonActor *param_1,char *param_2);
+bool core_hero_cpp_FUN_004ec090(CHero *param_1,char *param_2);
 int __cdecl core_hero_cpp_CHero_canLookAt_FUN_004ec1b0(CHero *this_ptr);
 void __cdecl core_hero_cpp_FUN_004ec280(CHero *this_ptr,int hand_index);
 void __cdecl core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004ec2c0(CHero *this_ptr,int hand_index);
