@@ -13,8 +13,10 @@ struct Stand {
     int gl_active = 0;       // nocturne_gl_is_active
     float movie_gain = 1.0f; // nocturne_movie_audio_gain
 
-    // nocturne_gl_present_framebuffer
+    // nocturne_gl_present_framebuffer, and nocturne_gl_present_picture, which
+    // sets present_own_shape
     int presents = 0;
+    int present_own_shape = 0;
     int present_width = 0;
     int present_height = 0;
     int present_bpp = 0;

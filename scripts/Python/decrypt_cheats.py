@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-# Decrypt all g_CheatStr_* arrays from the project's constants header.
+# Decrypt all g_CheatStr_* arrays from the project's constants header and
+# globals source. The export makes an array with room past its text a global
+# (pseudocode/char_buffer.py), so a cheat can be in either.
 #
 # Algorithm (recovered from support/newmsg.cpp:decryptMessage_FUN_00544270):
 #   key = buf[0]
@@ -16,11 +18,11 @@
 #
 # Usage:
 #   python3 decrypt_cheats.py
-#       Decrypts every g_CheatStr_* in the default constants header path and
-#       prints a name → cleartext table.
+#       Decrypts every g_CheatStr_* in the default constants header and globals
+#       source and prints a name → cleartext table.
 #
-#   python3 decrypt_cheats.py path/to/constants_620000.h
-#       Same, against a custom path.
+#   python3 decrypt_cheats.py path/to/constants_620000.h [more files...]
+#       Same, against custom paths.
 
 from __future__ import annotations
 
@@ -29,15 +31,16 @@ import re
 import sys
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-DEFAULT_HEADER = os.path.join(
-    REPO_ROOT, 'annotations', 'nocedit.exe', 'pseudocode',
-    'include', 'constants', 'constants_620000.h',
-)
+_PSEUDOCODE = os.path.join(REPO_ROOT, 'annotations', 'nocedit.exe', 'pseudocode')
+DEFAULT_PATHS = [
+    os.path.join(_PSEUDOCODE, 'include', 'constants', 'constants_620000.h'),
+    os.path.join(_PSEUDOCODE, 'src', 'globals', 'globals_620000.cpp'),
+]
 
-# Match a static char g_CheatStr_<Name>[N] = { ... }; declaration. The body
+# Match a [static] char g_CheatStr_<Name>[N] = { ... }; definition. The body
 # is captured raw and parsed for hex byte literals separately.
 _DECL_RE = re.compile(
-    r'static\s+char\s+(g_CheatStr_\w+)\s*\[\s*\d+\s*\]\s*=\s*\{([^}]*)\}\s*;',
+    r'(?:static\s+)?char\s+(g_CheatStr_\w+)\s*\[\s*\d+\s*\]\s*=\s*\{([^}]*)\}\s*;',
     re.DOTALL,
 )
 _BYTE_RE = re.compile(r'\(char\)\s*0x([0-9A-Fa-f]+)')
@@ -91,13 +94,15 @@ def decrypt(buf):
 
 def main(argv=None):
     argv = argv if argv is not None else sys.argv[1:]
-    path = argv[0] if argv else DEFAULT_HEADER
-    if not os.path.isfile(path):
-        print("ERROR: %s not found" % path, file=sys.stderr)
-        return 1
-
-    with open(path, 'r') as f:
-        text = f.read()
+    paths = argv if argv else DEFAULT_PATHS
+    text = ""
+    for path in paths:
+        if not os.path.isfile(path):
+            print("ERROR: %s not found" % path, file=sys.stderr)
+            return 1
+        with open(path, 'r') as f:
+            text += f.read()
+    path = ", ".join(paths)
 
     rows = []
     headers_seen = set()

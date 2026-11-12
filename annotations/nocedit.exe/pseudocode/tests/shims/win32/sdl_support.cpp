@@ -33,6 +33,12 @@ void nocturne_gl_present_framebuffer(const void *pixels, int width, int height, 
     stand.present_width = width;
     stand.present_height = height;
     stand.present_bpp = bpp;
+    stand.present_own_shape = 0;
+}
+
+void nocturne_gl_present_picture(const void *pixels, int width, int height, int pitch, int bpp) {
+    nocturne_gl_present_framebuffer(pixels, width, height, pitch, bpp);
+    stand.present_own_shape = 1;
 }
 
 float nocturne_movie_audio_gain(void) {

@@ -1,24 +1,25 @@
 #!/usr/bin/env bash
-# run.sh — repo-root convenience wrapper that launches the 64-bit ASan exe.
+# run.sh — repo-root convenience wrapper that launches the built 64-bit exe.
 #
-# Companion to build.sh: build.sh builds the default lane (exe-linux-asan-x86_64),
-# this runs it. It forwards to the cmake-generated
-# build/exe-linux-asan-x86_64/run.sh and passes --dev by default (full engine
-# dev hotkeys: TAB console, Ctrl+Z camera, etc.) since we're actively finding
-# and fixing things in this lane.
+# Companion to build.sh: build.sh builds the default lane (exe-linux-x86_64),
+# this runs it. It forwards to the cmake-generated build/<preset>/run.sh and
+# passes --dev by default (full engine dev hotkeys: TAB console, Ctrl+Z
+# camera, etc.) since we're actively finding and fixing things in this lane.
+# BUILD_PRESET picks another lane, as it does for build.sh:
 #
-#   ./run.sh                       # launch 64-bit ASan exe with --dev
+#   ./run.sh                       # launch exe-linux-x86_64 with --dev
 #   ./run.sh --some-game-arg       # extra args pass through (--dev still on)
+#   BUILD_PRESET=exe-linux-asan-x86_64 ./run.sh   # the ASan exe
 #
-# --vanilla (or VANILLA=1) runs the vanilla lane instead: the one
-# `./build.sh --vanilla` builds (build/exe-linux-asan-x86_64-vanilla), or
-# build/exe-linux-vanilla-x86_64 if that is the only one built.
+# --vanilla (or VANILLA=1) runs the vanilla lane of that preset instead: its
+# vanilla twin preset (exe-linux-vanilla-x86_64), or build/<preset>-vanilla
+# if that is the only one built.
 #
 #   ./run.sh --vanilla             # launch the vanilla exe with --dev
 #
 # Anything the generated run.sh understands works here too. To run WITHOUT dev
 # mode, call the generated script directly:
-#   ./build/exe-linux-asan-x86_64/run.sh
+#   ./build/exe-linux-x86_64/run.sh
 
 set -u
 
@@ -30,14 +31,16 @@ if [[ "${1:-}" == "--vanilla" ]]; then
     shift
 fi
 
-if [[ "${VANILLA}" == "1" ]]; then
-    GEN="${SCRIPT_DIR}/build/exe-linux-asan-x86_64-vanilla/run.sh"
-    if [[ ! -x "${GEN}" && -x "${SCRIPT_DIR}/build/exe-linux-vanilla-x86_64/run.sh" ]]; then
-        GEN="${SCRIPT_DIR}/build/exe-linux-vanilla-x86_64/run.sh"
+PRESET="${BUILD_PRESET:-exe-linux-x86_64}"
+if [[ "${VANILLA}" == "1" && "${PRESET}" != *vanilla* ]]; then
+    # As build.sh names them: the twin puts -vanilla before the architecture.
+    GEN="${SCRIPT_DIR}/build/${PRESET%-*}-vanilla-${PRESET##*-}/run.sh"
+    if [[ ! -x "${GEN}" && -x "${SCRIPT_DIR}/build/${PRESET}-vanilla/run.sh" ]]; then
+        GEN="${SCRIPT_DIR}/build/${PRESET}-vanilla/run.sh"
     fi
     BUILD_HINT="./build.sh --vanilla"
 else
-    GEN="${SCRIPT_DIR}/build/exe-linux-asan-x86_64/run.sh"
+    GEN="${SCRIPT_DIR}/build/${PRESET}/run.sh"
     BUILD_HINT="./build.sh"
 fi
 

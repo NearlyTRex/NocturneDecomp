@@ -6,6 +6,7 @@
 
 #include "core/console.h"
 
+#include <cstdio>
 #include <cstring>
 
 namespace ui_support {
@@ -123,8 +124,11 @@ void __cdecl engine_special_cpp_renderAlphaRow16_FUN_005b55f7(ushort *destPixels
     stand.rows16.push_back({destPixels, pixelCount, globalAlpha, srcIndices[0]});
 }
 
-void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(CAlphaBitmap *, int, int, int) {
+void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(CAlphaBitmap *, int x, int y,
+                                                                   int) {
     stand.displayed.push_back("display");
+    stand.displayed_at.push_back(x);
+    stand.displayed_at.push_back(y);
 }
 
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap *, int, int, int,
@@ -145,14 +149,57 @@ int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004d0010(CBitFont *, char *, c
     return 2;
 }
 
-int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004cda80(CBitFont *, char *text, int, int, int,
-                                                           int) {
-    stand.drawn.push_back(text);
-    return (int)std::strlen(text) * 8;
+namespace {
+
+// What one character of `font`'s text is wide: its OS font's height, if it
+// draws through one.
+int character_width(const CBitFont *font) {
+    if (font != nullptr && font->win_font_enabled != 0 && font->win_font_helper != nullptr)
+        return font->win_font_helper->cached_string_height;
+    return 8;
 }
 
-int __cdecl engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(CBitFont *, char *text) {
-    return (int)std::strlen(text) * 8;
+} // namespace
+
+int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004cda80(CBitFont *font, char *text, int x, int y,
+                                                           int, int) {
+    stand.drawn.push_back(text);
+    if (character_width(font) != 8) {
+        char drawn[160];
+        std::snprintf(drawn, sizeof(drawn), "%s %d %d %d", text, x, y,
+                      font->win_font_helper->cached_string_height);
+        stand.os_drawn.emplace_back(drawn);
+    }
+    return (int)std::strlen(text) * character_width(font);
+}
+
+int __cdecl engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(CBitFont *font, char *text) {
+    return (int)std::strlen(text) * character_width(font);
+}
+
+// --- OS fonts ---------------------------------------------------------------------
+
+CWinFont *g_MediumWinFont = nullptr;
+CWinFont *g_TinyWinFont = nullptr;
+CWinFont *g_ThemeWinFont = nullptr;
+CWinFont *g_DebugWinFont = nullptr;
+
+// The height kept where the stand's text routines read it.
+CWinFont *__cdecl engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(CWinFont *this_ptr, char *,
+                                                                int font_height, int y_offset1,
+                                                                int y_offset2) {
+    this_ptr->cached_string_height = font_height;
+    this_ptr->y_offset1 = y_offset1;
+    this_ptr->y_offset2 = y_offset2;
+    char made[48];
+    std::snprintf(made, sizeof(made), "%d %d %d", font_height, y_offset1, y_offset2);
+    stand.os_fonts.emplace_back(made);
+    return this_ptr;
+}
+
+CWinFont *__cdecl engine_winfont_cpp_CWinFont_dtor_FUN_005f2390(CWinFont *this_ptr, uint) {
+    stand.os_fonts_freed++;
+    return this_ptr;
 }
 
 int __cdecl engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(CBitFont *, char *) {
@@ -186,9 +233,70 @@ void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(CDemonRe
     stand.viewports.push_back(-1);
 }
 
-extern "C" int nocturne_trigl_device_begin_overlay(float scale_x, float, float, float) {
+extern "C" int nocturne_trigl_device_begin_overlay(float scale_x, float scale_y, float, float) {
     stand.overlays.push_back(scale_x);
+    stand.overlays_y.push_back(scale_y);
     return stand.overlay_opens;
+}
+
+// --- the front end's mode and its fangs ------------------------------------------
+
+SAlphaEntry g_AlphaTable[256] = {};
+int g_BlendMode = 0;
+uint g_Hardware32BitPalette[256] = {};
+CDemonMission *g_CDemonMissionPtr = nullptr;
+
+extern "C" int nocturne_upscaler_get(void) {
+    return stand.upscaler;
+}
+
+int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(int width, int height,
+                                                                 int bits_per_pixel) {
+    stand.modes.push_back(std::to_string(width) + "x" + std::to_string(height) + "x" +
+                          std::to_string(bits_per_pixel));
+    if (stand.refused.count(width) != 0)
+        return 0;
+    ui_support::screen(width, height, bits_per_pixel);
+    return 1;
+}
+
+void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_00402a80(void) {
+    stand.resets++;
+}
+
+void __cdecl engine_special_cpp_clearScreen_FUN_005b3e70(void) {
+    stand.clears++;
+}
+
+void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void) {
+    stand.swaps++;
+}
+
+CAlphaBitmap *__cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap *bitmap) {
+    *bitmap = CAlphaBitmap();
+    return bitmap;
+}
+
+void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(CAlphaBitmap *bitmap,
+                                                                char *filename, int width,
+                                                                int height) {
+    // Opaque, every pixel index 1; one picture loaded at a time.
+    static std::vector<char> s_raw;
+    static std::vector<char> s_opa;
+    stand.loaded.push_back(std::string(filename) + " " + std::to_string(width) + "x" +
+                           std::to_string(height));
+    s_raw.assign((size_t)width * (size_t)height, 1);
+    s_opa.assign((size_t)width * (size_t)height, (char)0xff);
+    bitmap->raw = s_raw.data();
+    bitmap->opa = s_opa.data();
+    bitmap->width = width;
+    bitmap->height = height;
+}
+
+CAlphaBitmap *__cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap *bitmap,
+                                                                         uint) {
+    stand.freed++;
+    return bitmap;
 }
 
 extern "C" void nocturne_trigl_device_end_overlay(void) {

@@ -257,27 +257,61 @@ NOCTURNE_TEST(the_device_is_picked) {
     CHECK(stand.in_order({"closeDevice", "initDevice", "soundConfigure"}));
 }
 
-// While sound plays, a bar every 4 pixels across each channel's share of the
-// width, less a twentieth either side; the clock behind it wraps.
+// While sound plays, a bar 32 wide every 4 pixels across each channel's share
+// of the width, less a twentieth either side, rising twice its level's height
+// from the foot; drawn a flame frame at a time, each bar's frame its column's.
+// The clock behind it wraps.
 NOCTURNE_TEST(the_spectrum_behind_the_lines) {
     stand.reset();
     stand.busy = 1;
     g_GlobalDeltaTimeInt = 1;
     g_AudioVisualizationCounter = 0x7fff0;
     sound({});
-    CHECK_EQ(stand.bars, 2 * 64);
+    CHECK_EQ((int)stand.bars.size(), 2 * 64);
+    CHECK_EQ(stand.bars[0], std::string("16 48 479 359 0"));
+    CHECK_EQ(stand.bars[64], std::string("20 52 479 359 4"));
+    CHECK_EQ(stand.render_alpha, 0xffff);
+    CHECK_EQ(stand.blend, 0);
     CHECK_EQ(g_AudioVisualizationCounter, 0x7fff0 + 0x18 - 0x80000);
 
     stand.reset();
     sound({});
-    CHECK_EQ(stand.bars, 0);
+    CHECK_EQ((int)stand.bars.size(), 0);
     CHECK_EQ(g_AudioVisualizationCounter, 0);
 
     stand.reset();
     stand.busy = 1;
     stand.channels = 0;
     sound({});
-    CHECK_EQ(stand.bars, 0);
+    CHECK_EQ((int)stand.bars.size(), 0);
+}
+
+// On a larger layout the bars are spaced and sized with it, each in the frame
+// of the column it would have had at 640x480; a silent band draws none.
+NOCTURNE_TEST(the_spectrum_follows_the_layout) {
+    stand.reset();
+    stand.busy = 1;
+    g_WindowWidth = 1920;
+    g_WindowHeight = 1080;
+    stand.layout = {2.25f, 240, 0};
+    sound({});
+    CHECK_EQ((int)stand.bars.size(), 2 * 85);
+    // No frame 0 at this pitch: the first drawn is the right channel's second
+    // bar, at column 473 (1065 / 2.25), in frame 1.
+    CHECK_EQ(stand.bars[0], std::string("1029 1101 1079 809 1"));
+
+    stand.reset();
+    stand.busy = 1;
+    stand.level = 0.0f;
+    sound({});
+    CHECK_EQ((int)stand.bars.size(), 0);
+
+    // However small the layout, a bar is a pixel apart.
+    stand.reset();
+    stand.busy = 1;
+    stand.layout = {0.1f, 0, 0};
+    sound({});
+    CHECK_EQ((int)stand.bars.size(), 2 * 256);
 }
 
 NOCTURNE_TEST_MAIN()

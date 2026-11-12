@@ -81,6 +81,21 @@ def test_only_bad_cheats_report_no_filler(tmp_path, capsys):
     assert code == 2 and "Filler" not in out and "share" not in out
 
 
+def test_cheats_made_globals_are_read_from_their_source_too(tmp_path, capsys):
+    header = tmp_path / "constants.h"
+    header.write_text(declaration("g_CheatStr_A", encrypt("AUTO")))
+    source = tmp_path / "globals.cpp"
+    source.write_text(declaration("g_CheatStr_B", encrypt("TIME")).removeprefix("static "))
+    assert decrypt_cheats.main([str(header), str(source)]) == 0
+    out = capsys.readouterr().out
+    assert "Decrypted 2 cheat strings" in out and "g_CheatStr_B  'TIME'" in out
+
+
+def test_the_default_paths_are_the_projects():
+    assert [os.path.basename(p) for p in decrypt_cheats.DEFAULT_PATHS] == [
+        "constants_620000.h", "globals_620000.cpp"]
+
+
 def test_a_missing_or_empty_header_fails(tmp_path, capsys):
     assert decrypt_cheats.main([str(tmp_path / "none.h")]) == 1
     assert "not found" in capsys.readouterr().err

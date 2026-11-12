@@ -10,7 +10,7 @@ set_source_files_properties("${NOCTURNE_PSEUDOCODE_DIR}/shims/core/version.cpp"
     PROPERTIES COMPILE_DEFINITIONS "NOCTURNE_VERSION_GENERATED=1")
 
 nocturne_test_suite(shims_core
-    EXCLUDE "/test_(console|ui_scale|menu_font|menu_font_saved|menu_font_negative|os_font|menu_screen|menu_render|audio_backend|window_icon|hud_layout)\\.cpp$"
+    EXCLUDE "/test_(console|ui_scale|menu_font|menu_font_saved|menu_font_negative|os_font|os_font_scale|menu_screen|menu_render|moon_render|front_end_layout|loading_screen|act_screens|calibration_screens|audio_backend|window_icon|hud_layout)\\.cpp$"
     SUBJECTS
         # Reaches the filesystem but nothing else; tested against a directory
         # the test builds itself.
@@ -32,17 +32,21 @@ nocturne_test_suite(shims_core
     LIBRARIES ${SDL2_LIBRARIES}
 )
 
-# The console, the HUD's scaling and the front end's fonts and screens: the
-# framebuffer and the engine's text and bitmap routines are ui_support.cpp's,
-# and the settings go through a stand-in for the engine's CIni.
+# The console, the HUD's scaling and the front end's fonts, layout and screens:
+# the framebuffer, its mode and the engine's text and bitmap routines are
+# ui_support.cpp's, and the settings go through a stand-in for the engine's
+# CIni.
 nocturne_test_suite(shims_core_ui
     TESTS test_console.cpp test_ui_scale.cpp test_menu_font.cpp test_menu_font_saved.cpp
           test_menu_font_negative.cpp test_os_font.cpp test_menu_screen.cpp
+          test_front_end_layout.cpp test_os_font_scale.cpp
     SUBJECTS
         shims/core/console.cpp
         shims/core/ui_scale.cpp
+        shims/core/os_font_scale.cpp
         shims/core/menu_font.cpp
         shims/core/menu_screen.cpp
+        shims/core/front_end_layout.cpp
         shims/core/os_font.cpp
         shims/core/ini_setting.cpp
         shims/watcom/path.cpp
@@ -74,6 +78,29 @@ nocturne_test_suite(shims_core_menu_render
         shims/core/menu_render.cpp
     SUPPORT
         menu_render_support.cpp
+)
+
+# The moon backdrop at the front end's layout, over the renderer, set, models
+# and framebuffer moon_render_support.cpp stands in for.
+nocturne_test_suite(shims_core_moon_render
+    TESTS test_moon_render.cpp
+    SUBJECTS
+        shims/core/moon_render.cpp
+    SUPPORT
+        moon_render_support.cpp
+)
+
+# The loading pictures, the promo, the act's stats, the credits and the
+# calibration screens at the front end's layout, over the layout, text, clock,
+# keys, gamepad, sound and credits file screens_support.cpp stands in for.
+nocturne_test_suite(shims_core_screens
+    TESTS test_loading_screen.cpp test_act_screens.cpp test_calibration_screens.cpp
+    SUBJECTS
+        shims/core/loading_screen.cpp
+        shims/core/act_screens.cpp
+        shims/core/calibration_screens.cpp
+    SUPPORT
+        screens_support.cpp
 )
 
 # The audio backend's name and the window icon, their SDL calls renamed in this

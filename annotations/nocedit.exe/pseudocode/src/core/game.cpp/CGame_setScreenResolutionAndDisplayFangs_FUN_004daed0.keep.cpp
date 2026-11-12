@@ -11,24 +11,15 @@ void __cdecl core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0
 
 {
   CAlphaBitmap local_18;
-  int menu_width;
-  int wrong_width;
-  int menu_left;
 
-  menu_width = 0x280;
-  wrong_width = 0;
+#if !NOCTURNE_AUTHENTIC_MENU
+  nocturne_front_end_fangs(this_ptr);
+  return;
+#endif
   engine_2d_c_reinitializeGraphicsSystem_FUN_00402a80();
-#if !NOCTURNE_AUTHENTIC_MENU
-  menu_width = nocturne_menu_width();
-  wrong_width = (int)(g_WindowWidth != menu_width);
-#endif
-  if (((wrong_width != 0) || (g_WindowHeight != 0x1e0)) || (this_ptr->game_bpp != 0x20)) {
-    wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(menu_width,0x1e0,0x20);
+  if ((g_WindowHeight != 0x1e0) || (this_ptr->game_bpp != 0x20)) {
+    wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(0x280,0x1e0,0x20);
   }
-  menu_left = 0;
-#if !NOCTURNE_AUTHENTIC_MENU
-  menu_left = nocturne_menu_left();
-#endif
   if (g_CDemonMissionPtr->is_in_editor == 0) {
 #if NOCTURNE_AUTHENTIC_MENU_FONT
     g_EditorFont = g_ThemeFont;
@@ -39,7 +30,7 @@ void __cdecl core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0
   engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&local_18);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&local_18,"fangs",0x280,0x1e0);
-  engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_18,menu_left,0,0x8000);
+  engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_18,0,0,0x8000);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&local_18,0);
   return;

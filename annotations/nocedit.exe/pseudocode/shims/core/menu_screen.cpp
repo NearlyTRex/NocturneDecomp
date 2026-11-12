@@ -4,6 +4,7 @@
 
 #include "core/menu_screen.h"
 
+#include "core/front_end_layout.h"
 #include "nocturne.h"
 #include "renderer/trigl_device.h"
 
@@ -22,12 +23,14 @@ extern "C" void nocturne_menu_backdrop_frame(void) {
 namespace {
 
 // `menu_y`, lifted where `rows` character heights below it would run off the
-// window, and never above the top.
+// window, and never above the top; all in the layout's rows.
 int fit(int menu_y, int rows) {
-    int menu_ch = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont, 0x58);
+    const NocturneLayout layout = nocturne_layout();
+    const int menu_ch = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont, 0x58);
+    const int height = (int)((float)(g_WindowHeight - layout.top) / layout.scale);
 
-    if (g_WindowHeight < menu_y + rows * menu_ch) {
-        menu_y = g_WindowHeight - rows * menu_ch;
+    if (height < menu_y + rows * menu_ch) {
+        menu_y = height - rows * menu_ch;
     }
     if (menu_y < 0) {
         menu_y = 0;
@@ -52,15 +55,12 @@ extern "C" int nocturne_menu_titled_y(int lines) {
 namespace {
 
 // The layout every front-end screen is drawn for.
-const int kLayoutWidth = 0x280;
-const int kLayoutHeight = 0x1e0;
-// The widest front end: 2.67:1.
-const int kWidestMenu = 1280;
-// What every width is a multiple of. clearScreen fills a row 32 bytes at a
-// time, which is 16 pixels at 16 bits; every mode the game ships is a multiple
-// of it, and a row that is not overruns into the next and, on the last, off
-// the buffer.
-const int kWidthStep = 16;
+const int kLayoutWidth = NOCTURNE_LAYOUT_WIDTH;
+const int kLayoutHeight = NOCTURNE_LAYOUT_HEIGHT;
+// The depth the front end runs at.
+const int kFrontEndBits = 0x20;
+// The fangs: half transparent, the layout's size.
+const int kFangsAlpha = 0x8000;
 
 // Whether nocturne_menu_scene_begin opened a pass to close.
 bool s_scene_widened = false;
@@ -69,35 +69,22 @@ bool s_scene_widened = false;
 
 #if !NOCTURNE_AUTHENTIC_MENU
 
-extern "C" int nocturne_menu_width(void) {
-    const CGame *game = g_CGamePtr;
-    if (g_UseDirect3D == 0 || game->game_pixy <= 0)
-        return kLayoutWidth;
-    const int exact = kLayoutHeight * game->game_pixx / game->game_pixy;
-    int width = (exact + kWidthStep / 2) / kWidthStep * kWidthStep;
-    if (width < kLayoutWidth)
-        width = kLayoutWidth;
-    return width > kWidestMenu ? kWidestMenu : width;
-}
-
-extern "C" int nocturne_menu_left(void) {
-    const int left = (g_WindowWidth - kLayoutWidth) / 2;
-    return left > 0 ? left : 0;
-}
-
 extern "C" float nocturne_menu_scene_begin(float field_of_view) {
     s_scene_widened = false;
-    // The software rasteriser draws at the screen's own width already and
-    // knows nothing of the overlay: squeezed into 640 columns it would stop at
-    // the 640th. The front end hands the video mode back (restoreVideoMode)
-    // while the device stays open from the game, so whether the device exists
-    // says nothing about who is drawing.
-    if (g_WindowWidth <= kLayoutWidth || g_UseExternalRenderer == 0)
+    // The software rasteriser draws at the screen's own size already and
+    // knows nothing of the overlay: squeezed into 640x480 it would stop at its
+    // edges. The front end hands the video mode back (restoreVideoMode) while
+    // the device stays open from the game, so whether the device exists says
+    // nothing about who is drawing.
+    if ((g_WindowWidth == kLayoutWidth && g_WindowHeight == kLayoutHeight) || g_WindowHeight <= 0 ||
+        g_UseExternalRenderer == 0)
         return field_of_view;
-    const float widen = (float)g_WindowWidth / (float)kLayoutWidth;
+    const float scale_x = (float)g_WindowWidth / (float)kLayoutWidth;
+    const float scale_y = (float)g_WindowHeight / (float)kLayoutHeight;
+    const float widen = scale_x / scale_y;
     engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890(g_CDemonRendererPtr2, 0, 0,
                                                                 kLayoutWidth, kLayoutHeight);
-    if (nocturne_trigl_device_begin_overlay(widen, 1.0f, 0.0f, 0.0f) == 0) {
+    if (nocturne_trigl_device_begin_overlay(scale_x, scale_y, 0.0f, 0.0f) == 0) {
         // Without the renderer's pass the 640 columns could not be widened, so
         // the scene keeps the screen's own viewport, stretched.
         engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(g_CDemonRendererPtr2);
@@ -115,19 +102,39 @@ extern "C" void nocturne_menu_scene_end(void) {
     engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(g_CDemonRendererPtr2);
 }
 
+extern "C" void nocturne_front_end_fangs(struct CGame *game) {
+    CAlphaBitmap fangs;
+    int width = 0;
+    int height = 0;
+
+    engine_2d_c_reinitializeGraphicsSystem_FUN_00402a80();
+    nocturne_front_end_mode(&width, &height);
+    if (g_WindowWidth != width || g_WindowHeight != height || game->game_bpp != kFrontEndBits)
+        nocturne_front_end_set_mode();
+    if (g_CDemonMissionPtr->is_in_editor == 0) {
+#if NOCTURNE_AUTHENTIC_MENU_FONT
+        g_EditorFont = g_ThemeFont;
+#else
+        g_EditorFont = nocturne_menu_font();
+#endif
+    }
+    engine_special_cpp_clearScreen_FUN_005b3e70();
+    engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&fangs);
+    engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&fangs, (char *)"fangs", kLayoutWidth,
+                                                       kLayoutHeight);
+    nocturne_layout_display(&fangs, 0, 0, kFangsAlpha);
+    wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
+    engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&fangs, 0);
+}
+
 #else
 
-extern "C" int nocturne_menu_width(void) {
-    return kLayoutWidth;
-}
-extern "C" int nocturne_menu_left(void) {
-    return 0;
-}
 extern "C" float nocturne_menu_scene_begin(float field_of_view) {
     (void)s_scene_widened;
+    (void)kLayoutWidth;
     (void)kLayoutHeight;
-    (void)kWidestMenu;
-    (void)kWidthStep;
+    (void)kFrontEndBits;
+    (void)kFangsAlpha;
     return field_of_view;
 }
 extern "C" void nocturne_menu_scene_end(void) {}

@@ -15,11 +15,10 @@ void __cdecl core_level_cpp_CLevelLoader_show_FUN_00503dc0(CLevelLoader *this_pt
   CAlphaBitmap local_44;
   CAlphaBitmap local_30;
   CAlphaBitmap local_1c;
-  int left;
 
-  left = 0;
 #if !NOCTURNE_AUTHENTIC_MENU
-  left = nocturne_menu_left();
+  nocturne_level_loader_show(this_ptr,total_frames,use_custom_viewport,image_variant);
+  return;
 #endif
   this_ptr->version = 0;
   this_ptr->enabled = 1;
@@ -37,7 +36,7 @@ void __cdecl core_level_cpp_CLevelLoader_show_FUN_00503dc0(CLevelLoader *this_pt
     this_ptr->viewport_y = 0;
     this_ptr->viewport_width = 0xc0;
     this_ptr->viewport_height = 0xc0;
-    this_ptr->viewport_x = left + 0x1bf;
+    this_ptr->viewport_x = 0x1bf;
   }
   (this_ptr->color).r = 0xff;
   (this_ptr->color).g = 0xff;
@@ -56,8 +55,8 @@ void __cdecl core_level_cpp_CLevelLoader_show_FUN_00503dc0(CLevelLoader *this_pt
   if (image_variant == 0) {
     engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&local_44);
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&local_44,"load1",0x280,0x1e0);
-    engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_44,left,0,0xffff);
-    this_ptr->viewport_x = left + 0x78;
+    engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_44,0,0,0xffff);
+    this_ptr->viewport_x = 0x78;
     this_ptr->viewport_y = 0x82;
     this_ptr->viewport_width = 0x5a;
     this_ptr->viewport_height = 0x5a;
@@ -70,8 +69,8 @@ void __cdecl core_level_cpp_CLevelLoader_show_FUN_00503dc0(CLevelLoader *this_pt
   if (image_variant == 1) {
     engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&local_30);
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&local_30,"load2",0x280,0x1e0);
-    engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_30,left,0,0xffff);
-    this_ptr->viewport_x = left + 0x1e4;
+    engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_30,0,0,0xffff);
+    this_ptr->viewport_x = 0x1e4;
     this_ptr->viewport_y = 0x42;
     this_ptr->viewport_width = 0x5a;
     this_ptr->viewport_height = 0x5a;
@@ -84,8 +83,8 @@ void __cdecl core_level_cpp_CLevelLoader_show_FUN_00503dc0(CLevelLoader *this_pt
   if (image_variant == 2) {
     engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&local_1c);
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&local_1c,"load3",0x280,0x1e0);
-    engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_1c,left,0,0xffff);
-    this_ptr->viewport_x = left + 0x9f;
+    engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_1c,0,0,0xffff);
+    this_ptr->viewport_x = 0x9f;
     this_ptr->viewport_y = 1;
     this_ptr->viewport_width = 0x5a;
     this_ptr->viewport_height = 0x5a;
@@ -100,8 +99,8 @@ void __cdecl core_level_cpp_CLevelLoader_show_FUN_00503dc0(CLevelLoader *this_pt
   }
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&local_58);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&local_58,"load4",0x280,0x1e0);
-  engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_58,left,0,0xffff);
-  this_ptr->viewport_x = left + 0x17b;
+  engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_58,0,0,0xffff);
+  this_ptr->viewport_x = 0x17b;
   this_ptr->viewport_y = 0x44;
   this_ptr->viewport_width = 0x5a;
   this_ptr->viewport_height = 0x5a;

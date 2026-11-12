@@ -6,10 +6,12 @@
 
 #include "core/ui_scale.h"
 
+#include "core/os_font_scale.h"
 #include "nocturne.h"
 #include "shim_config.h"
 
 #include <cmath>
+#include <string>
 
 // Everything on the HUD is drawn for a 480-tall framebuffer.
 #define UI_BASE_HEIGHT 480
@@ -429,6 +431,90 @@ static int ui_draw_char(CBitFont *font, int character_code, int x, int y, int co
     return advance;
 }
 
+// =============================================================================
+// OS fonts
+// =============================================================================
+//
+// An OS font is drawn at its own size unless core/os_font_scale has made it
+// again at the asked scale, and is measured at the size it is drawn.
+
+static bool ui_win_font(struct CBitFont *font) {
+    return font != 0 && ((CBitFont *)font)->win_font_enabled != 0;
+}
+
+// The scale `font` is drawn at when `scale` is asked.
+static float ui_drawn_scale(struct CBitFont *font, float scale) {
+    if (!ui_win_font(font))
+        return scale;
+    return nocturne_os_font_scaled(font, scale) != 0 ? scale : 1.0f;
+}
+
+namespace {
+
+// `font` drawing through its OS font made at `scale`, while this lasts.
+class UiScaledWinFont {
+public:
+    UiScaledWinFont(CBitFont *font, float scale)
+        : font_(font), own_(font->win_font_helper), scaled_(nocturne_os_font_scaled(font, scale)) {
+        if (scaled_ != 0)
+            font_->win_font_helper = scaled_;
+    }
+    ~UiScaledWinFont() {
+        font_->win_font_helper = own_;
+    }
+    UiScaledWinFont(const UiScaledWinFont &) = delete;
+    UiScaledWinFont &operator=(const UiScaledWinFont &) = delete;
+
+    bool scaled() const {
+        return scaled_ != 0;
+    }
+
+private:
+    CBitFont *font_;
+    CWinFont *own_;
+    CWinFont *scaled_;
+};
+
+} // namespace
+
+// The engine draws an OS font's text a line at a time, each the bitmap font's
+// line height below the last; made at a scale, the lines are that far apart
+// at it.
+static int ui_draw_win_text(CBitFont *font, char *text, int x, int y, int color_mode,
+                            int color_value, float scale) {
+    const UiScaledWinFont swap(font, scale);
+    if (!swap.scaled())
+        return engine_font_cpp_CBitFont_drawText_FUN_004cda80(font, text, x, y, color_mode,
+                                                              color_value);
+    const int pitch =
+        (int)std::lround((float)(font->current_line_height + font->line_spacing) * scale);
+    std::string line;
+    int drawn = 0;
+    for (const char *c = text;; c++) {
+        if (*c != '\n' && *c != '\0') {
+            line += *c;
+            continue;
+        }
+        drawn = engine_font_cpp_CBitFont_drawText_FUN_004cda80(font, &line[0], x, y, color_mode,
+                                                               color_value);
+        if (*c == '\0')
+            return drawn;
+        line.clear();
+        y += pitch;
+    }
+}
+
+static int ui_win_text_width(CBitFont *font, char *text, float scale) {
+    const UiScaledWinFont swap(font, scale);
+    return engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(font, text);
+}
+
+// A whole scale the int routines draw at, as a scale: 1 where they draw
+// unscaled.
+static float ui_whole_asked(int scale) {
+    return (scale < 2 || !nocturne_ui_text_scale_supported()) ? 1.0f : (float)scale;
+}
+
 int nocturne_ui_draw_text(struct CBitFont *bit_font, char *text, int x, int y, int color_mode,
                           int color_value, int scale) {
     CBitFont *font = (CBitFont *)bit_font;
@@ -437,7 +523,9 @@ int nocturne_ui_draw_text(struct CBitFont *bit_font, char *text, int x, int y, i
     if (font == 0 || text == 0) {
         return 0;
     }
-    if (scale < 2 || !nocturne_ui_text_scale_supported() || font->win_font_enabled != 0) {
+    if (font->win_font_enabled != 0)
+        return ui_draw_win_text(font, text, x, y, color_mode, color_value, ui_whole_asked(scale));
+    if (scale < 2 || !nocturne_ui_text_scale_supported()) {
         return engine_font_cpp_CBitFont_drawText_FUN_004cda80(font, text, x, y, color_mode,
                                                               color_value);
     }
@@ -458,6 +546,8 @@ int nocturne_ui_draw_text(struct CBitFont *bit_font, char *text, int x, int y, i
 }
 
 int nocturne_ui_text_width(struct CBitFont *font, char *text, int scale) {
+    if (ui_win_font(font))
+        return ui_win_text_width((CBitFont *)font, text, ui_whole_asked(scale));
     int width = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)font, text);
     if (scale < 2 || !nocturne_ui_text_scale_supported()) {
         return width;
@@ -467,19 +557,13 @@ int nocturne_ui_text_width(struct CBitFont *font, char *text, int scale) {
 
 int nocturne_ui_text_height(struct CBitFont *font, char *text, int scale) {
     int height = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40((CBitFont *)font, text);
-    if (scale < 2 || !nocturne_ui_text_scale_supported()) {
-        return height;
-    }
-    return height * scale;
+    return (int)std::lround((float)height * ui_drawn_scale(font, ui_whole_asked(scale)));
 }
 
 int nocturne_ui_char_height(struct CBitFont *font, int character_code, int scale) {
     int height =
         engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)font, character_code);
-    if (scale < 2 || !nocturne_ui_text_scale_supported()) {
-        return height;
-    }
-    return height * scale;
+    return (int)std::lround((float)height * ui_drawn_scale(font, ui_whole_asked(scale)));
 }
 
 // =============================================================================
@@ -670,10 +754,11 @@ int nocturne_ui_draw_text_f(struct CBitFont *bit_font, char *text, int x, int y,
     if (font == 0 || text == 0)
         return 0;
     scale = ui_usable(scale);
+    if (font->win_font_enabled != 0)
+        return ui_draw_win_text(font, text, x, y, color_mode, color_value, scale);
     const int whole = ui_whole(scale);
-    if (whole != 0 || font->win_font_enabled != 0)
-        return nocturne_ui_draw_text(bit_font, text, x, y, color_mode, color_value,
-                                     whole != 0 ? whole : 1);
+    if (whole != 0)
+        return nocturne_ui_draw_text(bit_font, text, x, y, color_mode, color_value, whole);
     float pen = (float)x;
     float line_y = (float)y;
     for (; *text != '\0'; text++) {
@@ -693,12 +778,14 @@ int nocturne_ui_draw_text_f(struct CBitFont *bit_font, char *text, int x, int y,
 
 int nocturne_ui_text_width_f(struct CBitFont *font, char *text, float scale) {
     scale = ui_usable(scale);
+    if (ui_win_font(font))
+        return ui_win_text_width((CBitFont *)font, text, scale);
     const int width = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)font, text);
     return (int)std::lround((float)width * scale);
 }
 
 int nocturne_ui_char_height_f(struct CBitFont *font, int character_code, float scale) {
-    scale = ui_usable(scale);
+    scale = ui_drawn_scale(font, ui_usable(scale));
     const int height =
         engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)font, character_code);
     return (int)std::lround((float)height * scale);
@@ -709,7 +796,14 @@ int nocturne_ui_wrap_to_width_f(struct CBitFont *font, char *text, char *lines, 
     scale = ui_usable(scale);
     if (line_pitch != 0)
         *line_pitch = nocturne_ui_char_height_f(font, 0x58, scale);
-    // wrapText measures unscaled glyphs, so the box is put in the same units.
+    // wrapText measures unscaled glyphs, so the box is put in the same units;
+    // an OS font it measures as it is drawn, through the font made at the scale
+    // if there is one.
+    if (ui_win_font(font)) {
+        const UiScaledWinFont swap((CBitFont *)font, scale);
+        return engine_font_cpp_CBitFont_wrapText_FUN_004d0010((CBitFont *)font, text, lines,
+                                                              max_lines, line_stride, box_width);
+    }
     return engine_font_cpp_CBitFont_wrapText_FUN_004d0010(
         (CBitFont *)font, text, lines, max_lines, line_stride, (int)((float)box_width / scale));
 }

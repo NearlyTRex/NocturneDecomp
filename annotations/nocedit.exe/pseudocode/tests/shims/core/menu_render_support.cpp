@@ -89,6 +89,18 @@ const char *nocturne_version_short(void) {
     return "v1.2.3";
 }
 
-int nocturne_menu_left(void) {
-    return stand.menu_left;
+NocturneLayout nocturne_layout(void) {
+    return stand.layout;
+}
+
+// The engine's text at the scale: 8 a character wide, each scaled.
+int nocturne_ui_draw_text_f(struct CBitFont *, char *text, int x, int y, int color_mode, int,
+                            float scale) {
+    stand.drawn.push_back({text, x, y, color_mode, stand.alpha, scale});
+    return 0;
+}
+
+int nocturne_ui_text_width_f(struct CBitFont *font, char *text, float scale) {
+    return (int)lroundf(
+        (float)engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)font, text) * scale);
 }
