@@ -73,6 +73,15 @@ void add_channel(Lines &lines, int id, const Channel &channel) {
               ROUND(level * 100.0f / channel.scale + 0.001f), localized("%."));
 }
 
+// The menu's music, started again by CSound::configure's reset; over a game
+// sound the pause menu holds, which the reset would cost, without one.
+void restart_menu_music() {
+    if (nocturne_pause_sound_held() != 0)
+        nocturne_pause_sound_menu_music();
+    else
+        core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
+}
+
 // Off is below the lowest step: back from it is full, on from it the lowest.
 void step_channel(const Channel &channel, int step) {
     float level = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(channel.index) / channel.scale;
@@ -80,7 +89,7 @@ void step_channel(const Channel &channel, int step) {
         sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(channel.index, 1);
         // The music has to be started again to be heard.
         if (channel.index == kMusic.index)
-            core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
+            restart_menu_music();
         level = step == STEP_BACK ? 1.0f : kVolumeStep;
     } else if (step == STEP_BACK) {
         level -= kVolumeStep;
@@ -395,7 +404,7 @@ public:
             sound_sndmain_cpp_setSoundMuted_FUN_005a96c0(
                 (int)(sound_sndmain_cpp_isSoundMuted_FUN_005a96b0() == 0));
             if (sound_sndmain_cpp_isSoundMuted_FUN_005a96b0() == 0)
-                core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
+                restart_menu_music();
             break;
         case SOUND_EFFECTS:
             step_channel(kEffects, step);

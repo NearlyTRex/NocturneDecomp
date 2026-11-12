@@ -85,6 +85,18 @@ void cards(std::vector<std::string> names, std::vector<int> vendors, std::vector
 
 // --- Options -------------------------------------------------------------------
 
+// Over the game's sound the pause menu holds, the music starts without a reset
+// and only the menu's own sounds stop after: the game carries on from where it
+// was.
+NOCTURNE_TEST(options_leaves_a_held_game_sound_alone) {
+    stand.reset();
+    stand.pause_held = 1;
+    nocturne_options_menu(1);
+    CHECK(stand.in_order({"pauseMenuMusic", "moonInit", "saveClockTime", "swap", "moonFree",
+                          "pauseQuiet", "writeIni"}));
+    CHECK_EQ(stand.count("soundConfigure") + stand.count("soundReset"), 0);
+}
+
 // From a mission's pause, the music and the moon start and stop with the
 // screen; from the main menu they are already up. Either way the settings
 // are written as it closes.

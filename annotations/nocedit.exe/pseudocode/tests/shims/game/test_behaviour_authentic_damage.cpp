@@ -42,7 +42,7 @@ NOCTURNE_TEST(auto_use_is_the_games_setting) {
     game->auto_use_health = 1;
     heroes[0]->base.hit_points = -1.0f;
     SDamageInfo damage = {};
-    damage.damage_type = DAMAGE_TYPE_MELEE;
+    damage.damage_type = DAMAGE_TYPE_ATTACK_BLADE;
     nocturne_hero_items_damage_taken(heroes[0], &damage);
     CHECK_EQ(stand.health_auto_used, 1);
 }

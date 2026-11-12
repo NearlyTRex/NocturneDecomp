@@ -531,9 +531,15 @@ private:
 
 } // namespace
 
+// The menu's music, and the reset after it. Over the game's sound the pause
+// menu holds, which a reset would cost, the music starts without one and only
+// the menu's own sounds stop after (game/pause_sound.h).
 extern "C" void nocturne_options_menu(int initialize_systems) {
     if (initialize_systems != 0) {
-        core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
+        if (nocturne_pause_sound_held() != 0)
+            nocturne_pause_sound_menu_music();
+        else
+            core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
         core_moon_cpp_CMoon_init_FUN_00529ae0(&g_CMoonInstance);
     }
     core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
@@ -541,7 +547,10 @@ extern "C" void nocturne_options_menu(int initialize_systems) {
     nocturne_menu::run(page);
     if (initialize_systems != 0) {
         core_moon_cpp_CMoon_free_FUN_00529ce0(&g_CMoonInstance);
-        core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
+        if (nocturne_pause_sound_held() != 0)
+            nocturne_pause_sound_quiet();
+        else
+            core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
     }
     core_inivar_cpp_writeIniData_FUN_004fc510();
 }

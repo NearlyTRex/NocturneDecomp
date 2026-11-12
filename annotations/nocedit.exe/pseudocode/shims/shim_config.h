@@ -145,6 +145,10 @@ void nocturne_trigl_envmap_pass_end(void);
 // Gated there on NOCTURNE_AUTHENTIC_GOGGLES_CAMERA_HOLD.
 #include "game/goggles_camera_hold.h"
 
+// The pause menu holding the sound where it is (nocturne_pause_sound_*), from
+// CGame::runGameSession. Gated there on NOCTURNE_AUTHENTIC_PAUSE_SOUND.
+#include "game/pause_sound.h"
+
 // Flashlight, beam, goggles and battery per hero (nocturne_hero_*), reached
 // from the stranger, weapon, inv, set and game TUs. Inert under
 // NOCTURNE_AUTHENTIC_NETPLAY.

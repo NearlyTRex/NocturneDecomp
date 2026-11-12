@@ -47,6 +47,11 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
     g_CurrentLineNumber = 2599;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::mix - must be locked!");
   }
+#if !NOCTURNE_AUTHENTIC_PAUSE_SOUND
+  if (nocturne_pause_sound_slot_held(this_ptr) != 0) {
+    return;
+  }
+#endif
   iVar10 = mix_buffer.num_output_samples;
   if (this_ptr->playback_state != 0) {
     bVar6 = true;
