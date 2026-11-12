@@ -925,6 +925,55 @@ Ghidra source location: `~/Repositories/Ghidra/`
   - About 100 more, where the BW body changed and the inferred count differs, are left for review.
 - **nocturne's 129 analysis-set signatures are committed** (`commit_signatures.py`). 125 match
   nocedit's exactly, and 4 retail-only ones agree with their callers.
+- **nocedit's 222 analysis-set signatures are committed**, checked against nocturne
+  (`--reference nocturne.exe`). 141 match nocturne's exactly. Of the 81 editor-only ones, 52 agree
+  with their callers' argument size (`verify_sibling_signatures.py` on a self-mapping) and 29 have
+  no measurable call site: zero-parameter functions, plus 4 dead `msnedit.cpp` functions whose
+  stack reads match their parameters. One CRT function with an `undefined8*` parameter stays
+  uncommitted.
+- **tridx7's 9 analysis-set game signatures are committed.** 8 agree with their callers; the
+  export `APIDLLReleaseDisplayContext` reads one stack argument and ends with a plain `RET`. Its
+  MSVC CRT signatures stay uncommitted (`commit_signatures.py` skips CRT unless `--crt`).
+- **1,188 committed BW signatures had no calling convention** (bw1 360, bw2 412, bw3 416), from
+  earlier transfers. Ghidra decodes a function without one as the cspec default, `__cdecl`, so
+  labelling it changes no output, but labelling a register-convention function would hide it.
+  `set_missing_conventions.py` sets `__cdecl` only on a function with no `RET n`, all-stack
+  parameters, a register return, no argument register read on entry, and callers that don't
+  contradict it. It takes a non-cdecl twin's convention when the types match; no twin needed it.
+  The entry-register check flags all of nocedit's `__stack_esi` and `__stack2_esi` functions. One
+  `mini3d.cpp` function per build returns on the stack and is left for review.
+- **489 named BW functions with a never-set signature got one** (bw1 149, bw2 175, bw3 165):
+  - nocedit twins resolved by unit and name: mostly `staticInit`, which the name-only plan drops
+    because every unit has one;
+  - BW-only `staticInit` → `void()` and `factoryFuncX` → `CX*()`, the shapes every nocedit one
+    has, with the class taken from the constructor the factory calls;
+  - 9 name-plan functions whose BW body changed, where `RET n` or the callers confirm nocedit's
+    argument size.
+
+  A never-set signature exports as `(void)`, so the pseudocode cannot show a BW parameter count;
+  only the bytes can. Every entry passed them: no argument register read on entry, and no
+  contradicting `RET n` or caller cleanup. About 25 name-plan functions per build read
+  `EAX`/`EDX`/`ECX`/`ESI` on entry (register-argument helpers, such as the `ckptutil.c` blit
+  entries) and were left out. So were two per build whose callers pop 4 bytes fewer than
+  nocedit's signature.
+- **The ~1,100 unnamed functions per build are BW's own code.** Only 8–10 per build pair with a
+  nocedit or nocturne function. About 450 are shared by all three builds.
+- **123 more BW names** (bw1 33, bw2 48, bw3 42), each source gated on the class that owns the
+  function's unit:
+  - **RTTI method records:** type_info records `Class::method` assert strings with the functions
+    that hold them. Watcom inlines small methods, so an assert can sit in a caller
+    (`pollAndMixSfx` holds `SfxSlot::kill`'s). A claim is taken only for the unit's own class.
+    Callers that pass nothing make it a static member with a plain name: `allocVertexList` in
+    `mini3d.cpp`, `setCounts`, `setupItems`.
+  - **Vtable slots:** an override whose named peers all give one method takes `<unit's class>_<method>`.
+    The table's own named members are often inherited base methods, which gave `CCharacter_process`
+    in `yow.cpp` instead of `CYow_process`.
+  - **Body matches:** 20 from nocturne.
+- **`CMini3D` is 1 byte** (RTTI `typeinfo_size`). Its constructor ignores `this` and sets module
+  globals. The next global sits 4 bytes after the instance only because of alignment.
+- **BW has `CSlew`:** its `slew.cpp` `init` is byte-identical to nocedit's. nocedit's 28-byte type
+  is imported into all three builds.
+
 - **Stale "Failed to disassemble" bookmarks are deleted** (`clear_stale_bookmarks.py`): 18 across
   nocturne and the BW builds. The 6 left are Watcom `strstr`'s deliberate jumps.
 - **The functions export records an uncommitted signature** as `sig` (`default`, `analysis` or

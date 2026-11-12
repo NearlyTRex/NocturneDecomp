@@ -18,7 +18,8 @@ from the exported records:
 
 Only `sig: analysis` and `sig: imported` signatures are candidates. A `default`
 one was never set, so there is nothing to commit; transfer one instead
-(apply_sibling_signatures.py). Thunks are skipped. Before writing, each
+(apply_sibling_signatures.py). Thunks are skipped, and CRT functions unless
+--crt. Before writing, each
 function's live name must still be the exported one.
 
 Report-first; --apply commits and saves.
@@ -64,25 +65,38 @@ def unit_file(unit):
     return unit.split("_", 1)[1] if unit and "_" in unit else unit
 
 
-def plan(records, reference):
-    """[(record, verdict, twin or None)] for every uncommitted analysis/imported signature.
+def twin_finder(reference):
+    """record -> [reference records with its class-and-method name].
 
-    A twin is the reference function with the same class-and-method name; a name the
-    reference uses more than once (each unit's staticInit) must also share the unit's file."""
+    A name the reference uses more than once (each unit's staticInit) must also
+    share the unit's file."""
     by_core, by_unit = defaultdict(list), defaultdict(list)
     for r in reference:
         unit, core = sm.split_qualified_name(r.get("name", ""))
         if core:
             by_core[core].append(r)
             by_unit[unit_file(unit), core].append(r)
+
+    def twins_of(record):
+        unit, core = sm.split_qualified_name(record.get("name", ""))
+        twins = by_core.get(core, [])
+        return by_unit.get((unit_file(unit), core), []) if len(twins) > 1 else twins
+    return twins_of
+
+
+def plan(records, reference, crt = True):
+    """[(record, verdict, twin or None)] for every uncommitted analysis/imported signature.
+
+    `crt=False` leaves out the CRT's (`crt_` names), whose signatures are shaped for
+    compiling the decomp rather than inferred."""
+    twins_of = twin_finder(reference)
     out = []
     for r in records:
         if r.get("sig") not in CANDIDATE_SOURCES or r.get("thunk") or not r.get("addr"):
             continue
-        unit, core = sm.split_qualified_name(r.get("name", ""))
-        twins = by_core.get(core, [])
-        if len(twins) > 1:
-            twins = by_unit.get((unit_file(unit), core), [])
+        if not crt and r.get("name", "").startswith("crt_"):
+            continue
+        twins = twins_of(r)
         out.append((r, verdict(r, twins), twins[0] if len(twins) == 1 else None))
     return sorted(out, key=lambda row: (VERDICTS.index(row[1]), row[0]["addr"]))
 
@@ -160,10 +174,11 @@ def main(argv=None):
     ap.add_argument("program_name")
     ap.add_argument("--reference", default="nocedit.exe", help="the build whose signatures must agree")
     ap.add_argument("--allow-no-twin", action="store_true", help="also commit signatures with no reference twin")
+    ap.add_argument("--crt", action="store_true", help="also take CRT functions (crt_ names)")
     ap.add_argument("--apply", action="store_true")
     args = ap.parse_args(argv)
     load = sm._load_buckets  # pylint: disable=protected-access
-    rows = plan(load(args.program_name, "functions"), load(args.reference, "functions"))
+    rows = plan(load(args.program_name, "functions"), load(args.reference, "functions"), args.crt)
     print("\n".join(render(args.program_name, args.reference, rows, args.allow_no_twin)))
     chosen = to_commit(rows, args.allow_no_twin)
     if not args.apply:

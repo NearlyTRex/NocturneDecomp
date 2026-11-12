@@ -54,6 +54,12 @@ def test_only_analysis_and_imported_signatures_are_checked_against_their_twin():
                     "00001040": ("undefined", None)}
 
 
+def test_crt_functions_are_left_out_unless_asked_for():
+    crt = [record("crt_x.c_f_FUN_00001000", "00001000", sig = "analysis")]
+    assert [v for _r, v, _t in cs.plan(crt, REFERENCE)] == ["no twin"]
+    assert cs.plan(crt, REFERENCE, crt = False) == []
+
+
 def test_the_report_groups_by_verdict_and_shows_what_the_reference_has():
     rows = cs.plan(RECORDS, REFERENCE)
     lines = cs.render("game.exe", "nocedit.exe", rows, allow_no_twin = True)
