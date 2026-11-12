@@ -98,10 +98,10 @@ constexpr int kHeight = 480;
 // Palette entry 1 of the brightness image.
 constexpr std::uint32_t kImage = 0x112233;
 
-// The menus on a screen 480 lines tall, their fonts from sheets of block glyphs '!' to 0x99, with
-// every message translated to a run of X's: calibration step n to n of them, the prompt to one
-// and the title to seven.
-template <int ScreenWidth>
+// The menus on a screen 480 lines tall unless given another height, their fonts from sheets of
+// block glyphs '!' to 0x99, with every message translated to a run of X's: calibration step n to
+// n of them, the prompt to one and the title to seven.
+template <int ScreenWidth, int ScreenHeight = kHeight>
 class CMenuFixture : public sound::CSndMainFixture {
 protected:
     // Where the 640-wide layout starts.
@@ -111,7 +111,7 @@ protected:
         givenMenuFontFiles([this](const std::string &name, const std::string &contents) {
             givenFile(name, contents);
         });
-        two_d_.setupViewportAndClipping(0, 0, ScreenWidth - 1, kHeight - 1);
+        two_d_.setupViewportAndClipping(0, 0, ScreenWidth - 1, ScreenHeight - 1);
         givenFile("art\\brightness.raw", std::string(std::size_t{kWidth} * kHeight, '\x01'));
         givenFile("art\\brightness.act", engine::makePalette({0, 0, 0, 0x11, 0x22, 0x33}));
         givenFile("msglist.txt", "; version\n0\n; use OS fonts\n0\n; font\n\"Arial\"\n"
@@ -186,7 +186,7 @@ protected:
     }
 
     std::array<std::uint8_t, engine::IRawInput::kInputCodeCount> keyboard_{};
-    engine::CMemoryScreen screen_{ScreenWidth, kHeight, 32};
+    engine::CMemoryScreen screen_{ScreenWidth, ScreenHeight, 32};
     NiceMock<engine::MockRawInput> raw_input_;
     engine::C2d two_d_{dosio_, screen_, raw_input_};
     engine::CLight light_;
@@ -292,6 +292,10 @@ using CMenuTest = CMenuFixture<kWidth>;
 // The front end at 16:9.
 constexpr int kWideWidth = 848;
 using CWideMenuTest = CMenuFixture<kWideWidth>;
+// The front end at 1280x720: twice as wide as the layout, one and a half times as tall.
+constexpr int kTallWidth = 1280;
+constexpr int kTallHeight = 720;
+using CTallMenuTest = CMenuFixture<kTallWidth, kTallHeight>;
 
 TEST_F(CMenuTest, CalibrationShowsEachStepWithThePromptOverTheImageUntilAKey) {
     std::vector<int> prompt_lefts;
@@ -440,22 +444,33 @@ TEST_F(CMenuTest, TheFooterCarriesTheCopyrightTheTrademarkAndTheBuild) {
     EXPECT_TRUE(lit(kWidth - 1 - smallFont().getTextWidth(copyright), letterRow(bottom)));
 }
 
-// The image and its text centred together, black either side.
-TEST_F(CWideMenuTest, CalibrationIsCentredOnAWideFrontEnd) {
-    // Across the middle row at the image's edges, and where the title starts, at each step.
+// The image stretched over the whole of a wide screen, its text centred on it.
+TEST_F(CWideMenuTest, CalibrationFillsAWideFrontEnd) {
+    // Across the middle row at the screen's edges, and where the title starts, at each step.
     std::vector<std::vector<std::uint32_t>> edges;
     std::vector<int> title_lefts;
     EXPECT_CALL(raw_input_, getNextKeypress(_)).Times(5).WillRepeatedly([&](auto &) {
         const int row = kHeight / 2;
-        edges.push_back({screen_.pixel(kLeft - 1, row), screen_.pixel(kLeft, row),
-                         screen_.pixel(kLeft + kWidth - 1, row),
-                         screen_.pixel(kLeft + kWidth, row)});
+        edges.push_back({screen_.pixel(0, row), screen_.pixel(kWideWidth - 1, row)});
         title_lefts.push_back(firstTextPixel(letterRow(2 * lineHeight())));
         return 'a';
     });
     menu_.showCalibrationTest();
-    EXPECT_THAT(edges, ::testing::Each(std::vector<std::uint32_t>{0U, kImage, kImage, 0U}));
+    EXPECT_THAT(edges, ::testing::Each(std::vector<std::uint32_t>{kImage, kImage}));
     EXPECT_THAT(title_lefts, ::testing::Each(centredLeft(7)));
+}
+
+// A stretch whole one way and not the other, mixed, still reaches every corner.
+TEST_F(CTallMenuTest, CalibrationFillsAScreenStretchedUnevenly) {
+    std::vector<std::vector<std::uint32_t>> corners;
+    EXPECT_CALL(raw_input_, getNextKeypress(_)).Times(5).WillRepeatedly([&](auto &) {
+        corners.push_back({screen_.pixel(0, 0), screen_.pixel(kTallWidth - 1, 0),
+                           screen_.pixel(0, kTallHeight - 1),
+                           screen_.pixel(kTallWidth - 1, kTallHeight - 1)});
+        return 'a';
+    });
+    menu_.showCalibrationTest();
+    EXPECT_THAT(corners, ::testing::Each(std::vector<std::uint32_t>(4, kImage)));
 }
 
 TEST_F(CWideMenuTest, TheItemsAndTheTrademarkMoveWithTheLayout) {

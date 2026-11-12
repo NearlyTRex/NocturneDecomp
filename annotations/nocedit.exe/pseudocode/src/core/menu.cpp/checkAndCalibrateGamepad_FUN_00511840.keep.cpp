@@ -23,11 +23,9 @@ int __cdecl core_menu_cpp_checkAndCalibrateGamepad_FUN_00511840(void)
   DWORD DStack_1c;
   DWORD DStack_18;
   DWORD DStack_14;
-  int left;
 
-  left = 0;
 #if !NOCTURNE_AUTHENTIC_MENU
-  left = nocturne_menu_left();
+  return nocturne_check_and_calibrate_gamepad();
 #endif
   if ((g_CGamePtr->game_control != CONTROL_MODE_GAMEPAD) || (g_CGamePtr->x_center != 0)) {
     return 1;
@@ -40,7 +38,7 @@ int __cdecl core_menu_cpp_checkAndCalibrateGamepad_FUN_00511840(void)
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Center gamepad, press ENTER")
     ;
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_MediumFont,pcVar2);
-    iStack_24 = left + 0x140 - iVar3 / 2;
+    iStack_24 = 0x140 - iVar3 / 2;
     iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_MediumFont,0x58);
     engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (g_MediumFont,pcVar2,iStack_24,0xf0 - iVar3 / 2,7,0);
@@ -62,7 +60,7 @@ int __cdecl core_menu_cpp_checkAndCalibrateGamepad_FUN_00511840(void)
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Move gamepad in all directions, press ENTER")
     ;
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_MediumFont,pcVar2);
-    iStack_20 = left + 0x140 - iVar3 / 2;
+    iStack_20 = 0x140 - iVar3 / 2;
     iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_MediumFont,0x58);
     engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (g_MediumFont,pcVar2,iStack_20,0xf0 - iVar3 / 2,7,0);

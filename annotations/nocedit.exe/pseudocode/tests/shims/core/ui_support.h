@@ -54,6 +54,12 @@ struct Stand {
     std::vector<std::string> loaded; // CAlphaBitmap::load, "name WxH"
     int freed = 0;                   // CAlphaBitmap's destructor
     std::vector<int> displayed_at;   // CAlphaBitmap::display's x and y, in turn
+    // OS fonts: each CWinFont made, "height y_offset1 y_offset2", and how many
+    // freed. Text a font draws or measures through one is its height a
+    // character wide, and each drawing is recorded as "text x y height".
+    std::vector<std::string> os_fonts;
+    int os_fonts_freed = 0;
+    std::vector<std::string> os_drawn;
 
     void reset();
 };

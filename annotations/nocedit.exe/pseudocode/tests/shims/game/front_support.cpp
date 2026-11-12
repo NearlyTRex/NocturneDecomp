@@ -43,7 +43,15 @@ char g_RendererDllPath[256];
 int g_nocturne_fixed_display = 0;
 int g_WindowWidth = 640;
 int g_AudioVisualizationCounter = 0;
+SMRGLTextureBasic g_AudioSpectrumTextures[8];
 int g_GlobalDeltaTimeInt = 0;
+
+// The renderer the spectrum draws its bars through, and the frame it took last.
+namespace {
+SRenderVertex s_vertices[4];
+CDemonRenderer s_renderer;
+int s_frame = -1;
+} // namespace
 char g_StringBuffers[10][256];
 int g_StringBufferIndex = 0;
 
@@ -117,6 +125,9 @@ void Stand::reset() {
     g_AudioVisualizationCounter = 0;
     g_GlobalDeltaTimeInt = 0;
     g_StringBufferIndex = 0;
+    s_renderer.vertex_buffer_ptr = s_vertices;
+    g_CDemonRendererPtr2 = &s_renderer;
+    s_frame = -1;
 }
 
 int Stand::count(const std::string &call) const {
@@ -733,11 +744,43 @@ int __cdecl sound_sndmain_cpp_isSoundBusy_FUN_005ab540(void) {
 }
 
 float __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400(int, float, float) {
-    return 0.5f;
+    return stand.level;
 }
 
-void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int, int, int) {
-    stand.bars++;
+// --- the spectrum's bars, through the renderer ------------------------------------------
+
+int __cdecl engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer *,
+                                                                          int render_alpha) {
+    stand.render_alpha = render_alpha;
+    return 0;
+}
+
+void __cdecl engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(CDemonRenderer *,
+                                                                         int blend_mode) {
+    stand.blend = blend_mode;
+}
+
+void __cdecl engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(
+    CDemonRenderer *, SMRGLTextureBasic *texture) {
+    s_frame = (int)(texture - g_AudioSpectrumTextures);
+}
+
+// The quad's corners as the bar's edges, checked to be the rectangle they draw,
+// and only while it is half transparent and added.
+void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10(
+    CDemonRenderer *renderer, SMRGLHeaderPrimitive *prim, int render_flags) {
+    const SRenderVertex *v = renderer->vertex_buffer_ptr;
+    const bool square = v[1].projected_vertex.screen_x == v[2].projected_vertex.screen_x &&
+                        v[0].projected_vertex.screen_x == v[3].projected_vertex.screen_x &&
+                        v[0].projected_vertex.screen_y == v[1].projected_vertex.screen_y &&
+                        v[2].projected_vertex.screen_y == v[3].projected_vertex.screen_y &&
+                        v[0].u == 8 << 16 && v[2].u == 0xf8 << 16 && prim->base.count == 4 &&
+                        render_flags == 0x23 && stand.render_alpha == 0x8000 && stand.blend == 1;
+    char bar[96];
+    snprintf(bar, sizeof(bar), "%d %d %d %d %d%s", v[0].projected_vertex.screen_x >> 16,
+             v[1].projected_vertex.screen_x >> 16, v[0].projected_vertex.screen_y >> 16,
+             v[2].projected_vertex.screen_y >> 16, s_frame, square ? "" : " skewed");
+    stand.bars.emplace_back(bar);
 }
 
 // --- the pick list ------------------------------------------------------------------
@@ -876,11 +919,10 @@ char *__cdecl wincore_winrun_cpp_getKeyName_FUN_005f3980(EInputCodeType keycode)
     return name;
 }
 
-// The front end's layout as the screen's own, and its fangs, which the pages
+// The front end's layout as the test sets it, and its fangs, which the pages
 // never show.
 NocturneLayout nocturne_layout(void) {
-    const NocturneLayout layout = {1.0f, 0, 0};
-    return layout;
+    return stand.layout;
 }
 void nocturne_front_end_mode(int *width, int *height) {
     *width = g_WindowWidth;

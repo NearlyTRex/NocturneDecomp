@@ -6,6 +6,7 @@
 
 #include "core/console.h"
 
+#include <cstdio>
 #include <cstring>
 
 namespace ui_support {
@@ -148,14 +149,57 @@ int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004d0010(CBitFont *, char *, c
     return 2;
 }
 
-int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004cda80(CBitFont *, char *text, int, int, int,
-                                                           int) {
-    stand.drawn.push_back(text);
-    return (int)std::strlen(text) * 8;
+namespace {
+
+// What one character of `font`'s text is wide: its OS font's height, if it
+// draws through one.
+int character_width(const CBitFont *font) {
+    if (font != nullptr && font->win_font_enabled != 0 && font->win_font_helper != nullptr)
+        return font->win_font_helper->cached_string_height;
+    return 8;
 }
 
-int __cdecl engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(CBitFont *, char *text) {
-    return (int)std::strlen(text) * 8;
+} // namespace
+
+int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004cda80(CBitFont *font, char *text, int x, int y,
+                                                           int, int) {
+    stand.drawn.push_back(text);
+    if (character_width(font) != 8) {
+        char drawn[160];
+        std::snprintf(drawn, sizeof(drawn), "%s %d %d %d", text, x, y,
+                      font->win_font_helper->cached_string_height);
+        stand.os_drawn.emplace_back(drawn);
+    }
+    return (int)std::strlen(text) * character_width(font);
+}
+
+int __cdecl engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(CBitFont *font, char *text) {
+    return (int)std::strlen(text) * character_width(font);
+}
+
+// --- OS fonts ---------------------------------------------------------------------
+
+CWinFont *g_MediumWinFont = nullptr;
+CWinFont *g_TinyWinFont = nullptr;
+CWinFont *g_ThemeWinFont = nullptr;
+CWinFont *g_DebugWinFont = nullptr;
+
+// The height kept where the stand's text routines read it.
+CWinFont *__cdecl engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(CWinFont *this_ptr, char *,
+                                                                int font_height, int y_offset1,
+                                                                int y_offset2) {
+    this_ptr->cached_string_height = font_height;
+    this_ptr->y_offset1 = y_offset1;
+    this_ptr->y_offset2 = y_offset2;
+    char made[48];
+    std::snprintf(made, sizeof(made), "%d %d %d", font_height, y_offset1, y_offset2);
+    stand.os_fonts.emplace_back(made);
+    return this_ptr;
+}
+
+CWinFont *__cdecl engine_winfont_cpp_CWinFont_dtor_FUN_005f2390(CWinFont *this_ptr, uint) {
+    stand.os_fonts_freed++;
+    return this_ptr;
 }
 
 int __cdecl engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(CBitFont *, char *) {

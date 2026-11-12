@@ -69,10 +69,6 @@ bool s_scene_widened = false;
 
 #if !NOCTURNE_AUTHENTIC_MENU
 
-extern "C" int nocturne_menu_left(void) {
-    return nocturne_layout().left;
-}
-
 extern "C" float nocturne_menu_scene_begin(float field_of_view) {
     s_scene_widened = false;
     // The software rasteriser draws at the screen's own size already and
@@ -133,9 +129,6 @@ extern "C" void nocturne_front_end_fangs(struct CGame *game) {
 
 #else
 
-extern "C" int nocturne_menu_left(void) {
-    return 0;
-}
 extern "C" float nocturne_menu_scene_begin(float field_of_view) {
     (void)s_scene_widened;
     (void)kLayoutWidth;

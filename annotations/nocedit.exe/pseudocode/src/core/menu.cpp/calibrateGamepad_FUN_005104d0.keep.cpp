@@ -25,11 +25,9 @@ int __cdecl core_menu_cpp_calibrateGamepad_FUN_005104d0(void)
   DWORD DStack_18;
   DWORD local_14;
   CGame *pCVar1;
-  int left;
 
-  left = 0;
 #if !NOCTURNE_AUTHENTIC_MENU
-  left = nocturne_menu_left();
+  return nocturne_calibrate_gamepad();
 #endif
   DVar5 = 0x7fffffff;
   DVar4 = 0;
@@ -42,7 +40,7 @@ int __cdecl core_menu_cpp_calibrateGamepad_FUN_005104d0(void)
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_MediumFont,pcVar2);
     iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_MediumFont,0x58);
     engine_font_cpp_CBitFont_drawText_FUN_004cda80
-              (g_MediumFont,pcVar2,left + 0x140 - iVar3 / 2,0xf0 - iVar4 / 2,7,0);
+              (g_MediumFont,pcVar2,0x140 - iVar3 / 2,0xf0 - iVar4 / 2,7,0);
     _sprintf(local_224,"%d,%d,%x",(int)g_JoyXPos,(int)g_JoyYPos,(uint)g_JoyButtons);
     engine_2d_c_drawText_FUN_00401fd0(local_224,0,0);
     core_game_cpp_CGame_resetKeyState_FUN_004dbe60(g_CGamePtr);
@@ -60,7 +58,7 @@ int __cdecl core_menu_cpp_calibrateGamepad_FUN_005104d0(void)
     iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_MediumFont,text);
     iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_MediumFont,0x58);
     engine_font_cpp_CBitFont_drawText_FUN_004cda80
-              (g_MediumFont,text,left + 0x140 - iVar4 / 2,0xf0 - iVar5 / 2,7,0);
+              (g_MediumFont,text,0x140 - iVar4 / 2,0xf0 - iVar5 / 2,7,0);
     _sprintf(acStack_124,"%d,%d,%x",(int)g_JoyXPos,(int)g_JoyYPos,(uint)g_JoyButtons)
     ;
     engine_2d_c_drawText_FUN_00401fd0(acStack_124,0,0);

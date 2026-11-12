@@ -40,8 +40,8 @@ def test_configures_and_builds_the_default_preset_from_its_own_directory(tmp_pat
     root = tree(tmp_path, regens = [("regen_a.sh", 0), ("regen_b.sh", 0)])
     result, calls = build(tmp_path, root, shell_traced_env, "-j", "4", SKIP_REGEN = "0")
     assert result.returncode == 0
-    assert calls == ["cmake --preset exe-linux-asan-x86_64",
-                     f"cmake --build {root}/build/exe-linux-asan-x86_64 -j 4"]
+    assert calls == ["cmake --preset exe-linux-x86_64",
+                     f"cmake --build {root}/build/exe-linux-x86_64 -j 4"]
     assert (tmp_path / "regen.log").read_text().splitlines() == ["regen_a.sh ran", "regen_b.sh ran"]
     assert (tmp_path / "bin" / "cwd.log").read_text().splitlines() == [str(root)] * 2
     assert "regenerating via regen_a.sh" in result.stdout
@@ -55,8 +55,8 @@ def test_a_named_preset_passes_the_rest_to_the_build(tmp_path, shell_traced_env)
 
 
 def test_the_preset_can_come_from_the_environment(tmp_path, shell_traced_env):
-    _, calls = build(tmp_path, tree(tmp_path), shell_traced_env, BUILD_PRESET = "exe-linux-x86_64")
-    assert calls[0] == "cmake --preset exe-linux-x86_64"
+    _, calls = build(tmp_path, tree(tmp_path), shell_traced_env, BUILD_PRESET = "exe-linux-asan-x86_64")
+    assert calls[0] == "cmake --preset exe-linux-asan-x86_64"
 
 
 def test_a_failing_regen_stops_the_build_with_its_status(tmp_path, shell_traced_env):
@@ -78,12 +78,12 @@ def test_skip_regen_and_a_tree_without_regens_both_go_straight_to_cmake(tmp_path
 
 def test_a_failing_configure_stops_before_the_build(tmp_path, shell_traced_env):
     result, calls = build(tmp_path, tree(tmp_path), shell_traced_env, cmake = "exit 5")
-    assert (result.returncode, calls) == (5, ["cmake --preset exe-linux-asan-x86_64"])
+    assert (result.returncode, calls) == (5, ["cmake --preset exe-linux-x86_64"])
 
 
 def test_vanilla_takes_the_presets_twin_when_there_is_one(tmp_path, shell_traced_env):
     root = tree(tmp_path)
-    result, calls = build(tmp_path, root, shell_traced_env, "--vanilla", "exe-linux-x86_64")
+    result, calls = build(tmp_path, root, shell_traced_env, "--vanilla")
     assert calls == ["cmake --preset exe-linux-vanilla-x86_64",
                      f"cmake --build {root}/build/exe-linux-vanilla-x86_64"]
     assert "vanilla lane -> build/exe-linux-vanilla-x86_64" in result.stdout
@@ -91,7 +91,7 @@ def test_vanilla_takes_the_presets_twin_when_there_is_one(tmp_path, shell_traced
 
 def test_vanilla_without_a_twin_configures_its_own_tree(tmp_path, shell_traced_env):
     root = tree(tmp_path)
-    _, calls = build(tmp_path, root, shell_traced_env, VANILLA = "1")
+    _, calls = build(tmp_path, root, shell_traced_env, "exe-linux-asan-x86_64", VANILLA = "1")
     vanilla = f"{root}/build/exe-linux-asan-x86_64-vanilla"
     assert calls == [f"cmake --preset exe-linux-asan-x86_64 -B {vanilla} -DNOCTURNE_VANILLA=ON"
                      " -DNOCTURNE_BUILD_TAG=exe-linux-asan-x86_64-vanilla",

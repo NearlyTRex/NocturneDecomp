@@ -25,16 +25,6 @@ NOCTURNE_TEST(the_backdrop_moves_the_moon_on_a_frame) {
     CHECK_EQ(stand.moon_frames, 1);
 }
 
-// The layout is centred on a wider screen, and at the left of a narrower one.
-NOCTURNE_TEST(the_layout_is_centred) {
-    ui_support::screen(848, 480, 32);
-    CHECK_EQ(nocturne_menu_left(), 104);
-    ui_support::screen(1920, 1080, 32);
-    CHECK_EQ(nocturne_menu_left(), 240);
-    ui_support::screen(600, 480, 32);
-    CHECK_EQ(nocturne_menu_left(), 0);
-}
-
 // The fangs: the front end's mode where the screen is in another, the editor
 // font the menu's, and the picture over the layout, shown and freed.
 NOCTURNE_TEST(the_fangs_take_the_front_ends_mode) {

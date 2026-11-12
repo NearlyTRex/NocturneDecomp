@@ -560,7 +560,8 @@ NOCTURNE_TEST(fractional_metrics_follow_the_text) {
     CHECK_EQ(nocturne_ui_char_height_f(font.get(), 'X', 1.5f), 10);
 }
 
-// An OS font draws at its own size, so it measures at it; no font measures as
+// An OS font not made again at the scale draws at its own size, so it
+// measures at it; no font measures as
 // the engine does.
 NOCTURNE_TEST(an_os_font_measures_at_its_own_size) {
     ui_support::screen(64, 64, 32);

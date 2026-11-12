@@ -18,6 +18,7 @@
 
 #include <algorithm>
 #include <array>
+#include <cmath>
 #include <cstddef>
 #include <cstdint>
 #include <string>
@@ -54,12 +55,37 @@ constexpr std::array<std::string_view, 5> kCalibrationSteps{
     "You're done with calibration.",
 };
 
-// Centred on the image, at layout row y.
-void drawCentred(engine::CBitFont &font, std::string_view text, const SFrontEndLayout &layout,
-                 int y) {
-    font.drawTextScaled(
-        text, layout.getX(kImageWidth / 2) - (font.getTextWidthScaled(text, layout.scale) / 2),
-        layout.getY(y), kTextColor, engine::CBitFont::kNoShadow, layout.scale);
+// The calibration image stretched over a screen of width by height.
+struct SStretch {
+    int width = kImageWidth;
+    int height = kImageHeight;
+
+    [[nodiscard]] float getScaleX() const {
+        return static_cast<float>(width) / static_cast<float>(kImageWidth);
+    }
+    [[nodiscard]] float getScaleY() const {
+        return static_cast<float>(height) / static_cast<float>(kImageHeight);
+    }
+    // An image row on the screen.
+    [[nodiscard]] int getY(int image_y) const {
+        return static_cast<int>(std::lround(static_cast<float>(image_y) * getScaleY()));
+    }
+    // Its pixels kept where both stretches keep them, else mixed.
+    [[nodiscard]] engine::EBitmapFilter getFilter(platform::EUpscaler upscaler) const {
+        using engine::EBitmapFilter;
+        return getFrontEndArtFilter(upscaler, getScaleX()) == EBitmapFilter::Nearest &&
+                       getFrontEndArtFilter(upscaler, getScaleY()) == EBitmapFilter::Nearest
+                   ? EBitmapFilter::Nearest
+                   : EBitmapFilter::Smooth;
+    }
+};
+
+// Centred on the screen at image row y as stretched, at the layout's text scale so the letters
+// keep their shape.
+void drawCentred(engine::CBitFont &font, std::string_view text, const SStretch &stretch,
+                 float scale, int y) {
+    font.drawTextScaled(text, (stretch.width / 2) - (font.getTextWidthScaled(text, scale) / 2),
+                        stretch.getY(y), kTextColor, engine::CBitFont::kNoShadow, scale);
 }
 
 } // namespace
@@ -95,7 +121,9 @@ bool CMenu::getMenuLeftRightPressed() const {
     return menu_left_right_pressed_;
 }
 
-// The original built the text in a 256-byte buffer, which a long translation overran.
+// The original built the text in a 256-byte buffer, which a long translation overran. The image
+// is plain enough to stretch, so unlike the rest of the front end it fills a wide screen rather
+// than keeping its shape; its lines go where the stretch puts their rows.
 // nocedit 0x00510a50
 void CMenu::showCalibrationTestPattern(engine::CAlphaBitmap &bitmap,
                                        std::string_view message_text) {
@@ -104,12 +132,14 @@ void CMenu::showCalibrationTestPattern(engine::CAlphaBitmap &bitmap,
         std::string(message_text) +
         std::string(owners_.messages.getLocalizedString("  Press any key to continue."));
     const int line_height = font.getCharHeight(kLineHeightChar);
-    const SFrontEndLayout layout = getScreenLayout();
+    const float scale = getScreenLayout().scale;
+    const SStretch stretch{.width = owners_.screen.getWindowWidth(),
+                           .height = owners_.screen.getWindowHeight()};
     owners_.special.clearScreen();
-    displayInLayout(bitmap, layout, {.x = 0, .y = 0, .width = kImageWidth, .height = kImageHeight},
-                    kFullAlpha, owners_.display.getUpscaler());
-    drawCentred(font, prompt, layout, kImageHeight - (3 * line_height));
-    drawCentred(font, owners_.messages.getLocalizedString("Monitor calibration"), layout,
+    bitmap.displayScaled(0, 0, stretch.width, stretch.height, kFullAlpha,
+                         stretch.getFilter(owners_.display.getUpscaler()));
+    drawCentred(font, prompt, stretch, scale, kImageHeight - (3 * line_height));
+    drawCentred(font, owners_.messages.getLocalizedString("Monitor calibration"), stretch, scale,
                 2 * line_height);
     owners_.screen.swapBuffers();
     owners_.two_d.clearInputAndWait();

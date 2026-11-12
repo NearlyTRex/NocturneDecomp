@@ -49,10 +49,6 @@ int nocturne_menu_start_y(int rows);
 // logo, lifted as that is only when the list would otherwise run off.
 int nocturne_menu_titled_y(int lines);
 
-// The left edge of the front end's layout (core/front_end_layout.h) on the
-// screen: 0 under NOCTURNE_AUTHENTIC_MENU=1.
-int nocturne_menu_left(void);
-
 // The moon's 3D on a front end larger than 640x480. CMoon::render projects it
 // into a 640x480 viewport, and an overlay pass (renderer/trigl_device.h)
 // stretches that over the whole screen; the projection is widened by how much

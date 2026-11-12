@@ -75,7 +75,13 @@ struct Stand {
     int device_mixes = 0; // the device's has_hardware_mixing
     int mixing = 0;       // isHardwareMixingEnabled
     int busy = 0;         // isSoundBusy
-    int bars = 0;         // renderAudioSpectrumBar calls
+    float level = 0.5f;   // analyzeFrequencyBand
+    // The spectrum's bars as drawn, each "left right foot top frame", in screen
+    // pixels; and the renderer's alpha and blend after the last.
+    std::vector<std::string> bars;
+    int render_alpha = 0;
+    int blend = -1;
+    NocturneLayout layout = {1.0f, 0, 0}; // nocturne_layout
 
     // --- the pick list ---------------------------------------------------------
     std::vector<std::string> rows; // CStrList_add, for the last list built

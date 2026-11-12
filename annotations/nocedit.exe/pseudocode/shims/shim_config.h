@@ -357,6 +357,10 @@ void nocturne_trigl_envmap_pass_end(void);
 // Options page. Inert under NOCTURNE_AUTHENTIC_MENU=1.
 #include "core/os_font.h"
 
+// The OS fonts made again at the text's scale (nocturne_os_font_scaled), which
+// core/ui_scale draws and measures them through.
+#include "core/os_font_scale.h"
+
 // The dialog widgets' font (nocturne_menu_font*), chosen on the Graphics
 // Options screen and asked for wherever the game would set g_ThemeFont. Gated
 // at those sites on NOCTURNE_AUTHENTIC_MENU_FONT.
@@ -373,6 +377,23 @@ void nocturne_trigl_envmap_pass_end(void);
 // CMoon::render at the front end's layout (nocturne_moon_render), reached from
 // the top of its keep. Gated there on NOCTURNE_AUTHENTIC_MENU.
 #include "core/moon_render.h"
+
+// The loading pictures and the promo at the front end's layout
+// (nocturne_level_loader_show, nocturne_promo_screen), reached from the tops of
+// CLevelLoader::show's and showPromoScreen's keeps. Gated there on
+// NOCTURNE_AUTHENTIC_MENU.
+#include "core/loading_screen.h"
+
+// The act's stats, its finish and the credits at the front end's layout
+// (nocturne_act_stats, nocturne_finish_act, nocturne_roll_credits), reached
+// from the tops of their keeps. Gated there on NOCTURNE_AUTHENTIC_MENU.
+#include "core/act_screens.h"
+
+// The gamepad's calibration and the monitor's test pattern at the front end's
+// layout (nocturne_calibrate_gamepad, nocturne_check_and_calibrate_gamepad,
+// nocturne_calibration_test_pattern), reached from the tops of their keeps.
+// Gated there on NOCTURNE_AUTHENTIC_MENU.
+#include "core/calibration_screens.h"
 
 // The front end as pages, and how a menu list is drawn (nocturne_main_menu,
 // nocturne_options_menu, nocturne_graphics_options_menu,

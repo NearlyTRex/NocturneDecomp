@@ -10,11 +10,13 @@ pseudocode. See [`cmake/README.md`](../cmake/README.md) for the full reference.
 ./run.sh            # launch it with --dev
 ```
 
-`build.sh` defaults to **`exe-linux-asan-x86_64`** — native 64-bit with AddressSanitizer and
-UBSan. Override with the first argument or `BUILD_PRESET`:
+`build.sh` defaults to **`exe-linux-x86_64`**, native 64-bit without sanitizers. Override with
+the first argument or `BUILD_PRESET`; `run.sh` and `debug.sh` read `BUILD_PRESET` too, so the
+three stay on one lane:
 
 ```sh
-./build.sh exe-linux-x86_64
+./build.sh exe-linux-asan-x86_64
+BUILD_PRESET=exe-linux-asan-x86_64 ./run.sh
 BUILD_PRESET=check-linux-x86_64 ./build.sh
 ```
 
@@ -38,8 +40,8 @@ paths, which build at `-O2` in any Debug build as the decomp's lanes keep theirs
 | Preset | Target | What it does |
 |---|---|---|
 | `check-linux-x86_64` | native 64-bit | per-file `-fsyntax-only`; no link, no shims, no SDL |
-| `exe-linux-x86_64` | native 64-bit | full executable, the shims through clang-tidy |
-| `exe-linux-asan-x86_64` | native 64-bit | full executable + ASan/UBSan, the shims through clang-tidy — **the default** |
+| `exe-linux-x86_64` | native 64-bit | full executable, the shims through clang-tidy — **the default** |
+| `exe-linux-asan-x86_64` | native 64-bit | full executable + ASan/UBSan, a Debug build, the shims through clang-tidy |
 | `check-windows-x86_64` | Windows 64-bit | syntax check against the Windows target, from Linux |
 | `exe-windows-x86_64` | Windows 64-bit | `nocturne.exe`, cross-compiled from Linux — **needs a cross toolchain** |
 | `check-windows-msys2` | Windows 64-bit | syntax check, run **on** Windows under MSYS2 |
